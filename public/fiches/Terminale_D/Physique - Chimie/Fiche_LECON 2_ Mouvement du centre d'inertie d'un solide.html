@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche - Mouvement du Centre d'Inertie d'un Solide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.7; padding: 40px; max-width: 900px; margin: auto; font-size: 14px; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
+  .header h1 { font-size: 22px; color: #2563eb; margin-bottom: 8px; }
+  .header .meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #64748b; }
+  .header .meta span { background: #f1f5f9; padding: 4px 12px; border-radius: 20px; }
+  h2 { font-size: 17px; color: #1e293b; margin: 28px 0 12px; padding: 10px 16px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+  h3 { font-size: 15px; color: #334155; margin: 18px 0 8px; }
+  p { margin-bottom: 10px; }
+  .definition { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .definition strong { color: #166534; }
+  .formule { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; color: #92400e; }
+  .important { background: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; color: #1e293b; }
+  ul, ol { margin: 8px 0 12px 20px; }
+  li { margin-bottom: 5px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; font-size: 12px; color: #94a3b8; }
+  .footer strong { color: #2563eb; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>🏫 Terminale D</span>
+    <span>📖 Physique - Chimie</span>
+    <span>📝 Mouvement du Centre d'Inertie d'un Solide</span>
+  </div>
+</div>
+
+<h2>I. Référentiels Galiléens</h2>
+
+<div class="definition">
+  Un <strong>référentiel galiléen</strong> est un référentiel dans lequel le <strong>principe de l'inertie</strong> est vérifié (un corps isolé ou pseudo-isolé garde un mouvement rectiligne uniforme ou reste immobile).
+</div>
+
+<h3>Exemples de référentiels galiléens</h3>
+<table>
+  <tr><th>Référentiel</th><th>Origine</th><th>Usage</th></tr>
+  <tr><td><strong>Copernic</strong> (héliocentrique)</td><td>Centre du système solaire</td><td>Mouvement des planètes</td></tr>
+  <tr><td><strong>Géocentrique</strong></td><td>Centre de la Terre</td><td>Mouvement des satellites</td></tr>
+  <tr><td><strong>Terrestre</strong> (laboratoire)</td><td>Objet fixe sur Terre</td><td>Expériences de courte durée</td></tr>
+</table>
+
+<h2>II. Théorème du Centre d'Inertie (TCI)</h2>
+
+<div class="definition">
+  Dans un référentiel galiléen, la <strong>somme vectorielle des forces extérieures</strong> appliquées à un solide est égale au produit de sa masse par le vecteur-accélération de son centre d'inertie.
+</div>
+
+<div class="formule">∑ ⃗F<sub>ext</sub> = m · ⃗a<sub>G</sub></div>
+
+<div class="important">
+  <strong>Cas particulier :</strong> Si ∑⃗F<sub>ext</sub> = ⃗0 alors ⃗a = ⃗0 :<br>
+  → soit le solide est <strong>immobile</strong> (v = 0)<br>
+  → soit il est en <strong>mouvement rectiligne uniforme</strong> (⃗v = constante)<br>
+  C'est le <strong>principe de l'inertie</strong>.
+</div>
+
+<h2>III. Théorème de l'Énergie Cinétique (TEC)</h2>
+
+<div class="definition">
+  Dans un référentiel galiléen, la <strong>variation d'énergie cinétique</strong> d'un solide entre deux points A et B est égale à la somme algébrique des travaux de <strong>toutes les forces extérieures</strong>.
+</div>
+
+<div class="formule">ΔE<sub>C</sub> = E<sub>C(B)</sub> − E<sub>C(A)</sub> = ∑ W<sub>AB</sub>(⃗F<sub>ext</sub>)</div>
+
+<p>Rappel : E<sub>C</sub> = ½ m v²</p>
+
+<h2>IV. Protocole de Résolution</h2>
+
+<ol>
+  <li><strong>Définir le système</strong> étudié</li>
+  <li><strong>Choisir le référentiel</strong> galiléen et le repère orthonormé</li>
+  <li><strong>Bilan des forces</strong> extérieures (schéma)</li>
+  <li><strong>Appliquer</strong> le TCI ou le TEC selon le besoin</li>
+  <li><strong>Projeter</strong> sur les axes et résoudre</li>
+</ol>
+
+<h2>V. Exemple Type : Plan Incliné sans Frottement</h2>
+
+<p>Solide de masse m lâché sans vitesse sur un plan incliné d'angle θ, longueur l :</p>
+
+<h3>Par le TCI :</h3>
+<div class="formule">⃗P + ⃗R = m·⃗a<br>
+Projection sur Ox (axe de la pente) : m·g·sin θ = m·a<br>
+→ a = g·sin θ</div>
+
+<h3>Par le TEC :</h3>
+<div class="formule">½ m·v<sub>B</sub>² − 0 = m·g·l·sin θ<br>
+→ v<sub>B</sub> = √(2·g·l·sin θ)</div>
+
+<div class="important">
+  <strong>Remarques :</strong>
+  <ul style="margin-top:8px;">
+    <li>W(⃗R) = 0 car ⃗R ⊥ déplacement</li>
+    <li>W(⃗P) = m·g·h = m·g·l·sin θ (h = dénivelé)</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <strong>powered by Haniel_dev</strong>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche - Mouvements dans les Champs g et E Uniformes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.7; padding: 40px; max-width: 900px; margin: auto; font-size: 14px; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
+  .header h1 { font-size: 22px; color: #2563eb; margin-bottom: 8px; }
+  .header .meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #64748b; }
+  .header .meta span { background: #f1f5f9; padding: 4px 12px; border-radius: 20px; }
+  h2 { font-size: 17px; color: #1e293b; margin: 28px 0 12px; padding: 10px 16px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+  h3 { font-size: 15px; color: #334155; margin: 18px 0 8px; }
+  p { margin-bottom: 10px; }
+  .definition { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .definition strong { color: #166534; }
+  .formule { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; color: #92400e; }
+  .important { background: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; color: #1e293b; }
+  ul, ol { margin: 8px 0 12px 20px; }
+  li { margin-bottom: 5px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; font-size: 12px; color: #94a3b8; }
+  .footer strong { color: #2563eb; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>🏫 Terminale D</span>
+    <span>📖 Physique - Chimie</span>
+    <span>📝 Mouvements dans les Champs ⃗g et ⃗E Uniformes</span>
+  </div>
+</div>
+
+<h2>I. Champ Uniforme</h2>
+
+<div class="definition">
+  Un champ est <strong>uniforme</strong> si son vecteur (direction, sens, intensité) est le <strong>même en tout point</strong> de la région considérée.
+</div>
+
+<ul>
+  <li><strong>Champ de pesanteur ⃗g</strong> : uniforme au voisinage de la Terre</li>
+  <li><strong>Champ électrostatique ⃗E</strong> : uniforme entre les armatures d'un condensateur plan</li>
+</ul>
+
+<h2>II. Mouvement d'un Projectile dans ⃗g</h2>
+
+<h3>1. Hypothèses</h3>
+<ul>
+  <li>Masse m, vitesse initiale v₀ faisant un angle α avec l'horizontale</li>
+  <li>Frottements de l'air négligés</li>
+  <li>Seule force : le poids ⃗P = m⃗g</li>
+</ul>
+
+<h3>2. Accélération</h3>
+<div class="formule">⃗a = ⃗g &nbsp;→&nbsp; aₓ = 0 ; a_z = −g</div>
+
+<h3>3. Équations horaires</h3>
+<div class="formule">
+vₓ = v₀·cos α &nbsp;&nbsp;&nbsp;&nbsp; v_z = −g·t + v₀·sin α<br><br>
+x = (v₀·cos α)·t<br>
+z = −½·g·t² + (v₀·sin α)·t
+</div>
+
+<h3>4. Équation cartésienne de la trajectoire</h3>
+<div class="formule">z = −g/(2·v₀²·cos²α) · x² + x·tan α</div>
+<p>C'est une <strong>parabole</strong> à concavité tournée vers le bas.</p>
+
+<h3>5. Hauteur maximale (sommet S)</h3>
+<div class="formule">t<sub>S</sub> = v₀·sin α / g<br>
+Z<sub>S</sub> = h<sub>max</sub> = v₀²·sin²α / (2g)</div>
+
+<h3>6. Portée (point de chute P)</h3>
+<div class="formule">x<sub>P</sub> = v₀²·sin(2α) / g</div>
+
+<div class="important">
+  <strong>Portée maximale</strong> : pour sin(2α) = 1, soit <strong>α = 45°</strong>.
+</div>
+
+<h2>III. Mouvement d'une Particule Chargée dans ⃗E</h2>
+
+<h3>1. Hypothèses</h3>
+<ul>
+  <li>Particule de charge q, masse m</li>
+  <li>Vitesse initiale ⃗v₀ = v₀·⃗i (horizontale)</li>
+  <li>⃗E vertical entre les plaques du condensateur</li>
+  <li>Poids négligé devant la force électrostatique</li>
+</ul>
+
+<h3>2. Accélération</h3>
+<div class="formule">⃗F = q·⃗E = m·⃗a &nbsp;→&nbsp; ⃗a = (q/m)·⃗E</div>
+<div class="formule">aₓ = 0 ; a_y = qE/m</div>
+
+<h3>3. Équations horaires</h3>
+<div class="formule">
+vₓ = v₀ &nbsp;&nbsp;&nbsp;&nbsp; v_y = (qE/m)·t<br><br>
+x = v₀·t<br>
+y = (qE)/(2m) · t²
+</div>
+
+<h3>4. Équation cartésienne</h3>
+<div class="formule">y = qE / (2m·v₀²) · x²</div>
+<p>C'est une <strong>parabole</strong> (trajectoire parabolique).</p>
+
+<h3>5. Déviation angulaire α</h3>
+<div class="formule">tan α = v<sub>Sy</sub> / v<sub>Sx</sub> = qEℓ / (m·v₀²)</div>
+<p>Avec ℓ : longueur des plaques du condensateur.</p>
+
+<h3>6. Déflexion électrostatique Y</h3>
+<div class="formule">Y = (q·ℓ·D) / (m·d·v₀²) · U<sub>AB</sub></div>
+<p>Avec D : distance plaques–écran, d : distance entre les plaques, U<sub>AB</sub> : tension.</p>
+
+<h2>IV. Tableau Comparatif</h2>
+
+<table>
+  <tr><th></th><th>Champ ⃗g</th><th>Champ ⃗E</th></tr>
+  <tr><td><strong>Force</strong></td><td>⃗P = m⃗g</td><td>⃗F = q⃗E</td></tr>
+  <tr><td><strong>Accélération</strong></td><td>⃗a = ⃗g (indépendante de m)</td><td>⃗a = (q/m)⃗E (dépend de q/m)</td></tr>
+  <tr><td><strong>Trajectoire</strong></td><td>Parabole</td><td>Parabole</td></tr>
+  <tr><td><strong>Mouvement horizontal</strong></td><td>Rectiligne uniforme</td><td>Rectiligne uniforme</td></tr>
+  <tr><td><strong>Mouvement vertical</strong></td><td>Uniformément varié</td><td>Uniformément varié</td></tr>
+</table>
+
+<div class="footer">
+  <strong>powered by Haniel_dev</strong>
+</div>
+
+</body>
+</html>

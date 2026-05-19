@@ -4,6 +4,7 @@
   "description": "Application qui génère des fiches de résumé à partir des cours PDF du site ecole-ci.org pour les élèves de 3ème et Terminale en Côte d'Ivoire.",
   "main": "server.js",
   "scripts": {
+    "build": "node src/build_static.js",
     "start": "node server.js",
     "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -30,13 +30,13 @@ ResumeCI/
 
 ```bash
 npm install
-npm start
+npm run build
 ```
 
 Puis ouvrir :
 
 ```text
-http://localhost:3000
+public/index.html
 ```
 
 ## Installation sur téléphone
@@ -66,17 +66,24 @@ git push -u origin main
 
 ## Hébergement recommandé
 
-La plateforme utilise un serveur Node.js Express. Elle peut être publiée sur :
+La plateforme finale est statique et peut être publiée sur :
 
 - Render
-- Railway
-- Fly.io
-- VPS
+- Netlify
+- Vercel
+- GitHub Pages
 
-Commande de démarrage :
+Sur Render, choisir :
 
-```bash
-npm start
+```text
+New Static Site
+```
+
+Configuration Render :
+
+```text
+Build Command: npm install && npm run build
+Publish Directory: public
 ```
 
 ## Stack technique
@@ -86,4 +93,5 @@ npm start
 - **pdf-parse** — Extraction de texte des PDFs
 - **HTML/CSS/JavaScript** — Interface web
 - **Service Worker + Manifest** — PWA installable
+- **Build statique** — `src/build_static.js`
 - **Puppeteer** (optionnel) — Scraping automatique du site ecole-ci.org

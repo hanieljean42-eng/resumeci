@@ -1,11 +1,13 @@
-const CACHE_NAME = 'fiches-bac-v2';
+const CACHE_NAME = 'fiches-bac-v3-static';
 const PRECACHE = [
   '/',
-  '/public/index.html',
-  '/public/quiz.html',
-  '/public/flashcards.html',
-  '/public/manifest.json',
-  '/public/icon.svg'
+  '/index.html',
+  '/quiz.html',
+  '/flashcards.html',
+  '/manifest.json',
+  '/icon.svg',
+  '/data/structure.json',
+  '/data/stats.json'
 ];
 
 self.addEventListener('install', e => {

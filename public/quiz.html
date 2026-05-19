@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Gamifié — Fiches BAC</title>
-  <link rel="manifest" href="/public/manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -326,7 +326,7 @@
     // ==================== SETUP ====================
     async function loadSubjects() {
       try {
-        const struct = await fetch('/api/structure').then(r => r.json());
+        const struct = await fetch('/data/structure.json').then(r => r.json());
         const sel = document.getElementById('subjectSelect');
         for (const [cls, subjects] of Object.entries(struct)) {
           for (const sub of Object.keys(subjects)) {

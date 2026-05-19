@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fiches de Résumé — Terminale A & D | Haniel_dev</title>
-  <link rel="manifest" href="/public/manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#2563eb">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -228,7 +228,7 @@
     function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
 
     async function loadData(){
-      const[struct,stats]=await Promise.all([fetch('/api/structure').then(r=>r.json()),fetch('/api/stats').then(r=>r.json())]);
+      const[struct,stats]=await Promise.all([fetch('/data/structure.json').then(r=>r.json()),fetch('/data/stats.json').then(r=>r.json())]);
       DATA.structure=struct;DATA.stats=stats;
       renderSidebar();showDashboard();
     }
@@ -323,9 +323,11 @@
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
       CURRENT_FICHE={cls,sub,file};
       try{
-        const data=await fetch(`/api/fiche/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`).then(r=>r.json());
-        const downloadUrl=`/api/download/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
-        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><a class="btn btn-green" href="${downloadUrl}" download><i class="fas fa-download"></i> Télécharger la fiche</a>`;
+        const ficheUrl=`/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
+        const rawHtml=await fetch(ficheUrl).then(r=>r.text());
+        const bodyMatch=rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
+        const data={html:bodyMatch?bodyMatch[1]:rawHtml};
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><a class="btn btn-green" href="${ficheUrl}" download><i class="fas fa-download"></i> Télécharger la fiche</a>`;
 
         // Process HTML to render formulas nicely
         let html=data.html;
@@ -334,7 +336,7 @@
           return `<div class="formula-block">${f}</div>`;
         });
 
-        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content">${html}</div><div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/public/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/public/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a></div></div>`;
+        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content">${html}</div><div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a></div></div>`;
         clearActive();
         const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
         if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
@@ -348,9 +350,9 @@
     // ==================== LEARNING TOOLS HTML ====================
     function getToolsBar(){
       return `<div class="tools-bar">
-        <a class="tool-card" href="/public/flashcards.html"><div class="tool-icon">🃏</div><h4>Flashcards</h4><p>Révision espacée — méthode Ebbinghaus</p></a>
-        <a class="tool-card" href="/public/quiz.html"><div class="tool-icon">🎮</div><h4>Quiz Game</h4><p>QCM, Vrai/Faux, Quiz Dates</p></a>
-        <a class="tool-card" href="/public/quiz.html" onclick="sessionStorage.setItem('quizMode','dates')"><div class="tool-icon">📅</div><h4>Quiz Dates</h4><p>Spécial dates Histoire-Géo</p></a>
+        <a class="tool-card" href="/flashcards.html"><div class="tool-icon">🃏</div><h4>Flashcards</h4><p>Révision espacée — méthode Ebbinghaus</p></a>
+        <a class="tool-card" href="/quiz.html"><div class="tool-icon">🎮</div><h4>Quiz Game</h4><p>QCM, Vrai/Faux, Quiz Dates</p></a>
+        <a class="tool-card" href="/quiz.html" onclick="sessionStorage.setItem('quizMode','dates')"><div class="tool-icon">📅</div><h4>Quiz Dates</h4><p>Spécial dates Histoire-Géo</p></a>
       </div>`;
     }
 
@@ -380,7 +382,7 @@
 
     // ==================== PWA ====================
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/public/sw.js').catch(e => console.log('SW:', e));
+      navigator.serviceWorker.register('/sw.js').catch(e => console.log('SW:', e));
     }
 
     loadData();
