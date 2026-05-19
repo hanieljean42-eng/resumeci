@@ -192,6 +192,8 @@
       .tools-bar{flex-direction:column}
       .tool-card{min-width:0}
       .audio-fab{width:46px;height:46px;bottom:14px;right:14px}
+      .install-prompt{bottom:10px;align-items:flex-start}
+      .install-actions{flex-direction:column}
     }
     /* Learning tools bar */
     .tools-bar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
@@ -204,6 +206,15 @@
     .audio-fab{position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:#2563eb;border:none;border-radius:50%;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(37,99,235,.4);transition:.3s;z-index:100}
     .audio-fab:hover{transform:scale(1.1)}
     .audio-fab.speaking{background:#059669;animation:pulse-audio 1s infinite}
+    .install-prompt{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(140%);width:min(520px,calc(100% - 24px));background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px;box-shadow:0 18px 50px rgba(15,23,42,.35);z-index:120;display:flex;align-items:center;gap:12px;transition:transform .28s ease}
+    .install-prompt.show{transform:translateX(-50%) translateY(0)}
+    .install-icon{width:42px;height:42px;min-width:42px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:18px}
+    .install-text{flex:1;min-width:0}
+    .install-text strong{display:block;font-size:13px;margin-bottom:2px}
+    .install-text span{display:block;font-size:11px;color:#cbd5e1;line-height:1.4}
+    .install-actions{display:flex;gap:6px;align-items:center}
+    .install-btn{border:none;background:#10b981;color:#fff;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
+    .install-close{border:none;background:rgba(255,255,255,.08);color:#cbd5e1;border-radius:10px;width:34px;height:34px;cursor:pointer}
     @keyframes pulse-audio{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.4)}50%{box-shadow:0 0 0 12px rgba(5,150,105,0)}}
     @media print{
       body{background:#fff}
@@ -278,11 +289,23 @@
     </div>
   </div>
   <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
+  <div class="install-prompt" id="installPrompt" role="dialog" aria-live="polite">
+    <div class="install-icon"><i class="fas fa-mobile-screen-button"></i></div>
+    <div class="install-text">
+      <strong>Installer l’application</strong>
+      <span>Ajoute ResumeCI sur ton écran d’accueil pour réviser plus vite, même hors connexion.</span>
+    </div>
+    <div class="install-actions">
+      <button class="install-btn" id="installBtn">Installer</button>
+      <button class="install-close" id="installClose" aria-label="Fermer"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
 
   <script>
     let DATA = {};
     // Store current fiche info for download
     let CURRENT_FICHE = null;
+    let deferredInstallPrompt = null;
 
     const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
@@ -335,7 +358,10 @@
       document.getElementById('continueBtn').addEventListener('click',()=>{
         document.getElementById('introScreen').style.display='none';
         document.getElementById('appLayout').classList.remove('is-hidden');
+        maybeShowInstallPrompt();
       });
+      document.getElementById('installClose').addEventListener('click',dismissInstallPrompt);
+      document.getElementById('installBtn').addEventListener('click',installApp);
       const sidebar=document.querySelector('.sidebar');
       const overlay=document.getElementById('mobileOverlay');
       const menuBtn=document.getElementById('mobileMenuBtn');
@@ -349,6 +375,44 @@
       });
     });
 
+    function isStandaloneApp(){
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function maybeShowInstallPrompt(){
+      if(isStandaloneApp()||localStorage.getItem('installPromptDismissed')==='1')return;
+      setTimeout(()=>document.getElementById('installPrompt').classList.add('show'),1200);
+    }
+
+    function dismissInstallPrompt(){
+      document.getElementById('installPrompt').classList.remove('show');
+      localStorage.setItem('installPromptDismissed','1');
+    }
+
+    async function installApp(){
+      const prompt=document.getElementById('installPrompt');
+      if(deferredInstallPrompt){
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt=null;
+        prompt.classList.remove('show');
+        return;
+      }
+      alert("Pour installer l'application sur Android : ouvre le menu ⋮ de Chrome puis choisis « Installer l'application » ou « Ajouter à l'écran d'accueil ».");
+    }
+
+    window.addEventListener('beforeinstallprompt',e=>{
+      e.preventDefault();
+      deferredInstallPrompt=e;
+      maybeShowInstallPrompt();
+    });
+
+    window.addEventListener('appinstalled',()=>{
+      deferredInstallPrompt=null;
+      localStorage.setItem('installPromptDismissed','1');
+      document.getElementById('installPrompt').classList.remove('show');
+    });
+
     function showDashboard(){
       CURRENT_FICHE=null;
       const{stats,structure}=DATA;
@@ -359,7 +423,7 @@
         const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
         cards+=`<div class="class-card" data-cls="${cls}"><h3>${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</h3><div class="subject-list">${tags}</div></div>`;
       }
-      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Terminale A & D — École Numérique Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-green"><i class="fas fa-file-pdf"></i></div><div class="stat-number" style="color:var(--green)">${stats.totalPdfs}</div><div class="stat-label">PDFs</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Terminale A & D — Révision BAC Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-green"><i class="fas fa-file-pdf"></i></div><div class="stat-number" style="color:var(--green)">${stats.totalPdfs}</div><div class="stat-label">PDFs</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
       // Bind class card clicks
       document.querySelectorAll('.class-card').forEach(el=>el.addEventListener('click',()=>showClass(el.dataset.cls)));
       clearActive();
