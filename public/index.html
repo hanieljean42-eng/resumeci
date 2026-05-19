@@ -519,27 +519,64 @@
 
     // ==================== AUDIO TTS ====================
     let ttsActive = false;
+    let ttsChunks = [];
+    let ttsIndex = 0;
+    let ttsWakeLock = null;
+
+    function getFrenchVoice(){
+      const voices = speechSynthesis.getVoices();
+      return voices.find(v=>v.lang && v.lang.toLowerCase().startsWith('fr')) || voices[0] || null;
+    }
+
+    function stopTts(){
+      speechSynthesis.cancel();
+      ttsActive = false;
+      ttsChunks = [];
+      ttsIndex = 0;
+      const btn=document.getElementById('audioFab');
+      btn.classList.remove('speaking');
+      btn.innerHTML='<i class="fas fa-volume-up"></i>';
+      if(ttsWakeLock){clearInterval(ttsWakeLock);ttsWakeLock=null}
+    }
+
+    function speakNextChunk(){
+      if(!ttsActive || ttsIndex >= ttsChunks.length){stopTts();return}
+      if(speechSynthesis.paused)speechSynthesis.resume();
+      const utter = new SpeechSynthesisUtterance(ttsChunks[ttsIndex++]);
+      const voice = getFrenchVoice();
+      utter.lang = 'fr-FR';
+      utter.rate = 0.88;
+      utter.pitch = 1;
+      if(voice)utter.voice = voice;
+      utter.onend = () => setTimeout(speakNextChunk, 120);
+      utter.onerror = () => setTimeout(speakNextChunk, 120);
+      speechSynthesis.speak(utter);
+    }
+
     document.getElementById('audioFab').addEventListener('click', () => {
-      if (ttsActive) { speechSynthesis.cancel(); ttsActive = false; document.getElementById('audioFab').classList.remove('speaking'); return; }
+      if(!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)){
+        alert("La lecture audio n'est pas disponible sur ce navigateur.");
+        return;
+      }
+      if (ttsActive) { stopTts(); return; }
       const ficheContent = document.querySelector('.fiche-content');
-      if (!ficheContent) return;
-      const chunks = ficheContent.innerText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(s=>s.trim()).filter(Boolean).slice(0,80) || [];
-      if (!chunks.length) return;
-      let i = 0;
-      const playNext = () => {
-        if (!ttsActive || i >= chunks.length) {
-          ttsActive = false;
-          document.getElementById('audioFab').classList.remove('speaking');
-          return;
-        }
-        const utter = new SpeechSynthesisUtterance(chunks[i++]);
-        utter.lang = 'fr-FR'; utter.rate = 0.9;
-        utter.onend = playNext;
-        speechSynthesis.speak(utter);
-      };
-      ttsActive = true; document.getElementById('audioFab').classList.add('speaking');
-      playNext();
+      if (!ficheContent) { alert("Ouvre d'abord une fiche pour lancer la lecture."); return; }
+      const text = ficheContent.innerText.replace(/\s+/g,' ').trim();
+      ttsChunks = text.match(/.{1,180}(\s|$)/g)?.map(s=>s.trim()).filter(Boolean).slice(0,120) || [];
+      if (!ttsChunks.length) { alert("Aucun texte lisible trouvé dans cette fiche."); return; }
+      speechSynthesis.cancel();
+      ttsIndex = 0;
+      ttsActive = true;
+      const btn=document.getElementById('audioFab');
+      btn.classList.add('speaking');
+      btn.innerHTML='<i class="fas fa-stop"></i>';
+      ttsWakeLock=setInterval(()=>{if(ttsActive && speechSynthesis.paused)speechSynthesis.resume()},1000);
+      setTimeout(speakNextChunk, 80);
     });
+
+    if('speechSynthesis' in window){
+      speechSynthesis.onvoiceschanged = getFrenchVoice;
+    }
 
     // ==================== PWA ====================
     if ('serviceWorker' in navigator) {

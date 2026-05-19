@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fiches-bac-v4-pdf-pwa';
+const CACHE_NAME = 'fiches-bac-v5-audio-fix';
 const PRECACHE = [
   '/',
   '/index.html',
