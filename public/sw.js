@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fiches-bac-v3-static';
+const CACHE_NAME = 'fiches-bac-v4-pdf-pwa';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -6,6 +6,8 @@ const PRECACHE = [
   '/flashcards.html',
   '/manifest.json',
   '/icon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
   '/data/structure.json',
   '/data/stats.json'
 ];

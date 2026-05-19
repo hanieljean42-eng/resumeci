@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     :root {
       --bg:#f8fafc;--bg-card:#fff;--bg-card-hover:#f1f5f9;--bg-surface:#fff;
@@ -399,7 +400,7 @@
         const rawHtml=await fetch(ficheUrl).then(r=>r.text());
         const bodyMatch=rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
         const data={html:bodyMatch?bodyMatch[1]:rawHtml};
-        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="btn btn-green" onclick="window.print()"><i class="fas fa-file-pdf"></i> Enregistrer en PDF</button>`;
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="btn btn-green" onclick="downloadCurrentFichePdf()"><i class="fas fa-file-pdf"></i> Télécharger PDF</button>`;
 
         // Process HTML to render formulas nicely
         let html=data.html;
@@ -418,6 +419,30 @@
     }
 
     function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    async function downloadCurrentFichePdf(){
+      const ficheContent=document.querySelector('.fiche-content');
+      if(!ficheContent||!CURRENT_FICHE)return;
+      const credit=document.querySelector('.fiche-discreet-credit');
+      const wrapper=document.createElement('div');
+      wrapper.style.padding='24px';
+      wrapper.style.background='#ffffff';
+      wrapper.appendChild(ficheContent.cloneNode(true));
+      if(credit)wrapper.appendChild(credit.cloneNode(true));
+      const fileName=CURRENT_FICHE.file.replace(/\.html?$/i,'.pdf').replace(/[\\/:*?"<>|]/g,'-');
+      if(window.html2pdf){
+        await html2pdf().set({
+          margin:[10,10,10,10],
+          filename:fileName,
+          image:{type:'jpeg',quality:0.98},
+          html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},
+          jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+          pagebreak:{mode:['css','legacy']}
+        }).from(wrapper).save();
+      }else{
+        window.print();
+      }
+    }
 
     // ==================== LEARNING TOOLS HTML ====================
     function getToolsBar(){
