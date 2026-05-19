@@ -1,0 +1,1501 @@
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THÈME : FONCTIONS NUMERIQUES
+Durée : 28 heures Code :
+Leçon 1 : ÉTUDE DE FONCTIONS POLYNÔMES ET DE FONCTIONS
+RATIONNELLES
+A-SITUATION D’APPRENTISSAGE
+En vue de diversifier ses activités et mobiliser des ressources financières, le comité de
+gestion scolaire (COGES) d’un lycée a créé une imprimerie. Celle-ci fabrique et vend
+chaque jour un nombre x d’articles. Le coût de production unitaire C(x) exprime le coût de
+production par article produit et vendu et est défini par la fonction C telle que :
+C(x)= 𝒙 − 𝟏𝟎 + 𝟗𝟎𝟎
+𝒙 .
+Le bénéfice global de l’imprimerie est modélisé par la fonction B telle que :
+B(x)= −𝒙𝟐 + 𝟏𝟏𝟎𝒙 − 𝟗𝟎𝟎 .
+Le président du COGES souhaite déterminer le nombre d’articles que l’on doit fabriquer et
+vendre pour avoir un bénéfice maximal mais il ne sait comment s’y prendre . Ta classe est
+informée du problème et décide de l’aider.
+B-CONTENU DE LA LEÇON
+I-FONCTION POLYNÔME
+1- Limite d’une fonction polynôme en un point
+Activité
+Soit 𝑓 la fonction définie de ℝ vers ℝ par : 𝑓(𝑥) = 𝑥2−𝑥
+2𝑥−2
+1-Détermine l’ensemble de définition 𝐷𝑓 de la fonction 𝑓
+2-Complète à l’aide d’une calculatrice le tableau ci-dessous.
+𝑥 0,9 0,99 0,999 0,9999 1 1,0001 1,001 1,01 1,1
+𝑓(𝑥)
+3) De quelle valeur se rapproche 𝑓(𝑥) lorsque x prend dans 𝐷𝑓 , des valeurs suffisamment proches
+de 1?
+REPONSES ATTENDUES
+SECONDAIRE
+Tle A
+MATHEMATIQUES
+
+-- 1 of 28 --
+
+1) 𝐷𝑓 = ]−∞; 1[⋃]1; +∞[
+2)
+𝑥 0,9 0,99 0,999 0,9999 1 1,0001 1,001 1,01 1,1
+𝑓(𝑥) 0,45 0,495 0,4995 0,49995 0,50005 0,5005 0,505 0,55
+3) 𝑓(𝑥) se rapproche du nombre 0,5 lorsque x prend dans 𝐷𝑓 , des valeurs suffisamment proches
+de 1.
+CONCLUSION
+On dit que 0,5 est la limite de 𝑓(𝑥) lorsque 𝑥 tend vers 1 ou que 0,5 est la limite de 𝑓 en 1.
+Et on note : 𝐥𝐢𝐦
+𝒙→𝟏 𝒇(𝒙) = 𝟎, 𝟓
+On admet les propriétés 1 et 2 suivantes :
+Propriété 1
+Lorsqu’une fonction admet une limite en un point ou à l’infini, cette limite est unique.
+Propriété 2
+-La limite d’une fonction polynôme 𝑷 en un point 𝒂 est égale à l’image de 𝒂 par 𝑷.
+On a alors :𝐥𝐢𝐦
+𝒙→𝒂 𝑷(𝒙) = 𝑷(𝒂)
+-En particulier, la limite d’une constante 𝒌 en un réel 𝒂 est la constante 𝒌.
+On a alors :𝐥𝐢𝐦
+𝒙→𝒂 𝒌 = 𝒌.
+Exercices de fixation
+Exercice 1
+Réponds par vrai ou faux aux affirmations suivantes :
+𝑓 est une fonction qui admet une limite en 𝑎 (𝑎 ∈ ℝ),
+1) la limite de 𝑓 en 𝑎 peut prendre deux valeurs différentes……..
+2) la limite de 𝑓 en 𝑎 ne peut prendre qu’une seule valeur……
+Solution
+Exercice 1
+
+-- 2 of 28 --
+
+1°) faux ; 2) vrai
+Exercice 2
+Complète les égalités suivantes :
+1) lim
+𝑥→4( 2𝑥 + 1) = ………… ; 2) lim
+𝑥→3(𝑥 − 3)(3𝑥 + 8) = ……….. ; 3) lim
+𝑥→−1(−13)
+Solution
+Exercice 2
+1) lim
+𝑥→4( 2𝑥 + 1) = 9 ; 2) lim
+𝑥→3(𝑥 − 3)(3𝑥 + 8) = 𝟎 ; 3) lim
+𝑥→−1(−13) = −𝟏𝟑
+Exercice de maison
+Détermine la limite suivante :lim
+𝑥→4(−2𝑥 + 10𝑥3)
+2- Limite d’une fonction polynôme à l’infini
+ACTIVITE
+On considère la fonction 𝑓 définie de ℝ vers ℝ par : 𝑓(𝑥) = 𝑥2 + 2
+1) Complète à l’aide d’une calculatrice le tableau ci-dessous
+𝑥 40 40 × 103 40 × 105 40 × 108
+𝑓(𝑥)
+2) Que deviennent les images 𝑓(𝑥) lorsque x prend des valeurs aussi grandes que l’on veut ?
+REPONSES ATTENDUES
+𝑥 40 40 × 103 40 × 105 40 × 108
+𝑓(𝑥) 1602 40002 4000002 4000000002
+2) Les valeurs de 𝑓(𝑥) deviennent aussi grandes que l’on veut lorsque x prend des valeurs de
+plus grandes.
+CONCLUSION
+On dit que 𝑓(𝑥) tend vers +∞ lorsque 𝑥 tend vers +∞ ou que +∞ est la limite de 𝑓 en +∞
+Et on note : lim
+𝑥→+∞ 𝑓(𝑥) = +∞
+On admet les propriétés 1 et 2 suivantes :
+Propriété1
+*𝑘 est un nombre réel, 𝑎 est un nombre réel non nul et 𝑛 un nombre entier naturel.on a :
+lim
+𝑥→+∞ 𝑘 = 𝑘 ; lim
+𝑥→−∞ 𝑘 = 𝑘
+
+-- 3 of 28 --
+
+*Cas 𝒏 est pair
+{
+𝐥𝐢𝐦
+𝒙→+∞ 𝒂𝒙𝒏 = +∞ 𝒔𝒊 𝒂 > 𝟎
+𝐥𝐢𝐦
+𝒙→+∞ 𝒂𝒙𝒏 = −∞ 𝒔𝒊 𝒂 < 𝟎 ; {
+𝐥𝐢𝐦
+𝒙→−∞ 𝒂𝒙𝒏 = +∞ 𝒔𝒊 𝒂 > 𝟎
+𝐥𝐢𝐦
+𝒙→−∞ 𝒂𝒙𝒏 = −∞ 𝒔𝒊 𝒂 < 𝟎
+*Cas 𝒏 est impair
+{
+𝐥𝐢𝐦
+𝒙→+∞ 𝒂𝒙𝒏 = +∞ 𝒔𝒊 𝒂 > 𝟎
+𝐥𝐢𝐦
+𝒙→+∞ 𝒂𝒙𝒏 = −∞ 𝒔𝒊 𝒂 < 𝟎 ; {
+𝐥𝐢𝐦
+𝒙→−∞ 𝒂𝒙𝒏 = −∞ 𝒔𝒊 𝒂 > 𝟎
+𝐥𝐢𝐦
+𝒙→−∞ 𝒂𝒙𝒏 = +∞ 𝒔𝒊 𝒂 < 𝟎
+Propriété 2
+La limite d’une fonction polynôme à l’infini est la limite de son monôme de plus haut degré
+Exercices de fixation 1
+Réponds par vrai ou par faux aux affirmations suivantes :
+1) lim
+𝑥→+∞( −3𝑥3) = −∞ ; 2) lim
+𝑥→+∞ −4𝑥2 = +∞ ; 3) lim
+𝑥→−∞ −𝑥3 = −∞ ; 4) lim
+𝑥→−∞ −𝑥 = −∞.
+Solution
+Exercice 1
+1) V ;2) F ; 3) F ; 4) F
+Exercice de fixation 2
+Détermine les limites suivantes :
+1) lim
+𝑥→−∞ −3𝑥3 + 2𝑥 ; 2) lim
+𝑥→+∞ −3𝑥2 + 10
+Solution
+Exercice 2
+1) lim
+𝑥→−∞( −3𝑥3 + 2𝑥)= lim
+𝑥→−∞ −3𝑥3 = +∞
+2) lim (
+𝑥→+∞
+−3𝑥2 + 10)= lim
+𝑥→+∞ −3𝑥2 = −∞
+Exercice de maison
+Détermine les limites suivantes
+1) lim
+𝑥→−∞ −3𝑥3 + 2𝑥 + 𝑥5 ; 2) lim
+𝑥→+∞ 2𝑥 − 100
+
+-- 4 of 28 --
+
+II- FONCTION RATIONNELLE
+1-Limite d’une fonction rationnelle
+1-1 -Limite d’une fonction rationnelle en un nombre où elle est définie.
+Propriété (admise)
+Soit 𝑓 une fraction rationnelle et 𝑎 un élément de l’ensemble de définition de 𝑓.
+On a : lim
+𝑥→𝑎 𝑓(𝑥) = 𝑓(𝑎)
+EXERCICE DE FIXATION
+Détermine les limites suivantes
+1) lim
+𝑥→1
+𝑥
+𝑥+2 ; 2) lim
+𝑥→−1
+𝑥2
+𝑥−2
+REPONSES ATTENDUES
+1) lim
+𝑥→1
+𝑥
+𝑥+2 = 1
+1+2 = 1
+3 2) lim
+𝑥→−1
+𝑥2
+𝑥−2 = (−1)2
+(−1)−2 = − 1
+3
+1-2 -Limite d’une fonction rationnelle en un nombre où elle n’est pas définie.
+a)-Limite à gauche en 𝑎 et à droite en 𝑎 de la fonction 𝑓: 𝑥 ↦ 1
+𝑥−𝑎
+ACTIVITE
+Soit 𝑓 la fonction définie de ℝ vers ℝ par : 𝑓(𝑥) = 1
+𝑥−1
+1-Détermine l’ensemble de définition 𝐷𝑓 de la fonction 𝑓
+2-Complète à l’aide d’une calculatrice le tableau ci-dessous.
+𝑥 0,9 0,99 0,999 0,9999 1 1,0001 1,001 1,01 1,1
+𝑓(𝑥)
+3-Que deviennent les images f(x) lorsque x prend dans 𝐷𝑓 des valeurs suffisamment proches de 1
+a) Lorsque 𝑥 < 1 b) Lorsque 𝑥 > 1
+REPONSES ATTENDUES
+1-𝐷𝑓 = ]−∞; 1[ ∪ ]1; +∞[ 2-
+𝑥 0,9 0,99 0,999 0,0009 1 1,0001 1,001 1,01 1,1
+𝑓(𝑥) −10 −100 −1000 −10000 10000 1000 100 10
+
+-- 5 of 28 --
+
+3)a – Lorsque 𝑥 < 1 et que 𝑥 est proche de 1, 𝑓(𝑥) devient négative et de distance à zéro de plus
+en plus grande.
+b-Lorsque 𝑥 > 1 et que 𝑥 est proche de 1, 𝑓(𝑥) devient de plus en plus grande.
+CONCLUSION
+Lorsque 𝑥 < 1 et que 𝑥 est proche de 1 , 𝑓(𝑥) tend vers −∞,
+On dit que −∞ est la limite de 𝑓(𝑥) lorsque 𝒙 tend vers 𝟏 à gauche en 𝟏.
+On note : 𝐥𝐢𝐦
+𝒙→𝟏
+<
+𝒇(𝒙) = −∞
+Lorsque 𝑥 > 1 et que 𝑥 est proche de 1 , 𝑓(𝑥) tend vers +∞,
+On dit que+∞ est la limite de 𝑓(𝑥) lorsque 𝒙 tend vers 𝟏 à droite en 𝟏.
+On note : 𝐥𝐢𝐦
+𝒙→𝟏
+>
+𝒇(𝒙) = −∞
+On admet la propriété suivante :
+Propriété
+Soit 𝑎 un nombre réel. On a :
+lim𝑥→𝑎
+<
+1
+𝑥−𝑎 = −∞ et lim𝑥→𝑎
+>
+1
+𝑥−𝑎 = +∞
+Exercices de fixation
+Exercice 1
+Réponds par vrai ou par faux aux affirmations suivantes
+a) lim
+𝑥→3
+<
+1
+𝑥−3 = −∞ ……………. b) lim
+𝑥→4
+<
+1
+𝑥−4 = +∞……………… ; c) lim
+𝑥→5
+>
+1
+𝑥−5 = −∞
+Solution
+a) V, b) F, c) F
+Exercice 2
+Détermine les limites suivantes
+a) lim
+𝑥→7
+>
+1
+𝑥−7 b) lim
+𝑥→−2
+<
+1
+𝑥+2
+Solution
+a) lim
+𝑥→7
+>
+1
+𝑥−7 = +∞ b) lim
+𝑥→−2
+<
+1
+𝑥+2 = −∞
+
+-- 6 of 28 --
+
+EXERCICE DE MAISON Détermine les limites suivantes
+1) lim
+𝑥→−2
+𝑥3
+𝑥−2 2) lim
+𝑥→5
+<
+1
+𝑥−5 3) lim
+𝑥→−4
+<
+1
+𝑥+4
+b) Limite à l’infini d’une fonction rationnelle
+Propriété (admise)
+La limite à l’infini d’une fonction rationnelle est égale à la limite du quotient des monômes de
+plus hauts degrés.
+Exercices de fixation
+Détermine lim
+𝑥→−∞
+7𝑥3−𝑥2+5
+4𝑥2−2𝑥+3
+Solution
+lim
+𝑥→−∞
+7𝑥3−𝑥2+5
+4𝑥2−2𝑥+3 = lim
+𝑥→−∞
+7𝑥3
+4𝑥2 = lim
+𝑥→−∞
+7𝑥
+4 = −∞
+Exercices de maison
+Détermine les limites suivantes : lim
+𝑥→+∞
+7𝑥3−𝑥2+5
+4𝑥2−2𝑥+3 ; lim
+𝑥→−∞
+7𝑥3−𝑥2+5
+4𝑥3−2𝑥+3 ; lim
+𝑥→+∞
+17𝑥2−𝑥2+5
+4𝑥3−2𝑥+3
+III- Opération sur les limites
+1- limite d’une somme de fonctions
+𝑎 désigne un nombre réel, ou +∞ ou−∞, 𝑙 et 𝑙′ sont des nombres réels.
+Propriété
+Si : lim
+𝑥→𝑎 𝑓(𝑥) = 𝒍 𝒍 𝒍 +∞ −∞ +∞
+et si : lim
+𝑥→𝑎 𝑔(𝑥) = 𝒍′ +∞ −∞ +∞ −∞ −∞
+alors :
+𝐥𝐢𝐦
+𝒙→𝒂[ 𝒇(𝒙) + 𝒈(𝒙)] = 𝒍 + 𝒍′ +∞ −∞ +∞ −∞ on ne peut
+conclure
+Exercices de fixation
+Exercice 1
+𝑙 est un nombre réel. On donne : lim
+𝑥→+∞ 𝑓(𝑥) = 𝑙, lim
+𝑥→+∞ 𝑔(𝑥) = +∞ et lim
+𝑥→+∞ ℎ(𝑥) = − ∞
+Réponds par vrai ou par faux aux affirmations suivantes :
+a) lim
+𝑥→+∞[ 𝑔(𝑥) + ℎ(𝑥)] = 0 , b) lim
+𝑥→+∞[ 𝑓(𝑥) + ℎ(𝑥)] = 𝑙 ,c) lim
+𝑥→+∞[ 𝑓(𝑥) + ℎ(𝑥)] = −∞
+
+-- 7 of 28 --
+
+Solution
+a) F , b) F , c) V
+Exercice 2
+Détermine dans chaque cas les limites suivantes :
+a) lim
+𝑥→−2[ 2𝑥+3
+𝑥+1 + 𝑥 − 8 ]
+b) lim
+𝑥→+∞[ 𝑥2 + 2𝑥 + 5 + 1
+𝑥 ]
+Solution
+a) lim
+𝑥→−2[ 2𝑥+3
+𝑥+1 + 𝑥 − 8] = − 9 car 𝐥𝐢𝐦
+𝒙→−𝟐
+2𝑥+3
+𝑥+1 = 𝟏 et 𝐥𝐢𝐦
+𝒙→−𝟐 𝑥 − 8 = −𝟏𝟎
+b) lim
+𝑥→+∞[ 𝑥2 + 2𝑥 + 5 + 1
+𝑥 ] = +∞
+car 𝐥𝐢𝐦
+𝒙→+∞ 𝒙𝟐 + 𝟐𝒙 + 𝟓 = 𝐥𝐢𝐦
+𝒙→+∞ 𝒙𝟐 = +∞ et 𝐥𝐢𝐦
+𝒙→+∞
+𝟏
+𝒙 = 𝟎
+2) Limite d’un produit de fonctions
+On admet les propriétés suivantes :
+Propriété
+Si : lim
+𝑥→𝑎 𝑓(𝑥) = 𝑙 𝑙 > 0 𝑙 < 0 𝑙 > 0 𝑙 < 0 +∞ −∞ +∞ 0
+et si : lim
+𝑥→𝑎 𝑔(𝑥) = 𝑙' +∞ +∞ −∞ −∞ +∞ −∞ −∞ −∞ ou
++∞
+alors
+lim
+𝑥→𝑎[ 𝑓(𝑥) × 𝑔(𝑥)] = 𝑙 × 𝑙′ +∞ −∞ −∞ +∞ +∞ +∞ −∞ on ne peut
+conclure
+Exercices de fixation
+Exercice1
+𝑙 est un nombre réel. On donne : lim
+𝑥→+∞ 𝑓(𝑥) = 0, lim
+𝑥→+∞ 𝑔(𝑥) = +∞ et lim
+𝑥→+∞ ℎ(𝑥) = 𝑙
+Répond par vrai ou par faux aux affirmations suivantes
+a) On ne peut conclure pour la limite de 𝑓 × 𝑔
+b) On ne peut conclure pour la limite de 𝑓 × ℎ
+c) lim
+𝑥→+∞[ 𝑓(𝑥) × ℎ(𝑥)] = 0
+d) lim
+𝑥→+∞[ 𝑔(𝑥) × ℎ(𝑥)] est toujours égale à +∞
+Solution
+1) a) V b) F c) V d) F
+Exercice2
+
+-- 8 of 28 --
+
+Détermine lim
+𝑥→+∞[ 𝑥+6
+𝑥−4 × (6 − 𝑥)]
+Solution
+lim
+𝑥→+∞[ 𝑥+6
+𝑥−4 × (6 − 𝑥)] = −∞ car lim
+𝑥→+∞
+𝑥+6
+𝑥−4 = 1 et lim
+𝑥→+∞(6 − 𝑥) = −∞
+Exercice de maison
+Calcule lim
+𝑥→+∞ 𝑓(𝑥) × 𝑔(𝑥) sachant que 𝑓(𝑥) = 𝑥2+6
+𝑥−4 et 𝑓(𝑥) = −𝑥3+6𝑥+4
+𝑥+2
+3) Limite d’un inverse d’une fonction
+Propriété
+Si lim
+𝑥→𝑎 𝑔(𝑥) = 𝑙
+avec
+𝑙 ≠ 0
+−∞ +∞
+0
+avec
+𝑔(𝑥) > 0
+0
+avec
+g(x) < 0
+alors
+lim
+𝑥→𝑎
+1
+𝑔(𝑥) =
+1
+𝑙 0 0
++∞ −∞
+4) Limite de quotients
+Méthode pour calculer lim
+𝑥→𝑎
+𝑓(𝑥)
+𝑔(𝑥) avec 𝑔(𝑎) = 0 et 𝑓(𝑎) ≠ 0
+Pour calculer lim
+𝑥→𝑎
+𝑓(𝑥)
+𝑔(𝑥) , on peut procéder comme suit :
+On écrit d’abord lim
+𝑥→𝑎 𝑓(𝑥) × 1
+𝑔(𝑥)
+On calcule lim
+𝑥→𝑎 𝑓(𝑥), puis lim
+𝑥→𝑎
+1
+𝑔(𝑥)
+On en déduis alors la valeur de lim
+𝑥→𝑎 𝑓(𝑥) × 1
+𝑔(𝑥) qui est égale à lim
+𝑥→𝑎
+𝑓(𝑥)
+𝑔(𝑥)
+Exercices de fixation
+Exercice 1
+𝑙 est un nombre réel. On donne : lim
+𝑥→+∞ 𝑓(𝑥) = 0, lim
+𝑥→+∞ 𝑔(𝑥) = +∞ et lim
+𝑥→+∞ ℎ(𝑥) = 𝑙 avec 𝑙 ≠ 0
+Réponds par vrai ou par faux aux affirmations suivantes :
+a) On ne peut conclure pour la limite de 𝑔
+𝑓 ,
+b) On ne peut conclure pour la limite de 𝑓
+𝑔
+
+-- 9 of 28 --
+
+c) lim
+𝑥→+∞
+ℎ(𝑥)
+𝑔(𝑥) = 0
+d) lim
+𝑥→+∞
+𝑔(𝑥)
+ℎ(𝑥) est toujours égale à +∞
+Solution
+1) a) V b) F c) V d) F
+Exercice 2
+Déterminer lim
+𝑥→6
+>
+𝑥−8
+𝑥−6 sachant que 𝑓(𝑥) = 𝑥 − 8 et ℎ(𝑥) = 𝑥 − 6
+Solution
+lim
+𝑥→6
+>
+𝑥 − 8
+𝑥 − 6 = lim
+𝑥→6
+>
+(𝑥 − 8) × 1
+𝑥 − 6
+= −∞ Car lim
+𝑥→6
+>
+𝑓(𝑥) = −2 et lim
+𝑥→6
+>
+1
+𝑔(𝑥) = +∞
+Exercice de maison
+Calcule les limites suivantes : lim
+𝑥→−4
+>
+𝑥2+6𝑥−10
+𝑥+4
+4-Asymptote verticale, horizontale, oblique
+a) Asymptote parallèle à la droite des abscisse ou asymptote horizontale
+Définition
+Lorsque la fonction 𝑓 admet une limite finie b en +∞ (respectivement en −∞),on dit que la
+représentation graphique de la fonction 𝑓 admet une asymptote horizontale en +∞
+(respectivement en −∞), la droite d’équation 𝑦 = 𝑏
+Illustration graphique
+
+-- 10 of 28 --
+
+lim
+𝑥→+∞ 𝑓(𝑥) = 2 et lim
+𝑥→−∞ 𝑓(𝑥) = 2
+La droite d’équation 𝑦 = 2 est asymptote
+horizontale en+∞ et en −∞
+lim
+𝑥→−∞ 𝑓(𝑥) = 0
+La droite d’équation 𝑦 = 0 est
+asymptote horizontale en −∞
+Exercice de fixation
+On donne la fonction 𝑓 définie sur ℝ ∖ {1} par 𝑓(𝑥) = 3𝑥−2
+𝑥−1 .On admet que lim
+𝑥→+∞𝑓(𝑥) = 3.
+Réponds par vrai ou par faux aux affirmations suivantes
+1) La représentation graphique de la fonction 𝑓 n’admet d’asymptote horizontale en +∞.
+2) La représentation graphique de la fonction 𝑓 admet une asymptote horizontale en +∞ :
+La droite d’équation 𝑦 = 3.
+3) La représentation graphique de la fonction 𝑓 n’admet d’asymptote horizontale en +∞ : 𝑥 = 1
+Solution
+1. F ; 2 . V ;3 F
+b) Asymptote parallèle à la droite des ordonnées ou asymptote verticale
+Définition
+Lorsque la fonction f admet une limite infinie (−∞ ou +∞) en a ,on dit que la représentation
+graphique de la fonction f admet une asymptote verticale en 𝑎 : la droite d’équation 𝑥 = 𝑎
+Illustration graphique
+
+-- 11 of 28 --
+
+lim𝑥→𝑎
+<
+𝑓(𝑥) = +∞
+La droite (D) d’équation
+𝑥 = 𝑎 est asymptote à (𝐶𝑓)
+lim𝑥→𝑎
+>
+𝑓(𝑥) = −∞
+La droite (D) d’équation
+𝑥 = 𝑎 est asymptote à (𝐶𝑓)
+lim
+𝑥→𝑎 𝑓(𝑥) = +∞
+La droite (D) d’équation
+𝑥 = 𝑎 est asymptote à (𝐶𝑓)
+Exercice de fixation
+On donne la fonction 𝑓 définie sur ℝ ∖ {1} par 𝑓(𝑥) = 3𝑥−4
+𝑥−5 et (𝐶𝑓)sa courbe représentative.
+On admet que lim
+𝑥→5
+>
+𝑓(𝑥) = −∞ et lim
+𝑥→5
+<
+𝑓(𝑥) = −∞
+Réponds par vrai ou par faux aux affirmations suivantes :
+1) La représentation graphique de la fonction 𝑓 admet une asymptote verticale d’équation 𝑥 = 5.
+2) La représentation graphique de la fonction 𝑓 admet une asymptote verticale d’équation 𝑦 = 3.
+3) La représentation graphique de la fonction 𝑓 n’admet pas d’asymptote verticale.
+Solution
+1. V ; 2 . F ;3 F
+c) Asymptote oblique
+On admet la propriété suivante :
+La droite d’équation 𝑦 = 𝑎𝑥 + 𝑏 (avec 𝑎 ≠ 0) est asymptote oblique à la courbe de 𝑓 en +∞
+(respectivement en −∞),si et seulement si lim
+𝑥→+∞[𝑓(𝑥) − (𝑎𝑥 + 𝑏)] = 0 (respectivement
+lim
+𝑥→−∞[𝑓(𝑥) − (𝑎𝑥 + 𝑏)] = 0)
+O 𝑎
+(Cf)
+(D)
+O 𝑎
+(𝐶𝑓)
+(D)
+O 𝑎
+(𝐶𝑓)
+(D
+)
+
+-- 12 of 28 --
+
+La droite (D) d’équation : 𝑦 = − 1
+2 𝑥 − 1
+4 est asymptote oblique à
+(𝐶𝑓) en −∞ et en+∞.
+Exercice de fixation
+On considere la fonction 𝑓 definie sur ℝ ∖ {−2} par :𝑓(𝑥) = 2𝑥2+3𝑥−1
+𝑥+2 et (𝐶𝑓) sa courbe
+representative.
+Justifie que la droite (D) d’equation 𝑦 = 2𝑥 − 1 est asymptote oblique à (𝐶𝑓) en +∞ et en −∞.
+Solution
+On sait que pour 𝑥 ∈ ℝ ∖ {−2}, 𝑓(𝑥) = 2𝑥 − 1 + 1
+𝑥+2.
+Calculons
+lim
+𝑥→+∞[𝑓(𝑥) − (2𝑥 − 1)] = lim
+𝑥→+∞
+1
+𝑥+2 = 0.
+De même lim
+𝑥→−∞[𝑓(𝑥) − (2𝑥 − 1)] = lim
+𝑥→−∞
+1
+𝑥+2 = 0
+Donc la droite (D) est asymptote à (𝐶𝑓) en +∞ et en −∞
+Exercice de maison
+Soit 𝑓 la fonction numérique définie par : 𝑓(𝑥) = 𝑥 − 8 + 1
+𝑥−3
+1) Calcule lim
+𝑥→3
+<
+𝑓(𝑥) et lim
+𝑥→3
+>
+𝑓(𝑥) puis interpréter les résultats.
+2) a)Justifie lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 8)] = 0
+b) Déduis-en que la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique à la courbe de
+𝑓 en +∞ .
+3) Justifier que la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique à la courbe de 𝑓 en
+-∞.
+IV- DERIVATION
+1) Dérivée de fonctions élémentaires
+Propriété
+
+-- 13 of 28 --
+
+Fonction 𝑓 Ensemble de
+définition 𝑓
+Dérivée 𝑓′ Ensemble de définition
+𝑓′
+𝑓(𝑥) = 𝑎 avec 𝑎 ∈ ℝ ℝ 𝑓′(𝑥) = 0 ℝ
+𝑓(𝑥) = 𝑎𝑥 avec 𝑎 ∈
+ℝ
+ℝ 𝑓′(𝑥) = 𝑎 ℝ
+𝑓(𝑥) = 𝑥2 ℝ 𝑓′(𝑥) = 2𝑥 ℝ
+𝑓(𝑥) = 𝑥𝑛, avec
+𝑛 entier et 𝑛 ≥ 1
+ℝ 𝑓′(𝑥) = 𝑛𝑥𝑛−1 ℝ
+𝑓(𝑥) = 1
+𝑥
+ℝ ∖ {0} 𝑓′(𝑥) = − 1
+𝑥2
+ℝ ∖ {0}
+𝑓(𝑥) = 1
+𝑥𝑛
+𝑛 entier et 𝑛 ≥ 1
+ℝ ∖ {0} 𝑓′(𝑥) = − 𝑛
+𝑥𝑛+1
+ℝ ∖ {0}
+Exercice de fixation
+Calcule la fonction dérivée sur ℝ des fonctions f, g, h, k, l, m et k suivantes :
+𝑓(𝑥) = −6 , 𝑔(𝑥) = 8𝑥 , ℎ(𝑥) = 𝑥2 , 𝑙(𝑥) = 𝑥3 , 𝑚(𝑥) = 1
+𝑥 , 𝑘(𝑥) = 1
+𝑥3
+Solution
+𝑓′(𝑥) = 0 , 𝑔′(𝑥) = 8 , ℎ′(𝑥) = 2𝑥 , 𝑙′(𝑥) = 3𝑥2 , 𝑚′(𝑥) = −1
+𝑥2 , 𝑘′(𝑥) = −3
+𝑥4
+2) Dérivées et opérations sur les fonctions
+Propriété
+𝑢 et 𝑣 sont deux fonctions dérivables sur un intervalle ouvert I et n un entier naturel non nul.
+On a :
+𝑢 + 𝑣 est dérivable sur I et (𝑢 + 𝑣)′ = 𝑢′ + 𝑣′
+𝑘𝑣 est dérivable sur I avec 𝑘 une constante réel
+et
+(𝑘𝑢)′ = 𝑘𝑢′
+𝑢 × 𝑣 est dérivable sur I et (𝑢 × 𝑣)′ = 𝑢′ × 𝑣 + 𝑣′ × 𝑢
+𝑢𝑛 est dérivable sur I et (𝑢𝑛)′ = 𝑛𝑢′ × 𝑢𝑛−1
+
+-- 14 of 28 --
+
+1
+𝑢 est dérivable sur I où 𝑢 ne s’annule sur I et − 1
+𝑢2
+𝑢
+𝑣 est dérivable sur I où 𝑣 ne s’annule sur I et (𝑢
+𝑣)
+′
+= 𝑢′ × 𝑣 − 𝑣′ × 𝑢
+𝑣2
+Exercice de fixation
+Calcule la dérivée sur [1; +∞[ de chacune des fonctions 𝑓 et 𝑔 définies respectivement par :
+𝑓(𝑥) = −5𝑥3 + 7𝑥2 − 8 et 𝑔(𝑥) = 𝑥−4
+5𝑥+3 .
+Solution
+𝑓 est dérivable sur [1; +∞[ ,
+Pour tout 𝑥 ∈ [1; +∞[ :𝑓′(𝑥) = (−5𝑥3 + 7𝑥2 − 8)′
+𝑓′(𝑥) = −15𝑥2 + 14𝑥
+g est dérivable sur [1; +∞[ , on a :
+Pour tout 𝑥 ∈ [1; +∞[,𝑔′(𝑥) = 1×(5𝑥+3)−5(𝑥−4)
+(5𝑥+3)2 = 20
+(5𝑥+3)2
+Exercice de maison
+𝑓 est une fonction définie par : 𝑓(𝑥) = 2𝑥2+3𝑥
+𝑥+1
+1) Déterminer l’ensemble de définition 𝐷𝑓 de 𝑓
+2) Justifier que pour tout 𝑥 ∈ ]−1; +∞[, 𝑓′(𝑥) = 2𝑥2+4𝑥+3
+(𝑥+1)2
+V- Dérivée et sens de variation – Extremum relatif d’une fonction
+1) Dérivée et sens de variation
+Propriété (admise)
+𝑓 est une fonction dérivable sur un intervalle ouvert K.
+• 𝑓’ est positive sur K si et seulement si f est croissante sur K.
+• 𝑓′ est négative sur K si et seulement si f est décroissante sur K.
+• 𝑓′ est nulle sur K si et seulement si f est constante sur K.
+2) Extremum relatif d’une fonction
+
+-- 15 of 28 --
+
+Propriété (admise)
+𝑓 est une fonction dérivable sur un intervalle ouvert K. 𝑥0un nombre réel appartenant à K.
+𝑓(𝑥0) est un extrémum relatif de la fonction 𝑓 si et seulement si 𝑓′ s’annule en 𝑥0 en changeant
+de signe.
+Exercice de fixation
+On considère la fonction 𝑓 définie de ℝ vers ℝ par 𝑓(𝑥) = 𝑥 − 2 + 1
+𝑥.
+1) Détermine l'ensemble de définition de f.
+2) Calcule les limites aux bornes de l'ensemble de définition.
+3) Démontre que pour tout 𝑥 ∈ ℝ ∖ {0} 𝑓′(𝑥) = (𝑥−1)(𝑥+1)
+𝑥2
+4) Etudie le signe de la fonction dérivée f'(x) suivant les valeurs de x.
+5) Déduis-en le sens de variation de f.
+6) Dresse le tableau de variation puis détermine les extrêmes relatifs de f.
+Solution
+1) 𝐷𝑓 = ]−∞; 0[ ∪ ]0; +∞[
+2) lim
+𝑥→−∞ 𝑓(𝑥) = −∞ ; lim
+𝑥→+∞ 𝑓(𝑥) = +∞ ; lim
+𝑥→0
+<
+𝑓(𝑥) = −∞ ; lim
+𝑥→0
+>
+𝑓(𝑥) = +∞
+3) f est dérivable sur ]−∞ ; 0[ et sur ]0 ; +∞[
+Pour tout 𝑥 ∈ ]−∞; 0[ et pour tout 𝑥 ∈ ]0; +∞[, 𝑓′(𝑥) = (𝑥−1)(𝑥+1)
+𝑥2
+4) Pour tout 𝑥 ∈ ]−∞; −1[, 𝑓′(𝑥) > 0
+Pour tout 𝑥 ∈ ]−1 ; 0[, 𝑓′(𝑥) < 0
+Pour tout 𝑥 ∈ ]0 ; 1[, 𝑓′(𝑥) < 0
+Pour tout 𝑥 ∈ ]1 ; +∞[, 𝑓′(𝑥) > 0
+5) Pour tout 𝑥 ∈ ]−∞; −1[, 𝑓′(𝑥) > 0 donc f est continue et strictement croissante sur ]−∞ ; −1[
+Pour tout 𝑥 ∈ ]−1 ; 0[, 𝑓′(𝑥) < 0 donc f est continue et strictement décroissante sur ]−1 ; 0[
+Pour tout 𝑥 ∈ ]0 ; 1[, 𝑓′(𝑥) < 0 donc f est continue et strictement décroissante sur ]0 ; 1[
+Pour tout 𝑥 ∈ ]1 ; +∞[, 𝑓′(𝑥) > 0 donc f est continue et strictement croissante sur ]1 ; +∞[
+7) Tableau de variation
+
+-- 16 of 28 --
+
+𝑥 −∞ -1 0 1 +∞
+𝑓′(𝑥) + 0 − − 0 +
+𝑓
+−∞
+−4
+−∞
++∞
+0
++∞
+−4 est un maximum relatif de f sur ]−∞; −1[ ; 0 est un minimum relatif de f sur ]0; +∞[
+VI- Droite tangente a une courbe ; Théorème des valeurs intermédiaires
+1) Équation de la tangente à une courbe en un point
+Définition
+La tangente à la courbe (𝐶𝑓) d’une fonction au point A d’abscisse a est la droite :
+-passant par A
+-de coefficient directeur le nombre dérivée 𝑓′(𝑎)
+Conséquence
+Une équation de la tangente à la courbe (𝐶𝑓) d’une fonction au point A d’abscisse a est
+𝑦 = 𝑓′(𝑎)(𝑥 − 𝑎) + 𝑓(𝑎)
+Exercice de fixation
+On considère la fonction 𝑓 définie sur ℝ par : 𝑓(𝑥) = −𝑥2 − 2
+Sachant que 𝑓′(1) = 2 et que 𝑓(1) = −3, déterminer une équation de la tangente à (𝐶𝑓) au
+point d’abscisse 1
+2) Théorème des valeurs intermédiaires
+ACTIVITE
+Le tableau de valeurs ci-dessous est celui de la fonction 𝑓 définie sur ℝ par : 𝑓(𝑥) = 𝑥3 − 3𝑥
+𝑥 à 0,1 près 1,5 1,6 1,7 1,8 1,9
+𝑓(𝑥) à 0,01 près −1,12 −0,70 −0,18 0,73 1,15
+Les valeurs de 𝑓(𝑥) passent des négatives aux positives.
+Sachant que 𝑓 est continue sur [1; 2], existe-t-il un réel 𝛼 dans [1; 2] tel que 𝑓(𝛼) = 0 ? Si oui,
+où semble se placer 𝛼 ?
+
+-- 17 of 28 --
+
+Solution
+Oui car f est continue sur [1; 2] et les valeurs de 𝑓(𝑥) passent des négatives aux positives, la
+courbe représentative de 𝑓coupe l’axe des abscisses. Et 𝛼 semble se trouver entre 1,7 et 𝛼 car
+𝑓(1,7) < 0 et 𝑓(1,8) > 0.
+Nous admettons la propriété suivante
+Propriété
+Soit 𝑓 une fonction continue sur un intervalle I, a et b éléments de I.
+Si 𝑓(a) et 𝑓(b) sont de signes contraires, alors l’équation 𝑓(𝑥) = 0, admet une solution unique 𝛼
+comprise entre a et b.
+Exercice de fixation
+Soit la fonction 𝑓 dérivable sur IR et définie par 𝑓(𝑥) = 𝑥3 − 12𝑥 + 10
+Sachant que 𝑓 est strictement décroissante sur [0; 1],
+Démontre que sur [0 ; 1], l’équation 𝑓(𝑥) = 0 admet une solution unique 𝛼 et que 0,8 < 𝛼 < 0,9
+Solution
+𝑓 est décroissante sur [0; 1], donc continue sur [0; 1] et 𝑓(0)=10 puis 𝑓(1) = −1,
+alors l’équation 𝑓(𝑥) = 0 admet une solution unique 𝛼 dans [0; 1].
+On a : 0,8 et 0,9 sont éléments de [0 ; 1] puis 𝑓(0,8)=0,912 et 𝑓(0,9)=-0,071
+Comme 𝑓(0,8)× 𝑓(0,9) < 0, alors 0,8 < 𝛼 < 0,9
+3- encadrement de 𝜶 tel que : 𝑓(α) = 0 par la méthode de dichotomie ou par balayage
+a) Méthode de Dichotomie
+Soit 𝑓 une fonction continue sur un intervalle [𝑎 ; 𝑏], tel que 𝑓(𝑎) et 𝑓(𝑏) sont de signes
+contraires
+Il s’agit de déterminer le nombre réel 𝛼 élément de [𝑎 ; 𝑏], tel que : 𝑓(α) = 0
+Cette méthode consiste à diviser l’intervalle [𝑎 ; 𝑏] en deux intervalles [𝑎 ; 𝑎+𝑏
+2 ] et [𝑎+𝑏
+2 ; 𝑏],
+puis on calcule 𝑓(a) , 𝑓(𝑎+𝑏
+2 ) et 𝑓(𝑏)
+- Si 𝑓(a) × 𝑓(𝑎+𝑏
+2 ) < 0 alors α ∈ [𝑎 ; 𝑎+𝑏
+2 ],puis on répète la même méthode à l’intervalle
+[𝑎 ; 𝑎+𝑏
+2 ] jusqu’à trouver la précision cherchée.
+- Si , 𝑓(a) × 𝑓(𝑎+𝑏
+2 ) > 0 alors α ∈ [𝑎+𝑏
+2 ; 𝑏]
+On répète cette méthode dans l’intervalle trouvé jusqu’à arriver à la précision cherchée.
+
+-- 18 of 28 --
+
+Exercice de fixation
+Soit la fonction 𝑓 dérivable sur IR et définie par 𝑓(𝑥) = 𝑥3 – 12𝑥 + 10
+Sachant que sur [0 ; 1], l’équation 𝑓(𝑥) = 0 admet une solution unique 𝛼, donner un
+encadrement de 𝛼 par la méthode de dichotomie
+Solution
+On a
+𝑓 est continue sur [0 ; 1], 𝑓(0) = 12 et 𝑓(1) = −1
+Comme 𝑓 (1
+2) = 4,125 , 𝑓(0) × 𝑓 (1
+2) > 0 donc 1
+2 < 𝛼 < 1
+b) Méthode par balayage
+Soit 𝑓 une fonction continue sur un intervalle [𝑎 ; 𝑏], tel que 𝑓(𝑎) et 𝑓(𝑏) sont de signes
+contraires.
+Il s’agit de déterminer le nombre réel 𝛼 élément de [𝑎 ; 𝑏], tel que : 𝑓(α) = 0
+On calcule 𝑓(a + 0,1) ; 𝑓(a + 0,1) ; 𝑓(a + 0,1) ;…
+On s’arrête lorsqu’on a un résultat de signe contraire au précédent. On déduit un encadrement de
+𝛼
+Exercice de fixation
+Soit la fonction 𝑓 définie par 𝑓(𝑥) = 𝑥3 − 3𝑥
+Sachant que sur [1 ; 2], l’équation 𝑓(𝑥) = 0 admet une solution unique 𝛼, donne un encadrement
+de 𝛼 par la méthode de balayage
+Solution
+𝑓 est continue et croissante sur [1 ; 2] on a :
+𝑥 à 0,1 près 1,1 1,2 1,3 1, 1,5 1,6 1,7 1,8
+𝑓(𝑥) à 0,01
+près
+− − − − − − − +
+Comme 𝑓(1,7) × 𝑓(1,8) < 0 alors 1,7 < 𝛼 < 1,8.
+C- SITUATION COMPLEXE
+
+-- 19 of 28 --
+
+Le comité de gestion scolaire (COGES) d’un lycée veut construire une salle de classe dont le
+coût de réalisation est estimé à 5 179 000F CFA. Pour cela, il lui faut mobiliser des
+ressources financières. Il crée alors une imprimerie dont la capacité journalière est entre 30
+et 100 articles. Toute la production journalière est vendue.
+Chaque article est vendu à 4000 F CFA. Le bénéfice global de l’imprimerie après six mois
+d’exercice est modélisé par la fonction 𝑩 telle que 𝑩(𝒙) = −𝒙𝟐 + 𝟕𝟐𝟎𝟎𝒙 − 𝟕 𝟕𝟔𝟎 𝟎𝟎𝟎 ,
+où 𝒙 désigne le nombre d’articles vendus durant les six mois.
+Ce bénéfice doit servir à la réalisation des travaux de construction.
+Le président du COGES a reçu l’information selon laquelle la classe pourra être construite,
+lorsque le bénéfice sera maximal. Préoccupé, il te sollicite.
+Détermine le nombre d’articles que l’on doit fabriquer et vendre pour avoir un bénéfice maximal
+et réponds à la préoccupation du président du COGES.
+Solution
+Pour répondre à la préoccupation du président du COGES, nous allons étudier la fonction B et
+déterminer son maximum.
+• Etude de la fonction B
+Considérons la fonction 𝐵 définie sur [0; +∞[, par 𝐵(𝑥) = −𝑥2 + 7200𝑥 − 7760000.
+B est dérivable sur [0; +∞[ , et pour tout 𝑥 ∈ [0; +∞[, 𝐵′(𝑥) = −2𝑥 + 7200.
+∀𝑥 ∈ [0; 3600[,𝐵′(𝑥) > 0, alors B est strictement croissante sur]0; 3600[.
+∀𝑥 ∈]3600; +∞[,𝐵′(𝑥) < 0, alors B est strictement décroissante sur]3600; +∞[.
+𝑥 0 3600 +∞
+𝐵′(𝑥) + 0 −
+𝐵(𝑥)
+−7760000
+5200000
+−∞
+• Déterminons le maximum de la fonction
+Le nombre d’articles que l’on doit fabriquer et vendre pour avoir un bénéfice maximal est 3600
+et ce bénéfice est 5200000𝐹 𝐶𝐹𝐴.
+Répondons à la préoccupation du président du COGES
+5200000 >5170000, donc le bénéfice maximal permettra la construction de cette classe.
+
+-- 20 of 28 --
+
+D- EXERCICES
+Exercice 1
+Complète le tableau suivant
+Limites Interprétation graphique
+lim
+𝑥→−3 𝑓(𝑥) = +∞
+La droite d’équation 𝑦 = 6 est asymptote horizontale à (𝐶𝑓) en +∞
+lim
+𝑥→−∞ 𝑓(𝑥) = 4
+La droite d’équation 𝑦 = 2𝑥 + 3 est asymptote oblique à (𝐶𝑓) en −∞
+lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 3)]
+= 0
+Solution
+Limites Interprétation graphique
+lim
+𝑥→−3 𝑓(𝑥) = +∞ La droite d’équation x=-3 est asymptote verticale à (𝐶𝑓) .
+lim
+𝑥→+∞ 𝑓(𝑥) = 6
+La droite d’équation 𝑦 = 6 est asymptote horizontale à (𝐶𝑓) en +∞
+lim
+𝑥→−∞ 𝑓(𝑥) = 4 La droite d’équation 𝑦 = 4 est asymptote horizontale à (𝐶𝑓) en -∞
+lim
+𝑥→−∞[ 𝑓(𝑥) − (2𝑥 + 3)] = 0
+La droite d’équation 𝑦 = 2𝑥 + 3 est asymptote oblique à (𝐶𝑓) en −∞
+lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 3)] = 0 La droite d’équation 𝑦 = 𝑥 - 3 est asymptote oblique à (𝐶𝑓) en +∞
+Exercice 2
+Détermine les limites suivantes :
+1 ) lim
+𝑥→ 5(2𝑥 + 1) ; 2 ) lim
+𝑥→ −53 2020 ; 3) lim
+𝑥→4(−𝑥 + 10𝑥3)
+
+-- 21 of 28 --
+
+4) lim
+𝑥→ −2 (3 𝑥3 − 𝑥2 + 2𝑥 − 1) ; 5) lim
+𝑥→ 0(𝑥2 − 3𝑥2 + 2𝑥 + 2021) .
+Solution
+1 ) lim
+𝑥→ 5(2𝑥 + 1) = 11 ;
+2 ) lim
+𝑥→ −53 2020 = 2020 ;
+3) lim
+𝑥→4(−𝑥 + 10𝑥3) = 636
+4) lim
+𝑥→ −2 (3 𝑥3 − 𝑥2 + 2𝑥 − 1) = - 33;
+5) lim
+𝑥→ 0(𝑥2 − 3𝑥2 + 2𝑥 + 2021) = 2021.
+Exercice
+Détermine les limites suivantes :
+1) lim
+𝑥→−∞(−3𝑥3 + 2𝑥 + 𝑥5)
+2) lim
+𝑥→+∞(2𝑥 − 100) ;
+3) lim
+𝑥→−∞(−𝑥4 − 6𝑥3 + 1) ;
+4) lim
+𝑥→+∞(−3𝑥2 + 𝑥3 − 99𝑥 + 7) .
+Solution
+1) lim
+𝑥→−∞(−3𝑥3 + 2𝑥 + 𝑥5) = lim
+𝑥→−∞ 𝑥5= −∞.
+2) lim
+𝑥→+∞(2𝑥 − 100) = lim
+𝑥→+∞ 2𝑥 = +∞ .
+3) lim
+𝑥→−∞( −𝑥4 − 6𝑥3 + 1) = lim
+𝑥→−∞(−𝑥4) = −∞.
+4) lim
+𝑥→+∞(−3𝑥2 + 𝑥3 − 99𝑥 + 7) = lim
+𝑥→+∞ 𝑥3 = +∞.
+Exercice 3
+Détermine les limites suivantes :
+1) lim
+𝑥→2
+<
+𝑥3
+𝑥−2 ; 2) lim
+𝑥→5
+<
+1
+𝑥−5 ; 3) lim
+𝑥→−4
+>
+1
+𝑥+4 .
+Solution
+1) lim
+𝑥→2
+<
+𝑥3
+𝑥−2 = −∞ ;
+2) lim
+𝑥→5
+<
+1
+𝑥−5 = −∞ ;
+3) lim
+𝑥→−4
+>
+1
+𝑥+4 = +∞ .
+Exercice 4
+
+-- 22 of 28 --
+
+1 ) lim
+𝑥→+∞
+−3𝑥3+𝑥2−1
+𝑥2−5𝑥−3 ; 2) lim
+𝑥→−∞
+−20𝑥3+75
+4𝑥3−2𝑥−90 ; 3) lim
+𝑥→+∞
+5𝑥4−𝑥2+5
+−4𝑥4+2𝑥−7 ; 4) lim
+𝑥→−∞
+𝑥4−𝑥2+5
+−2𝑥−1
+Solution
+1 ) lim
+𝑥→+∞
+−3𝑥3+𝑥2−1
+𝑥2−5𝑥−3 = lim
+𝑥→+∞
+−3𝑥3
+𝑥2 = lim
+𝑥→+∞(−3𝑥) = − ∞
+2 ) lim
+𝑥→−∞
+−20𝑥3+75
+4𝑥3−2𝑥−90 = lim
+𝑥→−∞
+−20𝑥3
+4𝑥3 = −5
+3 ) lim
+𝑥→+∞
+5𝑥4−𝑥2+5
+−4𝑥5+2𝑥−7 = lim
+𝑥→+∞
+−5
+4𝑥 = 0
+4 ) lim
+𝑥→−∞
+𝑥4−𝑥2+5
+−2𝑥−1 = lim
+𝑥→−∞
+𝑥4
+−2𝑥 = lim
+𝑥→−∞(− 𝑥3
+2 ) = + ∞
+Exercice 5
+Calcule lim
+𝑥→+∞ 𝑓(𝑥) × 𝑔(𝑥) sachant que 𝑓(𝑥) = 𝑥2+6
+𝑥−4 et 𝑔(𝑥) = −𝑥3+6𝑥+4
+𝑥+2 .
+Solution
+On a lim
+𝑥→+∞ 𝑓(𝑥) = lim
+𝑥→+∞
+𝑥2+6
+𝑥−4 = lim
+𝑥→+∞
+𝑥2
+𝑥 = lim
+𝑥→+∞𝑥 = +∞ et
+lim
+𝑥→+∞ 𝑔(𝑥) = lim
+𝑥→+∞
+−𝑥3 + 6𝑥 + 4
+𝑥 + 2 = lim
+𝑥→+∞
+− 𝑥3
+𝑥 = lim
+𝑥→+∞(− 𝑥 2) = −∞
+Donc lim
+𝑥→+∞ 𝑓(𝑥) × 𝑔(𝑥) = −∞
+Exercice 6
+Calcule les limites suivantes :
+1 ) lim
+𝑥→ − 4
+>
+𝑥2+6𝑥−10
+𝑥+4 ; 2) lim
+𝑥→2
+>
+𝑥2−5𝑥+7
+𝑥 −2 ; 3) lim
+𝑥→2
+<
+𝑥2−5𝑥+7
+𝑥 −2 ;
+4 ) lim
+𝑥→5
+>
+2𝑥2−𝑥+1
+𝑥 −5 ; 5) lim
+𝑥→−1
+>
+𝑥2− 𝑥−1
+𝑥+1 ; 6 ) lim
+𝑥→−1
+<
+𝑥2− 𝑥−1
+𝑥+1
+Solution
+1 ) lim
+𝑥→ −4
+>
+𝑥2+6𝑥−10
+𝑥+4 = lim
+𝑥→ −4
+>
+(𝑥2 + 6𝑥 − 10) × 1
+𝑥+4 = −∞ .
+Car lim
+𝑥→ − 4
+>
+(𝑥2 + 6𝑥 − 10) = −18 et lim
+𝑥→ − 4
+>
+1
+𝑥+4 = +∞ .
+2 ) lim
+𝑥→2
+>
+𝑥2−5𝑥+7
+𝑥 −2 = lim
+𝑥→2
+>
+(𝑥2 − 5𝑥 + 7) × 1
+𝑥 −2 = +∞ .
+Car lim
+𝑥→ 2
+>
+(𝑥2 − 5𝑥 + 7) = 1 et lim
+𝑥→ 2
+>
+1
+𝑥−2 = +∞ .
+3 ) lim
+𝑥→2
+<
+𝑥2−5𝑥+7
+𝑥 −2 = lim
+𝑥→2
+<
+(𝑥2 − 5𝑥 + 7) × 1
+𝑥 −2 = −∞ .
+Car lim
+𝑥→ 2
+<
+(𝑥2 − 5𝑥 + 7) = 1 et lim
+𝑥→ 2
+<
+1
+𝑥−2 = −∞ .
+
+-- 23 of 28 --
+
+4 ) lim
+𝑥→ 5
+>
+2𝑥2−𝑥+1
+𝑥−5 = lim
+𝑥→ 5
+>
+(2𝑥2 − 𝑥 + 1) × 1
+𝑥−5 = +∞
+Car lim
+𝑥→ 5
+>
+(2𝑥2 − 𝑥 + 1) = 46 et lim
+𝑥→ 5
+>
+1
+𝑥−5 = +∞
+5) lim
+𝑥→−1
+>
+𝑥2− 𝑥−1
+𝑥+1 = lim𝑥→
+>
+− 1 (𝑥2 − 𝑥 − 1) × 1
+𝑥+1 = +∞
+Car lim𝑥→
+>
+− 1 (𝑥2 − 𝑥 − 1) = 1 et lim
+𝑥→ −1
+>
+1
+𝑥+1 = +∞
+6) lim
+𝑥→−1
+<
+𝑥2− 𝑥−1
+𝑥+1 = lim𝑥→
+<
+− 1 (𝑥2 − 𝑥 − 1) × 1
+𝑥+1 = −∞
+Car lim𝑥→
+<
+− 1 (𝑥2 − 𝑥 − 1) = 1 et lim
+𝑥→ −1
+<
+1
+𝑥+1 = −∞
+Exercice 7
+Sur la figure ci- contre, on donne la représentation
+graphique d’une fonction 𝑓 dérivable et définie sur IR.
+1. Par lecture graphique, Précise les variations de 𝑓.
+2. Dresse le tableau de variations de 𝑓.
+3. On suppose que (𝐶𝑓) admet un centre de symétrie.
+Précise par lecture graphique les coordonnées de ce centre
+de symétrie
+4. Précise l’extrémum relatif de 𝑓 sur ]−∞ ; −1[ puis sur
+]−3 ; +∞[
+5. Résous graphiquement dans ℝ :
+a) 𝑥 ∈ ℝ, 𝑓(𝑥) = 1
+b) 𝑥 ∈ ℝ, 𝑓(𝑥) ≥ 1
+c) 𝑥 ∈ ℝ, 𝑓(𝑥) ≤ 0
+Solution
+1) 𝑓 est strictement croissante sur ]−∞ ; −3[ et sur ]−1 ; + ∞[ .
+𝑓 est strictement décroissante sur ]−3 ; −1[.
+2) tableau de variation de f.
+3) le centre de symétrie de (𝐶𝑓) est le point de coordonnées (−2 ; 1 ).
+4) 𝑓 est croissante sur ]−∞ ; −3[ puis décroissante sur ]−3 ; −1[ donc 2 est le maximum
+relatif
+de 𝑓 sur ]−∞ ; −1[.
+𝑓 est décroissante sur ]−3 ; −1[ puis croissante sur ]−1 ; + ∞[ donc 0 est le minimum
+relatif
+de 𝑓 sur ]−3 ; +∞[.
+5) a) 𝑆 = { − 3, 75 ; −2 ; − 0 , 25 }.
+b) 𝑆 = [ − 3, 75 ; −2 ] ∪ [−0, 25 ; +∞ [.
+c) 𝑆 = ]−∞ ; −4 ] ∪ {− 1 }.
+Exercice 8
+
+-- 24 of 28 --
+
+Soit la fonction 𝑓 définie de ℝ vers ℝ par : 𝑓(𝑥) = 𝑥2+3𝑥+3
+𝑥+1
+1. Justifie que l’ensemble de définition de 𝐷𝑓 de 𝑓 est 𝐷𝑓 = ]−∞ ; −1[ ∪ ]−1 ; +∞[
+2.a) Calcule les limites de 𝑓 à gauche et à droite en −1.
+b) Donne l’interprétation graphique de ces résultats.
+3. Détermine les limites de 𝑓 en − ∞ et en + ∞.
+4. Démontre que pour tout 𝑥 ∈ 𝐷𝑓, 𝑓(𝑥) = 𝑥 + 2 + 1
+𝑥+1.
+5.a) Démontre que la droite (D) d’équation 𝑦 = 𝑥 + 2 est asymptote oblique à (𝐶𝑓)
+en −∞ et en + ∞
+b) Etudie la position relative de (𝐶𝑓) et (D).
+6-a) Démontre que pour tout 𝑥 ∈ 𝐷𝑓, 𝑓′(𝑥) = 𝑥(𝑥+2)
+(𝑥+1)2
+b) Etudie le signe de 𝑓′(𝑥) puis déduis-en les variations de 𝑓.
+c) Dresse le tableau de variation de 𝑓.
+7. Démontre que le point A (−1 ; 1) est centre de symétrie de (𝐶𝑓).
+8. a) Reproduis et complète le tableau suivant :
+𝑥 −3 −2 −1,5 -1,8 −1 −0,8 −0,5 0 1 2
+𝑓(𝑥)
+b) Trace(𝐶𝑓) sur [−3 ; 2].
+Solution
+1) 𝑥 ∈ 𝐷𝑓 si et seulement si 𝑥 + 1 ≠ 0
+si et seulement si 𝑥 ≠ −1
+donc 𝐷𝑓 = ]−∞ ; −1[ ∪ ]−1 ; +∞[
+2 ) a) Limite de 𝑓 à gauche en −1.
+lim
+𝑥→ −1
+<
+𝑓(𝑥) = lim
+𝑥→ −1
+<
+𝑥2 + 3𝑥 + 3
+𝑥 + 1 = lim
+𝑥→ −1
+<
+(𝑥2 + 3𝑥 + 3) × 1
+𝑥 + 1 = −∞
+car lim
+𝑥→ −1
+<
+1
+𝑥+1 = −∞ et lim
+𝑥→ −1
+<
+(𝑥2 + 3𝑥 + 3) = 1
+Limite de 𝑓 à droite en −1
+lim
+𝑥→ −1
+>
+𝑓(𝑥) = lim
+𝑥→ −1
+>
+𝑥2 + 3𝑥 + 3
+𝑥 + 1 = lim
+𝑥→ −1
+>
+(𝑥2 + 3𝑥 + 3) × 1
+𝑥 + 1 = +∞
+Car lim
+𝑥→ −1
+>
+1
+𝑥+1 = +∞ et lim
+𝑥→ −1
+>
+(𝑥2 + 3𝑥 + 3) = 1
+b) lim
+𝑥→ −1
+<
+𝑓(𝑥) = −∞ et lim
+𝑥→ −1
+>
+𝑓(𝑥) = +∞ donc la droite d’équation 𝑥 = −1 est une asymptote
+verticale à (𝐶𝑓).
+3) lim
+𝑥→ −∞ 𝑓(𝑥) = lim
+𝑥→ −∞
+𝑥2+3𝑥+3
+𝑥+1 = lim
+𝑥→−∞
+𝑥2
+𝑥 = lim
+𝑥→ − ∞ 𝑥 = − ∞
+lim
+𝑥→+∞ 𝑓(𝑥) = lim
+𝑥→+∞
+𝑥2 + 3𝑥 + 3
+𝑥 + 1 = lim
+𝑥→+∞
+𝑥2
+𝑥 = lim
+𝑥→+∞ 𝑥 = + ∞
+4 ) Pour tout x ∈ 𝐷𝑓, 𝑓(𝑥) = 𝑥 + 2 + 1
+𝑥+1
+5 ) a) lim
+𝑥→ −∞( 𝑓(𝑥) − (𝑥 + 2)) = lim
+𝑥→ −∞
+1
+𝑥+1 = 0 et
+lim
+𝑥→ +∞( 𝑓(𝑥) − (𝑥 + 2)) = lim
+𝑥→ +∞
+1
+𝑥 + 1 = 0
+Donc la droite ( D ) d’équation 𝑦 = 𝑥 + 2 est asymptote oblique à (𝐶𝑓)en −∞ et en + ∞
+b) On a 𝑓(𝑥) − (𝑥 + 2) = 1
+𝑥+1
+
+-- 25 of 28 --
+
+Or pour tout 𝑥 ∈ ]−∞ ; −1[ , 1
+𝑥+1 < 0 et pour tout 𝑥 ∈ ]−1 ; +∞[ , 1
+𝑥+1 > 0
+donc sur ]−1 ; +∞[ , (𝐶𝑓) est au-dessus de ( D ) et sur ]−∞ ; −1[, (𝐶𝑓) est en dessous de ( D
+)
+6-a) Pour tout 𝑥 ∈ 𝐷𝑓 𝑓′ (𝑥) = (𝑥2+3𝑥+3)′(𝑥+1)−(𝑥2+3𝑥+3)(𝑥+1)′
+(𝑥+1)2 =
+2𝑥(𝑥+1)−(𝑥2+3𝑥+3)
+(𝑥+1)2 = 𝑥(𝑥+2)
+(𝑥+1)2
+d) On a 𝑓′( 𝑥) = 𝑥(𝑥+2)
+(𝑥+1)2 or pour tout réel 𝑥 ≠ 1, (𝑥 + 1)2 > 0 donc le signe de 𝑓′( 𝑥) est celui
+de 𝑥(𝑥 + 2)
+𝑥 −∞ − 2 − 1 0 + ∞
+𝑓′(𝑥) + − − +
+Pour tout 𝑥 ∈ ]−∞ ; −2 [ ∪ ]0 + ∞[ , 𝑓′( 𝑥) > 0
+Pour tout 𝑥 ∈ ]−2 ; −1 [ ∪ ]−1; 0[ , 𝑓′( 𝑥) < 0
+Par suite 𝑓 est strictement croissante sur ]−∞ ; −2 [ et sur ]0 + ∞[
+Et est strictement décroissante sur ]−2 ; −1 [ et sur ]−1; 0[
+e) le tableau de variation de 𝑓.
+𝑥 −∞ − 2 − 1 0 + ∞
+𝑓′(𝑥) + − − +
+𝑓(𝑥)
+7 ) On a 𝑓(−1 + 𝑥) + 𝑓(−1 − 𝑥) = −1 + 𝑥 + 2 + 1
+−1+𝑥+1 − 1 − 𝑥 + 2 + 1
+−1−𝑥+1
+= 2 = 2 × 1
+Donc le point A (−1 ; 1) est centre de symétrie de (𝐶𝑓).
+8 ) a) on a :
+𝑥 −3 −2 −1,5 -1,8 −1 −0,8 −0,5 0 1 2
+𝑓(𝑥) -1,5 -1 -1,5 -1,05 6,2 3,5 3 3,5 4,33
+b) Courbe (𝐶𝑓)
+0 0
+−1
+−∞ −∞
++∞
+3
++∞
+
+-- 26 of 28 --
+
+Exercice 9
+Soit 𝑓 la fonction numérique définie par : 𝑓(𝑥) = 𝑥 − 8 + 1
+𝑥−3 et ( C ) sa courbe représentative.
+4) Calcule lim
+𝑥→3
+<
+𝑓(𝑥) et lim
+𝑥→3
+>
+𝑓(𝑥) puis interprète les résultats.
+5) a) Justifie que lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 8)] = 0.
+b) Déduis - en que la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique à la courbe
+de 𝑓 en +∞ .
+6) Justifie que la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique à la courbe de 𝑓 en
+-∞ .
+7) Détermine les positions relatives de (C ) et de ( D ).
+Solution
+1 ) lim
+𝑥→3
+<
+𝑓(𝑥) = lim
+𝑥→ 3
+<
+𝑥 − 8 + 1
+𝑥−3 == −∞ . Car lim
+𝑥→ −3
+<
+(𝑥 − 8) = −5 et lim
+𝑥→ 3
+<
+1
+𝑥−3 = −∞.
+lim
+𝑥→3
+>
+𝑓(𝑥) = lim
+𝑥→ 3
+>
+(𝑥 − 8 + 1
+𝑥−3) = +∞ . Car lim
+𝑥→ −3
+>
+(𝑥 − 8) = −5 et lim
+𝑥→ 3
+>
+1
+𝑥−3 = +∞.
+Donc la droite d’équation x= 3 est asymptote verticale à ( C ) .
+2) a) lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 8)] = lim
+𝑥→+∞
+1
+𝑥−3 = 0.
+b) lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 8)] = 0 donc la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique
+à la courbe de 𝑓 en +∞ .
+3) lim
+𝑥→−∞[ 𝑓(𝑥) − (𝑥 − 8)] = lim
+𝑥→−∞
+1
+𝑥−3 = 0.
+lim
+𝑥→+∞[ 𝑓(𝑥) − (𝑥 − 8)] = 0 ; donc la droite (D) d’équation 𝑦 = 𝑥 − 8 est asymptote oblique à la
+2	-1	-2	-3
+2
+3
+4
+5
+-1
+-2
+-3
+-4
+-5
+-6
+0 1
+1
+x
+y
+
+-- 27 of 28 --
+
+courbe de 𝑓 en +∞.
+4) on a 𝑓(𝑥) − (𝑥 − 8) = 1
+𝑥−3.
+Pour tout 𝑥 ∈ ]−∞ − 3 [ , 1
+𝑥−3 > 0 donc ( C ) est au-dessus de ( D ) sur ]−∞ − 3 [.
+Pour tout 𝑥 ∈ ]−3 + ∞ [ , 1
+𝑥−3 < 0 donc ( C ) est en-dessous de ( D ) sur ]−3 + ∞ [ .
+
+-- 28 of 28 --
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche - Oscillations Mécaniques Libres</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.7; padding: 40px; max-width: 900px; margin: auto; font-size: 14px; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
+  .header h1 { font-size: 22px; color: #2563eb; margin-bottom: 8px; }
+  .header .meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #64748b; }
+  .header .meta span { background: #f1f5f9; padding: 4px 12px; border-radius: 20px; }
+  h2 { font-size: 17px; color: #1e293b; margin: 28px 0 12px; padding: 10px 16px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+  h3 { font-size: 15px; color: #334155; margin: 18px 0 8px; }
+  p { margin-bottom: 10px; }
+  .definition { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .definition strong { color: #166534; }
+  .formule { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; color: #92400e; }
+  .important { background: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; color: #1e293b; }
+  ul, ol { margin: 8px 0 12px 20px; }
+  li { margin-bottom: 5px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; font-size: 12px; color: #94a3b8; }
+  .footer strong { color: #2563eb; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>🏫 Terminale D</span>
+    <span>📖 Physique - Chimie</span>
+    <span>📝 Oscillations Mécaniques Libres</span>
+  </div>
+</div>
+
+<h2>I. Définitions</h2>
+
+<div class="definition">
+  Un <strong>oscillateur mécanique</strong> est un système qui effectue un mouvement <strong>périodique</strong> autour de sa position d'équilibre stable.
+</div>
+
+<table>
+  <tr><th>Grandeur</th><th>Symbole</th><th>Unité</th><th>Définition</th></tr>
+  <tr><td><strong>Période</strong></td><td>T</td><td>s</td><td>Durée d'une oscillation complète</td></tr>
+  <tr><td><strong>Fréquence</strong></td><td>N (ou f)</td><td>Hz</td><td>Nombre d'oscillations par seconde : N = 1/T</td></tr>
+  <tr><td><strong>Pulsation</strong></td><td>ω</td><td>rad/s</td><td>ω = 2πN = 2π/T</td></tr>
+  <tr><td><strong>Amplitude</strong></td><td>X<sub>m</sub></td><td>m</td><td>Élongation maximale</td></tr>
+</table>
+
+<h2>II. Pendule Élastique Horizontal</h2>
+
+<h3>1. Équation différentielle</h3>
+<p>Masse m reliée à un ressort de raideur k, sans frottement :</p>
+
+<div class="formule">mẍ + kx = 0 &nbsp;&nbsp;⟺&nbsp;&nbsp; ẍ + (k/m)·x = 0</div>
+
+<h3>2. Solution (équation horaire)</h3>
+<div class="formule">x(t) = X<sub>m</sub>·cos(ω₀t + φ)</div>
+<div class="formule">v(t) = −ω₀·X<sub>m</sub>·sin(ω₀t + φ)</div>
+
+<h3>3. Grandeurs caractéristiques</h3>
+<table>
+  <tr><th>Grandeur</th><th>Expression</th></tr>
+  <tr><td><strong>Pulsation propre</strong></td><td>ω₀ = √(k/m) &nbsp;[rad/s]</td></tr>
+  <tr><td><strong>Période propre</strong></td><td>T₀ = 2π/ω₀ = 2π√(m/k) &nbsp;[s]</td></tr>
+  <tr><td><strong>Fréquence propre</strong></td><td>N₀ = 1/T₀ &nbsp;[Hz]</td></tr>
+  <tr><td><strong>Vitesse maximale</strong></td><td>V<sub>m</sub> = ω₀·X<sub>m</sub></td></tr>
+</table>
+
+<h3>4. Détermination de X<sub>m</sub> et φ</h3>
+<div class="important">
+  À t = 0 : <br>
+  • x(0) = X<sub>m</sub>·cos φ<br>
+  • v(0) = −ω₀·X<sub>m</sub>·sin φ<br><br>
+  On utilise les conditions initiales pour trouver X<sub>m</sub> et φ.
+</div>
+
+<h2>III. Étude Énergétique</h2>
+
+<h3>1. Énergie potentielle élastique</h3>
+<div class="formule">E<sub>pe</sub> = ½·k·x² = ½·k·X<sub>m</sub>²·cos²(ω₀t + φ)</div>
+
+<h3>2. Énergie cinétique</h3>
+<div class="formule">E<sub>c</sub> = ½·m·v² = ½·k·X<sub>m</sub>²·sin²(ω₀t + φ)</div>
+
+<h3>3. Énergie mécanique</h3>
+<div class="formule">E<sub>m</sub> = E<sub>c</sub> + E<sub>pe</sub> = ½·k·X<sub>m</sub>² = constante</div>
+
+<div class="important">
+  <strong>Conservation de l'énergie mécanique :</strong><br>
+  E<sub>m</sub> = ½·k·X<sub>m</sub>² = ½·m·V<sub>m</sub>² = ½·m·ω₀²·X<sub>m</sub>²<br><br>
+  <strong>À la position d'équilibre (x = 0) :</strong> E<sub>c</sub> = max, E<sub>pe</sub> = 0<br>
+  <strong>Aux extrémités (x = ±X<sub>m</sub>) :</strong> E<sub>c</sub> = 0, E<sub>pe</sub> = max
+</div>
+
+<h2>IV. Résumé</h2>
+
+<table>
+  <tr><th>Propriété</th><th>Oscillateur harmonique (sans amortissement)</th></tr>
+  <tr><td>Trajectoire</td><td>Rectiligne, entre −X<sub>m</sub> et +X<sub>m</sub></td></tr>
+  <tr><td>Mouvement</td><td>Sinusoïdal (harmonique)</td></tr>
+  <tr><td>Amplitude</td><td>Constante</td></tr>
+  <tr><td>Énergie mécanique</td><td>Conservée</td></tr>
+  <tr><td>Période</td><td>Indépendante de l'amplitude</td></tr>
+</table>
+
+<div class="footer">
+  <strong>powered by Haniel_dev</strong>
+</div>
+
+</body>
+</html>

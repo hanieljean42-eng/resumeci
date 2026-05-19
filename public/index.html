@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiches de Résumé — Terminale A & D | Haniel_dev</title>
+  <link rel="manifest" href="/public/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <style>
+    :root {
+      --bg:#f8fafc;--bg-card:#fff;--bg-card-hover:#f1f5f9;--bg-surface:#fff;
+      --bg-sidebar:#1e293b;--sidebar-text:#e2e8f0;--sidebar-muted:#94a3b8;--sidebar-dim:#64748b;
+      --text:#1e293b;--text-muted:#475569;--text-dim:#64748b;
+      --accent:#2563eb;--accent-light:#3b82f6;--accent-bg:#eff6ff;
+      --green:#059669;--green-bg:#ecfdf5;--orange:#d97706;--orange-bg:#fffbeb;
+      --purple:#7c3aed;--purple-bg:#f5f3ff;--red:#dc2626;
+      --border:#e2e8f0;--radius:12px;--radius-sm:8px;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 12px rgba(0,0,0,.08);
+      --shadow-lg:0 8px 30px rgba(0,0,0,.12);--transition:all .2s ease;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+    .layout{display:flex;min-height:100vh}
+
+    /* Sidebar */
+    .sidebar{width:300px;min-width:300px;background:var(--bg-sidebar);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+    .sidebar-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .sidebar-header h1{font-size:16px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+    .sidebar-header .logo{width:34px;height:34px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
+    .sidebar-header p{font-size:11px;color:var(--sidebar-dim);margin-top:4px;padding-left:44px}
+    .search-box{padding:12px 16px;position:relative}
+    .search-box input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px 8px 34px;color:#fff;font-size:13px;outline:none;transition:var(--transition)}
+    .search-box input::placeholder{color:var(--sidebar-dim)}
+    .search-box input:focus{border-color:var(--accent-light);background:rgba(255,255,255,.12)}
+    .search-box i{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:var(--sidebar-dim);font-size:12px}
+    .sidebar-nav{flex:1;overflow-y:auto;padding:8px 0}
+    .sidebar-nav::-webkit-scrollbar{width:3px}
+    .sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+    .nav-class{padding:0 8px;margin-bottom:4px}
+    .nav-class-header{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;color:var(--sidebar-text);transition:var(--transition);user-select:none}
+    .nav-class-header:hover{background:rgba(255,255,255,.06)}
+    .nav-class-header .badge{margin-left:auto;background:rgba(59,130,246,.2);color:#93c5fd;padding:2px 7px;border-radius:10px;font-size:10px}
+    .nav-class-header .chevron{transition:transform .2s;font-size:9px;color:var(--sidebar-dim)}
+    .nav-class.open .chevron{transform:rotate(90deg)}
+    .nav-subjects{display:none;padding-left:12px}
+    .nav-class.open .nav-subjects{display:block}
+    .nav-subject-header{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;color:var(--sidebar-muted);transition:var(--transition);user-select:none}
+    .nav-subject-header:hover{background:rgba(255,255,255,.06);color:var(--sidebar-text)}
+    .nav-subject-header .count{margin-left:auto;font-size:10px;color:var(--sidebar-dim)}
+    .nav-subject-header .chevron{font-size:8px;color:var(--sidebar-dim);transition:transform .2s}
+    .nav-subject.open .chevron{transform:rotate(90deg)}
+    .nav-lessons{display:none;padding-left:10px}
+    .nav-subject.open .nav-lessons{display:block}
+    .nav-lesson{display:block;padding:5px 10px;margin:1px 0;border-radius:5px;cursor:pointer;font-size:11px;color:var(--sidebar-dim);transition:var(--transition);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav-lesson:hover{background:rgba(255,255,255,.06);color:var(--sidebar-text)}
+    .nav-lesson.active{background:rgba(59,130,246,.2);color:#93c5fd;font-weight:500}
+    .sidebar-footer{padding:12px 16px;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:11px;color:var(--sidebar-dim)}
+    .sidebar-footer strong{color:var(--accent-light)}
+
+    /* Main */
+    .main{flex:1;display:flex;flex-direction:column;min-width:0}
+    .topbar{padding:14px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--bg-card);box-shadow:var(--shadow-sm)}
+    .breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-dim);flex-wrap:wrap}
+    .breadcrumb .current{color:var(--text);font-weight:600}
+    .breadcrumb .clickable{cursor:pointer}
+    .breadcrumb .clickable:hover{color:var(--accent)}
+    .topbar-actions{margin-left:auto;display:flex;gap:8px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:12px;font-weight:500;cursor:pointer;transition:var(--transition);text-decoration:none}
+    .btn:hover{background:var(--bg-card-hover);border-color:var(--accent);color:var(--accent)}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{background:#1d4ed8}
+    .btn-green{background:var(--green);border-color:var(--green);color:#fff}
+    .btn-green:hover{background:#047857}
+    .content{flex:1;padding:28px;overflow-y:auto}
+
+    /* Dashboard */
+    .dashboard{max-width:960px;margin:0 auto}
+    .dashboard-hero{text-align:center;padding:40px 0 32px}
+    .dashboard-hero .hero-icon{width:72px;height:72px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:20px;display:inline-flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:16px;box-shadow:0 8px 24px rgba(59,130,246,.25)}
+    .dashboard-hero h2{font-size:26px;font-weight:800}
+    .dashboard-hero p{color:var(--text-muted);font-size:14px;margin-top:4px}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+    .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center;transition:var(--transition);box-shadow:var(--shadow-sm)}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .stat-card .stat-icon{width:40px;height:40px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+    .stat-card .stat-number{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+    .stat-card .stat-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+    .class-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .class-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-sm)}
+    .class-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .class-card h3{font-size:17px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .class-card .subject-list{display:flex;flex-wrap:wrap;gap:5px}
+    .subject-tag{padding:3px 9px;border-radius:14px;font-size:10px;font-weight:500;background:var(--accent-bg);color:var(--accent);border:1px solid #dbeafe}
+
+    /* Subject grid */
+    .subject-grid{max-width:1000px;margin:0 auto}
+    .subject-grid h2{font-size:22px;font-weight:700}
+    .subject-grid .subtitle{color:var(--text-muted);margin-bottom:20px;font-size:13px}
+    .lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:24px}
+    .lesson-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm)}
+    .lesson-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+    .lesson-card .lesson-icon{width:36px;height:36px;min-width:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+    .lesson-card .lesson-name{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lesson-card .lesson-meta{font-size:10px;color:var(--text-dim);margin-top:2px}
+
+    /* Fiche */
+    .fiche-view{max-width:820px;margin:0 auto}
+    .fiche-content{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 44px;line-height:1.75;box-shadow:var(--shadow)}
+    .fiche-content h1{font-size:22px;font-weight:800;margin-bottom:16px;color:var(--accent)}
+    .fiche-content h2{font-size:18px;font-weight:700;margin:32px 0 14px;padding:10px 16px;background:linear-gradient(135deg,var(--accent-bg),#f5f3ff);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:var(--text)}
+    .fiche-content h3{font-size:15px;font-weight:600;margin:20px 0 8px;color:var(--text);padding-bottom:6px;border-bottom:1px solid var(--border)}
+    .fiche-content p{margin-bottom:10px;color:var(--text-muted);font-size:14px}
+    .fiche-content ul,.fiche-content ol{margin:6px 0 14px 20px}
+    .fiche-content li{margin-bottom:5px;color:var(--text-muted);font-size:13px;line-height:1.6}
+    .fiche-content strong{color:var(--text)}
+    .fiche-content table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+    .fiche-content th,.fiche-content td{padding:8px 12px;border:1px solid var(--border)}
+    .fiche-content th{background:var(--bg);font-weight:600;text-align:left}
+    .fiche-content code{background:var(--accent-bg);color:var(--accent);padding:3px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace;font-weight:500}
+    .fiche-content blockquote{border-left:4px solid var(--accent);padding:12px 18px;margin:10px 0;background:var(--accent-bg);border-radius:0 8px 8px 0;color:var(--text);font-size:14px;line-height:1.8}
+    .fiche-content blockquote strong{color:var(--text);font-size:15px;letter-spacing:.3px}
+    .fiche-content hr{border:none;border-top:2px solid var(--border);margin:28px 0}
+
+    /* Formules KaTeX */
+    .formula-block{background:linear-gradient(135deg,#fef3c7,#fef9c3);border:2px solid #f59e0b;border-radius:10px;padding:16px 20px;margin:12px 0;text-align:center;font-size:18px;font-family:'JetBrains Mono',monospace;color:#92400e;font-weight:600;letter-spacing:.5px;line-height:2}
+
+    /* Footer */
+    .main-footer{padding:16px 28px;border-top:1px solid var(--border);text-align:center;background:var(--bg-card);font-size:12px;color:var(--text-dim)}
+    .main-footer strong{color:var(--accent);font-weight:700}
+
+    .loading{display:flex;align-items:center;justify-content:center;padding:60px;color:var(--text-muted);gap:10px}
+    .spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .color-blue{background:var(--accent-bg);color:var(--accent)}
+    .color-green{background:var(--green-bg);color:var(--green)}
+    .color-orange{background:var(--orange-bg);color:var(--orange)}
+    .color-purple{background:var(--purple-bg);color:var(--purple)}
+    .mobile-menu-btn{display:none;border:1px solid var(--border);background:var(--bg-card);border-radius:8px;padding:8px 10px;color:var(--text);cursor:pointer}
+    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:90}
+    .mobile-overlay.show{display:block}
+    @media(max-width:768px){
+      .layout{display:block}
+      .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:100;transform:translateX(-105%);transition:transform .25s ease;box-shadow:var(--shadow-lg)}
+      .sidebar.mobile-open{transform:translateX(0)}
+      .mobile-menu-btn{display:inline-flex;align-items:center;justify-content:center}
+      .topbar{position:sticky;top:0;z-index:80;padding:10px 12px;gap:8px}
+      .breadcrumb{font-size:11px;min-width:0;overflow:hidden}
+      .topbar-actions{gap:5px;flex-wrap:wrap;justify-content:flex-end}
+      .topbar-actions .btn{padding:6px 8px;font-size:11px}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .class-cards{grid-template-columns:1fr}
+      .content{padding:14px;overflow:visible}
+      .fiche-view{max-width:100%}
+      .fiche-content{padding:18px;font-size:14px;overflow-wrap:anywhere}
+      .fiche-content h1{font-size:18px}
+      .fiche-content h2{font-size:15px;margin:24px 0 12px;padding:8px 10px}
+      .fiche-content table{display:block;overflow-x:auto;white-space:nowrap}
+      .lessons-grid{grid-template-columns:1fr}
+      .tools-bar{flex-direction:column}
+      .tool-card{min-width:0}
+      .audio-fab{width:46px;height:46px;bottom:14px;right:14px}
+    }
+    /* Learning tools bar */
+    .tools-bar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+    .tool-card{flex:1;min-width:200px;background:linear-gradient(135deg,#1e293b,#334155);border:2px solid #475569;border-radius:14px;padding:18px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:#f1f5f9}
+    .tool-card:hover{border-color:#3b82f6;transform:translateY(-3px);box-shadow:0 8px 25px rgba(59,130,246,.2)}
+    .tool-card .tool-icon{font-size:28px;margin-bottom:8px}
+    .tool-card h4{font-size:14px;font-weight:700;margin-bottom:4px}
+    .tool-card p{font-size:11px;color:#94a3b8}
+    /* Audio TTS */
+    .audio-fab{position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:#2563eb;border:none;border-radius:50%;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(37,99,235,.4);transition:.3s;z-index:100}
+    .audio-fab:hover{transform:scale(1.1)}
+    .audio-fab.speaking{background:#059669;animation:pulse-audio 1s infinite}
+    @keyframes pulse-audio{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.4)}50%{box-shadow:0 0 0 12px rgba(5,150,105,0)}}
+  </style>
+</head>
+<body>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><span class="logo">📚</span> Fiches Résumé</h1>
+        <p>Terminale A & D — Côte d'Ivoire</p>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Rechercher une leçon...">
+      </div>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="loading"><div class="spinner"></div>Chargement...</div>
+      </nav>
+      <div class="sidebar-footer">powered by <strong>Haniel_dev</strong></div>
+    </aside>
+    <div class="main">
+      <div class="topbar">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
+        <div class="breadcrumb" id="breadcrumb">
+          <i class="fas fa-home" style="color:var(--accent)"></i>
+          <span class="current">Accueil</span>
+        </div>
+        <div class="topbar-actions" id="topbarActions"></div>
+      </div>
+      <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
+      <footer class="main-footer"><i class="fas fa-code"></i> powered by <strong>Haniel_dev</strong> — Fiches de résumé Terminale A & D</footer>
+    </div>
+  </div>
+  <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
+
+  <script>
+    let DATA = {};
+    // Store current fiche info for download
+    let CURRENT_FICHE = null;
+
+    const subjectIcons = {
+      'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
+      'Mathématiques':'📐','Philosophie':'💭','Histoire':'📜','Géo':'🌍',
+      'SVT':'🧬','Sciences':'🧬','Physique':'⚛️','Arts':'🎨',
+      'Education Musicale':'🎵','Education musicale':'🎵',
+      'Education Physique':'🏃','EPS':'🏃',
+    };
+    const subjectColors = ['color-blue','color-green','color-orange','color-purple'];
+    function getIcon(n){for(const[k,v]of Object.entries(subjectIcons))if(n.includes(k))return v;return'📖'}
+    function getColor(i){return subjectColors[i%subjectColors.length]}
+    function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
+
+    async function loadData(){
+      const[struct,stats]=await Promise.all([fetch('/api/structure').then(r=>r.json()),fetch('/api/stats').then(r=>r.json())]);
+      DATA.structure=struct;DATA.stats=stats;
+      renderSidebar();showDashboard();
+    }
+
+    function renderSidebar(){
+      const nav=document.getElementById('sidebarNav');
+      let h='';
+      for(const[cls,subjects]of Object.entries(DATA.structure)){
+        const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
+        h+=`<div class="nav-class"><div class="nav-class-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</span><span class="badge">${total}</span></div><div class="nav-subjects">`;
+        for(const[sub,fiches]of Object.entries(subjects)){
+          h+=`<div class="nav-subject"><div class="nav-subject-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${getIcon(sub)} ${sub}</span><span class="count">${fiches.length}</span></div><div class="nav-lessons">`;
+          for(let fi=0;fi<fiches.length;fi++){
+            const f=fiches[fi];
+            h+=`<a class="nav-lesson" data-cls="${cls}" data-sub="${sub}" data-idx="${fi}" data-path="${f.path}" title="${f.name}">${f.name}</a>`;
+          }
+          h+=`</div></div>`;
+        }
+        h+=`</div></div>`;
+      }
+      nav.innerHTML=h;
+      // Attach click events (avoids apostrophe issues in inline onclick)
+      nav.querySelectorAll('.nav-lesson').forEach(el=>{
+        el.addEventListener('click',()=>{
+          const cls=el.dataset.cls,sub=el.dataset.sub,idx=parseInt(el.dataset.idx);
+          const file=DATA.structure[cls][sub][idx].file;
+          document.querySelector('.sidebar')?.classList.remove('mobile-open');
+          document.getElementById('mobileOverlay')?.classList.remove('show');
+          showFiche(cls,sub,file);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      const sidebar=document.querySelector('.sidebar');
+      const overlay=document.getElementById('mobileOverlay');
+      const menuBtn=document.getElementById('mobileMenuBtn');
+      const closeMobileMenu=()=>{sidebar.classList.remove('mobile-open');overlay.classList.remove('show')};
+      menuBtn.addEventListener('click',()=>{sidebar.classList.add('mobile-open');overlay.classList.add('show')});
+      overlay.addEventListener('click',closeMobileMenu);
+      document.getElementById('searchInput').addEventListener('input',e=>{
+        const q=e.target.value.toLowerCase();
+        document.querySelectorAll('.nav-lesson').forEach(l=>l.style.display=l.textContent.toLowerCase().includes(q)?'':'none');
+        if(q)document.querySelectorAll('.nav-class,.nav-subject').forEach(e=>e.classList.add('open'));
+      });
+    });
+
+    function showDashboard(){
+      CURRENT_FICHE=null;
+      const{stats,structure}=DATA;
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
+      document.getElementById('topbarActions').innerHTML='';
+      let cards='';
+      for(const[cls,subjects]of Object.entries(structure)){
+        const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
+        cards+=`<div class="class-card" data-cls="${cls}"><h3>${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</h3><div class="subject-list">${tags}</div></div>`;
+      }
+      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Terminale A & D — École Numérique Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-green"><i class="fas fa-file-pdf"></i></div><div class="stat-number" style="color:var(--green)">${stats.totalPdfs}</div><div class="stat-label">PDFs</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+      // Bind class card clicks
+      document.querySelectorAll('.class-card').forEach(el=>el.addEventListener('click',()=>showClass(el.dataset.cls)));
+      clearActive();
+    }
+
+    function showClass(cls){
+      CURRENT_FICHE=null;
+      const subjects=DATA.structure[cls];
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</span>`;
+      document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Retour</button>`;
+      let h=`<div class="subject-grid"><h2>${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${Object.values(subjects).reduce((s,a)=>s+a.length,0)} leçons</p>`;
+      let i=0;
+      for(const[sub,fiches]of Object.entries(subjects)){
+        h+=`<h3 style="margin:20px 0 10px;font-size:15px;color:var(--text-muted)">${getIcon(sub)} ${sub} (${fiches.length})</h3><div class="lessons-grid">`;
+        for(let fi=0;fi<fiches.length;fi++){
+          const f=fiches[fi];
+          h+=`<div class="lesson-card" data-cls="${cls}" data-sub="${sub}" data-idx="${fi}"><div class="lesson-icon ${getColor(i)}">${getIcon(sub)}</div><div><div class="lesson-name">${f.name}</div><div class="lesson-meta">${sub}</div></div></div>`;
+        }
+        h+=`</div>`;i++;
+      }
+      h+=`</div>`;
+      document.getElementById('content').innerHTML=h;
+      // Bind lesson card clicks
+      document.querySelectorAll('.lesson-card').forEach(el=>el.addEventListener('click',()=>{
+        const c=el.dataset.cls,s=el.dataset.sub,idx=parseInt(el.dataset.idx);
+        showFiche(c,s,DATA.structure[c][s][idx].file);
+      }));
+      clearActive();
+    }
+
+    async function showFiche(cls,sub,file){
+      document.getElementById('content').innerHTML='<div class="loading"><div class="spinner"></div>Chargement...</div>';
+      const name=file.replace('Fiche_','').replace('.md','');
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
+      CURRENT_FICHE={cls,sub,file};
+      try{
+        const data=await fetch(`/api/fiche/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`).then(r=>r.json());
+        const downloadUrl=`/api/download/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><a class="btn btn-green" href="${downloadUrl}" download><i class="fas fa-download"></i> Télécharger la fiche</a>`;
+
+        // Process HTML to render formulas nicely
+        let html=data.html;
+        // Convert formula blocks (📌 **formula**) into styled formula blocks
+        html=html.replace(/<blockquote>\s*<p>📌\s*<strong>(.*?)<\/strong><\/p>\s*<\/blockquote>/g,(m,f)=>{
+          return `<div class="formula-block">${f}</div>`;
+        });
+
+        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content">${html}</div><div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/public/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/public/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a></div></div>`;
+        clearActive();
+        const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
+        if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
+      }catch(e){
+        document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> Erreur</div>`;
+      }
+    }
+
+    function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    // ==================== LEARNING TOOLS HTML ====================
+    function getToolsBar(){
+      return `<div class="tools-bar">
+        <a class="tool-card" href="/public/flashcards.html"><div class="tool-icon">🃏</div><h4>Flashcards</h4><p>Révision espacée — méthode Ebbinghaus</p></a>
+        <a class="tool-card" href="/public/quiz.html"><div class="tool-icon">🎮</div><h4>Quiz Game</h4><p>QCM, Vrai/Faux, Quiz Dates</p></a>
+        <a class="tool-card" href="/public/quiz.html" onclick="sessionStorage.setItem('quizMode','dates')"><div class="tool-icon">📅</div><h4>Quiz Dates</h4><p>Spécial dates Histoire-Géo</p></a>
+      </div>`;
+    }
+
+    // ==================== AUDIO TTS ====================
+    let ttsActive = false;
+    document.getElementById('audioFab').addEventListener('click', () => {
+      if (ttsActive) { speechSynthesis.cancel(); ttsActive = false; document.getElementById('audioFab').classList.remove('speaking'); return; }
+      const ficheContent = document.querySelector('.fiche-content');
+      if (!ficheContent) return;
+      const chunks = ficheContent.innerText.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(s=>s.trim()).filter(Boolean).slice(0,80) || [];
+      if (!chunks.length) return;
+      let i = 0;
+      const playNext = () => {
+        if (!ttsActive || i >= chunks.length) {
+          ttsActive = false;
+          document.getElementById('audioFab').classList.remove('speaking');
+          return;
+        }
+        const utter = new SpeechSynthesisUtterance(chunks[i++]);
+        utter.lang = 'fr-FR'; utter.rate = 0.9;
+        utter.onend = playNext;
+        speechSynthesis.speak(utter);
+      };
+      ttsActive = true; document.getElementById('audioFab').classList.add('speaking');
+      playNext();
+    });
+
+    // ==================== PWA ====================
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/public/sw.js').catch(e => console.log('SW:', e));
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Fiches Résumé - Terminale A & D",
+  "short_name": "Fiches BAC",
+  "description": "Fiches de résumé, quiz et flashcards pour le BAC ivoirien",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/public/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

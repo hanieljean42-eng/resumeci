@@ -1,0 +1,465 @@
+Page 1 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Niveau : Terminales C, D
+Discipline : Physique-Chimie
+CÔTE D’IVOIRE –
+ÉCOLE NUMÉRIQUE
+THEME : MECANIQUE
+TITRE DE LA LEÇON : MOUVEMENT DU CENTRE D’INERTIE D’UN SOLIDE
+I. SITUATION D’APPRENTISSAGE
+Dans le car de transport le ramenant d’ABIDJAN, un élève de la Terminale C du Lycée Moderne
+Abengourou observe le mouvement d’une petite poupée suspendue au rétroviseur interne, par
+l’intermédiaire d’un fil inextensible. Il constate que :
+- la poupée reste fixe et le fil reste vertical lorsque le véhicule est immobile ;
+- la poupée s’incline vers l’arrière quand le car accélère ;
+- la poupée s’incline vers l’avant quand le car ralentit.
+Arrivé en classe, il informe ses camarades. Très émerveillés, ils cherchent à comprendre ces observations.
+Alors ils décident, sous la supervision de leur professeur de Physique-Chimie, de définir un référentiel
+galiléen, d’établir un lien entre l’accélération et les forces extérieures appliquées au système et d’appliquer
+le théorème du centre d’inertie.
+II. CONTENU
+1. LES RÉFÉRENTIELS GALILÉENS
+1.1 Définition
+Un référentiel galiléen est un référentiel dans lequel le principe de l’inertie est vérifié.
+1.2 Exemples
+• Le référentiel de Copernic ou référentiel héliocentrique
+Il a pour origine le centre du système solaire et pour axes, trois axes dirigés vers trois étoiles fixes.
+.
+• Le référentiel géocentrique
+Il a pour origine le centre d’inertie de la Terre. Ces axes sont ceux du référentiel de Copernic.
+• Le référentiel terrestre ou référentiel du laboratoire
+Le solide de référence est un objet immobile situé sur la Terre (un arbre, un mur, …). Il est supposé
+galiléen pour des expériences de courtes durées.
+2. THÉORÈME DU CENTRE D’INERTIE
+Énoncé du théorème du centre d’inertie
+Dans un référentiel galiléen, la somme vectorielle des forces extérieures appliquées à un solide est égale au
+produit de la masse de ce solide par le vecteur-accélération de son centre d’inertie :
+∑ 𝒇⃗ 𝒆𝒙𝒕 = 𝒎. 𝒂	⃗⃗𝑮
+
+-- 1 of 11 --
+
+Page 2 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Remarque :
+Si la somme des forces extérieures est nulle :∑ F⃗ext = O	 ⃗⃗⃗ 𝑎𝑙𝑜𝑟𝑠 a⃗ = 0⃗
+𝑎 = 𝑑𝑣
+𝑑𝑡 ⇒ {
+𝑣 = 0⃗ ; le système est immobile
+𝑣 = cst	⃗⃗⃗⃗⃗ ; lemouvement est uniforme.
+On retrouve alors le principe de l’inertie.
+3. THÉORÈME DE L’ÉNERGIE CINÉTIQUE
+Énoncé du théorème
+Dans un référentiel galiléen, la variation de l’énergie cinétique d’un solide entre deux instants est égale à
+la somme algébrique des travaux effectués entre les deux instants par toutes les forces extérieures
+appliquées au solide :
+𝐸𝐶 = 𝐸𝐶𝐵 − 𝐸𝐶𝐴 = ∑ 𝑊𝐴𝐵(𝑓𝑒𝑥𝑡).
+Activité d’application
+Pour chacune des affirmations suivantes, mets une croix dans la case qui correspond à la bonne réponse.
+N° Affirmations Vrai Faux
+1 Dans un référentiel galiléen, si la somme vectorielle des forces extérieures
+appliquées à un solide est nulle alors ce solide est nécessairement au repos.
+2 Les théorèmes de l’énergie cinétique et du centre d’inertie ne sont applicables
+que dans des référentiels galiléens.
+3 Un solide en mouvement rectiligne et uniforme peut être considéré comme un
+référentiel galiléen.
+4 Dans un référentiel galiléen, la somme vectorielle des forces extérieures
+appliquées à un solide en mouvement rectiligne et uniforme est nulle.
+5 Dans un référentiel galiléen, la variation de l’énergie cinétique d’un solide est
+égale à la somme des forces extérieures appliquées à ce solide.
+Solution
+N° Affirmations Vrai Faux
+1 Dans un référentiel galiléen, si la somme vectorielle des forces extérieures
+appliquées à un solide est nulle alors ce solide est nécessairement au repos. X
+2 Les théorèmes de l’énergie cinétique et du centre d’inertie ne sont applicables
+que dans des référentiels galiléens. X
+3 Un solide en mouvement rectiligne et uniforme peut être considéré comme un
+référentiel galiléen. X
+4 Dans un référentiel galiléen, la somme vectorielle des forces extérieures
+appliquées à un solide en mouvement rectiligne et uniforme est nulle. X
+5 Dans un référentiel galiléen, la variation de l’énergie cinétique d’un solide est
+égale à la somme des forces extérieures appliquées à ce solide. X
+
+-- 2 of 11 --
+
+Page 3 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+4. PROTOCOLE DE RÉSOLUTION D’UN PROBLÈME DE MÉCANIQUE
+Pour résoudre un problème de mécanique, il faut :
+- définir le système ;
+- choisir un référentiel galiléen convenable muni d’un repère orthonormé ;
+- faire le bilan ou l’inventaire des forces appliquées au système, avec un schéma si possible ;
+- appliquer le théorème du centre d’inertie ou le théorème de l’énergie cinétique selon le besoin.
+SITUATION D’ÉVALUATION
+Lors d’une séance de TP, ton groupe étudie le mouvement d’un mobile de masse m = 630 g sur un
+banc à coussin d’air de longueur
+AB = l = 2 m. Le banc est incliné d’un angle θ = 30° par rapport à l’horizontale comme l’indique la figure
+ci-dessous. Le mobile initialement au repos en A, y est lâché sans vitesse initiale.
+On donne : g = 10 m.s-2.
+Le Professeur vous demande de déterminer l’accélération du mobile et sa vitesse VB au point B. Tu es le
+rapporteur du groupe. Réponds aux questions suivantes :
+1. Donne :
+1.1 la définition d’un référentiel galiléen ;
+1.2 l’énoncé du théorème du centre d’inertie.
+2. Représente qualitativement les forces extérieures qui s’exercent sur le solide.
+3. Détermine l’accélération ax du mobile.
+4. Détermine la vitesse VB en utilisant le théorème de l’énergie cinétique.
+Résolution
+1.1 Un référentiel galiléen est un référentiel dans lequel le principe de l’inertie est vérifié.
+1.2 Dans un référentiel galiléen, la somme vectorielle des forces extérieures appliquées à un solide est égale
+au produit de la masse de ce solide par le vecteur-accélération de son centre d’inertie.
+2. Système : le solide.
+Référentiel d’étude : Référentiel terrestre supposé galiléen.
+Bilan des forces :
+θθ
+A
+A
+B
+B
+(S)(S
+𝑥𝑥
+𝑦𝑦
+
+-- 3 of 11 --
+
+Page 4 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+𝑃⃗ : Poids du solide ;
+𝑅⃗ : Réaction de la piste ;
+Représentation des forces.
+3. Appliquons le théorème du centre d’inertie au solide S.
+𝑅⃗ + 𝑃⃗ = m.𝑎
+Projection de cette relation vectorielle sur l’axe (A, x) :
+Rx + Px = max
+0 + m.g.sinθ = m.𝑎𝑥 d’où 𝑎𝑥= g.sinθ
+Le calcul donne 𝑎𝑥= 10×sin30° = 5 m.s–2
+4. Détermination de VB :
+Appliquons le théorème de l’énergie cinétique au solide S entre les points A et B :
+ECB – ECA = W(𝑃⃗ ) + W(𝑅⃗ )
+W(𝑅⃗ ) = 0 car 𝑅⃗ ⊥ (𝐴𝐵) ; W(𝑃⃗ ) = mglsinθ
+ECA = 0 car VA = 0 et ECB = 1
+2 𝑚𝑉𝐵
+2
+Le théorème devient 1
+2 𝑚𝑉𝐵
+2 = mglsinθ ; on tire 𝑉𝐵 = √2𝑔𝑙𝑠𝑖𝑛𝜃
+A.N : 𝑉𝐵 = √2
+10
+2
+0,5 = 4,5m/s²
+III. EXERCICES
+Exercice 1
+Complète le texte ci-dessous avec les mots et groupe de mots suivants :le théorème de l'énergie cinétique;
+des référentiels galiléens; le théorème du centre d'inertie; théorèmes.
+Un solide de masse m tombe d'une chute libre. En appliquant…………………………….dans le référentiel
+terrestre, on montre que son vecteur accélération 𝑎 =𝑔.Après une chute d'une hauteur h, on établit, en
+appliquant …………………………………… que sa vitesse v est telle que 𝑣2	⃗⃗⃗⃗ =2gh. Ces
+deux…………………………..qui ne s'appliquent que dans………………………………..sont très utilisés
+en Mécanique.
+•
+•
+•A
+B
+θ
+𝑹	⃗⃗
+𝑷	⃗⃗
+𝑺
+𝑦
+𝑥
+
+-- 4 of 11 --
+
+Page 5 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Solution
+Un solide de masse m tombe d'une chute libre. En appliquant le théorème du centre d'inertie dans le
+référentiel terrestre, on montre que son vecteur accélération 𝑎 =𝑔. Après une chute d'une hauteur h, on
+établit, en appliquant le théorème de l'énergie cinétique que sa vitesse est telle que 𝑣2	⃗⃗⃗⃗ =2gh. Ces deux
+théorèmes qui ne s'appliquent que dans des référentiels galiléens sont très utiles en Mécanique.
+Exercice 2
+Un solide S est lancé verticalement vers le haut. Au cours de sa montée, son vecteur accélération 𝑎:
+a) a le même sens que son vecteur-vitesse 𝑣.
+b) est opposé au vecteur –accélération de la pesanteur𝑔.
+c) a le même sens que le vecteur- accélération de la pesanteur𝑔.
+d) est un vecteur nul.
+Entoure la lettre correspondant à la proposition correcte.
+Solution
+c)
+Exercice 3
+Un solide ponctuel (S) de masse m= 100 g est abandonné sans vitesse initiale, en un point A. Il glisse sur
+une piste rectiligne AB incliné d’un angle θ = 30° par rapport à l’horizontale (Voir figure).
+On néglige les forces de frottement sur ce trajet.
+On donne : g = 10 m.s-2.
+1. Représente les forces extérieures qui agissent sur le solide.
+2. Détermine l’expression de l’accélération du solide en utilisant le théorème du centre d’inertie.
+3. Calcule la valeur de cette accélération.
+θ
+A
+B
+(S)
+𝑥
+𝑦
+
+-- 5 of 11 --
+
+Page 6 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Solution
+1. Système : le solide
+Référentiel d’étude : Référentiel
+terrestre supposé galiléen
+Bilan des forces :
+𝑃⃗ : Poids du solide
+𝑅⃗ : Réaction de la piste
+Représentation des forces
+2. Expression de l’accélération
+Appliquons le théorème du centre d’inertie : 𝑅⃗ + 𝑃⃗ = m.𝑎
+Projection sur l’axe (A, x) : 0 + m.gsinθ = m.𝑎𝑥 ; d’où 𝑎𝑥= g.sinθ
+3. Valeur de l’accélération
+𝑎𝑥= 10×sin30° = 5 m.s–2
+Exercice 4
+Au cours d’un voyage, tu empruntes un véhicule de transport en commun. Parvenu au sommet O d’une
+côte de longueur ℓ = 500 𝑚 et faisant avec l’horizontale un angle α = 20°.Ce véhicule de masse m = 800
+kg, tombe en panne. Le conducteur l’abandonne en cet endroit et part à la recherche d’un mécanicien pour
+le dépanner. Malheureusement, le frein à main du véhicule se desserre partiellement ; celui-ci descend alors
+et parvient au bas de la côte (au point A) avec une vitesse𝑣𝐴 = 15 𝑚. 𝑠−1en étant animé d’un mouvement
+supposé rectiligne et uniformément varié.
+La valeur de la résultante 𝑓 des forces de frottement qui s’exercent sur le véhicule est supposée constante
+tout au long du trajet OB. Cette force 𝑓 est parallèle à la route rectiligne et opposée au vecteur-vitesse
+instantanée du véhicule.
+Parvenu en A au bas de la côte, le véhicule continue son mouvement en ralentissant jusqu’au point B où il
+s’immobilise sous l’action des mêmes forces de frottements. (Voir figure ci-dessous)
+L’intensité de la pesanteur vaut g = 9,8 m.s–2.
+Tu racontes ta mésaventure à ton voisin de classe. Ce dernier te sollicite pour l’aider à déterminer la valeur
+des forces de frottement𝑓 et la distance d = AB parcourue par le véhicule sur le tronçon horizontal avant
+de s’arrêter au point B.
+1. Précise le système étudié.
+2. Représente qualitativement les forces extérieures appliquées au système étudié:
+2.1 sur le trajet OA ;
+2.2 sur le trajet AB.
+3. Exprime la valeur algébrique de l’accélération 𝑎du véhicule entre O et A:
+θ
+A
+B
+(S)
+𝑥
+𝑦
+𝐑	⃗⃗
+𝐏⃗⃗
+
+-- 6 of 11 --
+
+Page 7 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+3.1 en fonction de vA, v0et ℓ ;
+3.2 en fonction de m, g, f et α.
+4. Détermine la valeur :
+4.1 numérique de l’accélération 𝑎du véhicule entre O et A ;
+4.2 de l’intensité de la résultante 𝑓 des forces de frottement à partir de l’expression de la valeur algébrique
+de l’accélérationd’une part puis en appliquant le théorème de l’énergie cinétique d’autre part ;
+4.3 de la distance d = AB.
+Résolution
+1. Le système étudié est le véhicule.
+2. Représentation des forces extérieures appliquées au système :
+2.1 sur le trajet OA.
+Référentiel terrestre supposé galiléen
+Bilan des forces extérieures Représentation des forces extérieures
+𝑃⃗ : poids du véhicule ;
+𝑅⃗𝑁 : réaction normale de la piste ;
+𝑓 : résultante des forces de frottement.
+2.2 sur le trajet AB.
+Bilan des forces extérieures Représentation des forces extérieures
+𝑃⃗ : poids du véhicule ;
+𝑅⃗𝑁 : réaction normale de la piste ;
+𝑓 :résultante des forces de frottement.
+3. Expression de la valeur 𝑎𝑥 de l’accélération 𝑎 du véhicule :
+3.1 en fonction de vA, v0et ℓ :
+On a un mouvement rectiligne uniformément varié, d’où :
+𝑎𝑥 = ∆𝑣2
+2(𝑥𝐴−𝑥𝑂) = 𝑣𝐴
+2 −𝑣0
+2
+2.𝑙 .
+3.2 en fonction de m, g, f et α :
+Appliquons le théorème du centre d’inertie : 𝑅⃗𝑁+ 𝑃⃗ + 𝑓 = m.𝑎
+Projection sur (O,𝑖 ): 0 + m.g.sinα – f = m.𝑎𝑥 ; d’où 𝑎𝑥 = g.sinα – 𝑓
+𝑚
+4. Détermination de la valeur de :
+4.1 l’accélération 𝑎 du véhicule entre O et A : a=𝑎𝑥 =152−02
+2×500 ;
+𝑅⃗𝑁
+𝑓
+𝑃⃗
+𝑃⃗
+𝑅⃗𝑁
+𝑓
+𝑖
+𝑗
+
+-- 7 of 11 --
+
+Page 8 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+𝑎𝑥 = 0,225 m.s–2.
+4.2 la résultante 𝑓 des forces de frottement :
+• A partir de l’expression de a : On a : 𝑎𝑥= g.sinα – 𝑓
+𝑚 .
+On tire :f = m(gsinα – 𝑎𝑥)
+A.N :f = 800×(9,8 ×sin20° - 0,225). f = 2 501,4 N.
+• En appliquant le théorème de l’énergie cinétique entre O et A :
+𝐸𝐶𝐴 − 𝐸𝐶𝑂 = 𝑊(𝑓) + 𝑊(𝑅⃗𝑁) + 𝑊(𝑃⃗ ) ;
+𝑚.𝑣𝐴
+2
+2 − 0 = −𝑓. 𝑙 + 0 + 𝑚. 𝑔. 𝑙. 𝑠𝑖𝑛𝛼 ; 𝑓 = 𝑚(𝑔. 𝑠𝑖𝑛𝛼 − 𝑣𝐴
+2
+2.𝑙)
+A.N :f = 800×(9,8 × sin20° – 152
+2×500) ; f= 2 501,4 N.
+4.3 la distance 𝑙= AB :
+𝐸𝐶𝐵 − 𝐸𝐶𝐴 = 𝑊(𝑓) + 𝑊(𝑅⃗𝑁) + 𝑊(𝑃⃗ ) ;
+0 - 𝑚.𝑣𝐴
+2
+2 = - f.𝑙 + 0 + 0 ;𝑙 = 𝑚.𝑣𝐴
+2
+2.𝑓
+A.N :𝑙 = 800×152
+2×2501,4 = 36 m.
+Exercice 5
+Lors d’une séance d’exercices, ton professeur de Physique-Chimie soumet à ta classe la figure ci-dessous.
+Sur cette figure, un solide de mase m = 0,5 g initialement au repos est lancé sur une piste ACD parfaitement
+lisse en faisant agir sur lui, le long de la partie AB une force 𝐹 horizontale, de valeur constante F.
+La portion CD de la piste est un demi-cercle de centre O et de rayon r = 1 m.
+La résistance de l’air est négligeable.
+On donne : 𝐴𝐵 = 𝐿 = 1,5 𝑚; g = 10 𝑚. 𝑠−2.
+Le Professeur vous demande d’appliquer le théorème du
+centre d’inertie afin de déterminer la valeur minimale 𝐹0 de F
+pour que le solide quitte la piste au point K.
+1. Donne :
+1.1 la définition d’un référentiel galiléen ;
+1.2 l’énoncé du théorème du centre d’inertie.
+2. Représente qualitativement les forces extérieures qui s’exercent sur le solide :
+2.1 entre A et B ;
+2.2 entre B et C ;
+2.3 entre C et D.
+3. Etablis :
+3.1 l’expression de la vitesse 𝑣𝐵 du solide (S) au point B en fonction de 𝐹, 𝐿 et 𝑚 ;
+3.2 que 𝑣𝐶 = 𝑣𝐵 ;
+3.3 l’expression de la vitesse 𝑣𝑀 du solide (S) au point M en fonction de 𝐹, 𝐿, 𝑚, g, 𝑟et𝜃 ;
+3.4 l’expression de la valeur de la réaction 𝑅⃗ de la piste sur le solide au point M en fonction de 𝐹, 𝐿, 𝑚,
+g, 𝑟et𝜃.
+4. Détermine :
+4.1 la valeur minimale 𝐹0 de 𝐹 ;
+4.2 la vitesse du solide au point K.
+K
+
+-- 8 of 11 --
+
+Page 9 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Solution
+1.
+1.1. Référentiel galiléen
+Un référentiel galiléen est un référentiel dans lequel le principe de l’inertie est vérifié.
+1.2. Enoncé du théorème du centre d’inertie
+Dans un référentiel galiléen, la somme vectorielle des forces extérieures appliquées à un système
+est égale au produit de la masse de ce système par le vecteur-accélération de son centre d’inertie :
+∑ 𝑓𝑒𝑥𝑡 = 𝑚. 𝑎𝐺
+2. Représentation des forces extérieures appliquées au solide :
+2.1. Entre A et B
+Bilan des forces extérieures Représentation des forces extérieures
+𝑃⃗ : poids du solide ;
+𝑅⃗ : réaction de la piste ;
+𝐹 : force motrice.
+2.2. Entre B et C :
+Bilan des forces extérieures Représentation des forces extérieures
+𝑃⃗ : poids du solide ;
+𝑅⃗ : réaction de la piste.
+2.3 Entre C et D
+Bilan des forces extérieures Représentation des forces extérieures
+𝑃⃗ : poids du solide ;
+𝑅⃗ : réaction de la piste.
+𝑃⃗
+𝑅⃗
+𝐹
+B	A
+K
+𝑅⃗
+𝑃⃗
+ℎ
+𝑃⃗
+𝑅⃗
+C	B
+𝑗 𝑖
+
+-- 9 of 11 --
+
+Page 10 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+3.
+3.1 Expression de la vitesse 𝑣𝐵 du solide (S) au point B en fonction de 𝐹, 𝐿 et 𝑚 :
+Appliquons le théorème de l’énergie cinétique entre A et B dans le référentiel terrestre supposé galiléen.
+∆𝐸𝐶 = ∑ 𝑊(𝑓) ; 𝐸𝐶𝐵 − 𝐸𝐶𝐴 = 𝑊(𝐹 ) + 𝑊(𝑅⃗ ) + 𝑊(𝑃⃗ ) ⇒ 𝑚.𝑣𝐵
+2
+2 − 0 = 𝐹. 𝐿 + 0 + 0 ⟶ 𝑣𝐵 = √2.𝐹.𝐿
+𝑚
+3.2 Etablissons que 𝑣𝐶 = 𝑣𝐵 :
+Appliquons le théorème du centre d’inertie :𝑅⃗ + 𝑃⃗ + = m.𝑎
+Projection sur (B, 𝑖 ): 0 + 0 = m.𝑎𝑥 ⇒ 𝑎𝑥 = 0 m.s–2 ⟶𝑣 = 𝑐𝑜𝑛𝑠𝑡𝑎𝑛𝑡𝑒, 𝑑′𝑜ù 𝑣𝐶 = 𝑣𝐵
+N.B : on peut aussi appliquer le théorème de l’énergie cinétique.
+3.3 Expression de la vitesse 𝑣𝑀 du solide (S) au point M en fonction de 𝐹, 𝐿, 𝑚, g, 𝑟 et 𝜃 :
+Appliquons le théorème de l’énergie cinétique entre C et M :
+∆𝐸𝐶 = ∑ 𝑊(𝑓) ; 𝐸𝐶𝑀 − 𝐸𝐶𝐶 = 𝑊(𝑅⃗ ) + 𝑊(𝑃⃗ ) ⇒
+𝑚.𝑣𝑀
+2
+2 − 𝑚.𝑣𝐶
+2
+2 = 0 − 𝑚𝑔ℎ ; 𝑐𝑜𝑚𝑚𝑒 ℎ = 𝑟(1 − 𝑐𝑜𝑠𝜃)et𝑣𝐶 = √2.𝐹.𝐿
+𝑚
+On tire la relation : 𝑣𝑀 = √2.𝐹.𝐿
+𝑚 − 2. 𝑔. 𝑟(1 − 𝑐𝑜𝑠𝜃)
+3.4 Expression de la valeur de la réaction 𝑅⃗ de la piste sur le solide au point M en fonction de 𝐹, 𝐿, 𝑚,
+g, 𝑟 et 𝜃.
+Appliquons le théorème du centre d’inertie :𝑅⃗ + 𝑃⃗ + = m.𝑎
+Dans la base de Frenet, on a : R - P.cosθ = m.𝑎𝑛 = 𝑚.𝑣𝑀
+2
+𝑟
+⟶ 𝑅 = 𝑚. 𝑔. cosθ + 𝑚.𝑣𝑀
+2
+𝑟 ; comme 𝑣𝑀 = √2.𝐹.𝐿
+𝑚 − 2. 𝑔. 𝑟(1 − 𝑐𝑜𝑠𝜃), on tire la relation
+𝑅 = 2.𝐹.𝐿
+𝑟 − 𝑚. 𝑔(2 − 3. 𝑐𝑜𝑠𝜃).
+4. Détermination de :
+4.1 la valeur minimale 𝐹0 de 𝐹:
+En K on a θ = 90°
+Le solide quitte la piste en K, si 𝑅𝐾 = 0 𝑁 ;
+𝑅𝐾 = 2. 𝐹0. 𝐿
+𝑟 − 𝑚. 𝑔(2 − 3. 𝑐𝑜𝑠90°) = 0 ⇒ 2. 𝐹0. 𝐿
+𝑟 − 2. 𝑚. 𝑔 = 0 ⇒ 𝐹0 = 𝑚. 𝑔. 𝑟
+𝐿
+𝐹0 = 0,5 × 10 × 0,5
+1,5 = 1,67 𝑁
+4.2 la vitesse du solide au point K.
+𝑣𝐾 = √2.𝐹0.𝐿
+𝑚 − 2. 𝑔. 𝑟(1 − 𝑐𝑜𝑠90°) = √2.𝑚.𝑔.𝑟
+𝐿 .𝐿
+𝑚 − 2. 𝑔. 𝑟 = 0 𝑚. 𝑠−1⟶𝑣𝐾 = 0 𝑚. 𝑠−1
+IV. DOCUMENTATION
+Qu’est-ce que le centre d’inertie ?
+Le centre d'inertie d'un objet, ou centre de masse, est le point de l'espace où l'on applique les effets
+d'inertie, c'est-à-dire le vecteur variation de quantité de mouvement.
+Pour mieux comprendre cette notion, il faut se dire que par exemple, si l'on veut faire tourner l'objet
+autour d'un axe de direction donnée, alors l'axe pour lequel il faut fournir le moins d'effort est l'axe
+passant par le centre d'inertie. Si l'axe de rotation ne passe pas par le centre d'inertie, cela génère des
+vibrations dans le système.
+Dans le cas où l'on peut considérer le champ de gravitation uniforme, le centre d'inertie est confondu
+avec le centre de gravité. On le note de fait G.
+
+-- 10 of 11 --
+
+Page 11 sur 11	ecole-ci.online (Ce document ne peut être vendu sous aucune condition- Tout contrevenant s’expose à des poursuites judiciaires
+Pour un système de points matériels M discrets assortis de leurs masses (Mi, mi), le centre d'inertie est
+le barycentre des masses.
+Le centre de masse de deux points (M1, m1) et (M2, m2) se trouve sur le segment de droite ouvert
+] M1 M2 [.
+Il ne faut pas confondre le centre d’inertie au centre de gravité.
+En effet, le centre de gravité est le point où la résultante des forces de gravité s’applique sur un solide.
+Mais on l’assimile au centre d’inertie par une bonne approximation liée au fait que dans la plupart des
+cas, le champ de gravitation auquel le corps est soumis peut être considéré comme uniforme dans le
+corps considéré.
+D’ailleurs, les systèmes que nous étudions sont représentés par un point ; le centre d’inertie.
+Pour plus d’exercices de renforcement, se référer aux sites suivants :
+https://ressources.unisciel.fr DAEU/physique/
+https://www.camerecole.org/classes/
+
+-- 11 of 11 --
+

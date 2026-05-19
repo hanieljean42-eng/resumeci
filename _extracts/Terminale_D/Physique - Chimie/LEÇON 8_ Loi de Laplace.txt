@@ -1,0 +1,452 @@
+Page 1 sur 13	école-ci.online
+Niveau : Terminales CDE
+Discipline : Physique-Chimie CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME: ELECTRICITE
+TITRE DE LA LEÇON : LOI DE LAPLACE
+I. SITUATION D’APPRENTISSAGE
+Lors de la lecture d’une revue scientifique, un élève de la classe de Terminale du Lycée Municipal 2
+Attécoubé, apprend que lorsqu’une tige métallique parcourue par un courant électrique continu est plongée
+dans un champ magnétique, elle subit une force électromagnétique. L’élève partage cette information avec
+ses camarades de classe. Voulant en savoir plus, ces élèves entreprennent avec l’aide de leur professeur
+de s’informer sur la force de Laplace, de déterminer ses caractéristiques et d’analyser quelques
+applications de la loi de Laplace.
+II. CONTENU DE LA LEÇON
+1. Mise en évidence expérimentale de la Force de Laplace
+1.1 Expérience de la tige de Laplace
+1.1.1. Dispositif
+1.1.2. Observations
+A la fermeture de l’interrupteur K, on fait les observations suivantes :
+• le conducteur en cuivre dévie ;
+• cette déviation change de sens si l’on modifie le sens du champ magnétique ou le sens du courant
+(changement de bornes) :
+• le conducteur reprend sa position si on supprime 𝐵⃗ ou si on ouvre l’interrupteur K.
+1.1.3. Conclusion
+Le conducteur (ou la tige) subit une force électromagnétique. Le sens de cette force dépend de ceux
+de 𝐵⃗ et I
+
+-- 1 of 13 --
+
+Page 2 sur 13	école-ci.online
+1.2 Expérience des Rails de LAPLACE
+1.2.1 Dispositif
+Deux rails horizontaux et parallèles sont reliés aux
+bornes d’un générateur de courant constant. Une barre
+conductrice est placée sur les rails et ferme le circuit.
+L’ensemble (rails+ conducteur) est placé dans l’entrefer
+d’un aimant en U. (voir figure 1)
+1.2.2 Observations
+Lorsque la barre est parcourue par un courant électrique constant, elle se met en mouvement. Le sens
+de son déplacement change selon le sens du courant électrique ou celui du champ B	⃗⃗.Sa vitesse
+augmente avec l’intensité de courant.
+1.2.2 Interprétation
+La barre est soumise à une force électromagnétique dont la valeur dépend de l’intensité I du courant
+électrique et celle du champ magnétique B	⃗⃗.
+1.2.3 Conclusion
+Un conducteur placé dans un champ magnétique et traversé par un courant électrique constant subit
+une force électromagnétique appelée force de LAPLACE.
+2. Loi de Laplace
+2.1 Énoncé
+2.2 Caractéristiques de la force de Laplace
+Les caractéristiques de la force de Laplace sont :
+- Point d’application : le milieu de la partie du conducteur placée dans
+le champ magnétique
+- Direction : la perpendiculaire au plan formé par le conducteur
+rectiligne et le champ 𝐵⃗
+- Sens : le sens de 𝐹 est tel que le trièdre ( ℓ⃗ , 𝐵⃗ , 𝐹 ) est direct.
+Figure 1
+Un conducteur rectiligne de longueurℓ, parcouru par un courant électrique constant d’intensité I, placé dans
+un champ magnétique uniforme 𝐵⃗ , est soumis à une force 𝐹 appelée force de LAPLACE d’expression :
+𝐹 = 𝐼ℓ⃗ ∧ 𝐵⃗
+
+-- 2 of 13 --
+
+Page 3 sur 13	école-ci.online
+Le sens de 𝐹	 ⃗⃗⃗ est déterminé par plusieurs règles, dont celle des trois doigts de la main droite
+• Si l’index indique le sens du courant électrique I ;
+• et le majeur indique le sens de 𝐵⃗ ;
+• alors le pouce indique le sens de 𝐹 .
+- valeur : 𝐹 = 𝐼. ℓ. 𝐵|𝑠𝑖𝑛𝛼| avec 𝛼 = ( ℓ⃗ , 𝐵⃗	 ̂ )
+Pour ℓ⃗ ⊥ 𝐵⃗ : 𝛼 = (ℓ⃗ , 𝐵⃗	 ̂ ) = 𝜋
+2 ⇒ 𝑠𝑖𝑛𝛼 = 1 donc 𝐹 = 𝐼. ℓ. 𝐵
+Activité d’application
+Représente sur chacun des conducteurs placés dans l’espace champ magnétique 𝐵	 ⃗⃗⃗ délimité par le
+rectangle, la force de LAPLACE.
+CORRECTION
+En utilisant la règle des trois doigts de la main droite
+⊗ 𝐵	⃗
+⊙ 𝐵	⃗	 ⊙ 𝐵	⃗	𝑭	⃗⃗
+𝑭	⃗⃗
+𝑭	⃗⃗
+Règle de la main droite
+
+-- 3 of 13 --
+
+Page 4 sur 13	école-ci.online
+3. Applications de la loi de Laplace
+3.1 Balance de Cotton ;
+3.1.1 Schéma et description
+Elle comprend :
+- un bras de fléau supportant un
+plateau ;
+- un circuit électrique OCADE fixé sur
+l’autre bras de fléau.
+La partie CADE est plongée dans le champ
+magnétique à mesurer. 𝐶𝐴	̂	 et 𝐷𝐸	̂	 sont des arcs
+de cercle de centre O.
+La balance est mobile autour de l’axe horizontal
+() passant par O, perpendiculaire au plan de
+figure. Elle est équilibre en l’absence de courant
+électrique.
+3.1.2 Détermination de la valeur du champ magnétique
+• Système : ensemble (fléau + plateau + masse)
+• Référentiel terrestre supposé galiléen
+• Bilan des forces extérieures au système :
+- La réaction 𝑅⃗ ,
+- les poids 𝑃⃗ , 𝑃⃗0,
+- les forces de Laplace 𝐹 , 𝐹1 et 𝐹	⃗⃗⃗2
+• À l’équilibre, on a ∑ 𝑀(∆)(𝐹𝑒𝑥𝑡) = 0
+𝑀(∆)(𝑃⃗ ) + 𝑀(∆)(𝑅⃗ ) + 𝑀(∆)(𝑃⃗0) + 𝑀(∆)(𝐹 ) + 𝑀(∆)(𝐹1) + 𝑀(∆)(𝐹2) = 0
+Compte tenu de la forme des conducteurs AC et DE (arcs de cercle de centre O), les moments des forces
+𝑅⃗ , 𝐹1 ,𝐹2et 𝑃⃗0sont nuls car leurs droites d’action coupe l’axe de rotation (∆) en O.
+𝑀(∆)(𝑃⃗ ) + 𝑀(∆)(𝐹 ) = 0
+−𝑃 × 𝑑′ + 𝐹 × 𝑑 = 0 ⟺ 𝐹 × 𝑑 = 𝑃 × 𝑑′
+Or 𝐹 = 𝐼ℓ𝐵 et 𝑃 = 𝑚𝑔
+𝐼ℓ𝐵 = 𝑚𝑔 ⟹ 𝐵 = 𝑚𝑔𝑑′
+𝐼ℓ𝑑
+Pour 𝑑’ = 𝑑 alors 𝑩 = 𝒎𝒈
+𝑰𝓵
+3.1.3 Intérêt du dispositif
+Il permet de déterminer la valeur du champ magnétique 𝐵⃗
+
+-- 4 of 13 --
+
+Page 5 sur 13	école-ci.online
+3.2 Roue de Barlow
+3.2.1 Schéma et description
+La roue de Barlow est constituée d’un disque de
+cuivre, mobile autour d’un axe horizontal ∆ ; cet
+axe est relié à l’une des bornes d’un générateur de
+tension continue. L’autre borne est reliée à une
+cuve contenant une solution conductrice, lui-même
+en contact avec le disque. Un aimant en U crée,
+autour de la portion basse du disque, un champ
+magnétique uniforme 𝐵⃗ .
+3.2.2 Fonctionnement
+A la fermeture du circuit, le rayon qui plonge dans la solution conductrice est traversé par le courant I et
+subit la force de la Laplace. Si l’intensité de 𝐹 est grande, ce rayon sort de la solution et un autre y
+pénètre. Les rayons se suivent ainsi les uns après les autres dans la solution et l’ensemble tourne dans le
+sens de 𝐹 .
+3.3 Haut-parleur
+Un haut-parleur est un appareil qui transforme des courants
+électriques en ondes sonores.
+Il est constitué d’un aimant, d’une bobine et d’une
+membrane. La membrane est solidaire de la bobine. Les
+variations du courant électrique dans la bobine créent une
+force (force de Laplace) qui fait vibrer la membrane.
+Cette vibration de la membrane crée le son.
+SITUATION D’ÉVALUATION
+Au cours d’une séance de T.P. un groupe d’élèves de terminale, sous la supervision de leur professeur de
+Physique – Chimie, réalise le montage schématisé ci-contre. OA est une tige de cuivre mobile autour de
+l’axe horizontal (). Le groupe veut déterminer l’angle de déviation 𝛼 du fil dans différentes situations.
+Les parties 1 et 2 sont indépendantes.
+1. Première partie
+Précise ce qui se passe au niveau de la tige dans chacun des
+cas suivants :
+1.1 le circuit est fermé et le champ magnétique𝐵⃗ existe ;
+1.2 on intervertit les bornes du générateur, en présence du
+même champ magnétique𝐵⃗ ;le circuit étant fermé ;
+1.3 le circuit est fermé et le champ magnétique est supprimé ;
+1.4 le circuit est ouvert en présence du champ magnétique 𝐵⃗ .
+(∆)
+
+-- 5 of 13 --
+
+Page 6 sur 13	école-ci.online
+2. Deuxième partie
+Un élève du groupe fixe la valeur de 𝐵⃗ à 5.10-2T et I = 5A. La tige OA de longueur ℓ = 20 𝑐𝑚 est
+entièrement plongée dans le champ 𝐵⃗ . La masse de la tige est m = 10 g.
+2.1 Fais le bilan des forces s’exerçant sur la tige OA. Représente-les sur un schéma.
+2.2 Écris les conditions d’équilibre de la tige OA.
+2.3 Détermine l’inclinaison 𝛼 de la tige OA par rapport à la verticale.
+On donne g = 10 m.s-2
+Correction
+1. Première partie
+1.1 Circuit fermé et la valeur de 𝐵⃗ est non nulle
+La tige rectiligne de cuivre (tige OA) est déviée
+1.2 On intervertit les bornes du générateur et la valeur de 𝐵⃗ est non nulle.
+La tige est déviée dans l’autre sens.
+1.3 Circuit fermé et la valeur de 𝐵⃗ est nulle
+La tige reste dans sa position d’équilibre verticale.
+1.4 Circuit ouvert et la valeur de 𝐵⃗ est non nulle
+La tige reste dans sa position d’équilibre verticale
+2. Deuxième partie
+2.1 Le bilan et représentation des forces
+Système : tige OA
+Bilan des forces extérieures à la tige OA
+• La réaction 𝑅⃗ du support
+• Le poids de la tige 𝑃⃗
+• La force de LAPLACE 𝐹
+2.2 Les conditions d’équilibre de la tige OA autour d’un axe fixe (∆).
+Lorsque la tige OA est en équilibre autour d’un axe de rotation(∆) fixe alors :
+∑ 𝐹(𝑒𝑥𝑡) = 0⃗&
+∑ 𝑀(∆)(𝐹𝑒𝑥𝑡) = 0
+2.3 Détermination de l’inclinaison𝛼 de la tige OA par rapport à la verticale.
+𝑀(∆)(𝑃⃗ ) + 𝑀(∆)(𝐹 ) + 𝑀(∆)(𝑅⃗ ) = 0
+𝛼
+𝛼
+𝑭	⃗⃗
+𝑹	⃗⃗
+𝑷	⃗⃗
+𝑶
+𝑨
++
+
+-- 6 of 13 --
+
+Page 7 sur 13	école-ci.online
+−𝐹 × ℓ
+2 + 𝑃 × ℓ
+2 𝑠𝑖𝑛𝛼 = 0 ⟺ 𝐹 = 𝑃 × 𝑠𝑖𝑛𝛼
+Or 𝐹 = 𝐼ℓ𝐵 et 𝑃 = 𝑚𝑔 alors 𝐼ℓ𝐵 = 𝑚𝑔𝑠𝑖𝑛𝛼
+𝑠𝑖𝑛𝛼 = 𝐼ℓ𝐵
+𝑚𝑔 𝑑′𝑜ù 𝛼 = sin−1( 𝐼ℓ𝐵
+𝑚𝑔) A.N 𝛼 = sin−1( 5×0,2×5.10−2
+10×10.10−3 ) 𝑠𝑜𝑖𝑡𝛼 = 30°
+III. EXERCICES
+Exercice 1 :
+Un conducteur rectiligne de 0,4m de longueur et parcouru par un courant constant d’intensité 12A est
+placé dans un espace où règne un champ magnétique uniforme 𝐵	 ⃗⃗⃗ de valeur B=0,25T.
+Déterminer la valeur de la force magnétique qui s’exerce sur le conducteur quand il fait avec les lignes
+de champ un angle de 30° puis de 45°.
+Solution:
+L'expression de la force de Laplace est 𝐹 =I𝑙 𝐵⃗
+En norme, on a F=IlBsin(I𝑙 ,𝐵⃗ )=IlBsin
+A.N. Si =30° F=0.6N
+Si =45° F=0.86N
+Exercice 2
+Une balance de Cotton possède un conducteur actif de 3cm traversé par un courant de 8A et placé
+perpendiculairement au vecteur-champ B dont on veut mesurer la valeur.
+Déterminer la masse m du corps à placer dans le plateau pour équilibrer la balance lorsque B= 0,5T ;
+Solution :
+Dans la balance de cotton, l'expression de la masse est donnée par la relation :
+m = 𝐼𝑙𝐵
+𝑔 A.N. m=0.012kg
+
+-- 7 of 13 --
+
+Page 8 sur 13	école-ci.online
+Exercice 3
+Une portion de conducteur de longueur d, traversé par un courant électrique constant d’intensité I, est
+plongée dans un espace où règne champ magnétique uniforme 𝐵⃗ .
+1. Représente la force de Laplace dans chaque cas.
+2. Exprime la valeur de la force dans chaque cas.
+3. Détermine le moment de la force de Laplace par rapport à un axe passant par Ai et parallèle
+au champ magnétique.
+On donne : d = 20cm ; I = 500 mA ; B = 0,4 T.
+Solution:
+1er cas: 1. Représentation de 𝐹 2eme cas: 1. Représentation de 𝐹
+2. Valeur de 𝐹 2. Valeur de 𝐹
+F=IdB=0.04N F=IdB=0.04N
+Moment de 𝐹 / A1 Moment de 𝐹 / A2
+M (𝐹 )=F*d/2=0.004 N.m M (𝐹 )=F*d/2=.004N.m
+3eme cas
+1. Représentation de 𝐹
+I
+𝐵⃗ I
+I
+𝐵⃗ 𝐵⃗
+2d
+A1
+A2
+A3 A4
+𝐹
+𝐹
+𝐹
+
+-- 8 of 13 --
+
+Page 9 sur 13	école-ci.online
+2. Valeur de 𝐹 : F=IdB=0.08N
+3. Moment de 𝐹 : M (𝐹 )=F*d=0.008N.m.
+Exercice 4 : BALANCE DE COTTON
+Tu es élève en classe de TC. Ton groupe de TP est choisi est choisi pour déterminer la valeur du champ
+magnétique 𝐵⃗ dans l’entrefer d’un aimant en U. Pour cela votre professeur de Physique-Chimie met à
+votre disposition le dispositif de la balance de Cotton et tout le matériel nécessaire. Le groupe réalise le
+dispositif expérimental et sous la supervision du professeur, il effectue les mesures dont les résultats sont
+consignés dans le tableau suivant.
+Echelle : 2cm ↔ 5 mg ; 2 cm ↔ 0,75 A
+On donne g = 10m.s-2 ; l = CD = 2,9 cm.
+En tant que porte-parole du groupe il t’est demandé de répondre aux questions suivantes.
+1- Indique sur le schéma le sens du champ magnétique créé par l’aimant.
+2- Montre que les forces de Laplace s’exerçant sur les portions AD et BC n’ont aucune
+influence sur l’équilibre de la balance.
+3- Exprime l’intensité I du courant dans le dispositif expérimental en fonction de B, l, g et m.
+4- Tracer la courbe I = f (m)
+5- Déduire de cette courbe la valeur B du champ magnétique.
+Solution:
+1. I va de C à D et la force magnétique est descendant. Selon l'une des règle,𝐵⃗ est sortant.
+2. Les forces s'exerçant sur les parties AD et BC (arc de cercle) ont leur droite d'action rencontre
+l'axe de rotation du fléau donc elles n'ont aucune influence.
+I(A) 0,74 1,50 2,35 3,20 3,90 4,80
+m (mg) 0,5 1 1,5 2 2,5 3
+L
+A
+B
+C D
+L
+I
+I
+ℓ m
+Zone d’action de
+
+-- 9 of 13 --
+
+Page 10 sur 13	école-ci.online
+3. En appliquant le théorème des moments, on a:
+M (𝐹 ) + M(𝑃⃗ )=0 ce qui donne I l B=mg d'où I=𝑚𝑔
+𝑖𝐵
+4. Tracé de la courbe I=f(m)
+C'est une droite qui passe par l'origine du repère donc I est proportionnel à m: I=k.m.
+Déterminons le coefficient de proportionnalité k.
+K= 3.90−1.50
+0.0025−0.0010=1600A/kg
+5. Par identification,
+I=k.m= 𝑔
+𝑙𝐵m ce qui donne k= 𝑔
+𝑙𝐵 d'où B= 𝑔
+𝑘𝑙 A.N. B=0,215T
+Exercice 5 : TIGE DE LAPLACE
+La coordination régionale disciplinaire de physique-chimie organise chaque année un concours qui
+oppose les élèves des classes de TC des différents établissements d’enseignement secondaire.
+Au cours de cette activité il est demandé aux élèves rapidité et justesse des réponses données. Les élèves
+seront notés et le vainqueur désigné sera le groupe qui aura eu la plus grande note.
+Le libellé du sujet à traiter est le suivant :
+Un conducteur de longueur l et de masse m, est susceptible de tourner autour d’un axe passant par le
+point A. Dans sa position d’équilibre, le conducteur fait un angle α avec la verticale. Il est alors parcouru
+par un courant constant d’intensité I. La portion du conducteur soumise au champ magnétique est
+symétrique par rapport à son centre d’inertie G.
+Données : m = 20 g ; g = 10 N/kg ; h = 5 cm ; B = 0,5 T.  = 10°
+Tu es candidat à ce concours et tu rends compte à tes camarades de classe.
+1. Exprime l’intensité de la force de Laplace qui agit sur le conducteur en fonction de α, I, h et B.
+2. Représente sur le schéma, les forces agissant sur le conducteur.
+3. Ecris la relation entre les moments de ces forces traduisant l’équilibre du conducteur.
+4. Déduis-en l’expression de l’intensité I du courant en fonction de m, g, α, h et B.
+m (mg)
+I(A)
+
+-- 10 of 13 --
+
+Page 11 sur 13	école-ci.online
+5. Calcule I.
+1. F=IlB avec h=lcosα d’où l= ℎ
+𝑐𝑜𝑠α et F= 𝐼ℎ𝐵
+𝑐𝑜𝑠α
+2. Les forces réagissant sur la tige
+• Force de Laplace 𝐹
+• Poids du conducteur 𝑃⃗
+• Réaction du support 𝑅⃗
+3. A l’équilibre de la balance : ΣM (𝐹 ext.)=0
+M(𝑹	⃗⃗ )=0 car 𝑹	⃗⃗ rencontre l’axe de rotation
+M (𝑷	⃗⃗ )= 𝒎𝒈𝒍𝒔𝒊𝒏α
+𝟐
+M (𝑭	⃗⃗ ) = - 𝐼ℎ𝐵𝑙
+2𝑐𝑜𝑠α
+ΣM (Fext.)=0 soit 𝒎𝒈𝒍𝒔𝒊𝒏α
+𝟐 - 𝐼ℎ𝐵𝑙
+2𝑐𝑜𝑠α = 0
+4.
+I= 𝒎𝒈𝒔𝒊𝒏𝟐α
+𝟐𝒉𝑩
+A.N. I=1,36 A
+IV. DOCUMENTATION
+COURANTS DE FOUCAULT
+On appelle courants de Foucault les courants électriques créés dans une masse conductrice, soit par la
+variation au cours du temps d'un champ magnétique extérieur traversant ce milieu (le flux du champ à
+travers le milieu), soit par un déplacement de cette masse dans un champ magnétique. Ils sont une
+conséquence de l'induction électromagnétique.
+Les courants de Foucault sont responsables d'une partie des pertes (dites pertes par courants de
+Foucault) dans les circuits magnétiques des machines électriques alternatives et des transformateurs.
+C'est la raison pour laquelle les circuits magnétiques sont constitués de tôles feuilletées afin de limiter
+ces courants et les pertes par effet Joule qui en découlent, ce qui améliore le rendement global des
+transformateurs.
+Le champ magnétique variable au cours du temps est responsable de l'apparition d'une force
+électromotrice à l'intérieur du milieu conducteur. Cette force électromotrice induit des courants dans la
+masse. Ces courants ont deux effets :
+h G
+I
+α
+A
+C
+
+-- 11 of 13 --
+
+Page 12 sur 13	école-ci.online
+• ils créent un champ magnétique qui s'oppose à la variation du champ magnétique extérieur
+(loi de Lenz) ;
+• ils provoquent un échauffement par effet Joule de la masse conductrice d'autant plus fort que la
+vitesse entre l'inducteur et la pièce conductrice est importante.
+Lorsque la variation de flux est due à un déplacement du milieu devant un champ magnétique constant,
+les courants de Foucault sont responsables de l'apparition de forces de Laplace qui s'opposent au
+déplacement, d'où l'effet de freinage observé sur les systèmes utilisant ce genre de dispositif.
+Freinage
+Frein à courants de Foucault sur un train rapide japonais Shinkansen.
+Schéma d'un disque de frein de Foucault actuel.
+Le premier brevet de ralentisseur électromagnétique a été déposé par Steckel en 19032. Raoul Sarazin a
+réalisé en 1936 la première application pratique sur véhicule d'un ralentisseur utilisant le principe des
+courants de Foucault2.
+Des systèmes de freinage à courants de Foucault sont utilisés notamment sur les véhicules poids
+lourds3 et sur les autocars sous le nom de « ralentisseur », ou sous le nom commercial Telma1.
+Ils sont constitués d'électroaimants fixes (stator) induisant des courants de Foucault dans des disques
+conducteurs (rotor) entraînés par les roues. Lorsque les électroaimants sont mis sous tension, les
+courants de Foucault induits dans les disques génèrent des forces de Laplace s'opposant au mouvement,
+donc générant un couple de freinage.
+Contrairement aux freins classiques qui dissipent l'énergie par frottement, le freinage électromagnétique
+fonctionne sans contact, donc sans usure de garniture. Ces freins nécessitent peu de réglage. Bien que
+l'énergie de freinage reste dissipée sous forme de chaleur (par effet Joule), ils sont moins sensibles à
+l'échauffement. Ils sont de ce fait obligatoires sur les véhicules lourds pour produire un freinage
+d’endurance notamment en montagne ou en situations d'arrêts fréquents. Le freinage étant généré par la
+vitesse des disques, ils ne permettent en aucun cas l'immobilisation d'un véhicule jusqu'à l'arrêt complet.
+C'est pour cela qu'ils ne fonctionnent qu'en complément de freins conventionnels.
+
+-- 12 of 13 --
+
+Page 13 sur 13	école-ci.online
+Dans les chemins de fer, la rame à grande vitesse ICE 3 de la Deutsche Bahn utilise un système de freins
+à courant de Foucault comme système de frein de service sur certaines lignes nouvelles et comme
+système de freinage d'urgence ailleurs.
+On peut leur reprocher que l'énergie est dissipée par effet Joule sous forme de chaleur et donc en pure
+perte, contrairement au freinage régénératif des véhicules hybrides qui la valorisent en électricité
+stockable.
+Chauffage
+Le chauffage par induction est produit par les courants de Foucault induits dans la pièce à chauffer. Ce
+type de chauffage est donc réservé aux matériaux conducteurs d’électricité. Il est par exemple utilisé
+dans les plaques de cuisson à induction, ou en métallurgie, où les fours à induction peuvent chauffer les
+lingots de métal jusqu'à leur température de fusion.
+Brasage
+Dans le cas du brasage par induction, on place les éléments à braser dans un champ électromagnétique
+puissant pour chauffer les pièces ainsi que le métal d'apport.
+Autres applications
+Ancien compteur électrique français (EDF).
+On utilise les courants de Foucault pour :
+• comptabiliser la consommation électrique, dans les anciens compteurs ERDF (à roue dentée) ;
+• réaliser des capteurs de distance sans contact. Ils sont généralement constitués d'une bobine excitée à
+haute fréquence (de 200 kHz à 2 MHz) ; la proximité d'une pièce conductrice en modifie
+l'impédance ; la mesure de cette impédance permet de déterminer la distance de la pièce mesurée ;
+• le contrôle non destructif, par exemple pour la détection des fissures dans les pièces métalliques
+comme les rails ferroviaires ou les pièces métalliques d'avion soumises à des contraintes répétées.
+En cas de défaut interne, les courants de Foucault sont différents, ce qui se traduit par une
+modification du champ magnétique induit. Un exemple est le contrôle de la qualité de fabrication
+des lames des armes d'escrime sportive5 ;
+• afficher la vitesse d'un véhicule par tachymètre : un aimant est relié à la sortie de la boite de
+vitesses et entouré d'un tube fait d'un métal conducteur allant de ladite boite jusqu'au compteur sur
+lequel est fixé une aiguille. Le tube, pivotant autour de son axe, est retenu par un ressort en spirale
+chargé de ramener l'aiguille à zéro. Plus la roue tourne vite, plus la force exercée sur la rotation du
+tube est grande, et plus l'aiguille du compteur s'éloigne de sa position initiale ;
+• le fonctionnement de certaines dynamos de vélo : un aimant est mis en rotation par l'effet des
+courants de Foucault dans la jante de la roue. Cet aimant permet ensuite de générer de l’énergie pour
+alimenter une lumière6. Contrairement aux dynamos traditionnelles, l'entrainement de l'aimant se fait
+ainsi sans contact.
+Source : Wikipédia
+
+-- 13 of 13 --
+

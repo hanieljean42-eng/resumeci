@@ -1,0 +1,428 @@
+MON ECOLE A LA MAISON
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME : fonctions numériques
+LEÇON 8 : PRIMTIVES ET CALCUL INTEGRAL
+A- SITUATION D’APPRENTISSAGE
+Le ministère a entrepris la construction d’une piscine
+dans l’enceinte d’un lycée d’excellence. L’entreprise
+chargée de l’ouvrage a affiché une image accompagnée
+d’un schéma de ce que sera cette piscine (voir image ci-
+contre).
+Rimon élève de TA1 et amateur de natation, veut
+comparer la taille de la piscine de son lycée à celle du
+lycée professionnel de la ville. Il tente de calculer son
+aire mais n’y arrive pas. Il pose le problème à ses
+camarades de classe qui décident de l’aider à déterminer
+l’aire totale de la piscine en construction.
+B- RESUME DE COURS
+𝚰- NOTION DE PRIMITIVES
+1) Primitives d’une fonction
+Définition
+Soit 𝑓 une fonction définie sur un intervalle Ι.
+On appelle primitive de 𝑓 sur Ι, toute fonction F dérivable sur Ι telle que 𝑓 soit la dérivée de F
+sur I. On a : pour tout 𝒙 ∈ 𝚰, 𝑭′(𝒙) = 𝒇(𝒙)
+Remarque :
+Si F est une primitive de 𝑓 sur I, alors toute primitive de 𝑓 sur Ι est de la forme 𝑥 ⟼ 𝐹(𝑥) +
+𝑐 où c est un élément de ℝ.
+Exercice de fixation
+Soit 𝑓 la fonction définie sur ℝ par 𝑓(𝑥) = 2𝑥 + 5. On donne les fonctions 𝐹, 𝐺, 𝐻 et 𝑃
+dérivables sur ℝ telles que : 𝐹(𝑥) = 𝑥2; 𝐺(𝑥) = 𝑥2 + 5𝑥 − 7 ; 𝐻(𝑥) = 𝑥2 + 5𝑥 ;
+𝑃(𝑥) = 𝑥2 + 5𝑥 + 𝑥3.
+Parmi les fonctions 𝐹, 𝐺, 𝐻 et 𝑃 cite celles qui sont des primitives de 𝑓.
+SECONDAIRE
+Tle A
+MATHEMATIQUES
+
+-- 1 of 9 --
+
+Solution :
+𝐹′(𝑥) = 2𝑥 ; 𝐺′(𝑥) = 2𝑥 + 5 ; 𝐻′(𝑥) = 2𝑥 + 5 et 𝑃′(𝑥) = 2𝑥 + 5 + 3𝑥2
+On vérifie que pour tout 𝑥 ∈ ℝ , 𝐺′(𝑥) = 𝑓(𝑥) et 𝐻′(𝑥) = 𝑓(𝑥).
+Donc G et F sont des primitives de 𝑓.
+2) La primitive d’une fonction qui prend une valeur donnée en un nombre donné
+Propriété :
+Soit 𝑓 une fonction admettant une primitive Ϝ sur un intervalle 𝛪, 𝑥0 un élément de 𝛪 et 𝑦0 un
+nombre réel .
+Ιl existe une primitive de 𝑓 et une seule qui prend la valeur 𝑦0 en 𝑥0 .
+Exercice de fixation
+Soit 𝑔 une fonction définie sur ℝ dont une primitive sur ℝ est la fonction 𝐺 définie par
+𝐺(𝑥) = 𝑥2 − 𝑥.
+Détermine la primitive 𝐻 de 𝑔 qui prend la valeur 5 en −1
+Solution :
+Les primitives de 𝑔 sur ℝ sont de la forme 𝐻: 𝑥 ⟼ 𝐺(𝑥) + 𝑐
+𝐻(𝑥) = 𝑥2 − 𝑥 + 𝑐 . Comme 𝐻(−1) = 5, on a :2 + 𝑐 = 5. Donc 𝑐 = 3.
+D’où 𝐻(𝑥) = 𝑥2 − 𝑥 + 3.
+𝟑) Les primitives des fonctions de usuelles
+Fonctions 𝑓 Primitives de 𝑓 (𝑐 𝜖 ℝ) Sur l’intervalle
+𝑥 ⟼ 𝑎 ; (𝑎 ∈ ℝ) 𝑥 ⟼ 𝑎𝑥 + 𝑐 ℝ
+𝑥 ⟼ 𝑥𝑛 ; (𝑛 ∈ ℕ) 𝑥 ⟼ 𝑥𝑛+1
+𝑛 + 1 + 𝑐 ℝ
+𝑥 ⟼ 1
+𝑥𝑛 ; (𝑛 ∈ ℕ∗ ∖ {1}) 𝑥 ⟼ 1
+(𝑛 − 1)𝑥𝑛−1 + 𝑐 ]−∞; 0[ ou ]0; +∞[
+𝑥 ⟼ 𝑥𝑟 ; (𝑟 ∈ ℚ∗ ∖ {−1} ) 𝑥 ⟼ 𝑥𝑟+1
+𝑟 + 1 + 𝑐 [0; +∞[ 𝑠𝑖 𝑟 > 0
+]0; +∞[ 𝑠𝑖 𝑟 < 0
+Exercice de fixation
+Dans chacun des cas suivants, détermine toutes les primitives sur ]0; +∞[ de la fonction 𝑓
+a) 𝑓(𝑥) = 𝑥2 ; 𝑏) 𝑓(𝑥) = 1
+𝑥5 ; 𝑐) 𝑓(𝑥) = 𝑥2
+3 ; d)𝑓(𝑥) = −3.
+Solution :
+𝑎)𝐹(𝑥) = 1
+3 𝑥3 + 𝑐 ; 𝑏)𝐹(𝑥) = − 1
+4𝑥4 + 𝑐 ; 𝑐)𝐹(𝑥) = −3𝑥−1
+3 + 𝑐 ; d) 𝐹(𝑥) = −3𝑥 + 𝑐
+6) primitives et opérations sur les fonctions
+a) primitives de 𝒖 + 𝒗
+Propriété
+Si 𝑈 et 𝑉 sont des primitives respectives des fonctions 𝑢 et 𝑣 sur un intervalle 𝐾, alors la
+fonction (𝑈 + 𝑉) est une primitive sur K de la fonction (𝑢 + 𝑣).
+
+-- 2 of 9 --
+
+Exercice de fixation
+Détermine une primitive sur ℝ de la fonction 𝑓: 𝑥 ⟼ 𝑥4 + 𝑥3.
+Solution
+𝑓est la somme des fonctions 𝑥 ⟼ 𝑥4 et 𝑥 ⟼ 𝑥3
+Une primitive sur ℝ de 𝑥 ⟼ 𝑥4 est la fonction 𝑥 ⟼ 𝑥5
+5 et une primitive sur ℝ de 𝑥 ⟼ 𝑥3 est la
+fonction 𝑥 ⟼ 𝑥4
+4 . On en déduit qu’une primitive sur ℝ de 𝑓 est la fonction 𝑥 ⟼ 𝑥5
+5 + 𝑥4
+4 .
+b) Primitives de 𝒂𝒖 (𝒂 ∈ ℝ)
+Propriété
+Si 𝑈 est une primitive de la fonction 𝑢 sur un intervalle 𝐾, alors pour tout nombre réel 𝑎, la
+fonction (𝑎𝑈) est une primitive sur K de la fonction (𝑎𝑢).
+Exercice de fixation
+Détermine une primitive sur ℝ∗de la fonction 𝑓: 𝑥 ⟼ − 5
+2𝑥2 .
+Solution
+𝑓est le produit de − 5
+2 par la fonction 𝑥 ⟼ 1
+𝑥2
+Une primitive sur ℝ∗ de la fonction 𝑥 ⟼ 1
+𝑥2 est 𝑥 ⟼ −1
+𝑥 .
+On en déduit qu’une primitive sur ℝ∗ de 𝑓 est la fonction 𝑥 ⟼ 5
+2𝑥.
+c) Primitives de 𝒖′ × 𝒖𝒎, (𝒎 ∈ ℚ ∖ {−𝟏})
+Propriété
+𝒎 étant un nombre rationnel différent de −1,
+Si 𝑢 est une fonction dérivable et strictement positive sur un intervalle K, alors une primitive
+sur K de la fonction 𝑢′𝑢𝑚 est la fonction 𝑢𝑚+1
+𝑚+1 .
+Exercice de fixation
+Détermine une primitive sur ℝ de la fonction 𝑓: 𝑥 ⟼ 2𝑥(𝑥2 + 1)8.
+Solution
+La dérivée de la fonction 𝑥 ⟼ 𝑥2 + 1 est la fonction 𝑥 ⟼ 2𝑥
+Donc la fonction 𝑓 est de la forme 𝑥 ⟼ 𝑢′(𝑥)(𝑢(𝑥))8 avec 𝑢(𝑥) = 𝑥2 + 1.
+On en déduit qu’une primitive sur ℝ de 𝑓 est la fonction 𝑥 ⟼ (𝑥2+1)9
+9 .
+5) Les primitives des fonctions du type :𝒙 ⟼ 𝒖′(𝒙)
+𝒖(𝒙)
+Propriété
+𝑢 est une fonction dérivable sur un intervalle 𝐾 sur lequel elle ne s’annule pas.
+La fonction 𝑥 ⟼ 𝑢′(𝑥)
+𝑢(𝑥) admet pour primitive 𝑥 ⟼ ln (𝑢(𝑥)), sur tout intervalle contenu dans
+𝐾 sur lequel 𝑢 est strictement positive et 𝑥 ⟼ ln(−𝑢(𝑥)), sur tout intervalle contenu dans 𝐾
+sur lequel 𝑢 est strictement négative.
+
+-- 3 of 9 --
+
+Exercice de fixation
+Dans chacun des cas suivants, détermine les primitives sur K de la fonction 𝑓 définie ci-
+dessous :
+1) 𝑓(𝑥) = 1
+𝑥 ; 𝐾 = ]0 ; +∞[ ;
+2) 𝑓(𝑥) = 5
+3 − 𝑥 ; 𝐾 = ]3 ; +∞[
+3) 𝑓(𝑥) = 2𝑥 + 3
+𝑥2 + 3𝑥 + 5 ; 𝐾 = ℝ
+Solution :
+1) La fonction 𝑢: 𝑥 ⟼ 𝑥 est dérivable et positive sur ]0 ; +∞[ et pour 𝑥 ∈
+]0 ; +∞[ , 𝑢′(𝑥) = 1 ;
+Pour 𝑥 ∈ ]0 ; +∞[ , 𝑓(𝑥) = 𝑢′(𝑥)
+𝑢(𝑥) donc une primitive de 𝑓 sur ]0 ; +∞[ est une fonction du type
+𝑥 ⟼ ln𝑥 + 𝑐 (𝑐 ∈ ℝ)
+2) La fonction 𝑢: 𝑥 ⟼ 3 − 𝑥 est dérivable et négative sur ]3 ; +∞[ et
+pour 𝑥 ∈ ]3 ; +∞[ , 𝑢′(𝑥) = −1 ;
+Pour 𝑥 ∈ ]3 ; +∞[ , 𝑓(𝑥) = − 5 𝑢′(𝑥)
+𝑢(𝑥) donc une primitive de 𝑓 sur ]3 ; +∞[ est une fonction du
+type 𝑥 ⟼ −5ln (−3 + 𝑥) + 𝑐 (𝑐 ∈ ℝ)
+3) La fonction 𝑢: 𝑥 ⟼ 𝑥2 + 3𝑥 + 5 est dérivable et positive sur ℝ et pour
+𝑥 ∈ ℝ, 𝑢′(𝑥) = 2𝑥 + 3 ;
+Pour 𝑥 ∈ ℝ , 𝑓(𝑥) = 𝑢′(𝑥)
+𝑢(𝑥) donc une primitive de 𝑓 sur ℝ est une fonction du type
+𝑥 ⟼ ln(𝑥2 + 3𝑥 + 5) + 𝑐 (𝑐 ∈ ℝ)
+6) Les primitives des fonctions de chacun des types : 𝒙 ⟼ 𝒖′(𝒙)𝒆𝒖(𝒙) .
+Propriété
+u est une fonction dérivable sur un intervalle K.
+La fonction 𝑥 ⟼ 𝑒𝑢(𝑥) est une primitive sur K de la fonction 𝑥 ⟼ 𝑢′(𝑥)𝑒𝑢(𝑥).
+Exercice de fixation
+Dans chacun des cas suivants, détermine les primitives sur K de la fonction 𝑓 définie ci-
+dessous :
+1) 𝑓(𝑥) = 𝑒𝑥 , 𝐾 = ℝ ;
+2) 𝑓(𝑥) = (2𝑥 + 3)𝑒𝑥2+3𝑥−1 , 𝐾 = ℝ
+3) 𝑓(𝑥) = 4𝑒4𝑥+5 , 𝐾 = ℝ
+Solution
+1) La fonction 𝑢: 𝑥 ⟼ 𝑥 est dérivable sur ℝ et pour 𝑥 ∈ ℝ, 𝑢′(𝑥) = 1 ;
+Pour 𝑥 ∈ ℝ, 𝑓(𝑥) = 𝑢′(𝑥)𝑒𝑢(𝑥) donc une primitive de 𝑓 sur ℝ est une fonction du type
+𝑥 ⟼ 𝑒𝑥 + 𝑐 (𝑥 ∈ ℝ)
+2) La fonction 𝑢: 𝑥 ⟼ 𝑥2 + 3𝑥 − 1 est dérivable sur ℝ et
+pour 𝑥 ∈ ℝ, 𝑢′(𝑥) = 2𝑥 + 3 ;
+Pour 𝑥 ∈ ℝ, 𝑓(𝑥) = 𝑢′(𝑥)𝑒𝑢(𝑥) donc une primitive de 𝑓 sur ℝ est une fonction du type
+𝑥 ⟼ 𝑒𝑥2+3𝑥−1 + 𝑐 (𝑥 ∈ ℝ)
+
+-- 4 of 9 --
+
+3) La fonction 𝑢: 𝑥 ⟼ 4𝑥 + 5 est dérivable sur ℝ et
+pour 𝑥 ∈ ℝ, 𝑢′(𝑥) = 4 ;
+Pour 𝑥 ∈ ℝ, 𝑓(𝑥) = 𝑢′(𝑥)𝑒𝑢(𝑥) donc une primitive de 𝑓 sur ℝ est une fonction du type
+𝑥 ⟼ 𝑒4𝑥+5 + 𝑐 (𝑥 ∈ ℝ)
+II. Intégrale
+1) Définition et notation
+Définition
+Soit 𝑓 une fonction continue sur un intervalle K, 𝑎 et 𝑏 deux éléments de K et F une
+primitive de 𝑓 sur K.
+Le nombre réel F(𝑏) − F(𝑎) ne dépend pas de F. Il est appelé intégrale de 𝒂 à 𝒃 de 𝑓.
+Notation :
+On note :
+• ∫ 𝒇(𝒙)𝒅𝒙
+𝒃
+𝒂 et on lit « intégrale de 𝒂 à 𝒃 de 𝒇(𝒙)𝒅𝒙 »
+ou
+• [𝐹(𝑥)]𝑎
+𝑏 et on lit : " 𝐹(𝑥) pris entre 𝑎 et 𝑏".
+Donc, on a : ∫ 𝑓(𝑥)𝑑𝑥
+𝑏
+𝑎 = [𝐹(𝑥)]𝑎
+𝑏 = 𝐹(𝑏) − 𝐹(𝑎)
+Exercice :
+Calcule les intégrales suivantes: I = ∫ x2dx
+1
+0 ; P = ∫ z2dz
+1
+0 ; J = ∫ (1 − 1
+t)dt
+1
+3
+Solution :
+• Considérons la fonction 𝑓 continue sur [0; 1] et définie par : 𝑓(𝑥) = 𝑥2.
+Une primitive de 𝑓 sur [0; 1] est la fonction F définie par : 𝐹(𝑥) = 1
+3 𝑥3 .
+Donc 𝐼 = ∫ 𝑥2𝑑𝑥 = [1
+3 𝑥3]0
+1	1
+0 = 1
+313 – 0 = 1
+3.
+• P = I= 1
+3 car la variable z est muette
+• Considérons la fonction f continue sur [1; 3] et définie par 𝑓(t) = (1 − 1
+t)
+Une primitive de 𝑓 est la fonction F définie par F(t) = t − lnt .
+Donc : J = ∫ (1 − 1
+t) dt
+1
+3
+= [t − lnt]3
+1
+= (1 − ln1) − (3 − ln3)
+= 1 − 3 + ln3
+J = −2 + ln3
+2) Interprétation graphique de l’intégrale d’une fonction continue et
+positive
+Propriété
+Soit 𝑓 une fonction continue et positive sur un intervalle [a; b] et (Cf) sa courbe
+représentative dans le plan muni d’un repère orthogonal (O, I, J).
+∫ f(x)dx
+b
+a est l’aire 𝒜 (en unités d’aire) de la partie du plan limitée par la courbe (Cf), l’axe
+(OI), les droites d’équations x = a et x = b.
+
+-- 5 of 9 --
+
+L’unité d’aire est l’aire du rectangle OIAJ :1u. a = OI×OJ
+On a : 𝒜 = ∫ 𝑓(𝑥)𝑑𝑥
+b
+a u. a
+Exercice de fixation :
+Le plan est muni d’un repère orthogonal (O ; I ; J).
+Unités : 2 cm sur l’axe des abscisses et 3 cm sur l’axe des ordonnées.
+On considère la fonction 𝑓 définie par :
+𝑓(𝑥) = 2𝑥 + 1. 𝑓 est continue et positive sur [0 ; +[
+1) Calcule en cm², l’aire de la partie du plan limitée par la courbe de 𝑓, l’axe des abscisses et
+les droites d’équation 𝑥 = 0 et 𝑥 = 5.
+Solution
+1) L’unité d’aire en cm² est 23 cm².
+𝒜 = ( ∫ (2𝑥 + 1)𝑑𝑥
+5
+0 )6 cm².
+= 6 × [𝑥2 + 𝑥]0
+5 cm².
+= 6 (25 + 5) cm².
+= 180 cm²
+3) Calcul d’aire
+a) Aire du plan limité par la courbe représentative d’une fonction, l’axe des
+abscisses et les droites d’équations 𝒙 = 𝒂 𝒆𝒕 𝒙 =b
+Propriétés
+Le plan est muni d’un repère orthogonal (𝑂, 𝐼, 𝐽).
+Soit 𝑓 une fonction continue positive sur [𝑎; 𝑏], (𝐶𝑓) sa courbe représentative.
+𝒜 est l’aire de la partie du plan limitée par (𝐶𝑓), l’axe des abscisses (𝑂𝐼), les droites
+d’équations 𝑥 = 𝑎 𝑒𝑡 𝑥 = 𝑏.
+On a 𝒜 = ∫ 𝑓(𝑥)𝑑𝑥
+𝑏
+𝑎 . 𝑢𝑎
+Exercice de fixation
+Le plan est muni d’un repère orthogonal (O, I, J). Unités : 2 cm sur l’axe des abscisses et 4 cm
+sur l’axe des ordonnées.
+On considère la fonction f définie par : f ( 𝑥) = 𝑥². 𝑓 est continue et positive sur ℝ
+Calcule en cm², l’aire de la partie du plan limitée par la courbe de f, l’axe des abscisses et les
+droites d’équations : 𝑥 = 1 et 𝑥 = 3.
+
+-- 6 of 9 --
+
+Solution
+𝒜 = ∫ (𝑥²)𝑑𝑥
+3
+1 𝑒𝑛 (𝑢. 𝑎)
+L’unité d’aire en cm² est 24 cm², donc 𝒜 = ( ∫ (𝑥²)𝑑𝑥
+3
+1 )8 cm²
+𝒜 = ( ∫ 𝑥²𝑑𝑥
+3
+1 )8 cm²
+= 8 × [1
+3 𝑥3]1
+3 cm²
+= 8 (9− 1
+3) cm²
+𝒜 = 208
+3 cm²
+b) Aire du plan limitée par les courbes représentatives de deux fonctions et les
+droites d’équations
+𝒙 = 𝒂 𝐞𝐭 𝒙 =b
+Propriétés
+Le plan est muni d’un repère orthogonal (𝑂, 𝐼, 𝐽).
+Soit 𝑓 et 𝑔 deux fonctions continues sur [𝑎; 𝑏] tel que : 𝑓 ≥ 𝑔 sur [𝑎; 𝑏] ; (𝐶𝑓) et (𝐶𝑔)
+leurs courbes représentatives respectives.
+𝒜 est l’aire de la partie du plan limitée par (𝐶𝑓), (𝐶𝑔), les droites d’équations :
+𝑥 = 𝑎 𝑒𝑡 𝑥 = 𝑏.
+On a: 𝒜 = (∫ [𝑓(𝑥) − 𝑔(𝑥)]𝑑𝑥
+𝑏
+𝑎 ) 𝑢𝑎.
+Exercice de fixation
+Soit les fonctions f et g définies par : f(𝑥) = 𝑥 + 2 𝑒𝑡 𝑔(𝑥) = 𝑥2
+On désigne par (𝐶𝑓) et (𝐶𝑔) les courbes représentatives de 𝑓 𝑒𝑡 𝑔 dans le plan muni d’un
+repère orthonormé (𝑂, 𝐼, 𝐽) . Unité graphique∶ 2𝑐𝑚
+Calcule en 𝑐𝑚², l’aire 𝒜 de la partie du plan délimitée par (𝐶𝑓), (𝐶𝑔) 𝑒𝑡 les droites
+d’équations : 𝑥 = −1 𝑒𝑡 𝑥 = 2
+Solution
+Etudions le signe de 𝑔(𝑥) − 𝑓(𝑥).
+𝑔(𝑥) − 𝑓(𝑥) = 𝑥2 − 𝑥 − 2 = (𝑥 + 1)(𝑥 − 2).
+𝑥 −∞ −1 2 +∞
+𝑔(𝑥) − 𝑓(𝑥) + 0 − 0 +
+Donc pour tout 𝑥 ∈ [−1; 2], 𝑔(𝑥) − 𝑓(𝑥) < 0.
+L’aire de la partie du plan délimitée par (𝐶𝑓), (𝐶𝑔) et les droites d’équations
+𝑥 = −1 et 𝑥 = 2 est ∫ (2 + 𝑥 − 𝑥2)𝑑𝑥 × 4 𝑐𝑚2	2
+−1 .
+Or ∫ (2 + 𝑥 − 𝑥2)𝑑𝑥 = [2𝑥 + 1
+2 𝑥2 − 1
+3 𝑥3] 2
+−1
+2
+−1 = (4 + 2 − 8
+3) − (−2 + 1
+2 + 1
+3) = 9
+2.
+L’aire cherchée est : 𝒜 = 9
+2 × 4 𝑐𝑚2 = 18 𝑐𝑚2.
+
+-- 7 of 9 --
+
+C-SITUATION COMPLEXE
+Un de vos camarades de classe rend visite à l’ancien
+professeur de mathématiques de son père à la
+retraite. Il remarque les formes géométriques
+particulières de la terrasse de celui-ci (voir figure ci-
+contre) : la partie en vert est délimitée par un
+rectangle de largeur 2 m et de longueur 4m et la
+partie en rose est délimitée par une parabole et par un
+segment [AB]. Amusé par le regard de votre
+camarade, l’ancien professeur de mathématique le
+met au défi et lui demande de calculer l’aire totale de
+la terrasse en vue de lui donner une idée du coût des
+travaux de revêtement de cette terrasse.
+Il lui présente le plan de la terrasse en précisant que
+pendant la construction, il a veillé à ce que la
+parabole qui apparait dans le plan ait pour équation
+y = −x²+4 dans le repère orthonormé d’origine O et
+d’unité 1m, avec A (-2,0) et B(2,0).
+Aide ce camarade a relevé ce défi.
+Solution
+Pour calculer l’aire totale de la terrasse, on va :
+• calculer l’aire de la partie ABCD
+• calculer l’aire ABE délimitée par la parabole
+• additionner les deux aires calculées précédemment.
+1) Calculons l’aire ABCD
+L’aire ABCD =AB×AD = 4×2 = 8 𝑚2
+2) Calculons l’aire ABE
+l’aire ABE=∫ (4 − 𝑥2)𝑑𝑥 = [4𝑥 − 1
+3 𝑥3]
+2
+−2
+2
+−2 = (8 − 8
+3) − (−8 + 8
+3) = 32
+3 𝑚2.
+3) l’aire de la terrasse est : 32
+3 + 8 = 56
+3 𝑚2.
+Conclusion
+L’aire de la terrasse du professeur à la retraite est : 56
+3 𝑚2 ≈ 18,66 𝑚2.
+D- EXERCICES
+Exercice 1
+Réponds par V (vrai) ou F (faux) à chacune des affirmations suivantes
+AFFIRMATIONS REPONSES
+Une primitive sur ℝ de la fonction définie par :𝑓(𝑥) = 3𝑥2 − 4𝑥 + 1 est la
+fonction définie par : 𝐹(𝑥) = 𝑥3 − 2𝑥2 + 𝑥 − 𝜋
+
+-- 8 of 9 --
+
+La primitive sur ]0; +∞[ de la fonction définie par 𝑝(𝑥) = 𝑥 − 1
+𝑥2 − 1
+√𝑥 qui
+prend la valeur − 1
+2 en 1 est la fonction définie par 𝑃(𝑥) = 1
+2 𝑥2 + 1
+𝑥 − 2√𝑥 +
+1
+Une primitive sur un intervalle Ι de la fonction 𝑢′𝑣 + 𝑢𝑣′ est la fonction
+𝑢 × 𝑣
+Exercice 2
+Dans chacun des cas suivants détermine toutes les primitives sur Ι de la fonction 𝑓
+𝑎) 𝑓(𝑥) = 1
+(2𝑥+5)2 ; Ι = ]− 5
+2 ; +∞[ 𝑏) 𝑓(𝑥) = (3𝑥 + 2)(3𝑥2 + 4𝑥 − 7)3 ; Ι = ℝ
+Exercice 3
+On pose : ∀𝑥 ∈ ℝ, 𝑓(𝑥) = 𝑥 + 1 − 𝑒𝑥.
+On désigne par (𝐶) la courbe représentative de 𝑓 dans le plan muni d’un repère orthonormé
+(𝑂, 𝐼, 𝐽) d’unité graphique 2𝑐𝑚.
+1) Calcule les limites en +∞ de 𝑓(𝑥) et de 𝑓(𝑥)
+𝑥 .
+Interprète graphiquement les résultats obtenus.
+2) a) Calcule la limite en −∞ de𝑓(𝑥).
+b) Montre que la droite (D) d’équation y = x est asymptote à (C) en −∞.
+c) Etudie les positions relatives de (C) et (D).
+3) Dresse le tableau de variation de 𝑓.
+4) Trace (D) et (C).
+5) Calcule en cm2, l’aire 𝒜(∆)de la partie ∆ du plan limitée par (C), la droite (D),les droites
+d’équations x = −2 et x = 0.
+
+-- 9 of 9 --
+

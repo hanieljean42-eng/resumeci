@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche - Dosage Acido-Basique</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.7; padding: 40px; max-width: 900px; margin: auto; font-size: 14px; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
+  .header h1 { font-size: 22px; color: #2563eb; margin-bottom: 8px; }
+  .header .meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #64748b; }
+  .header .meta span { background: #f1f5f9; padding: 4px 12px; border-radius: 20px; }
+  h2 { font-size: 17px; color: #1e293b; margin: 28px 0 12px; padding: 10px 16px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+  h3 { font-size: 15px; color: #334155; margin: 18px 0 8px; }
+  p { margin-bottom: 10px; }
+  .definition { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .definition strong { color: #166534; }
+  .formule { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; color: #92400e; }
+  .important { background: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; color: #1e293b; }
+  ul, ol { margin: 8px 0 12px 20px; }
+  li { margin-bottom: 5px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; font-size: 12px; color: #94a3b8; }
+  .footer strong { color: #2563eb; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>🏫 Terminale D</span>
+    <span>📖 Physique - Chimie</span>
+    <span>📝 Dosage Acido-Basique</span>
+  </div>
+</div>
+
+<h2>I. Généralités sur le Dosage</h2>
+
+<h3>1. Définition</h3>
+<div class="definition">
+  Un <strong>dosage</strong> est une technique expérimentale permettant de déterminer la <strong>concentration molaire inconnue</strong> d'une espèce chimique en solution.
+</div>
+
+<h3>2. Conditions</h3>
+<p>La réaction chimique utilisée doit être :</p>
+<ul>
+  <li><strong>Unique</strong></li>
+  <li><strong>Rapide</strong></li>
+  <li><strong>Totale</strong></li>
+</ul>
+
+<h3>3. Deux types de dosage</h3>
+<table>
+  <tr><th>Dosage pH-métrique</th><th>Dosage colorimétrique</th></tr>
+  <tr><td>On mesure le pH à chaque ajout de réactif titrant → courbe pH = f(V)</td><td>On repère l'équivalence par le changement de couleur d'un indicateur coloré</td></tr>
+</table>
+
+<h2>II. Dosage Colorimétrique</h2>
+
+<h3>1. Principe</h3>
+<ol>
+  <li>Prélever V<sub>a</sub> de la solution à doser dans un erlenmeyer</li>
+  <li>Ajouter quelques gouttes d'indicateur coloré approprié</li>
+  <li>Verser goutte à goutte la solution titrante depuis la burette</li>
+  <li>Noter le volume V<sub>éq</sub> au changement de couleur</li>
+</ol>
+
+<h3>2. Choix de l'indicateur coloré</h3>
+<div class="important">
+  L'indicateur coloré est <strong>approprié</strong> si le pH à l'équivalence est situé dans sa <strong>zone de virage</strong>.
+</div>
+
+<table>
+  <tr><th>Type de dosage</th><th>pH<sub>E</sub></th><th>Indicateur adapté</th></tr>
+  <tr><td>Acide fort / Base forte</td><td>≈ 7</td><td>BBT (zone : 6,0 – 7,6)</td></tr>
+  <tr><td>Acide faible / Base forte</td><td>> 7</td><td>Phénolphtaléine (zone : 8,2 – 10)</td></tr>
+  <tr><td>Acide fort / Base faible</td><td>< 7</td><td>Hélianthine (zone : 3,1 – 4,4)</td></tr>
+</table>
+
+<h3>3. Calcul de la concentration</h3>
+<div class="formule">À l'équivalence : C<sub>a</sub>·V<sub>a</sub> = C<sub>b</sub>·V<sub>bE</sub></div>
+<div class="formule">C<sub>a</sub> = C<sub>b</sub> × V<sub>bE</sub> / V<sub>a</sub></div>
+
+<h2>III. Dosage pH-métrique</h2>
+
+<h3>1. Montage expérimental</h3>
+<ul>
+  <li><strong>Burette graduée</strong> : contient la solution titrante (concentration connue)</li>
+  <li><strong>Bécher</strong> : contient la solution à doser + barreau aimanté</li>
+  <li><strong>pH-mètre</strong> : mesure le pH après chaque ajout</li>
+  <li><strong>Agitateur magnétique</strong> : homogénéise le mélange</li>
+</ul>
+
+<h3>2. Détermination de l'équivalence</h3>
+<div class="important">
+  <strong>Méthode des tangentes parallèles :</strong>
+  <ol style="margin-top:8px;">
+    <li>Tracer deux tangentes parallèles de part et d'autre du saut de pH</li>
+    <li>Tracer la droite parallèle équidistante des deux tangentes</li>
+    <li>Le point d'intersection avec la courbe est le <strong>point d'équivalence E</strong></li>
+  </ol>
+</div>
+
+<h2>IV. Application : Dosage du Vinaigre</h2>
+
+<h3>Protocole</h3>
+<ol>
+  <li>Diluer 10 fois le vinaigre commercial (C₀) → solution diluée (C<sub>a</sub>)</li>
+  <li>Doser V<sub>a</sub> = 10 mL de vinaigre dilué par NaOH à C<sub>b</sub> = 0,1 mol/L</li>
+  <li>Indicateur : phénolphtaléine (virage incolore → rose)</li>
+  <li>Lire V<sub>bE</sub> au virage</li>
+</ol>
+
+<h3>Calcul</h3>
+<div class="formule">C<sub>a</sub> = C<sub>b</sub> × V<sub>bE</sub> / V<sub>a</sub></div>
+<div class="formule">C₀ = facteur de dilution × C<sub>a</sub> = 10 × C<sub>a</sub></div>
+
+<h2>V. Résumé des Formules</h2>
+
+<table>
+  <tr><th>Grandeur</th><th>Formule</th></tr>
+  <tr><td>Relation d'équivalence</td><td><strong>n<sub>acide</sub> = n<sub>base</sub></strong> → C<sub>a</sub>V<sub>a</sub> = C<sub>b</sub>V<sub>bE</sub></td></tr>
+  <tr><td>Concentration après dilution</td><td>C₀V₀ = C<sub>a</sub>V<sub>a</sub></td></tr>
+  <tr><td>pH au point de demi-équivalence</td><td>pH = pKa</td></tr>
+</table>
+
+<div class="footer">
+  <strong>powered by Haniel_dev</strong>
+</div>
+
+</body>
+</html>

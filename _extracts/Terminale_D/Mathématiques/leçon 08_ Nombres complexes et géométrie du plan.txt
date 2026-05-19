@@ -1,0 +1,1726 @@
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME : TRANSFORMATION DU PLAN
+Durée : 12 heures Code :
+Leçon 08 : NOMBRES COMPLEXES ET GEOMETRIE DU PLAN
+A- SITUATION D’APPRENTISSAGE
+Des élèves d’un lycée ont décoré avec
+différentes figures géométriques les murs
+de la salle du club de Mathématiques.
+La figure ci-contre représentant l’une
+d’elles est constituée d’un quadrilatère
+ABCD de sens direct et de triangles
+rectangles isocèles 𝐴𝑀1𝐵, 𝐵𝑀2𝐶, 𝐶𝑀3𝐷
+et 𝐷𝑀4𝐴 de sommets respectifs
+𝑀1, 𝑀2, 𝑀3 et 𝑀4.
+Observant attentivement cette figure, l’un
+des élèves de la promotion de Terminale,
+passionné de nombres complexes et
+géométrie, affirme que les segments
+[𝑀1𝑀3] et [𝑀2𝑀4] ont des supports
+perpendiculaires et ont la même
+longueur. D’autres élèves n’étant pas de
+cet avis, portent le problème aux autres.
+Ceux-ci décident d’effectuer des calculs pour vérifier cette affirmation.
+B-CONTENU DE LA LEÇON
+1. ENSEMBLE DE POINTS ET NOMBRES COMPLEXES
+1) Interprétation de arg (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+) et de |𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+|
+a) Interprétation de arg (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+)
+Propriété
+SiA,B,CetDsontdespointsd’affixesrespectives	A	z	 ,	B	z	 ,	C	z	 et ZD tels que
+A≠ B et C≠ D, alors arg (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+) est une mesure de l'angle orienté(𝐷𝐶;	⃗⃗⃗⃗⃗⃗⃗ 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ).
+Autrement dit : 𝑚𝑒𝑠 (𝐷𝐶;	⃗⃗⃗⃗⃗⃗⃗ 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ) = arg (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+) + 2𝑘𝜋, 𝑘𝜖ℤ
+Exercice de fixation
+Le plan complexe est rapporté à un repère orthonormé direct (O ;I ;J)
+OnconsidèrelespointsA,BetCd’affixesrespectives −1 + 𝑖√3 ; 2 et −1 − 𝑖√3.
+Terminale D
+Mathématiques
+
+-- 1 of 26 --
+
+Déterminelamesureprincipaledel’angleorienté (𝐵𝐶	⃗⃗⃗⃗⃗ ; 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ).
+Solution
+A	z
+≠z B et zB ≠z C. donclespointsA,BetCsonttelsqueA≠BetB≠C.
+On a : Mes(𝐵𝐶;	⃗⃗⃗⃗⃗⃗⃗ 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ) = Arg (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+).
+Calculons 𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+𝑧𝐴 − 𝑧𝐵
+𝑧𝐶 − 𝑧𝐵
+= −1 + 𝑖√3 − 2
+−1 − 𝑖√3 − 2
+= −3 + 𝑖√3
+−3 − 𝑖√3
+= (−3 + 𝑖√3)(−3 + 𝑖√3)
+(−3 − 𝑖√3)(−3 + 𝑖√3)
+= 9 − 6𝑖√3 − 3
+9 + 3
+= 6 − 6𝑖√3
+12
+= 1 − 𝑖√3
+2
+= 1
+2 − 𝑖 √3
+2
+Posons A𝑟𝑔 (1
+2 − 𝑖 √3
+2 ) = 𝛼.
+On a {
+𝑐𝑜𝑠𝛼 = 1
+2
+𝑠𝑖𝑛𝛼 = −√3
+2
+. Donc 𝛼 = − 𝜋
+3
+D’où : Mes(𝐵𝐶;	⃗⃗⃗⃗⃗⃗⃗ 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ) = 𝐴𝑟𝑔 (𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+)
+= 𝐴𝑟𝑔 (1 − √3𝑖
+2 )
+= − 𝜋
+3 .
+Par suite la mesure principale de l’angle
+orienté (𝐵𝐶;	⃗⃗⃗⃗⃗⃗⃗ 𝐵𝐴	⃗⃗⃗⃗⃗	 ̂ ) est − 𝜋
+3 .
+b) Interprétation de |𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+|
+Propriété
+SiA,B,CetDsontdespointsd’affixes respectivesA	z ,	B	z	 ,	C	z	 et 𝑧𝐷 tels que C≠ D, alors :
+|𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+| = 𝐴𝐵
+𝐶𝐷.
+Exercice de fixation
+Le plan complexe est rapporté à un repère orthonormé direct.
+OnconsidèrelespointsnonalignésA,BetCd’affixesrespectives −1 + 𝑖√3 ; 2 et −1 −
+𝑖√3
+1) Donne une interprétation de |𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+|.
+2) Déduis-en que : AB = BC.
+Solution
+1) On a :	B	z	 ≠C	z ;cequijustifiel’existenceduquotient 𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+|𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+| = 𝐴𝐵
+𝐵𝐶
+2) Calculons |𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+|
+|𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+| = |1−√3𝑖
+2 |=√(1
+2)2
++ (− √3
+2 )
+2
+= √1
+4 + 3
+4 = 1
+D’où: 𝐵𝐴
+𝐵𝐶 = 1 et par suite AB = BC.
+TABLEAU RECAPITULATIF
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑒1	⃗⃗⃗⃗ , 𝑒2	⃗⃗⃗⃗ ).
+
+-- 2 of 26 --
+
+A et B deux points distincts du plan d'affixes respectives 𝑧A et 𝑧B.
+M est un point quelconque du plan d’affixe z et 𝑢⃗ désigne le vecteur-image de z.
+CARACTERISATIONS
+COMPLEXES
+CARACTERISATIONS
+GEOMETRIQUES
+ENSEMBLE DE POINTS
+|z − 𝑧A| = 𝑟, 𝑟 ∈ ℝ+
+∗ AM = 𝑟 Cercle de centre A et de rayon 𝑟.
+|𝑧 − 𝑧A| = 𝜆 |𝑧 − 𝑧B| , 𝜆 ∈ ℝ+
+∗ AM = 𝜆 BM
+Ou bien
+AM
+BM = λ
+- la médiatrice du segment [AB]
+lorsque 𝜆 = 1
+- le cercle de diamètre [𝐺1𝐺2]
+lorsque 𝜆 ≠ 1, où
+𝐺1 = bar {(A ;1), (B; 𝜆)} et
+𝐺2 = bar {(A ;1), (B;- 𝜆)}
+arg (𝑧B − 𝑧
+𝑧A − 𝑧) = 𝑘𝜋 , 𝑘 ∈ ℤ mes (MA	⃗⃗⃗⃗⃗⃗; MB	⃗⃗⃗⃗⃗⃗	 ̂) = 𝑘𝜋 ,
+𝑘 ∈ ℤ
+La droite (AB) privée des points A
+et B.
+arg(𝑧B − 𝑧
+𝑧A − 𝑧) = 𝜋
+2 + kπ , 𝑘 ∈ ℤ mes (MA	⃗⃗⃗⃗⃗⃗; MB	⃗⃗⃗⃗⃗⃗	 ̂) = 𝜋
+2 + 𝑘𝜋,
+𝑘 ∈ ℤ
+Le cercle de diamètre [AB] privé
+des points A et B.
+arg(𝑧 − 𝑧A ) = 𝛼 + 𝑘𝜋, 𝛼 ∈ ℝ mes( 𝑒1	⃗⃗⃗⃗ , 𝐴𝑀	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝛼 +𝑘𝜋,
+𝑘 ∈ ℤ
+la droite de repère (A, 𝑢	⃗⃗⃗ ), privée de
+A, où
+mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+arg(𝑧 − 𝑧A ) = 𝛼 + 𝑘2𝜋, 𝛼 ∈ ℝ mes( 𝑒1	⃗⃗⃗⃗ , 𝐴𝑀	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝛼 +2𝑘𝜋,
+𝑘 ∈ ℤ
+la demi-droite de repère (A, 𝑢	⃗⃗⃗ ),
+privée de A, où mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+Exercices de fixation
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑒1	⃗⃗⃗⃗ , 𝑒2	⃗⃗⃗⃗ ), A et B deux points
+distincts du plan d'affixes respectives 𝑧A et 𝑧B, M est un point quelconque du plan d’affixe z
+et de vecteur-image 𝑢⃗ .
+Associe chaque caractérisation complexe à l’ensemble des points du plan qui convient
+caractérisations complexes ensembles
+|z − 𝑧A| = 𝑟, 𝑟 ∈ ℝ+
+∗
+A 1 Le cercle de diamètre [AB] privé
+des points A et B.
+|𝑧 − 𝑧A| = 𝜆 |𝑧 − 𝑧B| , 𝜆 ∈ ℝ+
+∗ B 2
+la droite de repère (A, 𝑢	⃗⃗⃗ ), privée de
+A, où
+mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+arg (𝑧B − 𝑧
+𝑧A − 𝑧) = 𝑘𝜋 C 3 la demi-droite de repère (A, 𝑢	⃗⃗⃗ ),
+privée de A, où mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+arg(𝑧B − 𝑧
+𝑧A − 𝑧) = 𝜋
+2 + kπ D 4 Cercle de centre A et de rayon 𝑟.
+arg(𝑧 − 𝑧A ) = 𝛼 + 𝑘𝜋, 𝛼 ∈ ℝ E 5
+- la médiatrice du segment [AB]
+lorsque
+𝜆 = 1
+- le cercle de diamètre [𝐺1𝐺2]
+lorsque 𝜆 ≠ 1, où
+𝐺1 = bar {(A ; 1), (B;𝜆)} et
+𝐺2 = bar {(A ;1), (B;- 𝜆)}
+Arg(𝑧 − 𝑧A ) = 𝛼 + 𝑘𝜋, 𝛼 ∈ ℝ F 6 La droite (AB) privée des points A
+et B.
+
+-- 3 of 26 --
+
+Solution
+A-4 ; B-5 ; C-6 ; D-1 ; E-2 ; F-3
+Exercice de fixation 2
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢	⃗⃗⃗ , 𝑣	⃗⃗⃗ ). Détermine l’ensemble
+des points M d’affixe z vérifiant |2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2|.
+Solution
+|2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2| ⟺ |2𝑖 (𝑧 + 1 + 3
+2 𝑖)| = |𝑧 − 2| ⟺ 2 |𝑧 + 1 + 3
+2 𝑖 | = |𝑧 − 2|
+⟺ 2 |𝑧 − (−1 − 3
+2 𝑖) | = |𝑧 − 2| ⟺ 2 BM = AM où A et B sont
+les points d’affixes respectives 2 et −1 − 3
+2 𝑖.
+⟺ MA
+MB = 2.
+On considère les points H et K tels que H = bar {(A ; 1), (B ; 2)} et K = bar {(A ; 1), (B ;- 2)}.
+L’ensemble des points M d’affixe z vérifiant : |2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2| est le cercle de
+diamètre [HK].
+On a : 𝑧H = 1×2 + 2×(−1− 3
+2𝑖)
+3 = −1 et 𝑧K = 1×2 − 2×(−1− 3
+2𝑖)
+−1 = −4 − 3𝑖.
+II. CONFIGURATIONS DU PLAN ET NOMBRES COMPLEXES
+1) Droites parallèles
+Propriété:
+A,B,CetDsontdespointsd’affixesrespectives	A	z	 ,	B	z	 ,	C	z	 et 𝑧𝐷 tels que : A≠ B et C≠ D.
+Les droites (AB) et (CD) sont parallèles si et seulement si 𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+𝜖ℝ∗.
+Exercice de fixation
+OnconsidèrelespointsA,B,CetDd’affixesrespectives 5 + 𝑖 ; −2 ; 1 + 𝑖 et −4 − 2𝑖
+1) Trace les droites (AD) et (BC).
+2) Démontre que les droites (AD) et (BC) sont parallèles.
+Solution
+1)
+
+-- 4 of 26 --
+
+2) On a :	A	z	 ≠z B et zD ≠z C. DoncA≠BetD≠C.
+Calculons : 𝑧𝐷−𝑧𝐴
+𝑍𝐶−𝑧𝐵
+𝑧𝐷 − 𝑧𝐴
+𝑍𝐶 − 𝑧𝐵
+= −4 − 2𝑖 − (5 + 𝑖)
+1 + 𝑖 − (−2)
+= −9 − 3𝑖
+3 + 𝑖
+= −3(3+𝑖))
+3+𝑖 = −3.
+- 3 𝜖ℝ∗. Donc 𝑧𝐷−𝑧𝐴
+𝑍𝐶−𝑧𝐵
+𝜖ℝ∗. Par suite les droites (AD) et (BC) sont parallèles.
+2) Alignements de trois points
+Propriété:
+A,BetCsontdespointstelsqueA≠BetB≠Cd'affixesrespectives	A	z	 ,	B	z	 et	C	z	 .
+Les points distincts A, B, et C sont alignés si et seulement si 𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐵
+𝜖ℝ∗.
+Exercice de fixation
+OnconsidèrelespointsA,BetCd’affixesrespectives 2 + 𝑖√3 ; −1 et
+11 + 4𝑖√3
+Démontre que les points A, B et C sont alignés.
+Solution
+On a :	A	z	 ≠z B et zB ≠z C doncA≠BetB≠C.
+Calculons : 𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+𝑧𝐴 − 𝑧𝐵
+𝑍𝐶 − 𝑧𝐵
+= 2 + 𝑖√3 − (−1)
+11 + 4𝑖√3 − (−1)
+= 3 + 𝑖√3
+12 + 4𝑖√3
+= 3 + 𝑖√3
+4(3 + 𝑖√3)
+= 1
+4
+1
+4 𝜖ℝ∗. Donc 𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+𝜖ℝ∗. Par suite les points A, B et C sont alignés.
+3) Droites perpendiculaires
+Propriété
+A, B, C et D sont des points d'affixes respectives	A	z	 ,	B	z	 ,	C	z	 et	D	z	 tels que : A≠ B et C≠ D.
+Les droites (AB) et (CD) sont perpendiculaires si et seulement si 𝑧𝐴−𝑧𝐵
+𝑧𝐶−𝑧𝐷
+𝜖𝑖ℝ∗.
+Exercice de fixation
+OnconsidèrelespointsA,B,CetHd’affixesrespectives−3 – i ;−2+4i ;3−iet−2.
+1) Trace les droites (AH) et (BC).
+2) Démontre que les droites (AH) et (BC) sont perpendiculaires.
+Solution
+1)
+
+-- 5 of 26 --
+
+2) On a :	A	z	 ≠z H et zB ≠z C donc A≠ H et C≠ B.
+Calculons 𝑧𝐵−𝑧𝐶
+𝑧𝐻−𝑧𝐴
+𝑧𝐵−𝑧𝐶
+𝑧𝐻−𝑧𝐴
+= −2+4𝑖−(3−𝑖)
+−2−(−3−𝑖) = −5+5𝑖
+1+𝑖 = (−5+5𝑖)(1−𝑖)
+(1+𝑖)(1−𝑖)
+= −5 + 5𝑖 + 5𝑖 + 5
+1 + 1
+= 10𝑖
+2 = 5𝑖
+5𝑖 𝜖𝑖ℝ∗. Donc les droites (AH) et (BC) sont perpendiculaires.
+4) Points cocycliques
+(C’est-à-dire des points situés sur un cercle)
+Propriété
+A, B, C et D sont des points deux à deux distincts et non alignés d'affixes respectives
+A	z
+,	B	z	 ,	C	z	 et	D	z	 .
+A, B, C et D sont cocycliques si et seulement si 𝑧𝐶−𝑧𝐴
+𝑧𝐷−𝑧𝐴
+: 𝑧𝐶−𝑧𝐵
+𝑧𝐷−𝑧𝐵
+𝜖ℝ∗
+Exercice de fixation
+Dans le plan complexe rapporté au repère orthonormé (O, I, J), on considère les points A,
+B,CetDd’affixesrespectives −2𝑖 ; 7 − 𝑖 et 8 + 2𝑖 et −1 + 5𝑖.
+a) Place les points A, B, C et D dans le repère.
+b) Démontre que les points A, B, C et D sont cocycliques.
+Solution
+a)
+
+-- 6 of 26 --
+
+b) On a : 𝑧𝐵 ≠ 𝑧𝐴 et 𝑧𝐵 ≠ 𝑧𝐶 . Calculons 𝑧𝐷−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+et 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐶
+𝑧𝐷 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= −1 + 5𝑖 − (−2𝑖)
+7 − 𝑖 − (−2𝑖)
+= −1+7𝑖
+7+𝑖 = (−1+7𝑖)(7−𝑖)
+(7+𝑖)(7−𝑖) = −7+𝑖+49𝑖+7
+49+1 = 50𝑖
+50 = 𝑖
+𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐶
+= −1+5𝑖−(8+2𝑖)
+7−𝑖−(8+2𝑖) = −9+3𝑖
+−1−3𝑖 = (−9+3𝑖)(−1+3𝑖)
+(−1−3𝑖)(−1+3𝑖) = 9−27𝑖−3𝑖−9
+1+9 = −30𝑖
+10 = −3𝑖
+𝑧𝐷−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+: 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐶
+= 𝑖
+−3𝑖 = − 1
+3.
+Conclusion
+𝑧𝐷−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑖 donc A, B et D sont non alignés.
+De plus 𝑧𝐷−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+: 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐶
+∈ ℝ∗.
+Donc les points A, B, C et D sont cocycliques.
+5) Triangles particuliers et nombres complexes
+Propriétés
+A, B et C sont des points non alignés d'affixes respectives	A	z	 ,	B	z	 et	C	z	 .
+- Le triangle ABC est rectangle en A si et seulement si 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+𝜖𝑖ℝ∗ .
+- Le triangle ABC est isocèle en A si et seulement si
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒𝑖𝛼 ou 𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒−𝑖𝛼 , avec 0 < 𝛼 < 𝜋
+- Le triangle ABC est rectangle et isocèle en A si et seulement si 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= 𝑖 ou 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= −𝑖.
+- Le triangle ABC est équilatéral si et seulement si 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= 𝑒𝑖𝜋
+3 ou 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= 𝑒−𝑖𝜋
+3 .
+Exercice de fixation 1
+Dans le plan complexe rapporté à un repère orthonormé (O, I, J), on considère les points
+A,BetCd’affixesrespectives 1 + 𝑖 ; 3 et 3 + 5𝑖.
+a) Place les points A, B et C dans le repère (O, I, J).
+b) Démontre que le triangle ABC est rectangle en A.
+
+-- 7 of 26 --
+
+Solution
+a) b) On a :	A	z	 ≠	B	z	 et	C	z	 ≠z A. Donc A≠ B et
+C≠ A.
+Calculons : 𝑧𝐵−𝑧𝐴
+𝑍𝐶−𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+𝑍𝐶 − 𝑧𝐴
+= 3 − (1 + 𝑖)
+3 + 5𝑖 − (1 + 𝑖)
+= 2 − 𝑖
+2 + 4𝑖
+= (2 − 𝑖)(2 − 4𝑖)
+(2 + 4𝑖)(2 − 4𝑖)
+= 4 − 8𝑖 − 2𝑖 − 4
+4 + 16
+= −10𝑖
+20
+= − 1
+2 𝑖 .
+𝑧𝐵−𝑧𝐴
+𝑍𝐶−𝑧𝐴
+𝜖𝑖ℝ∗. Donc le triangle ABC est rectangle
+en A.
+Exercice de fixation 2
+OnconsidèrelespointsA,BetCd’affixesrespectives −3 + 2𝑖 ; −2 − 3𝑖 et 3 − 2𝑖
+Démontre que le triangle ABC est rectangle isocèle en B.
+Solution
+On a :	A	z	 ≠	B	z	 et	C	z	 ≠z B. Donc A≠ B et C≠ B.
+Calculons : 𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+𝑧𝐴 − 𝑧𝐵
+𝑍𝐶 − 𝑧𝐵
+= −3 + 2𝑖 + 2 + 3𝑖
+3 − 2𝑖 + 2 + 3𝑖 = −1 + 5𝑖
+5 + 𝑖 = (−1 + 5𝑖)(5 − 𝑖)
+(5 + 𝑖)(5 − 𝑖) = −5 + 𝑖 + 25𝑖 + 5
+25 + 1 = 𝑖
+𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+= 𝑖, donc le triangle est rectangle isocèle en B.
+Exercice de fixation 3
+OnconsidèrelespointsA,BetCd’affixesrespectives −1 + 𝑖√3 ; 2 et −1 − 𝑖√3.
+Démontre que le triangle ABC est équilatéral.
+Solution
+On a :	A	z	 ≠	B	z	 et	C	z	 ≠z B. Les points A, B et C sont A≠ B et C≠ B.
+Calculons : 𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+= −1+𝑖√3−2
+−1−𝑖√3−2 = −3+𝑖√3
+−3−𝑖√3 = (−3+𝑖√3)(−3+𝑖√3)
+9+3 = 9−6𝑖√3−3
+12 = 6−6𝑖√3
+12 = 1−𝑖√3
+2
+= 1
+2 − 𝑖 √3
+2 = cos(− 𝜋
+3) + isin(− 𝜋
+3) = 𝑒−𝑖𝜋
+3 ,
+𝑧𝐴−𝑧𝐵
+𝑍𝐶−𝑧𝐵
+= 𝑒−𝑖𝜋
+3 , donc ABC est un triangle équilatéral.
+TABLEAU RECAPITULATIF
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢	⃗⃗⃗ ; 𝑣	⃗⃗⃗ ).
+
+-- 8 of 26 --
+
+Configurations Caractérisations
+géométriques
+Caractérisations
+complexes
+Triangle ABC isocèle en A.
+AB = AC et mesA	̂	 = 𝛼
+(0 < 𝛼 < 𝜋).
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒𝑖𝛼
+ou
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒−𝑖𝛼
+Triangle ABC équilatéral.
+AB = AC et mesA	̂	 = 𝜋
+3.
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒𝑖𝜋
+3
+ou
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= 𝑒−𝑖𝜋
+3
+Triangle ABC rectangle et isocèle en
+A.
+AB = AC et mesA	̂	 = 𝜋
+2.
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= 𝑖
+ou
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= −𝑖
+Triangle ABC rectangle en A.
+mesA	̂	 = 𝜋
+2
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑏𝑖, avec
+𝑏 ∈ ℝ∗
+Points A, B, C alignés.
+mes (AB	⃗⃗⃗⃗⃗, AC	⃗⃗⃗⃗⃗	 ̂ ) = 𝑘𝜋, 𝑘 ∈ ℤ 𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗
+Points A, B, C, D cocycliques mes (CA	⃗⃗⃗⃗⃗, CB	⃗⃗⃗⃗⃗	 ̂ ) =
+mes (DA	⃗⃗⃗⃗⃗, DB	⃗⃗⃗⃗⃗	 ̂ ) + 𝑘𝜋, 𝑘 ∈ ℤ
+et mes (CA	⃗⃗⃗⃗⃗, CB	⃗⃗⃗⃗⃗	 ̂) ≠ 𝑘𝜋,
+𝑘 ∈ ℤ
+𝑧𝐵−𝑧𝐶
+𝑧𝐴−𝑧𝐶
+: 𝑧𝐵−𝑧𝐷
+𝑧𝐴−𝑧𝐷
+∈ ℝ∗
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O B
+C
+A
+D
+
+-- 9 of 26 --
+
+Droites parallèles Il existe un nombre réel 𝜆 non
+nul tel que :
+CD	⃗⃗⃗⃗⃗ = 𝜆 AB	⃗⃗⃗⃗⃗ .
+ou
+mes (AB	⃗⃗⃗⃗⃗; CD	⃗⃗⃗⃗⃗	 ̂ ) = 𝑘𝜋 ; 𝑘 ∈ ℤ
+arg(zD−𝑧C
+𝑧B−𝑧A
+) = 𝑘𝜋 ;
+𝑘 ∈ ℤ
+ou
+zD − 𝑧C
+𝑧B − 𝑧A
+∈ ℝ∗
+Droites perpendiculaires
+AB	⃗⃗⃗⃗⃗ ⋅ CD	⃗⃗⃗⃗⃗ = 0
+ou
+mes (AB	⃗⃗⃗⃗⃗; CD	⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+2 + 𝑘𝜋; 𝑘 ∈ ℤ
+arg(zD−𝑧C
+𝑧B−𝑧A
+) = 𝜋
+2 +
+𝑘𝜋 ; 𝑘 ∈ ℤ
+ou zD − 𝑧C
+𝑧B − 𝑧A
+∈ 𝑖 ℝ∗
+Exercice de fixation
+Le plan complexe est muni d’un repère orthonormé direct (O ; u	⃗⃗⃗, v	⃗⃗ ).
+On donne les points A, B, C, D et K d’affixes respectives 2 + 𝑖, 2 - 𝑖, 5 - 2𝑖, 5 + 2𝑖 et 4.
+Justifie que :
+1) les droites (AB) et (CD) sont parallèles ;
+2) les droites (OK) et (DC) sont perpendiculaires
+Solution
+1) On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+= 5+2𝑖−(5−2𝑖)
+2−𝑖−(2+𝑖) = 4𝑖
+−2𝑖 = −2 . D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗ ;Par suite les droites (AB) et
+(CD) sont parallèles.
+2) On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐾−𝑧𝑂
+= 5+2𝑖−(5−2𝑖)
+4−0 = 4
+4 𝑖 = 𝑖 . D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐾−𝑧𝑂
+∈ 𝑖 ℝ∗. Par conséquent les droites
+(OK) et (DC) sont perpendiculaires.
+III. TRANSFORMATIONS DU PLAN ET NOMBRES COMPLEXES
+Le plan complexe est muni d’un repère orthonormé direct (O ; OI	⃗⃗⃗⃗⃗ ; OJ	⃗⃗⃗⃗⃗ ).
+• Une transformation du plan est une application bijective du plan dans le plan.
+• Soit 𝑓 une transformation du plan qui, à tout point M, associe le point M’.
+L’application F de ℂ dans ℂ qui, à l’affixe z de M, associe l’affixe z’ de M’ s’appelle la
+transformation complexe associée à f .
+L’application 𝑓 s’appelle la transformation ponctuelle associée à F.
+L’expression de z’ en fonction de z s’appelle l’écriture complexe de𝑓.
+1- Définitiond’une transformationduplanetd’écriturecomplexe
+Définition
+Leplancomplexeestmunid’unrepèreorthonormédirect (O, I, J).
+O 𝑢⃗ 𝑢⃗
+𝑣 𝑣 D
+A
+B
+C
+O 𝑢⃗
+𝑣
+D
+A
+B
+C
+
+-- 10 of 26 --
+
+▪ Une transformation du plan est une application bijective du plan dans le plan.
+▪ SoitFunetransformationduplanquiàtoutpointMassocielepointM’.
+L’applicationbijective
+f de ℂ dans ℂ quiàl’affixe	
+z deM,associel’affixe	
+z’ deM’
+s’appellelatransformationcomplexeassociéeàF.
+L’applicationFs’appellelatransformationponctuelleassociéeà	
+f .
+L’expressionde
+z’ en fonction de
+z s’appellel’écriturecomplexede	
+F.
+2. Ecritures complexes de symétrie centrale de centre O et de symétries
+orthogonalesd’axes(OI)et(OJ)danslerepère(O,I,J).
+Propriété
+Leplancomplexeestmunid’unrepèreorthonormé
+direct (O, I, J).
+• La symétrie orthogonale d'axe (OI) a pour
+écriture complexe : 𝑧′ = 𝑧̅ .
+• La symétrie centrale de centre O a pour écriture
+complexe : 𝑧′ = −𝑧.
+• La symétrie orthogonale d'axe (OJ) a pour
+écriture complexe : 𝑧′ = −𝑧̅ .
+3. Ecriturecomplexed’unetranslation,d’unehomothétieetd’unerotation
+• Translation
+est la translation de vecteur d'affixe
+b, M et M'
+sont les points du plan d'affixes respectives z et z'.
+On a : 𝑀′ = 𝑡𝑢⃗⃗ (𝑀) ⟺ 𝑀𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗⃗ = 𝑢⃗ .
+⟺ 𝑧′ − 𝑧 = 𝑏
+⟺ 𝑧′ = 𝑧 + 𝑏
+La translation de vecteur d’affixe
+b a pour
+écriture complexe : 𝑧′ = 𝑧 + 𝑏.
+Exercice
+Leplancomplexeestmunid’unrepèreorthonormé.
+On donne le vecteur 𝑢⃗ d’affixe 1 − 2𝑖.
+1) Donne l'écriture complexe de la translation 𝑡 de vecteur 𝑢⃗ .
+2) Détermine les affixes des images respectives A' et B' par
+t de chacun des points A et B,
+d’affixesrespectives 3 − 𝑖 et 5.
+Solution
+1)L’écriturecomplexedelatranslation	
+t de vecteur 𝑢⃗ d’affixe 1 − 2𝑖 est :
+𝑧′ = 𝑧 + 1 − 2𝑖
+2) Déterminons les affixesdesimagesA’etB’respectivesdeAetdeBpar 𝑡.
+𝑧𝐴′ = 𝑧𝐴 + 1 − 2𝑖
+On a : 𝑧𝐴′ = 3 − 𝑖 + 1 − 2𝑖 = 4 − 3𝑖
+Donc 𝑧𝐴′ = 4 − 3𝑖
+𝑧𝐵′ = 𝑧𝐵 + 1 − 2𝑖
+On a : 𝑧𝐵′ = 5 + 1 − 2𝑖 = 6 − 2𝑖
+Donc : 𝑧𝐵′ = 6 − 2𝑖
+u
+t	u
+u
+O I
+J
+M'(z')
+M(z)
+u
+B(b)
+O I
+( )	
+M z
+( )	
+N z	( )	
+P z	-
+( )	
+Q z	-
+J
+a
+b
+- b
+-a
+
+-- 11 of 26 --
+
+• HomothétiedecentreΩetderapport 𝑘, 𝑘 ∈ ℝ∗
+h est l'homothétiedecentreΩd’affixeZ Ω et de
+rapport 𝑘, 𝑘 ∈ ℝ∗.
+M et M' sont les points du plan d'affixes respectives
+z et z'. On a :
+𝑀′ = ℎ(𝑀) ⟺ Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗ = 𝑘Ω𝑀	⃗⃗⃗⃗⃗⃗
+ Z’ -ZΩ = 𝑘(Z - ZΩ)
+ Z’= 𝑘(Z - ZΩ) + ZΩ
+L'homothétiedecentreΩd’affixeZ Ω et de rapport k
+a pour écriture complexe :Z’=	
+k(Z - ZΩ) + ZΩ
+Exercice
+Leplancomplexeestmunid’unrepèreorthonormé.
+Détermine l'écriture complexe associée à l'homothétie h de rapport – 2 et de centre Ω
+d'affixe 3 − 𝑖.
+Solution
+L’écriturecomplexeassociéeàl’homothétie	
+h de rapport −2 et de centre Ω d'affixe
+3 − 𝑖 est : 𝑧′ = −2(𝑧 − (3 − 𝑖 )) + (3 − 𝑖 ).
+Par suite :z’= -2z + 9 −3i.
+• RotationdecentreΩetd’angle 𝜃, 𝜃 ∈ ]−𝜋, 𝜋]
+restlarotationdecentredecentreΩd’affixeZ Ω et
+d'angle orienté de mesure principale𝜃.
+• M et M' sont les points du plan d'affixes
+respectiveszetz'telsqueMestdistinctdeΩ.Ona:
+𝑀′ = 𝑟(𝑀) ⟺ { Ω𝑀′ = Ω𝑀
+𝑀𝑒𝑠(Ω𝑀;	⃗⃗⃗⃗⃗⃗⃗⃗ Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜃
+• 𝑟(Ω) = Ω
+On a : 𝒁′−𝒛Ω
+𝒛−𝒛Ω
+=𝒆𝒊
+
+z’= 𝒆𝒊
+(z – zΩ) + zΩ
+LarotationdecentreΩd’affixeZ Ω et d'angle orienté
+de mesure principale 𝜃 a pour écriture complexe :
+z’= 𝒆𝒊
+(z – zΩ) + zΩ
+Exercice
+Leplancomplexeestmunid’unrepèreorthonormédirect. (O ; 𝑢	⃗⃗⃗ , 𝑣	⃗⃗⃗ )
+Trouvel’écriturecomplexedelarotation	
+r de centre d'affixe 𝑖√3 et d'angle orienté de
+mesure π
+3 .
+Solution
+LarotationdecentreΩd’affixeZ Ω et d'angle orienté de mesure principale 𝜃 a pour
+écriture complexe : z’= 𝑒𝑖
+(z – zΩ) + zΩ
+Or zΩ= 𝑖√3 et
+ = π
+3
+
+O I
+J
+M
+M'
+Ω
+O I
+J
+M	
+M'
+
+
+-- 12 of 26 --
+
+Donc 𝑧′ = 𝑒𝑖𝜋
+3 (𝑧 − 𝑖√3) + 𝑖√3
+Comme 𝑒𝑖𝜋
+3 = 𝑐𝑜𝑠 𝜋
+3 + 𝑖 𝑠𝑖𝑛 𝜋
+3 = 1
+2 + 𝑖 √3
+2
+On a : 𝑧′ = (1
+2 + 𝑖 √3
+2 ) (𝑧 − 𝑖√3) + 𝑖√3
+𝑧′ = (1
+2 + 𝑖 √3
+2 ) 𝑧 − 𝑖√3 (1
+2 + 𝑖 √3
+2 ) + 𝑖√3
+Par suite : 𝑧′ = (1
+2 + 𝑖 √3
+2 ) 𝑧 − 𝑖 √3
+2 + 3
+2 + 𝑖√3
+On en déduit que : 𝑧′ = (1
+2 + 𝑖 √3
+2 ) 𝑧 + 3
+2 + 𝑖 √3
+2
+Le tableau suivant donne des transformations du plan et leurs écritures complexes
+Transformation du
+Plan
+Image M′(z′ ) d’un point
+M(z)
+Définition
+géométrique Ecriture complexe
+Symétrie
+orthogonale d’axe
+(OI)
+La droite (OI) est la
+médiatrice du
+segment [MM′]
+Symétrie
+orthogonale d’axe
+(OJ)
+La droite (OJ) est la
+médiatrice du
+segment [MM′]
+Symétrie centrale de
+centre Ω(ω)
+Translation de
+vecteur u⃗
+d’affixe b
+Homothétie de
+Centre Ω(ω) et de
+rapport 𝑘
+( 𝑘 ∈ ℝ ∖ {0} )
+Rotation de centre
+Ω(ω) et d’angle θ
+M≠ Ω
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝐽
+𝐼	𝑂
+𝑧′ = 𝑧̅
+𝑂
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝐼
+𝐽
+𝑧′ = −𝑧̅
+𝑀′(𝑧′)
+𝑀(𝑧)
+Ω(ω) Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗ = − Ω𝑀	⃗⃗⃗⃗⃗⃗ 𝑧′ − 𝜔 = −(𝑧 − 𝜔)
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝑢	⃗
+𝑀𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗⃗	 = 𝑢	⃗	 𝑧′ = 𝑧 + 𝑏
+𝑀(𝑧)
+𝑀′(𝑧′)
+Ω(ω) Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗ = 𝑘Ω𝑀	⃗⃗⃗⃗⃗⃗ 𝑧′ − 𝜔 = 𝑘(𝑧 − 𝜔)
+Ω(ω)
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝜃 { Ω𝑀′ = Ω𝑀
+𝑚𝑒𝑠( Ω𝑀	⃗⃗⃗⃗⃗⃗ , Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗	 ̂	 ) = 𝜃 𝑧′ − 𝜔 = 𝑒𝑖𝜃(𝑧 − 𝜔)
+
+-- 13 of 26 --
+
+Exercices de fixation
+Exercice
+Le plan complexe est muni d’un repère orthonormé direct (O; OI	⃗⃗⃗⃗⃗ ; OJ	⃗⃗⃗⃗⃗ ).
+Détermine l’écriture complexe de l’homothétie h de centre Ω d’affixe − 1 − i et de rapport 3.
+Solution
+h étant l’homothétie de centre Ω d’affixe −1 − i et de rapport 3, son écriture complexe est :
+z′ − (−1 − i) = 3(z − (−1 − i)).
+Par suite, l’écriture complexe de l’homothétie h de centre Ω(−1 − i) et de rapport 3 est :
+z′ = 3z + 2 + 2i.
+4. Similitude plane directe
+a- Ecriturecomplexed’unesimilitudeplanedirecte
+Le plan complexe est rapporté à un repère orthonormé direct (O ; 𝑢	⃗⃗⃗ ; 𝑣	⃗⃗⃗ ).
+1. Définition
+Unesimilitudedirecteestunetransformationduplandontl’écriturecomplexeest de la
+forme:z’=	
+az +
+b où
+a𝐶∗ et
+b ℂ.
+Exemple :
+Toute translation, toute homothétie et toute rotation est une similitude directe.
+2. Propriété
+Soit s une similitude directe d'écriture complexe : z' =
+a z +
+b où
+a  ℂ* et
+b  ℂ.
+* Si
+a =1, alors s est la translation de vecteur d'affixe
+b.
+* Si
+a  1 alors s est la similitude directe de centre d'affixe 𝑏
+1−𝑎, de rapport |
+a|, d'angle
+Arg(
+a).
+Remarque :
+Pourdéterminerl’affixeducentredelasimilitude,onrésoutl’équation :z∈ℂ,z=az+b
+Vocabulaire
+Lorsque 𝑎 ≠ 1, la similitude directe est caractérisé par : son centre, son rapport et son
+angle.
+Remarque
+• Toute rotation de centre A et d’angle  est une similitude directe de centre A , de
+rapport1etd’angle .
+•Toute homothétie de centre A et de rapport
+k (𝑘 > 0) est une similitude directe de
+centre A, de rapport
+k etd’anglenul.
+
+-- 14 of 26 --
+
+•Toute homothétie de centre A et de rapport
+k (𝑘 < 0) est une similitude directe de
+centre A , de rapport −𝑘 etd’angle 𝜋.
+Exercice de fixation
+Détermine les éléments caractéristiques de la similitude directe S dontl’écriture
+complexe est : 𝑧′ = (1 − 𝑖)𝑧 + 𝑖
+Solution
+L’écriturecomplexed e S est de la forme 𝑧′ = 𝑎𝑧 + 𝑏
+où a = 1 –
+i, et
+b =
+i.
+a  1. Soit A le centre de S,
+k son rapport et  son angle.
+• L’affixeducentreAest 𝑏
+1−𝑎
+𝑏
+1−𝑎 = 𝑖
+1−(1−𝑖) = 𝑖
+𝑖 =1
+• Le rapport k est tel que : k = 
+a
+k = √12 + (−1)² = √2
+• L’angle  est tel que :  = Arg(
+a)
+On a : cos = √2
+2 et sin = − √2
+2 , donc  = −
+
+4
+S estlasimilitudedirectedecentreAd’affixe1,derapport √2 etd’angle −
+
+4.
+b- Reconnaitre une similitude directe définie par son écriture
+complexe
+Propriétés
+Dans le plan complexe P muni d'un repère orthonormé direct, on considère la similitude
+directeSd’écriturecomplexe:z'=az+boùa 𝐶∗ et b ℂ.
+TABLEAU RECAPITULATIF PERMETTANT DE PARTICULARISER UNE SIMILITUDE
+Conditions vérifiées par
+a Nature et éléments
+caractéristiques de S
+Similitude directe
+Sd’écriture
+complexe
+𝒛′ = 𝒂𝒛 + 𝒃
+où 𝑎 ∈ ℂ∗ et 𝑏 ∈ ℂ.
+Si 𝑎𝜖ℝ∗
+𝑎 = 1 S est la translation de vecteur 𝑢⃗
+d’affixe
+b
+𝑎𝜖ℝ∗ ∖ {1} Sestl’homothétiedecentre 
+d’affixe 𝑏
+1−𝑎 et de rapport
+a.
+Si 𝑎𝜖 ℂ ∖ ℝ
+|𝑎| = 1 S est la rotation de centre 
+d’affixe 𝑏
+1−𝑎 etd’angle Arg (𝑎)
+|𝑎| ≠ 1
+S est la similitude directe de
+centre  d’affixe 𝑏
+1−𝑎 de rapport
+|𝑎| ded’angle Arg (𝑎)
+Exercice de fixation
+Détermine dans chaque cas, la nature et les éléments caractéristiques de la similitude
+directe S définie par son écriture complexe :
+a)z’=5z+2i; b)z’=z+1+3i;
+c)z’=( 1
+2 + √3
+2 𝑖)z + 1
+2 − √3
+2 𝑖 ; d)z’=( - 1 + i)z + 2.
+Solution
+a) a = 5, dans ce cas a ℝ∗\ {1}, S est une homothétie de rapport 5.
+Déterminonsl’affixez 0 de son centre.
+
+-- 15 of 26 --
+
+z0 = 2𝑖
+1−5 = − 1
+2 𝑖
+DoncSestl’homothétiedecentrelepointd’affixe − 1
+2 𝑖 et de rapport 5
+b) a = 1. Donc, S est la translation de vecteur d'affixe 1+3i
+c) a = 1
+2 + √3
+2 𝑖, dans ce cas a  ℂ\ ℝ
+|1
+2 + √3
+2 𝑖 | = 1, donc S est une rotation
+Déterminons son angle
+Arg(1
+2 + √3
+2 𝑖) = 𝜋
+3 car 1
+2 + 𝑖 √3
+2 = 𝑐𝑜𝑠 𝜋
+3 + 𝑖𝑠𝑖𝑛 𝜋
+3 .
+Son angle est 𝜋
+3
+Déterminons son centre
+𝑏
+1−𝑎 =
+1
+2 − 𝑖√3
+2
+1−(1
+2 + 𝑖√3
+2 )
+=
+1
+2 − 𝑖√3
+2
+(1
+2− 𝑖√3
+2 )
+= 1
+Son centre a pour affixe 1.
+D'où, S est la rotation de centre le point d'affixe 1 et d'angle 𝜋
+3.
+d) a = -1 + i, dans ce cas a  ℂ\ ℝ
+|-1+i| = √2, |-1+i|≠ 1 donc S est une similitude directe
+Arg(-1+i) = 3𝜋
+4 car −1 + 𝑖 = 𝑐𝑜𝑠3𝜋
+4 + 𝑖𝑠𝑖𝑛3𝜋
+4
+L’angledeSest 3𝜋
+4
+𝑏
+1−𝑎 = 2
+1−(−1+𝑖)
+= 2
+2−𝑖
+= 2(2+𝑖)
+(2−𝑖)(2+𝑖) = 4 + 2𝑖)
+4 + 1 = 4
+5 + 2
+5 𝑖
+D'où,Sestlasimilitudedirectedecentrelepointd’affixe 4
+5 + 2
+5 𝑖 , de rapport √2 et
+d'angle 3𝜋
+4 .
+c- Déterminationdel’écriturecomplexed’unesimilitudedirecte
+donnée par son centre, son rapport et son angle.
+Le plan complexe est rapporté à un repère orthonormé direct (O ; 𝑢	⃗⃗⃗ , 𝑣	⃗⃗⃗ ).
+Propriété
+SoitM'unpointdupland'affixez'quiestl’imaged'unpointMd'affixezparune
+similitude directe S de centre  d’affixe 𝑧 , de rapport
+k et d'angle .
+On a :z’=k 𝑒𝑖
+(z – 𝑧
+) + 𝑧
+ .
+Exercice de fixation
+Déterminel’écriturecomplexedela similitudedirectedecentrelepointAd’affixe	
+i, de
+rapport √2 etd’angle
+
+4.
+Solution
+
+-- 16 of 26 --
+
+Laformegénéraledel’ écriture complexe de S est : z’=k 𝑒𝑖
+(z – 𝑧𝐴) + 𝑧𝐴
+z' = √2𝑒𝑖
+
+4(z- zA) + zA
+= √2 (√2
+2 + 𝑖 √2
+2 ) (𝑧 − 𝑖) + 𝑖
+= (1 +
+i)(z –
+i) +
+i
+= (1 +
+i)z + 1.
+Doncl’écriturecomplexedeSest: z’=(1+	
+i)z + 1.
+d. Constructiondel’imaged’unpointparunesimilitudedirectedéfiniepar
+son centre, son rapport et son angle.
+Propriété
+Soit s une similitude plane directedecentreA,derapportketd’angle θ(θ∈ ]−𝜋; 𝜋[).
+Pour tout point M du plan distinct de A, s(M)=M’⇔ { 𝐴𝑀′ = 𝑘𝐴𝑀
+𝑀𝑒𝑠 (𝐴𝑀	⃗⃗⃗⃗⃗⃗⃗ ; 𝐴𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗	 ̂ )
+Conséquence
+Toute similitude directe s(A, k , ) de centre A, de rapport
+k et d'angle de mesure , s'écrit
+de façon unique sous la forme :
+s(A ; k ; ) = r(A ; ) o h(A ; k) = h(A ; k) o r(A ; ).
+ h(A ; k) est l'homothétie de centre A et de rapport k
+ r(A ; ) est la rotation de centre A et d'angle de mesure .
+Vocabulaire:
+L’écriture:s (A ; k ; ) = r(A ; ) o h(A ; k) = h(A ; k) o r(A ; ) s’appelleladécompositioncanonique
+de la similitude directe s(A ; k ; )
+Exercice de fixation 1
+Ecris la décomposition canonique de s(A ; 2 ; 3𝜋
+2 )
+Solution
+s(A ; 2 ; 3𝜋
+2 ) = r(A ; 3𝜋
+2 ) o h(A ; 2) = h(A ; 2) o r(A ; 3𝜋
+2 ).
+Exercice de fixation 2 :
+Construisl'imageM'd’unpointMparlasimilitudedirecteSdecentreA,derapport3et
+d'angle 𝜋
+6 .
+Solution
+s(A ; 3 ; 𝜋
+6) = h(A ; 3) o r(A ; 𝜋
+6) = r(A ; 𝜋
+6) o h(A ;
+3)
+• s(A ; 3 ; 𝜋
+6) = h(A ; 3) o r(A ; 𝜋
+6).
+M |r
+⎯⎯→	 M1 |h
+⎯⎯→	 M'
+• s(A ;3; 𝜋
+6) = r(A ; 𝜋
+6) o h(A ; 3)
+M |h
+⎯⎯→	 M2 |⎯⎯→
+r M'
+
+-- 17 of 26 --
+
+e. Similitude directe définie par deux points distincts et leurs images
+Propriété
+Soit A, B, C et D quatre points du plan tels que : A  B et C  D.
+Il existe une unique similitude directe qui transforme A en C et B en D.
+Conséquence
+Soit A, B et C trois points du plan tels que : A  B et B  C.
+Il existe une unique similitude directe qui transforme A en B et B en C
+Exercice de fixation
+Le plan complexe est muni d'un repère orthonormé direct.
+On donne les points A(2), B(2+2i), C(1-3i) et D(-4i).
+a) Trouve l'écriture complexe de la similitude directe s telle que : s(A) = C et s(B) = D.
+b) Détermine les éléments caractéristiques de S.
+Solution
+a) Soit : z' = az + b où aℂ* et bℂ,l’écriturecomplexedeS.
+
+s(A) C
+s(B) D
+=
+=
+	
+A C
+B D
+az b z
+az b z
++ =
++ =
+ { 2𝑎 + 𝑏 = 1 − 3𝑖
+(2 + 2𝑖)𝑎 + 𝑏 = −4𝑖
+ { 2𝑎 + 𝑏 = 1 − 3𝑖
+(−2 − 2𝑖)𝑎 − 𝑏 = 4𝑖
+-2ia = 1+i
+a =1 i
+2i
++
+− = -1
+2 +1
+2 i
+La 1ère équation du système donne :
+b = 1 - 3i - 2a = 1 - 3i - 2(-1
+2 +1
+2 i)
+b = 2 - 4i
+L’écriturecomplexedesest:z'=( -1
+2 +1
+2 i)z + 2 - 4i
+b) Notons
+k le rapport de S,  son angle et  son centre :
+* k = |-1
+2 +1
+2 i| =2
+2
+*  = Arg(-1
+2 +1
+2 i) =3
+4
+
+* z = 2−4𝑖
+1−(−1
+2+𝑖
+2) =1 i
+2 2
+2 2i
+1 ( )
+−
+− − + = 2 - 2i
+Donc, S est la similitude directe de centre (2-2i), de rapport2
+2 et d'angle3
+4
+	 .
+Cas particulier : Similitude directe définie par son centre, un point et son
+image
+Propriété
+Soit A, B et C trois points du plan tels que : A  B et A  C.
+Il existe une unique similitude directe de centre A qui transforme B en C.
+
+-- 18 of 26 --
+
+Exercice de fixation
+Dans le plan muni d'un repère orthonormé direct, on donne les points A(-2+i), B(1+2i)
+et C(2-i).
+On considère la similitude directe S de centre A telle que : S(B) = C.
+a) Trouve l'écriture complexe de S.
+b) Détermine les éléments caractéristiques de S
+SOLUTION
+a)L’écriturecomplexedesestdelaforme:z'=az+boùa  ℂ* et b  ℂ.
+
+s(A) A
+s(B) C
+=
+=
+ {𝑎𝑧A + 𝑏 = 𝑧A
+𝑎𝑧B + 𝑏 = 𝑧C
+	
+1
+2
+( 2 i)a b 2 i (L )
+(1 2i)a b 2 i (L )
+− + + = − +
++ + = −
+	
+1
+2
+( 2 i)a b 2 i (L )
+( 1 2i)a b 2 i -1 (L )
+− + + = − +
+− − − = − + x
+(L1) - (L2)  (-3-i)a = -4+2i
+a =	4 2i
+3 i
+− +
+− −
+a = 1 - i
+(L1) donne : b = -2 + i - (-2+i)a
+b = -2 + i - (-2+i)(1 - i) = -1 - 2i
+Donc, S : z' = (1 - i)z - 1 - 2i
+b)Sauncentre,doncSn’estpasunetranslation.
+a = 1 – i, a ∈ ℂ\ℝ doncSn’estpasunehomothétie.
+|1 - i| =	2	 , |a| ≠1doncSn’estpasunerotation.
+D’oùSestlasimilitudedirectede centre A de rapport	2	 et d'angle Arg(1 - i)
+Soit  l’argumentprincipal 1-i.
+1
+2
+1
+2
+cos
+sin
+  =
+
+  = −	
+
+  = -4
+
+Conclusion : S est la similitude directe de centre A, de rapport	2	 etd’angle -4
+
+f. Images de figures simples par une similitude directe
+Propriété 1
+Toute similitude directe de rapport
+k transforme :
+•unedroiteenunedroite ;
+•unedemi -droite en une demi-droite ;
+•unsegmentdelongueur ℓ en un segment de longueur
+kℓ ;
+•uncercledecentreAetderayon 𝑟 enuncercledecentreA’,imagedeAparla
+similitude directe, et de rayon 𝑘𝑟.
+Propriété 2
+
+-- 19 of 26 --
+
+Toute similitude directe de rapport 𝑘 multiplie :
+•lesdistancespar 𝑘 ;
+•lesairespar 𝑘2
+Exercice de fixation
+Le plan complexe est muni d'un repère orthonormé direct (O, I, J).
+OndonnelasimilitudedirecteSdontl’écriturecomplexeest:z'=(1+i)z - 1 - 2i
+a) Calcule l'aire a1 del’imagedutriangleOIJparS.
+b) Trouve l'image (C2) par S du cercle (C1) de centre O et de rayon 2.
+c)Déterminel’imagedeladroite(OI)parS.
+Solution
+a) Le rapport de la similitude S est √2. Le triangle OIJ a pour aire 1
+2 ua.
+Doncl’airea 1 del’imagedutriangleOIJest : (√2)2
+× 1
+2 = 2 × 1
+2 ua, soit 1ua.
+b)SoitO’l’imagedeOparS.Ona : 𝑧𝑂′ = −1 − 2𝑖.
+(C2)estlecercledeO’etderayon2 √2.
+c)SoitI’l’imagedeIparS.Ona : 𝑧𝐼′ = −𝑖.
+L’imagedeladroite(OI)parSestladroite(O’I’).
+C- SITUATION COMPLEXE
+Situation complexe 1
+Lors de la préparation d’un exposé en géométrie, un groupe d’élèves d’une classe de
+terminale découvre l’équation (E) : 𝑧 ∈ ℂ, 2𝑧2 + 2𝑧 + 1 = 0.
+Ils veulent avoir des informations sur cette équation.
+Après réflexion, un élève de ce groupe affirme que si l’on note 𝑎 une solution de (E) dont la
+partie imaginaire est positive, les nombres 𝑎, 𝑎2et 𝑎3 seront les affixes des sommets d’un
+triangle équilatéral. Sa voisine de classe ne partage pas cet avis.
+Ayant suivi la discussion, tu décides de les départager.
+Dis, en argumentant, lequel des deux élèves a raison.
+Solution
+Les solutions de 2𝑧2 + 2𝑧 + 1 = 0 sont : − 1
+2 − 1
+2 𝑖 et − 1
+2 + 1
+2 𝑖 , les nombres 𝑎, 𝑎2et 𝑎3 seront
+les affixes des sommets d’un triangle équilatéral si 𝑎3−𝑎
+𝑎2−𝑎 = 1
+2 + √3
+2 𝑖 ou si 𝑎3−𝑎
+𝑎2−𝑎 = 1
+2 − √3
+2 𝑖 or
+𝑎3−𝑎
+𝑎2−𝑎 = 𝑎 + 1 = 1
+2 + 1
+2 𝑖 donc le triangle n’est pas équilatéral
+Situation complexe 2
+Des élèves d’un lycée ont décoré avec
+différentes figures géométriques les
+murs de la salle du club de
+Mathématiques.
+La figure ci-contre représentant l’une
+d’elles est constituée d’un quadrilatère
+ABCD de sens direct et des triangles
+rectangles isocèles 𝐴𝑀1𝐵, 𝐵𝑀2𝐶,
+
+-- 20 of 26 --
+
+𝐶𝑀3𝐷 et 𝐷𝑀4𝐴 de sommets respectifs
+𝑀1, 𝑀2, 𝑀3 et 𝑀4.
+Observant attentivement cette figure,
+l’un des élèves de la promotion de
+Terminale, passionné de nombres
+complexes et de géométrie, affirme que
+les segments [𝑀1𝑀3] et [𝑀2𝑀4] ont des
+supports perpendiculaires et ont la
+même longueur.
+Démontre en utilisant les nombres
+complexes que l’affirmation de cet
+élève est correcte.
+Solution
+• Pour résoudre ce problème, on va utiliser les nombres complexes appliqués à la
+géométrie.
+• Pour cela, désignons par 𝑧𝐴, 𝑧𝐵, 𝑧𝐶 et 𝑧𝐷, les affixes respectifs des points
+A,B,C et D ; 𝑧1, 𝑧2, 𝑧3, et 𝑧4 les affixes respectifs des points 𝑀1, 𝑀2, 𝑀3 et 𝑀4.
+Le triangle A𝑀1𝐵 est rectangle isocèle en 𝑀1⇔ 𝑧𝐵 − 𝑧1
+𝑧𝐴 − 𝑧1
+= 𝑖 (car le triangle A𝑀1𝐵 est
+directe).
+⇔ 𝑧1 = 𝑧𝐵 − 𝑖𝑧𝐴
+1 − 𝑖
+⇔ 𝑧1 = (𝑧𝐵 − 𝑖𝑧𝐴)(1+𝑖 )
+2
+⇔ 𝑧1 = 𝑧𝐴×(1−𝑖)+ 𝑧𝐵×(1+𝑖 )
+2 .
+De même, on montre que les triangles 𝐵𝑀2𝐶, 𝐶𝑀3𝐷 , 𝐷𝑀4𝐴 sont rectangles si et
+seulement si on a respectivement :
+𝑧2 = 𝑧𝐵×(1−𝑖)+ 𝑧𝐶×(1+𝑖 )
+2 , 𝑧3 = 𝑧𝐶×(1−𝑖)+ 𝑧𝐷×(1+𝑖 )
+2 et 𝑧4 = 𝑧𝐷×(1−𝑖)+ 𝑧𝐴×(1+𝑖 )
+2 .
+Il reste à calculer : 𝑧4− 𝑧2
+𝑧3− 𝑧1
+𝑧4− 𝑧2
+𝑧3− 𝑧1
+=
+𝑧𝐷×(1−𝑖)+ 𝑧𝐴×(1+𝑖 )
+2 −𝑧𝐵×(1−𝑖)+ 𝑧𝐶×(1+𝑖 )
+2
+𝑧𝐶×(1−𝑖)+ 𝑧𝐷×(1+𝑖 )
+2 − 𝑧𝐴×(1−𝑖)+ 𝑧𝐵×(1+𝑖 )
+2
+= (1−𝑖)(𝑧𝐷− 𝑧𝐵) + (1+𝑖 )(𝑧𝐴− 𝑧𝐶)
+(1−𝑖)(𝑧𝐶− 𝑧𝐴) + (1+𝑖 )(𝑧𝐷− 𝑧𝐵) et par multiplication par le
+conjugué
+(1 + i) de (1 – i) =2×(𝑧𝐷− 𝑧𝐵) +2𝑖×(𝑧𝐴− 𝑧𝐶)
+2×(𝑧𝐶− 𝑧𝐴)+ 2𝑖× (𝑧𝐷− 𝑧𝐵)
+= [(𝑧𝐷− 𝑧𝐵) +𝑖×(𝑧𝐴− 𝑧𝐶) ]
+𝑖 × [(𝑧𝐷− 𝑧𝐵) +𝑖×(𝑧𝐴− 𝑧𝐶) ] = −𝑖.
+les segments [𝑀1𝑀3] et [𝑀2𝑀4] ont des supports perpendiculaires et puisque
+|𝑧4 − 𝑧2| = |𝑧4 − 𝑧2| ces segments sont de même longueur.
+Exercices de maison
+Exercice 1
+On donne le point A d'affixe 2+2
+i.
+a) Détermine l'écriture complexe de la translation t de vecteuru	 d'affixe 1-3i.
+
+-- 21 of 26 --
+
+b) Détermine l'écriture complexe de l'homothétie h de centre A et de rapport -3.
+c) Détermine l'écriture complexe de la rotation r de centre A et d'angle3
+	 .
+Exercice 2
+Détermine les éléments caractéristiques de la similitude directe S dontl’écriture
+complexe est : 𝑧′ = (1 + 𝑖√3 )z + 2 𝑖√3.
+Exercice 3
+Détermine dans chaque cas, la nature et les éléments caractéristiques de la
+similitude directe s définie par son écriture complexe :
+a)z’= -3z +1- i ; b)z’=z+i;
+c)z’=( √2
+2 − √2
+2 𝑖)z + 1
+2 𝑖 ; d)z’=(2 -2i)z.
+e)z’= -z + i
+Exercice 4
+Le plan complexe est rapporté à un repère orthonormé direct (O ; 𝑒1	⃗⃗⃗⃗	
+, 𝑒2	⃗⃗⃗⃗ ).
+a)Déterminel’écriturecomplexedelasimilitudedirectedecentrelepointA
+d’affixe1 -
+i,derapport3etd’angle −3
+
+4 .
+b)Déterminel’écriturecomplexedelasimilitudedi recte de centre le point B
+d’affixe 𝑖√3,derapport4etd’angle −2
+
+3 .
+c)Déterminel’écriturecomplexedelasimilitudedirectedecentrelepointO,de
+rapport 1
+2 etd’angle 5
+
+6 .
+D- EXERCICES
+Exercice 1
+Le plan complexe est muni d’un repère orthonormé direct (O ; u	⃗⃗⃗ , v	⃗⃗ ).
+On donne les points A, B, C, D d’affixes respectives 2 + 𝑖, 2 - 𝑖, 5 - 2𝑖, 5 + 2𝑖 .
+Justifie que : les points A, B, C et D sont cocycliques.
+Solution
+On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐷−𝑧𝐴
+: 𝑧𝐵−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+= 4𝑖
+3+𝑖 : −3+𝑖
+−2𝑖 = −2
+5 .
+D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐷−𝑧𝐴
+: 𝑧𝐵−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗.
+Par suite les points A, B, C et D sont cocycliques.
+Exercice 2
+Le plan complexe est muni d’un repère orthonormé direct (O; OI	⃗⃗⃗⃗⃗ , OJ	⃗⃗⃗⃗⃗ ).
+1) Détermine l’écriture complexe de la translation 𝑡 de vecteur u⃗ d’affixe 1 + 4𝑖.
+2) Détermine l’écriture complexe de la rotation 𝑟 de centre A d’affixe 1 + 𝑖 et d’angle 2π
+3 .
+Solution
+1) L’écriture complexe de la translation 𝑡 de vecteur u⃗ est : z′ = z + zu⃗⃗ . Or zu⃗⃗ = 1+4i.
+L’écriture complexe de la translation 𝑡 de vecteur u⃗ est : z′ = z +1+4i.
+
+-- 22 of 26 --
+
+2) L’écriture complexe de la rotation 𝑟 de centre A et d’angle 2π
+3 est :
+z′ − (1 + i) = ei2π
+3 (z − (1 + i))
+z′ = (−1
+2 + i √3
+2 )(z − (1 + i)) +1+i
+z′ = (−1
+2 + i √3
+2 ) z + 3+√3
+2 + i 3−√3
+2
+L’écriture complexe de la rotation 𝑟 de centre A
+d’affixe 1 + i et d’angle 2π
+3 est :
+z′ = (−1
+2 + i √3
+2 ) z + 3+√3
+2 + i 3−√3
+2 .
+Exercice de renforcement
+Exercice 3
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢	⃗⃗⃗ , 𝑣	⃗⃗⃗ ).
+Dans chaque cas, détermine et construis l’ensemble des points M d’affixe z vérifiant la
+condition donnée :
+a) |𝑧 − 2𝑖| = 3.
+b) |𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖|.
+c) arg (𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋].
+Solution
+a) |𝑧 − 2𝑖| = 3 ⟺ AM = 3 où A est le point
+d’affixe 2i.
+L’ensemble des points M dont l’affixe z
+vérifie :
+|𝑧 − 2𝑖| = 3 est le cercle (C) de centre A de
+rayon 3.
+b)
+|𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖|
+⟺ |𝑧 − (1 − 𝑖)| =
+|𝑧 − (−1 − 3𝑖)|
+⟺ PM = QM où P et Q sont les points
+d’affixes respectives 1 − 𝑖 et −1 − 3𝑖.
+L’ensemble des points M dont l’affixe z
+vérifie :
+|𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖| est la médiatrice
+(Δ) du segment [PQ].
+(C)
+2 	3	-1	-2	-3
+2
+3
+4
+-1
+-2
+0 	1
+1
+x
+y
+A
+2 3 4	-1	-2	-3	-4
+2
+-1
+-2
+-3
+-4
+0 1
+1
+x
+y
+P
+Q
+I
+L
+
+-- 23 of 26 --
+
+c) arg (𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋]
+⟺ arg (𝑧 − (1 + 𝑖)) ≡ 𝜋
+6 [2𝜋]
+⟺ arg (𝑧 − 𝑧A) ≡ 𝜋
+6 [2𝜋], où A(1 + 𝑖)
+⟺Mes(𝑢⃗ , AM	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+6
+L’ensemble des points M d’affixe z
+vérifiant : arg (𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋] est
+la demi-droite [AP) privée du point A, où
+Mes(𝑢⃗ , AP	⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+6.
+3. Exercices d’approfondissement
+Exercice 4
+1) a) Résous dans C l’équation	0	2	z	2	z2 =	+	−	 .
+Précise le module et un argument de chacune des solutions.
+b) Déduis les solutions de l’équation :	0	2	)	3	i	3	iz	(	2	)	3	i	3	iz	( 2 =	+	+	+	−	−	+	+	−
+2) le plan est rapporté à un repère orthonormé direct	)	v	,	u	,	O	(	 d’unité graphique 2cm,
+On considère les points A, B et C d’affixes respectives	B	C	A	B	A z	2	z	,	z	z	,i	1	z =	=	+	=
+a) Détermine les formes algébriques de	C	B	A z	et	z	,	z
+b) Place les points A, B et C
+c) Montre que les points A, B et C appartiennent au cercle (C) de centre I d’affixe 3 et de
+rayon	5
+d) Calcule3	z
+3	z
+A
+C
+−
+− ; en déduire la nature du triangle IAC.
+Solution
+1) a)	0	2	z	2	z2 =	+	−	 . Utilisons (une fois quand même la forme canonique !)
+2	2	2	2 i	1	)1	z(	0	2	1	)1	z(	0	2	z	2	z =	−	=	−		=	+	−	−		=	+	−	i	1	z	ou	i	1	z	i	1	z	ou	i	1	z −	=	+	=		−	=	−	=	−		
+;
+ 		i	1	;i	1	SC −	+	=
+)
+4
+sin	i
+4
+(cos	2	)
+2
+2
+i
+2
+2
+(	2	i	1 
++
+
+=	+	=	+	
+;	2	i	1 =	+	 et4
+)i	1(	ARG 
+=	+	 .
+On montre de même que :	2	i	1 =	−	 et4
+)i	1(	ARG 
+−	=	−
+
+-- 24 of 26 --
+
+b) En posant	3	i3	iz	Z +	+	−	=	 , l’équation dévient :	0	2	Z	2	Z2 =	+	−	 donc les solutions sont
+d’après la première question, Z = 1 + i ou Z = 1 – i. Donc	i	1	3	i3	iz +	=	+	+	−	 ou	i	1	3	i3	iz −	=	+	+	−	 ;
+i	2	2	z −	=	
+ou	i2	4	z −	=	 ;	 		
+i	2	4	;i	2	2	SC −	−	=
+2°/ a)	i	2	2	z	,i	1	z,i	1	z C	B	A −	=	−	=	+	=	 ;
+b) Figure
+c) Il suffit de montrer que	5	IC	IB	IA =	=	=
+5	i	2	3	i	1	z	IA IA =	+	−	=	−	+	=	=	
+;	5	i	2	3	i	1	z	IB IB =	−	−	=	−	−	=	=
+5	i	2	1	3	i	2	2	z	IC IC =	−	−	=	−	−	=	=
+d)	i
+3	z
+3	z
+A
+C =
+-
+- ; le triangle IAC est rectangle et isocèle en I.
+Exercice 5
+Exercice 5
+Le plan complexe est muni du repère orthonormé (O, I, J).
+A, B et D sont les points d’affixes respectives −1 + 3𝑖 ; −2 et 2 + 2𝑖.
+Soit r la rotation d’angle π
+2 et de centre le point J d’affixe 𝑖.
+1- a) Fais une figure.
+b) Démontre que l’écriture complexe de r est : 𝑧′ = 𝑖 𝑧 + 1 + 𝑖
+2- a) Justifie que B est l’image du point A par la rotation r.
+b) Justifie que D est l’antécédent du point A par r.
+3- Soit C l’image du point A par la symétrie centrale de centre J.
+a) Calcule l’affixe du point C.
+b) Démontre que le quadrilatère ABCD est un carré.
+Solution
+1- a)
+1 	2 	3 	4 	5	-1	-2
+1
+2
+3
+4
+-1
+-2
+-3
+-4
+-5
+-6
+-7
+A
+B
+C
+I
+D
+E
+H 	J
+F
+G	K
+L
+M
+E
+I	O A
+B
+C
+
+-- 25 of 26 --
+
+b) écriture complexe de r
+L’écriture complexe d’une rotation est de la forme : 𝑧′ = 𝑒𝑖𝛼(𝑧 − 𝜔) + 𝜔 où 𝛼 est l’angle de
+la rotation et , l’affixe du centre de cette rotation. on en déduit que :
+𝑧′ = 𝑒𝑖𝜋
+2 (𝑧 − 𝑖) + 𝑖 = 𝑖𝑧 + 1 + 𝑖 est l’écriture complexe associé à cette rotation.
+2) a- Soit 𝑧′𝐴, l’affixe de l’image de A par la rotation r ; 𝑧′𝐴 = 𝑖 × (−1 + 3𝑖) + 1 + 𝑖 = −2=
+𝑧𝐵.
+b- cela revient à résoudre l’équation :z ∈ℂ, −1 + 3𝑖 = 𝑖𝑧 + 1 + 𝑖. On obtient :
+𝑧 = −2+2𝑖
+𝑖 = 2 + 2𝑖 = 𝑧𝐷.
+3) a- calcule de l’affixe de C
+𝑧𝐽 = 𝑧𝐴 + 𝑧𝐶
+2 ⇔ 𝑧𝐶 = 2 × 𝑧𝐽 − 𝑧𝐴 = 2 × 𝑖 − (−1 + 3𝑖) = 1 − 𝑖.
+b- démontrons que ABCD est un carré.
+Il suffit pour cela de montrer que ABCD est un losange ayant deux cotés consécutifs
+perpendiculaires.
+• |𝑧𝐵 − 𝑧𝐴| = |𝑧𝐵 − 𝑧𝐶| = |𝑧𝐶 − 𝑧𝐷| = |𝑧𝐷 − 𝑧𝐴| , donc AB = BC = CD =DA.
+• 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= −2−(−1+3𝑖)
+1 − 𝑖 −(−1+3𝑖) = −1−3𝑖
+2 − 4𝑖 = (−1−3𝑖)(2+4𝑖)
+20 = −2−4𝑖−6𝑖+12
+20 =10−10𝑖
+20 = 1
+2 − 1
+2 𝑖 donc
+𝑀𝑒𝑠 (𝐴𝐵	⃗⃗⃗⃗⃗ ; 𝐴𝐶	⃗⃗⃗⃗⃗	 ̂ ) = 𝑎𝑟𝑔 𝑧𝐵−𝑧𝐴
+𝑧𝐶−𝑧𝐴
+= 𝜋
+4et puisque 𝑀𝑒𝑠 (𝐴𝐵	⃗⃗⃗⃗⃗ ; 𝐴𝐷	⃗⃗⃗⃗⃗	 ̂ ) = 2 ×
+𝑀𝑒𝑠 (𝐴𝐵	⃗⃗⃗⃗⃗ ; 𝐴𝐶	⃗⃗⃗⃗⃗	 ̂ ) = 2 × 𝜋
+4 = 𝜋
+2 𝑑′𝑜ù 𝑙𝑒 𝑟é𝑠𝑢𝑙𝑡𝑎𝑡.
+
+-- 26 of 26 --
+

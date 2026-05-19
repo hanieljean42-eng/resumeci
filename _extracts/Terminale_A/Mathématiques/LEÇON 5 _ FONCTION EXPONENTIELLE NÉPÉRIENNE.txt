@@ -1,0 +1,1099 @@
+Page 1 sur 18
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+LEÇON 5 : FONCTION EXPONENTIELLE NEPERIENNE
+1. SITUATION D’APPRENTISSAGE
+Des élèves de terminale A travaillent les samedis dans le service marketing d’une grande
+chaîne de magasins. Ce magasin veut informer la population des nouvelles offres
+proportionnelles. Le service marketing a observé que la proportion P de la population qui
+est au courant de ces nouvelles offres après
+t jours d’annonces publicitaires est donnée
+par la fonction : P(
+t) = 1 − 𝑒−0,21𝑡.
+Le magasin veut arrêter cette publicité lorsque 90 % de la population sera au courant des
+nouvelles offres. Dans la formule de P, les élèves remarquent une nouvelle fonction : la
+fonction
+x↦ 𝑒𝑥
+. Ils décident d’étudier cette nouvelle fonction afin de répondre à la
+préoccupation de la grande chaine de magasins
+2. RESUME DE COURS
+I. Définition et propriétés algébriques.
+1. Définition et notation
+a) Définition
+La fonction exponentielle népérienne, notée exp, est la fonction réciproque de la fonction
+logarithme népérien.
+b) Autre notation :
+Pour tout nombre réel x, exp(x) se note également ex : exp(x) = ex.
+c) Conséquences de la définition
+ L’ensemble de définition de la fonction exp est ℝ.
+ Pour tout nombre réel
+a strictement positif et pour tout nombre réel
+b,
+ln(a) = b équivaut à eb = a.
+ e0 = 1 ; e1 = e.
+ Pour tout nombre réel a, ea > 0.
+ Pour tout nombre réel a, ln(ea) = a.
+ Pour tout nombre réel a strictement positif, elna = a.
+Exercice
+a) Réponds par vrai ou par faux à chacune des affirmations suivantes :
+Affirmations Réponse
+Terminale A
+Mathématiques
+
+-- 1 of 18 --
+
+Page 2 sur 18
+L’ensemble de définition de la fonction 𝑥: ↦ 𝑒𝑥 est
+ℝ
+Le nombre 𝑒−10 est négatif.
+Le nombre 𝑒0 est égal à 0.
+Le nombre réel, 𝑒ln(12) est égal à 𝑙𝑛12.
+Le nombre ln(𝑒51) est égal à 51
+b) Ecris chacun des nombres A, B, C et D suivants sous forme de nombre rationnel.
+A = ln(𝑒8) B = ln(𝑒−5) C = 𝑒𝑙𝑛3 D = 𝑒−𝑙𝑛2
+Corrigé
+a)
+Affirmations Réponse
+L’ensemble de définition de la fonction 𝑥: ↦ 𝑒𝑥 est
+ℝ
+vrai
+Le nombre 𝑒−10 est négatif. Faux
+Le nombre 𝑒0 est égal à 0. faux
+Le nombre réel, 𝑒ln(12) est égal à 𝑙𝑛12. Faux
+Le nombre ln(𝑒51) est égal à 51 vrai
+b)
+A = ln(𝑒8)
+= 8
+B = ln(𝑒−5)
+= −5
+C = 𝑒𝑙𝑛3
+= 3
+D = 𝑒−𝑙𝑛2
+=𝑒𝑙𝑛1
+2
+= 1
+2
+2. Propriétés algébriques
+Pour tous nombres réels
+a et
+b,
+Exercice
+Ecris chacun des nombres E, F et G suivants sous la forme 𝑒𝑘, 𝑘 ∈ ℝ .
+E = e6 × e−4 F = (e−2)4 G = 𝑒4
+𝑒−5
+Corrigé
+E = e6 × e−4
+= 𝑒6+(−4)
+= 𝑒2
+F = (e−2)4
+= 𝑒−2×4
+= 𝑒−8
+G = 𝑒4
+𝑒−5
+=𝑒4+5
+=𝑒9
+Exercice maison
+ea × eb =ea + b
+1
+𝑒 𝑏 =e-b
+𝑒 𝑎
+𝑒 𝑏 = e a - b
+(ea )r = ear
+
+-- 2 of 18 --
+
+Page 3 sur 18
+Ecris chacun des nombres suivants sous la forme 𝑒𝑘, 𝑘 ∈ ℝ .
+a) 𝑒−3 × 𝑒1
+2 ; b) 𝑒4
+𝑒2 ; c) (𝑒3)−2 ; d) 1
+𝑒−5 ;
+
+-- 3 of 18 --
+
+Page 4 sur 18
+II Limites, sens de variations et représentation graphique de la
+fonction exponentielle
+1. Limites de référence
+)	2	(	lim	)	1	( 		
+		
+x
+x
+e	0	lim 
+		
+x
+x
+e
+)	4	(	lim	)	3	( 		
+		 x
+ex
+x
+0	lim 
+		
+x
+x
+xe
+Exercice
+Calcule les limites suivantes :
+a) lim
+x→−(e𝑥 + 3) ; b) lim
+x→−∞ 2𝑥e𝑥 ; c) lim
+x→+∞(2𝑥 − 1 − e𝑥)
+Corrigé
+a. lim
+x→− (ex + 3) = 3 or lim
+x→− ex = 0 et lim
+x→− 3 = 3
+Donc lim
+x→− ex + 3 = 3
+b. lim
+x→−∞ 2𝑥e𝑥 = 2 lim
+x→−∞ 𝑥e𝑥 or lim
+x→−∞ 𝑥e𝑥 = 0
+Donc lim
+x→−∞ 2xex = 2× 0=0
+c. lim
+x→+∞ 2x − 1 − ex = lim
+x→+∞x(2 − 1
+x − ex
+x )
+=−∞ car {
+lim
+x→+∞ x = +∞
+lim
+x→+∞(2 − 1
+x − ex
+x ) = −∞
+2. Dérivée et sens de variation de la fonction exponentielle.
+Propriété
+La fonction exponentielle népérienne est dérivable sur ℝ et pour tout nombre réel x,
+(𝐞𝐱)’ = 𝐞𝐱.
+La fonction exponentielle népérienne est strictement croissante sur ℝ.
+Tableau de variation
+x
+(𝑒𝑥)′
+𝑒𝑥
++
+−∞ +∞
+0
++∞
+
+-- 4 of 18 --
+
+Page 5 sur 18
+3. Représentation graphique de la fonction 𝐞𝐱𝐩.
+Notons (C) la courbe représentative de la fonction x ⟼ ex dans le plan muni d’un repère
+orthonormé (O, I, J).
+On a : lim
+x→−∞ ex = 0. Donc la droite d’équation y = 0, c’est-à-dire l’axe (OI), est asymptote
+horizontale à (C) en −∞.
+Exercice
+Soit la fonction 𝑓 de ℝ vers ℝ définie par: 𝑓(𝑥) = 2𝑥 + 𝑒𝑥.
+1. Calcule la limite de 𝑓 en −∞ et en +∞
+2. Calcule 𝑓′(𝑥).
+Corrigé
+1. lim
+x→−∞(2𝑥 + 𝑒𝑥) = -  car : lim
+x→−∞2𝑥 = - et lim
+x→−∞𝑒𝑥 = 0
+lim
+x→+∞(2𝑥 + 𝑒𝑥) = +  car : lim
+x→+∞2𝑥 = +  et lim
+x→+∞𝑒𝑥 = +
+2. Pour tout
+x élément de ℝ, 𝑓′(𝑥) = 2 + 𝑒𝑥.
+Exercice de maison
+Soit la fonction 𝑓 de ℝ vers ℝ définie par: 𝑓(𝑥) = 1 − 𝑥 + 𝑒𝑥.
+1. Calcule la limite de 𝑓 en −∞ , en 0 et en +∞
+2. Calcule 𝑓′(𝑥).
+
+-- 5 of 18 --
+
+Page 6 sur 18
+B-3. Résolution d’équations et d’inéquations avec la fonction exp.
+1. Propriété
+Pour tous nombres réels
+a et
+b :
+ e
+a = e
+b ⟺
+a =
+b
+ e
+a < e
+b ⟺
+a <
+b
+ e
+a ≤ e
+b ⟺
+a ≤
+b
+ e
+a > e
+b ⟺
+a >
+b
+ e
+a ≥ e
+b ⟺
+a ≥
+b
+2. Equations
+Exercice
+Résous dans ℝ chacune des équations suivantes :
+1) e2𝑥−1 = e𝑥+5
+2) e𝑥−2 = 5
+3) e2𝑥 + e𝑥 − 6 = 0
+Corrigé
+1) e2𝑥−1 = e𝑥+5
+⟺ 2𝑥 − 1 = 𝑥 + 5
+⟺ 𝑥 = 6
+Sℝ = {6}
+2) e𝑥−2 = 5
+⟺ e𝑥−2 = eln5
+⟺ 𝑥 − 2 = ln5
+⟺ 𝑥 = 2 + ln5
+Sℝ = {2 + ln5}
+3) e2𝑥 + e𝑥 − 6 = 0
+⟺ (e𝑥)2 + e𝑥 − 6 = 0
+Posons : X = ex. Donc X  0
+L’équation devient : X2 + X − 6 = 0
+Résolution de cette équation :
+∆= 1 + (−4) × (−6) = 25 = 52
+X = −1 − 5
+2 ou X = −1 + 5
+2
+X=−3 ou X=2,
+X = - 3 est impossible car X  0.
+e𝑥 = 2 on a : 𝑥 = ln2
+Sℝ = {ln2}
+Exercices de maison
+Résous dans ℝ chacune des équations suivantes :
+a) e3−x = 1 ; b) e2x2+3 = e7x ; c) 2 − ex = 0 ; d) (ex − 2)(e−x + 1) = 0
+e) e2x − 2ex − 3 = 0
+3. Inéquations
+Exercice
+Résous dans ℝ chacune des inéquations suivantes :
+1) e2x−1 < 8
+2) e2x − 5ex + 6 ≥ 0
+
+-- 6 of 18 --
+
+Page 7 sur 18
+Corrigé
+1) e2x−1 < 8
+⟺ ln(e2x−1) < ln8
+⟺ 2x − 1 < ln8
+⟺ x < 1+ln8
+2
+Sℝ = ]−∞; 1 + ln8
+2 [
+2) e2x − 5ex − 6 ≥ 0
+Posons ex = X, donc X  0 . On a X2 − 5X + 6 ≥ 0
+∆= 25 − 24 = 1
+X = 2 ou X = 3
+Etudions le signe de X2 − 5X + 6
+X −∞ 2 3 +∞
+X2 − 5X + 6 + 0 - 0 +
+X2 − 5X + 6 ≥ 0 ⟺ Xϵ]−∞; 2] ∪ [3; +∞[
+On a : ex ϵ]−∞; 2] ou : ex ϵ[3; +∞[
+ex ≤ 2 ou ex ≥ 3 ce équivaut à x ≤ ln2 ou x ≥ ln3
+Sℝ = ]−∞; ln2] ∪ [ln3; +∞[
+Exercice de maison
+Résous dans ℝ chacune des inéquations suivantes :
+a) ex − 3 ≥ 0 b) 2e2x − 3ex − 2 ≤ 0
+IV. Dérivée et primitives
+1. Dérivée
+Propriété
+Si u est une fonction dérivable sur un intervalle K, alors eu est dérivable sur K et on a :
+(eu)’ = u’eu
+Exercice
+Dans chaque cas, la fonction f est dérivable sur ℝ. Détermine leur fonction dérivée.
+1) f(x) = e−4x+3
+2) f(x) = ex+3 − 2x + 5
+3) f(x) = (2x + 1)ex
+Corrigé
+1) Pour x ∈ ℝ, f ′(x) = −4e−4x+3
+2) Pour x ∈ ℝ, f ′(x) = −2 + ex+3
+3) Pour x ∈ ℝ, f ′(x) = 2ex + (2x + 1)ex
+f ′(x) = (2x + 3)ex
+Exercice de maison
+Détermine dans chaque cas la dérivée de la fonction f dérivable et définie sur ℝ.
+a) f(x) = e−2x+1 b) f(x) = x + 2 − ex c) f(x) = (1 − x)ex
+2. Primitives (Terminale A1 uniquement)
+Propriété
+Si u est une fonction dérivable sur un intervalle K, alors la fonction la fonction u’eu a pour
+primitive sur K, la fonction eu + α (α∈ℝ)
+
+-- 7 of 18 --
+
+Page 8 sur 18
+Méthode
+Fonctions Primitives
+𝒇: 𝒙 ⟼ 𝒆𝒙
+, 𝑭: 𝒙 ⟼ 𝒆𝒙 + 𝒌, , k ϵ ℝ
+𝒇: 𝒙 ⟼ 𝒆𝒂𝒙+𝒃 , 𝒂 ≠ 𝟎 𝑭: 𝒙 ⟼ 𝟏
+𝒂 𝒆𝒂𝒙+𝒃 + 𝒌 ; k ϵ ℝ
+𝒇: 𝒙 →⟼ 𝒖′(𝒙)𝒆𝒖(𝒙) 𝑭: 𝒙 ⟼ 𝒆𝒖(𝒙) + 𝒌 ; k ϵ ℝ
+Exercice
+Détermine sur ℝ les primitives de chacune des fonctions suivantes :
+𝑎) f(x) = ex, b) f(x) = e−3x+7, c) f(x) = xex2
+Corrigé
+a) Déterminons les primitives de la fonction f telle que : f(x) = ex sur ℝ .
+Les primitives de f sur ℝ, sont les fonctions F telles que : F(x) = ex + α (α∈ℝ)
+b) Déterminons les primitives de la fonction f telle : f(x) = e−3x+7 sur ℝ .
+Les primitives de f sur ℝ sont les fonctions F telles que : F(x) = − 1
+3 e−3x+7 + α (α∈ℝ).
+c) Déterminons les primitives de la fonction f telle que : f(x) = xex2
+sur ℝ .
+Soit u(x) = x2 et u′(x) = 2x
+On a : u′(x)eu(x) = 2xex2
+; f(x) = 1
+2 u′(x)eu(x)
+Les primitives de f sur ℝ sont les fonctions F telles que : F(x) = 1
+2 ex2
++ α (α∈ℝ).
+Exercice de maison
+Dans chacun des cas suivants détermine une primitive de la fonction f sur ℝ.
+a) f(x) = e4x ; b) f(x) = ex+5
+c) f(x) = e3x − e−1
+2x + 5 ; d) f(x) = x − 3
+4 + 3e−2x+1
+Exercice type Bac
+Le plan est muni d’un repère orthonormé (O, I, J). L’unité graphique est le centimètre.
+On considère la fonction 𝑓 dérivable et définie sur ]−∞ ; 2] par 𝑓(𝑥) = (−2𝑥 + 3)𝑒𝑥.
+On note ( C ) la représentation graphique de 𝑓 dans le repère ( O , I , J ).
+1. Justifie que lim
+𝑥→−∞ 𝑓(𝑥) = 0 , puis interpréte graphiquement ce résultat.
+2.a) Vérifie que pour tout élément 𝑥 de ]−∞ ; 2] , 𝑓′(𝑥) = (−2𝑥 + 1)𝑒𝑥
+b) Etudie le signe de la dérivée 𝑓′(𝑥) sur ]−∞ ; 2].
+En déduis les variations de 𝑓 sur ]−∞ ; 2]
+c) Dresse le tableau de variation de 𝑓.
+3. Soit A le point d’intersection de (C) avec l’axe des abscisses et B le point d’intersection
+de (C) avec l’axe des ordonnées.
+Détermine les coordonnées respectives des points A et B.
+4. Recopie et complète le tableau des valeurs ci – dessous.
+𝑥 −4 −3 −2 −1 0 0,5 1 1,5 2
+Arrondi d′ordre 1 de 𝑓(𝑥) 0,2 0,4 1,8 3,3 −7,4
+5. Construis ( C ) sur l’intervalle ]−∞ ; 2].
+
+-- 8 of 18 --
+
+Page 9 sur 18
+Corrigé
+1 Justifions que lim
+𝑥→−∞ 𝑓(𝑥) = 0.
+On a (−2𝑥 + 3)𝑒𝑥 = −2𝑥 𝑒𝑥 + 3𝑒𝑥 𝑜𝑟 lim
+𝑥→−∞ − 2𝑥𝑒𝑥 = 0 𝑒𝑡 lim
+𝑥→−∞3𝑒𝑥 = 0
+Donc lim
+𝑥→−∞ 𝑓(𝑥) = 0.
+Interprétation graphique :La droite d’équation y = 0 est une asymptôte horizontale à(C)
+en −∞
+2. a) Vérifions que pour tout élément 𝑥 de]−∞ ; 2] , 𝑓′(𝑥) = (−2𝑥 + 1)𝑒𝑥
+Pour tout élément x de ]−∞ ; 2] f est dérivable .
+𝑓′(𝑥) = (−2𝑥 + 3)′𝑒𝑥+ (−2𝑥 + 3)(𝑒𝑥)′
+= −2𝑒𝑥 + (−2𝑥 + 3)𝑒𝑥
+= (−2𝑥 + 3 − 2)𝑒𝑥
+𝑓′(𝑥) = (−2𝑥 + 1)𝑒𝑥
+b) Etudions le signe de la dérivée 𝑓′(𝑥) sur ]−∞ ; 2].
+Le signe de la dérivée est celui de (−2𝑥 + 1).
+ (−2𝑥 + 1) = 0 équivaut à 𝑥 = 1
+2
+ (−2𝑥 + 1) ≥ 0 équivaut à 𝑥 ≤ 1
+2 soit 𝑥 ∈ ] − ∞; 1
+2]
+ (−2𝑥 + 1) < 0 équivaut à 𝑥 > 1
+2 soit 𝑥 ∈ ] 1
+2 ; +∞[
+Variation de 𝑓 sur ]−∞ ; 2]
+Pour tout 𝑥 ∈ ] − ∞; 1
+2] , 𝑓 est croissante
+Pout tout 𝑥 ∈ ] 1
+2 ; +∞[ , , 𝑓 est strictement décroissante.
+c) le tableau de variation de 𝑓.
+𝑥 −∞ 1
+2
+2
+𝑓′(𝑥) + 0 +
+𝑓(𝑥) 3.3
+0
+3. Déterminons les coordonnées respectives des points A et B.
+ Soit A(𝑥𝐴; 𝑦𝐴)
+A le point d’intersection de ( C ) avec l’axe des abscisses équivaut à 𝑦𝐴=0
+Soit (−2𝑥𝐴 + 3)𝑒𝑥𝐴 =0
+C’est-à-dire (−2𝑥𝐴 + 3) = 0
+𝑥𝐴 = 3
+2
+
+-- 9 of 18 --
+
+Page 10 sur 18
+Donc A(3
+2 ; 0)
+ Soit B (𝑥𝐵; 𝑦𝐵)
+B le point d’intersection de ( C ) avec l’axe des ordonnées équivaut à 𝑥𝐵=0
+Soit (−2 × 0 + 3)𝑒0 = 𝑦𝐵
+C’est-à-dire 𝑦𝐵 = 3
+Donc B (0; 3)
+4. Tableau de valeurs
+𝑥 −4 −3 −2 −1 0 0,5 1 1,5 2
+Arrondi d′ordre 1 de 𝑓(𝑥) 0,2 0,4 0.9 1,8 3 3,3 2,7 0 −7,4
+1. Construction
+
+-- 10 of 18 --
+
+Page 11 sur 18
+3. EXERCICES
+3-1. Exercices de fixation
+Exercice 1
+Simplifie chacun des nombres suivants :
+ 	
+6 3 5 2 3	6 4 4
+3 7 3	
+; B= ; C= ; D= ; E=
+e e e e
+A e e e
+e e e
+ 
+ 
+
+
+ 
+Exercice 2
+Simplifie les expressions suivantes :
+a) (ex)3e2x
+b) e3x
+(e−x)2 c) exey
+ex−y
+Exercice 3
+Simplifie chacune des expressions a, b et c suivantes :2 2 5 2
+3 2	
+; ; c=
+x x x x
+x x x
+e e e e
+a b
+e e e
+ 
+  
+
+ 	 .
+Exercice 4
+Simplifie l’expression suivante : 	 	 	
+2 2	x x x x
+e e e e 
+  	 .
+Exercice 5
+Développe l’expression suivante : 	 	
+x x x x
+e e e e 
+ 	 .
+Exercice 6
+Résous dans ℝ chacune des équations proposées :
+a) e3−x = 1 b) e2x2+3 = e7x c) 2-ex = 0
+d) (ex − 2)(e−x + 1) = 0 e) e2x − 2ex − 3 = 0 f) ex+1 = e2
+x
+Exercice 7
+Résous dans ℝ les équations suivantes d’inconnue
+x en posant X =
+ex.
+a) e2x + ex + 3 = 0 ; b) e2x + ex – 2 = 0 ; c) e2x – 2ex + 1 = 0 ; d) – 3e2x – 9ex + 12 = 0.
+Exercice 8
+Résous dans ℝ chacune des équations suivantes :
+a) e3x - ex = 0 ; b) (5 – x)(e2x – 1 ) = 0 ; c) e2x – 2ex + 1 = 0 ; d) 	
+2
+1 0
+1
+x
+x e
+x
+ 
+ .
+Exercice 9
+Résous dans ℝ chacune des équations suivantes :
+a)2 1 3	x x x
+e e e  
+ 	 ; b) (
+x2 +
+x – 2 )(
+e2
+x+1 – 1 ) = 0 ; c)2
+2 0
+1
+x
+e e
+x
+   
+ .
+Exercice 10
+Résous dans ℝ chacune des inéquations suivantes :
+a) ex − 3 ≥ 0 b) 2e2x − 3ex − 2 ≤ 0
+
+-- 11 of 18 --
+
+Page 12 sur 18
+Exercice 11
+Résous dans ℝ les inéquations suivantes d’inconnue
+x.
+a) ex+1 ≥1 ; b) e-x+1 ≤ 1 ; c) e-2x+1 ≥ex ; d)2 1 2	x x
+e e 
+	 .
+Exercice 12
+Résous dans ℝ les inéquations suivantes d’inconnue
+x. après avoir déterminé leur
+ensemble de validité :
+a) e2 - e2x ≥ 0 ; b) (ex +1)(e-x – 1) ≤ 0 ; c)1 0
+2
+x
+e
+x
+ 
+ ; d) 		
+1 0
+3
+x
+x e
+x
+  
+ .
+Exercice 13
+Résous dans ℝ les inéquations suivantes d’inconnue
+x. après avoir déterminé leur
+ensemble de validité :
+a)
+e2
+x+3 ≤
+e-x ; b) (3
+x2 –
+x + 2)(
+e-x – 1 ) ≤ 0 ; c) (3
+x + 1)
+e-
+x-1  0 ; d)2
+2
+2 0
+1x
+x x
+e
+  
+ .
+Exercice 14
+Détermine la limite des fonctions suivantes en
+a :
+a) f(x) = ex – 2x + 1 , a = - ∞ ; b) g(x) = - ex – x – 3 , a = +∞ ;
+c) h(x) = xex – x2 – 2x + 2, a = 0.
+Exercice 15
+Détermine la limite des fonctions suivantes en
+a :
+a)
+f(
+x) = (2
+x + 1)
+ex +1
+x ,
+a = + ∞ ;
+b) g(
+x) = (2
+x – 3)
+e-x ,
+a = -∞ ;
+c)	 
+2	1
+2
+x
+e
+h x x
+x
+
+  	 ,
+a = 0.
+Exercice 16
+Détermine la limite des fonctions suivantes en +∞ et en -∞ :
+a)
+f(
+x) = (2 – 3
+x)
+ex ; b) g(
+x) = (
+x + 1)
+e-x ; c)
+h(
+x) = 3 – 2
+x +
+ex.
+Exercice 17
+Dans chacun des cas suivants, on admet que la fonction f est dérivable sur ℝ.
+Calcule la fonction dérivée de f.
+a) f(x) = e−2x+1 b) f(x) = x + 2 − ex c) f(x) = (1 − x)ex
+Exercice 18
+Détermine la dérivée de chacune des fonctions
+f, g et
+h suivantes :
+f(
+x) =
+x2
+ex ;	 
+1
+x
+e
+g x x
+  ;	
+h(
+x) =
+ex – 3
+x + 1.
+Exercice 19
+Détermine la dérivée de chacune des fonctions suivantes :
+
+-- 12 of 18 --
+
+Page 13 sur 18
+f(
+x) = (-2
+x+5)
+ex ;	 	
+ 	
+2
+3 5 x
+g x x e	  	 ;	 
+1
+1
+x
+e
+h x x
+
+  ;	 	
+1
+2x
+x
+e
+k x e 
+
+	 .
+Exercice 20
+Calcule la dérivée et étudie les variations de chacune des fonctions suivantes :
+f(
+x) =
+xex – 1 ; g(
+x) =
+x – 1 +
+ex .
+Exercice 21 (Terminale A1 uniquement)
+Dans chacun des cas suivants détermine une primitive de la fonction f sur ℝ.
+a) f(x) = e−4x + 2x b) f(x) = 2xex2
+c) f(x) = e2x
+1+e2x
+d) f(x) = x − 5 + 3e−2x+1
+Exercice 22 (Terminale A1 uniquement)
+Détermine une primitive de chacune des fonctions suivantes :
+  	  	 
+3 2	
+2 1
+3 ; 1 ; 2x x x
+f x x e g x e h x xe 
+   	
+.
+Exercice 23 (Terminale A1 uniquement)
+Trouve une primitive sur ℝ de la fonction :
+ 	
+2 3 1
+: 2 3 x x
+f x x e  
+
+3-2. Exercices de renforcement
+Exercice 24
+Pour chaque affirmation, trois réponses sont proposées dont une seule est juste. Choisie
+la réponse exacte.
+N° Affirmations A B C
+1 Pour tout
+x≠0, l’expression2
+1
+x x
+x
+e e
+e
+
+
+est égale à….
+1
+1
+x
+x
+e
+e
+
+
+1
+1
+x
+x
+e
+e
+
+	1
+x x
+x
+e e
+e
+
+
+
+
+2 L’équation2 1 3 4	x x x
+e e  
+	 a pour
+solution….
+x =1 et
+x= -3	
+x = -1 et	
+x= 3	
+x = 1 et	
+x= 3
+3 La limite, lorsque
+x tend vers +∞,
+de
+ex – 2
+x
++∞ -∞ 0
+4 La dérivée de la fonction
+f définie
+pour tout réel
+x, par :
+f(
+x) =
+xe-2
+x
+est :
+f ’(
+x) =
+2xe-2
+x f ’(
+x) = (2
+x-1)
+e-2
+x f ’(
+x) = (1-2
+x)
+e-2
+x
+Exercice 25
+Simplifie les expressions suivantes :
+a)
+ex×
+e-x ; b) (
+e2
+x)2×(
+e-x)2 ; c) (
+ex +
+e-x)2 – (
+ex –
+e- x)2 .
+
+-- 13 of 18 --
+
+Page 14 sur 18
+Exercice 26
+1) Soit la fonction définie sur ℝ par :	 
+1
+1
+x
+x
+e
+f x e
+
+ 
+Détermine la limite de
+f en +∞ puis en - ∞.
+2) Détermine la limite en 0 de la fonction g définie par :	 
+1
+3
+x
+e
+g x x
+
+	 .
+Exercice 27
+Détermine la limite en +∞ et en - ∞ de chacune des fonctions suivantes :
+a)	 
+1
+2
+x
+x
+e
+f x e
+
+  ; b)	 
+2
+2
+x
+e
+g x x
+
+  ; c)	 
+1
+x
+xe
+h x x
+  .
+Exercice 28
+Détermine la limite en +∞ de la fonction
+f définie par:
+f(
+x) =
+ex – 2
+x + 3.
+Exercice 29
+Pour chacune des fonctions suivantes ;
+a) Calcule la dérivée.
+b) Etudie les variations.
+f(
+x) =
+xex – 1 ; g(
+x) = (- 3
+x2 + 5)
+ex ;	
+h(
+x) =
+x – 1 +
+ex.
+Exercice 30
+Soit
+f la fonction définie sur ℝ par :
+f(
+x) = (
+x – 2)
+ex.
+a) Calcule	  	 	lim et lim
+x x
+f x f x
+  .
+b) Calcule la dérivée
+f’ de
+f.
+c) Etudie les variations de
+f et dresse son tableau de variation.
+Exercice 31
+Résous dans IR chacune des équations suivantes :
+a)2 5 4	x x
+e e 
+	 ; b)	0x x
+e e
+ 	 ; c) 	 	
+3 5 0x x
+e e e   
+Exercice 32
+Résous dans IR chacune des inéquations suivantes :
+a)x x
+e e 	 ; b)2	
+3 1 0x x x
+e e  
+ 	 .
+Exercice 33
+Etudie le signe de chacune des expressions suivantes :
+ 	 3 3 2
+1 ; B= ; C= 2 1 ; D= ; E= - 2x x x x x x x x x
+A x e e e e e e e e e 
+      
+
+-- 14 of 18 --
+
+Page 15 sur 18
+3-3. Exercices d’approfondissement
+Exercice 34
+Soit
+f la fonction définie sur [0 ;+∞[ par :	   		
+2 x
+f x x e	 	 .
+a) Calcule la limite de
+f en +∞.
+b) Calcule la dérivée
+f’ de
+f.
+c) Etudie les variations de
+f.
+d) Dresse le tableau de variation de
+f sur [0 ; +∞[.
+e) Trace la courbe représentative de la fonction
+f dans le repère orthonormé (O, I, J).
+f) Démontre que l’équation
+f(
+x) = 0 admet une solution unique a sur [1 ; 2].
+g) Déduis-en une étude du signe de
+f(
+x).
+Exercice 35
+On considère la fonction
+f définie sur ℝ par :
+f(
+x) = 2 +
+x +
+ex.
+a) Calcule la limite de
+f en +∞ et en -∞.
+b) Calcule la dérivée
+f’ de
+f sur ℝ.
+c) Etudie les variations de
+f.
+d) Dresse le tableau de variation de
+f.
+e) Trace (C
+f), représentation graphique de
+f dans le repère orthonormé (O, I, J).
+f) Détermine une primitive de
+f sur ℝ.
+Exercice 36
+Soit
+f la fonction définie sur ]-1 ; +∞[ par :	 
+1
+x
+e
+f x x
+  .
+1- a) Calcule la limite de
+f en +∞ et en -1.
+b) Justifie que la droite d’équation
+x = - 1 est une asymptote verticale à (C
+f).
+2- Calcule la dérivée
+f’ de
+f.
+3-Etudie les variations de
+f.
+4-Dresse le tableau de variation de
+f.
+5-Représente (C
+f) dans le repère orthonormé (O, I, J).
+Exercice 37
+Soit la fonction f de ℝ vers ℝ définie par : f(x) = 1 − x + ex. On note (C) la représentation
+graphique de f dans le plan muni d’un repère orthonormé (O, I, J),
+1. Précise l’ensemble de définition de f, noté Df.
+2. Calcule la limite de f en −∞.
+3. a) Vérifie que pour tout nombre réel x ≠ 0 , f(x) = x (1
+x − 1 + ex
+x )
+b) En déduis la limite de f en +∞.
+4. a) Démontre que la droite (∆) d’équation y = −x + 1 est asymptote oblique à (C) en −∞
+b) Précise la position relative de (C) par rapport à (∆).
+5. a) On admet que f est dérivable sur ℝ. Calculef ′(x).
+b) Résous dans ℝ l’équation f ′(x) = 0
+c) Résous dans ℝ l’inéquation f ′(x) > 0
+d) En déduis les variations de f et dresse son tableau de variations.
+
+-- 15 of 18 --
+
+Page 16 sur 18
+6. Reproduis et complète le tableau suivant :
+x −3 −2 −1 0 1 2
+f(x)
+7. Trace (C) et (∆) sur [−3 ; 2]
+Exercice 38 (Bac A2, 2008)
+Le plan est muni d’un repère orthonormé (O, I, J). L’unité graphique est le centimètre.
+On considère la fonction f dérivable et définie sur ]−∞ ; 2] par f(x) = (−2x + 3)ex.
+On note (C) la représentation graphique de f dans le repère (O, I, J).
+1. Justifie que lim
+x→−∞ f(x) = 0 , puis interprète graphiquement ce résultat.
+2.a) Vérifie que pour tout élément x de ]−∞ ; 2] , f ′(x) = (−2x + 1)ex
+b) Etudie le signe de la dérivée f ′ sur ]−∞ ; 2].
+Déduis-en les variations de f sur ]−∞ ; 2].
+c) Dresse la tableau de variation de f.
+3. Soit A le point d’intersection de (C) avec l’axe des abscisses et B le point d’intersection
+de (C) avec l’axe des ordonnées.
+Détermine les coordonnées respectives des points A et B.
+4. Recopie et complète le tableau des valeurs ci – dessous.
+x −4 −3 −2 −1 0 0,5 1 1,5 2
+Arrondi d′ordre 1 de f(x) 0,2 0,4 1,8 3,3 −7,4
+5. Construis (C) sur l’intervalle ]−∞ ; 2].
+
+-- 16 of 18 --
+
+Page 17 sur 18
+4. SITUATION COMPLEXE
+Exercice 39
+Des élèves de terminale A travaillent les samedis dans le service marketing d’une grande
+chaîne de magasins. Ce magasin veut informer la population des nouvelles offres
+proportionnelles. Le service marketing a observé que la proportion P de la population qui
+est au courant de ces nouvelles offres après
+t jours d’annonces publicitaires est donnée
+par la fonction : P(
+t) = 1 − 𝑒−0,21𝑡.
+Le magasin veut arrêter cette publicité lorsque 90 % de la population sera au courant des
+nouvelles offres. Elle te sollicite pour savoir le nombre de jours qu’elle devra consacrer à
+la publicité.
+Détermine le nombre de jours nécessaires à la grande chaîne de magasins pour faire la
+publicité de ces nouvelles offres.
+Quelques corrigés
+Exercice 38 (Bac A2, 2008)
+1. lim
+x→−∞ 𝑓(𝑥) = lim
+x→−∞ − 2𝑥e𝑥 + e𝑥
+= 0, car lim
+x→−∞ −2𝑥e𝑥 = 0 et lim
+x→−∞ e𝑥 = 0
+2.a) pour tout élément x de ]−∞ ; 2] , 𝑓′(𝑥) = −2e𝑥 + (−2𝑥 + 3)e𝑥
+= (−2𝑥 + 1)e𝑥
+Donc pour tout élément x de ]−∞ ; 2] , 𝑓′(𝑥) = (−2𝑥 + 1)e𝑥
+b) Etudions le signe de la dérivée 𝑓′ sur ]−∞ ; 2].
+pour tout élément 𝑥 de ]−∞ ; 2], e𝑥 0.
+pour tout élément 𝑥 de ]−∞ ; 2], −2𝑥 + 10,	
+x  1
+2
+Donc
+ pour tout élément 𝑥 de ]−∞ ; 1
+2], 𝑓′(𝑥)
+ 0
+ pour tout élément 𝑥 de [1
+2 ; 2], 𝑓′(𝑥)
+ 0
+Ainsi :
+ pour tout élément 𝑥 de ]−∞ ; 1
+2],
+f est croissante
+ pour tout élément 𝑥 de [1
+2 ; 2],
+f est décroissante
+c) Dressons la tableau de variation de 𝑓.
+x - 1
+2 2
+f '(
+x) + 0 −
+f(
+x) 2𝑒1
+2
+0 −𝑒2
+3)
+f(0) = 3 et
+f(
+x) = 0 
+x = 3
+2
+
+-- 17 of 18 --
+
+Page 18 sur 18
+On en déduis que : A(3
+2 ; 0) et B(0 ; 3).
+4)
+𝑥 −4 −3 −2 −1 0 0,5 1 1,5 2
+Arrondi d′ordre 1 de 𝑓(𝑥) 0,2 0,4 1 1,8 3 3,3 2,8 0 −7,4
+5.
+Situation complexe
+Déterminer le nombre de jours nécessaires à la grande chaîne de magasins pour faire la
+publicité de ces nouvelle offres revient à déterminer le nombre de jour pour que la
+proportion de la population qui est au courant de ces nouvelles offres atteint 90% .
+C’est-à-dire : 1 –
+e-0,21
+t = 90%
+Soit
+e -0,21
+t = 0,1
+−0,21𝑡 = 𝑙𝑛0,1
+t = 𝑙𝑛0,1
+−0,21
+t = 11
+La grande chaîne de magasins fera la publicité pendant 11 jours.
+
+-- 18 of 18 --
+

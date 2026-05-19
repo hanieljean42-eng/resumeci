@@ -1,0 +1,29 @@
+{
+  "title": "Connexion - Mon Ecole à la maison",
+  "url": "https://ecole-ci.org/co/loginvisiteur.php",
+  "links": [
+    {
+      "text": "",
+      "href": "https://ecole-ci.org/index.php",
+      "classes": ""
+    },
+    {
+      "text": "Accueil",
+      "href": "https://ecole-ci.org/index.php",
+      "classes": "btn btn-primary"
+    },
+    {
+      "text": "S'inscrire gratuitement",
+      "href": "https://ecole-ci.org/co/inscriptionvisiteur.php",
+      "classes": "link-success"
+    },
+    {
+      "text": "MENA",
+      "href": "https://education.gouv.ci/",
+      "classes": ""
+    }
+  ],
+  "pdfLinks": [],
+  "embeds": [],
+  "matiereLinks": []
+}

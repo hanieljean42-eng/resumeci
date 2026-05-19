@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Gamifié — Fiches BAC</title>
+  <link rel="manifest" href="/public/manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--bg:#0f172a;--card:#1e293b;--card2:#334155;--accent:#3b82f6;--green:#10b981;--red:#ef4444;--orange:#f59e0b;--text:#f1f5f9;--muted:#94a3b8;--gold:#fbbf24;--radius:16px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+    .container{max-width:700px;margin:0 auto;padding:20px}
+    .header{text-align:center;padding:30px 0 20px}
+    .header h1{font-size:28px;font-weight:800;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .header p{color:var(--muted);font-size:14px;margin-top:4px}
+    .back-btn{position:fixed;top:20px;left:20px;background:var(--card);border:1px solid #475569;padding:10px 16px;border-radius:10px;color:var(--text);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;transition:.2s}
+    .back-btn:hover{background:var(--accent);border-color:var(--accent)}
+    
+    /* Mode selector */
+    .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+    .mode-card{background:var(--card);border:2px solid transparent;border-radius:var(--radius);padding:24px;text-align:center;cursor:pointer;transition:.3s}
+    .mode-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .mode-card.active{border-color:var(--accent);box-shadow:0 0 20px rgba(59,130,246,.3)}
+    .mode-card .icon{font-size:36px;margin-bottom:10px}
+    .mode-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+    .mode-card p{font-size:11px;color:var(--muted)}
+    
+    /* Subject selector */
+    .subject-selector{margin:20px 0}
+    .subject-selector label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:8px}
+    .subject-selector select{width:100%;background:var(--card);border:1px solid #475569;color:var(--text);padding:12px 16px;border-radius:10px;font-size:14px;outline:none}
+    .subject-selector select:focus{border-color:var(--accent)}
+    
+    /* Start button */
+    .start-btn{width:100%;padding:16px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;color:#fff;font-size:16px;font-weight:700;border-radius:12px;cursor:pointer;transition:.3s;margin:20px 0}
+    .start-btn:hover{transform:scale(1.02);box-shadow:0 8px 25px rgba(59,130,246,.4)}
+    .start-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+    
+    /* Game UI */
+    .game-area{display:none}
+    .progress-bar{background:var(--card2);border-radius:20px;height:10px;margin:16px 0;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),#8b5cf6);border-radius:20px;transition:width .4s ease}
+    .score-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .score-bar .score{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px}
+    .score-bar .streak{font-size:13px;color:var(--orange);font-weight:600}
+    .score-bar .lives{display:flex;gap:4px}
+    .score-bar .lives .heart{color:var(--red);font-size:18px}
+    .score-bar .lives .heart.lost{opacity:.2}
+    
+    .question-card{background:var(--card);border-radius:var(--radius);padding:30px;margin-bottom:16px;text-align:center;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .question-card .q-number{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .question-card .q-text{font-size:18px;font-weight:700;line-height:1.5}
+    .question-card .q-hint{font-size:12px;color:var(--orange);margin-top:10px;font-style:italic}
+    
+    .answers{display:grid;gap:10px;margin-bottom:20px}
+    .answer-btn{background:var(--card);border:2px solid #475569;border-radius:12px;padding:16px 20px;text-align:left;font-size:14px;font-weight:500;cursor:pointer;transition:.2s;color:var(--text);display:flex;align-items:center;gap:12px}
+    .answer-btn:hover{border-color:var(--accent);background:#1e3a5f}
+    .answer-btn .letter{width:30px;height:30px;border-radius:8px;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+    .answer-btn.correct{border-color:var(--green);background:#064e3b;animation:pulse-green .5s}
+    .answer-btn.correct .letter{background:var(--green);color:#fff}
+    .answer-btn.wrong{border-color:var(--red);background:#450a0a;animation:shake .4s}
+    .answer-btn.wrong .letter{background:var(--red);color:#fff}
+    .answer-btn.disabled{pointer-events:none;opacity:.6}
+    
+    @keyframes pulse-green{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+    
+    .feedback{padding:16px;border-radius:12px;margin:16px 0;font-size:13px;display:none;line-height:1.6}
+    .feedback.show{display:block;animation:fadeIn .3s}
+    .feedback.correct-fb{background:#064e3b;border:1px solid var(--green);color:#6ee7b7}
+    .feedback.wrong-fb{background:#450a0a;border:1px solid var(--red);color:#fca5a5}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    
+    .next-btn{width:100%;padding:14px;background:var(--accent);border:none;color:#fff;font-size:14px;font-weight:600;border-radius:10px;cursor:pointer;transition:.2s;display:none}
+    .next-btn:hover{background:#2563eb}
+    .next-btn.show{display:block}
+    
+    /* Results */
+    .results{display:none;text-align:center;padding:40px 20px}
+    .results .trophy{font-size:72px;margin-bottom:16px;animation:bounce 1s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .results h2{font-size:26px;font-weight:800;margin-bottom:8px}
+    .results .final-score{font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:10px 0}
+    .results .stars{font-size:32px;margin:10px 0}
+    .results .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+    .results .stat{background:var(--card);border-radius:12px;padding:16px}
+    .results .stat .val{font-size:22px;font-weight:800}
+    .results .stat .lbl{font-size:11px;color:var(--muted);margin-top:4px}
+    .results .errors-section{text-align:left;background:var(--card);border-radius:12px;padding:20px;margin:20px 0}
+    .results .errors-section h3{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--red)}
+    .results .error-item{padding:10px 12px;border-bottom:1px solid #475569;font-size:13px;line-height:1.5}
+    .results .error-item:last-child{border:none}
+    .results .error-item .correct-ans{color:var(--green);font-weight:600}
+    .retry-btn{padding:14px 40px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;color:#fff;font-size:15px;font-weight:700;border-radius:12px;cursor:pointer;margin:10px 6px;transition:.3s}
+    .retry-btn:hover{transform:scale(1.05)}
+    
+    /* Dates Game specific */
+    .date-input-area{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+    .date-input-area input{background:var(--card2);border:2px solid #475569;color:var(--text);padding:12px 16px;border-radius:10px;font-size:16px;font-weight:600;text-align:center;width:160px;outline:none}
+    .date-input-area input:focus{border-color:var(--accent)}
+    .date-submit{padding:12px 24px;background:var(--accent);border:none;color:#fff;border-radius:10px;font-weight:600;cursor:pointer;font-size:14px}
+    
+    /* XP system */
+    .xp-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:20px 30px;z-index:1000;animation:popIn .4s;text-align:center;display:none}
+    .xp-popup.show{display:block}
+    .xp-popup .xp-val{font-size:36px;font-weight:800;color:var(--gold)}
+    @keyframes popIn{from{transform:translate(-50%,-50%) scale(.5);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+    
+    /* Audio button */
+    .audio-btn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:var(--accent);border:none;border-radius:50%;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(59,130,246,.4);transition:.3s;z-index:100}
+    .audio-btn:hover{transform:scale(1.1)}
+    .audio-btn.speaking{background:var(--green);animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{box-shadow:0 0 0 12px rgba(16,185,129,0)}}
+    
+    @media(max-width:600px){.mode-grid{grid-template-columns:1fr}.container{padding:12px}.question-card{padding:20px}.question-card .q-text{font-size:15px}}
+  </style>
+</head>
+<body>
+  <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Fiches</a>
+  <button class="audio-btn" id="audioBtn" title="Lire la question"><i class="fas fa-volume-up"></i></button>
+
+  <div class="container">
+    <div class="header">
+      <h1>Quiz Game</h1>
+      <p>Teste tes connaissances et progresse !</p>
+    </div>
+
+    <!-- Setup -->
+    <div id="setup">
+      <div class="mode-grid">
+        <div class="mode-card" data-mode="qcm" onclick="selectMode(this)">
+          <div class="icon">🎯</div>
+          <h3>QCM classique</h3>
+          <p>4 choix, trouve la bonne réponse</p>
+        </div>
+        <div class="mode-card" data-mode="dates" onclick="selectMode(this)">
+          <div class="icon">📅</div>
+          <h3>Quiz Dates</h3>
+          <p>Retrouve les dates clés de l'Histoire</p>
+        </div>
+        <div class="mode-card" data-mode="vf" onclick="selectMode(this)">
+          <div class="icon">✅</div>
+          <h3>Vrai / Faux</h3>
+          <p>Rapide et efficace</p>
+        </div>
+        <div class="mode-card" data-mode="challenge" onclick="selectMode(this)">
+          <div class="icon">🔥</div>
+          <h3>Challenge</h3>
+          <p>Toutes matières, mode survie</p>
+        </div>
+      </div>
+
+      <div class="subject-selector">
+        <label>Classe & Matière</label>
+        <select id="subjectSelect">
+          <option value="">-- Choisir --</option>
+        </select>
+      </div>
+
+      <button class="start-btn" id="startBtn" disabled onclick="startGame()">
+        <i class="fas fa-play"></i> Commencer le Quiz
+      </button>
+    </div>
+
+    <!-- Game -->
+    <div class="game-area" id="gameArea">
+      <div class="score-bar">
+        <div class="score"><i class="fas fa-star" style="color:var(--gold)"></i> <span id="scoreVal">0</span> XP</div>
+        <div class="streak" id="streakVal"></div>
+        <div class="lives" id="livesBar"></div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="question-card" id="questionCard">
+        <div class="q-number" id="qNumber"></div>
+        <div class="q-text" id="qText"></div>
+        <div class="q-hint" id="qHint"></div>
+      </div>
+      <div class="answers" id="answersArea"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Question suivante →</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <div class="trophy">🏆</div>
+      <h2 id="resultsTitle">Bravo !</h2>
+      <div class="final-score" id="finalScore"></div>
+      <div class="stars" id="starsDisplay"></div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="errors-section" id="errorsSection" style="display:none"></div>
+      <button class="retry-btn" onclick="resetGame()"><i class="fas fa-redo"></i> Rejouer</button>
+      <button class="retry-btn" onclick="location.href='/'"><i class="fas fa-book"></i> Réviser</button>
+    </div>
+  </div>
+
+  <div class="xp-popup" id="xpPopup"><div class="xp-val" id="xpVal"></div><div style="font-size:12px;color:var(--muted);margin-top:4px">XP gagnés !</div></div>
+
+  <script>
+    // ==================== DATA ====================
+    let MODE = '';
+    let QUESTIONS = [];
+    let currentQ = 0;
+    let score = 0;
+    let streak = 0;
+    let lives = 3;
+    let errors = [];
+    let totalCorrect = 0;
+
+    // Dates database for Histoire-Géo
+    const DATES_DB = [
+      {date:"24 octobre 1945",event:"Entrée en vigueur de la Charte de l'ONU"},
+      {date:"26 juin 1945",event:"Adoption de la Charte de l'ONU à San Francisco"},
+      {date:"14 août 1941",event:"Charte de l'Atlantique (Roosevelt-Churchill)"},
+      {date:"1947",event:"Début de la guerre froide et de la bipolarisation"},
+      {date:"1989",event:"Chute du mur de Berlin"},
+      {date:"1991",event:"Disparition de l'URSS, fin de la guerre froide"},
+      {date:"11 septembre 2001",event:"Attentats d'Al-Qaïda aux États-Unis"},
+      {date:"8 août 1944",event:"Création du Syndicat Agricole Africain (SAA) en Côte d'Ivoire"},
+      {date:"9 avril 1946",event:"Création du PDCI en Côte d'Ivoire"},
+      {date:"11 avril 1946",event:"Suppression du travail forcé (loi Houphouët-Boigny)"},
+      {date:"18 octobre 1946",event:"Création du RDA à Bamako"},
+      {date:"7 août 1960",event:"Indépendance de la Côte d'Ivoire"},
+      {date:"1er novembre 1954",event:"Début de l'insurrection algérienne (FLN)"},
+      {date:"18 mars 1962",event:"Accords d'Évian, fin de la guerre d'Algérie"},
+      {date:"5 juillet 1962",event:"Indépendance de l'Algérie"},
+      {date:"25 mai 1963",event:"Création de l'OUA à Addis-Abeba"},
+      {date:"9 juillet 2002",event:"Création officielle de l'Union Africaine à Durban"},
+      {date:"30 janvier 1944",event:"Ouverture de la Conférence de Brazzaville"},
+      {date:"8 mai 1945",event:"Émeutes de Sétif en Algérie"},
+      {date:"1955",event:"Conférence de Bandung (mouvement des non-alignés)"},
+      {date:"28 mai 1975",event:"Création de la CEDEAO à Lagos"},
+      {date:"1957",event:"Traité de Rome, début de la coopération UE-ACP"},
+      {date:"1975",event:"Accord de Georgetown créant le groupe ACP"},
+      {date:"2000",event:"Accord de Cotonou entre UE et ACP"},
+      {date:"Février 1945",event:"Conférence de Yalta (règlement du droit de veto)"},
+      {date:"1776",event:"Révolution américaine, Déclaration d'indépendance"},
+      {date:"1789",event:"Révolution française, Déclaration des droits de l'homme"},
+      {date:"Septembre 1999",event:"Sommet de Syrte décidant la création de l'UA"},
+      {date:"Juillet 2000",event:"Sommet de Lomé adoptant l'acte constitutif de l'UA"},
+      {date:"1992",event:"Traité de Maastricht créant l'Union Européenne"}
+    ];
+
+    // QCM database per subject (auto-generated from fiches content)
+    const QCM_DB = {
+      "Philosophie": [
+        {q:"Quelle est la première étape de la dissertation philosophique ?",a:["La problématisation","L'introduction","La conclusion","La transition"],c:0},
+        {q:"Qu'est-ce que le commentaire de texte philosophique doit contenir ?",a:["Introduction, étude ordonnée, intérêt philosophique","Résumé, critique, conclusion","Thèse, antithèse, synthèse","Plan détaillé uniquement"],c:0},
+        {q:"Selon la philosophie, la conscience permet à l'homme de :",a:["Se connaître soi-même","Devenir riche","Contrôler les autres","Prédire l'avenir"],c:0},
+        {q:"L'inconscient selon Freud comprend :",a:["Le Ça, le Moi, le Surmoi","Le corps et l'âme","La raison et la passion","Le bien et le mal"],c:0},
+        {q:"La vie en société implique selon les philosophes :",a:["Un contrat social entre les individus","La domination du plus fort","L'absence de règles","L'isolement"],c:0},
+        {q:"Quel philosophe est associé au contrat social ?",a:["Jean-Jacques Rousseau","Platon","Descartes","Nietzsche"],c:0},
+        {q:"La religion selon Marx est :",a:["L'opium du peuple","La source de la science","La base de la démocratie","Une invention récente"],c:0},
+        {q:"Le progrès technique est-il toujours source de bonheur ?",a:["Non, il peut aliéner l'homme","Oui, toujours","Seulement pour les riches","Il n'a aucun rapport avec le bonheur"],c:0},
+        {q:"Le langage humain se distingue de la communication animale par :",a:["Sa double articulation et sa créativité","Sa simplicité","Son volume sonore","Sa rapidité"],c:0},
+        {q:"La connaissance scientifique se caractérise par :",a:["L'objectivité, la méthode et la vérifiabilité","L'opinion personnelle","La croyance religieuse","L'intuition seule"],c:0}
+      ],
+      "Histoire - Géographie": [
+        {q:"Quel est l'organe suprême de l'ONU responsable du maintien de la paix ?",a:["Le Conseil de sécurité","L'Assemblée générale","Le Secrétariat","La CIJ"],c:0},
+        {q:"La doctrine Truman vise à :",a:["Contenir l'expansion du communisme","Promouvoir le socialisme","Unifier l'Allemagne","Créer l'ONU"],c:0},
+        {q:"Le plan Marshall est une aide :",a:["Économique américaine à l'Europe","Militaire soviétique","Culturelle française","Industrielle japonaise"],c:0},
+        {q:"Quel événement marque le début de la guerre froide ?",a:["La rupture de 1947","La chute de Berlin en 1945","La création de l'ONU","Le traité de Rome"],c:0},
+        {q:"Le mouvement des non-alignés est issu de :",a:["La conférence de Bandung en 1955","La guerre du Vietnam","Le plan Marshall","La conférence de Yalta"],c:0},
+        {q:"La CEDEAO a été créée le :",a:["28 mai 1975 à Lagos","25 mai 1963 à Addis-Abeba","9 juillet 2002 à Durban","1957 à Rome"],c:0},
+        {q:"Combien d'États membres compte la CEDEAO ?",a:["15","16","20","12"],c:0},
+        {q:"Quel facteur interne favorise la montée des nationalismes en Afrique ?",a:["L'émergence des élites africaines formées","L'aide américaine","Le soutien de l'URSS","La Charte de l'ONU"],c:0},
+        {q:"L'indépendance de l'Algérie est obtenue par :",a:["La lutte armée","La négociation pacifique","Un référendum français","Un coup d'État"],c:0},
+        {q:"Le secteur économique dominant en Côte d'Ivoire est :",a:["Le secteur primaire (agriculture)","Le secteur secondaire (industrie)","Le secteur tertiaire (services)","Le secteur quaternaire"],c:0},
+        {q:"La Corée du Sud a misé principalement sur :",a:["Le capital humain et l'éducation","Les ressources minières","L'agriculture","Le tourisme"],c:0},
+        {q:"L'Union Africaine remplace l'OUA pour :",a:["Plus d'efficacité face aux défis actuels","Des raisons financières","L'influence des États-Unis","La volonté de la France"],c:0}
+      ],
+      "Mathématiques": [
+        {q:"La dérivée de ln(x) est :",a:["1/x","x","ln(x)","e^x"],c:0},
+        {q:"La limite de e^x quand x tend vers +∞ est :",a:["+∞","0","1","-∞"],c:0},
+        {q:"La formule de la somme d'une suite géométrique de raison q ≠ 1 est :",a:["S = a₁(1-qⁿ)/(1-q)","S = n × a₁","S = a₁ × qⁿ","S = n(a₁+aₙ)/2"],c:0},
+        {q:"Le coefficient de corrélation r est compris entre :",a:["-1 et 1","0 et 1","0 et +∞","-∞ et +∞"],c:0},
+        {q:"L'intégrale de 1/x dx est :",a:["ln|x| + C","x² + C","1/x² + C","e^x + C"],c:0},
+        {q:"Si P(A∩B) = P(A)×P(B), les événements A et B sont :",a:["Indépendants","Incompatibles","Contraires","Certains"],c:0},
+        {q:"La dérivée de e^(2x) est :",a:["2e^(2x)","e^(2x)","2x·e^x","e^x/2"],c:0},
+        {q:"ln(a×b) est égal à :",a:["ln(a) + ln(b)","ln(a) × ln(b)","ln(a) - ln(b)","ln(a)/ln(b)"],c:0}
+      ],
+      "SVT": [
+        {q:"Le néphron est l'unité fonctionnelle :",a:["Du rein","Du foie","Du cœur","Du cerveau"],c:0},
+        {q:"La phagocytose fait partie de l'immunité :",a:["Non spécifique (innée)","Spécifique (acquise)","Artificielle","Passive"],c:0},
+        {q:"Le VIH infecte principalement les :",a:["Lymphocytes T4","Globules rouges","Plaquettes","Neurones"],c:0},
+        {q:"La double fécondation est caractéristique des :",a:["Angiospermes (plantes à fleurs)","Animaux","Champignons","Bactéries"],c:0},
+        {q:"Le crossing-over se produit pendant :",a:["La méiose (prophase I)","La mitose","L'interphase","La fécondation"],c:0},
+        {q:"Un gène autosomal récessif s'exprime :",a:["Uniquement à l'état homozygote","Toujours","Uniquement chez les mâles","Jamais"],c:0}
+      ],
+      "Physique - Chimie": [
+        {q:"La loi d'Ohm s'écrit :",a:["U = R × I","P = U × I","F = m × a","E = mc²"],c:0},
+        {q:"L'unité de la force dans le SI est :",a:["Le Newton (N)","Le Joule (J)","Le Watt (W)","Le Pascal (Pa)"],c:0},
+        {q:"La loi de Laplace donne la force sur un conducteur parcouru par un courant dans un champ magnétique. Sa formule est :",a:["F = BIL sin(α)","F = mg","F = kx","F = qvB"],c:0},
+        {q:"Un acide selon Brønsted est un :",a:["Donneur de proton H⁺","Accepteur de proton","Donneur d'électron","Accepteur d'électron"],c:0}
+      ]
+    };
+
+    // VF database
+    const VF_DB = {
+      "Histoire - Géographie": [
+        {q:"L'ONU a été créée en 1945.",a:true,expl:"La Charte de l'ONU entre en vigueur le 24 octobre 1945."},
+        {q:"La guerre froide oppose les États-Unis au Japon.",a:false,expl:"La guerre froide oppose les États-Unis à l'URSS."},
+        {q:"La CEDEAO compte 20 États membres.",a:false,expl:"La CEDEAO compte 15 États membres."},
+        {q:"L'Algérie a obtenu son indépendance par la négociation pacifique.",a:false,expl:"L'Algérie a obtenu son indépendance par la lutte armée (1954-1962)."},
+        {q:"L'Union Africaine a été créée en 2002 à Durban.",a:true,expl:"L'UA a été officiellement créée le 9 juillet 2002 au Sommet de Durban."},
+        {q:"Le droit de veto est un privilège de tous les membres de l'ONU.",a:false,expl:"Seuls les 5 membres permanents du Conseil de sécurité ont le droit de veto."},
+        {q:"La Côte d'Ivoire est le premier producteur mondial de cacao.",a:true,expl:"Avec environ 40% de la production mondiale."},
+        {q:"La Corée du Sud est riche en ressources minières.",a:false,expl:"Le sous-sol sud-coréen est pauvre en ressources, le pays a misé sur le capital humain."}
+      ],
+      "Philosophie": [
+        {q:"La philosophie est une opinion personnelle sans méthode.",a:false,expl:"La philosophie est une réflexion rationnelle et méthodique."},
+        {q:"Le contrat social est un concept de Rousseau.",a:true,expl:"Jean-Jacques Rousseau a théorisé le contrat social."},
+        {q:"L'inconscient est un concept introduit par Platon.",a:false,expl:"L'inconscient est un concept développé par Sigmund Freud."},
+        {q:"La connaissance scientifique repose sur la vérifiabilité.",a:true,expl:"La science se distingue par son caractère vérifiable et réfutable."},
+        {q:"Selon les philosophes, le langage est propre à l'espèce humaine.",a:true,expl:"Le langage articulé avec double articulation est spécifiquement humain."}
+      ],
+      "Mathématiques": [
+        {q:"La fonction exponentielle est toujours positive.",a:true,expl:"Pour tout x réel, e^x > 0."},
+        {q:"ln(1) = 1",a:false,expl:"ln(1) = 0, car e⁰ = 1."},
+        {q:"La dérivée d'une constante est 0.",a:true,expl:"Si f(x) = c (constante), alors f'(x) = 0."},
+        {q:"Deux événements incompatibles sont toujours indépendants.",a:false,expl:"Deux événements incompatibles de probabilité non nulle ne sont jamais indépendants."}
+      ]
+    };
+
+    // ==================== SETUP ====================
+    async function loadSubjects() {
+      try {
+        const struct = await fetch('/api/structure').then(r => r.json());
+        const sel = document.getElementById('subjectSelect');
+        for (const [cls, subjects] of Object.entries(struct)) {
+          for (const sub of Object.keys(subjects)) {
+            const opt = document.createElement('option');
+            opt.value = `${cls}|${sub}`;
+            opt.textContent = `${cls.replace('_',' ')} — ${sub}`;
+            sel.appendChild(opt);
+          }
+        }
+      } catch(e) {
+        // Fallback: use local DB keys
+        const sel = document.getElementById('subjectSelect');
+        for (const sub of Object.keys(QCM_DB)) {
+          const opt = document.createElement('option');
+          opt.value = `all|${sub}`;
+          opt.textContent = sub;
+          sel.appendChild(opt);
+        }
+      }
+    }
+
+    function selectMode(el) {
+      document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      MODE = el.dataset.mode;
+      checkReady();
+    }
+
+    document.getElementById('subjectSelect').addEventListener('change', checkReady);
+    function checkReady() {
+      const hasSub = document.getElementById('subjectSelect').value;
+      document.getElementById('startBtn').disabled = !(MODE && hasSub);
+    }
+
+    // ==================== GAME ENGINE ====================
+    function startGame() {
+      const subVal = document.getElementById('subjectSelect').value;
+      const subject = subVal.split('|')[1];
+      
+      QUESTIONS = generateQuestions(subject);
+      if (QUESTIONS.length === 0) { alert('Pas de questions disponibles pour cette matière.'); return; }
+
+      currentQ = 0; score = 0; streak = 0; lives = 3; errors = []; totalCorrect = 0;
+      document.getElementById('setup').style.display = 'none';
+      document.getElementById('gameArea').style.display = 'block';
+      document.getElementById('results').style.display = 'none';
+      renderLives();
+      showQuestion();
+    }
+
+    function generateQuestions(subject) {
+      let pool = [];
+      if (MODE === 'dates') {
+        // Dates game: show event, guess date (or show date, guess event)
+        const dates = [...DATES_DB];
+        shuffle(dates);
+        pool = dates.slice(0, 15).map((d, i) => {
+          if (i % 2 === 0) {
+            // Event → Date
+            const wrongDates = DATES_DB.filter(x => x.date !== d.date).map(x => x.date);
+            shuffle(wrongDates);
+            const answers = [d.date, ...wrongDates.slice(0, 3)];
+            shuffle(answers);
+            return { q: d.event, answers, correct: answers.indexOf(d.date), type: 'qcm', hint: 'Quelle date ?' };
+          } else {
+            // Date → Event
+            const wrongEvents = DATES_DB.filter(x => x.event !== d.event).map(x => x.event);
+            shuffle(wrongEvents);
+            const answers = [d.event, ...wrongEvents.slice(0, 3)];
+            shuffle(answers);
+            return { q: d.date, answers, correct: answers.indexOf(d.event), type: 'qcm', hint: 'Quel événement ?' };
+          }
+        });
+      } else if (MODE === 'vf') {
+        const vfPool = VF_DB[subject] || VF_DB['Histoire - Géographie'];
+        shuffle(vfPool);
+        pool = vfPool.slice(0, 10).map(v => ({
+          q: v.q, answers: ['Vrai', 'Faux'], correct: v.a ? 0 : 1, type: 'vf', explanation: v.expl
+        }));
+      } else if (MODE === 'challenge') {
+        // All subjects mixed
+        for (const [sub, qs] of Object.entries(QCM_DB)) {
+          for (const q of qs) {
+            pool.push({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm' });
+          }
+        }
+        shuffle(pool);
+        pool = pool.slice(0, 20);
+      } else {
+        // QCM standard
+        const qcmPool = QCM_DB[subject] || [];
+        pool = qcmPool.map(q => ({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm' }));
+        shuffle(pool);
+        pool = pool.slice(0, 10);
+      }
+      return pool;
+    }
+
+    function showQuestion() {
+      if (currentQ >= QUESTIONS.length || lives <= 0) { showResults(); return; }
+      const q = QUESTIONS[currentQ];
+      document.getElementById('qNumber').textContent = `Question ${currentQ + 1} / ${QUESTIONS.length}`;
+      document.getElementById('qText').textContent = q.q;
+      document.getElementById('qHint').textContent = q.hint || '';
+      document.getElementById('progressFill').style.width = `${(currentQ / QUESTIONS.length) * 100}%`;
+      document.getElementById('feedback').className = 'feedback';
+      document.getElementById('feedback').style.display = 'none';
+      document.getElementById('nextBtn').className = 'next-btn';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      let html = '';
+      q.answers.forEach((a, i) => {
+        html += `<div class="answer-btn" onclick="checkAnswer(${i})"><span class="letter">${letters[i] || ''}</span><span>${a}</span></div>`;
+      });
+      document.getElementById('answersArea').innerHTML = html;
+      updateScoreBar();
+    }
+
+    function checkAnswer(idx) {
+      const q = QUESTIONS[currentQ];
+      const btns = document.querySelectorAll('.answer-btn');
+      btns.forEach(b => b.classList.add('disabled'));
+
+      const fb = document.getElementById('feedback');
+      if (idx === q.correct) {
+        btns[idx].classList.add('correct');
+        streak++;
+        const xp = 10 + (streak > 2 ? streak * 2 : 0);
+        score += xp;
+        totalCorrect++;
+        fb.className = 'feedback correct-fb show';
+        fb.innerHTML = `<strong>✅ Correct !</strong> +${xp} XP` + (q.explanation ? `<br>${q.explanation}` : '');
+        showXP(xp);
+      } else {
+        btns[idx].classList.add('wrong');
+        btns[q.correct].classList.add('correct');
+        streak = 0;
+        lives--;
+        renderLives();
+        errors.push({ q: q.q, given: q.answers[idx], correct: q.answers[q.correct] });
+        fb.className = 'feedback wrong-fb show';
+        fb.innerHTML = `<strong>❌ Incorrect</strong><br>La bonne réponse : <strong>${q.answers[q.correct]}</strong>` + (q.explanation ? `<br>${q.explanation}` : '');
+      }
+      document.getElementById('nextBtn').className = 'next-btn show';
+      updateScoreBar();
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      showQuestion();
+    }
+
+    function renderLives() {
+      let h = '';
+      for (let i = 0; i < 3; i++) h += `<span class="heart ${i >= lives ? 'lost' : ''}"><i class="fas fa-heart"></i></span>`;
+      document.getElementById('livesBar').innerHTML = h;
+    }
+
+    function updateScoreBar() {
+      document.getElementById('scoreVal').textContent = score;
+      document.getElementById('streakVal').textContent = streak > 1 ? `🔥 ${streak} série` : '';
+    }
+
+    function showXP(val) {
+      const popup = document.getElementById('xpPopup');
+      document.getElementById('xpVal').textContent = `+${val}`;
+      popup.classList.add('show');
+      setTimeout(() => popup.classList.remove('show'), 800);
+    }
+
+    // ==================== RESULTS ====================
+    function showResults() {
+      document.getElementById('gameArea').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+      
+      const pct = QUESTIONS.length ? Math.round((totalCorrect / QUESTIONS.length) * 100) : 0;
+      const stars = pct >= 90 ? '⭐⭐⭐' : pct >= 70 ? '⭐⭐' : pct >= 50 ? '⭐' : '💪';
+      const title = pct >= 90 ? 'Excellent !' : pct >= 70 ? 'Bien joué !' : pct >= 50 ? 'Pas mal !' : 'Continue tes efforts !';
+
+      document.getElementById('resultsTitle').textContent = title;
+      document.getElementById('finalScore').textContent = `${score} XP`;
+      document.getElementById('starsDisplay').textContent = stars;
+      document.getElementById('statsGrid').innerHTML = `
+        <div class="stat"><div class="val" style="color:var(--green)">${totalCorrect}</div><div class="lbl">Bonnes réponses</div></div>
+        <div class="stat"><div class="val" style="color:var(--red)">${errors.length}</div><div class="lbl">Erreurs</div></div>
+        <div class="stat"><div class="val" style="color:var(--accent)">${pct}%</div><div class="lbl">Réussite</div></div>`;
+
+      // Save errors to localStorage for review
+      if (errors.length > 0) {
+        const errSection = document.getElementById('errorsSection');
+        errSection.style.display = 'block';
+        errSection.innerHTML = `<h3>📝 Tes erreurs à revoir :</h3>` + errors.map(e => `<div class="error-item"><strong>${e.q}</strong><br>Ta réponse : ${e.given}<br>Bonne réponse : <span class="correct-ans">${e.correct}</span></div>`).join('');
+        
+        // Save to localStorage
+        const saved = JSON.parse(localStorage.getItem('quiz_errors') || '[]');
+        saved.push(...errors.map(e => ({ ...e, date: new Date().toISOString() })));
+        localStorage.setItem('quiz_errors', JSON.stringify(saved.slice(-100)));
+      }
+
+      // Save score history
+      const history = JSON.parse(localStorage.getItem('quiz_history') || '[]');
+      history.push({ score, pct, total: QUESTIONS.length, correct: totalCorrect, mode: MODE, date: new Date().toISOString() });
+      localStorage.setItem('quiz_history', JSON.stringify(history.slice(-50)));
+    }
+
+    function resetGame() {
+      document.getElementById('setup').style.display = 'block';
+      document.getElementById('gameArea').style.display = 'none';
+      document.getElementById('results').style.display = 'none';
+    }
+
+    // ==================== AUDIO ====================
+    const audioBtn = document.getElementById('audioBtn');
+    let speaking = false;
+    audioBtn.addEventListener('click', () => {
+      if (speaking) { speechSynthesis.cancel(); speaking = false; audioBtn.classList.remove('speaking'); return; }
+      const qText = document.getElementById('qText').textContent;
+      if (!qText) return;
+      const utter = new SpeechSynthesisUtterance(qText);
+      utter.lang = 'fr-FR'; utter.rate = 0.9;
+      utter.onend = () => { speaking = false; audioBtn.classList.remove('speaking'); };
+      speechSynthesis.speak(utter);
+      speaking = true; audioBtn.classList.add('speaking');
+    });
+
+    // ==================== UTILS ====================
+    function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+
+    // Init
+    loadSubjects().then(() => {
+      const requestedMode = sessionStorage.getItem('quizMode');
+      if (requestedMode) {
+        const card = document.querySelector(`.mode-card[data-mode="${requestedMode}"]`);
+        if (card) selectMode(card);
+        sessionStorage.removeItem('quizMode');
+      }
+    });
+  </script>
+</body>
+</html>

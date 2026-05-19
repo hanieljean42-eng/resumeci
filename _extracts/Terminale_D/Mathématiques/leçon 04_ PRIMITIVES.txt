@@ -1,0 +1,484 @@
+Niveau : TD
+MATHEMATIQUES CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME : fonctions numériques
+DUREE : 06 heures CODE
+Leçon 4 : PRIMITIVES
+A- SITUATION D’APPRENTISSAGE
+Le ministère a entrepris la construction d’une
+piscine dans l’enceinte d’un lycée d’excellence.
+L’entreprise chargée de l’ouvrage a affiché une
+image accompagnée d’un schéma de ce que sera
+cette piscine (voir image ci-contre).
+Rimon élève de TA1 et amateur de natation,
+veut comparer la taille de la piscine de son
+lycée à celle du lycée professionnel de la ville.
+Il tente de calculer son aire mais n’y arrive pas.
+Il pose le problème à ses camarades de classe
+qui décident de l’aider à déterminer l’aire totale
+de la piscine en construction.
+A. CONTENU DE LA LEÇON
+I. Notion de primitive
+1. Définition
+𝑓 est une fonction définie sur un intervalle Ι. On appelle primitive de 𝑓 sur I , toute fonction F
+dérivable sur Ι telle que f soit la dérivée de F.
+Remarque
+A partir de la définition, on peut écrire : pour tout 𝐱 ∈ 𝚰, 𝐅′(𝐱) = 𝐟(𝐱).
+Exemple
+Soit f la fonction définie sur ℝ par : f(x) = 3x2 + 1.
+Une primitive de f sur ℝ est la fonction F telle que : F(x) = x3 + x − 9 ,
+En effet : F est dérivable sur ℝ et ∀x ∈ ℝ, F′(x) = 3x2 + 1 = f(x).
+EXERCICE DE FIXATION
+Soit f la fonction définie sur ℝ par f(x) = 2x + 5.
+
+-- 1 of 10 --
+
+On donne les fonctions F, G , H dérivables sur ℝ , la fonction P dérivable sur ℝ∗ et définies
+respectivement par :
+F(x) = x2; G(x) = x2 + 5x − 7 ; H(x) = x2 + 5x ; P(x) = x2 + 5x + 1
+x
+Parmi les fonctions F , G , H et P , cite celles qui sont des primitives de f sur ℝ
+Solution
+On vérifie que : pour tout x ∈ ℝ , G′(x) = f(x) et H′(x) = f(x).
+Donc G et H sont des primitives de f sur ℝ.
+2 . Propriétés
+Propriété1 : Condition d’existence d’une primitive
+Toute fonction continue sur un intervalle Ι admet une primitive sur Ι.
+EXERCICE DE FIXATION
+Soient f, g, h et u les fonctions de ℝ vers ℝ définies respectivement par :
+f(x) = x3 − 1 ; g(x) = 1
+x ; h(x) = √x ; u(x) = x
+x2 + 1
+Entoure celles qui admettent des primitives sur ℝ.
+Solution
+On entoure f et u , car ces deux fonctions sont continues sur ℝ.
+Propriété2 : Ensemble des primitives d’une fonction
+Soit une fonction f continue, admettant une primitive F sur un intervalle I.
+Toute primitive de f sur I est de la forme : x ↦ F(x) + c , où c est un élément de ℝ.
+Conséquence : toute fonction continue admet une infinité de primitives.
+EXERCICES DE FIXATION
+Exercice1
+Soient f et F les fonctions de ℝ vers ℝ et définies par : f(x) = x2 − x et F(x) = x3
+3 − x2
+2
+Vérifie que F est une primitive de f sur ℝ , puis trouve deux autres primitives G et H de f sur ℝ.
+Solution
+∀x ∈ ℝ, F′(x) = f(x). Donc, F est une primitive de f sur ℝ .
+Toutes les primitives de f sont de la forme : x ↦ F(x) + c, avec 𝑐 ∈ ℝ
+Deux autres primitives de f sur ℝ sont les fonctions G et H définies respectivement par :
+G(x) = x3
+3 − x2
+2 − 29 et H(x) = x3
+3 − x2
+2 + 546.
+Exercice2
+
+-- 2 of 10 --
+
+Détermine les primitives sur ]0; +∞[ de la fonction f définie par f(x) = − 1
+x2 .
+Solution
+Les primitives sur ]0; +∞[ de f sont les fonctions : x ⟼ 1
+x + c, où c ∈ ℝ.
+Propriété3 : La primitive d’une fonction vérifiant une condition initiale
+Soit f une fonction continue sur un intervalle Ι, x0 un élément de Ι et y0 un nombre réel .
+Ιl existe une primitive de f sur I et une seule qui prend la valeur y0 en x0 .
+EXERCICE DE FIXATION
+Soit g la fonction définie sur ℝ par : g(x) = 2x − 1 .
+On suppose que la fonction G définie par G(x) = x2 − x est une primitive de g sur ℝ . Détermine la
+primitive H de g qui prend la valeur 5 en −1
+Solution
+La primitive cherchée H est de la forme H(x) = G(x) + c = x2 − x + c , où c ∈ ℝ.
+Cherchons c :
+H(−1) = 5 ⟺ (−1)2 − (−1) + c = 5 . D’où : c = 3
+Donc : H(x) = x2 − x + 3.
+II. Détermination d’une primitive
+1. Primitives de fonctions usuelles
+Fonction 𝐟 Primitives de 𝐟 (c ∈ ℝ) Sur l’intervalle
+x ⟼ a (a ∈ ℝ) x ⟼ ax + c ℝ
+x ⟼ xr (r ∈ ℚ ∖ {−1}) 1
+r + 1 xr+1 + c ℝ , ℝ+ , ℝ+
+∗ ou ℝ−
+∗
+x ⟼ 1
+xr (r ∈ ℚ ∖ {1}) x ⟼ −1
+(r − 1)xr−1 + c ℝ+
+∗ ou ℝ−
+∗
+x ⟼ 1
+√x
+x ⟼ 2√x + c ℝ+
+∗
+x ⟼ cosx x ⟼ sinx + c ℝ
+x ⟼ sinx x ⟼ −cosx + c ℝ
+x ⟼ 1
+cos2x = 1 + tan2x x ⟼ tanx + c ]− π
+2 + kπ; π
+2 + kπ[ , k ∈ ℤ
+x ⟼ 1
+sin2x = 1 + cotan2x x ⟼ −cotanx + c ]kπ; π + kπ[ , k ∈ ℤ
+EXERCICE DE FIXATION
+
+-- 3 of 10 --
+
+Dans chacun des cas suivants, détermine toutes les primitives sur ]0; +∞[ de la fonction f
+a. f(𝑥) = 𝑥3 b. f(x) = 1
+x5 c. f(x) = x2 3	⁄
+Solution
+a. x ⟼ 1
+4 x4 + c ( c ∈ ℝ ) b. x ⟼ − 1
+4x4 + c (c ∈ ℝ) c. x ⟼ −3x− 1
+3 + c (c ∈ ℝ)
+2. Opérations et compositions
+Propriété1
+Soient u et v deux fonctions admettant respectivement pour primitives sur un intervalle I les fonctions
+U et V. k est un nombre réel.
+• U + V est une primitive sur I de la fonction u + v.
+• kU est une primitive sur I de la fonction ku.
+EXERCICE DE FIXATION
+Dans chacun des cas suivants, détermine toutes les primitives sur ℝ de la fonction f.
+a. f(x) = x + sinx b. f(x) = sinx + cosx c. f(x) = 8x2 + 5x − 9
+Solution
+a. x ⟼ 1
+2 x2 − cosx + c (c ∈ ℝ)
+b. x ⟼ −cosx + sinx + c (c ∈ ℝ)
+c. x ⟼ 8
+3 x3 + 5
+2 x2 − 9x + c (c ∈ ℝ)
+Propriété2
+Soit u une fonction dérivable sur un intervalle I et v une fonction dérivable sur un intervalle
+contenant u(Ι).
+Une primitive sur Ι de la fonction u′ × (v′ou) est la fonction v ∘ u.
+On en déduit le tableau suivant :
+Fonction 𝐟 Une primitive 𝐅 de 𝐟
+sur 𝐈
+Conditions
+u′ur (r ∈ ℚ ∖ {−1}) 1
+r + 1 ur+1 u > 0 sur I
+u′
+ur (r ∈ ℚ ∖ {1}) −1
+(r − 1)ur−1
+u > 0 sur I
+u′
+√u
+2√u u > 0 sur I
+u′cosu sinu
+x ⟼ cos (ax + b) 𝑥 ⟼ 1
+a sin(ax + b) a ≠ 0
+u′sinu −cosu
+x ⟼ sin(ax + b) 𝑥 ⟼ − 1
+a cos(ax + b) a ≠ 0
+
+-- 4 of 10 --
+
+EXERCICES DE FIXATION
+Exercice1
+Dans chacun des cas suivants, détermine une primitive F sur ]0; +∞[ de la fonction f.
+a. f(x) = 3 sin 2x b. f(x) = 2√2x + 1 ; c. f(x) = 3
+(3x+5)2
+Solution
+a. F(x) = 3 × (− 1
+2 𝑐𝑜𝑠2𝑥) = − 3
+2 𝑐𝑜𝑠2𝑥
+b. f(x) = 2(2x + 1)1
+2 . Donc F(x) = 1
+1
+2+1 (2x + 1)1
+2+1 = 2
+3 (2x + 1)3
+2 .
+c. F(x) = − 1
+(2−1)(3x+5)2−1 = − 1
+3x+5 .
+Exercice2
+Dans chacun des cas suivants, détermine une primitive H sur ℝ de la fonction h.
+a. h(x) = (2x + 1)(x2 + x + 6)3 b. h(x) = 2x+3
+(x2+3x+3)4 c. h(x) = sin x cos5x
+d. h(x) = 2x+1
+√x2+x+1
+Solution
+a. ℎ(𝑥) = 𝑢′(𝑥) × (𝑢(𝑥))3; avec u(x) = x2 + x + 6, donc H(x) = 1
+4 (x2 + x + 6)4
+b. ℎ(𝑥) = 𝑢′(𝑥)
+(𝑢(𝑥))4 ; avec u(x) = x2 + 3x + 3, donc H(x) = − 1
+3(x2+3x+3)3
+c. h(x) = −𝑢′(𝑥) × (𝑢(𝑥))5; avec 𝑢(𝑥) = cos(𝑥), donc H(x) = − 1
+6 cos6x .
+d. ℎ(𝑥) = 𝑢′(𝑥)
+√𝑢(𝑥) ; avec u(x) = x2 + x + 1, donc H(x) = 2√x2 + x + 1 .
+B. SITUATION COMPLEXE
+Le car loué par le lycée pour sa colonie de vacances doit effectuer un trajet de 1500 km.
+Lorsque ce car roule à la vitesse moyenne v, exprimée en km/h, la dérivée de sa consommation C(v),
+exprimée en litres pour 100 km, selon les études d’un expert sur ce type de véhicule, est donnée par la
+relation : 𝐶′(𝑣) = −300
+𝑣2 + 1
+3. Une information complémentaire fournie par le chauffeur au moment de la
+location du car est qu’il consomme 25 litres au 100 pour une vitesse moyenne de 60 km/h.
+Le salaire horaire du chauffeur est de 900 F CFA et le litre de gasoil coûte 600 F CFA.
+Les organisateurs de la colonie veulent déterminer la vitesse moyenne à laquelle le chauffeur doit
+rouler pour minimiser le coût total du voyage. Ils te sollicitent pour leur venir en aide.
+Propose - leur une solution argumentée basée sur tes connaissances mathématiques.
+
+-- 5 of 10 --
+
+Solution
+➢ Pour répondre à la préoccupation des organisateurs du voyage, nous utilisons les
+primitives.
+➢ Nous allons déterminer le cout total du voyage
+Modélisation
+• Détermination de C
+De la relation 𝐶′(𝑣) = −300
+𝑣2 + 1
+3, on obtient : 𝐶(𝑣) = 300
+𝑣 + 𝑣
+3 + 𝑘. Le car consomme 25 litres au 100 pour
+une vitesse moyenne de 60 km/h, d’où : C(60) = 25. Or 𝐶(60) = 300
+60 + 60
+3 + 𝑘 = 25 + k, donc k est nul.
+La formule donnant la consommation en litres pour 100 km est : 𝐶(𝑣) = 300
+𝑣 + 𝑣
+3 .
+• Détermination du coût total du voyage.
+Ce coût total P(v) dépend de la vitesse v.
+La durée du trajet de 1500 km à la vitesse v, est t = 1500
+𝑣 .
+Le salaire du chauffeur sera donc 900 × 1500
+𝑣 = 1350000
+𝑣 .
+La consommation en litres pour 1500 km (1500 = 15 × 100) sera de 15C(v) = 15(300
+𝑣 + 𝑣
+3)
+Comme le litre coûte 600FCFA, alors le coût du carburant sera de : 600× 15(300
+𝑣 + 𝑣
+3)=9000(300
+𝑣 + 𝑣
+3).
+𝑃(𝑣) = 4050000
+𝑣 + 3000𝑣.
+• Calcul de la vitesse qui minimise le coût total du voyage (résolution du modèle)
+Pour minimiser le coût total du trajet, il faut étudier les variations de la fonction P.
+Etudier les variations de la fonction P revient à étudier le signe de sa dérivée.
+P est dérivable sur l'intervalle ]0; +∞ [.
+𝑃′(𝑣) = −4050000
+𝑣2 + 3000
+𝑃′(𝑣) = 0 ⇔ 𝑣 = √1350 ⋍ 37, 𝑐𝑎𝑟 𝑣 ≥ 0
+𝑣 0
+𝑃′(𝑣) - 0 +
+𝑃(𝑣)
+𝑚 = 𝑃(√1350) ⋍ 220500
+➢ conclusion
+Pour minimiser le coût total du voyage, le chauffeur doit rouler à une vitesse moyenne de 37 km/h.
+L’organisation de cette colonie leur coûterait alors 220 500 FCFA.
+D . EXERCICES
+1. Exercices d’application
++∞	√1350
+𝑚
+
+-- 6 of 10 --
+
+Exercice1
+Réponds par VRAI (V ) ou par Faux (F ) à chacune des affirmations suivantes
+N° AFFIRMATIONS REPONSES
+1.
+Une primitive sur ℝ de la fonction définie par : f(x) = 3x2 − 4x + 1 est la fonction
+définie par : F(x) = x3 − 2x2 + x − π
+2. La primitive sur ]0; +∞[ de la fonction définie par p(x) = x − 1
+x2 − 1
+√x qui prend la
+valeur − 1
+2 en 1 est la fonction définie par P(x) = 1
+2 x2 + 1
+x − 2√x + 1
+3. Une primitive sur un intervalle Ι de la fonction u′v + uv′ est la fonction u × v
+Solution
+1. V 2. F 3. V
+Exercice2
+Dans chacun des cas suivants, détermine les primitives sur Ι de la fonction f.
+1. f(x) = 1
+(2x+5)2 ; I = ]− 5
+2 ; +∞[
+2. f(x) = (3x + 2)(3x² + 4x + 7)3 ; Ι = ℝ
+3. f(x) = 4x3
+√x4+1 ; Ι = ℝ+
+solution
+1. ∀x ∈ ]− 5
+2 ; +∞[ , f(x) = 1
+2 × 2
+(2x+5)2 .
+Donc, les primitives sur ]− 5
+2 ; +∞[ de f sont de la forme : x ⟼ − 1
+2(2x+5) + c (c ∈ ℝ).
+2. ∀x ∈ ℝ , f(x) = 1
+2 (6x + 4)(3x² + 4x + 7)3 .
+Donc, les primitives sur ℝ de f sont de la forme : x ⟼ 1
+8 (3x² + 4x + 7)4 + c (c ∈ ℝ).
+3. Les primitives sur ℝ+ de f sont de la forme : x ⟼ 2√x4 + 1 + c (c ∈ ℝ).
+Exercice3
+On donne les fonctions fet F définies sur ]0; +∞[ respectivement, par :
+f(x) = x(5√x + 4) et F(x) = 2x2(√x + 1)
+Démontre que F est une primitive de f sur ]0; +∞[ .
+Exercice4
+Dans chacun des cas suivants détermine les primitives sur Ι de la fonction f.
+1. f(x) = 2x6−3x+8
+2x4 , I = ]0; +∞[
+2. f(x) = 2x
+√x2−9 ; Ι = ]3; +∞[
+3. f(x) = (x − 1)(x² − 2x + 5)3 ; Ι = ℝ
+4. f(x) = sin (3x − π
+5) , Ι = ℝ
+2. Exercices de renforcement
+Exercice5
+
+-- 7 of 10 --
+
+On considère les fonctions fet F définies sur ]−∞; 3
+2[ respectivement par :
+f(x) = x√3 − 2x et F(x) = (ax2 + bx + c)√3 − 2x , où a, b et c sont des nombres réels.
+Détermine a, b et c pour que F soit une primitive de f sur ]−∞; 3
+2[.
+Réponse
+On a : ∀x ∈ ]−∞; 3
+2[ , F′(x) = f(x).
+F′(x) = f(x) ⟺ (2ax + b)√3 − 2x − ax2 + bx + c
+√3 − 2x = x√3 − 2x
+⟺ −5ax2 + (6a − 3b)x + 3b − c = −2x2 + 3x.
+Par identification : {
+−5a = −2
+6a − 3b = 3
+3b − c = 0
+On obtient : a = 2
+5 , b = − 1
+5 et c = − 3
+5 .
+Exercice6
+On donne les fonctions fet h définies sur ℝ respectivement par :
+f(x) = −x3+2x2+2
+x2+1 et h(x) = x4+3x2−4x
+(x2+1)2
+1. Justifie que : ∀x ∈ ℝ , h(x) = −f ′(x) − 4x
+(x2+1)2 .
+2. Détermine la primitive H de h sur ℝ , qui prend la valeur 2 en 0.
+Réponse
+1. ∀x ∈ ℝ , f ′(x) = −x4−3x2
+(x2+1)2 = −x4−3x2+4x−4x
+(x2+1)2 = − x4+3x2−4x
+(x2+1)2 − 4x
+(x2+1)2 = −h(x) − 4x
+(x2+1)2 .
+Donc : h(x) = −f′(x) − 4x
+(x2+1)2 .
+2. On a : ∀x ∈ ℝ , h(x) = −f ′(x) − 2 × 2x
+(x2+1)2 .
+La primitive cherchée H est de la forme: H(x) = −f(x) + 2
+x2+1 + c, où c ∈ ℝ.
+H(0) = −f(0) + 2 + c = 2. Alors : c = f(0) = 2.
+Donc : ∀x ∈ ℝ, H(x) = −f(x) + 2
+x2+1 + 2 .
+Exercice7
+On considère la fonction f définie sur ℝ, par : f(x) = xcosx.
+1. Calcule la dérivée de la fonction g définie sur ℝ, par : g(x) = xsinx.
+2. Déduis-en une primitive de f sur ℝ.
+Exercice8
+Dans chacun des cas suivants, détermine une primitive de la fonction f sur ]0; +∞[.
+1. f(x) = xsinx+cosx
+x2 2. f(x) = sinx−xcosx
+x2
+Exercice9
+Dans chacun des cas suivants, détermine une primitive F sur Ι de la fonction f.
+1. f(x) = −3x+1
+(3x2−2x−1)4 ; I = ]1; +∞[
+2. f(x) = sin7xcos37x ; Ι = ℝ
+
+-- 8 of 10 --
+
+3. f(x) = (3 − 2x)sin(x² − 3x + 1 ); Ι = ℝ
+4. f(x) = cos (3x − π
+5) , Ι = ℝ
+5. f(x) = cos2x
+√sin2x , Ι = ]0; π
+4[ .
+6. f(x) = x
+√x2−1
+3 , Ι = ]1; +∞[.
+Exercice10
+Soit la fonction f définie sur ]− π
+2 ; π
+2[ , par : f(x) = 1
+1−sinx .
+1. Vérifie que : 1
+1−sinx = 1+sinx
+cos2x .
+2. Déduis-en les primitives de f sur ]− π
+2 ; π
+2[.
+Exercice11
+Sans linéariser l’expression cos3xsin3x, détermine une primitive sur ℝ de la fonction
+f: x ⟼ cos3xsin3x.
+3. Exercices d’approfondissement
+Exercice12
+1. Linéariser l’expression cos4x.
+2. Déduis-en les primitives sur ℝ de la fonction : x ⟼ cos4x.
+Réponse
+1. cos4x = (1+cos2x
+2 )2
+= 1
+4 (1 + 2cos2x + cos22x)
+cos4x = 1
+4 + 1
+2 cos2x + 1
+4 cos22x = 1
+4 + 1
+2 cos2x + 1
+4 (1 + cos4x
+2 )
+cos4x = 3
+8 + 1
+2 cos2x + 1
+8 cos4x.
+2. Les primitives sur ℝ de la fonction : x ⟼ cos4x sont les fonctions :
+x ⟼ 3
+8 x + 1
+4 sin2x + 1
+32 sin4x + c (c ∈ ℝ).
+Exercice13
+Soit f la fonction définie sur ]2; +∞[ , par : f(x) = x3−x2−8x+8
+(x−2)2 .
+1. Détermine trois nombres réels a, b et c tels que : ∀x ∈ ]2; +∞[, f(x) = ax + b + c
+(x−2)2 .
+2. Déduis-en les primitives de f sur ]2; +∞[.
+Réponse
+1. A l’aide d’une division euclidienne , on obtient : a = 1 , b = 3 et c = −4 .
+2. ∀x ∈ ]2; +∞[ , f(x) = x + 3 − 4
+(x−2)2
+Les primitives de f sur ]2; +∞[ sont de la forme : x ⟼ 1
+3 x2 + 3x + 4
+x−2 + c (c ∈ ℝ) .
+Exercice14
+
+-- 9 of 10 --
+
+On considère la fonction f définie sur ]1
+3 ; +∞[ , par : f(x) = sin3x − 2
+(3x−1)2 .
+Détermine les primitives de f sur ]1
+3 ; +∞[.
+Exercice15
+On considère les fonctions h et g définies sur ℝ, par : h(x) = cos2x et g(x) = sin2x.
+1. Calcule h(x) + g(x).
+Déduis-en la primitive S de h + g sur ℝ, qui s’annule en 0.
+2. Détermine h(x) − g(x).
+Déduis-en la primitive D de h − g sur ℝ, qui s’annule en 0.
+3. On désigne par H et G des primitives respectives de h et g sur ℝ.
+Déduis des questions précédentes H et G.
+Exercice16
+Soit h la fonction définie sur ℝ ∖ {− 1
+2}, par : h(x) = x
+(2x+1)3 .
+1. Détermine les nombres réels a et b tels que : ∀x ∈ ℝ ∖ {− 1
+2} , h(x) = a
+(2x+1)2 + b
+(2x+1)3 .
+2. Déduis-en une primitive H de h sur ]− 1
+2 ; +∞[.
+
+-- 10 of 10 --
+

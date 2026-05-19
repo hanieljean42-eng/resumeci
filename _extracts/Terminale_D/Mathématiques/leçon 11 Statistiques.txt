@@ -1,0 +1,574 @@
+Page 1 sur 12
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THÈME : ORGANISATION ET TRAITEMENT DES DONNÉES
+Durée : 10 heures Code :
+Leçon 11 : STATISTIQUE À DEUX VARIABLES
+A. SITUATION D’APPRENTISSAGE
+Dans le cadre des recherches pour un exposé, des élèves d’une classe de Terminale ont été accrochés
+par les informations suivantes :
+La prévision météorologique est une science en pleine évolution. Elle a pour objectif de prédire un
+ensemble de paramètres comme la pluviométrie, la pression atmosphérique, la température, etc.
+Le tableau suivant donne les pluviométries et températures moyennes de septembre 2018 à août 2019
+dans une ville.
+Sept
+2018
+Oct.
+2018
+Nov.
+2018
+Déc
+2018
+Jan
+2019
+Fév.
+2019
+Mar
+2019
+Avr.
+2019
+Mai
+2019
+Juin
+2019
+Juillet
+2019
+Août
+2019
+Pluviométrie
+(en mm) 13 23 49 49 50 64 79 48 40 10 5 6
+Température
+(en °C) 23 17 14 10 10 11 13 15 17 23 27 28
+Dans l’affiche la température moyenne d’octobre 2019 était de 32 °C. Les élèves veulent connaitre la
+pluviométrie du mois d’octobre 2019. Un des élèves affirme que la pluviométrie n’est pas liée à la
+température et qu’on ne peut savoir la pluviométrie d’octobre. Ce que réfutent certains. Toute la classe
+ayant été saisi, décide de chercher à savoir si la pluviométrie est liée à la température et si c’est le cas,
+de prévoir la pluviométrie d’octobre 2019.
+B. CONTENU DE LA LEÇON
+I. Série statistique double
+1. Définition
+On considère deux caractères quantitatifs X et Y sur une même population de n individus.
+On note : 𝑥1 , 𝑥2 , 𝑥3 ,…, 𝑥𝑝 les valeurs( ou les modalités)du caractère X ; 𝑦1 , 𝑦2 , 𝑦3 ,…, 𝑦𝑝 les
+valeurs du caractère Y et 𝑛𝑖𝑗 l’effectif du couple (𝑥𝑖 , 𝑦𝑗).
+On appelle série statistique double de caractère (X, Y), l’ensemble des triplets (𝑥𝑖 , 𝑦𝑗 , 𝑛𝑖𝑗).
+Exemple
+Une étude statistique porte sur une population de 100 ménages. Deux caractères X et Y sont étudiés :
+- le caractère X est le nombre d’enfants.
+- le caractère Y est le nombre de pièces de l’appartement occupé.
+On obtient le tableau ci-dessous qui représente la série statistique de caractère(X ,Y)
+X
+Y 0 1 2 3 4 5
+1 6 4 1 0 0 0
+Terminale D
+Mathématiques
+
+-- 1 of 12 --
+
+Page 2 sur 12
+2 3 11 10 5 1 0
+3 1 3 16 13 4 1
+4 0 1 3 5 8 4
+Sur la 1èreligne, sont inscrites les valeurs du caractère X, soit 𝑥1 = 0 ; 𝑥2 = 1 ; 𝑥3 = 2 𝑥4 = 3 ;
+𝑥5 = 4; 𝑥6 = 5.
+La 1èrecolonne affiche les valeurs du caractère Y qui sont 𝑦1 =1 ;𝑦2 =2 ; 𝑦3 =3;𝑦4 =4.
+Les nombres qui ne sont pas dans cette ligne et cette colonne, représentent les différents 𝑛𝑖𝑗.
+Ainsi considérons le nombre 4 dans ce tableau. On constate qu’il est dans la colonne de la valeur 1 du
+caractère X et dans la ligne de la valeur 1du caractère Y. On dit alors il y a 4 ménages qui ont un
+enfant et occupent un appartement d’une pièce.
+Ainsi le couple (𝑥2, 𝑦1)= (1 ; 1) a pour effectif 𝑛21 = 4.
+Combien de ménages ont deux enfants et occupent un appartement de quatre pièces ?
+On va donc considérer la colonne ayant la valeur 2 du caractère X et la ligne ayant la valeur 4 du
+caractère Y. L’intersection de cette ligne et de cette colonne est 3.
+3 ménages ont donc deux enfants et occupent un appartement quatre pièces.
+Ce tableau à double entrée ci-dessus est appelé tableau de contingence.
+2. Taleau de séries marginales
+Reprenons l’exemple précédent.
+Il est question de trouver l’effectif de chaque modalité du caractère X et l’effectif de chaque valeur du
+caractère Y
+X
+Y 0 1 2 3 4 5 Total
+1 6 4 1 0 0 0 11
+2 3 11 10 5 1 0 30
+3 1 3 16 13 4 1 38
+4 0 1 3 5 8 4 21
+Total 10 19 30 23 13 5 100
+Considérons le caractère X.
+Pour trouver l’effectif de la valeur 0, on additionne tous les 𝑛𝑖𝑗qui se trouvent dans la colonne de la
+valeur 0 c’est-à-dire 6+3+1+0=10. 10 ménages n’ont donc pas d’enfants.
+Combien de ménages ont-ils quatre enfants ? Il est question donc d’additionner tous les 𝑛𝑖𝑗 se
+trouvant dans la colonne de la valeur 4 du caractère X.
+On a donc 0+1+4+8=13 ménages.
+On procède de la même manière pour trouver l’effectif des autres modalités du caractère X. Ainsi à
+chaque valeur on a son effectif dans la dernière ligne.
+D’où le tableau linéaire associé à X :
+𝑥𝑖 0 1 2 3 4 5
+𝑛𝑖 10 19 30 23 13 5
+La série ainsi obtenue est appelée série marginale du caractère X.
+En faisant de même avec les lignes, on obtient l’effectif de la modalité 1 du caractère Y en
+additionnant les 𝑛𝑖𝑗 de la ligne où se trouve cette modalité. Soit 6+4+1+0+0+0=11.
+On obtient ainsi l’effectif de chaque modalité du caractère Y dans la dernière colonne du tableau.
+D’où le tableau linéaire associé à Y :
+
+-- 2 of 12 --
+
+Page 3 sur 12
+𝑦𝑖 1 2 3 4
+𝑛𝑖 11 30 38 21
+La série ainsi obtenue est appelée série marginale du caractère Y.
+Dressons le tableau des fréquences marginales du caractère X.
+On rappelle que la fréquence est l’effectif de la modalité sur l’effectif total.
+On obtient le tableau suivant :
+𝑥𝑖 0 1 2 3 4 5
+𝑓𝑖
+10
+100
+19
+100
+30
+100
+23
+100
+13
+100
+5
+100
+De la même manière, définis le tableau des fréquences marginales du caractère Y.
+𝑦𝑖 1 2 3 4
+𝑓𝑖
+11
+100
+30
+100
+38
+100
+21
+100
+3. Nuage de points
+Définition
+On considère deux caractères quantitatifs X et Y sur une même population de n individus.
+On note 𝑥1 , 𝑥2 , 𝑥3 ,…, 𝑥𝑝 les valeurs du caractère X,
+𝑦1, 𝑦2 , 𝑦3 ,…, 𝑦𝑝 les valeurs du caractère Y.
+On appelle nuage de points associé à la série statistique double de caractère (X, Y) les points de couple
+de coordonnées (𝑥𝑖; 𝑦𝑗) d’effectifs non nuls.
+Exercice de fixation
+Le tableau suivant donne le nombre d’exploitations agricoles d’une région selon leur superficie en
+hectares.
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Représente le nuage de points associé à cette série.
+Solution
+
+-- 3 of 12 --
+
+Page 4 sur 12
+Remarque
+Dans la suite, les séries doubles considérées seront comme la série de l’exemple précédent ; c’est-à-dire
+l’effectif 𝑛𝑖𝑗du couple (𝑥𝑖 ,𝑦𝑗) vaut 1.
+4. Point moyen
+Définition
+On appelle point moyen d’un nuage de 𝑛 points 𝑀𝑖 de coordonnées (𝑥𝑖; 𝑦𝑖) le point G de coordonnées
+(𝑥𝐺; 𝑦𝐺 ) telles que :
+𝑥𝐺 = 𝑋 = 𝑥1+𝑥2+⋯+𝑥𝑛
+𝑛 ; 𝑦𝐺 = 𝑌 = 𝑦1+𝑦2+⋯+𝑦𝑛
+𝑛 .
+Exercice de fixation
+Détermine les coordonnées du point moyen du nuage de points de la série statistique suivante :
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Réponse
+C’est le point de coordonnées (X ;Y).
+On a : X = 2+2+3+4+5+6+7+7,6
+8 = 36,6
+8 = 4,575
+et Y = 14+26+31+29+44+40+54+50
+8 = 288
+8 = 36
+Donc : G (4,575 ; 36)
+II. Ajustement linéaire par la méthode des moindres carrés
+Soit un nuage de points associé à une série statistique double représenté dans un repère orthogonal.
+Faire un ajustement de ce nuage de points, c’est trouver une courbe qui passe le plus près « possible »
+du maximum de points de ce nuage.
+Lorsque cette courbe est une droite, on dit que l’ajustement est affine ou linéaire.
+Exemple d’ajustement par une droite.
+1. Covariance
+Définition
+On appelle covariance de la série statistique double de caractère (X ;Y),
+le nombre réel noté COV(X ; Y) tel que :
+
+-- 4 of 12 --
+
+Page 5 sur 12
+COV(𝑋, 𝑌) = 1
+𝑛 ∑ 𝑛𝑖𝑗(𝑥𝑖 − 𝑥)(𝑦𝑗 − 𝑦 ) ou COV(𝑋, 𝑌) = ∑ 𝑛𝑖𝑗𝑥𝑖𝑦𝑗
+𝑛 − X Y.
+Exercice de fixation
+Calcule la covariance de la série statistique précédente
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Solution
+La covariance COV(X, Y)de cette série statistique est ∑ 𝑥𝑖𝑦𝑗
+𝑛 − X Y
+COV(X, Y) = 2×14+2×26+3×31+4×29+5×44+6×40+7×54+7,6×50
+8 - 4,575×36
+COV(X, Y) = 1503
+8 − 164,7.
+Donc :COV(X, Y) = 23,675.
+2. Coefficient de corrélation linéaire
+Définition
+Soit V(X) la variance de la série statistique de caractère X, V(Y) la variance de la série statistique de
+caractère Y et COV (X ; Y) la covariance de la série statistique (X ; Y).
+On appelle coefficient de corrélation linéaire de la série statistique double (X ; Y), le nombre réel noté
+𝑟 tel que : 𝑟 = COV(X,Y)
+√V(X)√V(Y).
+Exercice de fixation
+Calcule le coefficient de corrélation linéaire de la série statistique du B.1.3.
+Solution
+Le coefficient de corrélation linéaire 𝑟de cette série statistique est: 𝑟 = COV(X,Y)
+√V(X)√V(Y)
+On a:
+• V(X) = ∑ 𝑥𝑖2
+𝑛 − (X)2
+= 22+22+32+42+52+62+72+(7,6)2
+8 − 4,5752
+V(X) = 200,76
+8 − 4,5752 ≈ 4,16
+• V(Y) = ∑ 𝑦𝑖2
+𝑛 − (Y)2
+= 142+262+312+292+442+402+542+502
+8 − 362
+V(Y) = 11626
+8 − 362 = 157,25
+Donc :𝑟 = 23,675
+√4,16×157,25 ≈0,92.
+Remarques
+• Le coefficient de corrélation linéaire permet de voir la dépendance linéaire des deux caractères X et Y.
+•Le coefficient de corrélation linéaire 𝑟 est un nombre réel de même signe que COV (X, Y) et
+on a : −1 ≤ 𝑟 ≤ 1.
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+
+-- 5 of 12 --
+
+Page 6 sur 12
+• Si │r│ est proche de 1, c’est-à-dire en pratique : 0,87≤ 𝑟 < 1 ou−1 < 𝑟 ≤ −0,87, alors on dit qu’il y a une
+bonne corrélation linéaire ou une forte corrélation linéaire entre les deux caractères
+X et Y.
+Exemple
+Interprète le coefficient de corrélation linéaire ci-dessus.
+Solution
+On a :𝑟 =0,92.
+Comme 0,87≤ 𝑟 < 1, il y a une forte corrélation entre la superficie et le nombre d’exploitations
+agricoles de cette région.
+3. Droites de régressions
+a) Propriété
+Soit V(X) la variance de la série statistique de caractère X, V(Y) la variance de la série statistique de
+caractère Y et COV (X, Y) la covariance de X et Y.
+i. Droite de régression de Yen X.
+En supposant qu’il y ait une forte corrélation entre les caractères X et Y alors, la droite (D) d’équation :
+𝑦 = 𝑎𝑥 + 𝑏 où 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = 𝑦 − 𝑎𝑥 est appelée la droite de régression de Yen X par la méthode
+des moindres carrés.
+ii. Droite de régression de X en Y.
+La droite (D’) d’équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec : 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = 𝑥 − 𝑎′𝑦 est appelée la droite de
+régression de X en Y par la méthode des moindres carrés.
+Exercice de fixation
+On considère la série statistique précédente.
+On sait que : 0,87≤ 𝑟 < 1.
+1. Détermine une équation de la droite d’ajustement linéaire de Y en X par la méthode des moindres
+carrés. On donnera les arrondis d’ordre 2 de a et b.
+2. Détermine une équation de la droite d’ajustement linéaire de X en Y par la méthode des moindres
+carrés. On donnera les arrondis d’ordre 2 de a’ et b’.
+Solution
+1. C’est la droite (D) d’équation : 𝑦 = 𝑎𝑥 + 𝑏 où 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = Y − 𝑎X
+𝑎 = Cov(X,Y)
+V(X) = 23,675
+4,16 = 5,69 et 𝑏 = Y − 𝑎X = 36 –5,69 ×4,575=9,97
+Donc (D) : 𝑦 = 5,69𝑥 + 9,97.
+2. C’est la droite (D’) d’équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = X − 𝑎′Y
+𝑎′ = Cov(X,Y)
+V(Y) = 23,675
+157,25 = 0,15 et 𝑏′ = X − 𝑎′Y = 4,575 – 0,15×36= –0,825
+Donc : (D’) : 𝑥 = 0,15𝑦 −0,825.
+Remarques
+- Les droites (D) et (D’) passent par le point moyen G du nuage de points.
+- Si 𝑟 est le coefficient de corrélation linéaire on a :
+•𝑎𝑎′ = 𝑟2 et |𝑟| = √𝑎𝑎′
+• Si 𝑎> 0 et 𝑎’> 0, alors 𝑟 = √𝑎𝑎′.
+• Si 𝑎< 0 et 𝑎’< 0, alors 𝑟 = −√𝑎𝑎′.
+• Si 𝑟2 = 1, alors 𝑎 = 1
+𝑎′ et les deux droites sont confondues.
+
+-- 6 of 12 --
+
+Page 7 sur 12
+b) Estimation
+•La droite d’ajustement tracée du nuage de points permet graphiquement une estimation de 𝑦
+connaissant 𝑥 (resp. 𝑥 connaissant 𝑦).
+•L’équation de la droite d’ajustement permet de calculer une estimation de 𝑦 connaissant 𝑥 (resp.𝑥
+connaissant 𝑦).
+Exercice de fixation
+On considère la série statistique précédente.
+En considérant que la tendance se poursuit ainsi, détermine le nombre d’exploitations agricoles pour
+une superficie de 9 ha.
+Solution
+Une superficie de 9 ha correspond à x = 9.
+En utilisant l’équation de la droite par la méthode des moindres carrés, on a : y = 5,69 x + 9,97
+𝑦 = 5,69 × 9 + 9,97 = 61,8
+Donc pour une superficie de 9 ha, le nombre d’exploitations agricoles est estimé à 62.
+C. SITUATION COMPLEXE
+Le tableau ci-dessous donne le nombre total d’adhérents au club littéraire d’un lycée au cours de
+l’année civile 2020.
+Mois Janv Fév Mars Avr Mai Juin Juil Août Sept Oct Nov Déc
+Rang 𝑥𝑖 1 2 3 4 5 6 7 8 9 10 11 12
+Nombre
+d’adhérents yi
+1100 1160 1220 1370 1620 1550 1600 1500 1790 1940 2060 1980
+Une Organisation Non Gouvernementale promet d’octroyer une aide financière considérable au club si
+le nombre d’adhérents dépasse les 3000 élèves. L’élève de la Terminale A qui dirige le club désire
+connaître la date à laquelle ce don pourra se faire. Il te sollicite pour l’aider.
+Détermine la date (mois et année) probable de la réception de ce don.
+Solution.
+➢ Pour trouver la date, nous allons utiliser les statistiques à deux variables,
+➢ Je détermine la droite de régression linéaire,
+➢ J’estime la date.
+• Je détermine une équation de la droite de régression de Y en X.
+Soit (D) cette droite.
+Une équation de (D) est sous la forme: y = ax + b avec 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = 𝑌 − 𝑎𝑋.
+
+-- 7 of 12 --
+
+Page 8 sur 12
+- Les coordonnées du point moyen G
+On a:
+𝑋̅ = ∑ 𝑥𝑖
+𝑛 = 78
+12 = 6,5
+𝑌̅ = ∑ 𝑦𝑖
+𝑛 = 18890
+12 = 1574,167
+- La variance de X
+𝑉(𝑋) = ∑ 𝑥𝑖2
+𝑛 − X2
+𝑉(𝑋) = 12 + 22 + 32 + 42 + 52 + 62 + 72 + 82 + 92 + 102 + 112 + 122
+12 − 6,52
+V(X) = 650
+12 − (6.5)2 = 11,917
+- La variance de Y
+𝑉(𝑌) = ∑ 𝑦𝑖2
+𝑛 − Y2
+𝑉(𝑌) = 11002 + 11602 + 12202 + 13702 + 1620 + 15502 + 16002 + 15002 + 17902 + 19402 + 20602 + 19802
+12
+− (1574,167)2
+𝑉(𝑌) = 30889500
+12 − (1574,167)2 = 96123,256
+- La covariance de X et Y
+Cov(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑖
+𝑛 − X Y
+Cov(𝑋, 𝑌) = 1100 + 2320 + 3660 + 5480 + 8100 + 9300 + 11200 + 12000 + 16110 + 19400 + 22660 + 23760
+12
+− 6,5 × 1574,167
+COV(X, Y) = 135090
+12 − 6,5 × 1574,167 = 1025,4145
+- Une équation de la droite (D): y = ax + b
+𝑎 = 1025,4145
+11,917 = 86,046
+𝑏 = 1574,167 − 86,046 × 6,5 = 1014,868
+D’où (D): 𝒚 = 86,046𝑥 + 1014,868
+• Je déduis le rang du mois pour 𝑦 = 3000
+𝑦 = 3000 équivaut à 𝑥 = 3000−1014,868
+86,046 = 23,071
+Le rang cherché est sensiblement égal à 24.
+• Je donne la date (mois et année) probable de la réception de ce don.
+La date probable de la réception de ce don est Décembre 2021.
+
+-- 8 of 12 --
+
+Page 9 sur 12
+D. EXERCICES
+1. Exercices de fixation
+Exercice 1
+On considère la série statistique suivante :
+𝑥𝑖 1 4 7 8 10
+𝑦𝑖 2 7 8 10 13
+Détermine les coordonnées du point moyen G.
+Solution
+On a : 𝑥𝐺 = 𝑥̅ =1+4+7+8+10
+5 =30
+5 =6
+𝑦𝐺 = 𝑦̅ = 2+7+8+10+13
+5 =40
+5 = 8 ; donc G (6 ; 8)
+Exercice 2
+Détermine la covariance de la série statistique de l’exercice 1
+Solution
+On a : COV(X, Y)= ∑ 𝑛𝑖𝑗𝑥𝑖𝑦𝑗
+𝑛 -X𝑌̅ = 1×2+4×7+7×8+8×10+10×13
+5 - 6× 8 =296
+5 -48= 11,2
+2. Exercices de renforcement
+Exercice 1
+La tension artérielle est une donnée médicale correspondant à la pression du sang dans les artères. On
+la mesure chez les patients car une tension anormale peut être le symptôme de pathologies
+cardiovasculaires comme l'hypertension artérielle.
+La tension artérielle d'une personne comporte deux mesures :
+- la Tension Artérielle Systolique (notée TAS) ;
+- la Tension Artérielle Diastolique (notée TAD).
+Le tableau suivant regroupe les mesures de la tension artérielle pour un groupe de personnes saines :
+Ages 26 39 40 50 53 56
+TAS (en mm Hg) 128 126 118 136 142 145
+TAD (en mm Hg) 80 83 92 91 87 93
+On s'intéresse à l'évolution de la TAS en fonction de l'âge.
+Pour cela, on symbolise les données du tableau à l'aide de points de coordonnées (x;y) où x est l'âge de
+la personne et y sa TAS.
+Détermine les coordonnées du point moyen des 3 points dont l'âge est le plus petit.
+Détermine les coordonnées du point moyen des 3 autres points.
+Solution
+Désignons par 𝐺1 le point moyen des trois points dont l’âge est le plus petit et par 𝐺2 celui des trois
+autres points. On a :
+𝑥𝐺1 = 26+39+40
+3 = 35
+𝑦𝐺1 = 128+126+118
+3 = 124
+
+-- 9 of 12 --
+
+Page 10 sur 12
+Donc 𝐺1(35 ; 124)
+𝑥𝐺2 = 50+53+56
+3 = 53
+𝑦𝐺2 = 136+142+145
+3 = 141
+Donc 𝐺2(53 ; 141)
+Exercice 2
+On considère la série statistique suivante :
+X 0 1 2 3 4 5 6 7 8
+Y 160 110 100 72 36 29 20 10 3
+1) Détermine la covariance de la série statistique.
+2) Détermine le coefficient de corrélation linéaire de cette série. Interprète ce coefficient de corrélation
+linéaire.
+3) Détermine une équation de la droite d’ajustement linéaire de Y en X du nuage de points de la série
+par la méthode des moindres carrés.
+4) Détermine une équation de la droite d’ajustement linéaire de X en Y.
+Solution
+1) On a : 𝑋̅ = 0+1+2+3+4+5+6+7+8
+9 = 4
+𝑌̅ = 160+110+100+72+36+29+20+10+3
+9 = 60
+𝐶𝑂𝑉(𝑋, 𝑌) = ∑ 𝑛𝑖𝑗𝑥𝑖𝑦𝑗
+𝑛 -𝑋𝑌 = 1×110+2×100+3×72+4×36+5×29+6×20+7×10+8×3
+9 - 4× 60 =- 125,67
+2) On a : : 𝑟 = COV(X,Y)
+√V(X)√V(Y) ; or V(X) = ∑ 𝑥𝑖2
+𝑛 − (x)2 = 1²+2²+3²+4²+5²+6²+7²+8²
+9 - 4² = 6,67 et
+• V(Y) = ∑ 𝑦𝑖2
+𝑛 − (y)2 = 160²+110²+100²+72²+36²+29²+20²+10²+3²
+9 - 60² = 2570
+Donc 𝑟 = −125,67
+√6,67×√2570 = − 0,96
+Comme - 1 < 𝑟 ≤ −0 ,87 alors il y a une forte corrélation linéaire entre les caractères X et Y.
+3) C’est la droite (D) d’équation : 𝑦 = 𝑎𝑥 + 𝑏 où 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = Y − 𝑎X
+𝑎 = −125,67
+6,67 = − 18,84 et b = 60 + 18,84×4 = 135, 36 donc(D) : y = - 18,84 x + 135,36
+4). C’est la droite (D’) d’équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = X − 𝑎′Y
+a’ = −125,67
+2570 = - 0,049 et b’ = 4+0,049×60 = 6,94 donc (D’) : x = - 0,049y + 6 ,94
+3. Exercice d’approfondissement
+Dans le cadre d’un recensement portant sur le nombre de travailleurs dans les champs d’hévéa, un
+agent a visité huit (8) exploitations .Un exploitant voudrait estimer le nombre de travailleurs que
+prendrait une exploitation de 16ha d’hévéa. Pour cela, l’agent recenseur a recueilli les informations
+consignées dans le tableau ci-dessous.
+Nombre 𝑥 de
+travailleurs 2 4 4 5 7 7 8 8
+
+-- 10 of 12 --
+
+Page 11 sur 12
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+0 1
+1
+x
+y
+Superficie exploitée
+𝑦(en ha) 3 5 6 7 10 11 8 12
+1) Représente le nuage de points correspondant à la série statistique double (X, Y) dans le plan muni
+d’un repère orthonormé.
+On prendra sur l’axe des abscisses 1cm pour 1 travailleur et sur l’axe des ordonnées 1cm pour une
+superficie de 1ha.
+Pour les questions 2) 3) 4) et 5), les résultats seront arrondis à l’ordre 2.
+2) Justifie que le point moyen a pour coordonnées (5,63; 7,75).
+3) On note 𝑉(𝑋) la variance de 𝑋, 𝑉(𝑌) la variance de 𝑌 et 𝐶𝑜𝑣 (𝑋 ; 𝑌) la covariance de X et Y.
+Justifie que 𝑉(𝑋) = 4,18 et 𝐶𝑜𝑣 (𝑋, 𝑌) = 5.57.
+4) a) Calcule le coefficient de corrélation linéaire r de la série (𝑋, 𝑌).
+b) Interprète le résultat obtenu précédemment.
+5) a) Justifie qu’une équation de la droite (D) d’ajustement de 𝑋 en 𝑌 par la méthode des moindres
+carrés est : y =1,28𝑥 +0,54.
+b) Trace(D) sur le graphique précédent.
+6) Utilise l’ajustement précédent pour répondre à la préoccupation de l’exploitant.
+On donnera l’arrondi d’ordre zéro du résultat.
+Solution
+1) Représentation du nuage de points associé à la série
+
+-- 11 of 12 --
+
+Page 12 sur 12
+2) Justifions que le point moyena pour coordonnées (5,63 ;7,75).
+Soit G(𝑋̅ ; 𝑌̅ )le point moyen du nuage réprésentant cette série statistique.
+On a :
+𝑋̅ = 2 + 4 + 4 + 5 + 7 + 7 + 8 + 8
+8 = 5 , 625 ≈ 5,63
+𝑋̅ = 5,63.
+𝑌̅ = 3 + 5 + 6 + 7 + 10 + 11 + 8 + 12
+8 = 7,75
+Donc : G(5,63;7,75).
+3) Justifions que V(X)=4,18, V(Y)=8 ,44 et Cov (X, Y) =5.57
+𝑉(𝑋) = ∑ 𝑥𝑖2
+𝑛 − X2
+= 22 + 42 + 42 + 52+72 + 72 + 82 + 82
+8 − 5,632
+𝑉(𝑋) = 4,178 ; donc V(X) =4,18.
+𝑉(𝑌) = ∑ 𝑦𝑖2
+𝑛 − Y2
+= 32 + 52 + 62 + 72+102 + 112 + 82 + 122
+8 − 7,752
+𝑉(𝑌) =8,437 ; donc V(Y)=8 ,44.
+COV(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑗
+𝑛 − X𝑌̅ .
+𝐶𝑂𝑉(𝑋, 𝑌) = 2×3+4×5+4×6+5×7+7×10+7×11+8×8+8×12
+8 − 5,63 × 7,75.
+𝐶𝑂𝑉 (𝑋, 𝑌) =5,37
+4) a) Calculons le coefficient de corrélation linéaire r de la série (𝑋, 𝑌).
+𝑟 = COV(X, Y)
+√V(X)√V(Y) = 5,37
+√4,18 × √8,44
+𝑟 = 0.904 𝑠𝑜𝑖𝑡 𝑟 = 0,90.
+b) Interprète le résultat obtenu précédemment.
+On remarque que : 0,87≤ 𝑟 < 1, ainsi, on peut conclure qu’il y a une forte corrélation entre le nombre
+de travailleurs et la superficie exploitée sur les 8 différentes exploitations.
+5) a)Justifie qu’une équation de la droite (D) d’ajustement de X en Y par la méthode des moindres
+carrés est : 𝑦 =1,28𝑥+0,54
+Puisqu’il y a une forte corrélation entre le nombre de travailleurs et la superficie exploitée alors
+(D) a pour équation : y =a x + b où 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = Y − 𝑎X
+𝑎 = 5,37
+4,18 = 1,28 et 𝑏 = 7,75 − 1,28 × 5, 63 = 0 , 54.
+Soit (𝐷) : 𝑦 = 1,28𝑥 + 0,54.
+
+-- 12 of 12 --
+

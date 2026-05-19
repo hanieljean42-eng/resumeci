@@ -1,0 +1,126 @@
+<!DOCTYPE html><html><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<!-- Cache pour une durée d'une 5 minutes-->
+		<meta http-equiv="Cache-Control" content="max-age=300, public">
+		<meta http-equiv="Expires" content="">
+		<meta http-equiv="Pragma" content="cache">
+		<title>Connexion - Mon Ecole à la maison</title>
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:image" content="/assets/img/ms-icon-310x310.png">
+		<meta property="og:type" content="website">
+		<meta name="description" content="Mon Ecole à la maison">
+		<meta property="og:title" content="Mon école à la maison">
+		<meta property="og:description" content="Mon école à la maison - Ministère de l’Education Nationale et de l’Alphabétisation de Côte d’Ivoire ">
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+		<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="310x310" href="/assets/img/ms-icon-310x310.png">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+		<link rel="stylesheet" href="/assets/fonts/simple-line-icons.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+		<link rel="stylesheet" href="/assets/css/vanilla-zoom.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<link href="/js/load/src/css/HoldOn.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-light navbar-expand-lg fixed-top clean-navbar" style="padding: 12.2px 0px;background: var(--bs-white);padding-bottom: 5.2px;padding-top: 5.2px;">
+			<div class="container"><a href="/index.php"><img style="width: 70px;height: 58px;" src="/assets/img/logo_armoirie_.png"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navcol-1" style="margin-top: 5px;">
+					<ul class="navbar-nav ms-auto"></ul><a class="btn btn-primary" role="button" style="margin-right: 9px;background: var(--bs-orange);border-color: var(--bs-orange);" href="/index.php">Accueil</a>
+				</div>
+			</div>
+		</nav>
+		<main class="page product-page">
+			<section class="clean-block clean-product dark" style="background: var(--bs-white);padding-bottom: 10px;">
+				<div class="container" style="margin-top: 0px;padding-top: 10px;">
+					<div class="shadow block-content" style="margin-top: 0px;padding: 0px;border-radius: 10px;">
+						<div class="product-info">
+							<div class="row align-items-center justify-content-center">
+
+								<div class="col-md-8">
+									<img class="card-img-top w-100 d-block" src="/assets/img/UNI320740.jpg">
+								</div>
+
+								<div class="col-md-4" style="padding-left: 50px; padding-right: 50px; paddin-top:30px;">
+<div style="text-align: center; padding-top: 20px;" id="resultMessage">
+	</div>
+					<h3 style="text-align: center;font-weight: bold;color: var(--bs-orange); padding-top:10px;">CONNEXION</h3>
+					<p style="text-align: center;margin-bottom:30px;">« en tant que visiteur »</p>
+
+					<form method="post" id="formlogin" class="needs-validation" name="formconnexion" action="" novalidate="">
+						<div class="mb-3">
+							<input class="form-control" type="tel" inputmode="numeric" pattern="\d*" id="telephone" name="username" placeholder="Téléphone" required="">
+						</div>
+
+						<div class="mb-3">
+							<input class="form-control" type="hidden" id="password" name="password" required="">
+						</div>
+
+						<div class="text-center m-1 row">
+							<button class="btn btn-primary" type="submit" id="submit" name="submit" style="margin-bottom: 10px;background: var(--bs-orange);border-color: var(--bs-orange);">Je me connecte</button>
+						</div><br>
+						<div class="text-center mb-3">
+							<span>Vous n'avez pas encore de compte ?</span><br>
+							<a class="link-success" href="/co/inscriptionvisiteur.php">S'inscrire gratuitement</a>
+						</div>
+					</form>
+
+					<!-- modifier profil-->
+					<div class="d-grid gap-2 col-12 mx-auto" style="margin-bottom:25px;">
+						<form method="post" class="mx-auto" action="/co/update_visiteur.php" id="formModifierProfil">
+							<input type="hidden" name="username" id="username_modifier">
+							<button type="submit" class="btn btn-outline-success">Modifier mon profil</button>
+						</form>
+					</div> 
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="page-footer dark" style="padding-top: 0px;">
+			<div class="footer-copyright" style="padding-top: 0px; margin-top:0px;">
+				<p>Copyright © <a href="https://education.gouv.ci" target="_blank"><span style="color: rgb(253, 126, 20);">MENA</span></a> 2024. Tous droits réservés.&nbsp;<br></p>
+			</div>
+		</footer>
+
+<script>
+    document.getElementById('formModifierProfil').addEventListener('submit', function (e) {
+        var telephoneInput = document.getElementById('telephone');
+        var resultDiv = document.getElementById('resultMessage');
+
+        if (!telephoneInput || telephoneInput.value.trim() === '') {
+            e.preventDefault();
+            if (resultDiv) {
+                resultDiv.innerHTML = '<h5 style="text-align:center; font-weight:bold; color:red;">Veuillez saisir votre téléphone pour modifier votre profil.</h5>';
+            }
+            return;
+        }
+
+        // On copie la valeur du champ téléphone dans le champ hidden
+        document.getElementById('username_modifier').value = telephoneInput.value;
+    });
+</script>
+		<script src="/js/visiteur_mdl.js?v=4"></script>
+		<script src="/js/codepassphone.js"></script>
+		<script src="/js/validationform.js"></script>
+		<script src="/js/submitelephone.js"></script>
+		<script src="/js/load/src/js/HoldOn.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/assets/js/bs-init.js"></script>
+		<script src="/js/nosource.js"></script>
+		
+	
+
+
+</body></html>

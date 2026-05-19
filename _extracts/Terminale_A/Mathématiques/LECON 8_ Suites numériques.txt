@@ -1,0 +1,980 @@
+Page 1 sur 17
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+LEÇON 13 : NOMBRES COMPLEXES ET GEOMETRIE DU PLAN
+1. SITUATION D’APPRENTISSAGE
+Des élèves d’un lycée ont décoré par
+différentes figures géométriques les
+murs de la salle du club
+Mathématiques.
+La figure ci-contre représentant l’une
+d’elle est constituée d’un quadrilatère
+ABCD de sens direct et de triangles
+rectangles isocèles 𝐴𝑀1𝐵, 𝐵𝑀2𝐶, 𝐶𝑀3𝐷
+et 𝐷𝑀4𝐴 de sommets respectifs
+𝑀1, 𝑀2, 𝑀3 et 𝑀4.
+Observant attentivement cette figure,
+l’un des élèves de la promotion
+terminale, passionné de nombres
+complexes et géométrie, affirme que
+les segments [𝑀1𝑀3] et [𝑀2𝑀4] ont des
+supports perpendiculaires et ont la
+même longueur. D’autres élèves
+n’étant pas de cet avis, portent le
+problème aux autres.
+Ceux-ci décident d’effectuer des calculs avec des nombres complexes pour vérifier
+cette affirmation.
+Terminale C
+Mathématiques
+
+-- 1 of 17 --
+
+Page 2 sur 17
+2. RESUME DE COURS
+1. LIGNES DE NIVEAU ET NOMBRES COMPLEXES.
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑒1	⃗⃗⃗⃗	
+, 𝑒2	⃗⃗⃗⃗ ).
+A et B deux points distincts du plan d'affixes respectives 𝑧A et 𝑧B.
+M est un point quelconque du plan d’affixe
+z.
+CARACTERISATIONS
+COMPLEXES
+CARACTERISATIONS
+GEOMETRIQUES
+LIGNES DE NIVEAU
+|z − 𝑧A| = 𝑟, 𝑟 ∈ ℝ+
+∗ AM = 𝑟 Cercle de centre A et de rayon 𝑟.
+|𝑧 − 𝑧A| = 𝜆 |𝑧 − 𝑧B| , 𝜆 ∈ ℝ+
+∗ AM = 𝜆 BM
+Ou bien
+AM
+BM = λ
+- la médiatrice du segment
+[AB] lorsque
+𝜆 = 1
+- le cercle de diamètre [𝐺1𝐺2]
+lorsque 𝜆 ≠ 1, où
+𝐺1 = bar {(A ;1), (B; 𝜆)} et
+𝐺2 = bar {(A ;1), (B;- 𝜆)}
+arg (𝑧B − 𝑧
+𝑧A − 𝑧) ≡ 0 [𝜋]
+mes (MA	⃗⃗⃗⃗⃗⃗; MB	⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝑘𝜋 ,
+𝑘 ∈ ℤ La droite (AB) privée des points
+A et B.
+arg(𝑧B − 𝑧
+𝑧A − 𝑧) ≡ 𝜋
+2 [𝜋]
+mes (MA	⃗⃗⃗⃗⃗⃗; MB	⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+2 + 𝑘𝜋
+, 𝑘 ∈ ℤ
+Le cercle de diamètre [AB] privé
+des points A et B.
+arg(𝑧 − 𝑧A ) ≡ 𝛼[𝜋],
+𝛼 ∈ ℝ mes( 𝑒1	⃗⃗⃗⃗ , 𝐴𝑀	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝛼 +𝑘𝜋
+, 𝑘 ∈ ℤ
+la droite de repère (A, 𝑢	⃗⃗⃗ ), privée
+de A, où
+mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+Arg(𝑧 − 𝑧A ) ≡ 𝛼[2𝜋], 𝛼 ∈ ℝ mes( 𝑒1	⃗⃗⃗⃗ , 𝐴𝑀	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝛼+2𝑘𝜋
+, 𝑘 ∈ ℤ
+la demi-droite de repère (A, 𝑢	⃗⃗⃗ ),
+privée de A, où mes( 𝑒1	⃗⃗⃗⃗ , 𝑢	⃗⃗⃗	 ̂	 ) = 𝛼
+Exercice (10 min)
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗⃗⃗
+, 𝑣⃗⃗⃗ ).
+Dans chaque cas, détermine et construis l’ensemble des points M d’affixe z vérifiant la
+condition donnée :
+a) |𝑧 − 2𝑖| = 3
+b) |𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖|.
+c) |2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2|.
+d) arg(𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋]
+
+-- 2 of 17 --
+
+Page 3 sur 17
+Corrigé
+a) |𝑧 − 2𝑖| = 3 ⟺ AM = 3 où A est le point
+d’affixe 2i.
+L’ensemble des points M dont l’affixe z
+vérifiant :
+|𝑧 − 2𝑖| = 3 est le cercle (C) de centre A
+de rayon 3.
+b)
+|𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖|
+⟺ |𝑧 − (1 − 𝑖)| =
+|𝑧 − (−1 − 3𝑖)|
+⟺ PM = QM où P et Q sont les points
+d’affixes respectives 1 − 𝑖 et −1 − 3𝑖.
+L’ensemble des points M dont l’affixe z
+vérifie :
+|𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖| est la médiatrice
+(Δ) du segment [PQ].
+c)
+|2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2|
+⟺ |2𝑖 (𝑧 + 1 + 3
+2 𝑖)| = |𝑧 − 2|
+⟺ 2 |𝑧 + 1 + 3
+2 𝑖 | = |𝑧 − 2|
+⟺ 2 |𝑧 − (−1 − 3
+2 𝑖) | = |𝑧 − 2|
+⟺ 2 BM = AM où A et B sont les points
+d’affixes respectives 2 et −1 − 3
+2 𝑖.
+⟺ MA
+MB = 2.
+On considère les points H et K tels que
+H = bar {(A ; 1), (B ; 2)} et
+K = bar {(A ; 1), (B ; - 2)}.
+L’ensemble des points M d’affixe z
+vérifiant :
+|2𝑖𝑧 − 3 + 2𝑖| = |𝑧 − 2| est le cercle de
+diamètre [HK].
+On a
+𝑧H = 2+2(−1−3
+2𝑖)
+3 = −1.
+et
+𝑧K = 2−2(−1−3
+2𝑖)
+−1 = −4 − 3𝑖.
+(C)
+2 	3	-1	-2	-3
+2
+3
+4
+-1
+-2
+0 	1
+1
+x
+y
+A
+2 3 4	-1	-2	-3	-4
+2
+-1
+-2
+-3
+-4
+0 1
+1
+x
+y
+P
+Q
+I
+L
+(C ')
+2 3	-1	-2	-3	-4	-5
+2
+-1
+-2
+-3
+-4
+-5
+0 1
+1
+x
+y
+A
+B H
+K
+
+-- 3 of 17 --
+
+Page 4 sur 17
+d) arg(𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋]
+⟺ arg(𝑧 − (1 + 𝑖)) ≡ 𝜋
+6 [2𝜋]
+⟺ arg(𝑧 − 𝑧A) ≡ 𝜋
+6 [2𝜋], où A(1 + 𝑖)
+⟺Mes(𝑢⃗ , AM	⃗⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+6
+L’ensemble des points M d’affixe z
+vérifiant : arg(𝑧 − 1 − 𝑖) ≡ 𝜋
+6 [2𝜋] est
+la demi-droite [AP) privé du point A, où
+Mes(𝑢⃗ , AP	⃗⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+6.
+Exercice à faire à la maison
+Le plan est muni d’un repère orthonormé direct (O ; 𝑢⃗⃗⃗
+, 𝑣⃗⃗⃗ ).
+Dans chaque cas, détermine et construis l’ensemble des points M d’affixe z vérifiant la
+condition donnée :
+1)|𝑧 − 1 + 𝑖| = |𝑧 + 1 + 3𝑖|
+2) arg(𝑧 − 3 + 𝑖) ≡ 𝜋
+4 [𝜋]
+3) arg(𝑧−2+𝑖
+𝑧+2 ) ≡ 𝜋
+2 [𝜋]
+4)|2𝑖𝑧 − 2 + 6𝑖| = 4;
+5) |(1 − 𝑖√3)𝑧 − 2√3 + 2𝑖| = |𝑧 − 2|
+2. CONFIGURATIONS DU PLAN ET NOMBRES COMPLEXES
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗⃗⃗
+, 𝑣⃗⃗⃗ ).
+Configurations Caractérisations
+géométriques
+Caractérisations
+complexes
+Triangle ABC isocèle en A.
+AB = AC et mesA	̂	 = 𝛼
+(0 < 𝛼 < 𝜋).
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒𝑖𝛼
+ou
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒−𝑖𝛼
+O 𝑢⃗
+𝑣
+B
+C
+A
+
+-- 4 of 17 --
+
+Page 5 sur 17
+Triangle ABC équilatéral.
+AB = AC et mesA	̂	 = 𝜋
+3.
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑒𝑖𝜋
+3
+ou
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= 𝑒−𝑖𝜋
+3
+Triangle ABC rectangle et isocèle
+en A.
+AB = AC et mesA	̂	 = 𝜋
+2.
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= 𝑖
+ou
+𝑧𝐶 − 𝑧𝐴
+𝑧𝐵 − 𝑧𝐴
+= −𝑖
+Triangle ABC rectangle en A.
+mesA	̂	 = 𝜋
+2
+𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+= 𝑏𝑖, avec
+𝑏 ∈ ℝ∗
+Points A, B, C alignés.
+mes (AB	⃗⃗⃗⃗⃗ , AC	⃗⃗⃗⃗⃗	 ̂ ) = 𝑘𝜋, 𝑘 ∈ ℤ 𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗
+Points A, B, C, D cocycliques
+mes (CA	⃗⃗⃗⃗⃗, CB	⃗⃗⃗⃗⃗	 ̂ ) =
+mes (DA	⃗⃗⃗⃗⃗, DB	⃗⃗⃗⃗⃗	 ̂ ) + 𝑘𝜋, 𝑘 ∈ ℤ
+et mes (CA	⃗⃗⃗⃗⃗ , CB	⃗⃗⃗⃗⃗	 ̂) ≠ 𝑘𝜋,
+𝑘 ∈ ℤ
+𝑧𝐵−𝑧𝐶
+𝑧𝐴−𝑧𝐶
+: 𝑧𝐵−𝑧𝐷
+𝑧𝐴−𝑧𝐷
+∈ ℝ∗
+Droites parallèles Il existe un nombre réel 𝜆 non
+nul tel que :
+CD	⃗⃗⃗⃗⃗ = 𝜆 AB	⃗⃗⃗⃗⃗ .
+ou
+arg(zD−𝑧C
+𝑧B−𝑧A
+) = 𝑘𝜋 ;
+𝑘 ∈ ℤ
+ou
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣
+B
+C
+A
+O 𝑢⃗
+𝑣 D
+A
+B
+C
+O 𝑢⃗
+𝑣
+B
+C
+A
+D
+
+-- 5 of 17 --
+
+Page 6 sur 17
+mes (AB	⃗⃗⃗⃗⃗ ; CD	⃗⃗⃗⃗⃗	 ̂ ) = 𝑘𝜋 ; 𝑘 ∈ ℤ zD − 𝑧C
+𝑧B − 𝑧A
+∈ ℝ∗
+Droites perpendiculaires
+AB	⃗⃗⃗⃗⃗ ⋅ CD	⃗⃗⃗⃗⃗ = 0
+ou
+mes (AB	⃗⃗⃗⃗⃗ ; CD	⃗⃗⃗⃗⃗	 ̂ ) = 𝜋
+2 + 𝑘𝜋; 𝑘 ∈ ℤ
+arg(zD−𝑧C
+𝑧B−𝑧A
+) = 𝜋
+2 +
+𝑘𝜋 ; 𝑘 ∈ ℤ
+ou zD − 𝑧C
+𝑧B − 𝑧A
+∈ 𝑖 ℝ∗
+Exercice (15 min)
+Le plan complexe est muni d’un repère orthonormé direct (O ; u⃗⃗⃗ , v⃗⃗ ).
+On donne les points A, B, C, D et K d’affixes respectives 2 + 𝑖, 2 - 𝑖, 5 - 2𝑖, 5 + 2𝑖 et 4.
+Justifie que :
+1) Les droites (AB) et (CD) sont parallèles ;
+2) Les points J, I et B sont alignés ;
+3) Les droites (OK) et (DC) sont perpendiculaires ;
+4) Le triangle JBD est rectangle en B ;
+5) Les points A, B, C et D sont cocycliques.
+Corrigé
+1) On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+= 5+2𝑖−(5−2𝑖)
+2−𝑖−(2+𝑖) = 4𝑖
+−2𝑖 = −2 .
+D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗ ;
+Par suite les droites (AB) et (CD) sont parallèles.
+2) On a : 𝑧𝐵−𝑧𝐼
+𝑧𝐽−𝑧𝐼
+= 2−𝑖−1
+𝑖−1 = - 1. D’où : 𝑧𝐵−𝑧𝐼
+𝑧𝐽−𝑧𝐼
+∈ ℝ∗.
+Par suite les points J, I et B sont alignés.
+3) On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐾−𝑧𝑂
+= 5+2𝑖−(5−2𝑖)
+4−1 = 4
+3 𝑖 .
+D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐾−𝑧𝑂
+∈ 𝑖 ℝ∗.
+Par conséquent les droites (OK) et (DC) sont perpendiculaires.
+4) On a : 𝑧𝐵−𝑧𝐷
+𝑧𝐵−𝑧𝐽
+= 2−𝑖−(5+2𝑖)
+2−𝑖−𝑖 = −3−3𝑖
+2−2𝑖 = − 3
+2 𝑖.
+D’où : 𝑧𝐵−𝑧𝐷
+𝑧𝐵−𝑧𝐽
+∈ 𝑖 ℝ∗.
+Par suite le triangle JBD est rectangle en B.
+5) On a : 𝑧𝐷−𝑧𝐶
+𝑧𝐷−𝑧𝐴
+: 𝑧𝐵−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+= 4𝑖
+3+𝑖 : −3+𝑖
+−2𝑖 = −2
+5 .
+D’où : 𝑧𝐷−𝑧𝐶
+𝑧𝐷−𝑧𝐴
+: 𝑧𝐵−𝑧𝐶
+𝑧𝐵−𝑧𝐴
+∈ ℝ∗.
+Par suite les points A, B, C et D sont cocycliques.
+O 𝑢⃗
+𝑣
+D
+A
+B
+C
+
+-- 6 of 17 --
+
+Page 7 sur 17
+Exercice à la maison
+Le plan complexe est muni d’un repère orthonormé direct (O ; u⃗⃗⃗ , v⃗⃗ ). L’unité graphique est
+2 cm.
+1- On donne les points A, B et C d’affixes respectives 2i,
+√3 + i et √3 – i.
+a) Calcule zA − zB
+zC− zB
+puis donne le résultat sous forme exponentielle.
+b) Déduis-en la nature du triangle ABC.
+2-On considère les points E, F et G d’affixes respectives
+−1 + 𝑖√3 ; 2 et −1 − 𝑖√3
+Justifie que le triangle EFG est équilatéral.
+3. On considère les points U, V et T d’affixes respectives
+𝑢 = 𝑖 ; 𝑣 = −2 + 3𝑖 et 𝑡 = −4 + 𝑖.
+a. On pose : 𝑍 = 𝑢−𝑣
+𝑡−𝑣 . Ecris le nombre complexe Z sous forme trigonométrique.
+b. Déduis-en que le triangle VUT est rectangle isocèle en V.
+3. TRANSFORMATIONS DU PLAN ET NOMBRES COMPLEXES
+Le plan complexe est muni d’un repère orthonormé direct (O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗ ).
+ Une transformation du plan est une application bijective du plan dans le plan.
+ Soit 𝑓 une transformation du plan qui à tout point M associe le point M’.
+L’application
+F de ℂ dans ℂ qui à l’affixe
+z de M associe l’affixe
+z’ de M’ s’appelle la
+transformation complexe associée à 𝑓 .
+L’application 𝑓 s’appelle la transformation ponctuelle associée à
+F .
+L’expression de
+z’ en fonction de
+z s’appelle l’écriture complexe de 𝑓.
+3.1 Ecritures complexes des transformations usuelles
+Le tableau suivant donne des transformations du plan et leurs écritures complexes
+Transformation du
+Plan
+Image M′(z′ ) d’un point
+M(z)
+Définition
+géométrique Ecriture complexe
+Symétrie
+orthogonale d’axe
+(OI)
+La droite (OI) est la
+médiatrice du
+segment [MM′]
+Symétrie
+orthogonale d’axe
+(OJ)
+La droite (OJ) est la
+médiatrice du
+segment [MM′]
+Symétrie centrale
+de centre Ω(ω)
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝐽
+𝐼	𝑂
+𝑧′ = 𝑧̅
+𝑂
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝐼
+𝐽
+𝑧′ = −𝑧̅
+𝑀′(𝑧′)
+𝑀(𝑧)
+Ω(ω) Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗ = − Ω𝑀	⃗⃗⃗⃗⃗⃗ 𝑧′ − 𝜔 = −(𝑧 − 𝜔)
+
+-- 7 of 17 --
+
+Page 8 sur 17
+Translation de
+vecteur u⃗
+d’affixe b
+Homothétie de
+Centre Ω(ω) et de
+rapport 𝑘
+( 𝑘 ∈ ℝ ∖ {0} )
+Rotation de centre
+Ω(ω) et d’angle θ
+M≠ Ω
+Exercice (10 min)
+Le plan complexe est muni d’un repère orthonormé direct (O; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗ ).
+1) Détermine l’écriture complexe de l’homothétie h de centre Ω d’affixe − 1 − i et de
+rapport 3.
+2) Détermine l’écriture complexe de la translation 𝑡 de vecteur u⃗ d’affixe 1 + 4𝑖.
+3) Détermine l’écriture complexe de la rotation 𝑟 de centre A d’affixe 1 + 𝑖 et d’angle 2π
+3 .
+Corrigé
+1) h étant l’homothétie de centre Ω d’affixe −1 − i et de rapport 3, son écriture complexe
+est : z′ − (−1 − i) = 3(z − (−1 − i)).
+Par suite, l’écriture complexe de l’homothétie h de centre Ω(−1 − i) et de rapport 3 est :
+z′ = 3z + 2 + 2i.
+2) L’écriture complexe de la translation 𝑡 de vecteur u⃗ est : z′ = z + zu⃗⃗ . Or zu⃗⃗ = 1+4i
+L’écriture complexe de la translation 𝑡 de vecteur u⃗ est : z′ = z +1+4i.
+3) L’écriture complexe de la rotation 𝑟 de centre A et
+d’angle 2π
+3 est :
+z′ − (1 + i) = ei2π
+3 (z − (1 + i))
+z′ = (−1
+2 + i √3
+2 )(z − (1 + i)) +1+i
+z′ = (−1
+2 + i √3
+2 ) z + 3+√3
+2 + i 3−√3
+2
+L’écriture complexe de la rotation 𝑟 de centre A
+d’affixe 1 + i et d’angle 2π
+3 est :
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝑢	⃗
+𝑀𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗⃗	 = 𝑢	⃗	 𝑧′ = 𝑧 + 𝑏
+𝑀(𝑧)
+𝑀′(𝑧′)
+Ω(ω) Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗ = 𝑘Ω𝑀	⃗⃗⃗⃗⃗⃗ 𝑧′ − 𝜔 = 𝑘(𝑧 − 𝜔)
+Ω(ω)
+𝑀(𝑧)
+𝑀′(𝑧′)
+𝜃 { Ω𝑀′ = Ω𝑀
+𝑚𝑒𝑠( Ω𝑀	⃗⃗⃗⃗⃗⃗ , Ω𝑀′	⃗⃗⃗⃗⃗⃗⃗⃗	 ̂	 ) = 𝜃 𝑧′ − 𝜔 = 𝑒𝑖𝜃(𝑧 − 𝜔)
+
+-- 8 of 17 --
+
+Page 9 sur 17
+z′ = (−1
+2 + i √3
+2 ) z + 3+√3
+2 + i 3−√3
+2 .
+Exercices de maison :
+Le plan complexe est muni d’un repère orthonormé direct (O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗ ).
+Détermine l’écriture complexe de la rotation r de centre Ω(2i) et d’angle − π
+3 .
+3.2 Reconnaitre une transformation du plan définie par son écriture complexe.
+Propriété
+Le plan complexe est muni d'un repère orthonormé direct.
+On considère la transformation 𝑓 d’écriture complexe :
+𝑧′ = 𝑎𝑧 + 𝑏, où
+a ℂ∗ et
+b ℂ
+𝑎 = 1
+f est la translation de vecteur 𝑢⃗ d’affixe b
+Transformation f d’écriture
+complexe
+𝑧′ = 𝑎𝑧 + 𝑏
+a ℂ∗ et b ℂ
+𝑎𝜖ℝ∗ ∖ {1}
+f est l’homothétie de rapport 𝑎 et de centre ( 𝑏
+1−𝑎)
+𝑎𝜖ℂ ∖ ℝ et a= 1
+f est la rotation de centre ( 𝑏
+1−𝑎) et d’angle Arg(a)
+Exercice (10 min)
+Le plan complexe est muni d’un repère orthonormé direct (O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗).
+Détermine dans chaque cas, la nature et les éléments caractéristiques de la transformation
+𝑓 du plan définie par son écriture complexe :
+a) z’ = 5z + 2i;
+b) z’ = z + 1 + 3i;
+c) z’ = (1
+2 + √3
+2 𝑖)z + 1
+2 − √3
+2 𝑖 ;
+Solution
+a) a = 5, a ℝ∗\ {1}, 𝑓 est une homothétie de rapport 5.
+Déterminons l’affixe z0 de son centre.
+z0 = 2𝑖
+1−5 = − 1
+2 𝑖
+Donc 𝑓 est l’homothétie de centre A d’affixe − 1
+2 𝑖 et de rapport 5.
+b) a = 1
+D'où, 𝑓 est la translation de vecteur d'affixe 1+3i.
+c) a = 1
+2 + √3
+2 𝑖, a  ℂ ∖ ℝ et |1
+2 + √3
+2 𝑖 | = 1. Donc 𝑓 est une rotation.
+- son angle : Arg(1
+2 + √3
+2 𝑖) = 𝜋
+3
+
+-- 9 of 17 --
+
+Page 10 sur 17
+- son centre a pour affixe :
+1
+2−𝑖√3
+2
+1−(1
+2+𝑖√3
+2 )
+= 1
+D'où, 𝑓 est la rotation de centre d'affixe 1 et d'angle 𝜋
+3.
+Exercice à faire à la maison
+Le plan complexe est muni d’un repère orthonormé direct (O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗).
+Détermine dans chaque cas, la nature et les éléments caractéristiques de la
+transformation 𝑓 du plan définie par son écriture complexe :
+a) z′ = − 1
+2 z + 3 − 6i.
+b) z’ = z + 1
+2 − √3
+2 𝑖 ;
+c) z’ = (√2
+2 − √2
+2 𝑖)z + 1
+2 − √2
+2 𝑖.
+
+-- 10 of 17 --
+
+Page 11 sur 17
+3. EXERCICES
+3-1. Exercices de fixation
+Dans tous les exercices, le plan complexe est muni d’un repère orthonormé direct.
+Exercice 1
+On donne les points A, B et C d’affixes respectives −2 − 2𝑖 ; 1 − 𝑖 et 10 + 2𝑖.
+Démontre que les points A, B et C sont alignés.
+Exercice 2
+On donne les points A, B et C d’affixes respectives 3 ; 5+7𝑖
+2 et −1−𝑖
+2 .
+Démontre que le triangle ABC est rectangle isocèle en A.
+Exercice 3
+On considère les points A, B, C d’affixes respectives −4; −1 + 𝑖√3 et −1 − 𝑖√3.
+Démontre que le triangle ABC est équilatéral.
+Exercice 4
+Les points A, B, C, D ont pour affixes respectives
+a = 2 − 2i,
+b = −1 + 7i,
+c = 4 + 2i et
+d = −4 − 2i.
+Ω désigne le point d’affixe −1 + 2i.
+Démontre que A, B, C, D appartiennent au cercle de centre Ω et de rayon 5.
+Exercice 5
+On a quatre points A, B, C et D d'affixes respectives 8 ; 8i ; 12 – 32i et 12 + 32i.
+Démontre que les points A, B, C et D sont sur un même cercle, dont on précisera le centre et
+le rayon.
+Exercice 6
+Détermine dans chacun des cas suivants, l’écriture complexe de la transformation F
+1) F est la rotation de centre O, et d’angle 𝜋
+2.
+2) F est la rotation de centre O, et d’angle − 𝜋
+4.
+3) F est l’homothétie de centre O, et de rapport −2
+Exercice 7
+Détermine l’écriture complexe de la rotation de centre (1−2𝑖) et d’angle 𝜋
+3 .
+Exercice 8
+Détermine l’écriture complexe de l’homothétie de centre (3 + 2𝑖) et de rapport 4.
+Exercice 9
+Détermine l’écriture complexe de la translation de vecteur d’affixe 1 − 𝑖.
+Exercice 10
+Détermine la nature et les éléments caractéristiques de la transformation du plan F dont
+l’écriture complexe est donnée dans chacun des cas suivants.
+a) 𝑧′=−3𝑧+2−𝑖
+b) 𝑧′ = (− √2
+2 + 𝑖 √2
+2 ) 𝑧 − 𝑖 + 1
+c) 𝑧′= 𝑧+2−3𝑖 ;
+
+-- 11 of 17 --
+
+Page 12 sur 17
+3-2. Exercices de renforcement
+Dans tous les exercices, le plan complexe est muni d’un repère orthonormé direct
+(O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗ ).
+Exercice11
+Dans le plan complexe est muni d'un repère orthonormé direct (O, I, J) d’unité 2 cm, on
+donne les points A, B et K d’affixes respectives -2i ; 2 et -1.
+1) Faire une figure soignée.
+2) Démontre que le quadrilatère ABJK est un trapèze isocèle.
+3) Justifie que les points A, B, J et K appartiennent à un cercle (C) dont on précisera l’affixe
+du centre  et le rayon.
+4) Détermine et construis l’ensemble des points M d’affixes z vérifiant :
+arg(z+1
+z−1) = π
+2 + 2kπ ; k ∈ ℤ
+Exercice 12
+On donne les points A, B et C d’affixes respectives
+a,
+b et
+c telles que :
+𝑎 = 1 + 3
+4 𝑖 ; 𝑏 = 2 − 5
+4 𝑖 ; 𝑐 = 3 + 7
+4 𝑖
+1) Place les points A, B et C dans le repère (O ; OI⃗⃗⃗⃗⃗ , OJ⃗⃗⃗⃗⃗ ).
+2) Détermine la nature du triangle ABC.
+3) Calcule l’affixe de A’ tel que ABA’C soit un carré.
+Exercice 13
+On considère les points A, B et C d’affixes respectives :−1 ;3 + 4𝑖 et −3 + 4𝑖 .
+a) Détermine l’affixe du point D tel que ABDC soit un parallélogramme.
+b) Démontre que ABDC est un carré.
+Exercice 14
+Soit A, B et C des points non alignés d’affixes respectives 𝑎, 𝑏 et 𝑐.
+1. Précise la nature du triangle ABC dans chacun des cas suivants :
+a) 𝑐−𝑎
+𝑏−𝑎 = −𝑖
+b) 𝑐−𝑎
+𝑏−𝑎 = 𝑒𝑖𝜋
+3
+c) |𝑐−𝑎
+𝑏−𝑎| = 1
+2. Détermine la position des droites (AC) et (AB) dans chacun des cas suivants :
+a) 𝑐−𝑎
+𝑏−𝑎 est un nombre réel.
+b) 𝐴𝑟𝑔 ( 𝑐−𝑎
+𝑏−𝑎) = 𝜋
+2
+Exercice 15
+
+-- 12 of 17 --
+
+Page 13 sur 17
+Détermine dans chacun des cas suivants, l’écriture complexe de la transformation F qui est
+la composée de la rotation de centre d’affixe 2i et d’angle 𝜋
+4 et de l’homothétie de centre
+(1+2𝑖) 𝑒𝑡 de rapport 3
+2.
+Exercice 16
+Détermine dans chacun des cas suivants, l’écriture complexe de la transformation F qui est
+la composée de l’homothétie de centre (3 − 𝑖) et de rapport −2 et de la translation qui
+applique le point A d’affixe 1-i sur le point B d’affixe 3 +2i.
+3-3. Exercices d’approfondissement
+Exercice 17
+Soit 𝑓 l’application de ℂ ∖ {−3} dans ℂ définie par : 𝑓(𝑧) = 𝑧+1−𝑖
+𝑧+3
+On désigne par A, B et M les points d’affixes respectives −3 ;−1 + 𝑖 et z.
+1. Donne une interprétation géométrique du module et d’un argument de 𝑓(𝑧).
+2. Détermine et construis :
+a) l’ensemble ( 𝐶1) des points M tels que |𝑓(𝑧)| = 1 ;
+b) l’ensemble ( 𝐶2) des points M tels que 𝑓(𝑧) soit un réel strictement négatif ;
+c) l’ensemble ( 𝐶3) des points M tels que 𝑓(𝑧) soit imaginaire pur.
+Exercice 18
+On considère dans ℂ l’équation : (E) : 𝑧3 + (4 − 2𝑖)𝑧2 + (8 − 6𝑖)𝑧 + 8 − 4𝑖 = 0
+1.a) Démontre que (E) admet une solution réelle, que l’on déterminera.
+b) Résous l’équation (E)
+2. On considère dans le plan complexe les points A, B et C d’affixes respectives
+:−1 + 3𝑖 ;−2 ; −1 − 𝑖.
+Soit 𝑟 la rotation d’angle 𝜋
+2 et de centre Ω d’affixe 𝑖.
+a. Place les points A, B et C.
+b. Démontre que le point B est l’image du point A par la rotation 𝑟.
+c. Détermine l’antécédent D du point C par 𝑟. Place D sur la figure.
+3.a. Démontre que les quatre points A, B, C et D appartiennent à un même cercle dont on
+précisera le centre et le rayon.
+b. Démontre que le quadrilatère ADBC est un trapèze isocèle.
+Exercice 19
+1. Résous dans ℂ, l’équation 4𝑧2 − 12𝑧 + 153 = 0
+2. Dans le plan complexe rapporté à un repère orthonormé (O, I, J) d’unité graphique 1 cm,
+on considère les points A, B, C et P d’affixes respectives 𝑧𝐴 = 3
+2 + 6𝑖, 𝑧𝐵 = 3
+2 − 6𝑖,
+𝑧𝐶 = −3 − 1
+4 𝑖 et 𝑧𝑃 = 3 + 2𝑖 et le vecteur 𝑤⃗⃗ d’affixe −1 + 5
+2 𝑖.
+a) Détermine l’affixe 𝑧𝑄 du point Q, image du point B par la translation de vecteur 𝑤⃗⃗ .
+b) Détermine l’affixe 𝑧𝑅 du point R, image du point P par l’homothétie ℎ de centre C et de
+rapport − 1
+3.
+c) Détermine l’affixe 𝑧𝑆 du point S, image du point P par la rotation 𝑟 de centre A et de
+rapport − 𝜋
+2.
+d) Place les points P, Q, R et S.
+
+-- 13 of 17 --
+
+Page 14 sur 17
+3.a) Démontre que le quadrilatère PQRS est un parallélogramme.
+b) Calcule 𝑧𝑅−𝑧𝑄
+𝑧𝑃−𝑧𝑄
+. Déduis- en la nature du parallélogramme PQRS.
+c) Démontre que les points P, Q, R et S appartiennent à un même cercle dont on précisera le
+centre et le rayon.
+Exercice 20
+Dans le plan complexe est muni d'un repère orthonormé direct (O, I, J) d’unité 2 cm, on
+donne les points A, B et K d’affixes respectives -2i ; 2 et -1.
+1. Fais une figure soignée.
+2. Démontre que le quadrilatère ABJK est un trapèze isocèle.
+3. Justifie que les points A, B, J et K appartiennent à un cercle (C) dont on précisera l’affixe
+du centre  et le rayon.
+4. Détermine et construis l’ensemble des points M d’affixes z vérifiant :
+arg(z+1
+𝑧−1) = 𝜋
+2 + 2𝑘𝜋 ; 𝑘 ∈ ℤ.
+Exercice 21
+Dans le plan complexe est muni d'un repère orthonormé direct (O, I, J)
+Soit F le point du plan d’affixe 1 − i
+1) Détermine l’affixe de l’image de F par la symétrie par rapport à (OI).
+2) Détermine l’affixe de l’image de F par la symétrie par rapport à (OJ).
+3) Détermine l’affixe de l’image de F par la symétrie par rapport à O.
+4) Détermine l’affixe de l’image de F par la symétrie par rapport au point B d’affixe 1 + i .
+Exercice 22
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗ , 𝑣 ) (unité : 4 cm)
+Soit A le point d’affixe 𝑧𝐴 = 𝑖 et B le point d’affixe 𝑧𝐵 = 𝑒−𝑖5 𝜋
+6
+1. Soit
+r la rotation de centre O et d’angle 2𝜋
+3 .on appelle C l’image de B par
+r.
+a. Détermine l’écriture complexe de
+r.
+b. Justifie que l’affixe de C est 𝑧𝐶 = 𝑒−𝑖𝜋
+6
+c. Construis les points A, B et C dans le repère.
+2 Soit D le point d’affixe √3
+2 + 𝑖 1
+2
+Justifie que A, B, C, D sont sur un même cercle (𝒞).
+3. Soit
+h l’homothétie de centre A et de rapport 2. On appelle E l’image de D par
+h.
+a. Détermine l’écriture complexe de
+h.
+b. Justifie que l’affixe de E est𝑧𝐸 = √3 . Construis le point E.
+4. a Calcule le rapport 𝑧𝐷−𝑧𝐶
+𝑧𝐸−𝑧𝐶
+.On écrira le résultat sous la forme exponentielle.
+b. Détermine la nature du triangle CDE.
+Exercice 23
+Le plan complexe est rapporté à un repère orthonormé direct (O, I, J).
+(On prendra pour unité 2ccm).
+Soient les points A (√3
+2 ; 1
+2) , B (− √3
+2 ; 1
+2) et C (0 ; −1).
+On considère la rotation
+r de centre O et d’angle de mesure 𝜋
+3 .
+Soit M un point quelconque d’affixe z et M’le point tel que M’=
+r(M).
+1. Détermine l’écriture complexe de
+r.
+
+-- 14 of 17 --
+
+Page 15 sur 17
+2. Justifie que :
+r (A) = J.
+3. Calcule les affixes des points E et F tels que
+r(B)=E et
+r(F)=C.
+Exercice 24
+Le plan complexe est muni du repère orthonormé (O, I, J). Unité : 2cm.
+Soit A, B et C trois points d’affixes respectives 𝑧𝐴= -1, 𝑧𝐵= 1+2
+i et 𝑧𝐶= 4+5
+i.
+1) a) Fais une figure.
+b) Détermine le nombre complexe 𝑧𝐶−𝑧𝐴
+𝑧𝐵−𝑧𝐴
+.
+c) En déduis que les points A, B et C sont alignés.
+2) Soit E et D les symétriques respectifs de C et B par rapport à la droite (OI).
+a) Place les points E et D.
+b) Justifie que les points B, C, D et E appartiennent à un même cercle (𝒞) dont on
+précisera le centre et le rayon.
+3) On considère l’homothétie h de centre A qui transforme C en B.
+Soit (𝒞’) l’image du cercle (𝒞) par h
+a) Détermine l’écriture complexe de h.
+b) Calcule l’affixe du centre de (𝒞’)
+c) Construis (𝒞’)
+Exercice 25
+Le plan complexe est muni du repère orthonormé (O, I, J).
+A, B et D sont les points d’affixes respectives −1 + 3𝑖 ; −2 et 2 + 2𝑖
+Soit
+r la rotation d’angle π
+2 et de centre le point J d’affixe 𝑖.
+1- a) Fais une figure.
+b) Démontre que l’écriture complexe de
+r est : 𝑧′ = 𝑖 𝑧 + 1 + 𝑖
+2- a) Justifie que B est l’image du point A par la rotation
+r.
+b) Justifie que D est l’antécédent du point A par
+r.
+3- Soit C l’image du point A par la symétrie centrale de centre J.
+a) Calcule l’affixe du point C.
+b) Démontre que le quadrilatère ABCD est un carré.
+Exercice 26
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗ , 𝑣 ) .
+L’unité graphique est : 2 cm.
+Soit M un point du plan d’affixe z. On pose : z = 𝑥 + 𝑦 𝑖
+, x et
+y sont des nombres réels.
+On note H le point du plan d’affixe 𝑥 + 3 𝑖 .
+Soit (Γ) l’ensemble des points M tels que : 2|𝑧| = |𝑦 − 3| .
+1. Démontre que : M ∈ (Γ) ⟺ MO
+MH = 1
+2
+2. Justifie que (Γ) est une ellipse dont on précisera l’excentricité, un foyer et une directrice.
+Exercice 27
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗ , 𝑣 ) .
+
+-- 15 of 17 --
+
+Page 16 sur 17
+On note f la transformation du plan qui à tout point M d’affixe z  1, associe le point M’
+d’affixe z’ telle que : z’ = −𝑖𝑧−2
+𝑧+1
+On désigne par A et B les points d’affixes respectives 2i et -1. On se propose de rechercher
+l’ensemble (E) des points M tels que M’appartient à l’axe des abscisses, privé de O.
+1- Démontre que :
+ z  1, z’ = −𝑖𝜔 où  = 𝑧−2𝑖
+𝑧+1
+2- Donne une interprétation géométrique d’un argument de , lorsque z  2
+i.
+3- Exprime : arg(z’) en fonction de arg().
+4- Déduis de ce qui précède l’ensemble (E).
+Exercice 28
+Soit A et B les points d’affixes respectives 1 et 2i.
+A tout nombre complexe z distinct de 2i, on associe le nombre complexe z tel que :
+𝑧 = 𝑧−1
+𝑧−2𝑖
+1. Détermine l’ensemble (C1) des points M d’affixe z tel que : Arg(z) 
+
+2[2]
+2. Détermine l’ensemble (C2) des points M d’affixe z tels que z = 2.
+3. Démontre que (C1) et (C2) ont un unique point commun dont on précisera l’affixe.
+Exercice 29
+Le plan complexe est muni d’un repère orthonormé direct (O ; 𝑢⃗ , 𝑣 ) .
+Soit A, B et C les points d’affixes respectives a, b, c et d tel que : a = -1 +i, b = -1 – i
+c = 2i et d = 2 – 2i
+On note G le barycentre des points pondérés (A, 1), (B, -1) et (C, 1).
+1. Détermine l’affixe du point G, puis place le dans le plan muni du repère (O ; 𝑢⃗ , 𝑣 ) .
+2. Soit () l’ensemble des points M du plan tels que :
+‖𝑀𝐴⃗⃗⃗⃗⃗⃗ − 2𝑀𝐵⃗⃗⃗⃗⃗⃗ + 𝑀𝐶⃗⃗⃗⃗⃗⃗ ‖ = ‖𝑀𝐴⃗⃗⃗⃗⃗⃗ − 𝑀𝐵⃗⃗⃗⃗⃗⃗ + 𝑀𝐶⃗⃗⃗⃗⃗⃗ ‖
+a) Vérifie que B appartient à ()
+b) Détermine et construis ().
+3. Démontre que les points A, B, C et D appartiennent à un même cercle dont on précisera le
+centre et le rayon.
+
+-- 16 of 17 --
+
+Page 17 sur 17
+4. SITUATIONS D’EVALUATION
+Exercice 30
+Des élèves d’un lycée ont décoré par
+différentes figures géométriques les murs de la
+salle du club Mathématiques.
+La figure ci-contre représentant l’une d’elle est
+constituée d’un quadrilatère ABCD de sens
+direct et de triangles rectangles isocèles 𝐴𝑀1𝐵,
+𝐵𝑀2𝐶, 𝐶𝑀3𝐷 et 𝐷𝑀4𝐴 de sommets respectifs
+𝑀1, 𝑀2, 𝑀3 et 𝑀4.
+Observant attentivement cette figure, l’un des
+élèves de la promotion terminale, passionné de
+nombres complexes et géométrie, affirme que
+les segments [𝑀1𝑀3] et [𝑀2𝑀4] ont des
+supports perpendiculaires et ont la même
+longueur.
+Démontre en utilisant les nombres complexes
+que l’affirmation de cet élève est correcte
+Exercice 31 (Situation complexe 2)
+Lors de la préparation d’un exposé en géométrie, un groupe d’élèves d’une classe de
+terminale découvre l’équation (E) : 𝑧 ∈ ℂ, 2𝑧2 + 2𝑧 + 1 = 0. Ils veulent avoir des
+informations sur cette équation.
+Après réflexion, un élève de ce groupe affirme que si l’on note 𝑎 la solution de (E) dont la
+partie imaginaire est positive, les nombres 𝑎, 𝑎2et 𝑎3 seront les affixes des sommets d’un
+triangle équilatéral. Sa voisine de classe ne partage pas cet avis.
+Ayant suivi la discussion, tu décides de les départager.
+Dis, en argumentant, lequel des deux élèves a raison.
+
+-- 17 of 17 --
+

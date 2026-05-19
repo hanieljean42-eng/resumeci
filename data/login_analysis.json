@@ -1,0 +1,115 @@
+{
+  "forms": [
+    {
+      "action": "https://ecole-ci.org/co/loginvisiteur.php",
+      "method": "post",
+      "id": "formlogin",
+      "inputs": [
+        {
+          "type": "tel",
+          "name": "username",
+          "id": "telephone",
+          "placeholder": "Téléphone",
+          "value": ""
+        },
+        {
+          "type": "hidden",
+          "name": "password",
+          "id": "password",
+          "placeholder": "",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "action": "https://ecole-ci.org/co/update_visiteur.php",
+      "method": "post",
+      "id": "formModifierProfil",
+      "inputs": [
+        {
+          "type": "hidden",
+          "name": "username",
+          "id": "username_modifier",
+          "placeholder": "",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "allInputs": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "name": "",
+      "id": "",
+      "text": "Toggle navigation",
+      "href": null
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "name": "",
+      "id": "",
+      "text": "Accueil",
+      "href": "https://ecole-ci.org/index.php"
+    },
+    {
+      "tag": "INPUT",
+      "type": "tel",
+      "name": "username",
+      "id": "telephone",
+      "text": "",
+      "href": null
+    },
+    {
+      "tag": "INPUT",
+      "type": "hidden",
+      "name": "password",
+      "id": "password",
+      "text": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "name": "submit",
+      "id": "submit",
+      "text": "Je me connecte",
+      "href": null
+    },
+    {
+      "tag": "INPUT",
+      "type": "hidden",
+      "name": "username",
+      "id": "username_modifier",
+      "text": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "name": "",
+      "id": "",
+      "text": "Modifier mon profil",
+      "href": null
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://ecole-ci.org/index.php"
+    },
+    {
+      "text": "Accueil",
+      "href": "https://ecole-ci.org/index.php"
+    },
+    {
+      "text": "S'inscrire gratuitement",
+      "href": "https://ecole-ci.org/co/inscriptionvisiteur.php"
+    },
+    {
+      "text": "MENA",
+      "href": "https://education.gouv.ci/"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+1
+CÔTE D’IVOIRE
+ÉCOLE NUMÉRIQUE
+Leçon 7( TD) Leçon 8 (TCE) LA LOI DE LA PLACE
+1) Situation d’apprentissage
+Lors de la lecture d’une revue scientifique, un élève de la classe de Terminale C1 au Lycée
+Moderne de Man, apprend que lorsqu’une tige métallique parcourue par un courant électrique
+est plongée dans un champ magnétique, il s’exerce sur elle une force électromagnétique. L’élève
+partage cette information à ses camarades de classe qui, afin de mieux s’approprier cette force,
+entreprennent de déterminer ses caractéristiques, de la représenter et d’en analyser quelques
+applications.
+2) Contenu de la leçon
+I. La force de Laplace
+1. Mise en évidence expérimentale de la force de Laplace
+1.1 La tige de Laplace
+1.1.1. Expérience
+1.1.2. Observations
+▪ Si aucun courant ne circule : la tige reste verticale
+▪ Lorsqu’un courant circule, la tige pivote autour du point O d’un angle 𝛼 en restant dans le plan
+perpendiculaire à B	⃗⃗.
+Le sens de la déviation est fonction du sens du courant électrique et des pôles de l’aimant.
+L’angle 𝛼 augmente avec l’intensité du courant électrique ou du champ magnétique.
+1.1.3. Conclusion
+La tige parcourue par un courant électrique et placée dans le champ magnétique, subit une force
+électromagnétique appelée force de Laplace. Cette force dépend de l’intensité du courant électrique
+et du champ magnétique.
+1.2. Les rails de Laplace
+1.2.1. Expérience
+TERMINALE
+CDE
+PHYSIQUE
+F
+S
+N
+
+-- 1 of 5 --
+
+2
+1.2.2. Observations
+▪ En absence de courant, la tige reste immobile
+▪ Lorsqu’un courant circule, la tige se déplace perpendiculairement au champ magnétique. Le
+sens du déplacement est lié au sens du courant électrique et aux pôles de l’aimant.
+1.2.3. Conclusion
+Le conducteur parcouru par un courant électrique et placé dans le champ magnétique, subit une force
+électromagnétique appelée force de Laplace.
+2. LOI DE LAPLACE
+2.1. Enoncé de la loi de Laplace.
+Un conducteur rectiligne de longueur 𝓵, parcouru par un courant électrique d’intensité I et placé dans
+un champ magnétique uniforme B	⃗⃗ subit yne force électromagnétique 𝐅 appelée force de Laplace.
+Son expression est : 𝐅 = I 𝓵	⃗⃗⃗⃗⃗ 𝐁	⃗⃗
+Avec 𝓵⃗ orienté dans le sens du courant.
+2.2. Caractéristiques de la force de Laplace F⃗ .
+• Point d’application : milieu du conducteur baignant dans le champ magnétique
+• Direction :⊥	 au plan formé par I ℓ⃗ et B	⃗⃗
+• Sens : tel que le trièdre I ℓ⃗ , B	⃗⃗ et F⃗ soit direct
+• Norme : F = I B |sin 𝛼|
+II- APPLICATION
+1. Balance de Cotton
+La balance de Cotton permet de déterminer l’intensité d’un champ magnétique.
+1.1. Schéma du dispositif
+1.2. Etude théorique
+Système : Fléau ; plateau, masses
+Bilan des forces :
+▪ Le poids P⃗⃗ 0 du fléau
+▪ La réaction R	⃗⃗ de l’axe
+
+-- 2 of 5 --
+
+3
+▪ Le poids P⃗⃗ des masses
+▪ Les forces de Laplace sur le cadre PMNQ
+Condition d’équilibre : Appliquons le théorème des moments :
+I B d1= mg d2 or d1 = d2
+B = 𝐦 𝐠
+𝐈 𝓵
+1.3. Etude expérimentale
+• Expérience
+Pour différentes valeurs des masses marquées posées dans le plateau, déterminons l’intensité du
+courant électrique I nécessaire au rétablissement de l’équilibre de la balance.
+• Résultats
+m (mg) 5 10 15 20 25 30
+I (A) 0,74 1,5 2,35 3,2 3,9 4,8
+• Exploitation des résultats
+La courbe I = f(m) est une droite qui passe par l’origine du repère, son équation est de la forme :
+I = k. m
+k= ΔI
+Δm
+Or : I = g
+B ℓ m = k.m donc par identification, k= g
+B ℓ d’où : B = g
+k ℓ
+Connaissant g, k et , on calcule la valeur de B.
+5 7,5 10 12,5 15 17,5 20 22,5 25 27,5
+1
+1,5
+2
+2,5
+3
+3,5
+4
+4,5
+5
+5,5
+0 2,5
+0,5
+m (mg)
+I (A)
+
+-- 3 of 5 --
+
+4
+2. La roue de Barlow
+Une roue de cuivre de rayon R, peut tourner autour d’un axe perpendiculaire au plan de la roue et
+passant par le point O.
+A chaque instant, le rayon OM est soumis à la force de Laplace F⃗ appliquée à son milieu.
+Le moment de la force de Laplace est :
+ℳ(𝐹 ) = 𝐹. 𝑅
+2 𝑜𝑟 𝐹 = 𝐼 𝐵 𝑅
+ℳ(𝐹 ) = 𝐼 𝐵 𝑅2
+2
+La roue tourne sous l’effet du moment de la force de
+Laplace.
+3. Le haut – parleur
+La bobine solidaire de la membrane peut coulisser sur l’un des pôles de l’aimant. Lorsqu’elle est
+parcourue par le courant électrique alternatif, elle est soumise aux forces de Laplace qui font vibrer la
+membrane. Les variations de pression de l’air provoquent le son perçu.
+𝑩	⃗⃗
+𝑩	⃗⃗
+𝑭	⃗⃗
+𝑭	⃗⃗ 𝐵𝑜𝑏𝑖𝑛𝑒
+𝐴𝑖𝑚𝑎𝑛𝑡	𝑀𝑒𝑚𝑏𝑟𝑎𝑛𝑒
+𝑺𝒄𝒉é𝒎𝒂 𝒅′𝒖𝒏 𝒉𝒂𝒖𝒕 𝒑𝒂𝒓𝒍𝒆𝒖𝒓
+𝑵
+𝑺
+𝑺
+O
+M
+𝑭⃗⃗
+𝑩⃗⃗
+Solution
+conductrice
+I
++
+
+-- 4 of 5 --
+
+5
+Situation d’évaluation
+Au laboratoire de Physique-Chimie, un groupe d’élèves de terminale D réalisent le montage dont le
+schéma est décrit comme suit : un conducteur électrique de longueur ℓ, de masse m est susceptible de
+tourner autour d’un axe horizontal passant par un point O. A l’équilibre le conducteur fait un angle θ
+avec la verticale. Il est alors parcouru par un courant d’intensité I. Une portion du conducteur
+symétrique par rapport à son centre d’inertie est soumise à un champ magnétique uniforme 𝐵⃗ .
+Il t’ai demandé d’étudier l’équilibre du conducteur.
+1) Exprime l’intensité de la force de LAPLACE en fonction de θ, I, L’ et B.
+2) Représente les forces agissant sur le conducteur.
+3) Ecris la relation d’équilibre du conducteur.
+4) En déduis l’expression de l’intensité I du courant en fonction de m, g, θ, L’ et B.
+5) Calcule l’intensité I du courant.
+On donne m = 20 g ; g = 10 N.kg-1 ; θ = 30° ; L’ = 5 cm ; B = 0,5 T
+
+-- 5 of 5 --
+

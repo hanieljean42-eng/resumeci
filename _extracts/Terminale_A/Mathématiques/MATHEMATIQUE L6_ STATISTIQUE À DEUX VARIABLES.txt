@@ -1,0 +1,1065 @@
+Page 1 sur 22
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+Thème : ORGANISATION DES DONNEES
+Leçon 6 : STATISTIQUE À DEUX VARIABLES
+Durée : 18 heures Code :
+A. SITUATION D’APPRENTISSAGE
+Dans le cadre des recherches pour un exposé, des élèves d’une classe de Terminale ont été accrochés
+par les informations suivantes :
+La prévision météorologique est une science en pleine évolution. Elle a pour objectif de prédire un
+ensemble de paramètres comme la pluviométrie, la pression atmosphérique, la température, etc.
+Le tableau suivant donne les pluviométries et températures moyennes de septembre 2018 à août 2019
+dans une ville.
+Sept
+2018
+Oct.
+2018
+Nov.
+2018
+Déc
+2018
+Jan
+2019
+Fév.
+2019
+Mar
+2019
+Avr.
+2019
+Mai
+2019
+Juin
+2019
+Juillet
+2019
+Août
+2019
+Pluviométrie
+(en mm) 13 23 49 49 50 64 79 48 40 10 5 6
+Température
+(en °C) 23 17 14 10 10 11 13 15 17 23 27 28
+Dans l’affiche la température moyenne d’octobre 2019 était de 32 °C. Les élèves veulent connaitre la
+pluviométrie du mois d’octobre 2019. Un des élèves affirme que la pluviométrie n’est pas liée à la
+température et qu’on ne peut savoir la pluviométrie d’octobre. Ce que réfute certains. Toute la classe
+ayant été saisi, décide de chercher à savoir si la pluviométrie est liée à la température et si c’est le cas,
+de prévoir la pluviométrie d’octobre 2019.
+B. CONTENU DE LA LECON
+I. Présentation de la série statistique double
+1. Définition
+On considère deux caractères quantitatifs X et Y sur une même population de n individus.
+On note : 𝑥1 , 𝑥2 , 𝑥3 ,…, 𝑥𝑝 les valeurs(ou les modalités) du caractère X ; 𝑦1, 𝑦2 , 𝑦3 ,…, 𝑦𝑞 les
+valeurs du caractère Y et 𝑛𝑖𝑗 l’effectif du couple (𝑥𝑖 ,𝑦𝑗).
+On appelle série statistique double de caractère (X, Y), l’ensemble des triplets (𝑥𝑖 , 𝑦𝑗 ,𝑛𝑖𝑗).
+Exemple
+Une étude statistique porte sur une population de 100 ménages. Deux caractères X et Y sont étudiés :
+- le caractère X est le nombre d’enfants,
+- le caractère Y est le nombre de pièces de l’appartement occupé.
+On obtient le tableau suivant qui représente la série statistique de caractère (X, Y).
+Terminale A
+Mathématiques
+
+-- 1 of 22 --
+
+Page 2 sur 22
+Y
+X 1 2 3 4
+0 6 3 1 0
+1 4 11 3 1
+2 1 10 16 3
+3 0 5 13 5
+4 0 1 4 8
+5 0 0 1 4
+Sur la 1ère ligne, sont inscrites les valeurs du caractère Y ; soit 𝑦1 = 1 ; 𝑦2 = 2 ; 𝑦3 = 3; 𝑦4 = 4.
+La 1ère colonne affiche les valeurs du caractère X qui sont : 𝑥1 = 0; 𝑥2 = 1 ; 𝑥3 = 2 ; 𝑥4 = 3;
+𝑥5 = 4; 𝑥6 = 5.
+Les nombres du tableau qui ne sont pas sur la 1ère ligne et la 1ère colonne, représentent les différents
+effectifs 𝑛𝑖𝑗 des couples (𝑥𝑖 ,𝑦𝑗).
+Ainsi considérons le nombre 6 dans ce tableau. On constate qu’il est dans la colonne de la valeur 1 du
+caractère Y et dans la ligne de la valeur 0 du caractère X. On dit alors qu’il y a 6 ménages qui n’ont
+aucun enfant et qui occupent un appartement d’une pièce.
+On dit que l’effectif du couple (0 ; 1) est 6.
+Combien de ménages ont deux enfants et occupent un appartement de trois pièces ?
+On va donc considérer la ligne ayant la valeur 2 du caractère X et la colonne ayant la valeur 3 du
+caractère Y. L’intersection de cette ligne et de cette colonne donne 16.
+16 ménages ont donc deux enfants et occupent un appartement de trois pièces.
+On dit que l’effectif du couple (2 ; 3) est 16.
+Exercez-vous à la maison avec le reste des 𝑛𝑖𝑗.
+Le tableau ci-dessus est un tableau à double entrée appelé tableau de contingence.
+2. Tableau de séries marginales (Série A1 seulement)
+Reprenons l’exemple précédent.
+Il est question de trouver l’effectif de chaque modalité du caractère X et l’effectif de chaque modalité
+du caractère Y.
+Y
+X 1 2 3 4 Total
+0 6 3 1 0 10
+1 4 11 3 1 19
+2 1 10 16 3 30
+3 0 5 13 5 23
+4 0 1 4 8 13
+5 0 0 1 4 5
+Total 11 30 38 21 100
+Considérons le caractère X.
+Pour trouver l’effectif de la valeur 0, on additionne tous les 𝑛𝑖𝑗 qui se trouvent sur la ligne de la valeur
+0 du caractère X c’est-à-dire : 6 + 3 + 1+ 0 = 10.
+Quel est l’effectif de la valeur 3 du caractère X ?
+
+-- 2 of 22 --
+
+Page 3 sur 22
+Pour trouver l’effectif de la valeur 3 du caractère X, on additionne tous les 𝑛𝑖𝑗 qui se trouvent sur la
+ligne de la valeur 3 du caractère X c’est-à-dire : 0 + 5 + 13 + 5 = 23.
+On procède de la même manière pour trouver l’effectif des autres modalités du caractère X. Ainsi à
+chaque valeur du caractère X, on a son effectif dans la dernière colonne.
+D’où le tableau linéaire associé à X :
+𝑥𝑖 0 1 2 3 4 5
+𝑛𝑖 10 19 30 23 13 5
+La série ainsi obtenue est appelée série marginale du caractère X.
+En faisant de même avec les colonnes, on obtient :
+L’effectif de la modalité 1 du caractère Y en additionnant les 𝑛𝑖𝑗 de la colonne où se trouve cette
+modalité. Soit 6 + 4 + 1 + 0 + 0 + 0 = 11.
+On obtient ainsi l’effectif de chaque modalité du caractère Y dans la dernière ligne du tableau.
+D’où le tableau linéaire associé à Y :
+𝑦𝑖 1 2 3 4
+𝑛𝑖 11 30 38 21
+La série ainsi obtenue est appelée série marginale du caractère Y.
+• Dressons le tableau des fréquences marginales du caractère X.
+On rappelle que la fréquence est l’effectif de la modalité sur l’effectif total.
+On obtient le tableau suivant :
+𝑥𝑖 0 1 2 3 4 5
+𝑓𝑖
+10
+100
+19
+100
+30
+100
+23
+100
+13
+100
+5
+100
+De la même manière, définis le tableau des fréquences marginales du caractère Y.
+𝑦𝑖 1 2 3 4
+𝑓𝑖
+11
+100
+30
+100
+38
+100
+21
+100
+3. Nuage de points
+Définition
+On considère deux caractères quantitatifs X et Y sur une même population de n individus.
+On note 𝑥1 , 𝑥2 , 𝑥3 ,…, 𝑥𝑝 les valeurs du caractère X,
+𝑦1 , 𝑦2 , 𝑦3 ,…, 𝑦𝑞 les valeurs du caractère Y,
+On appelle nuage de points associé à la série statistique double de caractère (X, Y), la représentation
+dans un repère orthogonal des points de couple de coordonnées (𝑥𝑖; 𝑦𝑗) d’effectifs non nuls.
+Exercice de fixation
+Le tableau suivant donne le nombre d’exploitations agricoles d’une région selon leur superficie en
+hectares.
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+
+-- 3 of 22 --
+
+Page 4 sur 22
+Représente le nuage de points associé à cette série.
+Solution
+Remarque
+Dans la suite, les séries doubles considérées seront comme la série de l’exemple précédent ;
+c’est-à-dire l’effectif 𝑛𝑖 de chaque couple (𝑥𝑖 ,𝑦𝑖) vaut 1.
+4. Point moyen
+Définition
+On appelle point moyen d’un nuage de 𝑛 points 𝑀𝑖 de coordonnées (𝑥𝑖; 𝑦𝑖) le point G de coordonnées
+(𝑥𝐺; 𝑦𝐺 ) telles que :
+𝑥𝐺 = 𝑋 = 𝑥1+𝑥2+⋯+𝑥𝑛
+𝑛 ; 𝑦𝐺 = 𝑌 = 𝑦1+𝑦2+⋯+𝑦𝑛
+𝑛 .
+Exercice de fixation
+Détermine les coordonnées du point moyen du nuage de points de la série statistique suivante :
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Solution
+C’est le point de coordonnées (X ;Y).
+On a : X = 2+2+3+4+5+6+7+7,6
+8 = 36,6
+8 = 4,575
+et Y = 14+26+31+29+44+40+54+50
+8 = 288
+8 = 36.
+
+-- 4 of 22 --
+
+Page 5 sur 22
+Donc G(4,575 ; 36).
+Exercice de maison
+On considère la série statistique double suivante :
+𝑥𝑖 0 1 2 3 4 5 6 7 8
+𝑦𝑖 160 110 100 72 36 29 20 10 3
+1) Représente le nuage de points de cette série statistique.
+2) Détermine les coordonnées du point moyen de cette série statistique.
+II. Ajustement
+1. Présentation
+Soit un nuage de points associé à une série statistique double représenté dans un repère orthogonal.
+Faire un ajustement de ce nuage de points, c’est trouver une courbe qui passe le plus près « possible »
+du maximum de points de ce nuage.
+Lorsque cette courbe est une droite, on dit que l’ajustement est affine ou linéaire.
+Exemple d’ajustement par une droite.
+2. Ajustement linéaire par la méthode de Mayer
+a. Droite d’ajustement
+Pour déterminer la droite d’ajustement linéaire d’un nuage de points, on peut procéder comme suit :
+• On range la série statistique double (X; Y) suivant les valeurs croissantes des 𝑥𝑖.
+• Si le nombre 𝑛 de points du nuage de points est pair, on partage la série statistique en deux séries
+statistiques de même effectif :
+(𝑥1; 𝑦1), (𝑥2; 𝑦2), ⋯ , (𝑥𝑝; 𝑦𝑝) et (𝑥𝑝+1; 𝑦𝑝+1), (𝑥𝑃+2; 𝑦𝑃+2), ⋯ , (𝑥𝑛; 𝑦𝑛), tel que p= 𝑛
+2.
+⚫ Si le nombre 𝑛 de points du nuage de points est impair, alors on partage le nuage de points en
+deux sous-nuages d’effectif 𝑛+1
+2 et 𝑛+1
+2 − 1.
+• On détermine le point moyen G1 du premier sous-nuage et le point moyen G2 du deuxième sous-
+nuage.
+• La droite (G1G2) est la droite d’ajustement par la méthode de Mayer.
+Remarque :
+- La droite (G1G2) passe par le point moyen G du nuage de points.
+Exercice de fixation
+Partage la série statistique ci-dessous en deux séries et détermine le point moyen de chacune d’elles.
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Solution
+
+-- 5 of 22 --
+
+Page 6 sur 22
+Les valeurs du caractère X sont rangées dans l’ordre croissant.
+L’effectif total de la série est 8.
+On va partager la série en deux séries d’effectif 4 chacune.
+Série 1
+X 2 2 3 4
+Y 14 26 31 29
+Point moyen G1
+G1 (X1 ;Y1) avec X1 = 2+2+3+4
+4 = 2,75 et Y1 = 14+26+31+29
+4 = 25
+Donc : G1(2,75 ; 25)
+Série 2
+𝑥𝑖 5 6 7 7,6
+𝑦𝑖 44 40 54 50
+Point moyen G2
+G2 (X2 ;Y2), avec X2 = 5+6+7+7,6
+4 = 6,4 et Y2 = 44+40+54+50
+4 = 47.
+Donc : G2(6,4 ; 47)
+b. Equation
+Soit G1(𝑋1; 𝑌1) et G2(𝑋2; 𝑌2) les points moyens des sous-nuages.
+On détermine une équation de la droite (G1G2) à l’aide d’un vecteur directeur ou du coefficient
+directeur.
+Exercice de fixation
+On considère la série statistique précédente.
+Détermine une équation de la droite d’ajustement linéaire du nuage de points par la méthode de Mayer.
+Trace cette droite.
+Solution
+C’est la droite (G1G2) avec G1(2,75 ; 25) et G2(6,4 ; 47).
+Elle a pour équation 𝑦 = 𝑎𝑥 + 𝑏;
+avec 𝑎 = Y2 − 𝑌1
+X2 − 𝑋1
+𝑜𝑢 𝑎 = Y1 − 𝑌2
+X1 − 𝑋2
+𝑒𝑡 𝑏 = 𝑌1 − 𝑎 × 𝑋1 𝑜𝑢 𝑏 = 𝑌2 − 𝑎 × 𝑋2 .
+𝐷′où 𝑎 = 47−25
+6,4−2,75 = 440
+73 et 𝑏 = 25 − 440
+73 × 2,75 = 615
+73
+Donc (G1G2) : 𝑦 = 440
+73 𝑥 + 615
+73
+
+-- 6 of 22 --
+
+Page 7 sur 22
+3. Ajustement linéaire par la méthode des moindres carrés (Série A1 seulement)
+a. Covariance
+Définition
+On appelle covariance de la série statistique double de caractère (X ; Y), le nombre réel noté
+Cov(X ; Y) tel que :
+Cov(𝑋, 𝑌) = 1
+𝑛 ∑(𝑥𝑖 − X )(𝑦𝑖 − Y ) ou Cov(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑖
+𝑛 − X Y.
+Exercice de fixation
+Calcule la covariance de la série statistique suivante sachant que G(4,575 ; 36).
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Solution
+La covariance de cette série statistique est telle que: Cov(X, Y) = ∑ 𝑥𝑖𝑦𝑖
+𝑛 − X Y .
+On a:
+Cov(X, Y) = 2×14+2×26+3×31+4×29+5×44+6×40+7×54+7,6×50
+8 − 4,575 × 36
+Cov(X, Y) = 1503
+8 − 164,7 .
+Donc : Cov(X, Y) = 23,675
+b. Coefficient de corrélation linéaire
+Définition
+Soit V(X) la variance de la série statistique de caractère X, V(Y) la variance de la série statistique de
+caractère Y et Cov(X ; Y) la covariance de la série statistique (X ; Y).
+On appelle coefficient de corrélation linéaire de la série statistique double (X ; Y), le nombre réel noté
+𝑟 tel que : 𝑟 = Cov(X,Y)
+√V(X)√V(Y).
+
+-- 7 of 22 --
+
+Page 8 sur 22
+Rappel : V(X) = ∑ 𝑥𝑖2
+𝑛 − (X)2
+et V(Y) = ∑ 𝑦𝑖2
+𝑛 − (Y)2
+.
+Exercice de fixation
+Calcule le coefficient de corrélation linéaire de la série statistique suivante.
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Solution
+Le coefficient de corrélation linéaire 𝑟 de cette série statistique est tel que: 𝑟 = Cov(X,Y)
+√V(X)√V(Y)
+On a:
+• V(X) = ∑ 𝑥𝑖2
+𝑛 − (X)2
+= 22+22+32+42+52+62+72+(7,6)2
+8 − 4,5752
+V(X) = 200,76
+8 − 4,5752 ≈ 4,16
+• V(Y) = ∑ 𝑦𝑖2
+𝑛 − (Y)2
+= 142+262+312+292+442+402+542+502
+8 − 362
+V(Y) = 11626
+8 − 362 = 157,25
+Donc : 𝑟 = 23,675
+√4,16×157,25 ≈ 0,92
+Remarques
+• Le coefficient de corrélation linéaire permet de voir la dépendance linéaire des deux caractères X
+et Y.
+• Le coefficient de corrélation linéaire 𝑟 est un nombre réel de même signe que COV(X, Y) et on
+a : −1 ≤ 𝑟 ≤ 1.
+• Si │r│ est proche de 1, c’est-à-dire en pratique : 0,87≤ 𝑟 ≤ 1 ou −1 ≤ 𝑟 ≤ −0,87, alors on dit qu’il
+y a une bonne corrélation linéaire ou une forte corrélation linéaire entre les deux caractères X et Y.
+Exercice de fixation
+Interprète le coefficient de corrélation linéaire de l’exercice de fixation précèdent.
+Solution
+On sait que : 𝑟 = 0,92.
+Comme 0,87≤ 𝑟 ≤ 1, il y a une forte corrélation entre la superficie et le nombre d’exploitations
+agricoles de cette région.
+c. Droites de régressions
+Propriété
+Soit V(X) la variance de la série statistique de caractère X, V(Y) la variance de la série statistique de
+caractère Y et Cov(X, Y) la covariance de X et Y.
+On suppose qu’il y a une forte corrélation entre les caractères X et Y .
+i. Droite de régression de Y en X.
+La droite (D) d’équation : 𝑦 = 𝑎𝑥 + 𝑏 où 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = 𝑌 − 𝑎𝑋 est appelée la droite de
+régression de Y en X par la méthode des moindres carrés.
+
+-- 8 of 22 --
+
+Page 9 sur 22
+ii. Droite de régression de X en Y.
+La droite (D’) d’équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec : 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = 𝑋 − 𝑎′𝑌 est appelée la droite de
+régression de X en Y par la méthode des moindres carrés.
+Exercice de fixation
+On considère la série statistique suivante :
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+On sait que: Cov(X, Y) = 23,675 ,V(X)=4,6 ; V(Y)= 157,25 et 0,87≤ 𝑟 ≤ 1.
+1. Détermine une équation de la droite d’ajustement linéaire de Y en X par la méthode des moindres
+carrés ; (On donnera les arrondis d’ordre 2 de 𝑎 et b.).
+2.Détermine une équation de la droite d’ajustement linéaire de X en Y par la méthode des moindres
+carrés. (On donnera les arrondis d’ordre 2 de 𝑎′et b’)
+Solution
+Comme 0,87≤ 𝑟 ≤ 1, il y’a une bonne relation entre X et Y.
+1.Déterminons la droite d’ajustement linéaire de Y en X par la méthode des moindres carrés.
+C’est la droite (D) d’équation : 𝑦 = 𝑎𝑥 + 𝑏 avec 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = Y − 𝑎X
+𝑎 = Cov(X,Y)
+V(X) = 23,675
+4,16 = 5,69 et 𝑏 = Y − 𝑎X = 36 – 5,69 ×4,575 = 9,97
+Donc (D) : 𝑦 = 5,69𝑥 + 9,97
+2. Déterminons la droite d’ajustement linéaire de X en Y par la méthode des moindres carrés.
+C’est la droite (D’) d’équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = X − 𝑎Y
+𝑎′ = Cov(X,Y)
+V(Y) = 23,675
+157,25 = 0,15 et 𝑏′ = X − 𝑎Y = 4,575 – 0,15×36 = –0,825
+Donc : (D’) : 𝑥 = 0,15𝑦 −0,83
+Remarques
+- Les droites (D) et (D’) passent par le point moyen G du nuage de points.
+- Si 𝑟 est le coefficient de corrélation linéaire on a :
+• 𝑎𝑎′ = 𝑟2 et |𝑟| = √𝑎𝑎′
+• Si 𝑎 > 0 et 𝑎’ > 0, alors 𝑟 = √𝑎𝑎′.
+• Si 𝑎 < 0 et 𝑎’ < 0, alors 𝑟 = −√𝑎𝑎′.
+• Si 𝑟2 = 1, alors 𝑎 = 1
+𝑎′ et les deux droites sont confondues.
+III. Estimation
+• La droite d’ajustement tracée du nuage de points permet graphiquement une estimation de 𝑦
+connaissant 𝑥 (resp. 𝑥 connaissant 𝑦).
+• L’équation de la droite d’ajustement permet de calculer une estimation de 𝑦 connaissant 𝑥
+(resp. 𝑥 connaissant 𝑦).
+Exercice de fixation
+On considère la série statistique suivante :
+Superficie X 2 2 3 4 5 6 7 7,6
+Nombre d’exploitations Y 14 26 31 29 44 40 54 50
+Soit (D) : 𝑦 = 5,69𝑥 + 9,97, la droite de régression de y en x.
+En considérant que la tendance se poursuit ainsi, détermine le nombre d’exploitations agricoles pour
+une superficie de 9 h
+
+-- 9 of 22 --
+
+Page 10 sur 22
+Solution
+Par la méthode de Mayer
+Une superficie de 9 ha correspond à 𝑥 = 9.
+En utilisant l’équation de la droite de Mayer, on a : 𝑦 = 6 × 9 + 8,4 = 62,4.
+Donc pour une superficie de 9 ha, le nombre d’exploitations est estimé à 63.
+Par la méthode des moindres carrés
+Série A1 seulement: Avec l’équation de la droite de régression de y en 𝑥 obtenue par la méthode des
+moindres carrés, on a : 𝑦 = 5,69𝑥 + 9,97,
+𝑦 = 5,69 × 9 + 9,97 = 61,8
+Donc pour une superficie de 9 ha, le nombre d’exploitations agricoles est estimé à 62.
+C. SITUATION COMPLEXE
+Le tableau ci-dessous donne le nombre total d’adhérents au club littéraire d’un lycée au cours de
+l’année civile 2020.
+Mois Janv Fév Mars Avr Mai Juin Juil Août Sept Oct Nov Déc
+Rang 𝑥𝑖 1 2 3 4 5 6 7 8 9 10 11 12
+Nombre
+d’adhérents yi
+1100 1160 1220 1370 1620 1550 1600 1500 1790 1940 2060 1980
+Une Organisation Non Gouvernementale promet d’octroyer une aide financière considérable au club si
+le nombre d’adhérents dépasse les 3000 élèves. L’élève de la Terminale A qui dirige le club désire
+connaître la date à laquelle ce don pourra se faire. Il te sollicite pour l’aider.
+Détermine la date (mois et année) probable de la réception de ce don.
+Solution.
+➢ Pour trouver la date, nous allons utiliser les statistiques à deux variables,
+➢ Je détermine la droite de régression linéaire,
+➢ J’estime la date.
+Résolution pour les classes de TA2
+• Partageons la série en deux sous séries
+𝑺𝟏
+Mois Janv Fév Mars Avr Mai Juin
+Rang 𝑥𝑖 1 2 3 4 5 6
+Nombre
+d’adhérents yi
+1100 1160 1220 1370 1620 1550
+𝑺𝟐
+Mois Juil Août Sept Oct Nov Déc
+Rang 𝑥𝑖 7 8 9 10 11 12
+Nombre
+d’adhérents yi
+1600 1500 1790 1940 2060 1980
+
+-- 10 of 22 --
+
+Page 11 sur 22
+• Je calcule la moyenne de chaque sous série
+Pour la série 𝑺𝟏
+𝑥1 = 1+2+3+4+5+6
+6 = 3,5 ; 𝑦1 = 1100+1160+1220+1370+1620+1550
+6 = 1338,33
+Donc 𝐺1(3,5; 1338,33)
+Pour la série 𝑺𝟐
+𝑥2 = 7+8+9+10+11+12
+6 = 9,5 ; 𝑦2 = 1600+1500+1790+1740+2060+1980
+6 = 1778,33
+Donc 𝐺2(9,5; 1778,33)
+• Je détermine une équation de la droite de régression par la méthode de Mayer
+Elle a pour équation 𝑦 = 𝑎𝑥 + 𝑏;
+𝑎 = Y2 − 𝑌1
+X2 − 𝑋1
+= 1778,33 − 1338,33
+9,5 − 3,5 = 440
+6 = 73,33
+𝑏 = 𝑌2 − 𝑎 × 𝑋2 = 1778,33 − 73,33 × 9,5 = 1081,66
+Donc 𝑦 = 73,33𝑥 + 1081,66
+• Je déduis le rang du mois pour 𝑦 = 3000
+𝑦 = 3000 équivaut à 𝑥 = 3000−1081,66
+73,33 = 26,16
+Le rang cherché est sensiblement égal à 27.
+• Je donne la date (mois et année) probable de la réception de ce don.
+La date probable de la réception de ce don est mars 2022.
+Résolution pour les classes de TA1
+• Je détermine une équation de la droite de régression de Y en X.
+Soit (D) cette droite.
+Une équation de (D) est sous la forme: y = ax + b avec 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = 𝑌 − 𝑎𝑋.
+- Les coordonnées du point moyen G
+On a:
+𝑋̅ = ∑ 𝑥𝑖
+𝑛 = 78
+12 = 6,5
+𝑌̅ = ∑ 𝑦𝑖
+𝑛 = 18890
+12 = 1574,167
+- La variance de X
+𝑉(𝑋) = ∑ 𝑥𝑖2
+𝑛 − X2
+𝑉(𝑋) = 12 + 22 + 32 + 42 + 52 + 62 + 72 + 82 + 92 + 102 + 112 + 122
+12 − 6,52
+V(X) = 650
+12 − (6.5)2 = 11,917
+
+-- 11 of 22 --
+
+Page 12 sur 22
+- La variance de Y
+𝑉(𝑌) = ∑ 𝑦𝑖2
+𝑛 − Y2
+𝑉(𝑌) = 11002 + 11602 + 12202 + 13702 + 1620 + 15502 + 16002 + 15002 + 17902 + 19402 + 20602 + 19802
+12
+− (1574,167)2
+𝑉(𝑌) = 30889500
+12 − (1574,167)2 = 96123,256
+- La covariance de X et Y
+Cov(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑖
+𝑛 − X Y
+Cov(𝑋, 𝑌) = 1100 + 2320 + 3660 + 5480 + 8100 + 9300 + 11200 + 12000 + 16110 + 19400 + 22660 + 23760
+12
+− 6,5 × 1574,167
+COV(X, Y) = 135090
+12 − 6,5 × 1574,167 = 1025,4145
+- Une équation de la droite (D): y = ax + b
+𝑎 = 1025,4145
+11,917 = 86,046
+𝑏 = 1574,167 − 86,046 × 6,5 = 1014,868
+D’où (D): 𝒚 = 86,046𝑥 + 1014,868
+• Je déduis le rang du mois pour 𝑦 = 3000
+𝑦 = 3000 équivaut à 𝑥 = 3000−1014,868
+86,046 = 23,071
+Le rang cherché est sensiblement égal à 24.
+• Donne la date (mois et année) probable de la réception de ce don.
+La date probable de la réception de ce don est Décembre 2021.
+D. EXERCICES
+1. Exercices de renforcement
+Exercice 1
+Dans le tableau ci-dessous, on donne la taille moyenne (en cm) des nouveau-nés en fonction du
+nombre de l'âge gestationnel (en semaines).
+Âge gestationnel
+(semaines) 30 31 32 33 34 35 36 37
+Taille (cm) 47,5 48,5 49 49,7 50 50,5 50,8 51,2
+Âge gestationnel
+(semaines) 38 39 40 41 42 43 44 45
+Taille (cm) 51,5 51,8 52,2 52,5 52,8 53 53,5 53,7
+1) Représente le nuage de points dans un repère orthogonal en prenant comme unités :
+En abscisses : 1 cm pour 1 semaine (commencer la graduation à 20 semaines).
+
+-- 12 of 22 --
+
+Page 13 sur 22
+En ordonnées : 2 cm par unité (commencer la graduation à 45 cm).
+2) On se propose de tracer la droite d'ajustement de ce nuage de points.
+a) Calcule les coordonnées des points moyens G1 et G2 ;
+b) Trace la droite d'ajustement passant par les points G1 et G2.
+3) Détermine une équation de cette droite d'ajustement.
+SOLUTION
+1) Je représente le nuage de points.
+2.a) Je calcule les coordonnés des points moyens G1 et G2
+On a:
+𝑋1̅̅̅ = ∑ 𝑥𝑖
+𝑛 = 30+31+32+33+34+35+36+37
+8 = 33,5
+𝑌1̅ = ∑ 𝑦𝑖
+𝑛 = 47,5 + 48,5 + 49 + 49,7 + 50 + 50,5 + 50,8 + 51,2
+8 = 49,65
+𝑋2̅̅̅ = ∑ 𝑥𝑖
+𝑛 = 38 + 39 + 40 + 41 + 42 + 43 + 44 + 45
+8 = 41,5
+𝑌2̅ = ∑ 𝑦𝑖
+𝑛 = 51,5 + 51,8 + 52,2 + 52,5 + 52,8 + 53 + 53,5 + 53,7
+8 = 52,625
+Donc: 𝑮𝟏(𝟑𝟑, 𝟓; 𝟒𝟗, 𝟔𝟓) et 𝑮𝟐(𝟒𝟏, 𝟓; 𝟓𝟐, 𝟔𝟐𝟓)
+b) Tracé de la droite (G1G2 ): (Voire nuage de points).
+3) Je détermine une équation de la droite (G1G2 ).
+Une équation la droite (G1G2 ) est sous la forme: 𝑦 = 𝑎𝑥 + 𝑏 avec 𝑎 = 𝑌2	̅̅̅ −𝑌1	̅̅̅
+𝑋2	̅̅̅̅ −𝑋1	̅̅̅̅ 𝑒𝑡 𝑏 = 𝑌1̅ − 𝑎𝑋1̅̅̅
+𝑎 = 52,625 − 49,65
+41,5 − 33,5 = 0.372 𝑒𝑡 𝑏 = 49,65 − 0.372 × 33,5 = 37,188.
+D’où (G1G2 ): 𝒚 = 𝟎. 𝟑𝟕𝟐𝒙 + 𝟑𝟕, 𝟏𝟖𝟖
+G1
+G2
+22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+47
+48
+49
+50
+51
+52
+53
+54
+44
+43
+42
+41
+20 	21
+45
+46
+x
+y
+
+-- 13 of 22 --
+
+Page 14 sur 22	100
+150
+200
+250
+300
+350
+400
+450
+500
+550
+600
+50
+y
+Exercice 2
+Le tableau suivant donne le chiffre d'affaires X (en millions de francs) réalisé au cours des 6 derniers
+mois par un site de vente en ligne en fonction du nombre de commandes Y reçues.
+Nombre de
+commandes (𝑥𝑖) 6 400 8 350 9 125 9 600 10 050 12 000
+Chiffre d'affaires
+mensuel (𝑦𝑖) 250 320 335 350 370 400
+Partie A
+1) Représente le nuage de points associé à cette série statistique (X, Y).
+2) Détermine les coordonnées du point moyen de ce nuage.
+3) a) Détermine une équation de la droite d’ajustement linéaire du nuage de points par la méthode de
+Mayer.
+b) Trace cette droite.
+4) En considérant que la tendance se poursuit ainsi, détermine le chiffre d’affaires pour 15 000
+commandes reçues.
+Partie B (Série A1 seulement)
+1) Calcule la covariance de la série statistique (X, Y).
+2) Calcule le coefficient de corrélation linéaire de la série statistique (X, Y).
+3) Interprète le coefficient de corrélation linéaire.
+4) Détermine une équation de la droite d’ajustement linéaire de Y en X du nuage de points par la
+méthode des moindres carrés.
+5) Détermine une équation de la droite d’ajustement linéaire de X en Y du nuage de points par la
+méthode des moindres carrés.
+6) En considérant que la tendance se poursuit ainsi, détermine le chiffre d’affaires pour 15 000
+commandes reçues.
+SOLUTION
+Partie A
+1) Je représente le nuage de points associé à la série
+Nombre de
+commandes (𝑥𝑖) 6 400 8 350 9 125 9 600 10 050 12 000
+Chiffre d'affaires
+mensuel (𝑦𝑖) 250 320 335 350 370 400
+
+-- 14 of 22 --
+
+Page 15 sur 22
+300
+350
+400
+450
+500
+550
+600
+y
+2) Je détermine les coordonnées du point moyen.
+Soit G(𝑋̅ ; 𝑌̅ ) le point moyen . On a :
+𝑋̅ = ∑ 𝑥𝑖
+𝑛 = 6400 + 8350 + 9125 + 9600 + 10050 + 12000
+6 = 9254,17
+𝑌̅ = ∑ 𝑦𝑖
+𝑛 = 250 + 320 + 335 + 350 + 370 + 400
+6 = 337,5
+Donc : G(9254,17 ; 337,5)
+3.a) Je détermine une équation de la droite d’ajustement linéaire du nuage de points par la
+méthode de Mayer
+Série 1
+S
+Soit 𝐺1(𝑋̅1; 𝑌̅1) le point moyen de la série 1. On a :
+𝑋̅1 = 6400 + 8350 + 9125
+3 = 7958,33
+𝑌̅1 = 250 + 320 + 335
+3 = 301,66
+Ainsi : 𝐺1 (7958,33 ; 301,66).
+Série 2
+𝑥𝑖 9600 10050 12000
+𝑦𝑖 350 370 400
+Soit 𝐺2(𝑋̅2; 𝑌̅2) le point moyen de la série 2. On a :
+𝑋̅2 = 9600 + 10050 + 12000
+3 = 10550
+𝑌̅2 = 350 + 370 + 400
+3 = 373,33
+Ainsi : 𝐺2(10550 ; 373,33)
+(𝐺1𝐺2): y = ax+b avec a = 𝑌̅1−𝑌̅2
+𝑋̅1−𝑋̅2
+= 301,66−373,33
+7958,33−10550 = 0 ,028 et b = 𝑌̅2 − 𝑎 𝑋	̅2 = 78
+C’est-à-dire (𝐺1𝐺2): y = 0,028x + 78
+b) Tracé de la droite d’ajustement linéaire
+𝑥𝑖 6400 8350 9125
+𝑦𝑖 250 320 335
+
+-- 15 of 22 --
+
+Page 16 sur 22
+4) Je détermine le chiffre d’affaires pour 15 000 commandes reçues.
+Une commande de 15 000 correspond à x = 15 000.
+L’équation de la droite de Mayer est : y = 0,028x + 78.
+On remplace x par 15 000 dans cette équation, on obtient y = 498.
+Le chiffre d’affaires est d’environ 498 000 000 francs.
+Partie B (Série A1 seulement)
+1) Je calcule la covariance de la série (X ; Y)
+Pour calculer les moyennes, les variances et la covariance, on peut se servir du tableau suivant :
+On a:
+COV(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑗
+𝑛 − X Y
+𝐶𝑂𝑉(𝑋, 𝑌) = 6400 × 250 + 8350 × 320 + 9125 × 335 + 9600 × 350 + 10050 × 370 + 12000 × 400
+6
+= 19207375
+6 - 9254,17 x 337, 5 = 77 947,9
+2) Je calcule le coefficient de corrélation r
+𝑉(𝑋) = ∑ 𝑥𝑖2
+𝑛 − X2
+𝑉(𝑋) = 64002 + 83502 + 91252 + 96002 + 100502 + 12002
+6 − (9254,167)2
+= 531 110 625
+6 − (9254,167)2 = 2 878 824,824
+Donc 𝑉(𝑋) = 2 878 824,824
+𝑉(𝑌) = ∑ 𝑦𝑖2
+𝑛 − Y2
+𝑉(𝑌) = 2502 + 3202 + 3352 + 3502 + 3702 + 4002
+6 − (337,5)2
+𝑉(𝑌) = 696 525
+6 − (337,5)2 = 2 181,254
+Donc
+𝑉(𝑌) = 2 181,254
+𝑟 = COV(X, Y)
+√V(X)√V(Y) = 77 947,9
+√2 878 824,824 × √2181,254 = 0,98
+3) J’interprète le coefficient de corrélation linéaire r
+
+-- 16 of 22 --
+
+Page 17 sur 22
+On remarque que : 0,87≤ 𝑟 < 1, ainsi, on peut conclure qu’il y a une forte corrélation entre le nombre
+de commandes reçues et le chiffre d’affaires réalisé au cours des 6 derniers mois.
+4) Je détermine une équation de la droite d’ajustement linéaire de Yen X par la méthode des
+moindres carrés
+Puisqu’il y a une forte corrélation entre les commandes reçues et le chiffre d’affaires alors,
+(D) a pour équation : 𝑦 = 𝑎𝑥 + 𝑏 avec 𝑎 = Cov(X,Y)
+V(X) et 𝑏 = 𝑌 − 𝑎𝑋.
+𝑎 = 77947,9
+2878824,824 = 0,027 et b = 337,5- 0,027 x 9254, 17 = 87,63
+Soit (D) : y = 0,027x + 87,63
+5) Je détermine une équation de la droite d’ajustement linéaire de X en Y par la méthode des
+moindres carrés
+La droite (D’) a pour équation : 𝑥 = 𝑎′𝑦 + 𝑏′ avec : 𝑎′ = Cov(X,Y)
+V(Y) et 𝑏′ = 𝑋 − 𝑎′𝑌.
+𝑎′ = 77947,9
+2181,254 = 35,735 et b’ = 9254,17-35,735 x 337, 5 = -2806,39
+Soit (D’): x = 35,735y - 2806,39
+6) Je détermine une estimation du chiffre d’affaires pour 15 000 commandes reçues
+Ici, x = 15 000 et en utilisant l’équation de la droite de régression de Y en X, on a :
+y = 0,027
+15000 + 87,63
+y = 492,63
+Pour 15 000 commandes reçues, le site de vente en ligne fera un chiffre d’affaires
+d’environ 492 630 000 francs.
+2. Exercices d’approfondissement
+EXERCICE 1
+Un chef d’entreprise reçoit de la part de ses collaborateurs la demande d’obtenir des véhicules de
+fonction plus confortables et plus puissants. Il sollicite alors son comptable afin que celui-ci examine la
+demande et sa faisabilité.
+Le comptable utilise le tableau ci-dessous, donnant le prix de revient kilométrique (PRK) des véhicules
+d’une puissance fiscale de 4 à 8 CV et en fait une projection sur les véhicules plus puissants.
+Puissance fiscale des
+véhicules (CV) 4 5 6 7 8
+Prix de revient
+kilométrique (PRK) 0,424 0,471 0,492 0,513 0,555
+1) Représente cette série statistique par un nuage.
+2) Calcule les coordonnées du point moyen G.
+3) On admet que la droite d’ajustement de cette série a pour équation :	y 0,03 x 0,311
+a. Justifie que le point G appartient à cette droite.
+b. Trace cette droite dans le repère précédent.
+4) En utilisant la droite d’ajustement, détermine le prix de revient d’une voiture de 10 CV. (Laisser
+apparents les traits nécessaires à la lecture).
+5). Le comptable fixe le prix de revient kilométrique maximum à 0,650 €.
+Calcule la puissance maximale du véhicule qui correspond à cette exigence.
+SOLUTION
+
+-- 17 of 22 --
+
+Page 18 sur 22
+1) Je représente le nuage de cette série statistique.
+2) Je calcule les coordonnées du points moyen G
+On a: X = ∑ 𝑥𝑖
+𝑛 = 4+5+6+7+8
+5 = 6
+Y = ∑ 𝑦𝑖
+𝑛 = 0,424 + 0,471 + 0,492 + 0,513 + 0,555
+5 = 0,491
+Donc G(6; 0,491)
+3.a) Je justifie que le point G appartient à la droite d’ajustement (D) de cette série.
+On a: (D): 𝑦 = 0.03𝑥 + 0.311
+Pour 𝑥 = 6 on a: 𝑦 = 0.03 × 6 + 0.311 = 0.491.
+Donc le point G appartient à la droite (D).
+3.b) Tracé de (D): (Voir nuage de point)
+4) Graphiquement pour 𝒙 = 𝟏𝟎, 𝒐𝒏 𝒕𝒓𝒐𝒖𝒗𝒆 𝒚 = 𝟎, 𝟕𝟏
+Donc le prix de revient kilométrique d’une voiture de 10 CV est 0.71 €.
+5) Je calcule la puissance maximale du véhicule qui a un prix de revient kilométrique de 10 CV.
+On a: (D): 𝑦 = 0.03𝑥 + 0.311.
+Pour 𝑦 = 0.650 𝑜𝑛 𝑎: 𝑥 = 0.650−0.311
+0.03 = 11.3
+Donc la puissance maximale du véhicule qui a un prix de revient kilométrique de 0.650 € est de
+11.3 CV.
+EXERCICE 2 (Série A1 seulement)
+La consommation d'une voiture, z, est donnée en fonction de sa vitesse, x, par le tableau suivant :
+x (en km/h) 80 90 100 110 120
+z (en litres/ 100 km) 4 5 6,5 8 10
+1) Examine la proportionnalité des deux grandeurs variables : consommation et vitesse. Justifie ta
+réponse.
+2) Complète le tableau ci-dessus, après l'avoir reproduit, par une ligne : y = ln z dont on donnera les
+valeurs approchées à 6 décimales (les meilleurs possibles).
+3) Dans un repère d'origine 0 (x0 = 70 ; y0 = 1,30 en prenant comme unités 1 cm pour 10 km/h en
+abscisse et 1 cm pour 0, 10 en ordonnée, représente le nuage de points (x, y).
+(D)
+G
+2 3 4 5 6 7 8 9 10 11	-1
+0,4
+0,6
+0,8
+-0,2
+0 	1
+0,2
+x
+y
+
+-- 18 of 22 --
+
+Page 19 sur 22
+4) Détermine une équation de la droite d'ajustement des points de coordonnées (x, y) du nuage, par la
+méthode des moindres carrés. Donne cette équation sous la forme y = Ax + B, avec les valeurs approchées
+de A et B (les meilleures possibles) à 3 décimales.
+5) Estime y pour une vitesse de 140 km/h.
+Estime la consommation aux 100 km pour cette vitesse de 140 km/h, à 0,5 L près comme dans le
+tableau initialement donné.
+SOLUTION
+1) On a: 80 × 5 = 400 𝑎𝑙𝑜𝑟𝑠 𝑞𝑢𝑒 90 × 4 = 360
+Don ce n’est pas un tableau de proportionnalité.
+2) Je complète le tableau
+3) Je représente le nuage de points
+4) Je détermine une équation de la droite d’ajustement des points de coordonnées (x, y) du
+nuage de points par la méthode des moindres carrés.
+90 100 110 120 130 140 150 160
+1,5
+1,6
+1,7
+1,8
+1,9
+2
+2,1
+2,2
+2,3
+1,2
+1,1
+70 80
+1,3
+1,4
+x
+y
+x (en km/h) 80 90 100 110 120
+z (en litres/ 100 km) 4 5 6,5 8 10
+y = ln(z) 1,386294 1,609438 1,871802 2,079442 2,302585
+
+-- 19 of 22 --
+
+Page 20 sur 22
+⚫ Les coordonnées du points moyen G
+On a: On a: X = ∑ 𝑥𝑖
+𝑛 = 500
+5 = 100
+Y = ∑ 𝑦𝑗
+𝑛 = 9,249561
+5 = 1,8499122
+Donc G(100; 𝟏, 𝟖𝟒𝟗𝟗𝟏𝟐𝟐)
+⚫ La variance de X
+On a: 𝑉(𝑋) = ∑ 𝑥𝑖2
+𝑛 − X2
+𝑉(𝑋) = 802 + 902 + 1002 + 1102 + 1202
+5 − 1002
+V(X) = 51000
+5 − (100)2 = 200
+⚫ La variance de Y
+On a: 𝑉(𝑌) = ∑ 𝑦𝑖2
+𝑛 − Y2
+𝑉(𝑌) = 802 + 902 + 1002 + 1102 + 1202
+5 − (1,8499122)2
+= 17,641743
+5 − (1,8499122)2 = 0,106173
+⚫ La covariance de X et Y
+On a: COV(𝑋, 𝑌) = ∑ 𝑥𝑖𝑦𝑗
+𝑛 − X Y
+𝐶𝑂𝑉(𝑋, 𝑌) = 80×1,386294+90×1,609438+100×1,871802+110×2,079442+120×2,302585
+5 −100 x 1,8499122
+𝐶𝑂𝑉(𝑋, 𝑌) = 947,98196
+5 - 100 ×1,8499122 = 4,605172
+⚫ Le coefficient de corrélation linéaire
+On a: 𝑟 = COV(X,Y)
+√V(X)√V(Y) = 4,605172
+√200×√0,106173 = 0,999364
+Il y a une bonne corrélation entre X et Y.
+Une équation de la droite de régression (D) de Y en X est sous la forme 𝑦 = 𝑎𝑥 + 𝑏
+avec 𝑎 = 𝐶𝑜𝑣(𝑋,𝑌)
+𝑉(𝑋) 𝑒𝑡 𝑏 = 𝑌̅ − 𝑎𝑋̅
+𝑎 = 4,605172
+200 = 0,023 𝑒𝑡 𝑏 = 1,8499122 − 0.023 × 100 = −0,45
+D’où (𝑫): 𝒚 = 𝟎, 𝟎𝟐𝟑𝒙 − 𝟎, 𝟒𝟓
+5) Je donne une estimation de y pour une vitesse de 140 km/h
+Pour 𝒙 = 𝟏𝟒𝟎 𝒐𝒏 𝒂: 𝒚 = 𝟎. 𝟎𝟐𝟑 × 𝟏𝟒𝟎 − 𝟎𝟒𝟓 = 𝟐, 𝟕𝟕.
+* J’estime la consommation aux 100 km pour cette vitesse de 140 km /h à 0,5 L.
+On a: 𝑦 = 𝑙𝑛(𝑧) donc 𝑧 = 𝑒𝑦.
+Donc pour 𝒚 = 𝟐, 𝟕𝟕 on a : 𝒛 = 𝒆𝟐,𝟕𝟕 = 𝟏𝟓, 𝟗𝟓𝟗
+Donc pour une vitesse de 140 km/h la consommation aux 100 km sera d’environ 16 L.
+4. Situation complexe
+
+-- 20 of 22 --
+
+Page 21 sur 22
+Dans le cadre des recherches pour un exposé, des élèves d’une classe de Terminale ont été accrochés
+par les informations suivantes :
+La prévision météorologique est une science en pleine évolution. Elle a pour objectif de prédire un
+ensemble de paramètres comme la pluviométrie, la pression, la température, etc.
+Le tableau suivant donne les pluviométries et températures moyennes de septembre 2018 à août 2019
+d’une ville.
+Sept
+18
+Oct.
+18
+Nov.
+18
+Déc
+18
+Jan
+19
+Fév.
+19
+Mars
+19
+Avril
+19
+Mai
+19
+Juin
+19
+Juillet
+19
+Août
+19
+Pluviométrie
+(en mm) 13 23 49 49 50 64 79 48 40 10 5 6
+Température
+(en °C) 23 17 14 10 10 11 13 15 17 23 27 28
+La température moyenne d’octobre 2019 était de 32 °C.
+Ils décident alors de chercher à savoir si la pluviométrie est liée à la température et dans ce cas, prévoir
+la pluviométrie d’octobre 2019.
+À l’aide des outils mathématiques au programme, justifie que la pluviométrie est liée à la température
+et détermine une estimation de la pluviométrie d’octobre 2019.
+SOLUTION :
+Pour répondre à ces questions, je vais utiliser la méthode des moindres carrés appliquée à la statistique
+à deux variables.
+Soit:
+- X la variable représentant la pluviométrie et prenant les valeurs xi (avec i ∈ {1; 2; 3; . . . ; 12}.
+- Y la variable représentant la Température et prenant les valeurs yi (avec i ∈ {1; 2; 3; . . . ; 12}.
+1) Je dresse le tableau des calculs.
+Sept.
+18
+Oct.
+18
+Nov.
+18
+Déc
+18
+Jan
+19
+Fév.
+19
+Mars
+19
+Avril
+19
+Mai
+19
+Juin
+19
+Juillet
+19
+Août
+19 Totaux
+xi 13 23 49 49 50 64 79 48 40 10 5 6 436
+yi 23 17 14 10 10 11 13 15 17 23 27 28 208
+xiyi 299 391 686 490 500 704 1027 720 680 230 135 168 6030
+xi2 169 529 2401 2401 2500 4096 6241 2304 1600 100 25 36 22402
+yi2 529 289 196 100 100 121 169 225 289 529 729 784 4060
+Cov(X, Y)
+2) Je calcule les coordonnées du point moyen G.
+On a: 𝑋̅ = ∑ 𝑥𝑖
+𝑛 = 436
+12 ≈ 36,333 et 𝑌̅ = ∑ 𝑦𝑖
+𝑛 = 208
+12 ≈ 17,333.
+Donc G(36,333; 17,333).
+3) Je calcule :
+⚫ La variance de X
+On a: 𝑉(𝑋) = ∑ 𝑥𝑖
+2
+𝑛 − 𝑋̅ 2
+𝑉(𝑋) = 132 + 232 + 492 + 492 + 502 + 642 + 792 + 482 + 402 + 102 + 52 + 62
+12 − 36.3332
+𝑉(𝑋) = 22402
+12 − 36.3332 ≈ 546,746 . 𝐷𝑜𝑛𝑐 𝑉(𝑋) = 546,746
+
+-- 21 of 22 --
+
+Page 22 sur 22
+⚫ La variance de Y
+On a: 𝑉(𝑌) = ∑ 𝑦𝑖
+2
+𝑛 − 𝑌̅ 2
+𝑉(𝑌) = 232 + 172 + 142 + 102 + 102 + 112 + 132 + 152 + 172 + 232 + 272 + 282
+12 − 17.3332
+𝑉(𝑌) = 4060
+12 − 17.3332 ≈ 37,9 . Donc 𝑉(𝑌) = 37,9
+⚫ La covariance de X et Y
+On a: Cov(X, Y) = ∑ 𝑥𝑖𝑦𝑖
+𝑛 − 𝑋̅ 𝑌̅ = 6030
+12 − 36,333 × 17,333 ≈ −127,26.
+Donc Cov(X, Y) = −127,26
+4) Je calcule le coefficient de corrélation linéaire r
+On a: 𝑟 = 𝐶𝑜𝑣(𝑋,𝑌)
+√𝑉(𝑋)×𝑉(𝑌) = −127,26
+√546,746×37,9 ≈ −0,884. Donc 𝑟 = −0,884
+Je remarque que: 0,87≤ ǀrǀ < 1.
+Donc il y a une bonne corrélation linéaire entre les variable X et Y.
+Conclusion : La pluviométrie est liée à la température.
+5) Je détermine une estimation de la pluviométrie d’octobre 2019 sachant que la température
+moyenne d’Octobre 2019 était de 32 °C.
+Ici on a 𝑦 = 32. Je doit chercher à déterminer la valeur de 𝑥 en utilisant l’équation de la droite de
+régression de Y en X.
+Soit (D) cette droite.
+L’équation réduite de (D) est sous la forme 𝑦 = 𝑎𝑥 + 𝑏 avec 𝑎 = 𝐶𝑜𝑣(𝑋,𝑌)
+𝑉(𝑋) 𝑒𝑡 𝑏 = 𝑌̅ − 𝑎𝑋̅ .
+On a: 𝑎 = −127,26
+546,746 = −0,233 𝑒𝑡 𝑏 = 17,333 + 0.233 × 36,333 = 25,798
+D’où (𝐷): 𝑦 = −0,233𝑥 + 25,798
+Donc pour 𝑦 = 32, on a: 𝑥 = 𝑦−25,798
+−0.233 = 32−25,798
+−0.233 ≈ −26,62.
+Conclusion : Pour une température moyenne de 32 °C en Octobre 2019, la pluviométrie d’Octobre
+2019 est quasi-nulle.
+
+-- 22 of 22 --
+

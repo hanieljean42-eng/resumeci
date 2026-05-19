@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche - Cinématique du Point</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.7; padding: 40px; max-width: 900px; margin: auto; font-size: 14px; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
+  .header h1 { font-size: 22px; color: #2563eb; margin-bottom: 8px; }
+  .header .meta { display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #64748b; }
+  .header .meta span { background: #f1f5f9; padding: 4px 12px; border-radius: 20px; }
+  h2 { font-size: 17px; color: #1e293b; margin: 28px 0 12px; padding: 10px 16px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; }
+  h3 { font-size: 15px; color: #334155; margin: 18px 0 8px; }
+  p { margin-bottom: 10px; }
+  .definition { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .definition strong { color: #166534; }
+  .formule { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 0 8px 8px 0; margin: 10px 0; font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; color: #92400e; }
+  .important { background: #eff6ff; border-left: 4px solid #2563eb; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th, td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; }
+  th { background: #f8fafc; font-weight: 700; color: #1e293b; }
+  ul, ol { margin: 8px 0 12px 20px; }
+  li { margin-bottom: 5px; }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; font-size: 12px; color: #94a3b8; }
+  .footer strong { color: #2563eb; }
+  @media print { body { padding: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>🏫 Terminale D</span>
+    <span>📖 Physique - Chimie</span>
+    <span>📝 Cinématique du Point</span>
+  </div>
+</div>
+
+<h2>I. Rappels</h2>
+
+<table>
+  <tr><th>Notion</th><th>Définition</th></tr>
+  <tr><td><strong>Référentiel</strong></td><td>Objet par rapport auquel on décrit le mouvement</td></tr>
+  <tr><td><strong>Repère d'espace</strong></td><td>Système d'axes lié au référentiel : R(O, ⃗i, ⃗j, ⃗k)</td></tr>
+  <tr><td><strong>Repère de temps</strong></td><td>Instant-origine t = 0 s choisi arbitrairement</td></tr>
+  <tr><td><strong>Trajectoire</strong></td><td>Ensemble des positions successives du point mobile</td></tr>
+</table>
+
+<h2>II. Vecteur-Position</h2>
+
+<div class="definition">
+  Le <strong>vecteur-position</strong> OM donne la position du point M dans le repère à chaque instant t.
+</div>
+
+<div class="formule">OM = x·⃗i + y·⃗j + z·⃗k &nbsp;(3D)<br>
+OM = x·⃗i + y·⃗j &nbsp;(plan)<br>
+OM = x·⃗i &nbsp;(droite)</div>
+
+<h2>III. Vecteur-Vitesse</h2>
+
+<div class="definition">
+  Le <strong>vecteur-vitesse instantanée</strong> est la dérivée du vecteur-position par rapport au temps.
+</div>
+
+<div class="formule">⃗v = dOM/dt = ẋ·⃗i + ẏ·⃗j + ż·⃗k</div>
+<div class="formule">v = √(ẋ² + ẏ² + ż²) &nbsp;&nbsp;[en m·s⁻¹]</div>
+
+<h3>Dans la base de Frenet</h3>
+<div class="formule">⃗v = v·⃗τ &nbsp;&nbsp;avec v = ds/dt = ṡ</div>
+<p><strong>⃗τ</strong> : vecteur unitaire tangent à la trajectoire ; <strong>⃗n</strong> : vecteur normal orienté vers la concavité.</p>
+
+<h2>IV. Vecteur-Accélération</h2>
+
+<div class="formule">⃗a = d⃗v/dt = ẍ·⃗i + ÿ·⃗j + z̈·⃗k</div>
+<div class="formule">a = √(ẍ² + ÿ² + z̈²) &nbsp;&nbsp;[en m·s⁻²]</div>
+
+<h3>Dans la base de Frenet</h3>
+<div class="formule">⃗a = aτ·⃗τ + aₙ·⃗n</div>
+
+<table>
+  <tr><th>Composante</th><th>Expression</th><th>Rôle</th></tr>
+  <tr><td><strong>aτ</strong> (tangentielle)</td><td>aτ = dv/dt = s̈</td><td>Modifie la valeur de v</td></tr>
+  <tr><td><strong>aₙ</strong> (normale)</td><td>aₙ = v²/ρ</td><td>Modifie la direction de ⃗v</td></tr>
+</table>
+
+<p><strong>ρ</strong> = rayon de courbure (ρ = R si trajectoire circulaire).</p>
+
+<div class="important">
+  <strong>Mouvement accéléré :</strong> ⃗a·⃗v > 0 (aₓ·vₓ > 0)<br>
+  <strong>Mouvement retardé :</strong> ⃗a·⃗v < 0 (aₓ·vₓ < 0)
+</div>
+
+<h2>V. Mouvements Particuliers</h2>
+
+<h3>1. Mouvement Rectiligne Uniforme (MRU)</h3>
+<div class="definition">Trajectoire rectiligne + vitesse constante + accélération nulle.</div>
+
+<div class="formule">a = 0<br>v = v₀ = constante<br>x = v₀·t + x₀</div>
+
+<h3>2. Mouvement Rectiligne Uniformément Varié (MRUV)</h3>
+<div class="definition">Trajectoire rectiligne + accélération constante (≠ 0).</div>
+
+<div class="formule">a = constante<br>v = a·t + v₀<br>x = ½·a·t² + v₀·t + x₀</div>
+
+<div class="formule">Relation sans le temps : v² − v₀² = 2·a·(x − x₀)</div>
+
+<h3>3. Mouvement Circulaire Uniforme (MCU)</h3>
+<div class="definition">Trajectoire circulaire + valeur de la vitesse constante.</div>
+
+<div class="formule">v = R·ω &nbsp;(vitesse linéaire)<br>
+θ = ω·t + θ₀ &nbsp;(abscisse angulaire)<br>
+s = R·θ = v·t + s₀ &nbsp;(abscisse curviligne)</div>
+
+<div class="formule">aτ = 0 &nbsp;(pas d'accélération tangentielle)<br>
+aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
+
+<h2>VI. Tableau Récapitulatif</h2>
+
+<table>
+  <tr><th></th><th>MRU</th><th>MRUV</th><th>MCU</th></tr>
+  <tr><td><strong>Trajectoire</strong></td><td>Droite</td><td>Droite</td><td>Cercle</td></tr>
+  <tr><td><strong>⃗v</strong></td><td>Constant</td><td>|v| varie</td><td>|v| constant, direction varie</td></tr>
+  <tr><td><strong>⃗a</strong></td><td>⃗0</td><td>Constant ≠ ⃗0</td><td>Centripète (aₙ = v²/R)</td></tr>
+</table>
+
+<div class="footer">
+  <strong>powered by Haniel_dev</strong>
+</div>
+
+</body>
+</html>

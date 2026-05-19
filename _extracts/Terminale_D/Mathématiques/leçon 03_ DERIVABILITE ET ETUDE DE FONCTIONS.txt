@@ -1,0 +1,1360 @@
+1
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME : FONCTIONS NUMERIQUES
+Durée : 14 heures Code :
+Leçon 3: DÉRIVABILITÉ ET ÉTUDE DE FONCTIONS
+A. SITUATION D’APPRENTISSAGE
+En visite dans une usine de fabrication et de commercialisation de sachets de poudre de cacao des
+élèves d’une classe de Terminale D reçoivent les informations suivantes :
+« La capacité journalière de production de l’usine est comprise entre 1 000 et 5 000 sachets. Toute
+la production journalière est commercialisée. Une étude a révélé que le bénéfice journalier, exprimé
+en millions de francs CFA, réalisé pour la production et la vente de 𝑥 milliers de sachets est
+modélisé sur l’intervalle [1 ; 5] par la fonction B définie par : B(𝑥) = − 1
+3 𝑥3 + 9𝑥 + 2 ».
+Le Directeur de l’usine veut accroître le bénéfice de l’entreprise. N’ayant pas de personnel qualifié,
+il demande aux élèves le nombre de sachets à produire en un jour, à l’unité près, pour que
+l’entreprise réalise un bénéfice maximal. Dès leur retour en classe, les élèves s’organisent pour
+répondre à la préoccupation du Directeur.
+B. CONTENU DE LA LEÇON
+I – DERIVABILITE
+1 Dérivabilité à gauche-dérivabilité à droite d’une fonction en un point
+a) Propriété et définition
+• Une fonction numérique f définie sur un intervalle ouvert K est dérivable à gauche en un
+nombre réel 𝑥0de K si et seulement si limx→𝑥0
+<
+𝑓(𝑥)−𝑓(𝑥0)
+𝑥−𝑥0
+𝑒𝑥𝑖𝑠𝑡𝑒 𝑒𝑡 𝑒𝑠𝑡𝑓𝑖𝑛𝑖𝑒.
+Dans ce cas, cette limite est appelée nombre dérivé de f à gauche en	0	x	 et se note 𝑓𝑔′(𝑥0).
+SECONDAIRE
+Tle D
+MATHEMATIQUES
+
+-- 1 of 24 --
+
+2
+La demi-droite passant par le point M(𝑥0, 𝑓(𝑥0)) et de coefficient directeur 𝑓𝑔′(𝑥0)est
+appelée demi-tangente à gauche au point M(𝑥0, 𝑓(𝑥0)) .
+• Une fonction numérique f définie sur un intervalle ouvert K est dérivable à droite en un
+nombre réel 𝑥0 de K si et seulement si lim𝑥→𝑥0
+>
+𝑓(𝑥)−𝑓(𝑥0)
+𝑥−𝑥0
+𝑒𝑥𝑖𝑠𝑡𝑒 𝑒𝑡 𝑒𝑠𝑡𝑓𝑖𝑛𝑖𝑒
+Dans ce cas, cette limite est appelée nombre dérivé de f à droite en 𝑥0 et se note𝑓𝑑′(𝑥0).
+La demi-droite passant par le point M(𝑥0, 𝑓(𝑥0)) et de coefficient directeur 𝑓𝑑
+′(𝑥0) est
+appelée demi-tangente à droite au point M(𝑥0, 𝑓(𝑥0)).
+Exercice de fixation
+Soit la fonction 𝑓 définie sur ℝ\{0; 2}
+par :{ ∀𝑥 ∈ ]−∞; 0[ ∪ ]0; 1], 𝑓(𝑥) = 1
+𝑥−2
+∀𝑥 ∈ [1; 2[ ∪ ]2; +∞[, 𝑓(𝑥) = −1
+𝑥
+et (C) sa courbe représentative donnée ci- contre
+dans le plan muni d’un repère orthonormé
+(O, I, J).
+1. Etudie la dérivabilité de 𝑓 à gauche et à droite
+en 1
+2. interprète graphiquement les résultats.
+3. Trace les demi-tangentes à (C) au point
+d’abscisse 1.
+Solution
+1. On a :𝑓(1) = −1.
+lim
+𝑥→1
+<
+f(𝑥)−f(1)
+𝑥−1 = lim
+x→1
+<
+1
+𝑥−2+1
+𝑥−1 = lim
+𝑥→1
+<
+1
+𝑥−2 = −1 ;
+𝑓 est donc dérivable à gauche en 1 car lim
+𝑥→1
+<
+𝑓(𝑥) − 𝑓(1)
+𝑥 − 1 est finie et fg
+′(1) = −1.
+lim
+𝑥→1
+>
+f(𝑥) − f(1)
+𝑥 − 1 = lim
+x→1
+>
+−1
+𝑥 + 1
+𝑥 − 1 = lim
+𝑥→1
+<
+1
+𝑥 = 1
+𝑓 est donc dérivable à droite en 1 car lim
+𝑥→1
+>
+f(𝑥) − f(1)
+𝑥 − 1 est finie et fd
+′ (1) = 1.
+Interprétation graphique :
+(C) admet au point d’abscisse 1 une demi-tangente à gauche de coefficient directeur -1 et une demi-
+tangente à droite de coefficient directeur 1.
+
+-- 2 of 24 --
+
+3
+Rappel : Connaissant 𝑓𝑔
+′(𝑥0), un vecteur
+directeur de la demi-tangente à gauche au point
+d’abscisse 1 est 𝑢	⃗⃗⃗ (-1 ;- 𝑓𝑔
+′(𝑥0)).
+Un vecteur directeur de la demi-tangente à
+gauche en 1 est u⃗ (-1 ; 1) et un vecteur directeur
+de la demi-tangente à droite en 1 est v⃗ (1 ; 1).
+On trace alors ces deux demi-tangentes.
+Voir figure ci – contre.
+b) Propriété
+Soit f une fonction définie sur un intervalle ouvert K et 𝑥0 un nombre réel de K.
+𝑓 est dérivable en 𝑥0 si et seulement si f est dériable à gauche et à droite en 𝑥0 et
+fd
+′ (𝑥0) = fg
+′(𝑥0) .
+Exercice de fixation
+Soit la fonction 𝑓 définie sur ℝ par :{ ∀𝑥 ∈ ]−∞; 0[, 𝑓(𝑥) = 𝑥2
+∀𝑥 ∈ [0; +∞[, 𝑓(𝑥) = 𝑥3
+Justifie que 𝑓 est dérivable en 0.
+Solution
+On a :lim
+𝑥→0
+<
+f(𝑥)−f(0)
+𝑥−0 = lim
+x→0
+𝑥2
+𝑥 = lim
+x→0 𝑥 = 0 ;
+𝑓 est donc dérivable à gauche en 0 et fg
+′(0) = 0.
+On a : lim
+𝑥→0
+>
+f(𝑥)−f(0)
+𝑥−0 = lim
+x→0
+𝑥3
+𝑥 = lim
+x→0 𝑥2 = 0 ;
+𝑓 est donc dérivable à droite en 0 et fd
+′ (0) = 0.
+Comme fg
+′(0) = fd
+′ (0), donc 𝑓 est dérivable en 0 et 𝑓′(0) = 0.
+c) Demi - tangente verticale
+Si 𝑥 ↦ 𝑓(𝑥)−𝑓(𝑥0)
+𝑥−𝑥0
+admet une limite infinie à gauche ou à droite en 𝑥0, alors la courbe
+représentative de 𝑓 dans le plan rapporté à un repère orthogonal admet une demi-tangente
+verticale au point de coordonnées (𝑥0; 𝑓(𝑥0)).
+Exercice de fixation
+Soit la fonction 𝑓 définie sur ℝ+ par : f(x) = √𝑥 − 𝑥.
+On note (C) la représentation graphique de 𝑓 dans le plan muni d’un repère orthonormé (O, I, J).
+Etudie la dérivabilité de 𝑓 en 0 puis interprète graphiquement le résultat obtenu.
+
+-- 3 of 24 --
+
+4
+Solution
+On a : 𝑙𝑖𝑚
+𝑥→0
+>
+𝑓(𝑥)−𝑓(0)
+𝑥−0 = 𝑙𝑖𝑚
+𝑥→0
+>
+√𝑥−𝑥
+𝑥
+𝑙𝑖𝑚
+𝑥→0
+>
+𝑓(𝑥) − 𝑓(0)
+𝑥 − 0 = 𝑙𝑖𝑚
+𝑥→0
+>
+√𝑥
+𝑥 − 1 = 𝑙𝑖𝑚
+𝑥→0
+>
+1
+√𝑥 − 1 = +∞
+Donc f n′est pas dérivable à droite en 0 car lim
+𝑥→0
+>
+𝑓(𝑥)−𝑓(0)
+𝑥−0 est infinie.
+Interprétation graphique :(C) admet en son point d’abscisse 0 une demi-tangente verticale.
+2– Dérivabilité sur un intervalle
+a)Définition
+• Une fonction numérique 𝑓 est dérivable sur un intervalle ouvert K si 𝑓 est dérivable en
+tout nombre réel de K.
+• Une fonction numérique 𝑓 est dérivable sur un intervalle fermé [𝑎 ; 𝑏] si 𝑓 est dérivable
+sur l’intervalle ouvert ]𝑎 ; 𝑏[, dérivable à droite en 𝑎 et dérivable à gauche en 𝑏.
+b) Exemples
+✓ La fonction 𝑥 ↦ √𝑥 est dérivable sur ]0 ; +∞[.
+✓ Toute fonction polynôme est dérivable sur ℝ.
+3 – Dérivabilité d’une fonction composée
+a) Propriété
+Soit K un intervalle ouvert ; 𝑓 et 𝑔 deux fonctions numériques telles que 𝑓𝑜𝑔 est définie sur K ; 𝑥0 ∈ K.
+Si 𝑔 est dérivable en 𝑥0 et 𝑓 dérivable en 𝑔(𝑥0) alors la fonction 𝑓 ∘ 𝑔 est dérivable en 𝑥0 et :
+(𝑓 ∘ 𝑔)′(𝑥0) = 𝑔′(𝑥0) × (𝑓′ ∘ 𝑔)(𝑥0) = g′(𝑥0) × 𝑓′[𝑔(𝑥0)] .
+Exercice de fixation
+Soient les fonctions 𝑓 𝑒𝑡 𝑔 de ℝ vers ℝ définies par :𝑓(𝑥) = 3−𝑥
+𝑥−2 et 𝑔(𝑥) = 𝑥 − 1
+𝑥 + 2.
+Démontre que 𝑓 ∘ 𝑔 est dérivable en 3 et calcule(𝑓 ∘ 𝑔)′(3 ) .
+Solution
+𝑔 est dérivable sur ]−∞ ;0[ et sur ]0 ;+∞[, donc 𝑔 est dérivable en 3.
+𝑓 est dérivable sur ]−∞ ;2[ et sur ]2 ;+∞[.
+𝑔(3) = 14
+3 , comme 𝑔(3) ≠ 2 donc f est dérivable en 𝑔(3).
+On conclut que 𝑓 ∘ 𝑔 est dérivable en 3.
+Pour tout x≠0, 𝑔’(𝑥) = 1 + 1
+x2 . Donc 𝑔’(3) =10
+9 .
+Pour tout 𝑥 ≠2, 𝑓′(𝑥) = −1
+(x−2)2 . Donc 𝑓′(14
+3 ) =− 9
+64 .
+On conclut que : (𝑓 ∘ 𝑔)′(3 ) = 10
+9 × (− 9
+64) = − 5
+32 .
+
+-- 4 of 24 --
+
+5
+b) Conséquences
+𝑢 est une fonction dérivable sur un intervalle K.
+Fonctions Dérivées
+𝑢𝑛 (𝑛 ∈ ℚ∗) 𝑛𝑢′𝑢𝑛−1
+√𝑢 𝑎𝑣𝑒𝑐 𝑢 > 0 sur K 𝑢′
+2√𝑢
+cos (𝑢) −𝑢′sin (𝑢)
+sin (𝑢) 𝑢′cos (𝑢)
+tan(𝑢) 𝑎𝑣𝑒𝑐 𝑐𝑜𝑠(𝑢) ≠ 0 Sur K 𝑢′ × [1 + 𝑡𝑎𝑛2(𝑢)] ou 𝑢′
+𝑐𝑜𝑠2(𝑢)
+Exercices de fixation
+Exercice 1
+Dans chacun des cas suivants, 𝑓 est une fonction dérivable sur ℝ.
+Calcule sa dérivée.
+a) 𝑓(𝑥)=(𝑥2 − 3𝑥 + 1)5 ; b) 𝑓(𝑥) = √𝑥2 + 3𝑥 + 5; c) 𝑓(𝑥) = cos(𝑥2)
+d) 𝑓(𝑥) = sin(sin𝑥); e) 𝑓(𝑥) = 𝑥
+√𝑥2+1 .
+Solution
+a) ∀ 𝑥 ∈ℝ, 𝑓’(𝑥) = 5(2𝑥 − 3)(𝑥2 − 3𝑥 + 1)4.
+b)
+∀ 𝑥 ∈ ℝ ,𝑓′(𝑥) = 2𝑥+3
+2√𝑥2+3𝑥+5 .
+𝑐) ∀ 𝑥 ∈ ℝ , 𝑓’(𝑥) = −2𝑥𝑠𝑖𝑛(𝑥2).
+𝑑) ∀ 𝑥 ∈ ℝ, 𝑓’(𝑥) = 𝑐𝑜𝑠𝑥 × 𝑐𝑜𝑠(𝑠𝑖𝑛𝑥) .
+e) ∀𝑥 ∈ ℝ, 𝑓’(𝑥) =
+√𝑥2+1−𝑥× 2𝑥
+2√𝑥2+1
+𝑥2+1 = 1
+(𝑥2+1)√𝑥2+1 .
+Exercice 2
+Soit la fonction𝑓 définie sur [1
+4 ; +∞[par :𝑓(𝑥) = (4𝑥 − 1)√4𝑥 − 1 .
+1. Etudie la dérivabilité de f en 1
+4 .
+2. On admet que f est dérivable sur ]1
+4 ; +∞[.Calcule 𝑓′(𝑥) pour tout 𝑥 𝑑𝑒 ]1
+4 ; +∞[
+Solution
+𝟏. 𝑙𝑖𝑚
+𝑥→1
+4
+𝑓(𝑥) − 𝑓(1
+4)
+𝑥 − 1
+4
+= 𝑙𝑖𝑚
+𝑥→1
+4
+(4𝑥 − 1)√4𝑥 − 1
+𝑥 − 1
+4
+= 𝑙𝑖𝑚
+𝑥→1
+4
+(4√4𝑥 − 1) = 0
+donc 𝑓 est dérivable en 1
+4 car 𝑙𝑖𝑚
+𝑥→1
+4
+𝑓(𝑥) − 𝑓(1
+4)
+𝑥 − 1
+4
+est finie; 𝑓′ (1
+4) = 0.
+
+-- 5 of 24 --
+
+6
+2.𝑓 est dérivable sur ]1
+4 ; +∞[et ∀ 𝑥 ∈ ]1
+4 ; +∞[, 𝑓’(𝑥) = 6√4x − 1.
+4 – Dérivabilité d’une bijection réciproque
+a) Propriété
+Soit K un intervalle, 𝑓 une fonction numérique dérivable et strictement monotone sur K ,
+𝑥0 ∈ K et y0 = 𝑓(𝑥0).
+Si 𝑓′(𝑥0) ≠ 0 alors la bijection réciproque 𝑓−1 de 𝑓 est dérivable en y0 et
+(𝑓−1)′(y0) = 1
+𝑓′(𝑓−1(y0)) = 1
+𝑓′(𝑥0).
+Point méthode
+Pour calculer le nombre dérivé de 𝑓−1 en 𝑦0, on peut procéder comme suit :
+• On détermine 𝑥0 ∈ 𝐾, tel que 𝑓(𝑥0) = 𝑦0 ;
+• On calcule 𝑓′(𝑥0) et on vérifie que 𝑓′(𝑥0) ≠ 0 ;
+• On conclut alors que 𝑓−1 est dérivable en 𝑦0 ;
+• On calcule enfin (𝑓−1)′(𝑦0) = 1
+𝑓′(𝑥0).
+Exercice de fixation
+Soit la fonction 𝑓 définie sur ℝ par: 𝑓(𝑥) = 𝑥2 − 𝑥.
+1. Démontre que 𝑓 réalise une bijection de ]−∞; 1
+2] sur [− 1
+4 ; +∞[.
+2. Soit 𝑔 la restriction de 𝑓à ]−∞; 1
+2].
+Démontre que 𝑔−1est dérivable en 2 et calcule (𝑔−1)′(2).
+Solution
+1.f est dérivable sur ℝ, et pour tout 𝑥 élément de ℝ ,𝑓’(𝑥) = 2𝑥 − 1.
+𝑓’(𝑥) = 0 ⟺ 𝑥 = 1
+2 et ∀ 𝑥 ∈] − ∞; 1
+2 [ , 𝑓’(𝑥) < 0.
+On a : 𝑙𝑖𝑚
+𝑥→−∞𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→−∞ (𝑥2 − 𝑥) = 𝑙𝑖𝑚
+𝑥→−∞𝑥2 = +∞.
+Ainsi,𝑓 est continue et strictement décroissante sur]−∞; 𝟏
+𝟐]donc𝑓réalise une bijection de]−∞; 𝟏
+𝟐]sur
+𝑓 (]−∞; 1
+2]) = [− 1
+4 ; +∞[.
+2. La résolution de l’équation 𝑥 ∈ ]−∞; 1
+2] , 𝑔(𝑥) = 2 donne : 𝑥 = −1.
+On a: 𝑔(−1) = 2 ; 𝑔’(−1) = −3 ; comme 𝑔’(−1) ≠ 0,donc la bijection réciproque 𝑔−1 de 𝑔 est
+dérivable en 2 et on a : (𝑔−1)’(2) = 1
+𝑔′(−1) = − 1
+3 .
+5 – Dérivées successives
+Définition
+Soit f une fonction définie sur un intervalle K.
+• Si f est dérivable sur K, alors sa fonction dérivée est la dérivée première de f.
+On la note :𝑓′
+ou 𝑑𝑓
+𝑑𝑥 .
+
+-- 6 of 24 --
+
+7
+• Si f’ est dérivable sur K, alors sa fonction dérivée est la dérivée seconde de f.
+On la note :𝑓′′ou 𝑑2 𝑓
+𝑑𝑥2 ou 𝑓(2).
+• De proche en proche, Si 𝑓(n−1) est dérivable sur K, alors sa fonction dérivée est la
+dérivée nième de f ou la dérivée d’ordre n de f.
+On la note :𝑓(𝑛)ou 𝑑𝑛 𝑓
+𝑑𝑥𝑛.
+EXERCICE DE FIXATION
+Détermine les 4 premières dérivées successives de la fonction f définie sur ℝ par : 𝑓(𝑥) = 𝑥3 − 2𝑥2 + 3 .
+SOLUTION
+∀𝑥 ∈ ℝ, 𝑓′(𝑥) = 3𝑥2 − 4𝑥;
+∀𝑥 ∈ ℝ, 𝑓′′(𝑥) = 6𝑥 − 4 ;
+∀𝑥∈ℝ, 𝑓(3)(x)= 6 ;
+∀ 𝑥 ∈ ℝ, 𝑓(4)(𝑥) =0.
+6 – Inégalités des accroissements finis
+Propriété 1
+Soit 𝑎 et 𝑏 deux nombres réels tels que 𝑎 < 𝑏 et 𝑓 une fonction numérique dérivable sur
+[𝑎 ; 𝑏].
+S’il existe deux nombres réels 𝑚 et 𝑀 tels que :∀ 𝑥 ∈ [𝑎; 𝑏], 𝑚 ≤ 𝑓′(𝑥) ≤ 𝑀,
+alors : 𝑚(𝑏 − 𝑎) ≤ 𝑓(𝑏) − 𝑓(𝑎) ≤ 𝑀(𝑏 − 𝑎).
+Exercice de fixation
+Justifie que : 1
+√19 ≤ √19 − √17 ≤ 1
+√17
+Solution
+On pose 𝑓(𝑥) = √𝑥.
+𝑓 est dérivable sur [√17; √19]et ∀ 𝑥 ∈ [√17; √19], 𝑓′(𝑥) = 1
+2√𝑥.
+∀ 𝑥 ∈ [√17; √19], √17 ≤ √𝑥 ≤ √19, donc 1
+2√19 ≤ 𝑓′(𝑥) ≤ 1
+2√17.
+D’après l’inégalité des accroissements finis, on a :
+1
+2√19 (19 − 17) ≤ 𝑓(19) − 𝑓(17)) ≤ 1
+2√17 (19 − 17) ; Donc 1
+√19 ≤ √19 − √17 ≤ 1
+√17.
+Propriété 2
+Soit 𝑓 une fonction numérique dérivable sur un intervalle I.
+S’il existe un nombre réel 𝑀 tel que∀ 𝑥 ∈ 𝐼, |𝑓′(𝑥)| ≤ 𝑀 , alors pour tous nombres réels 𝑎 𝑒𝑡 𝑏
+de I, on a :|𝑓(𝑏) − 𝑓(𝑎)| ≤ 𝑀|𝑏 − 𝑎|.
+Exercice de fixation
+Démontre que, pour tous nombres réels x et y, on a :|cos (𝑥) − cos (𝑦)| ≤ |𝑥 − 𝑦|.
+Solution
+Soit la fonction f définie sur ℝ par : 𝑓(𝑡) = cos (𝑡).
+f est dérivable sur ℝ et ∀ 𝑡 ∈ ℝ, 𝑓′(𝑡) = −sin (𝑡).
+
+-- 7 of 24 --
+
+8
+On a :|𝑓′(𝑡)| ≤ 1 pour tout nombre réel 𝑡.
+Donc d’après l’inégalité des accroissements finis, pour tous nombres réels x et y,
+on a :|𝑓(𝑥) − 𝑓(𝑦)| ≤ 1. |𝑥 − 𝑦|.
+Comme 𝑓(𝑥) = cos (𝑥) 𝑒𝑡 𝑓(𝑦) = cos (𝑦), donc pour tous nombres réels x et y,
+on a : |cos (𝑥) − cos (𝑦)| ≤ |𝑥 − 𝑦|
+II – ETUDE DE FONCTIONS
+Exercice 1
+Soit la fonction 𝑓 définie sur ℝ par :{𝑓(𝑥) = 𝑥2 + 𝑥 𝑠𝑖 𝑥 < 0
+𝑓(𝑥) = √𝑥 − 𝑥 𝑠𝑖 𝑥 ≥ 0
+On note (C) la représentation graphique de 𝑓 dans le plan muni d’un repère orthonormé (O, I, J).
+1. Etudie la continuité de 𝑓 en 0.
+2. Etudie la dérivabilité de 𝑓 en 0 puis interprète graphiquement les résultats obtenus.
+3. a) Calcule les limites de f en −∞ et en +∞.
+b) Justifie que la courbe (C) admet en −∞ une branche parabolique dont on précisera la direction.
+4. On admet que f est dérivable sur ]−∞; 0[ et sur ]0 ; +∞[.
+Etudie les variations de f et dresse son tableau de variation.
+5. Trace (C) et les demi-tangentes obtenues dans la question b).
+Solution
+1. 𝑓(0) = 0
+𝑙𝑖𝑚
+𝑥→0
+<
+𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→0(𝑥2 + 𝑥) = 0
+𝑙𝑖𝑚
+𝑥→0
+>
+𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→0(√𝑥 − 𝑥) = 0
+𝑙𝑖𝑚
+𝑥→0
+<
+𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→0
+>
+𝑓(𝑥) = 𝑓(0) donc 𝑓 est continue en 0.
+2. lim
+𝑥→0
+<
+𝑓(𝑥) − 𝑓(0)
+𝑥 − 0 = lim (
+𝑥→0
+𝑥2 + 𝑥
+𝑥 ) = lim (
+𝑥→0
+𝑥 + 1) = 1
+𝑓 𝑒𝑠𝑡 𝑑𝑜𝑛𝑐 𝑑é𝑟𝑖𝑣𝑎𝑏𝑙𝑒 à 𝑔𝑎𝑢𝑐ℎ𝑒 𝑒𝑛 0 𝑐𝑎𝑟 lim
+𝑥→0
+<
+𝑓(𝑥) − 𝑓(0)
+𝑥 − 0 𝑒𝑠𝑡 𝑓𝑖𝑛𝑖𝑒 𝑒𝑡 𝑓𝑔
+′(0) = 1.
+lim
+𝑥→0
+>
+𝑓(𝑥) − 𝑓(0)
+𝑥 − 0 = lim (
+𝑥→0
+√𝑥 − 𝑥
+𝑥 ) = lim (
+𝑥→0
+√𝑥
+𝑥 − 1) = lim (
+𝑥→0
+1
+√𝑥 − 1) = +∞
+𝑓 𝑛′𝑒𝑠𝑡 𝑝𝑎𝑠 𝑑é𝑟𝑖𝑣𝑎𝑏𝑙𝑒 à 𝑑𝑟𝑜𝑖𝑡𝑒 𝑒𝑛 0 𝑐𝑎𝑟 lim
+𝑥→0
+>
+𝑓(𝑥) − 𝑓(0)
+𝑥 − 0 𝑒𝑠𝑡 𝑖𝑛𝑓𝑖𝑛𝑖𝑒
+Conclusion : 𝑓 n’est pas dérivable en 0.
+Interprétation graphique : (C) admet au point d’abscisse 0 une demi-tangente à gauche de coefficient
+directeur 1 et à droite une demi-tangente verticale.
+3.a) Limites de 𝒇 en −∞ 𝒆𝒕 + ∞
+𝑙𝑖𝑚
+𝑥→−∞ 𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→−∞(𝑥2 + 𝑥) = 𝑙𝑖𝑚
+𝑥→−∞(𝑥2) = +∞
+
+-- 8 of 24 --
+
+9
+𝑙𝑖𝑚
+𝑥→+∞ 𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→+∞(√𝑥 − 𝑥) = 𝑙𝑖𝑚
+𝑥→+∞(√𝑥 (1 − √𝑥)) = −∞ 𝑐𝑎𝑟 {
+𝑙𝑖𝑚
+𝑥→+∞( √𝑥) = +∞
+𝑙𝑖𝑚
+𝑥→+∞(1 − √𝑥) = −∞
+b) On a : 𝑙𝑖𝑚
+𝑥→−∞
+𝑓(𝑥)
+𝑥 = 𝑙𝑖𝑚
+𝑥→−∞
+𝑥2+𝑥
+𝑥 = 𝑙𝑖𝑚
+𝑥→−∞(1 + 𝑥) = − ∞.
+Donc (C) admet en −∞ une branche parabolique de direction celle de (OJ).
+4.𝑓 est dérivable sur ]−∞; 0[ et sur ]0 ; +∞[
+{
+∀𝑥 ∈ ]−∞; 0[, 𝑓′(𝑥) = 2𝑥 + 1
+∀𝑥 ∈ ]0 ; +∞[, 𝑓′(𝑥) = 1
+2√𝑥 − 1 = 1 − 2√𝑥
+2√𝑥
+▪ 𝑥 ∈ ]−∞; 0[, 𝑓′(𝑥) = 0 ⇔ 𝑥 = − 1
+2
+𝑓′(𝑥) > 0 ⇔ 𝑥 ∈ ]− 1
+2 ; 0[et 𝑓′(𝑥) < 0 ⇔ 𝑥 ∈ ]−∞; − 1
+2[. Ainsi, 𝑓 est strictement croissante
+sur[− 1
+2 ; 0] et 𝑓 est strictement décroissante sur]−∞; − 1
+2].
+▪ Pour tout 𝑥 ∈ ]0 ; +∞[ , 2√𝑥 > 0 donc 𝑓′(𝑥) a le signe de 1 − 2√𝑥 .
+𝑓′(𝑥) = 0 ⇔ 1 − 2√𝑥 = 0 ⇔ 𝑥 = 1
+4
+𝑓′(𝑥) > 0 ⇔ 1 − 2√𝑥 > 0 ⇔ 0 < 𝑥 < 1
+4 .
+Ainsi, 𝑓 est strictement croissante sur[0; 1
+4] et 𝑓 est strictement décroissante sur[1
+4 ; +∞[.
+𝑥
+𝑓′(𝑥) − 0 + + 0 −
+𝑓(𝑥)
+−∞ 0 1
+4 +∞
++∞ 1
+4
+0 −∞
+
+-- 9 of 24 --
+
+10
+Exercice 2
+Le plan est rapporté à un repère orthonormé (O, I, J) (l’unité graphique est 2 cm).
+Soit ℎ la fonction définie sur ℝ par : ℎ(𝑥) =𝑥 + √|𝑥2 − 1| .
+On note (C) la courbe représentative deℎ.
+1.Justifie que :{∀ 𝑥 ∈ ]−∞; −1] ∪ [1; +∞[ , ℎ(𝑥) = 𝑥 + √𝑥2 − 1
+∀ 𝑥 ∈ [−1; 1] , ℎ(𝑥) = 𝑥 + √1 − 𝑥2
+2Démontre que (C) admet aux points d’abscisses−1 et 1 des demi-tangentes verticales.
+3. Démontre que la droite (OI) est une asymptote à (C) en −∞.
+4.a) Calcule la limite de ℎ en +∞ .
+b) Démontre que la droite (D) d’équation 𝑦 = 2𝑥 est asymptote à (C) en +∞ .
+c) Justifie que (C) est au-dessous de (D)sur ]√2
+2 ; +∞[.
+5.a) On admet que ℎest dérivable sur les intervalles ]−∞; −1[et]1; +∞[ ; et
+pour |𝑥| > 1 , |𝑥| > √𝑥2 − 1 .
+Etudie les variations de ℎsur les intervalles ]−∞; −1[et]1; +∞[ .
+b) On admet que ℎ est dérivable sur l’intervalle]−1; 1[.
+Justifie que ℎ est croissante sur l’intervalle [−1; √2
+2 ] et décroissante sur l’intervalle [√2
+2 ; 1].
+c) Dresse le tableau de variation de la fonction ℎ sur ℝ
+6. Trace(D) et (C).
+7. Soit 𝑘la restriction de ℎ à]−∞ ; −1].
+a) Justifie que k réalise une bijection de ]−∞ ; −1] sur [-1 ; 0[.
+b) Calcule k (−√2 ).
+c) Soit 𝑘−1 la bijection réciproque de k.
+Démontre que 𝑘−1 est dérivable en 1 − √2 et calcule(𝑘−1)′(1 − √2).
+Solution
+1.
+𝑥 −∞ − 1 1 +∞
+𝑥2 − 1 + − +
+|𝑥2 − 1| 𝑥2 − 1 1 − 𝑥2 𝑥2 − 1
+ℎ(𝑥) 𝑥 + √𝑥2 − 1 𝑥 + √1 − 𝑥2 𝑥 + √𝑥2 − 1
+Donc :{∀ 𝑥 ∈ ]−∞; −1] ∪ [1; +∞[ , ℎ(𝑥) = 𝑥 + √𝑥2 − 1
+∀ 𝑥 ∈ [−1; 1] , ℎ(𝑥) = 𝑥 + √1 − 𝑥2
+
+-- 10 of 24 --
+
+11
+2.Dérivabilité de h à gauche en – 𝟏 :
+𝑙𝑖𝑚
+𝑥→−1
+<
+ℎ(𝑥) − ℎ(−1)
+𝑥 + 1 = 𝑙𝑖𝑚
+𝑥→−1
+<
+𝑥 + √𝑥2 − 1 + 1
+𝑥 + 1 = 𝑙𝑖𝑚
+𝑥→−1
+<
+(1 + √𝑥2 − 1
+𝑥 + 1 )
+On a : 𝑙𝑖𝑚
+𝑥→−1
+<
+(𝑥 − 1) = −2 𝑒𝑡 𝑙𝑖𝑚
+𝑥→−1
+<
+1
+√𝑥2−1 = +∞,donc 𝑙𝑖𝑚
+𝑥→−1
+<
+1 + 𝑥−1
+√𝑥2−1 = −∞.
+D’où : 𝑙𝑖𝑚
+𝑥→−1
+<
+ℎ(𝑥)−ℎ(−1)
+𝑥+1 = −∞ 𝑑𝑜𝑛𝑐 ℎ𝑛′𝑒𝑠𝑡 𝑝𝑎𝑠 𝑑é𝑟𝑖𝑣𝑎𝑏𝑙𝑒 à 𝑔𝑎𝑢𝑐ℎ𝑒 𝑒𝑛 − 1 .
+Par conséquent, (C) admet une demi-tangente verticale au point d’abscisse -1.
+Dérivabilité de 𝒉 à droite en 𝟏
+𝑙𝑖𝑚
+𝑥→1
+>
+ℎ(𝑥) − ℎ(1)
+𝑥 − 1 = 𝑙𝑖𝑚
+𝑥→1
+>
+𝑥 + √𝑥2 − 1 − 1
+𝑥 − 1 = 𝑙𝑖𝑚
+𝑥→1
+>
+(1 + √𝑥2 − 1
+𝑥 − 1 )
+= 𝑙𝑖𝑚
+𝑥→1
+>
+1 + 𝑥 + 1
+√𝑥2 − 1 = +∞
+𝑐𝑎𝑟 𝑙𝑖𝑚
+𝑥→1
+>
+(𝑥 + 1) = 2 𝑒𝑡 𝑙𝑖𝑚
+𝑥→1
+>
+1
+√𝑥2 − 1 = +∞
+𝑙𝑖𝑚
+𝑥→1
+>
+ℎ(𝑥) − ℎ(1)
+𝑥 − 1 = +∞ 𝑑𝑜𝑛𝑐 ℎ𝑛′𝑒𝑠𝑡 𝑝𝑎𝑠 𝑑é𝑟𝑖𝑣𝑎𝑏𝑙𝑒 à 𝑑𝑟𝑜𝑖𝑡𝑒 𝑒𝑛 1
+Par conséquent, (C) admet une demi-tangente verticale au point d’abscisse 1.
+3.
+∀ 𝑥 < −1, ℎ(𝑥) = [𝑥+√𝑥2−1][𝑥−√𝑥2−1]
+𝑥−√𝑥2−1 = 1
+𝑥−√𝑥2−1
+𝑂𝑛 𝑎 : 𝑙𝑖𝑚
+𝑥→−∞ √𝑥2 − 1 = +∞ 𝑐𝑎𝑟 𝑙𝑖𝑚
+𝑥→−∞(𝑥2 − 1) = +∞ 𝑒𝑡 𝑙𝑖𝑚
+𝑥→+∞ √𝑥 = +∞
+𝐶𝑜𝑚𝑚𝑒 𝑙𝑖𝑚
+𝑥→−∞(−√𝑥2 − 1 ) = −∞ 𝑒𝑡 𝑙𝑖𝑚
+𝑥→−∞ 𝑥 = −∞ 𝑑𝑜𝑛𝑐 𝑙𝑖𝑚
+𝑥→−∞ (𝑥 − √𝑥2 − 1 ) = −∞
+𝑃𝑎𝑟 𝑠𝑢𝑖𝑡𝑒 𝑙𝑖𝑚
+𝑥→−∞
+1
+𝑥 − √𝑥2 − 1 = 0 ; 𝐴𝑖𝑛𝑠𝑖, 𝑙𝑖𝑚
+𝑥→−∞ ℎ(𝑥) = 0
+D’où la droite (OI) est asymptote à (C) en − ∞.
+4.a)
+𝑂𝑛𝑎 : 𝑙𝑖𝑚
+𝑥→+∞ √𝑥2 − 1 = +∞ 𝑐𝑎𝑟 𝑙𝑖𝑚
+𝑥→+∞(𝑥2 − 1) = +∞ 𝑒𝑡 𝑙𝑖𝑚
+𝑦→+∞ √𝑦 = +∞
+𝐶𝑜𝑚𝑚𝑒 𝑙𝑖𝑚
+𝑥→+∞ √𝑥2 − 1 = +∞ 𝑒𝑡 𝑙𝑖𝑚
+𝑥→+∞ 𝑥 = +∞ 𝑎𝑙𝑜𝑟𝑠 𝑙𝑖𝑚
+𝑥→+∞ (𝑥 + √𝑥2 − 1 ) = +∞
+𝐴𝑖𝑛𝑠𝑖, 𝑙𝑖𝑚
+𝑥→+∞ ℎ(𝑥) = +∞
+𝑏) 𝐶𝑎𝑙𝑐𝑢𝑙𝑜𝑛𝑠 𝑙𝑖𝑚
+𝑥→+∞[ℎ(𝑥) − 2𝑥]
+∀ 𝑥>1, ℎ(𝑥) − 2𝑥 = √𝑥2 − 1 − 𝑥 = [√𝑥2−1−𝑥][√𝑥2−1 +𝑥]
+𝑥+√𝑥2−1 = −1
+𝑥+√𝑥2−1
+On a : 𝑙𝑖𝑚
+𝑥→+ ∞𝑥 + √𝑥2 − 1= +∞ d’où 𝑙𝑖𝑚
+𝑥→+ ∞
+−1
+𝑥+√𝑥2−1 = 0 .
+𝐴𝑖𝑛𝑠𝑖, 𝑙𝑖𝑚
+𝑥→+ ∞[ℎ(𝑥) − 2𝑥] = 0.
+D’où la droite (D) d’équation y = 2𝑥 est asymptote à (C) en +∞.
+c) Etudions le signe de ℎ(𝑥) − 2𝑥.
+● Pour tout𝑥 ∈ ]√2
+2 ; 1[,on a : ℎ(𝑥) − 2𝑥 = √1 − 𝑥2 − 𝑥.
+
+-- 11 of 24 --
+
+12
+ℎ(𝑥) − 2𝑥 ≤ 0 ⇔ √1 − 𝑥2 ≤ 𝑥 ⇔ {
+1 − 𝑥2 ≥ 0
+𝑥 ≥ 0
+1 − 𝑥2 ≤ 𝑥2
+⇔ {
+−1 ≤ 𝑥 ≤ 1
+𝑥 ≥ 0
+1 − 2𝑥2 ≤ 0
+⇔ {
+−1 ≤ 𝑥 ≤ 1
+𝑥 ≥ 0
+𝑥 ∈ ]−∞ ; − √2
+2 ] ∪ [√2
+2 ; +∞[
+donc, ℎ(𝑥) − 2𝑥 ≤ 0 ⇔ 𝑥 ∈ [√2
+2 ; 1]
+● Pour tout 𝑥 ∈ [1 ; +∞[, on a :
+ℎ(𝑥) − 2𝑥 = √𝑥2 − 1 − 𝑥 = [√𝑥2−1−𝑥][√𝑥2−1 +𝑥]
+𝑥+√𝑥2−1 = −1
+𝑥+√𝑥2−1
+Pour tout 𝑥 ∈ [1 ; +∞[, √𝑥2 − 1 ≥ 0 𝑒𝑡 𝑥 > 0 donc∀x ∈ [1 ; +∞[,√𝑥2 − 1 + 𝑥 > 0.
+Par suite, pour tout𝑥 ∈ [1 ; +∞[, ℎ(𝑥) − 2𝑥 < 0.
+Ainsi :∀𝑥 ∈ ]√2
+2 ; 1[, et ∀𝑥 ∈ [1 ; +∞[, ℎ(𝑥) − 2𝑥 < 0.
+On en déduit que (C) est au-dessous de (D) sur]√2
+2 ; +∞[.
+5. a)∀𝑥 ∈] − ∞ ; −1[∪]1 ; +∞[ , ℎ′(𝑥) = 1 + 2𝑥
+2√𝑥2−1 = 1 + 𝑥
+√𝑥2−1
+∀ x ∈]1 ; +∞[, ℎ’(𝑥) > 0 donc ℎest strictement croissante sur]1 ; +∞[.
+∀ 𝑥 ∈] − ∞ ; −1[, ℎ’(𝑥) = √𝑥2−1+𝑥
+√𝑥2−1 .∀𝑥 ∈] − ∞ ; −1[,√𝑥2 − 1 > 0 donc le signe de ℎ′(𝑥)
+est celui de √𝑥2 − 1 + 𝑥. Or |𝑥| > √𝑥2 − 1 , donc pour 𝑥 ∈] − ∞ ; −1[, −𝑥 > √𝑥2 − 1,
+d’où pour 𝑥 ∈] − ∞ ; −1[,√𝑥2 − 1 + 𝑥 < 0.
+𝐷𝑜𝑛𝑐 ∀𝑥 ∈] − ∞; −1[, ℎ′(𝑥) < 0 et par suite h est strictement décroissante sur ] − ∞ ; −1[.
+On conclut donc que h est strictement décroissante sur ] − ∞ ; −1[ et strictement croissante
+sur ]1 ; +∞[.
+b) ∀𝑥 ∈] − 1 ; 1[ , ℎ′(𝑥) = 1 − 2𝑥
+2√1−𝑥2 = 1 − 𝑥
+√1−𝑥2
+donc ∀x ∈ ]−1; 0], ℎ’(𝑥) > 0.
+∀ x ∈]0 ; 1[, ℎ’(𝑥) = √1−𝑥2−𝑥
+√1−𝑥2
+∀𝑥 ∈]0 ; 1[,√1 − 𝑥2 > 0 donc le signe de ℎ′(𝑥)est celui de √1 − 𝑥2 − 𝑥.
+h’(x)≤ 0 ⇔ √1 − 𝑥2 − 𝑥 ≤ 0 ⇔ √1 − 𝑥2 ≤ 𝑥 ⇔ 𝑥 ∈ [√2
+2 ; 1]. (D’après la question 4.c))
+d’où ∀𝑥 ∈ [0; √2
+2 ] ; ℎ′(𝑥) ≥ 0.
+Donc ℎ est décroissante sur l’intervalle [√2
+2 ; 1] et croissante sur [−1; √2
+2 ].
+c)Tableau des variations de h
+
+-- 12 of 24 --
+
+13
+6.Représentation graphique
+7.a) ℎ est continue et strictement décroissante sur ]−∞ ; −1]. 𝑘 étant la restriction de ℎ à ]−∞ ; −1]
+donc 𝑘 est continue et strictement décroissante sur ]−∞ ; −1].
+D’où 𝑘 réalise une bijection de ]−∞ ; −1] sur 𝑘(]−∞ ; −1]) = [−1; 0[.
+b) 𝑘(−√2 ) = 1 − √2.
+c) 𝑘(−√2 ) = 1 − √2 et k’(−√2 ) = 1 − √2. Comme 𝑘’(−√2 ) ≠ 0 donc 𝑘−1 est dérivable en
+1 − √2 et on a :(𝑘−1)′(1 − √2) = 1
+1−√2 = −1 − √2 .
+Exercice 3
+Le plan est rapporté à un repère orthonormé (O, I, J).
+Soit 𝑓 la fonction définie de ℝ vers ℝ par : 𝑓(𝑥) =tan (𝜋
+2 𝑥).
+On note (C) la courbe représentative de𝑓.
+1. Détermine, 𝐷𝑓, l’ensemble de définition de la fonction 𝑓.
+2. a) Justifie que 𝑓 est périodique de période 2.
+b) Justifie que 𝑓 est impaire.
+c) Démontre que la droite d’équation 𝑥 = 1 est une asymptote à (C).
+ℎ′(𝑥)
+ℎ(𝑥)
+−∞ −1 √2
+2 1 +∞	𝑥
+0	− + − +
+0
+−1
+√2
+1
++∞
+(C)
+(D)
+0 1
+1
+x
+y
+
+-- 13 of 24 --
+
+14
+3. a) Démontre que, ∀ 𝑥 ∈ 𝐷𝑓, 𝑓′(𝑥) = 𝜋
+2 (1 + 𝑡𝑎𝑛2 (𝜋
+2 𝑥)).
+b) Dresse le tableau de variation de 𝑓 sur [0; 1[.
+4. Trace (C) sur [0; 1[ puis sur ]−3; 3[.
+Solution
+1. Détermine 𝐷𝑓
+𝑥 ∈ 𝐷𝑓 ⟺ 𝜋
+2 𝑥 ≠ 𝜋
+2 + 𝑘𝜋, 𝑘 ∈ ℤ ⟺ 𝑥 ≠ 1 + 2𝑘, 𝑘 ∈ ℤ
+Donc𝐷𝑓 = ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ
+2. a) Justifions que 𝑓 est périodique de période 2.
+Pour tout 𝑥 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ on a : 𝑥 ≠ 1 + 2𝑘, 𝑘 ∈ ℤ
+Donc 𝑥 + 2 ≠ 3 + 2𝑘, 𝑘 ∈ ℤ; 𝑥 + 2 ≠ 1 + 2𝑘′, 𝑘′ ∈ ℤ;
+D’où pour tout 𝑥 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ , 𝑥 + 2 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ
+𝑓(𝑥 + 2) = tan (𝜋
+2 (𝑥 + 2)) = tan (𝜋
+2 𝑥 + 𝜋) = tan (𝜋
+2 𝑥)
+𝑓(𝑥 + 2) = 𝑓(𝑥) , donc 𝑓 est périodique de période 2.
+b) Justifions que 𝑓 est impaire.
+Pour tout 𝑥 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ on a : 𝑥 ≠ 1 + 2𝑘, 𝑘 ∈ ℤ
+Donc −𝑥 ≠ −1 − 2𝑘, 𝑘 ∈ ℤ; −𝑥 ≠ 1 − 1 − 1 − 2𝑘, 𝑘 ∈ ℤ
+D’où −𝑥 ≠ 1 + 2(−1 − 𝑘), 𝑘 ∈ ℤ c’est-à-dire −𝑥 ≠ 1 + 2𝑘′, 𝑘′ ∈ ℤ
+D’où pour tout 𝑥 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ , −𝑥 ∈ ℝ ∖ {1 + 2𝑘}, 𝑘 ∈ ℤ
+𝑓(−𝑥) = tan (− 𝜋
+2 𝑥) = −tan (𝜋
+2 𝑥)
+𝑓(−𝑥) = −𝑓(𝑥) , donc 𝑓est impaire.
+c) Démontrons que la droite d’équation 𝑥 = 1 est une asymptote à (C).
+𝑙𝑖𝑚
+𝑥→1
+<
+𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→1
+<
+tan (𝜋
+2 𝑥) = 𝑙𝑖𝑚𝑥→
+< 𝜋
+2
+tan(𝑋) = +∞
+et 𝑙𝑖𝑚
+𝑥→1
+>
+𝑓(𝑥) = 𝑙𝑖𝑚
+𝑥→1
+>
+tan (𝜋
+2 𝑥) = 𝑙𝑖𝑚
+𝑥→𝜋
+2
+>
+tan(𝑋) = − ∞
+Donc la droite d’équation 𝑥 = 1 est une asymptote à (C).
+3. a) Démontrons que, ∀ 𝑥 ∈ 𝐷𝑓, 𝑓′(𝑥) = 𝜋
+2 (1 + 𝑡𝑎𝑛2 (𝜋
+2 𝑥)).
+∀ 𝑥 ∈ 𝐷𝑓, 𝑓′(𝑥) = (𝜋
+2 𝑥)′
+(1 + 𝑡𝑎𝑛2 (𝜋
+2 𝑥)) = 𝜋
+2 (1 + 𝑡𝑎𝑛2 (𝜋
+2 𝑥)).
+b) Dressons le tableau de variation de 𝑓 sur [0; 1[.
+∀ 𝑥 ∈ 𝐷𝑓, 𝑓′(𝑥) > 0 donc 𝑓 est strictement croissante sur [0; 1[.
+
+-- 14 of 24 --
+
+15
+𝑥
+𝑓′(𝑥)
+𝑓(𝑥)
+4. Traçons (C) sur [0; 1[ puis sur ]−3; 3[.
+C. SITUATIONS COMPLEXES
+Situation 1
+En visite dans une usine de fabrication et de commercialisation de sachets de poudre de cacao des
+élèves d’une classe de Terminale scientifique reçoivent les informations suivantes :
+« La capacité journalière de production de l’usine est comprise entre 1 000 et 5 000 sachets. Toute
+la production journalière est commercialisée. Une étude a révélé que le bénéfice journalier, exprimé
+en millions de francs CFA, réalisé pour la production et la vente de 𝑥 milliers de sachets est
+modélisé sur l’intervalle [1 ; 5] par la fonction B définie par : B(𝑥) = − 1
+3 𝑥3 + 9𝑥 + 2 ».
+Le Directeur de l’usine veut accroître le bénéfice de l’entreprise. N’ayant pas de personnel qualifié,
+il te demande le nombre de sachets à produire en un jour, à l’unité près, pour que l’entreprise réalise
+un bénéfice maximal.
+0 1
++
++∞
+0
+
+-- 15 of 24 --
+
+16
+En argumentant, détermine le nombre de sachets de poudre de cacao à produire pour obtenir un
+bénéfice maximal.
+Solution
+Pour répondre à la préoccupation du Directeur de l’usine,
+- J’étudie les variations de la fonction B modélisant le bénéfice journalier de l’usine.
+- Je détermine la dérivée de B
+- J’étudie le signe de la dérivée de B
+- Je détermine le zéro de la dérivée de B sur l’intervalle
+- Je donne le nombre de sachets de poudre de cacao à produire pour obtenir le bénéfice journalier
+maximal de l’usine.
+Le bénéfice journalier, exprimé en millions de francs CFA, réalisé pour la production et la vente
+de 𝑥 milliers de sachets est modélisé sur l’intervalle [1 ; 5] par la fonction B définie par :
+B(𝑥) = − 1
+3 𝑥3 + 9𝑥 + 2 . Etudions les variations de B.
+- Dérivée de B :
+B′(𝑥) = −𝑥2 + 9 = −(𝑥 − 3)(𝑥 + 3)
+- Signe de la dérivée de B
+𝑥 1 3 5
+𝐵′(𝑥)	
+− 0 +
+Pour 𝑥 ∈ [1; 5], 𝑥 + 3 > 0 donc B′(𝑥) a le
+même signe que −(𝑥 − 3). Or
+−(𝑥 − 3) ≥ 0 ⟺ 𝑥 − 3 ≤ 0
+⟺ 𝑥 ≤ 3
+Donc pour 𝑥 ∈ [1; 3] , B′(𝑥) ≥ 0 et
+pour 𝑥 ∈ [3; 5] , B′(𝑥) ≤ 0
+- Les variations de la fonction B.
+B est croissante sur l’intervalle [1; 3] et décroissante sur l’intervalle[3; 5].
+- B atteint son maximum en 3. Ce maximum est B(3) = 20.
+Le nombre de sachets de poudre de cacao à produire pour obtenir le bénéfice journalier maximal
+de l’usine est 3000.
+Le bénéfice journalier dans ce cas est d’environ 20 millions.
+
+-- 16 of 24 --
+
+17
+D. EXERCICES CORRIGES
+Exercice 1
+𝑓 est la fonction continue sur ℝ et définie par : {𝑓(𝑥) = 1 − 𝑥2si 𝑥 ∈ ]−∞; −1[
+𝑓(𝑥) = 2𝑥+2
+𝑥+2 si 𝑥 ∈ [−1; +∞[
+Etudie la dérivabilité de f en –1.
+Solution
+Dérivabilité de 𝑓 à gauche en -1 :
+lim
+𝑥⟶−1
+<
+(𝑓(𝑥)−𝑓(−1)
+𝑥+1 ) = lim
+𝑥⟶−1 (1−𝑥2−0
+𝑥+1 ) = lim
+𝑥⟶−1(1 − 𝑥) = 2 donc 𝑓 est dérivable à gauche en -1 et
+𝑓′
+𝑔(−1) = 2 .
+Dérivabilité de 𝑓 à droite en -1 :
+lim
+𝑥⟶−1
+>
+(𝑓(𝑥)−𝑓(−1)
+𝑥+1 ) = lim
+𝑥⟶−1 (
+2𝑥+2
+𝑥+2 −0
+𝑥+1 ) = lim
+𝑥⟶−1 ( 2
+𝑥+2) = 2 donc 𝑓 est dérivable à droite en -1 et
+𝑓′
+𝑑(−1) = 2 .
+On a 𝑓′
+𝑔(−1) = 𝑓′
+𝑑(−1) par suite 𝑓 est dérivable en -1.
+Exercice 2
+𝑘 est une fonction dérivable sur un intervalle [𝑎; 𝑏] telle que ∀𝑥 ∈ [𝑎; 𝑏] , |𝑘′(𝑥)| < 0,2.
+Justifie que 𝑘(𝑏) ∈ ]𝑘(𝑎) − 0,2(𝑏 − 𝑎); 𝑘(𝑎) + 0,2(𝑏 − 𝑎)[.
+SOLUTION
+𝑘 est une fonction dérivable sur un intervalle [𝑎; 𝑏] telle que ∀𝑥 ∈ [𝑎; 𝑏] , |𝑘′(𝑥)| < 0,2.
+D’après l’inégalité des accroissements finis |𝑘(𝑏) − 𝑘(𝑎)| < 0,2(𝑏 − 𝑎).
+Par suite : −0,2(𝑏 − 𝑎) < 𝑘(𝑏) − 𝑘(𝑎) < 0,2(𝑏 − 𝑎)
+𝑘(𝑎) − 0,2(𝑏 − 𝑎) < 𝑘(𝑏) < 𝑘(𝑎) + 0,2(𝑏 − 𝑎)
+Donc 𝑘(𝑏) ∈ ]𝑘(𝑎) − 0,2(𝑏 − 𝑎); 𝑘(𝑎) + 0,2(𝑏 − 𝑎)[.
+Exercice 3
+Soit 𝑛 un entier naturel.
+Démontre par récurrence que : ∀𝑥 ∈ ℝ , 𝑐𝑜𝑠(𝑛)(𝑥) = cos (𝑥 + 𝑛 𝜋
+2).
+Solution
+Pour 𝑛 = 0 : ∀𝑥 ∈ ℝ , 𝑐𝑜𝑠(0)(𝑥) = cos(𝑥) = cos (𝑥 + 0 × 𝜋
+2).
+Supposons l’égalité à un rang 𝑘; 𝑘 ∈ ℕ.
+Au rang 𝑘 + 1,
+∀𝑥 ∈ ℝ , 𝑐𝑜𝑠(𝑘+1)(𝑥) = (𝑐𝑜𝑠(𝑘))′(𝑥) = 𝑐𝑜𝑠′ (𝑥 + 𝑘 𝜋
+2) = − sin (𝑥 + 𝑘 𝜋
+2) = cos (𝑥 + 𝑘 𝜋
+2 + 𝜋
+2).
+= cos (𝑥 + (𝑘 + 1) 𝜋
+2).
+
+-- 17 of 24 --
+
+18
+Donc ∀𝑥 ∈ ℝ , 𝑐𝑜𝑠(𝑛)(𝑥) = cos (𝑥 + 𝑛 𝜋
+2).
+Exercice 4
+Soit la bijection dérivable 𝑓 : ]−𝜋
+2;𝜋
+2[ → ℝ
+𝑥⟼ tan (𝑥)
+et 𝜑 sa bijection réciproque.
+1. Démontre que 𝜑 est dérivable sur ℝ et ∀𝑥 ∈ ℝ, 𝜑′(𝑥) = 1
+1+𝑥2.
+2. Démontre que ∀𝑥 ∈ ]0; +∞[, 𝜑(𝑥) + 𝜑 (1
+𝑥) = 𝜋
+2.
+3. Détermine 𝜑(𝑥) + 𝜑 (1
+𝑥) pour 𝑥 ∈ ]−∞; 0[.
+Solution
+1. 𝑓 est une bijection dérivable sur ]− 𝜋
+2 ; 𝜋
+2[ et ∀𝑥 ∈ ]− 𝜋
+2 ; 𝜋
+2[ , 𝑓′(𝑥) = 1 + 𝑡𝑎𝑛2(𝑥).
+∀𝑥 ∈ ]− 𝜋
+2 ; 𝜋
+2[ , 𝑓′(𝑥) > 0 donc 𝜑 est dérivable sur ℝ et ∀𝑥 ∈ ℝ, 𝜑′(𝑥) = 1
+𝑓′(𝜑(𝑥)).
+Or ∀𝑥 ∈ ]− 𝜋
+2 ; 𝜋
+2[ , 𝑓′(𝑥) = 1 + 𝑓2(𝑥). Donc ∀𝑥 ∈ ℝ, 𝑓′(𝜑(𝑥)) = 1 + 𝑓2(𝜑(𝑥)) = 1+𝑥2.
+D’où ∀𝑥 ∈ ℝ, 𝜑′(𝑥) = 1
+1+𝑥2.
+2. Posons :
+∀𝑥 ∈ ]0; +∞[, 𝑢(𝑥) = 𝜑(𝑥) + 𝜑 (1
+𝑥)
+Dérivons la fonction 𝑢
+∀𝑥 ∈ ]0; +∞[, 𝑢′(𝑥) = 𝜑′(𝑥) − 1
+𝑥2 𝜑′ (1
+𝑥) = 1
+1+𝑥2 − 1
+𝑥2 × 1
+1+(1
+𝑥)2 = 1
+1+𝑥2 − 1
+1+𝑥2 = 0
+∀𝑥 ∈ ]0; +∞[, 𝑢′(𝑥) = 0 donc la fonction 𝑢 est constante sur ]0; +∞[.
+Par suite ∀𝑥 ∈ ]0; +∞[, 𝑢(𝑥) = 𝑢(1) = 𝜑(1) + 𝜑 (1
+1) = 2 × 𝜑(1) = 2 × 𝜋
+4 = 𝜋
+2
+3. 𝑓 étant impaire, 𝜑 est impaire.
+𝑥 ∈ ]−∞; 0[ ⟺ − 𝑥 ∈ ]0; +∞[ .
+𝜑(𝑥) + 𝜑 (1
+𝑥) = −𝜑(−𝑥) − 𝜑 (− 1
+𝑥) = − (𝜑(−𝑥) + 𝜑 (− 1
+𝑥) ) = − 𝜋
+2 .
+Donc 𝜑(𝑥) + 𝜑 (1
+𝑥) = − 𝜋
+2 . pour 𝑥 ∈ ]−∞; 0[.
+Exercice 5
+𝑓 est la fonction de IR vers IR définie par : 𝑓(𝑥)= √1−𝑥
+1+𝑥. On note (C) sa courbe représentative dans le plan
+muni d’un repère orthonormé (O, I, J). L’unité graphique est 4 cm.
+1. Détermine l’ensemble de définition de 𝑓.
+2. Etudie la dérivabilité de 𝑓 en 1 puis interprète graphiquement le résultat.
+3. Calcule la limite de 𝑓 en -1 puis interprète graphiquement le résultat.
+4. Etudie les variations de 𝑓 et dresse son tableau de variation.
+
+-- 18 of 24 --
+
+19
+5. Trace la courbe (C).
+6. Démontre que 𝑓 réalise une bijection de ]– 1 ; 1] sur[0; +∞[ .
+7. Justifie que la bijection réciproque 𝑓−1 de 𝑓 est dérivable en 1 et calcule(𝑓−1)′(1).
+8. Trace la courbe représentative (C’) de 𝑓−1sur le même graphique que (C).
+Solution
+1.𝐷𝑓 = { 𝑥 ∈ 𝐼𝑅 1 + 𝑥 ≠ 0 𝑒𝑡 1−𝑥
+1+𝑥 ≥ 0 }	⁄ .
+𝑥 - ∞ -1 1
++∞
+1 − 𝑥 + + 0 −
+1+x − 0 + +
+1 − 𝑥
+1 + 𝑥
+− + 0 −
+Donc:𝐷𝑓 = ] − 1; 1].
+2. Dérivabilité de 𝒇 en 1.
+𝑙𝑖𝑚
+𝑥→1
+<
+𝑓(𝑥) − 𝑓(1)
+𝑥 − 1 = 𝑙𝑖𝑚
+𝑥→1
+<
+√1−𝑥
+1+𝑥
+𝑥 − 1 = 𝑙𝑖𝑚
+𝑥→1
+<
+√1−𝑥
+1+𝑥 √1−𝑥
+1+𝑥
+(𝑥 − 1)√1−𝑥
+1+𝑥
+= 𝑙𝑖𝑚
+𝑥→1
+<
+−1
+(𝑥 + 1)√1−𝑥
+1+𝑥
+= −∞
+𝑐𝑎𝑟 𝑙𝑖𝑚
+𝑥→1
+<
+(𝑥 + 1)√1 − 𝑥
+1 + 𝑥 = 0 𝑒𝑡 (𝑥 + 1)√1 − 𝑥
+1 + 𝑥 ≥ 0 𝑝𝑜𝑢𝑟 𝑥 ∈ ]−1 ; 1]
+𝐴𝑖𝑛𝑠𝑖 𝑓 𝑛’𝑒𝑠𝑡 𝑝𝑎𝑠 𝑑é𝑟𝑖𝑣𝑎𝑏𝑙𝑒 𝑒𝑛 1 𝑐𝑎𝑟 𝑙𝑖𝑚
+𝑥→1
+<
+𝑓(𝑥) − 𝑓(1)
+𝑥 − 1 𝑛’𝑒𝑠𝑡 𝑝𝑎𝑠 𝑓𝑖𝑛𝑖𝑒.
+Interprétation graphique
+(C) admet une demi-tangente verticale au point d’abscisse 1.
+3. Limite en -1
+𝑙𝑖𝑚
+𝒙→−𝟏
+>
+1
+1 + 𝑥 = +∞ 𝑒𝑡 𝑙𝑖𝑚
+𝒙→−𝟏
+>
+(1 − 𝑥) = 2 𝑑𝑜𝑛𝑐 𝑙𝑖𝑚
+𝒙→−𝟏
+>
+1 − 𝑥
+1 + 𝑥 = +∞.
+𝑃𝑎𝑟 𝑎𝑖𝑙𝑙𝑒𝑢𝑟𝑠 𝑙𝑖𝑚
+𝑥→+∞ √𝑥 = +∞ , 𝑑𝑜𝑛𝑐 ∶ 𝑙𝑖𝑚
+𝒙→−𝟏
+>
+√1 − 𝑥
+1 + 𝑥 = +∞
+𝐷’𝑜ù 𝑙𝑖𝑚
+𝒙→−𝟏
+>
+𝑓(𝑥) = +∞. 𝐿𝑎 𝑑𝑟𝑜𝑖𝑡𝑒 (𝐷) 𝑑’é𝑞𝑢𝑎𝑡𝑖𝑜𝑛 𝑥 = −1 𝑒𝑠𝑡 𝑎𝑠𝑦𝑚𝑝𝑡𝑜𝑡𝑒 à (𝐶).
+4. 𝑓 est dérivable sur ] − 1; 1[.Pour tout x ∈ ] − 1; 1[, 𝑓’(𝑥) =
+−(𝑥+1)−(1−𝑥)
+(1+𝑥)2
+2√1−𝑥
+1+𝑥
+= −1
+(1+𝑥)2√1−𝑥
+1+𝑥
+∀𝑥 ∈] − 1; 1[,−1 < 0 et (𝑥 + 1)2√1−𝑥
+1+𝑥 > 0. Donc ∀𝑥 ∈] − 1; 1[, 𝑓’(𝑥) < 0. f est donc strictement
+décroissante sur ] − 1; 1[,
+
+-- 19 of 24 --
+
+20
+5. Courbe représentative de 𝒇.
+6.𝑓 est continue et strictement décroissante sur ] − 1; 1] donc f réalise une bijection de ] − 1; 1] sur
+𝑓(] − 1; 1]) = [0; +∞[.
+7. On a : 𝑓(0) = 1 et 𝑓’(0) = −1 ; comme 𝑓’(0) ≠ 0 donc la bijection réciproque 𝑓−1 de 𝑓 est
+dérivable en 1 et on a : (𝑓−1)′(1)= 1
+𝑓′(0) = −1 .
+8. Les courbes représentatives (C’) et (C) sont symétriques par rapport à la droite (∆) d’équation
+𝑦 = 𝑥 (voir figure).
+IV. EXERCICES
+I – EXERCICES DE FIXATION
+(C')
+(C)
+2 	3	-1
+2
+-1
+0 	1
+1
+x
+y
+𝑥 -1 1
+𝑓′(𝑥) -
+𝑓(𝑥)
++∞
+0
+(∆)
+
+-- 20 of 24 --
+
+21
+Exercice 1
+𝑓 est une fonction dérivable sur l’intervalle I. Dans chacun des cas suivants, calcule 𝑓′(𝑥) pour tout x de I.
+a) 𝑓(𝑥) = −3𝑥3 + 4𝑥2 − 7𝑥 + 2, I=IR; b)𝑓(𝑥) = 𝑥4
+4 + 𝑥3
+3 + 𝑥2
+2 − 𝑥 + 1, I = IR;
+c) (𝑥) = 3𝑥 − 2
+𝑥 + 1
+𝑥2 − 7
+𝑥3 ,𝐼 = ]0; +∞[;d) f(𝑥) = 2𝑥2√𝑥 ,𝐼 = ]0; +∞[;
+e) 𝑓(𝑥) = 2𝑥−3
+𝑥+1 ,𝐼 = ]−∞; −1[; f) 𝑓(𝑥) = (𝑥2 − 3𝑥 + 1)5 , I= IR ;
+g) 𝑓(𝑥)= √4𝑥 − 1 , 𝐼 = ]1
+4 ; +∞[; h) 𝑓(𝑥) = 2
+(𝑥−1)2 ,𝐼 = ]1; +∞[;
+i)𝑓(𝑥)= √𝑥2 − 3𝑥 + 5, I=IR; j) 𝑓(𝑥) = 2
+√3𝑥+1 ,𝐼 = ]−1
+3 ; +∞[ ;
+k) 𝑓(𝑥) = 𝑥cos2𝑥 , I= IR; l) 𝑓(𝑥) = 2
+(1−2𝑥)2 , 𝐼 = ]−∞; 1
+2[;
+m) 𝑓(𝑥) = 𝑥
+√𝑥2+1, I=IR; n) 𝑓(𝑥) = 𝑥3(1 – 𝑥)2 , I=IR;
+o) 𝑓(𝑥) = sin𝑥cos3𝑥 , I=IR; p) 𝑓(𝑥) = 𝑥
+2 + 1 − 2
+(𝑥−1)2 ,𝐼 = ]−∞; 1[.
+Exercice 2
+𝑓 est la fonction définie sur ]−∞; −2] ∪ [1; +∞[ par : 𝑓(𝑥) = √𝑥2 + 𝑥 − 2
+Etudie la dérivabilité de f en -2 et en 1.
+Exercice 3
+Démontre que :
+1. ∀𝑥 ∈ [0; 𝜋
+2 [, 𝑡𝑎𝑛𝑥 ≥ 𝑥.
+2. ∀𝑥 ∈]0; +∞[, on a 1
+2√𝑥+1 ≤ √𝑥 + 1 − √𝑥 ≤ 1
+2√𝑥
+Exercice 4
+Soit la fonction f :[−𝜋
+2;𝜋
+2] → [−1;1]
+𝑥⟼𝑠𝑖𝑛𝑥
+1. Démontre que f admet une bijection réciproque 𝜑.
+2. Démontre que : ∀𝑥 ∈] − 1; 1[, 𝜑′(𝑥) = 1
+√1−𝑥².
+II – EXERCICES DE RENFORCEMENT /APPROFONDISSEMENT
+Dans les exercices qui suivent, on note (C) la courbe représentative de f dans le plan muni d’un repère
+orthonormé (O, I, J).
+Exercice 5
+f est la fonction définie sur IR par : f(x) = x|x-3|+2.
+1. Etudie la continuité de f en 3.
+2. Etudie la dérivabilité de f en 3. Interprète graphiquement le résultat.
+3. Etudie les variations de f et dresse son tableau de variation.
+4. Trace (C).
+Exercice 6
+f est la fonction définie sur [0; +∞[par :𝑓(𝑥) = 𝑥2 − 2√𝑥.
+1. Etudie la dérivabilité de 𝑓 en 0 puis interpréter graphiquement le résultat.
+
+-- 21 of 24 --
+
+22
+2. Calcule les limites de 𝑓(𝑥) et 𝑓(𝑥)
+𝑥 lorsque 𝑥 tend vers +∞ puis interprète graphiquement les
+résultats.
+3. Etudie les variations de 𝑓 et dresse son tableau de variation.
+4. Trace (C).
+Exercice 7
+f est la fonction de IR vers IR définie par: 𝑓(𝑥) = 𝑥
+|𝑥|+1
+1. Précise l’ensemble de définition de 𝑓
+2. Etudie la continuité de 𝑓 en 0.
+3. Démontre que (C) admet au point d’abscisse 0 une tangente dont on précisera une équation.
+4. Etudie la parité de f et en donner une conséquence graphique.
+5. Calcule la limite de 𝑓 en +∞. Interpréte graphiquement le résultat.
+6. Etudie les variations de 𝑓 sur [0 ; +∞[ et dresse le tableau de variation de 𝑓.
+7. Trace la courbe (C).
+Exercice 8
+f est la fonction définie sur IR-{-1} par : 𝑓(𝑥) = 𝑥2+|𝑥−2|
+𝑥+1
+1. Etudie la continuité de f en 2.
+2. Etudie la dérivabilité de 𝑓 en 2. Interprète graphiquement les résultats.
+3. Calcule les limites de 𝑓 aux bornes de son ensemble de définition.
+4. Etudie les variations de 𝑓 et dresse son tableau de variation.
+5.
+a) Démontre que les droites (D1) et (D2) d’équations respectives 𝑦 = 𝑥 − 2 et 𝑦 = 𝑥 sont
+asymptotes à (C) respectivement en -∞ et en + ∞ .
+b) Etudie la position de (C) par rapport à (D1) sur ] − ∞; −1[∪] − 1; 2].
+c) Etudie la position de (C) par rapport à (D2) sur [2; +∞[.
+6. Trace (D1), (D2) et (C).
+Exercice 9
+𝑓 est la fonction de IR vers IR définie par : 𝑓(𝑥) =√𝑥2 + 3𝑥 + 2.
+Partie A
+1. Justifie que l’ensemble de définition de f est ] − ∞; −2]U[−1; +∞[.
+2. Etudie la dérivabilité de 𝑓 en −1 et en −2 puis interpréte graphiquement les résultats.
+3. Calcule les limites de 𝑓 en − ∞ et en +∞.
+4. Etudie les variations de 𝑓 et dresse son tableau de variation.
+5. Démontre que les droites (D1) : 𝑦 = −𝑥 − 3
+2 et (D2) : 𝑦 = 𝑥 + 3
+2 sont asymptotes à (C)
+respectivement en −∞ et en + ∞ .
+6. Démontre que la droite (∆) d’équation 𝑥 = − 3
+2 est un axe de symétrie de (C).
+7. Donne une équation de la tangente (T) à (C) au point d’abscisse 0.
+8. Trace (D1), (D2), (T) et (C).
+Partie B
+Soit 𝑔 la restriction de 𝑓 à [-1 ; +∞ [.
+1. Démontre que 𝑔 est une bijection de [-1 ; +∞ [sur [0 ; +∞ [.
+2. Justifie que la bijection réciproque 𝑔−1 de 𝑔 est dérivable en √2 etcalcule (𝑔−1)′(√2).
+
+-- 22 of 24 --
+
+23
+Exercice 10
+f est la fonction sur définie sur IR par : 𝑓(𝑥) = 1 + 𝑥
+√1+𝑥2
+1. Démontre que 𝑓 est une bijection de IR sur un intervalle K que l’on précisera.
+2. Justifie que la bijection réciproque 𝑓−1 de 𝑓 est dérivable en 1 et calculer (𝑓−1)′(1).
+3.
+a) Trace (C).
+b) Trace (C’) la courbe représentative de 𝑓−1.
+Exercice 11
+𝑓 est la fonction définie sur [0 ; 1] par : 𝑓(𝑥) = 𝑥 − 2√𝑥 +1.
+On prendra pour unité graphique10 cm.
+Etudier la dérivabilité de 𝑓 en 0.
+1. Interprète graphiquement le résultat.
+2. Démontre que 𝑓 est une bijection de [0 ;1] sur [0 ; 1]
+3. Démontre que pour tout 𝑥 ∈ [0 ; 1],𝑓 ∘ 𝑓(𝑥) = 𝑥.
+4. Déduis en la bijection réciproque de 𝑓.
+5. Construis (C).
+Exercice 12
+𝑓 est la fonction de IR vers IR définie par : 𝑓(𝑥) = (2 – 𝑥)√4 − 𝑥2 .
+L’unité graphique est 2cm.
+1. Etudie la dérivabilité de 𝑓 en -2 et en 2 puis interprète graphiquement les résultats.
+2. Etudie les variations de 𝑓 et dresse son tableau de variation.
+3. Donne une équation de la tangente (T) à (C) au point d’abscisse 0.
+4. Trace (T) et (C).
+Exercice 13
+𝑓 est la fonction de IR vers IR définie par : 𝑓(𝑥) = √𝑥2 + 1 − 𝑥.
+1. Calcule la limite de 𝑓 en +∞.
+Interprète graphiquement le résultat.
+2. Calcule la limite de 𝑓 en −∞.
+3.
+a) Démontre que la droite (D) d’équation 𝑦 = −2𝑥 est asymptote à (C) en−∞ .
+b) Etudie la position de (C) par rapport à (D).
+4. Etudie les variations de 𝑓 et dresse son tableau de variation.
+5. Trace (D) et (C).
+Exercice 14
+𝑓 est la fonction définie sur ] − ∞; −1] ∪ [1; +∞[ par :
+𝑓(𝑥) = − 𝑥
+2 + √𝑥2 − 1
+𝑥
+Partie A
+𝑔 est la fonction définie sur ]1; +∞[ par ∶ 𝑔(𝑥) = 2 – 𝑥2√𝑥2 − 1
+1. Calcule la limite de 𝑔 en +∞ .
+2. Etudie les variations de 𝑔 et dresse son tableau de variation.
+3.
+a) Démontre que l’équation 𝑥 ∈]1; +∞[, 𝑔(𝑥) = 0 admet une solution unique 𝛼 et que
+1< 𝛼 < 2.
+
+-- 23 of 24 --
+
+24
+b) Donne une valeur approchée de 𝛼 à 10-1 près.
+4. Justifie que : { ∀𝑥 ∈]1 ; 𝛼[, 𝑔(𝑥) > 0
+∀𝑥 ∈]𝛼 ; +∞[, 𝑔(𝑥) < 0
+Partie B
+1. Etudie la parité de 𝑓.
+2.
+a) Calcule la limite de 𝑓 en +∞.
+b) Démontre que la droite (D) d’équation 𝑦 = − 𝑥
+2 +1 est asymptote à (C) en +∞ .
+c) Etudie la position de (C) par rapport à (D) sur ]1; +∞[.
+3. Etudie la dérivabilité de 𝑓 en 1 puis interprète graphiquement le résultat.
+4.
+a) Démontre que : ∀ 𝑥 ∈]1 ; +∞[,𝑓′(𝑥) = 𝑔(𝑥)
+2𝑥2√𝑥2−1
+b) Dresse le tableau de variation de f.
+5. Démontre que : 𝑓(𝛼) = − 𝛼
+2 + 2
+𝛼3 .
+
+-- 24 of 24 --
+

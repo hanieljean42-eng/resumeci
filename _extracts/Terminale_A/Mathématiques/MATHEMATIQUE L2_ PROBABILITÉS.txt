@@ -1,0 +1,587 @@
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+THEME : MODELISATION D’UN PHENOMENE ALEATOIRE
+DUREE :24 heures CODE :
+LEÇON 2 : PROBABILITÉS
+A- SITUATION D’APPRENTISSAGE
+Pour l’organisation de la kermesse de leur Lycée, les élèves d’une classe de terminale désirent
+proposer le jeu suivant à un stand :
+« Une urne contient trois boules rouges numérotées 100, 200 et 300 et deux boules blanches
+numérotées 2 et 5, toutes indiscernables au toucher.
+Les règles du jeu sont les suivantes :
+Le joueur mise x francs CFA et tire successivement avec remise deux boules de l’urne. Si les
+deux boules tirées sont de même couleur, la partie est perdue. Sinon, le joueur remporte le
+montant en francs CFA égal au nombre obtenu par le produit des numéros apparus sur les boules
+tirées »
+Pour ne pas être perdants, ces élèves souhaitent déterminer la mise minimale du joueur pour que
+le jeu leur soit avantageux.
+Ensemble, ils s’organisent pour déterminer la mise nécessaire.
+B - CONTENU DE LA LEÇON
+I. EXPÉRIENCES ALEATOIRES
+1 Expériences aléatoires, éventualité ,univers
+a) Expérience aléatoire ( Présentation )
+On lance un dé non truqué à six faces numérotées de 1 à 6 et on note le nombre figurant sur la
+face supérieure du dé.
+Les résultats possibles sont finis et connus (1 ou 2 ou 3 ou 4 ou 5 ou 6 ).
+On ne peut pas prévoir d’avance le résultat ( 1 , 2 , 3 , 4, 5 , 6 ).
+• On dit qu’il s’agit d’une expérience aléatoire, c'est à dire une expérience dont l’issue ne peut
+être connue d’avance.
+Chaque résultat possible est appelé éventualité.
+SECONDAIRE
+Tle A
+MATHEMATIQUES
+
+-- 1 of 13 --
+
+• L’ensemble de toutes les éventualités d’une expérience aléatoire est appelé univers. En général,
+on le note  .
+Exemple :
+Lorsqu’on lance un dé a six faces non truqué numéroté de 1à 6
+6 est une éventualité
+ = { 1 ; 2 ; 3 ; 4 ; 5 ; 6 } est l’univers
+Exercice de fixation
+On lance deux fois de suite une pièce de monnaie
+Ecris en extension l’univers  des éventualités
+Solution
+ = { ( P, P ) ; ( P, F ) ; ( F, P ) ; ( F, F ) }
+b) Evénement
+On appelle événement tout sous ensemble de l’univers.
+Remarque
+Une éventualité  appartient à l’univers  ( on note    ) . Un événement A est inclus dans
+l’univers  ( on note A   )
+Exemple :
+Lorsqu’on lance un dé non truqué à six faces numéroté de 1 à 6
+On peut considérer l’événement A : « obtenir un nombre pair » .
+On a : A = { 2 ; 4 ; 6 }
+Remarque :un événement A est réalisé si l’issue de l’expérience appartient à A.
+Exercice de fixation
+On lance deux fois de suite une pièce de monnaie.
+Ecris en extension l’événement B « obtenir face au premier lancer »
+Solution
+B = { (F,P) ; (F,F) }
+2 VOCABULAIRE DES PROBABILITES
+Le tableau ci-dessous résume les définitions et notations importantes relatives à la notion
+d’événement.
+
+-- 2 of 13 --
+
+A, B et C représentent des événements d’un univers  lié à une expérience aléatoire.
+Notation Vocabulaire ensembliste Vocabulaire probabiliste Exemples
+ Ensemble de référence Univers
+On considère
+l’expérience aléatoire
+qui consiste à lancer un
+dé cubique de faces
+numérotées de 1 à 6 et
+à noter le numéro de la
+face supérieure.
+L’univers  est
+{1 ;2 ;3 ;4 ;5 ;6}.
+{} ou  Ensemble vide Événement impossible
+L’événement C :
+« obtenir un multiple de
+3 inférieur ou égal à 2 »
+est impossible. C=
+𝜔 𝜖  𝜔 appartient à 
+𝜔 est une éventualité, un
+résultat ou une issue de
+l’expérience aléatoire
+3 est un résultat dans un
+lancer de dé
+𝐴 ⊂ 
+A est un sous ensemble
+de  A est un évènement « obtenir un multiple de
+3 » est un évènement.
+𝜔 𝜖 A 𝜔 appartient à A
+𝜔 réalise A ou que A est
+réalisé lorsque le résultat
+𝜔 appartient à A
+Soit A l’événement :
+« obtenir un nombre
+pair» ;
+2 réalise A.
+𝐴 ⊂ 𝐵 A est inclus dans B
+A implique B, c’est que la
+réalisation de A entraine
+celle de B
+Soit A l’événement :
+« obtenir un nombre
+pair» et B : « obtenir un
+multiple de 6 »
+B implique A
+A  B Intersection de A et B
+Evènement « A et B »
+Il ne se réalise que si A et
+B se réalisent à la fois.
+Soit A : « obtenir un
+nombre pair » et B :
+« obtenir un multiple de
+3 ». A  B ne se réalise
+que lorsqu’on obtient à
+la fois un nombre pair et
+
+-- 3 of 13 --
+
+un multiple de 3, c’est-
+à-dire 6. A  B = {6}
+A∪B Réunion de A et B
+Evènement « A ou B »
+Il ne se réalise que si l’un
+au moins des évènements
+A et B se réalise
+Soit A : « obtenir un
+nombre pair » et B :
+« obtenir un multiple de
+3 ». A∪B se réalise que
+lorsqu’on obtient un
+nombre pair ou un
+multiple de 3, c’est-à-
+dire 6.
+A∪B ={2 ; 3 ; 4 ; 6}
+A  B =  A et B sont disjoints A et B sont incompatibles
+Soit A : « obtenir un
+nombre pair » et B :
+« obtenir un nombre
+impair».
+𝑨	̅	 Complémentaire de A.
+Evènement contraire de
+A ;
+A se réalise si et
+seulement 𝑨	̅	 ne se réalise
+pas.
+A : « obtenir un nombre
+pair »
+L’évènement contraire
+de A est :« obtenir un
+nombre impair » ;
+Exercice de fixation
+Réponds par vrai ou faux aux affirmations suivantes
+1 ) Deux événements contraires sont incompatibles
+2) Un événement qui ne se réalise jamais est appelé événement certain
+3 ) Deux événements incompatibles sont contraires
+4) le nombre d’éléments d’un ensemble fini est appelé cardinal
+Solution
+1 ) Vrai ; 2 ) Faux ; 3 ) Faux ; 4) Vrai
+
+-- 4 of 13 --
+
+II. PROBABILITE SUR UN ENSEMBLE FINI
+1 Définition
+On note  = { 1 , 2 … n } l’ensemble des éventualités d’une expérience aléatoire.
+Définir une probabilité sur , c’est associer à chaque résultat i un nombre 𝑃𝑖 ( appelé
+probabilité de l’issue i ) positif ou nul de telle façon que :
+▪ 𝑃1 + 𝑃2 + ⋯ . + 𝑃𝑛 = 1
+▪ La probabilité P d’un événement A, notée P ( A ), est la somme des probabilités 𝑃𝑖 des
+éventualités qui constituent A.
+Remarque :
+La probabilité P(A) d’un évènement A est telle que : 0  P(A)  1 .
+Exercice de fixation
+On lance un dé pipé tel que 𝑃(1) = 𝑃(3) = 𝑃(4) = 1
+8 et 𝑃(2) = 𝑃(6) = 1
+4
+Calcule 𝑃(5)
+Solution
+On a 𝑃(1) + 𝑃(2) + 𝑃(3) + 𝑃(4) + 𝑃(5) + 𝑃(6) = 1
+D’où 3𝑃(1) + 2𝑃(2) + 𝑃(5) = 1 donc 𝑃(5) = 1 − 3 × 1
+8 − 2 × 1
+4 par suite 𝑃(5) = 1
+8
+2- Propriétés
+Soit A et B deux événements de , alors :
+▪ La probabilité de l’événement certain est 1 ; P (  ) = 1
+▪ La probabilité de l’événement impossible est 0 ; P (  ) = 0
+▪ Si A  B , alors P ( A )  P ( B )
+▪ P ( A  B ) = P ( A ) + P ( B ) – P ( A  B )
+▪ Si A et B sont incompatibles , P ( A  B ) = P ( A ) + P ( B )
+▪ P ( A	̅	 ) = 1 – P ( A )
+Exercice de fixation
+Soit Ω l’univers d’une expérience aléatoire et deux événements 𝐴 et 𝐵 tels que
+𝑃(𝐴) = 0,3 ; 𝑃(𝐵) = 0,5 et 𝑃(𝐴 ∩ 𝐵) = 0,1
+1 ) Calcule 𝑃(𝐴 ∪ 𝐵)
+2 ) Calcule 𝑃( 𝐴̅ ) ; 𝑃( 𝐵̅ ) et 𝑃 ( 𝐴 ∪ 𝐵	̅̅̅̅̅̅̅ )
+
+-- 5 of 13 --
+
+Solution
+1 ) 𝑃(𝐴 ∪ 𝐵) = 𝑃(𝐴) + 𝑃(𝐵) − 𝑃( 𝐴 ∩ 𝐵) = 0,3 + 0,5 − 0,1 = 0,7
+2 ) 𝑃( 𝐴̅ ) = 1 − 𝑃(𝐴) = 1 − 0,3 = 0,7 ; 𝑃( 𝐵̅ ) = 1 − 𝑃(𝐵) = 1 − 0,5 = 0,5
+et 𝑃 ( 𝐴 ∪ 𝐵	̅̅̅̅̅̅̅ ) = 1 − 𝑃(𝐴 ∪ 𝐵 ) = 1 − 0,7 = 0,3
+3- Equiprobabilité
+Propriété
+Lorsque tous les événements élémentaires d’un univers ont la même probabilité, on dit qu’il y a
+équiprobabilité.
+Dans ce cas, si l’univers  est composé de n éventualités wi , on a :
+𝑃𝑖 = P ( { wi } ) =)	Ω	(	card
+1 = 1
+𝑛
+On a alors, pour tout événement A : P ( A ) = 𝑐𝑎𝑟𝑑(𝐴)
+𝑐𝑎𝑟𝑑(
+ )
+= 𝑛𝑜𝑚𝑏𝑟𝑒 𝑑𝑒 𝑐𝑎𝑠 𝑓𝑎𝑣𝑜𝑟𝑎𝑏𝑙𝑒𝑠
+𝑛𝑜𝑚𝑏𝑟𝑒 𝑑𝑒 𝑐𝑎𝑠 𝑝𝑜𝑠𝑠𝑖𝑏𝑙𝑒𝑠
+Remarque :
+Les expressions suivantes « dé parfait ou équilibré » ; « boule tirée de l’urne au hasard » ;
+« boules indiscernables au toucher » … indiquent que pour les expériences réalisées, le modèle
+associé est l’équiprobabilité.
+Exercice de fixation
+On place dans un sac 5 pièces de 500 𝐹 , 10 pièces de 250 F et 15 pièces de 25 F.
+Les pièces sont indiscernables au toucher.
+On tire simultanément 𝟒 pièces du sac.
+1 ) Calcule la probabilité de l’événement 𝐶 ∶≪ n’avoir choisi aucune pièce de 25 F ≫
+2 ) Calcule la probabilité 𝑙′é𝑣é𝑛𝑒𝑚𝑒𝑛𝑡 𝐷 ∶≪ d’avoir obtenu uniquement des pièces de 250 F ≫
+3 ) Calcule la probabilité 𝑙′é𝑣é𝑛𝑒𝑚𝑒𝑛𝑡 𝐸 ∶≪ d’avoir obtenu au moins une pièce de 500 𝐹 ≫
+4 ) Calcule la probabilité 𝑙′é𝑣é𝑛𝑒𝑚𝑒𝑛𝑡 𝐹 ∶≪ d’avoir obtenu au moins une pièce de chaque
+valeur ≫
+Corrigé
+𝐶𝑎𝑟𝑑( Ω) = 𝐶30
+4 = 27 405
+1 ) 𝑃( 𝐶 ) = 𝐶15
+4
+𝐶30
+4 = 1365
+27405 = 13
+261 ; 2 ) 𝑃( 𝐷 ) = 𝐶10
+4
+𝐶30
+4 = 210
+27405 = 2
+261
+3 ) 𝑃( 𝐸 ) = 1 − 𝑃( 𝐸̅ ) = 1 − 𝐶25
+4
+𝐶30
+4 = 1 − 12650
+27405 = 14755
+27405 = 2951
+5481
+4 ) 𝑃( 𝐹 ) = 𝐶5
+2×𝐶10
+1 ×𝐶15
+1 + 𝐶10
+2 ×𝐶5
+1×𝐶15
+1 + 𝐶15
+2 ×𝐶5
+1×𝐶10
+1
+𝐶30
+4 = 10 125
+27405 = 75
+203
+
+-- 6 of 13 --
+
+Série A1 seulement
+III. VARIABLES ALEATOIRES
+1 Définition
+Soit  l’ensemble des résultats d’une expérience aléatoire.
+▪ On appelle variable aléatoire toute fonction X de  dans IR qui, à tout élément de , fait
+correspondre un nombre réel x.
+▪ L’événement de , noté { X = x }, est l’ensemble des éléments de  qui ont pour image x par
+X.
+▪ L’ensemble des valeurs prises par X est l’ensemble de toutes les images des éléments de 
+par X . Cet ensemble est noté ’.
+Exemple :
+Avec l’exemple de départ, on peut définir une variable aléatoire X de la façon suivante :
+▪ X = 0 si le nombre est pair
+▪ X = 1 si le nombre est impair
+L’ensemble des valeurs prises
+par X est ’ = { 0 ; 1 }
+2 - Loi de probabilité d’une variable aléatoire
+( on dit aussi loi image de la variable aléatoire )
+Définition
+Soit  = { 1 , 2 … n } un ensemble sur lequel a été définie une loi de probabilité.
+’ = { x1 , x2 … ,xm } est l’ensemble des valeurs prises par une variable aléatoire X.
+La loi de probabilité de X est la fonction définie sur ’, qui à chaque xi fait correspondre le
+nombre pi = P ( X = xi )
+Remarque
+On a : 𝑝1 + 𝑝2 + 𝑝3 + 𝑝4 + ⋯ + 𝑝𝑛 = 1
+Exemple :
+La loi de probabilité de la variable aléatoire définie ci-dessus est :
+
+-- 7 of 13 --
+
+xi 0 1
+pi = P ( X = xi ) 1
+2
+1
+2
+3 Espérance, variance, écart type d’une loi de probabilité
+Soit X une variable aléatoire dont la loi est donnée ci-dessous :
+xi 𝑤1 𝑤1 … 𝑤𝑛
+𝑝𝑖 𝑝1 𝑝2 … 𝑝𝑛
+▪ L’espérance mathématique de la loi de probabilité est le nombre noté 𝐸(𝑋)défini par :
+𝐸(𝑋) = 𝑝1𝑤1 + 𝑝2𝑤2 + ⋯ + 𝑝𝑛𝑤𝑛
+▪ La variance de la loi de probabilité est le nombre V(𝑋) défini par :
+𝑉(𝑋) = 𝑝1𝑤12 + 𝑝2𝑤22 + ⋯ + 𝑝𝑛𝑤𝑛2 − ( 𝐸(𝑋) )2
+▪ L’écart type de la loi de probabilité est le nombre noté  défini par : 𝜎 = √ 𝑉(𝑋)
+Remarque
+𝐸(𝑋) est la moyenne des valeurs prises par X sur un grand nombre de parties.
+Lorsque X représente un gain algébrique d’un joueur
+- Si 𝐸(𝑋) = 0 , alors le jeu est équitable.
+- Si 𝐸(𝑋) > 0 , alors le jeu est favorable au joueur
+- Si 𝐸(𝑋) < 0 , alors le jeu est défavorable au joueur.
+Exercice de fixation
+Une urne contient 5 boules : 2 noires et 3 rouges.
+On tire simultanément 2 boules de l’urne.
+Soit X la variable aléatoire égale au nombre de boules noires tirées
+1 ) Justifie que Ω′ = { 0 ; 1 ; 2 }
+2 ) Détermine la loi de probabilité de X.
+3 ) a) Calcule l’espérance mathématique
+b) calcule la variance et l’écart type
+Solution
+
+-- 8 of 13 --
+
+1 ) On ne tire aucune boule noire 𝑋 = 0
+On tire une boule noire 𝑋 = 1
+On tire deux boules noires 𝑋 = 2
+Donc Ω′ = {0 ; 1 ; 2 }
+2 ) 𝑐𝑎𝑟𝑑 ( Ω) = 𝐶5
+2 = 10
+𝑃(𝑋 = 0) = 𝐶3
+2
+𝐶5
+2 = 3
+10 ; 𝑃(𝑋 = 1) = 𝐶2
+1×𝐶3
+1
+𝐶5
+2 = 6
+10 = 3
+5 ; 𝑃(𝑋 = 2) = 𝐶2
+2
+𝐶5
+2 = 1
+10
+Ainsi la loi de probabilité de X est :
+𝑥𝑖 0 1 2 total
+𝑃(𝑋 = 𝑥𝑖) 3
+10
+6
+10
+1
+10
+1
+3 ) a ) L’espérance mathématique
+On a 𝐸(𝑋) = 𝑝1𝑤1 + 𝑝2𝑤2 + ⋯ + 𝑝𝑛𝑤𝑛
+𝐸( 𝑋 ) = ( 0 × 3
+10 ) + ( 1 × 6
+10 ) + ( 2 × 1
+10 ) = 8
+10 = 4
+5
+b ) La variance
+𝑉(𝑋) = 𝑝1𝑤12 + 𝑝2𝑤22 + ⋯ + 𝑝𝑛𝑤𝑛2 − ( 𝐸(𝑋) )2
+𝑉(𝑋) = ( 02 × 3
+10 ) + ( 12 × 6
+10 ) + ( 22 × 1
+10 ) − ( 8
+10 )2
+= 100
+100 − 64
+100 = 36
+100 = 9
+25
+L’écart type 𝜎 = √ 𝑉(𝑋)
+donc 𝜎 = √ 9
+25 = 3
+5
+C – SITUATION COMPLEXE
+Pour l’organisation d’une kermesse dans le quartier, le président désire proposer le jeu suivant à
+un stand :
+« Une urne contient trois boules jaunes, deux boules bleues, une boule rouge et quatre boules
+vertes, toutes indiscernables au toucher. On tire au hasard, une boule de l’urne.
+Les règles du jeu sont les suivantes :
+Si la boule tirée est :
+• rouge, le joueur gagne 100f.
+• verte, le joueur gagne 20f.
+• jaune, le joueur gagne 30f.
+• bleue, le joueur gagne mf où m est un réel strictement positif.
+
+-- 9 of 13 --
+
+Pour participer et gagner au jeu Mariam souhaite déterminer la valeur minimale de m pour être
+sûr de gagner en moyenne au moins 45 F. Elle te sollicite pour l’y aider.
+À l’aide d’une production argumentée, détermine la valeur minimale de m pour être sûr de
+gagner en moyenne au moins 45 F.
+Solution
+Soit X la variable aléatoire correspondant au gain dans ce jeu
+La loi de probabilité de X est donnée par le tableau suivant
+𝑥𝑖 20 30 m 100
+𝑃(𝑋 = 𝑥𝑖) 4
+10
+3
+10
+2
+10
+1
+10
+Elle souhaite avoir 𝐸(𝑋) ≥ 45
+On a 𝐸(𝑋) = 4
+10 × 20 + 3
+10 × 30 + 2
+10 × 𝑚 + 1
+10 × 100 = 270 + 2𝑚
+10
+𝐸(𝑋) ≥ 45 ⇔ 270 + 2𝑚
+10 ≥ 45
+⇔ 2𝑚 ≥ 180
+⇔ 𝑚 ≥ 90
+La valeur minimale de m est donc 90 F
+D- EXERCICES
+1. Exercices d’application
+Exercice 1
+On lance un de pipe tel que 𝑃(1) = 𝑃(2) = 𝑃(3) = 𝑃(4) = 𝑃(5)et 𝑃(6) = 3𝑃(1)
+Calcule la probabilité d’apparition de chaque face
+SOLUTION
+On a 𝑃(1) + 𝑃(2) + 𝑃(3) + 𝑃(4) + 𝑃(5) + 𝑃(6) = 1
+D’où 5𝑃(1) + 3𝑃(1) = 1 donc 𝑃(1) = 1
+8
+
+-- 10 of 13 --
+
+par suite 𝑃(1) = 𝑃(2) = 𝑃(3) = 𝑃(4) = 𝑃(5) = 1
+8 et 𝑃(6) = 3
+8
+Exercice 2
+Soit X une variable aléatoire dont la loi est donnée ci-dessous
+𝑥𝑖 -15 0 15 30
+𝑃(𝑋 = 𝑥𝑖) 1
+8
+3
+8
+3
+8
+1
+8
+1) Calcule l’espérance mathématique.
+2) Calcule la variance et l’écart type.
+Solution
+1) 𝐸(𝑋) = −15 × 1
+8 + 0 × 3
+8 + 15 × 3
+8 + 30 × 1
+8 = 60
+8 = 15
+2 .
+2) 𝑉(𝑋) = (−15)2 × 1
+8 + 0 × 3
+8 + (15)2 × 3
+8 + (30)2 × 1
+8 − (15
+2 )2
+= 1800
+8 − 225
+4 = 1350
+8
+𝜎 = √𝑉(𝑋) = √1350
+8
+Exercices de renforcement
+Exercice 3
+Lors d’une kermesse scolaire, un jeu consiste à tirer simultanément et au hasard trois boules de
+l’urne contenant 5 boules noires et 15 boules rouges. On suppose que toutes les boules ont la
+même probabilité d’être tirées. Yasmine participe à ce jeu.
+1. Justifie que Yasmine peut effectuer 1140 tirages possibles.
+2. On considère les évènements A , B , C et D suivants et on note 𝑃(𝐴) , 𝑃(𝐵) , 𝑃(𝐶)
+et 𝑃(𝐷) leurs probabilités respectives.
+A : « Yasmine tire exactement une boule noire »
+B : « Yasmine tire exactement deux boules noires »
+C : « Yasmine tire exactement trois boules noires »
+D : « Yasmine tire au moins une boule noire »
+a ) Calcule 𝑃(𝐴 ) , 𝑃(𝐵) et 𝑃(𝐶).
+b ) Justifie que 𝑃(𝐷) = 137
+228
+
+-- 11 of 13 --
+
+Solution
+1) Le nombre de tirages possibles est effectuer 𝐶20
+3 soit 1140
+2) a) 𝑃(𝐴 ) = 𝐶5
+1×𝐶15
+2
+1140 = 105
+228 = 35
+76 , 𝑃(𝐵 ) = 𝐶5
+2×𝐶15
+1
+1140 = 15
+114 = 5
+38 ; 𝑃(𝐶 ) = 𝐶5
+3
+1140 = 1
+114
+b) 𝑃(𝐷	̅	 ) = 𝐶15
+3
+1140 = 91
+228 donc 𝑃(𝐷) = 1 − 𝑃(𝐷	̅	 ) = 137
+228
+Exercice 4
+Un chariot de desserts comporte 10 vanille, 3 fraise, 4 chocolat, 5 menthe, 6 caramel. Un enfant
+qui aime autant tous les gâteaux choisit au hasard 4 gâteaux.
+Détermine la probabilité des événements suivants
+1. A : « il ne choisit que de la vanille »
+2. B : « il ne choisit qu’une seule sorte de desserts »
+3. C : « il choisit un à la fraise et 3 chocolats »
+4 . D : « il choisit au moins un à la vanille »
+Solution
+Le nombre de tirages possibles est effectuer 𝐶28
+4 soit 20 475
+1. 𝑃(𝐴 ) = 𝐶10
+4
+20 474 = 210
+20 475 = 14
+1 365 , 2. 𝑃(𝐵 ) = 𝐶5
+4+𝐶10
+4 +𝐶6
+4+𝐶4
+4
+20 475 = 231
+20 475 = 11
+975 ;
+3. 𝑃(𝐶 ) = 𝐶3
+1 ×𝐶4
+3
+20 475 = 12
+20 475 = 4
+6 825
+4. Calculons d’abord la probabilité de l’événement 𝐷	̅	 : « ne pas choisir de gâteau à la vanille »
+𝑃(𝐷	̅	 ) = 𝐶18
+4
+20 457 = 3060
+20 457 = 204
+1 365
+Par suite 𝑃(𝐷) = 1 − 𝑃(𝐷	̅	 ) = 1 161
+1 365
+Exercice d’approfondissement
+Exercice 5
+Dans une population donnée, la proportion d’individus atteint d’une certaine maladie est 𝑥
+On dispose d’un test de dépistage de cette maladie et on voudrait étudier sa fiabilité
+Le test relève que
+Sur 100 personnes considérées comme malade, 98 ont un test positif.
+Sur 100 personnes considérées comme saines, 1 seule a un test positif.
+On note 𝑓(𝑥) la probabilité qu’une personne ayant un test positif soit malade.
+On admet que : pour tout 𝑥 élément de [ 0; 1 ] , 𝑓(𝑥) = 98 𝑥
+97 𝑥+1
+
+-- 12 of 13 --
+
+On considère que le test est fiable lorsque la probabilité qu’un individu ayant un test positif soit
+malade est supérieure à 0,95.
+1. Le test est-il fiable si la proportion 𝑥 d’individus atteints de la maladie est de 0,05 ( 5% )
+2. Détermine la proportion 𝑥 à partir de laquelle le test est fiable.
+Solution
+1. On a 𝑓(0,05) = 98 ×0,05
+97 ×0,05+1 = 0,8376
+Comme 0,83 < 0,95, alors le test n’est pas fiable si 5% de la population est malade
+2. On résout inéquation : 𝑓(𝑥) ≥ 0,95
+98 𝑥
+97 𝑥+1 ≥ 0,95
+Comme 97 𝑥 + 1 ≥ 0 ( car 0 ≤ 𝑥 ≤ 1 )
+98 𝑥 ≥ 0,95(97 𝑥 + 1)
+𝑥 ≥ 19
+117 or 19
+117 = 0,162
+On en déduit que le test est fiable si au moins 17% de la population est malade
+
+-- 13 of 13 --
+

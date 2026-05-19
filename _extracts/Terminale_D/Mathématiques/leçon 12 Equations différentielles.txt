@@ -1,0 +1,301 @@
+Page 1 sur 7
+CÔTE D’IVOIRE – ÉCOLE NUMÉRIQUE
+Thème : Fonctions numériques
+Durée : 06 heures Code :
+Leçon 12 : ÉQUATIONS DIFFÉRENTIELLES
+A. SITUATION D’APPRENTISSAGE
+Pendant un cours de physique-chimie dans une classe de Terminale scientifique, le professeur donne
+l’exercice ci-dessous à ses élèves :
+« Une substance chimique se dissout dans l’eau. On admet que la vitesse de dissolution est
+proportionnelle à la quantité non encore dissoute. A l’instant t=0 (t en minutes), on place 20 grammes
+de cette substance dans une grande quantité d’eau.
+Sachant que les dix premiers grammes se dissolvent en cinq minutes, donne une expression de la
+quantité non dissoute f(t), en grammes, en fonction de t. »
+Après un temps de recherche, les élèves n’arrivent pas à proposer une solution.
+Le professeur leur demande donc de se faire aider par leur professeur de mathématiques. Ce dernier
+leur demande de traduire cette situation sous forme d’équation et de la résoudre.
+B. CONTENU DE LA LECON
+I. Notion d’équation différentielle
+1. Définition
+On appelle équation différentielle, toute équation ayant pour inconnue une fonction et dans laquelle
+figure au moins une des dérivées successives de la fonction inconnue.
+Exemple
+(𝐸1) : − 2𝑓′ + 5𝑓 = 0 ; (𝐸2): 𝑓′′ − 25𝑓 = 2𝑥 + 1
+(𝐸1) et (𝐸2) sont des équations différentielles avec comme inconnue la fonction f.
+Remarques
+•Toute autre lettre désignant une fonction peut être utilisée à la place de f.
+• Résoudre une équation différentielle sur un intervalle K, c’est déterminer l’ensemble des fonctions
+définies sur K qui sont solutions de cette équation différentielle.
+N.B.
+Dans la suite du cours, nous utiliserons y comme fonction inconnue dans les équations différentielles.
+2. Exercices de fixation
+Exercice 1
+Parmi les équations suivantes, indique celles qui sont des équations différentielles.
+Terminale D
+Mathématiques
+
+-- 1 of 7 --
+
+Page 2 sur 7
+1) (𝐸 ): 2𝑦2 + 𝑦 = 2 ; 2)(𝐸 ): 𝑦′ + 4 = 0 ; 3) (𝐸 ): 𝑦2 = 1 ;
+4) (𝐸 ): 𝑦′′ + 2𝑦′ + 𝑦 = 5 ; 5) (𝐸 ): 𝑦 + 3 = 0.
+SOLUTION
+Les équations différentielles sont : 2) (E) : 𝑦′ + 4 = 0 et 4) (E) : 𝑦′′ + 2𝑦′ + 𝑦 = 5.
+II. Résolution de quelques équations différentielles
+1. Équations du type : 𝒚’ + 𝒂𝒚 = 𝒃 , 𝒂 ∈ ℝ , 𝒃 ∈ ℝ
+a) Cas où b = 0
+L’équation devient : 𝑦’ + 𝑎𝑦 = 0 , 𝑎 ∈ ℝ
+Propriété1
+Les solutions sur ℝ de l’équation différentielle: 𝑦’ + 𝑎𝑦 = 0 , 𝑎 ∈ ℝ, sont les fonctions :
+𝑥 ⟼ 𝑘𝑒−𝑎𝑥, 𝑘 ∈ ℝ.
+Exercice de fixation
+Résous sur ℝ les équations différentielles suivantes :
+1) 𝑦′ + 2𝑦 = 0 2) 7𝑦′ = 3𝑦
+SOLUTION
+1) Les solutions sur ℝ sont les fonctions ∶ 𝑥 ⟼ 𝑘𝑒−2𝑥, 𝑘 ∈ ℝ.
+2) Les solutions sur ℝ sont les fonctions ∶ 𝑥 ⟼ 𝑘𝑒3
+7𝑥, 𝑘 ∈ ℝ
+b) Cas où b ≠ 0
+L’équation différentielle devient : 𝑦’ + 𝑎𝑦 = 𝑏 , 𝑎 ∈ ℝ ∗ , 𝑏 ∈ ℝ ∗
+Propriété 2
+Les solutions sur ℝ de l’équation différentielle: 𝑦’ + 𝑎𝑦 = 𝑏, 𝑎 ∈ ℝ∗, 𝑏 ∈ ℝ∗, sont les fonctions :
+𝑥 ⟼ 𝑘𝑒−𝑎𝑥 + 𝑏
+𝑎, 𝑘 ∈ ℝ.
+Exercice de fixation
+Résous sur ℝ l’équation différentielle :𝑦′ + 2𝑦 = 6.
+SOLUTION
+Les solutions sur ℝ sont les fonctions ∶ 𝑥 ⟼ 𝑘𝑒−2𝑥 + 3, 𝑘 ∈ ℝ
+car a=2 et b =6.
+Propriété 3 (Solution vérifiant une condition initiale)
+Pour tout couple (x0 ;y0) de nombres réels, l’équation différentielle : 𝑦’ + 𝑎𝑦 = b , 𝑎 ∈ ℝ , 𝑏 ∈ ℝ, admet une
+unique solution sur ℝ qui prend la valeur y0 en x0 (c’est-à-dire telle que : 𝑦(𝑥0) = 𝑦0)
+Exercice de fixation
+On donne l’équation différentielle (E): 𝑦′ − 3𝑦 = 7.
+Détermine la solution 𝑓de (E) qui vérifie : 𝑓(0) = 1.
+Solution
+Les solutions sur ℝ sont les fonctions ∶ 𝑥 ⟼ 𝑐𝑒3𝑥 − 7
+3 , 𝑐 ∈ ℝ.
+𝑓 étant une solution de (E), 𝑓(𝑥) = 𝑐𝑒3𝑥 − 7
+3 , 𝑐 ∈ ℝ.
+𝑓(0) = 1 ⟺ 𝑐𝑒3×0 − 7
+3 = 1 ⟺ 𝑐 − 7
+3 = 1 ⟺ 𝑐 = 10
+3
+
+-- 2 of 7 --
+
+Page 3 sur 7
+Donc la solution 𝑓de (E)qui vérifie : 𝑓(0) = 1est la fonction définie sur ℝ par :
+𝑓(𝑥) = 10
+3 𝑒3𝑥 − 7
+3
+c) cas où 𝑎 = 0
+l’équation devient : 𝑦′ = 𝑏. Ses solutions sont les primitives sur ℝ de la fonction 𝑥 ⟼ 𝑏,
+qui sont les fonctions 𝑥 ⟼ 𝑏𝑥 + 𝑐, 𝑐 ∈ ℝ
+2. Équations du type : 𝒚’’ + 𝒎𝒚 = 𝟎 , 𝒎 ∈ ℝ
+a) Cas où 𝒎 = 𝟎
+L’équation devient :𝑦’’ = 0.
+Propriété
+Les solutions sur ℝ de l’équation différentielle ∶ 𝒚’’ = 𝟎 sont les fonctions :
+𝑥 ⟼ 𝑎𝑥 + 𝑏 , 𝑎 ∈ ℝ , 𝑏 ∈ ℝ.
+b) Cas où 𝒎 < 0
+On pose : 𝑚 = −𝜔2,𝜔 ∈ ℝ∗ .
+L’équation devient 𝑦′′ − 𝜔2𝒚 = 𝟎 , 𝜔 ∈ ℝ∗.
+Propriété
+Les solutions sur ℝ de l’équation différentielle ∶ 𝒚’’ − 𝜔2𝒚 = 𝟎 , 𝜔 ∈ ℝ∗ sont les fonctions :
+𝑥 ⟼ 𝑎𝑒−𝜔𝑥 + 𝑏𝑒𝜔𝑥 , 𝑎 ∈ ℝ 𝑒𝑡 𝑏 ∈ ℝ .
+Exercice de fixation
+Résous sur ℝ l’équation différentielle :𝑦′′ − 4𝑦 = 0.
+SOLUTION
+𝑦′′ − 4𝑦 = 0 d’où 𝜔² = 4 ⟺ 𝜔 = 2 𝑜𝑢 𝜔 = −2
+Donc les solutions sur ℝ de l’équation sont les fonctions : 𝑥 ⟼ 𝑎𝑒−2𝑥 + 𝑏𝑒2𝑥,𝑎 ∈ ℝ 𝑒𝑡 𝑏 ∈ ℝ.
+c) Cas où 𝒎 > 0
+On pose :𝑚 = 𝜔2 , 𝜔 ∈ ℝ∗.
+L’équation devient : 𝒚’’ + 𝜔2𝒚 = 𝟎 , 𝜔 ∈ ℝ∗.
+Propriété
+Les solutions sur ℝ de l’équation différentielle ∶ 𝒚’’ + 𝜔2𝒚 = 𝟎 , 𝜔 ∈ ℝ∗ sont les fonctions :
+𝑥 ⟼ 𝑎 cos (𝜔𝑥) + 𝑏 𝑠𝑖𝑛 (𝜔𝑥) , 𝑎 ∈ ℝ 𝑒𝑡 𝑏 ∈ ℝ.
+Exercice de fixation
+Résous sur ℝ l’équation différentielle :𝑦′′ + 4𝑦 = 0.
+Solution
+𝑦′′ + 4𝑦 = 0 ⇔ 𝑦′′ + 22𝑦 = 0 𝑎𝑣𝑒𝑐 𝜔² = 2². ⟺ 𝜔 = 2 𝑜𝑢 𝜔 = −2
+Donc les solutions sur ℝ de l’équation sont les fonctions : 𝑥 ⟼ 𝑎 𝑐𝑜𝑠2𝑥 + 𝑏 𝑠𝑖𝑛 2𝑥,𝑎 ∈ ℝ 𝑒𝑡 𝑏 ∈ ℝ.
+Propriété (Solution vérifiant des conditions initiales)
+
+-- 3 of 7 --
+
+Page 4 sur 7
+Pour tout triplet (x0 ; y0 ; z0) de nombres réels, l’équation différentielle : 𝑦′′ + 𝑚𝑦 = 0 , 𝑚 ∈ ℝ, admet une
+unique solution sur ℝ telle que : 𝑦(𝑥0) = 𝑦0 et 𝑦′(𝑥0) = 𝑧0.
+Exercice de fixation
+1. Résous sur ℝ l’équation différentielle (E) : 𝑦′′ + 25𝑦 = 0.
+2. Détermine la solution 𝑓de (E) qui vérifie : 𝑓(0) = 1 et 𝑓′ (𝜋
+5) = −2.
+SOLUTION
+1. 𝑦′′ + 25𝑦 = 0 ⟺ 𝑦′′ + 52𝑦 = 0.
+Donc les solutions sur ℝ de l’équation (E) sont les fonctions:
+𝑥 ⟼ 𝑎𝑐𝑜𝑠(5𝑥) + 𝑏𝑠𝑖𝑛(5𝑥), avec 𝑎 ∈ ℝ 𝑒𝑡 𝑏 ∈ ℝ.
+2. 𝑓 étant une solution de (E), 𝑓(𝑥) = 𝑎𝑐𝑜𝑠(5𝑥) + 𝑏𝑠𝑖𝑛(5𝑥) et 𝑓′(𝑥) = −5 𝑎𝑠𝑖𝑛(5𝑥) + 5𝑏 𝑐𝑜𝑠(5𝑥).
+•𝑓(0) = 1 ⟺ acos(0) + 𝑏𝑠𝑖𝑛(0) = 1 ⟺ 𝑎 = 1
+•𝑓′ (𝜋
+5) = −2 ⟺ −5a sin(𝜋) + 5𝑏 𝑐𝑜𝑠(𝜋) = −2 ⇔ −5𝑏 = −2 ⟺ 𝑏 = 2
+5
+D’où la solution 𝑓de (E)𝑒𝑠𝑡 𝑑é𝑓𝑖𝑛𝑖𝑒 𝑝𝑎𝑟 ∶ 𝑓(𝑥) = cos(5𝑥) + 2
+5 𝑠𝑖𝑛(5𝑥).
+3. Tableau récapitulatif
+Types d’équations différentielles Fonctions solutions
+𝑦’ + 𝑎𝑦 = 0 , 𝑎 ∈ ℝ 𝑥 ⟼ 𝑘𝑒−𝑎𝑥, 𝑘 ∈ ℝ
+𝑦’ + 𝑎𝑦 = b , 𝑎 ∈ ℝ∗ , 𝑏 ∈ ℝ∗ 𝑥 ⟼ 𝑘𝑒−𝑎𝑥 + 𝑏
+𝑎, 𝑘 ∈ ℝ
+𝑦′′ = 0 𝑥 ⟼ 𝑎𝑥 + 𝑏 , 𝑎 ∈ ℝ , 𝑏 ∈ ℝ
+𝑦′′ − 𝜔2𝑦 = 0 , 𝜔 ∈ ℝ∗ 𝑥 ⟼ 𝑎𝑒−𝜔𝑥 + 𝑏𝑒𝜔𝑥 , 𝑎 ∈ ℝ , 𝑏 ∈ ℝ
+𝑦′′ + 𝜔2𝑦 = 0 , 𝜔 ∈ ℝ∗ 𝑥 ⟼ 𝑎 𝑐𝑜𝑠 𝜔𝑥 + 𝑏 𝑠𝑖𝑛 𝜔𝑥 , 𝑎 ∈ ℝ , 𝑏 ∈ ℝ
+C- SITUATION COMPLEXE
+Lors d’une campagne innovante du Fonds des Nations Unies pour la population intitulée « 7 Milliards
+d’Actions », qui mettait l'accent sur les défis, les possibilités et les actions nécessaires à notre avenir
+commun sur la Terre, les élèves de la promotion terminale d’un lycée ont appris que :
+- plus de la moitié de la croissance démographique dans le monde d’ici à 2050 aura lieu en Afrique ;
+- la population d'Afrique subsaharienne, par exemple, devrait doubler d'ici à 2050 ;
+- selon les projections, la population mondiale devrait augmenter de 2 milliards de personnes au cours
+des trente prochaines années, passant de 7,7 milliards actuellement à 9,7 milliards en 2050 ;
+- la population d’un pays était de 4, 75 millions d’habitants en 1990 et de 5,5 millions d’habitants en
+1995.
+Etonnés du boum démographique de ce pays, ces élèves veulent déterminer l’année où la population de
+ce pays atteindra 20 millions d’habitants, si on suppose que la vitesse d’accroissement de la population
+est proportionnelle au nombre d’habitants. Ils désignent par 𝑓(𝑡) le nombre de millions d’habitants à
+l’instant 𝑡.
+Ayant entendu ces informations, tu veux tester tes connaissances et aussi les aider.
+Réponds, dans ces conditions, à la préoccupation de ces élèves.
+SOLUTION
+➢ Pour répondre à la préoccupation de ces élèves, je vais utiliser les équations
+différentielles ;
+
+-- 4 of 7 --
+
+Page 5 sur 7
+➢ Je vais déterminer l’année où la population atteindra les 20 MIILLIONS.
+Modélisation
+•Détermination de l’équation différentielle :
+L’hypothèse la vitesse d’accroissement de la population est proportionnelle au nombre d’habitants se
+traduit par : f’(t)= a f(t) où a ≠0
+Ainsi, il est question de trouver une f, dérivable sur [0 ; +∞[ telle que pour tout t ≥ 0 ;
+f’(t)= a f(t) et f(0) =4,75 ; on prend t=0 pour l’année 1990 comme année d’origine
+•Résolution de l’équation 𝑦′ = 𝑎𝑦.
+Les solutions de cette équation différentielle sont les fonctions f définies sur [0 ; +∞[ par : 𝑥 ⟼k𝑒𝑎𝑡,
+k∈ ℝ :
+Comme f(0)= 4,75 alors k𝑒0= 4,75 d’où k= 4,75 ainsi f(t) = 4,75 𝑒𝑎𝑡
+D’autre part de 1990 à 1995, on a t = 5 alors f(5)=5,5 ; ce qui donne 4,75 𝑒5𝑎= 5,5 donc a = 𝑙𝑛22
+19
+5
+Par conséquent, f(t)= 4,75 𝑒
+𝑙𝑛22
+19
+5 t
+Pour f(t)= 20 on a : 4,75 𝑒
+𝑙𝑛22
+19
+5 t = 20 d’où t =5𝑙𝑛80
+19
+𝑙𝑛22
+19
+~= 48 donc ce pays atteindra 20 millions d’habitants
+en 1990+48 = 2038.
+Conclusion :
+D. Exercices
+1. Exercices de fixation
+Exercice 1
+Parmi les équations suivantes, indique celles qui sont des équations différentielles :
+(E) : y² +y =2 ; (F) : y’-ln2y = 3 ; (G) : y’’ –y’ =3x² ; (H) : y = 3x
+solution
+Les équations (F) et (G) sont des équations différentielles
+Exercice 2
+Pour chacune des équations différentielles suivantes, détermine la solution vérifiant la condition
+donnée :
+a. 𝑦′ = −2𝑦 , 𝑓(0) = 1.
+b. 𝑦′ − (𝑙𝑛2)𝑦 = 0 , 𝑓(2) = 1
+2.
+solution
+a. Les solutions sont les fonctions f définies sur ℝ par f(x)= k 𝑒−2𝑥 , k 𝜖ℝ
+Comme f(0)= 1 alors on a : k 𝑒0= 1 ⟺k = 1, donc la solution f qui vérifie f(0)=1 est la fonction
+f définie sur ℝ par : f(x) = 𝑒−2𝑥
+b. Les solutions sont les fonctions f définies sur ℝ par f(x)= k 𝑒𝑥𝑙𝑛2 , k 𝜖ℝ
+Comme f(2)= 1
+2 alors on a : k 𝑒2𝑙𝑛2 = 1
+2 ⟺ k𝑒𝑙𝑛4 = 1
+2 ⟺ 4k = 1
+2 ⟺ k = 1
+8 , donc les la fonction f qui
+vérifie f(2)= 1
+2 est la fonction f définie sur ℝ par f(x)= 1
+8 𝑒𝑥𝑙𝑛2
+2. Exercices de renforcement
+Exercice 1
+Soit 𝜃 la température d’un corps à l’instant t. La température ambiante est 30°C.
+
+-- 5 of 7 --
+
+Page 6 sur 7
+A chaque instant𝑡, on pose : 𝑥(𝑡) = 𝜃(𝑡) − 30. On suppose que la fonction 𝑥 est dérivable sur ℝ et
+vérifie : 𝑥′ = −𝑘2𝑥 (𝑘 ∈ ℝ∗). A l’instant𝑡 = 0, la température de ce corps est 70°C et au bout de 5
+minutes, elle n’est plus que de 60°C.
+1) Détermine𝜃(𝑡), où 𝑡 est mesuré en minutes.
+2) Détermine la température de ce corps au bout de 20 minutes.
+Solution
+1) On a : 𝜃(t)= x(t) +30 ; or x’(t) = -k²x d’où x(t) = c 𝑒−𝑘²𝑡 , c𝜖ℝ par suite 𝜃(𝑡) = 𝑐 𝑒−𝑘²𝑡+30
+Comme 𝜃(0)= 70 alors c= 70-30=40 et 𝜃(5)= 60 alors –k² = 1
+5ln3
+4 donc 𝜃(𝑡) = 40𝑒1
+5𝑙𝑛3
+4𝑡+30.
+2) Pour t= 20, on a : 𝜃(20)= 42,66° , donc la température de ce corps au bout de 20mn est 42,66°.
+Exercice 2
+On considère dans ℝ l’équation différentielle(𝐸) ∶ 𝑦′ + 2𝑦 = 𝑒−2𝑥.
+1. Vérifie que la fonction 𝑔 telle que 𝑔(𝑥) = (𝑥 + 1)𝑒−2𝑥 est une solution de(𝐸).
+2. Démontre qu’une fonction ℎ + 𝑔 est solution de (𝐸)si et seulement si la fonction ℎ est solution de
+l’équation différentielle(𝐸′): 𝑦′ + 2𝑦 = 0.
+3. Détermine les solutions sur ℝde l’équation différentielle(𝐸′).
+4. a) Déduis des questions précédentes, les solutions sur ℝ de l’équation différentielle(𝐸).
+b) Détermine la solution 𝑓 de(𝐸) vérifiant la condition𝑓(0) = −2.
+Solution
+1. On a : g’(x)+2g(x) = (-2x-1)𝑒−2𝑥+2(x+1)𝑒−2𝑥= 𝑒−2𝑥 donc g est une solution de (E).
+2. On a : h+g solution de (E) ⟺ (h+g)’ +2(h+g) = 𝑒−2𝑥
+⟺h’ +2h =0 car g’+2g = 𝑒−2𝑥
+Par suite, h est solution de l’équation différentielle (E’) : y’+2y=0
+3. Les solutions sur ℝ sont les fonctions h définies sur ℝ par h(x)= k𝑒−2𝑥, k𝜖ℝ
+4. a) Ainsi les solutions sur ℝ de l’équation (E) sont les fonctions f définies sur ℝ
+Par f(x)= k𝑒−2𝑥+(x+1) 𝑒−2𝑥 = (k+x+1) 𝑒−2𝑥
+b) On a: f (0) = 1 ⟺ (k+1) 𝑒0= 1 ⟺k=0 donc f(x) = (x+1) 𝑒−2𝑥
+3. Exercice d’approfondissement
+Exercice
+On considère l’équation différentielle(𝐸) ∶ 𝑦′ + 3𝑦 = 2𝑒−𝑥.
+1. Détermine le nombre réel 𝑚 pour que la fonction ℎ définie sur ℝ par : ℎ(𝑥) = 𝑚𝑒−𝑥 soit solution
+de(E).
+2. Résous dans ℝ l’équation différentielle (𝐸′): 𝑦′ + 3𝑦 = 0.
+3. Démontre qu’une fonction ℎ − 𝑔 est solution de (𝐸′) si et seulement si la fonction 𝑔 est solution de
+(E).
+4. Déduis des questions précédentes les solutions sur ℝ de l’équation différentielle(E).
+Solution
+1.Déterminons le nombre réel 𝑚 pour que la fonction ℎ définie sur ℝ par : ℎ(𝑥) = 𝑚e−xsoit solution
+de (𝐸) ∶ 𝑦′ + 3𝑦 = 2e−x. ∀ 𝑥 ∈ ℝ ℎ(𝑥) = 𝑚𝑒−𝑥 et ℎ′(𝑥) = −𝑚𝑒−𝑥
+ℎ est solution de (𝐸) ⟺ ℎ′(𝑥) + 3ℎ(𝑥) = 2e−x
+⟺ −𝑚𝑒−𝑥 + 3𝑚𝑒−𝑥 ⟺ 2𝑚𝑒−𝑥 = 2𝑒−𝑥
+⟺ 𝑚 = 1
+Donc la fonction h définie par :ℎ(𝑥) = e−xest solution de (𝐸).
+
+-- 6 of 7 --
+
+Page 7 sur 7
+2. Résolvons dans ℝ l’équation différentielle (𝐸′): 𝑦′ + 3𝑦 = 0.
+Les solutions sur ℝ de l’équation différentielle (𝐸′) : 𝑦′ + 3𝑦 = 0 sont les fonctions :
+𝑥 ↦ 𝑘𝑒−3𝑥, 𝑘 ∈ ℝ.
+3. On a : h-g solution de (E’) ⟺ (h-g)’ +3(h-g) =0⟺h’+3h –(g’+3g)=0 , or h+3h = 2𝑒−𝑥
+Donc g’ +3g = 2𝑒−𝑥 ; par suite g est solution de l’équation (E).
+4. Les solutions de (E) sont les fonctions définies sur par : x⟼ 𝑒−𝑥-k𝑒−3𝑥 ,k𝜖ℝ
+V. Documents
+Collection IRMA TCE
+Collection Trans-Math Term ES
+Collection SCIAM Terminale SE
+Collection SCIAM Terminale SM
+
+-- 7 of 7 --
+
