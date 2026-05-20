@@ -82,6 +82,9 @@ function generateSeoFiles(structure) {
     '/',
     '/quiz.html',
     '/flashcards.html',
+    '/about.html',
+    '/contact.html',
+    '/privacy.html',
     ...Object.values(structure).flatMap(subjects =>
       Object.values(subjects).flatMap(fiches => fiches.map(fiche => fiche.url))
     ),
@@ -90,6 +93,21 @@ function generateSeoFiles(structure) {
   const robots = `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');
+}
+
+function generateSearchIndex(structure) {
+  const entries = [];
+  for (const [cls, subjects] of Object.entries(structure)) {
+    for (const [subject, fiches] of Object.entries(subjects)) {
+      for (const fiche of fiches) {
+        const filePath = path.join(OUT_FICHES_DIR, cls, subject, fiche.file);
+        const html = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : '';
+        const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 1600);
+        entries.push({ cls, subject, file: fiche.file, name: fiche.name, path: fiche.path, text });
+      }
+    }
+  }
+  fs.writeFileSync(path.join(OUT_DATA_DIR, 'search-index.json'), JSON.stringify(entries), 'utf8');
 }
 
 function main() {
@@ -102,6 +120,7 @@ function main() {
 
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'structure.json'), JSON.stringify(structure, null, 2), 'utf8');
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'stats.json'), JSON.stringify(stats, null, 2), 'utf8');
+  generateSearchIndex(structure);
   generateSeoFiles(structure);
 
   console.log(`Static build complete: ${stats.totalFiches} fiches copied.`);

@@ -1,9 +1,12 @@
-const CACHE_NAME = 'fiches-bac-v6-production';
+const CACHE_NAME = 'fiches-bac-v7-production-pages';
 const PRECACHE = [
   '/',
   '/index.html',
   '/quiz.html',
   '/flashcards.html',
+  '/about.html',
+  '/contact.html',
+  '/privacy.html',
   '/manifest.json',
   '/robots.txt',
   '/sitemap.xml',
@@ -11,7 +14,8 @@ const PRECACHE = [
   '/icon-192.png',
   '/icon-512.png',
   '/data/structure.json',
-  '/data/stats.json'
+  '/data/stats.json',
+  '/data/search-index.json'
 ];
 
 self.addEventListener('install', e => {

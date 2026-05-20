@@ -34,6 +34,7 @@
       --shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 12px rgba(0,0,0,.08);
       --shadow-lg:0 8px 30px rgba(0,0,0,.12);--transition:all .2s ease;
     }
+    body.dark-mode{--bg:#0f172a;--bg-card:#1e293b;--bg-card-hover:#334155;--bg-surface:#1e293b;--text:#f8fafc;--text-muted:#cbd5e1;--text-dim:#94a3b8;--border:#334155;--accent-bg:#1e3a8a;--green-bg:#064e3b;--orange-bg:#78350f;--purple-bg:#4c1d95}
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
     .layout{display:flex;min-height:100vh}
@@ -167,6 +168,8 @@
 
     /* Footer */
     .main-footer{padding:16px 28px;border-top:1px solid var(--border);text-align:center;background:var(--bg-card);font-size:12px;color:var(--text-dim)}
+    .footer-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .footer-links a{color:var(--accent);text-decoration:none;font-weight:700}
     .main-footer strong{color:var(--accent);font-weight:700}
 
     .loading{display:flex;align-items:center;justify-content:center;padding:60px;color:var(--text-muted);gap:10px}
@@ -179,6 +182,10 @@
     .mobile-menu-btn{display:none;border:1px solid var(--border);background:var(--bg-card);border-radius:8px;padding:8px 10px;color:var(--text);cursor:pointer}
     .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:90}
     .mobile-overlay.show{display:block}
+    .search-results{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:var(--shadow)}
+    .search-result{display:block;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-top:8px;color:var(--text);text-decoration:none;background:var(--bg)}
+    .search-result strong{display:block;font-size:13px;color:var(--accent)}
+    .search-result span{display:block;font-size:11px;color:var(--text-dim);margin-top:2px}
     @media(max-width:768px){
       .layout{display:block}
       .intro-card{grid-template-columns:1fr;padding:22px;border-radius:22px}
@@ -284,7 +291,7 @@
       <nav class="sidebar-nav" id="sidebarNav">
         <div class="loading"><div class="spinner"></div>Chargement...</div>
       </nav>
-      <div class="sidebar-footer">Créé par <strong>Haniel_dev</strong></div>
+      <div class="sidebar-footer">Créé par <strong>Haniel_dev</strong><br><a href="/about.html" style="color:#93c5fd">À propos</a> · <a href="/contact.html" style="color:#93c5fd">Contact</a></div>
     </aside>
     <div class="main">
       <div class="topbar">
@@ -296,7 +303,7 @@
         <div class="topbar-actions" id="topbarActions"></div>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
-      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong></span></footer>
+      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique à l'Institut universitaire d'Abidjan</span><div class="footer-links"><a href="/about.html">À propos</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a></div></footer>
     </div>
   </div>
   <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
@@ -317,6 +324,7 @@
     // Store current fiche info for download
     let CURRENT_FICHE = null;
     let deferredInstallPrompt = null;
+    let SEARCH_INDEX = [];
 
     const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
@@ -331,8 +339,13 @@
     function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
 
     async function loadData(){
-      const[struct,stats]=await Promise.all([fetch('/data/structure.json').then(r=>r.json()),fetch('/data/stats.json').then(r=>r.json())]);
-      DATA.structure=struct;DATA.stats=stats;
+      const[struct,stats,searchIndex]=await Promise.all([
+        fetch('/data/structure.json').then(r=>r.json()),
+        fetch('/data/stats.json').then(r=>r.json()),
+        fetch('/data/search-index.json').then(r=>r.json()).catch(()=>[])
+      ]);
+      DATA.structure=struct;DATA.stats=stats;SEARCH_INDEX=searchIndex;
+      if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');
       renderSidebar();showDashboard();
     }
 
@@ -379,11 +392,7 @@
       const closeMobileMenu=()=>{sidebar.classList.remove('mobile-open');overlay.classList.remove('show')};
       menuBtn.addEventListener('click',()=>{sidebar.classList.add('mobile-open');overlay.classList.add('show')});
       overlay.addEventListener('click',closeMobileMenu);
-      document.getElementById('searchInput').addEventListener('input',e=>{
-        const q=e.target.value.toLowerCase();
-        document.querySelectorAll('.nav-lesson').forEach(l=>l.style.display=l.textContent.toLowerCase().includes(q)?'':'none');
-        if(q)document.querySelectorAll('.nav-class,.nav-subject').forEach(e=>e.classList.add('open'));
-      });
+      document.getElementById('searchInput').addEventListener('input',e=>searchLessons(e.target.value));
     });
 
     function isStandaloneApp(){
@@ -424,11 +433,52 @@
       document.getElementById('installPrompt').classList.remove('show');
     });
 
+    function toggleDarkMode(){
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme',document.body.classList.contains('dark-mode')?'dark':'light');
+    }
+
+    async function shareSite(){
+      const title=CURRENT_FICHE?CURRENT_FICHE.file.replace(/\.html$/,''):'ResumeCI — Fiches BAC';
+      const text='Découvre ResumeCI pour réviser le BAC avec fiches, quiz, flashcards, audio et PDF.';
+      const url=location.href;
+      if(navigator.share)await navigator.share({title,text,url}).catch(()=>{});
+      else{
+        await navigator.clipboard?.writeText(url);
+        alert('Lien copié. Tu peux le partager sur WhatsApp ou Facebook.');
+      }
+    }
+
+    function openSearchResult(cls,subject,file){
+      document.querySelector('.sidebar')?.classList.remove('mobile-open');
+      document.getElementById('mobileOverlay')?.classList.remove('show');
+      showFiche(cls,subject,file);
+    }
+
+    function searchLessons(query){
+      const q=query.trim().toLowerCase();
+      document.querySelectorAll('.nav-lesson').forEach(l=>l.style.display=!q||l.textContent.toLowerCase().includes(q)?'':'none');
+      if(q)document.querySelectorAll('.nav-class,.nav-subject').forEach(e=>e.classList.add('open'));
+      if(q.length<2){
+        document.querySelector('.search-results')?.remove();
+        return;
+      }
+      const matches=SEARCH_INDEX.filter(item=>
+        item.name.toLowerCase().includes(q)||
+        item.subject.toLowerCase().includes(q)||
+        item.text.toLowerCase().includes(q)
+      ).slice(0,8);
+      const box=document.querySelector('.search-results')||document.createElement('div');
+      box.className='search-results';
+      box.innerHTML=`<h3>Résultats de recherche</h3>${matches.length?matches.map(item=>`<a class="search-result" href="#" onclick="openSearchResult('${esc(item.cls)}','${esc(item.subject)}','${esc(item.file)}');return false"><strong>${item.name}</strong><span>${item.cls.replace('_',' ')} · ${item.subject}</span></a>`).join(''):'<p style="color:var(--text-muted);font-size:13px;margin-top:8px">Aucun résultat trouvé.</p>'}`;
+      document.getElementById('content').prepend(box);
+    }
+
     function showDashboard(){
       CURRENT_FICHE=null;
       const{stats,structure}=DATA;
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
-      document.getElementById('topbarActions').innerHTML='';
+      document.getElementById('topbarActions').innerHTML='<button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';
       let cards='';
       for(const[cls,subjects]of Object.entries(structure)){
         const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
@@ -475,7 +525,7 @@
         const rawHtml=await fetch(ficheUrl).then(r=>r.text());
         const bodyMatch=rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
         const data={html:bodyMatch?bodyMatch[1]:rawHtml};
-        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="btn btn-green" onclick="downloadCurrentFichePdf()"><i class="fas fa-file-pdf"></i> Télécharger PDF</button>`;
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button><button class="btn btn-green" onclick="downloadCurrentFichePdf()"><i class="fas fa-file-pdf"></i> Télécharger PDF</button>`;
 
         // Process HTML to render formulas nicely
         let html=data.html;
@@ -484,7 +534,7 @@
           return `<div class="formula-block">${f}</div>`;
         });
 
-        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content">${html}</div><div class="fiche-discreet-credit">Créé par <strong>Haniel_dev</strong></div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a></div></div>`;
+        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content">${html}</div><div class="fiche-discreet-credit">Créé par <strong>Haniel_dev</strong></div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div></div>`;
         clearActive();
         const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
         if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
