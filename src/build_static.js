@@ -6,6 +6,7 @@ const SOURCE_DIR = path.join(ROOT, 'Fiches_Resume');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const OUT_FICHES_DIR = path.join(PUBLIC_DIR, 'fiches');
 const OUT_DATA_DIR = path.join(PUBLIC_DIR, 'data');
+const SITE_URL = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
 const ALLOWED_SUBJECTS = {
   Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
@@ -15,6 +16,14 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function stripHtml(html) {
+  return html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 function addCreatorCredit(html) {
   const credit = '<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>';
   if (html.includes('Créé par <strong style="color:#64748b">Haniel_dev</strong>')) return html;
@@ -22,19 +31,34 @@ function addCreatorCredit(html) {
   return `${html}${credit}`;
 }
 
-function copyHtmlFile(srcPath, destPath) {
-  const html = fs.readFileSync(srcPath, 'utf8');
-  fs.writeFileSync(destPath, addCreatorCredit(html), 'utf8');
+function addFicheSeo(html, meta) {
+  const title = `${meta.name} — ${meta.subject} ${meta.cls.replace('_', ' ')} | ResumeCI`;
+  const description = stripHtml(html).slice(0, 150) || `Fiche de résumé ${meta.name} en ${meta.subject} pour réviser le BAC en ${meta.cls.replace('_', ' ')}.`;
+  const url = `${SITE_URL}${meta.url}`;
+  const head = `<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index, follow"><link rel="canonical" href="${url}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE_URL}/og-image.svg"><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"LearningResource",name:title,description,url,inLanguage:"fr-CI",learningResourceType:"Fiche de résumé",educationalLevel:meta.cls.replace('_',' '),about:meta.subject,creator:{"@type":"Person",name:"Haniel_dev",affiliation:{"@type":"CollegeOrUniversity",name:"Institut universitaire d'Abidjan"}}})}</script></head>`;
+  if (/<head[\s\S]*?<\/head>/i.test(html)) return html.replace(/<head[\s\S]*?<\/head>/i, head);
+  if (/<html[^>]*>/i.test(html)) return html.replace(/<html[^>]*>/i, match => `${match}${head}`);
+  return `<!DOCTYPE html><html lang="fr">${head}<body>${html}</body></html>`;
 }
 
-function copyDir(src, dest) {
+function copyHtmlFile(srcPath, destPath, meta) {
+  const html = fs.readFileSync(srcPath, 'utf8');
+  const withCredit = addCreatorCredit(html);
+  fs.writeFileSync(destPath, meta ? addFicheSeo(withCredit, meta) : withCredit, 'utf8');
+}
+
+function copyDir(src, dest, cls = '', subject = '') {
   ensureDir(dest);
   for (const item of fs.readdirSync(src)) {
     const srcPath = path.join(src, item);
     const destPath = path.join(dest, item);
     const stat = fs.statSync(srcPath);
-    if (stat.isDirectory()) copyDir(srcPath, destPath);
-    else if (item.endsWith('.html')) copyHtmlFile(srcPath, destPath);
+    if (stat.isDirectory()) copyDir(srcPath, destPath, cls || item, cls ? item : '');
+    else if (item.endsWith('.html')) {
+      const name = item.replace('Fiche_', '').replace('.html', '');
+      const meta = cls && subject ? { cls, subject, file: item, name, url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(item)}` } : null;
+      copyHtmlFile(srcPath, destPath, meta);
+    }
   }
 }
 
@@ -77,7 +101,6 @@ function buildStructure() {
 }
 
 function generateSeoFiles(structure) {
-  const siteUrl = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
   const urls = [
     '/',
     '/quiz.html',
@@ -89,10 +112,16 @@ function generateSeoFiles(structure) {
       Object.values(subjects).flatMap(fiches => fiches.map(fiche => fiche.url))
     ),
   ];
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${siteUrl}${url}</loc></url>`).join('\n')}\n</urlset>\n`;
-  const robots = `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`;
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${SITE_URL}${url}</loc></url>`).join('\n')}\n</urlset>\n`;
+  const robots = `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');
+}
+
+function generateHtmlSitemap(structure) {
+  const sections = Object.entries(structure).map(([cls, subjects]) => `<h2>${escapeHtml(cls.replace('_', ' '))}</h2>${Object.entries(subjects).map(([subject, fiches]) => `<h3>${escapeHtml(subject)}</h3><ul>${fiches.map(fiche => `<li><a href="${fiche.url}">${escapeHtml(fiche.name)}</a></li>`).join('')}</ul>`).join('')}`).join('');
+  const html = `<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Plan du site — ResumeCI</title><meta name="description" content="Plan du site ResumeCI : toutes les fiches de résumé Terminale A et Terminale D pour réviser le BAC en Côte d'Ivoire."><link rel="canonical" href="${SITE_URL}/sitemap.html"><style>body{font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0}main{max-width:980px;margin:auto;padding:28px 18px}a{color:#2563eb;text-decoration:none;font-weight:700}.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(15,23,42,.08)}h1{margin-top:0}h2{margin-top:28px;color:#0f172a}h3{color:#475569}li{margin:6px 0}</style></head><body><main><p><a href="/">← Retour à l'accueil</a></p><div class="card"><h1>Plan du site ResumeCI</h1><p>Toutes les fiches de résumé disponibles pour réviser le BAC en Côte d'Ivoire.</p>${sections}</div></main></body></html>`;
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.html'), html, 'utf8');
 }
 
 function generateSearchIndex(structure) {
@@ -122,6 +151,7 @@ function main() {
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'stats.json'), JSON.stringify(stats, null, 2), 'utf8');
   generateSearchIndex(structure);
   generateSeoFiles(structure);
+  generateHtmlSitemap(structure);
 
   console.log(`Static build complete: ${stats.totalFiches} fiches copied.`);
 }

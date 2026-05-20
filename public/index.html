@@ -11,7 +11,10 @@
   <meta property="og:title" content="ResumeCI — Fiches de Résumé BAC">
   <meta property="og:description" content="Fiches, quiz, flashcards, audio et PDF pour réviser le BAC Terminale A et D.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/icon-512.png">
+  <meta property="og:url" content="https://resumeci.me/">
+  <meta property="og:site_name" content="ResumeCI">
+  <meta property="og:locale" content="fr_CI">
+  <meta property="og:image" content="https://resumeci.me/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="/manifest.json">
   <link rel="canonical" href="https://resumeci.me/">
@@ -22,6 +25,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"ResumeCI",
+    "url":"https://resumeci.me/",
+    "description":"Fiches de résumé, quiz, flashcards, lecture audio et PDF pour réviser le BAC en Côte d'Ivoire.",
+    "inLanguage":"fr-CI",
+    "creator":{"@type":"Person","name":"Haniel_dev","affiliation":{"@type":"CollegeOrUniversity","name":"Institut universitaire d'Abidjan"}},
+    "potentialAction":{"@type":"SearchAction","target":"https://resumeci.me/?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
   <style>
     :root {
       --bg:#f8fafc;--bg-card:#fff;--bg-card-hover:#f1f5f9;--bg-surface:#fff;
@@ -186,6 +201,9 @@
     .search-result{display:block;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-top:8px;color:var(--text);text-decoration:none;background:var(--bg)}
     .search-result strong{display:block;font-size:13px;color:var(--accent)}
     .search-result span{display:block;font-size:11px;color:var(--text-dim);margin-top:2px}
+    .seo-section{margin-top:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:24px;line-height:1.8;color:var(--text-muted);box-shadow:var(--shadow-sm)}
+    .seo-section h2{font-size:20px;color:var(--text);margin-bottom:10px}
+    .seo-section a{color:var(--accent);font-weight:800;text-decoration:none}
     @media(max-width:768px){
       .layout{display:block}
       .intro-card{grid-template-columns:1fr;padding:22px;border-radius:22px}
@@ -484,7 +502,7 @@
         const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
         cards+=`<div class="class-card" data-cls="${cls}"><h3>${cls==='Terminale_A'?'🅰️':'🅳'} ${cls.replace('_',' ')}</h3><div class="subject-list">${tags}</div></div>`;
       }
-      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Terminale A & D — Révision BAC Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-green"><i class="fas fa-file-pdf"></i></div><div class="stat-number" style="color:var(--green)">${stats.totalPdfs}</div><div class="stat-label">PDFs</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Terminale A & D — Révision BAC Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-green"><i class="fas fa-file-pdf"></i></div><div class="stat-number" style="color:var(--green)">${stats.totalPdfs}</div><div class="stat-label">PDFs</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div><section class="seo-section"><h2>Réviser le BAC en Côte d'Ivoire avec ResumeCI</h2><p>ResumeCI rassemble des fiches de résumé pour Terminale A et Terminale D, avec des cours de Mathématiques, SVT, Physique-Chimie, Philosophie et Histoire-Géographie. La plateforme aide les élèves à préparer le BAC ivoirien grâce aux quiz, flashcards, lecture audio, téléchargement PDF et révision mobile.</p><p><a href="/sitemap.html">Voir toutes les fiches disponibles</a></p></section></div>`;
       // Bind class card clicks
       document.querySelectorAll('.class-card').forEach(el=>el.addEventListener('click',()=>showClass(el.dataset.cls)));
       clearActive();

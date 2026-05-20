@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fiches-bac-v7-production-pages';
+const CACHE_NAME = 'fiches-bac-v8-seo-boost';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -7,10 +7,12 @@ const PRECACHE = [
   '/about.html',
   '/contact.html',
   '/privacy.html',
+  '/sitemap.html',
   '/manifest.json',
   '/robots.txt',
   '/sitemap.xml',
   '/icon.svg',
+  '/og-image.svg',
   '/icon-192.png',
   '/icon-512.png',
   '/data/structure.json',
