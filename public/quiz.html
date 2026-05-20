@@ -137,8 +137,8 @@
         </div>
         <div class="mode-card" data-mode="dates" onclick="selectMode(this)">
           <div class="icon">📅</div>
-          <h3>Quiz Dates</h3>
-          <p>Retrouve les dates clés de l'Histoire</p>
+          <h3>Quiz Dates (Histoire)</h3>
+          <p>Retrouve les dates clés — uniquement Histoire</p>
         </div>
         <div class="mode-card" data-mode="vf" onclick="selectMode(this)">
           <div class="icon">✅</div>
@@ -286,13 +286,23 @@
         {q:"Le VIH infecte principalement les :",a:["Lymphocytes T4","Globules rouges","Plaquettes","Neurones"],c:0},
         {q:"La double fécondation est caractéristique des :",a:["Angiospermes (plantes à fleurs)","Animaux","Champignons","Bactéries"],c:0},
         {q:"Le crossing-over se produit pendant :",a:["La méiose (prophase I)","La mitose","L'interphase","La fécondation"],c:0},
-        {q:"Un gène autosomal récessif s'exprime :",a:["Uniquement à l'état homozygote","Toujours","Uniquement chez les mâles","Jamais"],c:0}
+        {q:"Un gène autosomal récessif s'exprime :",a:["Uniquement à l'état homozygote","Toujours","Uniquement chez les mâles","Jamais"],c:0},
+        {q:"Le réflexe conditionnel a été découvert par :",a:["Pavlov","Darwin","Mendel","Pasteur"],c:0},
+        {q:"La synapse est la zone de :",a:["Communication entre deux neurones","Contraction musculaire","Division cellulaire","Sécrétion hormonale"],c:0},
+        {q:"L'actine et la myosine sont des protéines du :",a:["Muscle strié squelettique","Cerveau","Foie","Rein"],c:0},
+        {q:"Le groupe sanguin est déterminé par :",a:["Les antigènes à la surface des globules rouges","La couleur du sang","Le taux de plaquettes","La pression artérielle"],c:0}
       ],
       "Physique - Chimie": [
         {q:"La loi d'Ohm s'écrit :",a:["U = R × I","P = U × I","F = m × a","E = mc²"],c:0},
         {q:"L'unité de la force dans le SI est :",a:["Le Newton (N)","Le Joule (J)","Le Watt (W)","Le Pascal (Pa)"],c:0},
         {q:"La loi de Laplace donne la force sur un conducteur parcouru par un courant dans un champ magnétique. Sa formule est :",a:["F = BIL sin(α)","F = mg","F = kx","F = qvB"],c:0},
-        {q:"Un acide selon Brønsted est un :",a:["Donneur de proton H⁺","Accepteur de proton","Donneur d'électron","Accepteur d'électron"],c:0}
+        {q:"Un acide selon Brønsted est un :",a:["Donneur de proton H⁺","Accepteur de proton","Donneur d'électron","Accepteur d'électron"],c:0},
+        {q:"Le pH d'une solution acide est :",a:["Inférieur à 7","Égal à 7","Supérieur à 7","Négatif"],c:0},
+        {q:"La formule de l'énergie cinétique est :",a:["Ec = ½mv²","Ec = mgh","Ec = Fd","Ec = qU"],c:0},
+        {q:"Un savon est obtenu par réaction entre :",a:["Un corps gras et une base","Un acide et un métal","Deux acides","Un sel et de l'eau"],c:0},
+        {q:"L'induction électromagnétique est la production :",a:["D'une fem par variation de flux magnétique","D'un champ gravitationnel","D'une onde sonore","D'une réaction chimique"],c:0},
+        {q:"La vitesse instantanée est la dérivée de :",a:["La position par rapport au temps","La force par rapport à la masse","L'accélération par rapport au temps","L'énergie par rapport à la distance"],c:0},
+        {q:"Un alcool primaire possède le groupe OH sur un carbone lié à :",a:["Un seul autre carbone","Deux autres carbones","Trois autres carbones","Aucun carbone"],c:0}
       ]
     };
 
@@ -319,7 +329,25 @@
         {q:"La fonction exponentielle est toujours positive.",a:true,expl:"Pour tout x réel, e^x > 0."},
         {q:"ln(1) = 1",a:false,expl:"ln(1) = 0, car e⁰ = 1."},
         {q:"La dérivée d'une constante est 0.",a:true,expl:"Si f(x) = c (constante), alors f'(x) = 0."},
-        {q:"Deux événements incompatibles sont toujours indépendants.",a:false,expl:"Deux événements incompatibles de probabilité non nulle ne sont jamais indépendants."}
+        {q:"Deux événements incompatibles sont toujours indépendants.",a:false,expl:"Deux événements incompatibles de probabilité non nulle ne sont jamais indépendants."},
+        {q:"La limite de 1/x quand x tend vers +∞ est 0.",a:true,expl:"1/x tend vers 0 quand x tend vers +∞."},
+        {q:"e^(a+b) = e^a + e^b",a:false,expl:"e^(a+b) = e^a × e^b, pas la somme."}
+      ],
+      "SVT": [
+        {q:"Le réflexe myotatique est un réflexe inné.",a:true,expl:"C'est un réflexe inconditionnel, présent dès la naissance."},
+        {q:"Les anticorps sont produits par les lymphocytes T.",a:false,expl:"Les anticorps sont produits par les lymphocytes B (plasmocytes)."},
+        {q:"Le VIH se transmet par les moustiques.",a:false,expl:"Le VIH se transmet par voie sexuelle, sanguine ou de la mère à l'enfant."},
+        {q:"La mitose produit 4 cellules haploïdes.",a:false,expl:"La mitose produit 2 cellules diploïdes identiques. C'est la méiose qui donne 4 cellules haploïdes."},
+        {q:"Le cœur possède un automatisme cardiaque.",a:true,expl:"Le cœur bat de manière autonome grâce au nœud sinusal."},
+        {q:"La pollinisation est le transport du pollen vers le pistil.",a:true,expl:"La pollinisation est le transfert de pollen de l'anthère vers le stigmate."}
+      ],
+      "Physique - Chimie": [
+        {q:"Le pH d'une solution neutre est 7.",a:true,expl:"À 25°C, une solution neutre a un pH de 7."},
+        {q:"Un alcool tertiaire peut être oxydé en cétone.",a:false,expl:"Les alcools tertiaires ne s'oxydent pas dans les conditions habituelles."},
+        {q:"La force de Laplace est perpendiculaire au courant et au champ magnétique.",a:true,expl:"La force de Laplace est le produit vectoriel F = IL ∧ B."},
+        {q:"La fem induite existe seulement si le flux magnétique est constant.",a:false,expl:"La fem induite n'existe que s'il y a variation du flux magnétique (loi de Faraday)."},
+        {q:"Les acides aminés contiennent un groupe NH₂ et un groupe COOH.",a:true,expl:"Les acides alpha-aminés possèdent un groupe amine et un groupe carboxyle sur le même carbone."},
+        {q:"L'énergie potentielle de pesanteur dépend de la vitesse.",a:false,expl:"Ep = mgh dépend de la masse, g et la hauteur, pas de la vitesse."}
       ]
     };
 
@@ -380,7 +408,7 @@
     function generateQuestions(subject) {
       let pool = [];
       if (MODE === 'dates') {
-        // Dates game: show event, guess date (or show date, guess event)
+        // Dates game: uniquement Histoire — ignore le choix de matière
         const dates = [...DATES_DB];
         shuffle(dates);
         pool = dates.slice(0, 15).map((d, i) => {
@@ -401,7 +429,8 @@
           }
         });
       } else if (MODE === 'vf') {
-        const vfPool = VF_DB[subject] || VF_DB['Histoire - Géographie'];
+        const vfPool = VF_DB[subject];
+        if (!vfPool || vfPool.length === 0) { alert('Pas de questions Vrai/Faux disponibles pour cette matière. Choisis QCM ou une autre matière.'); return []; }
         shuffle(vfPool);
         pool = vfPool.slice(0, 10).map(v => ({
           q: v.q, answers: ['Vrai', 'Faux'], correct: v.a ? 0 : 1, type: 'vf', explanation: v.expl
