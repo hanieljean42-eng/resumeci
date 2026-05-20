@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fiches-bac-v8-seo-boost';
+const CACHE_NAME = 'fiches-bac-v9-faq';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -6,6 +6,7 @@ const PRECACHE = [
   '/flashcards.html',
   '/about.html',
   '/contact.html',
+  '/faq.html',
   '/privacy.html',
   '/sitemap.html',
   '/manifest.json',

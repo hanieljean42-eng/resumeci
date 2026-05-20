@@ -107,6 +107,7 @@ function generateSeoFiles(structure) {
     '/flashcards.html',
     '/about.html',
     '/contact.html',
+    '/faq.html',
     '/privacy.html',
     ...Object.values(structure).flatMap(subjects =>
       Object.values(subjects).flatMap(fiches => fiches.map(fiche => fiche.url))
