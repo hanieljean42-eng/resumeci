@@ -5,6 +5,12 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: ./public
     routes:
+      - type: redirect
+        source: https://resumeci.onrender.com/*
+        destination: https://resumeci.me/*
+      - type: redirect
+        source: http://resumeci.onrender.com/*
+        destination: https://resumeci.me/*
       - type: rewrite
         source: /*
         destination: /index.html

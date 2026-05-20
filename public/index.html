@@ -343,6 +343,7 @@
     let CURRENT_FICHE = null;
     let deferredInstallPrompt = null;
     let SEARCH_INDEX = [];
+    const PRIMARY_DOMAIN = 'https://resumeci.me';
 
     const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
@@ -357,6 +358,7 @@
     function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
 
     async function loadData(){
+      redirectToPrimaryDomain();
       const[struct,stats,searchIndex]=await Promise.all([
         fetch('/data/structure.json').then(r=>r.json()),
         fetch('/data/stats.json').then(r=>r.json()),
@@ -459,11 +461,17 @@
     async function shareSite(){
       const title=CURRENT_FICHE?CURRENT_FICHE.file.replace(/\.html$/,''):'ResumeCI — Fiches BAC';
       const text='Découvre ResumeCI pour réviser le BAC avec fiches, quiz, flashcards, audio et PDF.';
-      const url=location.href;
+      const url=PRIMARY_DOMAIN+location.pathname+location.search+location.hash;
       if(navigator.share)await navigator.share({title,text,url}).catch(()=>{});
       else{
         await navigator.clipboard?.writeText(url);
         alert('Lien copié. Tu peux le partager sur WhatsApp ou Facebook.');
+      }
+    }
+
+    function redirectToPrimaryDomain(){
+      if(location.hostname==='resumeci.onrender.com'){
+        location.replace(PRIMARY_DOMAIN+location.pathname+location.search+location.hash);
       }
     }
 
