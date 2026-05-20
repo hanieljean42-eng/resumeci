@@ -15,6 +15,18 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function addCreatorCredit(html) {
+  const credit = '<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>';
+  if (html.includes('Créé par <strong style="color:#64748b">Haniel_dev</strong>')) return html;
+  if (html.includes('</body>')) return html.replace('</body>', `${credit}</body>`);
+  return `${html}${credit}`;
+}
+
+function copyHtmlFile(srcPath, destPath) {
+  const html = fs.readFileSync(srcPath, 'utf8');
+  fs.writeFileSync(destPath, addCreatorCredit(html), 'utf8');
+}
+
 function copyDir(src, dest) {
   ensureDir(dest);
   for (const item of fs.readdirSync(src)) {
@@ -22,7 +34,7 @@ function copyDir(src, dest) {
     const destPath = path.join(dest, item);
     const stat = fs.statSync(srcPath);
     if (stat.isDirectory()) copyDir(srcPath, destPath);
-    else if (item.endsWith('.html')) fs.copyFileSync(srcPath, destPath);
+    else if (item.endsWith('.html')) copyHtmlFile(srcPath, destPath);
   }
 }
 
@@ -64,6 +76,22 @@ function buildStructure() {
   return { structure, stats: { totalFiches, totalPdfs: 0, classStats } };
 }
 
+function generateSeoFiles(structure) {
+  const siteUrl = (process.env.SITE_URL || 'https://resumeci.onrender.com').replace(/\/$/, '');
+  const urls = [
+    '/',
+    '/quiz.html',
+    '/flashcards.html',
+    ...Object.values(structure).flatMap(subjects =>
+      Object.values(subjects).flatMap(fiches => fiches.map(fiche => fiche.url))
+    ),
+  ];
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${siteUrl}${url}</loc></url>`).join('\n')}\n</urlset>\n`;
+  const robots = `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`;
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');
+}
+
 function main() {
   if (fs.existsSync(OUT_FICHES_DIR)) fs.rmSync(OUT_FICHES_DIR, { recursive: true, force: true });
   ensureDir(OUT_FICHES_DIR);
@@ -74,6 +102,7 @@ function main() {
 
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'structure.json'), JSON.stringify(structure, null, 2), 'utf8');
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'stats.json'), JSON.stringify(stats, null, 2), 'utf8');
+  generateSeoFiles(structure);
 
   console.log(`Static build complete: ${stats.totalFiches} fiches copied.`);
 }

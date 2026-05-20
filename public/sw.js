@@ -1,10 +1,12 @@
-const CACHE_NAME = 'fiches-bac-v5-audio-fix';
+const CACHE_NAME = 'fiches-bac-v6-production';
 const PRECACHE = [
   '/',
   '/index.html',
   '/quiz.html',
   '/flashcards.html',
   '/manifest.json',
+  '/robots.txt',
+  '/sitemap.xml',
   '/icon.svg',
   '/icon-192.png',
   '/icon-512.png',
