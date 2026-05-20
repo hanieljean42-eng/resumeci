@@ -77,7 +77,7 @@ function buildStructure() {
 }
 
 function generateSeoFiles(structure) {
-  const siteUrl = (process.env.SITE_URL || 'https://resumeci.onrender.com').replace(/\/$/, '');
+  const siteUrl = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
   const urls = [
     '/',
     '/quiz.html',
