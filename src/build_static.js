@@ -101,19 +101,22 @@ function buildStructure() {
 }
 
 function generateSeoFiles(structure) {
-  const urls = [
-    '/',
-    '/quiz.html',
-    '/flashcards.html',
-    '/about.html',
-    '/contact.html',
-    '/faq.html',
-    '/privacy.html',
-    ...Object.values(structure).flatMap(subjects =>
-      Object.values(subjects).flatMap(fiches => fiches.map(fiche => fiche.url))
-    ),
+  const today = new Date().toISOString().split('T')[0];
+  const mainPages = [
+    { url: '/', priority: '1.0', changefreq: 'weekly' },
+    { url: '/quiz.html', priority: '0.9', changefreq: 'weekly' },
+    { url: '/flashcards.html', priority: '0.9', changefreq: 'weekly' },
+    { url: '/faq.html', priority: '0.7', changefreq: 'monthly' },
+    { url: '/about.html', priority: '0.5', changefreq: 'monthly' },
+    { url: '/contact.html', priority: '0.5', changefreq: 'monthly' },
+    { url: '/privacy.html', priority: '0.3', changefreq: 'yearly' },
+    { url: '/sitemap.html', priority: '0.4', changefreq: 'weekly' },
   ];
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${SITE_URL}${url}</loc></url>`).join('\n')}\n</urlset>\n`;
+  const ficheUrls = Object.values(structure).flatMap(subjects =>
+    Object.values(subjects).flatMap(fiches => fiches.map(fiche => ({ url: fiche.url, priority: '0.8', changefreq: 'monthly' })))
+  );
+  const allUrls = [...mainPages, ...ficheUrls];
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map(u => `  <url>\n    <loc>${SITE_URL}${u.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
   const robots = `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');
