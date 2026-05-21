@@ -143,6 +143,54 @@ function generateSearchIndex(structure) {
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'search-index.json'), JSON.stringify(entries), 'utf8');
 }
 
+function injectIndexSeoBlock(structure, stats) {
+  const indexPath = path.join(PUBLIC_DIR, 'index.html');
+  if (!fs.existsSync(indexPath)) return;
+  const html = fs.readFileSync(indexPath, 'utf8');
+
+  const subjectIntros = {
+    'Mathématiques': 'fonctions, limites, dérivées, primitives, suites numériques, exponentielles, logarithmes, nombres complexes, probabilités et statistiques',
+    'SVT': 'tissu nerveux, fonctionnement du cœur, muscle squelettique, immunité, VIH, reproduction, génétique, hérédité',
+    'Physique - Chimie': 'cinématique, dynamique, loi de Laplace, induction électromagnétique, alcools, acides aminés, dosage, pH, oscillations',
+    'Philosophie': 'dissertation, conscience, inconscient, liberté, vérité, science, langage, État, politique, morale',
+    'Histoire - Géographie': 'ONU, guerre froide, décolonisation, Côte d\'Ivoire, CEDEAO, Union Africaine, Corée du Sud, Algérie',
+    'Français': 'dissertation, commentaire, figures de style, analyse littéraire',
+    'Anglais': 'grammaire, vocabulaire, compréhension, expression écrite',
+    'Allemand': 'grammaire, vocabulaire, compréhension, expression écrite',
+  };
+
+  const subjectSections = [];
+  for (const [cls, subjects] of Object.entries(structure)) {
+    const clsLabel = cls.replace('_', ' ');
+    for (const [subject, fiches] of Object.entries(subjects)) {
+      if (!fiches.length) continue;
+      const intro = subjectIntros[subject] || 'leçons et résumés du programme';
+      const links = fiches.map(f => `<li><a href="${f.url}">${escapeHtml(f.name)}</a></li>`).join('');
+      subjectSections.push(
+        `<article><h3>${escapeHtml(subject)} — ${escapeHtml(clsLabel)}</h3>` +
+        `<p>Fiches de résumé et cours de ${escapeHtml(subject)} pour la ${escapeHtml(clsLabel)} au BAC ivoirien : ${intro}.</p>` +
+        `<ul>${links}</ul></article>`
+      );
+    }
+  }
+
+  const block = `<!-- SEO_BLOCK_START -->
+<aside class="seo-static" aria-label="Plan détaillé du site">
+  <style>.seo-static{max-width:1100px;margin:0 auto;padding:48px 20px;background:#f8fafc;color:#1e293b;font-family:Inter,Arial,sans-serif;line-height:1.7}.seo-static h2{font-size:24px;margin:0 0 12px;color:#0f172a}.seo-static h3{font-size:17px;margin:24px 0 8px;color:#1d4ed8}.seo-static p{font-size:14px;color:#475569;margin:6px 0}.seo-static ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;list-style:none;padding:0;margin:8px 0}.seo-static li{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 12px;font-size:13px}.seo-static a{color:#2563eb;text-decoration:none;font-weight:600}.seo-static a:hover{text-decoration:underline}.seo-static .seo-intro{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px;margin-bottom:18px}.seo-static nav a{color:#475569;margin-right:14px;font-weight:600}</style>
+  <div class="seo-intro">
+    <h2>ResumeCI — Fiches de résumé pour le BAC en Côte d'Ivoire</h2>
+    <p>ResumeCI est une plateforme gratuite de révision pour les élèves de Terminale A et Terminale D en Côte d'Ivoire. Retrouvez ${stats.totalFiches} fiches de résumé en Mathématiques, SVT, Physique-Chimie, Philosophie et Histoire-Géographie, ainsi que des quiz gamifiés (QCM, Vrai/Faux, Quiz des dates) et des flashcards à répétition espacée pour préparer efficacement le baccalauréat ivoirien.</p>
+    <p>Cours BAC Côte d'Ivoire, résumé Terminale D, fiches Terminale A, programme BAC ivoirien, révision baccalauréat Côte d'Ivoire, exercices BAC CI, annales BAC CI, quiz BAC, flashcards BAC.</p>
+    <nav><a href="/quiz.html">Quiz BAC</a><a href="/flashcards.html">Flashcards</a><a href="/sitemap.html">Plan du site</a><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
+  </div>
+  ${subjectSections.join('\n  ')}
+</aside>
+<!-- SEO_BLOCK_END -->`;
+
+  const updated = html.replace(/<!-- SEO_BLOCK_START -->[\s\S]*?<!-- SEO_BLOCK_END -->/, block);
+  fs.writeFileSync(indexPath, updated, 'utf8');
+}
+
 function main() {
   if (fs.existsSync(OUT_FICHES_DIR)) fs.rmSync(OUT_FICHES_DIR, { recursive: true, force: true });
   ensureDir(OUT_FICHES_DIR);
@@ -156,6 +204,7 @@ function main() {
   generateSearchIndex(structure);
   generateSeoFiles(structure);
   generateHtmlSitemap(structure);
+  injectIndexSeoBlock(structure, stats);
 
   console.log(`Static build complete: ${stats.totalFiches} fiches copied.`);
 }
