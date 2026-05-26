@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const FICHES_DIR = path.join(__dirname, 'Fiches_Resume');
 const COURS_DIR = path.join(__dirname, 'Cours_Terminale');
 const ALLOWED_SUBJECTS = {
+  '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
   Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
 };
@@ -164,10 +165,13 @@ app.get('/api/download/:cls/:subject/:file', async (req, res) => {
   }
 });
 
-// Serve frontend
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: 0,
+  etag: false,
+}));
+
+// SPA fallback — serve index.html for non-file routes
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

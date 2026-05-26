@@ -1,0 +1,1048 @@
+<!DOCTYPE html><html dir="ltr" lang="fr" xml:lang="fr" class="html yui3-js-enabled"><head>
+        <title>Tableau de bord | Collège Numérique</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//coll.ecole-ci.org/pluginfile.php/1/theme_mb2nl/favicon/1776146674/rci.ico">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="moodle, Tableau de bord | Collège Numérique">
+<link rel="stylesheet" type="text/css" href="https://coll.ecole-ci.org/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css"><script charset="utf-8" id="yui_3_18_1_1_1779722445420_12" src="https://coll.ecole-ci.org/theme/yui_combo.php?3.18.1/event-mousewheel/event-mousewheel-min.js&amp;3.18.1/event-resize/event-resize-min.js&amp;3.18.1/event-hover/event-hover-min.js&amp;3.18.1/event-touch/event-touch-min.js&amp;3.18.1/event-move/event-move-min.js&amp;3.18.1/event-flick/event-flick-min.js&amp;3.18.1/event-valuechange/event-valuechange-min.js&amp;3.18.1/event-tap/event-tap-min.js&amp;m/1776146359/core/event/event-min.js" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://coll.ecole-ci.org/theme/styles.php/mb2nl/1776146674_1645545627/all">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/coll.ecole-ci.org","homeurl":{},"sesskey":"mAe7KSRnFm","sessiontimeout":"7200","sessiontimeoutwarning":1200,"themerev":"1776146674","slasharguments":1,"theme":"mb2nl","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1776146359","admin":"admin","svgicons":true,"usertimezone":"Afrique\/Abidjan","language":"fr","courseId":1,"courseContextId":2,"contextid":183599,"contextInstanceId":135206,"langrev":1779509466,"templaterev":"1776146359","siteId":1};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/coll.ecole-ci.org\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/coll.ecole-ci.org\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/coll.ecole-ci.org\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/coll.ecole-ci.org\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/coll.ecole-ci.org\/theme\/yui_combo.php?m\/1776146359\/","combine":true,"comboBase":"https:\/\/coll.ecole-ci.org\/theme\/yui_combo.php?","ext":false,"root":"m\/1776146359\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_role-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_mb2shortcodes-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_wiris-button":{"requires":["moodle-editor_atto-plugin","get"]}}},"gallery":{"name":"gallery","base":"https:\/\/coll.ecole-ci.org\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/coll.ecole-ci.org\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1776146359\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/coll.ecole-ci.org\/lib\/javascript.php\/1776146359\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/coll.ecole-ci.org\/lib\/javascript.php\/1776146359\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>-->	
+        <style id="ascsb_style">:root{--acsb-bg: #181818;--acsb-color: #ffffff;--acsb-bocolor: #282828;--acsb-filtercolor: brightness(0) saturate(100%) invert(100%) sepia(91%) saturate(0%) hue-rotate(298deg) brightness(105%) contrast(101%);}.acsb_contrastlight{--acsb-bg: #ffffff;--acsb-color: #000000;--acsb-bocolor: #dddddd;--acsb-filtercolor: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7494%) hue-rotate(292deg) brightness(70%) contrast(100%);}.acsb_contrastdark .breadcrumb ul li+li::before,.acsb_contrastlight .breadcrumb ul li+li::before,.acsb_contrastdark .breadcrumb ol li+li::before,.acsb_contrastlight .breadcrumb ol li+li::before,.acsb_contrastdark .block_tree a,.acsb_contrastlight .block_tree a,.acsb_contrastdark .popover-region-header-container,.acsb_contrastlight .popover-region-header-container,.acsb_contrastdark .popover-region-toggle::before,.acsb_contrastlight .popover-region-toggle::before,.acsb_contrastdark .popover-region-toggle::after,.acsb_contrastlight .popover-region-toggle::after,.acsb_contrastdark .control-area,.acsb_contrastlight .control-area,.acsb_contrastdark .notification-area,.acsb_contrastlight .notification-area,.acsb_contrastdark .courseindex-item,.acsb_contrastlight .courseindex-item,.acsb_contrastdark .changenumsections,.acsb_contrastlight .changenumsections,.acsb_contrastdark .pluscontainer,.acsb_contrastlight .pluscontainer,.acsb_contrastdark .inplaceeditable,.acsb_contrastlight .inplaceeditable,.acsb_contrastdark .sectionname a,.acsb_contrastlight .sectionname a,.acsb_contrastdark [type="text"],.acsb_contrastlight [type="text"],.acsb_contrastdark fieldset,.acsb_contrastlight fieldset,.acsb_contrastdark fieldset>*,.acsb_contrastlight fieldset>*,.acsb_contrastdark .filepicker-container,.acsb_contrastlight .filepicker-container,.acsb_contrastdark .moreless-toggler,.acsb_contrastlight .moreless-toggler,.acsb_contrastdark select,.acsb_contrastlight select,.acsb_contrastdark .form-control,.acsb_contrastlight .form-control,.acsb_contrastdark input,.acsb_contrastlight input,.acsb_contrastdark textarea,.acsb_contrastlight textarea,.acsb_contrastdark .fm-empty-container,.acsb_contrastlight .fm-empty-container,.acsb_contrastdark .sp-replacer,.acsb_contrastlight .sp-replacer,.acsb_contrastdark .sp-container,.acsb_contrastlight .sp-container,.acsb_contrastdark .sp-picker-container,.acsb_contrastlight .sp-picker-container,.acsb_contrastdark .tox-tinymce,.acsb_contrastlight .tox-tinymce,.acsb_contrastdark .tox-editor-header,.acsb_contrastlight .tox-editor-header,.acsb_contrastdark .tox-menubar,.acsb_contrastlight .tox-menubar,.acsb_contrastdark .tox-toolbar-overlord,.acsb_contrastlight .tox-toolbar-overlord,.acsb_contrastdark .tox-statusbar,.acsb_contrastlight .tox-statusbar,.acsb_contrastdark .tox-mbtn,.acsb_contrastlight .tox-mbtn,.acsb_contrastdark .tox-toolbar__primary,.acsb_contrastlight .tox-toolbar__primary,.acsb_contrastdark .tox-edit-area__iframe,.acsb_contrastlight .tox-edit-area__iframe,.acsb_contrastdark .tox-tbtn svg,.acsb_contrastlight .tox-tbtn svg,.acsb_contrastdark .tox-toolbar__overflow,.acsb_contrastlight .tox-toolbar__overflow,.acsb_contrastdark .tox-statusbar__text-container *,.acsb_contrastlight .tox-statusbar__text-container *,.acsb_contrastdark .tox-menu,.acsb_contrastlight .tox-menu,.acsb_contrastdark .tox-collection__item,.acsb_contrastlight .tox-collection__item,.acsb_contrastdark .tox-collection__group,.acsb_contrastlight .tox-collection__group,.acsb_contrastdark .tox .tox-collection__item-caret svg,.acsb_contrastlight .tox .tox-collection__item-caret svg,.acsb_contrastdark .tox-collection__item-accessory,.acsb_contrastlight .tox-collection__item-accessory,.acsb_contrastdark .tox-pop__dialog,.acsb_contrastlight .tox-pop__dialog,.acsb_contrastdark .tox-tbtn,.acsb_contrastlight .tox-tbtn,.acsb_contrastdark .CodeMirror,.acsb_contrastlight .CodeMirror,.acsb_contrastdark .CodeMirror-linenumber,.acsb_contrastlight .CodeMirror-linenumber,.acsb_contrastdark .CodeMirror-gutters,.acsb_contrastlight .CodeMirror-gutters,.acsb_contrastdark .editor_atto_toolbar,.acsb_contrastlight .editor_atto_toolbar,.acsb_contrastdark .atto_group,.acsb_contrastlight .atto_group,.acsb_contrastdark .atto_group button,.acsb_contrastlight .atto_group button,.acsb_contrastdark .atto_group button i,.acsb_contrastlight .atto_group button i,.acsb_contrastdark .modal-body,.acsb_contrastlight .modal-body,.acsb_contrastdark .modal-content,.acsb_contrastlight .modal-content,.acsb_contrastdark .modal-header,.acsb_contrastlight .modal-header,.acsb_contrastdark .modal-footer,.acsb_contrastlight .modal-footer,.acsb_contrastdark .modal-header *,.acsb_contrastlight .modal-header *,.acsb_contrastdark .modal-footer *,.acsb_contrastlight .modal-footer *,.acsb_contrastdark .moodle-dialogue-wrap,.acsb_contrastlight .moodle-dialogue-wrap,.acsb_contrastdark .moodle-dialogue-hd,.acsb_contrastlight .moodle-dialogue-hd,.acsb_contrastdark .badge,.acsb_contrastlight .badge,.acsb_contrastdark .yui3-calendar-content,.acsb_contrastlight .yui3-calendar-content,.acsb_contrastdark .yui3-calendar-header,.acsb_contrastlight .yui3-calendar-header,.acsb_contrastdark .filepicker-filelist,.acsb_contrastlight .filepicker-filelist,.acsb_contrastdark tr,.acsb_contrastlight tr,.acsb_contrastdark th,.acsb_contrastlight th,.acsb_contrastdark td,.acsb_contrastlight td,.acsb_contrastdark th *,.acsb_contrastlight th *,.acsb_contrastdark td *,.acsb_contrastlight td *,.acsb_contrastdark h1,.acsb_contrastlight h1,.acsb_contrastdark h2,.acsb_contrastlight h2,.acsb_contrastdark h3,.acsb_contrastlight h3,.acsb_contrastdark h4,.acsb_contrastlight h4,.acsb_contrastdark h5,.acsb_contrastlight h5,.acsb_contrastdark h6,.acsb_contrastlight h6,.acsb_contrastdark .h1,.acsb_contrastlight .h1,.acsb_contrastdark .h2,.acsb_contrastlight .h2,.acsb_contrastdark .h3,.acsb_contrastlight .h3,.acsb_contrastdark .h4,.acsb_contrastlight .h4,.acsb_contrastdark .h5,.acsb_contrastlight .h5,.acsb_contrastdark .h6,.acsb_contrastlight .h6,.acsb_contrastdark .card,.acsb_contrastlight .card,.acsb_contrastdark .text-truncate,.acsb_contrastlight .text-truncate,.acsb_contrastdark .activityiconcontainer,.acsb_contrastlight .activityiconcontainer,.acsb_contrastdark .btn,.acsb_contrastlight .btn,.acsb_contrastdark .btn i,.acsb_contrastlight .btn i,.acsb_contrastdark .multiline,.acsb_contrastlight .multiline,.acsb_contrastdark .card-footer,.acsb_contrastlight .card-footer,.acsb_contrastdark .progress-text,.acsb_contrastlight .progress-text,.acsb_contrastdark button:not(#acsb-menu button):not(.acsb-trigger),.acsb_contrastlight button:not(#acsb-menu button):not(.acsb-trigger),.acsb_contrastdark button i:not(#acsb-menu button i),.acsb_contrastlight button i:not(#acsb-menu button i),.acsb_contrastdark .list-group-item,.acsb_contrastlight .list-group-item,.acsb_contrastdark .bg-white,.acsb_contrastlight .bg-white,.acsb_contrastdark .linkbtn,.acsb_contrastlight .linkbtn,.acsb_contrastdark .title,.acsb_contrastlight .title,.acsb_contrastdark .course-popover-inner,.acsb_contrastlight .course-popover-inner,.acsb_contrastdark .course-popover-inner *,.acsb_contrastlight .course-popover-inner *,.acsb_contrastdark .item-actions button,.acsb_contrastlight .item-actions button,.acsb_contrastdark .popover-header,.acsb_contrastlight .popover-header,.acsb_contrastdark .popover-body,.acsb_contrastlight .popover-body,.acsb_contrastdark footer button,.acsb_contrastlight footer button,.acsb_contrastdark .day,.acsb_contrastlight .day,.acsb_contrastdark .message,.acsb_contrastlight .message,.acsb_contrastdark .message *,.acsb_contrastlight .message *,.acsb_contrastdark .dropdown-menu,.acsb_contrastlight .dropdown-menu,.acsb_contrastdark .dropdown-menu *,.acsb_contrastlight .dropdown-menu *,.acsb_contrastdark .dropdown-item,.acsb_contrastlight .dropdown-item,.acsb_contrastdark nav,.acsb_contrastlight nav,.acsb_contrastdark .nav-item,.acsb_contrastlight .nav-item,.acsb_contrastdark .nav-link,.acsb_contrastlight .nav-link,.acsb_contrastdark .nav-tabs,.acsb_contrastlight .nav-tabs,.acsb_contrastdark .border-bottom,.acsb_contrastlight .border-bottom,.acsb_contrastdark .border-top,.acsb_contrastlight .border-top,.acsb_contrastdark .border-right,.acsb_contrastlight .border-right,.acsb_contrastdark .border-left,.acsb_contrastlight .border-left,.acsb_contrastdark .categoryname,.acsb_contrastlight .categoryname,.acsb_contrastdark .coursebox,.acsb_contrastlight .coursebox,.acsb_contrastdark .info a,.acsb_contrastlight .info a,.acsb_contrastdark .enrolmenticons,.acsb_contrastlight .enrolmenticons,.acsb_contrastdark .categoryname::before,.acsb_contrastlight .categoryname::before,.acsb_contrastdark .teachers,.acsb_contrastlight .teachers,.acsb_contrastdark .mb2-pb-testimonials-item,.acsb_contrastlight .mb2-pb-testimonials-item,.acsb_contrastdark .mb2-pb-testimonials-item *,.acsb_contrastlight .mb2-pb-testimonials-item *,.acsb_contrastdark .course-quick,.acsb_contrastlight .course-quick,.acsb_contrastdark .course-quick *,.acsb_contrastlight .course-quick *,.acsb_contrastdark .mb2-editor,.acsb_contrastlight .mb2-editor,.acsb_contrastdark .mb2-editor-document,.acsb_contrastlight .mb2-editor-document,.acsb_contrastdark .mb2-editor-document *,.acsb_contrastlight .mb2-editor-document *,.acsb_contrastdark .mb2mm-wrap:before,.acsb_contrastlight .mb2mm-wrap:before,.acsb_contrastdark .search-field,.acsb_contrastlight .search-field,.acsb_contrastdark .theme-footer a,.acsb_contrastlight .theme-footer a,.acsb_contrastdark .theme-course-item-inner,.acsb_contrastlight .theme-course-item-inner,.acsb_contrastdark .event-title,.acsb_contrastlight .event-title,.acsb_contrastdark .event-details,.acsb_contrastlight .event-details,.acsb_contrastdark .myc-readmore,.acsb_contrastlight .myc-readmore,.acsb_contrastdark .tpheader_dark.tpheaderl_modern .breadcrumb a,.acsb_contrastlight .tpheader_dark.tpheaderl_modern .breadcrumb a,.acsb_contrastdark .tgsdbc_dark .sidebar-content,.acsb_contrastlight .tgsdbc_dark .sidebar-content,.acsb_contrastdark .cfilter-wrap,.acsb_contrastlight .cfilter-wrap{background-color: var(--acsb-bg) !important;color: var(--acsb-color) !important;border-color: var(--acsb-bocolor) !important;}.acsb_contrastdark .mb2-pb-row.light .mb2-pb-row-inner,.acsb_contrastdark .tpheader_light #page-header,.acsb_contrastdark .toggle-content .content:before,.acsb_contrastdark .tgsdb-chome .course-title{background-color: var(--acsb-bg) !important;border-color: var(--acsb-bocolor) !important;background-image: none !important;}.acsb_contrastlight .mb2-pb-row.dark .mb2-pb-row-inner,.acsb_contrastlight .tpheader_dark #page-header{background-color: var(--acsb-bg) !important;border-color: var(--acsb-bocolor) !important;background-image: none !important;}.acsb_contrastdark svg image,.acsb_contrastlight svg image,.acsb_contrastdark img.icon,.acsb_contrastlight img.icon,.acsb_contrastdark .activityicon,.acsb_contrastlight .activityicon{filter: var(--acsb-filtercolor) !important;}</style>    <style id="theme_custom_style">:root{--mb2-htmlscl:0px;}</style>    
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="https://coll.ecole-ci.org/lib/requirejs.php/1776146359/core/first.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script></head><body id="page-my-index" class="limitedwidth format-site path-my chrome dir-ltr lang-fr yui-skin-sam yui3-skin-sam coll-ecole-ci-org pagelayout-mydashboard course-1 context-183599 theme theme-lfw issection coursenav noediting fsmod0 fsmodedh nobuilderpage loggedin roleshortname-visiteur coursegrid0 sticky-nav3 theme-hidden-region-mode hide-sidebars nosidebar-case css_af5e css_31a2 css_rbxt css_6wum css_hy9f blockstyle-minimal theader_light2 tpheader_dark tpheaderl_modern tpheader_gradient tpheader_wave tpheader_color tnavheader tnavheader_light2 hnavpos1 navalignright jsenabled page-loaded">
+<div data-has-hidden="true" aria-hidden="true">
+    <a class="sr-only sr-only-focusable" href="#main-navigation" data-aria-hidden-tab-index="" tabindex="-1">Skip to navigation</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-mobilenav" data-aria-hidden-tab-index="" tabindex="-1">Skip to navigation</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-search" data-aria-hidden-tab-index="" tabindex="-1">Skip to search form</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-login" data-aria-hidden-tab-index="" tabindex="-1">Skip to profile</a>
+    <a class="sr-only sr-only-focusable" href="#maincontent" data-aria-hidden-tab-index="" tabindex="-1">Passer au contenu principal</a>
+    <a class="sr-only sr-only-focusable" href="#acsb-menu_launcher" data-aria-hidden-tab-index="" tabindex="-1">Skip to accessibility options</a>
+    <a class="sr-only sr-only-focusable" href="#footer" data-aria-hidden-tab-index="" tabindex="-1">Skip to footer</a>
+</div><script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/polyfills/polyfill.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js" data-has-hidden="true" aria-hidden="true"></script><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class="" data-has-hidden="true" aria-hidden="true"></div><script src="https://coll.ecole-ci.org/theme/jquery.php/core/jquery-3.7.1.min.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/javascript-static.js" data-has-hidden="true" aria-hidden="true"></script>
+<script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+<a class="sr-only sr-only-focusable" href="#skip_acsb-menu" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="" tabindex="-1">Skip accessibility options</a><button id="acsb-menu_launcher" type="button" class="acsb-trigger" aria-label="Accessibility options" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-icon-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm161.5-86.1c-12.2-5.2-26.3 .4-31.5 12.6s.4 26.3 12.6 31.5l11.9 5.1c17.3 7.4 35.2 12.9 53.6 16.3v50.1c0 4.3-.7 8.6-2.1 12.6l-28.7 86.1c-4.2 12.6 2.6 26.2 15.2 30.4s26.2-2.6 30.4-15.2l24.4-73.2c1.3-3.8 4.8-6.4 8.8-6.4s7.6 2.6 8.8 6.4l24.4 73.2c4.2 12.6 17.8 19.4 30.4 15.2s19.4-17.8 15.2-30.4l-28.7-86.1c-1.4-4.1-2.1-8.3-2.1-12.6V235.5c18.4-3.5 36.3-8.9 53.6-16.3l11.9-5.1c12.2-5.2 17.8-19.3 12.6-31.5s-19.3-17.8-31.5-12.6L338.7 175c-26.1 11.2-54.2 17-82.7 17s-56.5-5.8-82.7-17l-11.9-5.1zM256 160a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg></span><span class="acsb-icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg></span></button><div id="acsb-menu" class="acsb-block" data-has-hidden="true" aria-hidden="true"><div class="acsb-block-header d-flex justify-content-between align-items-center"><button type="button" class="themereset acsb-reset d-inline-flex justify-content-center align-items-center" aria-label="Réinitialiser" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-btn-icon"><i class="ri-loop-left-line"></i></span><span class="acsb-btn-text">Réinitialiser</span></button><div class="acsb-block-close"><button type="button" class="themereset acsb-close d-inline-flex justify-content-center align-items-center" aria-label="Fermer" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-btn-icon"><i class="ri-close-fill"></i></span><span class="acsb-btn-text">Fermer</span></button></div></div><div class="acsb-block-inner d-flex flex-column"><div class="acsb-section acsb-profiles"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_profiles" aria-expanded="true" aria-label="Profils d'accessibilité" data-aria-hidden-tab-index="" tabindex="-1"><span class="btntext">Profils d'accessibilité</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_profiles" class="acsb-section-content"><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="visualimpairment" data-acsb="readablefont,textsizelarge,highsaturation,bigblackcursor" aria-label="Déficience visuelle" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-eye-line"></i></span><span class="acsb-profile-title">Déficience visuelle</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="seizureandepileptic" data-acsb="lowsaturation,stopanimations" aria-label="Crise épileptique" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-flashlight-fill"></i></span><span class="acsb-profile-title">Crise épileptique</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="colorvisiondeficiency" data-acsb="readablefont,highcontrast,highsaturation" aria-label="Déficience de la vision des couleurs" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-contrast-drop-fill"></i></span><span class="acsb-profile-title">Déficience de la vision des couleurs</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="adhd" data-acsb="lowsaturation,readingmask,stopanimations" aria-label="Le trouble du déficit de l'attention" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-focus-2-fill"></i></span><span class="acsb-profile-title">Le trouble du déficit de l'attention</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="dyslexia" data-acsb="dyslexic,readingguide" aria-label="Dyslexie" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-font-size"></i></span><span class="acsb-profile-title">Dyslexie</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="learning" data-acsb="readablefont,textsizenormal,readingguide" aria-label="S'accommoder" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-profile-icon"><i class="ri-book-read-line"></i></span><span class="acsb-profile-title">S'accommoder</span></button></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_2" aria-expanded="true" aria-label="Ajustements de contenu" data-aria-hidden-tab-index="" tabindex="-1"><span class="btntext">Ajustements de contenu</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_2" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="readablefont" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="dyslexic" aria-label="Police lisible" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-font-family"></i><span class="acsb-item-title">Police lisible</span></button></div><div class="acsb-item"><button type="button" data-id="dyslexic" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="readablefont" aria-label="Police adaptée à la dyslexie" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-font-size"></i><span class="acsb-item-title">Police adaptée à la dyslexie</span></button></div><div class="acsb-item"><button type="button" data-id="highlighttitles" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en surbrillance les titres" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-heading"></i><span class="acsb-item-title">Mettre en surbrillance les titres</span></button></div><div class="acsb-item"><button type="button" data-id="highlightlinks" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en évidence les liens" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-link"></i><span class="acsb-item-title">Mettre en évidence les liens</span></button></div><div class="acsb-item"><button type="button" data-id="highlightbuttons" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en surbrillance les boutons" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-mouse-line"></i><span class="acsb-item-title">Mettre en surbrillance les boutons</span></button></div><div class="acsb-item"><button type="button" data-id="hideimages" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Masquer les images" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-image-2-line"></i><span class="acsb-item-title">Masquer les images</span></button></div><div class="acsb-item"><button type="button" data-id="tooltips" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Info-bulles" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-feedback-line"></i><span class="acsb-item-title">Info-bulles</span></button></div><div class="acsb-item"><button type="button" data-id="stopanimations" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Arrêter les animations" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-stop-line"></i><span class="acsb-item-title">Arrêter les animations</span></button></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-font-size-2"></i><span class="acsb-item-group-title">Taille du texte</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="textsizenormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizelarge,textsizebig" aria-label="Taille du texte: plus 1" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+</span></button><button type="button" data-id="textsizelarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizenormal,textsizebig" aria-label="Taille du texte: plus 2" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="textsizebig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizenormal,textsizelarge" aria-label="Taille du texte: plus 3" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ + +</span></button></div></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-line-height"></i><span class="acsb-item-group-title">Hauteur de la ligne</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="lineheightnormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightlarge,lineheightbig" aria-label="Hauteur de la ligne: plus 1" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+</span></button><button type="button" data-id="lineheightlarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightnormal,lineheightbig" aria-label="Hauteur de la ligne: plus 2" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="lineheightbig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightnormal,lineheightlarge" aria-label="Hauteur de la ligne: plus 3" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ + +</span></button></div></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-text-spacing"></i><span class="acsb-item-group-title">Espacement du texte</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="textspacingnormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacinglarge,textspacingbig" aria-label="Espacement du texte: plus 1" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+</span></button><button type="button" data-id="textspacinglarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacingnormal,textspacingbig" aria-label="Espacement du texte: plus 2" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="textspacingbig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacingnormal,textspacinglarge" aria-label="Espacement du texte: plus 3" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><span class="acsb-item-title">+ + +</span></button></div></div></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_16" aria-expanded="true" aria-label="Réglages de couleur" data-aria-hidden-tab-index="" tabindex="-1"><span class="btntext">Réglages de couleur</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_16" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="contrastdark" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastlight,invertcolors,changecolors" aria-label="Contraste sombre" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-moon-fill"></i><span class="acsb-item-title">Contraste sombre</span></button></div><div class="acsb-item"><button type="button" data-id="contrastlight" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,invertcolors,changecolors" aria-label="Contraste lumineux" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-sun-fill"></i><span class="acsb-item-title">Contraste lumineux</span></button></div><div class="acsb-item"><button type="button" data-id="invertcolors" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,contrastlight,highcontrast,highsaturation,lowsaturation,monochrome,changecolors" aria-label="Inverser les couleurs" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-contrast-line"></i><span class="acsb-item-title">Inverser les couleurs</span></button></div><div class="acsb-item"><button type="button" data-id="changecolors" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,contrastlight,highcontrast,highsaturation,lowsaturation,monochrome,invertcolors" aria-label="Changer les couleurs" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-exchange-2-line"></i><span class="acsb-item-title">Changer les couleurs</span></button></div><div class="acsb-item"><button type="button" data-id="highcontrast" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="invertcolors,changecolors,lowsaturation,monochrome,highsaturation" aria-label="Contraste élevé" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-contrast-fill"></i><span class="acsb-item-title">Contraste élevé</span></button></div><div class="acsb-item"><button type="button" data-id="highsaturation" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,lowsaturation,monochrome,invertcolors,changecolors" aria-label="Saturation élevée" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-drop-fill"></i><span class="acsb-item-title">Saturation élevée</span></button></div><div class="acsb-item"><button type="button" data-id="lowsaturation" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,highsaturation,monochrome,invertcolors,changecolors" aria-label="Faible saturation" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-contrast-drop-2-line"></i><span class="acsb-item-title">Faible saturation</span></button></div><div class="acsb-item"><button type="button" data-id="monochrome" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,highsaturation,lowsaturation,invertcolors,changecolors" aria-label="Monochrome" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-contrast-drop-fill"></i><span class="acsb-item-title">Monochrome</span></button></div></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_27" aria-expanded="true" aria-label="Réglages d'orientation" data-aria-hidden-tab-index="" tabindex="-1"><span class="btntext">Réglages d'orientation</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_27" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="readingguide" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Guide de lecture" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-subtract-fill"></i><span class="acsb-item-title">Guide de lecture</span></button></div><div class="acsb-item"><button type="button" data-id="readingmask" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Masque de lecture" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-send-backward"></i><span class="acsb-item-title">Masque de lecture</span></button></div><div class="acsb-item"><button type="button" data-id="bigblackcursor" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="bigwhitecursor" aria-label="Gros curseur noir" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-cursor-fill"></i><span class="acsb-item-title">Gros curseur noir</span></button></div><div class="acsb-item"><button type="button" data-id="bigwhitecursor" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="bigblackcursor" aria-label="Gros curseur blanc" aria-checked="false" role="checkbox" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-cursor-line"></i><span class="acsb-item-title">Gros curseur blanc</span></button></div></div></div></div><div class="acsb-block-footer"><a class="help-link d-inline-flex align-items-center" href="https://coll.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide" data-aria-hidden-tab-index="" tabindex="-1"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a></div></div><span id="skip_acsb-menu" data-has-hidden="true" aria-hidden="true"></span><div class="page-outer position-relative d-flex flex-column" id="page" data-has-hidden="true" aria-hidden="true">
+<!--  <div id="page"> -->
+    <header id="main-header" style="">
+		<div class="mb2notices"></div>				<div class="header-innner">
+		<div class="header-inner2">
+							<div class="sticky-replace-el" style="height: 0px;"></div>
+						<div id="master-header">
+			<div class="master-header-inner">
+	        	<div class="container-fluid">
+	            	<div class="row">
+	                	<div class="col-md-12">
+						<div class="flexcols">
+		                    <div class="logo-wrap">
+	<div class="main-logo">
+		<a href="https://coll.ecole-ci.org/" aria-label="CÔTE D'IVOIRE Collège Numérique" data-aria-hidden-tab-index="" tabindex="-1">
+			<img class="logo-light no_svg" src="//coll.ecole-ci.org/pluginfile.php/1/theme_mb2nl/logo/1776146674/college.png" alt="CÔTE D'IVOIRE Collège Numérique"><img class="logo-dark no_svg" src="//coll.ecole-ci.org/pluginfile.php/1/theme_mb2nl/logodark/1776146674/college.png" alt="CÔTE D'IVOIRE Collège Numérique">		</a>
+	</div>
+</div>
+															<div id="quicklinks" class="quicklinks"><button id="quicklinks-toggle" type="button" class="themereset" aria-label="Raccourcis" aria-expanded="false" aria-controls="quicklinks-list" data-aria-hidden-tab-index="" tabindex="-1"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></button><ul id="quicklinks-list" class="quicklinks-list"><li class="item-frontpage"><a href="https://coll.ecole-ci.org/?redirect=0" class="item-link d-flex flex-row align-items-center" data-aria-hidden-tab-index="" tabindex="-1"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-home-line"></i></span><span class="text">Classe virtuelle</span></a></li><li class="item-courses"><a href="https://coll.ecole-ci.org/course/" class="item-link d-flex flex-row align-items-center" data-aria-hidden-tab-index="" tabindex="-1"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-book-2-line"></i></span><span class="text">Tous les cours et supports</span></a></li></ul></div>												
+															<div class="menu-toggle">
+	<span id="themeskipto-mobilenav"></span>
+	<button class="show-menu themereset p-0 lhsmall d-inline-flex justify-content-center align-items-center" title="Toggle primary menu" aria-controls="main-navigation" aria-expanded="false" data-aria-hidden-tab-index="" tabindex="-1"><i class="bi bi-list"></i></button>
+</div>														        <div id="main-navigation" class="navigation-header"><div class="mnavtop menu-extracontent">
+	<div class="menu-extracontent-controls d-flex flex-row justify-content-center align-items-center">
+					<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-quicklinks d-inline-flex flex-column justify-content-center align-items-center" aria-label="Raccourcis" aria-controls="menu-quicklinkscontainer" aria-expanded="false" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-apps-2-line"></i><span class="d-block mt-1 label tsizexxsmall">Raccourcis</span></button>
+				<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-search d-inline-flex flex-column justify-content-center align-items-center" aria-label="Toggle search form" aria-controls="menu-searchcontainer" aria-expanded="false" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-search-line"></i><span class="d-block mt-1 label tsizexxsmall">Rechercher</span></button>
+		<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-login d-inline-flex flex-column justify-content-center align-items-center" aria-label="Toggle login form" aria-controls="menu-logincontainer" aria-expanded="false" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-user-3-line"></i><span class="d-block mt-1 label tsizexxsmall">Ama</span></button>
+					</div>
+			<div id="menu-quicklinkscontainer" class="menu-extracontent-content">
+			<ul class="quicklinks-list"><li class="item-frontpage"><a href="https://coll.ecole-ci.org/?redirect=0" class="item-link d-flex flex-row align-items-center" data-aria-hidden-tab-index="" tabindex="-1"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-home-line"></i></span><span class="text">Classe virtuelle</span></a></li><li class="item-courses"><a href="https://coll.ecole-ci.org/course/" class="item-link d-flex flex-row align-items-center" data-aria-hidden-tab-index="" tabindex="-1"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-book-2-line"></i></span><span class="text">Tous les cours et supports</span></a></li></ul>		</div>
+		<div id="menu-searchcontainer" class="menu-extracontent-content menu-searchcontainer"><div class="form-inner"><form id="menu-search" action="https://coll.ecole-ci.org/course/search.php" class=" d-flex justify-content-center align-items-center"><input id="menu-searchbox" type="text" value="" placeholder="Rechercher" name="search" data-aria-hidden-tab-index="" tabindex="-1"><button type="submit" aria-label="Rechercher" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-search-line"></i></button></form></div></div>	<div id="menu-logincontainer" class="menu-extracontent-content menu-logincontainer theme-loginform"><div class="form-inner"><div class="user-picture-container mb-4 d-flex align-items-center"><a href="https://coll.ecole-ci.org/user/profile.php?id=135206" class="d-inline-block aabtn" data-aria-hidden-tab-index="" tabindex="-1"><span class="userinitials size-80" title="Ama Kouassi" aria-label="Ama Kouassi" role="img">AK</span></a><div class="user-description ml-4"><div class="user-info"><div class="user-name h4 mb-2"><span class="firstname mr-1">Ama</span><span class="lastname">Kouassi</span></div><div class="user-roles"><span class="user-role mr-1 role-visiteur">Visiteur</span></div><span class="email">0700000005@ecole-ci.online</span></div></div></div><ul class="theme-usermenu"><li class="menu-item notifications"><a href="https://coll.ecole-ci.org/message/output/popup/notifications.php" data-aria-hidden-tab-index="" tabindex="-1">Notifications</a></li><li class="menu-item divider noid"></li><li class="menu-item profile"><a href="https://coll.ecole-ci.org/user/profile.php" data-aria-hidden-tab-index="" tabindex="-1">Profil</a></li><li class="menu-item grades"><a href="https://coll.ecole-ci.org/grade/report/overview/index.php" data-aria-hidden-tab-index="" tabindex="-1">Notes</a></li><li class="menu-item divider noid"></li><li class="menu-item preferences"><a href="https://coll.ecole-ci.org/user/preferences.php" data-aria-hidden-tab-index="" tabindex="-1">Préférences</a></li></ul><div class="user-footer mt-4 d-flex justify-content-between align-items-center"><a class="help-link d-inline-flex align-items-center" href="https://coll.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide" data-aria-hidden-tab-index="" tabindex="-1"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a><a class="logout-link d-inline-flex align-items-center" href="https://coll.ecole-ci.org/login/logout.php?sesskey=mAe7KSRnFm" data-aria-hidden-tab-index="" tabindex="-1"><span class="link-icon mr-1"><i class="ri-logout-circle-line"></i></span><span class="link-text">Déconnexion</span></a></div></div></div>		</div><ul class="mb2mm"></ul><div class="mobile-navbottom extra-content" id="mobilemenu_extra-content">
+			<div class="mobile-buttons mt-4 d-flex flex-wrap justify-content-center align-items-center pos-3"><a class="link-replace mb2-pb-btn typeprimary" href="/login/logout.php" data-aria-hidden-tab-index="" tabindex="-1"><span class="text">Se déconnecter</span></a></div>	</div>
+</div>						    																																				<div class="header-tools tools-pos2 hnavtype1"><div id="themeskipto-search" class="sr-only sr-only-focusable"></div><button id="theme-search-btn" class="header-tools-link tool-search themereset" data-id="search" aria-label="Rechercher" data-toggle="modal" data-target="#header-modal-search" data-aria-hidden-tab-index="" tabindex="-1"><i class="icon1 ri-search-line"></i><span class="text1">Rechercher</span></button><div id="themeskipto-login" class="sr-only sr-only-focusable"></div><button class="header-tools-link themereset tool-login" data-id="login" data-toggle="modal" data-target="#header-modal-login" aria-label="Ama" data-aria-hidden-tab-index="" tabindex="-1"><span class="userinitials size-40" title="Ama Kouassi" aria-label="Ama Kouassi" role="img">AK</span><span class="sr-only">Ama</span></button></div>								<div class="header-buttons d-flex align-items-center pos-2"><a class="link-replace mb2-pb-btn typeprimary" href="/login/logout.php" data-aria-hidden-tab-index="" tabindex="-1"><span class="text">Se déconnecter</span></a></div>																												</div>
+	                </div>
+	            </div>
+			</div>
+	        </div>
+			</div>
+					    		</div><!-- end .header-inner2 -->
+	</div><!-- end .header-innner -->
+	</header><!-- end #main-header -->	
+<div class="pagelayout d-flex flex-row">
+<div class="pagelayout-b d-flex flex-column">
+<div class="pagelayout-content d-flex flex-column">
+<div id="page-header" class="nobg">
+		<div class="inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+					<div class="page-heading flexcols">
+						<div class="page-header-left">
+							<h1 class="heding h2 nocourse">
+																	Tableau de bord 															</h1>
+						</div>
+						<div class="page-header-right">
+																									
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+			<div class="page-breadcrumb breadcrumb_modern">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="flexcols">
+					<div class="breadcrumb"><nav aria-label="Barre de navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://coll.ecole-ci.org/my/" aria-current="page" data-aria-hidden-tab-index="" tabindex="-1">
+                        Tableau de bord
+                    </a>
+                </li>
+        </ol>
+</nav></div>
+					<div class="actions">
+																	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	</div>
+<div class="page-b"><div class="mb2notices"></div><div id="main-content">
+    <div class="container-fluid">
+        <div id="theme-main-content" class="row">
+            <section id="region-main" class="content-col col-lg-9">
+				                <div id="page-content">					
+					<span class="notifications" id="user-notifications"></span>															
+										                	<div role="main"><span id="maincontent"></span><aside id="block-region-content" class="block-region" data-blockregion="content" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-1" class="sr-only sr-only-focusable" data-aria-hidden-tab-index="" tabindex="-1">Passer Cours consultés récemment</a>
+
+<section id="inst9" class=" block_recentlyaccessedcourses block  card mb-3" role="complementary" data-block="recentlyaccessedcourses" data-instance-id="9" aria-labelledby="instance-9-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-9-header" class="h5 card-title d-inline">Cours consultés récemment</h3>
+
+
+        <div class="card-text content mt-3">
+            <div id="block-recentlyaccessedcourses-6a1468d6b227b6a1468d6b227e1" class="block-recentlyaccessedcourses block-cards" data-region="recentlyaccessedcourses" data-userid="135206" data-displaycoursecategory="1">
+    <div class="container-fluid p-0">
+        <div id="recentlyaccessedcourses-view-6a1468d6b227b6a1468d6b227e1" data-region="recentlyaccessedcourses-view">
+            <div data-region="loading-placeholder" class="hidden">
+                <div class="card-grid mx-0 mt-5 row row-cols-1 row-cols-sm-2 row-cols-md-3 flex-nowrap overflow-hidden" style="height: 13.05rem">
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                </div>
+            </div>
+            <div class="" data-region="view-content">
+                    <div class="d-flex paging-bar-container mb-3" data-region="paging-bar-container">
+                        <div data-region="paging-control-container" class="d-flex">
+                        
+                            <nav id="paging-bar-6a1468d6b227b6a1468d6b227e1" class="" data-region="paging-bar" data-ignore-control-while-loading="" data-hide-control-on-single-page="" data-active-page-number="1" aria-label="Navigation par pages" data-aria-label-components-pagination-item="pagedcontentnavigationitem, core" data-aria-label-components-pagination-active-item="pagedcontentnavigationactiveitem, core" style="opacity: 1; visibility: visible;">
+                        
+                                <ul class="pagination mb-0">
+                                                                <li class="page-item disabled" data-region="page-item" data-control="previous" aria-disabled="true">
+                        
+                            <a href="#" class="page-link" data-region="page-link" aria-label="Page précédente" data-aria-hidden-tab-index="" tabindex="-1">
+                        <span class="icon-no-margin dir-rtl-hide" aria-hidden="true"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                        <span class="icon-no-margin dir-ltr-hide" aria-hidden="true"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+                                        <li class="page-item" data-region="page-item" data-control="next">
+                        
+                            <a href="#" class="page-link" data-region="page-link" aria-label="Page suivante" data-aria-hidden-tab-index="" tabindex="-1">
+                        <span class="icon-no-margin dir-rtl-hide" aria-hidden="true"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                        <span class="icon-no-margin dir-ltr-hide" aria-hidden="true"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+        </ul>
+                            </nav>
+                        </div>
+                    </div>
+                <div class="card-carousel mx-0 justify-content-center flex-nowrap overflow-hidden" data-region="card-deck" role="list"><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="1603">
+    <a href="https://coll.ecole-ci.org/course/view.php?id=1603" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjEiIGhlaWdodD0iMTYxIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMjIzLCAyMzAsIDIzMykiIC8+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjYuODc1NSwgLTI2Ljg3NTUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDk4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM0LjM3NzUsIC0yNi44NzU1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi44NzU1LCAxMzQuMzc3NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQuMzc3NSwgMTM0LjM3NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAtMTMuNDM3NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAxNDcuODE1MjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTE1MzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi44NzU1LCAtMjYuODc1NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMTUzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ljg3NTUsIDEzNC4zNzc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA2MzMzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjc1MSwgLTEzLjQzNzc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA2MzMzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjc1MSwgMTQ3LjgxNTI1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAuNjI2NSwgLTI2Ljg3NTUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MC42MjY1LCAxMzQuMzc3NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDcuNTAyLCAtMTMuNDM3NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA3LjUwMiwgMTQ3LjgxNTI1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi44NzU1LCAwKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNC4zNzc1LCAwKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDEzLjQzNzc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA2MzMzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ljg3NTUsIDApIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My43NTEsIDEzLjQzNzc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwLjYyNjUsIDApIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA3LjUwMiwgMTMuNDM3NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2Ljg3NTUsIDI2Ljg3NTUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM0LjM3NzUsIDI2Ljg3NTUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDk4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgNDAuMzEzMjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYuODc1NSwgMjYuODc1NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMzI2NjY2NjY2NjY2NzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjc1MSwgNDAuMzEzMjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTI0OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAuNjI2NSwgMjYuODc1NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDcuNTAyLCA0MC4zMTMyNSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjYuODc1NSwgNTMuNzUxKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNC4zNzc1LCA1My43NTEpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgNjcuMTg4NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYuODc1NSwgNTMuNzUxKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTMuNzUxLCA2Ny4xODg3NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNjMzMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MC42MjY1LCA1My43NTEpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTI0OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA3LjUwMiwgNjcuMTg4NzUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2Ljg3NTUsIDgwLjYyNjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM0LjM3NzUsIDgwLjYyNjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCA5NC4wNjQyNSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ljg3NTUsIDgwLjYyNjUpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My43NTEsIDk0LjA2NDI1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjE1OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODAuNjI2NSwgODAuNjI2NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMzI2NjY2NjY2NjY2NzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwNy41MDIsIDk0LjA2NDI1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2Ljg3NTUsIDEwNy41MDIpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQuMzc3NSwgMTA3LjUwMikgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi44NzU1LCAtNTMuNzUxKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMTIwLjkzOTc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTQwLjMxMzI1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ljg3NTUsIDEwNy41MDIpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYuODc1NSwgLTUzLjc1MSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNjMzMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My43NTEsIDEyMC45Mzk3NSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNjMzMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My43NTEsIC00MC4zMTMyNSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PGcgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMzczMzMzMzMzMzMzMzM7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MC42MjY1LCAxMDcuNTAyKSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAzNzMzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwLjYyNjUsIC01My43NTEpIHJvdGF0ZSg0NSwgMjYuODc1NSwgMjYuODc1NSkiID48cmVjdCB4PSIxOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjU3IiAvPjxyZWN0IHg9IjAiIHk9IjE5IiB3aWR0aD0iNTciIGhlaWdodD0iMTkiIC8+PC9nPjxnIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzOyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA3LjUwMiwgMTIwLjkzOTc1KSByb3RhdGUoNDUsIDI2Ljg3NTUsIDI2Ljg3NTUpIiA+PHJlY3QgeD0iMTkiIHk9IjAiIHdpZHRoPSIxOSIgaGVpZ2h0PSI1NyIgLz48cmVjdCB4PSIwIiB5PSIxOSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjE5IiAvPjwvZz48ZyBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA4OTMzMzMzMzMzMzMzMzsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwNy41MDIsIC00MC4zMTMyNSkgcm90YXRlKDQ1LCAyNi44NzU1LCAyNi44NzU1KSIgPjxyZWN0IHg9IjE5IiB5PSIwIiB3aWR0aD0iMTkiIGhlaWdodD0iNTciIC8+PHJlY3QgeD0iMCIgeT0iMTkiIHdpZHRoPSI1NyIgaGVpZ2h0PSIxOSIgLz48L2c+PC9zdmc+&quot;);">            
+            <span class="sr-only">L1_ELEMENTS_PERFOMANCE_ORDINATEUR.pdf</span>
+
+
+            <span id="favorite-icon-1603-3" data-region="favourite-icon" data-course-id="1603">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-1603-3">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://coll.ecole-ci.org/course/view.php?id=1603" class="aalink coursename mb-1" data-aria-hidden-tab-index="" tabindex="-1">
+
+
+                    <span id="favorite-icon-1603-3" data-region="favourite-icon" data-course-id="1603">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">L1_ELEMENTS_PERFOMANCE_ORDINATEUR.pdf</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Technologie de l'Information et de la communication</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://coll.ecole-ci.org/course/view.php?id=1603" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100" data-aria-hidden-tab-index="" tabindex="-1">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="1705">
+    <a href="https://coll.ecole-ci.org/course/view.php?id=1705" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMjg4Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoOSwgMTMyLCAyMjcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMTUzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAtNDUpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMTUzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAyNDMpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAtMzcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAyNTEpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgLTI5KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDI1OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIC0yMSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDI2NykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA2MzMzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAtMTMpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNjMzMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMjc1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgLTUpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAyODMpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wODkzMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA4OTMzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAyOTEpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAxMSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDI5OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjEyNDtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAxOSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjEyNDtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAzMDcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMjQ7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMjcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMjQ7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMzE1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDcyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDM1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDcyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDMyMykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjE1O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTU7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMzMxKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNTEpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAzMzkpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNTkpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMzQ3KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDY3KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDM1NSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDc1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMzYzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDgzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDM3MSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA5MSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAzNzkpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA5OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDM4NykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAxMDcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMzk1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDExNSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA0MDMpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMTIzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQxMSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDEzMSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQxOSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAxMzkpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNDI3KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMTQ3KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNDM1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTU7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMTU1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTU7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNDQzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDE2MykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA0NTEpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMzczMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMTcxKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQ1OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDE3OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQ2NykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDE4NykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQ3NSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAxOTUpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNDgzKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDIwMykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA4OTMzMzMzMzMzMzMzMztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA0OTEpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgMjExKSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDcyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDQ5OSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDIxOSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDUwNykiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjtzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCAyMjcpIiAvPjxwYXRoIGQ9Ik0wIDMwIEMgNTYgMCwgMTA0IDAsIDE2MCAzMCBTIDI2NCA2MCwgMzIwIDMwIFMgNDI0IDAsIDQ4MCwgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7c3Ryb2tlLXdpZHRoOjhweDsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MCwgNTE1KSIgLz48cGF0aCBkPSJNMCAzMCBDIDU2IDAsIDEwNCAwLCAxNjAgMzAgUyAyNjQgNjAsIDMyMCAzMCBTIDQyNCAwLCA0ODAsIDMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo4cHg7IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODAsIDIzNSkiIC8+PHBhdGggZD0iTTAgMzAgQyA1NiAwLCAxMDQgMCwgMTYwIDMwIFMgMjY0IDYwLCAzMjAgMzAgUyA0MjQgMCwgNDgwLCAzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6OHB4OyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgwLCA1MjMpIiAvPjwvc3ZnPg==&quot;);">            
+            <span class="sr-only">SVT 5ème_L1_LA REPRODUCTION DES CHAMPIGNONS A CHAPEAU</span>
+
+
+            <span id="favorite-icon-1705-4" data-region="favourite-icon" data-course-id="1705">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-1705-4">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://coll.ecole-ci.org/course/view.php?id=1705" class="aalink coursename mb-1" data-aria-hidden-tab-index="" tabindex="-1">
+
+
+                    <span id="favorite-icon-1705-4" data-region="favourite-icon" data-course-id="1705">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">SVT 5ème_L1_LA REPRODUCTION DES CHAMPIGNONS A ...</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Sciences de la vie et de la Terre</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://coll.ecole-ci.org/course/view.php?id=1705" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100" data-aria-hidden-tab-index="" tabindex="-1">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="1631">
+    <a href="https://coll.ecole-ci.org/course/view.php?id=1631" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNjAiIGhlaWdodD0iMzYwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMTE2LCAxODUsIDI1NSkiIC8+PHJlY3QgeD0iMy4zMzMzMzMzMzMzMzMzIiB5PSIzLjMzMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDYzMzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTYuNjY2NjY2NjY2NjY3IiB5PSIxNi42NjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iNjMuMzMzMzMzMzMzMzMzIiB5PSIzLjMzMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI3Ni42NjY2NjY2NjY2NjciIHk9IjE2LjY2NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDYzMzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTIzLjMzMzMzMzMzMzMzIiB5PSIzLjMzMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDYzMzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTM2LjY2NjY2NjY2NjY3IiB5PSIxNi42NjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA0NjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjE4My4zMzMzMzMzMzMzMyIgeT0iMy4zMzMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA0NjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjE5Ni42NjY2NjY2NjY2NyIgeT0iMTYuNjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI0My4zMzMzMzMzMzMzMyIgeT0iMy4zMzMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI1Ni42NjY2NjY2NjY2NyIgeT0iMTYuNjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wODA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzMDMuMzMzMzMzMzMzMzMiIHk9IjMuMzMzMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wODA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzMTYuNjY2NjY2NjY2NjciIHk9IjE2LjY2NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzLjMzMzMzMzMzMzMzMzMiIHk9IjYzLjMzMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wODkzMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxNi42NjY2NjY2NjY2NjciIHk9Ijc2LjY2NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iNjMuMzMzMzMzMzMzMzMzIiB5PSI2My4zMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iNzYuNjY2NjY2NjY2NjY3IiB5PSI3Ni42NjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjEyMy4zMzMzMzMzMzMzMyIgeT0iNjMuMzMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjEzNi42NjY2NjY2NjY2NyIgeT0iNzYuNjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxODMuMzMzMzMzMzMzMzMiIHk9IjYzLjMzMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wODkzMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxOTYuNjY2NjY2NjY2NjciIHk9Ijc2LjY2NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMjQzLjMzMzMzMzMzMzMzIiB5PSI2My4zMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIyNTYuNjY2NjY2NjY2NjciIHk9Ijc2LjY2NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzAzLjMzMzMzMzMzMzMzIiB5PSI2My4zMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzE2LjY2NjY2NjY2NjY3IiB5PSI3Ni42NjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjMuMzMzMzMzMzMzMzMzMyIgeT0iMTIzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjE2LjY2NjY2NjY2NjY2NyIgeT0iMTM2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI2My4zMzMzMzMzMzMzMzMiIHk9IjEyMy4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNjMzMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI3Ni42NjY2NjY2NjY2NjciIHk9IjEzNi42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTI0O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTIzLjMzMzMzMzMzMzMzIiB5PSIxMjMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTU7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxMzYuNjY2NjY2NjY2NjciIHk9IjEzNi42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTgzLjMzMzMzMzMzMzMzIiB5PSIxMjMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTI0O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTk2LjY2NjY2NjY2NjY3IiB5PSIxMzYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjEwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMjQzLjMzMzMzMzMzMzMzIiB5PSIxMjMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDcyO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMjU2LjY2NjY2NjY2NjY3IiB5PSIxMzYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzAzLjMzMzMzMzMzMzMzIiB5PSIxMjMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDU0NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzE2LjY2NjY2NjY2NjY3IiB5PSIxMzYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjMuMzMzMzMzMzMzMzMzMyIgeT0iMTgzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjE2LjY2NjY2NjY2NjY2NyIgeT0iMTk2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI2My4zMzMzMzMzMzMzMzMiIHk9IjE4My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9Ijc2LjY2NjY2NjY2NjY2NyIgeT0iMTk2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMzI2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjEyMy4zMzMzMzMzMzMzMyIgeT0iMTgzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjEzMjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTM2LjY2NjY2NjY2NjY3IiB5PSIxOTYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTgzLjMzMzMzMzMzMzMzIiB5PSIxODMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTk2LjY2NjY2NjY2NjY3IiB5PSIxOTYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI0My4zMzMzMzMzMzMzMyIgeT0iMTgzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA3MjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI1Ni42NjY2NjY2NjY2NyIgeT0iMTk2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNTQ2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzMDMuMzMzMzMzMzMzMzMiIHk9IjE4My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjtzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjMxNi42NjY2NjY2NjY2NyIgeT0iMTk2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzLjMzMzMzMzMzMzMzMzMiIHk9IjI0My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjE2LjY2NjY2NjY2NjY2NyIgeT0iMjU2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMjQ7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI2My4zMzMzMzMzMzMzMzMiIHk9IjI0My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wODA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSI3Ni42NjY2NjY2NjY2NjciIHk9IjI1Ni42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMTU7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxMjMuMzMzMzMzMzMzMzMiIHk9IjI0My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMjQ7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxMzYuNjY2NjY2NjY2NjciIHk9IjI1Ni42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDYzMzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTgzLjMzMzMzMzMzMzMzIiB5PSIyNDMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDQ2O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMTk2LjY2NjY2NjY2NjY3IiB5PSIyNTYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI0My4zMzMzMzMzMzMzMyIgeT0iMjQzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjI1Ni42NjY2NjY2NjY2NyIgeT0iMjU2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzMDMuMzMzMzMzMzMzMzMiIHk9IjI0My4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wODA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzMTYuNjY2NjY2NjY2NjciIHk9IjI1Ni42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTA2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIzLjMzMzMzMzMzMzMzMzMiIHk9IjMwMy4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMzczMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxNi42NjY2NjY2NjY2NjciIHk9IjMxNi42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iNjMuMzMzMzMzMzMzMzMzIiB5PSIzMDMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDI4NjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iNzYuNjY2NjY2NjY2NjY3IiB5PSIzMTYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjEyMy4zMzMzMzMzMzMzMyIgeT0iMzAzLjMzMzMzMzMzMzMzIiB3aWR0aD0iNDYuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjQ2LjY2NjY2NjY2NjY2NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjxyZWN0IHg9IjEzNi42NjY2NjY2NjY2NyIgeT0iMzE2LjY2NjY2NjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxODMuMzMzMzMzMzMzMzMiIHk9IjMwMy4zMzMzMzMzMzMzMyIgd2lkdGg9IjQ2LjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSI0Ni42NjY2NjY2NjY2NjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNTQ2NjY2NjY2NjY2Njc7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIxOTYuNjY2NjY2NjY2NjciIHk9IjMxNi42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzO3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMjQzLjMzMzMzMzMzMzMzIiB5PSIzMDMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7c3Ryb2tlLXdpZHRoOjYuNjY2NjY2NjY2NjY2N3B4OyIgLz48cmVjdCB4PSIyNTYuNjY2NjY2NjY2NjciIHk9IjMxNi42NjY2NjY2NjY2NyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzAzLjMzMzMzMzMzMzMzIiB5PSIzMDMuMzMzMzMzMzMzMzMiIHdpZHRoPSI0Ni42NjY2NjY2NjY2NjciIGhlaWdodD0iNDYuNjY2NjY2NjY2NjY3IiBmaWxsPSJub25lIiBzdHJva2U9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3O3N0cm9rZS13aWR0aDo2LjY2NjY2NjY2NjY2NjdweDsiIC8+PHJlY3QgeD0iMzE2LjY2NjY2NjY2NjY3IiB5PSIzMTYuNjY2NjY2NjY2NjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjA1NDY2NjY2NjY2NjY2NztzdHJva2Utd2lkdGg6Ni42NjY2NjY2NjY2NjY3cHg7IiAvPjwvc3ZnPg==&quot;);">            
+            <span class="sr-only"> Leçon1: NOMBRES PREMIERS</span>
+
+
+            <span id="favorite-icon-1631-5" data-region="favourite-icon" data-course-id="1631">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-1631-5">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://coll.ecole-ci.org/course/view.php?id=1631" class="aalink coursename mb-1" data-aria-hidden-tab-index="" tabindex="-1">
+
+
+                    <span id="favorite-icon-1631-5" data-region="favourite-icon" data-course-id="1631">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0"> Leçon1: NOMBRES PREMIERS</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Mathématiques</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://coll.ecole-ci.org/course/view.php?id=1631" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100" data-aria-hidden-tab-index="" tabindex="-1">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="1675">
+    <a href="https://coll.ecole-ci.org/course/view.php?id=1675" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NjUiIGhlaWdodD0iNTY1Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoOSwgMTMyLCAyMjcpIiAvPjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTQxMzMzMzMzMzMzMzM7IiAvPjxjaXJjbGUgY3g9IjU2NSIgY3k9IjAiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMzsiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjU2NSIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSI1NjUiIGN5PSI1NjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMzsiIC8+PGNpcmNsZSBjeD0iOTQuMTY2NjY2NjY2NjY3IiBjeT0iMCIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODsiIC8+PGNpcmNsZSBjeD0iOTQuMTY2NjY2NjY2NjY3IiBjeT0iNTY1IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDk4OyIgLz48Y2lyY2xlIGN4PSIxODguMzMzMzMzMzMzMzMiIGN5PSIwIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7IiAvPjxjaXJjbGUgY3g9IjE4OC4zMzMzMzMzMzMzMyIgY3k9IjU2NSIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyOyIgLz48Y2lyY2xlIGN4PSIyODIuNSIgY3k9IjAiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjsiIC8+PGNpcmNsZSBjeD0iMjgyLjUiIGN5PSI1NjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjsiIC8+PGNpcmNsZSBjeD0iMzc2LjY2NjY2NjY2NjY3IiBjeT0iMCIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjE0MTMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSIzNzYuNjY2NjY2NjY2NjciIGN5PSI1NjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMzsiIC8+PGNpcmNsZSBjeD0iNDcwLjgzMzMzMzMzMzMzIiBjeT0iMCIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjE1OyIgLz48Y2lyY2xlIGN4PSI0NzAuODMzMzMzMzMzMzMiIGN5PSI1NjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xNTsiIC8+PGNpcmNsZSBjeD0iMCIgY3k9Ijk0LjE2NjY2NjY2NjY2NyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODsiIC8+PGNpcmNsZSBjeD0iNTY1IiBjeT0iOTQuMTY2NjY2NjY2NjY3IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDk4OyIgLz48Y2lyY2xlIGN4PSI5NC4xNjY2NjY2NjY2NjciIGN5PSI5NC4xNjY2NjY2NjY2NjciIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wMjg2NjY2NjY2NjY2Njc7IiAvPjxjaXJjbGUgY3g9IjE4OC4zMzMzMzMzMzMzMyIgY3k9Ijk0LjE2NjY2NjY2NjY2NyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iMjgyLjUiIGN5PSI5NC4xNjY2NjY2NjY2NjciIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiAvPjxjaXJjbGUgY3g9IjM3Ni42NjY2NjY2NjY2NyIgY3k9Ijk0LjE2NjY2NjY2NjY2NyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iNDcwLjgzMzMzMzMzMzMzIiBjeT0iOTQuMTY2NjY2NjY2NjY3IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSIwIiBjeT0iMTg4LjMzMzMzMzMzMzMzIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIHN0eWxlPSJvcGFjaXR5OjAuMDgwNjY2NjY2NjY2NjY3OyIgLz48Y2lyY2xlIGN4PSI1NjUiIGN5PSIxODguMzMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wODA2NjY2NjY2NjY2Njc7IiAvPjxjaXJjbGUgY3g9Ijk0LjE2NjY2NjY2NjY2NyIgY3k9IjE4OC4zMzMzMzMzMzMzMyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiBzdHlsZT0ib3BhY2l0eTowLjAyOyIgLz48Y2lyY2xlIGN4PSIxODguMzMzMzMzMzMzMzMiIGN5PSIxODguMzMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMDY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iMjgyLjUiIGN5PSIxODguMzMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7IiAvPjxjaXJjbGUgY3g9IjM3Ni42NjY2NjY2NjY2NyIgY3k9IjE4OC4zMzMzMzMzMzMzMyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjEzMjY2NjY2NjY2NjY3OyIgLz48Y2lyY2xlIGN4PSI0NzAuODMzMzMzMzMzMzMiIGN5PSIxODguMzMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xMjQ7IiAvPjxjaXJjbGUgY3g9IjAiIGN5PSIyODIuNSIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA5ODsiIC8+PGNpcmNsZSBjeD0iNTY1IiBjeT0iMjgyLjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiAvPjxjaXJjbGUgY3g9Ijk0LjE2NjY2NjY2NjY2NyIgY3k9IjI4Mi41IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSIxODguMzMzMzMzMzMzMzMiIGN5PSIyODIuNSIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjAyODY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iMjgyLjUiIGN5PSIyODIuNSIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA0NjsiIC8+PGNpcmNsZSBjeD0iMzc2LjY2NjY2NjY2NjY3IiBjeT0iMjgyLjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xNTsiIC8+PGNpcmNsZSBjeD0iNDcwLjgzMzMzMzMzMzMzIiBjeT0iMjgyLjUiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4xNDEzMzMzMzMzMzMzMzsiIC8+PGNpcmNsZSBjeD0iMCIgY3k9IjM3Ni42NjY2NjY2NjY2NyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjExNTMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSI1NjUiIGN5PSIzNzYuNjY2NjY2NjY2NjciIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4xMTUzMzMzMzMzMzMzMzsiIC8+PGNpcmNsZSBjeD0iOTQuMTY2NjY2NjY2NjY3IiBjeT0iMzc2LjY2NjY2NjY2NjY3IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDg5MzMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSIxODguMzMzMzMzMzMzMzMiIGN5PSIzNzYuNjY2NjY2NjY2NjciIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wNzI7IiAvPjxjaXJjbGUgY3g9IjI4Mi41IiBjeT0iMzc2LjY2NjY2NjY2NjY3IiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7IiAvPjxjaXJjbGUgY3g9IjM3Ni42NjY2NjY2NjY2NyIgY3k9IjM3Ni42NjY2NjY2NjY2NyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjE1OyIgLz48Y2lyY2xlIGN4PSI0NzAuODMzMzMzMzMzMzMiIGN5PSIzNzYuNjY2NjY2NjY2NjciIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wNDY7IiAvPjxjaXJjbGUgY3g9IjAiIGN5PSI0NzAuODMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgc3R5bGU9Im9wYWNpdHk6MC4wMjsiIC8+PGNpcmNsZSBjeD0iNTY1IiBjeT0iNDcwLjgzMzMzMzMzMzMzIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDI7IiAvPjxjaXJjbGUgY3g9Ijk0LjE2NjY2NjY2NjY2NyIgY3k9IjQ3MC44MzMzMzMzMzMzMyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iMTg4LjMzMzMzMzMzMzMzIiBjeT0iNDcwLjgzMzMzMzMzMzMzIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMTI0OyIgLz48Y2lyY2xlIGN4PSIyODIuNSIgY3k9IjQ3MC44MzMzMzMzMzMzMyIgcj0iOTQuMTY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiBzdHlsZT0ib3BhY2l0eTowLjA4MDY2NjY2NjY2NjY2NzsiIC8+PGNpcmNsZSBjeD0iMzc2LjY2NjY2NjY2NjY3IiBjeT0iNDcwLjgzMzMzMzMzMzMzIiByPSI5NC4xNjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIHN0eWxlPSJvcGFjaXR5OjAuMDM3MzMzMzMzMzMzMzMzOyIgLz48Y2lyY2xlIGN4PSI0NzAuODMzMzMzMzMzMzMiIGN5PSI0NzAuODMzMzMzMzMzMzMiIHI9Ijk0LjE2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgc3R5bGU9Im9wYWNpdHk6MC4wOTg7IiAvPjwvc3ZnPg==&quot;);">            
+            <span class="sr-only">5ème_GEOGRAPHIE_T1_L1: LE MILIEU PHYSIQUE EN CÔTE D'IVOIRE ET L'INSTALLATION DES POPULATIONS</span>
+
+
+            <span id="favorite-icon-1675-6" data-region="favourite-icon" data-course-id="1675">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-1675-6">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://coll.ecole-ci.org/course/view.php?id=1675" class="aalink coursename mb-1" data-aria-hidden-tab-index="" tabindex="-1">
+
+
+                    <span id="favorite-icon-1675-6" data-region="favourite-icon" data-course-id="1675">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">5ème_GEOGRAPHIE_T1_L1: LE MILIEU PHYSIQUE EN ...</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Histoire - Géographie</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://coll.ecole-ci.org/course/view.php?id=1675" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100" data-aria-hidden-tab-index="" tabindex="-1">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div></div>
+            </div>
+            <div class="hidden text-xs-center text-center mt-3" data-region="empty-message">
+                <img class="empty-placeholder-image-lg mt-1" src="https://coll.ecole-ci.org/theme/image.php/mb2nl/block_recentlyaccessedcourses/1776146674/courses" alt="">
+                <p class="text-muted mt-3">Pas de cours récent</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span></aside></div>                    					                	                </div>
+            </section>
+                        	            <section class="sidebar-col col-lg-3">
+	            	<aside id="block-region-side-post" class="side-post style-minimal block-region" data-blockregion="side-post" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-2" class="sr-only sr-only-focusable" data-aria-hidden-tab-index="" tabindex="-1">Passer Calendrier</a>
+
+<section id="inst25179" class=" block_calendar_month block  card mb-3" role="complementary" data-block="calendar_month" data-instance-id="25179" aria-labelledby="instance-25179-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-25179-header" class="h5 card-title d-inline">Calendrier</h3>
+
+
+        <div class="card-text content mt-3">
+            <div data-region="calendar" class="maincalendar"><div id="calendar-month-6a1468d6e3abb6a1468d6b227e2-1" data-template="core_calendar/month_detailed">
+    <div class="header d-flex flex-wrap p-1">
+            <label class="sr-only" for="calendar-course-filter-1">Liste des cours</label><select class="select custom-select cal_courses_flt ml-1 mr-auto" id="calendar-course-filter-1" name="course" data-aria-hidden-tab-index="" tabindex="-1"><option selected="selected" value="1">Tous les cours et supports</option></select>
+    </div>
+    <div aria-live="polite" class="sr-only calendar-announcements"></div>
+    <div class="calendarwrapper" data-courseid="1" data-context-id="0" data-month="5" data-year="2026" data-view="monthblock">
+        <div id="month-navigation-6a1468d6e3abb6a1468d6b227e2-1" class="controls">
+            <div class="calendar-controls">
+                <a href="https://coll.ecole-ci.org/calendar/view.php?view=month&amp;time=1775001600" class="arrow_link previous" title="Mois précédent" data-year="2026" data-month="4" data-drop-zone="nav-link" data-aria-hidden-tab-index="" tabindex="-1">
+                    <span class="arrow" aria-hidden="true">◄</span>
+                    &nbsp;
+                    <span class="arrow_text">avril</span>
+                </a>
+                <span class="hide"> | </span>
+                    <h4 class="current">mai 2026</h4>
+                <span class="hide"> | </span>
+                <a href="https://coll.ecole-ci.org/calendar/view.php?view=month&amp;time=1780272000" class="arrow_link next" title="Mois prochain" data-year="2026" data-month="6" data-drop-zone="nav-link" data-aria-hidden-tab-index="" tabindex="-1">
+                    <span class="arrow_text">juin</span>
+                    &nbsp;
+                    <span class="arrow" aria-hidden="true">►</span>
+                </a>
+            </div>
+        </div>
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw " title="Chargement" role="img" aria-label="Chargement"></i></span>
+        </span>
+        <div class="theme-table-wrap"><table id="month-detailed-6a1468d6e3abb6a1468d6b227e2-1" class="calendarmonth calendartable mb-0">
+            <thead>
+                <tr>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Lundi</span>
+                        <span aria-hidden="true">Lu</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Mardi</span>
+                        <span aria-hidden="true">Ma</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Mercredi</span>
+                        <span aria-hidden="true">Me</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Jeudi</span>
+                        <span aria-hidden="true">Je</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Vendredi</span>
+                        <span aria-hidden="true">Ve</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Samedi</span>
+                        <span aria-hidden="true">Sa</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Dimanche</span>
+                        <span aria-hidden="true">Di</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-region="month-view-week">
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="day text-sm-center text-md-left" data-day="1" data-day-timestamp="1777593600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1777648854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 1 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">1</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 1 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">1</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="2" data-day-timestamp="1777680000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1777735254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 2 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">2</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 2 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">2</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="3" data-day-timestamp="1777766400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1777821654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 3 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">3</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 3 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">3</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="4" data-day-timestamp="1777852800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1777908054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 4 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">4</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 4 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">4</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="5" data-day-timestamp="1777939200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1777994454">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 5 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">5</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 5 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">5</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="6" data-day-timestamp="1778025600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778080854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 6 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">6</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 6 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">6</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="7" data-day-timestamp="1778112000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778167254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 7 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">7</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 7 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">7</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="8" data-day-timestamp="1778198400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778253654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 8 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">8</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 8 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">8</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="9" data-day-timestamp="1778284800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778340054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 9 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">9</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 9 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">9</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="10" data-day-timestamp="1778371200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778426454">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 10 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">10</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 10 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">10</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="11" data-day-timestamp="1778457600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778512854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 11 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">11</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 11 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">11</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="12" data-day-timestamp="1778544000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778599254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 12 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">12</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 12 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">12</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="13" data-day-timestamp="1778630400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778685654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 13 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">13</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 13 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">13</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="14" data-day-timestamp="1778716800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778772054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 14 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">14</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 14 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">14</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="15" data-day-timestamp="1778803200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778858454">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 15 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">15</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 15 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">15</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="16" data-day-timestamp="1778889600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1778944854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 16 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">16</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 16 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">16</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="17" data-day-timestamp="1778976000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779031254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 17 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">17</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 17 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">17</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="18" data-day-timestamp="1779062400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779117654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 18 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">18</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 18 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">18</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="19" data-day-timestamp="1779148800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779204054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 19 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">19</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 19 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">19</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="20" data-day-timestamp="1779235200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779290454">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 20 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">20</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 20 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">20</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="21" data-day-timestamp="1779321600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779376854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 21 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">21</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 21 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">21</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="22" data-day-timestamp="1779408000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779463254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 22 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">22</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 22 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">22</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="23" data-day-timestamp="1779494400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779549654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 23 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">23</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 23 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">23</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="24" data-day-timestamp="1779580800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779636054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 24 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">24</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 24 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">24</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left today" data-day="25" data-day-timestamp="1779667200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779722454" title="Aujourd’hui">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 25 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">25</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 25 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">25</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="26" data-day-timestamp="1779753600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779808854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 26 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">26</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 26 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">26</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="27" data-day-timestamp="1779840000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779895254">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 27 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">27</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 27 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">27</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="28" data-day-timestamp="1779926400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1779981654">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 28 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">28</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 28 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">28</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="29" data-day-timestamp="1780012800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1780068054">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 29 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">29</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 29 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">29</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="30" data-day-timestamp="1780099200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1780154454">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 30 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">30</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 30 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">30</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="31" data-day-timestamp="1780185600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1780240854">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 31 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">31</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 31 mai</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">31</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+</div></div>
+            <div class="footer"><div class="bottom">
+        <span class="footer-link">
+            <a href="https://coll.ecole-ci.org/calendar/view.php?view=month&amp;time=1779722454&amp;course=1" data-aria-hidden-tab-index="" tabindex="-1">Calendrier complet</a>
+        </span>
+</div></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-2"></span></aside>	            </section>
+                    </div>
+    </div>
+</div>
+<div class="mb2notices"></div><div id="bottom" class="dark1">
+			            <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-12">
+                    <aside id="block-region-bottom" class="bottom style-bottom block-region" data-blockregion="bottom" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-5" class="sr-only sr-only-focusable" data-aria-hidden-tab-index="" tabindex="-1">Passer Utilisateurs en ligne</a>
+
+<section id="inst4" class=" block_online_users block  card mb-3" role="complementary" data-block="online_users" data-instance-id="4" aria-labelledby="instance-4-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-4-header" class="h5 card-title d-inline">Utilisateurs en ligne</h3>
+
+
+        <div class="card-text content mt-3">
+            <div class="info">18 utilisateurs en ligne (5 dernières minutes)</div><ul class="list">
+<li class="listentry"><div class="user"><a href="https://coll.ecole-ci.org/user/view.php?id=135206&amp;course=1" title="1 s" data-aria-hidden-tab-index="" tabindex="-1"><span class="userinitials size-30" title="Ama Kouassi" aria-label="Ama Kouassi" role="img">AK</span>Ama Kouassi</a></div><div class="uservisibility"><a title="Cacher mon statut en ligne des autres utilisateurs" data-action="hide" data-userid="135206" id="change-user-visibility" href="" data-aria-hidden-tab-index="" tabindex="-1"><i class="icon fa fa-eye fa-fw " title="Cacher mon statut en ligne des autres utilisateurs" role="img" aria-label="Cacher mon statut en ligne des autres utilisateurs"></i></a></div></li>
+<li class="listentry"><div class="otherusers"><span>Autres utilisateurs (17)</span></div></li>
+</ul><div class="clearer"><!-- --></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-5"></span></aside>                    </div>
+            </div>
+            </div>
+            </div>
+</div> <!-- //end #page-b -->
+</div> <!--  end .pagelayout-content -->
+<div class="page-c">
+<footer id="footer" class="theme-footer dark1 main-footer">
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="footer-content flexcols">
+					<div class="footer-text">
+						<p>Copyright © <span class="cyear">2026</span> MENA - CÔTE D'IVOIRE</p>
+											</div>
+                	                </div>
+				<div class="footer-tools"></div>				     		</div>
+        </div>
+    </div>
+<div class="usertour">
+    <a id="resetpagetour" href="#" data-aria-hidden-tab-index="" tabindex="-1">Relancer la visite guidée sur cette page</a>
+</div></footer>
+</div><!-- //end #page-c -->
+</div><!--  end pagelayout-b -->
+</div><!--  end .pagelayout -->
+<!-- </div> //end #page -->
+</div><!-- end #page-outer -->
+<div class="fixed-bar" data-has-hidden="true" aria-hidden="true">
+		<button class="theme-hide-sidebar mode2 iconbutton" data-showtext="Show sidebars" data-hidetext="Hide sidebars" aria-expanded="false" aria-controls="theme-main-content" aria-label="Show sidebars" data-text_show="Show sidebars" data-text_hide="Hide sidebars" data-aria-hidden-tab-index="" tabindex="-1"><span class="svgicon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 64c0 17.7-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32H256c17.7 0 32 14.3 32 32zm0 256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c17.7 0 32 14.3 32 32zM0 192c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></span></button></div>
+<button type="button" class="themereset theme-scrolltt" aria-label="Niveau supérieur" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="" tabindex="-1"><i class="pe-7s-angle-up" data-scrollspeed="400"></i></button><a href="#page" class="sr-only sr-only-focusable" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="" tabindex="-1">Scroll to top</a>
+	<div id="header-modal-login" class="modal theme-modal-scale theme-forms login" role="dialog" tabindex="-1" aria-labelledby="header-modal-login" aria-describedby="header-modal-login" aria-modal="true" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="0"><div class="modal-dialog" role="document"><div class="modal-content"><div class="theme-modal-container"><button class="close-container themereset" data-dismiss="modal" aria-label="Fermer" data-aria-hidden-tab-index="" tabindex="-1">×</button><div id="login_6a1468d76ff6c" class="theme-loginform panel-item panel-login"><div class="user-picture-container mb-4 d-flex align-items-center"><a href="https://coll.ecole-ci.org/user/profile.php?id=135206" class="d-inline-block aabtn" data-aria-hidden-tab-index="" tabindex="-1"><span class="userinitials size-80" title="Ama Kouassi" aria-label="Ama Kouassi" role="img">AK</span></a><div class="user-description ml-4"><div class="user-info"><div class="user-name h4 mb-2"><span class="firstname mr-1">Ama</span><span class="lastname">Kouassi</span></div><div class="user-roles"><span class="user-role mr-1 role-visiteur">Visiteur</span></div><span class="email">0700000005@ecole-ci.online</span></div></div></div><ul class="theme-usermenu"><li class="menu-item profile"><a href="https://coll.ecole-ci.org/user/profile.php" data-aria-hidden-tab-index="" tabindex="-1">Profil</a></li><li class="menu-item grades"><a href="https://coll.ecole-ci.org/grade/report/overview/index.php" data-aria-hidden-tab-index="" tabindex="-1">Notes</a></li><li class="menu-item divider noid"></li><li class="menu-item preferences"><a href="https://coll.ecole-ci.org/user/preferences.php" data-aria-hidden-tab-index="" tabindex="-1">Préférences</a></li></ul><div class="user-footer mt-4 d-flex justify-content-between align-items-center"><a class="help-link d-inline-flex align-items-center" href="https://coll.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide" data-aria-hidden-tab-index="" tabindex="-1"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a><a class="logout-link d-inline-flex align-items-center" href="https://coll.ecole-ci.org/login/logout.php?sesskey=mAe7KSRnFm" data-aria-hidden-tab-index="" tabindex="-1"><span class="link-icon mr-1"><i class="ri-logout-circle-line"></i></span><span class="link-text">Déconnexion</span></a></div></div><button class="themereset themekeynavonly" data-dismiss="modal" data-aria-hidden-tab-index="" tabindex="-1">Fermer</button></div></div></div></div>	<div id="header-modal-search" class="modal theme-modal-scale theme-forms search" role="dialog" tabindex="-1" aria-labelledby="header-modal-search" aria-describedby="header-modal-search" aria-modal="true" data-has-hidden="true" aria-hidden="true" data-aria-hidden-tab-index="0"><div class="modal-dialog" role="document"><div class="modal-content"><div class="theme-modal-container"><button class="close-container themereset" data-dismiss="modal" aria-label="Fermer" data-aria-hidden-tab-index="" tabindex="-1">×</button><div id="search_6a1468d775b39" class="theme-searchform panel-item panel-search"><div class="form-inner"><form id="theme-search" action="https://coll.ecole-ci.org/course/search.php" class=" d-flex justify-content-center align-items-center"><input id="theme-searchbox" type="text" value="" placeholder="Rechercher" name="search" data-aria-hidden-tab-index="" tabindex="-1"><button type="submit" aria-label="Rechercher" data-aria-hidden-tab-index="" tabindex="-1"><i class="ri-search-line"></i></button></form></div></div><button class="themereset themekeynavonly" data-dismiss="modal" data-aria-hidden-tab-index="" tabindex="-1">Fermer</button></div></div></div></div>
+<!--<script src="/login/mealm/js/confettis.js"></script>--><script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://coll.ecole-ci.org/lib/requirejs.php/1776146359/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/lib/requirejs/require.min.js" data-has-hidden="true" aria-hidden="true"></script>
+<script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxconfig":"MathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"fr"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('fr');
+});;
+require(['theme_boost/loader']);;
+M.util.js_pending('theme_mb2nl/actions'); require(['theme_mb2nl/actions'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/actions');});;
+M.util.js_pending('theme_mb2nl/access'); require(['theme_mb2nl/access'], function(amd) {amd.focusClass(); M.util.js_complete('theme_mb2nl/access');});;
+M.util.js_pending('theme_mb2nl/sidebars'); require(['theme_mb2nl/sidebars'], function(amd) {amd.sidebarToggle(); M.util.js_complete('theme_mb2nl/sidebars');});;
+M.util.js_pending('theme_mb2nl/scrollpos'); require(['theme_mb2nl/scrollpos'], function(amd) {amd.panelLink(); M.util.js_complete('theme_mb2nl/scrollpos');});;
+M.util.js_pending('theme_mb2nl/megamenu'); require(['theme_mb2nl/megamenu'], function(amd) {amd.setWrapPos(); M.util.js_complete('theme_mb2nl/megamenu');});;
+M.util.js_pending('theme_mb2nl/megamenu'); require(['theme_mb2nl/megamenu'], function(amd) {amd.toggleSubmenus(); M.util.js_complete('theme_mb2nl/megamenu');});;
+M.util.js_pending('theme_mb2nl/stickynav'); require(['theme_mb2nl/stickynav'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/stickynav');});;
+M.util.js_pending('theme_mb2nl/tgsdb'); require(['theme_mb2nl/tgsdb'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/tgsdb');});;
+M.util.js_pending('theme_mb2nl/mb2notices'); require(['theme_mb2nl/mb2notices'], function(amd) {amd.closeNotice(); M.util.js_complete('theme_mb2nl/mb2notices');});;
+
+require(
+[
+    'jquery',
+    'block_recentlyaccessedcourses/main'
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#block-recentlyaccessedcourses-6a1468d6b227b6a1468d6b227e1');
+    var userid = root.attr('data-userid');
+
+    Main.init(userid, root);
+});
+;
+
+require(['jquery', 'core_calendar/month_navigation_drag_drop'], function($, DragDrop) {
+    var root = $('#month-navigation-6a1468d6e3abb6a1468d6b227e2-1');
+    DragDrop.init(root);
+});
+;
+
+require([
+    'jquery',
+    'core_calendar/month_view_drag_drop'
+], function(
+    $,
+    DragDrop
+) {
+    var root = $('#month-detailed-6a1468d6e3abb6a1468d6b227e2-1');
+    DragDrop.init(root);
+});
+;
+
+require(['jquery', 'core_calendar/calendar', 'core_calendar/popover'], function($, Calendar, calendarPopover) {
+    const isCalendarBlock = true;
+    Calendar.init($("#calendar-month-6a1468d6e3abb6a1468d6b227e2-1"), isCalendarBlock);
+});
+;
+M.util.js_pending('core_calendar/popover'); require(['core_calendar/popover'], function(amd) {M.util.js_complete('core_calendar/popover');});;
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("17839"); M.util.js_complete('block_navigation/navblock');});;
+M.util.js_pending('tool_usertours/usertours'); require(['tool_usertours/usertours'], function(amd) {amd.init([{"tourId":"2","startTour":true,"filtervalues":{"cssselector":{}}}], ["tool_usertours\/filter_cssselector"]); M.util.js_complete('tool_usertours/usertours');});;
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("17840", null); M.util.js_complete('block_settings/settingsblock');});;
+M.util.js_pending('block_online_users/change_user_visibility'); require(['block_online_users/change_user_visibility'], function(amd) {amd.init(); M.util.js_complete('block_online_users/change_user_visibility');});;
+M.util.js_pending('theme_mb2nl/access'); require(['theme_mb2nl/access'], function(amd) {amd.acsbTools(); M.util.js_complete('theme_mb2nl/access');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(183599, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});;
+M.util.js_pending('core/storage_validation'); require(['core/storage_validation'], function(amd) {amd.init(1779722454); M.util.js_complete('core/storage_validation');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?delayStartupUntil=configured" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/mb2nl_helper.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/inview.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/swiper.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/jarallax.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/magnific-popup.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/typed.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/lazyload.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/mb2nl_plugins.js" data-has-hidden="true" aria-hidden="true"></script>
+<script src="https://coll.ecole-ci.org/lib/javascript.php/1776146359/theme/mb2nl/script/mb2nl.js" data-has-hidden="true" aria-hidden="true"></script>
+<script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","viewallcourses":"Afficher tous les cours","cancel":"Annuler","morehelp":"Plus d\u2019aide","loadinghelp":"Chargement\u2026","confirm":"Confirmer","areyousure":"Voulez-vous vraiment continuer\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue","file":"Fichier","url":"URL","collapseall":"Tout replier","expandall":"Tout d\u00e9plier"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Il y a {$a} liens qui pointent vers ce fichier","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer les commentaires s\u00e9lectionn\u00e9s\u00a0?","confirmation":"Confirmation"},"debug":{"debuginfo":"Info de d\u00e9bogage","line":"Ligne","stacktrace":"Trace de la pile"},"langconfig":{"labelsep":"&nbsp;"}};
+//]]>
+</script>
+<script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+var mb2nljs = {"scp":"\/","headerhsm":58,"moretext":"Afficher plus\u2026","lesstext":"Afficher moins\u2026","collapseall":"Tout replier","expandall":"Tout d\u00e9plier","messages":"Messages personnels","notifications":"Notifications"};var jsselectors = ["body",".fsmod-footer",".page-bgimg",".theme-scrolltt",".header-inner",".top-bar",".master-header-inner",".breadcrumb-item","#region-main",".page-breadcrumb.breadcrumb_classic","#page-header",".theme-footer",".mb2-pb-date",".page-b",".slide-contentnav-link",".pbanimnum-number",".pbanimnum-icon",".theme-text-text",".theme-text-text *",".text",".text-muted","pre",".theme-table-wrap",".icon","label",".text-truncate",".bg-light",".page-link","dt","dd",".slide-desc",".tcolorh",".badge",".box-title",".box-title-text",".box-desc",".theme-boxicon-icon",".theme-boxicon-icon i",".boxcontent-desc",".box-desc-text",".theme-header-subtitle",".event-duration",".event-date",".event-date span",".eventname",".footer-link a",".iconel i",".list-text",".theme-list li",".theme-list a",".social-list a",".share-list a",".tab-pane",".tab-pane *",".theme-slide-title",".theme-slider-desc",".select-items-container",".mb2-pb-select_item",".mb2-pb-btn","#page button",".showmore-container button *","#page button i",".mb2-pb-btn i",".fixed-bar button",".panel-link",".header-tools-link i",".mb2-accordion button",".mb2-accordion button i",".embed-video-bg i",".accimg-item",".accimg-plus",".block_coursetoc .coursetoc-sectionlist",".enrollment-page #page-content",".card-body",".day-number",".quicklinks-list",".item-link",".static-icon",".static-icon i",".menu-extracontent-content",".quicklinks path",".mb2mm-action",".mb2mm-mega-action",".mb2mm-heading",".mb2mm-icon",".mb2mm-label",".mb2mm-sublabel",".mb2mm-mega-action",".mb2mm-toggle",".mb2mm-arrow",".link-replace",".mobile-navto",".mobile-navbottom",".menu-extracontent-controls",".menu-extra-controls-btn",".lang-list a",".show-menu",".theme-usermenu",".theme-usermenu li",".theme-usermenu a",".logout-link",".theme-loginform .help-link",".admin-region",".theme-links a",".mb2tmpl-acccontent>div",".mb2megamenu-item-header",".mb2megamenu-item-header .item-label",".mb2megamenu-builder-footer",".dashboard-tabs",".theme-dashboard",".block-item-inner",".action-menu",".action-menu-item",".mb2pb-editfooter","input","textarea","select",".form-label",".form-control",".col-form-label *",".form-description",".mb2-pb-announcements-title",".mb2-pb-announcements-content",".mb2-pb-announcements-item",".pagelayout-content",".pagelayout-a",".pagelayout-b",".toggle-sidebar-nav",".toggle-sidebar-nav button",".footer-tools",".footer-tools a",".footer-content",".alert",".filter-content",".box",".boxlist a",".boxlist span",".activityiconcontainer.content",".activityname",".activityname a",".instructor-meta *",".course-link-item a",".course-link-item path",".toggle-icon",".progress-value",".theme-turnediting",".course-nav-list-item-list-container",".course-nav-list-ccontent",".activity",".theme-course-teacher-inner",".info-courses",".info-students",".teacher-info i",".theme-courses-topbar","#fsmod-header",".fsmod-course-sections",".coursetoc-section-tite",".fsmod-section-tools",".fsmod-section",".fsmod-course-content",".coursenav-link",".fsmod-backlink",".fsmod-showhide-sidebar path",".coursenav-link span",".sidebar-inner",".course-slogan",".course-categories-tree",".course-meta1",".course-meta2",".price",".enrol-course-nav",".enrol-course-nav ul",".course-description-item",".children-category a",".cat-image",".cat-image path",".theme-course-filter .field-container input+i",".coursetabs-tablist",".coursetabs-catitem span",".course-custom-fileds",".course-custom-fileds li",".activity-header",".tcolorl",".tcolorn",".course-categories-tree a",".filter-heading",".filter-toggle",".toggle-list-btn",".course-info2-inner",".enrol-course-nav-inner",".availabilityinfo",".course-section-header",".activity-item",".section-collapsemenu",".course-nav-button",".modified",".nav-buttons",".coursetoc-tools",".coursetoc-sinput",".comment-link",".message-app",".drawer-top",".drawer-top a",".drawer-top i",".popover-region-container",".popover-region-footer-container",".popover-region-seeall-text",".mb2config-heading",".mb2config-spacer",".mb2pb-videopopup-icon",".mb2pb-videopopup-text",".bgcolor",".theme-boxicon",".mb2-pb-ba_content"];
+//]]>
+</script>
+<script data-has-hidden="true" aria-hidden="true">
+//<![CDATA[
+(function() {M.util.help_popups.setup(Y);
+ M.util.js_pending('random6a1468d6b227e13'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6a1468d6b227e13'); });
+})();
+//]]>
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" data-has-hidden="true" aria-hidden="true"></script><div data-has-hidden="true" aria-hidden="true"></div><div data-flexitour="backdrop" data-has-hidden="true" aria-hidden="true"></div><span data-flexitour="container" class="orphan" id="tour-step-tool_usertours_135206_2_1779721216-0" role="dialog" tabindex="0" aria-labelledby="tour-step-tool_usertours_135206_2_1779721216-0-title" aria-describedby="tour-step-tool_usertours_135206_2_1779721216-0-body" style="position: fixed; top: 363px; left: 483px;"><div class="modal-dialog" role="document" data-role="flexitour-step">
+  <div class="modal-content">
+    <div class="tooltip-arrow" data-role="arrow"></div>
+    <div class="modal-header">
+      <h5 class="modal-title" data-placeholder="title" id="tour-step-tool_usertours_135206_2_1779721216-0-title" aria-labelledby="tour-step-tool_usertours_135206_2_1779721216-0-body">Votre tableau de bord</h5>
+    </div>
+    <div class="modal-body" data-placeholder="body" id="tour-step-tool_usertours_135206_2_1779721216-0-body" role="document">Votre nouveau Tableau de bord a de nombreuses fonctions pour vous permettre d’accéder facilement aux informations les plus importantes pour vous.</div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-role="next" role="button">Suivant</button>
+      <button class="btn btn-secondary" data-role="end" role="button">Sauter la visite guidée</button>
+    </div>
+  </div>
+</div></span></body></html>

@@ -1,0 +1,213 @@
+═══════════════════════════════════════════════════════════
+LEÇON: L1_ELEMENTS_PERFOMANCE_ORDINATEUR.pdf
+MATIÈRE: Technologie
+CLASSE: 5ème
+SOURCE: L1_ELEMENTS_PERFOMANCE_ORDINATEUR.pdf.pdf
+═══════════════════════════════════════════════════════════
+
+Page 1 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+TITRE DE LA LEÇON 1 : QUELQUES ELEMENTS DE PERFORMANCE
+D’UN ORDINATEUR
+I-SITUATION D’APPRENTISSAGE
+En vue de sa prochaine séance de travaux pratiques en TICE, le professeur a installé un logiciel de dessins
+sur les différents ordinateurs de la salle multimédia. Albert un élève de la classe de 5ème2 qui l’a assisté a
+remarquer que sur certains ordinateurs l’installation s’est achevée très vite, tandis que sur d’autres, elle a
+duré plus longtemps. Intrigué, il décide de comprendre pourquoi le temps d’installation varie d’un
+ordinateur à un autre.
+Vidéo en guise de situation d’apprentissage : 
+II-RESUME DE LA LEÇON
+• Activité
+Un vétérinaire veut identifier par un code les différents types d’animaux d’un zoo.
+Les questions qu’il se pose à propos de ces animaux sont : L’animal est-il un mammifère ? Porte-t-il
+des cornes ? Est-il herbivore ? A-t-il des sabots ? Vole-t-il ?
+On convient de mettre « 1 » lorsque la réponse est vraie et « 0 » dans le cas contraire.
+Recopie puis complète le tableau suivant :
+Animaux M C H S V Code
+Bœuf 1 1 1 1 0 11110
+Chauve-
+souris
+Chien
+Eléphant
+(M : Mammifère ; C : Cornu ; H : Herbivore ; S : Porte des sabots ; V : Vole)
+• Bilan
+En informatique, une information est une suite de réponses à des questions que l’on se pose sur un
+être ou sur un objet. Dans cette activité, nous nous intéressons aux animaux à propos desquels nous
+avons les cinq questions suivantes : Est-il un mammifère ? Porte-t-il des cornes ? Est-il herbivore ?
+A-t-il des sabots ? Vole-t-il ?
+On remarque que chacune de ces questions n’a pour réponse que « Vrai » ou « Faux ». De telles
+questions sont dites binaires.
+Le code relatif au Bœuf « 11110 » est une information. Elle est constituée des réponses d’une suite
+de cinq questions. On dit que cette information est codée sur cinq bits.
+5eme
+TICE
+MATHEMATIQUE
+PHYSIQUE-CHIMIE
+
+-- 1 of 8 --
+
+Page 2 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+Un bit est la réponse à une question qui n’a que deux réponses possibles, à savoir « Vrai » et
+« Faux ».
+En informatique, une réponse vraie est codée « 1 » et une réponse fausse est codée « 0 ».
+Exemple :
+101010 est une information codée sur 6 bits
+0001 est une information codée sur 4 bits
+0 est une information codée sur 1 bit.
+1. L’OCTET
+L’octet (o) (Byte en Anglais) est une suite de huit bits
+Les multiples de l’octet sont : Kilooctet (Ko), Mégaoctet (Mo), Gigaoctet (Go), Téraoctet (To).
+- 1 Ko = 1024 octets
+- 1 Mo = 1024 kilooctets
+- 1 Go = 1024 mégaoctets
+- 1 To = 1024 giga-octets
+2. QUELQUES INDICATEURS DE LA PERFORMANCE D’UN ORDINATEUR
+Lorsque l'on cherche un nouvel ordinateur, on essaie naturellement de comparer les différents
+modèles pour identifier les plus rapides : sur quels critères se baser ?
+Pour comprendre comment fonctionne concrètement un ordinateur, il faut avant tout saisir les rôles
+de chaque élément, du processeur au disque dur – en passant par la carte graphique et l'alimentation.
+Mais lorsque l'on désire précisément un appareil réactif, il faut centrer son attention sur des critères
+bien spécifiques. En effet, certains composants influent beaucoup plus que d'autres sur l'efficacité de
+la machine, et donc sur la rapidité ainsi que la fluidité globale.
+• Processeur
+• Mémoire vive RAM
+• Disque dur ou SSD
+• Carte graphique
+Nous allons revenir sur les principales pièces à scruter afin de savoir si l'ordinateur en question sera
+suffisamment rapide ou pas. Pour chacune d'entre elles, nous vous donnerons quelques indications
+pour vous guider dans vos achats.
+3. LE PROCESSEUR
+Différents paramètres caractérisent un processeur, à commencer par le nombre de « cœurs ».
+Exprimée en GHz, la fréquence a aussi son importance. Plus elle est haute, meilleures sont les
+performances.
+Processeur « intel » Un processeur
+« AMD »
+4. MEMOIRE VIVE
+Exprimée en Giga-octets, la mémoire vive stocke toutes les tâches en cours sur l'ordinateur. Plus elle
+est performante, plus l'interface sera rapide.
+
+-- 2 of 8 --
+
+Page 3 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+Une mémoire RAM
+Lorsque l’ordinateur s’éteint, les informations contenues dans la RAM sont perdues si elles n’ont
+pas été enregistrées. La capacité de la mémoire RAM est exprimée en Mo ou en Go.
+5. LE DISQUE DUR
+Il faut penser à regarder la mémoire cache, qui désigne la quantité de données susceptibles
+réutilisables que l'appareil peut stocker.
+Un disque dur interne Un disque dur externe
+6. LA CARTE GRAPHIQUE
+Pour tous les amateurs de jeux vidéo ou professionnels travaillant dans la création vidéo ou
+photographique, il faut une excellente carte graphique dans l'ordinateur.
+Plusieurs éléments vous aideront à sélectionner votre carte graphique : la fréquence, la mémoire et
+la consommation.
+Remarque :
+Il n'est pas possible de déterminer quel est le meilleur processeur ou quel sera le disque dur le plus
+efficient : tout dépend de l'usage de chaque personne, de ses besoins et de son budget.
+
+-- 3 of 8 --
+
+Page 4 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+7. CAPACITE DU DISQUE
+Pour afficher la capacité du disque il faut :
+Sous Microsoft Windows Sous Linux
+1. Cliquer sur le bouton 1. Cliquer sur le bouton
+2. Cliquer sur « Ordinateur » 2. Cliquer sur le bouton
+3. Les capacités des durs s’affichent comme
+suit :
+3. Cliquer sur le bouton
+8. FREQUENCE DU PROCESSEUR ET CAPACITE DE LA MEMOIRE RAM
+Pour afficher la fréquence du processeur et la capacité de la mémoire RAM, il faut :
+a) Cliquer sur le bouton Windows
+b) Faire un clic droit sur « Ordinateur » puis cliquer sur « Propriétés »
+
+-- 4 of 8 --
+
+Page 5 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+c) La fréquence du processeur et la capacité de la mémoire RAM s’affiche
+Terminons par cette petite vidéo qui vous montre comment accroître les performances de votre
+ordinateur : URL : 
+III-SITUATION D’EVALUATION :
+Ta grande sœur veut copier dans son ordinateur les fichiers suivant :
+- 1 film documentaire sur l’histoire de la Côte d’Ivoire (7 Go) ;
+- 35 clips vidéo de ses artistes préférés (20 Go) ;
+- 250 photos prises à diverses occasions (3 Go) ;
+- 17 livres numériques (5,5 Go).
+Voici affichée, la capacité du disque dur de son ordinateur : .
+1) Dis si elle peut stockés sur son ordinateur tous ces fichiers.
+2) Donne le maximum de fichiers qu’elle peut stocker sur son disque dur
+IV-EXERCICES /DOCUMENTATION :
+Exercice 1
+Afin de savoir s’il faut construire un internat dans le Lycée, le Conseil Général a mené une enquête.
+Chaque élève interrogé(e) doit répondre dans l’ordre aux quatre questions suivantes :
+Es-tu une fille ?
+▪ Habites-tu chez tes parents ?
+
+-- 5 of 8 --
+
+Page 6 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+▪ Habites-tu loin de l’école ?
+▪ Manges-tu à la cantine ?
+On convient de noter « 1 » lorsque la réponse à) la question posée est « oui » et « o » dans le cas
+contraire.
+1) Dis sur combien de bits une information de cette enquête est codée.
+2) Félicité est une fille qui mange à la cantine, qui n’habite pas chez ses parents et qui habite
+loin de l’école. Donne le code qui lui correspond.
+3) Décris un élève dont le code est 0110.
+4) Dit-s’il est possible dans cette enquête d’avoir un élève dont le code est 01011
+Exercice 2
+Complete:
+1,5 Ko = ………. octets
+3,2 Mo = ………. octets
+2To = ………. Mo
+512 octets = ………. Ko
+2048 octets = ………. Mo
+4Go = ………. To
+Exercice 3
+Koffi a assisté à la fête des ignames dans son village. Au cours de cette fête, il a filmé la prestation
+des divers groupes de danse à l’aide de son téléphone portable. De retour du village, il veut copier le
+film sur l’ordinateur de bureau de son papa, mais l’ordinateur s’arrête et affiche : « Insuffisance
+d’espace de stockage ».
+Indique parmi les situations suivantes celle qui correspond au message que l’ordinateur a affiché :
+a) La capacité de la RAM est insuffisante
+b) La capacité du disque dur est insuffisante
+c) La fréquence du processeur est faible
+Exercice 4 Les fenêtres suivantes affichent des informations concernant un ordinateur.
+
+-- 6 of 8 --
+
+Page 7 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+1) Indique les caractéristiques de la RAM et du processeur de cet ordinateur.
+2) Donner les capacités des disques durs.
+3) Calculer la capacité utilisée sur chaque disque dur.
+4) Donne le nombre de clés USB actuellement connectées à cet ordinateur.
+Exercice 5 Voici dans un catalogue, les caractéristiques d’un ordinateur.
+Complète si possible le tableau ci-dessous à l’aide des données du catalogue.
+Processeur
+Vitesse :
+……………..………..…
+Marque :
+…………………..……
+RAM Capacité :
+………………………
+Disque dur Capacité :
+………………………
+Taille de l’écran …………………………………
+…
+
+-- 7 of 8 --
+
+Page 8 sur 8 ecole-ci.online
+Ce document ne peut être vendu. Tout contrevenant s’expose aux rigueurs de la loi
+
+-- 8 of 8 --
+
+═══════════════════════════════════════════════════════════
+FIN DE LA LEÇON
+═══════════════════════════════════════════════════════════

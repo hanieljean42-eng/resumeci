@@ -1,0 +1,117 @@
+# 📝 Résumé - CINQUIEME
+
+**Matière:** Français  
+**Classe:** 5ème  
+**Leçon:** Leçon2 S1_LA MORPHOLOGIE DU GROUPE ADJECTIF _ GENRE ET NOMBRE.
+
+---
+
+## 🎯 Points clés de la leçon
+
+*(À remplir après lecture du contenu)*
+
+### 1. Notions fondamentales
+- 
+- 
+- 
+
+### 2. Définitions importantes
+- **Terme 1**: 
+- **Terme 2**: 
+- **Terme 3**: 
+
+### 3. Méthodes / Formules
+- 
+- 
+
+### 4. Exemples pratiques
+- 
+- 
+
+---
+
+## 📝 Résumé détaillé
+
+*(Rédiger ici un résumé clair et structuré de la leçon)*
+
+
+
+---
+
+## ⚠️ Points à retenir pour l'examen
+
+1. 
+2. 
+3. 
+
+---
+
+## 📚 Contenu source (extrait du PDF)
+
+<details>
+<summary>Cliquez pour voir le texte original de la leçon</summary>
+
+```
+CINQUIEME
+FRANÇAIS
+CÔTE D’IVOIRE – ÉCOLE
+NUMÉRIQUE
+GRAMMAIRE - LECON 2 : LE GROUPE ADJECTIF
+SEANCE 1 : LA MORPHOLOGIE : GENRE ET NOMBRE.
+A partir de cet extrait, les élèves s’organisent pour étudier le groupe adjectif en commençant
+par la morphologie : genre et nombre.
+Généralité
+De manière générale, l’adjectif qualificatif s’accorde en genre et en nombre avec le ou les nom
+(s) qu’il qualifie.
+Exemple : Une mangue charnue.
+I-ACCORD DE L’ADJECTIF QUALIFICATIF AVEC PLUSIEURS NOMS.
+-L’adjectif qui qualifie plusieurs noms masculins se met au masculin pluriel si tous les noms
+sont du masculin et au féminin pluriel si tous les noms sont du féminin.
+Exemples :
+P 1 : Un livre et un cahier neufs.
+P 2 : Une allure et une démarche douteuses.
+-L’adjectif se met au masculin pluriel si l’un des noms est au masculin.
+Exemple : Une joie et un espoir fondés.
+-Dans une énumération, l’adjectif peut s’accorder selon le sens :
+*Avec tous les noms.
+Exemple : Un chapeau et un pantalon blancs.
+*Uniquement avec le nom qui le précède.
+Exemple : On apercevait de loin les flammes et le nuage noir de l’incendie.
+SITUATION D’APPRENTISSAGE
+Au cours de leur lecture, les élèves de la 5e 4 découvrent des adjectifs qualificatifs dont la
+morphologie leur paraît étrangère. Pour satisfaire leur curiosité, ils sollicitent le professeur de
+Français qui leur propose l’extrait suivant :
+« Safissatou aime les bons fruits : la mangue greffée et charnue, la papaye juteuse, tous les
+gros fruits tropicaux. »
+
+-- 1 of 2 --
+
+II-ACCORD DE L’ADJECTIF QUALIFICATIF AVEC UN GROUPE NOMINAL
+COMPORTANT UN COMPLEMENT DU NOM.
+Dans ce cas d’espèce, l’accord se fait selon le sens, soit avec le nom, soit avec le complément
+du nom.
+Exemples :
+P 1 : Un album de photos anciennes. (S’accorde avec de photos)
+P 2 : Un album de photos ancien. (S’accorde avec un album).
+EXERCICES
+1. Accorde correctement l’adjectif qualificatif entre parenthèses.
+P1 : Il avait consommé un fruit et un plat (excellent).
+P 2 : Je dois acheter un crayon et un cahier (quadrillé).
+P3 : Servez-moi de l’eau ou du thé (chaud.)
+P4 : Devant la cour, s’enfuyaient des pintades et une poule (effrayé.)
+2. Selon le sens, accorde l’adjectif qualificatif avec le nom ou le complément du nom.
+P5 : Un panier de mangues (délicieux.)
+P6 : Une tasse de café (sucré.)
+P7 : Du poisson et des crabes de mer (frais.)
+P8 : Un coup de tête (dangereux).
+P9 : Un cri de bête (blessé.)
+
+-- 2 of 2 --
+```
+
+</details>
+
+---
+
+*Statut: En attente de rédaction*  
+*Créé le: 25/05/2026*

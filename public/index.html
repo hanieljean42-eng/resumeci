@@ -3,110 +3,1141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="300">
-  <title>ResumeCI — Maintenance en cours</title>
-  <meta name="description" content="ResumeCI est en maintenance. Le site revient bientôt avec de nouvelles fonctionnalités.">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <title>ResumeCI — Fiches de Résumé | Collège & Lycée CI</title>
+  <meta name="description" content="ResumeCI propose des fiches de résumé, quiz, flashcards et téléchargement PDF pour les élèves du Collège et du Lycée en Côte d'Ivoire.">
+  <meta name="keywords" content="fiches résumé Côte d'Ivoire, collège, lycée, 5ème, 3ème, Seconde, Terminale A, Terminale D, quiz, flashcards, révision, BAC">
+  <meta name="author" content="Haniel_dev">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ResumeCI — Fiches de Résumé pour tous les niveaux">
+  <meta property="og:description" content="Fiches, quiz, flashcards, audio et PDF pour réviser au Collège et au Lycée en Côte d'Ivoire.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resumeci.me/">
+  <meta property="og:site_name" content="ResumeCI">
+  <meta property="og:locale" content="fr_CI">
+  <meta property="og:image" content="https://resumeci.me/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://resumeci.me/">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="theme-color" content="#2563eb">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"ResumeCI",
+    "url":"https://resumeci.me/",
+    "description":"Fiches de résumé, quiz, flashcards, lecture audio et PDF pour réviser au Collège et au Lycée en Côte d'Ivoire.",
+    "inLanguage":"fr-CI",
+    "creator":{"@type":"Person","name":"Haniel_dev","affiliation":{"@type":"CollegeOrUniversity","name":"Institut universitaire d'Abidjan"}},
+    "potentialAction":{"@type":"SearchAction","target":"https://resumeci.me/?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Inter, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
-      color: #1e293b;
-      padding: 20px;
+    :root {
+      --bg:#f8fafc;--bg-card:#fff;--bg-card-hover:#f1f5f9;--bg-surface:#fff;
+      --bg-sidebar:#1e293b;--sidebar-text:#e2e8f0;--sidebar-muted:#94a3b8;--sidebar-dim:#64748b;
+      --text:#1e293b;--text-muted:#475569;--text-dim:#64748b;
+      --accent:#2563eb;--accent-light:#3b82f6;--accent-bg:#eff6ff;
+      --green:#059669;--green-bg:#ecfdf5;--orange:#d97706;--orange-bg:#fffbeb;
+      --purple:#7c3aed;--purple-bg:#f5f3ff;--red:#dc2626;
+      --border:#e2e8f0;--radius:12px;--radius-sm:8px;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 12px rgba(0,0,0,.08);
+      --shadow-lg:0 8px 30px rgba(0,0,0,.12);--transition:all .2s ease;
     }
-    .container {
-      text-align: center;
-      max-width: 600px;
-      background: white;
-      border-radius: 24px;
-      padding: 60px 40px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    body.dark-mode{--bg:#0f172a;--bg-card:#1e293b;--bg-card-hover:#334155;--bg-surface:#1e293b;--text:#f8fafc;--text-muted:#cbd5e1;--text-dim:#94a3b8;--border:#334155;--accent-bg:#1e3a8a;--green-bg:#064e3b;--orange-bg:#78350f;--purple-bg:#4c1d95}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+    .layout{display:flex;min-height:100vh}
+    .intro-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at top left,#dbeafe 0,#f8fafc 36%,#eef2ff 100%)}
+    .intro-card{width:min(920px,100%);background:rgba(255,255,255,.92);border:1px solid rgba(226,232,240,.9);border-radius:28px;padding:36px;box-shadow:0 24px 70px rgba(15,23,42,.14);display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .intro-badge{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;margin-bottom:18px}
+    .intro-card h1{font-size:38px;line-height:1.1;font-weight:900;color:#0f172a;margin-bottom:14px}
+    .intro-card p{color:#475569;font-size:15px;line-height:1.75;margin-bottom:16px}
+    .intro-features{display:grid;gap:10px;margin:20px 0}
+    .intro-feature{display:flex;align-items:center;gap:10px;color:#334155;font-size:14px;font-weight:600}
+    .intro-feature span{width:32px;height:32px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:#eef2ff}
+    .intro-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .intro-continue{border:none;border-radius:14px;padding:14px 24px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(37,99,235,.28);transition:transform .2s}
+    .intro-continue:hover{transform:translateY(-2px)}
+    .intro-note{display:inline-flex;align-items:center;gap:8px;color:#64748b;font-size:12px;font-weight:600}
+    .intro-visual{background:linear-gradient(135deg,#1e293b,#334155);border-radius:24px;padding:22px;color:#fff;min-height:330px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+    .intro-visual-top{display:flex;align-items:center;justify-content:space-between}
+    .intro-logo{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:28px}
+    .intro-pill{font-size:11px;color:#bfdbfe;background:rgba(59,130,246,.18);border:1px solid rgba(147,197,253,.24);padding:6px 10px;border-radius:999px}
+    .intro-preview{display:grid;gap:12px;margin-top:24px}
+    .intro-preview-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px}
+    .intro-preview-card strong{display:block;font-size:13px;margin-bottom:5px}
+    .intro-preview-card small{color:#cbd5e1;line-height:1.5}
+    .creator-mark{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f8fafc;border:1px solid #e2e8f0;color:#475569;font-size:12px;font-weight:700}
+    .creator-mark strong{color:#2563eb}
+    .layout.is-hidden{display:none}
+
+    /* Sidebar */
+    .sidebar{width:300px;min-width:300px;background:var(--bg-sidebar);display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+    .sidebar-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .sidebar-header h1{font-size:16px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+    .sidebar-header .logo{width:34px;height:34px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
+    .sidebar-header p{font-size:11px;color:var(--sidebar-dim);margin-top:4px;padding-left:44px}
+    .search-box{padding:12px 16px;position:relative;display:flex;align-items:center;gap:8px}
+    .search-box input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px 8px 34px;color:#fff;font-size:13px;outline:none;transition:var(--transition)}
+    .search-box input::placeholder{color:var(--sidebar-dim)}
+    .search-box input:focus{border-color:var(--accent-light);background:rgba(255,255,255,.12)}
+    .search-box>.fa-search{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:var(--sidebar-dim);font-size:12px;z-index:1}
+    .voice-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#93c5fd;cursor:pointer;border-radius:6px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:14px;transition:.2s;flex-shrink:0}
+    .voice-btn:hover{background:rgba(255,255,255,.18);color:#60a5fa;transform:scale(1.05)}
+    .sidebar-nav{flex:1;overflow-y:auto;padding:8px 0}
+    .sidebar-nav::-webkit-scrollbar{width:3px}
+    .sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+    .nav-class{padding:0 8px;margin-bottom:4px}
+    .nav-class-header{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;color:var(--sidebar-text);transition:var(--transition);user-select:none}
+    .nav-class-header:hover{background:rgba(255,255,255,.06)}
+    .nav-class-header .badge{margin-left:auto;background:rgba(59,130,246,.2);color:#93c5fd;padding:2px 7px;border-radius:10px;font-size:10px}
+    .nav-class-header .chevron{transition:transform .2s;font-size:9px;color:var(--sidebar-dim)}
+    .nav-class.open .chevron{transform:rotate(90deg)}
+    .nav-subjects{display:none;padding-left:12px}
+    .nav-class.open .nav-subjects{display:block}
+    .nav-subject-header{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;color:var(--sidebar-muted);transition:var(--transition);user-select:none}
+    .nav-subject-header:hover{background:rgba(255,255,255,.06);color:var(--sidebar-text)}
+    .nav-subject-header .count{margin-left:auto;font-size:10px;color:var(--sidebar-dim)}
+    .nav-subject-header .chevron{font-size:8px;color:var(--sidebar-dim);transition:transform .2s}
+    .nav-subject.open .chevron{transform:rotate(90deg)}
+    .nav-lessons{display:none;padding-left:10px}
+    .nav-subject.open .nav-lessons{display:block}
+    .nav-lesson{display:block;padding:5px 10px;margin:1px 0;border-radius:5px;cursor:pointer;font-size:11px;color:var(--sidebar-dim);transition:var(--transition);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav-lesson:hover{background:rgba(255,255,255,.06);color:var(--sidebar-text)}
+    .nav-lesson.active{background:rgba(59,130,246,.2);color:#93c5fd;font-weight:500}
+    .sidebar-footer{padding:12px 16px;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:11px;color:var(--sidebar-dim)}
+    .sidebar-footer strong{color:var(--accent-light)}
+
+    /* Main */
+    .main{flex:1;display:flex;flex-direction:column;min-width:0}
+    .topbar{padding:14px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--bg-card);box-shadow:var(--shadow-sm)}
+    .breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-dim);flex-wrap:wrap}
+    .breadcrumb .current{color:var(--text);font-weight:600}
+    .breadcrumb .clickable{cursor:pointer}
+    .breadcrumb .clickable:hover{color:var(--accent)}
+    .topbar-actions{margin-left:auto;display:flex;gap:8px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);font-size:12px;font-weight:500;cursor:pointer;transition:var(--transition);text-decoration:none}
+    .btn:hover{background:var(--bg-card-hover);border-color:var(--accent);color:var(--accent)}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{background:#1d4ed8}
+    .btn-green{background:var(--green);border-color:var(--green);color:#fff}
+    .btn-green:hover{background:#047857}
+    .content{flex:1;padding:28px;overflow-y:auto}
+
+    /* Dashboard */
+    .dashboard{max-width:960px;margin:0 auto}
+    .dashboard-hero{text-align:center;padding:40px 0 32px}
+    .dashboard-hero .hero-icon{width:72px;height:72px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:20px;display:inline-flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:16px;box-shadow:0 8px 24px rgba(59,130,246,.25)}
+    .dashboard-hero h2{font-size:26px;font-weight:800}
+    .dashboard-hero p{color:var(--text-muted);font-size:14px;margin-top:4px}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+    .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center;transition:var(--transition);box-shadow:var(--shadow-sm)}
+    .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .stat-card .stat-icon{width:40px;height:40px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+    .stat-card .stat-number{font-size:26px;font-weight:800;line-height:1;margin-bottom:4px}
+    .stat-card .stat-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+    .class-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .class-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-sm)}
+    .class-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .class-card h3{font-size:17px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .class-card .subject-list{display:flex;flex-wrap:wrap;gap:5px}
+    .dl-btn{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:11px;font-weight:600;color:var(--text-dim);cursor:pointer;transition:.2s}
+    .dl-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+    .dl-btn.downloading{color:#f59e0b;border-color:#f59e0b;pointer-events:none}
+    .dl-btn.downloaded{color:#10b981;border-color:#10b981;background:#ecfdf5}
+    body.dark-mode .dl-btn.downloaded{background:#064e3b}
+    .subject-tag{padding:3px 9px;border-radius:14px;font-size:10px;font-weight:500;background:var(--accent-bg);color:var(--accent);border:1px solid #dbeafe}
+
+    /* Subject grid */
+    .subject-grid{max-width:1000px;margin:0 auto}
+    .subject-grid h2{font-size:22px;font-weight:700}
+    .subject-grid .subtitle{color:var(--text-muted);margin-bottom:20px;font-size:13px}
+    .lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:24px}
+    .lesson-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+    .lesson-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+    .lesson-card .lesson-icon{width:36px;height:36px;min-width:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
+    .lesson-card>div:last-child{min-width:0;flex:1}
+    .lesson-card .lesson-name{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lesson-card .lesson-meta{font-size:10px;color:var(--text-dim);margin-top:2px}
+
+    /* Fiche */
+    .fiche-view{max-width:820px;margin:0 auto}
+    .fiche-content::after{content:'Haniel_dev';position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-35deg);font-size:80px;font-weight:900;color:rgba(0,0,0,.035);pointer-events:none;z-index:0;letter-spacing:12px;white-space:nowrap;font-family:Inter,sans-serif}
+    body.dark-mode .fiche-content::after{color:rgba(255,255,255,.035)}
+    .fiche-content{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 44px;line-height:1.75;box-shadow:var(--shadow)}
+    .fiche-content h1{font-size:22px;font-weight:800;margin-bottom:16px;color:var(--accent)}
+    .fiche-content h2{font-size:18px;font-weight:700;margin:32px 0 14px;padding:10px 16px;background:linear-gradient(135deg,var(--accent-bg),#f5f3ff);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:var(--text)}
+    .fiche-content h3{font-size:15px;font-weight:600;margin:20px 0 8px;color:var(--text);padding-bottom:6px;border-bottom:1px solid var(--border)}
+    .fiche-content p{margin-bottom:10px;color:var(--text-muted);font-size:14px}
+    .fiche-content ul,.fiche-content ol{margin:6px 0 14px 20px}
+    .fiche-content li{margin-bottom:5px;color:var(--text-muted);font-size:13px;line-height:1.6}
+    .fiche-content strong{color:var(--text)}
+    .fiche-content table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+    .fiche-content th,.fiche-content td{padding:8px 12px;border:1px solid var(--border)}
+    .fiche-content th{background:var(--bg);font-weight:600;text-align:left}
+    .fiche-content code{background:var(--accent-bg);color:var(--accent);padding:3px 8px;border-radius:4px;font-size:14px;font-family:'JetBrains Mono',monospace;font-weight:500}
+    .fiche-content blockquote{border-left:4px solid var(--accent);padding:12px 18px;margin:10px 0;background:var(--accent-bg);border-radius:0 8px 8px 0;color:var(--text);font-size:14px;line-height:1.8}
+    .fiche-content blockquote strong{color:var(--text);font-size:15px;letter-spacing:.3px}
+    .fiche-content hr{border:none;border-top:2px solid var(--border);margin:28px 0}
+
+    /* Fiche internal classes (from fiche HTML head styles) */
+    .fiche-content .header{text-align:center;border-bottom:3px solid #16a34a;padding-bottom:20px;margin-bottom:30px}
+    .fiche-content .header h1{color:#16a34a;font-size:22px;text-align:center}
+    .fiche-content .meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;color:#64748b;font-size:13px}
+    .fiche-content .meta span{background:#f1f5f9;padding:4px 12px;border-radius:20px}
+    .fiche-content .definition{background:#ecfdf5;border-left:4px solid #22c55e;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0}
+    .fiche-content .important{background:#eff6ff;border-left:4px solid #2563eb;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+    .fiche-content .schema{background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 18px;border-radius:0 8px 8px 0;margin:10px 0;font-weight:700;color:#92400e}
+    body.dark-mode .fiche-content .meta span{background:#334155;color:#94a3b8}
+    body.dark-mode .fiche-content .definition{background:#064e3b;border-color:#10b981}
+    body.dark-mode .fiche-content .important{background:#1e3a5f;border-color:#3b82f6}
+    body.dark-mode .fiche-content .schema{background:#451a03;border-color:#f59e0b;color:#fbbf24}
+
+    /* Progression panel */
+    .progress-panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:24px;box-shadow:var(--shadow-sm)}
+    .progress-panel h3{font-size:15px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .streak-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#f97316,#ef4444);color:#fff;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;margin-left:auto}
+    .progress-bars{display:flex;flex-direction:column;gap:10px}
+    .prog-row{display:flex;align-items:center;gap:10px}
+    .prog-row .prog-label{font-size:12px;font-weight:600;color:var(--text-muted);min-width:100px}
+    .prog-row .prog-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}
+    .prog-row .prog-fill{height:100%;border-radius:4px;transition:width .6s ease}
+    .prog-row .prog-count{font-size:11px;color:var(--text-dim);min-width:40px;text-align:right}
+    .week-chart{display:flex;align-items:flex-end;gap:6px;height:60px;margin-top:14px;padding-top:10px;border-top:1px solid var(--border)}
+    .week-bar{flex:1;background:var(--accent-bg);border-radius:4px 4px 0 0;position:relative;min-height:4px;transition:height .4s ease}
+    .week-bar.active{background:var(--accent)}
+    .week-bar-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--text-dim)}
+
+    /* Favorites */
+    .fav-btn{background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-dim);transition:.2s;padding:4px}
+    .fav-btn:hover,.fav-btn.active{color:#f59e0b;transform:scale(1.2)}
+    .favs-section{margin-bottom:20px}
+    .favs-section h3{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-muted)}
+    .fav-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:12px;color:var(--sidebar-text);transition:.15s}
+    .fav-item:hover{background:rgba(255,255,255,.05)}
+
+    /* Themes */
+    :root[data-theme="green"]{--accent:#059669;--accent-bg:#ecfdf5}
+    :root[data-theme="purple"]{--accent:#7c3aed;--accent-bg:#f5f3ff}
+    :root[data-theme="orange"]{--accent:#ea580c;--accent-bg:#fff7ed}
+    :root[data-theme="blue"]{--accent:#2563eb;--accent-bg:#eff6ff}
+    .theme-selector{display:flex;gap:8px;margin:10px 0}
+    .theme-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:.2s}
+    .theme-dot:hover,.theme-dot.active{border-color:#fff;transform:scale(1.2)}
+
+    /* Formules KaTeX */
+    .formula-block{background:linear-gradient(135deg,#fef3c7,#fef9c3);border:2px solid #f59e0b;border-radius:10px;padding:16px 20px;margin:12px 0;text-align:center;font-size:18px;font-family:'JetBrains Mono',monospace;color:#92400e;font-weight:600;letter-spacing:.5px;line-height:2}
+
+    /* Footer */
+    .main-footer{padding:16px 28px;border-top:1px solid var(--border);text-align:center;background:var(--bg-card);font-size:12px;color:var(--text-dim)}
+    .footer-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .footer-links a{color:var(--accent);text-decoration:none;font-weight:700}
+    .main-footer strong{color:var(--accent);font-weight:700}
+
+    .loading{display:flex;align-items:center;justify-content:center;padding:60px;color:var(--text-muted);gap:10px}
+    .spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .color-blue{background:var(--accent-bg);color:var(--accent)}
+    .color-green{background:var(--green-bg);color:var(--green)}
+    .color-orange{background:var(--orange-bg);color:var(--orange)}
+    .color-purple{background:var(--purple-bg);color:var(--purple)}
+    .mobile-menu-btn{display:none;border:1px solid var(--border);background:var(--bg-card);border-radius:8px;padding:8px 10px;color:var(--text);cursor:pointer}
+    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:90}
+    .mobile-overlay.show{display:block}
+    .search-results{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:var(--shadow)}
+    .search-result{display:block;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-top:8px;color:var(--text);text-decoration:none;background:var(--bg)}
+    .search-result strong{display:block;font-size:13px;color:var(--accent)}
+    .search-result span{display:block;font-size:11px;color:var(--text-dim);margin-top:2px}
+    .seo-section{margin-top:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:24px;line-height:1.8;color:var(--text-muted);box-shadow:var(--shadow-sm)}
+    .seo-section h2{font-size:20px;color:var(--text);margin-bottom:10px}
+    .seo-section a{color:var(--accent);font-weight:800;text-decoration:none}
+    @media(max-width:768px){
+      .layout{display:block}
+      .intro-card{grid-template-columns:1fr;padding:22px;border-radius:22px}
+      .intro-card h1{font-size:28px}
+      .intro-visual{min-height:260px}
+      .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:100;transform:translateX(-105%);transition:transform .25s ease;box-shadow:var(--shadow-lg)}
+      .sidebar.mobile-open{transform:translateX(0)}
+      .mobile-menu-btn{display:inline-flex;align-items:center;justify-content:center}
+      .topbar{position:sticky;top:0;z-index:80;padding:10px 12px;gap:8px}
+      .breadcrumb{font-size:11px;min-width:0;overflow:hidden}
+      .topbar-actions{gap:5px;flex-wrap:wrap;justify-content:flex-end}
+      .topbar-actions .btn{padding:6px 8px;font-size:11px}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .class-cards{grid-template-columns:1fr}
+      .content{padding:14px;overflow:visible}
+      .fiche-view{max-width:100%}
+      .fiche-content{padding:18px;font-size:14px;overflow-wrap:anywhere}
+      .fiche-content h1{font-size:18px}
+      .fiche-content h2{font-size:15px;margin:24px 0 12px;padding:8px 10px}
+      .fiche-content table{display:block;overflow-x:auto;white-space:nowrap}
+      .lessons-grid{grid-template-columns:1fr}
+      .tools-bar{flex-direction:column}
+      .tool-card{min-width:0}
+      .audio-fab{width:46px;height:46px;bottom:14px;right:14px}
+      .install-prompt{bottom:10px;align-items:flex-start}
+      .install-actions{flex-direction:column}
     }
-    .icon {
-      font-size: 72px;
-      margin-bottom: 24px;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      color: #16a34a;
-      margin-bottom: 12px;
-    }
-    .subtitle {
-      font-size: 18px;
-      font-weight: 600;
-      color: #374151;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 15px;
-      color: #64748b;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: #e2e8f0;
-      border-radius: 3px;
-      margin: 30px 0;
-      overflow: hidden;
-    }
-    .progress-bar::after {
-      content: '';
-      display: block;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(90deg, #16a34a, #22c55e);
-      border-radius: 3px;
-      animation: loading 2s ease-in-out infinite;
-    }
-    @keyframes loading {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(350%); }
-    }
-    .badge {
-      display: inline-block;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      color: #16a34a;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-top: 20px;
-    }
-    .footer {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #94a3b8;
+    /* Learning tools bar */
+    .tools-bar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+    .tool-card{flex:1;min-width:200px;background:linear-gradient(135deg,#1e293b,#334155);border:2px solid #475569;border-radius:14px;padding:18px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:#f1f5f9}
+    .tool-card:hover{border-color:#3b82f6;transform:translateY(-3px);box-shadow:0 8px 25px rgba(59,130,246,.2)}
+    .tool-card .tool-icon{font-size:28px;margin-bottom:8px}
+    .tool-card h4{font-size:14px;font-weight:700;margin-bottom:4px}
+    .tool-card p{font-size:11px;color:#94a3b8}
+    /* Audio TTS */
+    .audio-fab{position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:#2563eb;border:none;border-radius:50%;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(37,99,235,.4);transition:.3s;z-index:100}
+    .audio-fab:hover{transform:scale(1.1)}
+    .audio-fab.speaking{background:#059669;animation:pulse-audio 1s infinite}
+    .install-prompt{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(140%);width:min(520px,calc(100% - 24px));background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px;box-shadow:0 18px 50px rgba(15,23,42,.35);z-index:120;display:flex;align-items:center;gap:12px;transition:transform .28s ease}
+    .install-prompt.show{transform:translateX(-50%) translateY(0)}
+    .install-icon{width:42px;height:42px;min-width:42px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:18px}
+    .install-text{flex:1;min-width:0}
+    .install-text strong{display:block;font-size:13px;margin-bottom:2px}
+    .install-text span{display:block;font-size:11px;color:#cbd5e1;line-height:1.4}
+    .install-actions{display:flex;gap:6px;align-items:center}
+    .install-btn{border:none;background:#10b981;color:#fff;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}
+    .install-close{border:none;background:rgba(255,255,255,.08);color:#cbd5e1;border-radius:10px;width:34px;height:34px;cursor:pointer}
+    @keyframes pulse-audio{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.4)}50%{box-shadow:0 0 0 12px rgba(5,150,105,0)}}
+    @media print{
+      body{background:#fff}
+      .intro-screen,.sidebar,.topbar,.main-footer,.audio-fab,.mobile-overlay,.fiche-actions{display:none!important}
+      .layout{display:block!important;min-height:auto}
+      .main{display:block}
+      .content{padding:0;overflow:visible}
+      .fiche-view{max-width:none;margin:0}
+      .fiche-content{box-shadow:none;border:none;padding:0}
+      .fiche-watermark{display:none}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon">🔧</div>
-    <h1>ResumeCI</h1>
-    <div class="subtitle">Maintenance en cours</div>
-    <p>Nous améliorons le site pour vous offrir une meilleure expérience.<br>De nouvelles fiches et fonctionnalités arrivent bientôt !</p>
-    <div class="progress-bar"></div>
-    <p>Le site sera de retour très prochainement.<br>Merci pour votre patience.</p>
-    <div class="badge">⏱️ Retour prévu bientôt</div>
-    <div class="footer">
-      <p>© 2026 ResumeCI — Fiches de résumé pour les élèves de Côte d'Ivoire</p>
+  <section class="intro-screen" id="introScreen">
+    <div class="intro-card">
+      <div>
+        <div class="intro-badge"><i class="fas fa-graduation-cap"></i> Plateforme de révision — Collège & Lycée</div>
+        <h1>Révise plus vite, retiens mieux, progresse chaque jour.</h1>
+        <p>Cette plateforme te donne accès à des fiches de résumé pour le Collège et le Lycée, des flashcards, des quiz gamifiés et un mode audio pour apprendre même avec peu de connexion.</p>
+        <div class="intro-features">
+          <div class="intro-feature"><span>📚</span> Fiches claires pour réviser les leçons importantes</div>
+          <div class="intro-feature"><span>🎮</span> Quiz avec correction immédiate pour apprendre de ses erreurs</div>
+          <div class="intro-feature"><span>🃏</span> Flashcards avec répétition espacée pour mieux mémoriser</div>
+          <div class="intro-feature"><span>📱</span> Application installable sur téléphone et utilisable hors-ligne</div>
+        </div>
+        <div class="intro-actions">
+          <button class="intro-continue" id="continueBtn"><i class="fas fa-arrow-right"></i> Continuer</button>
+          <span class="intro-note"><i class="fas fa-circle-info"></i> Les fiches restent séparées du nom du créateur.</span>
+        </div>
+      </div>
+      <div class="intro-visual">
+        <div class="intro-visual-top">
+          <div class="intro-logo">📘</div>
+          <div class="intro-pill">BAC CI</div>
+        </div>
+        <div class="intro-preview">
+          <div class="intro-preview-card"><strong>Fiches de résumé</strong><small>Des leçons organisées pour réviser rapidement avant les évaluations.</small></div>
+          <div class="intro-preview-card"><strong>Apprentissage actif</strong><small>Flashcards, quiz, score, correction et progression personnelle.</small></div>
+          <div class="intro-preview-card"><strong>Créé par Haniel_dev</strong><small>Indication placée hors du contenu pédagogique pour éviter toute confusion.</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="layout is-hidden" id="appLayout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1><span class="logo">📚</span> Fiches Résumé</h1>
+        <p>Collège & Lycée — Côte d'Ivoire</p>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Rechercher une leçon...">
+        <button class="voice-btn" onclick="startVoiceSearch()" title="Recherche vocale"><i class="fas fa-microphone"></i></button>
+      </div>
+      <div id="favsList"></div>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="loading"><div class="spinner"></div>Chargement...</div>
+      </nav>
+      <div style="padding:8px 16px">
+        <div style="font-size:11px;color:var(--sidebar-dim);margin-bottom:6px;font-weight:600">Thème</div>
+        <div class="theme-selector">
+          <div class="theme-dot" data-theme="blue" style="background:#2563eb" onclick="setTheme('blue')" title="Bleu"></div>
+          <div class="theme-dot" data-theme="green" style="background:#059669" onclick="setTheme('green')" title="Vert"></div>
+          <div class="theme-dot" data-theme="purple" style="background:#7c3aed" onclick="setTheme('purple')" title="Violet"></div>
+          <div class="theme-dot" data-theme="orange" style="background:#ea580c" onclick="setTheme('orange')" title="Orange"></div>
+        </div>
+      </div>
+      <div class="sidebar-footer">Créé par <strong>Haniel_dev</strong><br><a href="/about.html" style="color:#93c5fd">À propos</a> · <a href="/faq.html" style="color:#93c5fd">FAQ</a> · <a href="/contact.html" style="color:#93c5fd">Contact</a></div>
+    </aside>
+    <div class="main">
+      <div class="topbar">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
+        <div class="breadcrumb" id="breadcrumb">
+          <i class="fas fa-home" style="color:var(--accent)"></i>
+          <span class="current">Accueil</span>
+        </div>
+        <div class="topbar-actions" id="topbarActions"></div>
+      </div>
+      <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
+      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique à l'Institut universitaire d'Abidjan</span><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a></div></footer>
     </div>
   </div>
+  <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
+  <div class="install-prompt" id="installPrompt" role="dialog" aria-live="polite">
+    <div class="install-icon"><i class="fas fa-mobile-screen-button"></i></div>
+    <div class="install-text">
+      <strong>Installer l’application</strong>
+      <span>Ajoute ResumeCI sur ton écran d’accueil pour réviser plus vite, même hors connexion.</span>
+    </div>
+    <div class="install-actions">
+      <button class="install-btn" id="installBtn">Installer</button>
+      <button class="install-close" id="installClose" aria-label="Fermer"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
+  <script>
+    let DATA = {};
+    // Store current fiche info for download
+    let CURRENT_FICHE = null;
+    let deferredInstallPrompt = null;
+    let SEARCH_INDEX = [];
+    const PRIMARY_DOMAIN = 'https://resumeci.me';
+
+    const subjectIcons = {
+      'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
+      'Mathématiques':'📐','Philosophie':'💭','Histoire':'📜','Géo':'🌍',
+      'SVT':'🧬','Sciences':'🧬','Physique':'⚛️','Arts':'🎨',
+      'Education Musicale':'🎵','Education musicale':'🎵',
+      'Education Physique':'🏃','EPS':'🏃',
+    };
+    const subjectColors = ['color-blue','color-green','color-orange','color-purple'];
+    function getIcon(n){for(const[k,v]of Object.entries(subjectIcons))if(n.includes(k))return v;return'📖'}
+    function getColor(i){return subjectColors[i%subjectColors.length]}
+    function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
+
+    async function loadData(){
+      redirectToPrimaryDomain();
+      const[struct,stats]=await Promise.all([
+        fetch('/data/structure.json').then(r=>r.json()),
+        fetch('/data/stats.json').then(r=>r.json())
+      ]);
+      DATA.structure=struct;DATA.stats=stats;
+      if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');
+      renderSidebar();renderFavsSidebar();checkAutoNight();
+      // Init theme dots
+      const savedTheme=localStorage.getItem(THEME_KEY);
+      if(savedTheme)document.querySelectorAll('.theme-dot').forEach(d=>d.classList.toggle('active',d.dataset.theme===savedTheme));
+      showDashboard();
+    }
+    async function loadSearchIndex(){
+      if(SEARCH_INDEX.length)return;
+      SEARCH_INDEX=await fetch('/data/search-index.json').then(r=>r.json()).catch(()=>[]);
+    }
+
+    function renderSidebar(){
+      const nav=document.getElementById('sidebarNav');
+      let h='';
+      for(const[cls,subjects]of Object.entries(DATA.structure)){
+        const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
+        const clsIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
+        h+=`<div class="nav-class"><div class="nav-class-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${clsIcon} ${cls.replace('_',' ')}</span><span class="badge">${total}</span></div><div class="nav-subjects">`;
+        for(const[sub,fiches]of Object.entries(subjects)){
+          h+=`<div class="nav-subject"><div class="nav-subject-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${getIcon(sub)} ${sub}</span><span class="count">${fiches.length}</span></div><div class="nav-lessons">`;
+          for(let fi=0;fi<fiches.length;fi++){
+            const f=fiches[fi];
+            h+=`<a class="nav-lesson" data-cls="${cls}" data-sub="${sub}" data-idx="${fi}" data-path="${f.path}" title="${f.name}">${f.name}</a>`;
+          }
+          h+=`</div></div>`;
+        }
+        h+=`</div></div>`;
+      }
+      nav.innerHTML=h;
+      // Attach click events (avoids apostrophe issues in inline onclick)
+      nav.querySelectorAll('.nav-lesson').forEach(el=>{
+        el.addEventListener('click',()=>{
+          const cls=el.dataset.cls,sub=el.dataset.sub,idx=parseInt(el.dataset.idx);
+          const file=DATA.structure[cls][sub][idx].file;
+          document.querySelector('.sidebar')?.classList.remove('mobile-open');
+          document.getElementById('mobileOverlay')?.classList.remove('show');
+          showFiche(cls,sub,file);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      document.getElementById('continueBtn').addEventListener('click',()=>{
+        document.getElementById('introScreen').style.display='none';
+        document.getElementById('appLayout').classList.remove('is-hidden');
+        maybeShowInstallPrompt();
+      });
+      document.getElementById('installClose').addEventListener('click',dismissInstallPrompt);
+      document.getElementById('installBtn').addEventListener('click',installApp);
+      const sidebar=document.querySelector('.sidebar');
+      const overlay=document.getElementById('mobileOverlay');
+      const menuBtn=document.getElementById('mobileMenuBtn');
+      const closeMobileMenu=()=>{sidebar.classList.remove('mobile-open');overlay.classList.remove('show')};
+      menuBtn.addEventListener('click',()=>{sidebar.classList.add('mobile-open');overlay.classList.add('show')});
+      overlay.addEventListener('click',closeMobileMenu);
+      document.getElementById('searchInput').addEventListener('input',e=>searchLessons(e.target.value));
+    });
+
+    function isStandaloneApp(){
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function maybeShowInstallPrompt(){
+      if(isStandaloneApp()||localStorage.getItem('installPromptDismissed')==='1')return;
+      setTimeout(()=>document.getElementById('installPrompt').classList.add('show'),1200);
+    }
+
+    function dismissInstallPrompt(){
+      document.getElementById('installPrompt').classList.remove('show');
+      localStorage.setItem('installPromptDismissed','1');
+    }
+
+    async function installApp(){
+      const prompt=document.getElementById('installPrompt');
+      if(deferredInstallPrompt){
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt=null;
+        prompt.classList.remove('show');
+        return;
+      }
+      alert("Pour installer l'application sur Android : ouvre le menu ⋮ de Chrome puis choisis « Installer l'application » ou « Ajouter à l'écran d'accueil ».");
+    }
+
+    window.addEventListener('beforeinstallprompt',e=>{
+      e.preventDefault();
+      deferredInstallPrompt=e;
+      maybeShowInstallPrompt();
+    });
+
+    window.addEventListener('appinstalled',()=>{
+      deferredInstallPrompt=null;
+      localStorage.setItem('installPromptDismissed','1');
+      document.getElementById('installPrompt').classList.remove('show');
+    });
+
+    function toggleDarkMode(){
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme',document.body.classList.contains('dark-mode')?'dark':'light');
+    }
+
+    async function shareSite(){
+      const title=CURRENT_FICHE?CURRENT_FICHE.file.replace(/\.html$/,''):'ResumeCI — Fiches BAC';
+      const text='Découvre ResumeCI pour réviser le BAC avec fiches, quiz, flashcards, audio et PDF.';
+      const url=PRIMARY_DOMAIN+location.pathname+location.search+location.hash;
+      if(navigator.share)await navigator.share({title,text,url}).catch(()=>{});
+      else{
+        await navigator.clipboard?.writeText(url);
+        alert('Lien copié. Tu peux le partager sur WhatsApp ou Facebook.');
+      }
+    }
+
+    function redirectToPrimaryDomain(){
+      if(location.hostname==='resumeci.onrender.com'){
+        location.replace(PRIMARY_DOMAIN+location.pathname+location.search+location.hash);
+      }
+    }
+
+    function openSearchResult(cls,subject,file){
+      document.querySelector('.sidebar')?.classList.remove('mobile-open');
+      document.getElementById('mobileOverlay')?.classList.remove('show');
+      showFiche(cls,subject,file);
+    }
+
+    async function searchLessons(query){
+      const q=query.trim().toLowerCase();
+      document.querySelectorAll('.nav-lesson').forEach(l=>l.style.display=!q||l.textContent.toLowerCase().includes(q)?'':'none');
+      if(q)document.querySelectorAll('.nav-class,.nav-subject').forEach(e=>e.classList.add('open'));
+      if(q.length<2){
+        document.querySelector('.search-results')?.remove();
+        return;
+      }
+      await loadSearchIndex();
+      const matches=SEARCH_INDEX.filter(item=>
+        item.name.toLowerCase().includes(q)||
+        item.subject.toLowerCase().includes(q)||
+        item.text.toLowerCase().includes(q)
+      ).slice(0,8);
+      const box=document.querySelector('.search-results')||document.createElement('div');
+      box.className='search-results';
+      box.innerHTML=`<h3>Résultats de recherche</h3>${matches.length?matches.map(item=>`<a class="search-result" href="#" onclick="openSearchResult('${esc(item.cls)}','${esc(item.subject)}','${esc(item.file)}');return false"><strong>${item.name}</strong><span>${item.cls.replace('_',' ')} · ${item.subject}</span></a>`).join(''):'<p style="color:var(--text-muted);font-size:13px;margin-top:8px">Aucun résultat trouvé.</p>'}`;
+      document.getElementById('content').prepend(box);
+    }
+
+    function showDashboard(){
+      CURRENT_FICHE=null;
+      const{stats,structure}=DATA;
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
+      document.getElementById('topbarActions').innerHTML='<button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';
+      let cards='';
+      for(const[cls,subjects]of Object.entries(structure)){
+        const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
+        const cIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
+        const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
+        cards+=`<div class="class-card" data-cls="${cls}"><h3>${cIcon} ${cls.replace('_',' ')}</h3><div class="subject-list">${tags}</div><button class="dl-btn" data-class="${cls}" onclick="event.stopPropagation();downloadClassOffline('${cls}')"><i class="fas fa-cloud-download-alt"></i> Télécharger (${total} fiches)</button></div>`;
+      }
+      document.getElementById('content').innerHTML=`<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>Fiches de Résumé</h2><p>Collège & Lycée — Côte d'Ivoire</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${stats.totalFiches}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${Object.keys(stats.classStats).length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${Object.values(stats.classStats).reduce((s,c)=>s+c.subjects,0)}</div><div class="stat-label">Matières</div></div></div>${renderProgressPanel()}<div class="class-cards">${cards}</div></div>`;
+      // Bind class card clicks
+      document.querySelectorAll('.class-card').forEach(el=>el.addEventListener('click',()=>showClass(el.dataset.cls)));
+      clearActive();
+      refreshOfflineStatus();
+    }
+
+    function showClass(cls){
+      CURRENT_FICHE=null;
+      const subjects=DATA.structure[cls];
+      const cIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cIcon} ${cls.replace('_',' ')}</span>`;
+      document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Retour</button>`;
+      let h=`<div class="subject-grid"><h2>${cIcon} ${cls.replace('_',' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${Object.values(subjects).reduce((s,a)=>s+a.length,0)} leçons</p>`;
+      let i=0;
+      for(const[sub,fiches]of Object.entries(subjects)){
+        h+=`<h3 style="margin:20px 0 10px;font-size:15px;color:var(--text-muted)">${getIcon(sub)} ${sub} (${fiches.length})</h3><div class="lessons-grid">`;
+        for(let fi=0;fi<fiches.length;fi++){
+          const f=fiches[fi];
+          h+=`<div class="lesson-card" data-cls="${cls}" data-sub="${sub}" data-idx="${fi}"><div class="lesson-icon ${getColor(i)}">${getIcon(sub)}</div><div><div class="lesson-name">${f.name}</div><div class="lesson-meta">${sub}</div></div></div>`;
+        }
+        h+=`</div>`;i++;
+      }
+      h+=`</div>`;
+      document.getElementById('content').innerHTML=h;
+      // Bind lesson card clicks
+      document.querySelectorAll('.lesson-card').forEach(el=>el.addEventListener('click',()=>{
+        const c=el.dataset.cls,s=el.dataset.sub,idx=parseInt(el.dataset.idx);
+        showFiche(c,s,DATA.structure[c][s][idx].file);
+      }));
+      clearActive();
+    }
+
+    async function showFiche(cls,sub,file){
+      document.getElementById('content').innerHTML='<div class="loading"><div class="spinner"></div>Chargement...</div>';
+      const name=file.replace('Fiche_','').replace('.md','');
+      document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
+      CURRENT_FICHE={cls,sub,file};
+      trackFicheRead(cls,sub,file);
+      try{
+        const ficheUrl=`/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
+        const rawHtml=await fetch(ficheUrl).then(r=>r.text());
+        const bodyMatch=rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
+        const data={html:bodyMatch?bodyMatch[1]:rawHtml};
+        const favActive=isFavorite(cls,sub,file)?'active':'';
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="fav-btn ${favActive}" id="favBtn" onclick="const on=toggleFavorite('${esc(cls)}','${esc(sub)}','${esc(file)}');this.classList.toggle('active',on);renderFavsSidebar()" title="Ajouter aux favoris"><i class="fas fa-star"></i></button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button><button class="btn btn-green" onclick="downloadCurrentFichePdf()"><i class="fas fa-file-pdf"></i> PDF</button>`;
+
+        // Process HTML to render formulas nicely
+        let html=data.html;
+        // Convert formula blocks (📌 **formula**) into styled formula blocks
+        html=html.replace(/<blockquote>\s*<p>📌\s*<strong>(.*?)<\/strong><\/p>\s*<\/blockquote>/g,(m,f)=>{
+          return `<div class="formula-block">${f}</div>`;
+        });
+        // Strip embedded credits and footers from fiche HTML (target only short credit divs)
+        html=html.replace(/<div[^>]*>[^<]{0,20}Créé par[^<]*<strong[^>]*>[^<]*Haniel_dev[^<]*<\/strong>[^<]*<\/div>/gi,'');
+        html=html.replace(/<div[^>]*>[^<]{0,20}ResumeCI[^<]*Fiches de résumé[^<]*<\/div>/gi,'');
+        html=html.replace(/<p[^>]*>[^<]{0,20}Créé par[^<]*Haniel_dev[^<]*<\/p>/gi,'');
+        html=html.replace(/<footer[^>]*>[^<]*<\/footer>/gi,'');
+
+        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content" style="position:relative">${html}</div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div></div>`;
+        clearActive();
+        const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
+        if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
+      }catch(e){
+        document.getElementById('content').innerHTML=`<div class="loading" style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> Erreur</div>`;
+      }
+    }
+
+    function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    async function downloadCurrentFichePdf(){
+      const ficheContent=document.querySelector('.fiche-content');
+      if(!ficheContent||!CURRENT_FICHE)return;
+
+      // Create isolated wrapper with forced light theme
+      const wrapper=document.createElement('div');
+      wrapper.style.cssText='padding:24px;background:#ffffff;color:#1e293b;font-family:Inter,sans-serif;line-height:1.75;max-width:700px';
+
+      // Clone content and force light styles on all elements
+      const clone=ficheContent.cloneNode(true);
+      clone.style.cssText='background:#fff;color:#1e293b;border:none;box-shadow:none;padding:0';
+
+      // Force light colors on all child elements
+      clone.querySelectorAll('*').forEach(el=>{
+        const cs=getComputedStyle(el);
+        // Reset dark backgrounds
+        if(cs.backgroundColor&&cs.backgroundColor!=='rgba(0, 0, 0, 0)'&&cs.backgroundColor!=='transparent'){
+          const rgb=cs.backgroundColor;
+          // If background is dark (RGB components < 100), reset to appropriate light color
+          const match=rgb.match(/\d+/g);
+          if(match&&parseInt(match[0])<100&&parseInt(match[1])<100&&parseInt(match[2])<100){
+            el.style.backgroundColor='#ffffff';
+          }
+        }
+        // Fix text color: if too light (meant for dark bg), make dark
+        if(cs.color){
+          const match=cs.color.match(/\d+/g);
+          if(match&&parseInt(match[0])>200&&parseInt(match[1])>200&&parseInt(match[2])>200){
+            el.style.color='#1e293b';
+          }
+        }
+      });
+
+      // Style headings properly for PDF
+      clone.querySelectorAll('h1').forEach(el=>{el.style.cssText='color:#2563eb;font-size:20px;font-weight:800;margin-bottom:16px;text-align:center'});
+      clone.querySelectorAll('h2').forEach(el=>{el.style.cssText='color:#1e293b;font-size:16px;font-weight:700;margin:24px 0 12px;padding:10px 16px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-left:4px solid #2563eb;border-radius:0 8px 8px 0'});
+      clone.querySelectorAll('h3').forEach(el=>{el.style.cssText='color:#1e293b;font-size:14px;font-weight:600;margin:16px 0 8px;border-bottom:1px solid #e2e8f0;padding-bottom:6px'});
+      clone.querySelectorAll('p').forEach(el=>{if(!el.style.color||el.style.color==='#1e293b')el.style.color='#475569';el.style.fontSize='13px'});
+      clone.querySelectorAll('li').forEach(el=>{el.style.cssText='color:#475569;font-size:13px;margin-bottom:4px'});
+      clone.querySelectorAll('strong').forEach(el=>{el.style.color='#1e293b'});
+      clone.querySelectorAll('table').forEach(el=>{el.style.cssText='width:100%;border-collapse:collapse;margin:12px 0;font-size:12px'});
+      clone.querySelectorAll('th').forEach(el=>{el.style.cssText='padding:8px 10px;border:1px solid #e2e8f0;background:#f8fafc;font-weight:600;text-align:left;color:#1e293b'});
+      clone.querySelectorAll('td').forEach(el=>{el.style.cssText='padding:8px 10px;border:1px solid #e2e8f0;color:#475569'});
+      clone.querySelectorAll('blockquote').forEach(el=>{el.style.cssText='border-left:4px solid #2563eb;padding:10px 16px;margin:10px 0;background:#eff6ff;border-radius:0 8px 8px 0;color:#1e293b'});
+
+      // Handle special classes
+      clone.querySelectorAll('.definition').forEach(el=>{el.style.cssText='background:#ecfdf5;border-left:4px solid #22c55e;padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0;color:#1e293b'});
+      clone.querySelectorAll('.important').forEach(el=>{el.style.cssText='background:#eff6ff;border-left:4px solid #2563eb;padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0;color:#1e293b'});
+      clone.querySelectorAll('.schema').forEach(el=>{el.style.cssText='background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0;font-weight:700;color:#92400e'});
+      clone.querySelectorAll('.meta').forEach(el=>{el.style.cssText='display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:8px 0 16px;color:#64748b;font-size:12px'});
+      clone.querySelectorAll('.meta span').forEach(el=>{el.style.cssText='background:#f1f5f9;padding:4px 10px;border-radius:16px;color:#475569'});
+      clone.querySelectorAll('.header').forEach(el=>{el.style.cssText='text-align:center;border-bottom:3px solid #16a34a;padding-bottom:16px;margin-bottom:24px'});
+
+      // Strip embedded credits and footers from clone
+      clone.querySelectorAll('*').forEach(el=>{
+        if(el.children.length===0&&el.textContent){
+          el.textContent=el.textContent.replace(/Créé par\s*Haniel_dev/gi,'').replace(/ResumeCI\s*[—–-]\s*Fiches de résumé[^]*/gi,'');
+        }
+      });
+      // Remove empty trailing elements
+      const children=[...clone.children];
+      for(let i=children.length-1;i>=0;i--){
+        if(!children[i].textContent.trim()&&!children[i].querySelector('table,img'))children[i].remove();
+        else break;
+      }
+
+      // Add watermark on every page: insert watermark markers at regular intervals
+      wrapper.appendChild(clone);
+
+      // Temporarily attach to DOM to measure height
+      wrapper.style.position='absolute';wrapper.style.left='-9999px';wrapper.style.top='0';
+      document.body.appendChild(wrapper);
+      const totalH=wrapper.scrollHeight;
+      document.body.removeChild(wrapper);
+      wrapper.style.position='';wrapper.style.left='';wrapper.style.top='';
+
+      // A4 at 96dpi = ~1123px, minus margins (12mm*2 = ~91px) = ~1032px content per page
+      const pageH=1032;
+      const pages=Math.max(1,Math.ceil(totalH/pageH));
+      clone.style.position='relative';
+      for(let i=0;i<pages;i++){
+        const wm=document.createElement('div');
+        wm.textContent='Haniel_dev';
+        wm.style.cssText=`position:absolute;left:50%;top:${i*pageH + pageH*0.45}px;transform:translateX(-50%) rotate(-35deg);font-size:72px;font-weight:900;color:rgba(0,0,0,0.04);pointer-events:none;z-index:0;letter-spacing:10px;white-space:nowrap;font-family:Inter,sans-serif`;
+        clone.appendChild(wm);
+      }
+
+      const fileName=CURRENT_FICHE.file.replace(/\.html?$/i,'.pdf').replace(/[\\/:*?"<>|]/g,'-');
+      if(window.html2pdf){
+        await html2pdf().set({
+          margin:[12,12,12,12],
+          filename:fileName,
+          image:{type:'jpeg',quality:0.98},
+          html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false},
+          jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+          pagebreak:{mode:['avoid-all','css','legacy']}
+        }).from(wrapper).save();
+      }else{
+        window.print();
+      }
+    }
+
+    // ==================== LEARNING TOOLS HTML ====================
+    function getToolsBar(){
+      return `<div class="tools-bar">
+        <a class="tool-card" href="/flashcards.html"><div class="tool-icon">🃏</div><h4>Flashcards</h4><p>Révision espacée — méthode Ebbinghaus</p></a>
+        <a class="tool-card" href="/quiz.html"><div class="tool-icon">🎮</div><h4>Quiz Game</h4><p>QCM, Vrai/Faux, Quiz Dates</p></a>
+        <a class="tool-card" href="/quiz.html" onclick="sessionStorage.setItem('quizMode','dates')"><div class="tool-icon">📅</div><h4>Quiz Dates</h4><p>Spécial dates Histoire-Géo</p></a>
+      </div>`;
+    }
+
+    // ==================== AUDIO TTS ====================
+    let ttsActive = false;
+    let ttsChunks = [];
+    let ttsIndex = 0;
+    let ttsWakeLock = null;
+
+    function getFrenchVoice(){
+      const voices = speechSynthesis.getVoices();
+      return voices.find(v=>v.lang && v.lang.toLowerCase().startsWith('fr')) || voices[0] || null;
+    }
+
+    function stopTts(){
+      speechSynthesis.cancel();
+      ttsActive = false;
+      ttsChunks = [];
+      ttsIndex = 0;
+      const btn=document.getElementById('audioFab');
+      btn.classList.remove('speaking');
+      btn.innerHTML='<i class="fas fa-volume-up"></i>';
+      if(ttsWakeLock){clearInterval(ttsWakeLock);ttsWakeLock=null}
+    }
+
+    function speakNextChunk(){
+      if(!ttsActive || ttsIndex >= ttsChunks.length){stopTts();return}
+      if(speechSynthesis.paused)speechSynthesis.resume();
+      const utter = new SpeechSynthesisUtterance(ttsChunks[ttsIndex++]);
+      const voice = getFrenchVoice();
+      utter.lang = 'fr-FR';
+      utter.rate = 0.88;
+      utter.pitch = 1;
+      if(voice)utter.voice = voice;
+      utter.onend = () => setTimeout(speakNextChunk, 120);
+      utter.onerror = () => setTimeout(speakNextChunk, 120);
+      speechSynthesis.speak(utter);
+    }
+
+    document.getElementById('audioFab').addEventListener('click', () => {
+      if(!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)){
+        alert("La lecture audio n'est pas disponible sur ce navigateur.");
+        return;
+      }
+      if (ttsActive) { stopTts(); return; }
+      const ficheContent = document.querySelector('.fiche-content');
+      if (!ficheContent) { alert("Ouvre d'abord une fiche pour lancer la lecture."); return; }
+      const text = ficheContent.innerText.replace(/\s+/g,' ').trim();
+      ttsChunks = text.match(/.{1,180}(\s|$)/g)?.map(s=>s.trim()).filter(Boolean).slice(0,120) || [];
+      if (!ttsChunks.length) { alert("Aucun texte lisible trouvé dans cette fiche."); return; }
+      speechSynthesis.cancel();
+      ttsIndex = 0;
+      ttsActive = true;
+      const btn=document.getElementById('audioFab');
+      btn.classList.add('speaking');
+      btn.innerHTML='<i class="fas fa-stop"></i>';
+      ttsWakeLock=setInterval(()=>{if(ttsActive && speechSynthesis.paused)speechSynthesis.resume()},1000);
+      setTimeout(speakNextChunk, 80);
+    });
+
+    if('speechSynthesis' in window){
+      speechSynthesis.onvoiceschanged = getFrenchVoice;
+    }
+
+    // ==================== PWA ====================
+    let swReady=null;
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/sw.js').then(reg=>{
+        swReady=reg;
+        console.log('SW registered');
+        // Listen for cache completion messages
+        navigator.serviceWorker.addEventListener('message',e=>{
+          if(e.data.type==='CACHE_DONE'){
+            document.querySelectorAll('.dl-btn.downloading').forEach(btn=>{
+              btn.classList.remove('downloading');
+              btn.classList.add('downloaded');
+              btn.innerHTML='<i class="fas fa-check-circle"></i> Disponible hors-ligne';
+            });
+            refreshOfflineStatus();
+          }
+          if(e.data.type==='CACHED_LIST'){
+            window._cachedUrls=new Set(e.data.urls);
+            refreshOfflineStatus();
+          }
+          if(e.data.type==='CACHE_CLEARED'){
+            window._cachedUrls=new Set();
+            refreshOfflineStatus();
+          }
+        });
+        // Get initial cached list
+        setTimeout(()=>{
+          if(navigator.serviceWorker.controller){
+            navigator.serviceWorker.controller.postMessage({type:'GET_CACHED'});
+          }
+        },1000);
+      });
+    }
+    window._cachedUrls=new Set();
+
+    function downloadClassOffline(cls){
+      if(!navigator.serviceWorker||!navigator.serviceWorker.controller)return alert('Service Worker non prêt. Rafraîchis la page.');
+      const structure=DATA.structure;
+      if(!structure[cls])return;
+      const urls=[];
+      for(const[sub,fiches]of Object.entries(structure[cls])){
+        fiches.forEach(f=>urls.push(f.url));
+      }
+      if(!urls.length)return;
+      // Update button state
+      const btn=document.querySelector(`.dl-btn[data-class="${cls}"]`);
+      if(btn){btn.classList.add('downloading');btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Téléchargement...';}
+      navigator.serviceWorker.controller.postMessage({type:'CACHE_FICHES',urls});
+    }
+
+    function clearOfflineCache(){
+      if(!navigator.serviceWorker||!navigator.serviceWorker.controller)return;
+      navigator.serviceWorker.controller.postMessage({type:'CLEAR_CACHE'});
+    }
+
+    function refreshOfflineStatus(){
+      if(!DATA.structure)return;
+      for(const cls of Object.keys(DATA.structure)){
+        const btn=document.querySelector(`.dl-btn[data-class="${cls}"]`);
+        if(!btn)continue;
+        const urls=[];
+        for(const[sub,fiches]of Object.entries(DATA.structure[cls])){
+          fiches.forEach(f=>urls.push(f.url));
+        }
+        const cached=urls.filter(u=>window._cachedUrls.has(u)).length;
+        if(cached>=urls.length&&urls.length>0){
+          btn.classList.add('downloaded');
+          btn.innerHTML='<i class="fas fa-check-circle"></i> Hors-ligne';
+        }else if(cached>0){
+          btn.classList.remove('downloaded');
+          btn.innerHTML=`<i class="fas fa-cloud-download-alt"></i> ${cached}/${urls.length}`;
+        }
+      }
+    }
+
+    // ==================== PROGRESSION SYSTEM ====================
+    const PROGRESS_KEY='resumeci_progress';
+    const FAVS_KEY='resumeci_favorites';
+    const THEME_KEY='resumeci_theme';
+    const STREAK_KEY='resumeci_streak';
+
+    function getProgress(){return JSON.parse(localStorage.getItem(PROGRESS_KEY)||'{"fiches":{},"daily":{}}');}
+    function saveProgress(p){localStorage.setItem(PROGRESS_KEY,JSON.stringify(p));}
+    function getFavorites(){return JSON.parse(localStorage.getItem(FAVS_KEY)||'[]');}
+    function saveFavorites(f){localStorage.setItem(FAVS_KEY,JSON.stringify(f));}
+
+    function trackFicheRead(cls,sub,file){
+      const p=getProgress();
+      const key=`${cls}/${sub}/${file}`;
+      if(!p.fiches[key]){p.fiches[key]={first:Date.now()};}
+      p.fiches[key].last=Date.now();
+      const today=new Date().toISOString().slice(0,10);
+      p.daily[today]=(p.daily[today]||0)+1;
+      saveProgress(p);
+      updateStreak();
+    }
+
+    function updateStreak(){
+      const p=getProgress();
+      const today=new Date().toISOString().slice(0,10);
+      const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+      let streak=JSON.parse(localStorage.getItem(STREAK_KEY)||'{"count":0,"lastDay":""}');
+      if(streak.lastDay===today)return streak.count;
+      if(streak.lastDay===yesterday){streak.count++;streak.lastDay=today;}
+      else if(p.daily[today]){streak.count=1;streak.lastDay=today;}
+      else{streak.count=0;}
+      localStorage.setItem(STREAK_KEY,JSON.stringify(streak));
+      return streak.count;
+    }
+
+    function getStreak(){
+      const s=JSON.parse(localStorage.getItem(STREAK_KEY)||'{"count":0,"lastDay":""}');
+      const today=new Date().toISOString().slice(0,10);
+      const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);
+      if(s.lastDay!==today&&s.lastDay!==yesterday)return 0;
+      return s.count;
+    }
+
+    function getWeekData(){
+      const p=getProgress();
+      const days=[];
+      for(let i=6;i>=0;i--){
+        const d=new Date(Date.now()-i*86400000).toISOString().slice(0,10);
+        days.push({day:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'][new Date(d).getDay()],count:p.daily[d]||0,isToday:i===0});
+      }
+      return days;
+    }
+
+    function renderProgressPanel(){
+      const p=getProgress();
+      const streak=getStreak();
+      const totalRead=Object.keys(p.fiches).length;
+      const structure=DATA.structure;
+      const weekData=getWeekData();
+      const maxW=Math.max(...weekData.map(d=>d.count),1);
+
+      let bars='';
+      const colors=['#3b82f6','#8b5cf6','#10b981','#f59e0b','#ef4444'];
+      let ci=0;
+      for(const[cls,subjects]of Object.entries(structure)){
+        const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
+        const read=Object.keys(p.fiches).filter(k=>k.startsWith(cls+'/')).length;
+        const pct=total?Math.round(read/total*100):0;
+        const color=colors[ci%colors.length];
+        bars+=`<div class="prog-row"><span class="prog-label">${cls.replace('_',' ')}</span><div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${color}"></div></div><span class="prog-count">${read}/${total}</span></div>`;
+        ci++;
+      }
+
+      let weekBars='';
+      weekData.forEach(d=>{
+        const h=d.count?Math.max(15,Math.round(d.count/maxW*100)):4;
+        weekBars+=`<div class="week-bar${d.isToday?' active':''}" style="height:${h}%"><span class="week-bar-label">${d.day}</span></div>`;
+      });
+
+      return `<div class="progress-panel"><h3><i class="fas fa-chart-line" style="color:var(--accent)"></i> Ma progression${streak?`<span class="streak-badge"><i class="fas fa-fire"></i> ${streak} jour${streak>1?'s':''}</span>`:''}</h3><div class="progress-bars">${bars}</div><div class="week-chart">${weekBars}</div></div>`;
+    }
+
+    // ==================== FAVORITES ====================
+    function toggleFavorite(cls,sub,file){
+      let favs=getFavorites();
+      const key=`${cls}/${sub}/${file}`;
+      const idx=favs.findIndex(f=>f.key===key);
+      if(idx>=0)favs.splice(idx,1);
+      else favs.push({key,cls,sub,file,added:Date.now()});
+      saveFavorites(favs);
+      return idx<0;
+    }
+
+    function isFavorite(cls,sub,file){
+      return getFavorites().some(f=>f.key===`${cls}/${sub}/${file}`);
+    }
+
+    function renderFavsSidebar(){
+      const favs=getFavorites();
+      const el=document.getElementById('favsList');
+      if(!el)return;
+      if(!favs.length){el.innerHTML='';return;}
+      el.innerHTML=`<div class="favs-section"><h3><i class="fas fa-star" style="color:#f59e0b"></i> Favoris</h3>${favs.slice(0,8).map(f=>`<div class="fav-item" onclick="showFiche('${esc(f.cls)}','${esc(f.sub)}','${esc(f.file)}')"><i class="fas fa-bookmark" style="color:#f59e0b;font-size:10px"></i>${f.file.replace('Fiche_','').replace('.html','').replace(/_/g,' ').substring(0,30)}</div>`).join('')}</div>`;
+    }
+
+    // ==================== THEMES ====================
+    function setTheme(theme){
+      document.documentElement.setAttribute('data-theme',theme);
+      localStorage.setItem(THEME_KEY,theme);
+      document.querySelectorAll('.theme-dot').forEach(d=>d.classList.toggle('active',d.dataset.theme===theme));
+    }
+    (function initTheme(){
+      const saved=localStorage.getItem(THEME_KEY);
+      if(saved)document.documentElement.setAttribute('data-theme',saved);
+    })();
+
+    // ==================== VOICE SEARCH ====================
+    function startVoiceSearch(){
+      if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window)){
+        alert('Recherche vocale non supportée sur ce navigateur.');return;
+      }
+      const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+      const rec=new SR();
+      rec.lang='fr-FR';rec.continuous=false;rec.interimResults=false;
+      rec.onresult=(e)=>{
+        const txt=e.results[0][0].transcript;
+        document.getElementById('searchInput').value=txt;
+        searchLessons(txt);
+      };
+      rec.onerror=()=>{};
+      rec.start();
+    }
+
+    // ==================== NIGHT MODE AUTO ====================
+    function checkAutoNight(){
+      const h=new Date().getHours();
+      if(h>=21||h<6){
+        if(!document.body.classList.contains('dark-mode'))toggleDarkMode();
+      }
+    }
+
+    // ==================== KEYBOARD SHORTCUTS ====================
+    document.addEventListener('keydown',(e)=>{
+      if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+      if(e.key==='/'||e.key==='s'&&!e.ctrlKey){e.preventDefault();document.getElementById('searchInput').focus();}
+      if(e.key==='Escape'){showDashboard();}
+    });
+
+    loadData();
+
+    // ==================== ANNONCE POPUP ====================
+    function showAnnouncement(){
+      if(sessionStorage.getItem('announceDismissed'))return;
+      const overlay=document.createElement('div');
+      overlay.id='announceOverlay';
+      overlay.innerHTML=`
+        <div class="ann-card">
+          <button class="ann-x" id="announceClose" aria-label="Fermer"><i class="fas fa-times"></i></button>
+          <div class="ann-hero">
+            <div class="ann-spark"></div>
+            <div class="ann-spark s2"></div>
+            <div class="ann-spark s3"></div>
+            <div class="ann-label">NOUVEAUTES</div>
+            <h2>ResumeCI fait<br>peau neuve !</h2>
+            <p>Plein de nouveautés pour mieux réviser</p>
+          </div>
+          <div class="ann-body">
+            <div class="ann-highlights">
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-graduation-cap"></i></div><div><strong>5ème ajoutée</strong><span>73 fiches</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#3b82f6"><i class="fas fa-chart-line"></i></div><div><strong>Progression</strong><span>Suivi personnel</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#f59e0b"><i class="fas fa-star"></i></div><div><strong>Favoris</strong><span>Marque-pages</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#06b6d4"><i class="fas fa-download"></i></div><div><strong>Hors-ligne</strong><span>Télécharge tes cours</span></div></div>
+            </div>
+            <div class="ann-coming"><i class="fas fa-rocket" style="color:#f97316"></i> Bientôt : <strong>3ème</strong>, <strong>Seconde A</strong>, <strong>Seconde C</strong></div>
+            <a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev%20!%20Je%20viens%20de%20ResumeCI.%20" class="ann-wa-btn" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> Contacter Haniel_dev
+            </a>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      document.getElementById('announceClose').addEventListener('click',()=>{
+        overlay.remove();
+        sessionStorage.setItem('announceDismissed','1');
+      });
+      overlay.addEventListener('click',(e)=>{
+        if(e.target===overlay){overlay.remove();sessionStorage.setItem('announceDismissed','1');}
+      });
+    }
+    setTimeout(showAnnouncement,500);
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+    #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
+    @keyframes annIn{from{opacity:0}to{opacity:1}}
+    .ann-card{font-family:'Poppins',sans-serif;width:100%;max-width:400px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:annUp .5s cubic-bezier(.2,1,.3,1)}
+    @keyframes annUp{from{transform:translateY(60px) scale(.9);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+    .ann-hero{position:relative;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 50%,#06b6d4 100%);padding:36px 28px 28px;color:#fff;text-align:center;overflow:hidden}
+    .ann-spark{position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.08);top:-30px;left:-20px}
+    .ann-spark.s2{width:80px;height:80px;top:auto;bottom:-20px;right:-10px;left:auto;background:rgba(255,255,255,.06)}
+    .ann-spark.s3{width:50px;height:50px;top:20px;right:30px;left:auto;background:rgba(255,255,255,.1)}
+    .ann-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;width:34px;height:34px;border-radius:50%;font-size:14px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
+    .ann-x:hover{background:rgba(255,255,255,.3);transform:scale(1.15)}
+    .ann-label{display:inline-block;background:rgba(255,255,255,.2);font-size:11px;font-weight:800;letter-spacing:2.5px;padding:5px 16px;border-radius:999px;margin-bottom:14px}
+    .ann-hero h2{font-size:24px;font-weight:900;line-height:1.3;margin:0 0 8px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .ann-hero p{font-size:13px;opacity:.85;margin:0;font-weight:500}
+    .ann-body{padding:24px 28px 28px}
+    .ann-levels{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+    .ann-lv{display:flex;align-items:center;gap:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px 16px;font-size:15px;font-weight:700;color:#1e293b;transition:all .2s}
+    .ann-lv:hover{transform:translateX(4px);border-color:#818cf8;background:#eef2ff}
+    .ann-lv-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+    .ann-txt{font-size:13px;color:#64748b;line-height:1.75;margin:0 0 18px}
+    .ann-bar{width:100%;height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:12px}
+    .ann-bar-fill{width:35%;height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb,#06b6d4);border-radius:3px;animation:annProgress 2.5s ease-in-out infinite}
+    @keyframes annProgress{0%{width:15%}50%{width:55%}100%{width:15%}}
+    .ann-status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#7c3aed}
+    body.dark-mode .ann-card{background:#0f172a}
+    body.dark-mode .ann-lv{background:#1e293b;border-color:#334155;color:#e2e8f0}
+    body.dark-mode .ann-lv:hover{border-color:#818cf8;background:#1e1b4b}
+    body.dark-mode .ann-txt{color:#94a3b8}
+    body.dark-mode .ann-bar{background:#334155}
+    body.dark-mode .ann-status{color:#a78bfa}
+    .ann-highlights{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+    .ann-hi{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#f8fafc;border-radius:12px;border:1px solid #f1f5f9}
+    .ann-hi-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex-shrink:0}
+    .ann-hi strong{display:block;font-size:12px;font-weight:700;color:#1e293b}
+    .ann-hi span{font-size:10px;color:#94a3b8}
+    .ann-coming{text-align:center;font-size:12px;color:#64748b;padding:10px;background:#fff7ed;border-radius:10px;border:1px solid #fed7aa;margin-bottom:14px}
+    .ann-coming strong{color:#ea580c}
+    .ann-wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;background:#25d366;color:#fff;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;font-family:'Poppins',sans-serif;border:none;cursor:pointer}
+    .ann-wa-btn:hover{background:#20bd5a;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.3)}
+    .ann-wa-btn i{font-size:20px}
+    body.dark-mode .ann-hi{background:#1e293b;border-color:#334155}
+    body.dark-mode .ann-hi strong{color:#e2e8f0}
+    body.dark-mode .ann-coming{background:#451a03;border-color:#92400e;color:#fed7aa}
+    @media(max-width:480px){.ann-card{max-width:340px;border-radius:20px}.ann-hero{padding:24px 20px 20px}.ann-hero h2{font-size:20px}.ann-body{padding:16px 18px 20px}.ann-highlights{gap:6px}.ann-hi{padding:8px 10px}.ann-hi-icon{width:30px;height:30px;font-size:12px;border-radius:8px}.ann-hi strong{font-size:11px}.ann-wa-btn{padding:12px;font-size:13px;border-radius:12px}}
+  </style>
 </body>
 </html>

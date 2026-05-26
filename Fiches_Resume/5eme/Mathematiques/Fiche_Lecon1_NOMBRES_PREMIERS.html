@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>Fiche - Nombres premiers</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;max-width:900px;margin:auto;padding:40px;color:#1e293b;line-height:1.7;font-size:14px}.header{text-align:center;border-bottom:3px solid #16a34a;padding-bottom:20px;margin-bottom:30px}.header h1{color:#16a34a;font-size:22px}.meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;color:#64748b;font-size:13px}.meta span{background:#f1f5f9;padding:4px 12px;border-radius:20px}h2{font-size:17px;margin:28px 0 12px;padding:10px 16px;background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0}h3{font-size:15px;margin:18px 0 8px}.definition{background:#ecfdf5;border-left:4px solid #22c55e;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0}.important{background:#eff6ff;border-left:4px solid #2563eb;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}.schema{background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 18px;border-radius:0 8px 8px 0;margin:10px 0;font-weight:700;color:#92400e}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}th,td{border:1px solid #e2e8f0;padding:10px;text-align:left}th{background:#f8fafc}ul,ol{margin:8px 0 12px 22px}.footer{text-align:center;margin-top:40px;padding-top:20px;border-top:2px solid #e2e8f0;color:#94a3b8;font-size:12px}.footer strong{color:#16a34a}@media print{body{padding:20px}}</style></head><body><div class="header"><h1>📝 FICHE DE RÉSUMÉ</h1><div class="meta"><span>📐 Mathématiques</span><span>Leçon 1 : Nombres premiers</span></div></div>
+
+<h2>I. Puissances entières d'un nombre entier naturel</h2>
+<div class="definition"><strong>Puissance :</strong> a<sup>n</sup> désigne le produit de n facteurs tous égaux à a.<br>a<sup>n</sup> = a × a × a × … × a (n fois).<br><br><strong>Vocabulaire :</strong> a<sup>2</sup> se lit « a au carré » ; a<sup>3</sup> se lit « a au cube » ; n est l'exposant.</div>
+<table><tr><th>Cas particulier</th><th>Règle</th><th>Exemple</th></tr><tr><td>0<sup>n</sup></td><td>= 0 (pour n ≠ 0)</td><td>0<sup>5</sup> = 0</td></tr><tr><td>1<sup>n</sup></td><td>= 1</td><td>1<sup>100</sup> = 1</td></tr><tr><td>a<sup>1</sup></td><td>= a</td><td>7<sup>1</sup> = 7</td></tr><tr><td>a<sup>0</sup></td><td>= 1 (par convention)</td><td>24<sup>0</sup> = 1</td></tr></table>
+
+<h2>II. Règles de priorité dans les calculs</h2>
+<div class="important"><strong>Ordre de priorité :</strong><ol><li>Parenthèses (toujours prioritaires)</li><li>Puissances</li><li>Multiplications et divisions</li><li>Additions et soustractions</li></ol></div>
+<p><strong>Exemple :</strong> 7 + 5² − 2 − 3 × (2³ + 1) = 7 + 25 − 2 − 3 × 9 = 32 − 29 = <strong>3</strong></p>
+
+<h2>III. Propriétés de calcul avec les puissances</h2>
+<table><tr><th>Propriété</th><th>Formule</th><th>Exemple</th></tr><tr><td>Produit de même exposant</td><td>a<sup>n</sup> × b<sup>n</sup> = (a × b)<sup>n</sup></td><td>7<sup>4</sup> × 8<sup>4</sup> = (7 × 8)<sup>4</sup> = 56<sup>4</sup></td></tr><tr><td>Produit de même base</td><td>a<sup>n</sup> × a<sup>m</sup> = a<sup>n+m</sup></td><td>2<sup>2</sup> × 2<sup>3</sup> = 2<sup>5</sup> = 32</td></tr></table>
+
+<h2>IV. Division euclidienne dans ℕ</h2>
+<div class="definition">Pour deux entiers naturels a et b (b ≠ 0), il existe un unique couple (q, r) tel que :<br><strong>a = b × q + r</strong> avec <strong>r &lt; b</strong><br><br>a = dividende, b = diviseur, q = quotient, r = reste.</div>
+<p><strong>Exemple :</strong> 57 ÷ 4 → 57 = 4 × 14 + 1 (dividende = 57, diviseur = 4, quotient = 14, reste = 1)</p>
+<div class="important"><strong>Multiple :</strong> Si le reste r = 0, alors a est un <strong>multiple</strong> de b. Exemple : 24 = 2 × 12 → 24 est un multiple de 2.</div>
+
+<h2>V. Encadrement par deux multiples consécutifs</h2>
+<div class="definition">Si a n'est pas un multiple de b, on peut encadrer a entre deux multiples consécutifs de b :<br><strong>b × q &lt; a &lt; b × (q + 1)</strong></div>
+<p><strong>Exemple :</strong> 17 ÷ 6 → 17 = 6 × 2 + 5, donc 6 × 2 &lt; 17 &lt; 6 × 3, soit <strong>12 &lt; 17 &lt; 18</strong>.</p>
+
+<h2>VI. Nombres premiers</h2>
+<div class="definition">Un <strong>nombre premier</strong> est un nombre entier naturel (≥ 2) qui admet exactement <strong>deux diviseurs</strong> : 1 et lui-même.</div>
+<div class="important"><strong>Attention :</strong><ul><li>1 n'est <strong>pas</strong> un nombre premier.</li><li>2 est le seul nombre pair premier.</li></ul>Nombres premiers inférieurs à 20 : <strong>2, 3, 5, 7, 11, 13, 17, 19</strong></div>
+
+<h2>VII. Reconnaître un nombre premier</h2>
+<p>On divise le nombre par les nombres premiers successifs (2, 3, 5, 7, 11…) :</p>
+<ul><li>Si on trouve un <strong>reste nul</strong> → le nombre n'est <strong>pas premier</strong>.</li><li>Si le <strong>quotient devient ≤ au diviseur</strong> sans reste nul → le nombre <strong>est premier</strong>.</li></ul>
+<table><tr><th>Nombre</th><th>Test</th><th>Conclusion</th></tr><tr><td>71</td><td>71÷2 (r=1), 71÷3 (r=2), 71÷5 (r=1), 71÷7 (r=1), 71÷11 → q=6 &lt; 11</td><td><strong>Premier</strong></td></tr><tr><td>25</td><td>25÷2 (r=1), 25÷3 (r=1), 25÷5 → r=0</td><td><strong>Pas premier</strong> (25 = 5×5)</td></tr></table>
+
+<h2>VIII. Décomposition en facteurs premiers</h2>
+<div class="definition">Tout entier ≥ 2 non premier peut s'écrire comme un <strong>produit de facteurs premiers</strong>. On divise successivement par les plus petits nombres premiers possibles.</div>
+<div class="schema">Exemple : 40 → 40 ÷ 2 = 20 → 20 ÷ 2 = 10 → 10 ÷ 2 = 5 → 5 ÷ 5 = 1<br>Donc 40 = 2³ × 5</div>
+<table><tr><th>Nombre</th><th>Décomposition</th></tr><tr><td>56</td><td>2³ × 7</td></tr><tr><td>45</td><td>3² × 5</td></tr><tr><td>258</td><td>2 × 3 × 43</td></tr></table>
+
+</body></html>

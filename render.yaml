@@ -4,10 +4,6 @@ services:
     runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./public
-    headers:
-      - path: /*
-        name: X-Robots-Tag
-        value: noindex
     routes:
       - type: redirect
         source: https://resumeci.onrender.com/*

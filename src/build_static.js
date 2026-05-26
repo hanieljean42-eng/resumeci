@@ -8,6 +8,7 @@ const OUT_FICHES_DIR = path.join(PUBLIC_DIR, 'fiches');
 const OUT_DATA_DIR = path.join(PUBLIC_DIR, 'data');
 const SITE_URL = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
 const ALLOWED_SUBJECTS = {
+  '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
   Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
 };
@@ -85,7 +86,7 @@ function buildStructure() {
         .sort((a, b) => a.localeCompare(b, 'fr'))
         .map(file => ({
           file,
-          name: file.replace('Fiche_', '').replace('.html', ''),
+          name: file.replace('Fiche_', '').replace('.html', '').replace(/_/g, ' ').replace(/Lecon(\d)/g, 'Leçon $1').replace(/^L(\d)/, 'Leçon $1'),
           path: `${cls}/${subject}/${file}`,
           url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(file)}`,
         }));
@@ -204,7 +205,7 @@ function main() {
   generateSearchIndex(structure);
   generateSeoFiles(structure);
   generateHtmlSitemap(structure);
-  injectIndexSeoBlock(structure, stats);
+  // SEO block injection disabled
 
   console.log(`Static build complete: ${stats.totalFiches} fiches copied.`);
 }

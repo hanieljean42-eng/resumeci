@@ -1,0 +1,29 @@
+[
+  {
+    "name": "MoodleSession",
+    "value": "r5704tcnd3eu4n2c89t3dfionj",
+    "domain": "coll.ecole-ci.org",
+    "path": "/",
+    "expires": -1,
+    "size": 39,
+    "httpOnly": false,
+    "secure": true,
+    "session": true,
+    "sameSite": "None",
+    "priority": "Medium",
+    "sourceScheme": "Secure"
+  },
+  {
+    "name": "MOODLEID1_",
+    "value": "%252A2%25B9%2505%25C1%25E1%25A1%25259%25CC",
+    "domain": "coll.ecole-ci.org",
+    "path": "/",
+    "expires": 1784906442.731523,
+    "size": 52,
+    "httpOnly": false,
+    "secure": true,
+    "session": false,
+    "priority": "Medium",
+    "sourceScheme": "Secure"
+  }
+]

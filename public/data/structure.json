@@ -1,93 +1,547 @@
 {
+  "5eme": {
+    "EDHC": [
+      {
+        "file": "Fiche_L1_DROITS_DEVELOPPEMENT_PARTICIPATION_ENFANT.html",
+        "name": "Leçon 1 DROITS DEVELOPPEMENT PARTICIPATION ENFANT",
+        "path": "5eme/EDHC/Fiche_L1_DROITS_DEVELOPPEMENT_PARTICIPATION_ENFANT.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L1_DROITS_DEVELOPPEMENT_PARTICIPATION_ENFANT.html"
+      },
+      {
+        "file": "Fiche_L10_COMPORTEMENTS_SEXUELS_RISQUES.html",
+        "name": "Leçon 10 COMPORTEMENTS SEXUELS RISQUES",
+        "path": "5eme/EDHC/Fiche_L10_COMPORTEMENTS_SEXUELS_RISQUES.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L10_COMPORTEMENTS_SEXUELS_RISQUES.html"
+      },
+      {
+        "file": "Fiche_L11_GROSSESSES_PRECOCES.html",
+        "name": "Leçon 11 GROSSESSES PRECOCES",
+        "path": "5eme/EDHC/Fiche_L11_GROSSESSES_PRECOCES.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L11_GROSSESSES_PRECOCES.html"
+      },
+      {
+        "file": "Fiche_L12_ALCOOL_DROGUE_INSECURITE.html",
+        "name": "Leçon 12 ALCOOL DROGUE INSECURITE",
+        "path": "5eme/EDHC/Fiche_L12_ALCOOL_DROGUE_INSECURITE.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L12_ALCOOL_DROGUE_INSECURITE.html"
+      },
+      {
+        "file": "Fiche_L13_ASSAINISSEMENT_HYGIENE_PUBLIQUE.html",
+        "name": "Leçon 13 ASSAINISSEMENT HYGIENE PUBLIQUE",
+        "path": "5eme/EDHC/Fiche_L13_ASSAINISSEMENT_HYGIENE_PUBLIQUE.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L13_ASSAINISSEMENT_HYGIENE_PUBLIQUE.html"
+      },
+      {
+        "file": "Fiche_L14_GESTION_ORDURES_MENAGERES.html",
+        "name": "Leçon 14 GESTION ORDURES MENAGERES",
+        "path": "5eme/EDHC/Fiche_L14_GESTION_ORDURES_MENAGERES.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L14_GESTION_ORDURES_MENAGERES.html"
+      },
+      {
+        "file": "Fiche_L2_PRINCIPES_DROITS_HOMME.html",
+        "name": "Leçon 2 PRINCIPES DROITS HOMME",
+        "path": "5eme/EDHC/Fiche_L2_PRINCIPES_DROITS_HOMME.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L2_PRINCIPES_DROITS_HOMME.html"
+      },
+      {
+        "file": "Fiche_L3_PROTECTION_VICTIMES_CONFLITS.html",
+        "name": "Leçon 3 PROTECTION VICTIMES CONFLITS",
+        "path": "5eme/EDHC/Fiche_L3_PROTECTION_VICTIMES_CONFLITS.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L3_PROTECTION_VICTIMES_CONFLITS.html"
+      },
+      {
+        "file": "Fiche_L4_DROITS_DEVOIRS_CITOYEN.html",
+        "name": "Leçon 4 DROITS DEVOIRS CITOYEN",
+        "path": "5eme/EDHC/Fiche_L4_DROITS_DEVOIRS_CITOYEN.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L4_DROITS_DEVOIRS_CITOYEN.html"
+      },
+      {
+        "file": "Fiche_L5_POUVOIRS_POLITIQUES_CI.html",
+        "name": "Leçon 5 POUVOIRS POLITIQUES CI",
+        "path": "5eme/EDHC/Fiche_L5_POUVOIRS_POLITIQUES_CI.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L5_POUVOIRS_POLITIQUES_CI.html"
+      },
+      {
+        "file": "Fiche_L6_PRINCIPES_DEMOCRATIE_ASSOCIATIONS.html",
+        "name": "Leçon 6 PRINCIPES DEMOCRATIE ASSOCIATIONS",
+        "path": "5eme/EDHC/Fiche_L6_PRINCIPES_DEMOCRATIE_ASSOCIATIONS.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L6_PRINCIPES_DEMOCRATIE_ASSOCIATIONS.html"
+      },
+      {
+        "file": "Fiche_L7_ENTENTE_PEUPLES_PAIX.html",
+        "name": "Leçon 7 ENTENTE PEUPLES PAIX",
+        "path": "5eme/EDHC/Fiche_L7_ENTENTE_PEUPLES_PAIX.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L7_ENTENTE_PEUPLES_PAIX.html"
+      },
+      {
+        "file": "Fiche_L8_COMPORTEMENTS_ENGINS_DEUX_ROUES.html",
+        "name": "Leçon 8 COMPORTEMENTS ENGINS DEUX ROUES",
+        "path": "5eme/EDHC/Fiche_L8_COMPORTEMENTS_ENGINS_DEUX_ROUES.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L8_COMPORTEMENTS_ENGINS_DEUX_ROUES.html"
+      },
+      {
+        "file": "Fiche_L9_ACTIVITES_GENERATRICES_REVENUS.html",
+        "name": "Leçon 9 ACTIVITES GENERATRICES REVENUS",
+        "path": "5eme/EDHC/Fiche_L9_ACTIVITES_GENERATRICES_REVENUS.html",
+        "url": "/fiches/5eme/EDHC/Fiche_L9_ACTIVITES_GENERATRICES_REVENUS.html"
+      }
+    ],
+    "Francais": [
+      {
+        "file": "Fiche_EXP_ECRITE_COMPTE_RENDU.html",
+        "name": "EXP ECRITE COMPTE RENDU",
+        "path": "5eme/Francais/Fiche_EXP_ECRITE_COMPTE_RENDU.html",
+        "url": "/fiches/5eme/Francais/Fiche_EXP_ECRITE_COMPTE_RENDU.html"
+      },
+      {
+        "file": "Fiche_EXP_ECRITE_POEME.html",
+        "name": "EXP ECRITE POEME",
+        "path": "5eme/Francais/Fiche_EXP_ECRITE_POEME.html",
+        "url": "/fiches/5eme/Francais/Fiche_EXP_ECRITE_POEME.html"
+      },
+      {
+        "file": "Fiche_EXP_ECRITE_PORTRAIT.html",
+        "name": "EXP ECRITE PORTRAIT",
+        "path": "5eme/Francais/Fiche_EXP_ECRITE_PORTRAIT.html",
+        "url": "/fiches/5eme/Francais/Fiche_EXP_ECRITE_PORTRAIT.html"
+      },
+      {
+        "file": "Fiche_EXP_ECRITE_TEXTE_DESCRIPTIF.html",
+        "name": "EXP ECRITE TEXTE DESCRIPTIF",
+        "path": "5eme/Francais/Fiche_EXP_ECRITE_TEXTE_DESCRIPTIF.html",
+        "url": "/fiches/5eme/Francais/Fiche_EXP_ECRITE_TEXTE_DESCRIPTIF.html"
+      },
+      {
+        "file": "Fiche_GRAM_L1_GROUPE_NOMINAL.html",
+        "name": "GRAM L1 GROUPE NOMINAL",
+        "path": "5eme/Francais/Fiche_GRAM_L1_GROUPE_NOMINAL.html",
+        "url": "/fiches/5eme/Francais/Fiche_GRAM_L1_GROUPE_NOMINAL.html"
+      },
+      {
+        "file": "Fiche_GRAM_L2_GROUPE_ADJECTIVAL.html",
+        "name": "GRAM L2 GROUPE ADJECTIVAL",
+        "path": "5eme/Francais/Fiche_GRAM_L2_GROUPE_ADJECTIVAL.html",
+        "url": "/fiches/5eme/Francais/Fiche_GRAM_L2_GROUPE_ADJECTIVAL.html"
+      },
+      {
+        "file": "Fiche_GRAM_L3_PRONOMINALISATION.html",
+        "name": "GRAM L3 PRONOMINALISATION",
+        "path": "5eme/Francais/Fiche_GRAM_L3_PRONOMINALISATION.html",
+        "url": "/fiches/5eme/Francais/Fiche_GRAM_L3_PRONOMINALISATION.html"
+      },
+      {
+        "file": "Fiche_GRAM_L4_VERBE_FORMES_EMPLOIS.html",
+        "name": "GRAM L4 VERBE FORMES EMPLOIS",
+        "path": "5eme/Francais/Fiche_GRAM_L4_VERBE_FORMES_EMPLOIS.html",
+        "url": "/fiches/5eme/Francais/Fiche_GRAM_L4_VERBE_FORMES_EMPLOIS.html"
+      },
+      {
+        "file": "Fiche_GRAM_L5_PHRASE_COMPLEXE.html",
+        "name": "GRAM L5 PHRASE COMPLEXE",
+        "path": "5eme/Francais/Fiche_GRAM_L5_PHRASE_COMPLEXE.html",
+        "url": "/fiches/5eme/Francais/Fiche_GRAM_L5_PHRASE_COMPLEXE.html"
+      },
+      {
+        "file": "Fiche_LECTURE_METHODIQUE.html",
+        "name": "LECTURE METHODIQUE",
+        "path": "5eme/Francais/Fiche_LECTURE_METHODIQUE.html",
+        "url": "/fiches/5eme/Francais/Fiche_LECTURE_METHODIQUE.html"
+      },
+      {
+        "file": "Fiche_ORTHOGRAPHE_GRAMMATICALE.html",
+        "name": "ORTHOGRAPHE GRAMMATICALE",
+        "path": "5eme/Francais/Fiche_ORTHOGRAPHE_GRAMMATICALE.html",
+        "url": "/fiches/5eme/Francais/Fiche_ORTHOGRAPHE_GRAMMATICALE.html"
+      }
+    ],
+    "Histoire-Geographie": [
+      {
+        "file": "Fiche_GEO_T1_L1_MILIEU_PHYSIQUE_CI.html",
+        "name": "GEO T1 L1 MILIEU PHYSIQUE CI",
+        "path": "5eme/Histoire-Geographie/Fiche_GEO_T1_L1_MILIEU_PHYSIQUE_CI.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_GEO_T1_L1_MILIEU_PHYSIQUE_CI.html"
+      },
+      {
+        "file": "Fiche_GEO_T1_L2_CROISSANCE_DEMOGRAPHIQUE.html",
+        "name": "GEO T1 L2 CROISSANCE DEMOGRAPHIQUE",
+        "path": "5eme/Histoire-Geographie/Fiche_GEO_T1_L2_CROISSANCE_DEMOGRAPHIQUE.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_GEO_T1_L2_CROISSANCE_DEMOGRAPHIQUE.html"
+      },
+      {
+        "file": "Fiche_GEO_T1_L3_EAU_DEVELOPPEMENT_CI.html",
+        "name": "GEO T1 L3 EAU DEVELOPPEMENT CI",
+        "path": "5eme/Histoire-Geographie/Fiche_GEO_T1_L3_EAU_DEVELOPPEMENT_CI.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_GEO_T1_L3_EAU_DEVELOPPEMENT_CI.html"
+      },
+      {
+        "file": "Fiche_GEO_T2_L1_METHODES_TECHNIQUES_AGRICOLES.html",
+        "name": "GEO T2 L1 METHODES TECHNIQUES AGRICOLES",
+        "path": "5eme/Histoire-Geographie/Fiche_GEO_T2_L1_METHODES_TECHNIQUES_AGRICOLES.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_GEO_T2_L1_METHODES_TECHNIQUES_AGRICOLES.html"
+      },
+      {
+        "file": "Fiche_GEO_T2_L3_IMPOT_AMENAGEMENT.html",
+        "name": "GEO T2 L3 IMPOT AMENAGEMENT",
+        "path": "5eme/Histoire-Geographie/Fiche_GEO_T2_L3_IMPOT_AMENAGEMENT.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_GEO_T2_L3_IMPOT_AMENAGEMENT.html"
+      },
+      {
+        "file": "Fiche_HIST_T1_L1_PREMIERS_HABITANTS_CI.html",
+        "name": "HIST T1 L1 PREMIERS HABITANTS CI",
+        "path": "5eme/Histoire-Geographie/Fiche_HIST_T1_L1_PREMIERS_HABITANTS_CI.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_HIST_T1_L1_PREMIERS_HABITANTS_CI.html"
+      },
+      {
+        "file": "Fiche_HIST_T1_L2_MOUVEMENTS_MIGRATOIRES.html",
+        "name": "HIST T1 L2 MOUVEMENTS MIGRATOIRES",
+        "path": "5eme/Histoire-Geographie/Fiche_HIST_T1_L2_MOUVEMENTS_MIGRATOIRES.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_HIST_T1_L2_MOUVEMENTS_MIGRATOIRES.html"
+      },
+      {
+        "file": "Fiche_HIST_T2_L1_ORIGINE_PEUPLES_REGIONS.html",
+        "name": "HIST T2 L1 ORIGINE PEUPLES REGIONS",
+        "path": "5eme/Histoire-Geographie/Fiche_HIST_T2_L1_ORIGINE_PEUPLES_REGIONS.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_HIST_T2_L1_ORIGINE_PEUPLES_REGIONS.html"
+      },
+      {
+        "file": "Fiche_HIST_T2_L2_TRAITS_CIVILISATION.html",
+        "name": "HIST T2 L2 TRAITS CIVILISATION",
+        "path": "5eme/Histoire-Geographie/Fiche_HIST_T2_L2_TRAITS_CIVILISATION.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_HIST_T2_L2_TRAITS_CIVILISATION.html"
+      },
+      {
+        "file": "Fiche_HIST_T2_L3_CODES_REGLEMENTATION_CONFLITS.html",
+        "name": "HIST T2 L3 CODES REGLEMENTATION CONFLITS",
+        "path": "5eme/Histoire-Geographie/Fiche_HIST_T2_L3_CODES_REGLEMENTATION_CONFLITS.html",
+        "url": "/fiches/5eme/Histoire-Geographie/Fiche_HIST_T2_L3_CODES_REGLEMENTATION_CONFLITS.html"
+      }
+    ],
+    "Mathematiques": [
+      {
+        "file": "Fiche_Lecon1_NOMBRES_PREMIERS.html",
+        "name": "Leçon 1 NOMBRES PREMIERS",
+        "path": "5eme/Mathematiques/Fiche_Lecon1_NOMBRES_PREMIERS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon1_NOMBRES_PREMIERS.html"
+      },
+      {
+        "file": "Fiche_Lecon10_PARALLELOGRAMMES_PARTICULIERS.html",
+        "name": "Leçon 10 PARALLELOGRAMMES PARTICULIERS",
+        "path": "5eme/Mathematiques/Fiche_Lecon10_PARALLELOGRAMMES_PARTICULIERS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon10_PARALLELOGRAMMES_PARTICULIERS.html"
+      },
+      {
+        "file": "Fiche_Lecon11_STATISTIQUES.html",
+        "name": "Leçon 11 STATISTIQUES",
+        "path": "5eme/Mathematiques/Fiche_Lecon11_STATISTIQUES.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon11_STATISTIQUES.html"
+      },
+      {
+        "file": "Fiche_Lecon12_PRISMES_DROITS.html",
+        "name": "Leçon 12 PRISMES DROITS",
+        "path": "5eme/Mathematiques/Fiche_Lecon12_PRISMES_DROITS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon12_PRISMES_DROITS.html"
+      },
+      {
+        "file": "Fiche_Lecon2_FIGURES_SYMETRIQUES.html",
+        "name": "Leçon 2 FIGURES SYMETRIQUES",
+        "path": "5eme/Mathematiques/Fiche_Lecon2_FIGURES_SYMETRIQUES.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon2_FIGURES_SYMETRIQUES.html"
+      },
+      {
+        "file": "Fiche_Lecon3_ANGLES.html",
+        "name": "Leçon 3 ANGLES",
+        "path": "5eme/Mathematiques/Fiche_Lecon3_ANGLES.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon3_ANGLES.html"
+      },
+      {
+        "file": "Fiche_Lecon4_NOMBRES_DECIMAUX_RELATIFS.html",
+        "name": "Leçon 4 NOMBRES DECIMAUX RELATIFS",
+        "path": "5eme/Mathematiques/Fiche_Lecon4_NOMBRES_DECIMAUX_RELATIFS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon4_NOMBRES_DECIMAUX_RELATIFS.html"
+      },
+      {
+        "file": "Fiche_Lecon5_SEGMENTS.html",
+        "name": "Leçon 5 SEGMENTS",
+        "path": "5eme/Mathematiques/Fiche_Lecon5_SEGMENTS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon5_SEGMENTS.html"
+      },
+      {
+        "file": "Fiche_Lecon6_FRACTIONS.html",
+        "name": "Leçon 6 FRACTIONS",
+        "path": "5eme/Mathematiques/Fiche_Lecon6_FRACTIONS.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon6_FRACTIONS.html"
+      },
+      {
+        "file": "Fiche_Lecon7_TRIANGLES.html",
+        "name": "Leçon 7 TRIANGLES",
+        "path": "5eme/Mathematiques/Fiche_Lecon7_TRIANGLES.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon7_TRIANGLES.html"
+      },
+      {
+        "file": "Fiche_Lecon8_CERCLES.html",
+        "name": "Leçon 8 CERCLES",
+        "path": "5eme/Mathematiques/Fiche_Lecon8_CERCLES.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon8_CERCLES.html"
+      },
+      {
+        "file": "Fiche_Lecon9_PROPORTIONNALITE.html",
+        "name": "Leçon 9 PROPORTIONNALITE",
+        "path": "5eme/Mathematiques/Fiche_Lecon9_PROPORTIONNALITE.html",
+        "url": "/fiches/5eme/Mathematiques/Fiche_Lecon9_PROPORTIONNALITE.html"
+      }
+    ],
+    "Physique-Chimie": [
+      {
+        "file": "Fiche_L1_ADAPTATION_GENERATEUR_RECEPTEUR.html",
+        "name": "Leçon 1 ADAPTATION GENERATEUR RECEPTEUR",
+        "path": "5eme/Physique-Chimie/Fiche_L1_ADAPTATION_GENERATEUR_RECEPTEUR.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L1_ADAPTATION_GENERATEUR_RECEPTEUR.html"
+      },
+      {
+        "file": "Fiche_L10_COMBUSTION_SOUFRE.html",
+        "name": "Leçon 10 COMBUSTION SOUFRE",
+        "path": "5eme/Physique-Chimie/Fiche_L10_COMBUSTION_SOUFRE.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L10_COMBUSTION_SOUFRE.html"
+      },
+      {
+        "file": "Fiche_L11_DILATATION_SOLIDES.html",
+        "name": "Leçon 11 DILATATION SOLIDES",
+        "path": "5eme/Physique-Chimie/Fiche_L11_DILATATION_SOLIDES.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L11_DILATATION_SOLIDES.html"
+      },
+      {
+        "file": "Fiche_L13_DILATATION_GAZ.html",
+        "name": "Leçon 13 DILATATION GAZ",
+        "path": "5eme/Physique-Chimie/Fiche_L13_DILATATION_GAZ.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L13_DILATATION_GAZ.html"
+      },
+      {
+        "file": "Fiche_L2_ASSOCIATIONS_LAMPES.html",
+        "name": "Leçon 2 ASSOCIATIONS LAMPES",
+        "path": "5eme/Physique-Chimie/Fiche_L2_ASSOCIATIONS_LAMPES.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L2_ASSOCIATIONS_LAMPES.html"
+      },
+      {
+        "file": "Fiche_L3_ASSOCIATION_PILES_SERIE.html",
+        "name": "Leçon 3 ASSOCIATION PILES SERIE",
+        "path": "5eme/Physique-Chimie/Fiche_L3_ASSOCIATION_PILES_SERIE.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L3_ASSOCIATION_PILES_SERIE.html"
+      },
+      {
+        "file": "Fiche_L4_INTENSITE_COURANT.html",
+        "name": "Leçon 4 INTENSITE COURANT",
+        "path": "5eme/Physique-Chimie/Fiche_L4_INTENSITE_COURANT.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L4_INTENSITE_COURANT.html"
+      },
+      {
+        "file": "Fiche_L5_TENSION_ELECTRIQUE.html",
+        "name": "Leçon 5 TENSION ELECTRIQUE",
+        "path": "5eme/Physique-Chimie/Fiche_L5_TENSION_ELECTRIQUE.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L5_TENSION_ELECTRIQUE.html"
+      },
+      {
+        "file": "Fiche_L6_PRESSION_ATMOSPHERIQUE.html",
+        "name": "Leçon 6 PRESSION ATMOSPHERIQUE",
+        "path": "5eme/Physique-Chimie/Fiche_L6_PRESSION_ATMOSPHERIQUE.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L6_PRESSION_ATMOSPHERIQUE.html"
+      },
+      {
+        "file": "Fiche_L7_LES_MELANGES.html",
+        "name": "Leçon 7 LES MELANGES",
+        "path": "5eme/Physique-Chimie/Fiche_L7_LES_MELANGES.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L7_LES_MELANGES.html"
+      },
+      {
+        "file": "Fiche_L8_ATOMES_MOLECULES.html",
+        "name": "Leçon 8 ATOMES MOLECULES",
+        "path": "5eme/Physique-Chimie/Fiche_L8_ATOMES_MOLECULES.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L8_ATOMES_MOLECULES.html"
+      },
+      {
+        "file": "Fiche_L9_COMBUSTION_CARBONE.html",
+        "name": "Leçon 9 COMBUSTION CARBONE",
+        "path": "5eme/Physique-Chimie/Fiche_L9_COMBUSTION_CARBONE.html",
+        "url": "/fiches/5eme/Physique-Chimie/Fiche_L9_COMBUSTION_CARBONE.html"
+      }
+    ],
+    "SVT": [
+      {
+        "file": "Fiche_L1_REPRODUCTION_CHAMPIGNONS.html",
+        "name": "Leçon 1 REPRODUCTION CHAMPIGNONS",
+        "path": "5eme/SVT/Fiche_L1_REPRODUCTION_CHAMPIGNONS.html",
+        "url": "/fiches/5eme/SVT/Fiche_L1_REPRODUCTION_CHAMPIGNONS.html"
+      },
+      {
+        "file": "Fiche_L2_CROISSANCE_INSECTES.html",
+        "name": "Leçon 2 CROISSANCE INSECTES",
+        "path": "5eme/SVT/Fiche_L2_CROISSANCE_INSECTES.html",
+        "url": "/fiches/5eme/SVT/Fiche_L2_CROISSANCE_INSECTES.html"
+      },
+      {
+        "file": "Fiche_L3_CROISSANCE_MOLLUSQUES.html",
+        "name": "Leçon 3 CROISSANCE MOLLUSQUES",
+        "path": "5eme/SVT/Fiche_L3_CROISSANCE_MOLLUSQUES.html",
+        "url": "/fiches/5eme/SVT/Fiche_L3_CROISSANCE_MOLLUSQUES.html"
+      },
+      {
+        "file": "Fiche_L4_NUTRITION_PLANTES_SANS_CHLOROPHYLLE.html",
+        "name": "Leçon 4 NUTRITION PLANTES SANS CHLOROPHYLLE",
+        "path": "5eme/SVT/Fiche_L4_NUTRITION_PLANTES_SANS_CHLOROPHYLLE.html",
+        "url": "/fiches/5eme/SVT/Fiche_L4_NUTRITION_PLANTES_SANS_CHLOROPHYLLE.html"
+      },
+      {
+        "file": "Fiche_L5_NUTRITION_INVERTEBRES.html",
+        "name": "Leçon 5 NUTRITION INVERTEBRES",
+        "path": "5eme/SVT/Fiche_L5_NUTRITION_INVERTEBRES.html",
+        "url": "/fiches/5eme/SVT/Fiche_L5_NUTRITION_INVERTEBRES.html"
+      },
+      {
+        "file": "Fiche_L6_CONSEQUENCES_PROLIFERATION_CRIQUET.html",
+        "name": "Leçon 6 CONSEQUENCES PROLIFERATION CRIQUET",
+        "path": "5eme/SVT/Fiche_L6_CONSEQUENCES_PROLIFERATION_CRIQUET.html",
+        "url": "/fiches/5eme/SVT/Fiche_L6_CONSEQUENCES_PROLIFERATION_CRIQUET.html"
+      },
+      {
+        "file": "Fiche_L7_CONSEQUENCES_PROLIFERATION_MOUSTIQUE.html",
+        "name": "Leçon 7 CONSEQUENCES PROLIFERATION MOUSTIQUE",
+        "path": "5eme/SVT/Fiche_L7_CONSEQUENCES_PROLIFERATION_MOUSTIQUE.html",
+        "url": "/fiches/5eme/SVT/Fiche_L7_CONSEQUENCES_PROLIFERATION_MOUSTIQUE.html"
+      },
+      {
+        "file": "Fiche_L8_LUTTE_CONTRE_CRIQUET_MOUSTIQUE.html",
+        "name": "Leçon 8 LUTTE CONTRE CRIQUET MOUSTIQUE",
+        "path": "5eme/SVT/Fiche_L8_LUTTE_CONTRE_CRIQUET_MOUSTIQUE.html",
+        "url": "/fiches/5eme/SVT/Fiche_L8_LUTTE_CONTRE_CRIQUET_MOUSTIQUE.html"
+      }
+    ],
+    "Technologie": [
+      {
+        "file": "Fiche_L1_ELEMENTS_PERFORMANCE_ORDINATEUR.html",
+        "name": "Leçon 1 ELEMENTS PERFORMANCE ORDINATEUR",
+        "path": "5eme/Technologie/Fiche_L1_ELEMENTS_PERFORMANCE_ORDINATEUR.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L1_ELEMENTS_PERFORMANCE_ORDINATEUR.html"
+      },
+      {
+        "file": "Fiche_L2_GESTION_FICHIERS_DOSSIERS.html",
+        "name": "Leçon 2 GESTION FICHIERS DOSSIERS",
+        "path": "5eme/Technologie/Fiche_L2_GESTION_FICHIERS_DOSSIERS.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L2_GESTION_FICHIERS_DOSSIERS.html"
+      },
+      {
+        "file": "Fiche_L3_MISE_EN_FORME_PARAGRAPHE.html",
+        "name": "Leçon 3 MISE EN FORME PARAGRAPHE",
+        "path": "5eme/Technologie/Fiche_L3_MISE_EN_FORME_PARAGRAPHE.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L3_MISE_EN_FORME_PARAGRAPHE.html"
+      },
+      {
+        "file": "Fiche_L4_INSERTION_TABLEAUX.html",
+        "name": "Leçon 4 INSERTION TABLEAUX",
+        "path": "5eme/Technologie/Fiche_L4_INSERTION_TABLEAUX.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L4_INSERTION_TABLEAUX.html"
+      },
+      {
+        "file": "Fiche_L5_INSERTION_IMAGES.html",
+        "name": "Leçon 5 INSERTION IMAGES",
+        "path": "5eme/Technologie/Fiche_L5_INSERTION_IMAGES.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L5_INSERTION_IMAGES.html"
+      },
+      {
+        "file": "Fiche_L6_COMPORTEMENT_INTERNET.html",
+        "name": "Leçon 6 COMPORTEMENT INTERNET",
+        "path": "5eme/Technologie/Fiche_L6_COMPORTEMENT_INTERNET.html",
+        "url": "/fiches/5eme/Technologie/Fiche_L6_COMPORTEMENT_INTERNET.html"
+      }
+    ]
+  },
   "Terminale_A": {
     "Histoire - Géographie": [
       {
         "file": "Fiche_GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L1  Fondements du développement économique de la Côte dIvoire",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L1_%20Fondements%20du%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L2  Secteurs dactivités économiques de la Côte dIvoire",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L2_%20Secteurs%20dactivit%C3%A9s%20%C3%A9conomiques%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L3  Problèmes de développement économique de la Côte dIvoire",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L3_%20Probl%C3%A8mes%20de%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud.html",
-        "name": "GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud",
+        "name": "GEOGRAPHIE T2 L1  Fondements du développement économique de la Corée du Sud",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T2%20L1_%20Fondements%20du%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20Cor%C3%A9e%20du%20Sud.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique.html",
-        "name": "GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique",
+        "name": "GEOGRAPHIE T3 L1  CEDEAO Une organisation régionale à caractère économique",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T3%20L1_%20CEDEAO%20Une%20organisation%20r%C3%A9gionale%20%C3%A0%20caract%C3%A8re%20%C3%A9conomique.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud.html",
-        "name": "GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud",
+        "name": "GEOGRAPHIE T3 L2  Relations UE-ACP Un exemple de coopération Nord-Sud",
         "path": "Terminale_A/Histoire - Géographie/Fiche_GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T3%20L2_%20Relations%20UE-ACP%20Un%20exemple%20de%20coop%C3%A9ration%20Nord-Sud.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L1_ Organisation des Nations Unies ONU.html",
-        "name": "HISTOIRE T1 L1_ Organisation des Nations Unies ONU",
+        "name": "HISTOIRE T1 L1  Organisation des Nations Unies ONU",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T1 L1_ Organisation des Nations Unies ONU.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L1_%20Organisation%20des%20Nations%20Unies%20ONU.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991.html",
-        "name": "HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991",
+        "name": "HISTOIRE T1 L2  Lère de la bipolarisation 1947 à 1991",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L2_%20L%C3%A8re%20de%20la%20bipolarisation%201947%20%C3%A0%201991.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire.html",
-        "name": "HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire",
+        "name": "HISTOIRE T1 L3  De la fin de la guerre froide vers un monde multipolaire",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L3_%20De%20la%20fin%20de%20la%20guerre%20froide%20vers%20un%20monde%20multipolaire.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L1_ La montée des nationalismes en Afrique.html",
-        "name": "HISTOIRE T2 L1_ La montée des nationalismes en Afrique",
+        "name": "HISTOIRE T2 L1  La montée des nationalismes en Afrique",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T2 L1_ La montée des nationalismes en Afrique.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L1_%20La%20mont%C3%A9e%20des%20nationalismes%20en%20Afrique.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance.html",
-        "name": "HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance",
+        "name": "HISTOIRE T2 L2  Accession de la Côte dIvoire à lindépendance",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L2_%20Accession%20de%20la%20C%C3%B4te%20dIvoire%20%C3%A0%20lind%C3%A9pendance.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance.html",
-        "name": "HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance",
+        "name": "HISTOIRE T2 L3  Accession de lAlgérie à lindépendance",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L3_%20Accession%20de%20lAlg%C3%A9rie%20%C3%A0%20lind%C3%A9pendance.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L4_ Union Africaine UA.html",
-        "name": "HISTOIRE T2 L4_ Union Africaine UA",
+        "name": "HISTOIRE T2 L4  Union Africaine UA",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T2 L4_ Union Africaine UA.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L4_%20Union%20Africaine%20UA.html"
       },
       {
         "file": "Fiche_HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental.html",
-        "name": "HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental",
+        "name": "HISTOIRE T3 L1  Croyances et valeurs dominantes dans le monde occidental",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T3%20L1_%20Croyances%20et%20valeurs%20dominantes%20dans%20le%20monde%20occidental.html"
       },
       {
         "file": "Fiche_HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine.html",
-        "name": "HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine",
+        "name": "HISTOIRE T3 L2  Mutations contemporaines de la civilisation négro-africaine",
         "path": "Terminale_A/Histoire - Géographie/Fiche_HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine.html",
         "url": "/fiches/Terminale_A/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T3%20L2_%20Mutations%20contemporaines%20de%20la%20civilisation%20n%C3%A9gro-africaine.html"
       }
@@ -95,49 +549,49 @@
     "Mathématiques": [
       {
         "file": "Fiche_MATHEMATIQUE L1_ Étude de fonctions polynômes et de fonctions rationnelles.html",
-        "name": "MATHEMATIQUE L1_ Étude de fonctions polynômes et de fonctions rationnelles",
+        "name": "MATHEMATIQUE L1  Étude de fonctions polynômes et de fonctions rationnelles",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L1_ Étude de fonctions polynômes et de fonctions rationnelles.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L1_%20%C3%89tude%20de%20fonctions%20polyn%C3%B4mes%20et%20de%20fonctions%20rationnelles.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L2_ Probabilités.html",
-        "name": "MATHEMATIQUE L2_ Probabilités",
+        "name": "MATHEMATIQUE L2  Probabilités",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L2_ Probabilités.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L2_%20Probabilit%C3%A9s.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L3_ Logarithme népérien.html",
-        "name": "MATHEMATIQUE L3_ Logarithme népérien",
+        "name": "MATHEMATIQUE L3  Logarithme népérien",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L3_ Logarithme népérien.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L3_%20Logarithme%20n%C3%A9p%C3%A9rien.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L4_ Fonction exponentielle.html",
-        "name": "MATHEMATIQUE L4_ Fonction exponentielle",
+        "name": "MATHEMATIQUE L4  Fonction exponentielle",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L4_ Fonction exponentielle.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L4_%20Fonction%20exponentielle.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L5_ Suites numériques.html",
-        "name": "MATHEMATIQUE L5_ Suites numériques",
+        "name": "MATHEMATIQUE L5  Suites numériques",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L5_ Suites numériques.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L5_%20Suites%20num%C3%A9riques.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L6_ Statistique à deux variables.html",
-        "name": "MATHEMATIQUE L6_ Statistique à deux variables",
+        "name": "MATHEMATIQUE L6  Statistique à deux variables",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L6_ Statistique à deux variables.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L6_%20Statistique%20%C3%A0%20deux%20variables.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L7_ Systèmes linéaires dans R x R.html",
-        "name": "MATHEMATIQUE L7_ Systèmes linéaires dans R x R",
+        "name": "MATHEMATIQUE L7  Systèmes linéaires dans R x R",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L7_ Systèmes linéaires dans R x R.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L7_%20Syst%C3%A8mes%20lin%C3%A9aires%20dans%20R%20x%20R.html"
       },
       {
         "file": "Fiche_MATHEMATIQUE L8_ Primitives et calcul intégral.html",
-        "name": "MATHEMATIQUE L8_ Primitives et calcul intégral",
+        "name": "MATHEMATIQUE L8  Primitives et calcul intégral",
         "path": "Terminale_A/Mathématiques/Fiche_MATHEMATIQUE L8_ Primitives et calcul intégral.html",
         "url": "/fiches/Terminale_A/Math%C3%A9matiques/Fiche_MATHEMATIQUE%20L8_%20Primitives%20et%20calcul%20int%C3%A9gral.html"
       }
@@ -145,61 +599,61 @@
     "Philosophie": [
       {
         "file": "Fiche_PHILOSOPHIE L1_ La dissertation philosophique.html",
-        "name": "PHILOSOPHIE L1_ La dissertation philosophique",
+        "name": "PHILOSOPHIE L1  La dissertation philosophique",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L1_ La dissertation philosophique.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L1_%20La%20dissertation%20philosophique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L10_ La connaissance scientifique.html",
-        "name": "PHILOSOPHIE L10_ La connaissance scientifique",
+        "name": "PHILOSOPHIE L10  La connaissance scientifique",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L10_ La connaissance scientifique.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L10_%20La%20connaissance%20scientifique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L2_ Le commentaire de texte philosophique.html",
-        "name": "PHILOSOPHIE L2_ Le commentaire de texte philosophique",
+        "name": "PHILOSOPHIE L2  Le commentaire de texte philosophique",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L2_ Le commentaire de texte philosophique.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L2_%20Le%20commentaire%20de%20texte%20philosophique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L3_ La connaissance de l'homme.html",
-        "name": "PHILOSOPHIE L3_ La connaissance de l'homme",
+        "name": "PHILOSOPHIE L3  La connaissance de l'homme",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L3_ La connaissance de l'homme.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L3_%20La%20connaissance%20de%20l'homme.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L4_ La vie en société.html",
-        "name": "PHILOSOPHIE L4_ La vie en société",
+        "name": "PHILOSOPHIE L4  La vie en société",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L4_ La vie en société.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L4_%20La%20vie%20en%20soci%C3%A9t%C3%A9.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L5_ Dieu et la religion.html",
-        "name": "PHILOSOPHIE L5_ Dieu et la religion",
+        "name": "PHILOSOPHIE L5  Dieu et la religion",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L5_ Dieu et la religion.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L5_%20Dieu%20et%20la%20religion.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L6_ L’histoire et l’humanité.html",
-        "name": "PHILOSOPHIE L6_ L’histoire et l’humanité",
+        "name": "PHILOSOPHIE L6  L’histoire et l’humanité",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L6_ L’histoire et l’humanité.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L6_%20L%E2%80%99histoire%20et%20l%E2%80%99humanit%C3%A9.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L7_ La valeur de la philosophie.html",
-        "name": "PHILOSOPHIE L7_ La valeur de la philosophie",
+        "name": "PHILOSOPHIE L7  La valeur de la philosophie",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L7_ La valeur de la philosophie.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L7_%20La%20valeur%20de%20la%20philosophie.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L8_ Progrès et bonheur.html",
-        "name": "PHILOSOPHIE L8_ Progrès et bonheur",
+        "name": "PHILOSOPHIE L8  Progrès et bonheur",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L8_ Progrès et bonheur.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L8_%20Progr%C3%A8s%20et%20bonheur.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L9_ Langage et vérité.html",
-        "name": "PHILOSOPHIE L9_ Langage et vérité",
+        "name": "PHILOSOPHIE L9  Langage et vérité",
         "path": "Terminale_A/Philosophie/Fiche_PHILOSOPHIE L9_ Langage et vérité.html",
         "url": "/fiches/Terminale_A/Philosophie/Fiche_PHILOSOPHIE%20L9_%20Langage%20et%20v%C3%A9rit%C3%A9.html"
       }
@@ -209,91 +663,91 @@
     "Histoire - Géographie": [
       {
         "file": "Fiche_GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L1  Fondements du développement économique de la Côte dIvoire",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L1_ Fondements du développement économique de la Côte dIvoire.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L1_%20Fondements%20du%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L2  Secteurs dactivités économiques de la Côte dIvoire",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L2_ Secteurs dactivités économiques de la Côte dIvoire.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L2_%20Secteurs%20dactivit%C3%A9s%20%C3%A9conomiques%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire.html",
-        "name": "GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire",
+        "name": "GEOGRAPHIE T1 L3  Problèmes de développement économique de la Côte dIvoire",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T1 L3_ Problèmes de développement économique de la Côte dIvoire.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T1%20L3_%20Probl%C3%A8mes%20de%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20C%C3%B4te%20dIvoire.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud.html",
-        "name": "GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud",
+        "name": "GEOGRAPHIE T2 L1  Fondements du développement économique de la Corée du Sud",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T2 L1_ Fondements du développement économique de la Corée du Sud.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T2%20L1_%20Fondements%20du%20d%C3%A9veloppement%20%C3%A9conomique%20de%20la%20Cor%C3%A9e%20du%20Sud.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique.html",
-        "name": "GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique",
+        "name": "GEOGRAPHIE T3 L1  CEDEAO Une organisation régionale à caractère économique",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T3 L1_ CEDEAO Une organisation régionale à caractère économique.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T3%20L1_%20CEDEAO%20Une%20organisation%20r%C3%A9gionale%20%C3%A0%20caract%C3%A8re%20%C3%A9conomique.html"
       },
       {
         "file": "Fiche_GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud.html",
-        "name": "GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud",
+        "name": "GEOGRAPHIE T3 L2  Relations UE-ACP Un exemple de coopération Nord-Sud",
         "path": "Terminale_D/Histoire - Géographie/Fiche_GEOGRAPHIE T3 L2_ Relations UE-ACP Un exemple de coopération Nord-Sud.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_GEOGRAPHIE%20T3%20L2_%20Relations%20UE-ACP%20Un%20exemple%20de%20coop%C3%A9ration%20Nord-Sud.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L1_ Organisation des Nations Unies ONU.html",
-        "name": "HISTOIRE T1 L1_ Organisation des Nations Unies ONU",
+        "name": "HISTOIRE T1 L1  Organisation des Nations Unies ONU",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T1 L1_ Organisation des Nations Unies ONU.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L1_%20Organisation%20des%20Nations%20Unies%20ONU.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991.html",
-        "name": "HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991",
+        "name": "HISTOIRE T1 L2  Lère de la bipolarisation 1947 à 1991",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T1 L2_ Lère de la bipolarisation 1947 à 1991.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L2_%20L%C3%A8re%20de%20la%20bipolarisation%201947%20%C3%A0%201991.html"
       },
       {
         "file": "Fiche_HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire.html",
-        "name": "HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire",
+        "name": "HISTOIRE T1 L3  De la fin de la guerre froide vers un monde multipolaire",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T1 L3_ De la fin de la guerre froide vers un monde multipolaire.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T1%20L3_%20De%20la%20fin%20de%20la%20guerre%20froide%20vers%20un%20monde%20multipolaire.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L1_ La montée des nationalismes en Afrique.html",
-        "name": "HISTOIRE T2 L1_ La montée des nationalismes en Afrique",
+        "name": "HISTOIRE T2 L1  La montée des nationalismes en Afrique",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T2 L1_ La montée des nationalismes en Afrique.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L1_%20La%20mont%C3%A9e%20des%20nationalismes%20en%20Afrique.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance.html",
-        "name": "HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance",
+        "name": "HISTOIRE T2 L2  Accession de la Côte dIvoire à lindépendance",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T2 L2_ Accession de la Côte dIvoire à lindépendance.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L2_%20Accession%20de%20la%20C%C3%B4te%20dIvoire%20%C3%A0%20lind%C3%A9pendance.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance.html",
-        "name": "HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance",
+        "name": "HISTOIRE T2 L3  Accession de lAlgérie à lindépendance",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T2 L3_ Accession de lAlgérie à lindépendance.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L3_%20Accession%20de%20lAlg%C3%A9rie%20%C3%A0%20lind%C3%A9pendance.html"
       },
       {
         "file": "Fiche_HISTOIRE T2 L4_ Union Africaine UA.html",
-        "name": "HISTOIRE T2 L4_ Union Africaine UA",
+        "name": "HISTOIRE T2 L4  Union Africaine UA",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T2 L4_ Union Africaine UA.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T2%20L4_%20Union%20Africaine%20UA.html"
       },
       {
         "file": "Fiche_HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental.html",
-        "name": "HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental",
+        "name": "HISTOIRE T3 L1  Croyances et valeurs dominantes dans le monde occidental",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T3 L1_ Croyances et valeurs dominantes dans le monde occidental.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T3%20L1_%20Croyances%20et%20valeurs%20dominantes%20dans%20le%20monde%20occidental.html"
       },
       {
         "file": "Fiche_HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine.html",
-        "name": "HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine",
+        "name": "HISTOIRE T3 L2  Mutations contemporaines de la civilisation négro-africaine",
         "path": "Terminale_D/Histoire - Géographie/Fiche_HISTOIRE T3 L2_ Mutations contemporaines de la civilisation négro-africaine.html",
         "url": "/fiches/Terminale_D/Histoire%20-%20G%C3%A9ographie/Fiche_HISTOIRE%20T3%20L2_%20Mutations%20contemporaines%20de%20la%20civilisation%20n%C3%A9gro-africaine.html"
       }
@@ -307,19 +761,19 @@
       },
       {
         "file": "Fiche_leçon 02_ Probabilité_1.html",
-        "name": "leçon 02_ Probabilité_1",
+        "name": "leçon 02  Probabilité 1",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 02_ Probabilité_1.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2002_%20Probabilit%C3%A9_1.html"
       },
       {
         "file": "Fiche_leçon 03_ DERIVABILITE ET ETUDE DE FONCTIONS.html",
-        "name": "leçon 03_ DERIVABILITE ET ETUDE DE FONCTIONS",
+        "name": "leçon 03  DERIVABILITE ET ETUDE DE FONCTIONS",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 03_ DERIVABILITE ET ETUDE DE FONCTIONS.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2003_%20DERIVABILITE%20ET%20ETUDE%20DE%20FONCTIONS.html"
       },
       {
         "file": "Fiche_leçon 04_ PRIMITIVES.html",
-        "name": "leçon 04_ PRIMITIVES",
+        "name": "leçon 04  PRIMITIVES",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 04_ PRIMITIVES.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2004_%20PRIMITIVES.html"
       },
@@ -331,31 +785,31 @@
       },
       {
         "file": "Fiche_leçon 06_ Nombres complexes.html",
-        "name": "leçon 06_ Nombres complexes",
+        "name": "leçon 06  Nombres complexes",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 06_ Nombres complexes.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2006_%20Nombres%20complexes.html"
       },
       {
         "file": "Fiche_leçon 07_ Fonction exponentielle et fonction puissance.html",
-        "name": "leçon 07_ Fonction exponentielle et fonction puissance",
+        "name": "leçon 07  Fonction exponentielle et fonction puissance",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 07_ Fonction exponentielle et fonction puissance.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2007_%20Fonction%20exponentielle%20et%20fonction%20puissance.html"
       },
       {
         "file": "Fiche_leçon 08_ Nombres complexes et géométrie du plan.html",
-        "name": "leçon 08_ Nombres complexes et géométrie du plan",
+        "name": "leçon 08  Nombres complexes et géométrie du plan",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 08_ Nombres complexes et géométrie du plan.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2008_%20Nombres%20complexes%20et%20g%C3%A9om%C3%A9trie%20du%20plan.html"
       },
       {
         "file": "Fiche_leçon 09_ suites numériques.html",
-        "name": "leçon 09_ suites numériques",
+        "name": "leçon 09  suites numériques",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 09_ suites numériques.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2009_%20suites%20num%C3%A9riques.html"
       },
       {
         "file": "Fiche_leçon 10_ Calcul intégral.html",
-        "name": "leçon 10_ Calcul intégral",
+        "name": "leçon 10  Calcul intégral",
         "path": "Terminale_D/Mathématiques/Fiche_leçon 10_ Calcul intégral.html",
         "url": "/fiches/Terminale_D/Math%C3%A9matiques/Fiche_le%C3%A7on%2010_%20Calcul%20int%C3%A9gral.html"
       },
@@ -375,61 +829,61 @@
     "Philosophie": [
       {
         "file": "Fiche_PHILOSOPHIE L1_ La dissertation philosophique.html",
-        "name": "PHILOSOPHIE L1_ La dissertation philosophique",
+        "name": "PHILOSOPHIE L1  La dissertation philosophique",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L1_ La dissertation philosophique.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L1_%20La%20dissertation%20philosophique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L10_ La connaissance scientifique.html",
-        "name": "PHILOSOPHIE L10_ La connaissance scientifique",
+        "name": "PHILOSOPHIE L10  La connaissance scientifique",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L10_ La connaissance scientifique.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L10_%20La%20connaissance%20scientifique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L2_ Le commentaire de texte philosophique.html",
-        "name": "PHILOSOPHIE L2_ Le commentaire de texte philosophique",
+        "name": "PHILOSOPHIE L2  Le commentaire de texte philosophique",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L2_ Le commentaire de texte philosophique.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L2_%20Le%20commentaire%20de%20texte%20philosophique.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L3_ La connaissance de l'homme.html",
-        "name": "PHILOSOPHIE L3_ La connaissance de l'homme",
+        "name": "PHILOSOPHIE L3  La connaissance de l'homme",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L3_ La connaissance de l'homme.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L3_%20La%20connaissance%20de%20l'homme.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L4_ La vie en société.html",
-        "name": "PHILOSOPHIE L4_ La vie en société",
+        "name": "PHILOSOPHIE L4  La vie en société",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L4_ La vie en société.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L4_%20La%20vie%20en%20soci%C3%A9t%C3%A9.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L5_ Dieu et la religion.html",
-        "name": "PHILOSOPHIE L5_ Dieu et la religion",
+        "name": "PHILOSOPHIE L5  Dieu et la religion",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L5_ Dieu et la religion.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L5_%20Dieu%20et%20la%20religion.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L6_ L’histoire et l’humanité.html",
-        "name": "PHILOSOPHIE L6_ L’histoire et l’humanité",
+        "name": "PHILOSOPHIE L6  L’histoire et l’humanité",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L6_ L’histoire et l’humanité.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L6_%20L%E2%80%99histoire%20et%20l%E2%80%99humanit%C3%A9.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L7_ La valeur de la philosophie.html",
-        "name": "PHILOSOPHIE L7_ La valeur de la philosophie",
+        "name": "PHILOSOPHIE L7  La valeur de la philosophie",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L7_ La valeur de la philosophie.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L7_%20La%20valeur%20de%20la%20philosophie.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L8_ Progrès et bonheur.html",
-        "name": "PHILOSOPHIE L8_ Progrès et bonheur",
+        "name": "PHILOSOPHIE L8  Progrès et bonheur",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L8_ Progrès et bonheur.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L8_%20Progr%C3%A8s%20et%20bonheur.html"
       },
       {
         "file": "Fiche_PHILOSOPHIE L9_ Langage et vérité.html",
-        "name": "PHILOSOPHIE L9_ Langage et vérité",
+        "name": "PHILOSOPHIE L9  Langage et vérité",
         "path": "Terminale_D/Philosophie/Fiche_PHILOSOPHIE L9_ Langage et vérité.html",
         "url": "/fiches/Terminale_D/Philosophie/Fiche_PHILOSOPHIE%20L9_%20Langage%20et%20v%C3%A9rit%C3%A9.html"
       }
@@ -437,121 +891,121 @@
     "Physique - Chimie": [
       {
         "file": "Fiche_LECON 1_ Cinématique du point.html",
-        "name": "LECON 1_ Cinématique du point",
+        "name": "LECON 1  Cinématique du point",
         "path": "Terminale_D/Physique - Chimie/Fiche_LECON 1_ Cinématique du point.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LECON%201_%20Cin%C3%A9matique%20du%20point.html"
       },
       {
         "file": "Fiche_Leçon 1_ Les alcools.html",
-        "name": "Leçon 1_ Les alcools",
+        "name": "Leçon 1  Les alcools",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 1_ Les alcools.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%201_%20Les%20alcools.html"
       },
       {
         "file": "Fiche_LEÇON 10_ Auto induction.html",
-        "name": "LEÇON 10_ Auto induction",
+        "name": "LEÇON 10  Auto induction",
         "path": "Terminale_D/Physique - Chimie/Fiche_LEÇON 10_ Auto induction.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LE%C3%87ON%2010_%20Auto%20induction.html"
       },
       {
         "file": "Fiche_Leçon 10_ Réactions acidobasiques. Solutions tampons.html",
-        "name": "Leçon 10_ Réactions acidobasiques. Solutions tampons",
+        "name": "Leçon 10  Réactions acidobasiques. Solutions tampons",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 10_ Réactions acidobasiques. Solutions tampons.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%2010_%20R%C3%A9actions%20acidobasiques.%20Solutions%20tampons.html"
       },
       {
         "file": "Fiche_Leçon 11_ Dosage Acido-Basique (2).html",
-        "name": "Leçon 11_ Dosage Acido-Basique (2)",
+        "name": "Leçon 11  Dosage Acido-Basique (2)",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 11_ Dosage Acido-Basique (2).html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%2011_%20Dosage%20Acido-Basique%20(2).html"
       },
       {
         "file": "Fiche_Leçon 12_ Acides alpha aminés.html",
-        "name": "Leçon 12_ Acides alpha aminés",
+        "name": "Leçon 12  Acides alpha aminés",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 12_ Acides alpha aminés.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%2012_%20Acides%20alpha%20amin%C3%A9s.html"
       },
       {
         "file": "Fiche_Leçon 2_ Composés carbonylés_ aldéhydes et cétones.html",
-        "name": "Leçon 2_ Composés carbonylés_ aldéhydes et cétones",
+        "name": "Leçon 2  Composés carbonylés  aldéhydes et cétones",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 2_ Composés carbonylés_ aldéhydes et cétones.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%202_%20Compos%C3%A9s%20carbonyl%C3%A9s_%20ald%C3%A9hydes%20et%20c%C3%A9tones.html"
       },
       {
         "file": "Fiche_LECON 2_ Mouvement du centre d'inertie d'un solide.html",
-        "name": "LECON 2_ Mouvement du centre d'inertie d'un solide",
+        "name": "LECON 2  Mouvement du centre d'inertie d'un solide",
         "path": "Terminale_D/Physique - Chimie/Fiche_LECON 2_ Mouvement du centre d'inertie d'un solide.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LECON%202_%20Mouvement%20du%20centre%20d'inertie%20d'un%20solide.html"
       },
       {
         "file": "Fiche_Leçon 3_ Les amines.html",
-        "name": "Leçon 3_ Les amines",
+        "name": "Leçon 3  Les amines",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 3_ Les amines.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%203_%20Les%20amines.html"
       },
       {
         "file": "Fiche_Leçon 4_ Acides carboxyliques et dérivés.html",
-        "name": "Leçon 4_ Acides carboxyliques et dérivés",
+        "name": "Leçon 4  Acides carboxyliques et dérivés",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 4_ Acides carboxyliques et dérivés.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%204_%20Acides%20carboxyliques%20et%20d%C3%A9riv%C3%A9s.html"
       },
       {
         "file": "Fiche_LECON 4_ Mouvement dans les champs G et E uniformes.html",
-        "name": "LECON 4_ Mouvement dans les champs G et E uniformes",
+        "name": "LECON 4  Mouvement dans les champs G et E uniformes",
         "path": "Terminale_D/Physique - Chimie/Fiche_LECON 4_ Mouvement dans les champs G et E uniformes.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LECON%204_%20Mouvement%20dans%20les%20champs%20G%20et%20E%20uniformes.html"
       },
       {
         "file": "Fiche_Leçon 5_ Fabrication d'un savon.html",
-        "name": "Leçon 5_ Fabrication d'un savon",
+        "name": "Leçon 5  Fabrication d'un savon",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 5_ Fabrication d'un savon.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%205_%20Fabrication%20d'un%20savon.html"
       },
       {
         "file": "Fiche_LECON 5_ Oscillations mécaniques libres.html",
-        "name": "LECON 5_ Oscillations mécaniques libres",
+        "name": "LECON 5  Oscillations mécaniques libres",
         "path": "Terminale_D/Physique - Chimie/Fiche_LECON 5_ Oscillations mécaniques libres.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LECON%205_%20Oscillations%20m%C3%A9caniques%20libres.html"
       },
       {
         "file": "Fiche_LEÇON 6_ Champ magnétique.html",
-        "name": "LEÇON 6_ Champ magnétique",
+        "name": "LEÇON 6  Champ magnétique",
         "path": "Terminale_D/Physique - Chimie/Fiche_LEÇON 6_ Champ magnétique.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LE%C3%87ON%206_%20Champ%20magn%C3%A9tique.html"
       },
       {
         "file": "Fiche_Leçon 6_ Solutions aqueuses-Notion de pH.html",
-        "name": "Leçon 6_ Solutions aqueuses-Notion de pH",
+        "name": "Leçon 6  Solutions aqueuses-Notion de pH",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 6_ Solutions aqueuses-Notion de pH.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%206_%20Solutions%20aqueuses-Notion%20de%20pH.html"
       },
       {
         "file": "Fiche_Leçon 7_ Acide fort-Base forte.html",
-        "name": "Leçon 7_ Acide fort-Base forte",
+        "name": "Leçon 7  Acide fort-Base forte",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 7_ Acide fort-Base forte.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%207_%20Acide%20fort-Base%20forte.html"
       },
       {
         "file": "Fiche_LEÇON 8_ Loi de Laplace.html",
-        "name": "LEÇON 8_ Loi de Laplace",
+        "name": "LEÇON 8  Loi de Laplace",
         "path": "Terminale_D/Physique - Chimie/Fiche_LEÇON 8_ Loi de Laplace.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LE%C3%87ON%208_%20Loi%20de%20Laplace.html"
       },
       {
         "file": "Fiche_Leçon 9_ Couple acide_base. Classification.html",
-        "name": "Leçon 9_ Couple acide_base. Classification",
+        "name": "Leçon 9  Couple acide base. Classification",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon 9_ Couple acide_base. Classification.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on%209_%20Couple%20acide_base.%20Classification.html"
       },
       {
         "file": "Fiche_LEÇON 9_ Induction électromagnétique.html",
-        "name": "LEÇON 9_ Induction électromagnétique",
+        "name": "LEÇON 9  Induction électromagnétique",
         "path": "Terminale_D/Physique - Chimie/Fiche_LEÇON 9_ Induction électromagnétique.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_LE%C3%87ON%209_%20Induction%20%C3%A9lectromagn%C3%A9tique.html"
       },
       {
         "file": "Fiche_Leçon8_ Acide faible base faible.html",
-        "name": "Leçon8_ Acide faible base faible",
+        "name": "Leçon8  Acide faible base faible",
         "path": "Terminale_D/Physique - Chimie/Fiche_Leçon8_ Acide faible base faible.html",
         "url": "/fiches/Terminale_D/Physique%20-%20Chimie/Fiche_Le%C3%A7on8_%20Acide%20faible%20base%20faible.html"
       }
@@ -559,85 +1013,85 @@
     "SVT": [
       {
         "file": "Fiche_SVT TD_L1_ Le reflexe conditionnel.html",
-        "name": "SVT TD_L1_ Le reflexe conditionnel",
+        "name": "SVT TD L1  Le reflexe conditionnel",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L1_ Le reflexe conditionnel.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L1_%20Le%20reflexe%20conditionnel.html"
       },
       {
         "file": "Fiche_SVT TD_L10_ La reproduction chez les spermaphytes.html",
-        "name": "SVT TD_L10_ La reproduction chez les spermaphytes",
+        "name": "SVT TD L10  La reproduction chez les spermaphytes",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L10_ La reproduction chez les spermaphytes.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L10_%20La%20reproduction%20chez%20les%20spermaphytes.html"
       },
       {
         "file": "Fiche_SVT TD_L11_ La transmission d'un caractère héréditaire chez l'Homme.html",
-        "name": "SVT TD_L11_ La transmission d'un caractère héréditaire chez l'Homme",
+        "name": "SVT TD L11  La transmission d'un caractère héréditaire chez l'Homme",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L11_ La transmission d'un caractère héréditaire chez l'Homme.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L11_%20La%20transmission%20d'un%20caract%C3%A8re%20h%C3%A9r%C3%A9ditaire%20chez%20l'Homme.html"
       },
       {
         "file": "Fiche_SVT TD_L12_ La transmission de deux caractères héréditaires chez les êtres vivants.html",
-        "name": "SVT TD_L12_ La transmission de deux caractères héréditaires chez les êtres vivants",
+        "name": "SVT TD L12  La transmission de deux caractères héréditaires chez les êtres vivants",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L12_ La transmission de deux caractères héréditaires chez les êtres vivants.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L12_%20La%20transmission%20de%20deux%20caract%C3%A8res%20h%C3%A9r%C3%A9ditaires%20chez%20les%20%C3%AAtres%20vivants.html"
       },
       {
         "file": "Fiche_SVT TD_L14_ L'exploitation des gisements miniers.html",
-        "name": "SVT TD_L14_ L'exploitation des gisements miniers",
+        "name": "SVT TD L14  L'exploitation des gisements miniers",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L14_ L'exploitation des gisements miniers.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L14_%20L'exploitation%20des%20gisements%20miniers.html"
       },
       {
         "file": "Fiche_SVT TD_L15_ L'amélioration et la protection des sols.html",
-        "name": "SVT TD_L15_ L'amélioration et la protection des sols",
+        "name": "SVT TD L15  L'amélioration et la protection des sols",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L15_ L'amélioration et la protection des sols.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L15_%20L'am%C3%A9lioration%20et%20la%20protection%20des%20sols.html"
       },
       {
         "file": "Fiche_SVT TD_L2_ Le fonctionnement du tissu nerveux.html",
-        "name": "SVT TD_L2_ Le fonctionnement du tissu nerveux",
+        "name": "SVT TD L2  Le fonctionnement du tissu nerveux",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L2_ Le fonctionnement du tissu nerveux.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L2_%20Le%20fonctionnement%20du%20tissu%20nerveux.html"
       },
       {
         "file": "Fiche_SVT TD_L3_ Le fonctionnement du muscle strié squelettique.html",
-        "name": "SVT TD_L3_ Le fonctionnement du muscle strié squelettique",
+        "name": "SVT TD L3  Le fonctionnement du muscle strié squelettique",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L3_ Le fonctionnement du muscle strié squelettique.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L3_%20Le%20fonctionnement%20du%20muscle%20stri%C3%A9%20squelettique.html"
       },
       {
         "file": "Fiche_SVT TD_L4_ Le fonctionnement du coeur.html",
-        "name": "SVT TD_L4_ Le fonctionnement du coeur",
+        "name": "SVT TD L4  Le fonctionnement du coeur",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L4_ Le fonctionnement du coeur.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L4_%20Le%20fonctionnement%20du%20coeur.html"
       },
       {
         "file": "Fiche_SVT TD_L5_ Le maintien de la constance du milieu intérieur.html",
-        "name": "SVT TD_L5_ Le maintien de la constance du milieu intérieur",
+        "name": "SVT TD L5  Le maintien de la constance du milieu intérieur",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L5_ Le maintien de la constance du milieu intérieur.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L5_%20Le%20maintien%20de%20la%20constance%20du%20milieu%20int%C3%A9rieur.html"
       },
       {
         "file": "Fiche_SVT TD_L6_ Le système de défense de l'organisme.html",
-        "name": "SVT TD_L6_ Le système de défense de l'organisme",
+        "name": "SVT TD L6  Le système de défense de l'organisme",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L6_ Le système de défense de l'organisme.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L6_%20Le%20syst%C3%A8me%20de%20d%C3%A9fense%20de%20l'organisme.html"
       },
       {
         "file": "Fiche_SVT TD_L7_ L'INFECTION DE L'ORGANISME PAR LE VIH.html",
-        "name": "SVT TD_L7_ L'INFECTION DE L'ORGANISME PAR LE VIH",
+        "name": "SVT TD L7  L'INFECTION DE L'ORGANISME PAR LE VIH",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L7_ L'INFECTION DE L'ORGANISME PAR LE VIH.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L7_%20L'INFECTION%20DE%20L'ORGANISME%20PAR%20LE%20VIH.html"
       },
       {
         "file": "Fiche_SVT TD_L8_ Le devenir des cellules sexuelles chez les mammifères.html",
-        "name": "SVT TD_L8_ Le devenir des cellules sexuelles chez les mammifères",
+        "name": "SVT TD L8  Le devenir des cellules sexuelles chez les mammifères",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L8_ Le devenir des cellules sexuelles chez les mammifères.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L8_%20Le%20devenir%20des%20cellules%20sexuelles%20chez%20les%20mammif%C3%A8res.html"
       },
       {
         "file": "Fiche_SVT TD_L9_ Le fonctionnement des organes sexuels chez l'Homme.html",
-        "name": "SVT TD_L9_ Le fonctionnement des organes sexuels chez l'Homme",
+        "name": "SVT TD L9  Le fonctionnement des organes sexuels chez l'Homme",
         "path": "Terminale_D/SVT/Fiche_SVT TD_L9_ Le fonctionnement des organes sexuels chez l'Homme.html",
         "url": "/fiches/Terminale_D/SVT/Fiche_SVT%20TD_L9_%20Le%20fonctionnement%20des%20organes%20sexuels%20chez%20l'Homme.html"
       }
