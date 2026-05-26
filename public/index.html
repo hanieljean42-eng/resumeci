@@ -492,13 +492,27 @@
     }
 
     function maybeShowInstallPrompt(){
-      if(isStandaloneApp()||localStorage.getItem('installPromptDismissed')==='1')return;
+      if(isStandaloneApp())return;
+      const dismissed=parseInt(localStorage.getItem('installPromptDismissedAt')||'0',10);
+      const SEVEN_DAYS=7*24*60*60*1000;
+      if(dismissed && (Date.now()-dismissed) < SEVEN_DAYS)return;
       setTimeout(()=>document.getElementById('installPrompt').classList.add('show'),1200);
     }
 
     function dismissInstallPrompt(){
       document.getElementById('installPrompt').classList.remove('show');
-      localStorage.setItem('installPromptDismissed','1');
+      localStorage.setItem('installPromptDismissedAt',String(Date.now()));
+    }
+
+    function openInstallPrompt(){
+      localStorage.removeItem('installPromptDismissedAt');
+      document.getElementById('installPrompt').classList.add('show');
+    }
+
+    function refreshInstallButton(){
+      const btn=document.getElementById('topbarInstallBtn');
+      if(!btn)return;
+      btn.style.display=isStandaloneApp()?'none':'inline-flex';
     }
 
     async function installApp(){
@@ -516,13 +530,15 @@
     window.addEventListener('beforeinstallprompt',e=>{
       e.preventDefault();
       deferredInstallPrompt=e;
+      refreshInstallButton();
       maybeShowInstallPrompt();
     });
 
     window.addEventListener('appinstalled',()=>{
       deferredInstallPrompt=null;
-      localStorage.setItem('installPromptDismissed','1');
+      localStorage.setItem('installPromptDismissedAt',String(Date.now()));
       document.getElementById('installPrompt').classList.remove('show');
+      refreshInstallButton();
     });
 
     function toggleDarkMode(){
@@ -577,7 +593,7 @@
       CURRENT_FICHE=null;
       const{stats,structure}=DATA;
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
-      document.getElementById('topbarActions').innerHTML='<button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';
+      document.getElementById('topbarActions').innerHTML='<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';refreshInstallButton();
       let cards='';
       for(const[cls,subjects]of Object.entries(structure)){
         const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
@@ -1019,9 +1035,28 @@
     })();
 
     // ==================== VOICE SEARCH ====================
-    function startVoiceSearch(){
+    async function startVoiceSearch(){
       if(!('webkitSpeechRecognition' in window)&&!('SpeechRecognition' in window)){
-        alert('Recherche vocale non supportée sur ce navigateur.');return;
+        alert('Recherche vocale non supportée sur ce navigateur. Utilise Chrome ou Edge.');return;
+      }
+      if(location.protocol!=='https:' && location.hostname!=='localhost'){
+        alert('La recherche vocale nécessite une connexion sécurisée (HTTPS).');return;
+      }
+      // Demander explicitement la permission micro pour avoir un message clair
+      try{
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+          const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+          stream.getTracks().forEach(t=>t.stop());
+        }
+      }catch(err){
+        if(err && (err.name==='NotAllowedError'||err.name==='SecurityError')){
+          alert('Permission micro refusée. Pour activer la recherche vocale :\n1. Clique sur le cadenas 🔒 dans la barre d\'adresse\n2. Active « Microphone »\n3. Recharge la page');
+        }else if(err && err.name==='NotFoundError'){
+          alert('Aucun micro détecté sur ton appareil.');
+        }else{
+          alert('Impossible d\'accéder au micro : '+(err&&err.message?err.message:err));
+        }
+        return;
       }
       const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
       const rec=new SR();
@@ -1031,8 +1066,14 @@
         document.getElementById('searchInput').value=txt;
         searchLessons(txt);
       };
-      rec.onerror=()=>{};
-      rec.start();
+      rec.onerror=(e)=>{
+        if(e.error==='not-allowed'||e.error==='service-not-allowed'){
+          alert('Permission micro refusée. Active le microphone dans les paramètres du navigateur.');
+        }else if(e.error==='no-speech'){
+          alert('Aucune parole détectée. Réessaie en parlant plus fort.');
+        }
+      };
+      try{rec.start();}catch(err){console.error('SpeechRecognition start error',err);}
     }
 
     // ==================== NIGHT MODE AUTO ====================

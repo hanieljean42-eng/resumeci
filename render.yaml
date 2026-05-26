@@ -14,6 +14,9 @@ services:
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
+      - path: /*
+        name: Permissions-Policy
+        value: microphone=(self), camera=(), geolocation=()
     routes:
       - type: redirect
         source: https://resumeci.onrender.com/*
