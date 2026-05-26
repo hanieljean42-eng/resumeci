@@ -6,7 +6,7 @@ const SOURCE_DIR = path.join(ROOT, 'Fiches_Resume');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const OUT_FICHES_DIR = path.join(PUBLIC_DIR, 'fiches');
 const OUT_DATA_DIR = path.join(PUBLIC_DIR, 'data');
-const SITE_URL = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://www.resumeci.me').replace(/\/$/, '');
 const ALLOWED_SUBJECTS = {
   '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
   Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],

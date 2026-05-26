@@ -11,13 +11,13 @@
   <meta property="og:title" content="ResumeCI — Fiches de Résumé pour tous les niveaux">
   <meta property="og:description" content="Fiches, quiz, flashcards, audio et PDF pour réviser au Collège et au Lycée en Côte d'Ivoire.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://resumeci.me/">
+  <meta property="og:url" content="https://www.resumeci.me/">
   <meta property="og:site_name" content="ResumeCI">
   <meta property="og:locale" content="fr_CI">
-  <meta property="og:image" content="https://resumeci.me/og-image.svg">
+  <meta property="og:image" content="https://www.resumeci.me/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="/manifest.json">
-  <link rel="canonical" href="https://resumeci.me/">
+  <link rel="canonical" href="https://www.resumeci.me/">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#2563eb">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -407,7 +407,7 @@
     let CURRENT_FICHE = null;
     let deferredInstallPrompt = null;
     let SEARCH_INDEX = [];
-    const PRIMARY_DOMAIN = 'https://resumeci.me';
+    const PRIMARY_DOMAIN = 'https://www.resumeci.me';
 
     const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
@@ -542,7 +542,7 @@
     }
 
     function redirectToPrimaryDomain(){
-      if(location.hostname==='resumeci.onrender.com'||location.hostname==='www.resumeci.me'){
+      if(location.hostname==='resumeci.onrender.com'){
         location.replace(PRIMARY_DOMAIN+location.pathname+location.search+location.hash);
       }
     }
