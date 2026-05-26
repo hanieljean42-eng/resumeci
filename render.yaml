@@ -24,12 +24,6 @@ services:
       - type: redirect
         source: https://www.resumeci.me/*
         destination: https://resumeci.me/*
-      - type: redirect
-        source: http://www.resumeci.me/*
-        destination: https://resumeci.me/*
-      - type: redirect
-        source: http://resumeci.me/*
-        destination: https://resumeci.me/*
       - type: rewrite
         source: /*
         destination: /index.html

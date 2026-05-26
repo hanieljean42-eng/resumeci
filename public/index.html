@@ -542,7 +542,7 @@
     }
 
     function redirectToPrimaryDomain(){
-      if(location.hostname==='resumeci.onrender.com'||location.hostname==='www.resumeci.me'||location.protocol==='http:'){
+      if(location.hostname==='resumeci.onrender.com'||location.hostname==='www.resumeci.me'){
         location.replace(PRIMARY_DOMAIN+location.pathname+location.search+location.hash);
       }
     }
