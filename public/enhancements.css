@@ -164,6 +164,48 @@ body.focus-mode .main{margin:0;padding:20px}
 .paper-banner.show{display:flex}
 .paper-banner button{background:rgba(255,255,255,.2);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px}
 
+/* ===== AUDIO PLAYER PRO ===== */
+.audio-player{position:fixed;bottom:90px;right:14px;width:340px;max-width:calc(100vw - 28px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:96;display:none;flex-direction:column;overflow:hidden;animation:toast-in .3s ease;border:1px solid #e2e8f0}
+[data-theme="dark"] .audio-player{background:#1e293b;border-color:#334155;color:#f1f5f9}
+.audio-player.show{display:flex}
+.audio-player .ap-header{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px}
+.audio-player .ap-header .ap-close{margin-left:auto;background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}
+.audio-player .ap-header .ap-close:hover{background:rgba(255,255,255,.35)}
+.audio-player .ap-body{padding:14px 16px}
+.audio-player .ap-progress{height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px;cursor:pointer}
+[data-theme="dark"] .audio-player .ap-progress{background:#334155}
+.audio-player .ap-progress-bar{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);transition:width .3s ease;width:0%}
+.audio-player .ap-info{display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:12px}
+[data-theme="dark"] .audio-player .ap-info{color:#94a3b8}
+.audio-player .ap-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.audio-player .ap-btn{background:#f1f5f9;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;color:#1e293b;font-size:13px;transition:.2s;display:flex;align-items:center;justify-content:center}
+[data-theme="dark"] .audio-player .ap-btn{background:#334155;color:#f1f5f9}
+.audio-player .ap-btn:hover{background:#e2e8f0;transform:scale(1.08)}
+[data-theme="dark"] .audio-player .ap-btn:hover{background:#475569}
+.audio-player .ap-btn.ap-play{width:50px;height:50px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;font-size:18px;box-shadow:0 6px 16px rgba(124,58,237,.4)}
+.audio-player .ap-btn.ap-play:hover{transform:scale(1.1)}
+.audio-player .ap-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px}
+.audio-player .ap-setting label{display:block;color:#64748b;margin-bottom:4px;font-weight:600;font-size:11px}
+[data-theme="dark"] .audio-player .ap-setting label{color:#94a3b8}
+.audio-player .ap-setting select,.audio-player .ap-setting input[type="range"]{width:100%;font-size:12px;padding:5px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;color:#1e293b}
+[data-theme="dark"] .audio-player .ap-setting select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+.audio-player .ap-setting .ap-rate-val{font-weight:700;color:#7c3aed;margin-left:4px}
+.audio-player .ap-sleep{margin-top:12px;display:flex;align-items:center;gap:8px;font-size:11px;color:#64748b}
+.audio-player .ap-sleep select{padding:4px 6px;border-radius:6px;border:1px solid #e2e8f0;font-size:11px;flex:1;background:#fff;color:#1e293b}
+[data-theme="dark"] .audio-player .ap-sleep select{background:#0f172a;border-color:#334155;color:#f1f5f9}
+.audio-player .ap-sleep-active{color:#ef4444;font-weight:700}
+
+/* TTS highlight */
+.tts-highlight{background:linear-gradient(120deg,#fde68a 0%,#fcd34d 100%);padding:2px 4px;border-radius:4px;box-shadow:0 0 0 2px #fbbf24;scroll-margin-top:80px;transition:.3s;animation:tts-pulse 1.5s ease-in-out infinite}
+[data-theme="dark"] .tts-highlight{background:linear-gradient(120deg,#92400e 0%,#b45309 100%);color:#fff;box-shadow:0 0 0 2px #f59e0b}
+@keyframes tts-pulse{0%,100%{box-shadow:0 0 0 2px #fbbf24}50%{box-shadow:0 0 0 4px #fbbf24}}
+
+/* Audio FAB speaking state */
+.audio-fab.speaking{animation:audio-pulse 1.5s ease-in-out infinite}
+@keyframes audio-pulse{0%,100%{box-shadow:0 0 0 0 rgba(124,58,237,.6)}50%{box-shadow:0 0 0 14px rgba(124,58,237,0)}}
+
+@media(max-width:600px){.audio-player{bottom:80px;right:10px;left:10px;width:auto}}
+
 /* QR action buttons */
 .qr-actions{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
 .qr-actions button{padding:10px 16px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
