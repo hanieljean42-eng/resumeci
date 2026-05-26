@@ -6,7 +6,7 @@
   <title>Confidentialité — ResumeCI | Haniel_dev</title>
   <meta name="description" content="Politique de confidentialité de ResumeCI, plateforme de révision BAC créée par Haniel_dev.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://resumeci.me/privacy.html">
+  <link rel="canonical" href="https://www.resumeci.me/privacy.html">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#2563eb">
@@ -17,6 +17,9 @@
     .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(15,23,42,.08)}
     h1{font-size:32px;margin:0 0 10px;color:#0f172a}
     h2{font-size:20px;margin-top:26px;color:#0f172a}
+    ul{padding-left:20px}
+    li{margin-bottom:6px}
+    .badge{display:inline-block;background:#ecfdf5;color:#059669;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
     .footer{margin-top:22px;color:#64748b;font-size:13px;text-align:center}
   </style>
 </head>
@@ -25,15 +28,45 @@
     <p><a href="/">← Retour à l'accueil</a></p>
     <section class="card">
       <h1>Politique de confidentialité</h1>
-      <p>ResumeCI est une plateforme de révision qui fonctionne principalement côté navigateur.</p>
-      <h2>Données personnelles</h2>
-      <p>Le site ne demande pas de compte utilisateur et ne collecte pas directement de données personnelles sensibles.</p>
-      <h2>Stockage local</h2>
-      <p>Certaines fonctionnalités comme les flashcards, la progression ou les préférences peuvent utiliser le stockage local du navigateur.</p>
-      <h2>Installation PWA</h2>
-      <p>Lorsque l'application est installée sur téléphone, elle peut conserver certains fichiers en cache pour permettre une utilisation plus rapide et partiellement hors connexion.</p>
-      <h2>Contact</h2>
-      <p>Pour toute demande, utilise la page <a href="/contact.html">Contact</a>.</p>
+      <p><span class="badge">🔒 Zéro tracking</span></p>
+      <p>ResumeCI est une plateforme de révision qui fonctionne <strong>entièrement côté navigateur</strong>. Aucune donnée n'est envoyée à un serveur distant.</p>
+
+      <h2>1. Données personnelles</h2>
+      <p>Le site <strong>ne demande pas de compte utilisateur</strong>, ne collecte pas d'adresse email, ne demande pas de mot de passe. Aucune donnée personnelle n'est collectée ni transmise.</p>
+
+      <h2>2. Stockage local (localStorage)</h2>
+      <p>Certaines fonctionnalités utilisent le stockage local de ton navigateur pour sauvegarder :</p>
+      <ul>
+        <li>Tes <strong>favoris</strong> (fiches marquées)</li>
+        <li>Ton <strong>thème</strong> et préférences visuelles</li>
+        <li>Ta <strong>progression</strong> (fiches lues, scores quiz)</li>
+        <li>Ton <strong>plan de révision</strong> personnalisé</li>
+        <li>Tes <strong>notes</strong> prises dans le bloc-notes</li>
+        <li>L'<strong>historique de recherche</strong> (8 dernières recherches)</li>
+      </ul>
+      <p>Ces données restent <strong>uniquement sur ton appareil</strong>. Elles ne sont jamais envoyées à un serveur. Tu peux les supprimer à tout moment en vidant les données du site dans les paramètres de ton navigateur.</p>
+
+      <h2>3. Cookies</h2>
+      <p>ResumeCI <strong>n'utilise aucun cookie de tracking</strong>. Pas de Google Analytics, pas de Facebook Pixel, pas de publicité ciblée. Le localStorage est utilisé à la place des cookies.</p>
+
+      <h2>4. Installation PWA</h2>
+      <p>Lorsque l'application est installée sur ton téléphone, elle conserve des fichiers en cache (Service Worker) pour :</p>
+      <ul>
+        <li>Permettre une navigation <strong>hors-ligne</strong></li>
+        <li>Accélérer le chargement des pages</li>
+        <li>Stocker les fiches téléchargées localement</li>
+      </ul>
+
+      <h2>5. Microphone</h2>
+      <p>La recherche vocale demande l'accès au microphone. Cette permission est <strong>optionnelle</strong> et n'est utilisée que pour la reconnaissance vocale locale. Aucun enregistrement audio n'est conservé ni envoyé.</p>
+
+      <h2>6. Liens externes</h2>
+      <p>Le site contient des liens vers WhatsApp, Telegram et Facebook pour le partage. Ces services ont leurs propres politiques de confidentialité.</p>
+
+      <h2>7. Contact</h2>
+      <p>Pour toute demande concernant tes données : <a href="/contact.html">page Contact</a> ou WhatsApp au +225 01 50 25 24 67.</p>
+
+      <p style="margin-top:24px;color:#64748b;font-size:12px">Dernière mise à jour : mai 2025</p>
     </section>
     <div class="footer">Créé par <strong>Haniel_dev</strong></div>
   </main>
