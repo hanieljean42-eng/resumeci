@@ -23,8 +23,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="/enhancements.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="/enhancements.js" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -330,7 +332,10 @@
           <div class="intro-feature"><span>📚</span> Fiches claires pour réviser les leçons importantes</div>
           <div class="intro-feature"><span>🎮</span> Quiz avec correction immédiate pour apprendre de ses erreurs</div>
           <div class="intro-feature"><span>🃏</span> Flashcards avec répétition espacée pour mieux mémoriser</div>
-          <div class="intro-feature"><span>📱</span> Application installable sur téléphone et utilisable hors-ligne</div>
+          <div class="intro-feature"><span>📱</span> Application installable et utilisable hors-ligne</div>
+          <div class="intro-feature"><span>🛠️</span> Calculatrice, Timer Pomodoro, Bloc-notes intégrés</div>
+          <div class="intro-feature"><span>📅</span> Plan de révision personnalisé selon ta date d'examen</div>
+          <div class="intro-feature"><span>👆</span> Glisse entre les fiches et partage via WhatsApp/QR</div>
         </div>
         <div class="intro-actions">
           <button class="intro-continue" id="continueBtn"><i class="fas fa-arrow-right"></i> Continuer</button>
@@ -404,12 +409,16 @@
   </div>
 
   <script>
-    let DATA = {};
-    // Store current fiche info for download
-    let CURRENT_FICHE = null;
+    // Global state exposed for enhancements.js
+    window.DATA = {};
+    window.CURRENT_FICHE = null;
+    window.SEARCH_INDEX = [];
     let deferredInstallPrompt = null;
-    let SEARCH_INDEX = [];
     const PRIMARY_DOMAIN = 'https://www.resumeci.me';
+    // Aliases for backward compatibility
+    const DATA = window.DATA;
+    let CURRENT_FICHE = null;
+    let SEARCH_INDEX = [];
 
     const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
@@ -429,7 +438,7 @@
         fetch('/data/structure.json').then(r=>r.json()),
         fetch('/data/stats.json').then(r=>r.json())
       ]);
-      DATA.structure=struct;DATA.stats=stats;
+      DATA.structure=struct;DATA.stats=stats;window.DATA=DATA;
       if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');
       renderSidebar();renderFavsSidebar();checkAutoNight();
       // Init theme dots
@@ -440,7 +449,9 @@
     async function loadSearchIndex(){
       if(SEARCH_INDEX.length)return;
       SEARCH_INDEX=await fetch('/data/search-index.json').then(r=>r.json()).catch(()=>[]);
+      window.SEARCH_INDEX=SEARCH_INDEX;
     }
+    window.loadSearchIndex=loadSearchIndex;
 
     function renderSidebar(){
       const nav=document.getElementById('sidebarNav');
@@ -570,6 +581,8 @@
       document.getElementById('mobileOverlay')?.classList.remove('show');
       showFiche(cls,subject,file);
     }
+    window.showFiche=showFiche;
+    window.openSearchResult=openSearchResult;
 
     async function searchLessons(query){
       const q=query.trim().toLowerCase();
@@ -592,7 +605,7 @@
     }
 
     function showDashboard(){
-      CURRENT_FICHE=null;
+      CURRENT_FICHE=null;window.CURRENT_FICHE=null;
       const{stats,structure}=DATA;
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
       document.getElementById('topbarActions').innerHTML='<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';refreshInstallButton();
@@ -611,7 +624,7 @@
     }
 
     function showClass(cls){
-      CURRENT_FICHE=null;
+      CURRENT_FICHE=null;window.CURRENT_FICHE=null;
       const subjects=DATA.structure[cls];
       const cIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cIcon} ${cls.replace('_',' ')}</span>`;
@@ -640,7 +653,7 @@
       document.getElementById('content').innerHTML='<div class="loading"><div class="spinner"></div>Chargement...</div>';
       const name=file.replace('Fiche_','').replace('.md','');
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
-      CURRENT_FICHE={cls,sub,file};
+      CURRENT_FICHE={cls,sub,file};window.CURRENT_FICHE=CURRENT_FICHE;
       trackFicheRead(cls,sub,file);
       try{
         const ficheUrl=`/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
@@ -1142,10 +1155,12 @@
           </div>
           <div class="ann-body">
             <div class="ann-highlights">
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-graduation-cap"></i></div><div><strong>5ème ajoutée</strong><span>73 fiches</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#3b82f6"><i class="fas fa-chart-line"></i></div><div><strong>Progression</strong><span>Suivi personnel</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#f59e0b"><i class="fas fa-star"></i></div><div><strong>Favoris</strong><span>Marque-pages</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#06b6d4"><i class="fas fa-download"></i></div><div><strong>Hors-ligne</strong><span>Télécharge tes cours</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-graduation-cap"></i></div><div><strong>5ème ajoutée</strong><span>73 fiches + quiz</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#7c3aed"><i class="fas fa-toolbox"></i></div><div><strong>Outils</strong><span>Calculatrice, Timer, Notes</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#3b82f6"><i class="fas fa-calendar-days"></i></div><div><strong>Plan de révision</strong><span>Planning quotidien</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#f59e0b"><i class="fas fa-hand-pointer"></i></div><div><strong>Swipe</strong><span>Glisse entre les fiches</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#06b6d4"><i class="fas fa-share-nodes"></i></div><div><strong>Partage</strong><span>WhatsApp, QR, Telegram</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#ec4899"><i class="fas fa-eye"></i></div><div><strong>Mode Focus</strong><span>Zéro distraction</span></div></div>
             </div>
             <div class="ann-coming"><i class="fas fa-rocket" style="color:#f97316"></i> Bientôt : <strong>3ème</strong>, <strong>Seconde A</strong>, <strong>Seconde C</strong></div>
             <a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev%20!%20Je%20viens%20de%20ResumeCI.%20" class="ann-wa-btn" target="_blank" rel="noopener">

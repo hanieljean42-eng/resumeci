@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v14';
+const CACHE_SHELL = 'resumeci-shell-v15';
 const CACHE_FICHES = 'resumeci-fiches-v1';
 
 const SHELL_FILES = [
@@ -15,7 +15,9 @@ const SHELL_FILES = [
   '/icon-512.png',
   '/data/structure.json',
   '/data/stats.json',
-  '/data/search-index.json'
+  '/data/search-index.json',
+  '/enhancements.css',
+  '/enhancements.js'
 ];
 
 // Install: cache shell files
