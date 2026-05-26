@@ -170,12 +170,29 @@
     pomoUpdateDisplay();
   };
   function pomoUpdateDisplay(){
-    const d=document.getElementById('pomoDisplay');if(!d)return;
     const m=Math.floor(pomoState.remaining/60),s=pomoState.remaining%60;
-    d.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
-    d.classList.toggle('break',pomoState.break);
+    const txt=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    const d=document.getElementById('pomoDisplay');
+    if(d){d.textContent=txt;d.classList.toggle('break',pomoState.break);}
     const st=document.getElementById('pomoStatus');
     if(st)st.textContent=pomoState.break?'☕ Pause méritée !':(pomoState.running?'📚 Concentration...':'Prêt à travailler');
+    pomoUpdateMini(txt);
+  }
+  function pomoUpdateMini(txt){
+    let mini=document.getElementById('pomoMini');
+    if(pomoState.running){
+      if(!mini){
+        mini=document.createElement('div');mini.id='pomoMini';mini.className='pomo-mini';
+        mini.innerHTML=`<div class="pomo-mini-icon"><i class="fas fa-clock"></i></div><span id="pomoMiniTxt"></span><button class="pomo-mini-stop" aria-label="Arrêter"><i class="fas fa-stop"></i></button>`;
+        document.body.appendChild(mini);
+        mini.addEventListener('click',e=>{if(!e.target.closest('.pomo-mini-stop'))openPomodoro();});
+        mini.querySelector('.pomo-mini-stop').addEventListener('click',e=>{e.stopPropagation();pomoReset();});
+      }
+      mini.classList.add('show');
+      mini.classList.toggle('break',pomoState.break);
+      const sp=mini.querySelector('#pomoMiniTxt');if(sp)sp.textContent=(pomoState.break?'☕ ':'📚 ')+txt;
+    }else if(mini){mini.classList.remove('show');setTimeout(()=>{if(!pomoState.running&&mini.parentNode)mini.remove();},400);}
+    updateFabBadge();
   }
   window.pomoStart=function(){
     if(pomoState.running)return;
@@ -245,28 +262,35 @@
   // ==================== PLAN DE RÉVISION ====================
   window.openPlanner=function(){
     const saved=JSON.parse(localStorage.getItem('rci-planner')||'null');
+    const today=new Date().toISOString().split('T')[0];
     let html=`
-      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen, le site génère un plan de révision quotidien.</p>
-      <label style="font-size:12px;color:#475569;font-weight:600">Date d'examen</label>
-      <input type="date" id="plannerDate" class="planner-input" value="${saved?saved.date:''}" min="${new Date().toISOString().split('T')[0]}">
-      <label style="font-size:12px;color:#475569;font-weight:600">Classe</label>
+      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen, l'heure de début, le site génère un plan de révision quotidien avec rappels.</p>
+      <label style="font-size:12px;color:#475569;font-weight:600">📆 Date d'examen</label>
+      <input type="date" id="plannerDate" class="planner-input" value="${saved?saved.date:''}" min="${today}">
+      <label style="font-size:12px;color:#475569;font-weight:600">⏰ Heure de début quotidienne</label>
+      <input type="time" id="plannerTime" class="planner-input" value="${saved&&saved.time?saved.time:'17:00'}">
+      <label style="font-size:12px;color:#475569;font-weight:600">🎓 Classe</label>
       <select id="plannerClass" class="planner-input">
         <option value="5eme">5ème</option>
         <option value="Terminale_A">Terminale A</option>
         <option value="Terminale_D">Terminale D</option>
       </select>
-      <label style="font-size:12px;color:#475569;font-weight:600">Minutes/jour</label>
+      <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes/jour</label>
       <input type="number" id="plannerMin" class="planner-input" value="${saved?saved.minutes:45}" min="15" max="240">
+      <label style="font-size:12px;color:#475569;font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:8px"><input type="checkbox" id="plannerNotif" ${saved&&saved.notif!==false?'checked':''}> 🔔 Activer les rappels (notifications)</label>
       <button onclick="generatePlan()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-bottom:14px"><i class="fas fa-wand-magic-sparkles"></i> Générer mon plan</button>
+      <button onclick="testNotif()" style="width:100%;padding:8px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;cursor:pointer;margin-bottom:14px"><i class="fas fa-bell"></i> Tester une notification</button>
       <div id="plannerResult"></div>`;
     openModal('📅 Plan de révision',html,'plannerModal');
-    if(saved&&saved.plan)renderPlan(saved.plan);
+    if(saved&&saved.plan)renderPlan(saved.plan,saved);
     if(saved&&saved.classe)document.getElementById('plannerClass').value=saved.classe;
   };
-  window.generatePlan=function(){
+  window.generatePlan=async function(){
     const date=document.getElementById('plannerDate').value;
+    const time=document.getElementById('plannerTime').value||'17:00';
     const cls=document.getElementById('plannerClass').value;
     const minutes=parseInt(document.getElementById('plannerMin').value)||45;
+    const notif=document.getElementById('plannerNotif').checked;
     if(!date){toast('Choisis une date d\'examen','warn');return;}
     const target=new Date(date),today=new Date();today.setHours(0,0,0,0);
     const days=Math.max(1,Math.ceil((target-today)/(1000*60*60*24)));
@@ -279,34 +303,142 @@
       const subj=subjects[d%subjects.length];
       const fiches=struct[subj]||[];
       const f=fiches[d%fiches.length];
-      plan.push({day:d+1,date:date2.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'short'}),subject:subj,lesson:f?f.name:'Révision libre',minutes});
+      plan.push({day:d+1,dateISO:date2.toISOString().split('T')[0],date:date2.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'short'}),subject:subj,lesson:f?f.name:'Révision libre',file:f?f.file:null,minutes});
     }
-    localStorage.setItem('rci-planner',JSON.stringify({date,classe:cls,minutes,plan}));
-    renderPlan(plan);
-    toast('Plan de '+days+' jours généré !','success');
-    if('Notification' in window && Notification.permission==='default'){
-      Notification.requestPermission();
+    const data={date,time,classe:cls,minutes,notif,plan};
+    localStorage.setItem('rci-planner',JSON.stringify(data));
+    renderPlan(plan,data);
+    toast('Plan de '+days+' jours généré — début quotidien à '+time,'success');
+    if(notif){
+      const ok=await requestNotifPermission();
+      if(ok){scheduleNextReminder();toast('🔔 Rappels activés pour '+time,'success',4000);}
     }
   };
-  function renderPlan(plan){
+  async function requestNotifPermission(){
+    if(!('Notification' in window))return false;
+    if(Notification.permission==='granted')return true;
+    if(Notification.permission==='denied'){toast('Notifications refusées. Active-les dans les paramètres du navigateur.','warn',5000);return false;}
+    const r=await Notification.requestPermission();
+    return r==='granted';
+  }
+  window.testNotif=async function(){
+    const ok=await requestNotifPermission();
+    if(!ok)return;
+    showStudyNotification('Test de notification','Si tu vois ce message, les rappels fonctionnent ! 🎉');
+  };
+  function showStudyNotification(title,body){
+    if(Notification.permission!=='granted')return;
+    try{
+      const n=new Notification(title,{body,icon:'/icon-192.png',badge:'/icon-192.png',tag:'rci-study',renotify:true,vibrate:[200,100,200]});
+      n.onclick=()=>{window.focus();n.close();};
+    }catch(e){
+      // Fallback via SW
+      navigator.serviceWorker?.ready.then(reg=>reg.showNotification(title,{body,icon:'/icon-192.png',vibrate:[200,100,200],tag:'rci-study'}));
+    }
+  }
+  function getTodayPlanItem(){
+    const data=JSON.parse(localStorage.getItem('rci-planner')||'null');if(!data||!data.plan)return null;
+    const today=new Date().toISOString().split('T')[0];
+    return{data,item:data.plan.find(p=>p.dateISO===today)};
+  }
+  function scheduleNextReminder(){
+    if(window._rciReminderTimer)clearTimeout(window._rciReminderTimer);
+    const r=getTodayPlanItem();if(!r||!r.data.notif||!r.item)return;
+    const[h,m]=r.data.time.split(':').map(Number);
+    const now=new Date();
+    const target=new Date();target.setHours(h,m,0,0);
+    const lastNotif=localStorage.getItem('rci-last-notif');
+    if(lastNotif===r.item.dateISO)return; // déjà notifié aujourd'hui
+    if(target<=now){
+      // L'heure est passée — notifie tout de suite
+      showStudyNotification('📚 Jour '+r.item.day+' — '+r.item.subject,r.item.lesson+' • '+r.item.minutes+' min');
+      localStorage.setItem('rci-last-notif',r.item.dateISO);
+      // Reprogramme pour demain
+      const tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);tomorrow.setHours(h,m,0,0);
+      window._rciReminderTimer=setTimeout(scheduleNextReminder,tomorrow-now);
+    }else{
+      const wait=target-now;
+      window._rciReminderTimer=setTimeout(()=>{
+        showStudyNotification('📚 Jour '+r.item.day+' — '+r.item.subject,r.item.lesson+' • '+r.item.minutes+' min');
+        localStorage.setItem('rci-last-notif',r.item.dateISO);
+        scheduleNextReminder();
+      },wait);
+    }
+  }
+  function renderPlan(plan,data){
     const el=document.getElementById('plannerResult');
-    el.innerHTML='<h4 style="margin:8px 0 12px;font-size:14px">Tes prochains jours :</h4>'+plan.slice(0,10).map(p=>`<div class="planner-day"><strong>Jour ${p.day} — ${p.date}</strong><span>${p.subject} • ${p.lesson} (${p.minutes} min)</span></div>`).join('');
+    const today=new Date().toISOString().split('T')[0];
+    const timeInfo=data&&data.time?` — début quotidien <strong>${data.time}</strong>`:'';
+    el.innerHTML='<h4 style="margin:8px 0 12px;font-size:14px">Tes prochains jours'+timeInfo+' :</h4>'+plan.slice(0,10).map(p=>{
+      const isToday=p.dateISO===today;
+      const todayBadge=isToday?'<span style="background:#10b981;color:#fff;font-size:10px;padding:2px 7px;border-radius:6px;font-weight:700;margin-left:6px">AUJOURD\'HUI</span>':'';
+      return `<div class="planner-day" style="${isToday?'border-left-color:#10b981;background:#ecfdf5':''}"><strong>Jour ${p.day} — ${p.date}${todayBadge}</strong><span>${p.subject} • ${p.lesson} (${p.minutes} min)</span></div>`;
+    }).join('');
   }
 
   // ==================== FOCUS MODE ====================
+  function ensureFocusBanner(){
+    let b=document.getElementById('focusBanner');
+    if(!b){b=document.createElement('div');b.id='focusBanner';b.className='focus-banner';
+      b.innerHTML='<i class="fas fa-eye"></i> Mode Focus actif<button aria-label="Quitter"><i class="fas fa-times"></i></button>';
+      document.body.appendChild(b);
+      b.querySelector('button').addEventListener('click',toggleFocusMode);
+    }return b;
+  }
   window.toggleFocusMode=function(){
     document.body.classList.toggle('focus-mode');
-    toast(document.body.classList.contains('focus-mode')?'Mode focus activé':'Mode focus désactivé','info',2000);
+    const on=document.body.classList.contains('focus-mode');
+    ensureFocusBanner().classList.toggle('show',on);
+    toast(on?'👁️ Mode focus activé — zéro distraction':'Mode focus désactivé','info',2000);
+    haptic(15);updateFabBadge();
   };
 
   // ==================== PAPER READING MODE ====================
+  function ensurePaperBanner(){
+    let b=document.getElementById('paperBanner');
+    if(!b){b=document.createElement('div');b.id='paperBanner';b.className='paper-banner';
+      b.innerHTML='<i class="fas fa-book-open"></i> Mode Lecture papier<button aria-label="Quitter"><i class="fas fa-times"></i></button>';
+      document.body.appendChild(b);
+      b.querySelector('button').addEventListener('click',togglePaperMode);
+    }return b;
+  }
   window.togglePaperMode=function(){
     document.body.classList.toggle('paper-mode');
     const on=document.body.classList.contains('paper-mode');
     localStorage.setItem('rci-paper',on?'1':'0');
+    ensurePaperBanner().classList.toggle('show',on);
     toast(on?'📖 Mode lecture papier activé':'Mode lecture papier désactivé','info',2000);
+    haptic(15);updateFabBadge();
   };
-  if(localStorage.getItem('rci-paper')==='1')document.body.classList.add('paper-mode');
+  if(localStorage.getItem('rci-paper')==='1'){
+    document.body.classList.add('paper-mode');
+    setTimeout(()=>{ensurePaperBanner().classList.add('show');},100);
+  }
+
+  // ==================== FAB BADGE (active tools count) ====================
+  function updateFabBadge(){
+    const fab=document.getElementById('toolsFab');if(!fab)return;
+    let count=0;
+    if(pomoState.running)count++;
+    if(document.body.classList.contains('focus-mode'))count++;
+    if(document.body.classList.contains('paper-mode'))count++;
+    let badge=fab.querySelector('.fab-badge');
+    if(count>0){
+      if(!badge){badge=document.createElement('span');badge.className='fab-badge';fab.appendChild(badge);}
+      badge.textContent=count;
+    }else if(badge)badge.remove();
+    // Update menu button labels
+    const menu=document.getElementById('toolsMenu');if(!menu)return;
+    menu.querySelectorAll('button').forEach(b=>{const ex=b.querySelector('.badge-active');if(ex)ex.remove();});
+    function mark(idx){
+      const btns=menu.querySelectorAll('button');if(!btns[idx])return;
+      const s=document.createElement('span');s.className='badge-active';s.textContent='ON';btns[idx].appendChild(s);
+    }
+    if(pomoState.running)mark(1);
+    if(document.body.classList.contains('focus-mode'))mark(4);
+    if(document.body.classList.contains('paper-mode'))mark(5);
+  }
+  window.updateFabBadge=updateFabBadge;
 
   // ==================== SHARE MENU (WhatsApp + QR + Copy) ====================
   window.openShareMenu=function(){
@@ -329,7 +461,41 @@
   };
   window.showQR=function(){
     const z=document.getElementById('qrZone');
-    z.innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+encodeURIComponent(location.href)+'" alt="QR Code de la page" loading="lazy">';
+    const qrUrl='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+encodeURIComponent(location.href);
+    z.innerHTML=`<img id="qrImg" src="${qrUrl}" alt="QR Code" loading="lazy" crossorigin="anonymous">`+
+      `<div class="qr-actions"><button class="qr-share" onclick="shareQR()"><i class="fas fa-share"></i> Partager le QR</button>`+
+      `<button class="qr-download" onclick="downloadQR()"><i class="fas fa-download"></i> Télécharger</button>`+
+      `<button class="qr-copy" onclick="copyQR()"><i class="fas fa-copy"></i> Copier l'image</button></div>`;
+  };
+  async function fetchQRBlob(){
+    const url='https://api.qrserver.com/v1/create-qr-code/?size=512x512&data='+encodeURIComponent(location.href);
+    const r=await fetch(url);return await r.blob();
+  }
+  window.downloadQR=async function(){
+    try{const blob=await fetchQRBlob();const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download='qr-resumeci.png';a.click();URL.revokeObjectURL(u);toast('QR téléchargé','success');}catch(e){toast('Erreur téléchargement','error');}
+  };
+  window.shareQR=async function(){
+    try{
+      const blob=await fetchQRBlob();
+      const file=new File([blob],'qr-resumeci.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        await navigator.share({files:[file],title:'ResumeCI — QR Code',text:'Scanne ce QR pour ouvrir ResumeCI'});
+        toast('QR partagé','success');
+      }else if(navigator.share){
+        await navigator.share({title:'ResumeCI',text:'Découvre ResumeCI',url:location.href});
+      }else{
+        downloadQR();toast('Partage non supporté — image téléchargée','info');
+      }
+    }catch(e){if(e.name!=='AbortError')toast('Erreur partage : '+e.message,'error');}
+  };
+  window.copyQR=async function(){
+    try{
+      const blob=await fetchQRBlob();
+      if(navigator.clipboard&&window.ClipboardItem){
+        await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+        toast('Image QR copiée','success');
+      }else{toast('Copie image non supportée sur ce navigateur','warn');}
+    }catch(e){toast('Erreur copie : '+e.message,'error');}
   };
 
   // ==================== COOKIE BANNER ====================
@@ -431,6 +597,8 @@
     initCookieBanner();
     initEnhancedSearch();
     initSwipeNav();
+    // Reschedule study reminders if planner exists
+    try{scheduleNextReminder();}catch(e){}
     // Hook PWA install on landing
     if(localStorage.getItem('rci-welcome')!=='1'){
       setTimeout(()=>{

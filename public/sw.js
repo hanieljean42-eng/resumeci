@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v16';
+const CACHE_SHELL = 'resumeci-shell-v17';
 const CACHE_FICHES = 'resumeci-fiches-v1';
 
 const SHELL_FILES = [
@@ -107,4 +107,15 @@ self.addEventListener('message', e => {
       e.source.postMessage({ type: 'CACHE_CLEARED' });
     });
   }
+});
+
+// Notification click: focus or open the app
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+      for (const c of list) { if ('focus' in c) return c.focus(); }
+      if (self.clients.openWindow) return self.clients.openWindow('/');
+    })
+  );
 });

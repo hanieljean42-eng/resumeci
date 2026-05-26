@@ -138,3 +138,35 @@ body.focus-mode .main{margin:0;padding:20px}
 /* WhatsApp button */
 .wa-btn{background:#25d366 !important;color:#fff !important}
 .wa-btn:hover{background:#1ea952 !important}
+
+/* Mini Pomodoro Widget (persistent) */
+.pomo-mini{position:fixed;top:14px;left:14px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:8px 14px 8px 12px;border-radius:30px;display:none;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;box-shadow:0 6px 20px rgba(37,99,235,.45);z-index:97;cursor:pointer;animation:toast-in .3s ease;border:2px solid rgba(255,255,255,.2)}
+.pomo-mini.show{display:flex}
+.pomo-mini.break{background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 6px 20px rgba(16,185,129,.45)}
+.pomo-mini-icon{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:11px;animation:pulse-ring 2s infinite}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.pomo-mini-stop{background:rgba(0,0,0,.2);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center}
+.pomo-mini-stop:hover{background:rgba(0,0,0,.4)}
+@media(max-width:600px){.pomo-mini{top:10px;left:10px;font-size:12px;padding:6px 10px 6px 8px}}
+
+/* Active tool badge in menu */
+.tools-menu button .badge-active{margin-left:auto;background:#10b981;color:#fff;font-size:10px;padding:2px 7px;border-radius:8px;font-weight:700}
+.tools-fab .fab-badge{position:absolute;top:-4px;right:-4px;background:#ef4444;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;border:2px solid #fff;animation:toast-in .3s ease}
+.tools-fab{position:fixed}
+
+/* Focus mode banner */
+.focus-banner{position:fixed;top:14px;right:14px;background:#0f172a;color:#fff;padding:8px 14px;border-radius:20px;display:none;align-items:center;gap:8px;font-size:12px;font-weight:600;z-index:97;box-shadow:0 4px 14px rgba(0,0,0,.3);animation:toast-in .3s ease}
+.focus-banner.show{display:flex}
+.focus-banner button{background:rgba(255,255,255,.15);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px}
+
+/* Paper mode banner */
+.paper-banner{position:fixed;top:14px;right:14px;background:#92400e;color:#fff;padding:8px 14px;border-radius:20px;display:none;align-items:center;gap:8px;font-size:12px;font-weight:600;z-index:97;box-shadow:0 4px 14px rgba(146,64,14,.4);animation:toast-in .3s ease}
+.paper-banner.show{display:flex}
+.paper-banner button{background:rgba(255,255,255,.2);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px}
+
+/* QR action buttons */
+.qr-actions{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
+.qr-actions button{padding:10px 16px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
+.qr-actions .qr-share{background:#10b981;color:#fff}
+.qr-actions .qr-download{background:#3b82f6;color:#fff}
+.qr-actions .qr-copy{background:#7c3aed;color:#fff}
