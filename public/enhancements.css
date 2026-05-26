@@ -165,12 +165,33 @@ body.focus-mode .main{margin:0;padding:20px}
 .paper-banner button{background:rgba(255,255,255,.2);border:none;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px}
 
 /* ===== AUDIO PLAYER PRO ===== */
-.audio-player{position:fixed;bottom:90px;right:14px;width:340px;max-width:calc(100vw - 28px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:96;display:none;flex-direction:column;overflow:hidden;animation:toast-in .3s ease;border:1px solid #e2e8f0}
+/* When player active, add bottom padding to body so panel never hides content */
+body.tts-on{padding-bottom:260px}
+body.tts-on.tts-mini{padding-bottom:80px}
+@media(max-width:600px){body.tts-on{padding-bottom:300px}body.tts-on.tts-mini{padding-bottom:75px}}
+.tts-highlight{scroll-margin-bottom:280px !important;scroll-margin-top:80px !important}
+.audio-player{position:fixed;bottom:90px;right:14px;width:340px;max-width:calc(100vw - 28px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:96;display:none;flex-direction:column;overflow:hidden;animation:toast-in .3s ease;border:1px solid #e2e8f0;transition:all .3s ease}
 [data-theme="dark"] .audio-player{background:#1e293b;border-color:#334155;color:#f1f5f9}
 .audio-player.show{display:flex}
 .audio-player .ap-header{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px}
-.audio-player .ap-header .ap-close{margin-left:auto;background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}
-.audio-player .ap-header .ap-close:hover{background:rgba(255,255,255,.35)}
+.audio-player .ap-header .ap-mini-btn,.audio-player .ap-header .ap-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}
+.audio-player .ap-header .ap-mini-btn{margin-left:auto}
+.audio-player .ap-header .ap-close{margin-left:6px}
+.audio-player .ap-header .ap-mini-btn:hover,.audio-player .ap-header .ap-close:hover{background:rgba(255,255,255,.35)}
+/* Mini compact mode */
+body.tts-mini .audio-player{width:auto;left:10px;right:10px;bottom:80px;border-radius:14px;max-width:none}
+body.tts-mini .audio-player .ap-body{display:none}
+body.tts-mini .audio-player .ap-mini-bar{display:flex}
+.audio-player .ap-mini-bar{display:none;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-top:1px solid #e2e8f0}
+[data-theme="dark"] .audio-player .ap-mini-bar{background:#1e293b;border-top-color:#334155}
+.audio-player .ap-mini-bar .ap-mini-progress{flex:1;height:4px;background:#e2e8f0;border-radius:3px;overflow:hidden;cursor:pointer}
+[data-theme="dark"] .audio-player .ap-mini-bar .ap-mini-progress{background:#334155}
+.audio-player .ap-mini-bar .ap-mini-progress-bar{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);width:0%;transition:width .3s ease}
+.audio-player .ap-mini-bar button{background:#f1f5f9;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:11px;color:#1e293b;display:flex;align-items:center;justify-content:center}
+[data-theme="dark"] .audio-player .ap-mini-bar button{background:#334155;color:#f1f5f9}
+.audio-player .ap-mini-bar .ap-mini-play{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff !important;width:34px;height:34px}
+.audio-player .ap-mini-bar .ap-mini-pos{font-size:10px;color:#64748b;font-family:'JetBrains Mono',monospace;min-width:42px;text-align:center}
+[data-theme="dark"] .audio-player .ap-mini-bar .ap-mini-pos{color:#94a3b8}
 .audio-player .ap-body{padding:14px 16px}
 .audio-player .ap-progress{height:6px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px;cursor:pointer}
 [data-theme="dark"] .audio-player .ap-progress{background:#334155}

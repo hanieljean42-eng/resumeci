@@ -883,6 +883,8 @@
       speechSynthesis.cancel();
       const btn=document.getElementById('audioFab');btn.classList.add('speaking');btn.innerHTML='<i class="fas fa-stop"></i>';
       TTS.wakeLock=setInterval(()=>{if(TTS.active&&!TTS.paused&&speechSynthesis.paused)speechSynthesis.resume();},800);
+      document.body.classList.add('tts-on');
+      if(localStorage.getItem('tts-mini')==='1')document.body.classList.add('tts-mini');
       setTimeout(ttsSpeakNext,100);
       ttsShowPanel();
     }
@@ -894,7 +896,17 @@
       const btn=document.getElementById('audioFab');btn.classList.remove('speaking');btn.innerHTML='<i class="fas fa-volume-up"></i>';
       if(TTS.wakeLock){clearInterval(TTS.wakeLock);TTS.wakeLock=null;}
       if(TTS.sleepTimer){clearTimeout(TTS.sleepTimer);TTS.sleepTimer=null;TTS.sleepEndsAt=0;}
+      document.body.classList.remove('tts-on');
       ttsHidePanel();
+    }
+
+    function ttsToggleMini(){
+      document.body.classList.toggle('tts-mini');
+      const mini=document.body.classList.contains('tts-mini');
+      localStorage.setItem('tts-mini',mini?'1':'0');
+      const icon=TTS.panel?.querySelector('.ap-mini-btn i');
+      if(icon)icon.className=mini?'fas fa-up-right-and-down-left-from-center':'fas fa-down-left-and-up-right-to-center';
+      if(window.toast)toast(mini?'Lecteur réduit — le texte est visible':'Lecteur étendu','info',2000);
     }
 
     function ttsPause(){if(!TTS.active||TTS.paused)return;TTS.paused=true;speechSynthesis.pause();ttsUpdatePanel();}
@@ -923,8 +935,16 @@
     function ttsBuildPanel(){
       if(TTS.panel)return TTS.panel;
       const p=document.createElement('div');p.className='audio-player';p.id='audioPlayer';
+      const isMini=document.body.classList.contains('tts-mini');
       p.innerHTML=`
-        <div class="ap-header"><i class="fas fa-headphones"></i> Lecteur audio<button class="ap-close" id="apClose" title="Fermer"><i class="fas fa-times"></i></button></div>
+        <div class="ap-header"><i class="fas fa-headphones"></i> Lecteur audio<button class="ap-mini-btn" id="apMini" title="Réduire/Agrandir"><i class="fas ${isMini?'fa-up-right-and-down-left-from-center':'fa-down-left-and-up-right-to-center'}"></i></button><button class="ap-close" id="apClose" title="Fermer"><i class="fas fa-times"></i></button></div>
+        <div class="ap-mini-bar">
+          <button class="ap-mini-play" id="apMiniPlay" title="Pause/Lecture"><i class="fas fa-pause"></i></button>
+          <button id="apMiniPrev" title="Précédent"><i class="fas fa-backward-step"></i></button>
+          <button id="apMiniNext" title="Suivant"><i class="fas fa-forward-step"></i></button>
+          <div class="ap-mini-progress" id="apMiniProgress"><div class="ap-mini-progress-bar" id="apMiniProgressBar"></div></div>
+          <span class="ap-mini-pos" id="apMiniPos">0%</span>
+        </div>
         <div class="ap-body">
           <div class="ap-progress" id="apProgress"><div class="ap-progress-bar" id="apProgressBar"></div></div>
           <div class="ap-info"><span id="apPos">0/0</span><span id="apSleep"></span></div>
@@ -953,6 +973,15 @@
       document.body.appendChild(p);
       TTS.panel=p;
       p.querySelector('#apClose').onclick=ttsStop;
+      p.querySelector('#apMini').onclick=ttsToggleMini;
+      p.querySelector('#apMiniPlay').onclick=ttsTogglePause;
+      p.querySelector('#apMiniPrev').onclick=()=>ttsSkip(-1);
+      p.querySelector('#apMiniNext').onclick=()=>ttsSkip(1);
+      p.querySelector('#apMiniProgress').onclick=(e)=>{
+        const r=e.currentTarget.getBoundingClientRect();
+        const pct=(e.clientX-r.left)/r.width;
+        if(TTS.chunks.length){speechSynthesis.cancel();TTS.index=Math.floor(pct*TTS.chunks.length);if(!TTS.paused)setTimeout(ttsSpeakNext,80);}
+      };
       p.querySelector('#apPlay').onclick=ttsTogglePause;
       p.querySelector('#apPrev').onclick=()=>ttsSkip(-1);
       p.querySelector('#apNext').onclick=()=>ttsSkip(1);
@@ -983,9 +1012,12 @@
       const total=TTS.chunks.length||1;
       const pct=Math.min(100,Math.round((TTS.index/total)*100));
       TTS.panel.querySelector('#apProgressBar').style.width=pct+'%';
+      TTS.panel.querySelector('#apMiniProgressBar').style.width=pct+'%';
       TTS.panel.querySelector('#apPos').textContent=`${TTS.index}/${TTS.chunks.length} • ${pct}%`;
-      const playIcon=TTS.panel.querySelector('#apPlay i');
-      playIcon.className=TTS.paused?'fas fa-play':'fas fa-pause';
+      TTS.panel.querySelector('#apMiniPos').textContent=pct+'%';
+      const cls=TTS.paused?'fas fa-play':'fas fa-pause';
+      TTS.panel.querySelector('#apPlay i').className=cls;
+      TTS.panel.querySelector('#apMiniPlay i').className=cls;
       const sleepEl=TTS.panel.querySelector('#apSleep');
       if(TTS.sleepEndsAt){
         const left=Math.max(0,Math.round((TTS.sleepEndsAt-Date.now())/60000));
