@@ -655,6 +655,7 @@
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
       CURRENT_FICHE={cls,sub,file};window.CURRENT_FICHE=CURRENT_FICHE;
       trackFicheRead(cls,sub,file);
+      preloadNextFiche(cls,sub,file);
       try{
         const ficheUrl=`/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
         const rawHtml=await fetch(ficheUrl).then(r=>r.text());
@@ -685,6 +686,17 @@
     }
 
     function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    function preloadNextFiche(cls,sub,file){
+      const fiches=DATA.structure?.[cls]?.[sub];if(!fiches)return;
+      const idx=fiches.findIndex(f=>f.file===file);
+      if(idx>=0&&idx<fiches.length-1){
+        const next=fiches[idx+1];
+        const url=`/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(next.file)}`;
+        const link=document.createElement('link');link.rel='prefetch';link.href=url;link.as='document';
+        document.head.appendChild(link);
+      }
+    }
 
     async function downloadCurrentFichePdf(){
       const ficheContent=document.querySelector('.fiche-content');
@@ -894,7 +906,7 @@
     window._cachedUrls=new Set();
 
     function downloadClassOffline(cls){
-      if(!navigator.serviceWorker||!navigator.serviceWorker.controller)return alert('Service Worker non prêt. Rafraîchis la page.');
+      if(!navigator.serviceWorker||!navigator.serviceWorker.controller){if(window.toast)toast('Service Worker non prêt. Rafraîchis la page.','warn');else alert('Service Worker non prêt.');return;}
       const structure=DATA.structure;
       if(!structure[cls])return;
       const urls=[];
@@ -902,15 +914,38 @@
         fiches.forEach(f=>urls.push(f.url));
       }
       if(!urls.length)return;
-      // Update button state
       const btn=document.querySelector(`.dl-btn[data-class="${cls}"]`);
-      if(btn){btn.classList.add('downloading');btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Téléchargement...';}
+      if(btn){btn.classList.add('downloading');btn.innerHTML=`<i class="fas fa-spinner fa-spin"></i> 0/${urls.length}`;}
+      if(window.toast)toast(`⬇️ Téléchargement de ${urls.length} fiches (${cls.replace('_',' ')})...`,'info',3000);
+      let done=0;
+      const batchSize=5;
+      async function downloadBatch(start){
+        const batch=urls.slice(start,start+batchSize);
+        if(!batch.length){if(btn){btn.classList.remove('downloading');btn.classList.add('downloaded');btn.innerHTML='<i class="fas fa-check-circle"></i> Hors-ligne';}
+          if(window.toast)toast(`✅ ${cls.replace('_',' ')} : ${urls.length} fiches disponibles hors-ligne`,'success',4000);
+          if(window.haptic)haptic([50,30,50]);
+          showStorageInfo();return;}
+        await Promise.all(batch.map(u=>fetch(u).catch(()=>null)));
+        done+=batch.length;
+        if(btn)btn.innerHTML=`<i class="fas fa-spinner fa-spin"></i> ${done}/${urls.length}`;
+        downloadBatch(start+batchSize);
+      }
       navigator.serviceWorker.controller.postMessage({type:'CACHE_FICHES',urls});
+      downloadBatch(0);
     }
 
     function clearOfflineCache(){
       if(!navigator.serviceWorker||!navigator.serviceWorker.controller)return;
       navigator.serviceWorker.controller.postMessage({type:'CLEAR_CACHE'});
+      if(window.toast)toast('Cache hors-ligne vidé','info');
+    }
+
+    async function showStorageInfo(){
+      if(!navigator.storage||!navigator.storage.estimate)return;
+      const est=await navigator.storage.estimate();
+      const used=((est.usage||0)/1024/1024).toFixed(1);
+      const quota=((est.quota||0)/1024/1024).toFixed(0);
+      if(window.toast)toast(`💾 Stockage : ${used} Mo utilisés sur ${quota} Mo`,'info',3000);
     }
 
     function refreshOfflineStatus(){
