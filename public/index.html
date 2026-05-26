@@ -677,11 +677,11 @@
 
       // Create isolated wrapper with forced light theme
       const wrapper=document.createElement('div');
-      wrapper.style.cssText='padding:24px;background:#ffffff;color:#1e293b;font-family:Inter,sans-serif;line-height:1.75;max-width:700px';
+      wrapper.style.cssText='padding:0;margin:0;background:#ffffff;color:#1e293b;font-family:Inter,sans-serif;line-height:1.75;max-width:700px';
 
       // Clone content and force light styles on all elements
       const clone=ficheContent.cloneNode(true);
-      clone.style.cssText='background:#fff;color:#1e293b;border:none;box-shadow:none;padding:0';
+      clone.style.cssText='background:#fff;color:#1e293b;border:none;box-shadow:none;padding:20px;margin:0;page-break-before:avoid';
 
       // Force light colors on all child elements
       clone.querySelectorAll('*').forEach(el=>{
@@ -705,8 +705,8 @@
       });
 
       // Style headings properly for PDF
-      clone.querySelectorAll('h1').forEach(el=>{el.style.cssText='color:#2563eb;font-size:20px;font-weight:800;margin-bottom:16px;text-align:center'});
-      clone.querySelectorAll('h2').forEach(el=>{el.style.cssText='color:#1e293b;font-size:16px;font-weight:700;margin:24px 0 12px;padding:10px 16px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-left:4px solid #2563eb;border-radius:0 8px 8px 0'});
+      clone.querySelectorAll('h1').forEach(el=>{el.style.cssText='color:#2563eb;font-size:20px;font-weight:800;margin-bottom:16px;margin-top:0;padding-top:0;text-align:center'});
+      clone.querySelectorAll('h2').forEach(el=>{el.style.cssText='color:#1e293b;font-size:16px;font-weight:700;margin:20px 0 12px;padding:10px 16px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-left:4px solid #2563eb;border-radius:0 8px 8px 0;page-break-after:avoid;page-break-inside:avoid'});
       clone.querySelectorAll('h3').forEach(el=>{el.style.cssText='color:#1e293b;font-size:14px;font-weight:600;margin:16px 0 8px;border-bottom:1px solid #e2e8f0;padding-bottom:6px'});
       clone.querySelectorAll('p').forEach(el=>{if(!el.style.color||el.style.color==='#1e293b')el.style.color='#475569';el.style.fontSize='13px'});
       clone.querySelectorAll('li').forEach(el=>{el.style.cssText='color:#475569;font-size:13px;margin-bottom:4px'});
@@ -741,11 +741,11 @@
       wrapper.appendChild(clone);
 
       // Temporarily attach to DOM to measure height
-      wrapper.style.position='absolute';wrapper.style.left='-9999px';wrapper.style.top='0';
+      wrapper.style.position='fixed';wrapper.style.left='-9999px';wrapper.style.top='0';wrapper.style.width='700px';
       document.body.appendChild(wrapper);
       const totalH=wrapper.scrollHeight;
       document.body.removeChild(wrapper);
-      wrapper.style.position='';wrapper.style.left='';wrapper.style.top='';
+      wrapper.style.position='relative';wrapper.style.left='0';wrapper.style.top='0';wrapper.style.width='700px';
 
       // A4 at 96dpi = ~1123px, minus margins (12mm*2 = ~91px) = ~1032px content per page
       const pageH=1032;
@@ -761,12 +761,12 @@
       const fileName=CURRENT_FICHE.file.replace(/\.html?$/i,'.pdf').replace(/[\\/:*?"<>|]/g,'-');
       if(window.html2pdf){
         await html2pdf().set({
-          margin:[12,12,12,12],
+          margin:[10,10,10,10],
           filename:fileName,
-          image:{type:'jpeg',quality:0.98},
-          html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false},
+          image:{type:'jpeg',quality:0.95},
+          html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff',logging:false,y:0,scrollY:0},
           jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
-          pagebreak:{mode:['avoid-all','css','legacy']}
+          pagebreak:{mode:['css'],before:'.pdf-page-break-before',after:'.pdf-page-break-after',avoid:['.definition','.important','.schema','table','blockquote']}
         }).from(wrapper).save();
       }else{
         window.print();
