@@ -717,7 +717,7 @@
       while(p&&p.nodeType===1){
         const tag=p.tagName.toLowerCase();
         if(['code','pre','a','script','style','math','textarea','input','button'].includes(tag))return true;
-        if(p.classList&&(p.classList.contains('katex')||p.classList.contains('katex-display')||p.classList.contains('formula-block')||p.classList.contains('no-frac')))return true;
+        if(p.classList&&(p.classList.contains('katex')||p.classList.contains('katex-display')||p.classList.contains('formula-block')||p.classList.contains('formule')||p.classList.contains('math-inline')||p.classList.contains('auto-frac')||p.classList.contains('auto-vector')||p.classList.contains('no-frac')))return true;
         p=p.parentNode;
       }
       return false;

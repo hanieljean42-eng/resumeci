@@ -1,5 +1,5 @@
-const CACHE_SHELL = 'resumeci-shell-v24';
-const CACHE_FICHES = 'resumeci-fiches-v1';
+const CACHE_SHELL = 'resumeci-shell-v25';
+const CACHE_FICHES = 'resumeci-fiches-v2';
 
 const SHELL_FILES = [
   '/',
@@ -44,19 +44,18 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
 
-  // Fiches: cache-first (they are downloaded for offline)
+  // Fiches: stale-while-revalidate (serve cached fast, but always update in background)
   if (url.pathname.startsWith('/fiches/')) {
     e.respondWith(
-      caches.match(e.request).then(cached => {
-        if (cached) return cached;
-        return fetch(e.request).then(resp => {
-          if (resp && resp.status === 200) {
-            const clone = resp.clone();
-            caches.open(CACHE_FICHES).then(c => c.put(e.request, clone));
-          }
-          return resp;
-        });
-      })
+      caches.open(CACHE_FICHES).then(cache =>
+        cache.match(e.request).then(cached => {
+          const fetchPromise = fetch(e.request).then(resp => {
+            if (resp && resp.status === 200) cache.put(e.request, resp.clone());
+            return resp;
+          }).catch(() => cached);
+          return cached || fetchPromise;
+        })
+      )
     );
     return;
   }
