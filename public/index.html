@@ -700,7 +700,7 @@
       if(!rootEl||!window.katex)return;
       rootEl.querySelectorAll('.math-inline[data-tex]').forEach(el=>{
         if(el.dataset.rendered==='1')return;
-        window.katex.render(el.getAttribute('data-tex'),el,{throwOnError:false,output:'html'});
+        window.katex.render(el.getAttribute('data-tex'),el,{throwOnError:false,output:'html',strict:'ignore'});
         el.dataset.rendered='1';
       });
     }
@@ -773,7 +773,7 @@
           // Build KaTeX span
           const span=document.createElement('span');span.className='auto-frac';
           try{
-            window.katex.render(`\\frac{${tokenToTex(num)}}{${tokenToTex(den)}}`,span,{throwOnError:false,output:'html'});
+            window.katex.render(`\\frac{${tokenToTex(num)}}{${tokenToTex(den)}}`,span,{throwOnError:false,output:'html',strict:'ignore'});
             frag.appendChild(span);
           }catch(e){
             frag.appendChild(document.createTextNode(num+'/'+den));
@@ -788,78 +788,38 @@
       });
     }
 
+    // Safer auto-vector rendering: only handles isolated " x⃗ " (any letter followed by U+20D7)
+    // We never feed arbitrary equation text into KaTeX (it causes "no glyph" with dotted chars).
     function autoVectorsInElement(rootEl){
       if(!rootEl||!window.katex)return;
-      const rules=[
-        {
-          re:/\b(OM|OA|OB|AB|AM|BM|OP|r|v|a|F|P|T|N)\s*=\s*([^<\n]{1,90})/g,
-          tex:m=>`\\vec{${m[1]}}=${vectorExprToTex(m[2])}`
-        },
-        {
-          re:/\b([vVaA])\s*=\s*d\s*\/\s*dt\s*\(([^)]{1,60})\)/g,
-          tex:m=>`${m[1].toLowerCase()==='v'?'\\vec{v}':'\\vec{a}'}=\\frac{d}{dt}\\left(${vectorExprToTex(m[2])}\\right)`
-        },
-        {
-          re:/\b([vVaA])\s*=\s*√\(([^)]{1,80})\)/g,
-          tex:m=>`${m[1].toLowerCase()==='v'?'v':'a'}=\\sqrt{${vectorExprToTex(m[2])}}`
-        },
-        {
-          re:/\b([ijk])\b/g,
-          tex:m=>`\\vec{${m[1]}}`
-        },
-        {
-          re:/\b([vatrn])\s*⃗/g,
-          tex:m=>`\\vec{${m[1]}}`
-        }
-      ];
+      const VEC_ARROW=/([A-Za-z])\u20D7/g;
       const walker=document.createTreeWalker(rootEl,NodeFilter.SHOW_TEXT,{
         acceptNode:n=>{
-          if(!n.nodeValue)return NodeFilter.FILTER_REJECT;
+          if(!n.nodeValue||n.nodeValue.indexOf('\u20D7')<0)return NodeFilter.FILTER_REJECT;
           if(isInsideExclusion(n))return NodeFilter.FILTER_REJECT;
-          if(!/(OM|OA|OB|AB|AM|BM|OP|\bi\b|\bj\b|\bk\b|⃗|√\(|d\s*\/\s*dt)/.test(n.nodeValue))return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         }
       });
       const nodes=[];let n;while(n=walker.nextNode())nodes.push(n);
       nodes.forEach(node=>{
-        let text=node.nodeValue;
+        const text=node.nodeValue;
         const frag=document.createDocumentFragment();
-        let changed=false;
-        while(text.length){
-          let best=null,bestRule=null;
-          for(const rule of rules){
-            rule.re.lastIndex=0;
-            const m=rule.re.exec(text);
-            if(m&&(!best||m.index<best.index)){best=m;bestRule=rule;}
-          }
-          if(!best){frag.appendChild(document.createTextNode(text));break;}
-          frag.appendChild(document.createTextNode(text.slice(0,best.index)));
+        let last=0,changed=false,m;
+        VEC_ARROW.lastIndex=0;
+        while((m=VEC_ARROW.exec(text))){
+          frag.appendChild(document.createTextNode(text.slice(last,m.index)));
           const span=document.createElement('span');span.className='auto-vector';
           try{
-            window.katex.render(bestRule.tex(best),span,{throwOnError:false,output:'html'});
-            frag.appendChild(span);
-            changed=true;
-          }catch(e){
-            frag.appendChild(document.createTextNode(best[0]));
-          }
-          text=text.slice(best.index+best[0].length);
+            window.katex.render(`\\vec{${m[1]}}`,span,{throwOnError:false,output:'html',strict:'ignore'});
+            frag.appendChild(span);changed=true;
+          }catch(e){frag.appendChild(document.createTextNode(m[0]));}
+          last=m.index+m[0].length;
         }
-        if(changed)node.parentNode.replaceChild(frag,node);
+        if(changed){
+          frag.appendChild(document.createTextNode(text.slice(last)));
+          node.parentNode.replaceChild(frag,node);
+        }
       });
-    }
-
-    function vectorExprToTex(s){
-      return String(s).trim()
-        .replace(/·/g,'')
-        .replace(/\*/g,'')
-        .replace(/√\(([^)]+)\)/g,'\\sqrt{$1}')
-        .replace(/\b([ijk])\b/g,'\\vec{$1}')
-        .replace(/\b([vatrn])\s*⃗/g,'\\vec{$1}')
-        .replace(/([A-Za-z])_([A-Za-z0-9]+)/g,'$1_{$2}')
-        .replace(/π/g,'\\pi ')
-        .replace(/ρ/g,'\\rho ')
-        .replace(/θ/g,'\\theta ')
-        .replace(/ω/g,'\\omega ');
     }
 
     function preloadNextFiche(cls,sub,file){
