@@ -227,6 +227,11 @@ body.tts-mini .audio-player .ap-mini-bar{display:flex}
 
 @media(max-width:600px){.audio-player{bottom:80px;right:10px;left:10px;width:auto}}
 
+/* Auto-rendered inline fractions */
+.auto-frac{display:inline-block;vertical-align:middle;margin:0 2px;font-size:1em}
+.auto-frac .katex{font-size:1.05em}
+.formula-block .katex{color:#92400e}
+
 /* QR action buttons */
 .qr-actions{display:flex;gap:8px;margin-top:12px;justify-content:center;flex-wrap:wrap}
 .qr-actions button{padding:10px 16px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}

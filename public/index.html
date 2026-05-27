@@ -676,7 +676,11 @@
         html=html.replace(/<p[^>]*>[^<]{0,20}Créé par[^<]*Haniel_dev[^<]*<\/p>/gi,'');
         html=html.replace(/<footer[^>]*>[^<]*<\/footer>/gi,'');
 
+        // Auto-convert text fractions like a/b into proper KaTeX fractions
+        html=preprocessTextFractions(html);
         document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content" style="position:relative">${html}</div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div></div>`;
+        // Apply auto-fractions on the rendered DOM
+        try{autoFractionsInElement(document.querySelector('.fiche-content'));}catch(e){console.warn('auto-frac error',e);}
         clearActive();
         const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
         if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
@@ -686,6 +690,89 @@
     }
 
     function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    // ==================== AUTO-FRACTIONS ====================
+    // Converts text expressions like "U/√2", "T/4", "2π/T", "1/2π" into proper math fractions
+    // using KaTeX. Conservative: skips dates, URLs, code blocks, and existing math.
+    function preprocessTextFractions(html){
+      // No HTML-level transform; we work on rendered DOM after insertion
+      return html;
+    }
+    function isInsideExclusion(node){
+      let p=node.parentNode;
+      while(p&&p.nodeType===1){
+        const tag=p.tagName.toLowerCase();
+        if(['code','pre','a','script','style','math','textarea','input','button'].includes(tag))return true;
+        if(p.classList&&(p.classList.contains('katex')||p.classList.contains('katex-display')||p.classList.contains('formula-block')||p.classList.contains('no-frac')))return true;
+        p=p.parentNode;
+      }
+      return false;
+    }
+    // Converts a token like "√2", "2π", "T_0", "U_eff" or just "T" / "1500"
+    // into a KaTeX-safe fragment (without delimiters)
+    function tokenToTex(t){
+      t=t.trim();
+      if(!t)return '';
+      // Numbers
+      if(/^\d+(?:[.,]\d+)?$/.test(t))return t.replace(',','.');
+      // sqrt
+      let m=t.match(/^√(\d+)$/);if(m)return `\\sqrt{${m[1]}}`;
+      m=t.match(/^√\(([^)]+)\)$/);if(m)return `\\sqrt{${m[1]}}`;
+      // Subscripts like U_eff, T_0
+      m=t.match(/^([A-Za-zα-ωΑ-Ω])_([A-Za-z0-9]{1,5})$/);if(m)return `${m[1]}_{\\text{${m[2]}}}`;
+      // Greek letters & 2π, 4π
+      t=t.replace(/π/g,'\\pi ').replace(/ω/g,'\\omega ').replace(/θ/g,'\\theta ').replace(/φ/g,'\\varphi ').replace(/α/g,'\\alpha ').replace(/β/g,'\\beta ').replace(/Δ/g,'\\Delta ');
+      return t;
+    }
+    function autoFractionsInElement(rootEl){
+      if(!rootEl||!window.katex)return;
+      // Pattern: token / token, surrounded by space/punctuation/start/end
+      // token: number OR (1-8 chars: letters, digits, _, π,ω,θ,φ,α,Δ, or √n)
+      const TOK='(?:√(?:\\d+|\\([^)]+\\))|\\d+(?:[.,]\\d+)?|[A-Za-zα-ωΑ-Ωπωθφαβ]_(?:[A-Za-z0-9]{1,5})|[A-Za-zα-ωΑ-Ωπωθφαβ\\d]{1,8})';
+      const FRAC=new RegExp(`(^|[\\s(\\[=,;:>«"'+\\-*])(${TOK})\\s*/\\s*(${TOK})(?=$|[\\s).,;:?!\\]<»"'+\\-*=])`,'g');
+      const walker=document.createTreeWalker(rootEl,NodeFilter.SHOW_TEXT,{
+        acceptNode:n=>{
+          if(!n.nodeValue||!n.nodeValue.includes('/'))return NodeFilter.FILTER_REJECT;
+          if(isInsideExclusion(n))return NodeFilter.FILTER_REJECT;
+          // skip dates 12/06 or 12/06/2024
+          if(/\b\d{1,2}\/\d{1,2}(?:\/\d{2,4})?\b/.test(n.nodeValue)&&!/[A-Za-zα-ωΑ-Ωπωθφαβ√]/.test(n.nodeValue))return NodeFilter.FILTER_REJECT;
+          // skip URLs
+          if(/https?:\/\//i.test(n.nodeValue))return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      const targets=[];let n;while(n=walker.nextNode())targets.push(n);
+      targets.forEach(node=>{
+        const text=node.nodeValue;
+        let lastIdx=0,out=null,changed=false;
+        let m;
+        const frag=document.createDocumentFragment();
+        FRAC.lastIndex=0;
+        while((m=FRAC.exec(text))){
+          const before=m[1],num=m[2],den=m[3];
+          // ignore date pieces (numerator and denominator both <=2 digits and <31 -> probably date fragment)
+          if(/^\d{1,2}$/.test(num)&&/^\d{1,2}$/.test(den)&&parseInt(num)<32&&parseInt(den)<32){continue;}
+          const start=m.index+before.length;
+          const end=FRAC.lastIndex;
+          // Append text before
+          frag.appendChild(document.createTextNode(text.slice(lastIdx,start)));
+          // Build KaTeX span
+          const span=document.createElement('span');span.className='auto-frac';
+          try{
+            window.katex.render(`\\frac{${tokenToTex(num)}}{${tokenToTex(den)}}`,span,{throwOnError:false,output:'html'});
+            frag.appendChild(span);
+          }catch(e){
+            frag.appendChild(document.createTextNode(num+'/'+den));
+          }
+          lastIdx=end;
+          changed=true;
+        }
+        if(changed){
+          frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+          node.parentNode.replaceChild(frag,node);
+        }
+      });
+    }
 
     function preloadNextFiche(cls,sub,file){
       const fiches=DATA.structure?.[cls]?.[sub];if(!fiches)return;
