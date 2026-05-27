@@ -44,7 +44,7 @@
 <table>
   <tr><th>Notion</th><th>Définition</th></tr>
   <tr><td><strong>Référentiel</strong></td><td>Objet par rapport auquel on décrit le mouvement</td></tr>
-  <tr><td><strong>Repère d'espace</strong></td><td>Système d'axes lié au référentiel : R(O, ⃗i, ⃗j, ⃗k)</td></tr>
+  <tr><td><strong>Repère d'espace</strong></td><td>Système d'axes lié au référentiel : R(O, <span class="math-inline" data-tex="\vec{i}"></span>, <span class="math-inline" data-tex="\vec{j}"></span>, <span class="math-inline" data-tex="\vec{k}"></span>)</td></tr>
   <tr><td><strong>Repère de temps</strong></td><td>Instant-origine t = 0 s choisi arbitrairement</td></tr>
   <tr><td><strong>Trajectoire</strong></td><td>Ensemble des positions successives du point mobile</td></tr>
 </table>
@@ -55,9 +55,9 @@
   Le <strong>vecteur-position</strong> OM donne la position du point M dans le repère à chaque instant t.
 </div>
 
-<div class="formule">OM = x·⃗i + y·⃗j + z·⃗k &nbsp;(3D)<br>
-OM = x·⃗i + y·⃗j &nbsp;(plan)<br>
-OM = x·⃗i &nbsp;(droite)</div>
+<div class="formule">OM = x·<span class="math-inline" data-tex="\vec{i}"></span> + y·<span class="math-inline" data-tex="\vec{j}"></span> + z·<span class="math-inline" data-tex="\vec{k}"></span> &nbsp;(3D)<br>
+OM = x·<span class="math-inline" data-tex="\vec{i}"></span> + y·<span class="math-inline" data-tex="\vec{j}"></span> &nbsp;(plan)<br>
+OM = x·<span class="math-inline" data-tex="\vec{i}"></span> &nbsp;(droite)</div>
 
 <h2>III. Vecteur-Vitesse</h2>
 
@@ -65,32 +65,32 @@ OM = x·⃗i &nbsp;(droite)</div>
   Le <strong>vecteur-vitesse instantanée</strong> est la dérivée du vecteur-position par rapport au temps.
 </div>
 
-<div class="formule">⃗v = dOM/dt = ẋ·⃗i + ẏ·⃗j + ż·⃗k</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{v}"></span> = dOM/dt = ẋ·<span class="math-inline" data-tex="\vec{i}"></span> + ẏ·<span class="math-inline" data-tex="\vec{j}"></span> + ż·<span class="math-inline" data-tex="\vec{k}"></span></div>
 <div class="formule">v = √(ẋ² + ẏ² + ż²) &nbsp;&nbsp;[en m·s⁻¹]</div>
 
 <h3>Dans la base de Frenet</h3>
-<div class="formule">⃗v = v·⃗τ &nbsp;&nbsp;avec v = ds/dt = ṡ</div>
-<p><strong>⃗τ</strong> : vecteur unitaire tangent à la trajectoire ; <strong>⃗n</strong> : vecteur normal orienté vers la concavité.</p>
+<div class="formule"><span class="math-inline" data-tex="\vec{v}"></span> = v·<span class="math-inline" data-tex="\vec{\tau}"></span> &nbsp;&nbsp;avec v = ds/dt = ṡ</div>
+<p><strong><span class="math-inline" data-tex="\vec{\tau}"></span></strong> : vecteur unitaire tangent à la trajectoire ; <strong><span class="math-inline" data-tex="\vec{n}"></span></strong> : vecteur normal orienté vers la concavité.</p>
 
 <h2>IV. Vecteur-Accélération</h2>
 
-<div class="formule">⃗a = d⃗v/dt = ẍ·⃗i + ÿ·⃗j + z̈·⃗k</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{a}"></span> = d<span class="math-inline" data-tex="\vec{v}"></span>/dt = ẍ·<span class="math-inline" data-tex="\vec{i}"></span> + ÿ·<span class="math-inline" data-tex="\vec{j}"></span> + z̈·<span class="math-inline" data-tex="\vec{k}"></span></div>
 <div class="formule">a = √(ẍ² + ÿ² + z̈²) &nbsp;&nbsp;[en m·s⁻²]</div>
 
 <h3>Dans la base de Frenet</h3>
-<div class="formule">⃗a = aτ·⃗τ + aₙ·⃗n</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{a}"></span> = aτ·<span class="math-inline" data-tex="\vec{\tau}"></span> + aₙ·<span class="math-inline" data-tex="\vec{n}"></span></div>
 
 <table>
   <tr><th>Composante</th><th>Expression</th><th>Rôle</th></tr>
   <tr><td><strong>aτ</strong> (tangentielle)</td><td>aτ = dv/dt = s̈</td><td>Modifie la valeur de v</td></tr>
-  <tr><td><strong>aₙ</strong> (normale)</td><td>aₙ = v²/ρ</td><td>Modifie la direction de ⃗v</td></tr>
+  <tr><td><strong>aₙ</strong> (normale)</td><td>aₙ = v²/ρ</td><td>Modifie la direction de <span class="math-inline" data-tex="\vec{v}"></span></td></tr>
 </table>
 
 <p><strong>ρ</strong> = rayon de courbure (ρ = R si trajectoire circulaire).</p>
 
 <div class="important">
-  <strong>Mouvement accéléré :</strong> ⃗a·⃗v > 0 (aₓ·vₓ > 0)<br>
-  <strong>Mouvement retardé :</strong> ⃗a·⃗v < 0 (aₓ·vₓ < 0)
+  <strong>Mouvement accéléré :</strong> <span class="math-inline" data-tex="\vec{a}"></span>·<span class="math-inline" data-tex="\vec{v}"></span> > 0 (aₓ·vₓ > 0)<br>
+  <strong>Mouvement retardé :</strong> <span class="math-inline" data-tex="\vec{a}"></span>·<span class="math-inline" data-tex="\vec{v}"></span> < 0 (aₓ·vₓ < 0)
 </div>
 
 <h2>V. Mouvements Particuliers</h2>
@@ -122,8 +122,8 @@ aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
 <table>
   <tr><th></th><th>MRU</th><th>MRUV</th><th>MCU</th></tr>
   <tr><td><strong>Trajectoire</strong></td><td>Droite</td><td>Droite</td><td>Cercle</td></tr>
-  <tr><td><strong>⃗v</strong></td><td>Constant</td><td>|v| varie</td><td>|v| constant, direction varie</td></tr>
-  <tr><td><strong>⃗a</strong></td><td>⃗0</td><td>Constant ≠ ⃗0</td><td>Centripète (aₙ = v²/R)</td></tr>
+  <tr><td><strong><span class="math-inline" data-tex="\vec{v}"></span></strong></td><td>Constant</td><td>|v| varie</td><td>|v| constant, direction varie</td></tr>
+  <tr><td><strong><span class="math-inline" data-tex="\vec{a}"></span></strong></td><td><span class="math-inline" data-tex="\vec{0}"></span></td><td>Constant ≠ <span class="math-inline" data-tex="\vec{0}"></span></td><td>Centripète (aₙ = v²/R)</td></tr>
 </table>
 
 <div class="footer">
@@ -132,3 +132,8 @@ aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
 
 </body>
 </html>
+
+
+
+
+

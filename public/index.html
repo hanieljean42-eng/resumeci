@@ -682,6 +682,7 @@
         // Apply scientific notation rendering on the rendered DOM
         try{
           const ficheEl=document.querySelector('.fiche-content');
+          renderInlineMath(ficheEl);
           autoFractionsInElement(ficheEl);
           autoVectorsInElement(ficheEl);
         }catch(e){console.warn('auto-math error',e);}
@@ -694,6 +695,15 @@
     }
 
     function clearActive(){document.querySelectorAll('.nav-lesson.active').forEach(e=>e.classList.remove('active'))}
+
+    function renderInlineMath(rootEl){
+      if(!rootEl||!window.katex)return;
+      rootEl.querySelectorAll('.math-inline[data-tex]').forEach(el=>{
+        if(el.dataset.rendered==='1')return;
+        window.katex.render(el.getAttribute('data-tex'),el,{throwOnError:false,output:'html'});
+        el.dataset.rendered='1';
+      });
+    }
 
     // ==================== AUTO-FRACTIONS ====================
     // Converts text expressions like "U/√2", "T/4", "2π/T", "1/2π" into proper math fractions
