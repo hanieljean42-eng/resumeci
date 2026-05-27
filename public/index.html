@@ -724,25 +724,37 @@
     }
     // Converts a token like "√2", "2π", "T_0", "U_eff" or just "T" / "1500"
     // into a KaTeX-safe fragment (without delimiters)
+    // Map of Unicode chars commonly found in french physics fiches to LaTeX
+    const UNI2TEX={
+      'π':'\\pi ','ω':'\\omega ','θ':'\\theta ','φ':'\\varphi ','ϕ':'\\phi ',
+      'α':'\\alpha ','β':'\\beta ','γ':'\\gamma ','δ':'\\delta ','ε':'\\varepsilon ',
+      'λ':'\\lambda ','μ':'\\mu ','ν':'\\nu ','ρ':'\\rho ','σ':'\\sigma ','τ':'\\tau ',
+      'Δ':'\\Delta ','Φ':'\\Phi ','Ψ':'\\Psi ','Ω':'\\Omega ','Σ':'\\Sigma ','Π':'\\Pi ','Λ':'\\Lambda ','Θ':'\\Theta ',
+      'ℓ':'\\ell ','∞':'\\infty ','·':' \\cdot ','×':' \\times ','÷':'\\div ',
+      '²':'^{2}','³':'^{3}','⁴':'^{4}','⁵':'^{5}','⁶':'^{6}','⁻':'^{-}','⁰':'^{0}','¹':'^{1}','⁹':'^{9}','⁸':'^{8}','⁷':'^{7}',
+      '₀':'_{0}','₁':'_{1}','₂':'_{2}','₃':'_{3}','₄':'_{4}','ₙ':'_{n}','ₓ':'_{x}',
+      '′':"'",'″':"''",'°':'^{\\circ}'
+    };
+    function uniToTex(s){
+      return String(s).replace(/[πωθφϕαβγδελμνρστΔΦΨΩΣΠΛΘℓ∞·×÷²³⁴⁵⁶⁷⁸⁹⁰¹⁻₀₁₂₃₄ₙₓ′″°ε]/g,c=>UNI2TEX[c]||c);
+    }
     function tokenToTex(t){
       t=t.trim();
       if(!t)return '';
-      // Numbers
       if(/^\d+(?:[.,]\d+)?$/.test(t))return t.replace(',','.');
-      // sqrt
       let m=t.match(/^√(\d+)$/);if(m)return `\\sqrt{${m[1]}}`;
-      m=t.match(/^√\(([^)]+)\)$/);if(m)return `\\sqrt{${m[1]}}`;
-      // Subscripts like U_eff, T_0
-      m=t.match(/^([A-Za-zα-ωΑ-Ω])_([A-Za-z0-9]{1,5})$/);if(m)return `${m[1]}_{\\text{${m[2]}}}`;
-      // Greek letters & 2π, 4π
-      t=t.replace(/π/g,'\\pi ').replace(/ω/g,'\\omega ').replace(/θ/g,'\\theta ').replace(/φ/g,'\\varphi ').replace(/α/g,'\\alpha ').replace(/β/g,'\\beta ').replace(/Δ/g,'\\Delta ');
-      return t;
+      m=t.match(/^√\(([^)]+)\)$/);if(m)return `\\sqrt{${uniToTex(m[1])}}`;
+      m=t.match(/^([A-Za-zα-ωΑ-Ω])_([A-Za-z0-9]{1,5})$/);if(m)return `${uniToTex(m[1])}_{\\text{${m[2]}}}`;
+      return uniToTex(t);
     }
     function autoFractionsInElement(rootEl){
       if(!rootEl||!window.katex)return;
       // Pattern: token / token, surrounded by space/punctuation/start/end
       // token: number OR (1-8 chars: letters, digits, _, π,ω,θ,φ,α,Δ, or √n)
-      const TOK='(?:√(?:\\d+|\\([^)]+\\))|\\d+(?:[.,]\\d+)?|[A-Za-zα-ωΑ-Ωπωθφαβ]_(?:[A-Za-z0-9]{1,5})|[A-Za-zα-ωΑ-Ωπωθφαβ\\d]{1,8})';
+      const GREEK='α-ωΑ-ΩπωθφϕαβγδελμνρστΔΦΨΩΣΠΛΘℓ';
+      const SUP='²³⁴⁵⁶⁷⁸⁹⁰¹⁻';
+      const SUB='₀₁₂₃₄ₙₓ';
+      const TOK=`(?:√(?:\\d+|\\([^)]+\\))|\\d+(?:[.,]\\d+)?|[A-Za-z${GREEK}]_(?:[A-Za-z0-9]{1,5})|[A-Za-z${GREEK}\\d${SUP}${SUB}]{1,10})`;
       const FRAC=new RegExp(`(^|[\\s(\\[=,;:>«"'+\\-*])(${TOK})\\s*/\\s*(${TOK})(?=$|[\\s).,;:?!\\]<»"'+\\-*=])`,'g');
       const walker=document.createTreeWalker(rootEl,NodeFilter.SHOW_TEXT,{
         acceptNode:n=>{
