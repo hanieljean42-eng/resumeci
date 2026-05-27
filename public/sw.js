@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v25';
+const CACHE_SHELL = 'resumeci-shell-v26';
 const CACHE_FICHES = 'resumeci-fiches-v2';
 
 const SHELL_FILES = [

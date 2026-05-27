@@ -25,12 +25,12 @@
 <h2>II. Vecteur-Position</h2>
 
 <div class="definition">
-  Le <strong>vecteur-position</strong> OM donne la position du point M dans le repère à chaque instant t.
+  Le <strong>vecteur-position</strong> <span class="math-inline" data-tex="\vec{OM}"></span> donne la position du point M dans le repère à chaque instant t.
 </div>
 
-<div class="formule">OM = x·<span class="math-inline" data-tex="\vec{i}"></span> + y·<span class="math-inline" data-tex="\vec{j}"></span> + z·<span class="math-inline" data-tex="\vec{k}"></span> &nbsp;(3D)<br>
-OM = x·<span class="math-inline" data-tex="\vec{i}"></span> + y·<span class="math-inline" data-tex="\vec{j}"></span> &nbsp;(plan)<br>
-OM = x·<span class="math-inline" data-tex="\vec{i}"></span> &nbsp;(droite)</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{OM} = x \cdot \vec{i} + y \cdot \vec{j} + z \cdot \vec{k}"></span> &nbsp;(3D)<br>
+<span class="math-inline" data-tex="\vec{OM} = x \cdot \vec{i} + y \cdot \vec{j}"></span> &nbsp;(plan)<br>
+<span class="math-inline" data-tex="\vec{OM} = x \cdot \vec{i}"></span> &nbsp;(droite)</div>
 
 <h2>III. Vecteur-Vitesse</h2>
 
@@ -38,25 +38,25 @@ OM = x·<span class="math-inline" data-tex="\vec{i}"></span> &nbsp;(droite)</div
   Le <strong>vecteur-vitesse instantanée</strong> est la dérivée du vecteur-position par rapport au temps.
 </div>
 
-<div class="formule"><span class="math-inline" data-tex="\vec{v}"></span> = dOM/dt = ẋ·<span class="math-inline" data-tex="\vec{i}"></span> + ẏ·<span class="math-inline" data-tex="\vec{j}"></span> + ż·<span class="math-inline" data-tex="\vec{k}"></span></div>
-<div class="formule">v = √(ẋ² + ẏ² + ż²) &nbsp;&nbsp;[en m·s⁻¹]</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{v} = \frac{d\vec{OM}}{dt} = \dot{x} \cdot \vec{i} + \dot{y} \cdot \vec{j} + \dot{z} \cdot \vec{k}"></span></div>
+<div class="formule"><span class="math-inline" data-tex="v = \sqrt{\dot{x}^2 + \dot{y}^2 + \dot{z}^2}"></span> &nbsp;&nbsp;[en m·s⁻¹]</div>
 
 <h3>Dans la base de Frenet</h3>
-<div class="formule"><span class="math-inline" data-tex="\vec{v}"></span> = v·<span class="math-inline" data-tex="\vec{\tau}"></span> &nbsp;&nbsp;avec v = ds/dt = ṡ</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{v} = v \cdot \vec{\tau}"></span> &nbsp;&nbsp;avec <span class="math-inline" data-tex="v = \frac{ds}{dt} = \dot{s}"></span></div>
 <p><strong><span class="math-inline" data-tex="\vec{\tau}"></span></strong> : vecteur unitaire tangent à la trajectoire ; <strong><span class="math-inline" data-tex="\vec{n}"></span></strong> : vecteur normal orienté vers la concavité.</p>
 
 <h2>IV. Vecteur-Accélération</h2>
 
-<div class="formule"><span class="math-inline" data-tex="\vec{a}"></span> = d<span class="math-inline" data-tex="\vec{v}"></span>/dt = ẍ·<span class="math-inline" data-tex="\vec{i}"></span> + ÿ·<span class="math-inline" data-tex="\vec{j}"></span> + z̈·<span class="math-inline" data-tex="\vec{k}"></span></div>
-<div class="formule">a = √(ẍ² + ÿ² + z̈²) &nbsp;&nbsp;[en m·s⁻²]</div>
+<div class="formule"><span class="math-inline" data-tex="\vec{a} = \frac{d\vec{v}}{dt} = \ddot{x} \cdot \vec{i} + \ddot{y} \cdot \vec{j} + \ddot{z} \cdot \vec{k}"></span></div>
+<div class="formule"><span class="math-inline" data-tex="a = \sqrt{\ddot{x}^2 + \ddot{y}^2 + \ddot{z}^2}"></span> &nbsp;&nbsp;[en m·s⁻²]</div>
 
 <h3>Dans la base de Frenet</h3>
-<div class="formule"><span class="math-inline" data-tex="\vec{a}"></span> = aτ·<span class="math-inline" data-tex="\vec{\tau}"></span> + aₙ·<span class="math-inline" data-tex="\vec{n}"></span></div>
+<div class="formule"><span class="math-inline" data-tex="\vec{a} = a_\tau \cdot \vec{\tau} + a_n \cdot \vec{n}"></span></div>
 
 <table>
   <tr><th>Composante</th><th>Expression</th><th>Rôle</th></tr>
-  <tr><td><strong>aτ</strong> (tangentielle)</td><td>aτ = dv/dt = s̈</td><td>Modifie la valeur de v</td></tr>
-  <tr><td><strong>aₙ</strong> (normale)</td><td>aₙ = v²/ρ</td><td>Modifie la direction de <span class="math-inline" data-tex="\vec{v}"></span></td></tr>
+  <tr><td><strong>aτ</strong> (tangentielle)</td><td><span class="math-inline" data-tex="a_\tau = \frac{dv}{dt} = \ddot{s}"></span></td><td>Modifie la valeur de v</td></tr>
+  <tr><td><strong>aₙ</strong> (normale)</td><td><span class="math-inline" data-tex="a_n = \frac{v^2}{\rho}"></span></td><td>Modifie la direction de <span class="math-inline" data-tex="\vec{v}"></span></td></tr>
 </table>
 
 <p><strong>ρ</strong> = rayon de courbure (ρ = R si trajectoire circulaire).</p>
@@ -87,8 +87,8 @@ OM = x·<span class="math-inline" data-tex="\vec{i}"></span> &nbsp;(droite)</div
 θ = ω·t + θ₀ &nbsp;(abscisse angulaire)<br>
 s = R·θ = v·t + s₀ &nbsp;(abscisse curviligne)</div>
 
-<div class="formule">aτ = 0 &nbsp;(pas d'accélération tangentielle)<br>
-aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
+<div class="formule"><span class="math-inline" data-tex="a_\tau = 0"></span> &nbsp;(pas d'accélération tangentielle)<br>
+<span class="math-inline" data-tex="a_n = \frac{v^2}{R} = R \cdot \omega^2"></span> &nbsp;(accélération centripète)</div>
 
 <h2>VI. Tableau Récapitulatif</h2>
 
@@ -96,7 +96,7 @@ aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
   <tr><th></th><th>MRU</th><th>MRUV</th><th>MCU</th></tr>
   <tr><td><strong>Trajectoire</strong></td><td>Droite</td><td>Droite</td><td>Cercle</td></tr>
   <tr><td><strong><span class="math-inline" data-tex="\vec{v}"></span></strong></td><td>Constant</td><td>|v| varie</td><td>|v| constant, direction varie</td></tr>
-  <tr><td><strong><span class="math-inline" data-tex="\vec{a}"></span></strong></td><td><span class="math-inline" data-tex="\vec{0}"></span></td><td>Constant ≠ <span class="math-inline" data-tex="\vec{0}"></span></td><td>Centripète (aₙ = v²/R)</td></tr>
+  <tr><td><strong><span class="math-inline" data-tex="\vec{a}"></span></strong></td><td><span class="math-inline" data-tex="\vec{0}"></span></td><td>Constant ≠ <span class="math-inline" data-tex="\vec{0}"></span></td><td>Centripète (<span class="math-inline" data-tex="a_n = \frac{v^2}{R}"></span>)</td></tr>
 </table>
 
 <div class="footer">
@@ -105,6 +105,7 @@ aₙ = v²/R = R·ω² &nbsp;(accélération centripète)</div>
 
 <div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div></body>
 </html>
+
 
 
 
