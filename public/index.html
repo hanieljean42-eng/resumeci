@@ -679,8 +679,12 @@
         // Auto-convert text fractions like a/b into proper KaTeX fractions
         html=preprocessTextFractions(html);
         document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content" style="position:relative">${html}</div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div></div>`;
-        // Apply auto-fractions on the rendered DOM
-        try{autoFractionsInElement(document.querySelector('.fiche-content'));}catch(e){console.warn('auto-frac error',e);}
+        // Apply scientific notation rendering on the rendered DOM
+        try{
+          const ficheEl=document.querySelector('.fiche-content');
+          autoFractionsInElement(ficheEl);
+          autoVectorsInElement(ficheEl);
+        }catch(e){console.warn('auto-math error',e);}
         clearActive();
         const el=document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
         if(el){el.classList.add('active');el.closest('.nav-class')?.classList.add('open');el.closest('.nav-subject')?.classList.add('open')}
@@ -772,6 +776,80 @@
           node.parentNode.replaceChild(frag,node);
         }
       });
+    }
+
+    function autoVectorsInElement(rootEl){
+      if(!rootEl||!window.katex)return;
+      const rules=[
+        {
+          re:/\b(OM|OA|OB|AB|AM|BM|OP|r|v|a|F|P|T|N)\s*=\s*([^<\n]{1,90})/g,
+          tex:m=>`\\vec{${m[1]}}=${vectorExprToTex(m[2])}`
+        },
+        {
+          re:/\b([vVaA])\s*=\s*d\s*\/\s*dt\s*\(([^)]{1,60})\)/g,
+          tex:m=>`${m[1].toLowerCase()==='v'?'\\vec{v}':'\\vec{a}'}=\\frac{d}{dt}\\left(${vectorExprToTex(m[2])}\\right)`
+        },
+        {
+          re:/\b([vVaA])\s*=\s*√\(([^)]{1,80})\)/g,
+          tex:m=>`${m[1].toLowerCase()==='v'?'v':'a'}=\\sqrt{${vectorExprToTex(m[2])}}`
+        },
+        {
+          re:/\b([ijk])\b/g,
+          tex:m=>`\\vec{${m[1]}}`
+        },
+        {
+          re:/\b([vatrn])\s*⃗/g,
+          tex:m=>`\\vec{${m[1]}}`
+        }
+      ];
+      const walker=document.createTreeWalker(rootEl,NodeFilter.SHOW_TEXT,{
+        acceptNode:n=>{
+          if(!n.nodeValue)return NodeFilter.FILTER_REJECT;
+          if(isInsideExclusion(n))return NodeFilter.FILTER_REJECT;
+          if(!/(OM|OA|OB|AB|AM|BM|OP|\bi\b|\bj\b|\bk\b|⃗|√\(|d\s*\/\s*dt)/.test(n.nodeValue))return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      const nodes=[];let n;while(n=walker.nextNode())nodes.push(n);
+      nodes.forEach(node=>{
+        let text=node.nodeValue;
+        const frag=document.createDocumentFragment();
+        let changed=false;
+        while(text.length){
+          let best=null,bestRule=null;
+          for(const rule of rules){
+            rule.re.lastIndex=0;
+            const m=rule.re.exec(text);
+            if(m&&(!best||m.index<best.index)){best=m;bestRule=rule;}
+          }
+          if(!best){frag.appendChild(document.createTextNode(text));break;}
+          frag.appendChild(document.createTextNode(text.slice(0,best.index)));
+          const span=document.createElement('span');span.className='auto-vector';
+          try{
+            window.katex.render(bestRule.tex(best),span,{throwOnError:false,output:'html'});
+            frag.appendChild(span);
+            changed=true;
+          }catch(e){
+            frag.appendChild(document.createTextNode(best[0]));
+          }
+          text=text.slice(best.index+best[0].length);
+        }
+        if(changed)node.parentNode.replaceChild(frag,node);
+      });
+    }
+
+    function vectorExprToTex(s){
+      return String(s).trim()
+        .replace(/·/g,'')
+        .replace(/\*/g,'')
+        .replace(/√\(([^)]+)\)/g,'\\sqrt{$1}')
+        .replace(/\b([ijk])\b/g,'\\vec{$1}')
+        .replace(/\b([vatrn])\s*⃗/g,'\\vec{$1}')
+        .replace(/([A-Za-z])_([A-Za-z0-9]+)/g,'$1_{$2}')
+        .replace(/π/g,'\\pi ')
+        .replace(/ρ/g,'\\rho ')
+        .replace(/θ/g,'\\theta ')
+        .replace(/ω/g,'\\omega ');
     }
 
     function preloadNextFiche(cls,sub,file){

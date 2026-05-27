@@ -230,6 +230,8 @@ body.tts-mini .audio-player .ap-mini-bar{display:flex}
 /* Auto-rendered inline fractions */
 .auto-frac{display:inline-block;vertical-align:middle;margin:0 2px;font-size:1em}
 .auto-frac .katex{font-size:1.05em}
+.auto-vector{display:inline-block;vertical-align:middle;margin:0 2px}
+.auto-vector .katex{font-size:1.08em}
 .formula-block .katex{color:#92400e}
 
 /* QR action buttons */
