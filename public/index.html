@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ResumeCI — Fiches de Résumé | Collège & Lycée CI</title>
-  <meta name="description" content="ResumeCI propose des fiches de résumé, quiz, flashcards et téléchargement PDF pour les élèves du Collège et du Lycée en Côte d'Ivoire.">
-  <meta name="keywords" content="fiches résumé Côte d'Ivoire, collège, lycée, 5ème, 3ème, Seconde, Terminale A, Terminale D, quiz, flashcards, révision, BAC">
+  <meta name="description" content="ResumeCI : 618 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. 6ème, 5ème, 4ème, 3ème, Seconde, Première, Terminale. Maths, Physique, Chimie, Français, SVT, Histoire-Géo. Révisions BAC, BEPC.">
+  <meta name="keywords" content="fiches résumé Côte d'Ivoire, fiches de cours CI, révision BAC Côte d'Ivoire, BEPC, collège Abidjan, lycée, 6ème, 5ème, 4ème, 3ème, Seconde A, Seconde C, Première, Terminale A, Terminale C, Terminale D, maths, physique chimie, français, SVT, histoire géographie, révision, fiches gratuites, cours en ligne Côte d'Ivoire">
   <meta name="author" content="Haniel_dev">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="ResumeCI — Fiches de Résumé pour tous les niveaux">
-  <meta property="og:description" content="Fiches, quiz, flashcards, audio et PDF pour réviser au Collège et au Lycée en Côte d'Ivoire.">
+  <meta property="og:description" content="618 fiches de résumé gratuites pour réviser au Collège et Lycée. 6ème à Terminale. Maths, Physique, Français, SVT. BAC et BEPC Côte d'Ivoire.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.resumeci.me/">
   <meta property="og:site_name" content="ResumeCI">
@@ -31,13 +31,29 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"WebSite",
+    "@type":"EducationalOrganization",
     "name":"ResumeCI",
     "url":"https://resumeci.me/",
-    "description":"Fiches de résumé, quiz, flashcards, lecture audio et PDF pour réviser au Collège et au Lycée en Côte d'Ivoire.",
+    "description":"618 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. Révisions BAC et BEPC.",
     "inLanguage":"fr-CI",
-    "creator":{"@type":"Person","name":"Haniel_dev","affiliation":{"@type":"CollegeOrUniversity","name":"Institut universitaire d'Abidjan"}},
-    "potentialAction":{"@type":"SearchAction","target":"https://resumeci.me/?q={search_term_string}","query-input":"required name=search_term_string"}
+    "founder":{"@type":"Person","name":"Haniel_dev","jobTitle":"Développeur & Créateur de contenu éducatif"},
+    "foundingDate":"2024",
+    "areaServed":{"@type":"Country","name":"Côte d'Ivoire"},
+    "audience":{"@type":"EducationalAudience","educationalRole":"student"},
+    "potentialAction":{"@type":"SearchAction","target":"https://resumeci.me/?q={search_term_string}","query-input":"required name=search_term_string"},
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog",
+      "name":"Fiches de résumé par niveau",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"item":{"@type":"Course","name":"6ème","description":"Fiches 6ème - Toutes matières"}},
+        {"@type":"ListItem","position":2,"item":{"@type":"Course","name":"5ème","description":"Fiches 5ème - Toutes matières"}},
+        {"@type":"ListItem","position":3,"item":{"@type":"Course","name":"4ème","description":"Fiches 4ème - Bientôt disponible"}},
+        {"@type":"ListItem","position":4,"item":{"@type":"Course","name":"3ème","description":"Fiches 3ème - Révision BEPC"}},
+        {"@type":"ListItem","position":5,"item":{"@type":"Course","name":"Seconde","description":"Fiches Seconde A et C"}},
+        {"@type":"ListItem","position":6,"item":{"@type":"Course","name":"Première","description":"Fiches Première - Bientôt disponible"}},
+        {"@type":"ListItem","position":7,"item":{"@type":"Course","name":"Terminale","description":"Fiches Terminale A, C et D - Révision BAC"}}
+      ]
+    }
   }
   </script>
   <style>
@@ -722,6 +738,7 @@
 
     function showDashboard(){
       CURRENT_FICHE=null;window.CURRENT_FICHE=null;
+      updatePageTitle('ResumeCI — Fiches de Résumé | Collège & Lycée CI');
       const{stats,structure}=DATA;
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
       document.getElementById('topbarActions').innerHTML='<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';refreshInstallButton();
@@ -739,8 +756,17 @@
       refreshOfflineStatus();
     }
 
+    function updatePageTitle(title){
+      document.title=title+' | ResumeCI';
+      // Mettre à jour aussi la balise meta description dynamiquement si besoin
+      const metaDesc=document.querySelector('meta[name="description"]');
+      if(metaDesc&&title.includes('Fiche')){
+        metaDesc.setAttribute('content',title+'. Fiche de résumé gratuite pour le Collège et Lycée en Côte d\'Ivoire. Révisions BAC et BEPC.');
+      }
+    }
     function showClass(cls){
       CURRENT_FICHE=null;window.CURRENT_FICHE=null;
+      updatePageTitle('Fiches '+cls.replace('_',' ')+' - Toutes matières');
       const subjects=DATA.structure[cls];
       const cIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cIcon} ${cls.replace('_',' ')}</span>`;
@@ -768,6 +794,7 @@
     async function showFiche(cls,sub,file){
       document.getElementById('content').innerHTML='<div class="loading"><div class="spinner"></div>Chargement...</div>';
       const name=file.replace('Fiche_','').replace('.md','');
+      updatePageTitle(name+' - '+cls.replace('_',' ')+' '+sub);
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_',' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
       CURRENT_FICHE={cls,sub,file};window.CURRENT_FICHE=CURRENT_FICHE;
       trackFicheRead(cls,sub,file);
