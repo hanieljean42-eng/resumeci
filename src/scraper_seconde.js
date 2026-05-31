@@ -58,7 +58,7 @@ const CONFIG = {
     'histoire', 'géographie', 'hg', 'histoire-géographie',
   ],
   
-  delay: 2000,
+  delay: 500,
   headless: false,
   timeout: 30000,
 };
@@ -80,7 +80,7 @@ async function downloadFile(url, outputPath, cookies) {
   try {
     const cookieStr = (cookies || []).map(c => `${c.name}=${c.value}`).join('; ');
     const resp = await axios({
-      method: 'GET', url, responseType: 'arraybuffer', timeout: 60000,
+      method: 'GET', url, responseType: 'arraybuffer', timeout: 30000,
       headers: { 'Cookie': cookieStr, 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'Referer': CONFIG.baseUrl },
       maxRedirects: 5, httpsAgent,
     });
@@ -164,6 +164,21 @@ class EcoleCISecondeScraper {
   async screenshot(name) {
     ensureDir(CONFIG.dataDir);
     await this.page.screenshot({ path: path.join(CONFIG.dataDir, `${name}.png`), fullPage: true });
+  }
+
+  async goWithRetry(url, maxRetries = 3) {
+    for (let i = 1; i <= maxRetries; i++) {
+      try {
+        await this.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+        await sleep(800);
+        return true;
+      } catch (e) {
+        log('⚠️', `Tentative ${i}/${maxRetries} échouée: ${url.substring(0, 80)}`);
+        if (i === maxRetries) return false;
+        await sleep(3000);
+      }
+    }
+    return false;
   }
 
   async registerVisitor() {
@@ -265,8 +280,11 @@ class EcoleCISecondeScraper {
     log('🏫', 'Exploration des cours Lycée Seconde...');
     // Le lycée sur ecole-ci.org utilise un domaine différent
     const lyceeUrl = 'https://lyc.ecole-ci.org/course/';
-    await this.page.goto(lyceeUrl, { waitUntil: 'networkidle2' });
-    await sleep(2000);
+    const okRoot = await this.goWithRetry(lyceeUrl);
+    if (!okRoot) {
+      log('❌', 'Impossible d\'accéder au catalogue lycée');
+      return;
+    }
     this.cookies = await this.page.cookies();
 
     const moodleInfo = await this.page.evaluate(() => ({
@@ -310,8 +328,8 @@ class EcoleCISecondeScraper {
       if (isExcludedSubject(label)) { this.stats.excluded++; continue; }
 
       try {
-        await this.page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 });
-        await sleep(1500);
+        const ok = await this.goWithRetry(url);
+        if (!ok) continue;
         const subInfo = await this.page.evaluate(() => ({
           courses: [...document.querySelectorAll('a[href*="/course/view.php"]')].map(a => ({
             text: (a.textContent || '').trim().substring(0, 200), href: a.href
@@ -342,8 +360,8 @@ class EcoleCISecondeScraper {
     log('📚', `Exploration de ${coursePages.size} cours...`);
     for (const courseUrl of coursePages) {
       try {
-        await this.page.goto(courseUrl, { waitUntil: 'networkidle2', timeout: 20000 });
-        await sleep(1500);
+        const ok = await this.goWithRetry(courseUrl);
+        if (!ok) continue;
         this.stats.pages++;
         const courseInfo = await this.page.evaluate(() => ({
           title: document.querySelector('h1')?.textContent?.trim() || document.title,

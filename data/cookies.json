@@ -1,7 +1,20 @@
 [
   {
+    "name": "MOODLEID1_",
+    "value": "%25EA%2540%25CDS%2506%25F5%25DF%2507%257F%25ED",
+    "domain": "lyc.ecole-ci.org",
+    "path": "/",
+    "expires": 1785420443.903929,
+    "size": 56,
+    "httpOnly": false,
+    "secure": true,
+    "session": false,
+    "priority": "Medium",
+    "sourceScheme": "Secure"
+  },
+  {
     "name": "MoodleSession",
-    "value": "teti5gus30n1sjndee8hrejh5g",
+    "value": "v2tglp2d94nf658c249lpqrber",
     "domain": "lyc.ecole-ci.org",
     "path": "/",
     "expires": -1,
@@ -10,19 +23,6 @@
     "secure": true,
     "session": true,
     "sameSite": "None",
-    "priority": "Medium",
-    "sourceScheme": "Secure"
-  },
-  {
-    "name": "MOODLEID1_",
-    "value": "%25EAB%25C4W%250E%25FD%25D6%2504x%25E5",
-    "domain": "lyc.ecole-ci.org",
-    "path": "/",
-    "expires": 1784254188.961835,
-    "size": 48,
-    "httpOnly": false,
-    "secure": true,
-    "session": false,
     "priority": "Medium",
     "sourceScheme": "Secure"
   }

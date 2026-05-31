@@ -95,6 +95,10 @@
     .voice-btn:hover{background:rgba(255,255,255,.18);color:#60a5fa;transform:scale(1.05)}
     .voice-btn.listening{background:#ef4444;border-color:#ef4444;color:#fff;animation:voice-pulse 1s infinite}
     @keyframes voice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.5)}50%{box-shadow:0 0 0 10px rgba(239,68,68,0)}}
+    /* Update notification animations */
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes pulse-badge{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
     .sidebar-nav{flex:1;overflow-y:auto;padding:8px 0}
     .sidebar-nav::-webkit-scrollbar{width:3px}
     .sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
@@ -421,18 +425,50 @@
     let CURRENT_FICHE = null;
     let SEARCH_INDEX = [];
 
-    const subjectIcons = {
+       const subjectIcons = {
       'Allemand':'🇩🇪','Anglais':'🇬🇧','Espagnol':'🇪🇸','Français':'🇫🇷',
       'Mathématiques':'📐','Philosophie':'💭','Histoire':'📜','Géo':'🌍',
       'SVT':'🧬','Sciences':'🧬','Physique':'⚛️','Arts':'🎨',
       'Education Musicale':'🎵','Education musicale':'🎵',
       'Education Physique':'🏃','EPS':'🏃',
     };
+
+    // Ordre d’affichage des classes dans le menu
+    const CLASS_ORDER = [
+      '6eme',
+      '5eme',
+      '3eme',
+      'Seconde_A',
+      'Seconde_C',
+      'Terminale_A',
+      'Terminale_C',
+      'Terminale_D',
+    ];
+
+    function getOrderedClasses(structure){
+      const entries = [];
+      const seen = new Set();
+
+      // D’abord notre ordre personnalisé
+      CLASS_ORDER.forEach(cls => {
+        if (structure[cls]) {
+          entries.push([cls, structure[cls]]);
+          seen.add(cls);
+        }
+      });
+
+      // Puis les classes restantes non prévues (sécurité)
+      for (const [cls, subjects] of Object.entries(structure)) {
+        if (!seen.has(cls)) entries.push([cls, subjects]);
+      }
+
+      return entries;
+    }
+
     const subjectColors = ['color-blue','color-green','color-orange','color-purple'];
     function getIcon(n){for(const[k,v]of Object.entries(subjectIcons))if(n.includes(k))return v;return'📖'}
     function getColor(i){return subjectColors[i%subjectColors.length]}
-    function esc(s){return s.replace(/'/g,"\\'").replace(/"/g,'&quot;')}
-
+    function esc(s){return s.replace(/'/g,"\\'").replace(/\"/g,'&​quot;')}
     async function loadData(){
       redirectToPrimaryDomain();
       const[struct,stats]=await Promise.all([
@@ -446,7 +482,86 @@
       const savedTheme=localStorage.getItem(THEME_KEY);
       if(savedTheme)document.querySelectorAll('.theme-dot').forEach(d=>d.classList.toggle('active',d.dataset.theme===savedTheme));
       showDashboard();
+      // Check for updates
+      checkForUpdates();
     }
+
+    // ==================== UPDATE NOTIFICATION SYSTEM ====================
+    const VERSION_KEY='resumeci_last_version';
+    const UPDATE_DISMISSED_KEY='resumeci_update_dismissed';
+    async function checkForUpdates(){
+      try{
+        const versionData=await fetch('/data/version.json?v='+Date.now()).then(r=>r.json()).catch(()=>null);
+        if(!versionData)return;
+        const lastVersion=localStorage.getItem(VERSION_KEY);
+        const dismissedVersion=localStorage.getItem(UPDATE_DISMISSED_KEY);
+        // If new version available
+        if(versionData.version!==lastVersion){
+          // Show notification if not dismissed or force show
+          if(versionData.forceShow||dismissedVersion!==versionData.version){
+            showUpdateNotification(versionData);
+          }
+          // Update stored version
+          localStorage.setItem(VERSION_KEY,versionData.version);
+        }
+        // Always update badge
+        updateUpdateBadge(versionData.version!==lastVersion);
+      }catch(e){console.warn('Update check failed',e);}
+    }
+    function showUpdateNotification(data){
+      const overlay=document.createElement('div');
+      overlay.id='updateOverlay';
+      overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;animation:fadeIn .3s ease';
+      const features=data.features?data.features.map(f=>`<li style="margin:6px 0;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#10b981">✓</span>${f}</li>`).join(''):'';
+      overlay.innerHTML=`
+        <div style="width:100%;max-width:420px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:slideUp .5s cubic-bezier(.2,1,.3,1)">
+          <div style="background:linear-gradient(135deg,#7c3aed,#2563eb);padding:24px 20px;text-align:center;color:#fff">
+            <div style="font-size:40px;margin-bottom:10px">🎉</div>
+            <h2 style="font-size:20px;font-weight:800;margin:0 0 6px">${data.title||'Mise à jour disponible !'}</h2>
+            <p style="font-size:13px;opacity:.9;margin:0">Version ${data.version} • ${data.date||''}</p>
+          </div>
+          <div style="padding:20px">
+            <p style="font-size:14px;color:#475569;line-height:1.6;margin:0 0 16px">${data.message||'Nouvelles fonctionnalités disponibles !'}</p>
+            ${features?`<ul style="list-style:none;padding:0;margin:0 0 20px;font-size:13px;color:#334155;background:#f8fafc;border-radius:12px;padding:16px">${features}</ul>`:''}
+            <div style="display:flex;gap:10px">
+              <button id="updateDismiss" style="flex:1;padding:12px;border:1px solid #e2e8f0;background:#fff;border-radius:10px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:.2s">Plus tard</button>
+              <button id="updateReload" style="flex:1;padding:12px;border:none;background:linear-gradient(135deg,#7c3aed,#2563eb);border-radius:10px;font-size:13px;font-weight:700;color:#fff;cursor:pointer;transition:.2s">Actualiser</button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      document.getElementById('updateDismiss').addEventListener('click',()=>{
+        localStorage.setItem(UPDATE_DISMISSED_KEY,data.version);
+        overlay.remove();
+      });
+      document.getElementById('updateReload').addEventListener('click',()=>{
+        location.reload(true);
+      });
+      overlay.addEventListener('click',(e)=>{
+        if(e.target===overlay){
+          localStorage.setItem(UPDATE_DISMISSED_KEY,data.version);
+          overlay.remove();
+        }
+      });
+    }
+    function updateUpdateBadge(hasUpdate){
+      const logo=document.querySelector('.sidebar-header h1');
+      if(!logo)return;
+      let badge=logo.querySelector('.update-badge');
+      if(hasUpdate){
+        if(!badge){
+          badge=document.createElement('span');
+          badge.className='update-badge';
+          badge.style.cssText='background:#ef4444;color:#fff;font-size:9px;padding:2px 6px;border-radius:10px;margin-left:6px;animation:pulse-badge 2s infinite';
+          badge.textContent='1';
+          logo.appendChild(badge);
+        }
+      }else if(badge){
+        badge.remove();
+      }
+    }
+
     async function loadSearchIndex(){
       if(SEARCH_INDEX.length)return;
       SEARCH_INDEX=await fetch('/data/search-index.json').then(r=>r.json()).catch(()=>[]);
@@ -457,7 +572,7 @@
     function renderSidebar(){
       const nav=document.getElementById('sidebarNav');
       let h='';
-      for(const[cls,subjects]of Object.entries(DATA.structure)){
+        for(const[cls,subjects]of getOrderedClasses(DATA.structure)){
         const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
         const clsIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
         h+=`<div class="nav-class"><div class="nav-class-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${clsIcon} ${cls.replace('_',' ')}</span><span class="badge">${total}</span></div><div class="nav-subjects">`;
@@ -611,7 +726,7 @@
       document.getElementById('breadcrumb').innerHTML=`<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
       document.getElementById('topbarActions').innerHTML='<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>';refreshInstallButton();
       let cards='';
-      for(const[cls,subjects]of Object.entries(structure)){
+      for(const[cls,subjects]of getOrderedClasses(structure)){
         const tags=Object.entries(subjects).map(([s,f])=>`<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`).join('');
         const cIcon=cls==='Terminale_A'?'🅰️':cls==='Terminale_D'?'🅳':cls==='5eme'?'5️⃣':cls==='3eme'?'3️⃣':'📘';
         const total=Object.values(subjects).reduce((s,a)=>s+a.length,0);
@@ -663,7 +778,7 @@
         const bodyMatch=rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
         const data={html:bodyMatch?bodyMatch[1]:rawHtml};
         const favActive=isFavorite(cls,sub,file)?'active':'';
-        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="fav-btn ${favActive}" id="favBtn" onclick="const on=toggleFavorite('${esc(cls)}','${esc(sub)}','${esc(file)}');this.classList.toggle('active',on);renderFavsSidebar()" title="Ajouter aux favoris"><i class="fas fa-star"></i></button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button><button class="btn btn-green" onclick="downloadCurrentFichePdf()"><i class="fas fa-file-pdf"></i> PDF</button>`;
+        document.getElementById('topbarActions').innerHTML=`<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button><button class="fav-btn ${favActive}" id="favBtn" onclick="const on=toggleFavorite('${esc(cls)}','${esc(sub)}','${esc(file)}');this.classList.toggle('active',on);renderFavsSidebar()" title="Ajouter aux favoris"><i class="fas fa-star"></i></button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button><button class="btn" style="background:#94a3b8;cursor:not-allowed;opacity:.7" onclick="alert('Téléchargement PDF indisponible pour le moment.')" title="PDF non disponible"><i class="fas fa-file-pdf"></i> PDF</button>`;
 
         // Process HTML to render formulas nicely
         let html=data.html;
@@ -679,7 +794,7 @@
 
         // Auto-convert text fractions like a/b into proper KaTeX fractions
         html=preprocessTextFractions(html);
-        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content" style="position:relative">${html}</div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div></div>`;
+        document.getElementById('content').innerHTML=`<div class="fiche-view"><div class="fiche-content" style="position:relative">${html}</div><div class="fiche-actions" style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a href="/quiz.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-gamepad"></i> Tester mes connaissances</a><a href="/flashcards.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s"><i class="fas fa-clone"></i> Réviser en Flashcards</a><button onclick="shareSite()" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer"><i class="fas fa-share-nodes"></i> Partager</button></div><div style="margin-top:16px;text-align:center"><a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev%20!%20J'ai%20une%20question%20sur%20la%20fiche%20:%20${encodeURIComponent(name)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#25d366;color:#fff;border-radius:20px;font-weight:600;font-size:12px;text-decoration:none;transition:.2s"><i class="fab fa-whatsapp"></i> Questions & suggestions</a><p style="margin-top:8px;font-size:11px;color:var(--text-dim)">Une question sur cette fiche ? Contacte Haniel_dev</p></div></div>`;
         // Apply scientific notation rendering on the rendered DOM
         try{
           const ficheEl=document.querySelector('.fiche-content');
@@ -1501,7 +1616,7 @@
 
     // ==================== ANNONCE POPUP ====================
     function showAnnouncement(){
-      if(sessionStorage.getItem('announceDismissed'))return;
+      if(sessionStorage.getItem('announceDismissedV2'))return;
       const overlay=document.createElement('div');
       overlay.id='announceOverlay';
       overlay.innerHTML=`
@@ -1511,20 +1626,20 @@
             <div class="ann-spark"></div>
             <div class="ann-spark s2"></div>
             <div class="ann-spark s3"></div>
-            <div class="ann-label">NOUVEAUTES</div>
-            <h2>ResumeCI fait<br>peau neuve !</h2>
-            <p>Plein de nouveautés pour mieux réviser</p>
+            <div class="ann-label">🎉 MISE À JOUR</div>
+            <h2>Nouvelles classes<br>disponibles !</h2>
+            <p>Révise avec 618 fiches — d'autres classes arrivent bientôt</p>
           </div>
           <div class="ann-body">
             <div class="ann-highlights">
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-graduation-cap"></i></div><div><strong>5ème ajoutée</strong><span>73 fiches + quiz</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#7c3aed"><i class="fas fa-toolbox"></i></div><div><strong>Outils</strong><span>Calculatrice, Timer, Notes</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#3b82f6"><i class="fas fa-calendar-days"></i></div><div><strong>Plan de révision</strong><span>Planning quotidien</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#f59e0b"><i class="fas fa-hand-pointer"></i></div><div><strong>Swipe</strong><span>Glisse entre les fiches</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#06b6d4"><i class="fas fa-share-nodes"></i></div><div><strong>Partage</strong><span>WhatsApp, QR, Telegram</span></div></div>
-              <div class="ann-hi"><div class="ann-hi-icon" style="background:#ec4899"><i class="fas fa-eye"></i></div><div><strong>Mode Focus</strong><span>Zéro distraction</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-graduation-cap"></i></div><div><strong>618 fiches</strong><span>Toutes classes réunies</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#f97316"><i class="fas fa-star"></i></div><div><strong>Terminale C</strong><span>Maths + Physique-Chimie</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#3b82f6"><i class="fas fa-school"></i></div><div><strong>3ème ajoutée</strong><span>87 fiches disponibles</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#7c3aed"><i class="fas fa-book-open"></i></div><div><strong>Secondes A & C</strong><span>143 fiches combinées</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#06b6d4"><i class="fas fa-calculator"></i></div><div><strong>Outils intégrés</strong><span>Calc, Timer, Notes</span></div></div>
+              <div class="ann-hi"><div class="ann-hi-icon" style="background:#ec4899"><i class="fas fa-mobile-screen"></i></div><div><strong>Mode hors-ligne</strong><span>Télécharge tes fiches</span></div></div>
             </div>
-            <div class="ann-coming"><i class="fas fa-rocket" style="color:#f97316"></i> Bientôt : <strong>3ème</strong>, <strong>Seconde A</strong>, <strong>Seconde C</strong></div>
+            <div class="ann-coming"><i class="fas fa-check-circle" style="color:#10b981"></i> Disponibles : <strong>6ème</strong>, <strong>5ème</strong>, <strong>3ème</strong>, <strong>Seconde A/C</strong>, <strong>Terminale A/C/D</strong><br><i class="fas fa-rocket" style="color:#f97316"></i> Bientôt : <strong>4ème</strong>, <strong>Première A</strong>, <strong>Première D</strong></div>
             <a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev%20!%20Je%20viens%20de%20ResumeCI.%20" class="ann-wa-btn" target="_blank" rel="noopener">
               <i class="fab fa-whatsapp"></i> Contacter Haniel_dev
             </a>
@@ -1534,10 +1649,10 @@
       document.body.appendChild(overlay);
       document.getElementById('announceClose').addEventListener('click',()=>{
         overlay.remove();
-        sessionStorage.setItem('announceDismissed','1');
+        sessionStorage.setItem('announceDismissedV2','1');
       });
       overlay.addEventListener('click',(e)=>{
-        if(e.target===overlay){overlay.remove();sessionStorage.setItem('announceDismissed','1');}
+        if(e.target===overlay){overlay.remove();sessionStorage.setItem('announceDismissedV2','1');}
       });
     }
     setTimeout(showAnnouncement,500);
@@ -1548,16 +1663,16 @@
     @keyframes annIn{from{opacity:0}to{opacity:1}}
     .ann-card{font-family:'Poppins',sans-serif;width:100%;max-width:400px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:annUp .5s cubic-bezier(.2,1,.3,1)}
     @keyframes annUp{from{transform:translateY(60px) scale(.9);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
-    .ann-hero{position:relative;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 50%,#06b6d4 100%);padding:36px 28px 28px;color:#fff;text-align:center;overflow:hidden}
+    .ann-hero{position:relative;background:linear-gradient(135deg,#7c3aed 0%,#2563eb 50%,#06b6d4 100%);padding:24px 20px 18px;color:#fff;text-align:center;overflow:hidden}
     .ann-spark{position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.08);top:-30px;left:-20px}
     .ann-spark.s2{width:80px;height:80px;top:auto;bottom:-20px;right:-10px;left:auto;background:rgba(255,255,255,.06)}
     .ann-spark.s3{width:50px;height:50px;top:20px;right:30px;left:auto;background:rgba(255,255,255,.1)}
     .ann-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;width:34px;height:34px;border-radius:50%;font-size:14px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2}
     .ann-x:hover{background:rgba(255,255,255,.3);transform:scale(1.15)}
-    .ann-label{display:inline-block;background:rgba(255,255,255,.2);font-size:11px;font-weight:800;letter-spacing:2.5px;padding:5px 16px;border-radius:999px;margin-bottom:14px}
-    .ann-hero h2{font-size:24px;font-weight:900;line-height:1.3;margin:0 0 8px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
-    .ann-hero p{font-size:13px;opacity:.85;margin:0;font-weight:500}
-    .ann-body{padding:24px 28px 28px}
+    .ann-label{display:inline-block;background:rgba(255,255,255,.2);font-size:10px;font-weight:800;letter-spacing:2px;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+    .ann-hero h2{font-size:20px;font-weight:900;line-height:1.25;margin:0 0 6px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .ann-hero p{font-size:12px;opacity:.85;margin:0;font-weight:500}
+    .ann-body{padding:16px 20px 20px}
     .ann-levels{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
     .ann-lv{display:flex;align-items:center;gap:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px 16px;font-size:15px;font-weight:700;color:#1e293b;transition:all .2s}
     .ann-lv:hover{transform:translateX(4px);border-color:#818cf8;background:#eef2ff}
@@ -1573,20 +1688,20 @@
     body.dark-mode .ann-txt{color:#94a3b8}
     body.dark-mode .ann-bar{background:#334155}
     body.dark-mode .ann-status{color:#a78bfa}
-    .ann-highlights{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
-    .ann-hi{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#f8fafc;border-radius:12px;border:1px solid #f1f5f9}
-    .ann-hi-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex-shrink:0}
-    .ann-hi strong{display:block;font-size:12px;font-weight:700;color:#1e293b}
-    .ann-hi span{font-size:10px;color:#94a3b8}
-    .ann-coming{text-align:center;font-size:12px;color:#64748b;padding:10px;background:#fff7ed;border-radius:10px;border:1px solid #fed7aa;margin-bottom:14px}
+    .ann-highlights{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+    .ann-hi{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f8fafc;border-radius:10px;border:1px solid #f1f5f9}
+    .ann-hi-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;flex-shrink:0}
+    .ann-hi strong{display:block;font-size:11px;font-weight:700;color:#1e293b}
+    .ann-hi span{font-size:9px;color:#94a3b8}
+    .ann-coming{text-align:center;font-size:11px;color:#64748b;padding:8px;background:#fff7ed;border-radius:8px;border:1px solid #fed7aa;margin-bottom:12px}
     .ann-coming strong{color:#ea580c}
-    .ann-wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;background:#25d366;color:#fff;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;font-family:'Poppins',sans-serif;border:none;cursor:pointer}
+    .ann-wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;background:#25d366;color:#fff;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:.2s;font-family:'Poppins',sans-serif;border:none;cursor:pointer}
     .ann-wa-btn:hover{background:#20bd5a;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.3)}
-    .ann-wa-btn i{font-size:20px}
+    .ann-wa-btn i{font-size:18px}
     body.dark-mode .ann-hi{background:#1e293b;border-color:#334155}
     body.dark-mode .ann-hi strong{color:#e2e8f0}
     body.dark-mode .ann-coming{background:#451a03;border-color:#92400e;color:#fed7aa}
-    @media(max-width:480px){.ann-card{max-width:340px;border-radius:20px}.ann-hero{padding:24px 20px 20px}.ann-hero h2{font-size:20px}.ann-body{padding:16px 18px 20px}.ann-highlights{gap:6px}.ann-hi{padding:8px 10px}.ann-hi-icon{width:30px;height:30px;font-size:12px;border-radius:8px}.ann-hi strong{font-size:11px}.ann-wa-btn{padding:12px;font-size:13px;border-radius:12px}}
+    @media(max-width:480px){.ann-card{max-width:320px;border-radius:18px;max-height:90vh;overflow-y:auto}.ann-hero{padding:18px 16px 14px}.ann-hero h2{font-size:18px}.ann-body{padding:14px 16px 16px}.ann-highlights{gap:5px}.ann-hi{padding:6px 8px}.ann-hi-icon{width:28px;height:28px;font-size:11px;border-radius:6px}.ann-hi strong{font-size:10px}.ann-hi span{font-size:8px}.ann-coming{padding:6px;font-size:10px;margin-bottom:10px}.ann-wa-btn{padding:10px;font-size:12px;border-radius:10px}.ann-wa-btn i{font-size:16px}}
   </style>
 </body>
 </html>

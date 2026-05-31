@@ -317,6 +317,8 @@ class EcoleCI3emeScraper {
         for (const course of subInfo.courses) {
           if (isExcludedSubject(course.text)) { this.stats.excluded++; continue; }
           const subject = parentSubject || detectSubject(course.text) || detectSubject(label) || 'Autres';
+          // Ne retenir que les cours dont la matière est EDHC
+          if (subject !== 'EDHC') continue;
           coursePages.add(course.href);
           courseSubjects[course.href] = subject;
           if (!this.coursesBySubject[subject]) this.coursesBySubject[subject] = [];
@@ -329,7 +331,7 @@ class EcoleCI3emeScraper {
       } catch(e) { log('❌', `  Erreur: ${e.message}`); }
     }
 
-    log('📚', `Exploration de ${coursePages.size} cours...`);
+    log('📚', `Exploration de ${coursePages.size} cours (filtrés EDHC uniquement)...`);
     for (const courseUrl of coursePages) {
       try {
         await this.page.goto(courseUrl, { waitUntil: 'networkidle2', timeout: 20000 });
@@ -344,6 +346,8 @@ class EcoleCI3emeScraper {
         }));
         if (isExcludedSubject(courseInfo.title)) { this.stats.excluded++; continue; }
         const subject = courseSubjects[courseUrl] || detectSubject(courseInfo.title) || 'Autres';
+        // Sécurité supplémentaire : ignorer tout cours non EDHC
+        if (subject !== 'EDHC') continue;
         for (const res of courseInfo.resources) {
           if (isExcludedSubject(res.text)) { this.stats.excluded++; continue; }
           this.coursIndex.push({ url: res.href, text: res.text || courseInfo.title, course: courseInfo.title, isPdf: res.isPdf, subject, className: '3eme' });

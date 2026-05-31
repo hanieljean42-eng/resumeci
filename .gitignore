@@ -10,5 +10,12 @@ yarn-error.log*
 dist/
 build/
 pdfs/
-Cours_Terminale/
+Cours_*/
+Resumes_*/
+_extracts*/
+data_*/
+_debug_pdf.txt
+_tmp.txt
+_pending_summaries_*.json
+_resume_progress_*.json
 *.pdf

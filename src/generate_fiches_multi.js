@@ -124,9 +124,21 @@ function escapeHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function getSubjectIcon(subject) {
+  const s = String(subject).toLowerCase();
+  if (s.includes('math')) return '📐';
+  if (s.includes('physique') || s.includes('chimie')) return '⚡';
+  if (s.includes('svt') || s.includes('science de la vie')) return '🌱';
+  if (s.includes('fran')) return '📖';
+  if (s.includes('histoire') || s.includes('géographie') || s.includes('geographie')) return '🌍';
+  if (s.includes('tic') || s.includes('informatique')) return '💻';
+  return '📖';
+}
+
 function generateFicheHTML(pdfName, subject, content, fullText) {
   const lessonName = pdfName.replace('.pdf', '');
   const classeDisplay = CLASSE.replace('_', ' ');
+  const subjectIcon = getSubjectIcon(subject);
 
   let sections = '';
 
@@ -191,19 +203,22 @@ function generateFicheHTML(pdfName, subject, content, fullText) {
 <meta name="description" content="Fiche de résumé: ${escapeHtml(lessonName)} en ${escapeHtml(subject)} pour la classe de ${escapeHtml(classeDisplay)}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0;padding:20px}
-.container{max-width:900px;margin:0 auto;background:white;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
-.header{text-align:center;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid #16a34a}
-.header h1{color:#16a34a;margin:0 0 8px 0;font-size:1.5em}
-.meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:0.9em;color:#64748b}
-.meta span{background:#f1f5f9;padding:4px 12px;border-radius:8px}
-h2{color:#0f172a;margin-top:32px;border-left:4px solid #16a34a;padding-left:12px}
-.definition{background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.important{background:#eff6ff;border-left:4px solid #3b82f6;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.schema{background:#fffbeb;border-left:4px solid #f59e0b;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-ul{padding-left:20px}li{margin:6px 0}
-table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #e2e8f0;padding:10px;text-align:left}th{background:#f1f5f9}
-.footer{text-align:center;color:#94a3b8;font-size:12px;margin-top:32px;padding-top:16px;border-top:1px solid #e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0;padding:40px;font-size:14px}
+.container{max-width:900px;margin:auto;background:#ffffff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.header{text-align:center;border-bottom:3px solid #16a34a;padding-bottom:20px;margin-bottom:30px}
+.header h1{color:#16a34a;font-size:22px}
+.meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;color:#64748b;font-size:13px}
+.meta span{background:#f1f5f9;padding:4px 12px;border-radius:20px}
+h2{font-size:17px;margin:28px 0 12px;padding:10px 16px;background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0}
+h3{font-size:15px;margin:18px 0 8px}
+.definition{background:#ecfdf5;border-left:4px solid #22c55e;padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0}
+.important{background:#eff6ff;border-left:4px solid #2563eb;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.schema{background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 18px;border-radius:0 8px 8px 0;margin:10px 0;font-weight:700;color:#92400e}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+th,td{border:1px solid #e2e8f0;padding:10px;text-align:left}
+th{background:#f8fafc}
+ul,ol{margin:8px 0 12px 22px}
 </style>
 </head>
 <body>
@@ -211,13 +226,12 @@ table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #
 <div class="header">
 <h1>📝 FICHE DE RÉSUMÉ</h1>
 <div class="meta">
-<span>📚 ${escapeHtml(classeDisplay)}</span>
-<span>📖 ${escapeHtml(subject)}</span>
-<span>📄 ${escapeHtml(lessonName)}</span>
+<span>🏫 ${escapeHtml(classeDisplay)}</span>
+<span>${subjectIcon} ${escapeHtml(subject)}</span>
+<span>${escapeHtml(lessonName)}</span>
 </div>
 </div>
 ${sections}
-<div class="footer">Créé par <strong>Haniel_dev</strong> — ResumeCI</div>
 </div>
 </body>
 </html>`;

@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════
  * 📂 Organiser les PDFs par Classe > Matière > Leçon
- * Uniquement Terminale A et Terminale D
+ * Terminale A, Terminale D et Terminale C (Math & Physique-Chimie)
  * ═══════════════════════════════════════════════════════════
  */
 
@@ -30,7 +30,7 @@ function classifyLevel(course) {
       c.includes('_ta ') || c.includes(' ta ') || c.includes('tlea') || c.includes('tle_a')) return 'Tle_A';
   // Terminale C patterns
   if (c.includes('tc_') || c.includes('tle c') || c.includes('terminale c') || 
-      c.includes('_tc ') || c.includes('tle_c') || c.includes('1c ') || c.includes('_1c_')) return null; // Skip
+      c.includes('_tc ') || c.includes('tle_c') || c.includes('1c ') || c.includes('_1c_')) return 'Tle_C';
   // Terminale shared (Tle without A/C/D = shared between all Tle)
   if (c.includes('tle_') || c.includes('tle ')) return 'Tle_SHARED';
   // Première patterns
@@ -86,18 +86,21 @@ function sanitize(name) {
 }
 
 // Now let's look at all course names and classify them
-const stats = { Tle_A: 0, Tle_D: 0, Tle_SHARED: 0, skipped: 0, unknown: 0 };
+const stats = { Tle_A: 0, Tle_D: 0, Tle_C: 0, Tle_SHARED: 0, skipped: 0, unknown: 0 };
 const tleACourses = [];
 const tleDCourses = [];
+const tleCCourses = [];
 
 for (const entry of coursIndex) {
   const level = classifyLevel(entry.course);
   if (level === 'Tle_A') { stats.Tle_A++; tleACourses.push(entry); }
   else if (level === 'Tle_D') { stats.Tle_D++; tleDCourses.push(entry); }
+  else if (level === 'Tle_C') { stats.Tle_C++; tleCCourses.push(entry); }
   else if (level === 'Tle_SHARED') { 
     stats.Tle_SHARED++; 
     tleACourses.push(entry);
     tleDCourses.push(entry);
+    tleCCourses.push(entry);
   }
   else if (level === null) { stats.skipped++; }
   else { stats.unknown++; }
@@ -106,6 +109,7 @@ for (const entry of coursIndex) {
 console.log('\n📊 Classification:');
 console.log(`  Tle A: ${stats.Tle_A}`);
 console.log(`  Tle D: ${stats.Tle_D}`);
+console.log(`  Tle C: ${stats.Tle_C}`);
 console.log(`  Tle partagé (A+D): ${stats.Tle_SHARED}`);
 console.log(`  Seconde/Première (ignoré): ${stats.skipped}`);
 console.log(`  Inconnu: ${stats.unknown}`);
@@ -131,6 +135,12 @@ function organizeClass(className, entries) {
   
   for (const entry of entries) {
     const subject = classifySubject(entry.course);
+
+    // Pour Terminale C, on ne garde que Mathématiques et Physique-Chimie
+    if (className === 'Terminale_C' && !(subject === 'Mathematiques' || subject === 'Physique_Chimie')) {
+      continue;
+    }
+
     if (!bySubject[subject]) bySubject[subject] = [];
     bySubject[subject].push(entry);
   }
@@ -169,6 +179,7 @@ if (fs.existsSync(OUTPUT_DIR)) {
 console.log('\n📂 Organisation des PDFs...');
 const orgA = organizeClass('Terminale_A', tleACourses);
 const orgD = organizeClass('Terminale_D', tleDCourses);
+const orgC = organizeClass('Terminale_C', tleCCourses);
 
-console.log(`\n✅ Total: ${orgA + orgD} PDFs organisés`);
+console.log(`\n✅ Total: ${orgA + orgD + orgC} PDFs organisés`);
 console.log(`📁 Dossier: ${OUTPUT_DIR}`);

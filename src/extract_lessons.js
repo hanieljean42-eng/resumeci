@@ -6,6 +6,8 @@
  *           node src/extract_lessons.js 3eme
  *           node src/extract_lessons.js Seconde_A
  *           node src/extract_lessons.js Seconde_C
+ *           node src/extract_lessons.js Seconde_A_Math
+ *           node src/extract_lessons.js Seconde_C_Math
  * ═══════════════════════════════════════════════════════════
  */
 
@@ -15,7 +17,7 @@ const path = require('path');
 const CLASSE = process.argv[2];
 if (!CLASSE) {
   console.log('❌ Usage: node src/extract_lessons.js <classe>');
-  console.log('   Classes: 6eme, 3eme, Seconde_A, Seconde_C');
+  console.log('   Classes: 6eme, 3eme, Seconde_A, Seconde_C, Seconde_A_Math, Seconde_C_Math');
   process.exit(1);
 }
 
@@ -24,6 +26,9 @@ const COURS_DIR_MAP = {
   '3eme': path.join(__dirname, '..', 'Cours_3eme'),
   'Seconde_A': path.join(__dirname, '..', 'Cours_Seconde_A'),
   'Seconde_C': path.join(__dirname, '..', 'Cours_Seconde_C'),
+  // Nouvelles variantes pour le scraper dédié mathématiques Seconde
+  'Seconde_A_Math': path.join(__dirname, '..', 'Cours_Seconde_Math', 'Seconde_A'),
+  'Seconde_C_Math': path.join(__dirname, '..', 'Cours_Seconde_Math', 'Seconde_C'),
 };
 
 const COURS_DIR = COURS_DIR_MAP[CLASSE];
