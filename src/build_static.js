@@ -6,7 +6,7 @@ const SOURCE_DIR = path.join(ROOT, 'Fiches_Resume');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const OUT_FICHES_DIR = path.join(PUBLIC_DIR, 'fiches');
 const OUT_DATA_DIR = path.join(PUBLIC_DIR, 'data');
-const SITE_URL = (process.env.SITE_URL || 'https://www.resumeci.me').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
 const ALLOWED_SUBJECTS = {
   '6eme': ['Anglais', 'EDHC', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
   '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
@@ -27,6 +27,60 @@ function stripHtml(html) {
 
 function escapeHtml(value) {
   return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function getLessonMetaFromFile(file) {
+  const base = file.replace('Fiche_', '').replace('.html', '');
+  const normalized = base.replace(/\s+/g, ' ');
+
+  let name = base
+    .replace(/_/g, ' ')
+    .replace(/Lecon(\d)/gi, 'Leçon $1')
+    .replace(/^L(\d)/i, 'Leçon $1');
+  let order = 3000;
+
+  // Collège / Seconde : "Lecon10_...", "Leçon 3 ...", "L1_..."
+  let m = normalized.match(/^(?:Lecon|Leçon|L)\s*0*(\d+)[ _-]*(.*)/i);
+  if (m) {
+    const num = parseInt(m[1], 10) || 0;
+    const rest = (m[2] || '').replace(/_/g, ' ').trim();
+    name = `Leçon ${num}${rest ? ' — ' + rest : ''}`;
+    order = 1000 + num;
+    return { name, order };
+  }
+
+  // Collège Français: "S11_..." (Séance)
+  m = normalized.match(/^S\s*0*(\d+)[ _-]*(.*)/i);
+  if (m) {
+    const num = parseInt(m[1], 10) || 0;
+    const rest = (m[2] || '').replace(/_/g, ' ').trim();
+    name = `Séance ${num}${rest ? ' — ' + rest : ''}`;
+    order = 2000 + num;
+    return { name, order };
+  }
+
+  // Terminale Histoire / Géographie: "GEOGRAPHIE T1 L1_ ...", "HISTOIRE T2 L3_ ..."
+  m = normalized.match(/^(?:GEOGRAPHIE|HISTOIRE)\s*T\s*0*(\d+)\s*L\s*0*(\d+)[ _-]*(.*)/i);
+  if (m) {
+    const theme = parseInt(m[1], 10) || 0;
+    const lesson = parseInt(m[2], 10) || 0;
+    const rest = (m[3] || '').replace(/_/g, ' ').trim();
+    name = `Thème ${theme} — Leçon ${lesson}${rest ? ' — ' + rest : ''}`;
+    // On place les Terminales après les leçons classiques mais avec ordre interne clair
+    order = 4000 + theme * 100 + lesson;
+    return { name, order };
+  }
+
+  // Terminale D Maths: fichiers déjà nommés "Fiche_leçon 01 ..." → on garde le nom mais on essaie de détecter le numéro
+  m = normalized.match(/^leçon\s*0*(\d+)/i);
+  if (m) {
+    const num = parseInt(m[1], 10) || 0;
+    order = 5000 + num;
+    // name est déjà correctement formaté plus haut (avec accents)
+    return { name, order };
+  }
+
+  return { name, order };
 }
 
 function addCreatorCredit(html) {
@@ -63,8 +117,8 @@ function copyDir(src, dest, cls = '', subject = '') {
     const stat = fs.statSync(srcPath);
     if (stat.isDirectory()) copyDir(srcPath, destPath, cls || item, cls ? item : '');
     else if (item.endsWith('.html')) {
-      const name = item.replace('Fiche_', '').replace('.html', '');
-      const meta = cls && subject ? { cls, subject, file: item, name, url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(item)}` } : null;
+      const lessonMeta = getLessonMetaFromFile(item);
+      const meta = cls && subject ? { cls, subject, file: item, name: lessonMeta.name, url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(item)}` } : null;
       copyHtmlFile(srcPath, destPath, meta);
     }
   }
@@ -90,13 +144,20 @@ function buildStructure() {
 
       const fiches = fs.readdirSync(subDir)
         .filter(file => file.endsWith('.html'))
-        .sort((a, b) => a.localeCompare(b, 'fr'))
-        .map(file => ({
-          file,
-          name: file.replace('Fiche_', '').replace('.html', '').replace(/_/g, ' ').replace(/Lecon(\d)/g, 'Leçon $1').replace(/^L(\d)/, 'Leçon $1'),
-          path: `${cls}/${subject}/${file}`,
-          url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(file)}`,
-        }));
+        .map(file => {
+          const lessonMeta = getLessonMetaFromFile(file);
+          return {
+            file,
+            name: lessonMeta.name,
+            order: lessonMeta.order,
+            path: `${cls}/${subject}/${file}`,
+            url: `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(file)}`,
+          };
+        })
+        .sort((a, b) => {
+          if (a.order !== b.order) return a.order - b.order;
+          return a.name.localeCompare(b.name, 'fr');
+        });
 
       structure[cls][subject] = fiches;
       classStats[cls].subjects++;
