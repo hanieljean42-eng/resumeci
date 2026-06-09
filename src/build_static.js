@@ -98,7 +98,7 @@ function addFicheSeo(html, meta) {
   const today = new Date().toISOString().split('T')[0];
   const breadcrumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":SITE_URL},{"@type":"ListItem","position":2,"name":meta.cls.replace('_',' '),"item":`${SITE_URL}/#${meta.cls}`},{"@type":"ListItem","position":3,"name":meta.subject,"item":`${SITE_URL}/#${meta.cls}/${meta.subject}`},{"@type":"ListItem","position":4,"name":meta.name,"item":url}]};
   const article = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"url":url,"datePublished":today,"dateModified":today,"author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":SITE_URL},"inLanguage":"fr-CI","educationalLevel":meta.cls.replace('_',' '),"about":meta.subject,"learningResourceType":"Fiche de résumé"};
-  const head = `<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index, follow"><link rel="canonical" href="${url}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE_URL}/og-image.svg"><script type="application/ld+json">${JSON.stringify(breadcrumb)}</script><script type="application/ld+json">${JSON.stringify(article)}</script></head>`;
+  const head = `<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>${escapeHtml(title)}</title><meta name=\"description\" content=\"${escapeHtml(description)}\"><meta name=\"robots\" content=\"index, follow\"><link rel=\"canonical\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"fr-CI\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"x-default\" href=\"${url}\"><meta property=\"og:title\" content=\"${escapeHtml(title)}\"><meta property=\"og:description\" content=\"${escapeHtml(description)}\"><meta property=\"og:type\" content=\"article\"><meta property=\"og:url\" content=\"${url}\"><meta property=\"og:image\" content=\"${SITE_URL}/og-image.svg\"><script type=\"application/ld+json\">${JSON.stringify(breadcrumb)}</script><script type=\"application/ld+json\">${JSON.stringify(article)}</script></head>`;
   if (/<head[\s\S]*?<\/head>/i.test(html)) return html.replace(/<head[\s\S]*?<\/head>/i, head);
   if (/<html[^>]*>/i.test(html)) return html.replace(/<html[^>]*>/i, match => `${match}${head}`);
   return `<!DOCTYPE html><html lang="fr">${head}<body>${html}</body></html>`;
@@ -180,21 +180,25 @@ function generateSeoFiles(structure) {
     { url: '/about.html', priority: '0.5', changefreq: 'monthly' },
     { url: '/contact.html', priority: '0.5', changefreq: 'monthly' },
     { url: '/privacy.html', priority: '0.3', changefreq: 'yearly' },
-    { url: '/sitemap.html', priority: '0.4', changefreq: 'weekly' },
+    // Landing pages
+    { url: '/fiches-bac-ci.html', priority: '0.8', changefreq: 'monthly' },
+    { url: '/fiches-terminale-d.html', priority: '0.8', changefreq: 'monthly' },
+    { url: '/fiches-bepc-ci.html', priority: '0.7', changefreq: 'monthly' },
+    { url: '/fiches-college-ci.html', priority: '0.6', changefreq: 'monthly' },
   ];
   const ficheUrls = Object.values(structure).flatMap(subjects =>
     Object.values(subjects).flatMap(fiches => fiches.map(fiche => ({ url: fiche.url, priority: '0.8', changefreq: 'monthly' })))
   );
   const allUrls = [...mainPages, ...ficheUrls];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map(u => `  <url>\n    <loc>${SITE_URL}${u.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
-  const robots = `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  const robots = `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nDisallow: /sitemap.html\n`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');
 }
 
 function generateHtmlSitemap(structure) {
   const sections = Object.entries(structure).map(([cls, subjects]) => `<h2>${escapeHtml(cls.replace('_', ' '))}</h2>${Object.entries(subjects).map(([subject, fiches]) => `<h3>${escapeHtml(subject)}</h3><ul>${fiches.map(fiche => `<li><a href="${fiche.url}">${escapeHtml(fiche.name)}</a></li>`).join('')}</ul>`).join('')}`).join('');
-  const html = `<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Plan du site — ResumeCI</title><meta name="description" content="Plan du site ResumeCI : toutes les fiches de résumé Terminale A et Terminale D pour réviser le BAC en Côte d'Ivoire."><link rel="canonical" href="${SITE_URL}/sitemap.html"><style>body{font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0}main{max-width:980px;margin:auto;padding:28px 18px}a{color:#2563eb;text-decoration:none;font-weight:700}.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(15,23,42,.08)}h1{margin-top:0}h2{margin-top:28px;color:#0f172a}h3{color:#475569}li{margin:6px 0}</style></head><body><main><p><a href="/">← Retour à l'accueil</a></p><div class="card"><h1>Plan du site ResumeCI</h1><p>Toutes les fiches de résumé disponibles pour réviser le BAC en Côte d'Ivoire.</p>${sections}</div></main></body></html>`;
+  const html = `<!DOCTYPE html><html lang=\"fr\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex, follow\"><title>Plan du site — ResumeCI</title><meta name=\"description\" content=\"Plan du site ResumeCI : toutes les fiches de résumé Terminale A et Terminale D pour réviser le BAC en Côte d'Ivoire.\"><link rel=\"canonical\" href=\"${SITE_URL}/sitemap.html\"><style>body{font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0}main{max-width:980px;margin:auto;padding:28px 18px}a{color:#2563eb;text-decoration:none;font-weight:700}.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(15,23,42,.08)}h1{margin-top:0}h2{margin-top:28px;color:#0f172a}h3{color:#475569}li{margin:6px 0}</style></head><body><main><p><a href=\"/\">← Retour à l'accueil</a></p><div class=\"card\"><h1>Plan du site ResumeCI</h1><p>Toutes les fiches de résumé disponibles pour réviser le BAC en Côte d'Ivoire.</p>${sections}</div></main></body></html>`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.html'), html, 'utf8');
 }
 

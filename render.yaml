@@ -17,13 +17,16 @@ services:
       - path: /*
         name: Permissions-Policy
         value: microphone=(self), camera=(), geolocation=()
+      - path: /sitemap.html
+        name: X-Robots-Tag
+        value: noindex, follow
     routes:
       - type: redirect
         source: https://resumeci.onrender.com/*
-        destination: https://www.resumeci.me/*
+        destination: https://resumeci.me/*
       - type: redirect
         source: http://resumeci.onrender.com/*
-        destination: https://www.resumeci.me/*
+        destination: https://resumeci.me/*
       - type: rewrite
         source: /*
         destination: /index.html

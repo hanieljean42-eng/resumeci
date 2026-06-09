@@ -22,6 +22,7 @@ app.disable('x-powered-by');
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Content-Language', 'fr-CI');
   next();
 });
 app.use('/public', express.static(path.join(__dirname, 'public'), {
@@ -32,6 +33,12 @@ app.use('/pdfs', express.static(COURS_DIR, {
   maxAge: '1d',
   etag: true,
 }));
+
+// Ensure HTML sitemap is not indexed (keep for users only)
+app.get('/sitemap.html', (req, res) => {
+  res.setHeader('X-Robots-Tag', 'noindex, follow');
+  res.sendFile(path.join(__dirname, 'public', 'sitemap.html'));
+});
 
 // API: Get structure (classes > matières > leçons)
 app.get('/api/structure', (req, res) => {

@@ -7,17 +7,19 @@
   <meta name="description" content="ResumeCI : 618 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. 6ème, 5ème, 4ème, 3ème, Seconde, Première, Terminale. Maths, Physique, Chimie, Français, SVT, Histoire-Géo. Révisions BAC, BEPC.">
   <meta name="keywords" content="fiches résumé Côte d'Ivoire, fiches de cours CI, révision BAC Côte d'Ivoire, BEPC, collège Abidjan, lycée, 6ème, 5ème, 4ème, 3ème, Seconde A, Seconde C, Première, Terminale A, Terminale C, Terminale D, maths, physique chimie, français, SVT, histoire géographie, révision, fiches gratuites, cours en ligne Côte d'Ivoire">
   <meta name="author" content="Haniel_dev">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:180, max-image-preview:large">
   <meta property="og:title" content="ResumeCI — Fiches de Résumé pour tous les niveaux">
   <meta property="og:description" content="618 fiches de résumé gratuites pour réviser au Collège et Lycée. 6ème à Terminale. Maths, Physique, Français, SVT. BAC et BEPC Côte d'Ivoire.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.resumeci.me/">
+  <meta property="og:url" content="https://resumeci.me/">
   <meta property="og:site_name" content="ResumeCI">
   <meta property="og:locale" content="fr_CI">
-  <meta property="og:image" content="https://www.resumeci.me/og-image.svg">
+  <meta property="og:image" content="https://resumeci.me/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="/manifest.json">
-  <link rel="canonical" href="https://www.resumeci.me/">
+  <link rel="canonical" href="https://resumeci.me/">
+  <link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/">
+  <link rel="alternate" hreflang="x-default" href="https://resumeci.me/">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#2563eb">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -53,6 +55,20 @@
         {"@type":"ListItem","position":6,"item":{"@type":"Course","name":"Première","description":"Fiches Première - Bientôt disponible"}},
         {"@type":"ListItem","position":7,"item":{"@type":"Course","name":"Terminale","description":"Fiches Terminale A, C et D - Révision BAC"}}
       ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ResumeCI",
+    "url": "https://resumeci.me/",
+    "inLanguage": "fr-CI",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://resumeci.me/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   }
   </script>
@@ -389,7 +405,7 @@
         <button class="voice-btn" onclick="startVoiceSearch()" title="Recherche vocale"><i class="fas fa-microphone"></i></button>
       </div>
       <div id="favsList"></div>
-      <nav class="sidebar-nav" id="sidebarNav">
+      <nav class="sidebar-nav" id="sidebarNav" data-nosnippet>
         <div class="loading"><div class="spinner"></div>Chargement...</div>
       </nav>
       <div style="padding:8px 16px">
@@ -413,7 +429,7 @@
         <div class="topbar-actions" id="topbarActions"></div>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
-      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique à l'Institut universitaire d'Abidjan</span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a></div></footer>
+      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique à l'Institut universitaire d'Abidjan</span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a><a href="/fiches-bac-ci.html">Fiches BAC</a><a href="/fiches-terminale-d.html">Terminale D</a><a href="/fiches-bepc-ci.html">BEPC</a><a href="/fiches-college-ci.html">Collège</a></div></footer>
     </div>
   </div>
   <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
@@ -435,7 +451,7 @@
     window.CURRENT_FICHE = null;
     window.SEARCH_INDEX = [];
     let deferredInstallPrompt = null;
-    const PRIMARY_DOMAIN = 'https://www.resumeci.me';
+    const PRIMARY_DOMAIN = 'https://resumeci.me';
     // Aliases for backward compatibility
     const DATA = window.DATA;
     let CURRENT_FICHE = null;

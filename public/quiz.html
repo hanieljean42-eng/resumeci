@@ -104,8 +104,10 @@
     .results .error-item{padding:10px 12px;border-bottom:1px solid #475569;font-size:13px;line-height:1.5}
     .results .error-item:last-child{border:none}
     .results .error-item .correct-ans{color:var(--green);font-weight:600}
-    .retry-btn{padding:14px 40px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;color:#fff;font-size:15px;font-weight:700;border-radius:12px;cursor:pointer;margin:10px 6px;transition:.3s}
-    .retry-btn:hover{transform:scale(1.05)}
+    .retry-btn{padding:16px 40px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:none;color:#fff;font-size:16px;font-weight:700;border-radius:12px;cursor:pointer;margin:10px 6px;transition:.3s;box-shadow:0 4px 15px rgba(59,130,246,.4)}
+    .retry-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(59,130,246,.6)}
+    .retry-btn.primary{background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 4px 15px rgba(16,185,129,.4)}
+    .retry-btn.primary:hover{box-shadow:0 6px 20px rgba(16,185,129,.6)}
     
     /* Dates Game specific */
     .date-input-area{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
@@ -202,7 +204,7 @@
       <div class="stars" id="starsDisplay"></div>
       <div class="stats-grid" id="statsGrid"></div>
       <div class="errors-section" id="errorsSection" style="display:none"></div>
-      <button class="retry-btn" onclick="resetGame()"><i class="fas fa-redo"></i> Rejouer</button>
+      <button class="retry-btn primary" onclick="resetGame()"><i class="fas fa-redo"></i> Recommencer</button>
       <button class="retry-btn" onclick="location.href='/'"><i class="fas fa-book"></i> Réviser</button>
     </div>
   </div>
@@ -257,8 +259,8 @@
     // QCM database per subject (auto-generated from fiches content)
     const QCM_DB = {
       "Philosophie": [
-        {q:"Quelle est la première étape de la dissertation philosophique ?",a:["La problématisation","L'introduction","La conclusion","La transition"],c:0},
-        {q:"Qu'est-ce que le commentaire de texte philosophique doit contenir ?",a:["Introduction, étude ordonnée, intérêt philosophique","Résumé, critique, conclusion","Thèse, antithèse, synthèse","Plan détaillé uniquement"],c:0},
+        {q:"Quelle est la première étape de la dissertation philosophique ?",a:["La problématisation","L'introduction","La conclusion","La transition"],c:0,expl:"La problématique est le cœur de la dissertation. Elle pose la question centrale que tu vas analyser."},
+        {q:"Qu'est-ce que le commentaire de texte philosophique doit contenir ?",a:["Introduction, étude ordonnée, intérêt philosophique","Résumé, critique, conclusion","Thèse, antithèse, synthèse","Plan détaillé uniquement"],c:0,expl:"Le commentaire suit une structure précise : introduction avec présentation du texte, étude ordonnée (analyse linéaire ou thématique), et conclusion sur l'intérêt philosophique."},
         {q:"Selon la philosophie, la conscience permet à l'homme de :",a:["Se connaître soi-même","Devenir riche","Contrôler les autres","Prédire l'avenir"],c:0},
         {q:"L'inconscient selon Freud comprend :",a:["Le Ça, le Moi, le Surmoi","Le corps et l'âme","La raison et la passion","Le bien et le mal"],c:0},
         {q:"La vie en société implique selon les philosophes :",a:["Un contrat social entre les individus","La domination du plus fort","L'absence de règles","L'isolement"],c:0},
@@ -990,7 +992,7 @@
         // All subjects mixed
         for (const [sub, qs] of Object.entries(QCM_DB)) {
           for (const q of qs) {
-            pool.push({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm' });
+            pool.push({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm', explanation: q.expl });
           }
         }
         shuffle(pool);
@@ -998,7 +1000,7 @@
       } else {
         // QCM standard
         const qcmPool = QCM_DB[subVal] || QCM_DB[subject] || [];
-        pool = qcmPool.map(q => ({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm' }));
+        pool = qcmPool.map(q => ({ q: q.q, answers: [...q.a], correct: q.c, type: 'qcm', explanation: q.expl }));
         shuffle(pool);
         // Use all available questions
         pool = pool;
@@ -1087,13 +1089,21 @@
       const stars = pct >= 90 ? '⭐⭐⭐' : pct >= 70 ? '⭐⭐' : pct >= 50 ? '⭐' : '💪';
       const title = pct >= 90 ? 'Excellent !' : pct >= 70 ? 'Bien joué !' : pct >= 50 ? 'Pas mal !' : 'Continue tes efforts !';
 
+      // Get best score from localStorage
+      const bestScore = JSON.parse(localStorage.getItem('quiz_best_score') || '0');
+      const isNewBest = score > bestScore;
+      if (isNewBest) {
+        localStorage.setItem('quiz_best_score', JSON.stringify(score));
+      }
+
       document.getElementById('resultsTitle').textContent = title;
       document.getElementById('finalScore').textContent = `${score} XP`;
       document.getElementById('starsDisplay').textContent = stars;
       document.getElementById('statsGrid').innerHTML = `
         <div class="stat"><div class="val" style="color:var(--green)">${totalCorrect}</div><div class="lbl">Bonnes réponses</div></div>
         <div class="stat"><div class="val" style="color:var(--red)">${errors.length}</div><div class="lbl">Erreurs</div></div>
-        <div class="stat"><div class="val" style="color:var(--accent)">${pct}%</div><div class="lbl">Réussite</div></div>`;
+        <div class="stat"><div class="val" style="color:var(--accent)">${pct}%</div><div class="lbl">Réussite</div></div>
+        <div class="stat"><div class="val" style="color:var(--gold)">${isNewBest ? score : bestScore}</div><div class="lbl">${isNewBest ? '🎉 Record !' : 'Meilleur score'}</div></div>`;
 
       // Save errors to localStorage for review
       if (errors.length > 0) {
