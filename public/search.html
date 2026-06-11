@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche — ResumeCI</title>
+  <meta name="description" content="Recherche de fiches de résumé sur ResumeCI.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://resumeci.me/search.html">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#2563eb">
+  <style>
+    :root{--bg:#f8fafc;--card:#ffffff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--accent:#2563eb}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    main{max-width:980px;margin:0 auto;padding:28px 16px}
+    a{color:#2563eb;text-decoration:none;font-weight:700}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(15,23,42,.08)}
+    h1{margin:0 0 8px;font-size:28px}
+    .desc{color:var(--muted);margin:0 0 16px}
+    .search-bar{display:flex;gap:8px;margin:10px 0 14px}
+    .search-bar input{flex:1;border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;outline:none}
+    .search-bar button{border:none;border-radius:12px;padding:12px 16px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}
+    .meta{font-size:12px;color:#64748b;margin-top:10px}
+    .results{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+    .result{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:12px}
+    .result a{font-weight:800;color:#0f172a}
+    .snippet{font-size:13px;color:#475569;margin-top:6px}
+    .badge{display:inline-flex;gap:6px;align-items:center;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+    .empty{padding:18px;border:1px dashed var(--border);border-radius:12px;color:#64748b;text-align:center}
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="/">← Retour à l'accueil</a></p>
+    <section class="card">
+      <div class="top">
+        <h1>Recherche</h1>
+        <div class="badge">ResumeCI</div>
+      </div>
+      <p class="desc">Tape un mot clé pour trouver rapidement une fiche. Exemple: "Thalès", "photosynthèse", "dérivée".</p>
+      <form class="search-bar" role="search" aria-label="Rechercher des fiches">
+        <input id="q" name="q" type="search" placeholder="Rechercher une fiche..." autocomplete="off" />
+        <button type="submit">Rechercher</button>
+      </form>
+      <div class="meta" id="meta"></div>
+      <div class="results" id="results"></div>
+      <div class="empty" id="empty" style="display:none">Aucun résultat. Essaie un autre mot clé.</div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const $ = s => document.querySelector(s);
+      const resultsEl = $('#results');
+      const emptyEl = $('#empty');
+      const metaEl = $('#meta');
+      const input = $('#q');
+
+      const params = new URLSearchParams(location.search);
+      const initialQ = (params.get('q') || '').trim();
+      if (initialQ) input.value = initialQ;
+
+      async function loadIndex(){
+        try{
+          const res = await fetch('/data/search-index.json', { cache: 'no-store' });
+          if(!res.ok) throw new Error('HTTP '+res.status);
+          return await res.json();
+        }catch(e){
+          resultsEl.innerHTML = '';
+          emptyEl.style.display = 'block';
+          emptyEl.textContent = 'Index de recherche indisponible. Réessaie plus tard.';
+          return [];
+        }
+      }
+
+      function tokenize(s){
+        return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean);
+      }
+
+      function matches(entry, qTokens){
+        const hay = `${entry.name} ${entry.subject} ${entry.cls} ${entry.text}`.toLowerCase();
+        return qTokens.every(t => hay.includes(t));
+      }
+
+      function render(list, q){
+        resultsEl.innerHTML='';
+        if(!list.length){
+          emptyEl.style.display='block';
+          metaEl.textContent = q ? `Aucun résultat pour "${q}"` : '';
+          return;
+        }
+        emptyEl.style.display='none';
+        const frag = document.createDocumentFragment();
+        list.slice(0,50).forEach(it => {
+          const card = document.createElement('article');
+          card.className = 'result';
+          const url = `/fiches/${encodeURIComponent(it.cls)}/${encodeURIComponent(it.subject)}/${encodeURIComponent(it.file)}`;
+          const snippet = (it.text||'').slice(0,140) + (it.text && it.text.length>140 ? '…' : '');
+          card.innerHTML = `<a href="${url}">${it.name}</a><div class="snippet">${snippet}</div>`;
+          frag.appendChild(card);
+        });
+        resultsEl.appendChild(frag);
+        metaEl.textContent = `${list.length} résultat(s)`;
+      }
+
+      let INDEX = null;
+      async function run(q){
+        const query = (q||'').trim();
+        if(!INDEX) INDEX = await loadIndex();
+        if(!query){ render([], ''); return; }
+        const tokens = tokenize(query);
+        const filtered = INDEX.filter(e => matches(e, tokens));
+        render(filtered, query);
+      }
+
+      document.querySelector('.search-bar').addEventListener('submit', ev => {
+        ev.preventDefault();
+        const q = input.value || '';
+        const next = new URL(location.href);
+        next.searchParams.set('q', q);
+        history.replaceState({}, '', next);
+        run(q);
+      });
+
+      // Démarrage
+      run(initialQ);
+    })();
+  </script>
+</body>
+</html>
