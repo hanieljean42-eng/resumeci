@@ -40,6 +40,16 @@
     .deck-selector label{font-size:13px;font-weight:600;color:var(--muted)}
     .deck-selector select{width:100%;background:var(--card);border:1px solid #475569;color:var(--text);padding:12px 16px;border-radius:10px;font-size:14px;outline:none}
     .deck-selector select:focus{border-color:var(--accent)}
+    /* Settings */
+    .fc-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+    .fc-settings .switch{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid #475569;border-radius:10px;padding:10px 12px;font-size:13px}
+    .fc-settings .switch input{accent-color:#10b981}
+    .fc-settings .num{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid #475569;border-radius:10px;padding:10px 12px}
+    .fc-settings .num input{width:90px;background:transparent;border:1px solid #475569;border-radius:8px;padding:8px 10px;color:var(--text)}
+    .fc-actions{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+    .fc-actions .btn{padding:10px 14px;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer}
+    .fc-actions .btn.exp{background:#1e293b;border:1px solid #475569;color:#e2e8f0}
+    .fc-actions .btn.imp{background:#7c3aed;color:#fff}
     
     /* Stats bar */
     .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
@@ -115,6 +125,16 @@
       <select id="deckSelect">
         <option value="">-- Choisir une matière --</option>
       </select>
+    </div>
+
+    <div class="fc-settings">
+      <label class="switch"><input type="checkbox" id="dueOnly"> Revoir uniquement (pas de nouvelles cartes)</label>
+      <label class="num">Nouvelles cartes / jour <input type="number" id="maxNew" min="1" max="100" value="20"></label>
+    </div>
+    <div class="fc-actions">
+      <button class="btn exp" onclick="exportProgress()"><i class="fas fa-download"></i> Exporter progression</button>
+      <button class="btn imp" onclick="importProgress()"><i class="fas fa-upload"></i> Importer progression</button>
+      <input type="file" id="impFile" accept="application/json" style="display:none">
     </div>
 
     <div class="stats-bar" id="statsBar">
@@ -252,6 +272,8 @@
     let sessionIdx = 0;
     let sessionTotal = 0;
     let isFlipped = false;
+    let DUE_ONLY = localStorage.getItem('fc_due_only')==='1';
+    let MAX_NEW_DAY = parseInt(localStorage.getItem('fc_max_new')||'20',10);
 
     function populateDecks() {
       const sel = document.getElementById('deckSelect');
@@ -261,6 +283,16 @@
         opt.textContent = `${name} (${DECKS[name].length} cartes)`;
         sel.appendChild(opt);
       }
+      // init settings UI
+      document.getElementById('dueOnly').checked = DUE_ONLY;
+      document.getElementById('maxNew').value = String(MAX_NEW_DAY);
+      document.getElementById('dueOnly').addEventListener('change', (e)=>{
+        DUE_ONLY = !!e.target.checked; localStorage.setItem('fc_due_only', DUE_ONLY?'1':'0'); if(currentDeck) startSession();
+      });
+      document.getElementById('maxNew').addEventListener('change', (e)=>{
+        const v = Math.max(1, Math.min(100, parseInt(e.target.value||'20',10)));
+        MAX_NEW_DAY = v; localStorage.setItem('fc_max_new', String(v)); if(currentDeck) startSession();
+      });
     }
 
     document.getElementById('deckSelect').addEventListener('change', (e) => {
@@ -277,8 +309,12 @@
 
     function startSession() {
       const { due, newCards, learned } = getDueCards(currentDeck);
-      // Session: due cards first, then up to 10 new cards
-      sessionQueue = [...due, ...newCards.slice(0, 10)];
+      // Compute remaining new allowed today for this deck
+      const left = getRemainingNewToday(currentDeck);
+      const allowedNew = DUE_ONLY ? 0 : Math.max(0, Math.min(left, newCards.length));
+      const pickedNew = newCards.slice(0, allowedNew);
+      // Session: due cards first, then allowed new cards
+      sessionQueue = [...due, ...pickedNew];
       sessionIdx = 0;
       sessionTotal = sessionQueue.length;
 
@@ -291,6 +327,8 @@
       }
 
       document.getElementById('sessionProgress').style.display = 'block';
+      // Consommer le quota "nouvelles/jour" dès le démarrage de la session
+      if (pickedNew.length>0) incrementNewToday(currentDeck, pickedNew.length);
       showCard();
     }
 
@@ -379,6 +417,54 @@
       startSession();
     }
 
+    // ==================== NEW/DAY COUNTER ====================
+    function getNewDayKey(deck){ return `fc_new_day_${deck}`; }
+    function getRemainingNewToday(deck){
+      const k = getNewDayKey(deck);
+      const today = new Date().toISOString().split('T')[0];
+      const saved = JSON.parse(localStorage.getItem(k)||'null');
+      if(!saved || saved.date!==today){ return MAX_NEW_DAY; }
+      return Math.max(0, MAX_NEW_DAY - (parseInt(saved.count||0,10)));
+    }
+    function incrementNewToday(deck, inc){
+      const k = getNewDayKey(deck);
+      const today = new Date().toISOString().split('T')[0];
+      const saved = JSON.parse(localStorage.getItem(k)||'null');
+      const next = saved && saved.date===today ? {date:today, count: parseInt(saved.count||0,10)+inc} : {date:today, count: inc};
+      localStorage.setItem(k, JSON.stringify(next));
+    }
+
+    // ==================== EXPORT/IMPORT ====================
+    function gatherProgress(){
+      const out = {};
+      for(let i=0;i<localStorage.length;i++){
+        const k = localStorage.key(i);
+        if(k && k.startsWith('fc_')) out[k] = localStorage.getItem(k);
+      }
+      return out;
+    }
+    window.exportProgress = function(){
+      try{
+        const data = JSON.stringify(gatherProgress());
+        const blob = new Blob([data],{type:'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href=url; a.download='resumeci-flashcards-progress.json'; a.click(); URL.revokeObjectURL(url);
+        alert('Progression exportée.');
+      }catch(e){ alert('Erreur export: '+e.message); }
+    };
+    window.importProgress = function(){ document.getElementById('impFile').click(); };
+    document.getElementById('impFile').addEventListener('change', async (e)=>{
+      const f = e.target.files && e.target.files[0]; if(!f) return;
+      try{
+        const text = await f.text();
+        const obj = JSON.parse(text);
+        Object.keys(obj||{}).forEach(k=>{ if(k.startsWith('fc_')) localStorage.setItem(k, obj[k]); });
+        alert('Progression importée.');
+        if(currentDeck) startSession();
+      }catch(err){ alert('Import invalide: '+err.message); }
+      e.target.value='';
+    });
+
     // ==================== AUDIO ====================
     const audioBtn = document.getElementById('audioBtn');
     let speaking = false;
@@ -398,6 +484,8 @@
     // Init
     populateDecks();
     clearSession();
+    // SW registration for this page
+    try{ if('serviceWorker' in navigator){ navigator.serviceWorker.register('/service-worker.js'); } }catch(e){}
   </script>
 </body>
 </html>

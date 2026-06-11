@@ -171,26 +171,43 @@ function buildStructure() {
 }
 
 function generateSeoFiles(structure) {
-  const today = new Date().toISOString().split('T')[0];
+  function getLastMod(filePath) {
+    try {
+      const st = fs.statSync(filePath);
+      return st.mtime.toISOString().split('T')[0];
+    } catch (e) {
+      return new Date().toISOString().split('T')[0];
+    }
+  }
   const mainPages = [
-    { url: '/', priority: '1.0', changefreq: 'weekly' },
-    { url: '/quiz.html', priority: '0.9', changefreq: 'weekly' },
-    { url: '/flashcards.html', priority: '0.9', changefreq: 'weekly' },
-    { url: '/faq.html', priority: '0.7', changefreq: 'monthly' },
-    { url: '/about.html', priority: '0.5', changefreq: 'monthly' },
-    { url: '/contact.html', priority: '0.5', changefreq: 'monthly' },
-    { url: '/privacy.html', priority: '0.3', changefreq: 'yearly' },
+    { url: '/', file: path.join(PUBLIC_DIR, 'index.html'), priority: '1.0', changefreq: 'weekly' },
+    { url: '/quiz.html', file: path.join(PUBLIC_DIR, 'quiz.html'), priority: '0.9', changefreq: 'weekly' },
+    { url: '/flashcards.html', file: path.join(PUBLIC_DIR, 'flashcards.html'), priority: '0.9', changefreq: 'weekly' },
+    { url: '/faq.html', file: path.join(PUBLIC_DIR, 'faq.html'), priority: '0.7', changefreq: 'monthly' },
+    { url: '/about.html', file: path.join(PUBLIC_DIR, 'about.html'), priority: '0.5', changefreq: 'monthly' },
+    { url: '/contact.html', file: path.join(PUBLIC_DIR, 'contact.html'), priority: '0.5', changefreq: 'monthly' },
+    { url: '/privacy.html', file: path.join(PUBLIC_DIR, 'privacy.html'), priority: '0.3', changefreq: 'yearly' },
     // Landing pages
-    { url: '/fiches-bac-ci.html', priority: '0.8', changefreq: 'monthly' },
-    { url: '/fiches-terminale-d.html', priority: '0.8', changefreq: 'monthly' },
-    { url: '/fiches-bepc-ci.html', priority: '0.7', changefreq: 'monthly' },
-    { url: '/fiches-college-ci.html', priority: '0.6', changefreq: 'monthly' },
+    { url: '/fiches-bac-ci.html', file: path.join(PUBLIC_DIR, 'fiches-bac-ci.html'), priority: '0.8', changefreq: 'monthly' },
+    { url: '/fiches-terminale-d.html', file: path.join(PUBLIC_DIR, 'fiches-terminale-d.html'), priority: '0.8', changefreq: 'monthly' },
+    { url: '/fiches-bepc-ci.html', file: path.join(PUBLIC_DIR, 'fiches-bepc-ci.html'), priority: '0.7', changefreq: 'monthly' },
+    { url: '/fiches-college-ci.html', file: path.join(PUBLIC_DIR, 'fiches-college-ci.html'), priority: '0.6', changefreq: 'monthly' },
   ];
-  const ficheUrls = Object.values(structure).flatMap(subjects =>
-    Object.values(subjects).flatMap(fiches => fiches.map(fiche => ({ url: fiche.url, priority: '0.8', changefreq: 'monthly' })))
-  );
-  const allUrls = [...mainPages, ...ficheUrls];
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map(u => `  <url>\n    <loc>${SITE_URL}${u.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
+  const ficheItems = [];
+  for (const [cls, subjects] of Object.entries(structure)) {
+    for (const [subject, fiches] of Object.entries(subjects)) {
+      for (const fiche of fiches) {
+        ficheItems.push({
+          url: fiche.url,
+          file: path.join(OUT_FICHES_DIR, cls, subject, fiche.file),
+          priority: '0.8',
+          changefreq: 'monthly',
+        });
+      }
+    }
+  }
+  const allUrls = [...mainPages, ...ficheItems];
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${allUrls.map(u => `  <url>\n    <loc>${SITE_URL}${u.url}</loc>\n    <lastmod>${getLastMod(u.file)}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`).join('\n')}\n</urlset>\n`;
   const robots = `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nDisallow: /sitemap.html\n`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'robots.txt'), robots, 'utf8');

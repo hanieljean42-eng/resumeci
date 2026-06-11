@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hors ligne — ResumeCI</title>
+  <meta name="robots" content="noindex, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#3b82f6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.6;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;max-width:520px;width:92%;box-shadow:0 20px 60px rgba(0,0,0,.25);text-align:center}
+    h1{margin:0 0 8px;font-size:26px;font-weight:800}
+    p{color:var(--muted);margin:8px 0}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .btn{border:none;border-radius:12px;padding:12px 18px;cursor:pointer;font-weight:800}
+    .primary{background:var(--accent);color:#fff}
+    .secondary{background:#0b1220;color:#e2e8f0;border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Tu es hors ligne</h1>
+    <p>Pas de connexion. Certaines pages récemment visitées et fiches restent accessibles.</p>
+    <div class="btns">
+      <button class="btn primary" onclick="location.href='/'">Retour à l'accueil</button>
+      <button class="btn secondary" onclick="location.reload()">Réessayer</button>
+    </div>
+    <p style="font-size:12px;margin-top:14px;opacity:.8">ResumeCI fonctionne aussi hors ligne grâce au cache. Réessaie quand la connexion revient.</p>
+  </main>
+</body>
+</html>

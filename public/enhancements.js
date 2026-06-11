@@ -606,6 +606,8 @@
         localStorage.setItem('rci-welcome','1');
       },2000);
     }
+    // Service Worker registration (global)
+    try{ if('serviceWorker' in navigator){ navigator.serviceWorker.register('/service-worker.js'); } }catch(e){}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();
