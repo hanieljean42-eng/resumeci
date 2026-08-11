@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Généralités sur les Condensateurs - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+    .meta-chips {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    h2 {
+      color: #16a34a;
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #dcfce7;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #1e293b;
+      font-size: 1.15rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    .definition {
+      background: #dcfce7;
+      border-left: 4px solid #16a34a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .definition strong {
+      color: #166534;
+    }
+    .important {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .important strong {
+      color: #1e40af;
+    }
+    .schema {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .schema strong {
+      color: #92400e;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Physique-Chimie</span>
+      <span class="chip">Condensateurs</span>
+    </div>
+  </div>
+
+  <h2>I. Définition et Structure</h2>
+
+  <div class="definition">
+    <strong>Condensateur :</strong> Composant électrique capable de stocker de l'énergie sous forme de champ électrique.
+  </div>
+
+  <div class="important">
+    <strong>Structure :</strong>
+    <ul>
+      <li>Deux armatures conductrices parallèles</li>
+      <li>Séparées par un isolant (diélectrique)</li>
+      <li>Les armatures portent des charges opposées</li>
+    </ul>
+  </div>
+
+  <h2>II. Capacité d'un Condensateur</h2>
+
+  <div class="definition">
+    <strong>Capacité :</strong> Grandeur caractérisant la capacité du condensateur à stocker des charges.
+  </div>
+
+  <div class="schema">
+    <strong>Formule :</strong><br>
+    <code>C = Q / U</code><br>
+    C : capacité (F)<br>
+    Q : charge (C)<br>
+    U : tension (V)
+  </div>
+
+  <div class="important">
+    <strong>Capacité d'un condensateur plan :</strong><br>
+    <code>C = ε × S / d</code><br>
+    ε : permittivité du diélectrique<br>
+    S : surface des armatures<br>
+    d : distance entre les armatures
+  </div>
+
+  <h2>III. Charge et Décharge</h2>
+
+  <div class="schema">
+    <strong>Charge :</strong>
+    <ul>
+      <li>Le condensateur se charge à travers une résistance</li>
+      <li>La tension augmente progressivement</li>
+      <li>Le courant diminue au cours du temps</li>
+    </ul>
+  </div>
+
+  <div class="schema">
+    <strong>Décharge :</strong>
+    <ul>
+      <li>Le condensateur se décharge à travers une résistance</li>
+      <li>La tension diminue progressivement</li>
+      <li>Le courant change de sens</li>
+    </ul>
+  </div>
+
+  <h2>IV. Équation de Charge</h2>
+
+  <div class="important">
+    <strong>Tension aux bornes du condensateur :</strong><br>
+    <code>u(t) = E(1 - e<sup>-t/τ</sup>)</code><br>
+    E : tension du générateur<br>
+    τ : constante de temps = RC
+  </div>
+
+  <div class="important">
+    <strong>Intensité du courant :</strong><br>
+    <code>i(t) = (E/R)e<sup>-t/τ</sup></code>
+  </div>
+
+  <h2>V. Constante de Temps</h2>
+
+  <div class="definition">
+    <strong>Constante de temps :</strong> τ = RC, caractéristique la vitesse de charge/décharge.
+  </div>
+
+  <div class="schema">
+    <strong>Signification :</strong>
+    <ul>
+      <li>À t = τ, le condensateur est chargé à 63%</li>
+      <li>À t = 5τ, le condensateur est considéré chargé (99%)</li>
+    </ul>
+  </div>
+
+  <h2>VI. Énergie Stockée</h2>
+
+  <div class="important">
+    <strong>Énergie emmagasinée :</strong><br>
+    <code>E = ½CU² = ½Q²/C = ½QU</code><br>
+    E : énergie (J)<br>
+    C : capacité (F)<br>
+    U : tension (V)<br>
+    Q : charge (C)
+  </div>
+
+  <h2>VII. Applications</h2>
+
+  <ul>
+    <li><strong>Filtrage :</strong> Lissage des tensions redressées</li>
+    <li><strong>Temporisation :</strong> Circuits RC</li>
+    <li><strong>Mémoire :</strong> Stockage d'information</li>
+    <li><strong>Démarrage moteur :</strong> Condensateurs de démarrage</li>
+    <li><strong>Flash photographique :</strong> Accumulation d'énergie</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Barycentre - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+    .header { text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 1.8rem; color: #16a34a; margin-bottom: 15px; }
+    .meta-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .chip { background: #dcfce7; color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+    h2 { color: #16a34a; font-size: 1.4rem; margin-top: 35px; margin-bottom: 20px; border-bottom: 2px solid #dcfce7; padding-bottom: 10px; }
+    .definition { background: #dcfce7; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .important { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .schema { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Mathématiques</span>
+      <span class="chip">Le Barycentre</span>
+    </div>
+  </div>
+  <h2>I. Définition</h2>
+  <div class="definition"><strong>Barycentre :</strong> Point G tel que $\sum \alpha_i \vec{GA_i} = \vec{0}$ avec $\sum \alpha_i \neq 0$.</div>
+  <h2>II. Barycentre de 2 Points</h2>
+  <div class="important">G barycentre de (A, α) et (B, β) : $\vec{AG} = \frac{\beta}{\alpha+\beta} \vec{AB}$</div>
+  <h2>III. Propriétés</h2>
+  <div class="schema">
+    <ul>
+      <li>Associativité</li>
+      <li>Homogénéité : (A, kα) même barycentre</li>
+      <li>Isobarycentre : coefficients égaux</li>
+    </ul>
+  </div>
+  <h2>IV. Coordonnées</h2>
+  <div class="definition">x_G = (∑ α_i x_i)/(∑ α_i), y_G = (∑ α_i y_i)/(∑ α_i)</div>
+  <h2>V. Applications</h2>
+  <div class="important">Centre de gravité d'un triangle, centre de masse.</div>
+</body>
+</html>

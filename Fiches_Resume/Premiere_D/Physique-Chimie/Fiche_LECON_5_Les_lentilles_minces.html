@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lentilles Minces - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+    .meta-chips {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    h2 {
+      color: #16a34a;
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #dcfce7;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #1e293b;
+      font-size: 1.15rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    .definition {
+      background: #dcfce7;
+      border-left: 4px solid #16a34a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .definition strong {
+      color: #166534;
+    }
+    .important {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .important strong {
+      color: #1e40af;
+    }
+    .schema {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .schema strong {
+      color: #92400e;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Physique-Chimie</span>
+      <span class="chip">Lentilles Minces</span>
+    </div>
+  </div>
+
+  <h2>I. Définition et Types</h2>
+
+  <div class="definition">
+    <strong>Lentille mince :</strong> Milieu transparent limité par deux surfaces sphériques ou une surface sphérique et une surface plane.
+  </div>
+
+  <div class="important">
+    <strong>Types de lentilles :</strong>
+    <table>
+      <tr>
+        <th>Type</th>
+        <th>Forme</th>
+        <th>Effet</th>
+        <th>Vergence</th>
+      </tr>
+      <tr>
+        <td>Convergente</td>
+        <td>Bords minces</td>
+        <td>Converge les rayons</td>
+        <td>Positive</td>
+      </tr>
+      <tr>
+        <td>Divergente</td>
+        <td>Bords épais</td>
+        <td>Diverge les rayons</td>
+        <td>Négative</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>II. Centre Optique et Foyers</h2>
+
+  <div class="definition">
+    <strong>Centre optique O :</strong> Point de la lentille où les rayons incidents et émergents ne sont pas déviés.
+  </div>
+
+  <div class="schema">
+    <strong>Foyer image F' :</strong> Point où convergent les rayons incidents parallèles à l'axe optique.
+  </div>
+
+  <div class="schema">
+    <strong>Foyer objet F :</strong> Point d'où partent les rayons qui émergeant parallèlement à l'axe optique.
+  </div>
+
+  <h2>III. Distance Focale et Vergence</h2>
+
+  <div class="definition">
+    <strong>Distance focale :</strong> Distance OF' = f (positive pour convergente, négative pour divergente).
+  </div>
+
+  <div class="important">
+    <strong>Vergence :</strong><br>
+    <code>C = 1/f'</code><br>
+    Unité : dioptrie (δ) ou m<sup>-1</sup>
+  </div>
+
+  <h2>IV. Relation de Conjugaison</h2>
+
+  <div class="schema">
+    <strong>Formule de conjugaison :</strong><br>
+    <code>1/OA' - 1/OA = 1/OF'</code>
+  </div>
+
+  <div class="important">
+    <strong>Grandissement :</strong><br>
+    <code>γ = A'B'/AB = OA'/OA</code>
+  </div>
+
+  <h2>V. Construction de l'Image</h2>
+
+  <div class="definition">
+    <strong>Règles de construction :</strong>
+    <ol>
+      <li>Rayon passant par O n'est pas dévié</li>
+      <li>Rayon parallèle à l'axe optique passe par F'</li>
+      <li>Rayon passant par F émerge parallèlement à l'axe optique</li>
+    </ol>
+  </div>
+
+  <h2>VI. Image d'un Objet</h2>
+
+  <div class="important">
+    <strong>Lentille convergente :</strong>
+    <table>
+      <tr>
+        <th>Position objet</th>
+        <th>Position image</th>
+        <th>Nature</th>
+        <th>Taille</th>
+      </tr>
+      <tr>
+        <td>∞</td>
+        <td>F'</td>
+        <td>Réelle</td>
+        <td>Point</td>
+      </tr>
+      <tr>
+        <td>2F</td>
+        <td>2F'</td>
+        <td>Réelle</td>
+        <td>Égale</td>
+      </tr>
+      <tr>
+        <td>Entre 2F et F</td>
+        <td>Après 2F'</td>
+        <td>Réelle</td>
+        <td>Agrandie</td>
+      </tr>
+      <tr>
+        <td>Entre F et O</td>
+        <td>Avant l'objet</td>
+        <td>Virtuelle</td>
+        <td>Agrandie</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>VII. Applications</h2>
+
+  <ul>
+    <li><strong>Lunettes :</strong> Correction de la vue</li>
+    <li><strong>Appareils photo :</strong> Formation des images</li>
+    <li><strong>Microscopes :</strong> Grossissement</li>
+    <li><strong>Télescopes :</strong> Observation astronomique</li>
+    <li><strong>Projecteurs :</strong> Projection d'images</li>
+  </ul>
+</body>
+</html>

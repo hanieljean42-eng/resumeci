@@ -14,6 +14,7 @@ const ALLOWED_SUBJECTS = {
   '3eme': ['EDHC', 'EPS', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
   Seconde_A: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
   Seconde_C: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
+  Premiere_D: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'Philosophie'],
   Terminale_C: ['Mathématiques', 'Physique - Chimie'], // ← AJOUT ICI AUSSI
   Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],

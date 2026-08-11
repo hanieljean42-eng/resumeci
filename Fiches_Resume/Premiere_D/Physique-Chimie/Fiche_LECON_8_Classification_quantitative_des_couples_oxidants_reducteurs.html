@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classification Quantitative des Couples Oxydants-Réducteurs - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+    .meta-chips {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    h2 {
+      color: #16a34a;
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #dcfce7;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #1e293b;
+      font-size: 1.15rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    .definition {
+      background: #dcfce7;
+      border-left: 4px solid #16a34a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .definition strong {
+      color: #166534;
+    }
+    .important {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .important strong {
+      color: #1e40af;
+    }
+    .schema {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .schema strong {
+      color: #92400e;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Physique-Chimie</span>
+      <span class="chip">Couples Oxydants-Réducteurs</span>
+    </div>
+  </div>
+
+  <h2>I. Oxydation et Réduction</h2>
+
+  <div class="definition">
+    <strong>Oxydation :</strong> Perte d'électrons. L'espèce qui perd des électrons est le réducteur.
+  </div>
+
+  <div class="definition">
+    <strong>Réduction :</strong> Gain d'électrons. L'espèce qui gagne des électrons est l'oxydant.
+  </div>
+
+  <div class="important">
+    <strong>Mnémonique :</strong><br>
+    OIL RIG : Oxidation Is Loss, Reduction Is Gain.
+  </div>
+
+  <h2>II. Couple Oxydant-Réducteur</h2>
+
+  <div class="definition">
+    <strong>Couple redox :</strong> Ensemble constitué d'un oxydant et de son réducteur conjugué.
+  </div>
+
+  <div class="schema">
+    <strong>Notation :</strong><br>
+    <code>Ox + n<sub>e</sub><sup>-</sup> ⇌ Red</code>
+  </div>
+
+  <div class="important">
+    <strong>Exemples de couples :</strong>
+    <ul>
+      <li>Cu<sup>2+</sup>/Cu : Cu<sup>2+</sup> + 2e<sup>-</sup> ⇌ Cu</li>
+      <li>Fe<sup>3+</sup>/Fe<sup>2+</sup> : Fe<sup>3+</sup> + e<sup>-</sup> ⇌ Fe<sup>2+</sup></li>
+      <li>I<sub>2</sub>/I<sup>-</sup> : I<sub>2</sub> + 2e<sup>-</sup> ⇌ 2I<sup>-</sup></li>
+    </ul>
+  </div>
+
+  <h2>III. Nombre d'Oxydation</h2>
+
+  <div class="definition">
+    <strong>Degré d'oxydation :</strong> Nombre fictif caractérisant l'état d'oxydation d'un élément dans un composé.
+  </div>
+
+  <div class="schema">
+    <strong>Règles de détermination :</strong>
+    <ul>
+      <li>Élément simple : degré 0</li>
+      <li>H : +1 (sauf dans les hydrures métalliques : -1)</li>
+      <li>O : -2 (sauf dans les peroxydes : -1)</li>
+      <li>Métal alcalin : +1</li>
+      <li>Métal alcalino-terreux : +2</li>
+    </ul>
+  </div>
+
+  <h2>IV. Échelle des Potentiels</h2>
+
+  <div class="definition">
+    <strong>Potentiel standard :</strong> Tension électrique mesurée dans des conditions standard.
+  </div>
+
+  <div class="important">
+    <strong>Échelle des potentiels (V) :</strong>
+    <table>
+      <tr>
+        <th>Couple</th>
+        <th>E° (V)</th>
+      </tr>
+      <tr>
+        <td>Li<sup>+</sup>/Li</td>
+        <td>-3,04</td>
+      </tr>
+      <tr>
+        <td>Zn<sup>2+</sup>/Zn</td>
+        <td>-0,76</td>
+      </tr>
+      <tr>
+        <td>Fe<sup>2+</sup>/Fe</td>
+        <td>-0,44</td>
+      </tr>
+      <tr>
+        <td>Cu<sup>2+</sup>/Cu</td>
+        <td>+0,34</td>
+      </tr>
+      <tr>
+        <td>Ag<sup>+</sup>/Ag</td>
+        <td>+0,80</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>V. Prévision des Réactions</h2>
+
+  <div class="schema">
+    <strong>Règle du gamma :</strong><br>
+    Une réaction d'oxydoréduction est spontanée si l'oxydant du couple de potentiel le plus élevé réagit avec le réducteur du couple de potentiel le plus faible.
+  </div>
+
+  <div class="important">
+    <strong>Exemple :</strong><br>
+    Cu<sup>2+</sup> + Zn → Cu + Zn<sup>2+</sup> (spontanée car E°(Cu<sup>2+</sup>/Cu) > E°(Zn<sup>2+</sup>/Zn))
+  </div>
+
+  <h2>VI. Pile Électrochimique</h2>
+
+  <div class="definition">
+    <strong>Pile :</strong> Dispositif convertissant l'énergie chimique en énergie électrique par réaction d'oxydoréduction spontanée.
+  </div>
+
+  <div class="schema">
+    <strong>Constitution :</strong>
+    <ul>
+      <li>Deux électrodes (anode et cathode)</li>
+      <li>Deux solutions contenant les couples redox</li>
+      <li>Pont salin pour fermer le circuit</li>
+    </ul>
+  </div>
+</body>
+</html>

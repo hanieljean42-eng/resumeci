@@ -16,7 +16,7 @@ const path = require('path');
 const CLASSE = process.argv[2];
 if (!CLASSE) {
   console.log('❌ Usage: node src/generate_fiches_multi.js <classe>');
-  console.log('   Classes: 6eme, 3eme, Seconde_A, Seconde_C');
+  console.log('   Classes: 6eme, 3eme, Seconde_A, Seconde_C, Premiere_D');
   process.exit(1);
 }
 
@@ -25,6 +25,7 @@ const COURS_DIR_MAP = {
   '3eme': path.join(__dirname, '..', 'Cours_3eme'),
   'Seconde_A': path.join(__dirname, '..', 'Cours_Seconde_A'),
   'Seconde_C': path.join(__dirname, '..', 'Cours_Seconde_C'),
+  'Premiere_D': path.join(__dirname, '..', 'Cours_Premiere_D'),
 };
 
 const COURS_DIR = COURS_DIR_MAP[CLASSE];

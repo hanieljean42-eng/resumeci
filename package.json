@@ -11,14 +11,17 @@
     "scrape:6eme": "node src/scraper_6eme.js",
     "scrape:3eme": "node src/scraper_3eme.js",
     "scrape:seconde": "node src/scraper_seconde.js",
+    "scrape:premiere": "node src/scraper_premiere.js",
     "extract:6eme": "node src/extract_lessons.js 6eme",
     "extract:3eme": "node src/extract_lessons.js 3eme",
     "extract:seconde-a": "node src/extract_lessons.js Seconde_A",
     "extract:seconde-c": "node src/extract_lessons.js Seconde_C",
+    "extract:premiere": "node src/extract_lessons.js Premiere_D",
     "generate:6eme": "node src/generate_fiches_multi.js 6eme",
     "generate:3eme": "node src/generate_fiches_multi.js 3eme",
     "generate:seconde-a": "node src/generate_fiches_multi.js Seconde_A",
-    "generate:seconde-c": "node src/generate_fiches_multi.js Seconde_C"
+    "generate:seconde-c": "node src/generate_fiches_multi.js Seconde_C",
+    "generate:premiere": "node src/generate_fiches_multi.js Premiere_D"
   },
   "keywords": [],
   "author": "",

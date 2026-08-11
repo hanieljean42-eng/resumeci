@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Électrolyse - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+    .meta-chips {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    h2 {
+      color: #16a34a;
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #dcfce7;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #1e293b;
+      font-size: 1.15rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    .definition {
+      background: #dcfce7;
+      border-left: 4px solid #16a34a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .definition strong {
+      color: #166534;
+    }
+    .important {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .important strong {
+      color: #1e40af;
+    }
+    .schema {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .schema strong {
+      color: #92400e;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Physique-Chimie</span>
+      <span class="chip">L'Électrolyse</span>
+    </div>
+  </div>
+
+  <h2>I. Définition</h2>
+
+  <div class="definition">
+    <strong>Électrolyse :</strong> Transformation chimique forcée par un courant électrique. C'est l'inverse du fonctionnement d'une pile.
+  </div>
+
+  <div class="important">
+    <strong>Principe :</strong>
+    <ul>
+      <li>Un générateur impose le sens du courant</li>
+      <li>Les réactions aux électrodes sont forcées</li>
+      <li>Énergie électrique → Énergie chimique</li>
+    </ul>
+  </div>
+
+  <h2>II. Montage d'Électrolyse</h2>
+
+  <div class="schema">
+    <strong>Constitution :</strong>
+    <ul>
+      <li><strong>Anode :</strong> Électrode reliée au pôle + (oxydation)</li>
+      <li><strong>Cathode :</strong> Électrode reliée au pôle - (réduction)</li>
+      <li><strong>Électrolyte :</strong> Solution conductrice</li>
+      <li><strong>Générateur :</strong> Source de courant continu</li>
+    </ul>
+  </div>
+
+  <h2>III. Réactions aux Électrodes</h2>
+
+  <div class="definition">
+    <strong>Anode :</strong> Siège d'une oxydation (perte d'électrons).
+  </div>
+
+  <div class="definition">
+    <strong>Cathode :</strong> Siège d'une réduction (gain d'électrons).
+  </div>
+
+  <div class="important">
+    <strong>Exemple : électrolyse de l'eau :</strong>
+    <ul>
+      <li>Anode : 2H<sub>2</sub>O → O<sub>2</sub> + 4H<sup>+</sup> + 4e<sup>-</sup></li>
+      <li>Cathode : 2H<sub>2</sub>O + 2e<sup>-</sup> → H<sub>2</sub> + 2OH<sup>-</sup></li>
+    </ul>
+  </div>
+
+  <h2>IV. Quantité d'Électricité</h2>
+
+  <div class="schema">
+    <strong>Loi de Faraday :</strong><br>
+    <code>Q = I × t</code><br>
+    Q : quantité d'électricité (C)<br>
+    I : intensité (A)<br>
+    t : temps (s)
+  </div>
+
+  <div class="important">
+    <strong>Relation avec les moles d'électrons :</strong><br>
+    <code>n(e<sup>-</sup>) = Q / F</code><br>
+    F : constante de Faraday = 96500 C/mol
+  </div>
+
+  <h2>V. Applications</h2>
+
+  <ul>
+    <li><strong>Électrozingage :</strong> Dépôt de zinc sur le fer</li>
+    <li><strong>Électrolyse de l'eau :</strong> Production de H<sub>2</sub> et O<sub>2</sub></li>
+    <li><strong>Raffinage des métaux :</strong> Purification du cuivre</li>
+    <li><strong>Anodisation :</strong> Protection de l'aluminium</li>
+    <li><strong>Galvanoplastie :</strong> Reproduction d'objets</li>
+  </ul>
+
+  <h2>VI. Comparaison Pile/Électrolyse</h2>
+
+  <div class="important">
+    <strong>Tableau comparatif :</strong>
+    <table>
+      <tr>
+        <th>Caractéristique</th>
+        <th>Pile</th>
+        <th>Électrolyse</th>
+      </tr>
+      <tr>
+        <td>Conversion</td>
+        <td>Chimique → Électrique</td>
+        <td>Électrique → Chimique</td>
+      </tr>
+      <tr>
+        <td>Réactions</td>
+        <td>Spontanées</td>
+        <td>Forcées</td>
+      </tr>
+      <tr>
+        <td>Anode</td>
+        <td>- (oxydation)</td>
+        <td>+ (oxydation)</td>
+      </tr>
+      <tr>
+        <td>Cathode</td>
+        <td>+ (réduction)</td>
+        <td>- (réduction)</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

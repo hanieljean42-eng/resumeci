@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Polynômes du Second Degré - Première D</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+    .header { text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 1.8rem; color: #16a34a; margin-bottom: 15px; }
+    .meta-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .chip { background: #dcfce7; color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+    h2 { color: #16a34a; font-size: 1.4rem; margin-top: 35px; margin-bottom: 20px; border-bottom: 2px solid #dcfce7; padding-bottom: 10px; }
+    .definition { background: #dcfce7; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .important { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .schema { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première D</span>
+      <span class="chip">Mathématiques</span>
+      <span class="chip">Les Polynômes du Second Degré</span>
+    </div>
+  </div>
+  <h2>I. Forme Canonique</h2>
+  <div class="schema"><strong>P(x) = a(x - α)² + β</strong> avec α = -b/2a et β = P(α)</div>
+  <h2>II. Discriminant</h2>
+  <div class="definition"><strong>Δ = b² - 4ac</strong></div>
+  <h2>III. Racines</h2>
+  <div class="important">
+    <ul>
+      <li><strong>Δ > 0 :</strong> 2 racines x₁ = (-b - √Δ)/2a et x₂ = (-b + √Δ)/2a</li>
+      <li><strong>Δ = 0 :</strong> 1 racine double x₀ = -b/2a</li>
+      <li><strong>Δ < 0 :</strong> Pas de racine réelle</li>
+    </ul>
+  </div>
+  <h2>IV. Signe</h2>
+  <div class="schema">Si a > 0 : P(x) ≥ 0 à l'extérieur des racines. Si a < 0 : P(x) ≤ 0 à l'extérieur des racines.</div>
+  <h2>V. Factorisation</h2>
+  <div class="important">P(x) = a(x - x₁)(x - x₂) si Δ > 0</div>
+</body>
+</html>
