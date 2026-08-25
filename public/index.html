@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>ResumeCI — Fiches de Résumé | Collège & Lycée CI</title>
   <meta name="description" content="ResumeCI : 714 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. 6ème, 5ème, 4ème, 3ème, Seconde, Première D, Terminale. Maths, Physique, Chimie, Français, SVT, Histoire-Géo. Révisions BAC, BEPC.">
   <meta name="keywords" content="fiches résumé Côte d'Ivoire, fiches de cours CI, révision BAC Côte d'Ivoire, BEPC, collège Abidjan, lycée, 6ème, 5ème, 4ème, 3ème, Seconde A, Seconde C, Première, Terminale A, Terminale C, Terminale D, maths, physique chimie, français, SVT, histoire géographie, révision, fiches gratuites, cours en ligne Côte d'Ivoire">
@@ -315,7 +315,7 @@
       .topbar-actions .btn{padding:6px 8px;font-size:11px}
       .stats-grid{grid-template-columns:repeat(2,1fr)}
       .class-cards{grid-template-columns:1fr}
-      .content{padding:14px;overflow:visible}
+      .content{padding:14px;overflow-y:auto}
       .fiche-view{max-width:100%}
       .fiche-content{padding:18px;font-size:14px;overflow-wrap:anywhere}
       .fiche-content h1{font-size:18px}
@@ -327,6 +327,19 @@
       .audio-fab{width:46px;height:46px;bottom:14px;right:14px}
       .install-prompt{bottom:10px;align-items:flex-start}
       .install-actions{flex-direction:column}
+    }
+
+    @media(max-width:480px){
+      .content{padding:12px}
+      .fiche-content{padding:16px;font-size:13px}
+      .fiche-content h1{font-size:16px}
+      .fiche-content h2{font-size:14px;margin:20px 0 10px;padding:6px 8px}
+      .stat-card{padding:14px}
+      .stat-card .stat-number{font-size:22px}
+      .class-card{padding:18px}
+      .class-card h3{font-size:15px}
+      .dashboard-hero{padding:30px 0 24px}
+      .dashboard-hero h2{font-size:22px}
     }
     /* Learning tools bar */
     .tools-bar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}

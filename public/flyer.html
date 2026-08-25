@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flyer ResumeCI — À distribuer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      padding: 20px;
+    }
+
+    .print-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .print-button:hover {
+      transform: scale(1.05);
+    }
+
+    @media print {
+      .print-button {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .print-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+
+      .page {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: none;
+      }
+
+      .flyer-card {
+        padding: 20px;
+        border: 2px dashed #cbd5e1;
+        min-height: 500px;
+      }
+
+      .flyer-card::before {
+        height: 80px;
+      }
+
+      .logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .logo svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      .title {
+        font-size: 22px;
+      }
+
+      .subtitle {
+        font-size: 9px;
+      }
+
+      .description {
+        font-size: 9px;
+      }
+
+      .stat-number {
+        font-size: 18px;
+      }
+
+      .stat-label {
+        font-size: 7px;
+      }
+
+      .contact-section {
+        padding: 10px;
+      }
+
+      .contact-title {
+        font-size: 10px;
+      }
+
+      .contact-item {
+        padding: 6px 10px;
+      }
+
+      .contact-icon {
+        font-size: 16px;
+      }
+
+      .contact-name {
+        font-size: 9px;
+      }
+
+      .contact-number {
+        font-size: 11px;
+      }
+
+      .url {
+        font-size: 12px;
+      }
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .flyer-card {
+      padding: 15mm;
+      border: 2px dashed #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .flyer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 50%, #06b6d4 100%);
+      z-index: 0;
+    }
+
+    .flyer-content {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 8px;
+      background: #fff;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .logo svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .description {
+      font-size: 10px;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #2563eb;
+    }
+
+    .stat-label {
+      font-size: 8px;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: auto;
+    }
+
+    .contact-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .contact-number {
+      font-size: 12px;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .url-section {
+      text-align: center;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 2px dashed #e2e8f0;
+    }
+
+    .url {
+      font-size: 14px;
+      font-weight: 900;
+      color: #2563eb;
+      letter-spacing: 1px;
+    }
+
+    .cut-line {
+      position: absolute;
+      background: #e2e8f0;
+    }
+
+    .cut-line.horizontal {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+    }
+
+    .cut-line.vertical {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+
+      .cut-line {
+        display: none;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button" onclick="printFlyer()">🖨️ Imprimer le flyer</button>
+  
+  <div class="page">
+    <!-- Flyer 1 -->
+    <div class="flyer-card">
+      <div class="flyer-content">
+        <div class="header">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <rect width="512" height="512" rx="96" fill="#2563eb"/>
+              <path d="M128 128h188c38 0 68 30 68 68v188H196c-38 0-68-30-68-68V128z" fill="#ffffff" opacity="0.95"/>
+              <path d="M164 168h160M164 220h160M164 272h120" stroke="#2563eb" stroke-width="24" stroke-linecap="round"/>
+              <circle cx="356" cy="356" r="58" fill="#10b981"/>
+              <path d="M330 356l18 18 38-44" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="title">ResumeCI</h1>
+          <p class="subtitle">Fiches de Résumé — Collège & Lycée CI</p>
+        </div>
+        
+        <p class="description">
+          <strong>ResumeCI</strong> — Plateforme ivoirienne pour réviser efficacement. Fiches, quiz, flashcards, audio. 100% gratuit et hors-ligne !
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">714</div>
+            <div class="stat-label">Fiches</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Classes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Gratuit</div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <p class="contact-title">📱 Contactez-nous sur WhatsApp</p>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-info">
+              <div class="contact-name">Haniel_dev (Créateur)</div>
+              <div class="contact-number">+225 01 50 25 24 67</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🆘</div>
+            <div class="contact-info">
+              <div class="contact-name">Assistance ResumeCI</div>
+              <div class="contact-number">+225 01 04 91 10 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="url-section">
+          <p class="url">resumeci.me</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flyer 2 -->
+    <div class="flyer-card">
+      <div class="flyer-content">
+        <div class="header">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <rect width="512" height="512" rx="96" fill="#2563eb"/>
+              <path d="M128 128h188c38 0 68 30 68 68v188H196c-38 0-68-30-68-68V128z" fill="#ffffff" opacity="0.95"/>
+              <path d="M164 168h160M164 220h160M164 272h120" stroke="#2563eb" stroke-width="24" stroke-linecap="round"/>
+              <circle cx="356" cy="356" r="58" fill="#10b981"/>
+              <path d="M330 356l18 18 38-44" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="title">ResumeCI</h1>
+          <p class="subtitle">Fiches de Résumé — Collège & Lycée CI</p>
+        </div>
+        
+        <p class="description">
+          <strong>ResumeCI</strong> — Plateforme ivoirienne pour réviser efficacement. Fiches, quiz, flashcards, audio. 100% gratuit et hors-ligne !
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">714</div>
+            <div class="stat-label">Fiches</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Classes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Gratuit</div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <p class="contact-title">📱 Contactez-nous sur WhatsApp</p>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-info">
+              <div class="contact-name">Haniel_dev (Créateur)</div>
+              <div class="contact-number">+225 01 50 25 24 67</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🆘</div>
+            <div class="contact-info">
+              <div class="contact-name">Assistance ResumeCI</div>
+              <div class="contact-number">+225 01 04 91 10 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="url-section">
+          <p class="url">resumeci.me</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flyer 3 -->
+    <div class="flyer-card">
+      <div class="flyer-content">
+        <div class="header">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <rect width="512" height="512" rx="96" fill="#2563eb"/>
+              <path d="M128 128h188c38 0 68 30 68 68v188H196c-38 0-68-30-68-68V128z" fill="#ffffff" opacity="0.95"/>
+              <path d="M164 168h160M164 220h160M164 272h120" stroke="#2563eb" stroke-width="24" stroke-linecap="round"/>
+              <circle cx="356" cy="356" r="58" fill="#10b981"/>
+              <path d="M330 356l18 18 38-44" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="title">ResumeCI</h1>
+          <p class="subtitle">Fiches de Résumé — Collège & Lycée CI</p>
+        </div>
+        
+        <p class="description">
+          <strong>ResumeCI</strong> — Plateforme ivoirienne pour réviser efficacement. Fiches, quiz, flashcards, audio. 100% gratuit et hors-ligne !
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">714</div>
+            <div class="stat-label">Fiches</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Classes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Gratuit</div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <p class="contact-title">📱 Contactez-nous sur WhatsApp</p>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-info">
+              <div class="contact-name">Haniel_dev (Créateur)</div>
+              <div class="contact-number">+225 01 50 25 24 67</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🆘</div>
+            <div class="contact-info">
+              <div class="contact-name">Assistance ResumeCI</div>
+              <div class="contact-number">+225 01 04 91 10 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="url-section">
+          <p class="url">resumeci.me</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flyer 4 -->
+    <div class="flyer-card">
+      <div class="flyer-content">
+        <div class="header">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <rect width="512" height="512" rx="96" fill="#2563eb"/>
+              <path d="M128 128h188c38 0 68 30 68 68v188H196c-38 0-68-30-68-68V128z" fill="#ffffff" opacity="0.95"/>
+              <path d="M164 168h160M164 220h160M164 272h120" stroke="#2563eb" stroke-width="24" stroke-linecap="round"/>
+              <circle cx="356" cy="356" r="58" fill="#10b981"/>
+              <path d="M330 356l18 18 38-44" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="title">ResumeCI</h1>
+          <p class="subtitle">Fiches de Résumé — Collège & Lycée CI</p>
+        </div>
+        
+        <p class="description">
+          <strong>ResumeCI</strong> — Plateforme ivoirienne pour réviser efficacement. Fiches, quiz, flashcards, audio. 100% gratuit et hors-ligne !
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">714</div>
+            <div class="stat-label">Fiches</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Classes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Gratuit</div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <p class="contact-title">📱 Contactez-nous sur WhatsApp</p>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-info">
+              <div class="contact-name">Haniel_dev (Créateur)</div>
+              <div class="contact-number">+225 01 50 25 24 67</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🆘</div>
+            <div class="contact-info">
+              <div class="contact-name">Assistance ResumeCI</div>
+              <div class="contact-number">+225 01 04 91 10 10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="url-section">
+          <p class="url">resumeci.me</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Bouton pour imprimer manuellement
+    function printFlyer() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
