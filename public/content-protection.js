@@ -2,9 +2,19 @@
  * ResumeCI — Content Protection Script
  * © 2026 ResumeCI / Haniel_dev — Tous droits réservés.
  * Ce script protège le contenu contre la copie, le vol et la reproduction non autorisée.
+ * Désactivé sur mobile/iPhone pour une meilleure expérience utilisateur.
  */
 (function() {
   'use strict';
+
+  // ===== DETECT MOBILE DEVICES =====
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+  // Disable protection on mobile devices
+  if (isMobile) {
+    console.log('%c📱 Mode mobile détecté — Protection de contenu désactivée pour une meilleure expérience utilisateur', 'color:#10b981;font-size:12px');
+    return;
+  }
 
   // ===== 1. DISABLE RIGHT-CLICK CONTEXT MENU =====
   document.addEventListener('contextmenu', function(e) {
