@@ -1,5 +1,5 @@
 /* ResumeCI Service Worker */
-const VERSION = 'rci-sw-v1.0.0';
+const VERSION = 'rci-sw-v1.0.1';
 const APP_SHELL = [
   '/',
   '/index.html',
