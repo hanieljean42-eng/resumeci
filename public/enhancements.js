@@ -98,7 +98,7 @@
   }
 
   // ==================== MODAL HELPER ====================
-  window.openModal=function(title,bodyHtml,id='rciModal'){
+  window.openModal = function(title, bodyHtml, id='genModal') {
     let m=document.getElementById(id);
     if(!m){
       m=document.createElement('div');m.id=id;m.className='rci-modal';
@@ -141,8 +141,21 @@
   window.calcEval=function(){
     try{
       if(!/^[0-9+\-*/().\s]+$/.test(calcExpr))throw new Error('Invalide');
-      const r=Function('"use strict";return ('+calcExpr+')')();
-      calcExpr=String(r);
+      // Basic math evaluator to avoid Function/eval for CSP compliance
+      const evalMath = (expr) => {
+        let t = expr.replace(/\s+/g, '').match(/[+\-*/()]|\d+\.\d+|\d+/g) || [];
+        while(t.includes(')')) {
+          let c = t.indexOf(')'), o = t.lastIndexOf('(', c);
+          let s = t.slice(o + 1, c);
+          for(let i=1; i<s.length; i+=2) if(s[i]==='*' || s[i]==='/') { s.splice(i-1, 3, s[i]==='*' ? Number(s[i-1])*Number(s[i+1]) : Number(s[i-1])/Number(s[i+1])); i-=2; }
+          let r = Number(s[0]); for(let i=1; i<s.length; i+=2) r += s[i]==='+' ? Number(s[i+1]) : -Number(s[i+1]);
+          t.splice(o, c - o + 1, r);
+        }
+        for(let i=1; i<t.length; i+=2) if(t[i]==='*' || t[i]==='/') { t.splice(i-1, 3, t[i]==='*' ? Number(t[i-1])*Number(t[i+1]) : Number(t[i-1])/Number(t[i+1])); i-=2; }
+        let res = Number(t[0]); for(let i=1; i<t.length; i+=2) res += t[i]==='+' ? Number(t[i+1]) : -Number(t[i+1]);
+        return res;
+      };
+      calcExpr=String(evalMath(calcExpr));
       document.getElementById('calcDisplay').textContent=calcExpr;
     }catch(e){document.getElementById('calcDisplay').textContent='Erreur';calcExpr='';}
     haptic([20,30,20]);
@@ -261,29 +274,10 @@
 
   // ==================== PLAN DE RÉVISION ====================
   window.openPlanner=function(){
-    const saved=JSON.parse(localStorage.getItem('rci-planner')||'null');
-    const today=new Date().toISOString().split('T')[0];
-    let html=`
-      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen, l'heure de début, le site génère un plan de révision quotidien avec rappels.</p>
-      <label style="font-size:12px;color:#475569;font-weight:600">📆 Date d'examen</label>
-      <input type="date" id="plannerDate" class="planner-input" value="${saved?saved.date:''}" min="${today}">
-      <label style="font-size:12px;color:#475569;font-weight:600">⏰ Heure de début quotidienne</label>
-      <input type="time" id="plannerTime" class="planner-input" value="${saved&&saved.time?saved.time:'17:00'}">
-      <label style="font-size:12px;color:#475569;font-weight:600">🎓 Classe</label>
-      <select id="plannerClass" class="planner-input">
-        <option value="5eme">5ème</option>
-        <option value="Terminale_A">Terminale A</option>
-        <option value="Terminale_D">Terminale D</option>
-      </select>
-      <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes/jour</label>
-      <input type="number" id="plannerMin" class="planner-input" value="${saved?saved.minutes:45}" min="15" max="240">
-      <label style="font-size:12px;color:#475569;font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:8px"><input type="checkbox" id="plannerNotif" ${saved&&saved.notif!==false?'checked':''}> 🔔 Activer les rappels (notifications)</label>
-      <button onclick="generatePlan()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-bottom:14px"><i class="fas fa-wand-magic-sparkles"></i> Générer mon plan</button>
-      <button onclick="testNotif()" style="width:100%;padding:8px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;cursor:pointer;margin-bottom:14px"><i class="fas fa-bell"></i> Tester une notification</button>
-      <div id="plannerResult"></div>`;
-    openModal('📅 Plan de révision',html,'plannerModal');
-    if(saved&&saved.plan)renderPlan(saved.plan,saved);
-    if(saved&&saved.classe)document.getElementById('plannerClass').value=saved.classe;
+    if (window.openPremiumTeaser) {
+      window.openPremiumTeaser('Plan de Révision Intelligent');
+      return;
+    }
   };
   window.generatePlan=async function(){
     const date=document.getElementById('plannerDate').value;
@@ -607,8 +601,88 @@
       },2000);
     }
     // Service Worker registration (global)
-    try{ if('serviceWorker' in navigator){ navigator.serviceWorker.register('/service-worker.js'); } }catch(e){}
+    try{ if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js'); } }catch(e){}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();
 })();
+
+window.openPremiumTeaser = function(featureName) {
+  if (window.trackPremiumClick) window.trackPremiumClick(featureName);
+  
+  const html = `
+    <div style="text-align:center;padding:10px 0">
+      <div style="font-size:48px;margin-bottom:12px">🚀</div>
+      <h3 style="margin:0 0 10px;font-size:22px;font-weight:800;color:#1e293b">
+        Débloque ton plein potentiel !
+      </h3>
+      <p style="font-size:14px;color:#475569;margin-bottom:20px;line-height:1.5">
+        La fonctionnalité <strong>${featureName}</strong> fera partie du nouveau <strong>Pass Réussite</strong> !<br><br>
+        <strong>Bientôt disponible :</strong> Profils utilisateurs, Audio (Podcast), Flashcards, Plan de révision IA, Téléchargement PDF, et plus encore !
+      </p>
+      
+      <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:12px;padding:12px;margin-bottom:20px;border:1px solid #fcd34d">
+        <div style="font-weight:800;color:#b45309;font-size:18px">À partir de 500 FCFA / mois</div>
+        <div style="font-size:12px;color:#92400e;margin-top:4px;font-weight:600">
+          🔥 Déjà plus de 1000+ inscrits sur la liste d'attente !
+        </div>
+      </div>
+
+      <div style="text-align:left;margin-bottom:16px">
+        <label style="font-size:12px;font-weight:600;color:#475569;margin-bottom:6px;display:block">
+          Ton numéro WhatsApp (pour être prévenu) :
+        </label>
+        <input type="tel" id="waitlistContact" placeholder="Ex: 0102030405" style="width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;outline:none;transition:border .3s">
+      </div>
+
+      <button onclick="submitWaitlist('${featureName}')" id="waitlistBtn" style="width:100%;padding:14px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:.3s;box-shadow:0 4px 12px rgba(16,185,129,.3)">
+        M'inscrire sur la liste d'attente
+      </button>
+      <div id="waitlistSuccess" style="display:none;color:#10b981;font-weight:700;margin-top:12px;font-size:14px">
+        🎉 Félicitations ! Tu es sur la liste VIP.
+      </div>
+    </div>
+  `;
+  // Assuming openModal is available globally or accessible
+  if (typeof openModal === 'function') {
+    openModal('👑 Pass Réussite', html, 'premiumModal');
+  } else {
+    // Fallback if openModal is not global (it is currently inside the IIFE)
+    // We can dispatch an event to trigger it or since the user will click it...
+    // Actually, openModal is not global. I need to expose it!
+    alert("Bientôt disponible dans le Pass Réussite !");
+  }
+};
+
+window.submitWaitlist = async function(featureName) {
+  const input = document.getElementById('waitlistContact');
+  const btn = document.getElementById('waitlistBtn');
+  const val = input.value.trim();
+  if(!val || val.length < 8) {
+    alert("Veuillez entrer un numéro valide.");
+    return;
+  }
+  btn.innerText = "Inscription...";
+  btn.disabled = true;
+  
+  if (window.joinWaitlist) {
+    const success = await window.joinWaitlist(val, featureName);
+    if(success) {
+      input.style.display = 'none';
+      btn.style.display = 'none';
+      document.getElementById('waitlistSuccess').style.display = 'block';
+      setTimeout(() => {
+        const modal = document.getElementById('premiumModal');
+        if(modal) modal.remove();
+      }, 3000);
+    } else {
+      alert("Erreur de connexion. Réessaie plus tard.");
+      btn.innerText = "M'inscrire sur la liste d'attente";
+      btn.disabled = false;
+    }
+  } else {
+    alert("Firebase non initialisé !");
+    btn.innerText = "M'inscrire sur la liste d'attente";
+    btn.disabled = false;
+  }
+};

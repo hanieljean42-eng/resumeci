@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - ResumeCI</title>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; padding: 20px; }
+    h1 { text-align: center; color: #3b82f6; }
+    .card { background: #1e293b; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 12px; border-bottom: 1px solid #334155; text-align: left; }
+    th { color: #94a3b8; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .stat-box { background: #3b82f6; padding: 20px; border-radius: 12px; text-align: center; }
+    .stat-box h3 { margin: 0; font-size: 2em; }
+    .stat-box p { margin: 5px 0 0; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <h1>ResumeCI Admin</h1>
+  
+  <div class="stat-grid">
+    <div class="stat-box">
+      <h3 id="waitlistCount">0</h3>
+      <p>Inscrits Liste d'Attente</p>
+    </div>
+    <div class="stat-box" style="background:#10b981;">
+      <h3 id="clicksCount">0</h3>
+      <p>Clics Premium</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Derniers Inscrits (Pass Réussite)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Nom / Classe</th>
+          <th>Contact</th>
+          <th>Intérêt principal</th>
+        </tr>
+      </thead>
+      <tbody id="waitlistTableBody">
+        <tr><td colspan="4" style="text-align:center;">Chargement...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script type="module">
+    import { db } from '/firebase-config.js';
+    import { collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    
+    // Simple password check for basic access
+    const pwd = prompt("Mot de passe Admin :");
+    if (pwd !== "resumeci") {
+      document.body.innerHTML = "<h2 style='text-align:center;color:red;'>Accès refusé</h2>";
+      throw new Error("Accès refusé");
+    }
+
+    async function loadData() {
+      try {
+        const q = query(collection(db, "waitlist"), orderBy("timestamp", "desc"), limit(100));
+        const querySnapshot = await getDocs(q);
+        
+        document.getElementById('waitlistCount').innerText = querySnapshot.size;
+        
+        let html = '';
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const dateStr = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString('fr-FR') : 'N/A';
+          html += `<tr>
+            <td>${dateStr}</td>
+            <td>${data.name || 'N/A'}</td>
+            <td>${data.contact || 'N/A'}</td>
+            <td>${data.feature || 'Global'}</td>
+          </tr>`;
+        });
+        
+        document.getElementById('waitlistTableBody').innerHTML = html || '<tr><td colspan="4" style="text-align:center;">Aucun inscrit pour le moment.</td></tr>';
+      } catch(e) {
+        console.error("Error fetching data:", e);
+        document.getElementById('waitlistTableBody').innerHTML = '<tr><td colspan="4" style="text-align:center;color:red;">Erreur de chargement. Vérifiez les règles Firestore.</td></tr>';
+      }
+    }
+    
+    // Initialiser le chargement après un court délai pour s'assurer du chargement des modules
+    setTimeout(loadData, 500);
+  </script>
+</body>
+</html>

@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { getWhatsappQrHtml } = require('./fiche_whatsapp_qr');
 
 const CLASSE = process.argv[2];
 if (!CLASSE) {

@@ -79,6 +79,11 @@ app.get('/api/structure', (req, res) => {
 app.get('/api/fiche/:cls/:subject/:file', (req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=300');
   const { cls, subject, file } = req.params;
+  
+  if (!ALLOWED_SUBJECTS[cls] || !ALLOWED_SUBJECTS[cls].includes(subject) || !/^[a-zA-Z0-9_.-]+$/.test(file) || file.includes('..')) {
+    return res.status(400).json({ error: 'Paramètres invalides' });
+  }
+
   const fichePath = path.join(FICHES_DIR, cls, subject, file);
   
   if (!fs.existsSync(fichePath)) {
@@ -144,6 +149,11 @@ app.get('/api/stats', (req, res) => {
 // API: Download fiche as PDF (printable)
 app.get('/api/download/:cls/:subject/:file', async (req, res) => {
   const { cls, subject, file } = req.params;
+  
+  if (!ALLOWED_SUBJECTS[cls] || !ALLOWED_SUBJECTS[cls].includes(subject) || !/^[a-zA-Z0-9_.-]+$/.test(file) || file.includes('..')) {
+    return res.status(400).send('Paramètres invalides');
+  }
+
   const fichePath = path.join(FICHES_DIR, cls, subject, file);
   
   if (!fs.existsSync(fichePath)) {
