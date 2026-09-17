@@ -676,12 +676,12 @@ window.submitWaitlist = async function(featureName) {
         if(modal) modal.remove();
       }, 3000);
     } else {
-      alert("Erreur de connexion. Réessaie plus tard.");
+      alert("Erreur de connexion (Base de données). Réessaie plus tard.");
       btn.innerText = "M'inscrire sur la liste d'attente";
       btn.disabled = false;
     }
   } else {
-    alert("Firebase non initialisé !");
+    alert("Erreur : Le système de connexion n'a pas pu se charger (Vérifiez si vous avez un bloqueur de publicité ou rechargez la page).");
     btn.innerText = "M'inscrire sur la liste d'attente";
     btn.disabled = false;
   }
