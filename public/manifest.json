@@ -3,7 +3,12 @@
   "short_name": "ResumeCI",
   "description": "Fiches de résumé, quiz et flashcards pour le Collège et le Lycée en Côte d'Ivoire",
   "start_url": "/",
+  "id": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
+  "lang": "fr",
+  "categories": ["education", "books"],
   "background_color": "#f8fafc",
   "theme_color": "#2563eb",
   "icons": [

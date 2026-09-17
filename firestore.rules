@@ -1,8 +1,21 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /waitlist/{document=**} {
-      allow read, write: if true;
+
+    // Waitlist: create-only, no public read/update/delete
+    match /waitlist/{document} {
+      allow create: if request.resource.data.keys().hasAll(['contact', 'feature', 'timestamp'])
+                    && request.resource.data.contact is string
+                    && request.resource.data.contact.size() > 0
+                    && request.resource.data.contact.size() <= 25
+                    && request.resource.data.feature is string
+                    && request.resource.data.feature.size() <= 100;
+      allow read, update, delete: if false;
+    }
+
+    // Block everything else
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

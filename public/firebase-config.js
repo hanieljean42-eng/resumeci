@@ -21,7 +21,6 @@ const db = getFirestore(app);
 window.trackPremiumClick = function(featureName) {
   try {
     logEvent(analytics, 'premium_click', { feature_name: featureName });
-    console.log("Analytics: Clic enregistré pour", featureName);
   } catch(e) {
     console.warn("Analytics error", e);
   }

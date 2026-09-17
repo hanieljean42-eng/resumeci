@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ResumeCI — Fiches de Résumé | Collège & Lycée CI</title>
   <meta name="description" content="ResumeCI : 714 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. 6ème, 5ème, 4ème, 3ème, Seconde, Première D, Terminale. Maths, Physique, Chimie, Français, SVT, Histoire-Géo. Révisions BAC, BEPC.">
   <meta name="keywords" content="fiches résumé Côte d'Ivoire, fiches de cours CI, révision BAC Côte d'Ivoire, BEPC, collège Abidjan, lycée, 6ème, 5ème, 4ème, 3ème, Seconde A, Seconde C, Première, Terminale A, Terminale C, Terminale D, maths, physique chimie, français, SVT, histoire géographie, révision, fiches gratuites, cours en ligne Côte d'Ivoire">
@@ -25,15 +25,15 @@
   <link rel="alternate" hreflang="x-default" href="https://resumeci.me/">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#2563eb">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <link rel="stylesheet" href="/enhancements.css">
+  <link rel="stylesheet" href="/enhancements.css?v=2.2.0">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-  <script src="/enhancements.js" defer></script>
-  <script type="module" src="/firebase-config.js"></script>
-  <script src="/content-protection.js" defer></script>
+  <script src="/enhancements.js?v=2.2.0" defer></script>
+  <script type="module" src="/firebase-config.js?v=2.2.0"></script>
+  <script src="/content-protection.js?v=2.2.0" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -76,7 +76,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/main.css?v=2.2.0">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
@@ -153,16 +153,13 @@
           <span class="current">Accueil</span>
         </div>
         <div class="topbar-actions" id="topbarActions">
-          <button onclick="openPremiumTeaser('Profils Utilisateurs')" style="padding: 8px 12px; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(37,99,235,0.3); font-size: 13px;">
-            <i class="fas fa-user-circle"></i> <span class="hide-mobile">Mon Profil</span> 🔒
-          </button>
         </div>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
       <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique</span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a><a href="/fiches-bac-ci.html">Fiches BAC</a><a href="/fiches-terminale-d.html">Terminale D</a><a href="/fiches-bepc-ci.html">BEPC</a><a href="/fiches-college-ci.html">Collège</a></div></footer>
     </div>
   </div>
-  <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute"><i class="fas fa-volume-up"></i></button>
+  <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute" aria-label="Lire la fiche à voix haute"><i class="fas fa-volume-up" aria-hidden="true"></i></button>
   <div class="install-prompt" id="installPrompt" role="dialog" aria-live="polite">
     <div class="install-icon"><i class="fas fa-mobile-screen-button"></i></div>
     <div class="install-text">
@@ -175,9 +172,9 @@
     </div>
   </div>
 
-  <script src="/app.js" defer></script>
+  <script src="/app.js?v=2.2.0" defer></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+    /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
     @keyframes annIn{from{opacity:0}to{opacity:1}}
     .ann-card{font-family:'Poppins',sans-serif;width:100%;max-width:400px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:annUp .5s cubic-bezier(.2,1,.3,1)}

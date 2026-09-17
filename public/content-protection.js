@@ -140,7 +140,12 @@
       -moz-user-drag: none !important;
       -o-user-drag: none !important;
       user-drag: none !important;
-      pointer-events: none;
+    }
+    /* Allow text selection in fiche content for accessibility */
+    .fiche-content, .fiche-content * {
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      user-select: text !important;
     }
     /* Disable printing */
     @media print {
@@ -182,10 +187,10 @@
   animStyle.textContent = '@keyframes slideUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}';
   document.head.appendChild(animStyle);
 
-  // ===== 9. DETECT DEVTOOLS OPEN (basic) =====
+  // ===== 9. DETECT DEVTOOLS OPEN (basic, low-impact) =====
   var devtoolsOpen = false;
   var threshold = 160;
-  setInterval(function() {
+  function checkDevTools() {
     if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
       if (!devtoolsOpen) {
         devtoolsOpen = true;
@@ -198,7 +203,9 @@
         document.body.style.opacity = '1';
       }
     }
-  }, 1000);
+  }
+  // Use a longer interval (5s) to reduce CPU impact
+  setInterval(checkDevTools, 5000);
 
   // ===== 10. DISABLE PAGE VISIBILITY SCREENSHOT ATTEMPTS =====
   document.addEventListener('visibilitychange', function() {
@@ -210,9 +217,10 @@
 
   // ===== 11. WATERMARK OVERLAY (invisible but present in screenshots) =====
   var watermark = document.createElement('div');
+  watermark.setAttribute('aria-hidden', 'true');
   watermark.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;opacity:0.015;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;overflow:hidden;font-size:14px;color:#000;font-weight:bold;transform:rotate(-30deg);letter-spacing:2px';
   var wmText = '';
-  for (var i = 0; i < 80; i++) {
+  for (var i = 0; i < 15; i++) {
     wmText += '© ResumeCI 2026 — Haniel_dev &nbsp;&nbsp;&nbsp;&nbsp;';
   }
   watermark.innerHTML = wmText;

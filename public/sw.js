@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v27';
+const CACHE_SHELL = 'resumeci-shell-v28';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -9,6 +9,7 @@ const SHELL_FILES = [
   '/about.html',
   '/contact.html',
   '/faq.html',
+  '/offline.html',
   '/manifest.json',
   '/icon.svg',
   '/icon-192.png',
@@ -16,33 +17,47 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/enhancements.css',
-  '/enhancements.js'
+  '/main.css?v=2.2.0',
+  '/enhancements.css?v=2.2.0',
+  '/enhancements.js?v=2.2.0',
+  '/firebase-config.js?v=2.2.0',
+  '/content-protection.js?v=2.2.0',
+  '/app.js?v=2.2.0'
 ];
 
-// Install: cache shell files
+// Install: cache shell files and skip waiting immediately
 self.addEventListener('install', e => {
+  self.skipWaiting();
   e.waitUntil(
     caches.open(CACHE_SHELL)
       .then(c => c.addAll(SHELL_FILES))
-      .then(() => self.skipWaiting())
   );
 });
 
-// Activate: clean old caches
+// Activate: purge all old caches and notify all clients immediately
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
       Promise.all(keys.filter(k => k !== CACHE_SHELL && k !== CACHE_FICHES).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
+    ).then(() => self.clients.claim()).then(() => {
+      return self.clients.matchAll({ type: 'window' }).then(clients => {
+        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '2.2.0' }));
+      });
+    })
   );
 });
 
-// Fetch: network-first for HTML pages, cache-first for fiches
+// Fetch: bypass cache for sw.js and version.json, network-first for HTML pages
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
+
+  // Never cache version.json and sw.js
+  if (url.pathname.endsWith('version.json') || url.pathname.endsWith('sw.js')) {
+    e.respondWith(fetch(e.request, { cache: 'no-store' }));
+    return;
+  }
 
   // Fiches: stale-while-revalidate (serve cached fast, but always update in background)
   if (url.pathname.startsWith('/fiches/')) {

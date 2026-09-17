@@ -1,3 +1,7 @@
+// TODO: This server.js is used only on Render (not Firebase Hosting).
+// The puppeteer-core Chrome path on line ~167 is hardcoded for Windows.
+// For Linux deployment, use: executablePath: '/usr/bin/google-chrome-stable'
+// or switch to 'puppeteer' (not puppeteer-core) for auto-downloaded Chromium.
 const express = require('express');
 const fs = require('fs');
 const path = require('path');

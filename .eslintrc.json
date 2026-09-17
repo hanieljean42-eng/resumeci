@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "serviceworker": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "katex": "readonly",
+    "html2pdf": "readonly",
+    "firebase": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "eqeqeq": ["error", "always"],
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "curly": ["warn", "multi-line"],
+    "no-throw-literal": "error"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "public/app.js",
+    "_extracts_*/",
+    "data_*/",
+    "Cours_*/"
+  ]
+}

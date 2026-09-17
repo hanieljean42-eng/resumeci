@@ -1,4 +1,11 @@
 /* ==================== ENHANCEMENTS ==================== */
+/* Accessibility: WCAG AA contrast fixes */
+.stat-label, .lesson-meta, .count, .subtitle, .ann-hi span, .ann-txt { color: #64748b !important; }
+body.dark-mode .stat-label, body.dark-mode .lesson-meta, body.dark-mode .count { color: #94a3b8 !important; }
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 .skip-to-content{position:absolute;left:-9999px;z-index:999;padding:1em;background-color:var(--accent);color:#fff;opacity:0}
 .skip-to-content:focus{left:50%;transform:translateX(-50%);opacity:1}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}

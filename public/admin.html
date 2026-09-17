@@ -3,90 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Admin Dashboard - ResumeCI</title>
   <style>
-    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; padding: 20px; }
-    h1 { text-align: center; color: #3b82f6; }
-    .card { background: #1e293b; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { padding: 12px; border-bottom: 1px solid #334155; text-align: left; }
-    th { color: #94a3b8; }
-    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f8fafc; min-height: 100vh; }
+    
+    /* Login Screen */
+    .login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+    .login-card { background: #1e293b; border-radius: 16px; padding: 32px; max-width: 400px; width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,.4); text-align: center; }
+    .login-card h1 { font-size: 24px; margin-bottom: 8px; color: #3b82f6; }
+    .login-card p { color: #94a3b8; font-size: 13px; margin-bottom: 24px; }
+    .login-card .icon { font-size: 48px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; text-align: left; }
+    .form-group label { display: block; font-size: 12px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; }
+    .form-group input { width: 100%; padding: 12px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 10px; color: #f8fafc; font-size: 14px; outline: none; transition: border-color .2s; }
+    .form-group input:focus { border-color: #3b82f6; }
+    .login-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #3b82f6, #7c3aed); color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: opacity .2s; }
+    .login-btn:hover { opacity: .9; }
+    .login-btn:disabled { opacity: .5; cursor: not-allowed; }
+    .login-error { color: #ef4444; font-size: 12px; margin-top: 12px; display: none; }
+    .login-error.show { display: block; }
+    .attempts-warning { color: #f59e0b; font-size: 11px; margin-top: 8px; }
+    
+    /* Dashboard */
+    .dashboard { display: none; padding: 20px; max-width: 1000px; margin: 0 auto; }
+    .dashboard.show { display: block; }
+    h1.dash-title { text-align: center; color: #3b82f6; margin-bottom: 24px; font-size: 22px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
     .stat-box { background: #3b82f6; padding: 20px; border-radius: 12px; text-align: center; }
     .stat-box h3 { margin: 0; font-size: 2em; }
-    .stat-box p { margin: 5px 0 0; opacity: 0.8; }
+    .stat-box p { margin: 5px 0 0; opacity: 0.8; font-size: 14px; }
+    .card { background: #1e293b; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+    .card h2 { margin-bottom: 16px; font-size: 18px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; border-bottom: 1px solid #334155; text-align: left; font-size: 13px; }
+    th { color: #94a3b8; font-weight: 600; }
+    .logout-btn { position: fixed; top: 16px; right: 16px; padding: 10px 18px; background: #ef4444; color: #fff; border: none; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; z-index: 10; }
+    .logout-btn:hover { background: #dc2626; }
+    .export-btn { padding: 10px 20px; background: #10b981; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 16px; }
+    .export-btn:hover { background: #059669; }
   </style>
 </head>
 <body>
-  <h1>ResumeCI Admin</h1>
-  
-  <div class="stat-grid">
-    <div class="stat-box">
-      <h3 id="waitlistCount">0</h3>
-      <p>Inscrits Liste d'Attente</p>
-    </div>
-    <div class="stat-box" style="background:#10b981;">
-      <h3 id="clicksCount">0</h3>
-      <p>Clics Premium</p>
+
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="icon">🔐</div>
+      <h1>Admin ResumeCI</h1>
+      <p>Connectez-vous avec votre compte Firebase pour accéder au tableau de bord.</p>
+      <div class="form-group">
+        <label for="adminEmail">Email administrateur</label>
+        <input type="email" id="adminEmail" placeholder="admin@resumeci.me" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="adminPassword">Mot de passe</label>
+        <input type="password" id="adminPassword" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <button class="login-btn" id="loginBtn" onclick="handleLogin()">Se connecter</button>
+      <div class="login-error" id="loginError"></div>
+      <div class="attempts-warning" id="attemptsWarning"></div>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Derniers Inscrits (Pass Réussite)</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Nom / Classe</th>
-          <th>Contact</th>
-          <th>Intérêt principal</th>
-        </tr>
-      </thead>
-      <tbody id="waitlistTableBody">
-        <tr><td colspan="4" style="text-align:center;">Chargement...</td></tr>
-      </tbody>
-    </table>
+  <!-- Dashboard (hidden until authenticated) -->
+  <div class="dashboard" id="dashboard">
+    <button class="logout-btn" onclick="handleLogout()">Déconnexion</button>
+    <h1 class="dash-title">📊 ResumeCI Admin Dashboard</h1>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <h3 id="waitlistCount">—</h3>
+        <p>Inscrits Liste d'Attente</p>
+      </div>
+      <div class="stat-box" style="background:#10b981;">
+        <h3 id="todayCount">—</h3>
+        <p>Inscrits Aujourd'hui</p>
+      </div>
+      <div class="stat-box" style="background:#7c3aed;">
+        <h3 id="uniqueFeatures">—</h3>
+        <p>Features Demandées</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Derniers Inscrits (Pass Réussite)</h2>
+      <button class="export-btn" onclick="exportCSV()">📥 Exporter en CSV</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Contact</th>
+            <th>Intérêt principal</th>
+            <th>Appareil</th>
+          </tr>
+        </thead>
+        <tbody id="waitlistTableBody">
+          <tr><td colspan="4" style="text-align:center;">Chargement...</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script type="module">
-    import { db } from '/firebase-config.js';
-    import { collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-    
-    // Simple password check for basic access
-    const pwd = prompt("Mot de passe Admin :");
-    if (pwd !== "resumeci") {
-      document.body.innerHTML = "<h2 style='text-align:center;color:red;'>Accès refusé</h2>";
-      throw new Error("Accès refusé");
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
+      authDomain: "resumeci-d5c9a.firebaseapp.com",
+      projectId: "resumeci-d5c9a",
+      storageBucket: "resumeci-d5c9a.firebasestorage.app",
+      messagingSenderId: "1004356929699",
+      appId: "1:1004356929699:web:c1842aaf3f2d98247a1716"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    let loginAttempts = 0;
+    const MAX_ATTEMPTS = 5;
+    let allDocs = [];
+
+    // Check auth state on load
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        showDashboard();
+        loadData();
+      } else {
+        showLogin();
+      }
+    });
+
+    function showLogin() {
+      document.getElementById('loginScreen').style.display = 'flex';
+      document.getElementById('dashboard').classList.remove('show');
+    }
+
+    function showDashboard() {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('dashboard').classList.add('show');
+    }
+
+    window.handleLogin = async function() {
+      const email = document.getElementById('adminEmail').value.trim();
+      const password = document.getElementById('adminPassword').value;
+      const errorEl = document.getElementById('loginError');
+      const warningEl = document.getElementById('attemptsWarning');
+      const btn = document.getElementById('loginBtn');
+
+      if (!email || !password) {
+        errorEl.textContent = "Veuillez remplir tous les champs.";
+        errorEl.classList.add('show');
+        return;
+      }
+
+      if (loginAttempts >= MAX_ATTEMPTS) {
+        errorEl.textContent = "Trop de tentatives. Réessayez plus tard.";
+        errorEl.classList.add('show');
+        btn.disabled = true;
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Connexion...";
+      errorEl.classList.remove('show');
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        // Auth state observer will handle the rest
+      } catch(e) {
+        loginAttempts++;
+        const remaining = MAX_ATTEMPTS - loginAttempts;
+        
+        let msg = "Email ou mot de passe incorrect.";
+        if (e.code === 'auth/user-not-found') msg = "Aucun compte trouvé avec cet email.";
+        if (e.code === 'auth/wrong-password') msg = "Mot de passe incorrect.";
+        if (e.code === 'auth/too-many-requests') msg = "Compte temporairement bloqué. Réessayez plus tard.";
+        if (e.code === 'auth/invalid-email') msg = "Format d'email invalide.";
+        
+        errorEl.textContent = msg;
+        errorEl.classList.add('show');
+        
+        if (remaining > 0 && remaining <= 3) {
+          warningEl.textContent = `⚠️ ${remaining} tentative(s) restante(s)`;
+        }
+        
+        btn.disabled = false;
+        btn.textContent = "Se connecter";
+      }
+    };
+
+    window.handleLogout = async function() {
+      await signOut(auth);
+    };
+
+    // Sanitize HTML to prevent XSS
+    function escapeHtml(str) {
+      if (!str) return 'N/A';
+      const div = document.createElement('div');
+      div.textContent = String(str);
+      return div.innerHTML;
     }
 
     async function loadData() {
       try {
-        const q = query(collection(db, "waitlist"), orderBy("timestamp", "desc"), limit(100));
-        const querySnapshot = await getDocs(q);
-        
-        document.getElementById('waitlistCount').innerText = querySnapshot.size;
-        
+        const q = query(collection(db, "waitlist"), orderBy("timestamp", "desc"), limit(200));
+        const snapshot = await getDocs(q);
+
+        allDocs = [];
+        snapshot.forEach((doc) => allDocs.push(doc.data()));
+
+        document.getElementById('waitlistCount').textContent = allDocs.length;
+
+        // Today count
+        const today = new Date().toDateString();
+        const todayCount = allDocs.filter(d => {
+          if (!d.timestamp) return false;
+          return new Date(d.timestamp.toDate()).toDateString() === today;
+        }).length;
+        document.getElementById('todayCount').textContent = todayCount;
+
+        // Unique features
+        const features = new Set(allDocs.map(d => d.feature || 'General'));
+        document.getElementById('uniqueFeatures').textContent = features.size;
+
+        // Table
         let html = '';
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const dateStr = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString('fr-FR') : 'N/A';
+        allDocs.forEach((data) => {
+          const dateStr = data.timestamp
+            ? new Date(data.timestamp.toDate()).toLocaleString('fr-FR')
+            : 'N/A';
+          const ua = data.userAgent || '';
+          const device = /iPhone|iPad/i.test(ua) ? '📱 iOS'
+            : /Android/i.test(ua) ? '📱 Android'
+            : /Windows/i.test(ua) ? '💻 Windows'
+            : /Mac/i.test(ua) ? '💻 Mac'
+            : '🌐 Autre';
           html += `<tr>
-            <td>${dateStr}</td>
-            <td>${data.name || 'N/A'}</td>
-            <td>${data.contact || 'N/A'}</td>
-            <td>${data.feature || 'Global'}</td>
+            <td>${escapeHtml(dateStr)}</td>
+            <td>${escapeHtml(data.contact)}</td>
+            <td>${escapeHtml(data.feature)}</td>
+            <td>${device}</td>
           </tr>`;
         });
-        
-        document.getElementById('waitlistTableBody').innerHTML = html || '<tr><td colspan="4" style="text-align:center;">Aucun inscrit pour le moment.</td></tr>';
+
+        document.getElementById('waitlistTableBody').innerHTML =
+          html || '<tr><td colspan="4" style="text-align:center;">Aucun inscrit.</td></tr>';
       } catch(e) {
-        console.error("Error fetching data:", e);
-        document.getElementById('waitlistTableBody').innerHTML = '<tr><td colspan="4" style="text-align:center;color:red;">Erreur de chargement. Vérifiez les règles Firestore.</td></tr>';
+        document.getElementById('waitlistTableBody').innerHTML =
+          '<tr><td colspan="4" style="text-align:center;color:#ef4444;">Erreur de chargement. Vérifiez vos permissions Firebase.</td></tr>';
       }
     }
-    
-    // Initialiser le chargement après un court délai pour s'assurer du chargement des modules
-    setTimeout(loadData, 500);
+
+    window.exportCSV = function() {
+      if (!allDocs.length) return;
+      let csv = 'Date,Contact,Feature,UserAgent\n';
+      allDocs.forEach(d => {
+        const date = d.timestamp ? new Date(d.timestamp.toDate()).toISOString() : '';
+        csv += `"${date}","${(d.contact||'').replace(/"/g,'""')}","${(d.feature||'').replace(/"/g,'""')}","${(d.userAgent||'').replace(/"/g,'""')}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'waitlist_resumeci_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+    };
+
+    // Enter key support
+    document.getElementById('adminPassword').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleLogin();
+    });
   </script>
 </body>
 </html>

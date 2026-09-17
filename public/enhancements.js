@@ -98,21 +98,56 @@
   }
 
   // ==================== MODAL HELPER ====================
+  let _modalPreviousFocus = null;
+
   window.openModal = function(title, bodyHtml, id='genModal') {
     let m=document.getElementById(id);
     if(!m){
       m=document.createElement('div');m.id=id;m.className='rci-modal';
-      m.innerHTML=`<div class="rci-modal-content"><button class="rci-modal-close" aria-label="Fermer"><i class="fas fa-times"></i></button><h3 id="${id}Title"></h3><div id="${id}Body"></div></div>`;
+      m.setAttribute('role','dialog');
+      m.setAttribute('aria-modal','true');
+      m.setAttribute('aria-labelledby', id+'Title');
+      m.innerHTML=`<div class="rci-modal-content"><button class="rci-modal-close" aria-label="Fermer"><i class="fas fa-times" aria-hidden="true"></i></button><h3 id="${id}Title"></h3><div id="${id}Body"></div></div>`;
       document.body.appendChild(m);
       m.querySelector('.rci-modal-close').addEventListener('click',()=>closeModal(id));
       m.addEventListener('click',e=>{if(e.target===m)closeModal(id);});
+      // Escape key to close
+      m.addEventListener('keydown', e => {
+        if(e.key === 'Escape') { closeModal(id); return; }
+        // Focus trap: Tab/Shift+Tab cycle within modal
+        if(e.key === 'Tab') {
+          const focusable = m.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])');
+          if(focusable.length === 0) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if(e.shiftKey) {
+            if(document.activeElement === first) { e.preventDefault(); last.focus(); }
+          } else {
+            if(document.activeElement === last) { e.preventDefault(); first.focus(); }
+          }
+        }
+      });
     }
     document.getElementById(id+'Title').textContent=title;
     document.getElementById(id+'Body').innerHTML=bodyHtml;
+    _modalPreviousFocus = document.activeElement;
     m.classList.add('show');
+    // Focus first focusable element
+    requestAnimationFrame(() => {
+      const firstFocusable = m.querySelector('button, input, select, textarea, a[href]');
+      if(firstFocusable) firstFocusable.focus();
+    });
     return m;
   };
-  window.closeModal=function(id='rciModal'){const m=document.getElementById(id);if(m)m.classList.remove('show');};
+  window.closeModal=function(id='rciModal'){
+    const m=document.getElementById(id);
+    if(m) m.classList.remove('show');
+    // Restore focus
+    if(_modalPreviousFocus && typeof _modalPreviousFocus.focus === 'function') {
+      _modalPreviousFocus.focus();
+      _modalPreviousFocus = null;
+    }
+  };
 
   // ==================== CALCULATRICE ====================
   let calcExpr='';
@@ -600,8 +635,24 @@
         localStorage.setItem('rci-welcome','1');
       },2000);
     }
-    // Service Worker registration (global)
-    try{ if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js'); } }catch(e){}
+    // Service Worker registration & aggressive update checking
+    try {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          reg.update();
+        }).catch(e => {});
+
+        navigator.serviceWorker.addEventListener('message', e => {
+          if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
+            console.log("Mise à jour v2.2.0 détectée, actualisation...");
+            if (!sessionStorage.getItem('resumeci_reloaded_220')) {
+              sessionStorage.setItem('resumeci_reloaded_220', '1');
+              window.location.reload();
+            }
+          }
+        });
+      }
+    } catch(e) {}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();

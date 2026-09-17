@@ -19,3 +19,13 @@ _tmp.txt
 _pending_summaries_*.json
 _resume_progress_*.json
 *.pdf
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# IDE
+.vscode/
+.idea/
