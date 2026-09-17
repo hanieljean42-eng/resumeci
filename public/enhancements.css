@@ -667,3 +667,136 @@ body.dark-mode .phone-input-field {
 }
 body.dark-mode .teaser-guarantee { color: #94a3b8; }
 
+/* ==================== PACK HORS-LIGNE PREMIUM ==================== */
+.dl-btn.dl-btn-locked {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 10px 16px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  margin-top: 12px !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15) !important;
+}
+.dl-btn.dl-btn-locked::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+.dl-btn.dl-btn-locked:hover::before {
+  left: 100%;
+}
+.dl-btn.dl-btn-locked:hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.28) !important;
+  transform: translateY(-2px) !important;
+}
+.dl-btn.dl-btn-locked .fa-lock {
+  color: #f59e0b !important;
+  font-size: 13px !important;
+}
+
+/* Bannière Pack Hors-Ligne dans la page de classe */
+.class-offline-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 14px 0 22px;
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.2);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeIn 0.3s ease;
+}
+.class-offline-banner:hover {
+  transform: translateY(-2px);
+  border-color: #f59e0b;
+  box-shadow: 0 14px 34px rgba(245, 158, 11, 0.25);
+}
+.cob-left {
+  flex: 1;
+}
+.cob-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.cob-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.cob-desc {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+.cob-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+  transition: all 0.2s ease;
+}
+.cob-btn .fa-lock {
+  font-size: 13px;
+}
+.class-offline-banner:hover .cob-btn {
+  filter: brightness(1.08);
+  transform: scale(1.03);
+}
+@media (max-width: 640px) {
+  .class-offline-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .cob-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+

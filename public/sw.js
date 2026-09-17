@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v28';
+const CACHE_SHELL = 'resumeci-shell-v29';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -17,12 +17,12 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/main.css?v=2.2.0',
-  '/enhancements.css?v=2.2.0',
-  '/enhancements.js?v=2.2.0',
-  '/firebase-config.js?v=2.2.0',
-  '/content-protection.js?v=2.2.0',
-  '/app.js?v=2.2.0'
+  '/main.css?v=2.3.0',
+  '/enhancements.css?v=2.3.0',
+  '/enhancements.js?v=2.3.0',
+  '/firebase-config.js?v=2.3.0',
+  '/content-protection.js?v=2.3.0',
+  '/app.js?v=2.3.0'
 ];
 
 // Install: cache shell files and skip waiting immediately
@@ -41,7 +41,7 @@ self.addEventListener('activate', e => {
       Promise.all(keys.filter(k => k !== CACHE_SHELL && k !== CACHE_FICHES).map(k => caches.delete(k)))
     ).then(() => self.clients.claim()).then(() => {
       return self.clients.matchAll({ type: 'window' }).then(clients => {
-        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '2.2.0' }));
+        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '2.3.0' }));
       });
     })
   );

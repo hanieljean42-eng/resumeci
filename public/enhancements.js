@@ -749,8 +749,8 @@ window.openPremiumTeaser = function(featureName) {
         <div class="teaser-card-item">
           <div class="teaser-card-icon">📥</div>
           <div class="teaser-card-text">
-            <strong>Fiches PDF Imprimables</strong>
-            <span>Téléchargement illimité et révision hors-ligne sans connexion</span>
+            <strong>Pack Hors-Ligne & Fiches PDF</strong>
+            <span>Téléchargement complet de toutes les fiches d'une classe pour réviser sans connexion</span>
           </div>
         </div>
         <div class="teaser-card-item">
