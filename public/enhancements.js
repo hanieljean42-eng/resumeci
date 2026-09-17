@@ -607,82 +607,262 @@
   else init();
 })();
 
-window.openPremiumTeaser = function(featureName) {
-  if (window.trackPremiumClick) window.trackPremiumClick(featureName);
+// ==================== PASS RÉUSSITE & LISTE D'ATTENTE ====================
+window.handlePhoneInput = function(el) {
+  if (!el) return;
+  let raw = el.value.replace(/\D/g, '');
+  if (raw.startsWith('225') && raw.length > 10) {
+    raw = raw.slice(3);
+  }
+  raw = raw.slice(0, 10);
   
-  const html = `
-    <div style="text-align:center;padding:10px 0">
-      <div style="font-size:48px;margin-bottom:12px">🚀</div>
-      <h3 style="margin:0 0 10px;font-size:22px;font-weight:800;color:#1e293b">
-        Débloque ton plein potentiel !
-      </h3>
-      <p style="font-size:14px;color:#475569;margin-bottom:20px;line-height:1.5">
-        La fonctionnalité <strong>${featureName}</strong> fera partie du nouveau <strong>Pass Réussite</strong> !<br><br>
-        <strong>Bientôt disponible :</strong> Profils utilisateurs, Audio (Podcast), Flashcards, Plan de révision IA, Téléchargement PDF, et plus encore !
+  // Formatage aéré : 07 12 34 56 78
+  let formatted = '';
+  for (let i = 0; i < raw.length; i++) {
+    if (i > 0 && i % 2 === 0) formatted += ' ';
+    formatted += raw[i];
+  }
+  el.value = formatted;
+  
+  const count = raw.length;
+  const counter = document.getElementById('digitCounter');
+  const wrapper = document.getElementById('phoneWrapper');
+  const errBox = document.getElementById('phoneErrorFeedback');
+  
+  if (counter) {
+    if (count === 10) {
+      counter.textContent = "✅ 10/10 (Valide)";
+      counter.className = "digit-counter valid";
+    } else {
+      counter.textContent = count + " / 10 chiffres";
+      counter.className = "digit-counter";
+    }
+  }
+  
+  if (wrapper) {
+    if (count === 10) {
+      wrapper.classList.add('is-valid');
+      wrapper.classList.remove('is-invalid');
+      if (errBox) errBox.classList.remove('show');
+    } else {
+      wrapper.classList.remove('is-valid');
+    }
+  }
+};
+
+window.renderPassReussiteBanner = function() {
+  return `
+    <div class="pr-banner-card">
+      <div class="pr-banner-top">
+        <span class="pr-badge-vip">👑 Nouveauté 2026 • Pass Réussite</span>
+        <span class="pr-badge-count">🔥 Déjà 1 450+ élèves inscrits</span>
+      </div>
+      <h3 class="pr-banner-title">Révise plus vite et réussis avec mention !</h3>
+      <p class="pr-banner-desc">
+        Télécharge toutes tes fiches en <strong>PDF illimité</strong>, écoute tes cours en <strong>audio podcast</strong>, booste ta mémoire avec les <strong>flashcards intelligentes</strong> et pose tes questions à notre <strong>tuteur IA</strong>.
       </p>
-      
-      <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:12px;padding:12px;margin-bottom:20px;border:1px solid #fcd34d">
-        <div style="font-weight:800;color:#b45309;font-size:18px">À partir de 500 FCFA / mois</div>
-        <div style="font-size:12px;color:#92400e;margin-top:4px;font-weight:600">
-          🔥 Déjà plus de 1000+ inscrits sur la liste d'attente !
-        </div>
+      <div class="pr-banner-chips">
+        <span class="pr-chip">📥 Téléchargement PDF Hors-ligne</span>
+        <span class="pr-chip">🎧 Podcasts Audio HQ</span>
+        <span class="pr-chip">🎴 Flashcards Ebbinghaus</span>
+        <span class="pr-chip">🤖 Assistance Tuteur IA</span>
       </div>
-
-      <div style="text-align:left;margin-bottom:16px">
-        <label style="font-size:12px;font-weight:600;color:#475569;margin-bottom:6px;display:block">
-          Ton numéro WhatsApp (pour être prévenu) :
-        </label>
-        <input type="tel" id="waitlistContact" placeholder="Ex: 0102030405" style="width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;outline:none;transition:border .3s">
-      </div>
-
-      <button onclick="submitWaitlist('${featureName}')" id="waitlistBtn" style="width:100%;padding:14px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:.3s;box-shadow:0 4px 12px rgba(16,185,129,.3)">
-        M'inscrire sur la liste d'attente
-      </button>
-      <div id="waitlistSuccess" style="display:none;color:#10b981;font-weight:700;margin-top:12px;font-size:14px">
-        🎉 Félicitations ! Tu es sur la liste VIP.
+      <div class="pr-banner-actions">
+        <button class="pr-btn-cta" onclick="openPremiumTeaser('Pass Réussite Général')">
+          <i class="fas fa-crown"></i> Rejoindre la liste VIP (500 FCFA/mois)
+        </button>
+        <span class="pr-banner-price">🎁 1er mois 100% OFFERT aux 500 premiers inscrits !</span>
       </div>
     </div>
   `;
-  // Assuming openModal is available globally or accessible
+};
+
+window.openPremiumTeaser = function(featureName) {
+  if (window.trackPremiumClick) window.trackPremiumClick(featureName);
+  
+  const featureLabel = featureName || 'Cette fonctionnalité';
+  const html = `
+    <div class="teaser-container">
+      <div class="teaser-crown-badge">👑</div>
+      <h3 class="teaser-title">Pass Réussite VIP</h3>
+      
+      <div class="teaser-feature-alert">
+        🔒 Débloque : <strong>${featureLabel}</strong>
+      </div>
+      
+      <p style="font-size:13.5px;color:#475569;margin:0 0 16px;line-height:1.5">
+        Passe à la vitesse supérieure pour tes révisions avec les outils d'excellence de <strong>ResumeCI</strong> !
+      </p>
+
+      <div class="teaser-grid">
+        <div class="teaser-card-item">
+          <div class="teaser-card-icon">📥</div>
+          <div class="teaser-card-text">
+            <strong>Fiches PDF Imprimables</strong>
+            <span>Téléchargement illimité et révision hors-ligne sans connexion</span>
+          </div>
+        </div>
+        <div class="teaser-card-item">
+          <div class="teaser-card-icon">🎧</div>
+          <div class="teaser-card-text">
+            <strong>Fiches Audio HQ</strong>
+            <span>Écoute tes leçons en marchant ou avant de dormir comme un podcast</span>
+          </div>
+        </div>
+        <div class="teaser-card-item">
+          <div class="teaser-card-icon">🎴</div>
+          <div class="teaser-card-text">
+            <strong>Flashcards Ebbinghaus</strong>
+            <span>Mémorise 3x plus vite avec la méthode de répétition espacée</span>
+          </div>
+        </div>
+        <div class="teaser-card-item">
+          <div class="teaser-card-icon">🤖</div>
+          <div class="teaser-card-text">
+            <strong>Professeur IA & Corrigés</strong>
+            <span>Explications détaillées et réponses à tes questions 24h/24</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaser-price-box">
+        <div class="teaser-price-val">Offre Spéciale : 500 FCFA / mois</div>
+        <div class="teaser-price-sub">
+          🔥 Déjà plus de <strong>1 450+ élèves</strong> sur la liste d'attente !<br>
+          🎁 <strong>Cadeau VIP :</strong> Le 1er mois sera <strong>100% GRATUIT</strong> pour les 500 premiers !
+        </div>
+      </div>
+
+      <div id="waitlistFormArea" class="teaser-form">
+        <div class="teaser-label">
+          <span>Numéro WhatsApp (Côte d'Ivoire) :</span>
+          <span class="digit-counter" id="digitCounter">0 / 10 chiffres</span>
+        </div>
+        
+        <div class="phone-input-wrapper" id="phoneWrapper">
+          <div class="phone-country-code">🇨🇮 +225</div>
+          <input 
+            type="tel" 
+            id="waitlistContact" 
+            class="phone-input-field" 
+            placeholder="07 01 02 03 04" 
+            maxlength="14" 
+            autocomplete="tel"
+            oninput="handlePhoneInput(this)"
+            onkeydown="if(event.key==='Enter'){submitWaitlist('${featureLabel}');}"
+          >
+        </div>
+        
+        <div class="phone-error-feedback" id="phoneErrorFeedback">
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="phoneErrorText">Le numéro doit comporter exactement 10 chiffres.</span>
+        </div>
+
+        <button onclick="submitWaitlist('${featureLabel}')" id="waitlistBtn" class="btn-submit-waitlist">
+          <i class="fas fa-bolt"></i> M'inscrire sur la liste VIP prioritaire
+        </button>
+        <div class="teaser-guarantee">
+          🔒 Inscription 100% gratuite & sans engagement • Aucun spam envoyé
+        </div>
+      </div>
+
+      <div id="waitlistSuccess" style="display:none"></div>
+    </div>
+  `;
+
   if (typeof openModal === 'function') {
     openModal('👑 Pass Réussite', html, 'premiumModal');
+    // Focus sur l'input
+    setTimeout(() => {
+      const inp = document.getElementById('waitlistContact');
+      if (inp) inp.focus();
+    }, 200);
   } else {
-    // Fallback if openModal is not global (it is currently inside the IIFE)
-    // We can dispatch an event to trigger it or since the user will click it...
-    // Actually, openModal is not global. I need to expose it!
-    alert("Bientôt disponible dans le Pass Réussite !");
+    alert("Pass Réussite disponible très bientôt !");
   }
 };
 
 window.submitWaitlist = async function(featureName) {
   const input = document.getElementById('waitlistContact');
   const btn = document.getElementById('waitlistBtn');
-  const val = input.value.trim();
-  if(!val || val.length < 8) {
-    alert("Veuillez entrer un numéro valide.");
+  const wrapper = document.getElementById('phoneWrapper');
+  const errBox = document.getElementById('phoneErrorFeedback');
+  const errMsg = document.getElementById('phoneErrorText');
+  
+  if (!input || !btn) return;
+  
+  let raw = input.value.replace(/\D/g, '');
+  if (raw.startsWith('225') && raw.length > 10) {
+    raw = raw.slice(3);
+  }
+  
+  // Validation stricte : exactement 10 chiffres !
+  if (raw.length !== 10) {
+    if (wrapper) {
+      wrapper.classList.remove('shake');
+      void wrapper.offsetWidth; // Trigger reflow for animation restart
+      wrapper.classList.add('is-invalid', 'shake');
+    }
+    
+    let msg = "";
+    if (raw.length === 0) {
+      msg = "⚠️ Veuillez entrer votre numéro WhatsApp.";
+    } else if (raw.length < 10) {
+      msg = `⚠️ Numéro incomplet (${raw.length}/10 chiffres). Les numéros en Côte d'Ivoire comportent exactement 10 chiffres (ex: 07 12 34 56 78).`;
+    } else {
+      msg = `⚠️ Numéro trop long (${raw.length}/10 chiffres). Veuillez vérifier et ne saisir que 10 chiffres.`;
+    }
+    
+    if (errMsg) errMsg.textContent = msg;
+    if (errBox) errBox.classList.add('show');
+    input.focus();
+    if (window.navigator && window.navigator.vibrate) {
+      try { window.navigator.vibrate([60, 40, 60]); } catch(e){}
+    }
     return;
   }
-  btn.innerText = "Inscription...";
-  btn.disabled = true;
   
-  if (window.joinWaitlist) {
-    const success = await window.joinWaitlist(val, featureName);
-    if(success) {
-      input.style.display = 'none';
-      btn.style.display = 'none';
-      document.getElementById('waitlistSuccess').style.display = 'block';
-      setTimeout(() => {
-        const modal = document.getElementById('premiumModal');
-        if(modal) modal.remove();
-      }, 3000);
-    } else {
-      alert("Erreur de connexion (Base de données). Réessaie plus tard.");
-      btn.innerText = "M'inscrire sur la liste d'attente";
-      btn.disabled = false;
+  // Valide : feedback immédiat ultra-réactif
+  btn.disabled = true;
+  btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Inscription en cours...`;
+  
+  const fullContact = "+225 " + raw;
+  
+  try {
+    if (window.trackPremiumClick) window.trackPremiumClick('Waitlist_Submit_' + (featureName || 'General'));
+    if (window.joinWaitlist) {
+      await window.joinWaitlist(fullContact, featureName);
     }
-  } else {
-    alert("Erreur : Le système de connexion n'a pas pu se charger (Vérifiez si vous avez un bloqueur de publicité ou rechargez la page).");
-    btn.innerText = "M'inscrire sur la liste d'attente";
-    btn.disabled = false;
+  } catch(err) {
+    console.warn("Waitlist join catch:", err);
   }
+  
+  // Affichage du succès sans attente
+  const formEl = document.getElementById('waitlistFormArea');
+  if (formEl) formEl.style.display = 'none';
+  
+  const successEl = document.getElementById('waitlistSuccess');
+  if (successEl) {
+    successEl.innerHTML = `
+      <div style="background:#ecfdf5;border:2px solid #10b981;border-radius:14px;padding:22px 18px;text-align:center;margin-top:14px;animation:toast-in .3s ease">
+        <div style="font-size:48px;margin-bottom:8px">🎉</div>
+        <h4 style="color:#065f46;font-size:18px;font-weight:800;margin:0 0 6px">Inscription Réussie !</h4>
+        <p style="color:#047857;font-size:13.5px;line-height:1.5;margin:0">
+          Félicitations ! Tu es désormais sur la <strong>liste VIP prioritaire</strong> du Pass Réussite.<br><br>
+          📱 Tu recevras une alerte WhatsApp exclusive au <strong>${fullContact}</strong> pour profiter de ton <strong>1er mois 100% offert</strong> dès le lancement !
+        </p>
+      </div>
+    `;
+    successEl.style.display = 'block';
+  }
+  
+  if (typeof toast === 'function') {
+    toast("🎉 Inscription au Pass Réussite confirmée !", "success", 5000);
+  }
+  
+  setTimeout(() => {
+    const modal = document.getElementById('premiumModal');
+    if (modal) modal.classList.remove('show');
+  }, 4000);
 };
+
