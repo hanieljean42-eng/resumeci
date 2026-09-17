@@ -266,3 +266,4 @@ body.tts-mini .audio-player .ap-mini-bar{display:flex}
 .qr-actions .qr-share{background:#10b981;color:#fff}
 .qr-actions .qr-download{background:#3b82f6;color:#fff}
 .qr-actions .qr-copy{background:#7c3aed;color:#fff}
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
