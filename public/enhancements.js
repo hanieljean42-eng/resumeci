@@ -531,8 +531,8 @@
   function initCookieBanner(){
     if(localStorage.getItem('rci-cookie-ok')==='1')return;
     const b=document.createElement('div');b.className='cookie-banner';
-    b.innerHTML=`<p>🍪 ResumeCI utilise uniquement le stockage local (localStorage) pour sauvegarder tes préférences, favoris et progrès. Aucun cookie de tracking. <a href="/privacy.html" style="color:#93c5fd;text-decoration:underline">En savoir plus</a></p>
-      <button onclick="cookieAccept()">J'ai compris</button>`;
+    b.innerHTML=`<p>🍪 ResumeCI utilise des cookies et le stockage local pour mémoriser tes cours favoris, ton avancement et t'offrir la meilleure expérience d'apprentissage. Aucune donnée n'est cédée à des tiers. <a href="/privacy.html" style="color:#93c5fd;text-decoration:underline">En savoir plus</a></p>
+      <button onclick="cookieAccept()">Accepter & Continuer</button>`;
     document.body.appendChild(b);
     window.cookieAccept=function(){localStorage.setItem('rci-cookie-ok','1');b.remove();};
   }
@@ -701,135 +701,693 @@ window.handlePhoneInput = function(el) {
   }
 };
 
+// ==================== COMPTE À REBOURS OFFICIEL 01 OCTOBRE 2026 ====================
+window.TARGET_LAUNCH_TS = new Date('2026-10-01T00:00:00Z').getTime();
+
+window.getCountdownData = function() {
+  const now = Date.now();
+  const diff = Math.max(0, window.TARGET_LAUNCH_TS - now);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  return {
+    diff,
+    days: String(days).padStart(2, '0'),
+    hours: String(hours).padStart(2, '0'),
+    minutes: String(minutes).padStart(2, '0'),
+    seconds: String(seconds).padStart(2, '0')
+  };
+};
+
+window.updateAllCountdowns = function() {
+  const data = window.getCountdownData();
+  document.querySelectorAll('.rci-cd-days').forEach(el => { el.textContent = data.days; });
+  document.querySelectorAll('.rci-cd-hours').forEach(el => { el.textContent = data.hours; });
+  document.querySelectorAll('.rci-cd-minutes').forEach(el => { el.textContent = data.minutes; });
+  document.querySelectorAll('.rci-cd-seconds').forEach(el => { el.textContent = data.seconds; });
+  
+  const tickerText = `${data.days}j ${data.hours}h ${data.minutes}m ${data.seconds}s`;
+  document.querySelectorAll('.rci-cd-ticker-text').forEach(el => { el.textContent = tickerText; });
+};
+
+// Démarrage de l'intervalle de décompte chaque seconde
+setInterval(() => {
+  if (typeof window.updateAllCountdowns === 'function') {
+    window.updateAllCountdowns();
+  }
+}, 1000);
+
+window.submitCountdownWaitlist = async function(btnEl) {
+  const container = btnEl.closest('.rci-cd-cta-box') || document;
+  const input = container.querySelector('.rci-cd-input');
+  if (!input) return;
+  
+  let raw = input.value.replace(/\D/g, '');
+  if (raw.startsWith('225') && raw.length > 10) raw = raw.slice(3);
+  
+  if (raw.length !== 10) {
+    if (window.haptic) window.haptic([50, 50, 50]);
+    if (window.toast) {
+      window.toast("⚠️ Veuillez saisir votre numéro WhatsApp à 10 chiffres (ex: 0104911010)", "warn", 4000);
+    } else {
+      alert("Veuillez saisir votre numéro WhatsApp à 10 chiffres (ex: 0104911010)");
+    }
+    input.focus();
+    return;
+  }
+  
+  const oldText = btnEl.innerHTML;
+  btnEl.disabled = true;
+  btnEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enregistrement...';
+  
+  try {
+    if (typeof window.joinWaitlist === 'function') {
+      await window.joinWaitlist(raw, 'Compte à Rebours 01 Octobre');
+    }
+    if (window.haptic) window.haptic([100, 50, 100]);
+    if (window.confetti) window.confetti();
+    if (window.toast) {
+      window.toast("🎉 Félicitations ! Tu es inscrit sur la liste VIP. Tu seras contacté le 01 Octobre à 00h00 pile !", "success", 6000);
+    }
+    container.innerHTML = `
+      <div style="background: rgba(16, 185, 129, 0.2); border: 1.5px solid #10b981; border-radius: 12px; padding: 16px; text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 4px;">✅</div>
+        <strong style="color: #6ee7b7; font-size: 15px;">Numéro VIP enregistré avec succès !</strong>
+        <p style="margin: 6px 0 0; font-size: 12.5px; color: #e2e8f0; line-height: 1.5;">Tu recevras ton accès prioritaire le <strong>01 Octobre 2026 à 00h00</strong> sur le <strong>+225 ${raw}</strong>.</p>
+      </div>
+    `;
+  } catch (err) {
+    btnEl.disabled = false;
+    btnEl.innerHTML = oldText;
+    if (window.toast) window.toast("Une erreur est survenue, réessayez.", "error");
+  }
+};
+
 window.renderPassReussiteBanner = function() {
+  const cd = window.getCountdownData ? window.getCountdownData() : { days: '03', hours: '03', minutes: '45', seconds: '00' };
   return `
-    <div class="pr-banner-card">
-      <div class="pr-banner-top">
-        <span class="pr-badge-vip">👑 Nouveauté 2026 • Pass Réussite</span>
-        <span class="pr-badge-count">🔥 Déjà 1 450+ élèves inscrits</span>
+    <div class="rci-countdown-card" id="rciMainCountdown">
+      <div class="rci-cd-top-badge">
+        <i class="fas fa-rocket"></i> Grande Mise à Jour ResumeCI 2026
       </div>
-      <h3 class="pr-banner-title">Révise plus vite et réussis avec mention !</h3>
-      <p class="pr-banner-desc">
-        Télécharge toutes tes fiches en <strong>PDF illimité</strong>, écoute tes cours en <strong>audio podcast</strong>, booste ta mémoire avec les <strong>flashcards intelligentes</strong> et pose tes questions à notre <strong>tuteur IA</strong>.
+      
+      <!-- AU-DESSUS DU COMPTE A REBOURS -->
+      <h3 class="rci-cd-title">Déploiement national le 01 Octobre 2026 à 00h00 pile</h3>
+      <div class="rci-cd-date-tag">
+        <i class="fas fa-clock"></i> Heure officielle d'Abidjan (GMT)
+      </div>
+      <p class="rci-cd-subtitle">
+        Prépare-toi à réviser 3 fois plus vite avec les nouveaux outils interactifs conçus spécialement pour les élèves du Collège et du Lycée en Côte d'Ivoire.
       </p>
-      <div class="pr-banner-chips">
-        <span class="pr-chip">📥 Téléchargement PDF Hors-ligne</span>
-        <span class="pr-chip">🎧 Podcasts Audio HQ</span>
-        <span class="pr-chip">🎴 Flashcards Ebbinghaus</span>
-        <span class="pr-chip">🤖 Assistance Tuteur IA</span>
+
+      <!-- LE COMPTE A REBOURS DYNAMIQUE -->
+      <div class="rci-cd-timer-grid">
+        <div class="rci-cd-unit">
+          <div class="rci-cd-num rci-cd-days">${cd.days}</div>
+          <div class="rci-cd-lbl">Jours</div>
+        </div>
+        <div class="rci-cd-unit">
+          <div class="rci-cd-num rci-cd-hours">${cd.hours}</div>
+          <div class="rci-cd-lbl">Heures</div>
+        </div>
+        <div class="rci-cd-unit">
+          <div class="rci-cd-num rci-cd-minutes">${cd.minutes}</div>
+          <div class="rci-cd-lbl">Minutes</div>
+        </div>
+        <div class="rci-cd-unit">
+          <div class="rci-cd-num rci-cd-seconds">${cd.seconds}</div>
+          <div class="rci-cd-lbl">Secondes</div>
+        </div>
       </div>
-      <div class="pr-banner-actions">
-        <button class="pr-btn-cta" onclick="openPremiumTeaser('Pass Réussite Général')">
-          <i class="fas fa-crown"></i> Rejoindre la liste VIP (500 FCFA/mois)
-        </button>
-        <span class="pr-banner-price">🎁 1er mois 100% OFFERT aux 500 premiers inscrits !</span>
+
+      <!-- EN-DESSOUS DU COMPTE A REBOURS -->
+      <div class="rci-cd-below">
+        <div class="rci-cd-below-title">
+          <i class="fas fa-unlock-keyhole"></i> Ce qui sera officiellement débloqué le 01 Octobre à 00h00 :
+        </div>
+        
+        <ul class="rci-cd-features-list">
+          <li class="rci-cd-feature-item">
+            <span class="rci-cd-feature-icon">🃏</span>
+            <div class="rci-cd-feature-text">
+              <strong>Flashcards Scientifiques :</strong> Mémorise tes cours 3x plus vite avec la méthode de répétition espacée pour retenir formules, dates et définitions sans trou de mémoire.
+            </div>
+          </li>
+          <li class="rci-cd-feature-item">
+            <span class="rci-cd-feature-icon">🎯</span>
+            <div class="rci-cd-feature-text">
+              <strong>Quiz Interactifs & Mode Chrono :</strong> Teste tes réflexes et mesure ton niveau sur des centaines de QCM matière par matière avant chaque devoir surveillé.
+            </div>
+          </li>
+          <li class="rci-cd-feature-item">
+            <span class="rci-cd-feature-icon">📴</span>
+            <div class="rci-cd-feature-text">
+              <strong>Packs Hors-Ligne Intégraux :</strong> Télécharge l'intégralité des fiches de ta classe sur ton téléphone et révise partout sans aucune connexion Internet ni forfait data.
+            </div>
+          </li>
+          <li class="rci-cd-feature-item">
+            <span class="rci-cd-feature-icon">🧠</span>
+            <div class="rci-cd-feature-text">
+              <strong>Récitation Active (Active Recall) :</strong> Le masquage intelligent qui cache la leçon pour t'obliger à réciter bloc par bloc avant de vérifier la réponse d'un clic.
+            </div>
+          </li>
+          <li class="rci-cd-feature-item">
+            <span class="rci-cd-feature-icon">⚠️</span>
+            <div class="rci-cd-feature-text">
+              <strong>Pièges d'Examen Dévoilés :</strong> Les erreurs éliminatoires commises par 80% des élèves et les conseils confidentiels des correcteurs officiels de BEPC et BAC.
+            </div>
+          </li>
+        </ul>
+
+        <div class="rci-cd-note">
+          ℹ️ <strong>Rappel :</strong> Le Professeur IA 24/7 et les annales d'examens du Pass Élite (2 000 F) restent en cours de finalisation avec nos professeurs partenaires et seront activés ultérieurement.
+        </div>
+
+        <!-- FORMULAIRE VIP WHATSAPP -->
+        <div class="rci-cd-cta-box">
+          <div class="rci-cd-cta-title">📲 REJOINS LA LISTE VIP WHATSAPP</div>
+          <div class="rci-cd-cta-desc">Inscris ton numéro à 10 chiffres pour recevoir ton accès prioritaire le 01 Octobre à 00h00 pile :</div>
+          <div class="rci-cd-input-group">
+            <span style="background:#1e293b;border:1.5px solid #334155;border-radius:10px;padding:11px 12px;font-weight:700;font-size:13px;color:#94a3b8;display:flex;align-items:center;">🇨🇮 +225</span>
+            <input type="tel" class="rci-cd-input" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" onkeypress="if(event.key==='Enter')submitCountdownWaitlist(this.nextElementSibling)">
+            <button type="button" class="rci-cd-submit-btn" onclick="submitCountdownWaitlist(this)">
+              <i class="fas fa-paper-plane"></i> M'inscrire VIP
+            </button>
+          </div>
+          <div style="margin-top: 14px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <button type="button" onclick="openPremiumTeaser('Grande Mise à Jour 01 Octobre')" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fde68a; padding: 7px 14px; border-radius: 8px; font-size: 11.5px; font-weight: 700; cursor: pointer;">
+              👑 Découvrir les Pass Dès 500 F / mois
+            </button>
+            <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.3); color: #86efac; padding: 7px 14px; border-radius: 8px; font-size: 11.5px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fab fa-whatsapp"></i> Chaîne WhatsApp Officielle
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   `;
 };
 
-window.openPremiumTeaser = function(featureName) {
-  if (window.trackPremiumClick) window.trackPremiumClick(featureName);
+window.initStickyCountdownTicker = function() {
+  if (document.getElementById('rciStickyCountdownTicker')) return;
+  if (!document.body) {
+    setTimeout(() => { if (typeof window.initStickyCountdownTicker === 'function') window.initStickyCountdownTicker(); }, 80);
+    return;
+  }
+  const ticker = document.createElement('div');
+  ticker.id = 'rciStickyCountdownTicker';
+  ticker.className = 'rci-cd-top-ticker';
+  ticker.innerHTML = `
+    <span class="badge">🚀 MÀJ 01 OCTOBRE</span>
+    <span>Sortie nationale dans : <strong class="timer-badge rci-cd-ticker-text">--j --h --m --s</strong></span>
+    <span style="opacity:0.85">• Flashcards, Quiz, Packs Hors-Ligne &amp; Pièges d'Examen</span>
+    <span class="cta-link" onclick="if(typeof openPremiumTeaser==='function')openPremiumTeaser('Mise à jour 01 Octobre')">
+      Voir les détails &amp; VIP →
+    </span>
+  `;
+  document.body.prepend(ticker);
+  if (typeof window.updateAllCountdowns === 'function') {
+    window.updateAllCountdowns();
+  }
+};
+
+// Initialisation du bandeau ticker sur la page dès que le DOM est prêt
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => { window.initStickyCountdownTicker(); });
+} else {
+  setTimeout(() => { window.initStickyCountdownTicker(); }, 150);
+}
+window.openVipModal = function(titleContext = 'Grande Mise à Jour 01 Octobre') {
+  const cd = window.getCountdownData ? window.getCountdownData() : { days: '03', hours: '03', minutes: '45', seconds: '00' };
   
-  const featureLabel = featureName || 'Cette fonctionnalité';
-  const html = `
-    <div class="teaser-container">
-      <div class="teaser-crown-badge">👑</div>
-      <h3 class="teaser-title">Pass Réussite VIP</h3>
+  const existing = document.getElementById('vipRegistrationModalOverlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'vipRegistrationModalOverlay';
+  overlay.className = 'rci-modal show';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:14px;';
+  
+  overlay.innerHTML = `
+    <div class="rci-modal-content" style="background:#0f172a;color:#fff;border:1.5px solid rgba(245,158,11,0.5);border-radius:20px;max-width:440px;width:100%;padding:22px 18px;position:relative;box-shadow:0 25px 60px rgba(0,0,0,0.55);text-align:center;">
+      <button class="rci-modal-close" onclick="document.getElementById('vipRegistrationModalOverlay').remove()" style="position:absolute;top:12px;right:12px;background:#1e293b;border:none;color:#94a3b8;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;">&times;</button>
       
-      <div class="teaser-feature-alert">
-        🔒 Débloque : <strong>${featureLabel}</strong>
+      <div>
+        <span style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:10px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;">👑 LISTE VIP OFFICIELLE</span>
+        <h3 style="margin:10px 0 4px;font-size:20px;font-weight:800;color:#fff;line-height:1.3;">Déploiement le 01 Octobre à 00h00 pile</h3>
+        <p style="font-size:12px;color:#cbd5e1;margin:0 0 14px;">Ouverture nationale dans :</p>
+        
+        <!-- Timer -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:0 auto 16px;">
+          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
+            <div class="rci-cd-days" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.days}</div>
+            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Jours</div>
+          </div>
+          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
+            <div class="rci-cd-hours" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.hours}</div>
+            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Heures</div>
+          </div>
+          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
+            <div class="rci-cd-minutes" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.minutes}</div>
+            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Min</div>
+          </div>
+          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
+            <div class="rci-cd-seconds" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.seconds}</div>
+            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Sec</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(30,41,59,0.7);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px;text-align:left;font-size:12px;color:#e2e8f0;margin-bottom:14px;line-height:1.5;">
+          <div>🔓 <b>Ce qui sera débloqué à 00h00 pile :</b></div>
+          <div style="margin-top:4px;color:#cbd5e1;">🃏 Flashcards • 🎯 Quiz &amp; Chrono • 📴 Packs Hors-Ligne • 🧠 Active Recall • ⚠️ Pièges d'Examen</div>
+        </div>
+
+        <!-- Saisie Téléphone -->
+        <div id="vipModalInputBox">
+          <p style="font-size:12px;color:#cbd5e1;margin:0 0 8px;font-weight:600;">Entre ton numéro WhatsApp à 10 chiffres :</p>
+          <div style="display:flex;gap:6px;">
+            <span style="background:#1e293b;border:1.5px solid #475569;border-radius:8px;padding:10px;font-weight:700;font-size:12px;color:#cbd5e1;display:flex;align-items:center;">🇨🇮 +225</span>
+            <input type="tel" id="vipModalPhoneInput" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" style="flex:1;background:#1e293b;border:1.5px solid #475569;border-radius:8px;padding:10px 12px;color:#fff;font-size:13.5px;outline:none;" onkeypress="if(event.key==='Enter')submitVipModalForm(this)">
+            <button type="button" onclick="submitVipModalForm(this)" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:800;font-size:12.5px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 3px 10px rgba(37,99,235,0.3);">
+              <i class="fas fa-paper-plane"></i> M'inscrire
+            </button>
+          </div>
+          <div id="vipModalFeedback" style="margin-top:8px;font-size:12px;"></div>
+        </div>
+
+        <div style="margin-top:14px;border-top:1px dashed rgba(255,255,255,0.15);padding-top:12px;">
+          <a href="https://wa.me/2250104911010?text=Bonjour%20Assistance%20ResumeCI%20!%20Je%20veux%20des%20infos%20sur%20la%20liste%20VIP%20du%2001%20Octobre." target="_blank" rel="noopener" style="color:#25d366;font-size:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:6px;">
+            <i class="fab fa-whatsapp"></i> Assistance WhatsApp directe (01 04 91 10 10)
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  if (typeof window.updateAllCountdowns === 'function') window.updateAllCountdowns();
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.remove();
+  });
+};
+
+window.submitVipModalForm = async function(btn) {
+  const input = document.getElementById('vipModalPhoneInput');
+  const feedback = document.getElementById('vipModalFeedback');
+  const box = document.getElementById('vipModalInputBox');
+  if (!input) return;
+  
+  let raw = input.value.replace(/\D/g, '');
+  if (raw.startsWith('225') && raw.length > 10) raw = raw.slice(3);
+  
+  if (raw.length !== 10) {
+    if (window.haptic) window.haptic([50, 50, 50]);
+    if (feedback) {
+      feedback.style.color = '#f87171';
+      feedback.innerHTML = '⚠️ Saisis un numéro WhatsApp à 10 chiffres (ex: 0104911010)';
+    }
+    input.focus();
+    return;
+  }
+  
+  const oldText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+  
+  try {
+    if (typeof window.joinWaitlist === 'function') {
+      await window.joinWaitlist(raw, 'VIP Modal 01 Octobre');
+    }
+    if (window.haptic) window.haptic([100, 50, 100]);
+    if (window.confetti) window.confetti();
+    if (box) {
+      box.innerHTML = `
+        <div style="background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:12px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:4px;">🎉</div>
+          <strong style="color:#6ee7b7;font-size:14px;">Numéro VIP enregistré avec succès !</strong>
+          <p style="margin:4px 0 0;font-size:12px;color:#e2e8f0;">Tu seras contacté le <strong>01 Octobre à 00h00 pile</strong> sur le <strong>+225 ${raw}</strong>.</p>
+        </div>
+      `;
+    }
+    if (window.toast) window.toast('🎉 Inscription VIP confirmée !', 'success', 5000);
+  } catch (err) {
+    btn.disabled = false;
+    btn.innerHTML = oldText;
+    if (feedback) feedback.innerHTML = '⚠️ Erreur lors de l\'enregistrement.';
+  }
+};
+
+window.openPremiumTeaser = async function(featureName) {
+  // Si c'est l'inscription à la liste VIP ou la Grande Mise à Jour du 01 Octobre
+  if (featureName && (featureName.includes('01 Octobre') || featureName.includes('VIP') || featureName.includes('Compte à Rebours') || featureName.includes('Mise à jour'))) {
+    if (typeof window.openVipModal === 'function') {
+      window.openVipModal(featureName);
+      return;
+    }
+  }
+
+  // Si l'utilisateur clique directement sur l'IA, les annales, le simulateur ou le pass élite
+  if (featureName === 'Professeur IA' || featureName === 'Anciens Sujets & Corrigés' || (featureName && featureName.includes('Simulateur')) || featureName === 'Pass Élite' || featureName === 'Élite' || featureName === 'elite') {
+    if (typeof window.openElitePassModal === 'function') {
+      window.openElitePassModal(featureName);
+    } else if (typeof window.showActionNotice === 'function') {
+      window.showActionNotice({
+        type: 'vip',
+        icon: '👑',
+        title: 'Pass Élite en préparation',
+        subtitle: 'Professeur IA & Examens Blancs',
+        message: "Le Professeur IA 24/7, les Anciens Sujets & Corrigés et les Simulateurs d'Examens sont actuellement en cours de finalisation par nos professeurs partenaires.\n\n👉 Pour réviser dès maintenant sans limite, choisis le Pack Starter (500 FCFA/mois) ou le Pack Pro (1000 FCFA/mois) !",
+        primaryBtnText: '👑 Découvrir les Pass Disponibles',
+        primaryBtnAction: () => {
+          openPremiumTeaser('Pass Réussite Pro');
+        },
+        secondaryBtnText: 'Continuer la lecture'
+      });
+    } else if (window.toast) {
+      toast("🚧 Professeur IA & Examens bientôt disponibles. Découvre nos Pass Starter et Pro !", "info", 5000);
+    }
+    return;
+  }
+
+  // --- DEBLOCAGE PAR FORFAIT ---
+  if (window.userHasFeature && window.userHasFeature(featureName)) {
+    const fnCheck = String(featureName).toLowerCase();
+    if (fnCheck.includes('audio') || fnCheck.includes('podcast')) {
+      if (typeof window.executeTtsStart === 'function') window.executeTtsStart();
+      return;
+    }
+    if (fnCheck.includes('pdf') || fnCheck.includes('téléchargement')) {
+      if (window.CURRENT_FICHE) {
+        if (typeof window.downloadCurrentFichePdf === 'function') {
+          if (window.toast) toast('Génération de votre PDF...', 'info');
+          window.downloadCurrentFichePdf();
+          return;
+        }
+        if (window.toast) toast('Recharge la page pour activer le téléchargement PDF.', 'warn');
+      } else {
+        if (window.toast) toast("Veuillez ouvrir une fiche d'abord.", 'warn');
+      }
+      return;
+    }
+    if (fnCheck.includes('flashcard')) {
+      if (typeof window.startFlashcards === 'function') window.startFlashcards();
+      return;
+    }
+    if (fnCheck.includes('quiz')) {
+      if (typeof window.startQuiz === 'function' && window.CURRENT_FICHE) {
+        window.startQuiz(window.CURRENT_FICHE.cls, window.CURRENT_FICHE.sub, window.CURRENT_FICHE.file);
+      }
+      return;
+    }
+    if (fnCheck.includes('hors-ligne') || fnCheck.includes('hors ligne') || fnCheck.includes('sans connexion')) {
+      const match = String(featureName).match(/\((.*?)\)/);
+      const clsTarget = match && match[1] ? match[1].trim() : (window.CURRENT_FICHE?.cls || window.USER_PROFILE?.selectedClass || '');
+      if (typeof window.downloadClassOffline === 'function') {
+        window.downloadClassOffline(clsTarget);
+        return;
+      }
+    }
+    if (fnCheck.includes('stat')) {
+      if (typeof window.openStatistiquesModal === 'function') {
+        window.openStatistiquesModal();
+        return;
+      }
+    }
+    if (fnCheck.includes('recitation') || fnCheck.includes('récitation') || fnCheck.includes('recall')) {
+      if (typeof window.toggleActiveRecall === 'function') {
+        window.toggleActiveRecall();
+        return;
+      }
+    }
+    if (fnCheck.includes('surlign') || fnCheck.includes('highlighter')) {
+      if (typeof window.toggleHighlighterMode === 'function') {
+        window.toggleHighlighterMode();
+        return;
+      }
+    }
+    if (fnCheck.includes('note')) {
+      if (typeof window.toggleFicheNotes === 'function') {
+        window.toggleFicheNotes();
+        return;
+      }
+    }
+    if (fnCheck.includes('piege') || fnCheck.includes('piège') || fnCheck.includes('astuce')) {
+      const trapsEl = document.getElementById('examTrapsCard');
+      if (trapsEl) {
+        trapsEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+    }
+    if (window.toast) toast(`🔓 ${featureName} : Débloqué !`, 'success');
+    return;
+  }
+  // -------------------------
+
+  if (window.trackPremiumClick) window.trackPremiumClick(featureName);
+
+  const plans = window.PREMIUM_PLANS || {
+    starter: { name: 'Starter', price: 500, emoji: '🥉' },
+    pro: { name: 'Pro', price: 1000, emoji: '🥈' },
+    elite: { name: 'Élite', price: 2000, emoji: '🥇' }
+  };
+
+  const fnLower = String(featureName || '').toLowerCase();
+  let featureTitle = 'Cette fonctionnalité';
+  let featureIcon = '🔒';
+  let featureDesc = 'Abonne-toi à un Pass Réussite pour débloquer cette option sans restriction.';
+  let minTier = 'starter';
+  let includedText = '';
+
+  if (fnLower.includes('hors-ligne') || fnLower.includes('hors ligne') || fnLower.includes('sans connexion')) {
+    featureTitle = 'Pack Révision Hors-Ligne (Sans Connexion)';
+    featureIcon = '📱';
+    minTier = 'starter';
+    featureDesc = 'Télécharge toutes les fiches de cours directement sur ton téléphone pour réviser partout sans connexion Internet et sans forfait données mobiles.';
+    includedText = 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  } else if (fnLower.includes('pdf') || fnLower.includes('téléchargement')) {
+    featureTitle = 'Téléchargement PDF Officiel';
+    featureIcon = '📑';
+    minTier = 'starter';
+    featureDesc = 'Télécharge et imprime tes fiches officielles avec ton filigrane anti-fraude certifié pour réviser sur papier.';
+    includedText = 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  } else if (fnLower.includes('stat')) {
+    featureTitle = 'Statistiques, Progression & Données en Cache';
+    featureIcon = '📊';
+    minTier = 'starter';
+    featureDesc = 'Suis ta progression par matière, mesure ton assiduité avec ta flamme, analyse ton activité sur 7 jours et gère la mémoire en cache de ton téléphone.';
+    includedText = 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  } else if (fnLower.includes('surlign') || fnLower.includes('highlighter')) {
+    featureTitle = 'Surlignage Multi-couleurs & Mode Tap';
+    featureIcon = '🖍️';
+    minTier = 'starter';
+    featureDesc = 'Surligne tes cours en 4 couleurs (jaune, vert, bleu, rose) sur smartphone et ordinateur avec sauvegarde automatique pour retrouver tes passages clés à chaque révision.';
+    includedText = 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  } else if (fnLower.includes('note')) {
+    featureTitle = 'Mes Notes Personnelles de Cours';
+    featureIcon = '📝';
+    minTier = 'starter';
+    featureDesc = 'Note tes propres résumés, formules mnémotechniques et remarques du prof directement sous chaque fiche de cours, sauvegardés dans ton espace.';
+    includedText = 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  } else if (fnLower.includes('recitation') || fnLower.includes('récitation') || fnLower.includes('recall')) {
+    featureTitle = 'Récitation Active (Active Recall)';
+    featureIcon = '🧠';
+    minTier = 'pro';
+    featureDesc = 'Masque toute la leçon et entraîne-toi à la réciter bloc par bloc. Touche un paragraphe pour vérifier si tu as juste. La méthode n°1 pour mémoriser 3x plus vite avant un devoir !';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas la récitation active.';
+  } else if (fnLower.includes('piege') || fnLower.includes('piège') || fnLower.includes('astuce')) {
+    featureTitle = 'Pièges Fréquents d\'Examen & Astuces du Correcteur';
+    featureIcon = '⚠️';
+    minTier = 'pro';
+    featureDesc = 'Ne perds plus de points bêtement ! Découvre les erreurs types commises par 80% des élèves aux examens du BAC/BEPC et les conseils directs des correcteurs officiels.';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les pièges d\'examen.';
+  } else if (fnLower.includes('audio') || fnLower.includes('podcast')) {
+    featureTitle = 'Podcasts Audio (Lecture Vocale)';
+    featureIcon = '🎧';
+    minTier = 'pro';
+    featureDesc = 'Écoute tes cours lus à voix haute avec réglage du rythme et mise en veille automatique.';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les podcasts.';
+  } else if (fnLower.includes('flashcard')) {
+    featureTitle = 'Flashcards de Mémorisation Espacée';
+    featureIcon = '🃏';
+    minTier = 'pro';
+    featureDesc = 'Mémorise rapidement les définitions et formules clés grâce à la méthode scientifique de répétition espacée.';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les flashcards.';
+  } else if (fnLower.includes('quiz')) {
+    featureTitle = 'Quiz Interactifs Complets';
+    featureIcon = '🎮';
+    minTier = 'pro';
+    featureDesc = 'Entraîne-toi avec des QCM et questions de révision pour valider tes connaissances avant chaque devoir.';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les quiz.';
+  } else {
+    featureTitle = featureName || 'Fonctionnalité Premium';
+    featureIcon = '👑';
+    minTier = window.getMinPlanForFeature ? window.getMinPlanForFeature(featureName) : 'starter';
+    includedText = minTier === 'starter'
+      ? 'Inclus dès le <strong>Pass Starter (500 FCFA / mois)</strong> et dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.'
+      : 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
+  }
+
+  const renderPlanCard = (tierKey) => {
+    const plan = plans[tierKey];
+
+    // Le pack Élite est présenté dans son panneau de prestige
+    if (tierKey === 'elite') {
+      return `
+        <div class="pricing-card" style="border: 2px dashed #a855f7; border-radius: 14px; padding: 15px; margin-bottom: 12px; background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); position: relative; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.12);">
+          <div style="position: absolute; top: -10px; right: 10px; background: linear-gradient(135deg, #7c3aed, #9333ea); color: white; padding: 2px 10px; border-radius: 10px; font-size: 10px; font-weight: 800; letter-spacing: 0.4px;">🥇 FORMULE SUPRÊME</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="font-size: 16px; color: #581c87;">${plan.emoji} Pass ${plan.name}</strong>
+            <span style="font-weight: 800; color: #7e22ce;">${plan.price} FCFA <span style="font-size:10px;font-weight:normal;color:#9333ea">/ mois</span></span>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 12px; color: #6b21a8; line-height: 1.6;">
+            <li>✔️ <b>Tout le Pass Pro inclus +</b></li>
+            <li>🤖 <b>Professeur IA Personnel 24h/24</b> (Questions illimitées)</li>
+            <li>📜 <b>Annales & Sujets BAC/BEPC</b> avec corrigés types officiels</li>
+            <li>⏱️ <b>Simulateurs d'Examens Blancs</b> en conditions réelles</li>
+          </ul>
+          <button onclick="if(typeof window.openElitePassModal==='function'){window.openElitePassModal('elite');}else if(typeof window.showActionNotice==='function'){window.showActionNotice({type:'vip',icon:'👑',title:'Pass Élite',subtitle:'Bientôt disponible',message:'Cette formule suprême sera activée très prochainement !'});}" class="btn-submit-waitlist" style="background: linear-gradient(135deg, #7c3aed, #9333ea); color: white; width: 100%; padding: 11px; font-size: 13px; font-weight: 800; border-radius: 10px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);">
+            👑 Découvrir les fonctionnalités Élite
+          </button>
+        </div>
+      `;
+    }
+
+    const TIER_LEVELS = { starter: 1, pro: 2, elite: 3 };
+    const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+    const currentLevel = activeSub ? (TIER_LEVELS[activeSub.tier] || 0) : 0;
+    const targetLevel = TIER_LEVELS[tierKey] || 0;
+    const isCurrentPlan = activeSub && activeSub.tier === tierKey;
+    const isUpgrade = activeSub && (targetLevel > currentLevel);
+    const isDowngrade = activeSub && (targetLevel < currentLevel);
+
+    const isRecommended = !activeSub && (tierKey === minTier);
+    const isLocked = !activeSub && (tierKey === 'starter' && minTier === 'pro');
+    const isFullIncluded = !activeSub && (tierKey === 'pro' && minTier === 'starter');
+
+    let cardBadge = '';
+    let cardBorderColor = '#e2e8f0';
+    let cardBg = '#fff';
+
+    if (isCurrentPlan) {
+      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: #10b981; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">Ton Forfait Actuel</div>';
+      cardBorderColor = '#10b981';
+      cardBg = '#ecfdf5';
+    } else if (isUpgrade) {
+      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: linear-gradient(135deg, #c026d3, #9333ea); color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">🚀 Évolution Conseillée</div>';
+      cardBorderColor = '#c026d3';
+      cardBg = '#fdf4ff';
+    } else if (isRecommended) {
+      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: #10b981; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">✨ Débloque cette option</div>';
+      cardBorderColor = '#10b981';
+      cardBg = '#ecfdf5';
+    } else if (isFullIncluded) {
+      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: #2563eb; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">🌟 Formule Complète</div>';
+      cardBorderColor = '#93c5fd';
+      cardBg = '#eff6ff';
+    } else if (isLocked) {
+      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: #94a3b8; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">⚠️ Non inclus dans Starter</div>';
+      cardBorderColor = '#e2e8f0';
+      cardBg = '#f8fafc';
+    }
+
+    return `
+      <div class="pricing-card" style="border: 2px solid ${cardBorderColor}; border-radius: 12px; padding: 15px; margin-bottom: 12px; background: ${cardBg}; position: relative;">
+        ${cardBadge}
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <strong style="font-size: 16px;">${plan.emoji} Pass ${plan.name}</strong>
+          <span style="font-weight: bold; color: #1e293b;">${plan.price} FCFA <span style="font-size:10px;font-weight:normal;color:#64748b">/ mois</span></span>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 12px; color: #475569; line-height: 1.6;">
+          ${tierKey === 'starter' ? `
+            <li>✔️ <b>Pack Hors-Ligne</b> complet dans l'App (sans connexion)</li>
+            <li>✔️ <b>Téléchargement PDF</b> officiel (3 fiches / mois)</li>
+            <li>✔️ <b>Statistiques</b> de révision & flamme streak</li>
+            <li>🖍️ <b>Surligneur multi-couleurs</b> & Mode Tap</li>
+            <li>📝 <b>Mes Notes Personnelles</b> sur chaque fiche</li>
+          ` : ''}
+          ${tierKey === 'pro' ? `
+            <li>✔️ <b>Tout le Pass Starter inclus +</b></li>
+            <li>🧠 <b>Récitation Active</b> (Floutage intelligent de cours)</li>
+            <li>⚠️ <b>Pièges d'Examen & Astuces</b> du correcteur</li>
+            <li>🎧 <b>Podcasts Audio</b> (Lecture vocale illimitée)</li>
+            <li>🃏 <b>Flashcards</b> (Mémorisation espacée) & <b>Quiz</b></li>
+            <li>📅 <b>Plan de Révision Intelligent</b></li>
+          ` : ''}
+        </ul>
+        ${isCurrentPlan ? `
+          <button onclick="window.showActiveSubscriptionModal()" class="btn-submit-waitlist" style="background: #10b981; color: white; width: 100%; padding: 10px; font-size: 13px; font-weight: 800; border-radius: 10px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+            <i class="fas fa-check-circle"></i> Ton forfait actif (Gérer / Résilier)
+          </button>
+        ` : (isUpgrade ? `
+          <button onclick="initiatePremiumPayment(this, '${tierKey}')" class="btn-submit-waitlist" style="background: linear-gradient(135deg, #c026d3, #9333ea); color: white; width: 100%; padding: 11px; font-size: 13px; font-weight: 800; border-radius: 10px; cursor: pointer; border: none; box-shadow: 0 4px 14px rgba(192, 38, 211, 0.4);">
+            <i class="fas fa-bolt" style="color:#fde047;"></i> Passer au Pass ${plan.name} (${plan.price} F / mois)
+          </button>
+        ` : (isDowngrade ? `
+          <button onclick="window.showActiveSubscriptionModal()" class="btn-submit-waitlist" style="background: #94a3b8; color: white; width: 100%; padding: 10px; font-size: 12px; border-radius: 10px; cursor: pointer; border: none;">
+            ✔️ Inclus dans ton Pass ${activeSub.tier.toUpperCase()}
+          </button>
+        ` : `
+          <button onclick="initiatePremiumPayment(this, '${tierKey}')" class="btn-submit-waitlist" style="background: ${isLocked ? '#94a3b8' : (isRecommended ? 'linear-gradient(135deg, #10b981, #059669)' : (isFullIncluded ? 'linear-gradient(135deg, #2563eb, #1d4ed8)' : '#3b82f6'))}; width: 100%; padding: 11px; font-size: 13px; font-weight: 800; border-radius: 10px; border: none; color: white; cursor: ${isLocked ? 'not-allowed' : 'pointer'}; box-shadow: ${isLocked ? 'none' : '0 4px 12px rgba(0,0,0,0.12)'};" ${isLocked ? 'disabled title="Ce forfait ne débloque pas cette fonctionnalité"' : ''}>
+            ${isLocked ? '<i class="fas fa-lock"></i> Requiert le Pass Pro (1 000 F)' : (isRecommended ? `<i class="fas fa-bolt" style="color:#fef08a"></i> Choisir ${plan.name} (${plan.price} F / mois)` : `<i class="fas fa-crown" style="color:#fde047"></i> Choisir ${plan.name} (${plan.price} F / mois)`)}
+          </button>
+        `))}
+      </div>
+    `;
+  };
+
+  const html = `
+    <div class="teaser-container" style="text-align: left; padding: 4px 0;">
+      <!-- Hero Bannière d'Explication de la Fonctionnalité Cliquée -->
+      <div class="teaser-feature-header" style="background: ${minTier === 'starter' ? 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' : 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)'}; border: 1.5px solid ${minTier === 'starter' ? '#10b981' : '#3b82f6'}; border-radius: 14px; padding: 13px 15px; margin-bottom: 14px; text-align: left; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <div style="font-size: 26px; line-height: 1; flex-shrink: 0; background: #ffffff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">${featureIcon}</div>
+          <div style="flex: 1;">
+            <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: ${minTier === 'starter' ? '#047857' : '#1d4ed8'}; margin-bottom: 2px;">
+              🔒 FONCTIONNALITÉ AVEC CADENAS
+            </div>
+            <h4 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 800; color: #0f172a;">${featureTitle}</h4>
+            <div style="font-size: 12px; font-weight: 700; color: ${minTier === 'starter' ? '#065f46' : '#1e40af'}; margin-bottom: 4px;">
+              👉 ${includedText}
+            </div>
+            <div style="font-size: 11.5px; color: #475569; line-height: 1.4;">${featureDesc}</div>
+          </div>
+        </div>
       </div>
       
-      <p style="font-size:13.5px;color:#475569;margin:0 0 16px;line-height:1.5">
-        Passe à la vitesse supérieure pour tes révisions avec les outils d'excellence de <strong>ResumeCI</strong> !
+      <p style="font-size:12.5px;color:#475569;margin:0 0 14px;text-align:center;font-weight:600;">
+        Choisis ton abonnement mensuel renouvelable sans engagement :
       </p>
 
-      <div class="teaser-grid">
-        <div class="teaser-card-item">
-          <div class="teaser-card-icon">📥</div>
-          <div class="teaser-card-text">
-            <strong>Pack Hors-Ligne & Fiches PDF</strong>
-            <span>Téléchargement complet de toutes les fiches d'une classe pour réviser sans connexion</span>
-          </div>
-        </div>
-        <div class="teaser-card-item">
-          <div class="teaser-card-icon">🎧</div>
-          <div class="teaser-card-text">
-            <strong>Fiches Audio HQ</strong>
-            <span>Écoute tes leçons en marchant ou avant de dormir comme un podcast</span>
-          </div>
-        </div>
-        <div class="teaser-card-item">
-          <div class="teaser-card-icon">🎴</div>
-          <div class="teaser-card-text">
-            <strong>Flashcards Ebbinghaus</strong>
-            <span>Mémorise 3x plus vite avec la méthode de répétition espacée</span>
-          </div>
-        </div>
-        <div class="teaser-card-item">
-          <div class="teaser-card-icon">🤖</div>
-          <div class="teaser-card-text">
-            <strong>Professeur IA & Corrigés</strong>
-            <span>Explications détaillées et réponses à tes questions 24h/24</span>
-          </div>
-        </div>
+      <div class="pricing-tiers">
+        ${renderPlanCard('starter')}
+        ${renderPlanCard('pro')}
+        ${renderPlanCard('elite')}
       </div>
 
-      <div class="teaser-price-box">
-        <div class="teaser-price-val">Offre Spéciale : 500 FCFA / mois</div>
-        <div class="teaser-price-sub">
-          🔥 Déjà plus de <strong>1 450+ élèves</strong> sur la liste d'attente !<br>
-          🎁 <strong>Cadeau VIP :</strong> Le 1er mois sera <strong>100% GRATUIT</strong> pour les 500 premiers !
+      <div class="teaser-guarantee" style="text-align: center; margin-top: 14px; font-size: 12px; color: #64748b; line-height: 1.6;">
+        <div style="font-weight: 700; color: #1e293b;">🔒 Paiement sécurisé via GeniusPay (Wave, Orange, MTN, Moov)</div>
+        <div style="margin-top: 6px; font-size: 11px; color: #475569;">
+          💬 Tu préfères régler directement par Wave ou Orange Money ? <a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev,%20je%20souhaite%20r%C3%A9gler%20mon%20Pass%20par%20Wave%20ou%20Orange%20Money%20direct." target="_blank" rel="noopener" style="color: #2563eb; font-weight: 800; text-decoration: underline;">Assistance WhatsApp directe</a>
         </div>
       </div>
-
-      <div id="waitlistFormArea" class="teaser-form">
-        <div class="teaser-label">
-          <span>Numéro WhatsApp (Côte d'Ivoire) :</span>
-          <span class="digit-counter" id="digitCounter">0 / 10 chiffres</span>
-        </div>
-        
-        <div class="phone-input-wrapper" id="phoneWrapper">
-          <div class="phone-country-code">🇨🇮 +225</div>
-          <input 
-            type="tel" 
-            id="waitlistContact" 
-            class="phone-input-field" 
-            placeholder="07 01 02 03 04" 
-            maxlength="14" 
-            autocomplete="tel"
-            oninput="handlePhoneInput(this)"
-            onkeydown="if(event.key==='Enter'){submitWaitlist('${featureLabel}');}"
-          >
-        </div>
-        
-        <div class="phone-error-feedback" id="phoneErrorFeedback">
-          <i class="fas fa-exclamation-circle"></i>
-          <span id="phoneErrorText">Le numéro doit comporter exactement 10 chiffres.</span>
-        </div>
-
-        <button onclick="submitWaitlist('${featureLabel}')" id="waitlistBtn" class="btn-submit-waitlist">
-          <i class="fas fa-bolt"></i> M'inscrire sur la liste VIP prioritaire
-        </button>
-        <div class="teaser-guarantee">
-          🔒 Inscription 100% gratuite & sans engagement • Aucun spam envoyé
-        </div>
-      </div>
-
-      <div id="waitlistSuccess" style="display:none"></div>
     </div>
   `;
 
-  if (typeof openModal === 'function') {
-    openModal('👑 Pass Réussite', html, 'premiumModal');
-    // Focus sur l'input
-    setTimeout(() => {
-      const inp = document.getElementById('waitlistContact');
-      if (inp) inp.focus();
-    }, 200);
-  } else {
-    alert("Pass Réussite disponible très bientôt !");
+  if (typeof window.openModal === 'function') {
+    window.openModal('👑 Débloquer mon Pass Réussite', html, 'premiumModal');
+  } else if (typeof openModal === 'function') {
+    openModal('👑 Débloquer mon Pass Réussite', html, 'premiumModal');
+  } else if (typeof window.showActionNotice === 'function') {
+    window.showActionNotice({
+      type: 'vip',
+      icon: '👑',
+      title: 'Pass Réussite',
+      subtitle: 'Bientôt disponible',
+      message: 'Le Pass Réussite sera activable directement depuis l\'application très prochainement.',
+      primaryBtnText: 'Compris'
+    });
+  } else if (window.toast) {
+    toast("Pass Réussite disponible très bientôt !", "info");
   }
 };
 
@@ -900,7 +1458,7 @@ window.submitWaitlist = async function(featureName) {
         <h4 style="color:#065f46;font-size:18px;font-weight:800;margin:0 0 6px">Inscription Réussie !</h4>
         <p style="color:#047857;font-size:13.5px;line-height:1.5;margin:0">
           Félicitations ! Tu es désormais sur la <strong>liste VIP prioritaire</strong> du Pass Réussite.<br><br>
-          📱 Tu recevras une alerte WhatsApp exclusive au <strong>${fullContact}</strong> pour profiter de ton <strong>1er mois 100% offert</strong> dès le lancement !
+          📱 Tu recevras une alerte WhatsApp exclusive au <strong>${fullContact}</strong> pour profiter de ton <strong>accès VIP privilégié</strong> dès le lancement !
         </p>
       </div>
     `;
@@ -916,4 +1474,927 @@ window.submitWaitlist = async function(featureName) {
     if (modal) modal.classList.remove('show');
   }, 4000);
 };
+
+/* ==================== 1 A, 1 B, 1 C: NOUVELLES FONCTIONNALITÉS PREMIUM DE RÉVISION ==================== */
+
+// Base de connaissances des Pièges Fréquents d'Examen (BEPC & BAC Côte d'Ivoire)
+const EXAM_TRAPS_DATA = {
+  'Mathematiques': {
+    general: [
+      { text: "<strong>Oubli du domaine de validité :</strong> Écris toujours l'ensemble de définition Df avant de simplifier, dériver ou résoudre une équation (dénominateur non nul, expression sous la racine positive, x > 0 pour ln).", icon: "fa-ban" },
+      { text: "<strong>Confusion Dérivée vs Primitive :</strong> N'oublie jamais d'ajouter la constante <em>+ C (C ∈ ℝ)</em> lors du calcul d'une primitive indéfinie.", icon: "fa-rotate-left" },
+      { text: "<strong>Développement et signes :</strong> Une erreur classique sur le signe '-' devant une parenthèse ou lors du produit remarquable (a - b)² = a² - 2ab + b² (et non - b²).", icon: "fa-calculator" }
+    ],
+    specific: {
+      'limite': "<strong>Formes Indéterminées :</strong> En cas de 0/0 ou ∞/∞, ne conclus jamais directement. Factorise par le terme prépondérant ou utilise le nombre dérivé.",
+      'derive': "<strong>Dérivée composée :</strong> N'oublie pas de multiplier par u'(x) dans la dérivée de (u^n)' = n·u'·u^(n-1) et (e^u)' = u'·e^u.",
+      'probabilite': "<strong>Équiprobabilité :</strong> Vérifie toujours si les tirages sont successifs sans remise (arrangements), simultanés (combinaisons) ou avec remise (p-listes).",
+      'complexe': "<strong>Module et Argument :</strong> Ne confonds pas |z| = √(a² + b²) avec a² + b². Fais attention au quadrant pour trouver le bon argument θ.",
+      'suite': "<strong>Premier terme :</strong> Vérifie attentivement si la suite commence à n=0 ou n=1 dans la formule de la somme des termes.",
+      'integrale': "<strong>Intégration par parties :</strong> Formule ∫u·v' = [u·v] - ∫u'·v. Choisis judicieusement la fonction à dériver (règle ALPES)."
+    },
+    tip: "Les correcteurs du BAC et BEPC accordent souvent la moitié des points à la démarche et à la justification de la méthode, même si le calcul final comporte une étourderie. Rédige toujours avec rigueur !"
+  },
+  'Physique - Chimie': {
+    general: [
+      { text: "<strong>Unités non converties :</strong> Le piège n°1 ! Convertis toujours tes grandeurs dans le Système International : volumes en Litres (L) ou m³, masses en kilogrammes (kg), distances en mètres (m).", icon: "fa-scale-balanced" },
+      { text: "<strong>Réactif limitant :</strong> N'oublie jamais de diviser les quantités de matière initiales par les coefficients stœchiométriques respectifs pour identifier le réactif limitant.", icon: "fa-flask-vial" },
+      { text: "<strong>Chiffres significatifs :</strong> N'arrondis pas exagérément les résultats intermédiaires et exprime le résultat final avec le même nombre de chiffres significatifs que la donnée la moins précise.", icon: "fa-chart-pie" }
+    ],
+    specific: {
+      'acide': "<strong>Dosage acido-basique :</strong> À l'équivalence, la relation n_A = n_B n'est vraie que pour des coefficients 1:1. Pour un polyacide, n_A / a = n_B / b.",
+      'mouvement': "<strong>2ème Loi de Newton :</strong> Précise impérativement le Système, le Référentiel (Galiléen) et le bilan complet des forces extérieures avant d'écrire ∑F_ext = m·a.",
+      'champ': "<strong>Signe de la projection :</strong> Fais attention à l'orientation de l'axe vertical (Oz) : le poids s'exprime P_z = -m·g si l'axe est orienté vers le haut !",
+      'induction': "<strong>Loi de Lenz :</strong> Le courant induit crée un champ qui s'oppose à la cause qui lui donne naissance. Justifie toujours clairement son sens.",
+      'chimie': "<strong>Formules brutes et semi-développées :</strong> Vérifie que chaque atome de carbone respecte sa tétravalence (exactement 4 liaisons)."
+    },
+    tip: "Au BAC et au BEPC, une réponse chiffrée sans unité est systématiquement sanctionnée par 0 point pour la question. Note toujours l'unité !"
+  },
+  'SVT': {
+    general: [
+      { text: "<strong>Confondre Décrire et Expliquer :</strong> « Décrire » consiste à relever les variations observables sur un graphe (« la quantité passe de 2 à 8 »). « Expliquer » exige de donner les causes et mécanismes biologiques.", icon: "fa-microscope" },
+      { text: "<strong>Schémas non conformes :</strong> Tout schéma de SVT doit comporter obligatoirement : un Titre souligné, une Échelle/Orientation, et des Flèches tracées à la règle pointant précisément l'élément.", icon: "fa-pen-ruler" },
+      { text: "<strong>Vocabulaire scientifique rigoureux :</strong> Ne remplace jamais un terme technique par une expression vague (ex: écris « antigène » et non « microbe », « leucocyte » et non « globule blanc »).", icon: "fa-dna" }
+    ],
+    specific: {
+      'meiose': "<strong>Mitose vs Méiose :</strong> La mitose produit 2 cellules identiques (2n → 2n). La méiose produit 4 gamètes génétiquement différents (2n → n) grâce aux brassages inter et intrachromosomiques.",
+      'nerveux': "<strong>Message nerveux :</strong> Le potentiel d'action obéit à la loi du « tout ou rien » au niveau d'une fibre isolée, mais le potentiel global du nerf dépend du recrutement des fibres.",
+      'immun': "<strong>Anticorps vs Lymphocytes :</strong> Les anticorps sont des protéines (molécules solubles), alors que les lymphocytes B et T sont des cellules vivantes.",
+      'genetique': "<strong>Caractères héréditaires :</strong> Précise toujours si les allèles sont portés par un autosome ou un gonosome (chromosome sexuel X ou Y)."
+    },
+    tip: "Structure toujours ton exploitation de document selon la méthode MENA : 1. Constat/Analyse (« Je vois que... ») 2. Déduction/Interprétation (« J'en déduis que... ») 3. Conclusion."
+  },
+  'Francais': {
+    general: [
+      { text: "<strong>Situation d'évaluation APC :</strong> Réponds impérativement à chacune des 3 consignes de la situation d'évaluation. Chaque consigne correspond à un tiers des points de l'épreuve.", icon: "fa-feather" },
+      { text: "<strong>Citations textuelles :</strong> Toute affirmation dans le commentaire doit être appuyée par une citation entre guillemets extraite du texte avec le numéro de ligne.", icon: "fa-quote-left" },
+      { text: "<strong>Transitions négligées :</strong> Ne passe jamais d'une partie à une autre sans phrase de bilan et de transition pour assurer la fluidité de ton argumentation.", icon: "fa-arrows-split-up-and-left" }
+    ],
+    specific: {
+      'dissertation': "<strong>Introduction en 3 temps :</strong> Amorce / Définition, Problématique clairement formulée, et Annonce du plan. Ne commence jamais directement par la thèse.",
+      'commentaire': "<strong>Figures de style :</strong> Identifier une métaphore ne suffit pas. Tu dois obligatoirement analyser l'effet produit sur le lecteur et le sens qu'elle apporte au texte.",
+      'resume': "<strong>Contraction de texte :</strong> Ne copie aucune phrase du texte original et respecte scrupuleusement la marge de ±10% du nombre de mots exigé."
+    },
+    tip: "Soigne ton écriture et la ponctuation : 5 fautes d'orthographe ou d'accord peuvent te faire perdre jusqu'à 2 points précieux sur la copie."
+  },
+  'Histoire - Geographie': {
+    general: [
+      { text: "<strong>Anachronismes et confusion des dates :</strong> Ne confonds pas les dates charnières (1947, 1960 pour les indépendances africaines, 1989/1991 pour la chute du bloc soviétique).", icon: "fa-landmark" },
+      { text: "<strong>Commentaire de document :</strong> Présente toujours le document selon les 5 règles d'or : Nature, Auteur, Date, Contexte historique et Thème central.", icon: "fa-file-lines" },
+      { text: "<strong>Croquis de géographie :</strong> Un croquis sans Titre, sans Orientation (flèche du Nord), sans Nomenclature et sans Légende ordonnée ne peut pas obtenir la moyenne.", icon: "fa-map-location-dot" }
+    ],
+    specific: {
+      'bipolarisation': "<strong>Guerre Froide :</strong> Ne confonds pas le Plan Marshall (économique), l'OTAN (militaire) et la Doctrine Truman (politique d'endiguement).",
+      'independance': "<strong>Décolonisation :</strong> Distingue clairement les décolonisations pacifiques (Loi-cadre Defferre, Communauté de 1958) et les décolonisations violentes (Guerre d'Algérie, Indochine).",
+      'cote d\'ivoire': "<strong>Économie ivoirienne :</strong> Cite des atouts et des vulnérabilités réels (dépendance aux cours des matières premières agricoles, industrialisation en cours)."
+    },
+    tip: "En Histoire-Géo, n'écris jamais de phrases vagues comme « l'Afrique est un pays » ou « l'économie est bonne ». Utilise des termes précis, des dates et des chiffres clés."
+  },
+  'Philosophie': {
+    general: [
+      { text: "<strong>Le piège du relativisme :</strong> Évite impérativement les formules comme « chacun a son avis » ou « la vérité dépend de chacun ». La philosophie exige une recherche rationnelle et universelle.", icon: "fa-brain" },
+      { text: "<strong>Le catalogue d'auteurs sans réflexion :</strong> Ne juxtapose pas des citations d'auteurs apprises par cœur. Chaque référence doit servir à répondre à la question posée.", icon: "fa-book-open" },
+      { text: "<strong>Définition des concepts :</strong> Définis systématiquement les termes clés du sujet dès l'introduction (ex: liberté, devoir, technique, inconscient, justice).", icon: "fa-spell-check" }
+    ],
+    specific: {
+      'dissertation': "<strong>Problématisation :</strong> Montre pourquoi la question pose problème en dégageant le paradoxe ou la contradiction sous-jacente.",
+      'commentaire': "<strong>Paraphrase interdite :</strong> Ne répète pas le texte avec d'autres mots. Explique la thèse de l'auteur, sa démarche argumentative et ses enjeux philosophiques."
+    },
+    tip: "L'introduction représente 30% de la première impression du correcteur. Soigne particulièrement la formulation de la problématique et le questionnement !"
+  },
+  'Anglais': {
+    general: [
+      { text: "<strong>Accord à la 3ème personne :</strong> N'oublie jamais le '-s' final au Présent Simple pour He / She / It (« He works », « She explains »).", icon: "fa-language" },
+      { text: "<strong>Confusion Prétérit vs Present Perfect :</strong> Utilise le Prétérit pour une action datée et terminée dans le passé (yesterday, in 2020), et le Present Perfect pour une action liée au présent (already, never, yet).", icon: "fa-clock" },
+      { text: "<strong>Faux-amis fréquents :</strong> Attention : « actually » = en fait / en réalité (et non actuellement), « library » = bibliothèque (et non librairie), « pretend » = faire semblant (et non prétendre).", icon: "fa-triangle-exclamation" }
+    ],
+    tip: "En expression écrite d'anglais au BAC/BEPC, structure tes paragraphes avec des connecteurs logiques : Firstly, Furthermore, In addition, However, To conclude."
+  }
+};
+
+// 1 C : Générateur HTML des Pièges Fréquents d'Examen
+window.getExamTrapsHtml = function(cls, sub, file) {
+  const normSub = (sub || '').trim();
+  let subjectData = EXAM_TRAPS_DATA[normSub];
+  
+  if (!subjectData) {
+    // Recherche par mot clé dans la matière
+    for (let s in EXAM_TRAPS_DATA) {
+      if (normSub.toLowerCase().includes(s.toLowerCase().substring(0, 5))) {
+        subjectData = EXAM_TRAPS_DATA[s];
+        break;
+      }
+    }
+  }
+  
+  if (!subjectData) {
+    subjectData = {
+      general: [
+        { text: "<strong>Rigueur de la méthode :</strong> Lis l'intégralité du sujet avant de commencer pour bien gérer ton temps et éviter le hors-sujet.", icon: "fa-clock" },
+        { text: "<strong>Justification systématique :</strong> En examen, toute affirmation sans justification ou sans référence au cours perd la moitié de ses points.", icon: "fa-circle-check" },
+        { text: "<strong>Relecture finale :</strong> Consacre impérativement les 10 dernières minutes à vérifier l'orthographe, les calculs et la numérotation des questions.", icon: "fa-check-double" }
+      ],
+      tip: "Présente ta copie avec propreté : saute des lignes entre les exercices et souligne les résultats finaux à la règle pour faciliter le travail du correcteur."
+    };
+  }
+
+  // Sélection des pièges généraux + éventuel piège spécifique au nom du fichier
+  const traps = [...subjectData.general];
+  const fileLower = (file || '').toLowerCase();
+  
+  if (subjectData.specific) {
+    for (let key in subjectData.specific) {
+      if (fileLower.includes(key)) {
+        traps.unshift({
+          text: subjectData.specific[key],
+          icon: "fa-bullseye"
+        });
+        break;
+      }
+    }
+  }
+
+  const itemsHtml = traps.slice(0, 3).map(t => `
+    <li class="exam-trap-item">
+      <i class="fas ${t.icon || 'fa-triangle-exclamation'} exam-trap-icon"></i>
+      <div>${t.text}</div>
+    </li>
+  `).join('');
+
+  const tipHtml = subjectData.tip ? `
+    <div class="exam-traps-tip">
+      <i class="fas fa-lightbulb exam-traps-tip-icon"></i>
+      <div><strong>Astuce du correcteur officiel :</strong> ${subjectData.tip}</div>
+    </div>
+  ` : '';
+
+  const examTag = (cls && (cls.toLowerCase().includes('terminale') || cls.toLowerCase().includes('premiere'))) ? 'Épreuve BAC CI' : 'Épreuve BEPC & Devoirs';
+
+  const hasTraps = window.userHasFeature ? window.userHasFeature('Pièges d\'Examen') : false;
+  if (!hasTraps) {
+    return `
+      <div class="exam-traps-card exam-traps-locked" id="examTrapsCard" onclick="openPremiumTeaser('Pièges Fréquents d\'Examen & Astuces')">
+        <div class="exam-traps-badge-row">
+          <span class="exam-traps-pill" style="background:#dc2626;"><i class="fas fa-lock"></i> Exclusivité Pass Pro</span>
+          <span class="exam-traps-tag">${examTag}</span>
+        </div>
+        <h4 class="exam-traps-title">⚠️ Les erreurs qui coûtent cher le jour J 🔒</h4>
+        <div class="exam-traps-intro">Découvre les <strong>3 erreurs éliminatoires</strong> les plus fréquentes et l'<strong>astuce officielle du correcteur</strong> sur ce chapitre pour ne plus perdre de points bêtement.</div>
+        <div class="exam-traps-blur-preview">
+          <div class="exam-traps-blur-overlay">
+            <button class="exam-traps-unlock-btn" onclick="event.stopPropagation();openPremiumTeaser('Pièges Fréquents d\'Examen & Astuces')">
+              <i class="fas fa-lock"></i> Débloquer les Pièges & Astuces (Pass Pro 1 000 F)
+            </button>
+          </div>
+          <ul class="exam-traps-list" style="filter:blur(5px);pointer-events:none;user-select:none;opacity:0.4;">
+            ${itemsHtml}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="exam-traps-card" id="examTrapsCard">
+      <div class="exam-traps-badge-row">
+        <span class="exam-traps-pill"><i class="fas fa-triangle-exclamation"></i> Pièges Fréquents d'Examen</span>
+        <span class="exam-traps-tag">${examTag}</span>
+      </div>
+      <h4 class="exam-traps-title">⚠️ Les erreurs qui coûtent cher le jour J</h4>
+      <div class="exam-traps-intro">Voici ce que <strong>80% des élèves ratent ou négligent</strong> sur ce chapitre lors des compositions et examens nationaux :</div>
+      <ul class="exam-traps-list">
+        ${itemsHtml}
+      </ul>
+      ${tipHtml}
+    </div>
+  `;
+};
+
+// 1 A & 1 B : Barre d'Outils d'Étude sous la fiche
+window.getFicheStudyBarHtml = function(cls, sub, file) {
+  const hasRecall = window.userHasFeature ? window.userHasFeature('Récitation Active') : false;
+  const hasHl = window.userHasFeature ? window.userHasFeature('Surligneur de Fiche') : false;
+  const hasNotes = window.userHasFeature ? window.userHasFeature('Mes Notes Personnelles') : false;
+
+  const recallBtn = hasRecall
+    ? `<button id="btnStudyRecall" class="study-btn" onclick="toggleActiveRecall()" title="Masquer les formules et définitions pour tester ta mémoire">
+        <i class="fas fa-eye-slash"></i> <span>Récitation Active</span>
+      </button>`
+    : `<button id="btnStudyRecall" class="study-btn locked" onclick="openPremiumTeaser('Récitation Active (Active Recall)')" title="Récitation Active (Inclus dans le Pass Pro 1 000 F)">
+        <i class="fas fa-lock" style="color:#d97706"></i> <span>Récitation Active 🔒</span>
+      </button>`;
+
+  const hlBtn = hasHl
+    ? `<button id="btnStudyHl" class="study-btn" onclick="toggleHighlighterMode()" title="Surligner les passages clés de cette leçon">
+        <i class="fas fa-highlighter"></i> <span>Surligner</span>
+      </button>`
+    : `<button id="btnStudyHl" class="study-btn locked" onclick="openPremiumTeaser('Surligneur de Fiche')" title="Surligneur (Inclus dès le Pass Starter 500 F)">
+        <i class="fas fa-lock" style="color:#059669"></i> <span>Surligner 🔒</span>
+      </button>`;
+
+  const notesBtn = hasNotes
+    ? `<button id="btnStudyNotes" class="study-btn" onclick="toggleFicheNotes()" title="Prendre des notes personnelles sur cette fiche">
+        <i class="fas fa-pen-to-square"></i> <span>Mes Notes</span>
+        <span id="ficheNotesBadge" class="study-badge-count" style="display:none">1</span>
+      </button>`
+    : `<button id="btnStudyNotes" class="study-btn locked" onclick="openPremiumTeaser('Mes Notes Personnelles')" title="Mes Notes (Inclus dès le Pass Starter 500 F)">
+        <i class="fas fa-lock" style="color:#2563eb"></i> <span>Mes Notes 🔒</span>
+      </button>`;
+
+  return `
+    <div class="fiche-study-bar" id="ficheStudyBar">
+      <div class="study-bar-title"><i class="fas fa-graduation-cap"></i> Mode Révision :</div>
+      ${recallBtn}
+      ${hlBtn}
+      ${notesBtn}
+    </div>
+  `;
+};
+
+// Initialisation globale après affichage de la fiche
+window.initFicheStudyFeatures = function(cls, sub, file) {
+  window.__currentFicheKey = `${cls}__${sub}__${file}`;
+  window.__activeRecallOn = false;
+  window.__highlighterMode = false;
+  window.__currentHlColor = 'yellow';
+
+  // Mise à jour du badge des notes si une note existe
+  const savedNote = localStorage.getItem('rci_note_' + window.__currentFicheKey);
+  const badgeEl = document.getElementById('ficheNotesBadge');
+  if (badgeEl) {
+    if (savedNote && savedNote.trim().length > 0) {
+      badgeEl.style.display = 'inline-block';
+      badgeEl.textContent = '1';
+    } else {
+      badgeEl.style.display = 'none';
+    }
+  }
+
+  // Restauration des surlignages sauvegardés
+  restoreFicheHighlights(cls, sub, file);
+
+  // Écouteur pour surligner au tap ou sélection de texte
+  initHighlighterEventListeners();
+
+  // Écouteur pour dévoiler temporairement une section touchée en Mode Récitation
+  initRecallBlockTapListener();
+};
+
+/* ==================== 1 A: IMPLÉMENTATION RÉCITATION ACTIVE (TOUTE LA LEÇON) ==================== */
+window.toggleActiveRecall = function() {
+  const hasRecall = window.userHasFeature ? window.userHasFeature('Récitation Active') : false;
+  if (!hasRecall) {
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Récitation Active (Active Recall)');
+    }
+    return;
+  }
+
+  window.__activeRecallOn = !window.__activeRecallOn;
+  const btn = document.getElementById('btnStudyRecall');
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl) return;
+
+  if (window.haptic) window.haptic(25);
+
+  if (window.__activeRecallOn) {
+    if (btn) {
+      btn.classList.add('active', 'recall-active');
+      btn.innerHTML = `<i class="fas fa-eye"></i> <span>Révéler la Leçon</span>`;
+      btn.title = "Appuie pour révéler toute la leçon";
+    }
+
+    // Flouter l'intégralité du cours
+    ficheEl.classList.add('active-recall-all-blur');
+
+    // Afficher bannière flottante de contrôle
+    let banner = document.getElementById('recallFloatingBanner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'recallFloatingBanner';
+      banner.className = 'recall-floating-banner';
+      ficheEl.parentNode.insertBefore(banner, ficheEl);
+    }
+    banner.innerHTML = `
+      <div class="recall-banner-text">
+        <i class="fas fa-brain" style="font-size:18px;color:#d97706"></i>
+        <span><strong>Toute la leçon est masquée !</strong> Récite de mémoire. Touche un paragraphe pour vérifier un détail ou appuie ci-contre pour tout révéler.</span>
+      </div>
+      <div class="recall-banner-actions">
+        <button class="recall-banner-btn" onclick="toggleActiveRecall()" style="background:#10b981;color:#fff;border-color:transparent;font-weight:800;padding:6px 12px;font-size:12px">
+          <i class="fas fa-eye"></i> Révéler toute la leçon
+        </button>
+      </div>
+    `;
+    banner.style.display = 'flex';
+
+    if (window.toast) window.toast("🧠 Récitation Active : toute la leçon est masquée. Récite sans regarder !", "info", 3500);
+  } else {
+    if (btn) {
+      btn.classList.remove('active', 'recall-active');
+      btn.innerHTML = `<i class="fas fa-eye-slash"></i> <span>Récitation Active</span>`;
+      btn.title = "Masquer toute la leçon pour tester ta mémoire";
+    }
+    
+    // Retirer le flou sur toute la leçon
+    ficheEl.classList.remove('active-recall-all-blur');
+    ficheEl.querySelectorAll('*').forEach(el => {
+      el.classList.remove('recall-block-revealed');
+      el.style.removeProperty('filter');
+      el.style.removeProperty('opacity');
+    });
+
+    const banner = document.getElementById('recallFloatingBanner');
+    if (banner) banner.remove();
+
+    if (window.toast) window.toast("✨ Leçon révélée ! Vérifie ce que tu as récité.", "success", 2500);
+  }
+};
+
+function initRecallBlockTapListener() {
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl || ficheEl.__recallListening) return;
+  ficheEl.__recallListening = true;
+
+  let touchMoved = false;
+  ficheEl.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
+  ficheEl.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
+
+  const handleTap = (e) => {
+    if (!window.__activeRecallOn) return;
+    if (touchMoved) return;
+    
+    // Remonter pour trouver le premier élément enfant direct de .fiche-content
+    let block = e.target;
+    while (block && block.parentNode && block.parentNode !== ficheEl) {
+      block = block.parentNode;
+    }
+    
+    if (block && block.parentNode === ficheEl) {
+      // Ignorer les éléments utilitaires hors cours
+      if (block.closest('.exam-traps-card, .fiche-study-bar, #recallFloatingBanner, #highlighterBar, .fiche-notes-box, .fiche-actions, .resume-ci-whatsapp-qr') ||
+          block.classList.contains('exam-traps-card') ||
+          block.classList.contains('fiche-study-bar') ||
+          block.id === 'recallFloatingBanner' ||
+          block.id === 'highlighterBar' ||
+          block.id === 'ficheNotesBox') {
+        return;
+      }
+      
+      e.stopPropagation();
+      e.preventDefault();
+      
+      const isRevealed = block.classList.toggle('recall-block-revealed');
+      if (isRevealed) {
+        block.style.setProperty('filter', 'none', 'important');
+        block.style.setProperty('opacity', '1', 'important');
+      } else {
+        block.style.removeProperty('filter');
+        block.style.removeProperty('opacity');
+      }
+      if (window.haptic) window.haptic(20);
+    }
+  };
+
+  ficheEl.addEventListener('click', handleTap);
+}
+
+/* ==================== 1 B: IMPLÉMENTATION SURLIGNAGE (HIGHLIGHTER MOBILE & DESKTOP) ==================== */
+window.__savedSelectionRange = null;
+
+window.toggleHighlighterMode = function() {
+  const hasHl = window.userHasFeature ? window.userHasFeature('Surligneur de Fiche') : false;
+  if (!hasHl) {
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Surligneur de Fiche');
+    }
+    return;
+  }
+
+  window.__highlighterMode = !window.__highlighterMode;
+  const btn = document.getElementById('btnStudyHl');
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl) return;
+
+  if (window.haptic) window.haptic(20);
+
+  let bar = document.getElementById('highlighterBar');
+  if (window.__highlighterMode) {
+    if (btn) btn.classList.add('active', 'highlighter-active');
+
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'highlighterBar';
+      bar.className = 'highlighter-floating-bar';
+      ficheEl.parentNode.insertBefore(bar, ficheEl);
+    }
+    bar.innerHTML = `
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span id="hlHint" style="font-size:12px;font-weight:700;color:#047857;display:flex;align-items:center;gap:5px">
+          <i class="fas fa-highlighter"></i> Touche le texte ou sélectionne :
+        </span>
+        <button id="hlApplyBtn" class="hl-apply-btn" style="display:none">
+          <i class="fas fa-check"></i> Surligner la sélection
+        </button>
+      </div>
+      <div class="hl-palette">
+        <button type="button" class="hl-color-pill hl-pill-yellow ${window.__currentHlColor === 'yellow' ? 'active' : ''}" data-color="yellow" title="Jaune">🟡</button>
+        <button type="button" class="hl-color-pill hl-pill-green ${window.__currentHlColor === 'green' ? 'active' : ''}" data-color="green" title="Vert">🟢</button>
+        <button type="button" class="hl-color-pill hl-pill-blue ${window.__currentHlColor === 'blue' ? 'active' : ''}" data-color="blue" title="Bleu">🔵</button>
+        <button type="button" class="hl-color-pill hl-pill-pink ${window.__currentHlColor === 'pink' ? 'active' : ''}" data-color="pink" title="Rose">🌸</button>
+        <button type="button" class="hl-color-pill hl-pill-eraser ${window.__currentHlColor === 'eraser' ? 'active' : ''}" data-color="eraser" title="Gomme">🧹</button>
+      </div>
+      <button id="hlCloseBtn" style="padding:6px 12px;border-radius:8px;border:none;background:#e2e8f0;font-size:11.5px;font-weight:700;cursor:pointer">Fermer</button>
+    `;
+    bar.style.display = 'flex';
+
+    // Attacher les écouteurs sur chaque bouton de la palette (sans preventDefault qui casse le tap mobile)
+    let lastBtnTap = 0;
+    bar.querySelectorAll('.hl-color-pill').forEach(pill => {
+      const color = pill.getAttribute('data-color');
+      const handleSelect = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const now = Date.now();
+        if (now - lastBtnTap < 200) return;
+        lastBtnTap = now;
+        setHlColor(color);
+      };
+      pill.addEventListener('pointerdown', handleSelect);
+      pill.addEventListener('click', handleSelect);
+    });
+
+    const applyBtn = bar.querySelector('#hlApplyBtn');
+    if (applyBtn) {
+      const handleApply = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        applyHighlightToActiveSelection();
+      };
+      applyBtn.addEventListener('pointerdown', handleApply);
+      applyBtn.addEventListener('click', handleApply);
+    }
+
+    const closeBtn = bar.querySelector('#hlCloseBtn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleHighlighterMode();
+      });
+    }
+
+    if (window.toast) window.toast("🖍️ Surligneur actif : choisis une couleur et touche le texte !", "info", 2500);
+  } else {
+    if (btn) btn.classList.remove('active', 'highlighter-active');
+    if (bar) bar.remove();
+  }
+};
+
+window.setHlColor = function(color) {
+  window.__currentHlColor = color;
+  if (window.haptic) window.haptic(15);
+  
+  document.querySelectorAll('.hl-color-pill').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-color') === color);
+  });
+
+  if (color === 'eraser') {
+    if (window.toast) toast("🧹 Gomme activée : touche n'importe quel surlignage pour l'effacer.", "info", 2500);
+    return;
+  }
+
+  // Vérifier si une sélection de texte existe déjà
+  const sel = window.getSelection();
+  let hasSelection = false;
+  if (sel && !sel.isCollapsed && sel.toString().trim().length >= 2) {
+    hasSelection = true;
+  } else if (window.__savedSelectionRange && window.__savedSelectionRange.toString().trim().length >= 2) {
+    hasSelection = true;
+  }
+
+  if (hasSelection) {
+    applyHighlightToActiveSelection();
+  } else {
+    const colorNames = { yellow: 'jaune', green: 'vert', blue: 'bleu', pink: 'rose' };
+    if (window.toast) toast(`🖍️ Surligneur ${colorNames[color] || ''} prêt : touche le texte à surligner.`, "info", 1800);
+  }
+};
+
+window.applyHighlightToActiveSelection = function() {
+  const sel = window.getSelection();
+  let range = null;
+
+  if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
+    range = sel.getRangeAt(0);
+  } else if (window.__savedSelectionRange) {
+    range = window.__savedSelectionRange;
+  }
+
+  if (!range) {
+    if (window.toast) window.toast("Touche directement un mot ou une phrase dans la fiche.", "info", 2000);
+    return;
+  }
+
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl || !ficheEl.contains(range.commonAncestorContainer)) {
+    if (window.toast) window.toast("La sélection doit se trouver dans la fiche de cours.", "warn", 2500);
+    return;
+  }
+
+  applyHighlightToRange(range, window.__currentHlColor || 'yellow');
+  
+  // Réinitialiser la sélection
+  window.__savedSelectionRange = null;
+  const applyBtn = document.getElementById('hlApplyBtn');
+  if (applyBtn) applyBtn.style.display = 'none';
+  if (sel) sel.removeAllRanges();
+};
+
+function initHighlighterEventListeners() {
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl || ficheEl.__hlListening) return;
+  ficheEl.__hlListening = true;
+
+  let touchMoved = false;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  ficheEl.addEventListener('touchstart', (e) => {
+    touchMoved = false;
+    if (e.touches && e.touches[0]) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  ficheEl.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      const dx = Math.abs(e.touches[0].clientX - touchStartX);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (dx > 10 || dy > 10) {
+        touchMoved = true;
+      }
+    }
+  }, { passive: true });
+
+  // Détection continue de la sélection de texte (mobile & desktop)
+  const onSelectionChange = () => {
+    if (!window.__highlighterMode) return;
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
+
+    const text = sel.toString().trim();
+    if (text.length < 2) return;
+
+    const range = sel.getRangeAt(0);
+    if (!ficheEl.contains(range.commonAncestorContainer)) return;
+
+    window.__savedSelectionRange = range.cloneRange();
+
+    const applyBtn = document.getElementById('hlApplyBtn');
+    if (applyBtn) {
+      applyBtn.style.display = 'inline-flex';
+      const preview = text.length > 15 ? text.slice(0, 15) + '…' : text;
+      applyBtn.innerHTML = `<i class="fas fa-check"></i> Surligner « ${preview} »`;
+    }
+  };
+
+  document.addEventListener('selectionchange', onSelectionChange);
+
+  let lastTapTime = 0;
+
+  // Gestionnaire unifié de tap direct (mobile & desktop)
+  const handleTapOrClick = (e) => {
+    if (!window.__highlighterMode) return;
+    if (touchMoved) return; // Ignore le défilement de l'écran
+
+    const now = Date.now();
+    if (now - lastTapTime < 250) return; // Anti-rebond
+    lastTapTime = now;
+
+    // 1. Clic sur boutons, liens ou barres utilitaires
+    if (e.target.closest('.exam-traps-card, .fiche-study-bar, #recallFloatingBanner, #highlighterBar, .fiche-notes-box, .fiche-actions, .resume-ci-whatsapp-qr, button, a, input, textarea')) {
+      return;
+    }
+
+    // 2. Clic sur un élément déjà surligné -> l'effacer immédiatement
+    const existing = e.target.closest('mark.rci-hl, .rci-hl-block, .rci-hl-inline');
+    if (existing) {
+      e.preventDefault();
+      e.stopPropagation();
+      removeSingleMark(existing);
+      return;
+    }
+
+    // 3. Si la gomme est active
+    if (window.__currentHlColor === 'eraser') {
+      if (window.toast) window.toast("🧹 Touche un passage surligné pour l'effacer.", "info", 1800);
+      return;
+    }
+
+    // 4. Si une sélection de texte est active
+    const sel = window.getSelection();
+    if (sel && !sel.isCollapsed && sel.toString().trim().length >= 2) {
+      const range = sel.getRangeAt(0);
+      if (ficheEl.contains(range.commonAncestorContainer)) {
+        applyHighlightToRange(range, window.__currentHlColor || 'yellow');
+        sel.removeAllRanges();
+        return;
+      }
+    }
+
+    // 5. Mode Tap Direct : Surlignage instantané de l'élément touché
+    let target = e.target;
+    if (!target || target === ficheEl) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const color = window.__currentHlColor || 'yellow';
+
+    // Distinguer tag inline vs tag de bloc
+    const isInline = ['STRONG', 'EM', 'SPAN', 'B', 'I', 'CODE'].includes(target.tagName);
+    const hlClass = isInline ? 'rci-hl-inline' : 'rci-hl-block';
+
+    target.classList.add(hlClass, `hl-${color}`);
+    target.setAttribute('data-color', color);
+    target.title = "Surligné (touche pour effacer)";
+
+    if (window.haptic) window.haptic(25);
+    if (window.toast) window.toast("✨ Surligné ! (Touche à nouveau pour effacer)", "success", 1800);
+
+    saveFicheHighlights();
+  };
+
+  ficheEl.addEventListener('click', handleTapOrClick);
+  ficheEl.addEventListener('touchend', handleTapOrClick);
+}
+
+function applyHighlightToRange(range, color) {
+  try {
+    if (!range || range.collapsed || range.toString().trim().length === 0) return false;
+
+    const mark = document.createElement('mark');
+    mark.className = `rci-hl hl-${color}`;
+    mark.setAttribute('data-color', color);
+    mark.title = "Surligné (touche pour effacer)";
+
+    // Extraction propre
+    const fragment = range.extractContents();
+    mark.appendChild(fragment);
+    range.insertNode(mark);
+
+    if (window.haptic) window.haptic(25);
+    if (window.toast) window.toast("✨ Passage surligné et mémorisé !", "success", 1800);
+
+    saveFicheHighlights();
+    return true;
+  } catch(e) {
+    console.warn("Échec surlignage extractContents, essai fallback:", e);
+    try {
+      range.surroundContents(mark);
+      saveFicheHighlights();
+      return true;
+    } catch(err2) {
+      if (window.toast) window.toast("Sélectionne le texte à l'intérieur d'un même paragraphe.", "warn", 2500);
+      return false;
+    }
+  }
+}
+
+function removeSingleMark(el) {
+  if (window.haptic) window.haptic(20);
+
+  if (el.classList.contains('rci-hl-block')) {
+    el.classList.remove('rci-hl-block', 'hl-yellow', 'hl-green', 'hl-blue', 'hl-pink');
+    el.removeAttribute('data-color');
+    el.removeAttribute('title');
+    saveFicheHighlights();
+    if (window.toast) window.toast("Surlignage effacé.", "info", 1500);
+    return;
+  }
+
+  if (el.classList.contains('rci-hl-inline')) {
+    el.classList.remove('rci-hl-inline', 'hl-yellow', 'hl-green', 'hl-blue', 'hl-pink');
+    el.removeAttribute('data-color');
+    el.removeAttribute('title');
+    saveFicheHighlights();
+    if (window.toast) window.toast("Surlignage effacé.", "info", 1500);
+    return;
+  }
+
+  const mark = el.closest('mark.rci-hl') || el;
+  const parent = mark.parentNode;
+  if (!parent) return;
+
+  while (mark.firstChild) {
+    parent.insertBefore(mark.firstChild, mark);
+  }
+  mark.remove();
+  parent.normalize();
+  saveFicheHighlights();
+  if (window.toast) window.toast("Surlignage effacé.", "info", 1500);
+}
+
+function saveFicheHighlights() {
+  if (!window.__currentFicheKey) return;
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl) return;
+
+  const data = [];
+
+  // 1. Surlignages spécifiques par sélection (<mark.rci-hl>)
+  ficheEl.querySelectorAll('mark.rci-hl').forEach(m => {
+    const text = m.textContent.trim();
+    const color = m.getAttribute('data-color') || 'yellow';
+    if (text) data.push({ type: 'text', text, color });
+  });
+
+  // 2. Surlignages de blocs / paragraphes (.rci-hl-block)
+  ficheEl.querySelectorAll('.rci-hl-block').forEach(b => {
+    const text = b.textContent.trim();
+    const color = b.getAttribute('data-color') || 'yellow';
+    if (text) data.push({ type: 'block', text, color });
+  });
+
+  // 3. Surlignages de tags inline (.rci-hl-inline)
+  ficheEl.querySelectorAll('.rci-hl-inline').forEach(i => {
+    const text = i.textContent.trim();
+    const color = i.getAttribute('data-color') || 'yellow';
+    if (text) data.push({ type: 'inline', text, color });
+  });
+
+  localStorage.setItem('rci_hl_' + window.__currentFicheKey, JSON.stringify(data));
+}
+
+function restoreFicheHighlights(cls, sub, file) {
+  const key = `${cls}__${sub}__${file}`;
+  const raw = localStorage.getItem('rci_hl_' + key);
+  if (!raw) return;
+
+  try {
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data) || data.length === 0) return;
+
+    const ficheEl = document.querySelector('.fiche-content');
+    if (!ficheEl) return;
+
+    data.forEach(item => {
+      if (!item || !item.text || !item.color) return;
+
+      if (item.type === 'block' || item.type === 'inline') {
+        const clsName = item.type === 'block' ? 'rci-hl-block' : 'rci-hl-inline';
+        const candidates = ficheEl.querySelectorAll('p, li, h1, h2, h3, h4, blockquote, dt, dd, strong, em, span, code, .definition, .important, .schema');
+        for (const el of candidates) {
+          if (el.textContent.trim() === item.text && !el.classList.contains('rci-hl-block') && !el.classList.contains('rci-hl-inline')) {
+            el.classList.add(clsName, `hl-${item.color}`);
+            el.setAttribute('data-color', item.color);
+            el.title = "Surligné (touche pour effacer)";
+            break;
+          }
+        }
+      } else {
+        const found = wrapTextWithMark(ficheEl, item.text, item.color);
+        if (!found) {
+          const candidates = ficheEl.querySelectorAll('p, li, h1, h2, h3, h4, blockquote, strong, em, span');
+          for (const el of candidates) {
+            if (el.textContent.trim() === item.text && !el.classList.contains('rci-hl-block')) {
+              el.classList.add('rci-hl-block', `hl-${item.color}`);
+              el.setAttribute('data-color', item.color);
+              break;
+            }
+          }
+        }
+      }
+    });
+  } catch(e) {
+    console.warn("Erreur restauration surlignages:", e);
+  }
+}
+
+function wrapTextWithMark(rootEl, searchText, color) {
+  if (!searchText || searchText.length < 2) return false;
+  const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null, false);
+  let node;
+  let found = false;
+  while ((node = walker.nextNode())) {
+    if (node.parentNode && (node.parentNode.nodeName === 'MARK' || node.parentNode.classList.contains('rci-hl-block') || node.parentNode.classList.contains('rci-hl-inline'))) continue;
+    if (node.parentNode && node.parentNode.closest('.exam-traps-card, .fiche-notes-box, .fiche-study-bar')) continue;
+
+    const idx = node.nodeValue.indexOf(searchText);
+    if (idx !== -1) {
+      const range = document.createRange();
+      range.setStart(node, idx);
+      range.setEnd(node, idx + searchText.length);
+      const mark = document.createElement('mark');
+      mark.className = `rci-hl hl-${color}`;
+      mark.setAttribute('data-color', color);
+      mark.title = "Surligné (touche pour effacer)";
+      try {
+        const fragment = range.extractContents();
+        mark.appendChild(fragment);
+        range.insertNode(mark);
+        found = true;
+        break;
+      } catch(e) {}
+    }
+  }
+  return found;
+}
+
+/* ==================== 1 B: MES NOTES PERSONNELLES SUR LA FICHE ==================== */
+window.toggleFicheNotes = function() {
+  const hasNotes = window.userHasFeature ? window.userHasFeature('Mes Notes Personnelles') : false;
+  if (!hasNotes) {
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Mes Notes Personnelles');
+    }
+    return;
+  }
+
+  const ficheEl = document.querySelector('.fiche-content');
+  if (!ficheEl) return;
+
+  if (window.haptic) window.haptic(20);
+
+  let box = document.getElementById('ficheNotesBox');
+  if (box) {
+    box.remove();
+    return;
+  }
+
+  box = document.createElement('div');
+  box.id = 'ficheNotesBox';
+  box.className = 'fiche-notes-box';
+
+  const savedNote = localStorage.getItem('rci_note_' + (window.__currentFicheKey || '')) || '';
+
+  box.innerHTML = `
+    <div class="fiche-notes-header">
+      <div class="fiche-notes-title">
+        <i class="fas fa-pen-to-square" style="color:#3b82f6"></i> Mes Notes Personnelles
+      </div>
+      <div class="fiche-notes-status" id="ficheNotesStatus">${savedNote ? 'Sauvegardé ✓' : 'Prêt'}</div>
+    </div>
+    <textarea id="ficheNotesTextarea" class="fiche-notes-input" placeholder="Écris ici tes remarques, formules clés, astuces du professeur pour cette leçon...">${escHtml(savedNote)}</textarea>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;flex-wrap:wrap;gap:8px">
+      <span style="font-size:11px;color:#64748b"><i class="fas fa-shield-halved"></i> Notes privées stockées sur ton appareil</span>
+      <div style="display:flex;gap:6px">
+        <button onclick="clearFicheNotes()" style="background:#fee2e2;border:none;color:#dc2626;padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer"><i class="fas fa-trash"></i> Effacer</button>
+        <button onclick="toggleFicheNotes()" style="background:#f1f5f9;border:none;color:#475569;padding:5px 12px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer">Fermer</button>
+      </div>
+    </div>
+  `;
+
+  // Insérer juste avant les boutons d'action Quizz/Flashcards
+  ficheEl.parentNode.insertBefore(box, document.querySelector('.fiche-actions') || ficheEl.nextSibling);
+
+  const textarea = document.getElementById('ficheNotesTextarea');
+  if (textarea) {
+    textarea.focus();
+    let saveTimeout;
+    textarea.addEventListener('input', () => {
+      const statusEl = document.getElementById('ficheNotesStatus');
+      if (statusEl) statusEl.textContent = 'Enregistrement...';
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        if (window.__currentFicheKey) {
+          const val = textarea.value;
+          localStorage.setItem('rci_note_' + window.__currentFicheKey, val);
+          if (statusEl) statusEl.textContent = 'Sauvegardé ✓';
+
+          // Mise à jour badge
+          const badgeEl = document.getElementById('ficheNotesBadge');
+          if (badgeEl) {
+            if (val.trim().length > 0) {
+              badgeEl.style.display = 'inline-block';
+              badgeEl.textContent = '1';
+            } else {
+              badgeEl.style.display = 'none';
+            }
+          }
+        }
+      }, 350);
+    });
+  }
+};
+
+window.clearFicheNotes = function() {
+  if (!confirm("Voulez-vous vraiment effacer vos notes sur cette fiche ?")) return;
+  if (!window.__currentFicheKey) return;
+  localStorage.removeItem('rci_note_' + window.__currentFicheKey);
+  const textarea = document.getElementById('ficheNotesTextarea');
+  if (textarea) textarea.value = '';
+  const statusEl = document.getElementById('ficheNotesStatus');
+  if (statusEl) statusEl.textContent = 'Effacé';
+  const badgeEl = document.getElementById('ficheNotesBadge');
+  if (badgeEl) badgeEl.style.display = 'none';
+  if (window.toast) window.toast("Notes effacées.", "info", 2000);
+};
+
+function escHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 

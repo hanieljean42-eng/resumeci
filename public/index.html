@@ -28,12 +28,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <link rel="stylesheet" href="/enhancements.css?v=2.3.0">
+  <script>
+    // Purge automatique du cache navigateur pour forcer la mise à jour v3.0.0 (Compte à rebours)
+    (function() {
+      var currentVer = '3.0.0';
+      var storedVer = localStorage.getItem('rci_app_v');
+      if (storedVer !== currentVer) {
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            names.forEach(function(name) {
+              if (name !== 'resumeci-fiches-v3') caches.delete(name);
+            });
+          });
+        }
+        localStorage.setItem('rci_app_v', currentVer);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/enhancements.css?v=3.0.0">
+  <link rel="stylesheet" href="/quiz.css?v=3.0.0">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-  <script src="/enhancements.js?v=2.3.0" defer></script>
-  <script type="module" src="/firebase-config.js?v=2.3.0"></script>
-  <script src="/content-protection.js?v=2.3.0" defer></script>
+  <script src="/enhancements.js?v=3.0.0" defer></script>
+  <script type="module" src="/firebase-config.js?v=3.0.0"></script>
+  <script src="/content-protection.js?v=3.0.0" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -76,7 +94,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="/main.css?v=2.2.0">
+  <link rel="stylesheet" href="/main.css?v=2.3.0">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
@@ -85,11 +103,11 @@
       <div>
         <div class="intro-badge"><i class="fas fa-graduation-cap"></i> Fiches de résumé — Collège & Lycée</div>
         <h1>Révise plus vite, retiens mieux, progresse chaque jour.</h1>
-        <p>Cette plateforme te donne accès à des fiches de résumé pour le Collège et le Lycée, des flashcards, des quiz gamifiés et un mode audio pour apprendre même avec peu de connexion.</p>
+        <p>Cette plateforme te donne accès à des fiches de résumé pour le Collège et le Lycée, des statistiques de progression et un mode audio pour apprendre même avec peu de connexion.</p>
         <div class="intro-features">
           <div class="intro-feature"><span>📚</span> Fiches claires pour réviser les leçons importantes</div>
-          <div class="intro-feature"><span>🎮</span> Quiz avec correction immédiate pour apprendre de ses erreurs</div>
-          <div class="intro-feature"><span>🃏</span> Flashcards avec répétition espacée pour mieux mémoriser</div>
+          <div class="intro-feature"><span>📊</span> Statistiques et suivi détaillé de ta progression</div>
+          <div class="intro-feature"><span>🎧</span> Mode audio pour écouter ses cours n'importe où</div>
           <div class="intro-feature"><span>📱</span> Application installable et utilisable hors-ligne</div>
           <div class="intro-feature"><span>🛠️</span> Calculatrice, Timer Pomodoro, Bloc-notes intégrés</div>
           <div class="intro-feature"><span>📅</span> Plan de révision personnalisé selon ta date d'examen</div>
@@ -107,7 +125,7 @@
         </div>
         <div class="intro-preview">
           <div class="intro-preview-card"><strong>Fiches de résumé</strong><small>Des leçons organisées pour réviser rapidement avant les évaluations.</small></div>
-          <div class="intro-preview-card"><strong>Apprentissage actif</strong><small>Flashcards, quiz, score, correction et progression personnelle.</small></div>
+          <div class="intro-preview-card"><strong>Apprentissage actif</strong><small>Suivi de révision, points forts et progression personnelle.</small></div>
           <div class="intro-preview-card"><strong>Créé par Haniel_dev</strong><small>Indication placée hors du contenu pédagogique pour éviter toute confusion.</small></div>
         </div>
       </div>
@@ -126,8 +144,8 @@
         <button class="voice-btn" onclick="startVoiceSearch()" title="Recherche vocale"><i class="fas fa-microphone"></i></button>
       </div>
       <div style="padding: 10px 16px;">
-        <button onclick="openPremiumTeaser('Profils Utilisateurs')" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(37,99,235,0.3);">
-          <i class="fas fa-user-circle"></i> Mon Profil 🔒
+        <button onclick="openProfileView()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(37,99,235,0.3);">
+          <i class="fas fa-user-circle"></i> Mon Profil
         </button>
       </div>
       <div id="favsList"></div>
@@ -156,7 +174,7 @@
         </div>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
-      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique</span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a><a href="/fiches-bac-ci.html">Fiches BAC</a><a href="/fiches-terminale-d.html">Terminale D</a><a href="/fiches-bepc-ci.html">BEPC</a><a href="/fiches-college-ci.html">Collège</a></div></footer>
+      <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong>, étudiant en informatique</span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/cgu.html">CGU / CGV</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a><a href="/fiches-bac-ci.html">Fiches BAC</a><a href="/fiches-terminale-d.html">Terminale D</a><a href="/fiches-bepc-ci.html">BEPC</a><a href="/fiches-college-ci.html">Collège</a></div></footer>
     </div>
   </div>
   <button class="audio-fab" id="audioFab" title="Lire la fiche à voix haute" aria-label="Lire la fiche à voix haute"><i class="fas fa-volume-up" aria-hidden="true"></i></button>
@@ -172,7 +190,9 @@
     </div>
   </div>
 
-  <script src="/app.js?v=2.2.0" defer></script>
+  <script src="/app.js?v=3.0.0" defer></script>
+  <script src="/quiz.js?v=3.0.0" defer></script>
+  <script src="/flashcards.js?v=3.0.0" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -218,6 +238,1709 @@
     body.dark-mode .ann-hi strong{color:#e2e8f0}
     body.dark-mode .ann-coming{background:#451a03;border-color:#92400e;color:#fed7aa}
     @media(max-width:480px){.ann-card{max-width:320px;border-radius:18px;max-height:90vh;overflow-y:auto}.ann-hero{padding:18px 16px 14px}.ann-hero h2{font-size:18px}.ann-body{padding:14px 16px 16px}.ann-highlights{gap:5px}.ann-hi{padding:6px 8px}.ann-hi-icon{width:28px;height:28px;font-size:11px;border-radius:6px}.ann-hi strong{font-size:10px}.ann-hi span{font-size:8px}.ann-coming{padding:6px;font-size:10px;margin-bottom:10px}.ann-wa-btn{padding:10px;font-size:12px;border-radius:10px}.ann-wa-btn i{font-size:16px}}
+
+    /* Profile & General Modal CSS - Responsive Mobile First */
+    .modal-close { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.06); border: none; font-size: 20px; color: #64748b; cursor: pointer; border-radius: 50%; width: 36px; height: 36px; min-width: 36px; min-height: 36px; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; touch-action: manipulation; }
+    .modal-close:hover { background: rgba(0,0,0,0.12); color: #1e293b; }
+    .modal-close:active { transform: scale(0.92); }
+    body.dark-mode .modal-close { color: #94a3b8; background: rgba(255,255,255,0.08); }
+    body.dark-mode .modal-close:hover { color: #f8fafc; background: rgba(255,255,255,0.15); }
+    
+    .profile-modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom)); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; animation: fadeIn 0.25s ease; }
+    .profile-modal-overlay.show, .profile-modal-overlay.active { display: flex; }
+    .profile-modal { background: #fff; border-radius: 20px; width: 100%; max-width: min(420px, calc(100vw - 20px)); max-height: min(88dvh, calc(100vh - 20px)); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.5); font-family: 'Poppins', sans-serif; position: relative; margin: auto 0; animation: slideUp 0.35s cubic-bezier(0.2, 1, 0.3, 1); overscroll-behavior: contain; }
+    .profile-modal-header { background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; padding: 15px 18px 12px; text-align: center; flex-shrink: 0; }
+    .profile-modal-header h2 { margin: 0 0 3px 0; font-size: 17.5px; font-weight: 800; line-height: 1.3; }
+    .profile-modal-header p { margin: 0; font-size: 11.5px; opacity: 0.92; line-height: 1.35; }
+    .profile-modal-body { padding: 14px 18px 18px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; flex: 1; }
+    .pm-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .pm-form-group { margin-bottom: 9px; }
+    .pm-form-group label { display: block; font-size: 11.5px; font-weight: 700; color: #1e293b; margin-bottom: 3px; }
+    .pm-input, .pm-select { width: 100%; padding: 10px 12px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 13.5px; color: #334155; transition: 0.2s; background: #f8fafc; font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    .pm-input:focus, .pm-select:focus { border-color: #3b82f6; outline: none; background: #fff; box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+    .pm-btn { width: 100%; padding: 11px 14px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; border: none; border-radius: 12px; font-size: 13.5px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: 0.2s; margin-top: 4px; touch-action: manipulation; }
+    .pm-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px -6px rgba(37,99,235,0.6); }
+    .pm-btn:active { transform: scale(0.98); }
+    .pm-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
+    body.dark-mode .profile-modal { background: #0f172a; border: 1px solid #1e293b; }
+    body.dark-mode .pm-form-group label { color: #f1f5f9; }
+    body.dark-mode .pm-input, body.dark-mode .pm-select { background: #1e293b; border-color: #334155; color: #f1f5f9; }
+    body.dark-mode .pm-input:focus, body.dark-mode .pm-select:focus { border-color: #3b82f6; background: #0f172a; }
+
+    /* Streak Flame and Profile Topbar buttons */
+    .btn-streak {
+      background: linear-gradient(135deg, #fff7ed, #ffedd5) !important;
+      border: 1.5px solid #fdba74 !important;
+      color: #c2410c !important;
+      font-weight: 800 !important;
+      font-size: 12px !important;
+      padding: 6px 12px !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 2px 6px rgba(251, 146, 60, 0.2) !important;
+    }
+    .btn-streak:hover {
+      transform: translateY(-1px) scale(1.04) !important;
+      border-color: #f97316 !important;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35) !important;
+    }
+    .flame-icon {
+      font-size: 15px;
+      animation: flame-pulse 1.8s infinite ease-in-out;
+      display: inline-block;
+    }
+    @keyframes flame-pulse {
+      0%, 100% { transform: scale(1) rotate(-3deg); }
+      50% { transform: scale(1.22) rotate(3deg); filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.7)); }
+    }
+    .btn-profile {
+      background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+      border: 1.5px solid #93c5fd !important;
+      color: #1d4ed8 !important;
+      font-weight: 700 !important;
+      font-size: 12px !important;
+      padding: 6px 12px !important;
+      border-radius: 999px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      cursor: pointer !important;
+      transition: 0.2s !important;
+    }
+    .btn-profile:hover {
+      background: #bfdbfe !important;
+      transform: translateY(-1px) !important;
+    }
+    body.dark-mode .btn-streak { background: #451a03 !important; border-color: #9a3412 !important; color: #fdba74 !important; }
+    .btn-streak.extinguished {
+      background: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #64748b !important;
+      box-shadow: none !important;
+    }
+    .btn-streak.extinguished .flame-icon {
+      animation: none !important;
+      filter: grayscale(1) opacity(0.55);
+    }
+    body.dark-mode .btn-streak.extinguished {
+      background: #1e293b !important;
+      border-color: #334155 !important;
+      color: #94a3b8 !important;
+    }
+    body.dark-mode .btn-profile { background: #1e3a5f !important; border-color: #2563eb !important; color: #bfdbfe !important; }
+    body.dark-mode .profile-modal .profile-modal-body div[style*="background: #f8fafc"],
+    body.dark-mode .profile-modal .profile-modal-body div[style*="background: #fffbeb"],
+    body.dark-mode .profile-modal .profile-modal-body div[style*="background: #fff7ed"] {
+      background: #1e293b !important;
+      color: #e2e8f0 !important;
+      border-color: #334155 !important;
+    }
+    body.dark-mode .profile-modal .profile-modal-body button[style*="background: #f1f5f9"] {
+      background: #334155 !important;
+      color: #f1f5f9 !important;
+      border-color: #475569 !important;
+    }
+
+    /* ==================== PREMIUM QUOTA & ACTION MODALS ==================== */
+    .quota-modal-premium {
+      max-width: min(420px, calc(100vw - 20px)) !important;
+      max-height: min(88dvh, calc(100vh - 20px)) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+      box-shadow: 0 25px 65px -12px rgba(217, 119, 6, 0.3), 0 0 0 1px rgba(254, 243, 199, 0.6) !important;
+      background: #ffffff;
+      overscroll-behavior: contain;
+    }
+    body.dark-mode .quota-modal-premium {
+      background: #0f172a !important;
+      border-color: rgba(245, 158, 11, 0.3) !important;
+      box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(245, 158, 11, 0.2) !important;
+    }
+    .quota-modal-header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 48%, #b45309 100%);
+      color: #ffffff;
+      padding: 16px 18px 12px;
+      text-align: center;
+      position: relative;
+    }
+    .quota-icon-wrap {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 8px;
+    }
+    .quota-icon-inner {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ffffff, #fef3c7);
+      color: #d97706;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      animation: pulse-badge 2.4s infinite ease-in-out;
+    }
+    .quota-counter-pill {
+      position: absolute;
+      bottom: -3px;
+      right: -3px;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #ffffff;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 999px;
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+    .quota-title {
+      font-size: 17px;
+      font-weight: 900;
+      margin: 0 0 3px 0;
+      letter-spacing: -0.2px;
+      color: #ffffff;
+    }
+    .quota-subtitle {
+      font-size: 11.5px;
+      margin: 0;
+      opacity: 0.92;
+      color: #fde68a;
+      line-height: 1.35;
+    }
+    .quota-timer-card {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border: 1.5px solid #fde68a;
+      border-radius: 13px;
+      padding: 9px 11px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    body.dark-mode .quota-timer-card {
+      background: rgba(180, 83, 9, 0.15) !important;
+      border-color: rgba(245, 158, 11, 0.35) !important;
+    }
+    .quota-timer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .quota-timer-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #92400e;
+    }
+    body.dark-mode .quota-timer-label {
+      color: #fcd34d !important;
+    }
+    .quota-timer-date {
+      font-size: 12px;
+      font-weight: 800;
+      color: #b45309;
+      background: #ffffff;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid #fde68a;
+    }
+    body.dark-mode .quota-timer-date {
+      background: #1e293b !important;
+      color: #fef08a !important;
+      border-color: #78350f !important;
+    }
+    .quota-capsules-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .quota-capsule {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #fcd34d;
+      border-radius: 10px;
+      padding: 6px 8px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .quota-capsule.filled {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      border-color: #b45309;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+    }
+    body.dark-mode .quota-capsule {
+      background: #1e293b;
+      border-color: #78350f;
+      color: #fcd34d;
+    }
+    body.dark-mode .quota-capsule.filled {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: #ffffff;
+    }
+    .quota-solutions-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    body.dark-mode .quota-solutions-card {
+      background: #1e293b !important;
+      border-color: #334155 !important;
+    }
+    .qs-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qs-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-top: 1px;
+    }
+    .qs-text {
+      font-size: 12px;
+      line-height: 1.45;
+      color: #475569;
+    }
+    body.dark-mode .qs-text {
+      color: #cbd5e1 !important;
+    }
+    .qs-text strong {
+      display: block;
+      font-size: 12.5px;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    body.dark-mode .qs-text strong {
+      color: #f8fafc !important;
+    }
+    .quota-btn-primary {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      color: #ffffff !important;
+      padding: 11px 14px !important;
+      font-size: 13px !important;
+      min-height: 44px !important;
+      border-radius: 11px !important;
+      box-shadow: 0 6px 16px -4px rgba(16, 185, 129, 0.4) !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      touch-action: manipulation;
+    }
+    .quota-btn-primary:active { transform: scale(0.98); }
+    .quota-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.55) !important;
+    }
+    .quota-btn-vip {
+      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%) !important;
+      color: #ffffff !important;
+      padding: 11px 14px !important;
+      font-size: 13px !important;
+      min-height: 44px !important;
+      border-radius: 11px !important;
+      box-shadow: 0 6px 16px -4px rgba(124, 58, 237, 0.35) !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      touch-action: manipulation;
+    }
+    .quota-btn-vip:active { transform: scale(0.98); }
+    .quota-btn-vip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.5) !important;
+    }
+    .quota-btn-secondary {
+      background: #f1f5f9 !important;
+      color: #475569 !important;
+      border: 1px solid #cbd5e1 !important;
+      padding: 9px 12px !important;
+      font-size: 12px !important;
+      min-height: 40px !important;
+      border-radius: 10px !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      touch-action: manipulation;
+    }
+    .quota-btn-secondary:active { transform: scale(0.98); }
+    body.dark-mode .quota-btn-secondary {
+      background: #1e293b !important;
+      color: #94a3b8 !important;
+      border-color: #334155 !important;
+    }
+
+    /* Universal Action Notice Modal */
+    #actionNoticeModal {
+      z-index: 12000 !important;
+    }
+    .modern-notice-modal {
+      max-width: min(380px, calc(100vw - 20px)) !important;
+      max-height: min(88dvh, calc(100vh - 20px)) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      box-shadow: 0 25px 65px -12px rgba(15, 23, 42, 0.45) !important;
+      background: #ffffff;
+      overscroll-behavior: contain;
+    }
+    /* Fixed overlay for Flashcards centered in front of user */
+    #flashcardOverlay {
+      position: fixed !important;
+      inset: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      background: rgba(15, 23, 42, 0.82) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      z-index: 10000 !important;
+      display: none;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 12px !important;
+      padding-bottom: max(12px, env(safe-area-inset-bottom)) !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: contain !important;
+      animation: fadeIn 0.25s ease !important;
+    }
+    #flashcardOverlay.show {
+      display: flex !important;
+    }
+    body.dark-mode .modern-notice-modal {
+      background: #0f172a !important;
+      border: 1px solid #1e293b !important;
+    }
+    .notice-modal-header {
+      padding: 16px 18px 12px;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+    }
+    .notice-modal-header.type-info {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+    }
+    .notice-modal-header.type-warning {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    }
+    .notice-modal-header.type-success {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+    .notice-modal-header.type-vip {
+      background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    }
+    .notice-modal-header.type-error {
+      background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    }
+    .notice-hero-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin: 0 auto 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: pulse-badge 2.4s infinite ease-in-out;
+    }
+    .notice-modal-header h2 {
+      font-size: 17px;
+      font-weight: 800;
+      margin: 0 0 3px 0;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .notice-modal-header p {
+      font-size: 11.5px;
+      margin: 0;
+      opacity: 0.95;
+      color: #e0f2fe;
+      line-height: 1.35;
+    }
+    .notice-modal-body-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #334155;
+      text-align: left;
+      margin-bottom: 12px;
+      word-break: break-word;
+    }
+    body.dark-mode .notice-modal-body-box {
+      background: #1e293b !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    .notice-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    /* ==================== PASS ÉLITE VIP MODAL ==================== */
+    .elite-modal-premium {
+      max-width: min(430px, calc(100vw - 20px)) !important;
+      max-height: min(88dvh, calc(100vh - 20px)) !important;
+      border-radius: 22px !important;
+      overflow: hidden !important;
+      border: 1.5px solid rgba(234, 179, 8, 0.45) !important;
+      box-shadow: 0 25px 70px -10px rgba(109, 40, 217, 0.35), 0 0 0 1px rgba(253, 224, 71, 0.3) !important;
+      background: #ffffff;
+      animation: modalPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      overscroll-behavior: contain;
+    }
+    body.dark-mode .elite-modal-premium {
+      background: #0f0a1c !important;
+      border-color: rgba(234, 179, 8, 0.4) !important;
+      box-shadow: 0 25px 75px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(234, 179, 8, 0.25) !important;
+    }
+    .elite-modal-header {
+      background: linear-gradient(135deg, #180d2b 0%, #2e1065 40%, #581c87 80%, #7e22ce 100%);
+      color: #ffffff;
+      padding: 18px 16px 14px;
+      text-align: center;
+      position: relative;
+    }
+    .elite-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(254, 240, 138, 0.16);
+      border: 1px solid rgba(250, 204, 21, 0.7);
+      color: #fef08a;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      box-shadow: 0 0 14px rgba(234, 179, 8, 0.25);
+    }
+    .elite-hero-wrap {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 8px;
+    }
+    .elite-hero-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #fef3c7 45%, #fde047 100%);
+      color: #581c87;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3), 0 0 20px rgba(250, 204, 21, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      animation: pulse-badge 2.4s infinite ease-in-out;
+    }
+    .elite-hero-vip-tag {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      color: #1e1135;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 1.5px 6px;
+      border-radius: 999px;
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+    }
+    .elite-modal-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 0 4px 0;
+      letter-spacing: -0.2px;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      line-height: 1.25;
+    }
+    .elite-modal-subtitle {
+      font-size: 11.5px;
+      margin: 0;
+      color: #e9d5ff;
+      line-height: 1.4;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .elite-features-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 11px;
+      text-align: left;
+    }
+    .elite-feat-card {
+      background: #fdfcff;
+      border: 1.5px solid #e9d5ff;
+      border-radius: 13px;
+      padding: 9px 11px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    body.dark-mode .elite-feat-card {
+      background: #181226 !important;
+      border-color: #3b2d54 !important;
+    }
+    .elite-feat-card.active-target {
+      border-color: #a855f7 !important;
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%) !important;
+      box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.25), 0 8px 20px -4px rgba(168, 85, 247, 0.2) !important;
+      transform: scale(1.01);
+    }
+    body.dark-mode .elite-feat-card.active-target {
+      background: linear-gradient(135deg, #24133b 0%, #1f1033 100%) !important;
+      border-color: #c084fc !important;
+      box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3) !important;
+    }
+    .elite-feat-icon {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+      color: #6b21a8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-top: 1px;
+      box-shadow: 0 3px 8px rgba(107, 33, 168, 0.12);
+    }
+    body.dark-mode .elite-feat-icon {
+      background: #2e1065;
+      color: #e9d5ff;
+    }
+    .elite-feat-content {
+      flex: 1;
+    }
+    .elite-feat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .elite-feat-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #1e1135;
+      margin: 0;
+    }
+    body.dark-mode .elite-feat-title {
+      color: #f5f3ff !important;
+    }
+    .elite-status-pill {
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      white-space: nowrap;
+    }
+    body.dark-mode .elite-status-pill {
+      background: #451a03;
+      color: #fde68a;
+      border-color: #78350f;
+    }
+    .elite-feat-desc {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.4;
+      margin: 0;
+    }
+    body.dark-mode .elite-feat-desc {
+      color: #cbd5e1 !important;
+    }
+    .elite-reassurance-box {
+      background: linear-gradient(135deg, #fdf4ff 0%, #fffbeb 100%);
+      border: 1.5px solid #fbcfe8;
+      border-radius: 13px;
+      padding: 9px 11px;
+      margin-bottom: 11px;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    body.dark-mode .elite-reassurance-box {
+      background: linear-gradient(135deg, rgba(88, 28, 135, 0.25) 0%, rgba(180, 83, 9, 0.2) 100%) !important;
+      border-color: rgba(244, 114, 182, 0.3) !important;
+    }
+    .elite-reassurance-icon {
+      font-size: 17px;
+      line-height: 1;
+      margin-top: 1px;
+    }
+    .elite-reassurance-text {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    body.dark-mode .elite-reassurance-text {
+      color: #e2e8f0 !important;
+    }
+    .elite-reassurance-text strong {
+      color: #581c87;
+      display: block;
+      font-size: 11.5px;
+      margin-bottom: 1px;
+    }
+    body.dark-mode .elite-reassurance-text strong {
+      color: #f0abfc !important;
+    }
+    .elite-actions-column {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .elite-btn-vip {
+      background: linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #c026d3 100%) !important;
+      color: #ffffff !important;
+      padding: 11px 14px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 8px 20px -4px rgba(147, 51, 234, 0.45) !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      margin: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+      min-height: 44px !important;
+      touch-action: manipulation;
+    }
+    .elite-btn-vip:active { transform: scale(0.98); }
+    .elite-btn-vip:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 12px 24px -4px rgba(147, 51, 234, 0.6) !important;
+    }
+    .elite-btn-secondary {
+      background: #f1f5f9 !important;
+      color: #475569 !important;
+      border: 1px solid #cbd5e1 !important;
+      padding: 9px 12px !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      border-radius: 10px !important;
+      margin: 0 !important;
+      cursor: pointer;
+      min-height: 40px !important;
+      touch-action: manipulation;
+    }
+    .elite-btn-secondary:active { transform: scale(0.98); }
+    body.dark-mode .elite-btn-secondary {
+      background: #1e172e !important;
+      color: #cbd5e1 !important;
+      border-color: #3b2d54 !important;
+    }
+
+    /* ==================== ACTIVE SUBSCRIPTION MODAL ==================== */
+    .active-sub-modal-premium {
+      max-width: min(420px, calc(100vw - 20px)) !important;
+      max-height: min(88dvh, calc(100vh - 20px)) !important;
+      border-radius: 22px !important;
+      overflow: hidden !important;
+      border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+      box-shadow: 0 25px 70px -10px rgba(5, 150, 105, 0.35), 0 0 0 1px rgba(167, 243, 208, 0.3) !important;
+      background: #ffffff;
+      animation: modalPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      overscroll-behavior: contain;
+    }
+    body.dark-mode .active-sub-modal-premium {
+      background: #091e17 !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      box-shadow: 0 25px 75px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(16, 185, 129, 0.25) !important;
+    }
+    .active-sub-header {
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 45%, #059669 100%);
+      color: #ffffff;
+      padding: 16px 16px 12px;
+      text-align: center;
+      position: relative;
+    }
+    .active-sub-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(209, 250, 229, 0.2);
+      border: 1px solid rgba(110, 231, 183, 0.8);
+      color: #d1fae5;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2.5px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .active-sub-hero-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+      color: #059669;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      animation: pulse-badge 2.4s infinite ease-in-out;
+    }
+    .active-sub-details-card {
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 13px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    body.dark-mode .active-sub-details-card {
+      background: #0f2e24 !important;
+      border-color: #166534 !important;
+    }
+    .active-sub-plan-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .active-sub-plan-name {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #065f46;
+    }
+    body.dark-mode .active-sub-plan-name {
+      color: #86efac !important;
+    }
+    .active-sub-status-pill {
+      background: #10b981;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .active-sub-expiry {
+      font-size: 11px;
+      color: #047857;
+      font-weight: 600;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    body.dark-mode .active-sub-expiry {
+      color: #a7f3d0 !important;
+    }
+    .active-sub-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+    body.dark-mode .active-sub-features-list {
+      color: #cbd5e1 !important;
+    }
+    .active-sub-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .active-sub-features-list li i {
+      color: #10b981;
+    }
+    .active-sub-reassurance {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: #1e40af;
+      line-height: 1.4;
+      text-align: left;
+    }
+    body.dark-mode .active-sub-reassurance {
+      background: #1e293b !important;
+      border-color: #3b82f6 !important;
+      color: #bfdbfe !important;
+    }
+    .active-sub-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .sub-keep-btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      color: #ffffff !important;
+      padding: 11px 14px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      border-radius: 11px !important;
+      box-shadow: 0 6px 16px -4px rgba(16, 185, 129, 0.4) !important;
+      border: none !important;
+      cursor: pointer;
+      min-height: 44px !important;
+      touch-action: manipulation;
+    }
+    .sub-keep-btn:active { transform: scale(0.98); }
+    .sub-cancel-btn {
+      background: #fff1f2 !important;
+      color: #e11d48 !important;
+      border: 1.5px solid #fecdd3 !important;
+      padding: 9px 12px !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.2s;
+      min-height: 40px !important;
+      touch-action: manipulation;
+    }
+    .sub-cancel-btn:active { transform: scale(0.98); }
+    .sub-cancel-btn:hover {
+      background: #ffe4e6 !important;
+      border-color: #fda4af !important;
+    }
+    body.dark-mode .sub-cancel-btn {
+      background: #38121a !important;
+      color: #fda4af !important;
+      border-color: #881337 !important;
+    }
+    .sub-no-refund-warning {
+      font-size: 10.5px;
+      color: #64748b;
+      margin: 2px 0 0;
+      line-height: 1.35;
+      text-align: center;
+    }
+    body.dark-mode .sub-no-refund-warning {
+      color: #94a3b8 !important;
+    }
+    .active-sub-upgrade-banner {
+      background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+      border: 1.5px solid #e879f9;
+      border-radius: 13px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      text-align: left;
+      box-shadow: 0 3px 12px rgba(217, 70, 239, 0.1);
+    }
+    body.dark-mode .active-sub-upgrade-banner {
+      background: linear-gradient(135deg, #2e1045 0%, #1f0b30 100%) !important;
+      border-color: #a21caf !important;
+    }
+    .as-upgrade-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: #a21caf;
+      background: #fdf2f8;
+      border: 1px solid #f472b6;
+      padding: 1.5px 6px;
+      border-radius: 999px;
+      margin-bottom: 4px;
+    }
+    body.dark-mode .as-upgrade-badge {
+      background: #500724 !important;
+      color: #f472b6 !important;
+    }
+    .as-upgrade-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #701a75;
+      margin: 0 0 3px 0;
+    }
+    body.dark-mode .as-upgrade-title {
+      color: #f5d0fe !important;
+    }
+    .as-upgrade-desc {
+      font-size: 11px;
+      color: #4a044e;
+      line-height: 1.35;
+      margin: 0 0 7px 0;
+    }
+    body.dark-mode .as-upgrade-desc {
+      color: #e879f9 !important;
+    }
+    .as-upgrade-btn {
+      background: linear-gradient(135deg, #c026d3 0%, #9333ea 100%) !important;
+      color: #ffffff !important;
+      padding: 9px 12px !important;
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      border-radius: 9px !important;
+      width: 100% !important;
+      box-shadow: 0 4px 14px -2px rgba(192, 38, 211, 0.35) !important;
+      border: none !important;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 40px !important;
+      touch-action: manipulation;
+    }
+    .as-upgrade-btn:active { transform: scale(0.98); }
+    .as-upgrade-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -2px rgba(192, 38, 211, 0.55) !important;
+    }
+
+    /* ==================== GLOBAL MOBILE MODAL OPTIMIZATIONS (ANDROID & IOS) ==================== */
+    @media (max-width: 640px) {
+      .profile-modal-overlay {
+        padding: 8px !important;
+        padding-top: max(8px, env(safe-area-inset-top)) !important;
+        padding-bottom: max(12px, env(safe-area-inset-bottom)) !important;
+        align-items: center !important;
+      }
+      .profile-modal {
+        max-width: min(390px, calc(100vw - 16px)) !important;
+        max-height: min(88dvh, calc(100vh - 20px)) !important;
+        border-radius: 18px !important;
+        margin: auto 0 !important;
+      }
+      .profile-modal-header {
+        padding: 13px 14px 10px !important;
+      }
+      .profile-modal-header h2 {
+        font-size: 16px !important;
+      }
+      .profile-modal-header p {
+        font-size: 11px !important;
+      }
+      .profile-modal-body {
+        padding: 12px 14px 14px !important;
+      }
+      .modal-close {
+        top: 8px !important;
+        right: 8px !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        font-size: 18px !important;
+      }
+      .modern-notice-modal {
+        max-width: min(350px, calc(100vw - 16px)) !important;
+      }
+      .notice-hero-icon {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
+        font-size: 18px !important;
+        margin: 0 auto 6px !important;
+      }
+      .notice-modal-header {
+        padding: 12px 14px 8px !important;
+      }
+      .notice-modal-header h2 {
+        font-size: 15px !important;
+      }
+      .notice-modal-header p {
+        font-size: 10.5px !important;
+      }
+      .notice-modal-body-box {
+        padding: 9px 11px !important;
+        font-size: 11.5px !important;
+        margin-bottom: 9px !important;
+      }
+      .pm-btn {
+        padding: 10px 12px !important;
+        font-size: 12.5px !important;
+        min-height: 42px !important;
+      }
+      /* Specific Hero Icons scaling for all modals */
+      #viewProfileModalOverlay .profile-modal-header div[style*="border-radius: 50%"] {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 18px !important;
+        margin-bottom: 5px !important;
+      }
+      #streakWelcomeModal div[style*="border-radius: 50%"],
+      #streakInfoModal #simStreakIcon,
+      #subscriptionSuccessModal div[style*="border-radius: 50%"],
+      #packAlreadyDownloadedModal div[style*="border-radius: 20px"],
+      #packDownloadSuccessModal div[style*="border-radius: 50%"] {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        font-size: 20px !important;
+        margin: 0 auto 6px !important;
+      }
+      #streakWelcomeModal div[style*="padding: 24px"],
+      #streakInfoModal .profile-modal-header,
+      #subscriptionSuccessModal div[style*="padding: 24px"],
+      #packAlreadyDownloadedModal div[style*="padding: 24px"],
+      #packDownloadSuccessModal div[style*="padding: 24px"],
+      #pwaInstallGuideModal .profile-modal-header {
+        padding: 13px 14px 10px !important;
+      }
+      #streakWelcomeModal h2, #streakInfoModal h2, #subscriptionSuccessModal h2, #padTitle, #pdsTitle {
+        font-size: 16px !important;
+      }
+    }
+    @media (max-width: 380px) {
+      .profile-modal {
+        max-width: calc(100vw - 12px) !important;
+      }
+      .pm-form-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+      }
+      .quota-capsules-row {
+        gap: 4px !important;
+      }
+      .quota-capsule {
+        padding: 4px 3px !important;
+        font-size: 9.5px !important;
+      }
+    }
   </style>
+
+  <!-- Profile Modal (Inscription & Modification) -->
+  <div class="profile-modal-overlay" id="profileModalOverlay">
+    <div class="profile-modal">
+      <button class="modal-close" id="pmCloseBtn" onclick="closeProfileEditModal()" style="display: none;">&times;</button>
+      <div class="profile-modal-header">
+        <h2 id="pmModalTitle">Bienvenue sur ResumeCI ! 🎓</h2>
+        <p id="pmModalDesc">Remplis ces informations pour accéder à tes résumés et cours officiels.</p>
+      </div>
+      <div class="profile-modal-body">
+        <form id="profileForm" onsubmit="event.preventDefault(); submitProfile();">
+          <div class="pm-form-row">
+            <div class="pm-form-group">
+              <label for="pmFirstName">Prénom *</label>
+              <input type="text" id="pmFirstName" class="pm-input" placeholder="Ton prénom" required>
+            </div>
+            <div class="pm-form-group">
+              <label for="pmLastName">Nom *</label>
+              <input type="text" id="pmLastName" class="pm-input" placeholder="Ton nom" required>
+            </div>
+          </div>
+          <div class="pm-form-group">
+            <label for="pmClass">Ta Classe *</label>
+            <select id="pmClass" class="pm-select" required>
+              <option value="" disabled selected>Choisis ta classe</option>
+              <option value="6eme">6ème</option>
+              <option value="5eme">5ème</option>
+              <option value="3eme">3ème</option>
+              <option value="Seconde_A">Seconde A</option>
+              <option value="Seconde_C">Seconde C</option>
+              <option value="Premiere_D">Première D</option>
+              <option value="Terminale_A">Terminale A</option>
+              <option value="Terminale_C">Terminale C</option>
+              <option value="Terminale_D">Terminale D</option>
+            </select>
+          </div>
+          <div class="pm-form-group">
+            <label for="pmWhatsapp">Numéro WhatsApp (10 chiffres) *</label>
+            <input type="tel" id="pmWhatsapp" class="pm-input" placeholder="Ex: 0708091011" required maxlength="14">
+          </div>
+          <div class="pm-form-group" id="pmPasswordGroup">
+            <label for="pmPassword" id="pmPasswordLabel">Mot de passe (6 caractères min.) *</label>
+            <input type="password" id="pmPassword" class="pm-input" placeholder="6 caractères minimum" required minlength="6">
+          </div>
+          <button type="submit" class="pm-btn" id="pmSubmitBtn">Commencer à réviser 🚀</button>
+          <div id="pmSwitchToLogin" style="text-align: center; margin-top: 12px;">
+            <a href="#" onclick="openLoginModal(); return false;" style="color: #2563eb; text-decoration: underline; font-size: 13px; font-weight: 600;">Déjà inscrit ? Connecte-toi ici</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="profile-modal-overlay" id="loginModalOverlay">
+    <div class="profile-modal">
+      <button class="modal-close" onclick="document.getElementById('loginModalOverlay').classList.remove('show'); document.getElementById('profileModalOverlay').classList.add('show');">&times;</button>
+      <div class="profile-modal-header">
+        <h2>Content de te revoir ! 👋</h2>
+        <p>Connecte-toi pour retrouver ta classe et tes favoris.</p>
+      </div>
+      <div class="profile-modal-body">
+        <form id="loginForm" onsubmit="event.preventDefault(); submitLogin();">
+          <div class="pm-form-row">
+            <div class="pm-form-group">
+              <label for="lmFirstName">Prénom *</label>
+              <input type="text" id="lmFirstName" class="pm-input" placeholder="Ton prénom" required>
+            </div>
+            <div class="pm-form-group">
+              <label for="lmLastName">Nom *</label>
+              <input type="text" id="lmLastName" class="pm-input" placeholder="Ton nom" required>
+            </div>
+          </div>
+          <div class="pm-form-group">
+            <label for="lmWhatsapp">Numéro WhatsApp *</label>
+            <input type="tel" id="lmWhatsapp" class="pm-input" placeholder="Ex: 0708091011" required>
+          </div>
+          <div class="pm-form-group">
+            <label for="lmPassword">Mot de passe *</label>
+            <input type="password" id="lmPassword" class="pm-input" placeholder="Ton mot de passe" required minlength="6">
+          </div>
+          <button type="submit" class="pm-btn" id="lmSubmitBtn">Se Connecter 🔑</button>
+          <div style="text-align: center; margin-top: 12px;">
+            <a href="#" onclick="document.getElementById('loginModalOverlay').classList.remove('show'); document.getElementById('profileModalOverlay').classList.add('show'); return false;" style="color: #2563eb; text-decoration: underline; font-size: 13px; font-weight: 600;">Pas encore de compte ? S'inscrire</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Profile Modal -->
+  <div class="profile-modal-overlay" id="viewProfileModalOverlay">
+    <div class="profile-modal" style="text-align: center;">
+      <button class="modal-close" onclick="document.getElementById('viewProfileModalOverlay').classList.remove('show')">&times;</button>
+      <div class="profile-modal-header" style="background: linear-gradient(135deg, #1e293b, #334155);">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 8px;">👤</div>
+        <h2 style="font-size: 19px; margin-bottom: 2px;">Mon Profil Élève</h2>
+        <p style="font-size: 12px;">Informations de ton compte ResumeCI</p>
+      </div>
+      
+      <div class="profile-modal-body">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; text-align: left; font-size: 13px;">
+          <div style="margin-bottom: 6px; color: var(--text-muted);"><strong>Nom complet :</strong> <span id="vpFullName" style="color: var(--text); font-weight: 700;"></span></div>
+          <div style="margin-bottom: 6px; color: var(--text-muted);"><strong>Classe :</strong> <span id="vpClass" style="color: #2563eb; font-weight: 800; font-size: 14px;"></span></div>
+          <div style="margin-bottom: 6px; color: var(--text-muted);"><strong>WhatsApp :</strong> <span id="vpWhatsapp" style="color: var(--text); font-weight: 600;"></span></div>
+          <div style="color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+            <div><strong>Abonnement :</strong> <span id="vpPlanBadge" style="display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; background: #e2e8f0; color: #475569;">Gratuit</span></div>
+            <button id="vpManageSubBtn" onclick="document.getElementById('viewProfileModalOverlay').classList.remove('show'); window.showActiveSubscriptionModal();" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #047857; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 6px; cursor: pointer;">Gérer / Résilier</button>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 1.5px solid #fdba74; border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; text-align: left;">
+          <div style="font-size: 28px;">🔥</div>
+          <div>
+            <div style="font-weight: 800; color: #c2410c; font-size: 13px;">Flamme d'assiduité : <span id="vpStreakDays">1 jour</span> d'affilée</div>
+            <div style="font-size: 11px; color: #9a3412;">Révise chaque jour pour ne pas laisser ta flamme s'éteindre !</div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 10px 12px; border-radius: 10px; color: #92400e; font-weight: 600; font-size: 12px; margin-bottom: 14px; line-height: 1.4;" id="vpMessage">
+        </div>
+
+        <button onclick="openProfileEditModal()" class="pm-btn" style="background: #2563eb; margin-top: 0; margin-bottom: 8px;">
+          <i class="fas fa-user-edit"></i> Modifier mon profil
+        </button>
+        <button onclick="document.getElementById('viewProfileModalOverlay').classList.remove('show')" class="pm-btn" style="background: #10b981; margin-top: 0; margin-bottom: 8px;">
+          <i class="fas fa-book-open"></i> Continuer mes révisions
+        </button>
+        <button onclick="logoutUser()" class="pm-btn" style="background: #64748b; color: white; margin-top: 0; margin-bottom: 8px;">
+          <i class="fas fa-sign-out-alt"></i> Déconnexion
+        </button>
+        <div style="display: flex; gap: 8px; justify-content: center; margin-top: 10px; font-size: 11px; flex-wrap: wrap;">
+          <a href="#" onclick="if(window.exportUserData) window.exportUserData(); return false;" style="color: #4b5563; text-decoration: underline;"><i class="fas fa-download"></i> Télécharger mes données</a>
+          <span style="color: #cbd5e1;">•</span>
+          <a href="#" onclick="if(window.confirmDeleteAccount) window.confirmDeleteAccount(); return false;" style="color: #ef4444; text-decoration: underline;"><i class="fas fa-trash-alt"></i> Supprimer mon compte</a>
+        </div>
+        <div style="text-align: center; margin-top: 6px;">
+          <a href="/privacy.html" target="_blank" style="color: #9ca3af; font-size: 10px; text-decoration: underline;">Confidentialité & Données protégées</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Streak Welcome Modal (Explication après inscription) -->
+  <div class="profile-modal-overlay" id="streakWelcomeModal">
+    <div class="profile-modal" style="max-width: 420px; text-align: center; border: 2px solid #f97316;">
+      <div style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: white; padding: 24px 20px 18px; position: relative;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: #ffffff; color: #ea580c; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); animation: flame-pulse 1.8s infinite;">🔥</div>
+        <h2 style="font-size: 20px; font-weight: 900; margin: 0 0 4px 0;" id="streakWelcomeTitle">Ta flamme est allumée ! 🔥</h2>
+        <p style="margin: 0; font-size: 12px; opacity: 0.95;">La clé n°1 de la réussite sur ResumeCI</p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div style="background: #fff7ed; border: 1.5px solid #fdba74; border-radius: 14px; padding: 14px; margin-bottom: 16px; text-align: left; font-size: 13px; line-height: 1.6; color: #7c2d12;">
+          <div style="font-weight: 800; margin-bottom: 8px; color: #c2410c; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+            <span>🔥</span> Comment garder ta flamme active ?
+          </div>
+          <div style="margin-bottom: 8px;">
+            <strong>1. Révise 1 fiche par jour :</strong> Chaque jour où tu révises sur ResumeCI, ta flamme grandit (1 jour, 2 jours, 7 jours d'affilée...).
+          </div>
+          <div style="margin-bottom: 8px;">
+            <strong>2. Ne rate aucun jour :</strong> Si tu passes 24 heures sans réviser, ta flamme s'éteint et retombe à 0 !
+          </div>
+          <div>
+            <strong>3. Toujours visible :</strong> Ta flamme est affichée en haut à droite juste à côté de ton profil pour ne jamais l'oublier.
+          </div>
+        </div>
+        <button class="pm-btn" style="background: linear-gradient(135deg, #ea580c, #c2410c); margin-top: 0; font-size: 15px;" onclick="closeStreakWelcomeModal()">
+          🔥 C'est parti, j'allume ma flamme !
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Streak Info Details Modal -->
+  <div class="profile-modal-overlay" id="streakInfoModal">
+    <div class="profile-modal" style="max-width: 400px; text-align: center; border: 2px solid #fdba74;">
+      <button class="modal-close" onclick="document.getElementById('streakInfoModal').classList.remove('show');">&times;</button>
+      <div class="profile-modal-header" style="background: linear-gradient(135deg, #ea580c, #c2410c);" id="simStreakHeader">
+        <div style="font-size: 32px; margin-bottom: 4px;" id="simStreakIcon">🔥</div>
+        <h2 style="font-size: 20px;" id="simStreakCountTitle">Ta Flamme : 1 jour</h2>
+        <p id="simStreakSubtitle">Série d'assiduité consécutive</p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div style="background: #fff7ed; border: 1.5px solid #fdba74; border-radius: 12px; padding: 14px; margin-bottom: 16px; text-align: left; font-size: 13px; line-height: 1.6; color: #7c2d12;" id="simStreakStatusBox">
+          <div style="font-weight: 800; margin-bottom: 6px; color: #c2410c;">🎯 Statut du cycle 24h :</div>
+          <div id="simStreakStatusText" style="margin: 0 0 10px 0;">Tu as révisé aujourd'hui ! Reviens demain pour augmenter ta série.</div>
+          <div style="font-size: 12px; opacity: 0.9;">💡 Conseil : 15 minutes de révision chaque jour valent mieux qu'une nuit blanche avant les examens !</div>
+        </div>
+        <button class="pm-btn" style="background: #ea580c; margin-top: 0;" id="simStreakBtn" onclick="document.getElementById('streakInfoModal').classList.remove('show'); if (typeof showDashboard === 'function') showDashboard();">
+          Continuer à réviser 🚀
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subscription Success Celebration Modal -->
+  <div class="profile-modal-overlay" id="subscriptionSuccessModal">
+    <div class="profile-modal" style="max-width: 420px; text-align: center; border: 2px solid #f59e0b;">
+      <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%); color: white; padding: 24px 20px 18px; position: relative;">
+        <div style="width: 58px; height: 58px; border-radius: 50%; background: #ffffff; color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: pulse-badge 2s infinite;">👑</div>
+        <h2 style="font-size: 21px; font-weight: 900; margin: 0 0 4px 0;" id="subSuccessTitle">Félicitations ! 🎉</h2>
+        <p style="margin: 0; font-size: 12px; opacity: 0.95;" id="subSuccessSubtitle">Ton abonnement mensuel est officiellement validé !</p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div style="display: inline-block; background: #fef3c7; border: 1px solid #fde68a; color: #92400e; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 14px;" id="subSuccessExpiryBadge">
+          ⏳ Valable 30 jours • Jusqu'au 25/10/2026
+        </div>
+        <div style="text-align: left; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; font-size: 12px; line-height: 1.6; color: #334155;">
+          <div style="font-weight: 700; margin-bottom: 6px; color: #0f172a; font-size: 13px;">🔓 Fonctionnalités débloquées sans cadenas :</div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="color: #10b981; font-weight: 800;">✓</span> Accès illimité à toutes les fiches de ta classe</div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="color: #10b981; font-weight: 800;">✓</span> Pack Téléchargement Hors-Ligne dans l'application</div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;"><span style="color: #10b981; font-weight: 800;">✓</span> Quota de 3 PDF officiels avec ton filigrane anti-fraude</div>
+          <div id="subSuccessProPerks" style="display: flex; align-items: center; gap: 8px;"><span style="color: #10b981; font-weight: 800;">✓</span> Audio podcast, Flashcards de mémorisation & Quiz</div>
+        </div>
+        <button class="pm-btn" style="background: linear-gradient(135deg, #10b981, #059669); margin-top: 0; font-size: 14px;" onclick="closeSubscriptionSuccessModal()">
+          🚀 Découvrir mes cours débloqués
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Guide Modal (iPhone & Android) -->
+  <div class="profile-modal-overlay" id="pwaInstallGuideModal">
+    <div class="profile-modal" style="max-width: 440px;">
+      <button class="modal-close" onclick="document.getElementById('pwaInstallGuideModal').classList.remove('show');">&times;</button>
+      <div class="profile-modal-header" style="background: linear-gradient(135deg, #0284c7, #2563eb);">
+        <div style="font-size: 28px; margin-bottom: 2px;">📲</div>
+        <h2 style="font-size: 19px;">Installer l'application ResumeCI</h2>
+        <p>Révise sans connexion et sans lenteur sur ton téléphone</p>
+      </div>
+      <div class="profile-modal-body" id="pwaGuideBody">
+      </div>
+    </div>
+  </div>
+  <!-- Pack Already Downloaded Modal -->
+  <div class="profile-modal-overlay" id="packAlreadyDownloadedModal">
+    <div class="profile-modal" style="max-width: 440px; text-align: center; border-radius: 24px; overflow: hidden; border: 1.5px solid rgba(16, 185, 129, 0.4); box-shadow: 0 25px 65px -12px rgba(16, 185, 129, 0.25);">
+      <button class="modal-close" onclick="document.getElementById('packAlreadyDownloadedModal').classList.remove('show');">&times;</button>
+      <div style="background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%); color: white; padding: 24px 20px 18px; position: relative;">
+        <div style="width: 66px; height: 66px; border-radius: 20px; background: #ffffff; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); animation: pulse-badge 2s infinite;">💾</div>
+        <h2 style="font-size: 20px; font-weight: 900; margin: 0 0 4px 0;" id="padTitle">Pack Hors-Ligne Déjà Prêt ! ✓</h2>
+        <p style="margin: 0; font-size: 12.5px; opacity: 0.95; color: #a7f3d0;" id="padSubtitle">Toutes les fiches sont enregistrées sur ton téléphone</p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div style="display: inline-block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 5px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 14px;" id="padBadge">
+          ✨ 100% Accessible sans Internet
+        </div>
+        
+        <div class="quota-solutions-card">
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #ecfdf5; color: #059669;">📱</div>
+            <div class="qs-text">
+              <strong>Zéro Donnée Mobile requise :</strong>
+              <span>Tu peux réviser au village, dans les transports ou en mode avion. Les cours s'ouvrent instantanément.</span>
+            </div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #eff6ff; color: #2563eb;">⚡</div>
+            <div class="qs-text">
+              <strong>Sauvegarde sécurisée :</strong>
+              <span>Tes résumés et formules restent stockés dans la mémoire locale de ton navigateur.</span>
+            </div>
+          </div>
+          <div style="font-size: 11.5px; color: #64748b; margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+            💡 Si de nouvelles fiches ont été ajoutées récemment, tu peux forcer la mise à jour ci-dessous.
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <button class="pm-btn quota-btn-primary" onclick="document.getElementById('packAlreadyDownloadedModal').classList.remove('show');">
+            ✨ Continuer à réviser mes cours
+          </button>
+          <button class="pm-btn quota-btn-secondary" id="padForceUpdateBtn">
+            🔄 Forcer la mise à jour (Re-télécharger)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF Quota Reached Modal (Sublime Panneau Quota & Recharge) -->
+  <div class="profile-modal-overlay" id="pdfQuotaReachedModal">
+    <div class="profile-modal quota-modal-premium" style="text-align: center;">
+      <button class="modal-close" onclick="document.getElementById('pdfQuotaReachedModal').classList.remove('show');">&times;</button>
+      
+      <!-- En-tête Premium -->
+      <div class="quota-modal-header">
+        <div class="quota-icon-wrap">
+          <div class="quota-icon-inner">📑</div>
+          <span class="quota-counter-pill">3 / 3</span>
+        </div>
+        <h2 class="quota-title">Quota PDF du Mois Utilisé</h2>
+        <p class="quota-subtitle">Tes 3 téléchargements gratuits du mois ont été utilisés</p>
+      </div>
+
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <!-- Carte de jauge visuelle & date de réinitialisation -->
+        <div class="quota-timer-card">
+          <div class="quota-timer-header">
+            <span class="quota-timer-label">🔄 Prochaine recharge gratuite :</span>
+            <span class="quota-timer-date" id="pqrResetDateBadge">1er du mois prochain</span>
+          </div>
+          <div class="quota-capsules-row">
+            <div class="quota-capsule filled" title="1ère fiche téléchargée"><span>✓ Fiche 1</span></div>
+            <div class="quota-capsule filled" title="2ème fiche téléchargée"><span>✓ Fiche 2</span></div>
+            <div class="quota-capsule filled" title="3ème fiche téléchargée"><span>✓ Fiche 3</span></div>
+          </div>
+        </div>
+
+        <!-- Solutions positives et alternatives pour l'élève -->
+        <div class="quota-solutions-card">
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #ecfdf5; color: #059669;">📱</div>
+            <div class="qs-text">
+              <strong>Accès 100% Illimité dans l'App :</strong>
+              <span>Toutes les fiches, résumés de cours, quiz et flashcards restent en lecture libre et gratuite sur ton écran.</span>
+            </div>
+          </div>
+          
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #eff6ff; color: #2563eb;">⚡</div>
+            <div class="qs-text">
+              <strong>Pack Hors-Ligne dans l'App :</strong>
+              <span>Pas besoin d'imprimer ! Télécharge toute ta classe sur ton téléphone pour réviser sans connexion ni crédit internet.</span>
+            </div>
+          </div>
+
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #fdf4ff; color: #a855f7;">👑</div>
+            <div class="qs-text">
+              <strong>Besoin d'imprimer plus de fiches ?</strong>
+              <span>Active le Pass Réussite dès 500 FCFA/mois pour débloquer plus de PDF et accéder aux annales d'examens.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boutons d'action modernes -->
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          <button class="pm-btn quota-btn-primary" onclick="document.getElementById('pdfQuotaReachedModal').classList.remove('show'); if (window.userHasFeature && window.userHasFeature('Pack Hors-Ligne')) { if (typeof showDashboard === 'function') showDashboard(); } else { if (typeof window.openPremiumTeaser === 'function') window.openPremiumTeaser('Pack Hors-Ligne'); }">
+            <i class="fas fa-cloud-arrow-down" style="margin-right: 6px;"></i> 📱 Découvrir le Pack Hors-Ligne sans connexion
+          </button>
+          
+          <button class="pm-btn quota-btn-vip" onclick="document.getElementById('pdfQuotaReachedModal').classList.remove('show'); if (typeof openPremiumTeaser === 'function') openPremiumTeaser('Téléchargement PDF');">
+            <i class="fas fa-crown" style="margin-right: 6px; color: #fbbf24;"></i> 👑 Découvrir les Pass Réussite (Dès 500 F)
+          </button>
+
+          <button class="pm-btn quota-btn-secondary" onclick="document.getElementById('pdfQuotaReachedModal').classList.remove('show');">
+            Continuer la lecture en ligne
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pack Download Success Celebration Modal -->
+  <div class="profile-modal-overlay" id="packDownloadSuccessModal">
+    <div class="profile-modal" style="max-width: 420px; text-align: center; border-radius: 24px; overflow: hidden; border: 1.5px solid rgba(16, 185, 129, 0.4); box-shadow: 0 25px 65px -12px rgba(16, 185, 129, 0.25);">
+      <button class="modal-close" onclick="document.getElementById('packDownloadSuccessModal').classList.remove('show');">&times;</button>
+      <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 24px 20px 18px; position: relative;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: #ffffff; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); animation: pulse-badge 2s infinite;">🎉</div>
+        <h2 style="font-size: 21px; font-weight: 900; margin: 0 0 4px 0;" id="pdsTitle">Téléchargement Réussi !</h2>
+        <p style="margin: 0; font-size: 12.5px; opacity: 0.95; color: #d1fae5;" id="pdsSubtitle">Pack hors-ligne enregistré dans ton téléphone</p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div style="display: inline-block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 5px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 14px;" id="pdsFichesCountBadge">
+          ✓ Fiches prêtes hors-ligne
+        </div>
+        <div class="quota-solutions-card">
+          <div class="qs-item">
+            <div class="qs-icon" style="background: #ecfdf5; color: #059669;">🚀</div>
+            <div class="qs-text">
+              <strong>Tout est prêt pour cartonner :</strong>
+              <span>Même sans connexion Internet ni données mobiles, tu pourras ouvrir toutes ces fiches instantanément sur ResumeCI.</span>
+            </div>
+          </div>
+        </div>
+        <button class="pm-btn quota-btn-primary" onclick="document.getElementById('packDownloadSuccessModal').classList.remove('show');">
+          🚀 Commencer à réviser maintenant
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Universal Action Notice Modal (Remplacement de tous les alert() natifs) -->
+  <div class="profile-modal-overlay" id="actionNoticeModal">
+    <div class="profile-modal modern-notice-modal" id="actionNoticeContainer">
+      <button class="modal-close" onclick="closeActionNotice()">&times;</button>
+      <div class="notice-modal-header type-info" id="anHeader">
+        <div class="notice-hero-icon" id="anIcon">✨</div>
+        <h2 id="anTitle">Information</h2>
+        <p id="anSubtitle"></p>
+      </div>
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div id="anContent"></div>
+        <div class="notice-actions" id="anActions">
+          <button class="pm-btn quota-btn-primary" id="anPrimaryBtn">D'accord</button>
+          <button class="pm-btn quota-btn-secondary" id="anSecondaryBtn" style="display:none">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Pass Élite VIP Modal (Sublime Panneau VIP & Découverte) -->
+  <div class="profile-modal-overlay" id="eliteComingSoonModal">
+    <div class="profile-modal elite-modal-premium" style="text-align: center;">
+      <button class="modal-close" onclick="closeElitePassModal();">&times;</button>
+      
+      <!-- En-tête VIP Suprême -->
+      <div class="elite-modal-header">
+        <div class="elite-badge-top">
+          <span>🥇 FORMULE SUPRÊME • BIENTÔT DISPONIBLE</span>
+        </div>
+        <div class="elite-hero-wrap">
+          <div class="elite-hero-icon" id="eliteHeroIcon">🤖</div>
+          <span class="elite-hero-vip-tag">VIP</span>
+        </div>
+        <h2 class="elite-modal-title" id="eliteHeroTitle">Professeur IA 24/7 & Formule Élite</h2>
+        <p class="elite-modal-subtitle" id="eliteHeroSubtitle">Un tuteur personnel intelligent et des annales officielles pour garantir ta mention</p>
+      </div>
+
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <!-- Grille des 3 fonctionnalités prestigieuses de l'Élite -->
+        <div class="elite-features-container">
+          <!-- Item 1: Professeur IA -->
+          <div class="elite-feat-card" id="eliteCardIA">
+            <div class="elite-feat-icon">🤖</div>
+            <div class="elite-feat-content">
+              <div class="elite-feat-header">
+                <h4 class="elite-feat-title">Professeur IA 24h/24</h4>
+                <span class="elite-status-pill">🔬 En calibrage final</span>
+              </div>
+              <p class="elite-feat-desc">Pose toutes tes questions à tout moment. Il débloque tes exercices de maths, physique et français étape par étape.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Sujets BAC/BEPC corrigés -->
+          <div class="elite-feat-card" id="eliteCardAnnales">
+            <div class="elite-feat-icon">📜</div>
+            <div class="elite-feat-content">
+              <div class="elite-feat-header">
+                <h4 class="elite-feat-title">Annales BAC & BEPC Corrigées</h4>
+                <span class="elite-status-pill">📑 10 ans d'archives</span>
+              </div>
+              <p class="elite-feat-desc">Tous les vrais sujets officiels avec corrigés types rédigés par des inspecteurs et barèmes détaillés.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Simulateur d'examens blancs -->
+          <div class="elite-feat-card" id="eliteCardSimulateur">
+            <div class="elite-feat-icon">⏱️</div>
+            <div class="elite-feat-content">
+              <div class="elite-feat-header">
+                <h4 class="elite-feat-title">Simulateur d'Examens Blancs</h4>
+                <span class="elite-status-pill">⚡ Chronométré</span>
+              </div>
+              <p class="elite-feat-desc">Passe des épreuves en temps réel, évalue ta vitesse et obtiens ta note estimée pour cibler tes révisions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box de réassurance / Alternative immédiate pour l'élève -->
+        <div class="elite-reassurance-box">
+          <div class="elite-reassurance-icon">💡</div>
+          <div class="elite-reassurance-text">
+            <strong>Révise dès maintenant sans attendre !</strong>
+            <span>Toutes les fiches de cours, résumés, quiz et podcasts audio sont 100% accessibles immédiatement dès 500 FCFA avec les Pass Starter & Pro.</span>
+          </div>
+        </div>
+
+        <!-- Boutons d'action -->
+        <div class="elite-actions-column">
+          <button class="pm-btn elite-btn-vip" onclick="closeElitePassModal(); if (typeof openPremiumTeaser === 'function') openPremiumTeaser('Pass Réussite Pro');">
+            <i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Disponibles (Dès 500 F)
+          </button>
+          
+          <button class="pm-btn elite-btn-secondary" onclick="closeElitePassModal();">
+            Continuer mes révisions gratuites
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Active Subscription Modal (Panneau Abonnement Déjà Actif & Résiliation) -->
+  <div class="profile-modal-overlay" id="activeSubscriptionModal">
+    <div class="profile-modal active-sub-modal-premium" style="text-align: center;">
+      <button class="modal-close" onclick="closeActiveSubscriptionModal();">&times;</button>
+      
+      <div class="active-sub-header">
+        <div class="active-sub-badge-top">
+          <span>🟢 ABONNEMENT ACTIF SUR CE COMPTE</span>
+        </div>
+        <div class="active-sub-hero-icon" id="asHeroIcon">👑</div>
+        <h2 style="font-size: 20px; font-weight: 900; margin: 0 0 4px 0; color: #ffffff;" id="asTitle">Tu as déjà un Pass Actif !</h2>
+        <p style="font-size: 12.5px; margin: 0; color: #d1fae5;" id="asSubtitle">Tous les avantages de ta formule sont déjà débloqués</p>
+      </div>
+
+      <div class="profile-modal-body" style="padding: 18px 20px;">
+        <div class="active-sub-details-card">
+          <div class="active-sub-plan-row">
+            <span class="active-sub-plan-name" id="asPlanName">👑 Pass Pro</span>
+            <span class="active-sub-status-pill">● Actif</span>
+          </div>
+          <div class="active-sub-expiry" id="asExpiryText">
+            <i class="fas fa-calendar-check"></i> <span id="asExpiryDateSpan">Valable 30 jours</span>
+          </div>
+          <ul class="active-sub-features-list" id="asFeaturesList">
+            <li><i class="fas fa-check-circle"></i> Fiches et résumés officiels en lecture illimitée</li>
+            <li><i class="fas fa-check-circle"></i> Téléchargement PDF mensuel</li>
+            <li><i class="fas fa-check-circle"></i> Pack Hors-Ligne dans l'application</li>
+            <li><i class="fas fa-check-circle"></i> Podcasts audio (lecture vocale)</li>
+            <li><i class="fas fa-check-circle"></i> Flashcards et quiz d'entraînement complets</li>
+          </ul>
+        </div>
+
+        <!-- Section Évolution / Upgrade vers la formule supérieure -->
+        <div class="active-sub-upgrade-banner" id="asUpgradeSection" style="display: none;">
+          <div class="as-upgrade-badge" id="asUpgradeBadge">🚀 PASSER À LA VITESSE SUPÉRIEURE</div>
+          <h4 class="as-upgrade-title" id="asUpgradeTitle">Envie de débloquer les Podcasts & Flashcards ?</h4>
+          <p class="as-upgrade-desc" id="asUpgradeDesc">Passe au <strong>Pass Pro (1 000 FCFA/mois)</strong> pour profiter de la lecture vocale, des flashcards de mémorisation et de tous les quiz interactifs.</p>
+          <button class="pm-btn as-upgrade-btn" id="asUpgradeBtn" onclick="closeActiveSubscriptionModal(); initiatePremiumPayment(this, 'pro');">
+            ⚡ Passer au Pass Pro (1 000 FCFA / mois)
+          </button>
+        </div>
+
+        <div class="active-sub-reassurance">
+          💡 <strong>Pas besoin de payer à nouveau :</strong> Ton compte est déjà en règle. Tu peux profiter immédiatement de tous tes cours sans frais supplémentaires.
+        </div>
+
+        <div class="active-sub-actions">
+          <button class="pm-btn sub-keep-btn" onclick="closeActiveSubscriptionModal();">
+            🚀 Continuer à profiter de mon Pass
+          </button>
+          
+          <button class="pm-btn sub-cancel-btn" onclick="promptCancelSubscription();">
+            <i class="fas fa-times-circle"></i> Résilier mon abonnement
+          </button>
+          <p class="sub-no-refund-warning">
+            ⚠️ <strong>Règle de résiliation :</strong> La résiliation prend effet immédiatement et ne donne droit à aucun remboursement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistiques, Progression & Données en Cache Modal -->
+  <div class="profile-modal-overlay" id="statistiquesModal">
+    <div class="profile-modal stats-modal-premium">
+      <button class="modal-close" onclick="closeStatistiquesModal();">&times;</button>
+      
+      <div class="stats-modal-header">
+        <div class="stats-modal-badge-top">
+          <span>📊 TABLEAU DE BORD PERSONNEL</span>
+        </div>
+        <div class="stats-hero-icon">📈</div>
+        <h2 id="statsModalTitle">Statistiques & Progression</h2>
+        <p id="statsModalSubtitle">Suivi d'apprentissage & Mémoire de ton téléphone</p>
+      </div>
+
+      <!-- Navigation par Onglets -->
+      <div class="stats-tabs-nav">
+        <button class="stats-tab-btn active" id="statsTabBtnProgression" onclick="switchStatsTab('progression')">
+          <i class="fas fa-chart-line"></i> Ma Progression
+        </button>
+        <button class="stats-tab-btn" id="statsTabBtnStorage" onclick="switchStatsTab('storage')">
+          <i class="fas fa-hdd"></i> Mémoire & Cache
+        </button>
+      </div>
+
+      <div class="profile-modal-body" style="padding: 16px 18px;" id="statsModalBody">
+        <div style="text-align:center;padding:30px;color:#64748b;">
+          <div class="spinner" style="width:24px;height:24px;border-width:3px;margin:0 auto 10px;"></div>
+          Chargement de tes statistiques...
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

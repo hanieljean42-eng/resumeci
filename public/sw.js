@@ -1,11 +1,9 @@
-const CACHE_SHELL = 'resumeci-shell-v29';
+const CACHE_SHELL = 'resumeci-shell-v40';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
   '/',
   '/index.html',
-  '/quiz.html',
-  '/flashcards.html',
   '/about.html',
   '/contact.html',
   '/faq.html',
@@ -17,12 +15,15 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/main.css?v=2.3.0',
-  '/enhancements.css?v=2.3.0',
-  '/enhancements.js?v=2.3.0',
-  '/firebase-config.js?v=2.3.0',
-  '/content-protection.js?v=2.3.0',
-  '/app.js?v=2.3.0'
+  '/main.css?v=3.0.0',
+  '/enhancements.css?v=3.0.0',
+  '/enhancements.js?v=3.0.0',
+  '/firebase-config.js?v=3.0.0',
+  '/content-protection.js?v=3.0.0',
+  '/quiz.css?v=3.0.0',
+  '/quiz.js?v=3.0.0',
+  '/flashcards.js?v=3.0.0',
+  '/app.js?v=3.0.0'
 ];
 
 // Install: cache shell files and skip waiting immediately
@@ -41,7 +42,7 @@ self.addEventListener('activate', e => {
       Promise.all(keys.filter(k => k !== CACHE_SHELL && k !== CACHE_FICHES).map(k => caches.delete(k)))
     ).then(() => self.clients.claim()).then(() => {
       return self.clients.matchAll({ type: 'window' }).then(clients => {
-        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '2.3.0' }));
+        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '3.0.0' }));
       });
     })
   );
@@ -67,7 +68,7 @@ self.addEventListener('fetch', e => {
           const fetchPromise = fetch(e.request).then(resp => {
             if (resp && resp.status === 200) cache.put(e.request, resp.clone());
             return resp;
-          }).catch(() => cached);
+          }).catch(() => cached || caches.match('/offline.html'));
           return cached || fetchPromise;
         })
       )
@@ -75,7 +76,7 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Shell & data: network-first, fallback to cache
+  // Shell & data: network-first, fallback to cache, then offline.html for pages
   e.respondWith(
     fetch(e.request).then(resp => {
       if (resp && resp.status === 200) {
@@ -83,7 +84,13 @@ self.addEventListener('fetch', e => {
         caches.open(CACHE_SHELL).then(c => c.put(e.request, clone));
       }
       return resp;
-    }).catch(() => caches.match(e.request))
+    }).catch(async () => {
+      const cached = await caches.match(e.request);
+      if (cached) return cached;
+      if (e.request.mode === 'navigate' || e.request.headers.get('accept')?.includes('text/html')) {
+        return caches.match('/offline.html');
+      }
+    })
   );
 });
 
