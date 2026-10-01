@@ -230,6 +230,9 @@ app.post('/api/webhook', async (req, res) => {
     res.status(200).send('Webhook traité');
   } catch (error) {
     console.error("[Webhook] Erreur serveur Webhook:", error);
+    res.status(500).send('Erreur serveur Webhook');
+  }
+});
 // ROUTE 4 : ENREGISTREMENT ÉLÈVE
 app.post('/api/register', async (req, res) => {
   try {
