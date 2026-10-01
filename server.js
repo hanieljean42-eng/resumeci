@@ -1,62 +1,40 @@
-// TODO: This server.js is used only on Render (not Firebase Hosting).
-// The puppeteer-core Chrome path on line ~167 is hardcoded for Windows.
-// For Linux deployment, use: executablePath: '/usr/bin/google-chrome-stable'
-// or switch to 'puppeteer' (not puppeteer-core) for auto-downloaded Chromium.
 const express = require('express');
-const fs = require('fs');
+const cors = require('cors');
 const path = require('path');
 const https = require('https');
-const puppeteer = require('puppeteer-core');
+const admin = require('firebase-admin');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-const FICHES_DIR = path.join(__dirname, 'Fiches_Resume');
-const COURS_DIR = path.join(__dirname, 'Cours_Terminale');
-const ALLOWED_SUBJECTS = {
-  '6eme': ['Anglais', 'EDHC', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
-  '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
-  '3eme': ['EDHC', 'EPS', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
-  Seconde_A: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
-  Seconde_C: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
-  Premiere_D: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'Philosophie'],
-  Terminale_C: ['Mathématiques', 'Physique - Chimie'], // ← AJOUT ICI AUSSI
-  Terminale_D: ['Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
-  Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
-};
-app.disable('x-powered-by');
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Authorization');
-  if (req.method === 'OPTIONS') return res.sendStatus(204);
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Content-Language', 'fr-CI');
-  next();
-});
-
-// Middlewares JSON & URL-encoded
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Initialisation Firebase Admin
 let db = null;
-let admin = null;
 try {
-  admin = require('./payment-api/node_modules/firebase-admin');
-  const serviceAccount = require('./payment-api/firebase-admin.json');
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-  });
-  db = admin.firestore();
-  console.log('✅ Firebase Admin connecté (Projet: resumeci-d5c9a)');
+  let credential = null;
+  if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    const sa = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    credential = admin.credential.cert(sa);
+  } else {
+    const fs = require('fs');
+    const saPath = path.join(__dirname, 'payment-api/firebase-admin.json');
+    if (fs.existsSync(saPath)) {
+      const sa = require(saPath);
+      credential = admin.credential.cert(sa);
+    }
+  }
+  if (credential) {
+    admin.initializeApp({ credential });
+    db = admin.firestore();
+    console.log('✅ Firebase Admin connecté (Firestore)');
+  }
 } catch (e) {
   console.warn('⚠️ Firebase Admin non connecté:', e.message);
 }
 
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Charger .env si existant
 try {
+  const fs = require('fs');
   const envPath = fs.existsSync(path.join(__dirname, '.env')) ? path.join(__dirname, '.env') : path.join(__dirname, 'payment-api/.env');
   if (fs.existsSync(envPath)) {
     fs.readFileSync(envPath, 'utf8').split('\n').forEach(l => {
@@ -68,77 +46,146 @@ try {
   }
 } catch (e) {}
 
-// Configuration GeniusPay (lues depuis l'environnement ou .env)
+// Clés d'API GeniusPay
 const GENIUSPAY_PUBLIC_KEY = process.env.GENIUSPAY_PUBLIC_KEY || '';
 const GENIUSPAY_SECRET_KEY = process.env.GENIUSPAY_SECRET_KEY || '';
 const GENIUSPAY_API_URL = process.env.GENIUSPAY_API_URL || 'https://geniuspay.ci/api/v1/merchant/payments';
 
-const PAYMENT_PLANS = {
-  starter: { name: 'Starter (Mensuel)', price: 500, available: true },
-  pro: { name: 'Pro (Mensuel)', price: 1000, available: true },
-  elite: { name: 'Élite', price: 2000, available: false }
+// Forfaits
+const PLANS = {
+  starter: { name: 'Starter (Mensuel)', price: 500, days: 30, available: true },
+  pro: { name: 'Pro (Mensuel)', price: 1000, days: 30, available: true },
+  annual: { name: 'Annuel (365 jours)', price: 10000, days: 365, available: true },
+  elite: { name: 'Élite', price: 2000, days: 30, available: false }
 };
+
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
-// Fichier de stockage local des utilisateurs pour sauvegarde et hors-ligne
-const USERS_FILE = path.join(__dirname, 'data', 'users.json');
-function loadUsers() {
-  try {
-    if (fs.existsSync(USERS_FILE)) {
-      const content = fs.readFileSync(USERS_FILE, 'utf8');
-      return content ? JSON.parse(content) : [];
+// Helper: Débloquer un compte dans Firestore de façon universelle (par UID et/ou Téléphone)
+async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, extra = {}) {
+  if (!db) {
+    console.warn('[Unlock] Firestore non initialisé.');
+    return null;
+  }
+  const durationMs = durationDays * 24 * 60 * 60 * 1000;
+  const expiresAt = Date.now() + durationMs;
+  const updateData = {
+    premiumPlan: tierKey || 'pro',
+    plan: tierKey || 'pro',
+    isPremium: true,
+    premiumExpiresAt: expiresAt,
+    subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+    lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    ...extra
+  };
+
+  // 1. Débloquer par UID si renseigné
+  if (uid) {
+    try {
+      await db.collection('users').doc(uid).set(updateData, { merge: true });
+    } catch (e) {
+      console.warn('[Unlock] Erreur doc UID:', e.message);
     }
-  } catch (e) {
-    console.warn('Erreur lecture users.json:', e.message);
   }
-  return [];
+
+  // 2. Débloquer par Téléphone (format 10 chiffres ivoirien)
+  if (phone) {
+    const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
+    if (cleanPhone.length === 10) {
+      try {
+        await db.collection('users').doc(cleanPhone).set({
+          ...updateData,
+          whatsapp: cleanPhone,
+          contact: cleanPhone
+        }, { merge: true });
+      } catch (e) {}
+
+      // Mettre à jour tous les profils existants associés à ce contact
+      try {
+        const snap = await db.collection('users').where('whatsapp', '==', cleanPhone).get();
+        snap.forEach(async doc => {
+          await doc.ref.set(updateData, { merge: true });
+        });
+      } catch (e) {}
+    }
+  }
+
+  console.log(`[Unlock] ✅ Compte débloqué avec succès: UID=${uid} / Phone=${phone} -> Pass ${tierKey} (${durationDays}j)`);
+  return { expiresAt, tierKey };
 }
 
-function saveUsers(users) {
-  try {
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
-  } catch (e) {
-    console.warn('Erreur écriture users.json:', e.message);
-  }
-}
-
-function updateUserPlanLocal(uid, tierKey, expiresAt = null) {
-  try {
-    const users = loadUsers();
-    const exp = expiresAt || (Date.now() + THIRTY_DAYS_MS);
-    const cleanId = String(uid || '').replace(/\D/g, '').slice(-10);
-    const idx = users.findIndex(u => {
-      if (u.uid === uid) return true;
-      if (cleanId) {
-        const uWa = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
-        if (uWa === cleanId) return true;
-      }
-      return false;
+// Helper: Requête de consultation d'une transaction GeniusPay
+function queryGeniusPayPayment(reference) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(`${GENIUSPAY_API_URL}/${reference}`, {
+      family: 4,
+      headers: {
+        'X-API-Key': GENIUSPAY_PUBLIC_KEY,
+        'X-API-Secret': GENIUSPAY_SECRET_KEY
+      },
+      timeout: 20000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Réponse GeniusPay invalide: ${data}`));
+        }
+      });
     });
-    if (idx >= 0) {
-      users[idx].plan = tierKey;
-      users[idx].isPremium = true;
-      users[idx].premiumPlan = tierKey;
-      users[idx].premiumExpiresAt = exp;
-      saveUsers(users);
-    }
-  } catch (e) {
-    console.warn('Erreur updateUserPlanLocal:', e.message);
-  }
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
+  });
 }
 
-// ROUTE 1 : INITIER PAIEMENT
+// Helper: Lister les paiements récents GeniusPay
+function fetchGeniusPayPayments(page = 1, perPage = 30) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(`${GENIUSPAY_API_URL}?page=${page}&per_page=${perPage}`, {
+      family: 4,
+      headers: {
+        'X-API-Key': GENIUSPAY_PUBLIC_KEY,
+        'X-API-Secret': GENIUSPAY_SECRET_KEY
+      },
+      timeout: 20000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Réponse GeniusPay invalide: ${data}`));
+        }
+      });
+    });
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
+  });
+}
+
+// --------------------------------------------------------------------------
+// ROUTE 1 : INITIER LE PAIEMENT (Frontend)
+// --------------------------------------------------------------------------
 app.post('/api/pay', async (req, res) => {
   try {
     const { uid, tierKey, customerName, customerPhone, customerEmail, paymentMethod, returnOrigin } = req.body;
-    if (!uid || !tierKey || !PAYMENT_PLANS[tierKey]) {
+
+    if (!uid || !tierKey || !PLANS[tierKey]) {
       return res.status(400).json({ error: "Données invalides (uid ou tierKey manquant)" });
     }
-    if (!PAYMENT_PLANS[tierKey].available) {
-      return res.status(403).json({ error: "Cette formule est en cours de finalisation." });
+
+    if (!PLANS[tierKey].available) {
+      return res.status(403).json({
+        error: "Cette formule est actuellement en cours de finalisation."
+      });
     }
-    const plan = PAYMENT_PLANS[tierKey];
-    const origin = returnOrigin || `http://localhost:${PORT}`;
+
+    const plan = PLANS[tierKey];
+    const origin = returnOrigin || 'https://resumeci.me';
     const redirectUrl = `${origin}/?payment=success&tier=${tierKey}&uid=${uid}`;
 
     // Formatage strict du téléphone ivoirien au format international +225XXXXXXXXXX
@@ -154,10 +201,11 @@ app.post('/api/pay', async (req, res) => {
 
     const chosenMethod = (paymentMethod || 'wave').toLowerCase();
 
+    // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
     const payload = {
       amount: plan.price,
       currency: "XOF",
-      description: `Pass Réussite ${plan.name} - 30 jours`,
+      description: `Pass Réussite ${plan.name} - ResumeCI`,
       country: "CI",
       customer: {
         name: customerName || 'Élève',
@@ -165,12 +213,22 @@ app.post('/api/pay', async (req, res) => {
         phone: formattedPhone,
         country: "CI"
       },
-      metadata: { uid, tierKey, type: 'monthly', method: chosenMethod },
+      metadata: {
+        uid: uid,
+        phone: formattedPhone,
+        customerPhone: cleanPhone.slice(-10),
+        tierKey: tierKey,
+        type: 'monthly',
+        method: chosenMethod
+      },
+      webhook_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
+      callback_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
       success_url: redirectUrl,
       return_url: redirectUrl,
       cancel_url: `${origin}/?payment=cancelled`
     };
 
+    // Si Wave est choisi (par défaut), GeniusPay déclenche le paiement direct Wave
     if (chosenMethod === 'wave') {
       payload.payment_method = 'wave';
     }
@@ -181,7 +239,7 @@ app.post('/api/pay', async (req, res) => {
       const postData = JSON.stringify(payload);
       const req = https.request(GENIUSPAY_API_URL, {
         method: 'POST',
-        family: 4, // Forcer IPv4 pour éviter les timeouts DNS
+        family: 4,
         headers: {
           'X-API-Key': GENIUSPAY_PUBLIC_KEY,
           'X-API-Secret': GENIUSPAY_SECRET_KEY,
@@ -226,98 +284,166 @@ app.post('/api/pay', async (req, res) => {
       console.error("[Paiement] Erreur GeniusPay:", result);
       res.status(500).json({ error: "Impossible d'initier le paiement chez GeniusPay", details: result });
     }
+
   } catch (error) {
     console.error("[Paiement] Erreur interne:", error);
     res.status(500).json({ error: "Erreur serveur lors de la création du paiement." });
   }
 });
 
-// ROUTE 2 : CONFIRMER ET DÉBLOQUER L'ABONNEMENT
+// --------------------------------------------------------------------------
+// ROUTE 2 : VÉRIFICATION DYNAMIQUE D'UN PAIEMENT (Appelée en continu pour Wave)
+// --------------------------------------------------------------------------
+app.get('/api/check-payment/:ref', async (req, res) => {
+  try {
+    const ref = req.params.ref;
+    if (!ref) return res.status(400).json({ error: "Référence de transaction requise." });
+
+    const gpRes = await queryGeniusPayPayment(ref);
+    if (!gpRes.success || !gpRes.data) {
+      return res.status(404).json({ success: false, error: "Paiement non trouvé chez GeniusPay." });
+    }
+
+    const pay = gpRes.data;
+    const isCompleted = pay.status === 'completed' || pay.status === 'success';
+    const amount = Number(pay.amount) || 0;
+    const meta = pay.metadata || {};
+    const tierKey = meta.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+    const uid = meta.uid || null;
+    const phone = pay.customer?.phone || meta.phone || null;
+
+    if (isCompleted) {
+      const result = await unlockUserInFirestore(uid, phone, tierKey, 30, {
+        lastPaymentRef: ref,
+        paymentAmount: amount,
+        paymentMethod: pay.payment_method || 'wave'
+      });
+
+      return res.json({
+        success: true,
+        status: 'completed',
+        tierKey: tierKey,
+        isPremium: true,
+        premiumExpiresAt: result ? result.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+        customerName: pay.customer?.name || 'Élève',
+        amount: amount
+      });
+    }
+
+    return res.json({
+      success: true,
+      status: pay.status || 'pending',
+      amount: amount
+    });
+  } catch (err) {
+    console.error('[CheckPayment] Erreur:', err.message);
+    res.status(500).json({ error: "Erreur vérification paiement", details: err.message });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 2.5 : CONFIRMER ET DÉBLOQUER L'ABONNEMENT (Appelée au retour de navigation)
+// --------------------------------------------------------------------------
 app.post('/api/confirm-payment', async (req, res) => {
   try {
-    const { uid, tierKey } = req.body;
-    if (!uid || !tierKey || !['starter', 'pro'].includes(tierKey)) {
-      return res.status(400).json({ error: "Paramètres manquants ou invalides" });
+    const { uid, tierKey, reference } = req.body;
+
+    if (!uid) {
+      return res.status(400).json({ error: "UID requis" });
     }
+
+    if (reference) {
+      try {
+        const gpRes = await queryGeniusPayPayment(reference);
+        if (gpRes.success && gpRes.data && (gpRes.data.status === 'completed' || gpRes.data.status === 'success')) {
+          const pay = gpRes.data;
+          const amt = Number(pay.amount) || 0;
+          const actualTier = pay.metadata?.tierKey || tierKey || (amt >= 1000 ? 'pro' : 'starter');
+          const unl = await unlockUserInFirestore(uid, pay.customer?.phone, actualTier, 30, {
+            lastPaymentRef: reference,
+            paymentAmount: amt,
+            paymentMethod: pay.payment_method || 'wave'
+          });
+          return res.json({
+            success: true,
+            tierKey: actualTier,
+            premiumExpiresAt: unl ? unl.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+            message: `Pass ${actualTier} activé avec succès.`
+          });
+        }
+      } catch (err) {
+        console.warn('[ConfirmPayment] Erreur vérification référence:', err.message);
+      }
+    }
+
+    const actualTier = tierKey || 'starter';
     const expiresAt = Date.now() + THIRTY_DAYS_MS;
-    console.log(`[Activation] Déblocage pour ${uid} : Pass ${tierKey} pour 30 jours`);
 
-    // Mise à jour locale (data/users.json)
-    updateUserPlanLocal(uid, tierKey, expiresAt);
+    console.log(`[Activation] Déblocage manuel/retour pour ${uid} : Pass ${actualTier} pour 30 jours`);
 
-    if (db) {
-      await db.collection('users').doc(uid).set({
-        premiumPlan: tierKey,
-        plan: tierKey,
-        isPremium: true,
-        premiumExpiresAt: expiresAt,
-        subscriptionType: 'monthly',
-        lastPaymentDate: admin.firestore.FieldValue.serverTimestamp()
-      }, { merge: true });
-    }
+    await unlockUserInFirestore(uid, null, actualTier, 30);
+
     res.json({
       success: true,
-      tierKey,
+      tierKey: actualTier,
       premiumExpiresAt: expiresAt,
-      message: `Pass ${tierKey} activé avec succès pour 30 jours.`
+      message: `Pass ${actualTier} activé avec succès pour 30 jours.`
     });
+
   } catch (error) {
-    console.error("[Activation] Erreur lors de la confirmation:", error);
+    console.error("[Activation] Erreur confirmation:", error);
     res.status(500).json({ error: "Erreur serveur lors de l'activation." });
   }
 });
 
-// ROUTE 3 : WEBHOOK GENIUSPAY
+// --------------------------------------------------------------------------
+// ROUTE 3 : WEBHOOK (GeniusPay serveur à serveur en temps réel)
+// --------------------------------------------------------------------------
 app.post('/api/webhook', async (req, res) => {
   try {
     const event = req.body;
     console.log('[Webhook] Événement reçu de GeniusPay:', JSON.stringify(event));
+
     const isSuccess =
       (event && event.data && (event.data.status === 'success' || event.data.status === 'completed')) ||
       (event && event.status === 'success') ||
       (event && event.event === 'payment.successful');
 
     if (isSuccess) {
-      const metadata = event.data?.metadata || event.metadata;
-      if (metadata && metadata.uid && metadata.tierKey) {
-        const { uid, tierKey } = metadata;
-        const expiresAt = Date.now() + THIRTY_DAYS_MS;
-        
-        // Mise à jour locale
-        updateUserPlanLocal(uid, tierKey);
+      const pay = event.data || event;
+      const metadata = pay.metadata || {};
+      const amount = Number(pay.amount) || 0;
+      const tierKey = metadata.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+      const uid = metadata.uid || null;
+      const phone = pay.customer?.phone || metadata.phone || null;
+      const ref = pay.reference || null;
 
-        if (db) {
-          await db.collection('users').doc(uid).set({
-            premiumPlan: tierKey,
-            plan: tierKey,
-            isPremium: true,
-            premiumExpiresAt: expiresAt,
-            subscriptionType: 'monthly',
-            lastPaymentDate: admin.firestore.FieldValue.serverTimestamp()
-          }, { merge: true });
-        }
-        console.log(`[Webhook] Déblocage Firestore effectué pour ${uid}`);
-      }
+      console.log(`[Webhook] Déblocage automatique de ${uid || phone} pour le forfait ${tierKey} (30 jours)`);
+      await unlockUserInFirestore(uid, phone, tierKey, 30, {
+        lastPaymentRef: ref,
+        paymentAmount: amount,
+        paymentMethod: pay.payment_method || 'wave'
+      });
+      console.log("[Webhook] Profil Firestore mis à jour avec succès !");
     }
-    res.status(200).send('Webhook traité');
+
+    res.status(200).send('Webhook traité avec succès');
   } catch (error) {
-    console.error("[Webhook] Erreur:", error);
-    res.status(500).send('Erreur Webhook');
+    console.error("[Webhook] Erreur serveur Webhook:", error);
+    res.status(500).send('Erreur serveur Webhook');
   }
 });
 
-// ROUTE 4 : ENREGISTREMENT ÉLÈVE (Formule Gratuite ou Payante)
+// --------------------------------------------------------------------------
+// ROUTE 4 : ENREGISTREMENT ÉLÈVE
+// --------------------------------------------------------------------------
 app.post('/api/register', async (req, res) => {
   try {
-    const { uid, firstName, lastName, selectedClass, whatsapp, password, plan, isPremium, userAgent, premiumPlan, premiumExpiresAt } = req.body;
+    const { uid, firstName, lastName, selectedClass, whatsapp, plan, isPremium, userAgent } = req.body;
     if (!whatsapp) {
       return res.status(400).json({ error: "Numéro WhatsApp obligatoire" });
     }
-
-    const cleanWa = String(whatsapp).replace(/\D/g, '');
-    const isPrem = Boolean(isPremium && plan !== 'free');
-    const expAt = isPrem ? (Number(premiumExpiresAt) || (Date.now() + THIRTY_DAYS_MS)) : 0;
-
+    const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
     const userDoc = {
       uid: uid || ('user_' + Date.now()),
       firstName: (firstName || '').trim(),
@@ -326,42 +452,20 @@ app.post('/api/register', async (req, res) => {
       selectedClass: selectedClass || 'Non précisé',
       whatsapp: cleanWa,
       contact: cleanWa,
-      password: password || '',
       plan: plan || 'free',
-      premiumPlan: isPrem ? (premiumPlan || plan) : 'free',
-      isPremium: isPrem,
-      premiumExpiresAt: expAt,
-      subscriptionType: 'monthly',
+      isPremium: Boolean(isPremium && plan !== 'free'),
       createdAt: new Date().toISOString(),
-      userAgent: userAgent || req.headers['user-agent'] || 'Web',
-      ip: req.ip
+      userAgent: userAgent || req.headers['user-agent'] || 'Web'
     };
 
-    // 1. Sauvegarde Firestore
     if (db) {
       try {
         await db.collection('users').doc(userDoc.uid).set(userDoc, { merge: true });
-        await db.collection('inscriptions').doc(userDoc.uid).set(userDoc, { merge: true });
+        await db.collection('users').doc(cleanWa).set(userDoc, { merge: true });
       } catch (err) {
         console.warn('[Register] Erreur Firestore:', err.message);
       }
     }
-
-    // 2. Sauvegarde JSON local (data/users.json)
-    try {
-      const users = loadUsers();
-      const existingIdx = users.findIndex(u => u.uid === userDoc.uid || (u.whatsapp && u.whatsapp === cleanWa));
-      if (existingIdx >= 0) {
-        users[existingIdx] = { ...users[existingIdx], ...userDoc };
-      } else {
-        users.unshift(userDoc);
-      }
-      saveUsers(users);
-    } catch (e) {
-      console.warn('[Register] Erreur fichier local:', e.message);
-    }
-
-    console.log(`[Inscription] Nouvel élève : ${userDoc.fullName} (${userDoc.selectedClass}) - Formule : ${userDoc.plan} - Tel: ${userDoc.whatsapp}`);
     res.json({ success: true, user: userDoc });
   } catch (err) {
     console.error('[Register] Erreur:', err);
@@ -369,330 +473,199 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
+// --------------------------------------------------------------------------
 // ROUTE 4.5 : CONNEXION ÉLÈVE & RESTAURATION ABONNEMENT PAYÉ
+// --------------------------------------------------------------------------
 app.post('/api/login', async (req, res) => {
   try {
     const { whatsapp, password } = req.body;
-    if (!whatsapp) {
-      return res.status(400).json({ error: "Numéro WhatsApp obligatoire." });
-    }
+    if (!whatsapp) return res.status(400).json({ error: "Numéro WhatsApp obligatoire." });
     const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
 
     let foundUser = null;
-
-    // 1. Recherche dans data/users.json local
-    const localUsers = loadUsers();
-    foundUser = localUsers.find(u => {
-      const uWa = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
-      return uWa === cleanWa;
-    });
-
-    // 2. Recherche dans Firestore si non trouvé ou pour actualiser le statut
     if (db) {
-      try {
+      const docDirect = await db.collection('users').doc(cleanWa).get();
+      if (docDirect.exists) {
+        foundUser = { ...docDirect.data(), uid: docDirect.id };
+      }
+
+      if (!foundUser) {
         const snap = await db.collection('users').get();
         snap.forEach(doc => {
           const data = doc.data();
           const dWa = String(data.whatsapp || data.contact || '').replace(/\D/g, '').slice(-10);
           if (dWa === cleanWa) {
-            foundUser = { ...(foundUser || {}), ...data, uid: data.uid || doc.id };
+            foundUser = { ...data, uid: data.uid || doc.id };
           }
         });
-      } catch (err) {
-        console.warn('[Login] Erreur lecture Firestore:', err.message);
       }
     }
 
     if (!foundUser) {
-      return res.status(404).json({ error: "Aucun compte trouvé avec ce numéro WhatsApp. Veuillez vous inscrire d'abord." });
+      return res.status(404).json({ error: "Aucun compte trouvé avec ce numéro WhatsApp." });
     }
 
-    // Vérification mot de passe si disponible
     if (foundUser.password && password && foundUser.password !== password) {
-      return res.status(401).json({ error: "Mot de passe incorrect. Veuillez réessayer." });
+      return res.status(401).json({ error: "Mot de passe incorrect." });
     }
 
-    // Restauration de l'abonnement actif
     const now = Date.now();
     const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
     const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
     const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
     const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
 
-    const safeProfile = {
-      uid: foundUser.uid || ('user_' + Date.now()),
-      firstName: foundUser.firstName || 'Élève',
-      lastName: foundUser.lastName || '',
-      selectedClass: foundUser.selectedClass || '3eme',
-      whatsapp: cleanWa,
-      password: password || foundUser.password || '',
-      isPremium: isPremium,
-      premiumPlan: premiumPlan,
-      premiumExpiresAt: effectiveExpiresAt,
-      subscriptionType: foundUser.subscriptionType || 'monthly',
-      createdAt: foundUser.createdAt || new Date().toISOString()
-    };
-
-    console.log(`[Connexion] ${safeProfile.firstName} ${safeProfile.lastName} connecté (+225 ${cleanWa}) - Statut: ${isPremium ? 'Pass ' + premiumPlan + ' ACTIF' : 'Gratuit'}`);
-    res.json({ success: true, profile: safeProfile });
+    res.json({
+      success: true,
+      profile: {
+        uid: foundUser.uid || ('user_' + Date.now()),
+        firstName: foundUser.firstName || 'Élève',
+        lastName: foundUser.lastName || '',
+        fullName: foundUser.fullName || `${foundUser.firstName || ''} ${foundUser.lastName || ''}`.trim(),
+        selectedClass: foundUser.selectedClass || '3eme',
+        whatsapp: cleanWa,
+        password: password || foundUser.password || '',
+        isPremium: isPremium,
+        premiumPlan: premiumPlan,
+        premiumExpiresAt: effectiveExpiresAt,
+        subscriptionType: foundUser.subscriptionType || 'monthly'
+      }
+    });
   } catch (err) {
-    console.error('[Login] Erreur:', err);
-    res.status(500).json({ error: "Erreur serveur lors de la connexion." });
+    res.status(500).json({ error: "Erreur connexion" });
   }
 });
 
-// ROUTE 5 : API ADMIN POUR LE TABLEAU DE BORD (Liste, Plans, Classes)
+// --------------------------------------------------------------------------
+// ROUTE 5 : API ADMIN - UTILISATEURS UNIFIÉS (users + waitlist)
+// --------------------------------------------------------------------------
 app.get('/api/admin/users', async (req, res) => {
   try {
     const userMap = new Map();
-
-    // 1. Lecture locale d'abord
-    const localUsers = loadUsers();
-    localUsers.forEach(u => {
-      const key = (u.whatsapp || u.contact || u.uid || '').slice(-10);
-      if (key) userMap.set(key, u);
-    });
-
-    // 2. Lecture Firestore si disponible
     if (db) {
-      try {
-        const snap = await db.collection('users').get();
-        snap.forEach(doc => {
-          const data = doc.data();
-          const key = (data.whatsapp || data.contact || data.uid || doc.id).slice(-10);
-          if (key) {
-            const existing = userMap.get(key) || {};
-            userMap.set(key, { ...existing, ...data });
-          }
-        });
-      } catch (err) {
-        console.warn('[Admin API] Erreur Firestore users:', err.message);
-      }
+      const snapUsers = await db.collection('users').get();
+      snapUsers.forEach(doc => {
+        const d = doc.data();
+        const phone = String(d.whatsapp || d.contact || '').replace(/\D/g, '').slice(-10);
+        if (phone) {
+          userMap.set(phone, { ...d, contact: phone, whatsapp: phone, id: doc.id });
+        }
+      });
+
+      const snapWait = await db.collection('waitlist').get();
+      snapWait.forEach(doc => {
+        const d = doc.data();
+        const phone = String(d.contact || '').replace(/\D/g, '').slice(-10);
+        if (phone && !userMap.has(phone)) {
+          userMap.set(phone, {
+            fullName: 'Inscrit VIP',
+            firstName: 'Élève',
+            lastName: 'VIP',
+            contact: phone,
+            whatsapp: phone,
+            selectedClass: 'Non précisé',
+            plan: 'free',
+            isPremium: false,
+            createdAt: d.timestamp ? (d.timestamp.toDate ? d.timestamp.toDate().toISOString() : d.timestamp) : new Date().toISOString(),
+            userAgent: d.userAgent || 'Web',
+            id: doc.id
+          });
+        }
+      });
     }
 
-    const allUsers = Array.from(userMap.values());
-    allUsers.sort((a,b) => {
-      const da = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-      const dbDate = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-      return dbDate - da;
-    });
-
-    // Statistiques par formule
-    let freeCount = 0;
-    let starterCount = 0;
-    let proCount = 0;
-    const byClass = {};
-
-    allUsers.forEach(u => {
-      const p = (u.plan || (u.isPremium ? (u.premiumPlan || 'pro') : 'free')).toLowerCase();
-      if (p === 'starter') starterCount++;
-      else if (p === 'pro') proCount++;
-      else freeCount++;
-
-      const cls = u.selectedClass || 'Autre';
-      byClass[cls] = (byClass[cls] || 0) + 1;
-    });
-
-    res.json({
-      success: true,
-      stats: {
-        total: allUsers.length,
-        free: freeCount,
-        starter: starterCount,
-        pro: proCount,
-        byClass
-      },
-      users: allUsers
-    });
+    const users = Array.from(userMap.values());
+    res.json({ success: true, users, count: users.length });
   } catch (err) {
-    console.error('[Admin API] Erreur:', err);
+    console.error("[Admin Users] Erreur:", err);
     res.status(500).json({ error: "Erreur récupération utilisateurs" });
   }
 });
 
-app.use('/public', express.static(path.join(__dirname, 'public'), {
-  maxAge: '7d',
-  etag: true,
-}));
-app.use('/pdfs', express.static(COURS_DIR, {
-  maxAge: '1d',
-  etag: true,
-}));
-
-// Ensure HTML sitemap is not indexed (keep for users only)
-app.get('/sitemap.html', (req, res) => {
-  res.setHeader('X-Robots-Tag', 'noindex, follow');
-  res.sendFile(path.join(__dirname, 'public', 'sitemap.html'));
-});
-
-// API: Get structure (classes > matières > leçons)
-app.get('/api/structure', (req, res) => {
-  res.setHeader('Cache-Control', 'public, max-age=60');
-  const structure = {};
-  
-  if (!fs.existsSync(FICHES_DIR)) return res.json({});
-  
-  const classes = fs.readdirSync(FICHES_DIR).filter(d => 
-    fs.statSync(path.join(FICHES_DIR, d)).isDirectory() && ALLOWED_SUBJECTS[d]
-  );
-
-  for (const cls of classes) {
-    structure[cls] = {};
-    const clsDir = path.join(FICHES_DIR, cls);
-    const subjects = fs.readdirSync(clsDir).filter(d => 
-      fs.statSync(path.join(clsDir, d)).isDirectory() && ALLOWED_SUBJECTS[cls].includes(d)
-    );
-
-    for (const subject of subjects) {
-      const subDir = path.join(clsDir, subject);
-      const fiches = fs.readdirSync(subDir)
-        .filter(f => f.endsWith('.html'))
-        .map(f => ({
-          file: f,
-          name: f.replace('Fiche_', '').replace('.html', ''),
-          path: `${cls}/${subject}/${f}`,
-        }));
-      structure[cls][subject] = fiches;
+// --------------------------------------------------------------------------
+// ROUTE 6 : API ADMIN - ATTRIBUER OU MODIFIER UN ABONNEMENT EN 1 CLIC
+// --------------------------------------------------------------------------
+app.post('/api/admin/set-plan', async (req, res) => {
+  try {
+    const { target, plan, days, reason, fullName, selectedClass } = req.body;
+    if (!target) {
+      return res.status(400).json({ error: "Numéro WhatsApp ou UID requis." });
     }
-  }
 
-  res.json(structure);
-});
+    const cleanTarget = String(target).replace(/\D/g, '').slice(-10);
+    const chosenPlan = plan || 'pro';
+    const isFree = chosenPlan === 'free';
+    const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : 30);
+    const durationMs = durationDays * 24 * 60 * 60 * 1000;
+    const expiresAt = isFree ? 0 : (Date.now() + durationMs);
 
-// API: Get a specific fiche content (HTML direct)
-app.get('/api/fiche/:cls/:subject/:file', (req, res) => {
-  res.setHeader('Cache-Control', 'public, max-age=300');
-  const { cls, subject, file } = req.params;
-  
-  if (!ALLOWED_SUBJECTS[cls] || !ALLOWED_SUBJECTS[cls].includes(subject) || !/^[a-zA-Z0-9_.-]+$/.test(file) || file.includes('..')) {
-    return res.status(400).json({ error: 'Paramètres invalides' });
-  }
+    const updateData = {
+      isPremium: !isFree,
+      plan: chosenPlan,
+      premiumPlan: chosenPlan,
+      premiumExpiresAt: expiresAt,
+      subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+      adminGranted: true,
+      adminGrantReason: reason || 'Attribué par l\'administrateur',
+      adminGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    };
 
-  const fichePath = path.join(FICHES_DIR, cls, subject, file);
-  
-  if (!fs.existsSync(fichePath)) {
-    return res.status(404).json({ error: 'Fiche non trouvée' });
-  }
+    if (fullName) updateData.fullName = fullName;
+    if (selectedClass) updateData.selectedClass = selectedClass;
 
-  const rawHtml = fs.readFileSync(fichePath, 'utf8');
-  const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
-  const html = bodyMatch ? bodyMatch[1] : rawHtml;
-  
-  const pdfName = file.replace('Fiche_', '').replace('.html', '.pdf');
-  const pdfPath = path.join(COURS_DIR, cls, subject, pdfName);
-  const hasPdf = fs.existsSync(pdfPath);
+    if (db) {
+      await db.collection('users').doc(target).set(updateData, { merge: true });
 
-  res.json({ 
-    html, 
-    hasPdf,
-    pdfUrl: hasPdf ? `/pdfs/${encodeURIComponent(cls)}/${encodeURIComponent(subject)}/${encodeURIComponent(pdfName)}` : null,
-  });
-});
+      if (cleanTarget.length === 10) {
+        await db.collection('users').doc(cleanTarget).set({
+          ...updateData,
+          whatsapp: cleanTarget,
+          contact: cleanTarget
+        }, { merge: true });
 
-// API: Stats
-app.get('/api/stats', (req, res) => {
-  res.setHeader('Cache-Control', 'public, max-age=60');
-  let totalFiches = 0;
-  let totalPdfs = 0;
-  const classStats = {};
-
-  if (!fs.existsSync(FICHES_DIR)) return res.json({ totalFiches: 0, totalPdfs: 0, classStats: {} });
-
-  const classes = fs.readdirSync(FICHES_DIR).filter(d => 
-    fs.statSync(path.join(FICHES_DIR, d)).isDirectory() && ALLOWED_SUBJECTS[d]
-  );
-
-  for (const cls of classes) {
-    classStats[cls] = { subjects: 0, fiches: 0, pdfs: 0 };
-    const clsDir = path.join(FICHES_DIR, cls);
-    const subjects = fs.readdirSync(clsDir).filter(d => 
-      fs.statSync(path.join(clsDir, d)).isDirectory() && ALLOWED_SUBJECTS[cls].includes(d)
-    );
-    classStats[cls].subjects = subjects.length;
-
-    for (const subject of subjects) {
-      const subDir = path.join(clsDir, subject);
-      const fiches = fs.readdirSync(subDir).filter(f => f.endsWith('.html'));
-      classStats[cls].fiches += fiches.length;
-      totalFiches += fiches.length;
-
-      const pdfDir = path.join(COURS_DIR, cls, subject);
-      if (fs.existsSync(pdfDir)) {
-        const pdfs = fs.readdirSync(pdfDir).filter(f => f.endsWith('.pdf'));
-        classStats[cls].pdfs += pdfs.length;
-        totalPdfs += pdfs.length;
+        const snap = await db.collection('users').where('whatsapp', '==', cleanTarget).get();
+        snap.forEach(async doc => {
+          await doc.ref.set(updateData, { merge: true });
+        });
       }
     }
-  }
 
-  res.json({ totalFiches, totalPdfs, classStats });
+    console.log(`[Admin SetPlan] 👑 Forfait '${chosenPlan}' accordé à ${target} (${durationDays} jours).`);
+
+    res.json({
+      success: true,
+      plan: chosenPlan,
+      isPremium: !isFree,
+      premiumExpiresAt: expiresAt,
+      message: `Formule ${chosenPlan} activée avec succès pour ${durationDays} jours.`
+    });
+  } catch (err) {
+    console.error('[Admin SetPlan] Erreur:', err);
+    res.status(500).json({ error: "Erreur attribution abonnement", details: err.message });
+  }
 });
 
-// API: Download fiche as PDF (printable)
-app.get('/api/download/:cls/:subject/:file', async (req, res) => {
-  const { cls, subject, file } = req.params;
-  
-  if (!ALLOWED_SUBJECTS[cls] || !ALLOWED_SUBJECTS[cls].includes(subject) || !/^[a-zA-Z0-9_.-]+$/.test(file) || file.includes('..')) {
-    return res.status(400).send('Paramètres invalides');
-  }
-
-  const fichePath = path.join(FICHES_DIR, cls, subject, file);
-  
-  if (!fs.existsSync(fichePath)) {
-    return res.status(404).send('Fiche non trouvée');
-  }
-
+// --------------------------------------------------------------------------
+// ROUTE 7 : API ADMIN - SUIVI DES PAIEMENTS RÉELS GENIUSPAY & WAVE EN DIRECT
+// --------------------------------------------------------------------------
+app.get('/api/admin/transactions', async (req, res) => {
   try {
-    const fullHtml = fs.readFileSync(fichePath, 'utf8');
-
-    const browser = await puppeteer.launch({
-      executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-      headless: true,
-      args: ['--no-sandbox'],
-    });
-    const page = await browser.newPage();
-    await page.setContent(fullHtml, { waitUntil: 'networkidle0', timeout: 15000 });
-    const pdfBuffer = await page.pdf({
-      format: 'A4',
-      margin: { top: '15mm', bottom: '15mm', left: '12mm', right: '12mm' },
-      printBackground: true,
-    });
-    await browser.close();
-
-    const downloadName = file.replace('.html', '.pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(downloadName)}"`);
-    res.setHeader('Content-Type', 'application/pdf');
-    res.send(pdfBuffer);
-  } catch (e) {
-    console.error('PDF error:', e.message);
-    res.status(500).send('Erreur lors de la génération du PDF');
+    const page = parseInt(req.query.page) || 1;
+    const perPage = parseInt(req.query.per_page) || 40;
+    const result = await fetchGeniusPayPayments(page, perPage);
+    res.json(result);
+  } catch (err) {
+    console.error('[Admin Transactions] Erreur:', err.message);
+    res.status(500).json({ error: "Impossible de récupérer les transactions GeniusPay", details: err.message });
   }
 });
 
-// Clean routes for dedicated pages
-app.get(['/inscription', '/register', '/pass'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'inscription.html'));
-});
+// Santé du serveur
+app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
+app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
-app.get(['/connexion', '/login'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'connexion.html'));
-});
-
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
-});
-
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: 0,
-  etag: false,
-}));
-
-// SPA fallback — serve index.html for non-file routes
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Serveur ResumeCI actif sur http://0.0.0.0:${PORT} (http://localhost:${PORT})`);
+  console.log(`Serveur ResumeCI actif sur http://0.0.0.0:${PORT}`);
 });

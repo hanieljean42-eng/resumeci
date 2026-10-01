@@ -46,20 +46,126 @@ try {
   }
 } catch (e) {}
 
-// Clés d'API GeniusPay (lues depuis l'environnement ou .env)
+// Clés d'API GeniusPay
 const GENIUSPAY_PUBLIC_KEY = process.env.GENIUSPAY_PUBLIC_KEY || '';
 const GENIUSPAY_SECRET_KEY = process.env.GENIUSPAY_SECRET_KEY || '';
 const GENIUSPAY_API_URL = process.env.GENIUSPAY_API_URL || 'https://geniuspay.ci/api/v1/merchant/payments';
 
-// Forfaits mensuels (30 jours)
+// Forfaits
 const PLANS = {
-  starter: { name: 'Starter (Mensuel)', price: 500, available: true },
-  pro: { name: 'Pro (Mensuel)', price: 1000, available: true },
-  elite: { name: 'Élite', price: 2000, available: false } // Bloqué
+  starter: { name: 'Starter (Mensuel)', price: 500, days: 30, available: true },
+  pro: { name: 'Pro (Mensuel)', price: 1000, days: 30, available: true },
+  annual: { name: 'Annuel (365 jours)', price: 10000, days: 365, available: true },
+  elite: { name: 'Élite', price: 2000, days: 30, available: false }
 };
 
-// Durée de l'abonnement en millisecondes (30 jours)
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Helper: Débloquer un compte dans Firestore de façon universelle (par UID et/ou Téléphone)
+async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, extra = {}) {
+  if (!db) {
+    console.warn('[Unlock] Firestore non initialisé.');
+    return null;
+  }
+  const durationMs = durationDays * 24 * 60 * 60 * 1000;
+  const expiresAt = Date.now() + durationMs;
+  const updateData = {
+    premiumPlan: tierKey || 'pro',
+    plan: tierKey || 'pro',
+    isPremium: true,
+    premiumExpiresAt: expiresAt,
+    subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+    lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    ...extra
+  };
+
+  // 1. Débloquer par UID si renseigné
+  if (uid) {
+    try {
+      await db.collection('users').doc(uid).set(updateData, { merge: true });
+    } catch (e) {
+      console.warn('[Unlock] Erreur doc UID:', e.message);
+    }
+  }
+
+  // 2. Débloquer par Téléphone (format 10 chiffres ivoirien)
+  if (phone) {
+    const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
+    if (cleanPhone.length === 10) {
+      try {
+        await db.collection('users').doc(cleanPhone).set({
+          ...updateData,
+          whatsapp: cleanPhone,
+          contact: cleanPhone
+        }, { merge: true });
+      } catch (e) {}
+
+      // Mettre à jour tous les profils existants associés à ce contact
+      try {
+        const snap = await db.collection('users').where('whatsapp', '==', cleanPhone).get();
+        snap.forEach(async doc => {
+          await doc.ref.set(updateData, { merge: true });
+        });
+      } catch (e) {}
+    }
+  }
+
+  console.log(`[Unlock] ✅ Compte débloqué avec succès: UID=${uid} / Phone=${phone} -> Pass ${tierKey} (${durationDays}j)`);
+  return { expiresAt, tierKey };
+}
+
+// Helper: Requête de consultation d'une transaction GeniusPay
+function queryGeniusPayPayment(reference) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(`${GENIUSPAY_API_URL}/${reference}`, {
+      family: 4,
+      headers: {
+        'X-API-Key': GENIUSPAY_PUBLIC_KEY,
+        'X-API-Secret': GENIUSPAY_SECRET_KEY
+      },
+      timeout: 20000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Réponse GeniusPay invalide: ${data}`));
+        }
+      });
+    });
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
+  });
+}
+
+// Helper: Lister les paiements récents GeniusPay
+function fetchGeniusPayPayments(page = 1, perPage = 30) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(`${GENIUSPAY_API_URL}?page=${page}&per_page=${perPage}`, {
+      family: 4,
+      headers: {
+        'X-API-Key': GENIUSPAY_PUBLIC_KEY,
+        'X-API-Secret': GENIUSPAY_SECRET_KEY
+      },
+      timeout: 20000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Réponse GeniusPay invalide: ${data}`));
+        }
+      });
+    });
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
+  });
+}
 
 // --------------------------------------------------------------------------
 // ROUTE 1 : INITIER LE PAIEMENT (Frontend)
@@ -74,7 +180,7 @@ app.post('/api/pay', async (req, res) => {
 
     if (!PLANS[tierKey].available) {
       return res.status(403).json({
-        error: "Cette formule (Professeur IA & Sujets d'examen) est actuellement en cours de finalisation. Veuillez choisir le Pack Starter (500F/mois) ou Pro (1000F/mois)."
+        error: "Cette formule est actuellement en cours de finalisation."
       });
     }
 
@@ -95,11 +201,11 @@ app.post('/api/pay', async (req, res) => {
 
     const chosenMethod = (paymentMethod || 'wave').toLowerCase();
 
-    // Payload GeniusPay avec Côte d'Ivoire par défaut
+    // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
     const payload = {
       amount: plan.price,
       currency: "XOF",
-      description: `Pass Réussite ${plan.name} - 30 jours`,
+      description: `Pass Réussite ${plan.name} - ResumeCI`,
       country: "CI",
       customer: {
         name: customerName || 'Élève',
@@ -109,10 +215,14 @@ app.post('/api/pay', async (req, res) => {
       },
       metadata: {
         uid: uid,
+        phone: formattedPhone,
+        customerPhone: cleanPhone.slice(-10),
         tierKey: tierKey,
         type: 'monthly',
         method: chosenMethod
       },
+      webhook_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
+      callback_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
       success_url: redirectUrl,
       return_url: redirectUrl,
       cancel_url: `${origin}/?payment=cancelled`
@@ -129,7 +239,7 @@ app.post('/api/pay', async (req, res) => {
       const postData = JSON.stringify(payload);
       const req = https.request(GENIUSPAY_API_URL, {
         method: 'POST',
-        family: 4, // Forcer IPv4 pour éviter les timeouts DNS
+        family: 4,
         headers: {
           'X-API-Key': GENIUSPAY_PUBLIC_KEY,
           'X-API-Secret': GENIUSPAY_SECRET_KEY,
@@ -182,43 +292,113 @@ app.post('/api/pay', async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
-// ROUTE 2 : CONFIRMER ET DÉBLOQUER L'ABONNEMENT (Appelée au retour de paiement)
+// ROUTE 2 : VÉRIFICATION DYNAMIQUE D'UN PAIEMENT (Appelée en continu pour Wave)
+// --------------------------------------------------------------------------
+app.get('/api/check-payment/:ref', async (req, res) => {
+  try {
+    const ref = req.params.ref;
+    if (!ref) return res.status(400).json({ error: "Référence de transaction requise." });
+
+    const gpRes = await queryGeniusPayPayment(ref);
+    if (!gpRes.success || !gpRes.data) {
+      return res.status(404).json({ success: false, error: "Paiement non trouvé chez GeniusPay." });
+    }
+
+    const pay = gpRes.data;
+    const isCompleted = pay.status === 'completed' || pay.status === 'success';
+    const amount = Number(pay.amount) || 0;
+    const meta = pay.metadata || {};
+    const tierKey = meta.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+    const uid = meta.uid || null;
+    const phone = pay.customer?.phone || meta.phone || null;
+
+    if (isCompleted) {
+      const result = await unlockUserInFirestore(uid, phone, tierKey, 30, {
+        lastPaymentRef: ref,
+        paymentAmount: amount,
+        paymentMethod: pay.payment_method || 'wave'
+      });
+
+      return res.json({
+        success: true,
+        status: 'completed',
+        tierKey: tierKey,
+        isPremium: true,
+        premiumExpiresAt: result ? result.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+        customerName: pay.customer?.name || 'Élève',
+        amount: amount
+      });
+    }
+
+    return res.json({
+      success: true,
+      status: pay.status || 'pending',
+      amount: amount
+    });
+  } catch (err) {
+    console.error('[CheckPayment] Erreur:', err.message);
+    res.status(500).json({ error: "Erreur vérification paiement", details: err.message });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 2.5 : CONFIRMER ET DÉBLOQUER L'ABONNEMENT (Appelée au retour de navigation)
 // --------------------------------------------------------------------------
 app.post('/api/confirm-payment', async (req, res) => {
   try {
-    const { uid, tierKey } = req.body;
+    const { uid, tierKey, reference } = req.body;
 
-    if (!uid || !tierKey || !['starter', 'pro'].includes(tierKey)) {
-      return res.status(400).json({ error: "Paramètres manquants ou invalides" });
+    if (!uid) {
+      return res.status(400).json({ error: "UID requis" });
     }
 
+    // Si une référence de transaction est passée, vérifier d'abord son statut réel
+    if (reference) {
+      try {
+        const gpRes = await queryGeniusPayPayment(reference);
+        if (gpRes.success && gpRes.data && (gpRes.data.status === 'completed' || gpRes.data.status === 'success')) {
+          const pay = gpRes.data;
+          const amt = Number(pay.amount) || 0;
+          const actualTier = pay.metadata?.tierKey || tierKey || (amt >= 1000 ? 'pro' : 'starter');
+          const unl = await unlockUserInFirestore(uid, pay.customer?.phone, actualTier, 30, {
+            lastPaymentRef: reference,
+            paymentAmount: amt,
+            paymentMethod: pay.payment_method || 'wave'
+          });
+          return res.json({
+            success: true,
+            tierKey: actualTier,
+            premiumExpiresAt: unl ? unl.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+            message: `Pass ${actualTier} activé avec succès.`
+          });
+        }
+      } catch (err) {
+        console.warn('[ConfirmPayment] Erreur vérification référence:', err.message);
+      }
+    }
+
+    const actualTier = tierKey || 'starter';
     const expiresAt = Date.now() + THIRTY_DAYS_MS;
 
-    console.log(`[Activation] Déblocage manuel/retour pour ${uid} : Pass ${tierKey} pour 30 jours (Expire le ${new Date(expiresAt).toLocaleDateString()})`);
+    console.log(`[Activation] Déblocage manuel/retour pour ${uid} : Pass ${actualTier} pour 30 jours`);
 
-    await db.collection('users').doc(uid).set({
-      premiumPlan: tierKey,
-      isPremium: true,
-      premiumExpiresAt: expiresAt,
-      subscriptionType: 'monthly',
-      lastPaymentDate: admin.firestore.FieldValue.serverTimestamp()
-    }, { merge: true });
+    await unlockUserInFirestore(uid, null, actualTier, 30);
 
     res.json({
       success: true,
-      tierKey: tierKey,
+      tierKey: actualTier,
       premiumExpiresAt: expiresAt,
-      message: `Pass ${tierKey} activé avec succès pour 30 jours.`
+      message: `Pass ${actualTier} activé avec succès pour 30 jours.`
     });
 
   } catch (error) {
-    console.error("[Activation] Erreur lors de la confirmation:", error);
+    console.error("[Activation] Erreur confirmation:", error);
     res.status(500).json({ error: "Erreur serveur lors de l'activation." });
   }
 });
 
 // --------------------------------------------------------------------------
-// ROUTE 3 : WEBHOOK (GeniusPay serveur à serveur en production)
+// ROUTE 3 : WEBHOOK (GeniusPay serveur à serveur en temps réel)
 // --------------------------------------------------------------------------
 app.post('/api/webhook', async (req, res) => {
   try {
@@ -231,40 +411,40 @@ app.post('/api/webhook', async (req, res) => {
       (event && event.event === 'payment.successful');
 
     if (isSuccess) {
-      const metadata = event.data?.metadata || event.metadata;
+      const pay = event.data || event;
+      const metadata = pay.metadata || {};
+      const amount = Number(pay.amount) || 0;
+      const tierKey = metadata.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+      const uid = metadata.uid || null;
+      const phone = pay.customer?.phone || metadata.phone || null;
+      const ref = pay.reference || null;
 
-      if (metadata && metadata.uid && metadata.tierKey) {
-        const { uid, tierKey } = metadata;
-        const expiresAt = Date.now() + THIRTY_DAYS_MS;
-
-        console.log(`[Webhook] Déblocage de ${uid} pour le forfait ${tierKey} (30 jours)`);
-
-        await db.collection('users').doc(uid).set({
-          premiumPlan: tierKey,
-          isPremium: true,
-          premiumExpiresAt: expiresAt,
-          subscriptionType: 'monthly',
-          lastPaymentDate: admin.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-
-        console.log("[Webhook] Profil Firestore mis à jour avec succès !");
-      }
+      console.log(`[Webhook] Déblocage automatique de ${uid || phone} pour le forfait ${tierKey} (30 jours)`);
+      await unlockUserInFirestore(uid, phone, tierKey, 30, {
+        lastPaymentRef: ref,
+        paymentAmount: amount,
+        paymentMethod: pay.payment_method || 'wave'
+      });
+      console.log("[Webhook] Profil Firestore mis à jour avec succès !");
     }
 
-    res.status(200).send('Webhook traité');
+    res.status(200).send('Webhook traité avec succès');
   } catch (error) {
     console.error("[Webhook] Erreur serveur Webhook:", error);
     res.status(500).send('Erreur serveur Webhook');
   }
 });
+
+// --------------------------------------------------------------------------
 // ROUTE 4 : ENREGISTREMENT ÉLÈVE
+// --------------------------------------------------------------------------
 app.post('/api/register', async (req, res) => {
   try {
     const { uid, firstName, lastName, selectedClass, whatsapp, plan, isPremium, userAgent } = req.body;
     if (!whatsapp) {
       return res.status(400).json({ error: "Numéro WhatsApp obligatoire" });
     }
-    const cleanWa = String(whatsapp).replace(/\D/g, '');
+    const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
     const userDoc = {
       uid: uid || ('user_' + Date.now()),
       firstName: (firstName || '').trim(),
@@ -282,6 +462,7 @@ app.post('/api/register', async (req, res) => {
     if (db) {
       try {
         await db.collection('users').doc(userDoc.uid).set(userDoc, { merge: true });
+        await db.collection('users').doc(cleanWa).set(userDoc, { merge: true });
       } catch (err) {
         console.warn('[Register] Erreur Firestore:', err.message);
       }
@@ -293,7 +474,9 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
+// --------------------------------------------------------------------------
 // ROUTE 4.5 : CONNEXION ÉLÈVE & RESTAURATION ABONNEMENT PAYÉ
+// --------------------------------------------------------------------------
 app.post('/api/login', async (req, res) => {
   try {
     const { whatsapp, password } = req.body;
@@ -302,14 +485,23 @@ app.post('/api/login', async (req, res) => {
 
     let foundUser = null;
     if (db) {
-      const snap = await db.collection('users').get();
-      snap.forEach(doc => {
-        const data = doc.data();
-        const dWa = String(data.whatsapp || data.contact || '').replace(/\D/g, '').slice(-10);
-        if (dWa === cleanWa) {
-          foundUser = { ...data, uid: data.uid || doc.id };
-        }
-      });
+      // 1. Chercher par id = cleanWa
+      const docDirect = await db.collection('users').doc(cleanWa).get();
+      if (docDirect.exists) {
+        foundUser = { ...docDirect.data(), uid: docDirect.id };
+      }
+
+      // 2. Si pas trouvé, chercher dans toute la collection
+      if (!foundUser) {
+        const snap = await db.collection('users').get();
+        snap.forEach(doc => {
+          const data = doc.data();
+          const dWa = String(data.whatsapp || data.contact || '').replace(/\D/g, '').slice(-10);
+          if (dWa === cleanWa) {
+            foundUser = { ...data, uid: data.uid || doc.id };
+          }
+        });
+      }
     }
 
     if (!foundUser) {
@@ -332,6 +524,7 @@ app.post('/api/login', async (req, res) => {
         uid: foundUser.uid || ('user_' + Date.now()),
         firstName: foundUser.firstName || 'Élève',
         lastName: foundUser.lastName || '',
+        fullName: foundUser.fullName || `${foundUser.firstName || ''} ${foundUser.lastName || ''}`.trim(),
         selectedClass: foundUser.selectedClass || '3eme',
         whatsapp: cleanWa,
         password: password || foundUser.password || '',
@@ -346,19 +539,138 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// ROUTE 5 : API ADMIN UTILISATEURS
+// --------------------------------------------------------------------------
+// ROUTE 5 : API ADMIN - UTILISATEURS UNIFIÉS (users + waitlist)
+// --------------------------------------------------------------------------
 app.get('/api/admin/users', async (req, res) => {
   try {
-    const users = [];
+    const userMap = new Map();
     if (db) {
-      const snap = await db.collection('users').get();
-      snap.forEach(doc => users.push(doc.data()));
+      // 1. Charger 'users'
+      const snapUsers = await db.collection('users').get();
+      snapUsers.forEach(doc => {
+        const d = doc.data();
+        const phone = String(d.whatsapp || d.contact || '').replace(/\D/g, '').slice(-10);
+        if (phone) {
+          userMap.set(phone, { ...d, contact: phone, whatsapp: phone, id: doc.id });
+        }
+      });
+
+      // 2. Charger 'waitlist' pour les inscrits de première heure
+      const snapWait = await db.collection('waitlist').get();
+      snapWait.forEach(doc => {
+        const d = doc.data();
+        const phone = String(d.contact || '').replace(/\D/g, '').slice(-10);
+        if (phone && !userMap.has(phone)) {
+          userMap.set(phone, {
+            fullName: 'Inscrit VIP',
+            firstName: 'Élève',
+            lastName: 'VIP',
+            contact: phone,
+            whatsapp: phone,
+            selectedClass: 'Non précisé',
+            plan: 'free',
+            isPremium: false,
+            createdAt: d.timestamp ? (d.timestamp.toDate ? d.timestamp.toDate().toISOString() : d.timestamp) : new Date().toISOString(),
+            userAgent: d.userAgent || 'Web',
+            id: doc.id
+          });
+        }
+      });
     }
-    res.json({ success: true, users });
+
+    const users = Array.from(userMap.values());
+    res.json({ success: true, users, count: users.length });
   } catch (err) {
-    res.status(500).json({ error: "Erreur admin" });
+    console.error("[Admin Users] Erreur:", err);
+    res.status(500).json({ error: "Erreur récupération utilisateurs" });
   }
 });
+
+// --------------------------------------------------------------------------
+// ROUTE 6 : API ADMIN - ATTRIBUER OU MODIFIER UN ABONNEMENT EN 1 CLIC
+// --------------------------------------------------------------------------
+app.post('/api/admin/set-plan', async (req, res) => {
+  try {
+    const { target, plan, days, reason, fullName, selectedClass } = req.body;
+    if (!target) {
+      return res.status(400).json({ error: "Numéro WhatsApp ou UID requis." });
+    }
+
+    const cleanTarget = String(target).replace(/\D/g, '').slice(-10);
+    const chosenPlan = plan || 'pro';
+    const isFree = chosenPlan === 'free';
+    const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : 30);
+    const durationMs = durationDays * 24 * 60 * 60 * 1000;
+    const expiresAt = isFree ? 0 : (Date.now() + durationMs);
+
+    const updateData = {
+      isPremium: !isFree,
+      plan: chosenPlan,
+      premiumPlan: chosenPlan,
+      premiumExpiresAt: expiresAt,
+      subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+      adminGranted: true,
+      adminGrantReason: reason || 'Attribué par l\'administrateur',
+      adminGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    };
+
+    if (fullName) updateData.fullName = fullName;
+    if (selectedClass) updateData.selectedClass = selectedClass;
+
+    if (db) {
+      // 1. Mettre à jour par target (UID ou Doc direct)
+      await db.collection('users').doc(target).set(updateData, { merge: true });
+
+      // 2. Si c'est un numéro ivoirien à 10 chiffres, mettre à jour le document correspondant
+      if (cleanTarget.length === 10) {
+        await db.collection('users').doc(cleanTarget).set({
+          ...updateData,
+          whatsapp: cleanTarget,
+          contact: cleanTarget
+        }, { merge: true });
+
+        const snap = await db.collection('users').where('whatsapp', '==', cleanTarget).get();
+        snap.forEach(async doc => {
+          await doc.ref.set(updateData, { merge: true });
+        });
+      }
+    }
+
+    console.log(`[Admin SetPlan] 👑 Forfait '${chosenPlan}' accordé à ${target} (${durationDays} jours).`);
+
+    res.json({
+      success: true,
+      plan: chosenPlan,
+      isPremium: !isFree,
+      premiumExpiresAt: expiresAt,
+      message: `Formule ${chosenPlan} activée avec succès pour ${durationDays} jours.`
+    });
+  } catch (err) {
+    console.error('[Admin SetPlan] Erreur:', err);
+    res.status(500).json({ error: "Erreur attribution abonnement", details: err.message });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 7 : API ADMIN - SUIVI DES PAIEMENTS RÉELS GENIUSPAY & WAVE EN DIRECT
+// --------------------------------------------------------------------------
+app.get('/api/admin/transactions', async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const perPage = parseInt(req.query.per_page) || 40;
+    const result = await fetchGeniusPayPayments(page, perPage);
+    res.json(result);
+  } catch (err) {
+    console.error('[Admin Transactions] Erreur:', err.message);
+    res.status(500).json({ error: "Impossible de récupérer les transactions GeniusPay", details: err.message });
+  }
+});
+
+// Santé du serveur
+app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
+app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {

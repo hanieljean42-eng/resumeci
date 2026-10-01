@@ -253,49 +253,82 @@ async function loadData() {
   checkForUpdates();
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get('payment');
-  if (paymentStatus === 'success' || urlParams.get('payment_success')) {
-    const tier = urlParams.get('tier') || 'starter';
+  const storedPendingRef = sessionStorage.getItem('last_payment_reference');
+  const storedPendingTier = sessionStorage.getItem('last_payment_tier') || 'pro';
+
+  if (paymentStatus === 'success' || urlParams.get('payment_success') || storedPendingRef) {
+    const tier = urlParams.get('tier') || storedPendingTier || 'starter';
     const targetUid = urlParams.get('uid') || window.USER_PROFILE?.uid;
-    const reference = urlParams.get('reference') || urlParams.get('payment_reference') || urlParams.get('ref') || sessionStorage.getItem('last_payment_reference') || '';
-    window.history.replaceState({}, '', window.location.pathname);
-    if (targetUid) {
+    const reference = urlParams.get('reference') || urlParams.get('payment_reference') || urlParams.get('ref') || storedPendingRef || '';
+    if (paymentStatus === 'success') {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+    if (targetUid || reference) {
       setTimeout(async () => {
         try {
-          if (window.toast) toast('⏳ Vérification sécurisée de ton paiement en cours...', 'info', 4000);
           const apiBase = window.getPaymentApiBase();
-          const confirmRes = await fetch(`${apiBase}/api/confirm-payment`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ uid: targetUid, tierKey: tier, reference: reference })
-          });
-          const confirmData = await confirmRes.json();
-          if (confirmData.success) {
+          // 1. Si référence présente, interroger directement check-payment
+          let confirmData = null;
+          if (reference) {
+            try {
+              const chkRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(reference)}`);
+              confirmData = await chkRes.json();
+            } catch(e) {}
+          }
+
+          // 2. Si pas encore validé, tenter confirm-payment
+          if (!confirmData || !confirmData.success || confirmData.status !== 'completed') {
+            const confirmRes = await fetch(`${apiBase}/api/confirm-payment`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ uid: targetUid || window.USER_PROFILE?.uid, tierKey: tier, reference: reference })
+            });
+            confirmData = await confirmRes.json();
+          }
+
+          if (confirmData && confirmData.success && (confirmData.isPremium || confirmData.status === 'completed')) {
             sessionStorage.removeItem('last_payment_reference');
+            sessionStorage.removeItem('last_payment_tier');
+            const unlockedTier = confirmData.tierKey || tier;
             if (window.USER_PROFILE) {
-              window.USER_PROFILE.premiumPlan = tier;
+              window.USER_PROFILE.premiumPlan = unlockedTier;
               window.USER_PROFILE.isPremium = true;
               window.USER_PROFILE.premiumExpiresAt = confirmData.premiumExpiresAt;
               localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
             }
             updateAudioFabVisual();
             updateSidebarPassBtn();
-            showSubscriptionSuccessModal(tier, confirmData.premiumExpiresAt);
-          } else {
-            console.warn("Échec validation paiement:", confirmData);
-            window.showActionNotice({
-              type: 'error',
-              icon: '❌',
-              title: 'Paiement non confirmé',
-              subtitle: 'Contrôle bancaire',
-              message: (confirmData.error || "Ton paiement n'a pas pu être validé automatiquement.") + "\n\nSi ton compte mobile a bien été débité, clique ci-dessous pour joindre notre assistance WhatsApp avec ton reçu.",
-              primaryBtnText: '📲 Contacter l\'assistance WhatsApp',
-              onPrimary: () => {
-                const pName = (window.USER_PROFILE?.firstName || '') + ' ' + (window.USER_PROFILE?.lastName || '');
-                const waMsg = encodeURIComponent(`Bonjour Haniel_dev, mon paiement Pass ${tier} n'a pas été validé automatiquement mais j'ai un reçu. Réf: ${reference || 'N/A'}. Nom: ${pName}`);
-                window.open(`https://wa.me/2250150252467?text=${waMsg}`, '_blank');
-              },
-              secondaryBtnText: 'Fermer'
-            });
+            showSubscriptionSuccessModal(unlockedTier, confirmData.premiumExpiresAt);
+          } else if (storedPendingRef) {
+            // L'élève revient de Wave : lancer une vérification discrète toutes les 4s pendant 40s
+            let pollAttempts = 0;
+            const pollInterval = setInterval(async () => {
+              pollAttempts++;
+              const curRef = sessionStorage.getItem('last_payment_reference');
+              if (!curRef || pollAttempts > 10) {
+                clearInterval(pollInterval);
+                return;
+              }
+              try {
+                const pRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(curRef)}`);
+                const pData = await pRes.json();
+                if (pData.success && pData.status === 'completed') {
+                  clearInterval(pollInterval);
+                  sessionStorage.removeItem('last_payment_reference');
+                  sessionStorage.removeItem('last_payment_tier');
+                  const pTier = pData.tierKey || tier;
+                  if (window.USER_PROFILE) {
+                    window.USER_PROFILE.premiumPlan = pTier;
+                    window.USER_PROFILE.isPremium = true;
+                    window.USER_PROFILE.premiumExpiresAt = pData.premiumExpiresAt;
+                    localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+                  }
+                  updateAudioFabVisual();
+                  updateSidebarPassBtn();
+                  showSubscriptionSuccessModal(pTier, pData.premiumExpiresAt);
+                }
+              } catch(e) {}
+            }, 4000);
           }
         } catch(e) {
           console.error("Erreur confirmation paiement:", e);
