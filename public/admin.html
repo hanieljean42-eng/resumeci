@@ -866,7 +866,14 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-    import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    window.getAdminApiBase = function() {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://127.0.0.1:3000';
+      }
+      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+    };
 
     const firebaseConfig = {
       apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
@@ -1004,7 +1011,7 @@
       try {
         // 1. Appel API locale/serveur (/api/admin/users)
         try {
-          const res = await fetch('/api/admin/users');
+          const res = await fetch(window.getAdminApiBase() + '/api/admin/users');
           if (res.ok) {
             const apiData = await res.json();
             if (apiData.success && Array.isArray(apiData.users)) {
@@ -1431,7 +1438,8 @@
       const targetDays = daysMap[currentGrantPlan] || 30;
 
       try {
-        const res = await fetch('/api/admin/set-plan', {
+        const apiBase = window.getAdminApiBase();
+        const res = await fetch(`${apiBase}/api/admin/set-plan`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1445,6 +1453,26 @@
 
         const data = await res.json();
         if (!data.success) throw new Error(data.error || 'Erreur serveur');
+
+        // Mise à jour directe Firestore avec le Client SDK
+        try {
+          const expiresAt = data.premiumExpiresAt || (currentGrantPlan === 'free' ? 0 : (Date.now() + targetDays * 86400000));
+          if (currentGrantTarget.phone) {
+            const cleanPhone = String(currentGrantTarget.phone).replace(/\D/g, '').slice(-10);
+            await setDoc(doc(db, "users", cleanPhone), {
+              isPremium: currentGrantPlan !== 'free',
+              plan: currentGrantPlan,
+              premiumPlan: currentGrantPlan,
+              premiumExpiresAt: expiresAt,
+              subscriptionType: targetDays >= 300 ? 'yearly' : 'monthly',
+              adminGranted: true,
+              adminGrantReason: reason || 'Attribué par l\'administrateur',
+              updatedAt: new Date().toISOString()
+            }, { merge: true });
+          }
+        } catch(sdkErr) {
+          console.warn('Sync SDK Firestore direct:', sdkErr);
+        }
 
         const foundItem = fullList.find(u => (u.contact === currentGrantTarget.phone || u.whatsapp === currentGrantTarget.phone));
         if (foundItem) {
@@ -1470,21 +1498,14 @@
         feedback.style.color = '#ef4444';
         feedback.innerHTML = `❌ Erreur : ${err.message}`;
       } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check"></i> Activer immédiatement';
-      }
-    };
-
-    // --- GESTION DES PAIEMENTS RÉELS GENIUSPAY & WAVE ---
-    let liveTransactions = [];
-
-    window.loadGeniusPayTransactions = async function(manual = false) {
+     window.loadGeniusPayTransactions = async function(manual = false) {
       const tbody = document.getElementById('paymentsTableBody');
       if (manual && tbody) {
         tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><i class="fas fa-circle-notch fa-spin"></i><p>Actualisation des paiements...</p></td></tr>';
       }
       try {
-        const res = await fetch('/api/admin/transactions');
+        const apiBase = window.getAdminApiBase();
+        const res = await fetch(`${apiBase}/api/admin/transactions`);
         const json = await res.json();
         if (json.success && Array.isArray(json.data)) {
           liveTransactions = json.data;
@@ -1526,7 +1547,7 @@
         const isProcessing = t.status === 'processing';
         const statusCls = isCompleted ? 'status-completed' : (isProcessing ? 'status-processing' : 'status-pending');
         const statusLabel = isCompleted ? 'Payé (Validé)' : (isProcessing ? 'En cours' : 'Initié');
-        const cleanPhone = (t.customer_phone || '').replace(/\D/g, '').slice(-10);
+        const cleanPhone = (t.customer_phone || '').replace(/\\D/g, '').slice(-10);
         const tierToGrant = amt >= 1000 ? 'pro' : 'starter';
 
         html += `
@@ -1553,7 +1574,8 @@
     window.quickUnlockFromTransaction = async function(ref, phone, name, tier) {
       if (!confirm(`Voulez-vous débloquer immédiatement le Pass ${tier.toUpperCase()} (30 jours) pour ${name} (${phone}) suite à la transaction ${ref} ?`)) return;
       try {
-        const res = await fetch('/api/admin/set-plan', {
+        const apiBase = window.getAdminApiBase();
+        const res = await fetch(`${apiBase}/api/admin/set-plan`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1565,6 +1587,22 @@
           })
         });
         const d = await res.json();
+
+        // Direct Client SDK sync
+        try {
+          const expiresAt = d.premiumExpiresAt || (Date.now() + 30 * 86400000);
+          await setDoc(doc(db, "users", phone), {
+            isPremium: true,
+            plan: tier,
+            premiumPlan: tier,
+            premiumExpiresAt: expiresAt,
+            subscriptionType: 'monthly',
+            adminGranted: true,
+            adminGrantReason: 'Validé suite paiement ' + ref,
+            updatedAt: new Date().toISOString()
+          }, { merge: true });
+        } catch(e) {}
+
         if (d.success) {
           alert(`✅ Pass ${tier.toUpperCase()} débloqué avec succès pour ${name} !`);
           window.loadData();
