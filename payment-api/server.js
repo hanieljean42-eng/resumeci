@@ -679,7 +679,62 @@ app.get('/api/admin/users', async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
-// ROUTE 6 : API ADMIN - ATTRIBUER OU MODIFIER UN ABONNEMENT EN 1 CLIC
+// ROUTE 6-A : API ADMIN - CRÉER UN COMPTE ÉLÈVE DIRECTEMENT (100% GRATUIT ADMIN)
+// --------------------------------------------------------------------------
+app.post('/api/admin/create-user', async (req, res) => {
+  try {
+    const { fullName, firstName, lastName, phone, whatsapp, selectedClass, password, plan, days, reason } = req.body;
+    const rawPhone = phone || whatsapp || '';
+    const cleanPhone = String(rawPhone).replace(/\D/g, '').slice(-10);
+
+    if (!cleanPhone || cleanPhone.length < 10) {
+      return res.status(400).json({ error: "Numéro de téléphone à 10 chiffres requis (ex: 0708091011)." });
+    }
+
+    const chosenPlan = plan || 'pro';
+    const isFree = chosenPlan === 'free';
+    const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30));
+    const expiresAt = isFree ? 0 : (Date.now() + durationDays * 24 * 60 * 60 * 1000);
+    const uid = 'admin_user_' + Date.now();
+    const fName = firstName || (fullName ? fullName.split(' ')[0] : 'Élève');
+    const lName = lastName || (fullName ? fullName.split(' ').slice(1).join(' ') : '');
+    const full = fullName || `${fName} ${lName}`.trim() || 'Élève';
+
+    const userData = {
+      uid,
+      fullName: full,
+      firstName: fName,
+      lastName: lName,
+      whatsapp: cleanPhone,
+      contact: cleanPhone,
+      selectedClass: selectedClass || '3eme',
+      password: password || '123456',
+      plan: chosenPlan,
+      premiumPlan: chosenPlan,
+      isPremium: !isFree,
+      premiumExpiresAt: expiresAt,
+      subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+      adminCreated: true,
+      adminGrantReason: reason || 'Compte créé par l\'administrateur (Accès accordé)',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+
+    if (db) {
+      await db.collection('users').doc(cleanPhone).set(userData, { merge: true });
+      await db.collection('users').doc(uid).set(userData, { merge: true });
+    }
+
+    console.log(`[Admin CreateUser] ✅ Compte créé avec succès pour ${full} (${cleanPhone}) - Forfait: ${chosenPlan}`);
+    res.json({ success: true, user: userData, message: `Compte ${full} créé avec succès.` });
+  } catch (err) {
+    console.error('[Admin CreateUser] Erreur:', err);
+    res.status(500).json({ error: "Erreur création compte", details: err.message });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 6-B : API ADMIN - ATTRIBUER, MODIFIER OU ARRÊTER UN ABONNEMENT EN 1 CLIC
 // --------------------------------------------------------------------------
 app.post('/api/admin/set-plan', async (req, res) => {
   try {
@@ -691,7 +746,7 @@ app.post('/api/admin/set-plan', async (req, res) => {
     const cleanTarget = String(target).replace(/\D/g, '').slice(-10);
     const chosenPlan = plan || 'pro';
     const isFree = chosenPlan === 'free';
-    const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : 30);
+    const durationDays = isFree ? 0 : (Number(days) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30)));
     const durationMs = durationDays * 24 * 60 * 60 * 1000;
     const expiresAt = isFree ? 0 : (Date.now() + durationMs);
 
@@ -702,10 +757,18 @@ app.post('/api/admin/set-plan', async (req, res) => {
       premiumExpiresAt: expiresAt,
       subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
       adminGranted: true,
-      adminGrantReason: reason || 'Attribué par l\'administrateur',
+      adminGrantReason: reason || (isFree ? 'Abonnement arrêté par l\'administrateur' : 'Attribué par l\'administrateur'),
       adminGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
       updatedAt: admin.firestore.FieldValue.serverTimestamp()
     };
+
+    if (isFree) {
+      updateData.status = 'suspended';
+      updateData.adminRevoked = true;
+    } else {
+      updateData.status = 'active';
+      updateData.adminRevoked = false;
+    }
 
     if (fullName) updateData.fullName = fullName;
     if (selectedClass) updateData.selectedClass = selectedClass;
@@ -729,14 +792,15 @@ app.post('/api/admin/set-plan', async (req, res) => {
       }
     }
 
-    console.log(`[Admin SetPlan] 👑 Forfait '${chosenPlan}' accordé à ${target} (${durationDays} jours).`);
+    const actionText = isFree ? `Abonnement ARRÊTÉ pour ${target}` : `Forfait '${chosenPlan}' accordé à ${target} (${durationDays} jours)`;
+    console.log(`[Admin SetPlan] 👑 ${actionText}`);
 
     res.json({
       success: true,
       plan: chosenPlan,
       isPremium: !isFree,
       premiumExpiresAt: expiresAt,
-      message: `Formule ${chosenPlan} activée avec succès pour ${durationDays} jours.`
+      message: isFree ? `Abonnement arrêté avec succès pour ${target}.` : `Formule ${chosenPlan} activée avec succès pour ${durationDays} jours.`
     });
   } catch (err) {
     console.error('[Admin SetPlan] Erreur:', err);

@@ -544,6 +544,46 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 14px rgba(139,92,246,0.45);
     }
+    .btn-action-revoke {
+      background: rgba(239, 68, 68, 0.16);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-action-revoke:hover {
+      background: #ef4444;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+    .btn-action-quick-pro {
+      background: rgba(16, 185, 129, 0.16);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-action-quick-pro:hover {
+      background: #10b981;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
     .actions-flex {
       display: flex;
       align-items: center;
@@ -555,6 +595,11 @@
       background: rgba(245, 158, 11, 0.18);
       color: #fbbf24;
       border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .badge-plan-vip {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(139, 92, 246, 0.25));
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, 0.4);
     }
     .tab-nav-bar {
       display: flex;
@@ -681,6 +726,9 @@
         <p>Suivi en temps réel des élèves inscrits, des formules choisies (Gratuit, Starter, Pro) et de leurs classes.</p>
       </div>
       <div class="header-actions">
+        <button class="btn-header" onclick="openCreateUserModal()" style="background:linear-gradient(135deg, #10b981, #059669); color:#fff; border:none; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
+          <i class="fas fa-user-plus"></i> ➕ Créer un Compte (Accès Gratuit)
+        </button>
         <button class="btn-header btn-refresh" id="btnRefresh" onclick="loadData(true)">
           <i class="fas fa-arrows-rotate"></i> Actualiser la liste
         </button>
@@ -828,6 +876,9 @@
             <option value="Terminale_D">Terminale D</option>
           </select>
 
+          <button class="btn-export" onclick="openCreateUserModal()" style="background:linear-gradient(135deg, #10b981, #059669);">
+            <i class="fas fa-user-plus"></i> Nouveau Compte
+          </button>
           <button class="btn-export" onclick="exportCSV()">
             <i class="fas fa-file-excel"></i> Exporter la liste (Excel / CSV)
           </button>
@@ -1233,13 +1284,25 @@
         const device = detectDevice(item.userAgent);
         const formattedPhone = cleanPhone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
 
-        // Formule
+        // Formule & Statut d'abonnement réel
         const plan = (item.plan || (item.isPremium ? (item.premiumPlan || 'pro') : 'free')).toLowerCase();
+        const nowMs = Date.now();
+        const exp = Number(item.premiumExpiresAt) || 0;
+        const isCurrentlyPremium = Boolean(item.isPremium && (exp === 0 || exp > nowMs));
+
         let planBadge = '<span class="badge-plan badge-plan-free"><i class="fas fa-unlock"></i> Gratuit (0 F)</span>';
-        if (plan === 'starter') {
-          planBadge = '<span class="badge-plan badge-plan-starter"><i class="fas fa-bolt"></i> Starter (500 F)</span>';
-        } else if (plan === 'pro') {
-          planBadge = '<span class="badge-plan badge-plan-pro"><i class="fas fa-crown"></i> Pro (1 000 F)</span>';
+        if (isCurrentlyPremium) {
+          if (plan === 'starter') {
+            planBadge = '<span class="badge-plan badge-plan-starter"><i class="fas fa-bolt"></i> Starter (Actif)</span>';
+          } else if (plan === 'annual') {
+            planBadge = '<span class="badge-plan badge-plan-annual"><i class="fas fa-star"></i> Annuel (Actif)</span>';
+          } else if (plan === 'vip') {
+            planBadge = '<span class="badge-plan badge-plan-vip"><i class="fas fa-gem"></i> VIP Illimité</span>';
+          } else {
+            planBadge = '<span class="badge-plan badge-plan-pro"><i class="fas fa-crown"></i> Pro (Actif)</span>';
+          }
+        } else if (item.status === 'suspended' || item.adminRevoked) {
+          planBadge = '<span class="badge-plan badge-plan-free" style="border-color:#ef4444; color:#f87171;"><i class="fas fa-ban"></i> Suspendu</span>';
         }
 
         // Classe
@@ -1250,6 +1313,27 @@
 
         // Message WhatsApp pré-rempli officiel universel (SANS prénom)
         const waMsg = OFFICIAL_WA_MSG;
+
+        let actionBtns = '';
+        if (isCurrentlyPremium) {
+          actionBtns = `
+            <button class="btn-action-revoke" onclick="quickRevokeSubscription('${cleanPhone}', '${escapeQuotes(displayName)}')" title="Arrêter immédiatement cet abonnement">
+              <i class="fas fa-ban"></i> Arrêter Pass
+            </button>
+            <button class="btn-action-grant" onclick="openGrantSubModal('${cleanPhone}', '${escapeQuotes(displayName)}', '${plan}', '${item.uid || ''}')" title="Modifier la formule">
+              <i class="fas fa-sliders"></i> Forfait
+            </button>
+          `;
+        } else {
+          actionBtns = `
+            <button class="btn-action-quick-pro" onclick="quickGrantPro('${cleanPhone}', '${escapeQuotes(displayName)}')" title="Activer 30 jours de Pass Pro (Gratuit pour vous)">
+              <i class="fas fa-crown"></i> Activer Pro (30j)
+            </button>
+            <button class="btn-action-grant" onclick="openGrantSubModal('${cleanPhone}', '${escapeQuotes(displayName)}', '${plan}', '${item.uid || ''}')" title="Choisir une formule">
+              <i class="fas fa-sliders"></i> Forfait
+            </button>
+          `;
+        }
 
         html += `
           <tr>
@@ -1273,9 +1357,7 @@
             <td style="color:var(--text-muted); font-size:12px;">${device}</td>
             <td style="text-align: right;">
               <div class="actions-flex">
-                <button class="btn-action-grant" onclick="openGrantSubModal('${cleanPhone}', '${escapeQuotes(displayName)}', '${plan}', '${item.uid || ''}')" title="Accorder ou modifier l'abonnement de cet élève">
-                  <i class="fas fa-crown"></i> Gérer Abonnement
-                </button>
+                ${actionBtns}
                 <a href="https://wa.me/225${cleanPhone}?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener" class="btn-wa-contact" title="Envoyer un message WhatsApp">
                   <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
@@ -1394,7 +1476,292 @@
       }
     };
 
-    // --- MODAL D'ATTRIBUTION D'ABONNEMENT ---
+    // =========================================================================
+    // GESTION DES ABONNEMENTS : ACTIVER, MODIFIER OU ARRÊTER EN 1 CLIC
+    // =========================================================================
+
+    // 1. ARRÊTER / RÉSILIER IMMÉDIATEMENT L'ABONNEMENT D'UN ÉLÈVE
+    window.quickRevokeSubscription = async function(phone, name) {
+      if (!confirm(`⚠️ ATTENTION : Voulez-vous vraiment ARRÊTER immédiatement l'abonnement de ${name} (+225 ${phone}) ?\n\nSes accès Premium seront révoqués et il repassera immédiatement sur la formule Gratuite.`)) {
+        return;
+      }
+
+      const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
+      try {
+        // A. Mise à jour directe Firestore avec le Client SDK
+        try {
+          await setDoc(doc(db, "users", cleanPhone), {
+            isPremium: false,
+            plan: 'free',
+            premiumPlan: 'free',
+            premiumExpiresAt: 0,
+            status: 'suspended',
+            adminRevoked: true,
+            revokedAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+          }, { merge: true });
+        } catch (sdkErr) {
+          console.warn("Direct Firestore SDK revoke:", sdkErr);
+        }
+
+        // B. Notification serveur API
+        try {
+          const apiBase = window.getAdminApiBase();
+          fetch(`${apiBase}/api/admin/set-plan`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              target: cleanPhone,
+              plan: 'free',
+              days: 0,
+              reason: 'Abonnement arrêté manuellement par l\'administrateur'
+            })
+          }).catch(e => console.warn("API set-plan revoke:", e));
+        } catch (e) {}
+
+        // C. Mise à jour de la mémoire locale et réaffichage instantané
+        const found = fullList.find(u => (u.contact === cleanPhone || u.whatsapp === cleanPhone));
+        if (found) {
+          found.isPremium = false;
+          found.plan = 'free';
+          found.premiumPlan = 'free';
+          found.premiumExpiresAt = 0;
+          found.status = 'suspended';
+          found.adminRevoked = true;
+        }
+
+        filterTable();
+        alert(`✅ Abonnement de ${name} arrêté avec succès. L'élève est repassé en formule Gratuite.`);
+      } catch (err) {
+        console.error("Erreur arrêt abonnement:", err);
+        alert(`❌ Erreur lors de l'arrêt de l'abonnement : ${err.message}`);
+      }
+    };
+
+    // 2. ACCORDER LE PASS PRO EN 1 CLIC (100% GRATUIT ADMIN)
+    window.quickGrantPro = async function(phone, name) {
+      if (!confirm(`👑 Voulez-vous activer 30 jours de PASS PRO pour ${name} (+225 ${phone}) ?\n\n(C'est 100% GRATUIT pour vous en tant qu'administrateur)`)) {
+        return;
+      }
+
+      const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
+      const expiresAt = Date.now() + 30 * 24 * 60 * 60 * 1000;
+
+      try {
+        // A. Mise à jour directe Firestore
+        try {
+          await setDoc(doc(db, "users", cleanPhone), {
+            isPremium: true,
+            plan: 'pro',
+            premiumPlan: 'pro',
+            premiumExpiresAt: expiresAt,
+            subscriptionType: 'monthly',
+            adminGranted: true,
+            status: 'active',
+            adminRevoked: false,
+            adminGrantReason: 'Pass Pro offert par l\'administrateur',
+            updatedAt: new Date().toISOString()
+          }, { merge: true });
+        } catch (sdkErr) {
+          console.warn("Direct Firestore SDK grant:", sdkErr);
+        }
+
+        // B. Notification serveur API
+        try {
+          const apiBase = window.getAdminApiBase();
+          fetch(`${apiBase}/api/admin/set-plan`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              target: cleanPhone,
+              plan: 'pro',
+              days: 30,
+              reason: 'Pass Pro accordé par l\'administrateur',
+              fullName: name
+            })
+          }).catch(e => console.warn("API set-plan grant:", e));
+        } catch (e) {}
+
+        // C. Mise à jour de l'affichage
+        const found = fullList.find(u => (u.contact === cleanPhone || u.whatsapp === cleanPhone));
+        if (found) {
+          found.isPremium = true;
+          found.plan = 'pro';
+          found.premiumPlan = 'pro';
+          found.premiumExpiresAt = expiresAt;
+          found.status = 'active';
+          found.adminRevoked = false;
+        }
+
+        filterTable();
+        alert(`✅ Pass Pro (30 jours) accordé avec succès à ${name} !`);
+      } catch (err) {
+        console.error("Erreur activation Pass Pro:", err);
+        alert(`❌ Erreur : ${err.message}`);
+      }
+    };
+
+    // =========================================================================
+    // CRÉATION DE COMPTE ÉLÈVE DIRECTEMENT DEPUIS ADMIN.HTML (100% GRATUIT)
+    // =========================================================================
+    let currentCreatePlan = 'pro';
+
+    window.openCreateUserModal = function() {
+      document.getElementById('createFullName').value = '';
+      document.getElementById('createPhone').value = '';
+      document.getElementById('createPassword').value = '123456';
+      document.getElementById('createReason').value = 'Créé manuellement par admin';
+      document.getElementById('createFeedback').style.display = 'none';
+      window.selectCreateModalPlan('pro');
+      document.getElementById('createUserModal').classList.add('active');
+    };
+
+    window.closeCreateUserModal = function() {
+      document.getElementById('createUserModal').classList.remove('active');
+    };
+
+    window.selectCreateModalPlan = function(planKey) {
+      currentCreatePlan = planKey;
+      ['pro', 'starter', 'annual', 'vip', 'free'].forEach(k => {
+        const el = document.getElementById('cplan_' + k);
+        if (el) el.classList.toggle('selected', k === planKey);
+      });
+    };
+
+    window.submitCreateUser = async function() {
+      const name = document.getElementById('createFullName').value.trim();
+      const rawPhone = document.getElementById('createPhone').value.trim();
+      const cls = document.getElementById('createClass').value;
+      const pwd = document.getElementById('createPassword').value.trim() || '123456';
+      const reason = document.getElementById('createReason').value.trim();
+      const btn = document.getElementById('btnSubmitCreateUser');
+      const feedback = document.getElementById('createFeedback');
+
+      const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
+
+      if (!name) {
+        feedback.style.display = 'block';
+        feedback.style.color = '#ef4444';
+        feedback.innerHTML = '⚠️ Veuillez entrer le nom complet de l\'élève.';
+        return;
+      }
+
+      if (cleanPhone.length < 10) {
+        feedback.style.display = 'block';
+        feedback.style.color = '#ef4444';
+        feedback.innerHTML = '⚠️ Veuillez entrer un numéro à 10 chiffres (ex: 07 08 09 10 11).';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création du compte en cours...';
+      feedback.style.display = 'none';
+
+      const daysMap = { free: 0, starter: 30, pro: 30, annual: 365, vip: 3650 };
+      const targetDays = daysMap[currentCreatePlan] || 30;
+      const isFree = currentCreatePlan === 'free';
+      const expiresAt = isFree ? 0 : (Date.now() + targetDays * 86400000);
+      const uid = 'admin_' + Date.now();
+
+      const newUserData = {
+        uid: uid,
+        fullName: name,
+        firstName: name.split(' ')[0] || name,
+        lastName: name.split(' ').slice(1).join(' ') || '',
+        whatsapp: cleanPhone,
+        contact: cleanPhone,
+        selectedClass: cls,
+        classe: cls,
+        password: pwd,
+        plan: currentCreatePlan,
+        premiumPlan: currentCreatePlan,
+        isPremium: !isFree,
+        premiumExpiresAt: expiresAt,
+        subscriptionType: targetDays >= 300 ? 'yearly' : 'monthly',
+        adminCreated: true,
+        adminGranted: !isFree,
+        adminGrantReason: reason || 'Compte créé par l\'administrateur',
+        status: isFree ? 'standard' : 'active',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      try {
+        // 1. Enregistrement direct Firestore Client SDK
+        try {
+          await setDoc(doc(db, "users", cleanPhone), newUserData, { merge: true });
+          await setDoc(doc(db, "users", uid), newUserData, { merge: true });
+        } catch (sdkErr) {
+          console.warn("Direct Firestore SDK createUser:", sdkErr);
+        }
+
+        // 2. Appel API Backend
+        try {
+          const apiBase = window.getAdminApiBase();
+          await fetch(`${apiBase}/api/admin/create-user`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              fullName: name,
+              phone: cleanPhone,
+              selectedClass: cls,
+              password: pwd,
+              plan: currentCreatePlan,
+              days: targetDays,
+              reason: reason
+            })
+          });
+        } catch (apiErr) {
+          console.warn("API create-user fallback:", apiErr);
+        }
+
+        // 3. Ajouter directement en haut de la liste pour affichage immédiat
+        fullList.unshift(newUserData);
+        filterTable();
+
+        // 4. Fermer la modal de saisie et afficher la confirmation de succès avec partage WhatsApp
+        window.closeCreateUserModal();
+        window.showCreatedSuccess(name, cleanPhone, pwd, currentCreatePlan, cls);
+
+      } catch (err) {
+        console.error("Erreur création compte:", err);
+        feedback.style.display = 'block';
+        feedback.style.color = '#ef4444';
+        feedback.innerHTML = `❌ Erreur lors de la création : ${err.message}`;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-check"></i> Créer et Activer le compte (0 F)';
+      }
+    };
+
+    let lastCreatedUser = null;
+    window.showCreatedSuccess = function(name, phone, pwd, plan, cls) {
+      lastCreatedUser = { name, phone, pwd, plan, cls };
+      document.getElementById('succStudentName').textContent = name;
+      document.getElementById('succStudentPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+      document.getElementById('succStudentPwd').textContent = pwd;
+      document.getElementById('succStudentPlan').textContent = plan.toUpperCase();
+      document.getElementById('createdSuccessModal').classList.add('active');
+    };
+
+    window.closeCreatedSuccessModal = function() {
+      document.getElementById('createdSuccessModal').classList.remove('active');
+      lastCreatedUser = null;
+    };
+
+    window.sendAccessViaWhatsApp = function() {
+      if (!lastCreatedUser) return;
+      const u = lastCreatedUser;
+      const planName = u.plan === 'pro' ? 'Pass Pro (30 jours)' : (u.plan === 'starter' ? 'Pass Starter (30 jours)' : (u.plan === 'annual' ? 'Pass Annuel (1 An)' : (u.plan === 'vip' ? 'Pass VIP Illimité' : 'Formule Gratuite')));
+      const msg = `Bonjour ${u.name} !\n\nTon compte ResumeCI a été créé avec succès par l'administrateur avec la formule : *${planName}* ! 🎓\n\nVoici tes accès personnels pour te connecter et réviser tes 714 fiches de cours, audios et quiz :\n\n📱 Identifiant (WhatsApp) : *+225 ${u.phone}*\n🔑 Mot de passe : *${u.pwd}*\n\n👉 Connecte-toi directement ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI !`;
+
+      const url = `https://wa.me/225${u.phone}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    };
+
+    // =========================================================================
+    // MODAL D'ATTRIBUTION D'ABONNEMENT (MODIFIER OU ARRÊTER)
+    // =========================================================================
     let currentGrantTarget = null;
     let currentGrantPlan = 'pro';
 
@@ -1405,7 +1772,7 @@
       document.getElementById('modalGrantReason').value = '';
       document.getElementById('modalGrantFeedback').style.display = 'none';
 
-      const defaultSelect = (currentPlan === 'starter' || currentPlan === 'annual' || currentPlan === 'pro') ? currentPlan : 'pro';
+      const defaultSelect = (currentPlan === 'starter' || currentPlan === 'annual' || currentPlan === 'vip' || currentPlan === 'pro') ? currentPlan : 'pro';
       window.selectModalPlan(defaultSelect);
 
       document.getElementById('grantSubModal').classList.add('active');
@@ -1418,10 +1785,17 @@
 
     window.selectModalPlan = function(planKey) {
       currentGrantPlan = planKey;
-      ['pro', 'starter', 'annual', 'free'].forEach(k => {
+      ['pro', 'starter', 'annual', 'vip', 'free'].forEach(k => {
         const el = document.getElementById('card_plan_' + k);
         if (el) el.classList.toggle('selected', k === planKey);
       });
+    };
+
+    window.revokeInGrantModal = async function() {
+      if (!currentGrantTarget) return;
+      if (!confirm(`Arrêter immédiatement l'abonnement de ${currentGrantTarget.name} ? L'élève repassera en formule gratuite.`)) return;
+      window.selectModalPlan('free');
+      await window.submitGrantSubscription();
     };
 
     window.submitGrantSubscription = async function() {
@@ -1431,11 +1805,13 @@
       const reason = document.getElementById('modalGrantReason').value.trim();
 
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Activation en cours...';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement en cours...';
       feedback.style.display = 'none';
 
-      const daysMap = { free: 0, starter: 30, pro: 30, annual: 365 };
+      const daysMap = { free: 0, starter: 30, pro: 30, annual: 365, vip: 3650 };
       const targetDays = daysMap[currentGrantPlan] || 30;
+      const isFree = currentGrantPlan === 'free';
+      const expiresAt = isFree ? 0 : (Date.now() + targetDays * 86400000);
 
       try {
         const apiBase = window.getAdminApiBase();
@@ -1446,27 +1822,25 @@
             target: currentGrantTarget.phone || currentGrantTarget.uid,
             plan: currentGrantPlan,
             days: targetDays,
-            reason: reason || 'Attribué par l\'administrateur',
+            reason: reason || (isFree ? 'Abonnement arrêté par l\'administrateur' : 'Attribué par l\'administrateur'),
             fullName: currentGrantTarget.name
           })
         });
 
-        const data = await res.json();
-        if (!data.success) throw new Error(data.error || 'Erreur serveur');
-
         // Mise à jour directe Firestore avec le Client SDK
         try {
-          const expiresAt = data.premiumExpiresAt || (currentGrantPlan === 'free' ? 0 : (Date.now() + targetDays * 86400000));
           if (currentGrantTarget.phone) {
             const cleanPhone = String(currentGrantTarget.phone).replace(/\D/g, '').slice(-10);
             await setDoc(doc(db, "users", cleanPhone), {
-              isPremium: currentGrantPlan !== 'free',
+              isPremium: !isFree,
               plan: currentGrantPlan,
               premiumPlan: currentGrantPlan,
               premiumExpiresAt: expiresAt,
               subscriptionType: targetDays >= 300 ? 'yearly' : 'monthly',
               adminGranted: true,
-              adminGrantReason: reason || 'Attribué par l\'administrateur',
+              adminRevoked: isFree,
+              status: isFree ? 'suspended' : 'active',
+              adminGrantReason: reason || (isFree ? 'Abonnement arrêté par admin' : 'Attribué par admin'),
               updatedAt: new Date().toISOString()
             }, { merge: true });
           }
@@ -1477,16 +1851,20 @@
         const foundItem = fullList.find(u => (u.contact === currentGrantTarget.phone || u.whatsapp === currentGrantTarget.phone));
         if (foundItem) {
           foundItem.plan = currentGrantPlan;
-          foundItem.isPremium = currentGrantPlan !== 'free';
+          foundItem.isPremium = !isFree;
           foundItem.premiumPlan = currentGrantPlan;
-          foundItem.premiumExpiresAt = data.premiumExpiresAt;
+          foundItem.premiumExpiresAt = expiresAt;
+          foundItem.status = isFree ? 'suspended' : 'active';
+          foundItem.adminRevoked = isFree;
         }
 
         filterTable();
 
         feedback.style.display = 'block';
-        feedback.style.color = '#10b981';
-        feedback.innerHTML = `✅ Formule <b>${currentGrantPlan.toUpperCase()}</b> accordée avec succès à ${currentGrantTarget.name} !`;
+        feedback.style.color = isFree ? '#f87171' : '#10b981';
+        feedback.innerHTML = isFree 
+          ? `⛔ Abonnement de <b>${currentGrantTarget.name}</b> arrêté avec succès.`
+          : `✅ Formule <b>${currentGrantPlan.toUpperCase()}</b> accordée avec succès à ${currentGrantTarget.name} !`;
 
         setTimeout(() => {
           window.closeGrantSubModal();
@@ -1498,6 +1876,10 @@
         feedback.style.color = '#ef4444';
         feedback.innerHTML = `❌ Erreur : ${err.message}`;
       } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-check"></i> Valider et Appliquer';
+      }
+    };
      window.loadGeniusPayTransactions = async function(manual = false) {
       const tbody = document.getElementById('paymentsTableBody');
       if (manual && tbody) {
@@ -1665,27 +2047,185 @@
           <span style="color:#fbbf24; font-weight:800;">365 jours</span>
         </div>
 
+        <div class="plan-radio-card" id="card_plan_vip" onclick="selectModalPlan('vip')">
+          <div>
+            <div style="font-weight:800; font-size:13.5px; color:#fcd34d;"><i class="fas fa-gem"></i> Pass VIP Permanent (Illimité)</div>
+            <div style="font-size:11.5px; color:var(--text-muted);">Accès complet permanent sans date d'expiration</div>
+          </div>
+          <span style="color:#fcd34d; font-weight:800;">Permanent</span>
+        </div>
+
         <div class="plan-radio-card" id="card_plan_free" onclick="selectModalPlan('free')">
           <div>
-            <div style="font-weight:800; font-size:13.5px; color:#94a3b8;"><i class="fas fa-unlock"></i> Gratuit (0 FCFA)</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Désactiver le pass premium (accès fiches standard uniquement)</div>
+            <div style="font-weight:800; font-size:13.5px; color:#94a3b8;"><i class="fas fa-unlock"></i> Gratuit / Arrêter l'Abonnement</div>
+            <div style="font-size:11.5px; color:var(--text-muted);">Désactiver le pass premium (l'élève repasse en formule gratuite)</div>
           </div>
           <span style="color:#94a3b8; font-weight:800;">Standard</span>
         </div>
       </div>
 
       <div style="margin-bottom:18px;">
-        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Motif de l'attribution (facultatif) :</label>
+        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Motif de l'attribution ou arrêt (facultatif) :</label>
         <input type="text" id="modalGrantReason" placeholder="Ex: Paiement Wave reçu, Régularisation..." style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13px; outline:none;">
       </div>
 
-      <div style="display:flex; gap:10px;">
-        <button onclick="closeGrantSubModal()" style="flex:1; background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:12px; border-radius:10px; font-weight:700; cursor:pointer;">Annuler</button>
-        <button id="modalBtnSubmit" onclick="submitGrantSubscription()" style="flex:2; background:linear-gradient(135deg, #10b981, #059669); border:none; color:#fff; padding:12px; border-radius:10px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(16,185,129,0.3);">
-          <i class="fas fa-check"></i> Activer immédiatement
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button onclick="closeGrantSubModal()" style="flex:1; min-width:90px; background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:12px; border-radius:10px; font-weight:700; cursor:pointer;">Annuler</button>
+        <button onclick="revokeInGrantModal()" style="flex:1.3; min-width:140px; background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:12px; border-radius:10px; font-weight:800; cursor:pointer;" title="Arrêter immédiatement cet abonnement">
+          <i class="fas fa-ban"></i> Arrêter Pass
+        </button>
+        <button id="modalBtnSubmit" onclick="submitGrantSubscription()" style="flex:2; min-width:170px; background:linear-gradient(135deg, #10b981, #059669); border:none; color:#fff; padding:12px; border-radius:10px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(16,185,129,0.3);">
+          <i class="fas fa-check"></i> Valider Formule (Gratuit)
         </button>
       </div>
       <div id="modalGrantFeedback" style="margin-top:10px; font-size:12.5px; text-align:center; display:none;"></div>
+    </div>
+  </div>
+
+  <!-- MODAL : CRÉER UN COMPTE ÉLÈVE & ATTRIBUER UN ACCÈS (100% GRATUIT ADMIN) -->
+  <div class="admin-modal-overlay" id="createUserModal">
+    <div class="admin-modal-card" style="max-width: 560px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:40px; height:40px; border-radius:12px; background:rgba(16,185,129,0.2); color:#10b981; display:flex; align-items:center; justify-content:center; font-size:19px;">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div>
+            <h2 style="font-size:17.5px; font-weight:800; color:#fff; margin:0;">Créer un Compte Élève</h2>
+            <p style="font-size:12px; color:var(--text-muted); margin:0;">Attribuez immédiatement l'abonnement de votre choix (100% Gratuit pour vous)</p>
+          </div>
+        </div>
+        <button onclick="closeCreateUserModal()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;"><i class="fas fa-xmark"></i></button>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div>
+          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Nom & Prénom(s) * :</label>
+          <input type="text" id="createFullName" placeholder="Ex: Kouamé Ange" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
+        </div>
+        <div>
+          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Numéro WhatsApp (10 chiffres) * :</label>
+          <input type="tel" id="createPhone" placeholder="Ex: 07 08 09 10 11" maxlength="14" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+        <div>
+          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Classe de l'élève :</label>
+          <select id="createClass" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 12px; color:#fff; font-size:13.5px; outline:none;">
+            <option value="3eme" selected>3ème (BEPC)</option>
+            <option value="Terminale_D">Terminale D (BAC D)</option>
+            <option value="Terminale_A">Terminale A (BAC A)</option>
+            <option value="Terminale_C">Terminale C (BAC C)</option>
+            <option value="Premiere_D">Première D</option>
+            <option value="Seconde_C">Seconde C</option>
+            <option value="Seconde_A">Seconde A</option>
+            <option value="4eme">4ème</option>
+            <option value="5eme">5ème</option>
+            <option value="6eme">6ème</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Mot de passe de l'élève :</label>
+          <input type="text" id="createPassword" value="123456" placeholder="Par défaut : 123456" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:8px;">Choisir la Formule à Débloquer (0 F pour vous) :</label>
+
+        <div class="plan-radio-card selected" id="cplan_pro" onclick="selectCreateModalPlan('pro')">
+          <div>
+            <div style="font-weight:800; font-size:13px; color:#34d399;"><i class="fas fa-crown"></i> Pass Pro (30 jours) - RECOMMANDÉ</div>
+            <div style="font-size:11px; color:var(--text-muted);">Accès illimité à tous les audios, quiz, pièges d'examen & fiches</div>
+          </div>
+          <span style="color:#34d399; font-weight:800; font-size:12px;">30 jours</span>
+        </div>
+
+        <div class="plan-radio-card" id="cplan_starter" onclick="selectCreateModalPlan('starter')">
+          <div>
+            <div style="font-weight:800; font-size:13px; color:#60a5fa;"><i class="fas fa-bolt"></i> Pass Starter (30 jours)</div>
+            <div style="font-size:11px; color:var(--text-muted);">Pack hors-ligne & téléchargements de résumés</div>
+          </div>
+          <span style="color:#60a5fa; font-weight:800; font-size:12px;">30 jours</span>
+        </div>
+
+        <div class="plan-radio-card" id="cplan_annual" onclick="selectCreateModalPlan('annual')">
+          <div>
+            <div style="font-weight:800; font-size:13px; color:#fbbf24;"><i class="fas fa-star"></i> Pass Annuel (365 jours)</div>
+            <div style="font-size:11px; color:var(--text-muted);">Accès Pro complet pour toute l'année scolaire 2024-2025</div>
+          </div>
+          <span style="color:#fbbf24; font-weight:800; font-size:12px;">1 An</span>
+        </div>
+
+        <div class="plan-radio-card" id="cplan_vip" onclick="selectCreateModalPlan('vip')">
+          <div>
+            <div style="font-weight:800; font-size:13px; color:#fcd34d;"><i class="fas fa-gem"></i> Pass VIP Permanent (Illimité)</div>
+            <div style="font-size:11px; color:var(--text-muted);">Accès permanent à vie sans aucune expiration</div>
+          </div>
+          <span style="color:#fcd34d; font-weight:800; font-size:12px;">Permanent</span>
+        </div>
+
+        <div class="plan-radio-card" id="cplan_free" onclick="selectCreateModalPlan('free')">
+          <div>
+            <div style="font-weight:800; font-size:13px; color:#94a3b8;"><i class="fas fa-unlock"></i> Formule Gratuite (0 F)</div>
+            <div style="font-size:11px; color:var(--text-muted);">Accès standard uniquement</div>
+          </div>
+          <span style="color:#94a3b8; font-weight:800; font-size:12px;">Standard</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Motif / Note interne :</label>
+        <input type="text" id="createReason" value="Créé manuellement par admin" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:9px 12px; color:#fff; font-size:12.5px; outline:none;">
+      </div>
+
+      <div style="display:flex; gap:10px;">
+        <button onclick="closeCreateUserModal()" style="flex:1; background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:12px; border-radius:10px; font-weight:700; cursor:pointer;">Annuler</button>
+        <button id="btnSubmitCreateUser" onclick="submitCreateUser()" style="flex:2; background:linear-gradient(135deg, #10b981, #059669); border:none; color:#fff; padding:12px; border-radius:10px; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
+          <i class="fas fa-check"></i> Créer et Activer le compte (0 F)
+        </button>
+      </div>
+      <div id="createFeedback" style="margin-top:10px; font-size:12.5px; text-align:center; display:none;"></div>
+    </div>
+  </div>
+
+  <!-- MODAL : CONFIRMATION COMPTE CRÉÉ & ENVOI WHATSAPP -->
+  <div class="admin-modal-overlay" id="createdSuccessModal">
+    <div class="admin-modal-card" style="max-width: 480px; text-align:center;">
+      <div style="width:58px; height:58px; border-radius:50%; background:rgba(16,185,129,0.2); color:#10b981; display:flex; align-items:center; justify-content:center; font-size:26px; margin: 0 auto 14px;">
+        <i class="fas fa-check"></i>
+      </div>
+      <h2 style="font-size:20px; font-weight:800; color:#fff; margin-bottom:6px;">Compte Créé & Activé avec Succès !</h2>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:18px;">L'élève peut dès maintenant se connecter sur <b>resumeci.me/connexion.html</b> avec ses accès.</p>
+
+      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:14px; text-align:left; margin-bottom:20px; font-size:13px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="color:var(--text-muted);">Élève :</span>
+          <strong style="color:#fff;" id="succStudentName">-</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="color:var(--text-muted);">Identifiant (Tél) :</span>
+          <strong style="color:#38bdf8;" id="succStudentPhone">-</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="color:var(--text-muted);">Mot de passe :</span>
+          <strong style="color:#a78bfa;" id="succStudentPwd">-</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between;">
+          <span style="color:var(--text-muted);">Formule accordée :</span>
+          <strong style="color:#34d399;" id="succStudentPlan">PRO</strong>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <button onclick="sendAccessViaWhatsApp()" style="background:linear-gradient(135deg, #25d366, #128c7e); color:#fff; border:none; padding:13px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 4px 14px rgba(37,211,102,0.35);">
+          <i class="fab fa-whatsapp" style="font-size:18px;"></i> Envoyer les accès par WhatsApp 📲
+        </button>
+        <button onclick="closeCreatedSuccessModal()" style="background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:11px; border-radius:10px; font-weight:700; cursor:pointer;">
+          Terminer & Fermer
+        </button>
+      </div>
     </div>
   </div>
 
