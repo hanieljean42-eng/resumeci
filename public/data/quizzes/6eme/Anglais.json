@@ -1,0 +1,857 @@
+{
+  "Fiche_Lecon1_Unit1_At_School_Greetings": {
+    "title": "Greetings (Les salutations)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you say 'Bonjour' in English in the morning ?",
+        "type": "qcm",
+        "options": ["Good afternoon", "Good evening", "Good morning", "Good night"],
+        "answer": 2,
+        "explanation": "We say 'Good morning' from sunrise to 12:00 (midday)."
+      },
+      {
+        "id": "q2",
+        "text": "If someone asks 'How are you?', what is a good answer ?",
+        "type": "qcm",
+        "options": ["My name is John", "I am fine, thank you", "I am a student", "Good bye"],
+        "answer": 1,
+        "explanation": "'How are you?' asks about your health. 'I am fine, thank you' is the standard polite response."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : We say 'Good night' when we meet someone at 8 PM.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 1,
+        "explanation": "False! When we meet someone in the evening, we say 'Good evening'. 'Good night' is only used when leaving to go to bed or late at night to say goodbye."
+      },
+      {
+        "id": "q4",
+        "text": "How do you ask someone's name ?",
+        "type": "qcm",
+        "options": ["What is your name?", "How old are you?", "Where are you?", "Who are you?"],
+        "answer": 0,
+        "explanation": "To ask for someone's name, we use 'What is your name?'."
+      },
+      {
+        "id": "q5",
+        "text": "Which word means 'Au revoir' ?",
+        "type": "qcm",
+        "options": ["Hello", "Goodbye", "Please", "Thanks"],
+        "answer": 1,
+        "explanation": "'Goodbye' or simply 'Bye' means au revoir."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Unit1_In_The_Classroom": {
+    "title": "In the classroom (Dans la salle de classe)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is 'un stylo' in English ?",
+        "type": "qcm",
+        "options": ["A pencil", "A book", "A pen", "A ruler"],
+        "answer": 2,
+        "explanation": "A pen = un stylo. A pencil = un crayon de papier."
+      },
+      {
+        "id": "q2",
+        "text": "What does the teacher say when he wants you to sit down ?",
+        "type": "qcm",
+        "options": ["Stand up!", "Sit down!", "Listen!", "Read!"],
+        "answer": 1,
+        "explanation": "'Sit down' is the instruction for 'asseyez-vous'."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'A blackboard' means 'un tableau noir'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. Black = noir, board = tableau."
+      },
+      {
+        "id": "q4",
+        "text": "What is 'une gomme' in English ?",
+        "type": "qcm",
+        "options": ["An eraser / A rubber", "A bag", "A copybook", "A desk"],
+        "answer": 0,
+        "explanation": "An eraser (US) or a rubber (UK) is used to erase pencil marks."
+      },
+      {
+        "id": "q5",
+        "text": "If a student wants to enter the classroom, what should they ask ?",
+        "type": "qcm",
+        "options": ["Can I go out?", "May I come in, please?", "Can I erase the board?", "What is this?"],
+        "answer": 1,
+        "explanation": "To ask for permission to enter, you politely say 'May I come in, please?'."
+      }
+    ]
+  },
+  "Fiche_Lecon3_Unit1_Locating_Classroom_Objects": {
+    "title": "Locating Classroom Objects (Où sont les objets ?)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you ask where a pen is ?",
+        "type": "qcm",
+        "options": ["Who is the pen?", "Where is the pen?", "What is the pen?", "How is the pen?"],
+        "answer": 1,
+        "explanation": "'Where' is the question word used to ask about a place or location (Où est le stylo ?)."
+      },
+      {
+        "id": "q2",
+        "text": "If the book is SUR the desk, you say: The book is ... the desk.",
+        "type": "qcm",
+        "options": ["in", "under", "on", "next to"],
+        "answer": 2,
+        "explanation": "'On' means sur (en contact). 'In' means dans, 'under' means sous."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'The bag is under the chair' means 'Le sac est sous la chaise'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. 'Under' means 'sous'."
+      },
+      {
+        "id": "q4",
+        "text": "Which preposition means 'dans' ?",
+        "type": "qcm",
+        "options": ["On", "In", "Under", "Behind"],
+        "answer": 1,
+        "explanation": "'In' translates to 'dans' (inside something, like 'in the bag')."
+      },
+      {
+        "id": "q5",
+        "text": "Complete: The teacher is standing ... the blackboard.",
+        "type": "qcm",
+        "options": ["in front of", "in", "on", "under"],
+        "answer": 0,
+        "explanation": "'In front of' means 'devant'. The teacher usually stands in front of the board."
+      }
+    ]
+  },
+  "Fiche_Lecon4_Unit2_At_Home_Family": {
+    "title": "At Home: Family (La famille)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is 'un frère' in English ?",
+        "type": "qcm",
+        "options": ["A father", "A brother", "A sister", "An uncle"],
+        "answer": 1,
+        "explanation": "A brother = un frère. A sister = une sœur."
+      },
+      {
+        "id": "q2",
+        "text": "How do you say 'ma mère' in English ?",
+        "type": "qcm",
+        "options": ["My father", "My mother", "My aunt", "My grandmother"],
+        "answer": 1,
+        "explanation": "My mother (or 'my mom') means 'ma mère'."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'Parents' in English only means your father and mother.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. Unlike French where 'parents' can mean all relatives, in English 'parents' strictly refers to father and mother."
+      },
+      {
+        "id": "q4",
+        "text": "Who is your father's brother ?",
+        "type": "qcm",
+        "options": ["My grandfather", "My cousin", "My uncle", "My brother"],
+        "answer": 2,
+        "explanation": "Your father's or mother's brother is your uncle (oncle)."
+      },
+      {
+        "id": "q5",
+        "text": "How do you ask someone how many brothers they have ?",
+        "type": "qcm",
+        "options": ["How old are your brothers?", "How much brothers do you have?", "How many brothers do you have?", "Who are your brothers?"],
+        "answer": 2,
+        "explanation": "We use 'How many' to ask about quantities you can count (Combien de)."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Unit2_Sunday_With_My_Family": {
+    "title": "Sunday with my family (Dimanche en famille)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What do people generally do on Sunday in English speaking countries ?",
+        "type": "qcm",
+        "options": ["Go to school", "Rest and spend time with family", "Work all day", "Have exams"],
+        "answer": 1,
+        "explanation": "Sunday (dimanche) is typically a day of rest (weekend) spent with family."
+      },
+      {
+        "id": "q2",
+        "text": "How do you say 'nous regardons la télévision' ?",
+        "type": "qcm",
+        "options": ["We are looking the television", "We watch TV", "They watch TV", "We are reading TV"],
+        "answer": 1,
+        "explanation": "The correct verb is 'to watch'. 'We watch TV' means nous regardons la télé."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : The present continuous (is/are + verb-ing) is used for an action happening right now.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. Example: 'I am playing' means 'Je suis en train de jouer' (en ce moment)."
+      },
+      {
+        "id": "q4",
+        "text": "What is the English word for 'le déjeuner' (le repas du midi) ?",
+        "type": "qcm",
+        "options": ["Breakfast", "Lunch", "Dinner", "Snack"],
+        "answer": 1,
+        "explanation": "Breakfast = petit-déjeuner, Lunch = déjeuner, Dinner = dîner."
+      },
+      {
+        "id": "q5",
+        "text": "Translate : 'My sister is playing in the garden.'",
+        "type": "qcm",
+        "options": ["Ma sœur dort dans la chambre.", "Ma sœur joue dans le jardin.", "Mon frère joue dans le parc.", "Ma sœur mange dans le jardin."],
+        "answer": 1,
+        "explanation": "Sister = sœur, is playing = joue / est en train de jouer, garden = jardin."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Unit2_The_Kitchen": {
+    "title": "The Kitchen (La cuisine)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is 'la cuisine' (the room) in English ?",
+        "type": "qcm",
+        "options": ["The living room", "The bedroom", "The kitchen", "The bathroom"],
+        "answer": 2,
+        "explanation": "The kitchen is the room where you prepare food and cook."
+      },
+      {
+        "id": "q2",
+        "text": "How do you say 'une cuillère' in English ?",
+        "type": "qcm",
+        "options": ["A fork", "A knife", "A plate", "A spoon"],
+        "answer": 3,
+        "explanation": "A spoon = une cuillère. A fork = une fourchette. A knife = un couteau."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'A fridge' is short for refrigerator (réfrigérateur).",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. It's the appliance used to keep food cold."
+      },
+      {
+        "id": "q4",
+        "text": "Where do you wash the dishes ?",
+        "type": "qcm",
+        "options": ["In the fridge", "In the oven", "In the sink", "On the table"],
+        "answer": 2,
+        "explanation": "The sink (l'évier) is where you use water to wash the dishes (la vaisselle)."
+      },
+      {
+        "id": "q5",
+        "text": "What is the English word for 'une assiette' ?",
+        "type": "qcm",
+        "options": ["A glass", "A plate", "A bowl", "A cup"],
+        "answer": 1,
+        "explanation": "A plate is a flat dish used for eating food."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Unit3_Whats_the_Date": {
+    "title": "What's the date ? (Quelle est la date ?)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you say 'Janvier' in English ?",
+        "type": "qcm",
+        "options": ["Juny", "January", "July", "February"],
+        "answer": 1,
+        "explanation": "The first month of the year is January."
+      },
+      {
+        "id": "q2",
+        "text": "What is the correct format for dates in British English ?",
+        "type": "qcm",
+        "options": ["Month - Day - Year (ex: May 12th)", "Day - Month - Year (ex: 12th May)", "Year - Month - Day", "Day - Year - Month"],
+        "answer": 1,
+        "explanation": "In the UK (and often taught in CI), the format is Day-Month-Year (ex: 12th May). In the US, it's Month-Day (May 12th)."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : Days of the week (Monday, Tuesday...) and Months always start with a capital letter in English.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. Unlike French (lundi, janvier), in English they must be capitalized: Monday, January."
+      },
+      {
+        "id": "q4",
+        "text": "How do you write 'le premier' (the 1st) for a date ?",
+        "type": "qcm",
+        "options": ["The oneth", "The first", "The one", "The fir"],
+        "answer": 1,
+        "explanation": "For dates, we use ordinal numbers. 1 = first (1st), 2 = second (2nd), 3 = third (3rd)."
+      },
+      {
+        "id": "q5",
+        "text": "If today is 'Wednesday', what is tomorrow ?",
+        "type": "qcm",
+        "options": ["Tuesday", "Friday", "Thursday", "Saturday"],
+        "answer": 2,
+        "explanation": "Wednesday = Mercredi. Thursday = Jeudi."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Unit3_Telling_Time": {
+    "title": "Telling the time (L'heure)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you ask 'Quelle heure est-il ?' in English ?",
+        "type": "qcm",
+        "options": ["What time is it?", "How much time?", "What is the hour?", "When time?"],
+        "answer": 0,
+        "explanation": "The standard question is 'What time is it?'."
+      },
+      {
+        "id": "q2",
+        "text": "What does 'It's three o'clock' mean ?",
+        "type": "qcm",
+        "options": ["Il est 3h30", "Il est 13h", "Il est 3 heures pile", "Il est moins le quart"],
+        "answer": 2,
+        "explanation": "We use 'o'clock' only for full, exact hours (l'heure juste, pile)."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'Half past four' means 'Il est 4h30'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. 'Half' means demi (30 minutes), and 'past' means 'passé de'. Donc 30 min passées après 4h = 4h30."
+      },
+      {
+        "id": "q4",
+        "text": "How do you say 'Il est 8h15' ?",
+        "type": "qcm",
+        "options": ["It's fifteen past eight", "It's a quarter to eight", "It's a quarter past eight", "It's eight and fifteen"],
+        "answer": 2,
+        "explanation": "15 minutes = a quarter. 'Past' = après. So 'a quarter past eight' = un quart d'heure passé après 8h."
+      },
+      {
+        "id": "q5",
+        "text": "What does 'A.M.' stand for when talking about time (ex: 8:00 a.m.) ?",
+        "type": "qcm",
+        "options": ["After Morning", "Ante Meridiem (Before noon / le matin)", "At Midnight", "Always Morning"],
+        "answer": 1,
+        "explanation": "A.M. is used for morning hours (from midnight to 11:59). P.M. is for afternoon/evening (from noon to 23:59)."
+      }
+    ]
+  },
+  "Fiche_Lecon9_Unit3_English_At_8_OClock": {
+    "title": "English at 8 o'clock",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What preposition is used before time? (ex: We have English ... 8 o'clock)",
+        "type": "qcm",
+        "options": ["in", "on", "at", "to"],
+        "answer": 2,
+        "explanation": "In English, we always use 'at' for time. 'At 8 o'clock' = à 8 heures."
+      },
+      {
+        "id": "q2",
+        "text": "What does a timetable show ?",
+        "type": "qcm",
+        "options": ["The time on a clock", "A table in the kitchen", "The schedule of subjects and classes for the week (l'emploi du temps)", "A list of food"],
+        "answer": 2,
+        "explanation": "A timetable (or schedule) is the plan of your lessons (emploi du temps)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On utilise la préposition 'on' avant les jours de la semaine (ex: 'On Monday').",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. We say 'at 8 o'clock' (pour l'heure) but 'on Monday' (pour les jours)."
+      },
+      {
+        "id": "q4",
+        "text": "How do you ask about someone's favourite subject ?",
+        "type": "qcm",
+        "options": ["What is your best school?", "What is your favourite subject?", "How is your subject?", "Who is your subject?"],
+        "answer": 1,
+        "explanation": "'Subject' means 'matière scolaire'. 'Favourite' = préféré."
+      },
+      {
+        "id": "q5",
+        "text": "If a student says 'I'm late!', what does it mean ?",
+        "type": "qcm",
+        "options": ["Je suis en avance", "Je suis heureux", "Je suis en retard", "Je suis absent"],
+        "answer": 2,
+        "explanation": "To be late means to arrive after the expected time (être en retard)."
+      }
+    ]
+  },
+  "Fiche_Lecon10_Unit4_My_Father_Is_A_Policeman": {
+    "title": "My father is a policeman (Les métiers)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is a 'policeman' ?",
+        "type": "qcm",
+        "options": ["Un médecin", "Un policier", "Un pompier", "Un professeur"],
+        "answer": 1,
+        "explanation": "Policeman = policier (ou agent de police)."
+      },
+      {
+        "id": "q2",
+        "text": "How do you ask 'Quel est ton métier ?' in English ?",
+        "type": "qcm",
+        "options": ["What are you making?", "What is your job? (or What do you do?)", "Who is your job?", "Where is your work?"],
+        "answer": 1,
+        "explanation": "'Job' means métier/profession. 'What do you do?' is also very common."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : A 'nurse' works in a school.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 1,
+        "explanation": "False! A nurse (infirmière / infirmier) works in a hospital or clinic."
+      },
+      {
+        "id": "q4",
+        "text": "Who works in a school to teach students ?",
+        "type": "qcm",
+        "options": ["A baker", "A driver", "A teacher", "A tailor"],
+        "answer": 2,
+        "explanation": "A teacher = un professeur / un enseignant."
+      },
+      {
+        "id": "q5",
+        "text": "What does a 'farmer' do ?",
+        "type": "qcm",
+        "options": ["He fixes cars", "He sells bread", "He works on a farm growing crops or raising animals (agriculteur)", "He flies planes"],
+        "answer": 2,
+        "explanation": "A farmer is an agriculteur/fermier. 'Farm' = la ferme."
+      }
+    ]
+  },
+  "Fiche_Lecon11_Unit4_Jobs_Tools": {
+    "title": "Jobs and Tools (Métiers et outils)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What does a mechanic use to fix cars ?",
+        "type": "qcm",
+        "options": ["A pen", "A spanner (une clé à molette)", "A book", "A blackboard"],
+        "answer": 1,
+        "explanation": "A mechanic uses tools like a spanner to repair cars."
+      },
+      {
+        "id": "q2",
+        "text": "Who uses a chalk and a blackboard ?",
+        "type": "qcm",
+        "options": ["A farmer", "A teacher", "A driver", "A tailor"],
+        "answer": 1,
+        "explanation": "A teacher (professeur) uses a chalk (craie) to write on a blackboard (tableau noir)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : A 'tailor' (tailleur) uses a needle and thread.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. A tailor makes clothes and uses a needle (aiguille) and thread (fil)."
+      },
+      {
+        "id": "q4",
+        "text": "What is the English word for 'le lieu de travail' ?",
+        "type": "qcm",
+        "options": ["The home", "The workplace", "The school", "The cinema"],
+        "answer": 1,
+        "explanation": "A workplace is the place where someone does their job."
+      },
+      {
+        "id": "q5",
+        "text": "What does a doctor use to listen to your heart ?",
+        "type": "qcm",
+        "options": ["A stethoscope", "A hammer", "A tractor", "A computer"],
+        "answer": 0,
+        "explanation": "A doctor (médecin) uses a stethoscope."
+      }
+    ]
+  },
+  "Fiche_Lecon12_Unit5_Clothes": {
+    "title": "Clothes (Les vêtements)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What do you wear on your feet before putting on shoes ?",
+        "type": "qcm",
+        "options": ["A hat", "Socks (chaussettes)", "A tie", "Gloves"],
+        "answer": 1,
+        "explanation": "Socks are worn on the feet."
+      },
+      {
+        "id": "q2",
+        "text": "How do you say 'une robe' in English ?",
+        "type": "qcm",
+        "options": ["A skirt", "A shirt", "A dress", "A trousers"],
+        "answer": 2,
+        "explanation": "A dress = une robe. A skirt = une jupe."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'Trousers' (pantalon) is always plural in English.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. We say 'my trousers are black' (comme pantalon a deux jambes)."
+      },
+      {
+        "id": "q4",
+        "text": "What is a 'shirt' ?",
+        "type": "qcm",
+        "options": ["Une chemise", "Un short", "Un chapeau", "Des chaussures"],
+        "answer": 0,
+        "explanation": "A shirt is une chemise. (A t-shirt = un t-shirt)."
+      },
+      {
+        "id": "q5",
+        "text": "What do you wear on your head to protect from the sun ?",
+        "type": "qcm",
+        "options": ["A belt", "A hat", "A sock", "A dress"],
+        "answer": 1,
+        "explanation": "A hat = un chapeau."
+      }
+    ]
+  },
+  "Fiche_Lecon13_Unit5_Clothes_and_Colours": {
+    "title": "Clothes and Colours (Vêtements et couleurs)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What colour is the sky on a sunny day ?",
+        "type": "qcm",
+        "options": ["Red", "Blue", "Green", "Yellow"],
+        "answer": 1,
+        "explanation": "Blue = bleu."
+      },
+      {
+        "id": "q2",
+        "text": "How do you translate 'une chemise rouge' ?",
+        "type": "qcm",
+        "options": ["A shirt red", "A red shirt", "A shirt of red", "Red a shirt"],
+        "answer": 1,
+        "explanation": "In English, the adjective (colour) always comes BEFORE the noun: A red shirt."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : Adjectives in English do not take an 's' in the plural.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. Adjectives are invariable. We say 'Red shirts' (des chemises rouges), the 's' is only on the noun."
+      },
+      {
+        "id": "q4",
+        "text": "What is the colour of grass (l'herbe) ?",
+        "type": "qcm",
+        "options": ["Black", "Green", "White", "Purple"],
+        "answer": 1,
+        "explanation": "Green = vert."
+      },
+      {
+        "id": "q5",
+        "text": "Translate : 'Il porte un pantalon noir.'",
+        "type": "qcm",
+        "options": ["He is wearing black trousers.", "He wears a trousers black.", "He is wearing a black shirt.", "He is wearing black shoes."],
+        "answer": 0,
+        "explanation": "He is wearing (il porte) + black (noir) + trousers (pantalon)."
+      }
+    ]
+  },
+  "Fiche_Lecon14_Unit6_Food_And_Drinks_I_Like_Rice_And_Coke": {
+    "title": "Food and Drinks (Nourriture et boissons)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you say 'J'aime le riz' ?",
+        "type": "qcm",
+        "options": ["I don't like rice", "I like rice", "I hate rice", "I eat bread"],
+        "answer": 1,
+        "explanation": "'I like' = J'aime. 'Rice' = le riz."
+      },
+      {
+        "id": "q2",
+        "text": "What is the opposite of 'I like' ?",
+        "type": "qcm",
+        "options": ["I love", "I don't like (or I dislike)", "I want", "I eat"],
+        "answer": 1,
+        "explanation": "To express dislike, you say 'I do not like' or 'I don't like'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Meat' signifie la viande.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Meat = viande. Fish = poisson."
+      },
+      {
+        "id": "q4",
+        "text": "Which of these is a drink (une boisson) ?",
+        "type": "qcm",
+        "options": ["Bread", "Chicken", "Water (l'eau)", "Rice"],
+        "answer": 2,
+        "explanation": "Water, Coke (Coca), milk (lait) are drinks. The others are solid food."
+      },
+      {
+        "id": "q5",
+        "text": "If you are very hungry, what do you say ?",
+        "type": "qcm",
+        "options": ["I am thirsty", "I am happy", "I am hungry", "I am sleeping"],
+        "answer": 2,
+        "explanation": "'Hungry' = avoir faim. 'Thirsty' = avoir soif."
+      }
+    ]
+  },
+  "Fiche_Lecon15_Unit6_Fruits_And_Vegetables": {
+    "title": "Fruits and Vegetables (Fruits et légumes)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What is a 'banana' ?",
+        "type": "qcm",
+        "options": ["Un légume vert", "Une banane", "Une pomme", "Une carotte"],
+        "answer": 1,
+        "explanation": "Banana = banane."
+      },
+      {
+        "id": "q2",
+        "text": "Which of these is a vegetable (un légume) ?",
+        "type": "qcm",
+        "options": ["An orange", "An apple", "A carrot", "A mango"],
+        "answer": 2,
+        "explanation": "A carrot is a vegetable. Oranges, apples and mangoes are fruits."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'An apple a day keeps the doctor away' is a famous English proverb.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. It means eating healthy fruits (like an apple) keeps you in good health."
+      },
+      {
+        "id": "q4",
+        "text": "How do you say 'Je veux des tomates' ?",
+        "type": "qcm",
+        "options": ["I like tomatoes", "I want tomatoes", "I have tomatoes", "I eat tomatoes"],
+        "answer": 1,
+        "explanation": "'I want' = je veux."
+      },
+      {
+        "id": "q5",
+        "text": "What colour is a ripe lemon (un citron mûr) ?",
+        "type": "qcm",
+        "options": ["Blue", "Red", "Yellow", "Black"],
+        "answer": 2,
+        "explanation": "A lemon is yellow."
+      }
+    ]
+  },
+  "Fiche_Lecon16_Unit6_Cooking_Processes": {
+    "title": "Cooking Processes (La cuisine)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What does the verb 'to boil' mean ?",
+        "type": "qcm",
+        "options": ["Frire", "Bouillir", "Couper", "Mélanger"],
+        "answer": 1,
+        "explanation": "'To boil' means to cook in very hot water (bouillir)."
+      },
+      {
+        "id": "q2",
+        "text": "If you want to make chips (frites), you must ... the potatoes in oil.",
+        "type": "qcm",
+        "options": ["boil", "fry", "cut", "wash"],
+        "answer": 1,
+        "explanation": "'To fry' means to cook in hot fat or oil (frire)."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'To cut' means 'couper'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. You cut the vegetables with a knife."
+      },
+      {
+        "id": "q4",
+        "text": "Before eating fruits or vegetables, what should you do first ?",
+        "type": "qcm",
+        "options": ["Cook them", "Eat them", "Wash them (les laver)", "Throw them"],
+        "answer": 2,
+        "explanation": "'To wash' means laver. It is important for hygiene."
+      },
+      {
+        "id": "q5",
+        "text": "What does 'to mix' mean ?",
+        "type": "qcm",
+        "options": ["Verser", "Cuire", "Mélanger", "Bouillir"],
+        "answer": 2,
+        "explanation": "To mix means to combine ingredients together (mélanger)."
+      }
+    ]
+  },
+  "Fiche_Lecon17_Unit7_Body_Hygiene": {
+    "title": "Body Hygiene (L'hygiène corporelle)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "How do you say 'Je me brosse les dents' in English ?",
+        "type": "qcm",
+        "options": ["I wash my hair", "I brush my teeth", "I clean my face", "I take a shower"],
+        "answer": 1,
+        "explanation": "To brush = brosser. Teeth = les dents."
+      },
+      {
+        "id": "q2",
+        "text": "What do you use to clean your body in the shower ?",
+        "type": "qcm",
+        "options": ["Only water", "Soap (savon)", "Oil", "Sand"],
+        "answer": 1,
+        "explanation": "Soap is used for washing to kill germs and remove dirt."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'To have a bath' means 'Prendre un bain'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. 'To have a shower' means prendre une douche."
+      },
+      {
+        "id": "q4",
+        "text": "What should you do before eating and after using the toilet ?",
+        "type": "qcm",
+        "options": ["Wash your hands (se laver les mains)", "Sleep", "Comb your hair", "Brush your teeth"],
+        "answer": 0,
+        "explanation": "Washing your hands is the most basic rule of body hygiene."
+      },
+      {
+        "id": "q5",
+        "text": "What is a 'towel' ?",
+        "type": "qcm",
+        "options": ["Un peigne", "Un savon", "Une serviette (pour s'essuyer)", "Une brosse"],
+        "answer": 2,
+        "explanation": "A towel is used to dry your body after a shower."
+      }
+    ]
+  },
+  "Fiche_Lecon18_Unit7_Insalubrity_Diseases": {
+    "title": "Insalubrity & Diseases (Insalubrité et maladies)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "What does 'insalubrity' mean ?",
+        "type": "qcm",
+        "options": ["Good health", "A dirty and unhealthy environment (l'insalubrité)", "A hospital", "A medicine"],
+        "answer": 1,
+        "explanation": "Insalubrity refers to places that are dirty, full of rubbish and dangerous for health."
+      },
+      {
+        "id": "q2",
+        "text": "Mosquitoes (les moustiques) can transmit which disease ?",
+        "type": "qcm",
+        "options": ["Malaria (le paludisme)", "A cold (un rhume)", "A headache", "A broken leg"],
+        "answer": 0,
+        "explanation": "Mosquitoes breed in dirty, stagnant water and transmit malaria."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : Keeping your environment clean helps prevent diseases.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. A clean environment stops germs and insects from multiplying."
+      },
+      {
+        "id": "q4",
+        "text": "What is the English word for 'ordures' or 'poubelle' ?",
+        "type": "qcm",
+        "options": ["Food", "Rubbish / Garbage", "Water", "Clothes"],
+        "answer": 1,
+        "explanation": "Rubbish (UK) or Garbage (US) means ordures. The bin is la poubelle."
+      },
+      {
+        "id": "q5",
+        "text": "If you are sick with malaria, who should you see ?",
+        "type": "qcm",
+        "options": ["A teacher", "A doctor", "A mechanic", "A farmer"],
+        "answer": 1,
+        "explanation": "You should go to the hospital to see a doctor."
+      }
+    ]
+  },
+  "Fiche_Lecon19_Unit5_Buying_Clothes": {
+    "title": "Buying clothes (Acheter des vêtements)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Where do you go to buy clothes ?",
+        "type": "qcm",
+        "options": ["To the hospital", "To the school", "To the shop / market", "To the bank"],
+        "answer": 2,
+        "explanation": "You buy clothes in a shop (un magasin) or at the market (au marché)."
+      },
+      {
+        "id": "q2",
+        "text": "How do you ask for the price of a shirt ?",
+        "type": "qcm",
+        "options": ["How old is this shirt?", "How much is this shirt?", "Where is this shirt?", "Who is this shirt?"],
+        "answer": 1,
+        "explanation": "'How much' is used to ask for the price (combien ça coûte)."
+      },
+      {
+        "id": "q3",
+        "text": "True or False : 'Expensive' means 'cher'.",
+        "type": "vrai_faux",
+        "options": ["True", "False"],
+        "answer": 0,
+        "explanation": "True. If a shirt costs a lot of money, it is expensive. The opposite is 'cheap'."
+      },
+      {
+        "id": "q4",
+        "text": "If the seller says 'It's 5,000 CFA', what is he talking about ?",
+        "type": "qcm",
+        "options": ["The size", "The colour", "The price", "The time"],
+        "answer": 2,
+        "explanation": "He is giving the price of the item."
+      },
+      {
+        "id": "q5",
+        "text": "What does 'Can I try it on?' mean ?",
+        "type": "qcm",
+        "options": ["Puis-je le laver ?", "Puis-je l'essayer (le vêtement) ?", "Puis-je le déchirer ?", "Puis-je le donner ?"],
+        "answer": 1,
+        "explanation": "To try on means 'essayer' (un vêtement) to see if the size is right."
+      }
+    ]
+  }
+}

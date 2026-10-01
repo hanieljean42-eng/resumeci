@@ -1,0 +1,818 @@
+{
+  "Fiche_Lecon1_NOMBRES_PREMIERS": {
+    "title": "Nombres Premiers",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un nombre premier ?",
+        "type": "qcm",
+        "options": [
+          "Un nombre qui se termine par 1",
+          "Un nombre qui n'a que deux diviseurs distincts : 1 et lui-même",
+          "Un nombre pair",
+          "Un nombre qui a plus de 3 diviseurs"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 7 est premier car il ne se divise que par 1 et 7. 6 n'est pas premier car il se divise par 1, 2, 3, et 6."
+      },
+      {
+        "id": "q2",
+        "text": "Le nombre 1 est-il un nombre premier ?",
+        "type": "qcm",
+        "options": [
+          "Oui",
+          "Non",
+          "Seulement le mardi",
+          "Oui, c'est le premier de tous"
+        ],
+        "answer": 1,
+        "explanation": "Non, par convention, 1 n'est pas premier car il n'a qu'un SEUL diviseur (lui-même)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Tous les nombres pairs (sauf 2) ne sont PAS des nombres premiers.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. S'ils sont pairs, ils sont divisibles par 2. Donc 2 est le SEUL nombre pair qui est premier."
+      },
+      {
+        "id": "q4",
+        "text": "Lequel de ces nombres est premier ?",
+        "type": "qcm",
+        "options": [
+          "15",
+          "9",
+          "13",
+          "21"
+        ],
+        "answer": 2,
+        "explanation": "13 est premier. (15 = 3x5, 9 = 3x3, 21 = 3x7)."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie 'décomposer un nombre en produit de facteurs premiers' ?",
+        "type": "qcm",
+        "options": [
+          "L'écrire sous forme de multiplication de nombres premiers uniquement (ex: 12 = 2 x 2 x 3)",
+          "Le diviser par 2 jusqu'à zéro",
+          "L'écrire avec des virgules",
+          "Faire une addition"
+        ],
+        "answer": 0,
+        "explanation": "C'est très utile pour trouver le PPCM (Plus Petit Commun Multiple) ou le PGCD (Plus Grand Commun Diviseur)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_FIGURES_SYMETRIQUES": {
+    "title": "Figures Symétriques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la symétrie centrale (par rapport à un point O) ?",
+        "type": "qcm",
+        "options": [
+          "C'est comme un miroir droit",
+          "C'est un demi-tour (rotation de 180°) autour d'un point O",
+          "C'est agrandir la figure",
+          "C'est plier la feuille en deux"
+        ],
+        "answer": 1,
+        "explanation": "En symétrie centrale, si on 'pique' le compas sur le point O et qu'on fait tourner la figure d'un demi-tour, elle se superpose à son symétrique."
+      },
+      {
+        "id": "q2",
+        "text": "Comment construit-on le symétrique A' d'un point A par rapport au point O (centre de symétrie) ?",
+        "type": "qcm",
+        "options": [
+          "O est le milieu du segment [AA']",
+          "On dessine un cercle",
+          "A' est n'importe où",
+          "A et A' sont du même côté de O"
+        ],
+        "answer": 0,
+        "explanation": "On trace la demi-droite [AO), et on reporte la distance AO de l'autre côté de O pour trouver A'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une symétrie (axiale ou centrale), les longueurs et les angles sont conservés.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le symétrique d'un segment de 5 cm est un autre segment de 5 cm. La symétrie conserve les formes et les dimensions."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la différence avec la symétrie axiale (par rapport à une droite d) ?",
+        "type": "qcm",
+        "options": [
+          "Aucune",
+          "La symétrie axiale correspond à un 'pliage' le long de la droite d (effet miroir)",
+          "La symétrie axiale fait tourner la figure",
+          "La symétrie axiale réduit la taille"
+        ],
+        "answer": 1,
+        "explanation": "La droite d agit comme un miroir."
+      },
+      {
+        "id": "q5",
+        "text": "Un rectangle possède-t-il un 'centre' de symétrie ?",
+        "type": "qcm",
+        "options": [
+          "Oui, le point d'intersection de ses diagonales",
+          "Non",
+          "Oui, l'un de ses sommets",
+          "Oui, le milieu de son côté"
+        ],
+        "answer": 0,
+        "explanation": "Si on fait tourner le rectangle d'un demi-tour autour de ce point central, il retombe exactement sur lui-même."
+      }
+    ]
+  },
+  "Fiche_Lecon3_ANGLES": {
+    "title": "Les angles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'unité de mesure d'un angle géométrique ?",
+        "type": "qcm",
+        "options": [
+          "Le centimètre (cm)",
+          "Le gramme (g)",
+          "Le degré (°)",
+          "L'heure (h)"
+        ],
+        "answer": 2,
+        "explanation": "Un tour complet fait 360°, un angle droit fait 90°."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on deux angles dont la somme fait 90° (un angle droit) ?",
+        "type": "qcm",
+        "options": [
+          "Des angles opposés",
+          "Des angles complémentaires",
+          "Des angles supplémentaires",
+          "Des angles plats"
+        ],
+        "answer": 1,
+        "explanation": "Complémentaires = leur somme fait 90° (ex: 30° et 60°)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux angles 'supplémentaires' ont une somme égale à 180° (un angle plat).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (ex: 120° et 60° sont supplémentaires)."
+      },
+      {
+        "id": "q4",
+        "text": "Que sont des angles 'opposés par le sommet' ?",
+        "type": "qcm",
+        "options": [
+          "Des angles qui ne se touchent pas",
+          "Deux angles qui ont le même sommet et dont les côtés sont dans le prolongement l'un de l'autre (en croix X)",
+          "Des angles droits",
+          "Des angles dans un triangle"
+        ],
+        "answer": 1,
+        "explanation": "Propriété importante : Deux angles opposés par le sommet ont toujours la MÊME mesure."
+      },
+      {
+        "id": "q5",
+        "text": "Si deux droites parallèles sont coupées par une sécante, comment sont les angles 'alternes-internes' formés ?",
+        "type": "qcm",
+        "options": [
+          "De longueurs différentes",
+          "Égaux (ils ont la même mesure)",
+          "L'un est double de l'autre",
+          "Toujours égaux à 90°"
+        ],
+        "answer": 1,
+        "explanation": "C'est une propriété fondamentale pour calculer des angles dans les figures géométriques (le fameux 'Z')."
+      }
+    ]
+  },
+  "Fiche_Lecon4_NOMBRES_DECIMAUX_RELATIFS": {
+    "title": "Les nombres relatifs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un nombre relatif ?",
+        "type": "qcm",
+        "options": [
+          "Un nombre toujours avec une virgule",
+          "Un nombre précédé d'un signe plus (+) ou moins (-)",
+          "Un nombre d'une famille",
+          "Un nombre écrit en lettres"
+        ],
+        "answer": 1,
+        "explanation": "Les relatifs rassemblent les nombres positifs et les nombres négatifs."
+      },
+      {
+        "id": "q2",
+        "text": "Le nombre Zéro (0) est-il positif ou négatif ?",
+        "type": "qcm",
+        "options": [
+          "Positif seulement",
+          "Négatif seulement",
+          "Il est à la fois positif et négatif (le seul nombre dans ce cas)",
+          "Il n'est ni l'un ni l'autre"
+        ],
+        "answer": 2,
+        "explanation": "0 sépare les positifs des négatifs sur la droite graduée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : De deux nombres négatifs, le plus grand est celui qui a la plus grande distance à zéro (la plus grande valeur absolue).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est l'inverse. Par exemple, -2 est PLUS GRAND que -5 (car -2 est plus proche de 0, il fait 'moins froid')."
+      },
+      {
+        "id": "q4",
+        "text": "Combien font (-3) + (-4) ?",
+        "type": "qcm",
+        "options": [
+          "+7",
+          "-7",
+          "-1",
+          "+1"
+        ],
+        "answer": 1,
+        "explanation": "J'ai une dette de 3 et une dette de 4, donc j'ai une dette de 7 (-7). Pour additionner deux nombres de même signe, on garde le signe et on additionne les distances à zéro."
+      },
+      {
+        "id": "q5",
+        "text": "Combien font (-8) + (+5) ?",
+        "type": "qcm",
+        "options": [
+          "-13",
+          "+13",
+          "-3",
+          "+3"
+        ],
+        "answer": 2,
+        "explanation": "Signes contraires : on garde le signe de celui qui est le plus éloigné de zéro (-8 l'emporte, donc négatif) et on soustrait (8-5=3). Résultat : -3."
+      }
+    ]
+  },
+  "Fiche_Lecon5_SEGMENTS": {
+    "title": "Segments et milieux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un segment [AB] ?",
+        "type": "qcm",
+        "options": [
+          "Une ligne droite infinie",
+          "La portion de droite délimitée par les deux extrémités A et B",
+          "Un cercle",
+          "Un point"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à une droite (infinie), un segment a un début et une fin, on peut donc mesurer sa longueur AB."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que le milieu d'un segment [AB] ?",
+        "type": "qcm",
+        "options": [
+          "N'importe quel point sur le segment",
+          "Le point M qui appartient au segment et qui est à égale distance des deux extrémités (AM = MB)",
+          "La moitié de la longueur",
+          "Un angle"
+        ],
+        "answer": 1,
+        "explanation": "Le milieu coupe le segment en deux parties égales."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La médiatrice d'un segment [AB] est la droite qui passe par le milieu de ce segment ET qui lui est perpendiculaire.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la définition géométrique parfaite de la médiatrice."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle propriété possède tout point qui se trouve SUR la médiatrice du segment [AB] ?",
+        "type": "qcm",
+        "options": [
+          "Il est invisible",
+          "Il est à égale distance (équidistant) des deux extrémités A et B",
+          "Il est plus proche de A",
+          "Il ne forme pas d'angle"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'axe de symétrie du segment."
+      },
+      {
+        "id": "q5",
+        "text": "Si un point P est tel que PA = PB (P est équidistant de A et B), alors où se trouve le point P ?",
+        "type": "qcm",
+        "options": [
+          "Au milieu de [AB]",
+          "Obligatoirement sur la médiatrice de [AB]",
+          "Sur un autre segment",
+          "Nulle part"
+        ],
+        "answer": 1,
+        "explanation": "P n'est pas forcément au milieu (il peut être plus haut ou plus bas), mais il est sûr de se trouver sur la ligne médiatrice."
+      }
+    ]
+  },
+  "Fiche_Lecon6_FRACTIONS": {
+    "title": "Les fractions (Opérations)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment additionne-t-on deux fractions qui n'ont pas le même dénominateur (ex: 1/2 + 1/4) ?",
+        "type": "qcm",
+        "options": [
+          "On additionne les numérateurs entre eux et les dénominateurs entre eux",
+          "On doit d'abord les réduire au même dénominateur",
+          "On multiplie tout",
+          "C'est impossible"
+        ],
+        "answer": 1,
+        "explanation": "Règle d'or pour l'addition ou la soustraction : il faut le MÊME dénominateur ! (1/2 = 2/4. Puis 2/4 + 1/4 = 3/4)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment multiplie-t-on deux fractions entre elles (ex: 2/3 x 4/5) ?",
+        "type": "qcm",
+        "options": [
+          "Il faut les mettre au même dénominateur",
+          "On multiplie les numérateurs entre eux et les dénominateurs entre eux",
+          "On fait un produit en croix",
+          "On inverse la deuxième"
+        ],
+        "answer": 1,
+        "explanation": "Pas besoin du même dénominateur pour la multiplication. (2x4)/(3x5) = 8/15."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Diviser par une fraction revient à multiplier par son inverse.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Exemple : 3 ÷ (1/4) = 3 x (4/1) = 12."
+      },
+      {
+        "id": "q4",
+        "text": "Que vaut la fraction 5/5 ?",
+        "type": "qcm",
+        "options": [
+          "25",
+          "10",
+          "1",
+          "0"
+        ],
+        "answer": 2,
+        "explanation": "Un nombre divisé par lui-même donne toujours 1 (sauf 0/0). C'est l'unité entière."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie 'simplifier une fraction' ?",
+        "type": "qcm",
+        "options": [
+          "L'effacer de la page",
+          "Diviser le numérateur et le dénominateur par un même nombre pour obtenir une fraction égale mais avec des plus petits nombres",
+          "L'écrire avec des couleurs",
+          "Enlever le trait du milieu"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 10/15, on divise par 5 en haut et en bas, ça donne 2/3 (qui est une fraction irréductible)."
+      }
+    ]
+  },
+  "Fiche_Lecon7_TRIANGLES": {
+    "title": "Les triangles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que vaut TOUJOURS la somme des angles d'un triangle (quel qu'il soit) ?",
+        "type": "qcm",
+        "options": [
+          "90°",
+          "180°",
+          "360°",
+          "100°"
+        ],
+        "answer": 1,
+        "explanation": "C'est une propriété fondamentale. Si on connait deux angles, on peut calculer le 3ème : 180 - (A + B) = C."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on le côté le plus long d'un triangle rectangle (le côté opposé à l'angle droit) ?",
+        "type": "qcm",
+        "options": [
+          "La base",
+          "L'hypoténuse",
+          "La diagonale",
+          "Le sommet"
+        ],
+        "answer": 1,
+        "explanation": "L'hypoténuse est spécifique au triangle rectangle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un triangle isocèle (2 côtés égaux), les deux angles à la base sont égaux.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le triangle isocèle a un axe de symétrie qui divise la base en deux."
+      },
+      {
+        "id": "q4",
+        "text": "Comment sont les trois angles d'un triangle équilatéral (3 côtés égaux) ?",
+        "type": "qcm",
+        "options": [
+          "Différents",
+          "Ils valent tous 60°",
+          "Ils valent tous 90°",
+          "Ils valent 100°"
+        ],
+        "answer": 1,
+        "explanation": "Les 3 angles sont égaux, donc 180° ÷ 3 = 60°."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce qu'une 'hauteur' dans un triangle ?",
+        "type": "qcm",
+        "options": [
+          "La droite qui passe par un sommet et coupe le côté opposé en son milieu",
+          "La droite qui passe par un sommet et qui est perpendiculaire au côté opposé",
+          "La longueur du plus grand côté",
+          "Le trait qui le coupe en deux triangles égaux"
+        ],
+        "answer": 1,
+        "explanation": "La hauteur est associée à l'angle droit (perpendiculaire). La médiane, elle, passe par le milieu du côté opposé."
+      }
+    ]
+  },
+  "Fiche_Lecon8_CERCLES": {
+    "title": "Le cercle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le 'rayon' d'un cercle ?",
+        "type": "qcm",
+        "options": [
+          "La longueur qui traverse le cercle de part en part en passant par le centre",
+          "Le segment qui relie le centre du cercle à un point de ce cercle",
+          "Le contour du cercle",
+          "Un point au hasard"
+        ],
+        "answer": 1,
+        "explanation": "Tous les points du cercle sont à la même distance (le rayon) du centre."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la relation entre le diamètre (D) et le rayon (r) ?",
+        "type": "qcm",
+        "options": [
+          "D = r",
+          "D = r + 1",
+          "D = 2 x r (Le diamètre est le double du rayon)",
+          "D = r / 2"
+        ],
+        "answer": 2,
+        "explanation": "Le diamètre est la plus grande corde du cercle, il passe par le centre."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on choisit trois points quelconques A, B, C non alignés, on peut tracer un seul cercle qui passe par ces trois points.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est le 'cercle circonscrit' au triangle ABC. Son centre est l'intersection des médiatrices des trois côtés."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une droite tangente à un cercle ?",
+        "type": "qcm",
+        "options": [
+          "Une droite qui coupe le cercle en deux points",
+          "Une droite qui touche le cercle en un seul point (et qui est perpendiculaire au rayon en ce point)",
+          "Une droite qui passe par le centre",
+          "Une droite qui ne le touche pas"
+        ],
+        "answer": 1,
+        "explanation": "La tangente 'effleure' le cercle en un point unique."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la formule pour calculer le périmètre (la circonférence) d'un cercle ?",
+        "type": "qcm",
+        "options": [
+          "Rayon x Rayon x Pi",
+          "Diamètre x Pi (ou 2 x Pi x Rayon)",
+          "Base x Hauteur",
+          "Côté x 4"
+        ],
+        "answer": 1,
+        "explanation": "Pi (π) vaut environ 3,14. (L'autre formule, Pi x R², c'est pour l'aire/la surface du disque)."
+      }
+    ]
+  },
+  "Fiche_Lecon9_PROPORTIONNALITE": {
+    "title": "La proportionnalité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un tableau, on dit que deux grandeurs sont proportionnelles si :",
+        "type": "qcm",
+        "options": [
+          "On passe d'une ligne à l'autre en additionnant toujours le même nombre",
+          "On passe d'une ligne à l'autre en multipliant (ou divisant) toujours par un MÊME nombre",
+          "Les nombres de la deuxième ligne sont plus grands",
+          "Il n'y a pas de zéros"
+        ],
+        "answer": 1,
+        "explanation": "Ce nombre multiplicateur s'appelle le 'coefficient de proportionnalité'."
+      },
+      {
+        "id": "q2",
+        "text": "Si 3 stylos coûtent 600 FCFA, combien coûtent 5 stylos ? (Situation de proportionnalité)",
+        "type": "qcm",
+        "options": [
+          "1000 FCFA",
+          "1200 FCFA",
+          "800 FCFA",
+          "2000 FCFA"
+        ],
+        "answer": 0,
+        "explanation": "1 stylo coûte (600/3 = 200 FCFA). Donc 5 stylos = 5 x 200 = 1000 FCFA."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'âge d'une personne et sa taille sont des grandeurs proportionnelles.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Si on mesure 1m à 10 ans, on ne mesure pas 2m à 20 ans, ni 4m à 40 ans !"
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une échelle sur une carte géographique (ex: 1/100 000) ?",
+        "type": "qcm",
+        "options": [
+          "Le poids de la carte",
+          "Un coefficient de proportionnalité entre les distances sur la carte et les distances réelles sur le terrain",
+          "L'âge de la carte",
+          "Le nombre de villes"
+        ],
+        "answer": 1,
+        "explanation": "1/100 000 signifie que 1 cm sur la carte représente 100 000 cm (1 km) en réalité."
+      },
+      {
+        "id": "q5",
+        "text": "Comment calcule-t-on 20 % (pourcentage) d'un prix de 5000 FCFA ?",
+        "type": "qcm",
+        "options": [
+          "5000 - 20",
+          "5000 x 20",
+          "(5000 x 20) / 100",
+          "5000 / 20"
+        ],
+        "answer": 2,
+        "explanation": "Le pourcentage est une proportionnalité. (5000 x 20) / 100 = 100 000 / 100 = 1000 FCFA."
+      }
+    ]
+  },
+  "Fiche_Lecon10_PARALLELOGRAMMES_PARTICULIERS": {
+    "title": "Parallélogrammes particuliers",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un losange ?",
+        "type": "qcm",
+        "options": [
+          "Un carré raté",
+          "Un quadrilatère dont les 4 côtés sont de même longueur",
+          "Un rectangle penché",
+          "Un triangle double"
+        ],
+        "answer": 1,
+        "explanation": "Le losange a 4 côtés égaux. C'est un parallélogramme particulier."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un rectangle ?",
+        "type": "qcm",
+        "options": [
+          "Un parallélogramme qui a 4 angles droits",
+          "Un parallélogramme avec 4 côtés égaux",
+          "Une figure à 5 côtés",
+          "Un cercle étiré"
+        ],
+        "answer": 0,
+        "explanation": "Le rectangle est défini par ses 4 angles droits (et ses diagonales de même longueur)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le carré est à la fois un losange (4 côtés égaux) ET un rectangle (4 angles droits).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le carré réunit les propriétés du losange et du rectangle."
+      },
+      {
+        "id": "q4",
+        "text": "Comment se croisent les diagonales d'un LOSANGE ?",
+        "type": "qcm",
+        "options": [
+          "Elles ne se croisent pas",
+          "Elles se coupent en leur milieu ET sont perpendiculaires (forment un angle droit)",
+          "Elles sont de la même longueur",
+          "Elles sont parallèles"
+        ],
+        "answer": 1,
+        "explanation": "Les diagonales du losange sont perpendiculaires. (Attention, elles ne sont pas de la même longueur, sauf si c'est un carré)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment sont les diagonales d'un RECTANGLE ?",
+        "type": "qcm",
+        "options": [
+          "Perpendiculaires",
+          "Elles se coupent en leur milieu ET elles ont exactement la même longueur",
+          "Elles ne se coupent pas en leur milieu",
+          "Il n'en a qu'une seule"
+        ],
+        "answer": 1,
+        "explanation": "C'est la propriété clé des diagonales du rectangle."
+      }
+    ]
+  },
+  "Fiche_Lecon11_STATISTIQUES": {
+    "title": "Les statistiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'effectif total dans une enquête statistique (ex: les notes de la classe) ?",
+        "type": "qcm",
+        "options": [
+          "La meilleure note",
+          "Le nombre total de données récoltées (ex: le nombre d'élèves de la classe)",
+          "La somme des notes",
+          "La moyenne"
+        ],
+        "answer": 1,
+        "explanation": "C'est la taille de la 'population' étudiée."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la 'fréquence' d'une donnée ?",
+        "type": "qcm",
+        "options": [
+          "Le nombre de fois où on compte",
+          "L'effectif de la donnée divisé par l'effectif total",
+          "La rapidité de l'élève",
+          "Le plus grand nombre"
+        ],
+        "answer": 1,
+        "explanation": "La fréquence (souvent mise en pourcentage) montre la proportion d'un résultat par rapport au tout."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour calculer la moyenne des notes d'une classe, on additionne toutes les notes obtenues, puis on divise par le nombre d'élèves (effectif total).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la formule classique de la moyenne."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un diagramme circulaire (camembert), la mesure de l'angle pour chaque part est proportionnelle à quoi ?",
+        "type": "qcm",
+        "options": [
+          "À la couleur",
+          "À l'effectif (ou la fréquence) de la donnée représentée",
+          "Au rayon du cercle",
+          "À l'humeur du professeur"
+        ],
+        "answer": 1,
+        "explanation": "Plus l'effectif est grand, plus la part de 'gâteau' (l'angle) sera grande."
+      },
+      {
+        "id": "q5",
+        "text": "Comment s'appelle le graphique qui utilise des rectangles verticaux séparés pour représenter les effectifs ?",
+        "type": "qcm",
+        "options": [
+          "Le diagramme circulaire",
+          "L'histogramme",
+          "Le diagramme en bâtons",
+          "Le diagramme cartésien"
+        ],
+        "answer": 2,
+        "explanation": "Le diagramme en bâtons (ou barres) permet de comparer visuellement les effectifs de différentes catégories."
+      }
+    ]
+  },
+  "Fiche_Lecon12_PRISMES_DROITS": {
+    "title": "Prismes droits et cylindres",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un prisme droit (ex: une boîte d'allumettes, un Toblerone) ?",
+        "type": "qcm",
+        "options": [
+          "Une figure plate",
+          "Un solide géométrique avec 2 bases superposables (parallèles) et des faces latérales rectangulaires",
+          "Une boule parfaite",
+          "Un cube uniquement"
+        ],
+        "answer": 1,
+        "explanation": "Si les bases sont des triangles (ex: Toblerone), on a 3 faces latérales rectangulaires."
+      },
+      {
+        "id": "q2",
+        "text": "Combien de faces possède un pavé droit (qui est un prisme droit à base rectangulaire) ?",
+        "type": "qcm",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "12"
+        ],
+        "answer": 1,
+        "explanation": "Il a 6 faces rectangulaires (comme un dé)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le cylindre de révolution (ex: une boîte de conserve) a pour bases deux cercles de même rayon.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ces deux disques sont parallèles et superposables."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'patron' d'un solide ?",
+        "type": "qcm",
+        "options": [
+          "Le chef de l'usine qui l'a fabriqué",
+          "Le dessin à plat sur une feuille qui, une fois découpé et plié, permet de construire le solide en 3D",
+          "La couleur du solide",
+          "Le volume intérieur"
+        ],
+        "answer": 1,
+        "explanation": "Faire le patron permet de fabriquer le solide avec du papier cartonné."
+      },
+      {
+        "id": "q5",
+        "text": "Comment calcule-t-on le VOLUME (V) d'un prisme droit ou d'un cylindre ?",
+        "type": "qcm",
+        "options": [
+          "V = Longueur + Largeur + Hauteur",
+          "V = Aire de la Base x Hauteur",
+          "V = Côté x 4",
+          "V = Base / Hauteur"
+        ],
+        "answer": 1,
+        "explanation": "On calcule d'abord la surface du 'plancher' (la base), puis on multiplie par la hauteur du solide."
+      }
+    ]
+  }
+}

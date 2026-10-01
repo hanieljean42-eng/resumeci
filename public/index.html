@@ -29,9 +29,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script>
-    // Purge automatique du cache navigateur pour forcer la mise à jour v3.0.0 (Compte à rebours)
+    // Purge automatique du cache navigateur pour forcer la mise à jour v3.2.0
     (function() {
-      var currentVer = '3.0.0';
+      var currentVer = '3.2.0';
       var storedVer = localStorage.getItem('rci_app_v');
       if (storedVer !== currentVer) {
         if ('caches' in window) {
@@ -45,13 +45,15 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="/enhancements.css?v=3.0.0">
-  <link rel="stylesheet" href="/quiz.css?v=3.0.0">
+  <link rel="stylesheet" href="/enhancements.css?v=3.2.0">
+  <link rel="stylesheet" href="/quiz.css?v=3.2.0">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-  <script src="/enhancements.js?v=3.0.0" defer></script>
-  <script type="module" src="/firebase-config.js?v=3.0.0"></script>
-  <script src="/content-protection.js?v=3.0.0" defer></script>
+  <script src="/enhancements.js?v=3.2.0" defer></script>
+  <script type="module" src="/firebase-config.js?v=3.2.0"></script>
+  <script src="/content-protection.js?v=3.2.0" defer></script>
+  <script src="/quiz.js?v=3.2.0" defer></script>
+  <script src="/flashcards.js?v=3.2.0" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -94,7 +96,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="/main.css?v=2.3.0">
+  <link rel="stylesheet" href="/main.css?v=3.2.0">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
@@ -143,9 +145,14 @@
         <input type="text" id="searchInput" placeholder="Rechercher une leçon...">
         <button class="voice-btn" onclick="startVoiceSearch()" title="Recherche vocale"><i class="fas fa-microphone"></i></button>
       </div>
-      <div style="padding: 10px 16px;">
+      <div style="padding: 10px 16px 4px;">
         <button onclick="openProfileView()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(37,99,235,0.3);">
           <i class="fas fa-user-circle"></i> Mon Profil
+        </button>
+      </div>
+      <div style="padding: 0 16px 10px;">
+        <button id="sidebarPassBtn" onclick="if(typeof openElitePassModal==='function')openElitePassModal('Pass Réussite');" style="width: 100%; padding: 10px; background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.2)); border: 1px solid rgba(245,158,11,0.4); color: #fde68a; border-radius: 8px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <i class="fas fa-crown"></i> Activer mon Pass Réussite 🔒
         </button>
       </div>
       <div id="favsList"></div>
@@ -190,9 +197,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.0.0" defer></script>
-  <script src="/quiz.js?v=3.0.0" defer></script>
-  <script src="/flashcards.js?v=3.0.0" defer></script>
+  <script src="/app.js?v=3.2.0" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1366,94 +1371,9 @@
     }
   </style>
 
-  <!-- Profile Modal (Inscription & Modification) -->
-  <div class="profile-modal-overlay" id="profileModalOverlay">
-    <div class="profile-modal">
-      <button class="modal-close" id="pmCloseBtn" onclick="closeProfileEditModal()" style="display: none;">&times;</button>
-      <div class="profile-modal-header">
-        <h2 id="pmModalTitle">Bienvenue sur ResumeCI ! 🎓</h2>
-        <p id="pmModalDesc">Remplis ces informations pour accéder à tes résumés et cours officiels.</p>
-      </div>
-      <div class="profile-modal-body">
-        <form id="profileForm" onsubmit="event.preventDefault(); submitProfile();">
-          <div class="pm-form-row">
-            <div class="pm-form-group">
-              <label for="pmFirstName">Prénom *</label>
-              <input type="text" id="pmFirstName" class="pm-input" placeholder="Ton prénom" required>
-            </div>
-            <div class="pm-form-group">
-              <label for="pmLastName">Nom *</label>
-              <input type="text" id="pmLastName" class="pm-input" placeholder="Ton nom" required>
-            </div>
-          </div>
-          <div class="pm-form-group">
-            <label for="pmClass">Ta Classe *</label>
-            <select id="pmClass" class="pm-select" required>
-              <option value="" disabled selected>Choisis ta classe</option>
-              <option value="6eme">6ème</option>
-              <option value="5eme">5ème</option>
-              <option value="3eme">3ème</option>
-              <option value="Seconde_A">Seconde A</option>
-              <option value="Seconde_C">Seconde C</option>
-              <option value="Premiere_D">Première D</option>
-              <option value="Terminale_A">Terminale A</option>
-              <option value="Terminale_C">Terminale C</option>
-              <option value="Terminale_D">Terminale D</option>
-            </select>
-          </div>
-          <div class="pm-form-group">
-            <label for="pmWhatsapp">Numéro WhatsApp (10 chiffres) *</label>
-            <input type="tel" id="pmWhatsapp" class="pm-input" placeholder="Ex: 0708091011" required maxlength="14">
-          </div>
-          <div class="pm-form-group" id="pmPasswordGroup">
-            <label for="pmPassword" id="pmPasswordLabel">Mot de passe (6 caractères min.) *</label>
-            <input type="password" id="pmPassword" class="pm-input" placeholder="6 caractères minimum" required minlength="6">
-          </div>
-          <button type="submit" class="pm-btn" id="pmSubmitBtn">Commencer à réviser 🚀</button>
-          <div id="pmSwitchToLogin" style="text-align: center; margin-top: 12px;">
-            <a href="#" onclick="openLoginModal(); return false;" style="color: #2563eb; text-decoration: underline; font-size: 13px; font-weight: 600;">Déjà inscrit ? Connecte-toi ici</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <!-- Login Modal -->
-  <div class="profile-modal-overlay" id="loginModalOverlay">
-    <div class="profile-modal">
-      <button class="modal-close" onclick="document.getElementById('loginModalOverlay').classList.remove('show'); document.getElementById('profileModalOverlay').classList.add('show');">&times;</button>
-      <div class="profile-modal-header">
-        <h2>Content de te revoir ! 👋</h2>
-        <p>Connecte-toi pour retrouver ta classe et tes favoris.</p>
-      </div>
-      <div class="profile-modal-body">
-        <form id="loginForm" onsubmit="event.preventDefault(); submitLogin();">
-          <div class="pm-form-row">
-            <div class="pm-form-group">
-              <label for="lmFirstName">Prénom *</label>
-              <input type="text" id="lmFirstName" class="pm-input" placeholder="Ton prénom" required>
-            </div>
-            <div class="pm-form-group">
-              <label for="lmLastName">Nom *</label>
-              <input type="text" id="lmLastName" class="pm-input" placeholder="Ton nom" required>
-            </div>
-          </div>
-          <div class="pm-form-group">
-            <label for="lmWhatsapp">Numéro WhatsApp *</label>
-            <input type="tel" id="lmWhatsapp" class="pm-input" placeholder="Ex: 0708091011" required>
-          </div>
-          <div class="pm-form-group">
-            <label for="lmPassword">Mot de passe *</label>
-            <input type="password" id="lmPassword" class="pm-input" placeholder="Ton mot de passe" required minlength="6">
-          </div>
-          <button type="submit" class="pm-btn" id="lmSubmitBtn">Se Connecter 🔑</button>
-          <div style="text-align: center; margin-top: 12px;">
-            <a href="#" onclick="document.getElementById('loginModalOverlay').classList.remove('show'); document.getElementById('profileModalOverlay').classList.add('show'); return false;" style="color: #2563eb; text-decoration: underline; font-size: 13px; font-weight: 600;">Pas encore de compte ? S'inscrire</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+
+
 
   <!-- View Profile Modal -->
   <div class="profile-modal-overlay" id="viewProfileModalOverlay">
@@ -1497,8 +1417,6 @@
           <i class="fas fa-sign-out-alt"></i> Déconnexion
         </button>
         <div style="display: flex; gap: 8px; justify-content: center; margin-top: 10px; font-size: 11px; flex-wrap: wrap;">
-          <a href="#" onclick="if(window.exportUserData) window.exportUserData(); return false;" style="color: #4b5563; text-decoration: underline;"><i class="fas fa-download"></i> Télécharger mes données</a>
-          <span style="color: #cbd5e1;">•</span>
           <a href="#" onclick="if(window.confirmDeleteAccount) window.confirmDeleteAccount(); return false;" style="color: #ef4444; text-decoration: underline;"><i class="fas fa-trash-alt"></i> Supprimer mon compte</a>
         </div>
         <div style="text-align: center; margin-top: 6px;">

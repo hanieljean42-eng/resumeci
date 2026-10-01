@@ -2,6 +2,72 @@
 (function(){
   'use strict';
 
+  // ==================== ABONNEMENTS & VÉRIFICATION DES DROITS ====================
+  window.userHasFeature = function(featureName) {
+    if (!window.USER_PROFILE) {
+      try {
+        const raw = localStorage.getItem('resumeci_profile');
+        if (raw) window.USER_PROFILE = JSON.parse(raw);
+      } catch(e) {}
+    }
+    if (!window.USER_PROFILE) return false;
+    
+    // Vérification de la validité de l'abonnement
+    const isPremium = !!window.USER_PROFILE.isPremium;
+    const expiresAt = Number(window.USER_PROFILE.premiumExpiresAt) || 0;
+    if (!isPremium || (expiresAt > 0 && expiresAt < Date.now())) {
+      return false; // Pas d'abonnement actif
+    }
+
+    const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
+    const fn = String(featureName || '').toLowerCase();
+
+    // Fonctionnalités incluses dès le Pass Starter (500 F/mois) :
+    const isStarterFeature = 
+      fn.includes('hors-ligne') || 
+      fn.includes('pack') || 
+      fn.includes('pdf') || 
+      fn.includes('surlign') || 
+      fn.includes('note') || 
+      fn.includes('stat');
+
+    // Fonctionnalités réservées au Pass Pro (1 000 F/mois) :
+    const isProFeature = 
+      fn.includes('récitation') || 
+      fn.includes('recitation') || 
+      fn.includes('recall') || 
+      fn.includes('piège') || 
+      fn.includes('piege') || 
+      fn.includes('audio') || 
+      fn.includes('podcast') || 
+      fn.includes('flashcard') || 
+      fn.includes('quiz') ||
+      fn.includes('plan') ||
+      fn.includes('planning');
+
+    // Fonctionnalités réservées au Pass Élite (2 000 F/mois) :
+    const isEliteFeature = 
+      fn.includes('professeur') || 
+      fn.includes('ia') || 
+      fn.includes('sujet') || 
+      fn.includes('examen') || 
+      fn.includes('annale') || 
+      fn.includes('simulateur');
+
+    if (plan === 'starter') return isStarterFeature;
+    if (plan === 'pro') return isStarterFeature || isProFeature;
+    if (plan === 'elite') return isStarterFeature || isProFeature || isEliteFeature;
+
+    return false;
+  };
+
+  // Fallback redirection de paiement si appelée hors de la SPA principale
+  if (typeof window.initiatePremiumPayment !== 'function') {
+    window.initiatePremiumPayment = function(btn, tierKey = 'pro') {
+      window.location.href = '/?openPass=' + encodeURIComponent(tierKey);
+    };
+  }
+
   // ==================== TOAST SYSTEM ====================
   function ensureToastContainer(){
     let c=document.getElementById('toastContainer');
@@ -76,10 +142,12 @@
 
   // ==================== TOOLS FAB MENU ====================
   function initToolsFab(){
+    if (document.getElementById('toolsFab')) return;
     const fab=document.createElement('button');
     fab.className='tools-fab';fab.id='toolsFab';
     fab.innerHTML='<i class="fas fa-toolbox"></i>';
-    fab.setAttribute('aria-label','Outils');
+    fab.setAttribute('aria-label','Boîte à outils de révision');
+    fab.setAttribute('title','Outils (Calculatrice, Pomodoro, Notes, Planning)');
     document.body.appendChild(fab);
     const menu=document.createElement('div');
     menu.className='tools-menu';menu.id='toolsMenu';
@@ -96,6 +164,7 @@
     fab.addEventListener('click',e=>{e.stopPropagation();fab.classList.toggle('open');menu.classList.toggle('show');haptic(15);});
     document.addEventListener('click',e=>{if(!menu.contains(e.target)&&e.target!==fab){fab.classList.remove('open');menu.classList.remove('show');}});
   }
+  window.initToolsFab = initToolsFab;
 
   // ==================== MODAL HELPER ====================
   let _modalPreviousFocus = null;
@@ -272,8 +341,16 @@
   };
 
   // ==================== NOTES ====================
-  window.openNotes=function(){
-    const saved=localStorage.getItem('rci-notes')||'';
+  window.openNotes = function(){
+    if (!window.userHasFeature || !window.userHasFeature('Mes Notes Personnelles')) {
+      if (typeof window.openPremiumTeaser === 'function') {
+        window.openPremiumTeaser('Mes Notes Personnelles');
+      } else if (typeof window.openElitePassModal === 'function') {
+        window.openElitePassModal('Pass Starter');
+      }
+      return;
+    }
+    const saved = localStorage.getItem('rci-notes') || '';
     const html=`
       <textarea class="notes-textarea" id="notesArea" placeholder="Écris ici tes notes... (sauvegarde automatique)">${saved.replace(/</g,'&lt;')}</textarea>
       <div class="notes-info" id="notesInfo">${saved.length} caractères • sauvegardé localement</div>
@@ -308,9 +385,51 @@
   };
 
   // ==================== PLAN DE RÉVISION ====================
-  window.openPlanner=function(){
-    if (window.openPremiumTeaser) {
-      window.openPremiumTeaser('Plan de Révision Intelligent');
+  window.openActualPlanner = function(){
+    const saved = JSON.parse(localStorage.getItem('rci-planner') || 'null');
+    const today = new Date().toISOString().split('T')[0];
+    let html = `
+      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen, l'heure de début, le site génère un plan de révision quotidien avec rappels.</p>
+      <label style="font-size:12px;color:#475569;font-weight:600">📆 Date d'examen</label>
+      <input type="date" id="plannerDate" class="planner-input" value="${saved ? saved.date : ''}" min="${today}">
+      <label style="font-size:12px;color:#475569;font-weight:600">⏰ Heure de début quotidienne</label>
+      <input type="time" id="plannerTime" class="planner-input" value="${saved && saved.time ? saved.time : '17:00'}">
+      <label style="font-size:12px;color:#475569;font-weight:600">🎓 Classe</label>
+      <select id="plannerClass" class="planner-input">
+        <option value="6eme">6ème</option>
+        <option value="5eme">5ème</option>
+        <option value="4eme">4ème</option>
+        <option value="3eme">3ème (BEPC)</option>
+        <option value="2nde_A">Seconde A</option>
+        <option value="2nde_C">Seconde C</option>
+        <option value="1ere_A">Première A</option>
+        <option value="1ere_D">Première D</option>
+        <option value="Terminale_A">Terminale A (BAC)</option>
+        <option value="Terminale_C">Terminale C (BAC)</option>
+        <option value="Terminale_D">Terminale D (BAC)</option>
+      </select>
+      <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes/jour</label>
+      <input type="number" id="plannerMin" class="planner-input" value="${saved ? saved.minutes : 45}" min="15" max="240">
+      <label style="font-size:12px;color:#475569;font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:8px"><input type="checkbox" id="plannerNotif" ${saved && saved.notif !== false ? 'checked' : ''}> 🔔 Activer les rappels (notifications)</label>
+      <button onclick="generatePlan()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-bottom:14px"><i class="fas fa-wand-magic-sparkles"></i> Générer mon plan</button>
+      <button onclick="testNotif()" style="width:100%;padding:8px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;cursor:pointer;margin-bottom:14px"><i class="fas fa-bell"></i> Tester une notification</button>
+      <div id="plannerResult"></div>`;
+    openModal('📅 Plan de révision', html, 'plannerModal');
+    if (saved && saved.plan) renderPlan(saved.plan, saved);
+    if (saved && saved.classe) document.getElementById('plannerClass').value = saved.classe;
+  };
+
+  window.openPlanner = function(){
+    if (window.userHasFeature && window.userHasFeature('Planning d\'Examen')) {
+      window.openActualPlanner();
+      return;
+    }
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Planning d\'Examen');
+      return;
+    }
+    if (typeof window.openElitePassModal === 'function') {
+      window.openElitePassModal('Pass Pro');
       return;
     }
   };
@@ -471,10 +590,10 @@
 
   // ==================== SHARE MENU (WhatsApp + QR + Copy) ====================
   window.openShareMenu=function(){
-    const url=location.href;
-    const msg=encodeURIComponent('📚 Découvre ResumeCI pour réviser au Collège & Lycée : '+url);
+    const url='https://resumeci.me/inscription.html';
+    const msg=encodeURIComponent('🚀 La nouvelle mise à jour de ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils d\'élite pour réussir ton année scolaire au BEPC et au BAC. Inscris-toi dès maintenant via : https://resumeci.me/inscription.html');
     const html=`
-      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Partage cette page avec un ami :</p>
+      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Partage la mise à jour avec tes camarades :</p>
       <div style="display:flex;flex-direction:column;gap:8px">
         <a href="https://wa.me/?text=${msg}" target="_blank" rel="noopener" class="wa-btn" style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px"><i class="fab fa-whatsapp"></i> Partager sur WhatsApp</a>
         <a href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${msg}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#0088cc;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px"><i class="fab fa-telegram"></i> Partager sur Telegram</a>
@@ -785,263 +904,25 @@ window.submitCountdownWaitlist = async function(btnEl) {
 };
 
 window.renderPassReussiteBanner = function() {
-  const cd = window.getCountdownData ? window.getCountdownData() : { days: '03', hours: '03', minutes: '45', seconds: '00' };
-  return `
-    <div class="rci-countdown-card" id="rciMainCountdown">
-      <div class="rci-cd-top-badge">
-        <i class="fas fa-rocket"></i> Grande Mise à Jour ResumeCI 2026
-      </div>
-      
-      <!-- AU-DESSUS DU COMPTE A REBOURS -->
-      <h3 class="rci-cd-title">Déploiement national le 01 Octobre 2026 à 00h00 pile</h3>
-      <div class="rci-cd-date-tag">
-        <i class="fas fa-clock"></i> Heure officielle d'Abidjan (GMT)
-      </div>
-      <p class="rci-cd-subtitle">
-        Prépare-toi à réviser 3 fois plus vite avec les nouveaux outils interactifs conçus spécialement pour les élèves du Collège et du Lycée en Côte d'Ivoire.
-      </p>
-
-      <!-- LE COMPTE A REBOURS DYNAMIQUE -->
-      <div class="rci-cd-timer-grid">
-        <div class="rci-cd-unit">
-          <div class="rci-cd-num rci-cd-days">${cd.days}</div>
-          <div class="rci-cd-lbl">Jours</div>
-        </div>
-        <div class="rci-cd-unit">
-          <div class="rci-cd-num rci-cd-hours">${cd.hours}</div>
-          <div class="rci-cd-lbl">Heures</div>
-        </div>
-        <div class="rci-cd-unit">
-          <div class="rci-cd-num rci-cd-minutes">${cd.minutes}</div>
-          <div class="rci-cd-lbl">Minutes</div>
-        </div>
-        <div class="rci-cd-unit">
-          <div class="rci-cd-num rci-cd-seconds">${cd.seconds}</div>
-          <div class="rci-cd-lbl">Secondes</div>
-        </div>
-      </div>
-
-      <!-- EN-DESSOUS DU COMPTE A REBOURS -->
-      <div class="rci-cd-below">
-        <div class="rci-cd-below-title">
-          <i class="fas fa-unlock-keyhole"></i> Ce qui sera officiellement débloqué le 01 Octobre à 00h00 :
-        </div>
-        
-        <ul class="rci-cd-features-list">
-          <li class="rci-cd-feature-item">
-            <span class="rci-cd-feature-icon">🃏</span>
-            <div class="rci-cd-feature-text">
-              <strong>Flashcards Scientifiques :</strong> Mémorise tes cours 3x plus vite avec la méthode de répétition espacée pour retenir formules, dates et définitions sans trou de mémoire.
-            </div>
-          </li>
-          <li class="rci-cd-feature-item">
-            <span class="rci-cd-feature-icon">🎯</span>
-            <div class="rci-cd-feature-text">
-              <strong>Quiz Interactifs & Mode Chrono :</strong> Teste tes réflexes et mesure ton niveau sur des centaines de QCM matière par matière avant chaque devoir surveillé.
-            </div>
-          </li>
-          <li class="rci-cd-feature-item">
-            <span class="rci-cd-feature-icon">📴</span>
-            <div class="rci-cd-feature-text">
-              <strong>Packs Hors-Ligne Intégraux :</strong> Télécharge l'intégralité des fiches de ta classe sur ton téléphone et révise partout sans aucune connexion Internet ni forfait data.
-            </div>
-          </li>
-          <li class="rci-cd-feature-item">
-            <span class="rci-cd-feature-icon">🧠</span>
-            <div class="rci-cd-feature-text">
-              <strong>Récitation Active (Active Recall) :</strong> Le masquage intelligent qui cache la leçon pour t'obliger à réciter bloc par bloc avant de vérifier la réponse d'un clic.
-            </div>
-          </li>
-          <li class="rci-cd-feature-item">
-            <span class="rci-cd-feature-icon">⚠️</span>
-            <div class="rci-cd-feature-text">
-              <strong>Pièges d'Examen Dévoilés :</strong> Les erreurs éliminatoires commises par 80% des élèves et les conseils confidentiels des correcteurs officiels de BEPC et BAC.
-            </div>
-          </li>
-        </ul>
-
-        <div class="rci-cd-note">
-          ℹ️ <strong>Rappel :</strong> Le Professeur IA 24/7 et les annales d'examens du Pass Élite (2 000 F) restent en cours de finalisation avec nos professeurs partenaires et seront activés ultérieurement.
-        </div>
-
-        <!-- FORMULAIRE VIP WHATSAPP -->
-        <div class="rci-cd-cta-box">
-          <div class="rci-cd-cta-title">📲 REJOINS LA LISTE VIP WHATSAPP</div>
-          <div class="rci-cd-cta-desc">Inscris ton numéro à 10 chiffres pour recevoir ton accès prioritaire le 01 Octobre à 00h00 pile :</div>
-          <div class="rci-cd-input-group">
-            <span style="background:#1e293b;border:1.5px solid #334155;border-radius:10px;padding:11px 12px;font-weight:700;font-size:13px;color:#94a3b8;display:flex;align-items:center;">🇨🇮 +225</span>
-            <input type="tel" class="rci-cd-input" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" onkeypress="if(event.key==='Enter')submitCountdownWaitlist(this.nextElementSibling)">
-            <button type="button" class="rci-cd-submit-btn" onclick="submitCountdownWaitlist(this)">
-              <i class="fas fa-paper-plane"></i> M'inscrire VIP
-            </button>
-          </div>
-          <div style="margin-top: 14px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-            <button type="button" onclick="openPremiumTeaser('Grande Mise à Jour 01 Octobre')" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fde68a; padding: 7px 14px; border-radius: 8px; font-size: 11.5px; font-weight: 700; cursor: pointer;">
-              👑 Découvrir les Pass Dès 500 F / mois
-            </button>
-            <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.3); color: #86efac; padding: 7px 14px; border-radius: 8px; font-size: 11.5px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fab fa-whatsapp"></i> Chaîne WhatsApp Officielle
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+  return '';
 };
 
 window.initStickyCountdownTicker = function() {
-  if (document.getElementById('rciStickyCountdownTicker')) return;
-  if (!document.body) {
-    setTimeout(() => { if (typeof window.initStickyCountdownTicker === 'function') window.initStickyCountdownTicker(); }, 80);
-    return;
-  }
-  const ticker = document.createElement('div');
-  ticker.id = 'rciStickyCountdownTicker';
-  ticker.className = 'rci-cd-top-ticker';
-  ticker.innerHTML = `
-    <span class="badge">🚀 MÀJ 01 OCTOBRE</span>
-    <span>Sortie nationale dans : <strong class="timer-badge rci-cd-ticker-text">--j --h --m --s</strong></span>
-    <span style="opacity:0.85">• Flashcards, Quiz, Packs Hors-Ligne &amp; Pièges d'Examen</span>
-    <span class="cta-link" onclick="if(typeof openPremiumTeaser==='function')openPremiumTeaser('Mise à jour 01 Octobre')">
-      Voir les détails &amp; VIP →
-    </span>
-  `;
-  document.body.prepend(ticker);
-  if (typeof window.updateAllCountdowns === 'function') {
-    window.updateAllCountdowns();
-  }
-};
-
-// Initialisation du bandeau ticker sur la page dès que le DOM est prêt
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => { window.initStickyCountdownTicker(); });
-} else {
-  setTimeout(() => { window.initStickyCountdownTicker(); }, 150);
-}
-window.openVipModal = function(titleContext = 'Grande Mise à Jour 01 Octobre') {
-  const cd = window.getCountdownData ? window.getCountdownData() : { days: '03', hours: '03', minutes: '45', seconds: '00' };
-  
-  const existing = document.getElementById('vipRegistrationModalOverlay');
+  const existing = document.getElementById('rciStickyCountdownTicker');
   if (existing) existing.remove();
-
-  const overlay = document.createElement('div');
-  overlay.id = 'vipRegistrationModalOverlay';
-  overlay.className = 'rci-modal show';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;padding:14px;';
-  
-  overlay.innerHTML = `
-    <div class="rci-modal-content" style="background:#0f172a;color:#fff;border:1.5px solid rgba(245,158,11,0.5);border-radius:20px;max-width:440px;width:100%;padding:22px 18px;position:relative;box-shadow:0 25px 60px rgba(0,0,0,0.55);text-align:center;">
-      <button class="rci-modal-close" onclick="document.getElementById('vipRegistrationModalOverlay').remove()" style="position:absolute;top:12px;right:12px;background:#1e293b;border:none;color:#94a3b8;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;">&times;</button>
-      
-      <div>
-        <span style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:10px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;">👑 LISTE VIP OFFICIELLE</span>
-        <h3 style="margin:10px 0 4px;font-size:20px;font-weight:800;color:#fff;line-height:1.3;">Déploiement le 01 Octobre à 00h00 pile</h3>
-        <p style="font-size:12px;color:#cbd5e1;margin:0 0 14px;">Ouverture nationale dans :</p>
-        
-        <!-- Timer -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:0 auto 16px;">
-          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-days" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.days}</div>
-            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Jours</div>
-          </div>
-          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-hours" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.hours}</div>
-            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Heures</div>
-          </div>
-          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-minutes" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.minutes}</div>
-            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Min</div>
-          </div>
-          <div style="background:rgba(30,41,59,0.85);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-seconds" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.seconds}</div>
-            <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;font-weight:700;">Sec</div>
-          </div>
-        </div>
-
-        <div style="background:rgba(30,41,59,0.7);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:12px;text-align:left;font-size:12px;color:#e2e8f0;margin-bottom:14px;line-height:1.5;">
-          <div>🔓 <b>Ce qui sera débloqué à 00h00 pile :</b></div>
-          <div style="margin-top:4px;color:#cbd5e1;">🃏 Flashcards • 🎯 Quiz &amp; Chrono • 📴 Packs Hors-Ligne • 🧠 Active Recall • ⚠️ Pièges d'Examen</div>
-        </div>
-
-        <!-- Saisie Téléphone -->
-        <div id="vipModalInputBox">
-          <p style="font-size:12px;color:#cbd5e1;margin:0 0 8px;font-weight:600;">Entre ton numéro WhatsApp à 10 chiffres :</p>
-          <div style="display:flex;gap:6px;">
-            <span style="background:#1e293b;border:1.5px solid #475569;border-radius:8px;padding:10px;font-weight:700;font-size:12px;color:#cbd5e1;display:flex;align-items:center;">🇨🇮 +225</span>
-            <input type="tel" id="vipModalPhoneInput" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" style="flex:1;background:#1e293b;border:1.5px solid #475569;border-radius:8px;padding:10px 12px;color:#fff;font-size:13.5px;outline:none;" onkeypress="if(event.key==='Enter')submitVipModalForm(this)">
-            <button type="button" onclick="submitVipModalForm(this)" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:800;font-size:12.5px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 3px 10px rgba(37,99,235,0.3);">
-              <i class="fas fa-paper-plane"></i> M'inscrire
-            </button>
-          </div>
-          <div id="vipModalFeedback" style="margin-top:8px;font-size:12px;"></div>
-        </div>
-
-        <div style="margin-top:14px;border-top:1px dashed rgba(255,255,255,0.15);padding-top:12px;">
-          <a href="https://wa.me/2250104911010?text=Bonjour%20Assistance%20ResumeCI%20!%20Je%20veux%20des%20infos%20sur%20la%20liste%20VIP%20du%2001%20Octobre." target="_blank" rel="noopener" style="color:#25d366;font-size:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:6px;">
-            <i class="fab fa-whatsapp"></i> Assistance WhatsApp directe (01 04 91 10 10)
-          </a>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  if (typeof window.updateAllCountdowns === 'function') window.updateAllCountdowns();
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) overlay.remove();
-  });
 };
 
-window.submitVipModalForm = async function(btn) {
-  const input = document.getElementById('vipModalPhoneInput');
-  const feedback = document.getElementById('vipModalFeedback');
-  const box = document.getElementById('vipModalInputBox');
-  if (!input) return;
-  
-  let raw = input.value.replace(/\D/g, '');
-  if (raw.startsWith('225') && raw.length > 10) raw = raw.slice(3);
-  
-  if (raw.length !== 10) {
-    if (window.haptic) window.haptic([50, 50, 50]);
-    if (feedback) {
-      feedback.style.color = '#f87171';
-      feedback.innerHTML = '⚠️ Saisis un numéro WhatsApp à 10 chiffres (ex: 0104911010)';
-    }
-    input.focus();
-    return;
-  }
-  
-  const oldText = btn.innerHTML;
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-  
-  try {
-    if (typeof window.joinWaitlist === 'function') {
-      await window.joinWaitlist(raw, 'VIP Modal 01 Octobre');
-    }
-    if (window.haptic) window.haptic([100, 50, 100]);
-    if (window.confetti) window.confetti();
-    if (box) {
-      box.innerHTML = `
-        <div style="background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:12px;padding:14px;text-align:center;">
-          <div style="font-size:24px;margin-bottom:4px;">🎉</div>
-          <strong style="color:#6ee7b7;font-size:14px;">Numéro VIP enregistré avec succès !</strong>
-          <p style="margin:4px 0 0;font-size:12px;color:#e2e8f0;">Tu seras contacté le <strong>01 Octobre à 00h00 pile</strong> sur le <strong>+225 ${raw}</strong>.</p>
-        </div>
-      `;
-    }
-    if (window.toast) window.toast('🎉 Inscription VIP confirmée !', 'success', 5000);
-  } catch (err) {
-    btn.disabled = false;
-    btn.innerHTML = oldText;
-    if (feedback) feedback.innerHTML = '⚠️ Erreur lors de l\'enregistrement.';
+window.openVipModal = function(titleContext = 'Pass Réussite') {
+  if (typeof window.openElitePassModal === 'function') {
+    window.openElitePassModal(titleContext);
   }
 };
 
 window.openPremiumTeaser = async function(featureName) {
-  // Si c'est l'inscription à la liste VIP ou la Grande Mise à Jour du 01 Octobre
-  if (featureName && (featureName.includes('01 Octobre') || featureName.includes('VIP') || featureName.includes('Compte à Rebours') || featureName.includes('Mise à jour'))) {
-    if (typeof window.openVipModal === 'function') {
-      window.openVipModal(featureName);
+  // Redirection directe vers les Pass Réussite
+  if (!featureName || featureName.includes('01 Octobre') || featureName.includes('VIP') || featureName.includes('Compte à Rebours') || featureName.includes('Mise à jour')) {
+    if (typeof window.openElitePassModal === 'function') {
+      window.openElitePassModal('Pass Pro');
       return;
     }
   }
@@ -1138,6 +1019,12 @@ window.openPremiumTeaser = async function(featureName) {
         return;
       }
     }
+    if (fnCheck.includes('plan') || fnCheck.includes('planning')) {
+      if (typeof window.openActualPlanner === 'function') {
+        window.openActualPlanner();
+        return;
+      }
+    }
     if (window.toast) toast(`🔓 ${featureName} : Débloqué !`, 'success');
     return;
   }
@@ -1218,6 +1105,12 @@ window.openPremiumTeaser = async function(featureName) {
     minTier = 'pro';
     featureDesc = 'Entraîne-toi avec des QCM et questions de révision pour valider tes connaissances avant chaque devoir.';
     includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les quiz.';
+  } else if (fnLower.includes('plan') || fnLower.includes('planning')) {
+    featureTitle = 'Planning d\'Examen & Programme Personnalisé';
+    featureIcon = '📅';
+    minTier = 'pro';
+    featureDesc = 'Génère automatiquement un calendrier de révision sur mesure jour après jour jusqu\'à la date de ton examen avec rappels et répartition par matière.';
+    includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas le planning personnalisé.';
   } else {
     featureTitle = featureName || 'Fonctionnalité Premium';
     featureIcon = '👑';

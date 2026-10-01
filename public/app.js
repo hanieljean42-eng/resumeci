@@ -50,6 +50,173 @@ function getColor(i) {
 function esc(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
+
+// ==================== GESTION DU PROFIL UTILISATEUR & PASS ====================
+window.loadUserProfile = async function() {
+  try {
+    let raw = localStorage.getItem('resumeci_profile');
+    if (!raw) {
+      // Aucun profil trouvé — l'utilisateur doit s'inscrire
+      window.USER_PROFILE = null;
+      return null;
+    }
+    window.USER_PROFILE = JSON.parse(raw);
+    return window.USER_PROFILE;
+  } catch(e) {
+    console.warn("Erreur chargement profil:", e);
+  }
+  return null;
+};
+
+window.saveUserProfile = async function(firstName, lastName, selectedClass, whatsapp, password, tierKey) {
+  try {
+    // Le tier est déterminé par le choix de l'utilisateur lors de l'inscription
+    const isPaid = tierKey && tierKey !== 'free';
+    const profile = {
+      uid: 'user_' + Date.now(),
+      firstName: firstName,
+      lastName: lastName,
+      selectedClass: selectedClass,
+      whatsapp: whatsapp,
+      password: password,
+      isPremium: isPaid,
+      premiumPlan: tierKey || 'free',
+      premiumExpiresAt: isPaid ? Date.now() + (30 * 24 * 60 * 60 * 1000) : 0,
+      createdAt: new Date().toISOString()
+    };
+    window.USER_PROFILE = profile;
+    localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+
+    try {
+      if (typeof window.joinWaitlist === 'function') {
+        window.joinWaitlist(whatsapp, `Profil: ${selectedClass} - ${firstName} ${lastName}`);
+      }
+    } catch(e){}
+
+    try {
+      const today = getLocalDateStr();
+      saveStreakData({ count: 1, lastDay: today, lastActiveAt: Date.now() });
+      if (typeof updateTopbarStreak === 'function') updateTopbarStreak();
+    } catch(e){}
+
+    if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+
+    return { success: true, profile: profile };
+  } catch(e) {
+    console.error("Erreur saveUserProfile:", e);
+    return { error: "Erreur lors de l'enregistrement de ton profil." };
+  }
+};
+
+window.loginUserProfile = async function(firstName, lastName, whatsapp, password) {
+  try {
+    const raw = localStorage.getItem('resumeci_profile');
+    if (raw) {
+      const p = JSON.parse(raw);
+      // Vérification stricte : WhatsApp doit correspondre ET mot de passe correct
+      if (p.whatsapp === whatsapp && p.password === password) {
+        window.USER_PROFILE = p;
+        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+        return { success: true, profile: p };
+      }
+      // WhatsApp correspond mais mot de passe incorrect
+      if (p.whatsapp === whatsapp && p.password !== password) {
+        return { error: "Mot de passe incorrect." };
+      }
+    }
+    // Aucun profil trouvé — ne PAS créer de profil premium gratuit
+    return { error: "Aucun compte trouvé sur cet appareil. Inscris-toi d'abord." };
+  } catch(e) {
+    return { error: "Identifiants invalides." };
+  }
+};
+
+window.updateUserProfile = async function(firstName, lastName, selectedClass, whatsapp) {
+  try {
+    if (!window.USER_PROFILE) window.USER_PROFILE = {};
+    window.USER_PROFILE.firstName = firstName;
+    window.USER_PROFILE.lastName = lastName;
+    window.USER_PROFILE.selectedClass = selectedClass;
+    window.USER_PROFILE.whatsapp = whatsapp;
+    localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+    if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+    return { success: true, profile: window.USER_PROFILE };
+  } catch(e) {
+    return { error: "Erreur lors de la modification du profil." };
+  }
+};
+
+window.logoutUser = function() {
+  localStorage.removeItem('resumeci_profile');
+  window.USER_PROFILE = null;
+  document.getElementById('viewProfileModalOverlay')?.classList.remove('show');
+  if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+  if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+  // Redirection automatique vers la page de connexion
+  window.location.href = '/connexion.html';
+};
+
+window.userHasFeature = function(featureName) {
+  if (!window.USER_PROFILE) return false;
+  
+  // Vérification de la validité de l'abonnement
+  const isPremium = !!window.USER_PROFILE.isPremium;
+  const expiresAt = Number(window.USER_PROFILE.premiumExpiresAt) || 0;
+  if (!isPremium || (expiresAt > 0 && expiresAt < Date.now())) {
+    return false; // Pas d'abonnement actif
+  }
+
+  const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
+  const fn = String(featureName || '').toLowerCase();
+
+  // Fonctionnalités incluses dès le Pass Starter (500 F/mois) :
+  const isStarterFeature = 
+    fn.includes('hors-ligne') || 
+    fn.includes('pack') || 
+    fn.includes('pdf') || 
+    fn.includes('surlign') || 
+    fn.includes('note') || 
+    fn.includes('stat');
+
+  // Fonctionnalités réservées au Pass Pro (1 000 F/mois) :
+  const isProFeature = 
+    fn.includes('récitation') || 
+    fn.includes('recitation') || 
+    fn.includes('recall') || 
+    fn.includes('piège') || 
+    fn.includes('piege') || 
+    fn.includes('audio') || 
+    fn.includes('podcast') || 
+    fn.includes('flashcard') || 
+    fn.includes('quiz') ||
+    fn.includes('plan') ||
+    fn.includes('planning');
+
+  // Fonctionnalités réservées au Pass Élite (2 000 F/mois) :
+  const isEliteFeature = 
+    fn.includes('professeur') || 
+    fn.includes('ia') || 
+    fn.includes('sujet') || 
+    fn.includes('examen') || 
+    fn.includes('annale') || 
+    fn.includes('simulateur');
+
+  if (plan === 'starter') {
+    return isStarterFeature;
+  }
+  if (plan === 'pro') {
+    return isStarterFeature || isProFeature;
+  }
+  if (plan === 'elite') {
+    return isStarterFeature || isProFeature || isEliteFeature;
+  }
+
+  return false;
+};
+
 async function loadData() {
   redirectToPrimaryDomain();
   if (window.loadUserProfile) {
@@ -77,6 +244,12 @@ async function loadData() {
   if (typeof updateTopbarStreak === 'function') {
     updateTopbarStreak();
   }
+  window.getPaymentApiBase = function() {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://127.0.0.1:3000';
+    }
+    return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+  };
   checkForUpdates();
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get('payment');
@@ -89,7 +262,8 @@ async function loadData() {
       setTimeout(async () => {
         try {
           if (window.toast) toast('⏳ Vérification sécurisée de ton paiement en cours...', 'info', 4000);
-          const confirmRes = await fetch(`/api/confirm-payment`, {
+          const apiBase = window.getPaymentApiBase();
+          const confirmRes = await fetch(`${apiBase}/api/confirm-payment`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ uid: targetUid, tierKey: tier, reference: reference })
@@ -104,6 +278,7 @@ async function loadData() {
               localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
             }
             updateAudioFabVisual();
+            updateSidebarPassBtn();
             showSubscriptionSuccessModal(tier, confirmData.premiumExpiresAt);
           } else {
             console.warn("Échec validation paiement:", confirmData);
@@ -129,12 +304,10 @@ async function loadData() {
     }
   }
   updateAudioFabVisual();
+  updateSidebarPassBtn();
   if (!window.USER_PROFILE) {
-    const introScreen = document.getElementById('introScreen');
-    if (introScreen) introScreen.style.display = 'none';
-    const appLayout = document.getElementById('appLayout');
-    if (appLayout) appLayout.classList.remove('is-hidden');
-    document.getElementById('profileModalOverlay')?.classList.add('show');
+    window.location.href = '/connexion.html';
+    return;
   }
 }
 
@@ -192,6 +365,26 @@ function updateAudioFabVisual() {
     fab.style.overflow = '';
   }
 }
+
+function updateSidebarPassBtn() {
+  const btn = document.getElementById('sidebarPassBtn');
+  if (!btn) return;
+  const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+  if (activeSub) {
+    btn.style.background = 'linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.25))';
+    btn.style.borderColor = 'rgba(16,185,129,0.5)';
+    btn.style.color = '#6ee7b7';
+    btn.innerHTML = `<i class="fas fa-check-circle" style="color:#10b981"></i> Mon Pass ${activeSub.tier.toUpperCase()} Actif ✓`;
+    btn.onclick = () => { if (typeof showActiveSubscriptionModal === 'function') showActiveSubscriptionModal(); };
+  } else {
+    btn.style.background = 'linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.2))';
+    btn.style.borderColor = 'rgba(245,158,11,0.4)';
+    btn.style.color = '#fde68a';
+    btn.innerHTML = `<i class="fas fa-crown"></i> Activer mon Pass Réussite 🔒`;
+    btn.onclick = () => { if (typeof openElitePassModal === 'function') openElitePassModal('Pass Réussite'); };
+  }
+}
+window.updateSidebarPassBtn = updateSidebarPassBtn;
 const VERSION_KEY = 'resumeci_last_version';
 const UPDATE_DISMISSED_KEY = 'resumeci_update_dismissed';
 async function checkForUpdates() {
@@ -422,37 +615,12 @@ window.submitProfile = async function () {
 };
 
 window.openProfileEditModal = function() {
-  if (!window.USER_PROFILE) return;
   document.getElementById('viewProfileModalOverlay')?.classList.remove('show');
-  
-  // Pré-remplir les champs
-  document.getElementById('pmFirstName').value = window.USER_PROFILE.firstName || '';
-  document.getElementById('pmLastName').value = window.USER_PROFILE.lastName || '';
-  document.getElementById('pmClass').value = window.USER_PROFILE.selectedClass || '';
-  document.getElementById('pmWhatsapp').value = window.USER_PROFILE.whatsapp || '';
-
-  // Adapter l'interface au mode modification
-  document.getElementById('pmModalTitle').textContent = 'Modifier mon profil ✏️';
-  document.getElementById('pmModalDesc').textContent = 'Mets à jour ta classe ou tes coordonnées.';
-  document.getElementById('pmSubmitBtn').textContent = 'Enregistrer les modifications 💾';
-  document.getElementById('pmCloseBtn').style.display = 'flex';
-  document.getElementById('pmSwitchToLogin').style.display = 'none';
-  document.getElementById('pmPasswordGroup').style.display = 'none';
-  document.getElementById('pmPassword').removeAttribute('required');
-
-  document.getElementById('profileModalOverlay')?.classList.add('show');
+  window.location.href = '/inscription.html?edit=1';
 };
 
 window.closeProfileEditModal = function() {
-  document.getElementById('profileModalOverlay')?.classList.remove('show');
-  // Réinitialiser le formulaire en mode inscription
-  document.getElementById('pmModalTitle').textContent = 'Bienvenue sur ResumeCI ! 🎓';
-  document.getElementById('pmModalDesc').textContent = 'Dis-nous en plus sur toi pour que nous puissions adapter l\'application à ta classe.';
-  document.getElementById('pmSubmitBtn').textContent = 'Commencer à réviser 🚀';
-  document.getElementById('pmCloseBtn').style.display = 'none';
-  document.getElementById('pmSwitchToLogin').style.display = 'block';
-  document.getElementById('pmPasswordGroup').style.display = 'block';
-  document.getElementById('pmPassword').setAttribute('required', 'required');
+  document.getElementById('viewProfileModalOverlay')?.classList.remove('show');
 };
 
 window.submitLogin = async function () {
@@ -507,13 +675,12 @@ window.submitLogin = async function () {
 };
 
 window.openLoginModal = function () {
-  document.getElementById('profileModalOverlay')?.classList.remove('show');
-  document.getElementById('loginModalOverlay')?.classList.add('show');
+  window.location.href = '/connexion.html';
 };
 
 window.openProfileView = function () {
   if (!window.USER_PROFILE) {
-    document.getElementById('profileModalOverlay')?.classList.add('show');
+    window.location.href = '/connexion.html';
     return;
   }
   const fullName = `${window.USER_PROFILE.firstName || ''} ${window.USER_PROFILE.lastName || ''}`.trim() || 'Élève';
@@ -531,10 +698,11 @@ window.openProfileView = function () {
 
   const badgeEl = document.getElementById('vpPlanBadge');
   if (badgeEl) {
-    const plan = window.USER_PROFILE.premiumPlan;
-    if (plan && window.PREMIUM_PLANS && window.PREMIUM_PLANS[plan]) {
-      const p = window.PREMIUM_PLANS[plan];
-      badgeEl.textContent = `👑 Pass ${p.name} (Actif - 30j)`;
+    const isPrem = Boolean(window.USER_PROFILE.isPremium);
+    const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
+    if (isPrem && plan !== 'free') {
+      const pName = plan === 'pro' ? 'Pro' : (plan === 'starter' ? 'Starter' : plan.toUpperCase());
+      badgeEl.textContent = `👑 Pass ${pName} (Actif - 30j)`;
       badgeEl.style.background = '#10b981';
       badgeEl.style.color = '#fff';
     } else {
@@ -585,8 +753,13 @@ function getYesterdayDateStr() {
 
 function getStreakData() {
   try {
-    const raw = localStorage.getItem(STREAK_KEY);
-    if (!raw) return { count: 0, lastDay: '', lastActiveAt: 0 };
+    let raw = localStorage.getItem(STREAK_KEY);
+    if (!raw) {
+      const today = getLocalDateStr();
+      const initial = { count: 1, lastDay: today, lastActiveAt: Date.now() };
+      localStorage.setItem(STREAK_KEY, JSON.stringify(initial));
+      return initial;
+    }
     const parsed = JSON.parse(raw);
     return {
       count: Number(parsed.count) || 0,
@@ -594,7 +767,7 @@ function getStreakData() {
       lastActiveAt: Number(parsed.lastActiveAt) || 0
     };
   } catch (e) {
-    return { count: 0, lastDay: '', lastActiveAt: 0 };
+    return { count: 1, lastDay: getLocalDateStr(), lastActiveAt: Date.now() };
   }
 }
 
@@ -879,7 +1052,7 @@ window.closeStreakWelcomeModal = closeStreakWelcomeModal;
 window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
   if (!window.USER_PROFILE) {
     if (window.toast) toast("Connecte-toi ou crée ton compte en 30 secondes pour activer ton Pass.", 'info');
-    document.getElementById('loginModalOverlay')?.classList.add('show');
+    window.location.href = '/connexion.html';
     return;
   }
 
@@ -944,7 +1117,8 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
   const returnOrigin = window.location.origin;
 
   try {
-    const res = await fetch(`/api/pay`, {
+    const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
+    const res = await fetch(`${apiBase}/api/pay`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -956,25 +1130,33 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
         returnOrigin: returnOrigin
       }),
     });
+    if (!res.ok) {
+      throw new Error("GATEWAY_UNAVAILABLE");
+    }
+    const ct = res.headers.get('content-type') || '';
+    if (!ct.includes('application/json')) {
+      throw new Error("GATEWAY_RESPONSE_INVALID");
+    }
     const data = await res.json();
     const checkoutUrl = data.checkout_url || data.payment_url;
     if (data.success && checkoutUrl) {
-      if (data.reference) {
-        sessionStorage.setItem('last_payment_reference', data.reference);
+      if (data.reference || data.payment_reference) {
+        sessionStorage.setItem('last_payment_reference', data.reference || data.payment_reference);
       }
       window.location.href = checkoutUrl;
+      return;
     } else {
       throw new Error(data.error || 'Erreur de paiement');
     }
   } catch (err) {
-    console.error(err);
+    console.error("Erreur paiement:", err);
     const pTierLabel = tierKey === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
     window.showActionNotice({
       type: 'error',
       icon: '💳',
       title: 'Paiement en ligne temporairement indisponible',
       subtitle: `Pass ${tierKey === 'pro' ? 'Pro' : 'Starter'}`,
-      message: (err.message || "Impossible d'initier le paiement en ligne.") + "\n\n💡 Pas d'inquiétude ! Tu peux régler directement par Wave ou Orange Money et activer ton compte immédiatement.",
+      message: "La caisse de paiement automatique est actuellement en cours de liaison ou de maintenance.\n\n💡 Pas d'inquiétude ! Tu peux régler directement par Wave ou Orange Money et faire activer ton compte immédiatement.",
       primaryBtnText: '📲 Payer par Wave / Orange Money direct',
       onPrimary: () => {
         const pName = (window.USER_PROFILE?.firstName || '') + ' ' + (window.USER_PROFILE?.lastName || '');
@@ -988,9 +1170,19 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
   }
 };
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('continueBtn').addEventListener('click', () => {
-    document.getElementById('introScreen').style.display = 'none';
-    document.getElementById('appLayout').classList.remove('is-hidden');
+  const introSeen = localStorage.getItem('rci_intro_seen');
+  if (introSeen === '1' || window.USER_PROFILE) {
+    const intro = document.getElementById('introScreen');
+    if (intro) intro.style.display = 'none';
+    const appLayout = document.getElementById('appLayout');
+    if (appLayout) appLayout.classList.remove('is-hidden');
+  }
+  document.getElementById('continueBtn')?.addEventListener('click', () => {
+    localStorage.setItem('rci_intro_seen', '1');
+    const intro = document.getElementById('introScreen');
+    if (intro) intro.style.display = 'none';
+    const appLayout = document.getElementById('appLayout');
+    if (appLayout) appLayout.classList.remove('is-hidden');
     maybeShowInstallPrompt();
   });
   document.getElementById('installClose').addEventListener('click', dismissInstallPrompt);
@@ -1145,18 +1337,18 @@ function toggleDarkMode() {
   localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 async function shareSite() {
-  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — Fiches BAC';
-  const text = 'Découvre ResumeCI pour réviser le BAC avec fiches, quiz, flashcards, audio et PDF.';
-  const url = PRIMARY_DOMAIN + location.pathname + location.search + location.hash;
+  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 714 Fiches BAC & BEPC';
+  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
+  const url = 'https://resumeci.me/inscription.html';
   if (navigator.share) await navigator.share({ title: title, text: text, url: url }).catch(() => {});
   else {
-    await navigator.clipboard?.writeText(url);
+    await navigator.clipboard?.writeText(text);
     window.showActionNotice({
       type: 'success',
       icon: '🔗',
-      title: 'Lien Copié !',
+      title: 'Message Copié !',
       subtitle: 'Partager ResumeCI',
-      message: "Le lien a été copié dans ton presse-papier.\n\nTu peux le coller directement sur WhatsApp, Telegram ou Facebook pour aider tes camarades de classe !",
+      message: "Le message et le lien d'inscription (https://resumeci.me/inscription.html) ont été copiés dans ton presse-papier.\n\nTu peux le coller directement sur WhatsApp pour inviter tes camarades de classe !",
       primaryBtnText: 'Super !'
     });
   }
@@ -1246,10 +1438,12 @@ function showDashboard(push = true) {
     0
   );
   document.getElementById('content').innerHTML =
-    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${typeof renderPassReussiteBanner === 'function' ? renderPassReussiteBanner() : ''}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
   document.querySelectorAll('.class-card').forEach(el => el.addEventListener('click', () => showClass(el.dataset.cls)));
   clearActive();
   refreshOfflineStatus();
+  if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+  if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
 }
 function updatePageTitle(title) {
   document.title = title + ' | ResumeCI';
@@ -1377,6 +1571,7 @@ async function showFiche(cls, sub, file, push = true) {
     if (typeof window.initFicheStudyFeatures === 'function') {
       window.initFicheStudyFeatures(cls, sub, file);
     }
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
     clearActive();
     const el = document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
     if (el) {
@@ -1789,8 +1984,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'streakInfoModal',
     'subscriptionSuccessModal',
     'pwaInstallGuideModal',
-    'viewProfileModalOverlay',
-    'loginModalOverlay'
+    'viewProfileModalOverlay'
   ];
 
   dismissibleModalIds.forEach(id => {
@@ -1802,19 +1996,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Pour profileModalOverlay, fermer seulement si déjà inscrit (bouton fermer présent)
-  const profileOverlay = document.getElementById('profileModalOverlay');
-  if (profileOverlay) {
-    profileOverlay.addEventListener('click', (e) => {
-      if (e.target === profileOverlay) {
-        const closeBtn = document.getElementById('pmCloseBtn');
-        if (closeBtn && closeBtn.style.display !== 'none') {
-          profileOverlay.classList.remove('show');
-        }
-      }
-    });
-  }
 
   // Touche Escape pour fermer le modal actif
   document.addEventListener('keydown', (e) => {
@@ -1838,7 +2019,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==================== GESTION ABONNEMENT ACTIF & RESILIATION ==================== */
 window.hasActiveSubscription = function() {
   const profile = window.USER_PROFILE;
-  if (!profile || !profile.premiumPlan) return null;
+  if (!profile || !profile.premiumPlan || profile.premiumPlan === 'free' || !profile.isPremium) return null;
   if (profile.premiumExpiresAt && Number(profile.premiumExpiresAt) < Date.now()) {
     return null; // Abonnement expiré
   }
@@ -2022,6 +2203,13 @@ window.executeCancelSubscription = async function() {
 };
 
 async function downloadCurrentFichePdf() {
+  if (!window.userHasFeature || !window.userHasFeature('Téléchargement PDF')) {
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Téléchargement PDF');
+    }
+    return;
+  }
+
   const ficheContent = document.querySelector('.fiche-content');
   if (!ficheContent || !CURRENT_FICHE) return;
 
@@ -2367,15 +2555,26 @@ window.downloadClassOffline = downloadClassOffline;
 
 function getToolsBar() {
   const hasStats = window.userHasFeature ? window.userHasFeature('Statistiques Avancées') : false;
+  const hasPlanner = window.userHasFeature ? window.userHasFeature("Planning d'Examen") : false;
+  const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
 
   const statsCard = hasStats
-    ? `<a class="tool-card" href="#" onclick="openStatistiquesModal(); return false;"><div class="tool-icon">📊</div><h4>Statistiques</h4><p>Progression & Données en cache</p></a>`
-    : `<a class="tool-card" href="#" onclick="openPremiumTeaser('Statistiques Avancées'); return false;"><div class="tool-icon">📊</div><h4>Statistiques 🔒</h4><p>Progression & Données en cache</p></a>`;
+    ? `<a class="tool-card" href="#" onclick="openStatistiquesModal(); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques</h4><p>Progression & Données en cache</p></a>`
+    : `<a class="tool-card" href="#" onclick="openPremiumTeaser('Statistiques Avancées'); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques 🔒</h4><p>Progression & Cache (Dès 500 F)</p></a>`;
+
+  const passCard = activeSub
+    ? `<a class="tool-card" href="#" onclick="if(typeof showActiveSubscriptionModal==='function'){showActiveSubscriptionModal();}else if(typeof openElitePassModal==='function'){openElitePassModal('Pass Réussite');} return false;"><div class="tool-icon">👑</div><h4 style="color:#10b981;">Pass ${activeSub.tier.toUpperCase()} Actif ✓</h4><p>Toutes formules débloquées</p></a>`
+    : `<a class="tool-card" href="#" onclick="if(typeof openElitePassModal==='function')openElitePassModal('Pass Réussite'); return false;"><div class="tool-icon">👑</div><h4>Pass Réussite 🔒</h4><p>Activer les formules élèves</p></a>`;
+
+  const plannerCard = hasPlanner
+    ? `<a class="tool-card" href="#" onclick="if(typeof openPlanner==='function')openPlanner(); return false;"><div class="tool-icon">📅</div><h4>Planning d'Examen</h4><p>Plan personnalisé (Actif ✓)</p></a>`
+    : `<a class="tool-card" href="#" onclick="if(typeof openPlanner==='function')openPlanner(); return false;"><div class="tool-icon">📅</div><h4>Planning d'Examen 🔒</h4><p>Plan personnalisé (Pass Pro)</p></a>`;
 
   return `<div class="tools-bar">
-    <a class="tool-card" href="#" onclick="openElitePassModal('Professeur IA'); return false;"><div class="tool-icon">🤖</div><h4>Professeur IA 🔒</h4><p>Pose tes questions à notre IA</p></a>
-    <a class="tool-card" href="#" onclick="openElitePassModal('Anciens Sujets & Corrigés'); return false;"><div class="tool-icon">📜</div><h4>Sujets BAC/BEPC 🔒</h4><p>Annales avec corrigés détaillés</p></a>
-    <a class="tool-card" href="#" onclick="openElitePassModal('Simulateur d\\'Examens'); return false;"><div class="tool-icon">⏱️</div><h4>Examens Blancs 🔒</h4><p>Évalue ton niveau chronométré</p></a>
+    ${passCard}
+    <a class="tool-card" href="#" onclick="if(typeof openCalculator==='function')openCalculator(); return false;"><div class="tool-icon">🧮</div><h4>Calculatrice</h4><p>Calculatrice scientifique</p></a>
+    <a class="tool-card" href="#" onclick="if(typeof openPomodoro==='function')openPomodoro(); return false;"><div class="tool-icon">⏱️</div><h4>Timer Pomodoro</h4><p>25 min révision active</p></a>
+    ${plannerCard}
     ${statsCard}
   </div>`;
 }
@@ -2467,11 +2666,28 @@ function ttsSpeakNext() {
   speechSynthesis.speak(u);
 }
 function ttsStart() {
-  if (typeof openPremiumTeaser === 'function') {
+  if (window.userHasFeature && window.userHasFeature('Audio (Podcast)')) {
+    if (typeof window.executeTtsStart === 'function') {
+      window.executeTtsStart();
+    }
+    return;
+  }
+  if (typeof window.openPremiumTeaser === 'function') {
+    window.openPremiumTeaser('Audio (Podcast)');
+  } else if (typeof openPremiumTeaser === 'function') {
     openPremiumTeaser('Audio (Podcast)');
+  } else if (typeof window.openElitePassModal === 'function') {
+    window.openElitePassModal('Pass Pro');
   }
 }
 window.executeTtsStart = function () {
+  if (!window.userHasFeature || !window.userHasFeature('Audio (Podcast)')) {
+    if (typeof window.openPremiumTeaser === 'function') {
+      window.openPremiumTeaser('Audio (Podcast)');
+    }
+    return;
+  }
+
   if (!('speechSynthesis' in window)) {
     if (window.toast) toast('Audio non supporté sur ce navigateur', 'error');
     return;
@@ -3464,8 +3680,7 @@ window.submitAnnVip = async function(btn) {
 };
 
 function showAnnouncement() {
-  if (sessionStorage.getItem('announceCountdownDismissed_v300')) return;
-  const cd = window.getCountdownData ? window.getCountdownData() : { days: '03', hours: '03', minutes: '45', seconds: '00' };
+  if (sessionStorage.getItem('announcePlatformLive_v300')) return;
   const overlay = document.createElement('div');
   overlay.id = 'announceOverlay';
   overlay.innerHTML = `
@@ -3475,33 +3690,13 @@ function showAnnouncement() {
         <div class="ann-spark"></div>
         <div class="ann-spark s2"></div>
         <div class="ann-spark s3"></div>
-        <div class="ann-label" style="background:#f59e0b;color:#0f172a;font-weight:800;">🚀 01 OCTOBRE 2026 • 00H00</div>
-        <h2 style="font-size:22px;margin:6px 0 4px;">La Grande Mise à Jour Arrive !</h2>
-        <p style="font-size:12px;opacity:0.9;margin:0 0 12px;">Déploiement national dans :</p>
-        
-        <!-- Timer dans le modal -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px;margin:0 auto 10px;">
-          <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-days" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.days}</div>
-            <div style="font-size:9px;color:#cbd5e1;text-transform:uppercase;font-weight:700;">Jours</div>
-          </div>
-          <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-hours" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.hours}</div>
-            <div style="font-size:9px;color:#cbd5e1;text-transform:uppercase;font-weight:700;">Heures</div>
-          </div>
-          <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-minutes" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.minutes}</div>
-            <div style="font-size:9px;color:#cbd5e1;text-transform:uppercase;font-weight:700;">Min</div>
-          </div>
-          <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(253,230,138,0.4);border-radius:10px;padding:8px 4px;">
-            <div class="rci-cd-seconds" style="font-size:22px;font-weight:900;color:#fde047;font-family:monospace;">${cd.seconds}</div>
-            <div style="font-size:9px;color:#cbd5e1;text-transform:uppercase;font-weight:700;">Sec</div>
-          </div>
-        </div>
+        <div class="ann-label" style="background:#10b981;color:#fff;font-weight:800;">✨ NOUVELLE PLATEFORME EN LIGNE</div>
+        <h2 style="font-size:22px;margin:6px 0 4px;">Bienvenue sur ResumeCI ! 🎓</h2>
+        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">714 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
       </div>
       <div class="ann-body" style="padding:16px;">
         <div style="font-size:12px;font-weight:800;color:#0f172a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.3px;">
-          🔓 Débloqué le 01 Octobre à 00h00 :
+          🚀 Tes outils de révision disponibles :
         </div>
         <div class="ann-highlights" style="grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
           <div class="ann-hi"><div class="ann-hi-icon" style="background:#10b981"><i class="fas fa-clone"></i></div><div><strong>Flashcards</strong><span>Mémorisation 3x plus vite</span></div></div>
@@ -3511,44 +3706,30 @@ function showAnnouncement() {
           <div class="ann-hi" style="grid-column:span 2"><div class="ann-hi-icon" style="background:#ef4444"><i class="fas fa-triangle-exclamation"></i></div><div><strong>Pièges d'Examen</strong><span>Astuces des correcteurs</span></div></div>
         </div>
 
-        <!-- FORMULAIRE VIP WHATSAPP DIRECT DANS LE PANNEAU -->
-        <div id="annVipContainer" style="background:#f8fafc;border:1.5px solid #2563eb;border-radius:14px;padding:12px;margin:12px 0 10px;text-align:left;">
-          <div style="font-size:12px;font-weight:800;color:#1e40af;margin-bottom:3px;display:flex;align-items:center;gap:6px;">
-            <i class="fas fa-crown" style="color:#f59e0b"></i> REJOINDRE LA LISTE VIP WHATSAPP
-          </div>
-          <p style="font-size:11px;color:#475569;margin:0 0 8px;line-height:1.4;">
-            Inscris ton numéro à 10 chiffres pour recevoir ton accès prioritaire le 01 Octobre à 00h00 pile :
-          </p>
-          <div style="display:flex;gap:6px;" id="annVipInputGroup">
-            <span style="background:#e2e8f0;border-radius:8px;padding:9px 8px;font-weight:700;font-size:12px;color:#334155;display:flex;align-items:center;line-height:1;">🇨🇮 +225</span>
-            <input type="tel" id="annVipPhone" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" style="flex:1;border:1.5px solid #cbd5e1;border-radius:8px;padding:9px 10px;font-size:13px;outline:none;" onkeypress="if(event.key==='Enter')submitAnnVip(this)">
-            <button type="button" onclick="submitAnnVip(this)" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;border-radius:8px;padding:9px 14px;font-weight:800;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;box-shadow:0 3px 10px rgba(37,99,235,0.3);">
-              <i class="fas fa-paper-plane"></i> M'inscrire
-            </button>
-          </div>
-          <div id="annVipFeedback" style="margin-top:6px;font-size:11.5px;font-weight:600;"></div>
-        </div>
+        <button type="button" onclick="document.getElementById('announceOverlay')?.remove(); if(typeof openElitePassModal==='function') openElitePassModal('Pass Réussite');" style="width:100%;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;border:none;border-radius:12px;padding:12px 14px;font-weight:800;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 4px 14px rgba(37,99,235,0.3);margin-bottom:8px;">
+          👑 Découvrir les Pass dès 500 F / mois
+        </button>
 
-        <a href="https://wa.me/2250104911010?text=Bonjour%20Assistance%20ResumeCI%20!%20Je%20veux%20des%20infos%20sur%20la%20mise%20%C3%A0%20jour%20du%2001%20Octobre." class="ann-wa-btn" target="_blank" rel="noopener" style="background:#10b981;font-size:12px;padding:9px;margin-top:4px;">
+        <a href="https://wa.me/2250104911010?text=Bonjour%20Assistance%20ResumeCI%20!%20Je%20souhaite%20des%20informations%20sur%20la%20plateforme." class="ann-wa-btn" target="_blank" rel="noopener" style="background:#10b981;font-size:12px;padding:10px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;">
           <i class="fab fa-whatsapp"></i> Assistance WhatsApp (01 04 91 10 10)
         </a>
       </div>
     </div>
   `;
   document.body.appendChild(overlay);
-  if (typeof window.updateAllCountdowns === 'function') window.updateAllCountdowns();
-  document.getElementById('announceClose').addEventListener('click', () => {
+  document.getElementById('announceClose')?.addEventListener('click', () => {
     overlay.remove();
-    sessionStorage.setItem('announceCountdownDismissed_v300', '1');
+    sessionStorage.setItem('announcePlatformLive_v300', '1');
   });
   overlay.addEventListener('click', e => {
     if (e.target === overlay) {
       overlay.remove();
-      sessionStorage.setItem('announceCountdownDismissed_v300', '1');
+      sessionStorage.setItem('announcePlatformLive_v300', '1');
     }
   });
 }
-setTimeout(showAnnouncement, 500);
+// Annonce désactivée pour la version en production
+// setTimeout(showAnnouncement, 500);
 function handleInitialRoute() {
   const path = window.location.pathname.replace(/^\//, '');
   if (path && path !== 'index.html') {
@@ -3623,3 +3804,25 @@ document.addEventListener('click', (e) => {
   }
 }, true);
 
+// Détection des redirections d'activation de Pass depuis d'autres pages (ex: quiz.html, flashcards.html)
+(function checkOpenPassParam() {
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const passTarget = urlParams.get('openPass') || urlParams.get('upgrade');
+    if (passTarget) {
+      setTimeout(() => {
+        if (typeof window.openPremiumTeaser === 'function') {
+          if (passTarget.includes('starter')) {
+            window.openPremiumTeaser('Pack Hors-Ligne');
+          } else if (passTarget.includes('quiz')) {
+            window.openPremiumTeaser('Quiz Interactif');
+          } else if (passTarget.includes('flashcard')) {
+            window.openPremiumTeaser('Flashcards (Répétition Espacée)');
+          } else {
+            window.openPremiumTeaser('Pass Réussite Pro');
+          }
+        }
+      }, 700);
+    }
+  } catch(e) {}
+})();

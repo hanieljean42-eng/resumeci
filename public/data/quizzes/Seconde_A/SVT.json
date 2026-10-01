@@ -1,0 +1,614 @@
+{
+  "Fiche_Lecon1_La_diversite_des_comportements_alimentaires_de_l_homme": {
+    "title": "La diversité des comportements alimentaires de l'homme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'être humain est un 'omnivore'. Qu'est-ce que cela signifie ?",
+        "type": "qcm",
+        "options": [
+          "Il ne mange que des végétaux",
+          "Il se nourrit d'aliments d'origine végétale et d'origine animale",
+          "Il ne mange que de la viande",
+          "Il fabrique lui-même sa nourriture"
+        ],
+        "answer": 1,
+        "explanation": "Le régime alimentaire humain est diversifié (fruits, légumes, viande, poisson, etc.)."
+      },
+      {
+        "id": "q2",
+        "text": "Le régime végétarien exclut la consommation de viande. Que consomment les végétaliens (ou vegans) ?",
+        "type": "qcm",
+        "options": [
+          "De la viande blanche uniquement",
+          "Uniquement des végétaux, en excluant TOUT produit d'origine animale (ni viande, ni lait, ni œufs, ni miel)",
+          "Du poisson et des légumes",
+          "De l'eau uniquement"
+        ],
+        "answer": 1,
+        "explanation": "Le végétalisme est la forme la plus stricte du végétarisme."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les coutumes, la religion (ex: interdiction du porc) et la géographie (climat) influencent fortement les comportements alimentaires.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'alimentation n'est pas qu'un besoin biologique, c'est aussi un acte culturel et social."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l'alimentation de base dans les régions tropicales d'Afrique de l'Ouest ?",
+        "type": "qcm",
+        "options": [
+          "Le blé et la pomme de terre",
+          "Surtout des féculents locaux : igname, manioc, mil, sorgho, maïs et riz",
+          "La viande rouge à chaque repas",
+          "Le poisson cru"
+        ],
+        "answer": 1,
+        "explanation": "Ces aliments apportent l'essentiel des glucides (énergie)."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi observe-t-on une transition nutritionnelle vers la 'malbouffe' (fast-food) dans les grandes villes du monde ?",
+        "type": "qcm",
+        "options": [
+          "Parce que c'est meilleur pour la santé",
+          "À cause du manque de temps, de l'influence de la publicité et de la mondialisation",
+          "Parce que la nourriture traditionnelle a disparu",
+          "Parce que c'est gratuit"
+        ],
+        "answer": 1,
+        "explanation": "Cette uniformisation de l'alimentation entraîne souvent des problèmes d'obésité."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Les_habitudes_alimentaires_et_la_sante_de_l_homme": {
+    "title": "Les habitudes alimentaires et la santé de l'homme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une ration alimentaire équilibrée ?",
+        "type": "qcm",
+        "options": [
+          "Manger un seul type d'aliment par jour",
+          "Une quantité d'aliments qui couvre quantitativement (assez d'énergie) et qualitativement (protéines, lipides, glucides, vitamines) les besoins du corps en 24h",
+          "Ne boire que de l'eau",
+          "Manger jusqu'à avoir mal au ventre"
+        ],
+        "answer": 1,
+        "explanation": "La ration varie selon l'âge, le sexe et l'activité physique."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle maladie est causée par une carence sévère en protéines, souvent observée chez les jeunes enfants au moment du sevrage ?",
+        "type": "qcm",
+        "options": [
+          "Le scorbut",
+          "Le kwashiorkor (caractérisé par un œdème/ventre gonflé, lésions de la peau)",
+          "Le diabète",
+          "L'obésité"
+        ],
+        "answer": 1,
+        "explanation": "C'est une forme grave de malnutrition infantile."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le marasme nutritionnel est causé par une alimentation trop riche en sucres et en graisses.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le marasme est une dénutrition globale (carence en protéines ET en calories), entraînant un amaigrissement extrême. C'est l'obésité qui est causée par un excès de sucres/graisses."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle maladie est liée à une carence (manque) en Fer ?",
+        "type": "qcm",
+        "options": [
+          "L'anémie (fatigue, pâleur)",
+          "Le goitre",
+          "La cécité",
+          "La grippe"
+        ],
+        "answer": 0,
+        "explanation": "Le fer est essentiel pour les globules rouges. Le goitre est lié au manque d'iode."
+      },
+      {
+        "id": "q5",
+        "text": "Aujourd'hui, quelle maladie métabolique grave est en forte augmentation à cause d'une alimentation trop sucrée et du manque de sport (sédentarité) ?",
+        "type": "qcm",
+        "options": [
+          "Le paludisme",
+          "Le diabète de type 2 (et les maladies cardiovasculaires)",
+          "Le choléra",
+          "La rage"
+        ],
+        "answer": 1,
+        "explanation": "C'est la conséquence principale de la 'malbouffe'."
+      }
+    ]
+  },
+  "Fiche_Lecon3_La_transmission_du_message_nerveux": {
+    "title": "La transmission du message nerveux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'unité de base (la cellule) du système nerveux, chargée de transmettre l'information ?",
+        "type": "qcm",
+        "options": [
+          "Le globule rouge",
+          "Le neurone",
+          "La cellule musculaire",
+          "L'hépatocyte"
+        ],
+        "answer": 1,
+        "explanation": "Un neurone comprend un corps cellulaire, des dendrites et un axone."
+      },
+      {
+        "id": "q2",
+        "text": "Comment se propage le message nerveux le long de l'axone du neurone ?",
+        "type": "qcm",
+        "options": [
+          "Par l'eau",
+          "Sous forme de signal électrique (le potentiel d'action)",
+          "Sous forme de lumière",
+          "Par des hormones de sang"
+        ],
+        "answer": 1,
+        "explanation": "C'est une brève inversion de la polarité de la membrane."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La zone de contact entre deux neurones, où l'information est transmise de l'un à l'autre, s'appelle la 'synapse'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est le relais de la transmission."
+      },
+      {
+        "id": "q4",
+        "text": "Au niveau de la synapse (entre deux neurones), comment le message passe-t-il ?",
+        "type": "qcm",
+        "options": [
+          "Le message électrique saute d'un neurone à l'autre comme un éclair",
+          "Il passe par voie CHIMIQUE : le 1er neurone libère des 'neurotransmetteurs' dans la fente synaptique, qui vont se fixer sur le 2ème neurone",
+          "Les neurones sont collés avec de la colle",
+          "Il ne passe pas"
+        ],
+        "answer": 1,
+        "explanation": "La transmission est donc électrique (sur l'axone) puis chimique (à la synapse)."
+      },
+      {
+        "id": "q5",
+        "text": "Que se passe-t-il si l'on consomme des drogues (comme la cocaïne) au niveau du système nerveux ?",
+        "type": "qcm",
+        "options": [
+          "Cela répare les neurones",
+          "Les drogues perturbent le fonctionnement des synapses (en imitant, bloquant ou augmentant les neurotransmetteurs comme la dopamine), créant des hallucinations ou des addictions",
+          "Cela rend plus intelligent",
+          "Rien ne se passe"
+        ],
+        "answer": 1,
+        "explanation": "La drogue 'pirate' la communication chimique entre les neurones."
+      }
+    ]
+  },
+  "Fiche_Lecon4_La_transmission_d_un_message_hormonal": {
+    "title": "La transmission d'un message hormonal",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une hormone ?",
+        "type": "qcm",
+        "options": [
+          "Un os",
+          "Une substance chimique sécrétée par une glande endocrine, transportée par le SANG, et qui agit sur des organes cibles",
+          "Un globule blanc",
+          "Un muscle"
+        ],
+        "answer": 1,
+        "explanation": "Exemples : l'insuline, l'adrénaline, la testostérone."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le moyen de transport du message hormonal dans le corps humain ?",
+        "type": "qcm",
+        "options": [
+          "Les nerfs",
+          "Le sang (la circulation sanguine)",
+          "La lymphe",
+          "L'air"
+        ],
+        "answer": 1,
+        "explanation": "C'est la grande différence avec le message nerveux (qui passe par les nerfs). Le sang baigne tout l'organisme."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une hormone agit sur toutes les cellules du corps sans distinction.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Une hormone n'agit QUE sur ses 'cellules-cibles', c'est-à-dire les cellules qui possèdent le bon récepteur (comme une clé dans une serrure)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle hormone, sécrétée par le pancréas, permet de baisser le taux de sucre dans le sang (hypoglycémiante) ?",
+        "type": "qcm",
+        "options": [
+          "L'insuline",
+          "L'adrénaline",
+          "Le glucagon",
+          "La thyroxine"
+        ],
+        "answer": 0,
+        "explanation": "Le manque d'insuline provoque le diabète (trop de sucre dans le sang)."
+      },
+      {
+        "id": "q5",
+        "text": "Le message hormonal est-il plus rapide ou plus lent que le message nerveux ?",
+        "type": "qcm",
+        "options": [
+          "Beaucoup plus rapide",
+          "Plus lent (le temps que le sang circule), mais son effet dure souvent plus longtemps",
+          "Il va à la même vitesse",
+          "Il s'arrête immédiatement"
+        ],
+        "answer": 1,
+        "explanation": "Le système nerveux gère l'urgence, le système hormonal gère les régulations à plus long terme (comme la croissance ou la digestion)."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Les_grands_ensembles_environnementaux": {
+    "title": "Les grands ensembles environnementaux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la 'biosphère' ?",
+        "type": "qcm",
+        "options": [
+          "La partie de la Terre où il y a de la glace",
+          "L'ensemble des zones de la Terre où la VIE est possible (air, eau, sol)",
+          "Une bulle en plastique",
+          "Le centre de la terre"
+        ],
+        "answer": 1,
+        "explanation": "La biosphère englobe la lithosphère (sol), l'hydrosphère (eau) et la basse atmosphère (air)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle l'ensemble des êtres vivants (animaux, végétaux, micro-organismes) d'un écosystème ?",
+        "type": "qcm",
+        "options": [
+          "Le biotope",
+          "La biocénose",
+          "Le biome",
+          "La biodiversité"
+        ],
+        "answer": 1,
+        "explanation": "Le milieu physique de vie (non-vivant) s'appelle le BIOTOPE."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'écosystème est l'ensemble formé par le milieu de vie (le biotope) et les êtres vivants qui l'habitent (la biocénose), ainsi que les relations qui les lient.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (Écosystème = Biotope + Biocénose)."
+      },
+      {
+        "id": "q4",
+        "text": "Parmi ces éléments, lequel est un facteur 'abiotique' (non vivant) d'un écosystème ?",
+        "type": "qcm",
+        "options": [
+          "Un arbre",
+          "Une bactérie",
+          "La température (le climat) ou la lumière",
+          "Un oiseau"
+        ],
+        "answer": 2,
+        "explanation": "Les facteurs abiotiques influencent fortement la répartition des êtres vivants."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le plus grand écosystème marin de la planète ?",
+        "type": "qcm",
+        "options": [
+          "La forêt amazonienne",
+          "L'Océan",
+          "Le désert du Sahara",
+          "Le fleuve Amazone"
+        ],
+        "answer": 1,
+        "explanation": "L'océan mondial abrite une part immense de la biodiversité terrestre."
+      }
+    ]
+  },
+  "Fiche_Lecon6_La_production_de_la_matiere_organique": {
+    "title": "La production de la matière organique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels êtres vivants sont considérés comme les 'producteurs primaires' (autotrophes) dans un écosystème ?",
+        "type": "qcm",
+        "options": [
+          "Les animaux carnivores",
+          "Les végétaux chlorophylliens (les plantes vertes)",
+          "Les champignons",
+          "Les êtres humains"
+        ],
+        "answer": 1,
+        "explanation": "Ils fabriquent eux-mêmes leur propre matière organique à partir de matière minérale."
+      },
+      {
+        "id": "q2",
+        "text": "Quel processus biologique permet aux plantes vertes de fabriquer leur propre matière organique (sucre, amidon) ?",
+        "type": "qcm",
+        "options": [
+          "La digestion",
+          "La respiration",
+          "La photosynthèse",
+          "La fermentation"
+        ],
+        "answer": 2,
+        "explanation": "Grâce à la chlorophylle, elles captent l'énergie solaire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour faire la photosynthèse, la plante a uniquement besoin d'eau et de soleil, elle n'a pas besoin de gaz.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Elle a absolument besoin de Dioxyde de carbone (CO2) qu'elle prélève dans l'air, et elle rejette de l'Oxygène (O2)."
+      },
+      {
+        "id": "q4",
+        "text": "Les animaux sont dits 'hétérotrophes' (producteurs secondaires). Qu'est-ce que cela signifie ?",
+        "type": "qcm",
+        "options": [
+          "Ils font de la photosynthèse avec leur peau",
+          "Ils sont obligés de consommer la matière organique fabriquée par d'autres êtres vivants (plantes ou autres animaux) pour vivre et grandir",
+          "Ils ne mangent que des minéraux",
+          "Ils mangent de la terre"
+        ],
+        "answer": 1,
+        "explanation": "Les herbivores mangent des plantes, les carnivores mangent d'autres animaux."
+      },
+      {
+        "id": "q5",
+        "text": "Dans une chaîne alimentaire, qui occupe la place des 'décomposeurs' ?",
+        "type": "qcm",
+        "options": [
+          "Les aigles et les lions",
+          "Les bactéries et champignons du sol",
+          "Les arbres fruitiers",
+          "Les insectes herbivores"
+        ],
+        "answer": 1,
+        "explanation": "Ils transforment la matière organique morte (feuilles, cadavres) en matière minérale (engrais naturel) réutilisable par les plantes."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Le_changement_climatique": {
+    "title": "Le changement climatique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'effet de serre naturel ?",
+        "type": "qcm",
+        "options": [
+          "Un gaz toxique qui tue les plantes",
+          "Un phénomène naturel qui retient une partie de la chaleur du soleil (grâce à l'atmosphère) et maintient la Terre à une température vivable (15°C au lieu de -18°C)",
+          "La fabrication de serres en verre par les jardiniers",
+          "Le froid extrême"
+        ],
+        "answer": 1,
+        "explanation": "Sans l'effet de serre naturel, il n'y aurait pas de vie possible."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi parle-t-on aujourd'hui de 'réchauffement climatique' (effet de serre additionnel) ?",
+        "type": "qcm",
+        "options": [
+          "Parce que le soleil s'est rapproché de la Terre",
+          "Parce que les activités humaines (usines, voitures, déforestation) rejettent trop de Gaz à Effet de Serre (GES), ce qui augmente anormalement la chaleur retenue",
+          "Parce que la Terre tourne plus vite",
+          "C'est une rumeur fausse"
+        ],
+        "answer": 1,
+        "explanation": "Le principal gaz responsable est le Dioxyde de carbone (CO2)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'élévation du niveau des mers, la fonte des glaces polaires et la perturbation du cycle de l'eau (sécheresses et inondations) sont des conséquences du changement climatique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ce sont des bouleversements environnementaux majeurs."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle énergie fossile est très responsable des émissions de CO2 lors de sa combustion ?",
+        "type": "qcm",
+        "options": [
+          "L'énergie solaire",
+          "Le vent (éolienne)",
+          "Le charbon et le pétrole",
+          "L'énergie hydraulique"
+        ],
+        "answer": 2,
+        "explanation": "Pour limiter le réchauffement, il faut passer aux énergies renouvelables."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le rôle positif des forêts (comme la forêt amazonienne) face au changement climatique ?",
+        "type": "qcm",
+        "options": [
+          "Elles réchauffent l'atmosphère",
+          "Elles agissent comme un 'puits de carbone' (elles absorbent le CO2 de l'air lors de la photosynthèse)",
+          "Elles fabriquent du plastique",
+          "Elles ne servent à rien"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi la déforestation aggrave considérablement le réchauffement climatique."
+      }
+    ]
+  },
+  "Fiche_Lecon8_La_structure_d_une_cellule_animale": {
+    "title": "La structure d'une cellule animale",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les trois éléments fondamentaux qui composent TOUTE cellule animale (de l'extérieur vers l'intérieur) ?",
+        "type": "qcm",
+        "options": [
+          "Une coquille, du blanc, un jaune",
+          "Une membrane plasmique, un cytoplasme, et un noyau",
+          "Une paroi pectocellulosique, une vacuole, un chloroplaste",
+          "De l'eau, du sang, des os"
+        ],
+        "answer": 1,
+        "explanation": "C'est le schéma de base de l'unité du vivant."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le rôle de la membrane plasmique ?",
+        "type": "qcm",
+        "options": [
+          "Elle produit l'énergie de la cellule",
+          "Elle délimite la cellule et contrôle les échanges (entrées et sorties) avec le milieu extérieur",
+          "Elle contient l'ADN",
+          "Elle permet à la cellule de rouler"
+        ],
+        "answer": 1,
+        "explanation": "Elle est semi-perméable."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le noyau est l'organite qui contient l'information génétique (l'ADN) de la cellule.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le noyau est le 'cerveau' ou le centre de contrôle de la cellule."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le cytoplasme ?",
+        "type": "qcm",
+        "options": [
+          "Une enveloppe dure",
+          "Le liquide gélatineux (hyaloplasme) à l'intérieur de la cellule, contenant de nombreux petits organites (mitochondries, appareil de Golgi, etc.)",
+          "Le nom du noyau",
+          "Un globule blanc"
+        ],
+        "answer": 1,
+        "explanation": "C'est là que se déroulent la plupart des réactions chimiques de la cellule."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle grande différence y a-t-il entre une cellule animale et une cellule végétale ?",
+        "type": "qcm",
+        "options": [
+          "La cellule animale est plus grande",
+          "La cellule animale possède une paroi rigide épaisse en plus de sa membrane",
+          "La cellule végétale possède en plus une paroi rigide (pectocellulosique), de gros sacs d'eau (vacuoles) et souvent des chloroplastes",
+          "Il n'y a aucune différence"
+        ],
+        "answer": 2,
+        "explanation": "La paroi rigide donne sa forme géométrique à la cellule végétale."
+      }
+    ]
+  },
+  "Fiche_Lecon9_La_reproduction_conforme_de_la_cellule": {
+    "title": "La reproduction de la cellule (Mitose)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment s'appelle le processus de division cellulaire qui permet à une cellule mère de donner naissance à deux cellules filles identiques ?",
+        "type": "qcm",
+        "options": [
+          "La digestion",
+          "La mitose",
+          "La méiose",
+          "La fécondation"
+        ],
+        "answer": 1,
+        "explanation": "La mitose assure la croissance et le renouvellement des tissus (peau, os...)."
+      },
+      {
+        "id": "q2",
+        "text": "Que doit impérativement faire la cellule AVANT de commencer à se diviser (lors de la phase S de l'interphase) ?",
+        "type": "qcm",
+        "options": [
+          "Dormir profondément",
+          "Réduire sa taille de moitié",
+          "Dupliquer (copier) son ADN (ses chromosomes) pour pouvoir en donner une copie exacte à chaque cellule fille",
+          "Changer de couleur"
+        ],
+        "answer": 2,
+        "explanation": "Les chromosomes simples deviennent des chromosomes doubles (à 2 chromatides)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les deux cellules filles issues d'une mitose normale possèdent exactement le même nombre de chromosomes et la même information génétique que la cellule mère d'origine.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est pourquoi on parle de reproduction 'conforme' (clonage cellulaire)."
+      },
+      {
+        "id": "q4",
+        "text": "La mitose se divise classiquement en 4 grandes phases. Quel est le bon ordre ?",
+        "type": "qcm",
+        "options": [
+          "Anaphase, Télophase, Prophase, Métaphase",
+          "Prophase, Métaphase, Anaphase, Télophase (PMAT)",
+          "Métaphase, Anaphase, Prophase, Télophase",
+          "Télophase, Prophase, Anaphase, Métaphase"
+        ],
+        "answer": 1,
+        "explanation": "Moyen mnémotechnique : Pour Mon Amour Toujours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors de la Métaphase (la 2ème phase), où se placent les chromosomes dans la cellule ?",
+        "type": "qcm",
+        "options": [
+          "Ils se cachent dans les coins",
+          "Ils s'alignent tous au milieu de la cellule, formant la plaque équatoriale",
+          "Ils se séparent en deux",
+          "Ils sortent de la cellule"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'étape où les chromosomes sont les plus visibles au microscope."
+      }
+    ]
+  }
+}

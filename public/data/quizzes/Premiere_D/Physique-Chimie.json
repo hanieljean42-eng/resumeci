@@ -1,0 +1,1064 @@
+{
+  "Fiche_LECON_11_L_electrolyse": {
+    "title": "LECON 11 L electrolyse",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 11 L electrolyse\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_1_Hydrocarbures_satures_Les_alcanes": {
+    "title": "LECON 1 Hydrocarbures satures Les alcanes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la formule générale d'un alcane (hydrocarbure saturé acyclique) ?",
+        "type": "qcm",
+        "options": [
+          "CnH2n+2",
+          "CnH2n",
+          "CnH2n-2",
+          "CnH2n+1OH"
+        ],
+        "answer": 0,
+        "explanation": "Les alcanes ne comportent que des liaisons simples Carbone-Carbone."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le nom de l'alcane à 4 atomes de carbone (C4H10) ?",
+        "type": "qcm",
+        "options": [
+          "Le butane",
+          "Le méthane",
+          "L'éthane",
+          "Le propane"
+        ],
+        "answer": 0,
+        "explanation": "Méthane (1), Éthane (2), Propane (3), Butane (4)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux isomères d'alcanes ont la même formule brute mais des formules semi-développées différentes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le butane normal et le méthylpropane (isobutane) ont tous deux la formule C4H10."
+      },
+      {
+        "id": "q4",
+        "text": "Quels sont les produits de la combustion complète d'un alcane ?",
+        "type": "qcm",
+        "options": [
+          "Du dioxyde de carbone (CO2) et de l'eau (H2O)",
+          "Du monoxyde de carbone (CO) et du carbone (C)",
+          "Un alcool et de l'hydrogène",
+          "Rien, la réaction est impossible"
+        ],
+        "answer": 0,
+        "explanation": "Une combustion complète dans le dioxygène produit toujours du CO2 et de H2O."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle réaction caractéristique des alcanes permet de remplacer un atome d'hydrogène par un atome d'halogène (ex: chlore) ?",
+        "type": "qcm",
+        "options": [
+          "La réaction de substitution",
+          "La réaction d'addition",
+          "La réaction de polymérisation",
+          "L'estérification"
+        ],
+        "answer": 0,
+        "explanation": "Exemple avec le méthane et le chlore (à la lumière) pour donner du chlorométhane (CH3Cl)."
+      }
+    ]
+  },
+  "Fiche_LECON_1_Travail_et_puissance_d_une_force": {
+    "title": "LECON 1 Travail et puissance d une force",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment se calcule le travail W d'une force constante F lors d'un déplacement AB ?",
+        "type": "qcm",
+        "options": [
+          "W = F . AB = F * AB * cos(alpha)",
+          "W = F / AB",
+          "W = m * g * h",
+          "W = 1/2 * m * v²"
+        ],
+        "answer": 0,
+        "explanation": "Le travail est le produit scalaire du vecteur force par le vecteur déplacement."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité du travail dans le Système International ?",
+        "type": "qcm",
+        "options": [
+          "Le Joule (J)",
+          "Le Newton (N)",
+          "Le Watt (W)",
+          "Le Pascal (Pa)"
+        ],
+        "answer": 0,
+        "explanation": "Le travail, comme l'énergie, s'exprime en Joules."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si l'angle entre la force et le déplacement est supérieur à 90°, le travail est moteur.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Le cosinus est négatif, le travail est donc résistant (< 0)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la définition de la puissance moyenne P d'une force ?",
+        "type": "qcm",
+        "options": [
+          "Le quotient du travail W par la durée Δt (P = W / Δt)",
+          "Le produit de la force par la vitesse",
+          "L'intégrale du travail",
+          "La somme des forces"
+        ],
+        "answer": 0,
+        "explanation": "La puissance représente la rapidité avec laquelle le travail est fourni."
+      },
+      {
+        "id": "q5",
+        "text": "Comment s'exprime le travail du poids d'un corps se déplaçant d'une altitude zA à une altitude zB ?",
+        "type": "qcm",
+        "options": [
+          "W(P) = mg(zA - zB)",
+          "W(P) = mg(zB - zA)",
+          "W(P) = 0",
+          "W(P) = 1/2 m(vB² - vA²)"
+        ],
+        "answer": 0,
+        "explanation": "Le travail du poids ne dépend pas du chemin suivi, mais uniquement de la différence d'altitude."
+      }
+    ]
+  },
+  "Fiche_LECON_2_Energie_potentielle_electrostatique": {
+    "title": "LECON 2 Energie potentielle electrostatique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 2 Energie potentielle electrostatique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_2_Hydrocarbures_insatures_Alcenes_Alcynes": {
+    "title": "LECON 2 Hydrocarbures insatures Alcenes Alcynes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 2 Hydrocarbures insatures Alcenes Alcynes\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_3_Puissance_et_energie_electrique": {
+    "title": "LECON 3 Puissance et energie electrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 3 Puissance et energie electrique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_4_Le_condensateur": {
+    "title": "LECON 4 Le condensateur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est constitué un condensateur ?",
+        "type": "qcm",
+        "options": [
+          "De deux armatures conductrices séparées par un isolant (diélectrique)",
+          "D'une bobine de fil de cuivre",
+          "De deux aimants",
+          "D'une résistance en carbone"
+        ],
+        "answer": 0,
+        "explanation": "Le condensateur stocke des charges électriques sur ses armatures séparées par l'isolant."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la relation entre la charge Q, la capacité C et la tension U d'un condensateur ?",
+        "type": "qcm",
+        "options": [
+          "Q = C * U",
+          "U = R * I",
+          "Q = C / U",
+          "C = Q * U"
+        ],
+        "answer": 0,
+        "explanation": "La charge accumulée est proportionnelle à la tension appliquée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'unité de la capacité d'un condensateur est le Farad (F).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. En pratique, on utilise souvent ses sous-multiples (µF, nF, pF)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est l'énergie E emmagasinée par un condensateur ?",
+        "type": "qcm",
+        "options": [
+          "E = 1/2 * C * U²",
+          "E = 1/2 * L * I²",
+          "E = m * g * h",
+          "E = U * I * t"
+        ],
+        "answer": 0,
+        "explanation": "Cette énergie électrostatique est proportionnelle au carré de la tension."
+      },
+      {
+        "id": "q5",
+        "text": "Comment évolue la capacité équivalente Ce lorsque deux condensateurs C1 et C2 sont montés en parallèle ?",
+        "type": "qcm",
+        "options": [
+          "Ce = C1 + C2",
+          "1/Ce = 1/C1 + 1/C2",
+          "Ce = C1 - C2",
+          "Ce = (C1 * C2) / (C1 + C2)"
+        ],
+        "answer": 0,
+        "explanation": "En parallèle, les capacités s'additionnent, contrairement aux résistances."
+      }
+    ]
+  },
+  "Fiche_LECON_4_Petrole_et_gaz_naturels": {
+    "title": "LECON 4 Petrole et gaz naturels",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 4 Petrole et gaz naturels\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_5_Composes_oxygenes": {
+    "title": "LECON 5 Composes oxygenes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 5 Composes oxygenes\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_5_Les_lentilles_minces": {
+    "title": "LECON 5 Les lentilles minces",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 5 Les lentilles minces\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_6_L_ethanol": {
+    "title": "LECON 6 L ethanol",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 6 L ethanol\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_7_Esterification_et_hydrolyse_d_un_ester": {
+    "title": "LECON 7 Esterification et hydrolyse d un ester",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 7 Esterification et hydrolyse d un ester\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_8_Classification_quantitative_des_couples_oxidants_reducteurs": {
+    "title": "LECON 8 Classification quantitative des couples oxidants reducteurs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 8 Classification quantitative des couples oxidants reducteurs\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_9_Energie_mecanique": {
+    "title": "LECON 9 Energie mecanique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 9 Energie mecanique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_9_Reactions_d_oxidoreduction": {
+    "title": "LECON 9 Reactions d oxidoreduction",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 9 Reactions d oxidoreduction\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_lecon_7_Energie_cinetique": {
+    "title": "lecon 7 Energie cinetique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"lecon 7 Energie cinetique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  }
+}

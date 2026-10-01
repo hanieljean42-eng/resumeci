@@ -1,0 +1,546 @@
+{
+  "Fiche_Lecon1_FORMATION_DE_LA_GRAINE": {
+    "title": "La formation de la graine",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'organe reproducteur des plantes à fleurs ?",
+        "type": "qcm",
+        "options": [
+          "La tige",
+          "La feuille",
+          "La fleur",
+          "La racine"
+        ],
+        "answer": 2,
+        "explanation": "La fleur est l'organe reproducteur des plantes à fleurs. C'est là que se produisent la pollinisation et la fécondation."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle l'ensemble des pétales d'une fleur ?",
+        "type": "qcm",
+        "options": [
+          "Le calice",
+          "La corolle",
+          "L'androcée",
+          "Le gynécée"
+        ],
+        "answer": 1,
+        "explanation": "L'ensemble des pétales forme la corolle. Le calice est l'ensemble des sépales."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La pollinisation, c'est la fusion de deux cellules reproductrices.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La pollinisation, c'est le TRANSPORT du pollen de l'anthère vers le stigmate. C'est la FÉCONDATION qui est la fusion des cellules."
+      },
+      {
+        "id": "q4",
+        "text": "Que devient l'ovaire de la fleur après la fécondation ?",
+        "type": "qcm",
+        "options": [
+          "Il se transforme en graine",
+          "Il se transforme en fruit",
+          "Il tombe",
+          "Il devient un pétale"
+        ],
+        "answer": 1,
+        "explanation": "Après la fécondation, l'ovaire grossit et se transforme en fruit, tandis que l'ovule devient une graine."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle partie de l'étamine contient le pollen ?",
+        "type": "qcm",
+        "options": [
+          "Le stigmate",
+          "Le style",
+          "Le filet",
+          "L'anthère"
+        ],
+        "answer": 3,
+        "explanation": "L'anthère est la partie terminale de l'étamine (l'organe mâle) et elle contient les grains de pollen."
+      }
+    ]
+  },
+  "Fiche_Lecon2_GERMINATION_DES_GRAINES": {
+    "title": "La germination des graines",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la germination ?",
+        "type": "qcm",
+        "options": [
+          "Le passage de la fleur au fruit",
+          "La chute des feuilles",
+          "Le passage de la graine à une nouvelle plante",
+          "Le transport du pollen"
+        ],
+        "answer": 2,
+        "explanation": "La germination est le processus par lequel une graine se développe pour donner une nouvelle plante."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces éléments, lequel N'EST PAS une condition nécessaire à la germination ?",
+        "type": "qcm",
+        "options": [
+          "L'humidité (eau)",
+          "La lumière",
+          "Une bonne température",
+          "De l'air (oxygène)"
+        ],
+        "answer": 1,
+        "explanation": "La lumière n'est pas nécessaire pour que la graine germe (elle germe souvent sous terre, dans le noir). Par contre, l'eau, l'air et la chaleur le sont."
+      },
+      {
+        "id": "q3",
+        "text": "Comment s'appellent les réserves de nourriture contenues dans la graine ?",
+        "type": "qcm",
+        "options": [
+          "Les cotylédons",
+          "Le tégument",
+          "La radicule",
+          "La tigelle"
+        ],
+        "answer": 0,
+        "explanation": "Les cotylédons contiennent les réserves nutritives qui permettent à la plantule de grandir au début."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Le tégument est la peau protectrice de la graine.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le tégument est l'enveloppe extérieure qui protège la graine."
+      },
+      {
+        "id": "q5",
+        "text": "Que devient la radicule lors de la germination ?",
+        "type": "qcm",
+        "options": [
+          "La tige",
+          "Les feuilles",
+          "La racine principale",
+          "Le fruit"
+        ],
+        "answer": 2,
+        "explanation": "La radicule est la partie de l'embryon qui s'allonge vers le bas pour former la racine principale de la future plante."
+      }
+    ]
+  },
+  "Fiche_Lecon3_REPRODUCTION_MAMMIFERES": {
+    "title": "La reproduction chez les mammifères",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment appelle-t-on les organes visibles qui permettent de distinguer le mâle de la femelle ?",
+        "type": "qcm",
+        "options": [
+          "Les organes internes",
+          "Les caractères sexuels externes",
+          "Les gonades",
+          "Les glandes sexuelles"
+        ],
+        "answer": 1,
+        "explanation": "Les caractères sexuels externes (pénis/bourses chez le mâle, vulve/mamelles chez la femelle) sont visibles à l'œil nu."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les cellules reproductrices femelles ?",
+        "type": "qcm",
+        "options": [
+          "Les spermatozoïdes",
+          "Les testicules",
+          "Les ovaires",
+          "Les ovules"
+        ],
+        "answer": 3,
+        "explanation": "Les ovules sont les cellules reproductrices femelles, elles sont produites par les ovaires."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Chez les mammifères, la fécondation est externe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La rencontre entre le spermatozoïde et l'ovule se fait à l'intérieur de l'appareil reproducteur de la femelle, c'est une fécondation INTERNE."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il immédiatement après la fusion des noyaux (fécondation) ?",
+        "type": "qcm",
+        "options": [
+          "Il y a naissance",
+          "Il se forme une cellule-œuf",
+          "L'embryon se fixe",
+          "Les organes se forment"
+        ],
+        "answer": 1,
+        "explanation": "La fusion du noyau du spermatozoïde et de l'ovule donne une cellule unique appelée la cellule-œuf."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on les animaux dont le développement de l'œuf se fait entièrement dans l'utérus ?",
+        "type": "qcm",
+        "options": [
+          "Les ovipares",
+          "Les vertébrés",
+          "Les mammifères vivipares",
+          "Les amphibiens"
+        ],
+        "answer": 2,
+        "explanation": "Les mammifères sont vivipares car le développement de l'embryon et du fœtus se fait à l'intérieur du corps de la femelle."
+      }
+    ]
+  },
+  "Fiche_Lecon4_REPRODUCTION_OISEAUX": {
+    "title": "La reproduction chez les oiseaux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel caractère sexuel externe est bien développé chez le coq mais réduit chez la poule ?",
+        "type": "qcm",
+        "options": [
+          "Les pattes",
+          "Le bec",
+          "La crête",
+          "Les ailes"
+        ],
+        "answer": 2,
+        "explanation": "Le coq possède une crête (et des barbillons) bien développée, contrairement à la poule."
+      },
+      {
+        "id": "q2",
+        "text": "Quel organe permet l'accouplement chez les oiseaux (coq et poule) ?",
+        "type": "qcm",
+        "options": [
+          "Le pénis",
+          "La vulve",
+          "Le cloaque",
+          "L'oviducte"
+        ],
+        "answer": 2,
+        "explanation": "L'accouplement se fait par le rapprochement des cloaques du mâle et de la femelle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Comme chez les mammifères, la fécondation chez les oiseaux est interne.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai ! La fécondation (rencontre des cellules) se fait à l'intérieur du corps de la poule."
+      },
+      {
+        "id": "q4",
+        "text": "Où se développe l'embryon après la ponte de l'œuf ?",
+        "type": "qcm",
+        "options": [
+          "Dans l'utérus de la poule",
+          "Dans l'ovaire",
+          "Hors du corps de la poule (développement externe)",
+          "Dans le cloaque"
+        ],
+        "answer": 2,
+        "explanation": "L'œuf est pondu puis couvé. Le développement de l'embryon se fait à l'extérieur du corps de la mère : c'est un développement externe."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la durée moyenne de couvaison avant l'éclosion d'un poussin ?",
+        "type": "qcm",
+        "options": [
+          "5 jours",
+          "15 jours",
+          "21 jours",
+          "30 jours"
+        ],
+        "answer": 2,
+        "explanation": "L'éclosion du poussin a lieu généralement le 21ème jour."
+      }
+    ]
+  },
+  "Fiche_Lecon5_FACTEURS_CROISSANCE_PLANTES": {
+    "title": "Facteurs de croissance des plantes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que se passe-t-il si un plant est arrosé avec un excès d'eau (sol inondé) ?",
+        "type": "qcm",
+        "options": [
+          "Il grandit très vite",
+          "Il se développe normalement",
+          "Ses racines s'asphyxient et il meurt",
+          "Ses feuilles deviennent plus vertes"
+        ],
+        "answer": 2,
+        "explanation": "L'excès d'eau empêche l'air d'arriver aux racines (asphyxie), ce qui provoque la mort de la plante."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les trois principaux sels minéraux essentiels (engrais NPK) ?",
+        "type": "qcm",
+        "options": [
+          "Azote, Phosphore, Potassium",
+          "Azote, Calcium, Fer",
+          "Oxygène, Phosphore, Carbone",
+          "Potassium, Zinc, Cuivre"
+        ],
+        "answer": 0,
+        "explanation": "Les engrais NPK apportent de l'Azote (N), du Phosphore (P) et du Potassium (K)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un plant à l'obscurité a des feuilles bien vertes et des tiges robustes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! À l'obscurité, les tiges sont frêles et les feuilles deviennent jaunâtres. La lumière est indispensable."
+      },
+      {
+        "id": "q4",
+        "text": "Grâce à quoi la plante verte fabrique-t-elle sa propre matière organique ?",
+        "type": "qcm",
+        "options": [
+          "Les racines uniquement",
+          "La chlorophylle et la lumière",
+          "Les engrais chimiques",
+          "L'obscurité totale"
+        ],
+        "answer": 1,
+        "explanation": "En présence de lumière, la plante utilise la chlorophylle de ses feuilles pour fabriquer sa nourriture : on dit qu'elle est autotrophe."
+      },
+      {
+        "id": "q5",
+        "text": "De quoi a besoin la plante, en plus de l'eau et de la lumière, pour une croissance optimale ?",
+        "type": "qcm",
+        "options": [
+          "De beaucoup de vent",
+          "D'un sol sec",
+          "De sels minéraux",
+          "D'eau distillée pure"
+        ],
+        "answer": 2,
+        "explanation": "Une plante a besoin d'eau, de lumière ET de sels minéraux (nourriture minérale)."
+      }
+    ]
+  },
+  "Fiche_Lecon6_INFLUENCE_ALIMENTS_VERTEBRES": {
+    "title": "Influence des aliments chez les vertébrés",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le rôle principal des protéines dans l'alimentation ?",
+        "type": "qcm",
+        "options": [
+          "Fournir de l'énergie",
+          "Construire l'organisme (production de chair)",
+          "Hydrater le corps",
+          "Renforcer uniquement les os"
+        ],
+        "answer": 1,
+        "explanation": "Les protéines (végétales et animales) sont des aliments de construction, indispensables pour produire de la chair et grandir."
+      },
+      {
+        "id": "q2",
+        "text": "Quels aliments simples fournissent principalement de l'énergie ?",
+        "type": "qcm",
+        "options": [
+          "Les protéines et les sels minéraux",
+          "Les vitamines et l'eau",
+          "Les glucides et les lipides",
+          "Les lipides et les vitamines"
+        ],
+        "answer": 2,
+        "explanation": "Les glucides et les lipides (graisses) sont les carburants du corps : ils fournissent l'énergie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Des poussins nourris avec des aliments pauvres en protéines grandissent très vite.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Une alimentation pauvre en protéines (qui sont des aliments de construction) entraîne une croissance faible."
+      },
+      {
+        "id": "q4",
+        "text": "Pourquoi un animal ne grandit-il pas bien si on ne lui donne pas assez à manger (quantité) ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'il dort trop",
+          "Parce que ses besoins nutritionnels ne sont pas couverts",
+          "Parce qu'il boit trop d'eau",
+          "Parce que la nourriture est trop riche"
+        ],
+        "answer": 1,
+        "explanation": "Si les quantités sont insuffisantes, l'animal manque de matériaux pour grandir."
+      },
+      {
+        "id": "q5",
+        "text": "Quels sont les 3 critères alimentaires qui influencent la croissance ?",
+        "type": "qcm",
+        "options": [
+          "Le goût, l'odeur, la couleur",
+          "Le prix, le poids, le volume",
+          "La composition, la qualité, la quantité",
+          "L'eau, le soleil, le vent"
+        ],
+        "answer": 2,
+        "explanation": "La croissance dépend de la composition (aliments variés), de la qualité (richesse en nutriments utiles comme les protéines) et de la quantité."
+      }
+    ]
+  },
+  "Fiche_Lecon7_ACTIONS_NEFASTES_ENVIRONNEMENT": {
+    "title": "Actions néfastes de l'homme sur l'environnement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'une des conséquences principales du déboisement et des feux de brousse ?",
+        "type": "qcm",
+        "options": [
+          "L'enrichissement des sols",
+          "La diminution des moustiques",
+          "L'érosion et l'appauvrissement des sols",
+          "La multiplication des forêts"
+        ],
+        "answer": 2,
+        "explanation": "La destruction de la végétation laisse le sol nu, entraînant son érosion (par la pluie/le vent) et son appauvrissement."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qui cause la raréfaction ou la disparition des poissons ?",
+        "type": "qcm",
+        "options": [
+          "Le surpâturage",
+          "Le braconnage",
+          "La pêche intensive (surexploitation halieutique)",
+          "Le reboisement"
+        ],
+        "answer": 2,
+        "explanation": "La pêche intensive (ou surexploitation halieutique) consiste à pêcher plus de poissons qu'ils ne peuvent se reproduire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le braconnage est une action de destruction des ressources végétales.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le braconnage est la surexploitation des ressources ANIMALES (chasse illégale)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle pollution entraîne principalement des maladies respiratoires chez l'homme ?",
+        "type": "qcm",
+        "options": [
+          "La pollution de l'eau",
+          "La pollution de l'air",
+          "La pollution du sol",
+          "La pollution sonore"
+        ],
+        "answer": 1,
+        "explanation": "L'émission de gaz toxiques et de fumées pollue l'air et attaque directement les poumons."
+      },
+      {
+        "id": "q5",
+        "text": "Que provoque la pollution de l'eau par des ordures ou des déchets industriels ?",
+        "type": "qcm",
+        "options": [
+          "L'érosion des sols",
+          "Une meilleure croissance des poissons",
+          "Des intoxications et des maladies hydriques",
+          "Des maladies pulmonaires"
+        ],
+        "answer": 2,
+        "explanation": "L'eau polluée rend malades les personnes et les animaux qui la consomment."
+      }
+    ]
+  },
+  "Fiche_Lecon8_LUTTE_DEGRADATION_ENVIRONNEMENT": {
+    "title": "Lutte contre la dégradation de l'environnement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment appelle-t-on l'action de replanter des arbres pour lutter contre la déforestation ?",
+        "type": "qcm",
+        "options": [
+          "Le déboisement",
+          "Le braconnage",
+          "Le reboisement",
+          "La lutte chimique"
+        ],
+        "answer": 2,
+        "explanation": "Le reboisement est le fait de planter de nouveaux arbres pour renouveler la forêt."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un parc national ?",
+        "type": "qcm",
+        "options": [
+          "Un jardin public en ville",
+          "Une zone où la faune et la flore sont protégées",
+          "Une zone de pêche intensive",
+          "Une zone de traitement des ordures"
+        ],
+        "answer": 1,
+        "explanation": "Un parc national est un moyen de préserver l'environnement : les espèces y sont protégées de la chasse et de la destruction."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Traiter les eaux usées est un moyen de lutter contre la pollution de l'eau.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le traitement des eaux permet de rendre l'eau saine avant son rejet dans la nature, évitant ainsi de graves maladies."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la lutte intégrée (ou biologique) en agriculture ?",
+        "type": "qcm",
+        "options": [
+          "Utiliser beaucoup de pesticides toxiques",
+          "Brûler toutes les cultures",
+          "Utiliser des êtres vivants pour détruire les ravageurs",
+          "Arroser abondamment les champs"
+        ],
+        "answer": 2,
+        "explanation": "La lutte biologique consiste à utiliser des prédateurs naturels (ex: des coccinelles contre les pucerons) au lieu de produits chimiques."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces propositions, laquelle est une technique de sensibilisation de la population ?",
+        "type": "qcm",
+        "options": [
+          "La création de réserves",
+          "Les campagnes d'affichage et conférences",
+          "Le traitement des ordures",
+          "La réglementation de la chasse"
+        ],
+        "answer": 1,
+        "explanation": "Les panneaux, affiches, émissions de radio ou conférences servent à expliquer aux gens l'importance de protéger l'environnement."
+      }
+    ]
+  }
+}

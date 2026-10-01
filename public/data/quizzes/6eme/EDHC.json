@@ -1,0 +1,542 @@
+{
+  "Fiche_Lecon1_DROITS_SURVIE_PROTECTION_ENFANT": {
+    "title": "Droits à la survie et à la protection de l'enfant",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le document international fondamental qui protège les droits des enfants ?",
+        "type": "qcm",
+        "options": ["La Constitution", "Le Code pénal", "La Convention Relative aux Droits de l'Enfant (CDE)", "Le Code du travail"],
+        "answer": 2,
+        "explanation": "La Convention Relative aux Droits de l'Enfant (CDE) a été adoptée en 1989 pour garantir et protéger les droits des enfants dans le monde entier."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces droits, lequel est un droit à la SURVIE ?",
+        "type": "qcm",
+        "options": ["Le droit de jouer", "Le droit à la liberté d'expression", "Le droit à l'alimentation et aux soins médicaux", "Le droit de ne pas être battu"],
+        "answer": 2,
+        "explanation": "Les droits à la survie garantissent les besoins vitaux : manger, boire, se soigner, avoir un abri."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un enfant a le droit d'être protégé contre les travaux dangereux et l'exploitation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est un droit fondamental à la PROTECTION : aucun enfant ne doit être forcé de faire un travail qui nuit à sa santé ou à son éducation."
+      },
+      {
+        "id": "q4",
+        "text": "Selon la loi, jusqu'à quel âge est-on considéré comme un enfant ?",
+        "type": "qcm",
+        "options": ["10 ans", "15 ans", "18 ans", "21 ans"],
+        "answer": 2,
+        "explanation": "La CDE définit un enfant comme tout être humain âgé de moins de 18 ans."
+      },
+      {
+        "id": "q5",
+        "text": "À qui incombe en premier la responsabilité de protéger et nourrir l'enfant ?",
+        "type": "qcm",
+        "options": ["Aux enseignants", "Aux parents ou tuteurs", "À la police", "Aux médecins"],
+        "answer": 1,
+        "explanation": "Ce sont les parents (ou tuteurs légaux) qui ont la responsabilité première d'assurer la survie et la protection de l'enfant. L'État doit les y aider."
+      }
+    ]
+  },
+  "Fiche_Lecon2_DROITS_HOMME_EPANOUISSEMENT": {
+    "title": "Droits de l'Homme et Épanouissement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la Déclaration Universelle des Droits de l'Homme (DUDH) ?",
+        "type": "qcm",
+        "options": ["Un livre de mathématiques", "Un texte adopté par l'ONU en 1948 pour protéger la dignité humaine", "Une loi de la Côte d'Ivoire uniquement", "Un traité militaire"],
+        "answer": 1,
+        "explanation": "Adoptée le 10 décembre 1948 par l'ONU, la DUDH proclame les droits fondamentaux dont chaque être humain doit bénéficier."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces droits favorise l'épanouissement INTELLECTUEL de l'individu ?",
+        "type": "qcm",
+        "options": ["Le droit à la santé", "Le droit à l'éducation et à l'instruction", "Le droit de vote", "Le droit au logement"],
+        "answer": 1,
+        "explanation": "Le droit à l'éducation permet à une personne de développer son intelligence et ses connaissances."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les Droits de l'Homme ne s'appliquent qu'aux adultes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Les Droits de l'Homme sont universels : ils s'appliquent à tous les êtres humains, peu importe leur âge, leur sexe ou leur origine."
+      },
+      {
+        "id": "q4",
+        "text": "Que signifie le mot 'épanouissement' ?",
+        "type": "qcm",
+        "options": ["Le fait de devenir riche", "Le fait de se développer pleinement et d'être heureux dans la société", "Le fait de ne respecter aucune règle", "Le fait de travailler beaucoup"],
+        "answer": 1,
+        "explanation": "L'épanouissement est le développement complet des capacités physiques, intellectuelles et morales d'une personne."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi est-il important de respecter les droits des autres ?",
+        "type": "qcm",
+        "options": ["Pour avoir de bonnes notes à l'école", "Pour éviter de payer des impôts", "Pour garantir la paix, la justice et le vivre-ensemble", "Pour devenir célèbre"],
+        "answer": 2,
+        "explanation": "Le respect mutuel des droits est la base d'une société pacifique et juste où chacun peut s'épanouir."
+      }
+    ]
+  },
+  "Fiche_Lecon7_CIRCULATION_ROUTIERE": {
+    "title": "La circulation routière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où le piéton doit-il marcher en ville pour être en sécurité ?",
+        "type": "qcm",
+        "options": ["Sur la chaussée", "Sur le trottoir", "Au milieu de la route", "Sur la piste cyclable"],
+        "answer": 1,
+        "explanation": "En agglomération, le piéton doit toujours marcher sur les trottoirs ou les accotements réservés aux piétons."
+      },
+      {
+        "id": "q2",
+        "text": "De quel côté le piéton doit-il marcher en rase campagne (hors agglomération) ?",
+        "type": "qcm",
+        "options": ["Au milieu", "Du côté droit dans le sens de la marche", "Du côté gauche, face aux véhicules", "Peu importe"],
+        "answer": 2,
+        "explanation": "Hors agglomération, le piéton doit marcher sur le côté gauche de la chaussée pour voir arriver les véhicules face à lui."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les passages cloutés (ou zébrés) sont réservés aux voitures.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Les passages piétons (cloutés ou zébrés) sont réservés à la traversée sécurisée des piétons."
+      },
+      {
+        "id": "q4",
+        "text": "À quoi sert un feu tricolore ?",
+        "type": "qcm",
+        "options": ["À éclairer la route la nuit", "À réguler la circulation des véhicules et des piétons", "À décorer les carrefours", "À chronométrer les voitures"],
+        "answer": 1,
+        "explanation": "Le feu tricolore (rouge, orange, vert) organise le passage alterné aux intersections pour éviter les accidents."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit faire un usager face à un feu rouge ?",
+        "type": "qcm",
+        "options": ["Accélérer", "Klaxonner et passer", "S'arrêter obligatoirement", "Ralentir seulement"],
+        "answer": 2,
+        "explanation": "Le feu rouge impose un arrêt absolu à la ligne d'arrêt."
+      }
+    ]
+  },
+  "Fiche_Lecon9_PUBERTE_EPANOUISSEMENT": {
+    "title": "Puberté et épanouissement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la puberté ?",
+        "type": "qcm",
+        "options": ["Une maladie de peau", "La période de transition de l'enfance à l'adolescence avec des changements physiques et psychologiques", "La période où on devient une personne âgée", "Une matière scolaire"],
+        "answer": 1,
+        "explanation": "La puberté est l'étape du développement où le corps de l'enfant se transforme pour acquérir la capacité de se reproduire."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces changements physiques est typique chez le garçon pendant la puberté ?",
+        "type": "qcm",
+        "options": ["La voix devient plus aiguë", "La mue de la voix (elle devient plus grave)", "La taille diminue", "La perte des dents de lait"],
+        "answer": 1,
+        "explanation": "Chez le garçon, la puberté se manifeste notamment par l'apparition de poils, le développement des muscles et la mue de la voix."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les règles (ou menstruations) apparaissent chez la fille pendant la puberté.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. L'apparition des premières règles est le signe principal de la puberté chez la jeune fille."
+      },
+      {
+        "id": "q4",
+        "text": "Sur le plan psychologique, comment se comporte souvent l'adolescent ?",
+        "type": "qcm",
+        "options": ["Il veut toujours rester avec ses parents", "Il n'a plus d'amis", "Il cherche à s'affirmer, se pose des questions et peut être rebelle", "Il ne ressent plus aucune émotion"],
+        "answer": 2,
+        "explanation": "La puberté est souvent accompagnée d'un besoin d'indépendance, de sautes d'humeur et d'une recherche d'identité."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi est-il important d'avoir une bonne hygiène corporelle pendant la puberté ?",
+        "type": "qcm",
+        "options": ["Pour grandir plus vite", "Pour éviter les maladies et les mauvaises odeurs liées à la transpiration accrue", "Pour réussir à l'école", "Pour changer la couleur de sa peau"],
+        "answer": 1,
+        "explanation": "Pendant la puberté, les glandes sudoripares sont plus actives. Une bonne hygiène (douche régulière) est essentielle pour être en bonne santé et à l'aise avec les autres."
+      }
+    ]
+  },
+  "Fiche_Lecon3_DROIT_INTERNATIONAL_HUMANITAIRE": {
+    "title": "Le Droit International Humanitaire (DIH)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le Droit International Humanitaire (DIH) ?",
+        "type": "qcm",
+        "options": ["Les règles du football", "Un ensemble de règles visant à limiter les effets des conflits armés (guerres)", "Une loi pour protéger les animaux", "Le droit de voyager"],
+        "answer": 1,
+        "explanation": "Le DIH protège ceux qui ne participent pas (ou plus) aux combats et limite les moyens de faire la guerre."
+      },
+      {
+        "id": "q2",
+        "text": "Selon le DIH, qui doit être protégé pendant une guerre ?",
+        "type": "qcm",
+        "options": ["Seulement les généraux", "Personne", "Les civils, les blessés, les malades et les prisonniers de guerre", "Uniquement les soldats vainqueurs"],
+        "answer": 2,
+        "explanation": "Le DIH (comme les conventions de Genève) oblige à traiter humainement toute personne qui ne se bat pas."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : En temps de guerre, il est permis d'attaquer les hôpitaux.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! C'est strictement interdit. Les hôpitaux, les écoles et le personnel médical sont protégés par le DIH."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est l'emblème qui permet de protéger le personnel médical sur le champ de bataille ?",
+        "type": "qcm",
+        "options": ["Un aigle noir", "Une croix rouge ou un croissant rouge sur fond blanc", "Une étoile jaune", "Un drapeau noir"],
+        "answer": 1,
+        "explanation": "La Croix-Rouge et le Croissant-Rouge sont des emblèmes protecteurs. Attaquer quelqu'un qui porte ce signe est un crime de guerre."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi le DIH est-il important ?",
+        "type": "qcm",
+        "options": ["Pour gagner la guerre plus vite", "Pour préserver un minimum d'humanité et de dignité, même au cœur de la violence", "Pour punir les innocents", "Pour vendre des armes"],
+        "answer": 1,
+        "explanation": "L'objectif est d'éviter les souffrances inutiles et de protéger la vie et la dignité humaine."
+      }
+    ]
+  },
+  "Fiche_Lecon4_PRINCIPES_REGLES_VIE": {
+    "title": "Les principes et règles de vie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une règle de vie en société ?",
+        "type": "qcm",
+        "options": ["Une interdiction de parler", "Un principe ou une loi qui permet de vivre ensemble dans le respect et l'harmonie", "Une obligation d'être riche", "Une recette de cuisine"],
+        "answer": 1,
+        "explanation": "Les règles de vie nous indiquent ce qui est permis ou interdit pour que tout le monde puisse vivre en paix."
+      },
+      {
+        "id": "q2",
+        "text": "Le respect des biens publics (bancs, écoles, routes) est :",
+        "type": "qcm",
+        "options": ["Inutile", "Un droit", "Un devoir civique pour chaque citoyen", "Uniquement le travail du maire"],
+        "answer": 2,
+        "explanation": "C'est un devoir civique. Les biens publics appartiennent à tous, les dégrader pénalise toute la communauté."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Être tolérant, c'est accepter que les autres aient des opinions ou des croyances différentes des nôtres.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. La tolérance est une valeur fondamentale pour vivre en paix dans une société diversifiée."
+      },
+      {
+        "id": "q4",
+        "text": "Que risque-t-on si l'on ne respecte pas les lois de son pays ?",
+        "type": "qcm",
+        "options": ["On reçoit un diplôme", "On peut être sanctionné (amende, prison) par la justice", "Rien du tout", "On devient chef"],
+        "answer": 1,
+        "explanation": "Les lois sont obligatoires. Leur non-respect entraîne des sanctions prévues par le code pénal ou civil."
+      },
+      {
+        "id": "q5",
+        "text": "La politesse (dire 'bonjour', 'merci') est-elle une règle de vie importante ?",
+        "type": "qcm",
+        "options": ["Non, c'est dépassé", "Oui, elle facilite les relations humaines et marque le respect", "Seulement à l'école", "Uniquement avec les personnes riches"],
+        "answer": 1,
+        "explanation": "La politesse est la base du savoir-vivre. Elle permet des échanges respectueux entre les individus."
+      }
+    ]
+  },
+  "Fiche_Lecon5_CONSTITUTION_COTE_DIVOIRE": {
+    "title": "La Constitution de la Côte d'Ivoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la Constitution ?",
+        "type": "qcm",
+        "options": ["Un simple livre de lecture", "La loi fondamentale et suprême du pays", "Le règlement intérieur du collège", "Une liste d'impôts"],
+        "answer": 1,
+        "explanation": "La Constitution est la loi la plus importante d'un État. Toutes les autres lois doivent la respecter."
+      },
+      {
+        "id": "q2",
+        "text": "Que définit principalement la Constitution ?",
+        "type": "qcm",
+        "options": ["Le prix du pain", "Les droits et devoirs des citoyens ainsi que l'organisation des pouvoirs de l'État (Président, Assemblée...)", "Les jours fériés", "Les règles de circulation"],
+        "answer": 1,
+        "explanation": "Elle organise le fonctionnement de l'État (pouvoir exécutif, législatif, judiciaire) et garantit les libertés."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : N'importe qui peut modifier la Constitution tout seul.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! La modification (révision) d'une Constitution obéit à des règles très strictes (ex: vote du peuple par référendum ou vote du Parlement)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle institution s'assure que les nouvelles lois respectent bien la Constitution ?",
+        "type": "qcm",
+        "options": ["Le Conseil Constitutionnel", "La gendarmerie", "Le maire", "L'école"],
+        "answer": 0,
+        "explanation": "Le Conseil Constitutionnel est le juge de la constitutionnalité des lois."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la Constitution ivoirienne, quel est l'emblème de la République ?",
+        "type": "qcm",
+        "options": ["Le lion", "Le drapeau tricolore Orange, Blanc, Vert", "L'éléphant", "Le soleil"],
+        "answer": 1,
+        "explanation": "La Constitution définit les symboles de l'État : le drapeau (Orange, Blanc, Vert), l'hymne national (l'Abidjanaise), la devise (Union, Discipline, Travail)."
+      }
+    ]
+  },
+  "Fiche_Lecon6_PRINCIPES_DEMOCRATIQUES": {
+    "title": "Les principes démocratiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie le mot 'Démocratie' ?",
+        "type": "qcm",
+        "options": ["Le pouvoir aux plus riches", "Le pouvoir du peuple, par le peuple et pour le peuple", "Le pouvoir de l'armée", "Le pouvoir d'un seul homme"],
+        "answer": 1,
+        "explanation": "Dans une démocratie, c'est le peuple qui détient le pouvoir souverain, souvent en élisant ses représentants."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces éléments est indispensable dans un pays démocratique ?",
+        "type": "qcm",
+        "options": ["La liberté d'expression", "Un seul parti politique autorisé", "La censure des journaux", "L'interdiction de voter"],
+        "answer": 0,
+        "explanation": "La liberté d'expression (et de la presse) est un pilier de la démocratie. Chacun a le droit de donner son avis."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une démocratie, tous les citoyens sont égaux devant la loi.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est le principe d'égalité : la loi est la même pour tous, sans distinction de religion, d'ethnie ou de richesse."
+      },
+      {
+        "id": "q4",
+        "text": "Comment le peuple choisit-il ses dirigeants en démocratie ?",
+        "type": "qcm",
+        "options": ["Par tirage au sort", "Par des élections libres et transparentes", "Par la force", "Par héritage familial"],
+        "answer": 1,
+        "explanation": "L'élection (le vote) est le moyen démocratique par lequel les citoyens choisissent ceux qui vont diriger le pays."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que le 'pluralisme politique' ?",
+        "type": "qcm",
+        "options": ["Le fait d'avoir plusieurs Présidents en même temps", "L'existence et l'autorisation de plusieurs partis politiques différents", "L'interdiction de faire de la politique", "Le fait de voter plusieurs fois"],
+        "answer": 1,
+        "explanation": "Le multipartisme (pluralisme) permet aux citoyens d'avoir le choix entre plusieurs visions pour le pays."
+      }
+    ]
+  },
+  "Fiche_Lecon8_SECTEUR_PRIMAIRE_CHOMAGE": {
+    "title": "Secteur primaire et chômage",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le secteur primaire de l'économie ?",
+        "type": "qcm",
+        "options": ["Les banques et les assurances", "Les activités d'exploitation des ressources naturelles (agriculture, pêche, élevage, mines)", "La construction d'usines", "L'école primaire"],
+        "answer": 1,
+        "explanation": "Le secteur primaire regroupe toutes les activités liées à la production directe de matières premières issues de la nature."
+      },
+      {
+        "id": "q2",
+        "text": "En Côte d'Ivoire, quel est le poids du secteur primaire dans l'économie ?",
+        "type": "qcm",
+        "options": ["Très faible", "Inexistant", "Très important, il emploie une grande partie de la population (cacao, café, vivrier)", "Il n'y a que des usines"],
+        "answer": 2,
+        "explanation": "L'agriculture est la base de l'économie ivoirienne. Elle fournit des emplois et de la nourriture pour le pays."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le chômage est le fait d'avoir trop de travail.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Le chômage désigne la situation d'une personne qui n'a pas d'emploi et qui en cherche un."
+      },
+      {
+        "id": "q4",
+        "text": "Comment le secteur primaire peut-il aider à lutter contre le chômage des jeunes ?",
+        "type": "qcm",
+        "options": ["En fermant les fermes", "En offrant de nombreuses opportunités d'emploi et d'entrepreneuriat (ex: création de fermes modernes)", "En détruisant les forêts", "Ce n'est pas possible"],
+        "answer": 1,
+        "explanation": "L'agriculture moderne et l'élevage sont des secteurs très pourvoyeurs d'emplois pour les jeunes qui veulent entreprendre."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'une des principales difficultés du secteur agricole en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": ["Il neige trop souvent", "Le vieillissement des planteurs et le manque de modernisation", "Les plantes poussent trop vite", "Personne ne veut manger de légumes"],
+        "answer": 1,
+        "explanation": "Moderniser l'agriculture et attirer les jeunes est un grand défi pour développer encore plus ce secteur."
+      }
+    ]
+  },
+  "Fiche_Lecon10_ABSTINENCE_SEXUELLE": {
+    "title": "L'abstinence sexuelle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie 'l'abstinence sexuelle' ?",
+        "type": "qcm",
+        "options": ["Manger beaucoup", "Le choix volontaire de ne pas avoir de rapports sexuels", "Faire du sport tous les jours", "Ne pas parler"],
+        "answer": 1,
+        "explanation": "L'abstinence sexuelle est le fait de s'abstenir de toute pratique sexuelle, souvent jusqu'au mariage ou jusqu'à ce qu'on soit mature."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi recommande-t-on l'abstinence aux adolescents ?",
+        "type": "qcm",
+        "options": ["Pour les punir", "Parce que c'est le seul moyen 100% sûr d'éviter les grossesses précoces et les MST/VIH", "Pour qu'ils dorment plus", "Parce que c'est la loi"],
+        "answer": 1,
+        "explanation": "Pendant l'adolescence, le corps n'est pas toujours prêt, et l'abstinence protège totalement contre les maladies et les grossesses non désirées."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une grossesse précoce peut obliger une jeune fille à abandonner l'école.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Les grossesses en milieu scolaire ont de graves conséquences sur l'avenir scolaire et social des jeunes filles."
+      },
+      {
+        "id": "q4",
+        "text": "Quel comportement aide à maintenir la décision d'abstinence ?",
+        "type": "qcm",
+        "options": ["Consommer de l'alcool et de la drogue", "Regarder des films pornographiques", "Avoir des activités saines (sport, études) et savoir dire NON face à la pression des camarades", "Suivre aveuglément les autres"],
+        "answer": 2,
+        "explanation": "Avoir une forte personnalité, s'occuper sainement et savoir refuser sont les clés pour maintenir son engagement."
+      },
+      {
+        "id": "q5",
+        "text": "Outre la grossesse, quel autre grand danger l'abstinence permet-elle d'éviter ?",
+        "type": "qcm",
+        "options": ["Le paludisme", "Les IST (Infections Sexuellement Transmissibles) et le VIH/SIDA", "La grippe", "La fièvre jaune"],
+        "answer": 1,
+        "explanation": "Les rapports sexuels non protégés sont la principale voie de transmission des IST et du SIDA."
+      }
+    ]
+  },
+  "Fiche_Lecon11_ENTRETIEN_CADRE_DE_VIE": {
+    "title": "L'entretien du cadre de vie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le 'cadre de vie' ?",
+        "type": "qcm",
+        "options": ["Un tableau accroché au mur", "L'environnement dans lequel nous vivons au quotidien (maison, école, quartier)", "La bordure d'une télévision", "Une cage pour animaux"],
+        "answer": 1,
+        "explanation": "Notre cadre de vie englobe tous les lieux où nous évoluons chaque jour."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi est-il important d'entretenir son cadre de vie ?",
+        "type": "qcm",
+        "options": ["Pour faire plaisir au voisin", "Pour préserver sa santé et vivre dans un environnement agréable", "Pour trouver de l'argent par terre", "Pour éviter la pluie"],
+        "answer": 1,
+        "explanation": "Un environnement propre empêche la prolifération des microbes, des moustiques et garantit une bonne santé."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Jeter des ordures dans les caniveaux est une bonne pratique pour nettoyer la rue.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Cela bouche les caniveaux. En cas de pluie, l'eau ne peut plus s'écouler, ce qui provoque des inondations dangereuses."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle action participe au bon entretien de l'école ?",
+        "type": "qcm",
+        "options": ["Écrire sur les murs et les tables", "Jeter les emballages par la fenêtre", "Participer au balayage de la classe et utiliser les poubelles", "Casser les chaises"],
+        "answer": 2,
+        "explanation": "Chaque élève est responsable de la propreté de son école, qui est un bien commun."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit-on faire avec l'eau stagnante (flaques, vieux pneus) près des maisons ?",
+        "type": "qcm",
+        "options": ["La boire", "La laisser pour les oiseaux", "L'évacuer ou vider les récipients pour éviter la prolifération des moustiques (vecteurs du paludisme)", "La colorer en bleu"],
+        "answer": 2,
+        "explanation": "L'eau stagnante est le lieu de ponte des moustiques qui transmettent des maladies graves comme le paludisme ou la dengue."
+      }
+    ]
+  },
+  "Fiche_Lecon12_ENTRETIEN_LATRINES_TOILETTES": {
+    "title": "L'entretien des latrines et toilettes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi faut-il maintenir les latrines et toilettes propres ?",
+        "type": "qcm",
+        "options": ["Parce que c'est joli", "Pour éviter les mauvaises odeurs et la propagation de maladies graves (choléra, typhoïde)", "Pour pouvoir y manger", "Pour gaspiller de l'eau"],
+        "answer": 1,
+        "explanation": "Les toilettes sales sont des nids à bactéries. Un bon entretien empêche la transmission de maladies liées au péril fécal."
+      },
+      {
+        "id": "q2",
+        "text": "Que faut-il TOUJOURS faire après être allé aux toilettes ?",
+        "type": "qcm",
+        "options": ["Courir vite", "Se laver soigneusement les mains avec de l'eau et du savon", "S'essuyer les mains sur ses vêtements", "Aller dormir"],
+        "answer": 1,
+        "explanation": "Le lavage des mains au savon est la règle d'hygiène la plus importante pour tuer les microbes et éviter de contaminer les autres."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Il suffit de jeter de l'eau claire de temps en temps pour nettoyer des toilettes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! L'eau claire ne tue pas les microbes. Il faut utiliser des produits désinfectants (eau de javel, grésil, savon) et brosser régulièrement."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le cas de latrines traditionnelles, que faut-il faire pour limiter les mouches et les odeurs ?",
+        "type": "qcm",
+        "options": ["Mettre un couvercle sur le trou après utilisation", "Laisser la porte grande ouverte", "Jeter de la nourriture dedans", "Y verser de l'essence"],
+        "answer": 0,
+        "explanation": "Couvrir le trou empêche les mouches (qui transportent les maladies) d'entrer en contact avec les excréments et limite les odeurs."
+      },
+      {
+        "id": "q5",
+        "text": "Quel produit est très efficace pour désinfecter les toilettes ?",
+        "type": "qcm",
+        "options": ["L'huile de palme", "L'eau de Javel", "Le jus de citron", "Le lait"],
+        "answer": 1,
+        "explanation": "L'eau de Javel est un puissant désinfectant qui détruit les virus et les bactéries."
+      }
+    ]
+  }
+}

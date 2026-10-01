@@ -1,0 +1,682 @@
+{
+  "Fiche_PHILOSOPHIE L10_ La connaissance scientifique": {
+    "title": "PHILOSOPHIE L10  La connaissance scientifique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'épistémologie ?",
+        "type": "qcm",
+        "options": [
+          "L'étude critique des principes, des méthodes et des résultats des sciences",
+          "L'étude de l'inconscient",
+          "La science des nombres",
+          "L'étude des mythes antiques"
+        ],
+        "answer": 0,
+        "explanation": "L'épistémologie est la philosophie des sciences."
+      },
+      {
+        "id": "q2",
+        "text": "Selon Gaston Bachelard, contre quoi la science doit-elle se construire ?",
+        "type": "qcm",
+        "options": [
+          "Contre les obstacles épistémologiques (opinion, croyance, sens commun)",
+          "Contre la philosophie",
+          "Contre l'Etat",
+          "Contre la raison"
+        ],
+        "answer": 0,
+        "explanation": "L'opinion a toujours tort en science ; l'esprit scientifique se forge en rompant avec les préjugés."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une théorie scientifique est une vérité absolue et éternelle.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Karl Popper a montré que la science progresse par réfutabilité (falsification) : une théorie n'est valable que jusqu'à preuve du contraire."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle méthode est au cœur de la démarche scientifique expérimentale (Claude Bernard) ?",
+        "type": "qcm",
+        "options": [
+          "Observation, Hypothèse, Expérimentation, Loi",
+          "Thèse, Antithèse, Synthèse",
+          "Syllogisme et déduction",
+          "L'intuition poétique"
+        ],
+        "answer": 0,
+        "explanation": "La méthode expérimentale classique procède de l'observation à la vérification par l'expérience."
+      },
+      {
+        "id": "q5",
+        "text": "La science garantit-elle à elle seule un usage moral de ses découvertes ?",
+        "type": "qcm",
+        "options": [
+          "Non, c're Rabelais dit : « Science sans conscience n'est que ruine de l'âme »",
+          "Oui, la science est toujours morale",
+          "Oui, les scientifiques sont infaillibles",
+          "Non, car elle est un mythe"
+        ],
+        "answer": 0,
+        "explanation": "Le progrès scientifique nécessite une réflexion éthique pour ne pas se retourner contre l'homme."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L1_ La dissertation philosophique": {
+    "title": "PHILOSOPHIE L1  La dissertation philosophique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la structure logique obligatoire d'une dissertation philosophique ?",
+        "type": "qcm",
+        "options": [
+          "Introduction, Développement, Conclusion",
+          "Thèse, Antithèse, Synthèse",
+          "Résumé, Commentaire, Bilan",
+          "Problème, Débat, Solution"
+        ],
+        "answer": 0,
+        "explanation": "Toute dissertation comprend une introduction, un développement argumenté et une conclusion."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le but principal de l'introduction dans une dissertation philosophique ?",
+        "type": "qcm",
+        "options": [
+          "Poser clairement le problème et annoncer le plan",
+          "Donner son opinion personnelle",
+          "Résumer le cours",
+          "Définir tous les mots du dictionnaire"
+        ],
+        "answer": 0,
+        "explanation": "L'introduction sert à amener le sujet, poser le problème et annoncer les axes de réflexion."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le développement d'une dissertation doit toujours comporter des arguments et des exemples.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Une idée philosophique doit être prouvée par des arguments et illustrée par des exemples."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit-on absolument éviter dans la conclusion ?",
+        "type": "qcm",
+        "options": [
+          "Introduire une nouvelle idée ou un nouvel argument",
+          "Faire le bilan du devoir",
+          "Répondre au problème posé",
+          "Prendre position"
+        ],
+        "answer": 0,
+        "explanation": "La conclusion est un bilan définitif, il ne faut pas y introduire de nouveaux arguments."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on le lien logique qui permet de passer d'une partie à l'autre dans le développement ?",
+        "type": "qcm",
+        "options": [
+          "La transition",
+          "La thèse",
+          "L'antithèse",
+          "L'introduction"
+        ],
+        "answer": 0,
+        "explanation": "La transition sert de pont entre deux parties pour assurer la fluidité du raisonnement."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L2_ Le commentaire de texte philosophique": {
+    "title": "PHILOSOPHIE L2  Le commentaire de texte philosophique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le but d'un commentaire de texte philosophique ?",
+        "type": "qcm",
+        "options": [
+          "Dégager l'intérêt philosophique du texte à partir de son étude ordonnée",
+          "Réciter son cours",
+          "Contredire l'auteur à tout prix",
+          "Résumer le texte en une phrase"
+        ],
+        "answer": 0,
+        "explanation": "Le commentaire vise à expliquer et évaluer la pensée de l'auteur."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les trois questions auxquelles l'introduction du commentaire doit répondre ?",
+        "type": "qcm",
+        "options": [
+          "Thème, Problème, Thèse",
+          "Qui, Quand, Où",
+          "Thèse, Antithèse, Synthèse",
+          "Introduction, Développement, Conclusion"
+        ],
+        "answer": 0,
+        "explanation": "On présente le texte en donnant son thème, le problème qu'il soulève et la thèse de l'auteur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'étude ordonnée consiste à expliquer le texte mouvement par mouvement.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'explication suit la progression logique de l'argumentation de l'auteur."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l'intérêt philosophique d'un texte ?",
+        "type": "qcm",
+        "options": [
+          "La valeur, la portée et les limites de la thèse de l'auteur",
+          "La biographie de l'auteur",
+          "Le nombre de pages du texte",
+          "La beauté du vocabulaire utilisé"
+        ],
+        "answer": 0,
+        "explanation": "L'intérêt philosophique consiste à évaluer la thèse, montrer sa force ou ses faiblesses."
+      },
+      {
+        "id": "q5",
+        "text": "Dans le texte d'Épictète pris en exemple, quelle est la thèse principale ?",
+        "type": "qcm",
+        "options": [
+          "Le philosophe doit prendre soin de son corps et de son âme",
+          "Le philosophe doit négliger sa tenue",
+          "La philosophie est inutile",
+          "Il faut vivre caché"
+        ],
+        "answer": 0,
+        "explanation": "Épictète affirme que le philosophe ne doit pas négliger son apparence corporelle."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L3_ La connaissance de l'homme": {
+    "title": "PHILOSOPHIE L3  La connaissance de l'homme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle faculté permet à l'homme de se connaître, de connaître le monde et de juger ses actes ?",
+        "type": "qcm",
+        "options": [
+          "La conscience",
+          "L'inconscient",
+          "L'instinct",
+          "L'imagination"
+        ],
+        "answer": 0,
+        "explanation": "La conscience distingue l'homme des autres êtres vivants et permet la connaissance de soi et du monde."
+      },
+      {
+        "id": "q2",
+        "text": "Selon Jean-Jacques Rousseau, comment peut-on définir la conscience morale ?",
+        "type": "qcm",
+        "options": [
+          "Un juge infaillible du bien et du mal",
+          "Une illusion créée par la société",
+          "Un ensemble de souvenirs refoulés",
+          "Une simple pulsion biologique"
+        ],
+        "answer": 0,
+        "explanation": "Pour Rousseau, la conscience morale est innée et nous dicte de manière infaillible ce qui est bien ou mal."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Chez Freud, l'inconscient est l'ensemble des désirs refoulés qui échappent à notre conscience.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Freud a théorisé l'inconscient comme une part de notre psychisme contenant des désirs et pulsions refoulés."
+      },
+      {
+        "id": "q4",
+        "text": "Quel philosophe affirme que « Toute conscience est donc mémoire » ?",
+        "type": "qcm",
+        "options": [
+          "Henri Bergson",
+          "Jean-Paul Sartre",
+          "René Descartes",
+          "Paul Valéry"
+        ],
+        "answer": 0,
+        "explanation": "C'est Bergson qui souligne le lien intime entre la conscience, qui s'inscrit dans la durée, et la mémoire."
+      },
+      {
+        "id": "q5",
+        "text": "Selon quel auteur l'homme est-il « condamné à être libre », signifiant qu'il demeure entièrement responsable de ses actes ?",
+        "type": "qcm",
+        "options": [
+          "Jean-Paul Sartre",
+          "Sigmund Freud",
+          "René Descartes",
+          "Alain"
+        ],
+        "answer": 0,
+        "explanation": "Sartre soutient que, malgré les déterminismes, l'homme est fondamentalement libre et responsable de ce qu'il fait."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L4_ La vie en société": {
+    "title": "PHILOSOPHIE L4  La vie en société",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Selon Aristote (thèse naturaliste), la société est...",
+        "type": "qcm",
+        "options": [
+          "Naturelle à l'homme, car il est un animal politique",
+          "Le résultat d'un contrat artificiel",
+          "Une illusion",
+          "Une prison pour l'homme"
+        ],
+        "answer": 0,
+        "explanation": "Pour Aristote, l'homme est par nature un « animal politique » fait pour vivre en cité."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle approche soutient que la société résulte d'une convention entre les hommes ?",
+        "type": "qcm",
+        "options": [
+          "L'approche contractualiste (Hobbes, Rousseau, Locke)",
+          "L'approche naturaliste (Aristote)",
+          "Le déterminisme",
+          "L'existentialisme"
+        ],
+        "answer": 0,
+        "explanation": "Les contractualistes pensent que la société naît d'un pacte (contrat social) pour fuir l'état de nature."
+      },
+      {
+        "id": "q3",
+        "text": "Selon Sartre, quel est le rôle d'autrui dans la connaissance de soi ?",
+        "type": "qcm",
+        "options": [
+          "Il est indispensable (« il faut passer par l'autre »)",
+          "Il est inutile, on se connaît seul",
+          "Il nous empêche de nous connaître",
+          "Il est un miroir trompeur"
+        ],
+        "answer": 0,
+        "explanation": "Sartre dit : « Pour obtenir une vérité quelconque sur moi, il faut que je passe par l'autre »."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Selon Lucien Malson, avant la rencontre d'autrui, l'homme n'est que des virtualités.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'éducation et le contact avec les autres qui actualisent le potentiel humain (cas des enfants sauvages)."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que l'État par rapport à la société ?",
+        "type": "qcm",
+        "options": [
+          "L'organisation politico-administrative et juridique exclusive",
+          "Une association de quartier",
+          "Un groupe d'amis",
+          "La famille élargie"
+        ],
+        "answer": 0,
+        "explanation": "L'État est l'institution souveraine qui organise et dirige la société par le droit."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L5_ Dieu et la religion": {
+    "title": "PHILOSOPHIE L5  Dieu et la religion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment Lalande définit-il la religion ?",
+        "type": "qcm",
+        "options": [
+          "Une institution sociale fondée sur la croyance en une valeur absolue : Dieu",
+          "Une simple superstition du passé",
+          "Une théorie scientifique",
+          "Une illusion de la conscience"
+        ],
+        "answer": 0,
+        "explanation": "La religion repose fondamentalement sur la croyance au sacré et à une divinité transcendante."
+      },
+      {
+        "id": "q2",
+        "text": "Selon Émile Durkheim, quel est le rôle principal de la religion ?",
+        "type": "qcm",
+        "options": [
+          "Unir une communauté autour de croyances et pratiques relatives au sacré",
+          "Séparer les hommes",
+          "Expliquer l'origine de l'univers",
+          "Contrôler politiquement le peuple"
+        ],
+        "answer": 0,
+        "explanation": "Pour Durkheim, la religion est avant tout un fait social qui assure la cohésion du groupe."
+      },
+      {
+        "id": "q3",
+        "text": "Quelle distinction Emmanuel Kant fait-il à propos de Dieu ?",
+        "type": "qcm",
+        "options": [
+          "Il distingue l'idée de Dieu (concept) et son existence réelle",
+          "Il prouve mathématiquement son existence",
+          "Il affirme que Dieu est une illusion de la société capitaliste",
+          "Il identifie Dieu à la Nature"
+        ],
+        "answer": 0,
+        "explanation": "Kant critique l'argument ontologique : concevoir Dieu comme parfait ne prouve pas qu'il existe."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : La présence du mal dans le monde est souvent utilisée par les athées pour critiquer l'idée d'un Dieu infiniment bon et puissant.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le problème du mal est un argument classique contre la providence divine."
+      },
+      {
+        "id": "q5",
+        "text": "Quel philosophe considère la religion comme \"l'opium du peuple\", une aliénation ?",
+        "type": "qcm",
+        "options": [
+          "Karl Marx",
+          "René Descartes",
+          "Émile Durkheim",
+          "Blaise Pascal"
+        ],
+        "answer": 0,
+        "explanation": "Marx critique la religion car elle endort la conscience des travailleurs face aux injustices."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L6_ L’histoire et l’humanité": {
+    "title": "PHILOSOPHIE L6  L’histoire et l’humanité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour Sophocle, « il n'est pas de plus grand que l'homme ». Cela souligne :",
+        "type": "qcm",
+        "options": [
+          "La dimension morale et éthique qui distingue l'humanité de l'animalité",
+          "Que l'homme est plus grand physiquement que les animaux",
+          "Que l'homme doit détruire la nature",
+          "L'orgueil de l'homme moderne"
+        ],
+        "answer": 0,
+        "explanation": "L'humanité ne désigne pas seulement l'espèce, mais une valeur éthique et morale unique."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la définition de la civilisation selon Senghor ?",
+        "type": "qcm",
+        "options": [
+          "L'ensemble des valeurs morales et techniques et la manière de s'en servir",
+          "La construction de grandes villes",
+          "L'abandon des traditions africaines",
+          "L'invention de l'écriture"
+        ],
+        "answer": 0,
+        "explanation": "La civilisation est la « culture en action », l'usage que l'on fait de ses valeurs."
+      },
+      {
+        "id": "q3",
+        "text": "Que signifie la célèbre formule de Sartre « L'existence précède l'essence » ?",
+        "type": "qcm",
+        "options": [
+          "L'homme existe d'abord et se définit ensuite par ses actes",
+          "L'homme a un destin tracé avant sa naissance",
+          "La nature humaine est fixe",
+          "L'homme est un objet comme un autre"
+        ],
+        "answer": 0,
+        "explanation": "L'existentialisme affirme qu'il n'y a pas de nature humaine prédéfinie ; l'homme est ce qu'il se fait."
+      },
+      {
+        "id": "q4",
+        "text": "Selon Rousseau, quelle faculté permet à l'homme de se distinguer de l'animal ?",
+        "type": "qcm",
+        "options": [
+          "La perfectibilité",
+          "L'instinct de survie",
+          "La force physique",
+          "Le besoin de manger"
+        ],
+        "answer": 0,
+        "explanation": "La perfectibilité est cette capacité proprement humaine d'évoluer, de changer et de progresser."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : Le marxisme soutient que ce sont les conditions matérielles et économiques qui font l'histoire de l'humanité.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Marx parle de matérialisme historique où les luttes des classes sont le moteur de l'histoire."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L7_ La valeur de la philosophie": {
+    "title": "PHILOSOPHIE L7  La valeur de la philosophie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la définition étymologique de la philosophie ?",
+        "type": "qcm",
+        "options": [
+          "L'amour de la sagesse",
+          "La science de la nature",
+          "Le récit des origines",
+          "L'étude de l'inconscient"
+        ],
+        "answer": 0,
+        "explanation": "Philo (amour) et Sophia (sagesse). C'est une quête rationnelle de vérité et de vertu."
+      },
+      {
+        "id": "q2",
+        "text": "Comment Heidegger définit-il la philosophie par rapport à la raison ?",
+        "type": "qcm",
+        "options": [
+          "« La philosophie est œuvre de la raison »",
+          "« La philosophie s'oppose à la raison »",
+          "« La philosophie est un mythe »",
+          "« La philosophie est inutile »"
+        ],
+        "answer": 0,
+        "explanation": "La philosophie s'appuie sur la rationalité, l'argumentation et la preuve."
+      },
+      {
+        "id": "q3",
+        "text": "Qu'est-ce qu'un mythe selon la leçon ?",
+        "type": "qcm",
+        "options": [
+          "Un récit imaginaire et symbolique expliquant l'origine du monde ou de l'humanité",
+          "Une démonstration mathématique",
+          "Une théorie scientifique avérée",
+          "Un mensonge politique"
+        ],
+        "answer": 0,
+        "explanation": "Le mythe fait appel à l'imagination et à la croyance pour donner du sens à ce qu'on ne comprend pas."
+      },
+      {
+        "id": "q4",
+        "text": "Que dit Pascal à propos de l'imagination ?",
+        "type": "qcm",
+        "options": [
+          "C'est une « maîtresse d'erreurs et de faussetés »",
+          "C'est la faculté suprême de l'homme",
+          "Elle permet de trouver la vérité absolue",
+          "Elle vaut mieux que la raison"
+        ],
+        "answer": 0,
+        "explanation": "Pour Pascal, l'imagination trompe souvent la raison, contrairement à la réflexion philosophique."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : Pour Auguste Comte, le mythe (état théologique) correspond à l'enfance de l'esprit humain.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Comte pense que l'humanité passe du mythe à la métaphysique, puis à la science (l'état positif)."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L8_ Progrès et bonheur": {
+    "title": "PHILOSOPHIE L8  Progrès et bonheur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment Hegel considère-t-il le rôle des passions dans l'histoire ?",
+        "type": "qcm",
+        "options": [
+          "« Rien de grand ne s'est accompli dans le monde sans passion »",
+          "Les passions sont la source de tous les malheurs",
+          "L'homme ne doit avoir aucune passion",
+          "Seule la raison froide construit l'histoire"
+        ],
+        "answer": 0,
+        "explanation": "Bien qu'excessives, les passions donnent l'énergie nécessaire pour accomplir de grandes choses."
+      },
+      {
+        "id": "q2",
+        "text": "Selon Descartes, que permet la technique à l'homme ?",
+        "type": "qcm",
+        "options": [
+          "De se rendre « comme maître et possesseur de la nature »",
+          "De détruire la planète",
+          "De prier les dieux",
+          "De contempler la beauté"
+        ],
+        "answer": 0,
+        "explanation": "La technique et la science moderne permettent à l'homme de dominer son environnement."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le désir est l'expression d'un manque, et c'est ce qui distingue l'homme de l'animal qui se contente de besoins.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le besoin est naturel et limité, tandis que le désir est infini et lié à l'imagination."
+      },
+      {
+        "id": "q4",
+        "text": "Pour Emmanuel Kant, qu'est-ce que l'art par rapport à la nature ?",
+        "type": "qcm",
+        "options": [
+          "L'art est la production du beau par un être conscient (l'homme)",
+          "L'art est l'imitation parfaite de la nature",
+          "L'art n'existe pas",
+          "La nature est le seul véritable artiste"
+        ],
+        "answer": 0,
+        "explanation": "L'art exige une intentionnalité, une conscience et une création libre."
+      },
+      {
+        "id": "q5",
+        "text": "Le progrès scientifique et technique conduit-il toujours au bonheur ?",
+        "type": "qcm",
+        "options": [
+          "Non, il apporte le confort matériel mais ne garantit pas la paix morale ou le bonheur",
+          "Oui, toujours",
+          "Le bonheur n'existe pas",
+          "Oui, si on possède beaucoup d'argent"
+        ],
+        "answer": 0,
+        "explanation": "Le progrès technique améliore les conditions de vie mais soulève aussi de graves problèmes moraux et écologiques."
+      }
+    ]
+  },
+  "Fiche_PHILOSOPHIE L9_ Langage et vérité": {
+    "title": "PHILOSOPHIE L9  Langage et vérité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Selon le philosophe Searle, quelle est la fonction essentielle du langage ?",
+        "type": "qcm",
+        "options": [
+          "La communication",
+          "La poésie",
+          "Le mensonge",
+          "La domination"
+        ],
+        "answer": 0,
+        "explanation": "Bien qu'il serve aussi à penser, le but premier du langage est d'échanger et de communiquer."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qui distingue le langage humain de la communication animale selon Benveniste ?",
+        "type": "qcm",
+        "options": [
+          "Le langage humain est culturel, créatif et permet un vrai dialogue",
+          "Les animaux ont un vocabulaire plus riche",
+          "Les animaux utilisent des métaphores",
+          "Il n'y a aucune différence"
+        ],
+        "answer": 0,
+        "explanation": "La communication animale est fixe et instinctive, le langage humain est évolutif et abstrait."
+      },
+      {
+        "id": "q3",
+        "text": "Chez Ferdinand de Saussure, le signe linguistique unit un signifiant et un signifié. Quel est le lien entre les deux ?",
+        "type": "qcm",
+        "options": [
+          "Il est arbitraire (conventionnel)",
+          "Il est naturel et logique",
+          "Il est divin",
+          "Il est instinctif"
+        ],
+        "answer": 0,
+        "explanation": "Il n'y a aucun rapport naturel entre le son « chien » et l'animal qu'il désigne : c'est une convention."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Le mot (le langage) traduit toujours fidèlement et parfaitement la pensée (la vérité).",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Bergson explique que le langage est général et appauvrit souvent la richesse de notre pensée intime."
+      },
+      {
+        "id": "q5",
+        "text": "Selon Boileau, quelle est la relation entre bien concevoir (penser) et s'énoncer (langage) ?",
+        "type": "qcm",
+        "options": [
+          "« Ce que l'on conçoit bien s'énonce clairement »",
+          "La pensée est impossible sans le langage",
+          "Le langage trahit toujours la pensée",
+          "On ne peut exprimer que l'indicible"
+        ],
+        "answer": 0,
+        "explanation": "Pour Boileau (et Descartes), une pensée claire se traduit par un langage clair."
+      }
+    ]
+  }
+}

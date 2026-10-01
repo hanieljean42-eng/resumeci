@@ -1,0 +1,682 @@
+{
+  "Fiche_Lecon1_ALIMENTS_ET_HOMME": {
+    "title": "Les aliments et l'homme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les rôles principaux des aliments dits 'bâtisseurs' (protides et certains sels minéraux comme le calcium) ?",
+        "type": "qcm",
+        "options": [
+          "Ils donnent uniquement de l'énergie",
+          "Ils permettent la construction, la croissance et l'entretien de l'organisme (les muscles, les os)",
+          "Ils protègent contre le soleil",
+          "Ils n'ont aucune utilité"
+        ],
+        "answer": 1,
+        "explanation": "Les protides (viande, poisson, œufs) sont essentiels pour fabriquer les cellules du corps."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces nutriments est principalement considéré comme un aliment 'énergétique' ?",
+        "type": "qcm",
+        "options": [
+          "Les vitamines",
+          "L'eau",
+          "Les glucides (sucres lents et rapides) et les lipides (graisses)",
+          "Les fibres"
+        ],
+        "answer": 2,
+        "explanation": "Les glucides et les lipides sont le carburant de notre corps pour fonctionner et maintenir sa température."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les vitamines et l'eau sont des aliments fonctionnels ou protecteurs, indispensables au bon fonctionnement de l'organisme.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Même s'ils ne fournissent pas d'énergie, leur carence provoque de graves maladies (scorbut, rachitisme)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une ration alimentaire ?",
+        "type": "qcm",
+        "options": [
+          "Le repas de midi",
+          "La quantité et la qualité d'aliments qu'une personne doit consommer en 24 heures pour couvrir tous ses besoins",
+          "Un régime pour maigrir",
+          "L'eau bue pendant la journée"
+        ],
+        "answer": 1,
+        "explanation": "Une bonne ration doit être équilibrée (protides, glucides, lipides, vitamines, eau)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle maladie est causée par un manque grave et prolongé de protéines dans l'alimentation de l'enfant (sevrage brutal) ?",
+        "type": "qcm",
+        "options": [
+          "Le paludisme",
+          "Le kwashiorkor (caractérisé par des œdèmes et un gros ventre)",
+          "La grippe",
+          "La myopie"
+        ],
+        "answer": 1,
+        "explanation": "C'est une maladie de malnutrition grave fréquente dans les pays en développement."
+      }
+    ]
+  },
+  "Fiche_Lecon2_DIGESTION_ALIMENTS": {
+    "title": "La digestion des aliments",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la digestion ?",
+        "type": "qcm",
+        "options": [
+          "Le fait de dormir après avoir mangé",
+          "L'ensemble des transformations mécaniques et chimiques que subissent les aliments dans le tube digestif pour devenir des nutriments absorbables par le sang",
+          "L'évacuation des selles",
+          "L'action de cuisiner"
+        ],
+        "answer": 1,
+        "explanation": "La digestion simplifie les gros aliments en minuscules molécules (les nutriments)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle substance chimique (suc), produite par l'estomac, aide à transformer les protéines ?",
+        "type": "qcm",
+        "options": [
+          "La salive",
+          "La bile",
+          "Le suc gastrique (très acide)",
+          "Le sang"
+        ],
+        "answer": 2,
+        "explanation": "L'estomac brasse les aliments et le suc gastrique commence la digestion chimique des protéines."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La bile, fabriquée par le foie, aide à digérer les lipides (les graisses).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La bile agit comme un liquide vaisselle : elle émulsionne les graisses en fines gouttelettes pour faciliter l'action des enzymes."
+      },
+      {
+        "id": "q4",
+        "text": "Où se fait principalement l'absorption intestinale (le passage des nutriments dans le sang) ?",
+        "type": "qcm",
+        "options": [
+          "Dans la bouche",
+          "Dans l'estomac",
+          "Dans l'intestin grêle (grâce à ses nombreuses villosités)",
+          "Dans le gros intestin"
+        ],
+        "answer": 2,
+        "explanation": "L'intestin grêle a une surface d'échange énorme pour faire passer les nutriments utiles dans le sang."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le rôle du gros intestin à la fin de la digestion ?",
+        "type": "qcm",
+        "options": [
+          "Digérer les viandes",
+          "Absorber l'eau restante et former les matières fécales (déchets non digérés)",
+          "Fabriquer de la salive",
+          "Produire les globules rouges"
+        ],
+        "answer": 1,
+        "explanation": "Le gros intestin compacte les déchets en absorbant l'eau, avant leur élimination par l'anus."
+      }
+    ]
+  },
+  "Fiche_Lecon3_LE_SANG": {
+    "title": "Le sang",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est composé principalement le plasma sanguin ?",
+        "type": "qcm",
+        "options": [
+          "De sucre pur",
+          "D'eau (à 90%) dans laquelle sont dissous des nutriments, des déchets et d'autres substances",
+          "De globules rouges uniquement",
+          "De fer"
+        ],
+        "answer": 1,
+        "explanation": "Le plasma est le liquide jaunâtre qui transporte les cellules sanguines et les nutriments."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le rôle principal des globules rouges (hématies) ?",
+        "type": "qcm",
+        "options": [
+          "Détruire les microbes",
+          "Transporter le dioxygène (O2) depuis les poumons vers les organes, et une partie du CO2, grâce à l'hémoglobine",
+          "Faire coaguler le sang",
+          "Transporter le sucre"
+        ],
+        "answer": 1,
+        "explanation": "L'hémoglobine, riche en fer, est la protéine qui fixe l'oxygène et donne la couleur rouge au sang."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les globules blancs (leucocytes) sont les soldats de l'organisme, chargés de nous défendre contre les infections.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ils détruisent les bactéries et les virus (par phagocytose ou en produisant des anticorps)."
+      },
+      {
+        "id": "q4",
+        "text": "À quoi servent les plaquettes sanguines ?",
+        "type": "qcm",
+        "options": [
+          "À boucher les trous des dents",
+          "À permettre la coagulation du sang (former un caillot) pour arrêter un saignement",
+          "À transporter l'eau",
+          "À donner la couleur rouge"
+        ],
+        "answer": 1,
+        "explanation": "Sans les plaquettes, une simple coupure pourrait entraîner une hémorragie mortelle."
+      },
+      {
+        "id": "q5",
+        "text": "Si on analyse le sang d'une personne malade (infection), on observera souvent une augmentation importante de :",
+        "type": "qcm",
+        "options": [
+          "Plasma",
+          "Globules rouges",
+          "Globules blancs (pour lutter contre le microbe)",
+          "Plaquettes"
+        ],
+        "answer": 2,
+        "explanation": "L'organisme produit plus de globules blancs (soldats) pour combattre l'infection."
+      }
+    ]
+  },
+  "Fiche_Lecon4_TRANSFUSION_SANGUINE": {
+    "title": "La transfusion sanguine",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les 4 grands groupes sanguins du système ABO ?",
+        "type": "qcm",
+        "options": [
+          "Alpha, Beta, Gamma, Delta",
+          "A, B, AB et O",
+          "1, 2, 3 et 4",
+          "Rouge, Bleu, Vert, Jaune"
+        ],
+        "answer": 1,
+        "explanation": "Ces groupes sont définis par la présence ou l'absence d'agglutinogènes à la surface des globules rouges."
+      },
+      {
+        "id": "q2",
+        "text": "Quel groupe sanguin est considéré comme le 'donneur universel' (il peut donner son sang à tout le monde) ?",
+        "type": "qcm",
+        "options": [
+          "Le groupe A",
+          "Le groupe B",
+          "Le groupe AB",
+          "Le groupe O (Rhésus négatif)"
+        ],
+        "answer": 3,
+        "explanation": "Les globules rouges du groupe O n'ont pas d'antigènes A ou B à leur surface, ils ne provoquent donc pas de rejet chez les receveurs."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une personne du groupe AB est 'receveur universel', elle peut recevoir du sang de n'importe quel groupe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Son plasma ne contient pas d'anticorps anti-A ni anti-B, donc elle tolère tous les globules rouges."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si on transfuse du sang de groupe A à une personne de groupe B (transfusion incompatible) ?",
+        "type": "qcm",
+        "options": [
+          "Le patient change de groupe sanguin",
+          "Il se produit une agglutination (les globules rouges se collent et bouchent les vaisseaux), ce qui peut être mortel",
+          "Le sang devient bleu",
+          "Rien du tout"
+        ],
+        "answer": 1,
+        "explanation": "Les anticorps anti-A du receveur de groupe B vont attaquer les globules rouges A du donneur."
+      },
+      {
+        "id": "q5",
+        "text": "Outre le système ABO, quel autre système est indispensable pour vérifier la compatibilité (le signe + ou -) ?",
+        "type": "qcm",
+        "options": [
+          "Le système solaire",
+          "Le système digestif",
+          "Le système Rhésus (Rh+ ou Rh-)",
+          "Le système immunitaire"
+        ],
+        "answer": 2,
+        "explanation": "On parle ainsi de A+, O-, B+, etc. Une incompatibilité Rhésus est particulièrement dangereuse, notamment pour les femmes enceintes."
+      }
+    ]
+  },
+  "Fiche_Lecon5_CIRCULATION_SANGUINE": {
+    "title": "La circulation sanguine",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel organe est le moteur de la circulation sanguine (il joue le rôle de pompe) ?",
+        "type": "qcm",
+        "options": [
+          "Le cerveau",
+          "Le foie",
+          "Le cœur",
+          "Les poumons"
+        ],
+        "answer": 2,
+        "explanation": "Le cœur est un muscle creux (myocarde) qui se contracte rythmiquement pour propulser le sang."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on les vaisseaux sanguins qui ramènent le sang des organes VERS le cœur ?",
+        "type": "qcm",
+        "options": [
+          "Les artères",
+          "Les veines",
+          "Les capillaires",
+          "Les bronches"
+        ],
+        "answer": 1,
+        "explanation": "Attention à la définition : Veines = vers le cœur. Artères = partent du cœur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La circulation sanguine humaine est une circulation 'double' et 'complète' (le sang riche en oxygène ne se mélange jamais avec le sang pauvre en oxygène).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le cœur gauche propulse le sang oxygéné, le cœur droit propulse le sang désoxygéné (riche en CO2) vers les poumons."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la circulation pulmonaire (ou petite circulation) ?",
+        "type": "qcm",
+        "options": [
+          "Le sang qui va au cerveau",
+          "Le trajet du sang entre le cœur droit, les poumons (pour s'oxygéner et rejeter le CO2) et le retour au cœur gauche",
+          "Le sang qui va aux intestins",
+          "La respiration par le nez"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'étape de recharge en oxygène."
+      },
+      {
+        "id": "q5",
+        "text": "Où ont lieu les échanges réels entre le sang et les cellules des organes (oxygène/nutriments contre déchets/CO2) ?",
+        "type": "qcm",
+        "options": [
+          "Dans les grosses artères",
+          "Dans le cœur",
+          "Dans les capillaires sanguins (vaisseaux microscopiques très fins)",
+          "Dans la peau"
+        ],
+        "answer": 2,
+        "explanation": "La paroi des capillaires est si fine qu'elle permet le passage des molécules entre le sang et les cellules."
+      }
+    ]
+  },
+  "Fiche_Lecon7_INFECTION_VIH": {
+    "title": "L'infection au VIH",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'unité de base de tous les êtres vivants ?",
+        "type": "qcm",
+        "options": [
+          "La cellule",
+          "Le muscle",
+          "Le sang",
+          "L'os"
+        ],
+        "answer": 0,
+        "explanation": "Tous les organismes, végétaux ou animaux, sont constitués de cellules."
+      },
+      {
+        "id": "q2",
+        "text": "Vrai ou Faux : Les plantes vertes fabriquent leur propre matière organique par la photosynthèse.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elles utilisent la lumière, l'eau et le dioxyde de carbone."
+      },
+      {
+        "id": "q3",
+        "text": "Qu'est-ce que le sang apporte aux organes pour qu'ils produisent de l'énergie ?",
+        "type": "qcm",
+        "options": [
+          "Des nutriments et du dioxygène (O2)",
+          "Uniquement de l'eau",
+          "Du dioxyde de carbone (CO2)",
+          "De l'azote"
+        ],
+        "answer": 0,
+        "explanation": "Les organes respirent en consommant du dioxygène et des nutriments (glucose)."
+      },
+      {
+        "id": "q4",
+        "text": "Où se fait l'absorption des nutriments dans le tube digestif ?",
+        "type": "qcm",
+        "options": [
+          "Dans l'intestin grêle",
+          "Dans l'estomac",
+          "Dans l'œsophage",
+          "Dans le gros intestin"
+        ],
+        "answer": 0,
+        "explanation": "Les nutriments passent dans le sang au niveau des villosités de l'intestin grêle."
+      },
+      {
+        "id": "q5",
+        "text": "Comment se nomme le phénomène naturel responsable des séismes et du volcanisme ?",
+        "type": "qcm",
+        "options": [
+          "La tectonique des plaques",
+          "L'érosion",
+          "La fossilisation",
+          "La météorologie"
+        ],
+        "answer": 0,
+        "explanation": "Le mouvement des plaques lithosphériques crée des tensions à l'origine des séismes."
+      }
+    ]
+  },
+  "Fiche_Lecon8_CARACTERISTIQUES_SOLS": {
+    "title": "Les caractéristiques des sols",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est composé un sol équilibré (sol de forêt ou de champ cultivable) ?",
+        "type": "qcm",
+        "options": [
+          "Uniquement de gros cailloux",
+          "De matière minérale (sable, argile, limon), de matière organique (humus, racines, êtres vivants), d'eau et d'air",
+          "De plastique et de verre",
+          "D'eau pure"
+        ],
+        "answer": 1,
+        "explanation": "Le sol est un milieu vivant et très complexe."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la texture d'un sol ?",
+        "type": "qcm",
+        "options": [
+          "Sa couleur",
+          "La proportion de particules minérales de différentes tailles (pourcentage de sables, de limons et d'argiles)",
+          "Sa température",
+          "Son odeur"
+        ],
+        "answer": 1,
+        "explanation": "Un sol sableux laisse passer l'eau, un sol argileux retient l'eau."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'humus, de couleur très sombre, provient de la décomposition des matières organiques (feuilles mortes, cadavres d'animaux) par les microorganismes du sol.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'humus est la réserve de fertilité du sol."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'appelle-t-on le 'complexe argilo-humique' ?",
+        "type": "qcm",
+        "options": [
+          "Un engrais artificiel",
+          "L'association de l'argile et de l'humus qui agit comme un aimant pour retenir l'eau et les sels minéraux nutritifs pour la plante",
+          "Une roche très dure",
+          "Un animal fouisseur"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'élément clé de la fertilité : il empêche les nutriments d'être emportés par la pluie (lessivage)."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le rôle du lombric (ver de terre) dans le sol ?",
+        "type": "qcm",
+        "options": [
+          "Il mange les racines",
+          "Il aère le sol en creusant des galeries et participe activement à la formation de l'humus",
+          "Il détruit le sol",
+          "Il rend le sol toxique"
+        ],
+        "answer": 1,
+        "explanation": "Le ver de terre est l'ami du jardinier."
+      }
+    ]
+  },
+  "Fiche_Lecon9_RELATIONS_SOLS_PLANTES": {
+    "title": "Relations Sols-Plantes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment la plante prélève-t-elle l'eau et les sels minéraux dans le sol ?",
+        "type": "qcm",
+        "options": [
+          "Par ses feuilles",
+          "Par les poils absorbants situés sur ses racines",
+          "Par la tige",
+          "Par les fleurs"
+        ],
+        "answer": 1,
+        "explanation": "Les poils absorbants sont de microscopiques excroissances qui pompent la solution du sol."
+      },
+      {
+        "id": "q2",
+        "text": "La plante est un être vivant 'autotrophe'. Qu'est-ce que cela signifie ?",
+        "type": "qcm",
+        "options": [
+          "Elle mange d'autres êtres vivants",
+          "Elle est capable de fabriquer sa propre matière organique (sucre) à partir d'éléments minéraux (eau, sels, CO2) et de lumière (la photosynthèse)",
+          "Elle n'a pas besoin d'eau",
+          "Elle bouge"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement aux animaux (hétérotrophes) qui doivent manger d'autres organismes."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les sels minéraux les plus importants pour la croissance des plantes sont l'Azote (N), le Phosphore (P) et le Potassium (K).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est pourquoi on utilise des engrais 'NPK'."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si un sol manque sévèrement d'Azote (N) ?",
+        "type": "qcm",
+        "options": [
+          "La plante pousse 10 fois plus vite",
+          "La croissance est stoppée et les feuilles jaunissent (chlorose)",
+          "La plante produit du sang",
+          "Les racines sortent de terre"
+        ],
+        "answer": 1,
+        "explanation": "L'azote est le principal moteur du développement végétatif (feuilles et tiges)."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que l'évapotranspiration ?",
+        "type": "qcm",
+        "options": [
+          "La plante qui pleure",
+          "Le phénomène par lequel la plante rejette de l'eau sous forme de vapeur par ses feuilles (les stomates), créant un courant d'aspiration depuis les racines",
+          "Le sol qui fond",
+          "La chute des feuilles en automne"
+        ],
+        "answer": 1,
+        "explanation": "C'est la 'sueur' de la plante, qui permet à la sève de monter."
+      }
+    ]
+  },
+  "Fiche_Lecon10_DEGRADATION_SOL": {
+    "title": "La dégradation du sol",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'érosion des sols ?",
+        "type": "qcm",
+        "options": [
+          "L'arrosage excessif",
+          "L'arrachement et le transport de la couche superficielle fertile du sol par l'action de l'eau (pluie) ou du vent",
+          "Le compactage par les tracteurs",
+          "L'ajout d'engrais"
+        ],
+        "answer": 1,
+        "explanation": "C'est la cause numéro 1 de perte de terres cultivables dans le monde."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle action humaine aggrave considérablement l'érosion des sols ?",
+        "type": "qcm",
+        "options": [
+          "Le reboisement",
+          "La déforestation (abattage abusif des arbres) et le défrichage intense",
+          "La construction de puits",
+          "La création de parcs nationaux"
+        ],
+        "answer": 1,
+        "explanation": "Sans les racines des arbres pour retenir la terre, le sol est lavé par les premières pluies."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les feux de brousse répétés rendent le sol plus fertile à long terme.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! S'ils libèrent des cendres à court terme, ils détruisent la matière organique (humus) et la faune du sol (vers, microorganismes), le rendant stérile à long terme."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le lessivage des sols ?",
+        "type": "qcm",
+        "options": [
+          "Laver le sol avec du savon",
+          "L'entraînement des éléments nutritifs solubles (sels minéraux) en profondeur par les eaux de pluie, hors de portée des racines",
+          "La sécheresse",
+          "L'invasion par les mauvaises herbes"
+        ],
+        "answer": 1,
+        "explanation": "Le sol s'appauvrit chimiquement."
+      },
+      {
+        "id": "q5",
+        "text": "L'utilisation excessive et non contrôlée d'engrais chimiques et de pesticides provoque :",
+        "type": "qcm",
+        "options": [
+          "L'amélioration éternelle du sol",
+          "La pollution du sol et des nappes phréatiques, ainsi que la destruction de la faune utile",
+          "La création d'humus",
+          "L'arrêt de l'érosion"
+        ],
+        "answer": 1,
+        "explanation": "La dégradation chimique du sol est aussi dangereuse que l'érosion physique."
+      }
+    ]
+  },
+  "Fiche_Lecon11_PROTECTION_AMELIORATION_SOLS": {
+    "title": "Protection et amélioration des sols",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle technique culturale permet de lutter contre l'érosion par l'eau sur un terrain en pente ?",
+        "type": "qcm",
+        "options": [
+          "Labourer dans le sens de la pente",
+          "Aménager le terrain en terrasses (gradins) ou labourer perpendiculairement à la pente",
+          "Asphalter le champ",
+          "Brûler le terrain"
+        ],
+        "answer": 1,
+        "explanation": "Les terrasses cassent la vitesse de l'eau et retiennent la terre (ex: rizières en terrasses)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la rotation des cultures (ou assolement) ?",
+        "type": "qcm",
+        "options": [
+          "Faire tourner le tracteur en rond",
+          "Alterner les types de plantes cultivées sur un même champ d'année en année (ex: maïs, puis arachide, puis repos)",
+          "Planter toujours le même légume",
+          "Récolter la nuit"
+        ],
+        "answer": 1,
+        "explanation": "Cela évite d'épuiser toujours les mêmes éléments nutritifs du sol et coupe le cycle des parasites."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'apport de fumier ou de compost (engrais organiques) améliore la structure du sol en formant de l'humus, contrairement aux engrais chimiques purs.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La matière organique est vitale pour maintenir un sol vivant et capable de retenir l'eau."
+      },
+      {
+        "id": "q4",
+        "text": "Que permet l'installation de 'brise-vent' (haies d'arbres) autour des champs agricoles ?",
+        "type": "qcm",
+        "options": [
+          "Protéger les oiseaux",
+          "Faire de l'ombre au paysan",
+          "Réduire la vitesse du vent pour empêcher l'érosion éolienne et protéger les cultures",
+          "Cacher le champ aux voleurs"
+        ],
+        "answer": 2,
+        "explanation": "Le vent est une cause majeure d'érosion dans les zones sèches."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi pratique-t-on la mise en 'jachère' ?",
+        "type": "qcm",
+        "options": [
+          "Pour construire des maisons",
+          "Pour laisser le sol se reposer pendant une ou plusieurs saisons, lui permettant de reconstituer naturellement sa fertilité et sa matière organique",
+          "Pour punir le sol",
+          "Pour y mettre des déchets"
+        ],
+        "answer": 1,
+        "explanation": "Le repos est une technique ancienne et efficace pour restaurer les sols fatigués."
+      }
+    ]
+  }
+}

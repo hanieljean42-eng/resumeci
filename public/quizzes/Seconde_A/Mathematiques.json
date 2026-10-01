@@ -1,0 +1,138 @@
+{
+  "Fiche_Lecon1_Calculs_numeriques": {
+    "title": "Lecon1 Calculs numeriques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'objectif principal du cours sur : \"Lecon1 Calculs numeriques\" ?",
+        "type": "qcm",
+        "options": [
+          "Maîtriser les théorèmes et propriétés mathématiques associés",
+          "Apprendre l'alphabet grec",
+          "Dessiner des paysages",
+          "Rédiger des poèmes"
+        ],
+        "answer": 0,
+        "explanation": "En Mathématiques, la maîtrise des théorèmes et propriétés est indispensable pour résoudre les exercices."
+      },
+      {
+        "id": "q2",
+        "text": "Dans ce chapitre, comment doit-on aborder la résolution d'un problème ?",
+        "type": "qcm",
+        "options": [
+          "En devinant la réponse finale",
+          "En posant clairement les hypothèses et en démontrant étape par étape",
+          "En sautant directement à la conclusion",
+          "En demandant à son voisin"
+        ],
+        "answer": 1,
+        "explanation": "La rigueur et la démonstration sont au cœur des mathématiques de Seconde."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les formules de ce chapitre ne s'appliquent que sous certaines conditions précises.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il faut toujours vérifier les conditions d'application (ex: un dénominateur différent de zéro, un triangle rectangle, etc.)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle erreur est la plus fréquente lors des calculs ou démonstrations de cette leçon ?",
+        "type": "qcm",
+        "options": [
+          "L'erreur de signe ou de priorité opératoire",
+          "L'oubli de la majuscule en début de phrase",
+          "L'utilisation d'un stylo rouge",
+          "L'excès de zèle"
+        ],
+        "answer": 0,
+        "explanation": "Les erreurs de calcul, de signes (- par - donne +) ou le développement erroné sont très courantes."
+      },
+      {
+        "id": "q5",
+        "text": "Pour s'assurer d'avoir juste à un exercice de ce type, il est conseillé de :",
+        "type": "qcm",
+        "options": [
+          "Faire une vérification rapide ou un schéma si possible",
+          "Laisser l'exercice vide si on doute",
+          "Gommer toute sa page",
+          "Arrondir tous les nombres à 10"
+        ],
+        "answer": 0,
+        "explanation": "Vérifier la cohérence de son résultat avec un ordre de grandeur, ou faire une figure géométrique aide beaucoup."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Calculs_numeriques_Approfondissement": {
+    "title": "Lecon2 Calculs numeriques Approfondissement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'objectif principal du cours sur : \"Lecon2 Calculs numeriques Approfondissement\" ?",
+        "type": "qcm",
+        "options": [
+          "Maîtriser les théorèmes et propriétés mathématiques associés",
+          "Apprendre l'alphabet grec",
+          "Dessiner des paysages",
+          "Rédiger des poèmes"
+        ],
+        "answer": 0,
+        "explanation": "En Mathématiques, la maîtrise des théorèmes et propriétés est indispensable pour résoudre les exercices."
+      },
+      {
+        "id": "q2",
+        "text": "Dans ce chapitre, comment doit-on aborder la résolution d'un problème ?",
+        "type": "qcm",
+        "options": [
+          "En devinant la réponse finale",
+          "En posant clairement les hypothèses et en démontrant étape par étape",
+          "En sautant directement à la conclusion",
+          "En demandant à son voisin"
+        ],
+        "answer": 1,
+        "explanation": "La rigueur et la démonstration sont au cœur des mathématiques de Seconde."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les formules de ce chapitre ne s'appliquent que sous certaines conditions précises.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il faut toujours vérifier les conditions d'application (ex: un dénominateur différent de zéro, un triangle rectangle, etc.)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle erreur est la plus fréquente lors des calculs ou démonstrations de cette leçon ?",
+        "type": "qcm",
+        "options": [
+          "L'erreur de signe ou de priorité opératoire",
+          "L'oubli de la majuscule en début de phrase",
+          "L'utilisation d'un stylo rouge",
+          "L'excès de zèle"
+        ],
+        "answer": 0,
+        "explanation": "Les erreurs de calcul, de signes (- par - donne +) ou le développement erroné sont très courantes."
+      },
+      {
+        "id": "q5",
+        "text": "Pour s'assurer d'avoir juste à un exercice de ce type, il est conseillé de :",
+        "type": "qcm",
+        "options": [
+          "Faire une vérification rapide ou un schéma si possible",
+          "Laisser l'exercice vide si on doute",
+          "Gommer toute sa page",
+          "Arrondir tous les nombres à 10"
+        ],
+        "answer": 0,
+        "explanation": "Vérifier la cohérence de son résultat avec un ordre de grandeur, ou faire une figure géométrique aide beaucoup."
+      }
+    ]
+  }
+}

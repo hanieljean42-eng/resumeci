@@ -1,0 +1,546 @@
+{
+  "Fiche_L1_REPRODUCTION_CHAMPIGNONS": {
+    "title": "La reproduction chez les champignons",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment s'appelle l'appareil reproducteur visible de la plupart des champignons (ex: le champignon de Paris) ?",
+        "type": "qcm",
+        "options": [
+          "Le carpophore (le chapeau et le pied)",
+          "La fleur",
+          "Le fruit",
+          "Le mycélium"
+        ],
+        "answer": 0,
+        "explanation": "Le carpophore est la partie hors du sol. Le mycélium est la partie souterraine cachée."
+      },
+      {
+        "id": "q2",
+        "text": "Que trouve-t-on sous le chapeau du champignon de Paris pour assurer sa reproduction ?",
+        "type": "qcm",
+        "options": [
+          "Des graines",
+          "Des lamelles portant des spores",
+          "Du pollen",
+          "Des œufs"
+        ],
+        "answer": 1,
+        "explanation": "Les champignons ne produisent pas de graines, ils se reproduisent grâce à des spores microscopiques."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les spores germent dans le sol pour former un nouveau mycélium.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Lorsque les conditions (humidité, chaleur) sont favorables, la spore germe et développe des filaments (le mycélium)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le mycélium ?",
+        "type": "qcm",
+        "options": [
+          "La tige du champignon",
+          "Le véritable corps du champignon, formé de filaments souterrains blancs",
+          "La couleur du chapeau",
+          "Une maladie"
+        ],
+        "answer": 1,
+        "explanation": "Le mycélium vit dans le sol et peut s'étendre sur de grandes surfaces."
+      },
+      {
+        "id": "q5",
+        "text": "Le champignon a-t-il besoin de s'accoupler (mâle/femelle) pour se reproduire par spores ?",
+        "type": "qcm",
+        "options": [
+          "Oui",
+          "Non, c'est une reproduction asexuée (ou par dissémination de spores)",
+          "Seulement en hiver",
+          "Seulement s'il est gros"
+        ],
+        "answer": 1,
+        "explanation": "La production et libération des spores permettent au champignon de se multiplier de façon végétative ou asexuée dans de nombreux cas (bien qu'une phase sexuée complexe existe au niveau des filaments)."
+      }
+    ]
+  },
+  "Fiche_L2_CROISSANCE_INSECTES": {
+    "title": "La croissance chez les insectes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Chez le criquet, l'insecte qui sort de l'œuf ressemble-t-il déjà à l'adulte ?",
+        "type": "qcm",
+        "options": [
+          "Non, c'est une chenille",
+          "Oui, c'est une larve (ou un criquet miniature) qui lui ressemble beaucoup, mais sans ailes",
+          "Non, c'est un têtard",
+          "Il n'y a pas d'œuf"
+        ],
+        "answer": 1,
+        "explanation": "Le criquet a un développement à métamorphose incomplète. La larve lui ressemble dès l'éclosion."
+      },
+      {
+        "id": "q2",
+        "text": "Comment la larve de l'insecte fait-elle pour grandir puisque sa carapace (exosquelette) est rigide ?",
+        "type": "qcm",
+        "options": [
+          "Elle mange la carapace",
+          "Elle fait des mues (elle change de peau)",
+          "Elle s'étire au soleil",
+          "Elle grandit par magie"
+        ],
+        "answer": 1,
+        "explanation": "Lors de la mue, l'insecte se débarrasse de son ancienne carapace devenue trop petite, grandit, et sa nouvelle peau durcit."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Chez le papillon, la chenille se transforme directement en adulte sans étape intermédiaire.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La chenille (larve) s'enferme dans un cocon pour devenir une chrysalide (nymphe) avant d'émerger en papillon adulte. C'est une métamorphose complète."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on la transformation profonde du corps d'un insecte entre le stade larvaire et le stade adulte ?",
+        "type": "qcm",
+        "options": [
+          "La mue",
+          "La croissance continue",
+          "La métamorphose",
+          "La photosynthèse"
+        ],
+        "answer": 2,
+        "explanation": "La métamorphose est le processus de changement de forme et de mode de vie."
+      },
+      {
+        "id": "q5",
+        "text": "L'insecte adulte (imago) grandit-il encore ?",
+        "type": "qcm",
+        "options": [
+          "Oui, toute sa vie",
+          "Non, après la mue imaginale (la dernière), il ne grandit plus",
+          "Oui, seulement s'il mange beaucoup",
+          "Oui, mais très lentement"
+        ],
+        "answer": 1,
+        "explanation": "Une fois devenu adulte (et souvent doté d'ailes), l'insecte a atteint sa taille définitive."
+      }
+    ]
+  },
+  "Fiche_L3_CROISSANCE_MOLLUSQUES": {
+    "title": "La croissance chez les mollusques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'escargot (mollusque) a-t-il une croissance continue ou discontinue ?",
+        "type": "qcm",
+        "options": [
+          "Discontinue (il fait des mues comme les insectes)",
+          "Continue",
+          "Il ne grandit pas",
+          "En dents de scie"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement aux insectes, l'escargot a une croissance continue (régulière) tout au long de sa vie."
+      },
+      {
+        "id": "q2",
+        "text": "Comment la coquille de l'escargot grandit-elle avec lui ?",
+        "type": "qcm",
+        "options": [
+          "Il change de coquille quand elle est trop petite",
+          "Il secrète de la matière calcaire (sur le bord de l'ouverture) qui agrandit la coquille en spirale",
+          "Elle s'étire comme un élastique",
+          "Quelqu'un lui en donne une autre"
+        ],
+        "answer": 1,
+        "explanation": "Le manteau de l'escargot fabrique la coquille. On peut voir les stries d'accroissement sur celle-ci."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'escargot naît sans coquille et doit en trouver une dans la nature.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'escargot (à la différence du bernard-l'hermite) naît d'un œuf avec une toute petite coquille déjà attachée à son corps."
+      },
+      {
+        "id": "q4",
+        "text": "Que mesure-t-on généralement pour évaluer la croissance d'un animal comme l'escargot au fil du temps ?",
+        "type": "qcm",
+        "options": [
+          "Son poids et sa taille (diamètre de la coquille)",
+          "La couleur de ses yeux",
+          "La longueur de sa langue",
+          "Le nombre de ses dents"
+        ],
+        "answer": 0,
+        "explanation": "La courbe de croissance se trace en mesurant la masse (poids) et la taille à intervalles réguliers."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce qui peut ralentir ou stopper temporairement la croissance de l'escargot ?",
+        "type": "qcm",
+        "options": [
+          "La chaleur",
+          "L'hibernation en hiver ou le manque de nourriture (sécheresse)",
+          "Rien, elle ne s'arrête jamais",
+          "La pluie"
+        ],
+        "answer": 1,
+        "explanation": "Pendant la saison sèche ou froide, l'escargot s'enferme dans sa coquille (estivation ou hibernation) et sa croissance s'arrête."
+      }
+    ]
+  },
+  "Fiche_L4_NUTRITION_PLANTES_SANS_CHLOROPHYLLE": {
+    "title": "Nutrition des plantes sans chlorophylle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les champignons possèdent-ils de la chlorophylle (la matière verte des plantes) ?",
+        "type": "qcm",
+        "options": [
+          "Oui, toujours",
+          "Non, ils sont dépourvus de chlorophylle",
+          "Oui, mais seulement dans le pied",
+          "Seulement la nuit"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi ils ne peuvent pas fabriquer leur propre nourriture grâce à la lumière du soleil (photosynthèse)."
+      },
+      {
+        "id": "q2",
+        "text": "Puisqu'ils ne font pas de photosynthèse, comment les champignons se nourrissent-ils ?",
+        "type": "qcm",
+        "options": [
+          "Ils mangent de la terre",
+          "Ils absorbent des matières organiques déjà fabriquées (matière en décomposition, ou parasitent d'autres êtres vivants)",
+          "Ils boivent de l'eau claire",
+          "Ils respirent l'air"
+        ],
+        "answer": 1,
+        "explanation": "Les champignons sont hétérotrophes : ils se nourrissent de matière organique morte (saprophytes) ou vivante (parasites)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le champignon appelé 'moisissure' (sur du pain ou des fruits) se nourrit du sucre et de l'amidon présents dans l'aliment.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le mycélium de la moisissure digère et absorbe la matière organique de l'aliment sur lequel il pousse."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on une plante sans chlorophylle qui vit aux dépens d'une autre plante vivante et la rend malade ?",
+        "type": "qcm",
+        "options": [
+          "Un symbiote",
+          "Un parasite",
+          "Un saprophyte",
+          "Un producteur"
+        ],
+        "answer": 1,
+        "explanation": "Le parasite puise sa nourriture directement sur un être vivant (l'hôte), ce qui lui nuit."
+      },
+      {
+        "id": "q5",
+        "text": "Que digère le mycélium dans le sol pour se nourrir lorsqu'il est saprophyte ?",
+        "type": "qcm",
+        "options": [
+          "Des minéraux uniquement",
+          "Des feuilles mortes, des branches pourries (l'humus)",
+          "Des cailloux",
+          "Du plastique"
+        ],
+        "answer": 1,
+        "explanation": "Les saprophytes sont les éboueurs de la nature : ils décomposent la matière organique morte."
+      }
+    ]
+  },
+  "Fiche_L5_NUTRITION_INVERTEBRES": {
+    "title": "Nutrition des invertébrés",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'unité de base de tous les êtres vivants ?",
+        "type": "qcm",
+        "options": [
+          "La cellule",
+          "Le muscle",
+          "Le sang",
+          "L'os"
+        ],
+        "answer": 0,
+        "explanation": "Tous les organismes, végétaux ou animaux, sont constitués de cellules."
+      },
+      {
+        "id": "q2",
+        "text": "Vrai ou Faux : Les plantes vertes fabriquent leur propre matière organique par la photosynthèse.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elles utilisent la lumière, l'eau et le dioxyde de carbone."
+      },
+      {
+        "id": "q3",
+        "text": "Qu'est-ce que le sang apporte aux organes pour qu'ils produisent de l'énergie ?",
+        "type": "qcm",
+        "options": [
+          "Des nutriments et du dioxygène (O2)",
+          "Uniquement de l'eau",
+          "Du dioxyde de carbone (CO2)",
+          "De l'azote"
+        ],
+        "answer": 0,
+        "explanation": "Les organes respirent en consommant du dioxygène et des nutriments (glucose)."
+      },
+      {
+        "id": "q4",
+        "text": "Où se fait l'absorption des nutriments dans le tube digestif ?",
+        "type": "qcm",
+        "options": [
+          "Dans l'intestin grêle",
+          "Dans l'estomac",
+          "Dans l'œsophage",
+          "Dans le gros intestin"
+        ],
+        "answer": 0,
+        "explanation": "Les nutriments passent dans le sang au niveau des villosités de l'intestin grêle."
+      },
+      {
+        "id": "q5",
+        "text": "Comment se nomme le phénomène naturel responsable des séismes et du volcanisme ?",
+        "type": "qcm",
+        "options": [
+          "La tectonique des plaques",
+          "L'érosion",
+          "La fossilisation",
+          "La météorologie"
+        ],
+        "answer": 0,
+        "explanation": "Le mouvement des plaques lithosphériques crée des tensions à l'origine des séismes."
+      }
+    ]
+  },
+  "Fiche_L6_CONSEQUENCES_PROLIFERATION_CRIQUET": {
+    "title": "Prolifération du criquet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que se passe-t-il lorsque les criquets migrateurs se regroupent en immenses essaims ?",
+        "type": "qcm",
+        "options": [
+          "Ils dorment",
+          "Ils dévorent toutes les cultures sur leur passage, provoquant de graves famines",
+          "Ils fertilisent le sol",
+          "Ils se mangent entre eux"
+        ],
+        "answer": 1,
+        "explanation": "Un essaim peut contenir des milliards d'individus qui détruisent la végétation en quelques heures."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi le criquet est-il si dangereux pour l'agriculture ?",
+        "type": "qcm",
+        "options": [
+          "Il pique les agriculteurs",
+          "Il mange chaque jour l'équivalent de son propre poids en plantes",
+          "Il empoisonne l'eau",
+          "Il fait trop de bruit"
+        ],
+        "answer": 1,
+        "explanation": "Sa voracité extrême fait qu'un essaim peut engloutir des milliers de tonnes de végétation par jour."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les criquets migrateurs changent de comportement et de couleur lorsqu'ils passent de la phase solitaire à la phase grégaire (en groupe).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le manque de nourriture ou la surpopulation déclenche des changements physiques et les pousse à migrer en masse."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle conséquence a la destruction des cultures par les criquets sur l'homme ?",
+        "type": "qcm",
+        "options": [
+          "La richesse",
+          "La perte de revenus pour les paysans, l'insécurité alimentaire et la famine",
+          "Le développement du tourisme",
+          "Une amélioration de la santé"
+        ],
+        "answer": 1,
+        "explanation": "L'impact économique et humanitaire d'une invasion acridienne est catastrophique."
+      },
+      {
+        "id": "q5",
+        "text": "Le criquet transmet-il des maladies graves à l'homme (comme le moustique) ?",
+        "type": "qcm",
+        "options": [
+          "Oui, le paludisme",
+          "Non, le danger du criquet est indirect (famine) car il attaque les plantes",
+          "Oui, la grippe",
+          "Oui, la rage"
+        ],
+        "answer": 1,
+        "explanation": "Le criquet ne pique pas et ne transmet pas de microbes à l'homme."
+      }
+    ]
+  },
+  "Fiche_L7_CONSEQUENCES_PROLIFERATION_MOUSTIQUE": {
+    "title": "Prolifération du moustique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où les moustiques pondent-ils leurs œufs et où se développent leurs larves ?",
+        "type": "qcm",
+        "options": [
+          "Dans l'air",
+          "Dans l'eau stagnante (flaques, vieux pneus, canaris)",
+          "Dans le sable sec",
+          "Sur les feuilles d'arbres"
+        ],
+        "answer": 1,
+        "explanation": "Le moustique a absolument besoin d'eau calme pour la première partie de son cycle de vie (œufs -> larves -> nymphes)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle maladie mortelle la femelle du moustique Anophèle transmet-elle ?",
+        "type": "qcm",
+        "options": [
+          "Le SIDA",
+          "Le paludisme (ou malaria)",
+          "Le choléra",
+          "La tuberculose"
+        ],
+        "answer": 1,
+        "explanation": "En piquant une personne malade, le moustique absorbe le parasite (Plasmodium) qu'il réinjecte à une personne saine."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les moustiques mâles piquent aussi l'homme pour se nourrir de sang.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Seule la femelle pique car les protéines du sang sont nécessaires au développement de ses œufs. Le mâle se nourrit de nectar."
+      },
+      {
+        "id": "q4",
+        "text": "Le moustique *Aedes aegypti* est connu pour transmettre quelles autres maladies (souvent en Côte d'Ivoire) ?",
+        "type": "qcm",
+        "options": [
+          "La fièvre jaune, la dengue et le Zika",
+          "Le rhume",
+          "La rage",
+          "Le diabète"
+        ],
+        "answer": 0,
+        "explanation": "Ces moustiques (souvent actifs le jour et reconnaissables à leurs rayures) sont vecteurs de graves virus tropicaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quels sont les symptômes fréquents du paludisme transmis par le moustique ?",
+        "type": "qcm",
+        "options": [
+          "Forte fièvre, frissons, maux de tête, fatigue",
+          "Pertes de mémoire",
+          "Chute des cheveux",
+          "Toux sèche"
+        ],
+        "answer": 0,
+        "explanation": "Ces symptômes apparaissent quelques jours après la piqûre."
+      }
+    ]
+  },
+  "Fiche_L8_LUTTE_CONTRE_CRIQUET_MOUSTIQUE": {
+    "title": "Lutte (Criquets & Moustiques)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le moyen de prévention le plus efficace à la maison contre les piqûres de moustiques la nuit ?",
+        "type": "qcm",
+        "options": [
+          "Dormir avec la lumière allumée",
+          "Dormir sous une moustiquaire imprégnée d'insecticide",
+          "Manger beaucoup de sel",
+          "Mettre un pull"
+        ],
+        "answer": 1,
+        "explanation": "La moustiquaire est la barrière physique et chimique la plus efficace contre l'anophèle qui pique la nuit."
+      },
+      {
+        "id": "q2",
+        "text": "Comment lutter contre la prolifération des moustiques dans notre environnement (lutte larvaire) ?",
+        "type": "qcm",
+        "options": [
+          "En plantant des arbres",
+          "En supprimant toutes les eaux stagnantes (vider les vieux pneus, nettoyer les gouttières, fermer les canaris)",
+          "En donnant du sang aux moustiques",
+          "En ouvrant les fenêtres"
+        ],
+        "answer": 1,
+        "explanation": "Sans eau stagnante, le moustique ne peut pas se reproduire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'épandage d'insecticides par avion est souvent utilisé pour détruire les essaims de criquets.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la lutte chimique à grande échelle. Mais elle est coûteuse et polluante."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la lutte 'biologique' contre ces insectes nuisibles ?",
+        "type": "qcm",
+        "options": [
+          "Utiliser des produits chimiques",
+          "Utiliser leurs prédateurs naturels (ex: oiseaux, poissons mangeurs de larves, champignons parasites)",
+          "Leur parler",
+          "Faire du bruit"
+        ],
+        "answer": 1,
+        "explanation": "La lutte biologique est plus respectueuse de l'environnement car elle utilise la nature contre la nature."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi est-il important de lutter collectivement (toute la communauté ensemble) contre les moustiques ?",
+        "type": "qcm",
+        "options": [
+          "Pour faire une fête",
+          "Car un gîte larvaire chez un voisin produira des moustiques qui piqueront tout le quartier",
+          "Pour payer moins cher",
+          "Ce n'est pas important"
+        ],
+        "answer": 1,
+        "explanation": "La salubrité publique exige l'effort de tous pour supprimer les foyers de reproduction."
+      }
+    ]
+  }
+}

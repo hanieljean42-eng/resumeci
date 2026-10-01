@@ -1,0 +1,2042 @@
+{
+  "Fiche_Accord_Adjectif_Qualificatif": {
+    "title": "L'accord de l'adjectif qualificatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la règle générale d'accord de l'adjectif qualificatif ?",
+        "type": "qcm",
+        "options": [
+          "Il ne s'accorde jamais",
+          "Il s'accorde en genre et en nombre avec le nom ou le pronom qu'il qualifie",
+          "Il s'accorde seulement en genre",
+          "Il s'accorde avec le verbe"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Un beau garçon, de belles filles."
+      },
+      {
+        "id": "q2",
+        "text": "Si un adjectif qualifie plusieurs noms de genres différents (un nom masculin et un nom féminin), comment s'accorde-t-il ?",
+        "type": "qcm",
+        "options": [
+          "Au féminin pluriel",
+          "Au masculin singulier",
+          "Au masculin pluriel",
+          "Il ne s'accorde pas"
+        ],
+        "answer": 2,
+        "explanation": "La règle veut que le masculin l'emporte. Ex: 'Une chemise et un pantalon bleus'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les adjectifs de couleur qui proviennent de noms de choses (orange, marron, cerise) sont invariables.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On écrit 'des chaussures marron'. (Sauf exception : rose, mauve, écarlate, pourpre...)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'écrit l'adjectif 'demi' placé DEVANT un nom (ex: une ... heure) ?",
+        "type": "qcm",
+        "options": [
+          "demie",
+          "demis",
+          "demi (invariable et relié par un trait d'union : une demi-heure)",
+          "demies"
+        ],
+        "answer": 2,
+        "explanation": "Placé avant le nom, 'demi' est invariable."
+      },
+      {
+        "id": "q5",
+        "text": "Comment accorder 'nu' dans l'expression 'marcher (nu) pieds' ?",
+        "type": "qcm",
+        "options": [
+          "nus",
+          "nue",
+          "nu-pieds (invariable quand il est placé devant le nom sans déterminant)",
+          "nues"
+        ],
+        "answer": 2,
+        "explanation": "Mais placé après : 'les pieds nus'."
+      }
+    ]
+  },
+  "Fiche_Accord_Verbres_Pronominaux": {
+    "title": "L'accord des verbes pronominaux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un verbe pronominal ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe conjugué avec 'avoir'",
+          "Un verbe qui se conjugue avec un pronom réfléchi de la même personne que le sujet (ex: je me lave, tu te laves)",
+          "Un verbe du 3ème groupe",
+          "Un verbe sans sujet"
+        ],
+        "answer": 1,
+        "explanation": "Le pronom réfléchi (me, te, se, nous, vous, se) précède le verbe."
+      },
+      {
+        "id": "q2",
+        "text": "Aux temps composés (ex: passé composé), quel auxiliaire utilisent TOUJOURS les verbes pronominaux ?",
+        "type": "qcm",
+        "options": [
+          "Avoir",
+          "Être",
+          "Aller",
+          "Venir de"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Elles se sont promenées' (jamais 'Elles s'ont promenées')."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour les verbes 'essentiellement pronominaux' (ceux qui n'existent qu'à la forme pronominale, ex: s'évanouir), le participe passé s'accorde toujours avec le sujet.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Elles se sont évanouies'."
+      },
+      {
+        "id": "q4",
+        "text": "Comment accorder le verbe 'se laver' dans la phrase : 'Elles se sont lavé les mains' ?",
+        "type": "qcm",
+        "options": [
+          "lavée",
+          "lavées",
+          "lavé (invariable)",
+          "lavés"
+        ],
+        "answer": 2,
+        "explanation": "Elles se sont lavé QUOI ? 'les mains' (COD placé APRÈS le verbe). Donc pas d'accord. S'il n'y avait pas de COD : 'Elles se sont lavées'."
+      },
+      {
+        "id": "q5",
+        "text": "Le participe passé des verbes pronominaux 'se plaire', 'se complaire', 'se rire', 'se mentir' s'accorde-t-il ?",
+        "type": "qcm",
+        "options": [
+          "Oui, toujours avec le sujet",
+          "Non, il est toujours invariable (ex: 'Ils se sont plu')",
+          "Seulement au féminin",
+          "Seulement au pluriel"
+        ],
+        "answer": 1,
+        "explanation": "Ces verbes n'ont pas de COD, le pronom est un COI (plaire 'à' qui ?). Donc pas d'accord."
+      }
+    ]
+  },
+  "Fiche_Comparatif_Superlatif_Adverbe": {
+    "title": "Le comparatif et le superlatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels mots utilise-t-on pour former le comparatif de supériorité, d'égalité et d'infériorité d'un adverbe (ou adjectif) ?",
+        "type": "qcm",
+        "options": [
+          "Le plus, le moins",
+          "Plus... que, aussi... que, moins... que",
+          "Très, trop, assez",
+          "Beaucoup, peu"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Il court 'plus vite que' toi."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le comparatif de supériorité de l'adverbe 'bien' ?",
+        "type": "qcm",
+        "options": [
+          "Plus bien",
+          "Mieux",
+          "Le meilleur",
+          "Le mieux"
+        ],
+        "answer": 1,
+        "explanation": "On ne dit pas 'plus bien' mais 'mieux' (Il travaille mieux qu'avant)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le superlatif de supériorité se forme avec 'le plus' ou 'la plus' (ex: C'est l'élève le plus rapide).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le superlatif exprime le plus haut (ou le plus bas) degré possible."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le superlatif (le plus haut degré) de l'adjectif 'bon' ?",
+        "type": "qcm",
+        "options": [
+          "Le plus bon",
+          "Le meilleur",
+          "Le mieux",
+          "Très bon"
+        ],
+        "answer": 1,
+        "explanation": "Attention : 'Meilleur' est pour un adjectif (bon), 'Mieux' est pour un adverbe (bien)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la phrase 'Il travaille le moins sérieusement possible', à quel degré est l'adverbe 'sérieusement' ?",
+        "type": "qcm",
+        "options": [
+          "Comparatif d'égalité",
+          "Superlatif d'infériorité",
+          "Superlatif absolu",
+          "Positif"
+        ],
+        "answer": 1,
+        "explanation": "La présence de 'le moins' indique un superlatif d'infériorité."
+      }
+    ]
+  },
+  "Fiche_Emplois_Infinitif": {
+    "title": "Les emplois de l'infinitif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le mode infinitif ?",
+        "type": "qcm",
+        "options": [
+          "Un temps du passé",
+          "Le mode du verbe non conjugué (c'est le 'nom' du verbe : chanter, finir, prendre)",
+          "Un adverbe",
+          "Une préposition"
+        ],
+        "answer": 1,
+        "explanation": "L'infinitif indique l'action ou l'état, de manière impersonnelle (sans personne, ni nombre, ni temps précis)."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase 'Manger trop de sucre est mauvais', quelle est la fonction du verbe à l'infinitif 'Manger' ?",
+        "type": "qcm",
+        "options": [
+          "Complément d'objet direct",
+          "Sujet du verbe 'est'",
+          "Attribut du sujet",
+          "Complément circonstanciel"
+        ],
+        "answer": 1,
+        "explanation": "L'infinitif peut jouer le même rôle qu'un nom (Ici : La consommation de sucre est mauvaise)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si deux verbes se suivent (le second n'étant pas un auxiliaire), le deuxième se met toujours à l'infinitif.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il veut partir'. (Règle : quand deux verbes se suivent, le second se met à l'infinitif)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans 'Il m'a demandé de venir', l'infinitif 'venir' est précédé de quoi ?",
+        "type": "qcm",
+        "options": [
+          "D'un article",
+          "D'une préposition ('de')",
+          "D'un adjectif",
+          "D'un autre infinitif"
+        ],
+        "answer": 1,
+        "explanation": "L'infinitif est très souvent introduit par les prépositions 'à', 'de', 'pour', 'sans', 'par'."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est l'emploi de l'infinitif dans une recette de cuisine : 'Ajouter le sel, puis mélanger' ?",
+        "type": "qcm",
+        "options": [
+          "Exprimer une interdiction",
+          "Exprimer un ordre, un conseil ou une consigne (valeur d'impératif)",
+          "Raconter une histoire",
+          "Poser une question"
+        ],
+        "answer": 1,
+        "explanation": "L'infinitif est très utilisé dans les modes d'emploi et les règlements (ex: 'Ne pas fumer')."
+      }
+    ]
+  },
+  "Fiche_Etude_Oeuvre_Conclusion": {
+    "title": "Étude d'œuvre - La conclusion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un devoir d'étude d'œuvre intégrale, à quoi sert la conclusion ?",
+        "type": "qcm",
+        "options": [
+          "À raconter une nouvelle histoire",
+          "À dresser le bilan (faire la synthèse) de l'étude et à ouvrir de nouvelles perspectives (l'ouverture)",
+          "À présenter l'auteur",
+          "À poser des questions au professeur"
+        ],
+        "answer": 1,
+        "explanation": "La conclusion clôture le devoir de manière élégante et pertinente."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la première étape de la conclusion ?",
+        "type": "qcm",
+        "options": [
+          "L'ouverture",
+          "Le résumé du livre page par page",
+          "Le bilan (ou synthèse) des éléments essentiels développés dans le corps du devoir",
+          "La date de naissance de l'auteur"
+        ],
+        "answer": 2,
+        "explanation": "On rappelle brièvement l'idée directrice ou le constat final auquel on a abouti."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'ouverture (la dernière phrase de la conclusion) sert à élargir le sujet en faisant le lien avec une autre œuvre, un autre auteur, ou un problème de société actuel.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Cela montre votre culture générale et votre capacité de réflexion au-delà du simple livre étudié."
+      },
+      {
+        "id": "q4",
+        "text": "Ce qu'il ne faut SURTOUT PAS faire dans une conclusion :",
+        "type": "qcm",
+        "options": [
+          "Donner son avis argumenté",
+          "Apporter de NOUVEAUX arguments qui n'ont pas été abordés dans le développement",
+          "Faire une belle phrase finale",
+          "Résumer sa pensée"
+        ],
+        "answer": 1,
+        "explanation": "La conclusion n'est pas un nouveau paragraphe d'argumentation."
+      },
+      {
+        "id": "q5",
+        "text": "Par quel type de mot ou d'expression peut-on introduire la conclusion ?",
+        "type": "qcm",
+        "options": [
+          "Tout d'abord",
+          "Au terme de notre analyse (ou En somme, Pour conclure)",
+          "Cependant",
+          "D'une part"
+        ],
+        "answer": 1,
+        "explanation": "Il faut un connecteur logique de conclusion clair."
+      }
+    ]
+  },
+  "Fiche_Etude_Oeuvre_Introduction": {
+    "title": "Étude d'œuvre - L'introduction",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Combien de parties essentielles compose l'introduction d'un devoir de lettres ?",
+        "type": "qcm",
+        "options": [
+          "Une seule",
+          "Trois (L'amorce, la présentation du sujet/problématique, et l'annonce du plan)",
+          "Cinq",
+          "Aucune"
+        ],
+        "answer": 1,
+        "explanation": "C'est la règle d'or (Amener, Poser, Diviser le sujet)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'amorce (ou contextualisation) au tout début de l'introduction ?",
+        "type": "qcm",
+        "options": [
+          "L'annonce du plan",
+          "Une présentation générale de l'auteur, du mouvement littéraire ou du contexte historique pour situer l'œuvre",
+          "La conclusion du devoir",
+          "La date du devoir"
+        ],
+        "answer": 1,
+        "explanation": "Cela permet de 'mettre en appétit' le lecteur avant de lui donner le sujet précis."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans l'introduction, il faut annoncer clairement les grandes parties (I, II, etc.) de son plan.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'annonce du plan se fait avec des phrases du type : 'Dans un premier temps, nous étudierons... puis dans un second temps nous analyserons...'."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit-on éviter à tout prix dans l'introduction ?",
+        "type": "qcm",
+        "options": [
+          "De donner le nom de l'auteur",
+          "De commencer à répondre au sujet ou à donner des arguments détaillés",
+          "De faire des paragraphes",
+          "D'écrire lisiblement"
+        ],
+        "answer": 1,
+        "explanation": "L'introduction ne sert qu'à poser le problème, les réponses doivent être dans le développement."
+      },
+      {
+        "id": "q5",
+        "text": "Comment doit-on écrire le titre de l'œuvre (le livre) dans l'introduction et dans tout le devoir ?",
+        "type": "qcm",
+        "options": [
+          "En majuscules",
+          "Entre guillemets ou souligné (si écrit à la main)",
+          "En tout petit",
+          "On ne l'écrit pas"
+        ],
+        "answer": 1,
+        "explanation": "Souligner le titre d'un livre (ex: _Sous l'orage_) est une convention typographique obligatoire."
+      }
+    ]
+  },
+  "Fiche_Expression_Ecrite_Texte_Argumentatif": {
+    "title": "Expression écrite - Le texte argumentatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le but principal d'un texte argumentatif ?",
+        "type": "qcm",
+        "options": [
+          "Raconter un conte de fées",
+          "Convaincre ou persuader le lecteur d'adopter un point de vue (une thèse) à l'aide d'arguments et d'exemples",
+          "Faire rire",
+          "Décrire un paysage"
+        ],
+        "answer": 1,
+        "explanation": "On argumente pour défendre une idée (thèse) ou s'opposer à une idée (antithèse)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un 'argument' ?",
+        "type": "qcm",
+        "options": [
+          "Une insulte",
+          "Une idée, une preuve ou un raisonnement logique utilisé pour justifier la thèse",
+          "Un long résumé",
+          "Un poème"
+        ],
+        "answer": 1,
+        "explanation": "L'argument prouve POURQUOI l'idée est vraie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un argument seul suffit, il n'est pas nécessaire de l'accompagner d'un exemple.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'exemple (un fait précis, une citation, une statistique) sert à illustrer l'argument et à le rendre concret pour le lecteur."
+      },
+      {
+        "id": "q4",
+        "text": "Quel type de mots est indispensable pour relier les arguments entre eux et donner de la cohérence au texte ?",
+        "type": "qcm",
+        "options": [
+          "Les adjectifs de couleur",
+          "Les connecteurs logiques ou mots de liaison (Ensuite, De plus, Cependant, Par conséquent)",
+          "Les verbes d'action",
+          "Les noms propres"
+        ],
+        "answer": 1,
+        "explanation": "Les connecteurs balisent le cheminement de la pensée (addition, opposition, cause...)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans un paragraphe argumentatif type, quel est le bon ordre de rédaction ?",
+        "type": "qcm",
+        "options": [
+          "Exemple, puis Connecteur, puis Argument",
+          "Connecteur logique -> Argument -> Exemple(s) et Explication",
+          "Conclusion, puis Thèse",
+          "Uniquement des exemples"
+        ],
+        "answer": 1,
+        "explanation": "On énonce l'idée, on l'explique, puis on l'illustre."
+      }
+    ]
+  },
+  "Fiche_L_Adverbe": {
+    "title": "L'adverbe",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un adverbe ?",
+        "type": "qcm",
+        "options": [
+          "Un mot variable qui remplace un nom",
+          "Un mot INVARIABLE qui modifie le sens d'un verbe, d'un adjectif ou d'un autre adverbe",
+          "Un verbe d'action",
+          "Une préposition"
+        ],
+        "answer": 1,
+        "explanation": "Exemples : Il marche 'lentement' ; il est 'très' grand."
+      },
+      {
+        "id": "q2",
+        "text": "Comment forme-t-on généralement les adverbes de manière se terminant par '-ment' (ex: doucement) ?",
+        "type": "qcm",
+        "options": [
+          "À partir du verbe à l'infinitif",
+          "À partir de l'adjectif qualificatif mis au FÉMININ + le suffixe '-ment' (ex: douce + ment)",
+          "À partir du nom",
+          "En ajoutant -ment n'importe où"
+        ],
+        "answer": 1,
+        "explanation": "Heureux -> Heureuse -> Heureusement."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les adverbes peuvent indiquer le temps (hier, demain), le lieu (ici, loin) ou la quantité (beaucoup, trop).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les adverbes apportent des précisions de circonstance (comme les compléments circonstanciels)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'Elle court extrêmement vite', quel mot l'adverbe 'extrêmement' modifie-t-il ?",
+        "type": "qcm",
+        "options": [
+          "Le pronom 'Elle'",
+          "Le verbe 'court'",
+          "L'autre adverbe 'vite' (pour en modifier l'intensité)",
+          "Rien"
+        ],
+        "answer": 2,
+        "explanation": "L'adverbe 'extrêmement' indique le degré d'intensité de l'adverbe 'vite'."
+      },
+      {
+        "id": "q5",
+        "text": "Laquelle de ces listes ne contient QUE des adverbes ?",
+        "type": "qcm",
+        "options": [
+          "Grand, beau, petit, fort",
+          "Toujours, jamais, souvent, parfois, bien, mal",
+          "Pour, avec, dans, sur",
+          "Mon, ton, son, ma"
+        ],
+        "answer": 1,
+        "explanation": "Ces mots sont invariables et précisent le temps ou la manière."
+      }
+    ]
+  },
+  "Fiche_La_Communication": {
+    "title": "La communication",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans le schéma de la communication, qui est 'l'émetteur' ?",
+        "type": "qcm",
+        "options": [
+          "Celui qui reçoit le message",
+          "Celui qui produit et envoie le message (qui parle ou qui écrit)",
+          "Le canal utilisé",
+          "Le bruit ambiant"
+        ],
+        "answer": 1,
+        "explanation": "L'émetteur est la source de la communication."
+      },
+      {
+        "id": "q2",
+        "text": "Que représente le 'récepteur' ?",
+        "type": "qcm",
+        "options": [
+          "L'antenne télé",
+          "La personne à qui le message est destiné (le destinataire)",
+          "Le sujet de la conversation",
+          "Le livre"
+        ],
+        "answer": 1,
+        "explanation": "Le récepteur est celui qui lit, écoute et interprète le message."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le 'canal' est le moyen physique utilisé pour transmettre le message (l'air pour la voix, le papier pour une lettre, le téléphone...).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le canal est le support de transmission."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'code' dans la communication ?",
+        "type": "qcm",
+        "options": [
+          "Un mot de passe secret",
+          "Le système de signes utilisé pour communiquer, connu de l'émetteur et du récepteur (ex: la langue française, la langue des signes, les panneaux routiers)",
+          "Le lieu de la discussion",
+          "Le bruit"
+        ],
+        "answer": 1,
+        "explanation": "Si je vous parle en chinois et que vous ne parlez pas chinois, nous n'avons pas le même code : la communication échoue."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce qu'on appelle 'le référent' (ou le contexte) ?",
+        "type": "qcm",
+        "options": [
+          "La personne qui surveille",
+          "Le sujet dont on parle (le thème du message) et le contexte dans lequel l'échange a lieu",
+          "Le facteur",
+          "Le code postal"
+        ],
+        "answer": 1,
+        "explanation": "Le message renvoie toujours à une réalité ou une idée : le référent."
+      }
+    ]
+  },
+  "Fiche_La_Coordination": {
+    "title": "La coordination",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la célèbre phrase mnémotechnique pour retenir les conjonctions de coordination ?",
+        "type": "qcm",
+        "options": [
+          "Où est mon sac ?",
+          "Mais où est donc Ornicar ? (mais, ou, et, donc, or, ni, car)",
+          "Je pense donc je suis",
+          "Qui que quoi dont où"
+        ],
+        "answer": 1,
+        "explanation": "Ces 7 petits mots sont les conjonctions de coordination."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le rôle d'une conjonction de coordination ?",
+        "type": "qcm",
+        "options": [
+          "Remplacer un nom",
+          "Relier (coordonner) des mots, des groupes de mots ou des propositions indépendantes qui ont la même fonction grammaticale",
+          "Changer le temps du verbe",
+          "Poser une question"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'le chat ET la souris' (relie deux noms), 'Il pleut DONC je prends mon parapluie' (relie deux propositions)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La conjonction 'Mais' exprime l'addition (l'ajout).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! 'Mais' exprime l'opposition ou la restriction. (C'est 'Et' qui exprime l'addition)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle relation logique la conjonction 'Car' exprime-t-elle ?",
+        "type": "qcm",
+        "options": [
+          "La conséquence",
+          "La cause (l'explication)",
+          "Le choix",
+          "L'opposition"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il est absent CAR il est malade' (parce qu'il est malade)."
+      },
+      {
+        "id": "q5",
+        "text": "Si je dis : 'Je n'aime NI la pomme, NI la poire', qu'exprime la conjonction 'Ni' ?",
+        "type": "qcm",
+        "options": [
+          "Une cause",
+          "Une conséquence",
+          "Une addition dans la négation (relier deux éléments négatifs)",
+          "Une condition"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'équivalent de 'et' mais pour des phrases à la forme négative."
+      }
+    ]
+  },
+  "Fiche_La_Pronominalisation": {
+    "title": "La pronominalisation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la pronominalisation ?",
+        "type": "qcm",
+        "options": [
+          "Ajouter des noms",
+          "Le fait de remplacer un nom ou un groupe nominal par un pronom pour éviter les répétitions",
+          "Changer le verbe",
+          "Supprimer le sujet"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'Je vois (Paul).' -> 'Je (le) vois.' Le pronom prend la place du nom."
+      },
+      {
+        "id": "q2",
+        "text": "Par quels pronoms remplace-t-on un Complément d'Objet Direct (COD) ?",
+        "type": "qcm",
+        "options": [
+          "Lui, leur",
+          "Le, la, les, l'",
+          "En, y",
+          "Qui, que"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il mange (la pomme).' -> 'Il (la) mange.'"
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On utilise les pronoms 'lui' (au singulier) et 'leur' (au pluriel) pour remplacer un Complément d'Objet Indirect (COI) introduit par la préposition 'à' (pour des personnes).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Je parle (à mon père).' -> 'Je (lui) parle.' 'Je parle (à mes amis).' -> 'Je (leur) parle.'"
+      },
+      {
+        "id": "q4",
+        "text": "Le pronom 'en' est souvent utilisé pour remplacer un groupe introduit par quelle préposition ou quel article ?",
+        "type": "qcm",
+        "options": [
+          "À, au",
+          "De, du, de la, des (ou une quantité)",
+          "Pour",
+          "Sur"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'Je mange (du gâteau).' -> 'J'(en) mange.' ; 'Il parle (de son voyage).' -> 'Il (en) parle.'"
+      },
+      {
+        "id": "q5",
+        "text": "Quel pronom utilise-t-on généralement pour remplacer un complément de lieu (introduit par à, dans, sur, sous...) ?",
+        "type": "qcm",
+        "options": [
+          "Lui",
+          "Le",
+          "Y",
+          "En"
+        ],
+        "answer": 2,
+        "explanation": "Ex: 'Je vais (à l'école).' -> 'J'(y) vais.'"
+      }
+    ]
+  },
+  "Fiche_Le_Groupe_Adverbial": {
+    "title": "Le groupe adverbial",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un 'groupe adverbial' (ou locution adverbiale) ?",
+        "type": "qcm",
+        "options": [
+          "Un groupe de verbes",
+          "Un ensemble (un groupe) de plusieurs mots qui joue le même rôle grammatical qu'un adverbe simple (invariable)",
+          "Un sujet",
+          "Une phrase compliquée"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Tout à coup', 'De temps en temps'."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase : 'Il a agi (avec prudence)', par quel adverbe simple pourrait-on remplacer le groupe adverbial 'avec prudence' ?",
+        "type": "qcm",
+        "options": [
+          "Prudemment",
+          "Lentement",
+          "Mal",
+          "Doucement"
+        ],
+        "answer": 0,
+        "explanation": "Le groupe 'avec prudence' est un complément circonstanciel de manière, tout comme 'prudemment'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les groupes adverbiaux 'à peu près', 'tout de suite', 'au fur et à mesure' sont invariables.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Comme les adverbes, les locutions adverbiales ne s'accordent jamais ni en genre ni en nombre."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'Il arrivera (sans doute) en retard', que précise le groupe adverbial 'sans doute' ?",
+        "type": "qcm",
+        "options": [
+          "Le temps",
+          "Le lieu",
+          "Le doute, la probabilité, l'incertitude",
+          "La quantité"
+        ],
+        "answer": 2,
+        "explanation": "Il nuance le verbe."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces expressions, laquelle N'EST PAS une locution adverbiale ?",
+        "type": "qcm",
+        "options": [
+          "Tout à fait",
+          "Sur-le-champ",
+          "Une grande maison",
+          "Par hasard"
+        ],
+        "answer": 2,
+        "explanation": "'Une grande maison' est un groupe nominal (déterminant + adjectif + nom), il varie."
+      }
+    ]
+  },
+  "Fiche_Le_Participe_Passe": {
+    "title": "Le participe passé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la règle d'accord du participe passé employé SANS auxiliaire (comme un adjectif) ?",
+        "type": "qcm",
+        "options": [
+          "Il ne s'accorde jamais",
+          "Il s'accorde en genre et en nombre avec le nom qu'il qualifie",
+          "Il s'accorde avec le verbe",
+          "Il s'accorde avec le COD"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Une lettre (écrite)', 'Des enfants (fatigués)'. Il fonctionne comme un adjectif."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la règle d'accord du participe passé employé avec l'auxiliaire ÊTRE ?",
+        "type": "qcm",
+        "options": [
+          "Il est invariable",
+          "Il s'accorde en genre et en nombre avec le SUJET du verbe",
+          "Il s'accorde avec le COD",
+          "Il prend toujours un 's'"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : '(Elles) sont venu(es)'. 'Elles' est féminin pluriel, donc 'es'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le participe passé employé avec l'auxiliaire AVOIR ne s'accorde jamais avec le sujet.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Avec 'avoir', on n'accorde JAMAIS avec le sujet. Ex: 'Elle a mangé' (et non 'mangée')."
+      },
+      {
+        "id": "q4",
+        "text": "Avec l'auxiliaire AVOIR, avec quel élément le participe passé s'accorde-t-il, SI CET ÉLÉMENT EST PLACÉ AVANT LE VERBE ?",
+        "type": "qcm",
+        "options": [
+          "Avec le COI",
+          "Avec le sujet",
+          "Avec le Complément d'Objet Direct (COD)",
+          "Avec le complément circonstanciel"
+        ],
+        "answer": 2,
+        "explanation": "Ex: 'Les pommes qu'il a mangé(es)'. Le COD (les pommes) est placé avant, donc on accorde."
+      },
+      {
+        "id": "q5",
+        "text": "Comment écrivez-vous le participe passé dans : 'Nous avons (chanté) toute la nuit' ?",
+        "type": "qcm",
+        "options": [
+          "chantés",
+          "chantées",
+          "chanté (invariable)",
+          "chantez"
+        ],
+        "answer": 2,
+        "explanation": "Auxiliaire AVOIR + pas de COD avant (on a chanté quoi ? pas de COD, 'toute la nuit' est C.C de temps). Donc invariable."
+      }
+    ]
+  },
+  "Fiche_Le_Participe_Present": {
+    "title": "Le participe présent",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Par quelle terminaison se termine TOUJOURS un verbe au participe présent ?",
+        "type": "qcm",
+        "options": [
+          "-é",
+          "-ant (ex: chantant, finissant, voulant)",
+          "-er",
+          "-i"
+        ],
+        "answer": 1,
+        "explanation": "Tous les participes présents finissent en -ant."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la règle d'accord du participe présent (quand il indique une action) ?",
+        "type": "qcm",
+        "options": [
+          "Il s'accorde en genre et en nombre avec le sujet",
+          "Il est strictement INVARIABLE",
+          "Il s'accorde au féminin seulement",
+          "Il prend un 's' au pluriel"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'Des élèves (travaillant) tard.' Le participe présent est invariable."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Il ne faut pas confondre le participe présent (invariable) avec l'adjectif verbal (qui, lui, s'accorde comme un adjectif normal).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex adjectif verbal : 'Une histoire (fatigante)'. Ex participe : 'Une personne se (fatiguant) vite'."
+      },
+      {
+        "id": "q4",
+        "text": "Comment reconnaître un adjectif verbal d'un participe présent dans certains cas (ex: fatiguant / fatigant) ?",
+        "type": "qcm",
+        "options": [
+          "Ils ont la même orthographe",
+          "Leur orthographe change parfois (le participe présent de fatiguer garde son 'u' : fatiguant ; l'adjectif verbal le perd : fatigant)",
+          "L'adjectif a un chapeau",
+          "On ne peut pas savoir"
+        ],
+        "answer": 1,
+        "explanation": "Autres exemples : navigant/naviguant, provocant/provoquant, convergent/convergeant."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que le 'Gérondif' ?",
+        "type": "qcm",
+        "options": [
+          "Un temps du futur",
+          "C'est le participe présent précédé de la préposition 'en' (ex: en marchant, en pleurant). Il est toujours invariable.",
+          "Un adjectif de couleur",
+          "Un animal"
+        ],
+        "answer": 1,
+        "explanation": "Le gérondif indique souvent la simultanéité (deux actions en même temps) : 'Il chante en travaillant'."
+      }
+    ]
+  },
+  "Fiche_Le_retour_de_l_ecole": {
+    "title": "Étude de texte : Le retour de l'école",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans une étude de texte portant sur un extrait romanesque (ex: Le retour de l'école), par quoi commence-t-on l'analyse ?",
+        "type": "qcm",
+        "options": [
+          "Par donner son avis",
+          "Par la 'situation du texte' (le situer dans l'œuvre, rappeler ce qui se passe juste avant)",
+          "Par la conclusion",
+          "Par compter les mots"
+        ],
+        "answer": 1,
+        "explanation": "Situer le texte permet de comprendre le contexte de l'extrait."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'idée générale (ou axe de lecture) d'un texte ?",
+        "type": "qcm",
+        "options": [
+          "Le résumé détaillé",
+          "L'idée principale ou le thème majeur qui se dégage du texte (ce dont l'auteur veut parler)",
+          "Le nombre de personnages",
+          "Le titre du livre"
+        ],
+        "answer": 1,
+        "explanation": "L'idée générale sert de fil conducteur à toute l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une lecture méthodique, on sépare complètement le FOND (les idées) de la FORME (la grammaire, le style, les figures de style).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le but de la lecture méthodique est justement d'étudier comment la FORME (le vocabulaire, les temps) sert à exprimer le FOND (les idées)."
+      },
+      {
+        "id": "q4",
+        "text": "Si un texte décrit un personnage marchant péniblement sous la pluie après l'école, quel champ lexical (groupe de mots) l'auteur va-t-il probablement utiliser ?",
+        "type": "qcm",
+        "options": [
+          "Le champ lexical de la joie et de la fête",
+          "Le champ lexical de la fatigue, de la souffrance et des intempéries (eau, boue, lourd, épuisé)",
+          "Le champ lexical du sport",
+          "Le champ lexical de la technologie"
+        ],
+        "answer": 1,
+        "explanation": "L'étude des champs lexicaux est essentielle pour analyser l'atmosphère d'un texte."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la conclusion de l'étude de texte, que signifie faire le 'bilan' ?",
+        "type": "qcm",
+        "options": [
+          "Donner la note du texte",
+          "Résumer brièvement comment l'auteur a réussi à faire passer son message grâce aux procédés d'écriture étudiés",
+          "Recopier le texte",
+          "Raconter la suite de l'histoire"
+        ],
+        "answer": 1,
+        "explanation": "C'est la synthèse des découvertes faites lors de l'analyse."
+      }
+    ]
+  },
+  "Fiche_Lecture_Methodique": {
+    "title": "La lecture méthodique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la lecture méthodique d'un texte ?",
+        "type": "qcm",
+        "options": [
+          "Lire le texte très vite",
+          "Une étude organisée et justifiée d'un texte pour en dégager le sens profond, en s'appuyant sur des éléments précis (grammaire, figures de style, vocabulaire)",
+          "Lire le texte à voix haute",
+          "Apprendre le texte par cœur"
+        ],
+        "answer": 1,
+        "explanation": "C'est la méthode reine au collège et au lycée pour analyser un texte littéraire."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la première étape (l'introduction) de la lecture méthodique ?",
+        "type": "qcm",
+        "options": [
+          "Donner son avis",
+          "La présentation du texte (auteur, titre de l'œuvre, date de parution, genre littéraire) et sa situation",
+          "La conclusion",
+          "Le résumé du livre complet"
+        ],
+        "answer": 1,
+        "explanation": "Il faut toujours commencer par présenter l'extrait étudié."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Formuler une 'hypothèse de lecture' (ou idée générale), c'est proposer une idée principale que l'on va chercher à prouver tout au long de l'analyse du texte.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est le fil conducteur de votre étude."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le développement de la lecture méthodique, qu'appelle-t-on les 'entrées' (ou axes de lecture) ?",
+        "type": "qcm",
+        "options": [
+          "Les portes de la classe",
+          "Les grands thèmes ou parties du plan choisis pour démontrer l'hypothèse de lecture",
+          "Les mots difficiles du texte",
+          "Les questions du professeur"
+        ],
+        "answer": 1,
+        "explanation": "Chaque entrée regroupe des repérages (citations du texte) et leurs analyses."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la règle d'or lors de l'analyse (le repérage) dans le texte ?",
+        "type": "qcm",
+        "options": [
+          "Affirmer des choses sans preuve",
+          "Chaque idée avancée doit toujours être justifiée par une citation précise du texte (entre guillemets) et l'analyse d'un procédé d'écriture",
+          "Recopier tout le texte",
+          "Inventer des mots"
+        ],
+        "answer": 1,
+        "explanation": "Pas d'analyse sans preuve tirée du texte !"
+      }
+    ]
+  },
+  "Fiche_Lecture_Suivie": {
+    "title": "La lecture suivie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En quoi consiste la 'lecture suivie' (ou lecture dirigée) en classe ?",
+        "type": "qcm",
+        "options": [
+          "Lire un livre en marchant",
+          "Étudier une œuvre intégrale (un livre entier) chapitre par chapitre, ou scène par scène, sur plusieurs semaines",
+          "Lire le résumé sur internet",
+          "Lire un poème court"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à la lecture méthodique d'un petit extrait, la lecture suivie aborde l'œuvre dans sa globalité."
+      },
+      {
+        "id": "q2",
+        "text": "Avant de commencer l'étude des chapitres, que fait-on généralement lors de la première séance de lecture suivie ?",
+        "type": "qcm",
+        "options": [
+          "L'évaluation finale",
+          "L'étude du paratexte (première de couverture, quatrième de couverture, titre, biographie de l'auteur) pour émettre des hypothèses sur l'histoire",
+          "On jette le livre",
+          "On regarde le film"
+        ],
+        "answer": 1,
+        "explanation": "Le paratexte donne de précieux indices sur le contenu de l'œuvre."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une lecture suivie, l'étude des personnages (leur caractère, leur évolution, leurs relations) est une étape très importante.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On appelle cela l'étude du schéma actantiel (qui fait quoi, qui aide qui, qui s'oppose à qui)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'schéma narratif' d'un roman ou d'un conte étudié en lecture suivie ?",
+        "type": "qcm",
+        "options": [
+          "Le dessin de la couverture",
+          "L'organisation de l'histoire en 5 étapes : situation initiale, élément perturbateur, péripéties, élément de résolution, situation finale",
+          "La liste des mots difficiles",
+          "Le prix du livre"
+        ],
+        "answer": 1,
+        "explanation": "C'est le 'squelette' de l'histoire."
+      },
+      {
+        "id": "q5",
+        "text": "À la fin de la lecture suivie d'une œuvre, que réalise-t-on lors de la dernière séance ?",
+        "type": "qcm",
+        "options": [
+          "On brûle le livre",
+          "Le bilan général (synthèse des thèmes abordés, portée morale ou critique du livre, jugement personnel argumenté)",
+          "On change de matière",
+          "On apprend l'alphabet"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'occasion de réfléchir au message de l'auteur (la portée de l'œuvre)."
+      }
+    ]
+  },
+  "Fiche_Les_Registres_Langue": {
+    "title": "Les registres de langue",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les trois principaux niveaux (ou registres) de langue en français ?",
+        "type": "qcm",
+        "options": [
+          "Passé, présent, futur",
+          "Familier, Courant et Soutenu",
+          "Aigu, grave, médium",
+          "Faible, moyen, fort"
+        ],
+        "answer": 1,
+        "explanation": "On adapte son registre de langue en fonction de la personne à qui l'on s'adresse et de la situation."
+      },
+      {
+        "id": "q2",
+        "text": "Quel registre de langue utilise-t-on naturellement dans la vie de tous les jours (à l'école, au travail, avec des inconnus) ? (Ex: 'J'ai perdu mon livre' / 'Une voiture').",
+        "type": "qcm",
+        "options": [
+          "Le registre familier",
+          "Le registre soutenu",
+          "Le registre courant (ou standard)",
+          "Le registre argotique"
+        ],
+        "answer": 2,
+        "explanation": "C'est le registre de base, grammaticalement correct, utilisé par tout le monde."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le registre 'familier' (ex: 'J'ai paumé mon bouquin' / 'Une bagnole') est celui qu'il faut utiliser pour rédiger un devoir ou s'adresser au Directeur.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le registre familier s'utilise à l'oral, entre amis ou en famille, de façon détendue. Il est incorrect à l'écrit scolaire."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles sont les caractéristiques du registre 'soutenu' (ou littéraire) ?",
+        "type": "qcm",
+        "options": [
+          "Il utilise des gros mots",
+          "Il utilise un vocabulaire riche, rare et précis, des phrases complexes et l'imparfait du subjonctif. (Ex: 'J'ai égaré mon ouvrage' / 'Un véhicule' / 'Une automobile').",
+          "Il est rempli de fautes de grammaire",
+          "Il utilise des abréviations (ex: T'as vu)"
+        ],
+        "answer": 1,
+        "explanation": "C'est le registre des grands discours, de la littérature classique et des lettres officielles."
+      },
+      {
+        "id": "q5",
+        "text": "L'expression 'Se dépêcher' (Courant) se dit comment dans les registres familier et soutenu ?",
+        "type": "qcm",
+        "options": [
+          "Familier : Se grouiller / Soutenu : Se hâter",
+          "Familier : Courir / Soutenu : Marcher",
+          "Familier : Se hâter / Soutenu : Se grouiller",
+          "Familier : Vite / Soutenu : Doucement"
+        ],
+        "answer": 0,
+        "explanation": "Il faut savoir 'traduire' un mot d'un registre à l'autre."
+      }
+    ]
+  },
+  "Fiche_Participe_Passe_Avoir_OrthGram": {
+    "title": "Accord du Participe Passé avec Avoir (Approfondissement)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Rappel de la règle d'or : avec l'auxiliaire AVOIR, le participe passé s'accorde si le COD est placé...",
+        "type": "qcm",
+        "options": [
+          "Après le verbe",
+          "Avant le verbe",
+          "Il ne s'accorde jamais",
+          "Avec le sujet"
+        ],
+        "answer": 1,
+        "explanation": "S'il est après, pas d'accord. S'il est avant, on l'accorde avec ce COD."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase : 'La chanson que j'ai (entendu)', comment s'écrit le participe passé et pourquoi ?",
+        "type": "qcm",
+        "options": [
+          "entendu (pas d'accord avec Avoir)",
+          "entendue (car le COD 'que', qui remplace 'la chanson', est placé AVANT le verbe)",
+          "entendus",
+          "entendues"
+        ],
+        "answer": 1,
+        "explanation": "J'ai entendu quoi ? 'que' (la chanson), féminin singulier."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le pronom relatif 'que' est très souvent le COD placé avant le verbe qui déclenche l'accord du participe passé avec l'auxiliaire avoir.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les pronoms personnels (le, la, les, l') placés devant le verbe (ex: 'Je les ai vus') déclenchent aussi l'accord."
+      },
+      {
+        "id": "q4",
+        "text": "Comment écrivez-vous le participe passé dans : 'Ils nous ont (parlé) hier' ?",
+        "type": "qcm",
+        "options": [
+          "parlé (invariable, car 'nous' est un COI : parler À quelqu'un, pas un COD)",
+          "parlés",
+          "parlées",
+          "parlée"
+        ],
+        "answer": 0,
+        "explanation": "Le pronom 'nous' répond à la question 'à qui ?' et non 'qui/quoi ?'. Il n'y a donc pas de COD, le participe reste invariable."
+      },
+      {
+        "id": "q5",
+        "text": "Attention au pronom 'en' ! Dans 'Des pommes, j'en ai (mangé)', comment s'écrit le participe passé ?",
+        "type": "qcm",
+        "options": [
+          "mangées (accord avec pommes)",
+          "mangé (le pronom 'en' est neutre, le participe passé qui le suit reste INVARIABLE)",
+          "mangés",
+          "mangée"
+        ],
+        "answer": 1,
+        "explanation": "C'est une exception importante. Avec 'en', pas d'accord."
+      }
+    ]
+  },
+  "Fiche_Resume_Texte_Argumentatif": {
+    "title": "Le résumé de texte argumentatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'objectif principal du résumé d'un texte ?",
+        "type": "qcm",
+        "options": [
+          "Raconter sa propre vie",
+          "Rédiger un texte plus court qui reprend fidèlement les idées essentielles de l'auteur, en respectant son plan et son système d'énonciation (ex: dire 'je' si l'auteur dit 'je')",
+          "Critiquer les idées de l'auteur",
+          "Copier-coller des phrases du texte"
+        ],
+        "answer": 1,
+        "explanation": "On réduit la longueur du texte (souvent au quart ou au tiers) sans déformer la pensée de l'auteur."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle erreur faut-il absolument éviter lorsqu'on fait un résumé ?",
+        "type": "qcm",
+        "options": [
+          "Utiliser des connecteurs logiques",
+          "Faire du 'montage de citations' (recopier des bouts de phrases du texte d'origine)",
+          "Reformuler avec ses propres mots",
+          "Respecter le nombre de mots exigé"
+        ],
+        "answer": 1,
+        "explanation": "Le résumé doit être rédigé avec vos PROPRES MOTS (la reformulation est obligatoire)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un résumé, il faut conserver tous les exemples, les anecdotes et les répétitions du texte d'origine.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Il faut supprimer le superflu (les exemples illustratifs, les détails, les répétitions) pour ne garder que l'essentiel (les arguments principaux)."
+      },
+      {
+        "id": "q4",
+        "text": "Si le texte d'origine compte 400 mots et qu'on vous demande un résumé au quart (1/4), combien de mots votre résumé devra-t-il contenir environ ?",
+        "type": "qcm",
+        "options": [
+          "400 mots",
+          "200 mots",
+          "100 mots (avec une marge de tolérance de plus ou moins 10%)",
+          "50 mots"
+        ],
+        "answer": 2,
+        "explanation": "Le comptage exact des mots à la fin du résumé est obligatoire à l'examen."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit-on faire à la fin de l'épreuve du résumé de texte ?",
+        "type": "qcm",
+        "options": [
+          "Dessiner",
+          "Indiquer très précisément le nombre exact de mots utilisés",
+          "Signer de son nom",
+          "Donner son opinion personnelle"
+        ],
+        "answer": 1,
+        "explanation": "Une erreur de comptage ou un dépassement de la marge autorisée entraîne des pénalités."
+      }
+    ]
+  },
+  "Fiche_S11_CAUSE_CONSEQUENCE_BUT": {
+    "title": "Cause, Conséquence et But",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la différence logique entre la 'Cause' et la 'Conséquence' ?",
+        "type": "qcm",
+        "options": [
+          "Il n'y a pas de différence",
+          "La cause est l'origine (le pourquoi) de l'action ; la conséquence est le résultat (l'effet) de cette action.",
+          "La cause est le futur, la conséquence le passé",
+          "Ce sont des figures de style"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il a plu' (Cause) -> 'La route est mouillée' (Conséquence)."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces mots de liaison (connecteurs), lesquels expriment la CAUSE ?",
+        "type": "qcm",
+        "options": [
+          "Donc, par conséquent, c'est pourquoi",
+          "Parce que, car, puisque, en raison de",
+          "Afin que, pour",
+          "Bien que, quoique"
+        ],
+        "answer": 1,
+        "explanation": "'Parce que' est la locution conjonctive de cause la plus courante."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les mots 'donc', 'ainsi', 'c'est pourquoi' introduisent l'expression de la CONSÉQUENCE.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il a beaucoup travaillé, DONC il a réussi'."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'exprime le BUT dans une phrase complexe ?",
+        "type": "qcm",
+        "options": [
+          "Ce qui s'est passé hier",
+          "L'objectif, l'intention ou la finalité que l'on cherche à atteindre (ou à éviter)",
+          "Le lieu de l'action",
+          "Le regret"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il court POUR attraper son train'."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles conjonctions utilise-t-on pour exprimer le BUT ?",
+        "type": "qcm",
+        "options": [
+          "Pour que, afin que, de peur que",
+          "Parce que, puisque",
+          "Donc, si bien que",
+          "Quand, lorsque"
+        ],
+        "answer": 0,
+        "explanation": "Attention : ces conjonctions de but sont toujours suivies du mode SUBJONCTIF."
+      }
+    ]
+  },
+  "Fiche_S12_PROPOSITION_CAUSE_COMPLEXE": {
+    "title": "Proposition Subordonnée de Cause",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une proposition subordonnée circonstancielle de cause (ou causale) ?",
+        "type": "qcm",
+        "options": [
+          "Une proposition qui n'a pas de verbe",
+          "Une proposition dépendante de la proposition principale, qui indique la raison de l'action, souvent introduite par 'parce que', 'puisque', 'comme'",
+          "Une phrase interrogative",
+          "Une proposition qui indique le temps"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Il est absent (P. Principale) [parce qu'il est malade] (P.S. de Cause)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle conjonction de cause DOIT obligatoirement se placer EN TÊTE de phrase (au début) ?",
+        "type": "qcm",
+        "options": [
+          "Parce que",
+          "Car",
+          "Comme",
+          "Vu que"
+        ],
+        "answer": 2,
+        "explanation": "Exemple : '[Comme] il pleuvait, nous sommes restés à la maison'. On ne dit pas 'Nous sommes restés à la maison comme il pleuvait'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On utilise la locution 'Sous prétexte que' pour introduire une cause que l'on considère comme fausse ou non valable (une excuse).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il n'est pas venu sous prétexte qu'il avait mal au ventre'."
+      },
+      {
+        "id": "q4",
+        "text": "À quel mode conjugue-t-on généralement le verbe de la proposition subordonnée de cause (introduite par 'parce que' ou 'puisque') ?",
+        "type": "qcm",
+        "options": [
+          "À l'impératif",
+          "Au mode INDICATIF",
+          "Au conditionnel",
+          "À l'infinitif"
+        ],
+        "answer": 1,
+        "explanation": "La cause est un fait réel et certain, donc on utilise l'indicatif (présent, passé composé, imparfait...)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la phrase : 'Puisque tu as fini tes devoirs, tu peux sortir', quel est le rôle de 'puisque' ?",
+        "type": "qcm",
+        "options": [
+          "Introduire une cause évidente, connue ou incontestable",
+          "Introduire le doute",
+          "Introduire un but",
+          "Poser une condition"
+        ],
+        "answer": 0,
+        "explanation": "'Puisque' sert à justifier un fait par un autre fait déjà admis."
+      }
+    ]
+  },
+  "Fiche_S13_PROPOSITION_CONSEQUENCE_COMPLEXE": {
+    "title": "Proposition Subordonnée de Conséquence",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une proposition subordonnée circonstancielle de conséquence (ou consécutive) ?",
+        "type": "qcm",
+        "options": [
+          "Elle exprime l'origine d'un fait",
+          "Elle exprime le résultat, l'effet ou l'aboutissement de l'action exprimée dans la proposition principale",
+          "Elle exprime l'heure",
+          "Elle n'a pas de sens"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il a plu toute la nuit, [si bien que la cour est inondée]'."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les locutions conjonctives les plus utilisées pour introduire une subordonnée de conséquence ?",
+        "type": "qcm",
+        "options": [
+          "Parce que, comme",
+          "Pour que, afin que",
+          "Si bien que, de sorte que, au point que",
+          "Mais, ou, et"
+        ],
+        "answer": 2,
+        "explanation": "Elles se placent toujours APRÈS la proposition principale."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les adverbes d'intensité 'si', 'tellement' et 'tant' peuvent annoncer une conséquence lorsqu'ils sont associés à la conjonction 'que' (ex: Il est tellement fatigué qu'il s'est endormi).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'intensité de la fatigue (principale) qui provoque le sommeil (conséquence)."
+      },
+      {
+        "id": "q4",
+        "text": "À quel mode conjugue-t-on généralement le verbe de la subordonnée de conséquence introduite par 'si bien que' ou 'de sorte que' ?",
+        "type": "qcm",
+        "options": [
+          "À l'indicatif (le fait s'est réellement produit)",
+          "À l'impératif",
+          "Au subjonctif",
+          "À l'infinitif"
+        ],
+        "answer": 0,
+        "explanation": "Comme la cause, la conséquence réalisée est exprimée à l'indicatif."
+      },
+      {
+        "id": "q5",
+        "text": "Attention à la nuance ! À quel mode met-on le verbe après 'trop... pour que' ou 'assez... pour que' (ex: Il fait trop chaud pour qu'on [sortir]) ?",
+        "type": "qcm",
+        "options": [
+          "Indicatif (sort)",
+          "Subjonctif (sorte)",
+          "Conditionnel (sortirait)",
+          "Infinitif (sortir)"
+        ],
+        "answer": 1,
+        "explanation": "Ces locutions expriment une conséquence non réalisée ou envisagée, elles exigent donc le subjonctif."
+      }
+    ]
+  },
+  "Fiche_S14_PROPOSITION_BUT_COMPLEXE": {
+    "title": "Proposition Subordonnée de But",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le mode verbal OBLIGATOIRE après les locutions conjonctives de BUT 'pour que' et 'afin que' ?",
+        "type": "qcm",
+        "options": [
+          "L'indicatif",
+          "L'impératif",
+          "Le subjonctif",
+          "Le conditionnel"
+        ],
+        "answer": 2,
+        "explanation": "Le but est une action espérée, voulue, mais pas encore réalisée. Il faut donc utiliser le subjonctif. Ex: 'Je t'aide pour que tu (réussisses)'."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase : 'Je parle fort afin qu'il m'entende', quelle est la fonction de la proposition '[afin qu'il m'entende]' ?",
+        "type": "qcm",
+        "options": [
+          "Proposition principale",
+          "Proposition subordonnée relative",
+          "Proposition subordonnée circonstancielle de BUT",
+          "Sujet"
+        ],
+        "answer": 2,
+        "explanation": "Elle répond à la question : Dans quel but ? Pour quoi faire ?"
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les locutions 'de peur que' ou 'de crainte que' expriment un but que l'on veut ÉVITER (un but négatif), et elles sont suivies du subjonctif.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Je me cache de peur qu'il ne me (voie)'."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si le sujet de la proposition principale et le sujet de l'action visée sont LES MÊMES (ex: Je travaille / Je veux réussir) ?",
+        "type": "qcm",
+        "options": [
+          "On utilise 'pour que je réussisse'",
+          "On utilise un infinitif introduit par 'pour' ou 'afin de' : 'Je travaille POUR réussir'",
+          "On ne peut pas faire de phrase",
+          "On utilise le subjonctif obligatoire"
+        ],
+        "answer": 1,
+        "explanation": "On ne dit pas 'Je travaille pour que je réussisse'. L'infinitif s'impose quand les sujets sont identiques."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces phrases, laquelle contient une expression de But ?",
+        "type": "qcm",
+        "options": [
+          "Il court parce qu'il a peur.",
+          "Il court tellement qu'il transpire.",
+          "Il court pour attraper le voleur.",
+          "Il court quand il pleut."
+        ],
+        "answer": 2,
+        "explanation": "'Parce que' = cause. 'Tellement que' = conséquence. 'Quand' = temps. 'Pour' = But."
+      }
+    ]
+  },
+  "Fiche_S17_PROPOSITION_COMPARAISON_COMPLEXE": {
+    "title": "Proposition Subordonnée de Comparaison",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quoi sert une proposition subordonnée circonstancielle de comparaison ?",
+        "type": "qcm",
+        "options": [
+          "À indiquer le lieu",
+          "À établir un rapport de ressemblance, de différence ou de proportion entre le fait de la principale et celui de la subordonnée",
+          "À donner un ordre",
+          "À exprimer le temps"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il ment [comme il respire]' (Ressemblance)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la conjonction de comparaison la plus courante pour exprimer la ressemblance ou l'égalité ?",
+        "type": "qcm",
+        "options": [
+          "Si bien que",
+          "Comme",
+          "Parce que",
+          "Afin que"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il est têtu COMME une mule' (comparaison simple) ; 'Il a fait COMME on lui avait dit' (proposition subordonnée)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les locutions 'plus... que', 'moins... que', 'aussi... que' introduisent des subordonnées de comparaison qui marquent des degrés (supériorité, infériorité, égalité).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il est (plus) intelligent [qu'il n'en a l'air]'."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase : 'Il agit (ainsi que) le ferait son père', que remplace 'ainsi que' ?",
+        "type": "qcm",
+        "options": [
+          "Mais",
+          "De la même manière que (comparaison de ressemblance)",
+          "Pour que",
+          "À cause de"
+        ],
+        "answer": 1,
+        "explanation": "'Ainsi que' et 'De même que' sont des locutions très courantes pour la comparaison littéraire."
+      },
+      {
+        "id": "q5",
+        "text": "Quel mode verbal utilise-t-on le plus souvent dans une subordonnée de comparaison (introduite par comme, plus que...) ?",
+        "type": "qcm",
+        "options": [
+          "L'indicatif (ou le conditionnel)",
+          "L'impératif",
+          "Le participe passé",
+          "L'infinitif"
+        ],
+        "answer": 0,
+        "explanation": "La comparaison se fait sur des faits réels (indicatif) ou imaginés (conditionnel). Jamais au subjonctif."
+      }
+    ]
+  },
+  "Fiche_S18_CONDITION_OPPOSITION_SIMPLE": {
+    "title": "La Condition et l'Opposition",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'expression de la CONDITION (ou l'hypothèse) ?",
+        "type": "qcm",
+        "options": [
+          "L'affirmation d'une certitude absolue",
+          "L'expression d'un fait qui doit obligatoirement se réaliser pour qu'un autre fait (dans la principale) se réalise",
+          "L'explication d'une cause",
+          "Une opposition d'idées"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : '[Si tu travailles], tu réussiras'. La réussite dépend du travail."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la conjonction la plus couramment utilisée pour exprimer la condition ?",
+        "type": "qcm",
+        "options": [
+          "Mais",
+          "Car",
+          "Si",
+          "Donc"
+        ],
+        "answer": 2,
+        "explanation": "La conjonction 'Si' introduit l'hypothèse. (Attention : 'Si' de condition n'est jamais suivi du conditionnel ou du futur : Si + Présent -> Futur)."
+      },
+      {
+        "id": "q3",
+        "text": "Qu'est-ce que l'OPPOSITION dans une phrase complexe ?",
+        "type": "qcm",
+        "options": [
+          "Quand deux personnes se battent",
+          "Elle met en relation deux faits qui s'opposent logiquement, ou dont l'un n'empêche pas l'autre de se réaliser (concession)",
+          "Une égalité mathématique",
+          "La fin d'une histoire"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il pleut (A), mais je sors quand même (B)'. (Logiquement, s'il pleut on ne sort pas, il y a opposition/concession)."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les conjonctions de coordination 'Mais' et 'Or' expriment l'opposition.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il est petit, MAIS il est très fort'."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles prépositions (suivies d'un nom) expriment l'opposition ou la concession ?",
+        "type": "qcm",
+        "options": [
+          "Afin de, pour",
+          "À cause de, grâce à",
+          "Malgré, en dépit de (ex: Malgré la pluie, le match a eu lieu)",
+          "Avant de, après"
+        ],
+        "answer": 2,
+        "explanation": "'Malgré' + groupe nominal est la façon la plus simple d'exprimer une concession."
+      }
+    ]
+  },
+  "Fiche_S19_CONDITION_COMPLEXE": {
+    "title": "Proposition Subordonnée de Condition",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Complétez la fameuse règle de concordance des temps avec 'Si' : 'Si + Présent de l'indicatif -> ...'",
+        "type": "qcm",
+        "options": [
+          "Conditionnel",
+          "Futur de l'indicatif (ex: Si tu (viens), nous (irons) au cinéma)",
+          "Imparfait",
+          "Passé composé"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'hypothèse sur le futur, très probable (potentiel)."
+      },
+      {
+        "id": "q2",
+        "text": "Complétez la règle : 'Si + Imparfait de l'indicatif -> ...'",
+        "type": "qcm",
+        "options": [
+          "Futur",
+          "Présent",
+          "Conditionnel présent (ex: Si tu (venais), nous (irions) au cinéma)",
+          "Subjonctif"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'hypothèse incertaine (irréel du présent). Attention aux fautes : Les 'si' n'aiment pas les '-rais' (Jamais de conditionnel juste après Si)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Si + Plus-que-parfait -> Conditionnel passé' exprime un regret dans le passé (ex: Si j'avais su, je ne serais pas venu).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'irréel du passé : la condition ne peut plus être réalisée car le passé est révolu."
+      },
+      {
+        "id": "q4",
+        "text": "Quel mode verbal exige la locution conjonctive de condition 'À condition que' (ou 'Pourvu que') ?",
+        "type": "qcm",
+        "options": [
+          "L'indicatif",
+          "L'impératif",
+          "Le SUBJONCTIF (ex: Tu sortiras à condition que tu (finisses) ton travail)",
+          "Le conditionnel"
+        ],
+        "answer": 2,
+        "explanation": "La réalisation de l'action est subordonnée à cette condition, elle n'est pas encore certaine, d'où le subjonctif."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle locution de condition est toujours suivie du mode CONDITIONNEL ?",
+        "type": "qcm",
+        "options": [
+          "Au cas où (ex: Prends ton parapluie, au cas où il (pleuvrait))",
+          "À condition que",
+          "Bien que",
+          "Si"
+        ],
+        "answer": 0,
+        "explanation": "'Au cas où' introduit une éventualité, un risque possible."
+      }
+    ]
+  },
+  "Fiche_S20_OPPOSITION_COMPLEXE": {
+    "title": "Proposition Subordonnée d'Opposition",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelles sont les locutions conjonctives les plus courantes pour introduire une subordonnée d'opposition (concession) ?",
+        "type": "qcm",
+        "options": [
+          "Parce que, puisque",
+          "Bien que, quoique, encore que",
+          "Pour que, afin que",
+          "Au cas où"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : '[Bien qu'il soit malade], il est venu à l'école'."
+      },
+      {
+        "id": "q2",
+        "text": "Quel mode verbal OBLIGATOIRE doit suivre 'bien que' ou 'quoique' ?",
+        "type": "qcm",
+        "options": [
+          "L'indicatif",
+          "Le conditionnel",
+          "Le SUBJONCTIF (ex: Bien qu'il (soit) pauvre...)",
+          "L'impératif"
+        ],
+        "answer": 2,
+        "explanation": "C'est une règle d'orthographe grammaticale absolue. On ne dit jamais 'Bien qu'il est'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les locutions 'Même si' ou 'Alors que' sont suivies de l'indicatif.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Même s'il (pleut), je sors'. 'Alors qu'il (fait) froid, il se baigne'."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase : 'Il est très gentil (tandis que) son frère est méchant', qu'exprime la subordonnée ?",
+        "type": "qcm",
+        "options": [
+          "Le temps",
+          "Une opposition forte (contraste direct entre deux faits de même nature)",
+          "La cause",
+          "Le but"
+        ],
+        "answer": 1,
+        "explanation": "'Tandis que' ou 'Alors que' marquent souvent le contraste."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle locution suivie de l'infinitif permet d'exprimer l'opposition quand le sujet est le même ?",
+        "type": "qcm",
+        "options": [
+          "Afin de",
+          "À cause de",
+          "Au lieu de (ex: 'Au lieu de travailler, il dort')",
+          "Pour"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'équivalent à l'infinitif de l'opposition."
+      }
+    ]
+  },
+  "Fiche_Temps_Composes": {
+    "title": "Les temps composés",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment se forme un temps composé (ex: le passé composé) ?",
+        "type": "qcm",
+        "options": [
+          "En ajoutant '-ait' au verbe",
+          "Avec un AUXILIAIRE (être ou avoir) conjugué à un temps simple + le PARTICIPE PASSÉ du verbe à conjuguer",
+          "Avec deux verbes à l'infinitif",
+          "En inversant le sujet"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'J'(ai) (mangé)'. Auxiliaire + Participe passé."
+      },
+      {
+        "id": "q2",
+        "text": "De quel temps l'auxiliaire doit-il être conjugué pour former le PLUS-QUE-PARFAIT ?",
+        "type": "qcm",
+        "options": [
+          "Au présent",
+          "Au futur",
+          "À l'imparfait (ex: j'avais mangé, il était parti)",
+          "Au passé simple"
+        ],
+        "answer": 2,
+        "explanation": "Plus-que-parfait = Auxiliaire à l'imparfait + Participe passé."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le temps composé permet toujours d'exprimer une action ANTÉRIEURE (qui s'est passée AVANT) par rapport à une autre action.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la valeur principale des temps composés. Ex: 'Quand j'aurai fini (1er, futur antérieur), je sortirai (2ème, futur simple)'."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le temps composé correspondant au Futur Simple ?",
+        "type": "qcm",
+        "options": [
+          "Le passé composé",
+          "Le Futur Antérieur (ex: j'aurai fini)",
+          "Le présent",
+          "Le conditionnel"
+        ],
+        "answer": 1,
+        "explanation": "Futur Antérieur = Auxiliaire au futur simple + Participe passé."
+      },
+      {
+        "id": "q5",
+        "text": "Quel temps composé est formé avec l'auxiliaire au PASSÉ SIMPLE (ex: j'eus mangé, il fut parti) ?",
+        "type": "qcm",
+        "options": [
+          "Le passé composé",
+          "Le passé antérieur",
+          "Le plus-que-parfait",
+          "Le subjonctif passé"
+        ],
+        "answer": 1,
+        "explanation": "Le passé antérieur s'utilise surtout à l'écrit, souvent juste avant un passé simple (ex: Dès qu'il eut fini, il partit)."
+      }
+    ]
+  },
+  "Fiche_Temps_Simples": {
+    "title": "Les temps simples de l'indicatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les 4 temps simples de l'indicatif ?",
+        "type": "qcm",
+        "options": [
+          "Passé composé, plus-que-parfait, futur antérieur, passé antérieur",
+          "Présent, Imparfait, Passé simple, Futur simple",
+          "Conditionnel, subjonctif, impératif, participe",
+          "Infinitif, gérondif"
+        ],
+        "answer": 1,
+        "explanation": "Un temps simple est formé d'un seul mot (le radical du verbe + sa terminaison)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la valeur principale (l'emploi) du PRÉSENT de l'indicatif dans la phrase : 'La Terre tourne autour du Soleil' ?",
+        "type": "qcm",
+        "options": [
+          "Présent d'énonciation (en ce moment)",
+          "Présent de vérité générale (fait toujours vrai, scientifique)",
+          "Présent de narration",
+          "Présent d'habitude"
+        ],
+        "answer": 1,
+        "explanation": "C'est aussi le présent utilisé pour les proverbes et les règles de mathématiques."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un récit au passé, l'IMPARFAIT est utilisé pour la description (le décor) et pour les actions qui durent ou se répètent (les habitudes).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il faisait beau, les oiseaux chantaient'. C'est le temps de l'arrière-plan."
+      },
+      {
+        "id": "q4",
+        "text": "Quel temps simple du récit exprime, au contraire de l'imparfait, des actions passées SOUDAINES, brèves, achevées et qui font avancer l'histoire (le premier plan) ?",
+        "type": "qcm",
+        "options": [
+          "Le futur",
+          "Le présent",
+          "Le PASSÉ SIMPLE (ex: Soudain, la porte s'ouvrit)",
+          "Le conditionnel"
+        ],
+        "answer": 2,
+        "explanation": "Imparfait (décor) / Passé simple (action brusque). C'est le duo classique du roman et du conte."
+      },
+      {
+        "id": "q5",
+        "text": "À quel temps simple de l'indicatif est conjugué le verbe dans la phrase : 'Je (finirai) mon devoir demain' ?",
+        "type": "qcm",
+        "options": [
+          "Présent",
+          "Futur simple",
+          "Passé simple",
+          "Imparfait"
+        ],
+        "answer": 1,
+        "explanation": "Il exprime une action qui va se réaliser dans l'avenir. Les terminaisons sont toujours : rai, ras, ra, rons, rez, ront."
+      }
+    ]
+  }
+}

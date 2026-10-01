@@ -1,0 +1,1158 @@
+{
+  "Fiche_Lecon5_Les_grandes_periodes_de_l_histoire": {
+    "title": "Quiz Spécial : Les dates historiques clés",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quelle date correspond l'invention de l'écriture, marquant le début de l'Antiquité ?",
+        "type": "qcm",
+        "options": [
+          "Vers 476",
+          "Vers -3000",
+          "Vers 1492",
+          "Vers -1500"
+        ],
+        "answer": 1,
+        "explanation": "L'invention de l'écriture vers -3000 (avant J.-C.) marque la fin de la Préhistoire et le début de l'Antiquité et de l'Histoire."
+      },
+      {
+        "id": "q2",
+        "text": "Quel événement s'est produit en 1492, marquant la fin du Moyen-Âge ?",
+        "type": "qcm",
+        "options": [
+          "La Révolution française",
+          "La chute de l'Empire romain d'Occident",
+          "La découverte de l'Amérique par Christophe Colomb",
+          "L'indépendance de la Côte d'Ivoire"
+        ],
+        "answer": 2,
+        "explanation": "La découverte de l'Amérique en 1492 par Christophe Colomb marque le début des Temps modernes."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'Époque contemporaine a commencé en 1789 avec la Révolution française.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai ! La Révolution française de 1789 marque la fin des Temps modernes et le début de l'Époque contemporaine."
+      },
+      {
+        "id": "q4",
+        "text": "Que s'est-il passé en 476 ?",
+        "type": "qcm",
+        "options": [
+          "L'invention de l'écriture",
+          "La chute de l'Empire romain d'Occident",
+          "Le début de la traite négrière",
+          "La création de la colonie de Côte d'Ivoire"
+        ],
+        "answer": 1,
+        "explanation": "La chute de l'Empire romain d'Occident en 476 marque la fin de l'Antiquité et le début du Moyen-Âge."
+      },
+      {
+        "id": "q5",
+        "text": "En quelle année commence la période de l'indépendance pour la Côte d'Ivoire et de nombreux pays d'Afrique ?",
+        "type": "qcm",
+        "options": [
+          "1848",
+          "1893",
+          "1470",
+          "1960"
+        ],
+        "answer": 3,
+        "explanation": "La période des indépendances africaines (et notamment de la Côte d'Ivoire) commence principalement en 1960."
+      }
+    ]
+  },
+  "Fiche_Lecon4_La_notion_de_chronologie": {
+    "title": "La chronologie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quels mots grecs vient le mot 'chronologie' ?",
+        "type": "qcm",
+        "options": [
+          "Chrono et mètre",
+          "Chronos (temps) et logos (science)",
+          "Géo (terre) et logos (science)",
+          "Chronos (couleur) et logos (discours)"
+        ],
+        "answer": 1,
+        "explanation": "La chronologie est la science (logos) qui étudie le temps (chronos)."
+      },
+      {
+        "id": "q2",
+        "text": "Combien de temps dure un millénaire ?",
+        "type": "qcm",
+        "options": [
+          "10 ans",
+          "100 ans",
+          "1000 ans",
+          "1 000 000 ans"
+        ],
+        "answer": 2,
+        "explanation": "Un millénaire équivaut à 1000 ans (soit 10 siècles)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les siècles s'écrivent généralement en chiffres arabes (1, 2, 3...) en histoire.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! En histoire, les siècles s'écrivent en chiffres romains (I, II, XX, XXI...)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une décennie ?",
+        "type": "qcm",
+        "options": [
+          "Une période de 10 ans",
+          "Une période de 100 ans",
+          "Une période de 12 ans",
+          "Une période de 10 mois"
+        ],
+        "answer": 0,
+        "explanation": "Une décennie est une période de 10 ans."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi dessine-t-on une flèche au bout d'une frise chronologique ?",
+        "type": "qcm",
+        "options": [
+          "Pour faire joli",
+          "Pour indiquer que le temps s'arrête",
+          "Pour indiquer que le temps continue",
+          "Pour montrer la direction du vent"
+        ],
+        "answer": 2,
+        "explanation": "La flèche à la fin (à droite) de la frise chronologique signifie que le temps s'écoule continuellement et ne s'arrête pas."
+      }
+    ]
+  },
+  "Fiche_Lecon1_L_histoire_et_son_objet": {
+    "title": "L'Histoire et son objet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'Histoire ?",
+        "type": "qcm",
+        "options": [
+          "L'étude des animaux",
+          "La science qui étudie le passé des hommes",
+          "Un conte inventé",
+          "L'étude du climat"
+        ],
+        "answer": 1,
+        "explanation": "L'Histoire est la science qui nous permet de connaître et de comprendre les actions des hommes dans le passé."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi étudie-t-on l'Histoire ?",
+        "type": "qcm",
+        "options": [
+          "Pour deviner le futur magiquement",
+          "Pour comprendre le présent et préparer l'avenir",
+          "Pour apprendre des chansons",
+          "Pour oublier le passé"
+        ],
+        "answer": 1,
+        "explanation": "L'Histoire sert de leçon : comprendre les erreurs et les réussites du passé permet de mieux construire le présent et le futur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'Histoire s'intéresse uniquement aux guerres et aux rois.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'Histoire étudie TOUTES les activités humaines (la vie quotidienne, les inventions, l'économie, l'art, etc.)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on le spécialiste qui fait des recherches et écrit l'histoire ?",
+        "type": "qcm",
+        "options": [
+          "L'historien",
+          "L'archéologue",
+          "Le géographe",
+          "Le biologiste"
+        ],
+        "answer": 0,
+        "explanation": "L'historien cherche la vérité sur le passé en étudiant diverses sources (textes, objets, témoignages)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la qualité principale que doit avoir un historien dans son travail ?",
+        "type": "qcm",
+        "options": [
+          "L'imagination",
+          "L'objectivité (dire la vérité sans parti pris)",
+          "La rapidité",
+          "L'invention"
+        ],
+        "answer": 1,
+        "explanation": "L'historien doit être objectif : il doit rapporter les faits tels qu'ils se sont déroulés, sans les modifier selon ses propres sentiments."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Les_sources_de_l_histoire": {
+    "title": "Les sources de l'histoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une source historique ?",
+        "type": "qcm",
+        "options": [
+          "L'origine d'un fleuve",
+          "Les traces ou documents laissés par les hommes du passé",
+          "Un livre de sciences",
+          "Une histoire inventée"
+        ],
+        "answer": 1,
+        "explanation": "Une source historique est tout élément du passé (objet, texte, témoignage) qui permet à l'historien de reconstituer l'histoire."
+      },
+      {
+        "id": "q2",
+        "text": "Un vieux manuscrit ou un traité de paix est une source :",
+        "type": "qcm",
+        "options": [
+          "Orale",
+          "Archéologique (muette)",
+          "Écrite",
+          "Audio"
+        ],
+        "answer": 2,
+        "explanation": "Tout document contenant de l'écriture (lettre, livre, inscription) est une source écrite."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La source orale (témoignages, contes, mythes) est très importante en Afrique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Dans les sociétés de tradition orale en Afrique, la transmission de l'histoire se faisait principalement par la parole (les griots)."
+      },
+      {
+        "id": "q4",
+        "text": "Des poteries, des ruines de bâtiments ou des outils en pierre sont des sources :",
+        "type": "qcm",
+        "options": [
+          "Écrites",
+          "Orales",
+          "Muettes (matérielles ou archéologiques)",
+          "Sonores"
+        ],
+        "answer": 2,
+        "explanation": "Les objets, monuments et restes humains sont des sources matérielles que l'on découvre souvent grâce à l'archéologie."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la principale limite (défaut) de la source orale ?",
+        "type": "qcm",
+        "options": [
+          "Elle peut être déformée par le temps ou la mémoire",
+          "Elle coûte très cher",
+          "Elle est illégale",
+          "Elle s'efface à la lumière"
+        ],
+        "answer": 0,
+        "explanation": "Avec le temps, la mémoire humaine peut faillir et l'histoire racontée peut être transformée, consciemment ou non."
+      }
+    ]
+  },
+  "Fiche_Lecon9_La_geographie_et_son_objet": {
+    "title": "La géographie et son objet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la géographie ?",
+        "type": "qcm",
+        "options": [
+          "La science qui étudie le passé",
+          "La science qui décrit et explique la surface de la Terre et les activités humaines",
+          "L'étude des animaux et des plantes",
+          "La science des nombres"
+        ],
+        "answer": 1,
+        "explanation": "La géographie (géo = terre, graphie = description) étudie la Terre, ses paysages et la façon dont les hommes y vivent."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est l'outil principal du géographe pour représenter la Terre ?",
+        "type": "qcm",
+        "options": [
+          "Le microscope",
+          "La carte géographique",
+          "Le stéthoscope",
+          "La calculatrice"
+        ],
+        "answer": 1,
+        "explanation": "La carte est l'outil fondamental qui permet au géographe de représenter un espace (ville, pays, continent)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La géographie physique étudie les populations et leurs activités.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est la géographie HUMAINE qui étudie les populations. La géographie physique étudie la nature (le relief, le climat, la végétation)."
+      },
+      {
+        "id": "q4",
+        "text": "Que signifie le mot 'paysage' en géographie ?",
+        "type": "qcm",
+        "options": [
+          "Une peinture",
+          "Ce que l'on voit d'un espace terrestre (nature, constructions...)",
+          "Le nom d'un pays",
+          "Le climat de la région"
+        ],
+        "answer": 1,
+        "explanation": "Le paysage est la partie d'un espace que l'œil peut embrasser (montagnes, champs, villes, forêts)."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi la géographie est-elle utile ?",
+        "type": "qcm",
+        "options": [
+          "Pour raconter des légendes",
+          "Pour aménager le territoire et gérer les ressources",
+          "Pour construire des fusées",
+          "Pour lire l'avenir"
+        ],
+        "answer": 1,
+        "explanation": "Connaître le terrain, le climat et la population permet de construire des routes, des barrages et de mieux organiser la vie des hommes."
+      }
+    ]
+  },
+  "Fiche_Lecon10_Le_relief": {
+    "title": "Le relief",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le relief ?",
+        "type": "qcm",
+        "options": [
+          "L'ensemble des cours d'eau",
+          "L'ensemble des inégalités (creux et bosses) à la surface de la Terre",
+          "Le type de sol",
+          "Le climat d'une région"
+        ],
+        "answer": 1,
+        "explanation": "Le relief désigne toutes les formes de la surface de la Terre (montagnes, plaines, vallées, plateaux)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on une vaste étendue de terre plane et peu élevée ?",
+        "type": "qcm",
+        "options": [
+          "Une montagne",
+          "Une plaine",
+          "Un plateau",
+          "Une vallée"
+        ],
+        "answer": 1,
+        "explanation": "La plaine est une surface plane où les cours d'eau ne creusent pas de vallées profondes (contrairement au plateau)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'altitude est la hauteur d'un lieu mesurée à partir du niveau de la mer.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On utilise le niveau 0 de la mer comme référence pour mesurer l'altitude (en mètres)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle forme de relief est caractérisée par de fortes pentes et une grande altitude ?",
+        "type": "qcm",
+        "options": [
+          "La colline",
+          "La plaine",
+          "La montagne",
+          "La cuvette"
+        ],
+        "answer": 2,
+        "explanation": "La montagne est une élévation importante du terrain avec des pentes raides et un sommet."
+      },
+      {
+        "id": "q5",
+        "text": "Que trouve-t-on généralement entre deux montagnes ?",
+        "type": "qcm",
+        "options": [
+          "Une vallée",
+          "Un plateau",
+          "Un océan",
+          "Une plaine"
+        ],
+        "answer": 0,
+        "explanation": "Une vallée est un espace creusé (souvent par un cours d'eau) situé entre deux reliefs (montagnes ou collines)."
+      }
+    ]
+  },
+  "Fiche_Lecon11_Le_climat": {
+    "title": "Le climat",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la différence entre le temps et le climat ?",
+        "type": "qcm",
+        "options": [
+          "C'est la même chose",
+          "Le temps est l'état de l'atmosphère sur une longue période, le climat est l'état à un moment précis",
+          "Le temps est l'état de l'atmosphère à un moment donné, le climat est la moyenne du temps sur de nombreuses années",
+          "Le temps concerne la pluie, le climat le soleil"
+        ],
+        "answer": 2,
+        "explanation": "Le temps qu'il fait change chaque jour. Le climat est une moyenne calculée sur au moins 30 ans."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les deux principaux éléments qui définissent un climat ?",
+        "type": "qcm",
+        "options": [
+          "Le relief et la végétation",
+          "La température et les précipitations (pluies)",
+          "Le vent et le soleil",
+          "La population et l'industrie"
+        ],
+        "answer": 1,
+        "explanation": "Pour définir un climat, on regarde principalement s'il fait chaud/froid (température) et s'il pleut beaucoup ou pas (précipitations)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : À l'équateur, le climat est très froid et sec.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Autour de l'équateur (comme en Côte d'Ivoire), le climat est chaud et souvent très humide (climat équatorial)."
+      },
+      {
+        "id": "q4",
+        "text": "Avec quel appareil mesure-t-on la quantité de pluie tombée ?",
+        "type": "qcm",
+        "options": [
+          "Le thermomètre",
+          "Le baromètre",
+          "L'anémomètre",
+          "Le pluviomètre"
+        ],
+        "answer": 3,
+        "explanation": "Le pluviomètre mesure les précipitations en millimètres (mm)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on la saison où il ne pleut pas (ou très peu) en zone tropicale ?",
+        "type": "qcm",
+        "options": [
+          "La saison des pluies",
+          "L'hiver",
+          "La saison sèche",
+          "L'automne"
+        ],
+        "answer": 2,
+        "explanation": "En zone intertropicale, l'année se divise souvent en saison sèche (sans pluie) et saison des pluies."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Le_paleolithique_ivoirien": {
+    "title": "Le paléolithique ivoirien",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le Paléolithique ?",
+        "type": "qcm",
+        "options": [
+          "L'âge du fer",
+          "L'âge de la pierre taillée (la période la plus ancienne de la préhistoire)",
+          "L'époque de la colonisation",
+          "L'âge de l'écriture"
+        ],
+        "answer": 1,
+        "explanation": "Le Paléolithique est l'âge de la 'pierre ancienne' ou 'pierre taillée', la première période de la Préhistoire."
+      },
+      {
+        "id": "q2",
+        "text": "Où ont été trouvées les plus anciennes traces humaines en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "À Abidjan",
+          "À Yamoussoukro",
+          "À l'Est, au Sud-Est (Anyama, Bingerville) et au Nord",
+          "Uniquement sur la plage"
+        ],
+        "answer": 2,
+        "explanation": "Les fouilles archéologiques ont révélé des traces de présence humaine très ancienne, notamment dans la région d'Anyama, Bingerville et dans le Nord du pays."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'homme du Paléolithique ivoirien vivait dans des villes avec des maisons en dur.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'homme de cette époque était nomade. Il s'abritait dans des grottes, sous des rochers ou des branchages."
+      },
+      {
+        "id": "q4",
+        "text": "De quoi se nourrissait principalement l'homme du Paléolithique ?",
+        "type": "qcm",
+        "options": [
+          "D'agriculture (igname, riz)",
+          "De produits industriels achetés",
+          "De chasse, de pêche et de cueillette",
+          "De lait de vache exclusivement"
+        ],
+        "answer": 2,
+        "explanation": "L'homme était un prédateur : il vivait des ressources qu'il trouvait dans la nature (chasse, pêche, cueillette des fruits sauvages)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle grande découverte de cette époque a permis à l'homme de se chauffer, s'éclairer et cuire ses aliments ?",
+        "type": "qcm",
+        "options": [
+          "La découverte de la roue",
+          "La maîtrise du feu",
+          "L'invention de l'électricité",
+          "La découverte du fer"
+        ],
+        "answer": 1,
+        "explanation": "La maîtrise du feu a été une révolution immense au Paléolithique pour se protéger, s'éclairer et améliorer son alimentation."
+      }
+    ]
+  },
+  "Fiche_Lecon7_La_revolution_du_neolithique_en_Cote_d_Ivoire": {
+    "title": "La révolution du néolithique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel événement marque la fin de la Préhistoire et le début de l'Histoire ?",
+        "type": "qcm",
+        "options": [
+          "L'invention de l'écriture (vers -3500)",
+          "La découverte du feu",
+          "La chute de l'Empire Romain",
+          "La naissance de Jésus-Christ"
+        ],
+        "answer": 0,
+        "explanation": "L'écriture permet de conserver des traces précises des événements."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la démocratie (née à Athènes) ?",
+        "type": "qcm",
+        "options": [
+          "Un régime politique où le pouvoir appartient aux citoyens",
+          "Un régime où un roi a tous les pouvoirs",
+          "Un régime gouverné par les plus riches",
+          "Un régime militaire"
+        ],
+        "answer": 0,
+        "explanation": "Démocratie vient du grec 'Demos' (le peuple) et 'Kratos' (le pouvoir)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le fleuve le plus long d'Afrique est le Nil.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il traverse notamment l'Égypte et se jette dans la mer Méditerranée."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une carte topographique ?",
+        "type": "qcm",
+        "options": [
+          "Une carte représentant le relief et les éléments visibles du terrain (routes, rivières...)",
+          "Une carte politique avec les pays",
+          "Une carte du climat",
+          "Une carte des étoiles"
+        ],
+        "answer": 0,
+        "explanation": "Elle utilise des courbes de niveau pour représenter les altitudes."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la capitale économique de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Abidjan",
+          "Yamoussoukro",
+          "Bouaké",
+          "San-Pédro"
+        ],
+        "answer": 0,
+        "explanation": "Yamoussoukro est la capitale politique, Abidjan est la capitale économique."
+      }
+    ]
+  },
+  "Fiche_Lecon13_Les_moyens_de_representation_de_la_Terre": {
+    "title": "Les moyens de représentation de la Terre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la forme réelle de la Terre ?",
+        "type": "qcm",
+        "options": [
+          "Un carré parfait",
+          "Plat comme une crêpe",
+          "Une sphère (légèrement aplatie aux pôles)",
+          "Un triangle"
+        ],
+        "answer": 2,
+        "explanation": "La Terre est sphérique, bien qu'elle soit très légèrement aplatie au pôle Nord et au pôle Sud."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la représentation la plus exacte de la Terre (sans déformation) ?",
+        "type": "qcm",
+        "options": [
+          "Un plan",
+          "Une carte routière",
+          "Le globe terrestre",
+          "Une photographie imprimée"
+        ],
+        "answer": 2,
+        "explanation": "Le globe terrestre est le seul moyen de représenter la Terre en respectant sa forme sphérique, sans déformer les continents."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le planisphère représente toute la Terre à plat sur une feuille de papier.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le planisphère (ou carte du monde) est une représentation plane de l'ensemble de la surface terrestre."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l'équateur ?",
+        "type": "qcm",
+        "options": [
+          "Une ligne verticale qui relie les pôles",
+          "Une ligne imaginaire horizontale qui sépare la Terre en deux hémisphères (Nord et Sud)",
+          "La capitale du Brésil",
+          "Un continent"
+        ],
+        "answer": 1,
+        "explanation": "L'équateur est la ligne imaginaire (parallèle 0°) située à égale distance des deux pôles."
+      },
+      {
+        "id": "q5",
+        "text": "À quoi sert la légende sur une carte géographique ?",
+        "type": "qcm",
+        "options": [
+          "À raconter une histoire ancienne",
+          "À donner l'échelle de la carte",
+          "À expliquer la signification des couleurs et des symboles utilisés",
+          "À indiquer le Nord"
+        ],
+        "answer": 2,
+        "explanation": "La légende est indispensable pour comprendre la carte : elle traduit le sens de chaque symbole, couleur ou trait dessiné."
+      }
+    ]
+  },
+  "Fiche_Lecon14_Les_mouvements_de_la_Terre_et_leurs_influences_sur_la_vie_quotidienne": {
+    "title": "Les mouvements de la Terre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Combien de temps met la Terre pour faire un tour complet sur elle-même (rotation) ?",
+        "type": "qcm",
+        "options": [
+          "12 heures",
+          "24 heures (1 jour)",
+          "30 jours (1 mois)",
+          "365 jours (1 an)"
+        ],
+        "answer": 1,
+        "explanation": "Le mouvement de rotation de la Terre sur son axe s'effectue en 24 heures."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la conséquence directe de la rotation de la Terre sur elle-même ?",
+        "type": "qcm",
+        "options": [
+          "L'alternance des saisons",
+          "L'alternance du jour et de la nuit",
+          "Les éclipses de lune",
+          "Les tremblements de terre"
+        ],
+        "answer": 1,
+        "explanation": "En tournant, chaque partie de la Terre est tour à tour éclairée par le Soleil (le jour) et plongée dans l'ombre (la nuit)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le mouvement de la Terre autour du Soleil s'appelle la 'révolution'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La Terre effectue une révolution autour du Soleil."
+      },
+      {
+        "id": "q4",
+        "text": "Combien de temps dure la révolution de la Terre autour du Soleil ?",
+        "type": "qcm",
+        "options": [
+          "24 heures",
+          "1 mois",
+          "365 jours et 6 heures (1 an)",
+          "10 ans"
+        ],
+        "answer": 2,
+        "explanation": "Ce mouvement définit la durée de l'année. Les 6 heures supplémentaires s'accumulent pour donner une année bissextile (366 jours) tous les 4 ans."
+      },
+      {
+        "id": "q5",
+        "text": "Que provoque le mouvement de révolution de la Terre (associé à l'inclinaison de son axe) ?",
+        "type": "qcm",
+        "options": [
+          "Le jour et la nuit",
+          "L'alternance des saisons",
+          "Les marées océaniques",
+          "Les phases de la lune"
+        ],
+        "answer": 1,
+        "explanation": "La révolution de la Terre et son inclinaison modifient l'ensoleillement au cours de l'année, ce qui crée les saisons (été, hiver...)."
+      }
+    ]
+  },
+  "Fiche_Lecon15_Population_et_environnement_local": {
+    "title": "Population et environnement local",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la population d'une localité ?",
+        "type": "qcm",
+        "options": [
+          "Le nombre d'animaux sauvages",
+          "L'ensemble des personnes (habitants) qui vivent dans cette localité",
+          "L'ensemble des bâtiments construits",
+          "La taille du territoire en km²"
+        ],
+        "answer": 1,
+        "explanation": "La population désigne l'ensemble des êtres humains habitant sur un territoire donné (un village, une ville, un pays)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on l'opération qui consiste à compter tous les habitants d'un pays ?",
+        "type": "qcm",
+        "options": [
+          "Une élection",
+          "Un sondage",
+          "Le recensement général de la population",
+          "Une loterie"
+        ],
+        "answer": 2,
+        "explanation": "Le recensement (comme le RGPH en Côte d'Ivoire) permet de connaître le nombre exact d'habitants, leur âge, leur sexe, etc."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si la natalité (naissances) est plus forte que la mortalité (décès), la population augmente.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est ce qu'on appelle l'accroissement naturel positif. Plus de bébés naissent que de gens ne meurent."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l'exode rural ?",
+        "type": "qcm",
+        "options": [
+          "Le départ des citadins vers la campagne",
+          "Le départ massif des habitants des villages vers les grandes villes",
+          "Le fait de voyager à l'étranger",
+          "Une maladie des plantes"
+        ],
+        "answer": 1,
+        "explanation": "L'exode rural est la migration des populations de la campagne vers la ville (souvent pour chercher du travail ou de meilleures conditions de vie)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'une des conséquences d'une croissance trop rapide de la population dans une ville ?",
+        "type": "qcm",
+        "options": [
+          "Il y a trop de logements disponibles",
+          "Problèmes de chômage, d'insécurité, et création de bidonvilles",
+          "La ville devient plus silencieuse",
+          "La baisse des impôts"
+        ],
+        "answer": 1,
+        "explanation": "Quand la population augmente très vite, les infrastructures (écoles, hôpitaux, logements) ne suffisent plus, entraînant chômage et bidonvilles."
+      }
+    ]
+  },
+  "Fiche_Lecon3_Les_sources_d_information_et_la_dignite_humaine_en_temps_de_guerre_ou_de_violence": {
+    "title": "Information et dignité humaine",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En temps de guerre ou de crise, pourquoi faut-il faire attention aux informations reçues ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'elles sont toujours vraies",
+          "Parce qu'il y a souvent des rumeurs, de la désinformation ou de la propagande",
+          "Parce qu'il n'y a plus de journalistes",
+          "Parce que l'information n'est pas importante"
+        ],
+        "answer": 1,
+        "explanation": "Pendant une crise, certaines personnes diffusent de fausses informations (fake news) pour manipuler l'opinion ou créer la panique."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la dignité humaine ?",
+        "type": "qcm",
+        "options": [
+          "Le fait d'avoir beaucoup d'argent",
+          "Le respect absolu dû à chaque être humain, quelles que soient ses origines ou sa situation",
+          "Le fait d'être fort",
+          "Un diplôme universitaire"
+        ],
+        "answer": 1,
+        "explanation": "La dignité humaine est le principe selon lequel chaque personne mérite le respect simplement parce qu'elle est humaine. Elle est inviolable."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les prisonniers de guerre n'ont aucun droit et peuvent être torturés.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le Droit International Humanitaire (comme les conventions de Genève) protège la dignité et la vie de toutes les victimes de guerre, y compris les prisonniers."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit faire un bon citoyen avant de partager une nouvelle choquante sur les réseaux sociaux ?",
+        "type": "qcm",
+        "options": [
+          "La partager immédiatement à tout le monde",
+          "Insulter ceux qui ne sont pas d'accord",
+          "Vérifier la source et la fiabilité de l'information",
+          "La modifier pour qu'elle soit encore plus choquante"
+        ],
+        "answer": 2,
+        "explanation": "Il faut toujours croiser les sources et vérifier si l'information vient d'un média officiel ou sérieux avant de la diffuser."
+      },
+      {
+        "id": "q5",
+        "text": "Quel organisme international (avec une croix rouge sur fond blanc) est connu pour protéger la dignité humaine en temps de guerre ?",
+        "type": "qcm",
+        "options": [
+          "La FIFA",
+          "Le CICR (Comité International de la Croix-Rouge)",
+          "L'OMS",
+          "L'UNESCO"
+        ],
+        "answer": 1,
+        "explanation": "Le CICR a pour mission exclusive de protéger la vie et la dignité des victimes de conflits armés et de leur porter assistance."
+      }
+    ]
+  },
+  "Fiche_Lecon8_La_metallurgie_du_fer_en_Cote_d_Ivoire": {
+    "title": "La métallurgie du fer en Côte d'Ivoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la métallurgie du fer ?",
+        "type": "qcm",
+        "options": [
+          "La culture des plantes",
+          "L'ensemble des techniques permettant d'extraire le fer du minerai et de le travailler",
+          "La pêche industrielle",
+          "La taille de la pierre"
+        ],
+        "answer": 1,
+        "explanation": "La métallurgie est l'art de transformer le minerai (la roche contenant le métal) en objets en fer (outils, armes)."
+      },
+      {
+        "id": "q2",
+        "text": "Quel était le rôle du 'forgeron' dans les sociétés traditionnelles ivoiriennes ?",
+        "type": "qcm",
+        "options": [
+          "Il chantait des contes",
+          "Il était uniquement agriculteur",
+          "Il fabriquait les outils et les armes en fer, et avait un rôle social très respecté (voire craint)",
+          "Il construisait des bateaux"
+        ],
+        "answer": 2,
+        "explanation": "Le forgeron maîtrisait le feu et le fer. Il fabriquait les houes pour l'agriculture et les lances pour la guerre. C'était un personnage puissant et mystique."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'invention de la métallurgie du fer a ralenti le développement de l'agriculture.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est tout le contraire. Les outils en fer (houes, machettes) étant beaucoup plus solides que la pierre ou le bois, ils ont permis d'améliorer considérablement l'agriculture."
+      },
+      {
+        "id": "q4",
+        "text": "Où travaillait le forgeron pour chauffer le fer ?",
+        "type": "qcm",
+        "options": [
+          "Dans une cuisine",
+          "Dans une forge (avec un foyer et des soufflets)",
+          "Dans un champ",
+          "Dans une grotte glacée"
+        ],
+        "answer": 1,
+        "explanation": "La forge est l'atelier du forgeron. Il y utilise des soufflets pour attiser le feu et atteindre les très hautes températures nécessaires."
+      },
+      {
+        "id": "q5",
+        "text": "Comment le travail du fer a-t-il modifié la société ?",
+        "type": "qcm",
+        "options": [
+          "Il n'a rien changé",
+          "Il a donné plus de pouvoir aux populations qui possédaient des armes en fer",
+          "Il a fait disparaître les arbres",
+          "Il a forcé les gens à redevenir nomades"
+        ],
+        "answer": 1,
+        "explanation": "La maîtrise du fer a donné une supériorité militaire et économique aux peuples qui la possédaient."
+      }
+    ]
+  },
+  "Fiche_Lecon12_L_interrelation_entre_les_sols_le_climat_et_la_vegetation": {
+    "title": "Sols, climat et végétation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la relation entre le climat et la végétation ?",
+        "type": "qcm",
+        "options": [
+          "Aucune relation",
+          "Le climat détermine le type de végétation qui pousse dans une région",
+          "La végétation décide du climat de la planète entière",
+          "Il pleut parce qu'il y a des arbres"
+        ],
+        "answer": 1,
+        "explanation": "Le climat (pluies et températures) impose la végétation. Ex: Beaucoup d'eau et de chaleur = Forêt dense. Manque d'eau = Désert."
+      },
+      {
+        "id": "q2",
+        "text": "En Côte d'Ivoire, quel type de végétation trouve-t-on dans le Sud, où le climat est très humide (équatorial) ?",
+        "type": "qcm",
+        "options": [
+          "Le désert",
+          "La savane",
+          "La forêt dense",
+          "La toundra"
+        ],
+        "answer": 2,
+        "explanation": "Les fortes précipitations du Sud favorisent la croissance d'arbres très grands et rapprochés : c'est la forêt dense."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les racines des plantes protègent le sol contre l'érosion (la destruction du sol par l'eau et le vent).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les racines retiennent la terre. Quand on détruit la forêt (déforestation), le sol s'appauvrit et est emporté par les pluies."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle végétation est caractéristique du climat tropical sec (au Nord de la Côte d'Ivoire) ?",
+        "type": "qcm",
+        "options": [
+          "La mangrove",
+          "La savane (hautes herbes et quelques arbres clairsemés)",
+          "La forêt équatoriale",
+          "La steppe de glace"
+        ],
+        "answer": 1,
+        "explanation": "Avec une longue saison sèche, la forêt dense laisse place à la savane."
+      },
+      {
+        "id": "q5",
+        "text": "Comment le sol influence-t-il la végétation ?",
+        "type": "qcm",
+        "options": [
+          "Il ne l'influence pas du tout",
+          "Un sol riche et profond permet à une végétation abondante de se développer",
+          "Le sol brûle les plantes",
+          "Il transforme les arbres en roches"
+        ],
+        "answer": 1,
+        "explanation": "Les plantes puisent l'eau et les sels minéraux dans le sol. La richesse du sol est donc déterminante pour la flore."
+      }
+    ]
+  },
+  "Fiche_Lecon16_L_homme_et_le_cycle_de_l_eau": {
+    "title": "L'homme et le cycle de l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'évaporation dans le cycle de l'eau ?",
+        "type": "qcm",
+        "options": [
+          "La pluie qui tombe",
+          "Le passage de l'eau liquide (océans, fleuves) à l'état de gaz (vapeur) sous l'effet du soleil",
+          "L'eau qui gèle",
+          "L'eau qui rentre dans le sol"
+        ],
+        "answer": 1,
+        "explanation": "Sous l'action de la chaleur du Soleil, l'eau liquide s'évapore et devient de la vapeur d'eau invisible dans l'atmosphère."
+      },
+      {
+        "id": "q2",
+        "text": "Comment se forment les nuages ?",
+        "type": "qcm",
+        "options": [
+          "Par la fumée des usines",
+          "Par la condensation de la vapeur d'eau en fines gouttelettes quand elle refroidit en altitude",
+          "Par les avions",
+          "Ce sont des morceaux de coton"
+        ],
+        "answer": 1,
+        "explanation": "En s'élevant, l'air chaud et humide se refroidit. La vapeur d'eau se condense (redevient liquide) pour former les nuages."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Toute l'eau qui tombe sur la terre (précipitations) retourne immédiatement dans l'océan.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Une partie ruisselle vers les cours d'eau, une autre s'infiltre dans le sol pour former les nappes phréatiques, et une partie s'évapore à nouveau."
+      },
+      {
+        "id": "q4",
+        "text": "Comment l'homme perturbe-t-il le cycle naturel de l'eau ?",
+        "type": "qcm",
+        "options": [
+          "En buvant de l'eau",
+          "Par la pollution (usines, pesticides) et la surexploitation des nappes phréatiques",
+          "En regardant la mer",
+          "En se lavant"
+        ],
+        "answer": 1,
+        "explanation": "L'homme pollue les cours d'eau et les nappes souterraines, et consomme parfois plus d'eau que la nature ne peut en renouveler."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit faire l'homme pour préserver la ressource en eau ?",
+        "type": "qcm",
+        "options": [
+          "La gaspiller",
+          "Épurer les eaux usées et éviter le gaspillage",
+          "Boire de l'eau salée",
+          "Boucher les rivières"
+        ],
+        "answer": 1,
+        "explanation": "Traiter les eaux sales avant de les rejeter dans la nature et économiser l'eau au quotidien sont des gestes essentiels."
+      }
+    ]
+  },
+  "Fiche_Lecon17_L_importance_de_l_impot_dans_le_developpement_de_ma_region": {
+    "title": "L'importance de l'impôt",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'impôt ?",
+        "type": "qcm",
+        "options": [
+          "Un cadeau donné par l'État",
+          "Une somme d'argent obligatoire versée par les citoyens et les entreprises à l'État ou à la commune",
+          "Une amende pour mauvaise conduite",
+          "Un salaire"
+        ],
+        "answer": 1,
+        "explanation": "L'impôt est une contribution financière obligatoire exigée des citoyens pour financer les dépenses publiques."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert principalement l'argent récolté par les impôts dans une région ?",
+        "type": "qcm",
+        "options": [
+          "À enrichir le maire personnellement",
+          "À payer des vacances à tout le monde",
+          "À financer les infrastructures publiques (écoles, hôpitaux, routes, éclairage)",
+          "À organiser des fêtes privées"
+        ],
+        "answer": 2,
+        "explanation": "L'impôt permet le développement de la région en finançant les services publics qui profitent à toute la population."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Payer ses impôts est un devoir citoyen.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le paiement de l'impôt est un devoir civique (une obligation) défini par la loi pour participer à la solidarité nationale."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si les citoyens refusent de payer leurs impôts (incivisme fiscal) ?",
+        "type": "qcm",
+        "options": [
+          "La région se développe plus vite",
+          "L'État ou la commune n'a plus d'argent pour entretenir les écoles, les routes ou ramasser les ordures",
+          "L'argent pousse sur les arbres",
+          "Les autres pays paient à leur place"
+        ],
+        "answer": 1,
+        "explanation": "Sans recettes fiscales, l'État ne peut plus assurer ses missions de base, ce qui freine le développement du pays ou de la région."
+      },
+      {
+        "id": "q5",
+        "text": "Qui est chargé de collecter les impôts au nom de l'État ?",
+        "type": "qcm",
+        "options": [
+          "La police",
+          "Les pompiers",
+          "L'administration fiscale (les services des impôts)",
+          "Les professeurs"
+        ],
+        "answer": 2,
+        "explanation": "C'est la Direction Générale des Impôts (DGI) qui a pour mission de calculer et de récolter les impôts."
+      }
+    ]
+  }
+}

@@ -1,0 +1,632 @@
+{
+  "Fiche_L1_DROITS_DEVELOPPEMENT_PARTICIPATION_ENFANT": {
+    "title": "Droits, développement et participation de l'enfant",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le droit au développement pour un enfant ?",
+        "type": "qcm",
+        "options": ["Le droit d'avoir un téléphone portable", "Le droit à l'éducation, aux loisirs, au jeu, et à un niveau de vie suffisant pour s'épanouir (santé, alimentation)", "Le droit de travailler à 10 ans", "Le droit de ne pas aller à l'école"],
+        "answer": 1,
+        "explanation": "L'État et les parents doivent fournir les conditions matérielles, spirituelles et morales nécessaires au développement physique et mental de l'enfant."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie le 'droit à la participation' selon la Convention relative aux droits de l'enfant ?",
+        "type": "qcm",
+        "options": ["L'enfant a le droit d'exprimer librement son opinion sur les questions qui le concernent (dans la famille, à l'école) et d'être écouté", "L'enfant décide à la place des parents", "L'enfant a le droit de voter aux élections présidentielles", "L'enfant peut participer aux guerres"],
+        "answer": 0,
+        "explanation": "La participation signifie prendre part activement à la vie de sa communauté selon son âge et sa maturité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les enfants ont le droit de s'associer (créer un club au collège) et de s'informer librement, tant que cela respecte la loi.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'exercice du droit d'association et d'expression."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la conséquence si l'enfant est privé de son droit à l'éducation (non scolarisation) ?",
+        "type": "qcm",
+        "options": ["Il aura plus de temps pour jouer", "Cela compromet gravement son avenir, son épanouissement intellectuel et professionnel, le condamnant souvent à la pauvreté", "Il deviendra obligatoirement riche", "Cela n'a pas d'importance"],
+        "answer": 1,
+        "explanation": "L'éducation est le socle du développement personnel."
+      },
+      {
+        "id": "q5",
+        "text": "Quel comportement l'enfant doit-il adopter en retour de ses droits ?",
+        "type": "qcm",
+        "options": ["Il doit être capricieux", "Il a le devoir de respecter ses parents, ses encadreurs, travailler à l'école et respecter les droits des autres enfants", "Il doit ignorer la loi", "Il n'a aucun devoir"],
+        "answer": 1,
+        "explanation": "Chaque droit est assorti d'un devoir. La participation de l'enfant doit être responsable et respectueuse."
+      }
+    ]
+  },
+  "Fiche_L2_PRINCIPES_DROITS_HOMME": {
+    "title": "Les principes des droits de l'Homme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel texte fondamental, adopté en 1948 par l'ONU, sert de référence mondiale pour les droits humains ?",
+        "type": "qcm",
+        "options": ["La Constitution Ivoirienne", "La Déclaration Universelle des Droits de l'Homme (DUDH)", "Le Code Pénal", "Le règlement intérieur du collège"],
+        "answer": 1,
+        "explanation": "La DUDH affirme que 'Tous les êtres humains naissent libres et égaux en dignité et en droits'."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie le principe de 'l'universalité' des Droits de l'Homme ?",
+        "type": "qcm",
+        "options": ["Ils ne s'appliquent qu'en Europe", "Ils s'appliquent à tous les êtres humains, partout dans le monde, sans aucune distinction (race, sexe, religion)", "Ils s'appliquent seulement aux adultes", "Ils ne s'appliquent que sur la Terre et la Lune"],
+        "answer": 1,
+        "explanation": "Universel signifie 'pour tout le monde', partout."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les droits de l'homme sont 'inaliénables', ce qui veut dire qu'on ne peut pas les retirer ou les vendre à une personne.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Même un prisonnier garde certains droits fondamentaux (droit à la vie, ne pas être torturé)."
+      },
+      {
+        "id": "q4",
+        "text": "Le droit à la vie, la liberté d'expression et l'interdiction de l'esclavage font partie de quelle catégorie de droits ?",
+        "type": "qcm",
+        "options": ["Les droits de l'enfant", "Les droits civils et politiques", "Les droits économiques", "Les droits culturels"],
+        "answer": 1,
+        "explanation": "Ils garantissent la liberté individuelle et la sécurité face à l'État."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle institution ou instrument protège ces droits en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": ["Seulement la police", "La Constitution ivoirienne (la loi suprême) et la Commission Nationale des Droits de l'Homme (CNDHCI)", "Le directeur de l'école", "Le Ministère des Sports"],
+        "answer": 1,
+        "explanation": "La loi nationale intègre ces principes internationaux pour les faire respecter localement."
+      }
+    ]
+  },
+  "Fiche_L3_PROTECTION_VICTIMES_CONFLITS": {
+    "title": "Protection des victimes de conflits",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment appelle-t-on l'ensemble des règles internationales (comme les Conventions de Genève) qui cherchent à limiter les effets des guerres et à protéger les personnes vulnérables ?",
+        "type": "qcm",
+        "options": ["Le Code de la route", "Le Droit International Humanitaire (DIH)", "Le Droit de l'Enfant", "Le Droit Pénal"],
+        "answer": 1,
+        "explanation": "Le DIH (aussi appelé droit de la guerre) s'applique uniquement en cas de conflit armé."
+      },
+      {
+        "id": "q2",
+        "text": "Selon le DIH, qui sont les personnes principalement protégées (les personnes hors de combat) pendant une guerre ?",
+        "type": "qcm",
+        "options": ["Les généraux", "Les civils (femmes, enfants, vieillards), les blessés, les malades et les prisonniers de guerre", "Seulement les soldats armés", "Les politiciens"],
+        "answer": 1,
+        "explanation": "Il est formellement interdit d'attaquer ces personnes."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Même en temps de guerre, il est interdit de bombarder des hôpitaux, des écoles ou des ambulances portant l'emblème de la Croix-Rouge.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Les biens de caractère civil et les secours médicaux sont protégés par le droit international."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle organisation internationale humanitaire neutre intervient souvent dans le monde entier pour soigner les blessés de guerre et visiter les prisonniers ?",
+        "type": "qcm",
+        "options": ["L'Organisation Mondiale du Commerce", "Le Comité International de la Croix-Rouge (CICR)", "L'Unesco", "La FIFA"],
+        "answer": 1,
+        "explanation": "Le CICR a été créé par le Suisse Henry Dunant spécifiquement pour soulager les souffrances en temps de guerre."
+      },
+      {
+        "id": "q5",
+        "text": "Quel principe fondamental guide l'action de la Croix-Rouge sur un champ de bataille ?",
+        "type": "qcm",
+        "options": ["L'impartialité (secourir tous les blessés sans distinction de camp, d'ethnie ou de religion)", "La vengeance", "L'attaque", "La corruption"],
+        "answer": 0,
+        "explanation": "Un médecin humanitaire soigne de la même manière le soldat allié et le soldat ennemi blessé."
+      }
+    ]
+  },
+  "Fiche_L4_DROITS_DEVOIRS_CITOYEN": {
+    "title": "Droits et devoirs du citoyen",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un citoyen ?",
+        "type": "qcm",
+        "options": ["Un touriste étranger", "Un habitant d'une ville", "Une personne reconnue comme membre d'un État (ex: la Côte d'Ivoire) qui bénéficie de droits civiques et politiques, et qui a des devoirs envers cet État", "Un enfant de moins de 10 ans"],
+        "answer": 2,
+        "explanation": "La nationalité confère le statut de citoyen, qui s'exerce pleinement à la majorité (droit de vote)."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces actes est un DEVOIR pour un bon citoyen ?",
+        "type": "qcm",
+        "options": ["Détruire les feux tricolores", "Payer ses impôts et respecter les lois de la République", "Ne pas aller voter", "Créer une association"],
+        "answer": 1,
+        "explanation": "Le paiement des impôts et le respect des lois assurent le fonctionnement et la paix du pays."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le vote (participer aux élections) est un droit civique et politique du citoyen majeur.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le droit d'élire ses dirigeants (ou d'être élu) est la base de la démocratie."
+      },
+      {
+        "id": "q4",
+        "text": "Parmi ces propositions, laquelle représente un DROIT garanti par la Constitution au citoyen ?",
+        "type": "qcm",
+        "options": ["Le droit à la santé, à l'éducation, à l'égalité devant la loi et la liberté d'expression", "Le droit de voler", "Le droit de ne pas payer d'impôts", "Le droit de faire justice soi-même"],
+        "answer": 0,
+        "explanation": "L'État a l'obligation de protéger ces droits pour chaque citoyen."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que l'incivisme ?",
+        "type": "qcm",
+        "options": ["Aider une personne âgée", "Le comportement d'un citoyen qui ne respecte pas les lois, les biens publics ou l'environnement (ex: jeter des ordures dans la rue)", "Voter aux élections", "Payer ses impôts"],
+        "answer": 1,
+        "explanation": "L'incivisme est le contraire du civisme (qui est le respect de la chose publique)."
+      }
+    ]
+  },
+  "Fiche_L5_POUVOIRS_POLITIQUES_CI": {
+    "title": "Les pouvoirs politiques en CI",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans une République démocratique comme la Côte d'Ivoire, pour éviter la dictature, on sépare les pouvoirs. Combien y a-t-il de grands pouvoirs ?",
+        "type": "qcm",
+        "options": ["2 (Police et Gendarmerie)", "3 (Exécutif, Législatif, Judiciaire)", "1 (Le Roi)", "5"],
+        "answer": 1,
+        "explanation": "C'est la théorie de la séparation des pouvoirs de Montesquieu."
+      },
+      {
+        "id": "q2",
+        "text": "Qui incarne le Pouvoir Exécutif (celui qui dirige le pays et exécute les lois) au plus haut niveau en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": ["Le Président de l'Assemblée Nationale", "Le Président de la République (aidé par le Vice-président et le Gouvernement / Premier Ministre)", "Le Président de la Cour Suprême", "Le Maire d'Abidjan"],
+        "answer": 1,
+        "explanation": "Le Président est le Chef de l'État et le chef de l'exécutif."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le Pouvoir Législatif (celui qui vote les lois et contrôle le gouvernement) est détenu par le Parlement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. En Côte d'Ivoire, le Parlement est composé de l'Assemblée Nationale (députés) et du Sénat (sénateurs)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le rôle du Pouvoir Judiciaire ?",
+        "type": "qcm",
+        "options": ["Construire des routes", "Voter les lois", "Rendre la justice, juger ceux qui ne respectent pas la loi et régler les conflits", "Nommer les ministres"],
+        "answer": 2,
+        "explanation": "Il est exercé par les juges, les tribunaux et les cours (ex: Cour Suprême, Conseil Constitutionnel)."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi est-il important que ces trois pouvoirs soient séparés ?",
+        "type": "qcm",
+        "options": ["Pour faire joli", "Pour qu'aucun individu ou groupe n'ait un pouvoir absolu (ils se contrôlent mutuellement)", "Pour que le Président décide de tout", "Pour coûter moins cher"],
+        "answer": 1,
+        "explanation": "La séparation garantit l'équilibre et protège les libertés des citoyens contre l'abus de pouvoir."
+      }
+    ]
+  },
+  "Fiche_L6_PRINCIPES_DEMOCRATIE_ASSOCIATIONS": {
+    "title": "La Démocratie et les associations",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la Démocratie selon sa définition célèbre ?",
+        "type": "qcm",
+        "options": ["Le gouvernement d'un seul homme", "Le gouvernement du peuple, par le peuple et pour le peuple", "Le pouvoir aux militaires", "Le pouvoir aux plus riches"],
+        "answer": 1,
+        "explanation": "Le peuple détient la souveraineté. Il l'exerce en choisissant ses représentants lors d'élections libres."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les principes fondamentaux de la vie démocratique dans un pays ou une association ?",
+        "type": "qcm",
+        "options": ["La violence et la tricherie", "La majorité a tort, la minorité a raison", "L'égalité de tous, le vote libre, la liberté d'expression, le respect de la majorité et la protection de la minorité", "L'obéissance aveugle au chef"],
+        "answer": 2,
+        "explanation": "Ces règles garantissent une participation juste de tous."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une association (comme le club environnement de l'école), les décisions doivent être prises par le président seul, sans consulter les membres.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Une association fonctionne démocratiquement. Les décisions importantes sont votées par les membres lors d'une Assemblée Générale."
+      },
+      {
+        "id": "q4",
+        "text": "Lequel de ces actes est un comportement démocratique dans une classe ou une réunion ?",
+        "type": "qcm",
+        "options": ["Imposer son idée par la force", "Écouter l'avis des autres, débattre calmement et accepter le résultat du vote", "Insulter ceux qui ne sont pas d'accord", "Refuser de parler"],
+        "answer": 1,
+        "explanation": "La tolérance et le dialogue sont la base du fonctionnement démocratique."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi crée-t-on une association (club de sport, mutuelle de village, ONG) ?",
+        "type": "qcm",
+        "options": ["Pour se faire de l'argent personnellement", "Pour se regrouper volontairement afin de réaliser un projet commun, défendre une cause ou s'entraider (sans but lucratif)", "Pour faire la guerre", "Pour contourner la loi"],
+        "answer": 1,
+        "explanation": "L'association permet d'unir les forces des citoyens pour le bien commun."
+      }
+    ]
+  },
+  "Fiche_L7_ENTENTE_PEUPLES_PAIX": {
+    "title": "Entente entre les peuples",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie le terme 'xénophobie' ?",
+        "type": "qcm",
+        "options": ["L'amour des animaux", "La peur, l'hostilité systématique ou la haine envers les étrangers", "La phobie des insectes", "Le rejet des jeunes"],
+        "answer": 1,
+        "explanation": "La xénophobie est un comportement intolérant qui détruit la cohésion sociale."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que le racisme ?",
+        "type": "qcm",
+        "options": ["Une course de voitures", "Une théorie dangereuse et fausse qui affirme qu'il existe des 'races' humaines supérieures à d'autres, justifiant les discriminations", "Le fait de préférer le riz au maïs", "Le respect de la loi"],
+        "answer": 1,
+        "explanation": "Le racisme est condamné par la Déclaration universelle des droits de l'homme, car tous les humains sont égaux en dignité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'intolérance (refus de la différence de religion, d'ethnie ou d'opinion) est une cause fréquente de guerre et de conflit.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le manque d'acceptation de l'autre engendre la violence."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle valeur est essentielle pour maintenir la paix et l'entente entre les différentes communautés vivant en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": ["La violence", "La tolérance (le respect de l'autre), la solidarité et le dialogue", "L'égoïsme", "L'exclusion"],
+        "answer": 1,
+        "explanation": "La diversité culturelle (multiples ethnies et nationalités) est une richesse si elle est vécue dans la tolérance."
+      },
+      {
+        "id": "q5",
+        "text": "Comment pouvez-vous, à votre niveau (à l'école), contribuer à l'entente entre les peuples ?",
+        "type": "qcm",
+        "options": ["En me moquant de l'accent ou du nom de mes camarades", "En formant un clan avec seulement ceux de mon village", "En acceptant de jouer et de travailler avec tous mes camarades sans distinction d'origine ou de religion", "En me battant à la récréation"],
+        "answer": 2,
+        "explanation": "La paix commence par les petits gestes du quotidien de chacun."
+      }
+    ]
+  },
+  "Fiche_L8_COMPORTEMENTS_ENGINS_DEUX_ROUES": {
+    "title": "Comportement (Engins à 2 roues)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'équipement de sécurité le plus indispensable (et obligatoire) pour le conducteur et le passager d'une moto ?",
+        "type": "qcm",
+        "options": ["Des lunettes de soleil", "Un casque homologué bien attaché", "Une radio", "Des gants en cuir"],
+        "answer": 1,
+        "explanation": "Le casque protège la tête (cerveau) des chocs mortels ou traumatisants en cas de chute."
+      },
+      {
+        "id": "q2",
+        "text": "Où le cycliste ou le motocycliste doit-il circuler sur la route ?",
+        "type": "qcm",
+        "options": ["Sur le trottoir au milieu des piétons", "Au milieu de la route pour gêner les voitures", "Sur la chaussée, le plus près possible du bord droit (ou sur la piste cyclable s'il y en a une)", "À gauche"],
+        "answer": 2,
+        "explanation": "Sauf pour doubler, ils doivent serrer à droite pour laisser passer les véhicules plus rapides en sécurité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : À vélo ou à moto, il est interdit de faire des acrobaties, de slalomer entre les voitures ou de s'accrocher à un camion en mouvement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Ces comportements imprudents sont la cause de très graves accidents de la circulation."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit faire un conducteur de deux-roues avant de tourner à gauche ou à droite à une intersection ?",
+        "type": "qcm",
+        "options": ["Fermer les yeux", "Tourner d'un coup", "Regarder derrière lui et indiquer clairement son intention à l'avance (tendre le bras ou mettre le clignotant)", "Crier fort"],
+        "answer": 2,
+        "explanation": "L'anticipation et la communication avec les autres usagers de la route permettent d'éviter les collisions."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles sont les conditions requises pour qu'un deux-roues motorisé (moto) soit autorisé à circuler la nuit ?",
+        "type": "qcm",
+        "options": ["Rouler très vite", "Être équipé de phares avant (feu blanc/jaune) et arrière (feu rouge) en bon état de marche, pour voir et être vu", "Avoir un pot d'échappement bruyant", "Avoir de la musique"],
+        "answer": 1,
+        "explanation": "Un deux-roues sans phare la nuit est un 'cercueil roulant', très difficile à voir pour les automobilistes."
+      }
+    ]
+  },
+  "Fiche_L9_ACTIVITES_GENERATRICES_REVENUS": {
+    "title": "Activités génératrices de revenus",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une 'Activité Génératrice de Revenus' (AGR) ?",
+        "type": "qcm",
+        "options": ["Faire du sport", "Une petite activité économique (commerce, artisanat, agriculture) initiée par un individu ou un groupe pour gagner de l'argent et subvenir à ses besoins", "Aller à l'école", "Dormir"],
+        "answer": 1,
+        "explanation": "Exemples : vendre des beignets, faire de l'élevage de poulets, coudre des vêtements. C'est le socle de l'entrepreneuriat."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi l'État et les ONG encouragent-ils les populations (surtout les femmes et les jeunes) à créer des AGR ?",
+        "type": "qcm",
+        "options": ["Pour les fatiguer", "Pour lutter contre la pauvreté, le chômage, et favoriser l'autonomie financière", "Pour les empêcher de voyager", "Pour vendre plus de marchandises importées"],
+        "answer": 1,
+        "explanation": "Les AGR permettent aux ménages pauvres de créer leur propre emploi et d'améliorer leurs conditions de vie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour réussir une AGR, il suffit de dépenser tout l'argent gagné immédiatement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Il faut gérer l'argent rigoureusement : réinvestir une partie dans l'activité, épargner (faire des économies), et utiliser le reste pour les besoins."
+      },
+      {
+        "id": "q4",
+        "text": "Comment un jeune ou un groupe de femmes peut-il trouver de l'argent pour démarrer sa petite activité (le capital de départ) ?",
+        "type": "qcm",
+        "options": ["Le voler", "Faire appel aux tontines, à l'épargne personnelle, ou aux microcrédits (IMF)", "Attendre que l'argent tombe du ciel", "Demander un million à la banque"],
+        "answer": 1,
+        "explanation": "La tontine ou les institutions de microfinance (coopératives d'épargne) sont très adaptées au financement des AGR."
+      },
+      {
+        "id": "q5",
+        "text": "Quel comportement de l'entrepreneur garantit souvent la pérennité de son AGR ?",
+        "type": "qcm",
+        "options": ["La paresse", "L'honnêteté envers les clients, l'innovation, le courage et la bonne tenue des comptes", "Fermer sa boutique souvent", "Insulter ses employés"],
+        "answer": 1,
+        "explanation": "Le sérieux et la fidélisation de la clientèle font la différence dans le secteur informel ou commercial."
+      }
+    ]
+  },
+  "Fiche_L10_COMPORTEMENTS_SEXUELS_RISQUES": {
+    "title": "Comportements sexuels à risques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un comportement sexuel 'à risques' ?",
+        "type": "qcm",
+        "options": ["Avoir des relations sexuelles protégées (avec préservatif)", "Un comportement (comme des rapports non protégés ou des partenaires multiples) qui expose la personne aux MST, au VIH/SIDA ou aux grossesses non désirées", "Parler de sexualité avec un médecin", "Refuser d'avoir des relations sexuelles"],
+        "answer": 1,
+        "explanation": "L'absence de protection ou l'imprudence lors des rapports sexuels constituent des prises de risques majeurs pour la santé."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie le sigle IST (ou MST) ?",
+        "type": "qcm",
+        "options": ["Information Scientifique et Technique", "Infection (ou Maladie) Sexuellement Transmissible", "Institut de Soins Traditionnels", "Interdiction Stricte au Travail"],
+        "answer": 1,
+        "explanation": "Exemples d'IST : la syphilis, la gonococcie (chaude-pisse), l'herpès, le chlamydia, et bien sûr le VIH."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'abstinence sexuelle (le fait d'attendre ou de ne pas avoir de rapports sexuels) est le moyen le plus sûr à 100% d'éviter les IST et les grossesses précoces.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est la méthode de prévention absolue, particulièrement recommandée pour les jeunes adolescents et les élèves."
+      },
+      {
+        "id": "q4",
+        "text": "Pour les personnes sexuellement actives, quel est l'unique moyen de se protéger efficacement contre les IST et le virus du SIDA (VIH) lors des rapports ?",
+        "type": "qcm",
+        "options": ["Prendre des antibiotiques après", "Utiliser correctement et systématiquement un préservatif (masculin ou féminin)", "Se laver immédiatement avec du savon", "La pilule contraceptive"],
+        "answer": 1,
+        "explanation": "Le préservatif (condom) forme une barrière physique qui empêche l'échange de fluides corporels contaminés. (La pilule protège de la grossesse, PAS des maladies)."
+      },
+      {
+        "id": "q5",
+        "text": "Si un jeune a un doute (boutons, douleurs, brûlures intimes, ou rapport à risque), que doit-il faire immédiatement ?",
+        "type": "qcm",
+        "options": ["Le cacher et avoir honte", "Se soigner seul avec des remèdes de la rue", "Se rendre dans un centre de santé ou une infirmerie scolaire pour consulter un professionnel et se faire dépister", "Prier pour que ça passe"],
+        "answer": 2,
+        "explanation": "Le dépistage précoce et le traitement médical (par un médecin) permettent de guérir de nombreuses IST et d'éviter des complications (comme la stérilité)."
+      }
+    ]
+  },
+  "Fiche_L11_GROSSESSES_PRECOCES": {
+    "title": "Les grossesses précoces",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'appelle-t-on une grossesse 'précoce' (ou grossesse en milieu scolaire) ?",
+        "type": "qcm",
+        "options": ["Une grossesse chez une femme de 30 ans", "Une grossesse qui survient chez une jeune fille (adolescente), souvent alors qu'elle est encore à l'école et que son corps n'est pas totalement mature", "Une grossesse qui dure 10 mois", "Une grossesse gémellaire"],
+        "answer": 1,
+        "explanation": "Le phénomène des grossesses précoces est un grave problème sociétal en Côte d'Ivoire."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les conséquences fréquentes d'une grossesse précoce sur la vie scolaire de la jeune fille ?",
+        "type": "qcm",
+        "options": ["Elle obtient de meilleures notes", "L'abandon scolaire (déscolarisation), l'échec aux examens et le renvoi fréquent par la famille", "Elle reçoit une bourse", "Elle devient directrice"],
+        "answer": 1,
+        "explanation": "La honte, les difficultés physiques et le manque de soutien forcent très souvent la jeune fille à quitter l'école, compromettant son avenir."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une grossesse chez une adolescente (ex: 14 ans) ne présente aucun danger pour sa santé et celle du bébé.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Le corps d'une jeune adolescente n'est pas toujours prêt pour l'accouchement. Il y a de grands risques médicaux (déchirures, hémorragies, décès de la mère ou du bébé)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles sont les causes fréquentes des grossesses en milieu scolaire ?",
+        "type": "qcm",
+        "options": ["Le manque de bus", "L'ignorance, la pauvreté (recherche du 'génie' ou protecteur financier), la pression des garçons ou d'adultes, le manque d'éducation sexuelle", "Le fait de trop étudier", "Le sport"],
+        "answer": 1,
+        "explanation": "Les filles se laissent parfois berner par de fausses promesses matérielles ou subissent des pressions/violences."
+      },
+      {
+        "id": "q5",
+        "text": "Comment prévenir et lutter contre ce fléau à l'école ?",
+        "type": "qcm",
+        "options": ["Par le dialogue, l'abstinence, la sensibilisation (club anti-SIDA) et la concentration sur les études", "En renvoyant toutes les filles de l'école", "En interdisant aux filles de parler aux garçons", "En ne faisant rien"],
+        "answer": 0,
+        "explanation": "La priorité de l'élève reste ses études ('Zéro grossesse à l'école'). L'information et la fermeté ('savoir dire NON') sont essentielles."
+      }
+    ]
+  },
+  "Fiche_L12_ALCOOL_DROGUE_INSECURITE": {
+    "title": "Alcool, drogue et insécurité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'effet de la consommation de drogues (cannabis, cocaïne, tramadol) ou d'alcool sur le cerveau d'un jeune ?",
+        "type": "qcm",
+        "options": ["Elle le rend plus intelligent", "Elle modifie le fonctionnement du cerveau, entraîne une forte dépendance (addiction), une perte de mémoire et de concentration", "Elle donne une bonne vue", "Elle n'a aucun effet"],
+        "answer": 1,
+        "explanation": "Les substances psychoactives détruisent les cellules nerveuses (neurones)."
+      },
+      {
+        "id": "q2",
+        "text": "Conséquence scolaire : Que risque un élève qui consomme de l'alcool ou de la drogue ?",
+        "type": "qcm",
+        "options": ["Il est félicité par le directeur", "Baisse des résultats, absentéisme, indiscipline, bagarres et renvoi définitif de l'école", "Il devient délégué de classe", "Rien ne change"],
+        "answer": 1,
+        "explanation": "L'école est un lieu d'apprentissage incompatible avec les stupéfiants."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'usage, la détention ou la vente de drogues (stupéfiants) est un crime puni par la loi ivoirienne (prison).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le trafic ou la simple consommation de drogues conduisent la police à arrêter les contrevenants et la justice à les emprisonner."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le lien fréquent entre la drogue/alcool et l'insécurité (banditisme, phénomène des 'microbes') ?",
+        "type": "qcm",
+        "options": ["La drogue calme les gens", "Sous l'effet de ces produits, les jeunes perdent la raison et le contrôle de soi, deviennent très violents et agressent les honnêtes citoyens", "Il n'y a pas de lien", "La drogue donne envie d'aider les autres"],
+        "answer": 1,
+        "explanation": "L'alcool et la drogue lèvent les inhibitions, poussant aux viols, braquages et meurtres."
+      },
+      {
+        "id": "q5",
+        "text": "Comment un jeune peut-il résister à l'influence de ses camarades (la pression des pairs) qui l'incitent à fumer ou boire ?",
+        "type": "qcm",
+        "options": ["En acceptant juste une fois pour faire plaisir", "En ayant une forte personnalité, en osant dire NON fermement, et en s'éloignant des mauvaises fréquentations", "En fuyant le pays", "En pleurant"],
+        "answer": 1,
+        "explanation": "Il faut savoir s'affirmer et choisir des amis positifs (sport, culture) pour préserver sa santé et son avenir."
+      }
+    ]
+  },
+  "Fiche_L13_ASSAINISSEMENT_HYGIENE_PUBLIQUE": {
+    "title": "Assainissement et hygiène publique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'assainissement ?",
+        "type": "qcm",
+        "options": ["Laver ses vêtements", "L'ensemble des techniques (égouts, caniveaux) permettant d'évacuer et de traiter les eaux usées et les excréments sans polluer l'environnement", "Parfumer la maison", "Construire des routes"],
+        "answer": 1,
+        "explanation": "L'assainissement empêche les eaux sales (toilettes, vaisselle, pluie) de stagner dans la rue ou les cours."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi ne faut-il pas jeter de déchets solides (sachets plastiques, ordures) dans les caniveaux (les 'rigoles') ?",
+        "type": "qcm",
+        "options": ["Car ça bouche les caniveaux, ce qui provoque des inondations graves et la stagnation d'eaux puantes propices aux moustiques", "Pour que les balayeurs aient du travail", "Parce que c'est interdit par le directeur", "Parce que les poissons aiment le plastique"],
+        "answer": 0,
+        "explanation": "Le caniveau sert UNIQUEMENT à évacuer l'eau (de pluie ou usée), pas à stocker des déchets solides."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Uriner ou déféquer à l'air libre (dans la nature ou derrière les maisons) est un danger grave pour la santé de toute la communauté.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Les matières fécales sont emportées par la pluie, polluent l'eau de boisson (puits, rivières) et transmettent des maladies diarrhéiques (choléra, typhoïde)."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit-on construire obligatoirement dans chaque concession (cour) pour respecter l'hygiène ?",
+        "type": "qcm",
+        "options": ["Un puits et une fosse septique (ou des latrines/toilettes fermées)", "Un garage pour voiture", "Une piscine", "Une grande antenne télé"],
+        "answer": 0,
+        "explanation": "L'utilisation de latrines (w.c.) et le traitement des eaux de puisard sont la base de l'hygiène."
+      },
+      {
+        "id": "q5",
+        "text": "Le lavage régulier des mains avec de l'eau propre et du savon (surtout au sortir des toilettes et avant de manger) permet d'éviter quelles maladies ?",
+        "type": "qcm",
+        "options": ["Le paludisme et la fièvre jaune", "Les maladies liées au 'péril fécal' (diarrhée, choléra, vers intestinaux) et beaucoup d'infections respiratoires", "Les fractures", "Le SIDA"],
+        "answer": 1,
+        "explanation": "Le lavage des mains est la barrière hygiénique la plus simple, la moins chère et la plus efficace."
+      }
+    ]
+  },
+  "Fiche_L14_GESTION_ORDURES_MENAGERES": {
+    "title": "La gestion des ordures ménagères",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que sont les ordures ménagères ?",
+        "type": "qcm",
+        "options": ["Les déchets industriels et toxiques des usines", "Les déchets générés au quotidien par la vie dans une maison (restes de nourriture, emballages, sachets, épluchures, papiers)", "Les déchets spatiaux", "L'eau sale de la douche"],
+        "answer": 1,
+        "explanation": "C'est tout ce que nous jetons tous les jours de notre maison."
+      },
+      {
+        "id": "q2",
+        "text": "Où faut-il stocker les ordures à la maison avant leur ramassage ?",
+        "type": "qcm",
+        "options": ["Dans la cour à l'air libre", "Directement dans la rue", "Dans une poubelle fermée (avec couvercle) pour éviter les mouches et les odeurs", "Sous le lit"],
+        "answer": 2,
+        "explanation": "La poubelle avec couvercle empêche les vecteurs de maladies (rats, mouches, cafards) d'y accéder."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Il est conseillé de créer des dépotoirs sauvages (tas d'ordures) dans les quartiers non lotis ou près des écoles.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Les dépotoirs sauvages sont très dangereux : dégagement de gaz toxiques (fumée), multiplication de maladies, et enlaidissement de la ville."
+      },
+      {
+        "id": "q4",
+        "text": "Qui est généralement chargé du ramassage (collecte) et du traitement final des ordures ménagères dans une commune urbaine ?",
+        "type": "qcm",
+        "options": ["Le chef du village", "La Mairie, souvent associée à des sociétés de nettoyage ou pré-collecteurs (les jeunes à charrette)", "Le Président", "La Police"],
+        "answer": 1,
+        "explanation": "Les ordures doivent être transportées vers une décharge officielle et contrôlée."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la meilleure action 'éco-citoyenne' concernant les déchets ?",
+        "type": "qcm",
+        "options": ["Les jeter par la fenêtre de la voiture", "Les réduire, les trier et essayer de les recycler ou les réutiliser (le principe des 3R : Réduire, Réutiliser, Recycler)", "Les brûler au milieu de la cour", "Ne plus rien manger"],
+        "answer": 1,
+        "explanation": "Par exemple, ne pas utiliser de sachets plastiques uniques, utiliser les épluchures pour faire du compost (engrais naturel)."
+      }
+    ]
+  }
+}

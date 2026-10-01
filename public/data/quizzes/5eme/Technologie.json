@@ -1,0 +1,272 @@
+{
+  "Fiche_L1_ELEMENTS_PERFORMANCE_ORDINATEUR": {
+    "title": "Performances de l'ordinateur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel composant est souvent considéré comme le 'cerveau' de l'ordinateur et détermine en grande partie sa vitesse de calcul ?",
+        "type": "qcm",
+        "options": ["Le disque dur", "Le processeur (ou CPU)", "L'écran", "La souris"],
+        "answer": 1,
+        "explanation": "Le processeur exécute les instructions des programmes. Plus il est puissant (fréquence en GHz, nombre de cœurs), plus l'ordinateur est rapide."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert la mémoire vive (RAM) dans un ordinateur ?",
+        "type": "qcm",
+        "options": ["À stocker définitivement les photos", "À refroidir le processeur", "À stocker temporairement les données des programmes en cours d'utilisation pour un accès très rapide", "À imprimer des documents"],
+        "answer": 2,
+        "explanation": "Une grande quantité de RAM permet à l'ordinateur de faire fonctionner plusieurs applications en même temps sans ralentir."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un disque dur SSD est plus rapide qu'un disque dur mécanique traditionnel (HDD).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le SSD utilise de la mémoire flash (sans pièce mobile), ce qui accélère considérablement le démarrage de l'ordinateur et le chargement des fichiers."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle unité de mesure utilise-t-on pour évaluer la capacité de stockage d'un disque dur ?",
+        "type": "qcm",
+        "options": ["Le Hertz (Hz)", "Le Volt (V)", "Le Gigaoctet (Go) ou Téraoctet (To)", "Le Pixel"],
+        "answer": 2,
+        "explanation": "Les octets mesurent la quantité de données numériques qu'on peut enregistrer."
+      },
+      {
+        "id": "q5",
+        "text": "Quel élément graphique soulage le processeur lors de l'affichage d'images complexes (comme les jeux 3D) ?",
+        "type": "qcm",
+        "options": ["La carte graphique (ou GPU)", "Le clavier", "L'imprimante", "La carte réseau"],
+        "answer": 0,
+        "explanation": "La carte graphique s'occupe des calculs liés à l'affichage, améliorant les performances visuelles globales."
+      }
+    ]
+  },
+  "Fiche_L2_GESTION_FICHIERS_DOSSIERS": {
+    "title": "Gestion des fichiers et dossiers",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un fichier en informatique ?",
+        "type": "qcm",
+        "options": ["Un conteneur pour ranger d'autres dossiers", "Un ensemble de données (texte, image, son, vidéo) enregistré sous un nom spécifique", "Un logiciel antivirus", "Une touche du clavier"],
+        "answer": 1,
+        "explanation": "Le fichier est le document lui-même (ex: ma_photo.jpg, mon_texte.docx)."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert un dossier (ou répertoire) ?",
+        "type": "qcm",
+        "options": ["À imprimer des feuilles", "À créer de l'électricité", "À classer et organiser les fichiers (et d'autres sous-dossiers) pour les retrouver facilement", "À écouter de la musique"],
+        "answer": 2,
+        "explanation": "Un dossier agit comme une chemise ou un classeur dans lequel on range des documents informatiques."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'arborescence est la structure hiérarchique (en forme d'arbre) dans laquelle sont organisés les dossiers et sous-dossiers.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Par exemple, le disque C: contient le dossier 'Utilisateurs', qui contient le dossier 'Documents', etc."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle action permet de changer le nom d'un fichier ou d'un dossier existant sans le supprimer ?",
+        "type": "qcm",
+        "options": ["Copier", "Renommer", "Couper", "Coller"],
+        "answer": 1,
+        "explanation": "En faisant un clic droit sur le fichier, on peut choisir 'Renommer' pour lui donner un nouveau nom."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la différence entre 'Copier' et 'Couper' un fichier ?",
+        "type": "qcm",
+        "options": ["Aucune différence", "'Copier' efface le fichier original, 'Couper' le duplique", "'Copier' crée un double en gardant l'original à sa place, alors que 'Couper' déplace le fichier vers un nouvel emplacement", "'Copier' imprime, 'Couper' ferme l'ordinateur"],
+        "answer": 2,
+        "explanation": "Couper (suivi de Coller) équivaut à un déplacement. Copier (suivi de Coller) équivaut à une duplication."
+      }
+    ]
+  },
+  "Fiche_L3_MISE_EN_FORME_PARAGRAPHE": {
+    "title": "Mise en forme des paragraphes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un logiciel de traitement de texte, qu'est-ce que 'l'alignement' d'un paragraphe ?",
+        "type": "qcm",
+        "options": ["La taille des lettres", "La façon dont le texte est positionné par rapport aux marges (gauche, centré, droite, justifié)", "La couleur du texte", "L'impression du document"],
+        "answer": 1,
+        "explanation": "L'alignement donne sa structure visuelle au paragraphe sur la page."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie 'justifier' un paragraphe ?",
+        "type": "qcm",
+        "options": ["Le mettre en gras", "L'aligner uniquement à droite", "L'aligner à la fois sur la marge de gauche et la marge de droite (pour faire un bloc régulier)", "L'effacer"],
+        "answer": 2,
+        "explanation": "La justification étire légèrement les espaces entre les mots pour que les bords du texte soient droits des deux côtés, comme dans un livre ou un journal."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'interligne est l'espace vertical compris entre deux lignes de texte d'un même paragraphe.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. On peut augmenter l'interligne (ex: double interligne) pour aérer la lecture."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on l'espace vide que l'on ajoute parfois au début de la première ligne d'un paragraphe ?",
+        "type": "qcm",
+        "options": ["Le retrait de première ligne (ou alinéa)", "L'interligne", "La police", "L'espacement avant"],
+        "answer": 0,
+        "explanation": "L'alinéa marque visuellement le commencement d'une nouvelle idée ou d'un nouveau paragraphe."
+      },
+      {
+        "id": "q5",
+        "text": "À quoi servent les 'espacements avant et après' dans les propriétés d'un paragraphe ?",
+        "type": "qcm",
+        "options": ["À mettre des bordures autour du texte", "À espacer les lettres d'un mot", "À créer automatiquement de l'espace vide entre deux paragraphes consécutifs (sans avoir à appuyer plusieurs fois sur 'Entrée')", "À changer la couleur de fond"],
+        "answer": 2,
+        "explanation": "C'est la méthode professionnelle pour aérer un texte entre les différents paragraphes."
+      }
+    ]
+  },
+  "Fiche_L4_INSERTION_TABLEAUX": {
+    "title": "Insertion de tableaux (Texte)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est composé un tableau dans un logiciel de traitement de texte (comme Word) ?",
+        "type": "qcm",
+        "options": ["De cercles et de carrés", "De lignes (horizontales) et de colonnes (verticales) dont l'intersection forme des cellules", "De lettres majuscules", "De pages web"],
+        "answer": 1,
+        "explanation": "La cellule est la case individuelle dans laquelle on saisit le texte ou les nombres."
+      },
+      {
+        "id": "q2",
+        "text": "Comment fait-on pour créer un tableau de 3 colonnes et 4 lignes ?",
+        "type": "qcm",
+        "options": ["On dessine avec le stylo", "On va dans le menu Insertion > Tableau, et on sélectionne une grille de 3 cases en largeur sur 4 en hauteur", "On écrit 'Tableau 3x4'", "On appuie 12 fois sur Entrée"],
+        "answer": 1,
+        "explanation": "Le menu Insertion permet de générer automatiquement un tableau structuré selon le nombre de lignes et de colonnes souhaité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une fois le tableau inséré, on ne peut plus ajouter ni supprimer de colonnes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Le tableau est entièrement modifiable. On peut insérer de nouvelles colonnes à gauche/droite, ou supprimer des lignes, grâce au clic droit ou aux outils de tableau."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que 'fusionner des cellules' dans un tableau ?",
+        "type": "qcm",
+        "options": ["Colorer les cellules en jaune", "Regrouper plusieurs petites cellules adjacentes pour n'en former qu'une seule grande", "Effacer le texte à l'intérieur", "Couper le tableau en deux"],
+        "answer": 1,
+        "explanation": "La fusion est très utile pour créer un grand titre qui s'étale sur la largeur de plusieurs colonnes."
+      },
+      {
+        "id": "q5",
+        "text": "Comment peut-on modifier l'apparence visuelle (couleurs, bordures) d'un tableau pour le rendre plus esthétique ?",
+        "type": "qcm",
+        "options": ["En utilisant les 'Styles de tableau' (ou options de Création/Design) proposés par le logiciel", "C'est impossible, un tableau est toujours noir et blanc", "En augmentant la taille de la police", "En le copiant-collant dans Paint"],
+        "answer": 0,
+        "explanation": "Les outils de création permettent d'appliquer rapidement des bordures épaisses, des couleurs d'en-tête, etc."
+      }
+    ]
+  },
+  "Fiche_L5_INSERTION_IMAGES": {
+    "title": "Insertion d'images (Texte)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pourquoi insère-t-on une image dans un document texte ?",
+        "type": "qcm",
+        "options": ["Pour faire joli uniquement", "Pour illustrer le propos, rendre le document plus attractif ou apporter une information visuelle (schéma, graphique)", "Pour cacher du texte", "Pour alourdir l'ordinateur"],
+        "answer": 1,
+        "explanation": "L'image (illustration, photo) complète souvent le texte en facilitant la compréhension (ex: un exposé de S.V.T.)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment insère-t-on une image présente sur son ordinateur dans un document Word ?",
+        "type": "qcm",
+        "options": ["On la redessine à la souris", "Menu Insertion > Image > Cet appareil, puis on sélectionne le fichier de l'image", "On appuie sur la touche 'I'", "On clique droit sur le bureau"],
+        "answer": 1,
+        "explanation": "Le menu Insertion permet d'importer des fichiers images externes (JPG, PNG) dans le document."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour réduire la taille d'une image sans la déformer (garder les proportions), il faut glisser l'une de ses poignées d'angle (les coins).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Si on utilise les poignées situées sur les côtés en haut ou en bas, l'image sera écrasée ou étirée."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l''habillage' d'une image dans un traitement de texte ?",
+        "type": "qcm",
+        "options": ["Le cadre autour de l'image", "La manière dont le texte du document s'adapte et se positionne autour de l'image (ex: au travers, encadré, aligné sur le texte)", "Les vêtements des personnes sur la photo", "La couleur de l'image"],
+        "answer": 1,
+        "explanation": "L'habillage (ou renvoi à la ligne) permet de faire couler le texte proprement autour de l'illustration pour une belle mise en page."
+      },
+      {
+        "id": "q5",
+        "text": "Lequel de ces outils permet de supprimer les parties inutiles sur les bords d'une image insérée ?",
+        "type": "qcm",
+        "options": ["L'outil Rotation", "L'outil Effet d'image", "L'outil Rogner (ou Recadrer)", "L'outil Alignement"],
+        "answer": 2,
+        "explanation": "Rogner permet de couper les bords superflus pour se concentrer sur l'élément principal de l'image."
+      }
+    ]
+  },
+  "Fiche_L6_COMPORTEMENT_INTERNET": {
+    "title": "Comportement sur Internet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la 'Nétiquette' ?",
+        "type": "qcm",
+        "options": ["Une petite étiquette collée sur l'écran", "L'ensemble des règles de politesse, de savoir-vivre et de bonne conduite à respecter sur Internet", "Un logiciel antivirus", "Une nouvelle danse"],
+        "answer": 1,
+        "explanation": "La nétiquette transpose les règles de politesse de la vie réelle au monde virtuel (forums, réseaux sociaux, emails)."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi faut-il éviter d'écrire EN MAJUSCULES (TOUT EN MAJUSCULES) sur Internet ?",
+        "type": "qcm",
+        "options": ["Parce que ça consomme plus d'encre", "Parce que sur le web, écrire en majuscules équivaut à CRIER et c'est considéré comme agressif", "Parce que c'est illégal", "Parce que l'ordinateur ne le lit pas"],
+        "answer": 1,
+        "explanation": "L'usage des majuscules est perçu comme un haussement de ton ou une expression de colère."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Tout ce qui est publié sur Internet (photos, commentaires) peut être effacé définitivement et facilement le lendemain.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Internet a une 'mémoire' (les traces numériques). Une photo publiée peut être copiée ou archivée par d'autres en quelques secondes, la rendant impossible à effacer totalement."
+      },
+      {
+        "id": "q4",
+        "text": "Si vous êtes victime de cyberharcèlement (insultes, menaces en ligne), que devez-vous faire en premier ?",
+        "type": "qcm",
+        "options": ["Insulter le harceleur en retour", "Éteindre l'ordinateur pour toujours", "Bloquer le harceleur, ne pas répondre, et en parler immédiatement à un adulte de confiance (parents, professeurs)", "Faire semblant de rien"],
+        "answer": 2,
+        "explanation": "Il est crucial de ne pas rester isolé face au cyberharcèlement et de signaler le compte."
+      },
+      {
+        "id": "q5",
+        "text": "Concernant les données personnelles (vrai nom, adresse, numéro de téléphone, mot de passe) :",
+        "type": "qcm",
+        "options": ["On doit les donner à toute personne qui le demande", "On ne doit jamais les diffuser publiquement ni les confier à des inconnus sur Internet", "On peut les donner si on a gagné à un jeu en ligne", "On doit les mettre en photo de profil"],
+        "answer": 1,
+        "explanation": "Protéger sa vie privée et son identité numérique est fondamental pour éviter l'usurpation d'identité ou d'autres dangers."
+      }
+    ]
+  }
+}

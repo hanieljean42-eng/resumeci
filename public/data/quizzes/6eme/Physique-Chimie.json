@@ -1,0 +1,886 @@
+{
+  "Fiche_Lecon1_CIRCUIT_ELECTRIQUE": {
+    "title": "Le circuit électrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Parmi ces éléments, lequel est un générateur ?",
+        "type": "qcm",
+        "options": [
+          "Une lampe",
+          "Un moteur",
+          "Une pile",
+          "Un interrupteur"
+        ],
+        "answer": 2,
+        "explanation": "La pile est un générateur car elle produit et fournit le courant électrique au circuit."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le rôle d'un récepteur dans un circuit électrique ?",
+        "type": "qcm",
+        "options": [
+          "Produire le courant",
+          "Utiliser le courant pour fonctionner",
+          "Ouvrir ou fermer le circuit",
+          "Relier les composants"
+        ],
+        "answer": 1,
+        "explanation": "Un récepteur (comme une lampe ou un moteur) a besoin du courant électrique produit par le générateur pour fonctionner."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le courant électrique circule de la borne négative (-) vers la borne positive (+).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Par convention, le courant électrique circule toujours de la borne positive (+) vers la borne négative (-) à l'extérieur du générateur."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si le circuit est ouvert ?",
+        "type": "qcm",
+        "options": [
+          "La lampe brille plus fort",
+          "Le courant circule très vite",
+          "Le courant ne circule plus",
+          "La pile se recharge"
+        ],
+        "answer": 2,
+        "explanation": "Dans un circuit ouvert (boucle interrompue), le courant électrique ne peut pas circuler."
+      },
+      {
+        "id": "q5",
+        "text": "Quels sont les deux bornes d'une pile plate (4,5V) ?",
+        "type": "qcm",
+        "options": [
+          "Nord et Sud",
+          "Petite et Grande lamelle (+ et -)",
+          "Plot central et culot",
+          "Droite et Gauche"
+        ],
+        "answer": 1,
+        "explanation": "Une pile plate possède deux bornes : une petite lamelle (la borne positive +) et une grande lamelle (la borne négative -)."
+      }
+    ]
+  },
+  "Fiche_Lecon4_SOLIDES_ET_LIQUIDES": {
+    "title": "Les solides et les liquides",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la propriété principale d'un solide compact ?",
+        "type": "qcm",
+        "options": [
+          "Il prend la forme du récipient",
+          "Il a une forme propre (on peut le saisir)",
+          "Sa surface libre est toujours horizontale",
+          "Il s'écoule"
+        ],
+        "answer": 1,
+        "explanation": "Un solide compact (comme une pierre ou un morceau de bois) a une forme propre : il ne change pas de forme si on le change de récipient et on peut le saisir entre les doigts."
+      },
+      {
+        "id": "q2",
+        "text": "Le sable, le sucre en poudre et le sel sont des :",
+        "type": "qcm",
+        "options": [
+          "Solides compacts",
+          "Liquides",
+          "Gaz",
+          "Solides divisés"
+        ],
+        "answer": 3,
+        "explanation": "Ce sont des solides divisés (ou en poudre) car ils sont formés de petits grains et peuvent s'écouler, prenant la forme de leur récipient, mais chaque grain reste un solide."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Au repos, la surface libre d'un liquide est toujours plane et horizontale.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Quelle que soit l'inclinaison du récipient, la surface d'un liquide au repos reste plane et horizontale (on le vérifie avec un fil à plomb)."
+      },
+      {
+        "id": "q4",
+        "text": "Peut-on saisir un liquide (comme l'eau) entre ses doigts ?",
+        "type": "qcm",
+        "options": [
+          "Oui",
+          "Non",
+          "Seulement s'il est froid",
+          "Seulement s'il est chaud"
+        ],
+        "answer": 1,
+        "explanation": "Non, un liquide ne peut pas être saisi entre les doigts car il coule et n'a pas de forme propre."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces objets, lequel N'EST PAS un liquide ?",
+        "type": "qcm",
+        "options": [
+          "Le lait",
+          "Le mercure",
+          "L'huile",
+          "La farine"
+        ],
+        "answer": 3,
+        "explanation": "La farine est un solide divisé. Le lait, l'huile et même le mercure (métal liquide à température ambiante) sont des liquides."
+      }
+    ]
+  },
+  "Fiche_Lecon8_CHANGEMENTS_ETAT_EAU": {
+    "title": "Changements d'état de l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment appelle-t-on le passage de l'état solide (glace) à l'état liquide (eau liquide) ?",
+        "type": "qcm",
+        "options": [
+          "La vaporisation",
+          "La solidification",
+          "La fusion",
+          "La condensation"
+        ],
+        "answer": 2,
+        "explanation": "La fusion est le passage de l'état solide à l'état liquide sous l'effet de la chaleur."
+      },
+      {
+        "id": "q2",
+        "text": "À quelle température l'eau pure gèle-t-elle (devient solide) sous pression normale ?",
+        "type": "qcm",
+        "options": [
+          "100 °C",
+          "0 °C",
+          "50 °C",
+          "-10 °C"
+        ],
+        "answer": 1,
+        "explanation": "La solidification (et la fusion) de l'eau pure se produit exactement à 0 °C."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le passage de l'état liquide à l'état gazeux (vapeur) s'appelle la vaporisation.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La vaporisation (qui inclut l'évaporation et l'ébullition) est le passage du liquide au gaz."
+      },
+      {
+        "id": "q4",
+        "text": "Comment se nomme le changement d'état de l'eau de gaz vers liquide (buée sur une vitre froide) ?",
+        "type": "qcm",
+        "options": [
+          "L'ébullition",
+          "La fusion",
+          "La liquéfaction (ou condensation liquide)",
+          "La sublimation"
+        ],
+        "answer": 2,
+        "explanation": "Quand la vapeur d'eau (gaz) touche une surface froide, elle redevient liquide : c'est la liquéfaction."
+      },
+      {
+        "id": "q5",
+        "text": "Lors de l'ébullition de l'eau pure, que se passe-t-il concernant la température ?",
+        "type": "qcm",
+        "options": [
+          "La température continue de monter indéfiniment",
+          "La température baisse",
+          "La température reste constante à 100 °C",
+          "La température s'arrête à 50 °C"
+        ],
+        "answer": 2,
+        "explanation": "Pendant tout le changement d'état (ici l'ébullition), la température de l'eau pure reste constante à 100 °C jusqu'à ce que toute l'eau soit évaporée."
+      }
+    ]
+  },
+  "Fiche_Lecon2_COMMANDE_CIRCUIT_ELECTRIQUE": {
+    "title": "Commande d'un circuit électrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel composant permet de commander (ouvrir ou fermer) un circuit électrique ?",
+        "type": "qcm",
+        "options": [
+          "La pile",
+          "L'interrupteur",
+          "La lampe",
+          "Le fil de connexion"
+        ],
+        "answer": 1,
+        "explanation": "L'interrupteur est l'organe de commande. Il permet d'établir ou d'interrompre le passage du courant."
+      },
+      {
+        "id": "q2",
+        "text": "Que se passe-t-il quand l'interrupteur est fermé ?",
+        "type": "qcm",
+        "options": [
+          "Le circuit est ouvert et la lampe s'éteint",
+          "Le circuit est fermé et le courant circule (la lampe s'allume)",
+          "La pile explose",
+          "Rien ne se passe"
+        ],
+        "answer": 1,
+        "explanation": "Un interrupteur fermé crée un contact métallique, fermant ainsi la boucle du circuit et laissant passer le courant."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les métaux comme le cuivre et le fer sont de bons conducteurs électriques.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les métaux laissent passer le courant électrique, ce sont des conducteurs."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on un matériau qui ne laisse pas passer le courant électrique (ex: plastique, bois) ?",
+        "type": "qcm",
+        "options": [
+          "Un générateur",
+          "Un conducteur",
+          "Un isolant",
+          "Un récepteur"
+        ],
+        "answer": 2,
+        "explanation": "Un isolant est un matériau (comme le plastique des fils électriques) qui empêche le courant de passer pour nous protéger."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi les fils électriques sont-ils entourés de plastique ?",
+        "type": "qcm",
+        "options": [
+          "Pour faire joli",
+          "Parce que le plastique est conducteur",
+          "Pour éviter les courts-circuits et protéger contre l'électrocution (le plastique est isolant)",
+          "Pour chauffer les fils"
+        ],
+        "answer": 2,
+        "explanation": "Le plastique isole le fil métallique, empêchant le courant de s'échapper et de nous électrocuter."
+      }
+    ]
+  },
+  "Fiche_Lecon3_COURT_CIRCUIT_PROTECTION": {
+    "title": "Court-circuit et protection",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un court-circuit ?",
+        "type": "qcm",
+        "options": [
+          "Un circuit avec des fils très courts",
+          "Le fait de relier directement les deux bornes d'un dipôle (comme une lampe) par un fil conducteur",
+          "Un circuit qui clignote",
+          "Un circuit sans pile"
+        ],
+        "answer": 1,
+        "explanation": "Un court-circuit se produit quand le courant trouve un chemin plus facile (sans résistance) en passant par un fil de connexion direct entre deux bornes."
+      },
+      {
+        "id": "q2",
+        "text": "Que risque-t-il de se passer en cas de court-circuit du générateur (pile) ?",
+        "type": "qcm",
+        "options": [
+          "Rien du tout",
+          "La pile va se recharger",
+          "Les fils vont chauffer très fort, avec un risque d'incendie",
+          "La lampe va briller plus fort"
+        ],
+        "answer": 2,
+        "explanation": "Le courant devient très intense. Cela provoque un fort dégagement de chaleur qui peut faire fondre les isolants et déclencher un incendie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on court-circuite une lampe dans un circuit en série, cette lampe s'allume plus fort.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Si une lampe est court-circuitée, le courant passe par le fil de court-circuit et évite la lampe, donc elle s'éteint."
+      },
+      {
+        "id": "q4",
+        "text": "Quel appareil utilise-t-on pour protéger une installation électrique contre les surintensités (courts-circuits) ?",
+        "type": "qcm",
+        "options": [
+          "Une lampe",
+          "Un fusible (ou un disjoncteur)",
+          "Un moteur",
+          "Un fil de cuivre"
+        ],
+        "answer": 1,
+        "explanation": "Le fusible fond et coupe le circuit si le courant est trop fort. Le disjoncteur a le même rôle mais ne fond pas (il 'saute')."
+      },
+      {
+        "id": "q5",
+        "text": "Comment doit être branché un fusible pour protéger un appareil ?",
+        "type": "qcm",
+        "options": [
+          "En parallèle (en dérivation) avec l'appareil",
+          "En série avec l'appareil qu'il doit protéger",
+          "Directement sur la lampe",
+          "Sur le fil de masse"
+        ],
+        "answer": 1,
+        "explanation": "Il doit être en série pour que tout le courant destiné à l'appareil passe d'abord par lui. S'il fond, il ouvre le circuit."
+      }
+    ]
+  },
+  "Fiche_Lecon5_LES_GAZ": {
+    "title": "Les gaz",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la principale caractéristique d'un gaz concernant sa forme et son volume ?",
+        "type": "qcm",
+        "options": [
+          "Il a une forme propre et un volume propre",
+          "Il n'a ni forme propre ni volume propre (il occupe tout l'espace disponible)",
+          "Il a un volume propre mais pas de forme propre",
+          "Il est toujours liquide"
+        ],
+        "answer": 1,
+        "explanation": "Un gaz est expansible et compressible : il prend la forme de son contenant et occupe tout le volume qu'on lui donne."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on la propriété d'un gaz à pouvoir diminuer de volume quand on le presse ?",
+        "type": "qcm",
+        "options": [
+          "L'expansibilité",
+          "La compressibilité",
+          "La liquéfaction",
+          "La solidification"
+        ],
+        "answer": 1,
+        "explanation": "Un gaz est compressible : on peut réduire son volume en augmentant la pression (ex: seringue bouchée)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un gaz n'a pas de masse (il ne pèse rien).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La matière à l'état gazeux (comme l'air) possède une masse. 1 litre d'air pèse environ 1,2 gramme."
+      },
+      {
+        "id": "q4",
+        "text": "Que fait un gaz si on le transfère dans un récipient plus grand ?",
+        "type": "qcm",
+        "options": [
+          "Il reste au fond du récipient",
+          "Il disparaît",
+          "Il s'étend et occupe tout le nouveau volume (expansibilité)",
+          "Il devient solide"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'expansibilité : les molécules de gaz s'éloignent pour occuper tout l'espace disponible."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'observe-t-on si on retourne un verre vide (plein d'air) droit dans une bassine d'eau ?",
+        "type": "qcm",
+        "options": [
+          "L'eau remplit totalement le verre",
+          "L'air empêche l'eau d'entrer complètement (l'air occupe un espace)",
+          "Le verre se casse",
+          "L'air se dissout instantanément"
+        ],
+        "answer": 1,
+        "explanation": "L'air, bien qu'invisible, est de la matière et occupe un volume, ce qui empêche l'eau de remplir le verre."
+      }
+    ]
+  },
+  "Fiche_Lecon6_TEMPERATURE": {
+    "title": "La température",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avec quel instrument mesure-t-on la température ?",
+        "type": "qcm",
+        "options": [
+          "Une balance",
+          "Un thermomètre",
+          "Une éprouvette",
+          "Un baromètre"
+        ],
+        "answer": 1,
+        "explanation": "Le thermomètre est l'appareil utilisé pour mesurer la température d'un corps ou de l'air."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité de mesure de la température la plus couramment utilisée chez nous ?",
+        "type": "qcm",
+        "options": [
+          "Le gramme (g)",
+          "Le Litre (L)",
+          "Le degré Celsius (°C)",
+          "Le Kelvin (K)"
+        ],
+        "answer": 2,
+        "explanation": "Dans la vie courante (en Côte d'Ivoire et dans de nombreux pays), la température s'exprime en degrés Celsius (°C)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Quand le liquide d'un thermomètre monte, cela signifie que la température baisse.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Sous l'effet de la chaleur, le liquide (ex: alcool coloré) se dilate et monte dans le tube. Donc si le niveau monte, la température augmente."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la température normale du corps humain en bonne santé ?",
+        "type": "qcm",
+        "options": [
+          "30 °C",
+          "37 °C",
+          "40 °C",
+          "42 °C"
+        ],
+        "answer": 1,
+        "explanation": "La température corporelle normale est d'environ 37 °C."
+      },
+      {
+        "id": "q5",
+        "text": "Sur un thermomètre de laboratoire, que représente la graduation '0 °C' ?",
+        "type": "qcm",
+        "options": [
+          "La température de l'eau qui bout",
+          "La température de solidification de l'eau pure (glace fondante)",
+          "La température de la pièce",
+          "Le zéro absolu"
+        ],
+        "answer": 1,
+        "explanation": "0 °C est la température à laquelle l'eau pure gèle (ou la glace pure fond) à la pression atmosphérique normale."
+      }
+    ]
+  },
+  "Fiche_Lecon7_CONSTITUANTS_AIR": {
+    "title": "Les constituants de l'air",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'air que nous respirons est-il un corps pur ou un mélange ?",
+        "type": "qcm",
+        "options": [
+          "Un corps pur",
+          "Un mélange de plusieurs gaz",
+          "Un liquide",
+          "Un gaz unique appelé 'oxygène'"
+        ],
+        "answer": 1,
+        "explanation": "L'air n'est pas un seul gaz, c'est un mélange de plusieurs gaz différents."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le gaz le plus abondant dans l'air ?",
+        "type": "qcm",
+        "options": [
+          "Le dioxygène",
+          "Le dioxyde de carbone",
+          "Le diazote",
+          "L'hydrogène"
+        ],
+        "answer": 2,
+        "explanation": "Le diazote est le constituant principal de l'air : il représente environ 78 % (soit près des 4/5) du volume."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le dioxygène représente environ 21 % de l'air.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le dioxygène (souvent appelé oxygène) représente 21 % (environ 1/5) de l'air. C'est le gaz indispensable à la respiration et aux combustions."
+      },
+      {
+        "id": "q4",
+        "text": "À part le diazote et le dioxygène, que trouve-t-on dans les 1 % restants de l'air ?",
+        "type": "qcm",
+        "options": [
+          "Rien, il n'y a que deux gaz",
+          "Des roches",
+          "De l'eau salée",
+          "Des gaz rares, du dioxyde de carbone (CO2) et de la vapeur d'eau"
+        ],
+        "answer": 3,
+        "explanation": "Les 1 % restants sont un mélange d'autres gaz (CO2, argon...) et de vapeur d'eau."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi l'air est-il indispensable à la vie ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'il contient du diazote",
+          "Parce qu'il contient de l'eau",
+          "Parce qu'il contient du dioxygène nécessaire à la respiration",
+          "Parce qu'il est transparent"
+        ],
+        "answer": 2,
+        "explanation": "Tous les êtres vivants (animaux, humains, plantes) ont besoin du dioxygène de l'air pour respirer et vivre."
+      }
+    ]
+  },
+  "Fiche_Lecon9_COMBUSTION_SOLIDE_LIQUIDE": {
+    "title": "Combustion d'un solide ou d'un liquide",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une combustion ?",
+        "type": "qcm",
+        "options": [
+          "Le fait de geler de l'eau",
+          "Une réaction chimique qui dégage de la chaleur et souvent de la lumière (le fait de brûler)",
+          "Le fait d'éteindre un feu",
+          "Le mélange de deux liquides froids"
+        ],
+        "answer": 1,
+        "explanation": "Une combustion est l'action de brûler un matériau. Cela s'accompagne d'un dégagement de chaleur."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on le corps qui brûle (comme le charbon de bois ou l'alcool) ?",
+        "type": "qcm",
+        "options": [
+          "Le comburant",
+          "Le combustible",
+          "L'allumette",
+          "L'extincteur"
+        ],
+        "answer": 1,
+        "explanation": "Le combustible est la matière qui brûle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le dioxygène de l'air est le comburant de la plupart des combustions.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le comburant est le gaz qui permet au combustible de brûler. Sans dioxygène, le feu s'éteint."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si on place un verre renversé sur une bougie allumée ?",
+        "type": "qcm",
+        "options": [
+          "Elle brûle plus fort",
+          "Elle change de couleur",
+          "Elle s'éteint rapidement car elle manque de dioxygène (comburant)",
+          "Le verre explose toujours"
+        ],
+        "answer": 2,
+        "explanation": "La bougie consomme le dioxygène emprisonné dans le verre. Quand il n'y en a plus, la combustion s'arrête et la flamme s'éteint."
+      },
+      {
+        "id": "q5",
+        "text": "Quel gaz est produit lors de la combustion complète du charbon (carbone) ?",
+        "type": "qcm",
+        "options": [
+          "Du dioxyde de carbone (CO2)",
+          "De l'eau pure",
+          "Du dioxygène",
+          "Du diazote"
+        ],
+        "answer": 0,
+        "explanation": "Le charbon (carbone) réagit avec le dioxygène de l'air pour former un nouveau gaz : le dioxyde de carbone."
+      }
+    ]
+  },
+  "Fiche_Lecon10_COMBUSTION_GAZ": {
+    "title": "Combustion d'un gaz",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel gaz utilise-t-on généralement pour faire la cuisine à la maison ?",
+        "type": "qcm",
+        "options": [
+          "Le dioxygène",
+          "Le butane (gaz en bouteille)",
+          "Le diazote",
+          "Le gaz carbonique"
+        ],
+        "answer": 1,
+        "explanation": "Le butane est un gaz combustible stocké sous forme liquide dans des bouteilles (B6 ou B12) et utilisé pour la cuisson."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi reconnaît-on que la combustion du butane est COMPLÈTE (bonne combustion) ?",
+        "type": "qcm",
+        "options": [
+          "La flamme est jaune et fumeuse",
+          "La flamme est bleue, très chaude et ne noircit pas les casseroles",
+          "La flamme est rouge",
+          "Il n'y a pas de flamme"
+        ],
+        "answer": 1,
+        "explanation": "Une bonne combustion (assez d'air) donne une flamme bleue. Elle est très chaude et propre (pas de suie)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une flamme jaune indique une combustion INCOMPLÈTE (manque d'air).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Si la virole du bec Bunsen (ou de la gazinière) est fermée, le gaz manque de dioxygène. La flamme devient jaune, moins chaude et dépose du noir (suie)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel produit dangereux est formé lors d'une combustion incomplète du butane ?",
+        "type": "qcm",
+        "options": [
+          "De l'eau gazeuse",
+          "Du monoxyde de carbone (gaz mortel et inodore)",
+          "De la glace",
+          "De l'or"
+        ],
+        "answer": 1,
+        "explanation": "La combustion incomplète produit du monoxyde de carbone. Ce gaz est très dangereux car il est toxique, inodore et invisible."
+      },
+      {
+        "id": "q5",
+        "text": "Comment régler une cuisinière si la flamme est jaune et noircit les casseroles ?",
+        "type": "qcm",
+        "options": [
+          "Fermer l'arrivée de gaz",
+          "Ouvrir l'arrivée d'air (régler la virole) pour que le butane ait assez de dioxygène",
+          "Mettre de l'eau sur la flamme",
+          "C'est normal, on ne fait rien"
+        ],
+        "answer": 1,
+        "explanation": "Il faut augmenter l'apport en dioxygène (air) pour que la combustion redevienne complète (flamme bleue)."
+      }
+    ]
+  },
+  "Fiche_Lecon11_DANGERS_COMBUSTIONS": {
+    "title": "Les dangers des combustions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le risque principal si on laisse une bougie allumée près d'un rideau ?",
+        "type": "qcm",
+        "options": [
+          "L'asphyxie",
+          "L'incendie",
+          "L'explosion",
+          "Rien du tout"
+        ],
+        "answer": 1,
+        "explanation": "Le feu peut se propager au tissu du rideau (matériau combustible) et déclencher un incendie."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'asphyxie ?",
+        "type": "qcm",
+        "options": [
+          "Le fait de brûler",
+          "Le manque de dioxygène dans l'air (air vicié) entraînant l'étouffement",
+          "Une explosion de gaz",
+          "Une électrocution"
+        ],
+        "answer": 1,
+        "explanation": "Un feu dans une pièce fermée consomme le dioxygène de l'air. Les personnes présentes risquent alors l'asphyxie (manque d'air pour respirer)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le monoxyde de carbone produit par un chauffage mal réglé est inoffensif.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est exactement le contraire. Le monoxyde de carbone est un gaz extrêmement TOXIQUE et mortel, d'autant plus dangereux qu'il n'a pas d'odeur."
+      },
+      {
+        "id": "q4",
+        "text": "Que risque de provoquer une fuite de gaz (butane) dans une pièce fermée si on allume la lumière ?",
+        "type": "qcm",
+        "options": [
+          "Un courant d'air",
+          "Un court-circuit",
+          "Une explosion",
+          "Une inondation"
+        ],
+        "answer": 2,
+        "explanation": "Le mélange d'air et de gaz est explosif. Une simple étincelle (comme l'allumage d'un interrupteur) suffit à déclencher une violente explosion."
+      },
+      {
+        "id": "q5",
+        "text": "Pour éviter les dangers liés aux combustions, il faut toujours :",
+        "type": "qcm",
+        "options": [
+          "Fermer hermétiquement toutes les fenêtres",
+          "Ne jamais utiliser de gaz",
+          "Aérer régulièrement les pièces et vérifier les installations",
+          "Dormir près du feu"
+        ],
+        "answer": 2,
+        "explanation": "L'aération permet de renouveler le dioxygène et d'évacuer les gaz toxiques éventuels."
+      }
+    ]
+  },
+  "Fiche_Lecon12_VOLUME_LIQUIDE_SOLIDE": {
+    "title": "Volume d'un liquide ou solide",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle unité est généralement utilisée pour mesurer le volume d'un liquide ?",
+        "type": "qcm",
+        "options": [
+          "Le gramme (g)",
+          "Le mètre (m)",
+          "Le Litre (L) ou le centimètre cube (cm3)",
+          "Le degré Celsius (°C)"
+        ],
+        "answer": 2,
+        "explanation": "Le volume s'exprime en Litres (souvent mL pour les petites quantités) ou en mètres cubes (souvent cm3 en laboratoire). Rappel : 1 mL = 1 cm3."
+      },
+      {
+        "id": "q2",
+        "text": "Quel instrument de laboratoire est le plus précis pour mesurer le volume d'un liquide ?",
+        "type": "qcm",
+        "options": [
+          "Un verre d'eau",
+          "Un bécher",
+          "Une éprouvette graduée",
+          "Une balance"
+        ],
+        "answer": 2,
+        "explanation": "L'éprouvette graduée est conçue spécifiquement pour mesurer des volumes de liquides avec précision."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour lire correctement le volume, l'œil doit être placé au-dessus du niveau du liquide.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'œil doit être placé exactement AU MÊME NIVEAU que la base du ménisque (la petite courbure à la surface du liquide) pour éviter les erreurs."
+      },
+      {
+        "id": "q4",
+        "text": "Comment mesurer le volume d'un solide de forme irrégulière (comme une pierre) ?",
+        "type": "qcm",
+        "options": [
+          "Avec une règle",
+          "Par déplacement de liquide dans une éprouvette graduée",
+          "Avec une balance",
+          "On ne peut pas"
+        ],
+        "answer": 1,
+        "explanation": "On met un volume d'eau V1 dans l'éprouvette, on y plonge le solide, l'eau monte à V2. Le volume du solide est V = V2 - V1."
+      },
+      {
+        "id": "q5",
+        "text": "Combien de millilitres y a-t-il dans 1 Litre ?",
+        "type": "qcm",
+        "options": [
+          "10 mL",
+          "100 mL",
+          "1000 mL",
+          "10 000 mL"
+        ],
+        "answer": 2,
+        "explanation": "Le préfixe 'milli' signifie millième. Donc 1 L = 1000 mL."
+      }
+    ]
+  },
+  "Fiche_Lecon13_MASSE_SOLIDE_LIQUIDE": {
+    "title": "Masse d'un solide ou liquide",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Avec quel instrument mesure-t-on la masse d'un objet ?",
+        "type": "qcm",
+        "options": [
+          "Une éprouvette graduée",
+          "Un thermomètre",
+          "Une balance",
+          "Un chronomètre"
+        ],
+        "answer": 2,
+        "explanation": "La balance (mécanique type Roberval ou électronique) est l'instrument qui sert à mesurer la masse."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité légale (internationale) de la masse ?",
+        "type": "qcm",
+        "options": [
+          "Le gramme (g)",
+          "Le kilogramme (kg)",
+          "Le litre (L)",
+          "Le mètre (m)"
+        ],
+        "answer": 1,
+        "explanation": "Le kilogramme (kg) est l'unité légale. Le gramme (g) est un de ses sous-multiples."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La masse d'un corps change si on le change de forme (ex: on écrase une boule de pâte à modeler).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La masse est liée à la quantité de matière. Que la pâte soit en boule ou aplatie, la quantité de matière (donc la masse) reste la même."
+      },
+      {
+        "id": "q4",
+        "text": "Comment mesurer la masse d'un liquide seul (sans son récipient) sur une balance électronique ?",
+        "type": "qcm",
+        "options": [
+          "On verse le liquide directement sur la balance",
+          "On pèse le récipient plein, et on devine",
+          "On utilise le bouton 'TARE' après avoir posé le récipient vide",
+          "On ne peut pas peser un liquide"
+        ],
+        "answer": 2,
+        "explanation": "La fonction TARE remet la balance à zéro. En posant le récipient vide puis en appuyant sur TARE, on pèsera ensuite uniquement le liquide ajouté."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la masse d'un litre (1 L) d'eau pure ?",
+        "type": "qcm",
+        "options": [
+          "100 grammes",
+          "1 kilogramme (1000 g)",
+          "1 tonne",
+          "10 kilogrammes"
+        ],
+        "answer": 1,
+        "explanation": "C'est une référence importante : 1 litre d'eau pure pèse exactement 1 kg (dans des conditions normales)."
+      }
+    ]
+  }
+}

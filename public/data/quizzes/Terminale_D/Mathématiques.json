@@ -1,0 +1,818 @@
+{
+  "Fiche_leçon 01 LIMITES ET CONTINUITE": {
+    "title": "leçon 01 LIMITES ET CONTINUITE",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie mathématiquement qu'une fonction f est continue en un point a ?",
+        "type": "qcm",
+        "options": [
+          "La limite de f(x) quand x tend vers a est égale à f(a)",
+          "La dérivée f'(a) est nulle",
+          "La fonction est définie sur tout ℝ",
+          "La limite de f(x) est l'infini"
+        ],
+        "answer": 0,
+        "explanation": "C'est la définition même de la continuité : lim f(x) = f(a)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle une droite d'équation x = a vers laquelle tend la courbe quand la limite de f en a est l'infini ?",
+        "type": "qcm",
+        "options": [
+          "Une asymptote verticale",
+          "Une asymptote horizontale",
+          "Une asymptote oblique",
+          "Une tangente"
+        ],
+        "answer": 0,
+        "explanation": "Si x s'approche de a, la valeur de f(x) explose (vers +∞ ou -∞), créant une asymptote verticale."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le théorème des valeurs intermédiaires garantit l'existence d'au moins une solution à l'équation f(x)=k si f est continue sur [a;b] et que k est compris entre f(a) et f(b).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Si la fonction est strictement monotone, cette solution est même unique."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une forme indéterminée dans le calcul de limites ?",
+        "type": "qcm",
+        "options": [
+          "Une situation où les théorèmes de base ne permettent pas de conclure (ex: +∞ - ∞, 0/0)",
+          "Une limite qui n'existe pas",
+          "Un calcul qui donne toujours zéro",
+          "Une erreur de la calculatrice"
+        ],
+        "answer": 0,
+        "explanation": "Il faut alors lever l'indétermination (factorisation, expression conjuguée, etc.)."
+      },
+      {
+        "id": "q5",
+        "text": "La limite de (sin x)/x quand x tend vers 0 est :",
+        "type": "qcm",
+        "options": [
+          "1",
+          "0",
+          "+∞",
+          "-1"
+        ],
+        "answer": 0,
+        "explanation": "C'est une limite de référence fondamentale en trigonométrie."
+      }
+    ]
+  },
+  "Fiche_leçon 02_ Probabilité_1": {
+    "title": "leçon 02  Probabilité 1",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 02  Probabilité 1\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 03_ DERIVABILITE ET ETUDE DE FONCTIONS": {
+    "title": "leçon 03  DERIVABILITE ET ETUDE DE FONCTIONS",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 03  DERIVABILITE ET ETUDE DE FONCTIONS\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 04_ PRIMITIVES": {
+    "title": "leçon 04  PRIMITIVES",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 04  PRIMITIVES\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 05 FONCTIONS LOGARITHMES": {
+    "title": "leçon 05 FONCTIONS LOGARITHMES",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 05 FONCTIONS LOGARITHMES\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 06_ Nombres complexes": {
+    "title": "leçon 06  Nombres complexes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la particularité du nombre imaginaire i introduit dans les nombres complexes ?",
+        "type": "qcm",
+        "options": [
+          "i² = -1",
+          "i = 0",
+          "i² = 1",
+          "i = -1"
+        ],
+        "answer": 0,
+        "explanation": "L'ensemble ℂ a été créé en définissant un nombre i dont le carré vaut -1."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'écrit la forme algébrique d'un nombre complexe z ?",
+        "type": "qcm",
+        "options": [
+          "z = a + ib",
+          "z = a / ib",
+          "z = a * b",
+          "z = e^(iθ)"
+        ],
+        "answer": 0,
+        "explanation": "a est la partie réelle Re(z) et b est la partie imaginaire Im(z)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le module d'un nombre complexe z = a + ib se calcule par |z| = √(a² + b²).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Géométriquement, c'est la distance entre l'origine O et le point M d'affixe z."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le conjugué (z barre) du nombre complexe z = 3 - 4i ?",
+        "type": "qcm",
+        "options": [
+          "3 + 4i",
+          "-3 - 4i",
+          "3 - 4i",
+          "-3 + 4i"
+        ],
+        "answer": 0,
+        "explanation": "Le conjugué s'obtient en changeant le signe de la partie imaginaire."
+      },
+      {
+        "id": "q5",
+        "text": "La forme exponentielle d'un nombre complexe non nul z de module r et d'argument θ est :",
+        "type": "qcm",
+        "options": [
+          "z = r e^(iθ)",
+          "z = r + e^(iθ)",
+          "z = e^(rθ)",
+          "z = r(cos θ - i sin θ)"
+        ],
+        "answer": 0,
+        "explanation": "C'est une écriture très pratique pour les multiplications et les puissances."
+      }
+    ]
+  },
+  "Fiche_leçon 07_ Fonction exponentielle et fonction puissance": {
+    "title": "leçon 07  Fonction exponentielle et fonction puissance",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 07  Fonction exponentielle et fonction puissance\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 08_ Nombres complexes et géométrie du plan": {
+    "title": "leçon 08  Nombres complexes et géométrie du plan",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 08  Nombres complexes et géométrie du plan\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 09_ suites numériques": {
+    "title": "leçon 09  suites numériques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 09  suites numériques\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 10_ Calcul intégral": {
+    "title": "leçon 10  Calcul intégral",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 10  Calcul intégral\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 11 Statistiques": {
+    "title": "leçon 11 Statistiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"leçon 11 Statistiques\" ?",
+        "type": "qcm",
+        "options": [
+          "Les enjeux majeurs du programme du Baccalauréat",
+          "Un rappel de la classe de 6ème",
+          "Des notions hors programme",
+          "Des définitions élémentaires"
+        ],
+        "answer": 0,
+        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+      },
+      {
+        "id": "q2",
+        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+        "type": "qcm",
+        "options": [
+          "Apprendre par cœur sans comprendre le sens",
+          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+          "Deviner les réponses",
+          "Recopier simplement la fiche"
+        ],
+        "answer": 1,
+        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+      },
+      {
+        "id": "q4",
+        "text": "Concernant la discipline \"Mathématiques\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+        "type": "qcm",
+        "options": [
+          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+          "Écrire proprement",
+          "Oublier d'écrire son nom",
+          "Lire l'énoncé trop vite"
+        ],
+        "answer": 0,
+        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+        "type": "qcm",
+        "options": [
+          "Ne faire aucun exercice",
+          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+          "Poser la question à ses parents",
+          "Regarder un résumé de 2 minutes sur internet"
+        ],
+        "answer": 1,
+        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+      }
+    ]
+  },
+  "Fiche_leçon 12 Equations différentielles": {
+    "title": "leçon 12 Equations différentielles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une équation différentielle ?",
+        "type": "qcm",
+        "options": [
+          "Une équation dont l'inconnue est une fonction (y) et qui fait intervenir ses dérivées (y', y'')",
+          "Une équation du second degré",
+          "Une équation avec des nombres complexes",
+          "Une équation qui n'a pas de solution"
+        ],
+        "answer": 0,
+        "explanation": "Résoudre l'équation, c'est trouver la ou les fonctions y qui vérifient la relation."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la solution générale de l'équation différentielle y' = a y ?",
+        "type": "qcm",
+        "options": [
+          "y(x) = k e^(ax) avec k constante réelle",
+          "y(x) = k x^a",
+          "y(x) = a x + k",
+          "y(x) = ln(ax)"
+        ],
+        "answer": 0,
+        "explanation": "C'est l'équation différentielle linéaire du premier ordre la plus classique."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les solutions de y' = ay + b s'obtiennent en additionnant la solution de y'=ay et une solution particulière constante (-b/a).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les solutions sont de la forme f(x) = k e^(ax) - b/a."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'appelle l'équation du second degré ar² + br + c = 0 associée à l'équation différentielle ay'' + by' + cy = 0 ?",
+        "type": "qcm",
+        "options": [
+          "L'équation caractéristique",
+          "L'équation exponentielle",
+          "L'équation réduite",
+          "Le déterminant"
+        ],
+        "answer": 0,
+        "explanation": "Ses racines permettent de déterminer la forme des solutions (exponentielles ou trigonométriques)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans l'équation différentielle y'' + ω²y = 0 (cas du pendule non amorti), quelles sont les solutions ?",
+        "type": "qcm",
+        "options": [
+          "y(x) = A cos(ωx) + B sin(ωx)",
+          "y(x) = A e^(ωx)",
+          "y(x) = A x + B",
+          "y(x) = ln(ωx)"
+        ],
+        "answer": 0,
+        "explanation": "Les solutions de cette équation sont des fonctions sinusoïdales (oscillateur harmonique)."
+      }
+    ]
+  }
+}

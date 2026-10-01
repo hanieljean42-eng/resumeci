@@ -2,18 +2,25 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Waitlist: create-only, no public read/update/delete
+    // Waitlist: create public, lecture autorisée pour les admins authentifiés
     match /waitlist/{document} {
-      allow create: if request.resource.data.keys().hasAll(['contact', 'feature', 'timestamp'])
-                    && request.resource.data.contact is string
-                    && request.resource.data.contact.size() > 0
-                    && request.resource.data.contact.size() <= 25
-                    && request.resource.data.feature is string
-                    && request.resource.data.feature.size() <= 100;
-      allow read, update, delete: if false;
+      allow create: if true;
+      allow read: if request.auth != null;
+      allow update, delete: if request.auth != null;
     }
 
-    // Block everything else
+    // Utilisateurs et Inscriptions: création/mise à jour, lecture pour admins authentifiés
+    match /users/{userId} {
+      allow create, update: if true;
+      allow read: if request.auth != null;
+    }
+
+    match /inscriptions/{userId} {
+      allow create, update: if true;
+      allow read: if request.auth != null;
+    }
+
+    // Bloquer le reste par défaut
     match /{document=**} {
       allow read, write: if false;
     }

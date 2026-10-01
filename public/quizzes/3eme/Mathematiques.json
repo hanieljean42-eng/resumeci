@@ -1,0 +1,954 @@
+{
+  "Fiche_Lecon1_CALCUL_LITTERAL": {
+    "title": "Calcul Littéral",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un triangle rectangle ?",
+        "type": "qcm",
+        "options": [
+          "Un triangle qui possède un angle droit (90°)",
+          "Un triangle dont tous les côtés sont égaux",
+          "Un triangle dont deux côtés sont égaux",
+          "Un triangle avec trois angles aigus"
+        ],
+        "answer": 0,
+        "explanation": "Dans un triangle rectangle, le plus grand côté s'appelle l'hypoténuse."
+      },
+      {
+        "id": "q2",
+        "text": "Que dit le théorème de Pythagore dans un triangle ABC rectangle en A ?",
+        "type": "qcm",
+        "options": [
+          "BC² = AB² + AC²",
+          "AB² = BC² + AC²",
+          "AC² = AB² + BC²",
+          "AB + AC = BC"
+        ],
+        "answer": 0,
+        "explanation": "Le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour additionner deux fractions, elles doivent avoir le même dénominateur.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Si elles n'ont pas le même dénominateur, il faut d'abord les réduire au même dénominateur."
+      },
+      {
+        "id": "q4",
+        "text": "Comment développe-t-on l'expression k(a + b) ?",
+        "type": "qcm",
+        "options": [
+          "ka + kb",
+          "k + a + b",
+          "k + ab",
+          "kab"
+        ],
+        "answer": 0,
+        "explanation": "C'est la propriété de distributivité de la multiplication par rapport à l'addition."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'aire d'un rectangle de longueur L et de largeur l ?",
+        "type": "qcm",
+        "options": [
+          "L × l",
+          "2 × (L + l)",
+          "L + l",
+          "L / l"
+        ],
+        "answer": 0,
+        "explanation": "L'aire se calcule en multipliant la longueur par la largeur."
+      }
+    ]
+  },
+  "Fiche_Lecon2_THALES": {
+    "title": "Propriété de Thalès",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans quelle figure géométrique applique-t-on le plus souvent le théorème de Thalès en classe de 3ème ?",
+        "type": "qcm",
+        "options": [
+          "Un cercle",
+          "Un carré",
+          "Deux triangles formés par des droites sécantes coupées par deux droites PARALLÈLES (configuration en triangle ou en papillon)",
+          "Un pentagone"
+        ],
+        "answer": 2,
+        "explanation": "Le théorème de Thalès nécessite absolument des droites parallèles."
+      },
+      {
+        "id": "q2",
+        "text": "Si dans le triangle ABC, M est sur [AB], N sur [AC] et (MN) est parallèle à (BC), quelle est l'égalité des rapports de Thalès ?",
+        "type": "qcm",
+        "options": [
+          "AM/AB = AN/AC = MN/BC",
+          "AM/AC = AN/AB",
+          "AB/AM = MN/BC",
+          "AM + AB = MN + BC"
+        ],
+        "answer": 0,
+        "explanation": "Les côtés du petit triangle (AMN) sont proportionnels aux côtés du grand triangle (ABC)."
+      },
+      {
+        "id": "q3",
+        "text": "À quoi sert principalement la 'réciproque' du théorème de Thalès ?",
+        "type": "qcm",
+        "options": [
+          "À calculer une longueur",
+          "À prouver que deux droites sont PARALLÈLES (si les rapports de longueurs sont égaux et les points alignés dans le même ordre)",
+          "À prouver qu'un angle est droit",
+          "À tracer un cercle"
+        ],
+        "answer": 1,
+        "explanation": "Le théorème direct calcule des longueurs. La réciproque prouve le parallélisme."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Pour utiliser la réciproque de Thalès, il suffit juste que l'égalité AM/AB = AN/AC soit vraie, peu importe l'ordre des points.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'ordre des points est très important. Les points A,M,B et A,N,C doivent être alignés dans le MÊME ORDRE."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie le mot 'agrandissement' dans une configuration de Thalès ?",
+        "type": "qcm",
+        "options": [
+          "C'est quand on dessine plus grand au hasard",
+          "C'est quand toutes les longueurs d'une figure sont multipliées par un même nombre (rapport) k supérieur à 1",
+          "C'est quand on ajoute 2 cm à tous les côtés",
+          "C'est un effet d'optique"
+        ],
+        "answer": 1,
+        "explanation": "La proportionnalité est conservée. (Si k < 1, c'est une réduction)."
+      }
+    ]
+  },
+  "Fiche_Lecon3_RACINES_CARREES": {
+    "title": "Racines Carrées",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la définition de la racine carrée (√a) d'un nombre positif 'a' ?",
+        "type": "qcm",
+        "options": [
+          "La moitié de a",
+          "Le nombre positif dont le carré est égal à a",
+          "Le double de a",
+          "a divisé par 4"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : √9 = 3 car 3² = 9 (et 3 est positif)."
+      },
+      {
+        "id": "q2",
+        "text": "Vrai ou Faux : Il est possible de calculer la racine carrée d'un nombre strictement négatif (ex: √-4).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le carré d'un nombre réel est toujours positif ou nul. Donc √-4 n'existe pas."
+      },
+      {
+        "id": "q3",
+        "text": "À quoi est égale l'expression √(a) * √(b) (pour a et b positifs) ?",
+        "type": "qcm",
+        "options": [
+          "√(a + b)",
+          "√(a * b)",
+          "a * b",
+          "√(a) + b"
+        ],
+        "answer": 1,
+        "explanation": "Règle du produit : √2 * √3 = √6."
+      },
+      {
+        "id": "q4",
+        "text": "Attention au piège ! À quoi est égale √(16 + 9) ?",
+        "type": "qcm",
+        "options": [
+          "√16 + √9 = 4 + 3 = 7",
+          "√25 = 5",
+          "16 + 3 = 19",
+          "0"
+        ],
+        "answer": 1,
+        "explanation": "Il n'y a pas de règle pour l'addition ! Il faut d'abord calculer la somme sous la racine : √(25) = 5. (Et 5 est différent de 7)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment 'simplifie-t-on' l'écriture de √12 ?",
+        "type": "qcm",
+        "options": [
+          "6",
+          "√(4 * 3) = √4 * √3 = 2√3",
+          "√10 + √2",
+          "On ne peut pas"
+        ],
+        "answer": 1,
+        "explanation": "On cherche à faire apparaître le plus grand carré parfait possible sous la racine (ici 4)."
+      }
+    ]
+  },
+  "Fiche_Lecon4_TRIANGLE_RECTANGLE": {
+    "title": "Triangle Rectangle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle propriété célèbre s'applique UNIQUEMENT dans un triangle rectangle pour calculer la longueur d'un côté ?",
+        "type": "qcm",
+        "options": [
+          "Le théorème de Thalès",
+          "Le théorème de Pythagore",
+          "La règle de trois",
+          "Le théorème de l'angle droit"
+        ],
+        "answer": 1,
+        "explanation": "Le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'hypoténuse dans un triangle rectangle ?",
+        "type": "qcm",
+        "options": [
+          "Le plus petit côté",
+          "Le côté opposé à l'angle droit (c'est toujours le côté le plus long)",
+          "Le côté à côté de l'angle droit",
+          "L'angle aigu"
+        ],
+        "answer": 1,
+        "explanation": "C'est la diagonale du triangle rectangle."
+      },
+      {
+        "id": "q3",
+        "text": "En trigonométrie (SOH CAH TOA), à quoi est égal le COSINUS (Cos) d'un angle aigu dans un triangle rectangle ?",
+        "type": "qcm",
+        "options": [
+          "Côté Opposé / Hypoténuse",
+          "Côté Adjacent / Côté Opposé",
+          "Côté Adjacent / Hypoténuse",
+          "Hypoténuse / Côté Opposé"
+        ],
+        "answer": 2,
+        "explanation": "Rappel CAH : Cosinus = Adjacent / Hypoténuse."
+      },
+      {
+        "id": "q4",
+        "text": "Que permet de trouver la Tangente (Tan) d'un angle aigu ?",
+        "type": "qcm",
+        "options": [
+          "Le poids du triangle",
+          "Côté Opposé / Côté Adjacent (TOA)",
+          "La surface du triangle",
+          "L'hypoténuse"
+        ],
+        "answer": 1,
+        "explanation": "La tangente n'utilise pas l'hypoténuse."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : Si je connais la longueur d'un côté et la mesure d'un angle aigu, je peux utiliser la trigonométrie (cos, sin, tan) pour trouver les autres côtés.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la principale utilité de la trigonométrie dans les problèmes de géométrie."
+      }
+    ]
+  },
+  "Fiche_Lecon5_CALCUL_NUMERIQUE": {
+    "title": "Calcul Numérique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que 'l'écriture scientifique' d'un nombre ?",
+        "type": "qcm",
+        "options": [
+          "Un nombre écrit avec des mots compliqués",
+          "Un nombre écrit sous la forme a x 10^n, où 'a' est un nombre décimal compris entre 1 et 9,99... et 'n' est un entier relatif",
+          "Une fraction",
+          "Un code barre"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 4500 s'écrit 4,5 x 10^3."
+      },
+      {
+        "id": "q2",
+        "text": "Si on multiplie deux puissances de 10 (ex: 10^3 x 10^4), que fait-on des exposants ?",
+        "type": "qcm",
+        "options": [
+          "On les multiplie (10^12)",
+          "On les additionne (10^7)",
+          "On les soustrait",
+          "On les ignore"
+        ],
+        "answer": 1,
+        "explanation": "10^a * 10^b = 10^(a+b)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Tout nombre (non nul) élevé à la puissance zéro (ex: 5^0) est égal à 1.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Par convention mathématique, a^0 = 1 (pour a différent de 0)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment additionne-t-on deux fractions (ex: 1/3 + 1/4) ?",
+        "type": "qcm",
+        "options": [
+          "On additionne les numérateurs et les dénominateurs (2/7)",
+          "Il faut d'abord les mettre au MÊME DÉNOMINATEUR (ici 12) avant d'additionner les numérateurs",
+          "On les multiplie",
+          "On soustrait"
+        ],
+        "answer": 1,
+        "explanation": "(1*4)/(3*4) + (1*3)/(4*3) = 4/12 + 3/12 = 7/12."
+      },
+      {
+        "id": "q5",
+        "text": "Comment divise-t-on par une fraction (ex: diviser par a/b) ?",
+        "type": "qcm",
+        "options": [
+          "C'est impossible",
+          "Cela revient à MULTIPLIER par son inverse (multiplier par b/a)",
+          "On divise tout par 2",
+          "On remplace par 0"
+        ],
+        "answer": 1,
+        "explanation": "Diviser, c'est multiplier par l'inverse."
+      }
+    ]
+  },
+  "Fiche_Lecon6_ANGLES_INSCRITS": {
+    "title": "Angles Inscrits et Polygones",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un cercle, qu'est-ce qu'un angle 'inscrit' ?",
+        "type": "qcm",
+        "options": [
+          "Un angle qui est à l'extérieur du cercle",
+          "Un angle dont le SOMMET est sur le cercle et dont les côtés coupent le cercle",
+          "Un angle droit au centre",
+          "Un angle tracé au compas"
+        ],
+        "answer": 1,
+        "explanation": "Le sommet touche la circonférence du cercle."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un angle 'au centre' ?",
+        "type": "qcm",
+        "options": [
+          "Un angle dont le sommet est le CENTRE du cercle",
+          "Un angle en plein milieu de la page",
+          "Un angle qui vaut toujours 90°",
+          "Un petit angle"
+        ],
+        "answer": 0,
+        "explanation": "Il intercepte un arc de cercle à partir du centre."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si un angle inscrit et un angle au centre interceptent le MÊME ARC de cercle, alors l'angle au centre mesure le DOUBLE de l'angle inscrit.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est le théorème de l'angle au centre. Si l'angle inscrit fait 30°, l'angle au centre fait 60°."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si deux angles inscrits différents interceptent le MÊME ARC de cercle ?",
+        "type": "qcm",
+        "options": [
+          "Ils s'annulent",
+          "Ils ont exactement la MÊME MESURE",
+          "L'un est le double de l'autre",
+          "Ils forment un carré"
+        ],
+        "answer": 1,
+        "explanation": "Tous les angles inscrits qui 'regardent' le même arc sont égaux."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le nom d'un polygone régulier à 5 côtés égaux (et qui peut s'inscrire dans un cercle) ?",
+        "type": "qcm",
+        "options": [
+          "Un triangle",
+          "Un carré",
+          "Un pentagone",
+          "Un hexagone"
+        ],
+        "answer": 2,
+        "explanation": "Le polygone régulier à 6 côtés est l'hexagone."
+      }
+    ]
+  },
+  "Fiche_Lecon7_VECTEURS": {
+    "title": "Les Vecteurs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un vecteur (ex: vecteur AB) est défini par 3 caractéristiques. Lesquelles ?",
+        "type": "qcm",
+        "options": [
+          "Son poids, sa taille, sa couleur",
+          "Sa direction (la droite), son sens (de A vers B) et sa longueur (sa norme, la distance AB)",
+          "Son nom, son prénom, son âge",
+          "Ses angles"
+        ],
+        "answer": 1,
+        "explanation": "Un vecteur représente un déplacement orienté d'un point vers un autre."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie géométriquement l'égalité des vecteurs AB et DC (vecteur AB = vecteur DC) ?",
+        "type": "qcm",
+        "options": [
+          "Que les droites se croisent",
+          "Que le quadrilatère ABCD est un PARALLÉLOGRAMME",
+          "Que les points sont alignés",
+          "Que c'est un triangle"
+        ],
+        "answer": 1,
+        "explanation": "Deux vecteurs égaux ont la même direction (parallèles), même sens et même longueur, formant ainsi un parallélogramme."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : D'après la relation de Chasles, si on additionne le vecteur AB + le vecteur BC, on obtient le vecteur AC.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Aller de A à B, puis de B à C, revient au même déplacement que d'aller directement de A à C."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'vecteur nul' ?",
+        "type": "qcm",
+        "options": [
+          "Un vecteur caché",
+          "Un vecteur dont le point de départ et d'arrivée sont confondus (ex: vecteur AA). Sa longueur est zéro.",
+          "Un vecteur qui descend",
+          "Un chiffre"
+        ],
+        "answer": 1,
+        "explanation": "Il représente un déplacement nul."
+      },
+      {
+        "id": "q5",
+        "text": "Si le point I est le milieu du segment [AB], quelle égalité vectorielle est vraie ?",
+        "type": "qcm",
+        "options": [
+          "vecteur IA = vecteur IB",
+          "vecteur AI = vecteur IB",
+          "vecteur AB = vecteur nul",
+          "vecteur IA = vecteur AB"
+        ],
+        "answer": 1,
+        "explanation": "Le déplacement de A vers I est exactement le même que le déplacement de I vers B (même direction, même sens, même longueur)."
+      }
+    ]
+  },
+  "Fiche_Lecon8_EQUATIONS_INEQUATIONS_IR": {
+    "title": "Équations et Inéquations dans R",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une équation du premier degré à une inconnue ?",
+        "type": "qcm",
+        "options": [
+          "Une poésie mathématique",
+          "Une égalité contenant une lettre 'x' (qui n'a pas de puissance comme x²) qu'il faut trouver pour rendre l'égalité vraie",
+          "Une addition de nombres",
+          "Un dessin"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 2x + 3 = 7."
+      },
+      {
+        "id": "q2",
+        "text": "Pour résoudre 'x + 4 = 10', que fait-on ?",
+        "type": "qcm",
+        "options": [
+          "On ajoute 4",
+          "On soustrait 4 des deux côtés (x = 10 - 4), donc x = 6",
+          "On multiplie par 10",
+          "On divise par x"
+        ],
+        "answer": 1,
+        "explanation": "On isole 'x' en appliquant l'opération inverse des deux côtés de l'égalité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La règle du produit nul dit que : Si A x B = 0, alors obligatoirement A = 0 ou B = 0.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la méthode utilisée pour résoudre des équations factorisées comme (x-2)(x+3) = 0."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la règle CRITIQUE lors de la résolution d'une inéquation (avec les signes < ou >) si on multiplie ou divise par un nombre NÉGATIF ?",
+        "type": "qcm",
+        "options": [
+          "Il ne se passe rien",
+          "Il faut CHANGER LE SENS de l'inégalité (ex: < devient >)",
+          "On efface l'inéquation",
+          "Le résultat est zéro"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Si -2x < 4, alors on divise par -2, ce qui donne x > -2."
+      },
+      {
+        "id": "q5",
+        "text": "Comment représente-t-on l'ensemble des solutions d'une inéquation (ex: x >= 2) ?",
+        "type": "qcm",
+        "options": [
+          "Par un seul point",
+          "Sur une droite graduée (axe des abscisses), en hachurant la partie qui ne convient pas",
+          "Dans un tableau à double entrée",
+          "Avec un cercle"
+        ],
+        "answer": 1,
+        "explanation": "Les crochets (ouverts ou fermés) indiquent si le nombre frontière (ici 2) est inclus ou exclu de la solution."
+      }
+    ]
+  },
+  "Fiche_Lecon9_COORDONNEES_VECTEUR": {
+    "title": "Coordonnées d'un Vecteur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un repère (O, I, J), comment calcule-t-on les coordonnées (x; y) du vecteur AB si on connaît A(xA; yA) et B(xB; yB) ?",
+        "type": "qcm",
+        "options": [
+          "On additionne tout",
+          "x = xB - xA  et  y = yB - yA (Point d'arrivée MOINS Point de départ)",
+          "x = xA - xB",
+          "On les multiplie"
+        ],
+        "answer": 1,
+        "explanation": "C'est la formule fondamentale : Fin moins Début."
+      },
+      {
+        "id": "q2",
+        "text": "Si le vecteur u a pour coordonnées (2 ; 3) et le vecteur v a pour coordonnées (4 ; 5), quelles sont les coordonnées du vecteur somme (u + v) ?",
+        "type": "qcm",
+        "options": [
+          "(8 ; 15)",
+          "(6 ; 8) (on additionne les abscisses entre elles, et les ordonnées entre elles)",
+          "(2 ; 2)",
+          "(0 ; 0)"
+        ],
+        "answer": 1,
+        "explanation": "(2+4 = 6) et (3+5 = 8)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour calculer les coordonnées du MILIEU M d'un segment [AB], on fait la moyenne de leurs coordonnées : xM = (xA + xB) / 2 et yM = (yA + yB) / 2.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le milieu est la moyenne parfaite des deux extrémités."
+      },
+      {
+        "id": "q4",
+        "text": "Comment calcule-t-on la DISTANCE entre deux points A et B (c'est-à-dire la norme du vecteur AB) dans un repère orthonormé ?",
+        "type": "qcm",
+        "options": [
+          "Avec un mètre",
+          "AB = √[ (xB - xA)² + (yB - yA)² ]",
+          "AB = xA + yB",
+          "AB = 0"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'application directe du théorème de Pythagore dans le repère."
+      },
+      {
+        "id": "q5",
+        "text": "Si deux vecteurs ont des coordonnées proportionnelles (leurs coordonnées sont des multiples l'une de l'autre), alors ces vecteurs sont :",
+        "type": "qcm",
+        "options": [
+          "Perpendiculaires",
+          "Colinaires (leurs directions sont parallèles)",
+          "Nuls",
+          "Sécants"
+        ],
+        "answer": 1,
+        "explanation": "La colinéarité permet de prouver que des droites sont parallèles ou que des points sont alignés."
+      }
+    ]
+  },
+  "Fiche_Lecon10_EQUATIONS_DROITES": {
+    "title": "Équations de Droites",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la forme générale de l'équation réduite d'une droite non verticale dans un repère ?",
+        "type": "qcm",
+        "options": [
+          "x = 5",
+          "y = ax + b",
+          "y = x²",
+          "a + b = y"
+        ],
+        "answer": 1,
+        "explanation": "'a' est le coefficient directeur et 'b' est l'ordonnée à l'origine."
+      },
+      {
+        "id": "q2",
+        "text": "Dans l'équation y = ax + b, que représente le coefficient 'a' ?",
+        "type": "qcm",
+        "options": [
+          "Le poids de la ligne",
+          "Le coefficient directeur (ou la pente) : il indique l'inclinaison de la droite",
+          "Le centre du repère",
+          "L'âge du capitaine"
+        ],
+        "answer": 1,
+        "explanation": "Si a est positif, la droite 'monte'. Si a est négatif, la droite 'descend'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le nombre 'b' (ordonnée à l'origine) est la valeur de y à l'endroit précis où la droite coupe l'axe vertical des ordonnées (l'axe OY, là où x=0).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Si b = 3, la droite passe par le point de coordonnées (0 ; 3)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment sait-on sans la tracer si un point A(xA ; yA) appartient à la droite d'équation y = 2x - 1 ?",
+        "type": "qcm",
+        "options": [
+          "On le dessine au hasard",
+          "On remplace x par xA dans la formule (2*xA - 1) ; si le résultat est égal à yA, alors le point est sur la droite",
+          "On jette une pièce",
+          "On mesure avec une règle"
+        ],
+        "answer": 1,
+        "explanation": "Les coordonnées du point doivent vérifier (rendre vraie) l'équation de la droite."
+      },
+      {
+        "id": "q5",
+        "text": "Si deux droites différentes ont EXACTEMENT le même coefficient directeur 'a' (ex: y = 3x + 1 et y = 3x - 5), alors ces droites sont :",
+        "type": "qcm",
+        "options": [
+          "Sécantes (elles se croisent)",
+          "Perpendiculaires",
+          "Strictement parallèles",
+          "Confondues"
+        ],
+        "answer": 2,
+        "explanation": "Même pente = parallèles. Elles ne se croiseront jamais."
+      }
+    ]
+  },
+  "Fiche_Lecon11_STATISTIQUE": {
+    "title": "Statistique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En statistique, qu'est-ce que l'effectif d'une valeur ?",
+        "type": "qcm",
+        "options": [
+          "La taille de la personne",
+          "Le nombre de fois où cette valeur apparaît dans la série (ex: le nombre d'élèves ayant eu la note 12)",
+          "La moyenne de la classe",
+          "L'âge du professeur"
+        ],
+        "answer": 1,
+        "explanation": "L'effectif total est la somme de tous les effectifs (ex: le nombre total d'élèves dans la classe)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment calcule-t-on la fréquence d'une valeur ?",
+        "type": "qcm",
+        "options": [
+          "On divise l'effectif total par l'effectif de la valeur",
+          "On divise l'effectif de cette valeur par l'effectif total (et on peut le multiplier par 100 pour l'avoir en pourcentage)",
+          "On additionne tout",
+          "On choisit un nombre au hasard"
+        ],
+        "answer": 1,
+        "explanation": "Si 5 élèves sur 20 ont eu la note 12, la fréquence est 5/20 = 0,25 (ou 25%)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le 'Mode' d'une série statistique est la valeur (ou la classe) qui a le plus grand effectif (la plus fréquente).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la valeur 'à la mode', celle qui revient le plus souvent."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la 'Médiane' d'une série statistique ordonnée (rangée du plus petit au plus grand) ?",
+        "type": "qcm",
+        "options": [
+          "La valeur moyenne",
+          "La valeur qui partage la série en deux groupes de même effectif (50% en dessous, 50% au-dessus)",
+          "La valeur la plus haute",
+          "La première valeur"
+        ],
+        "answer": 1,
+        "explanation": "La médiane coupe la population exactement en deux parties égales, contrairement à la moyenne qui peut être tirée vers le haut par une seule très bonne note."
+      },
+      {
+        "id": "q5",
+        "text": "Comment calcule-t-on la Moyenne pondérée d'une série (ex: des notes avec leurs effectifs) ?",
+        "type": "qcm",
+        "options": [
+          "On additionne les notes et on divise par 2",
+          "On multiplie chaque note par son effectif, on additionne tous ces produits, puis on divise par l'effectif total",
+          "On garde la plus grande note",
+          "On soustrait les notes"
+        ],
+        "answer": 1,
+        "explanation": "C'est le calcul classique de la moyenne trimestrielle."
+      }
+    ]
+  },
+  "Fiche_Lecon12_EQUATIONS_INEQUATIONS_RxR": {
+    "title": "Systèmes d'équations dans RxR",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un système de deux équations à deux inconnues (du type ax + by = c et a'x + b'y = c') ?",
+        "type": "qcm",
+        "options": [
+          "Deux additions",
+          "Un problème où l'on cherche un couple (x ; y) qui rend vraies les DEUX équations EN MÊME TEMPS",
+          "Un graphique vide",
+          "Une devinette avec 3 chiffres"
+        ],
+        "answer": 1,
+        "explanation": "Exemple classique : trouver le prix d'un pain (x) et d'un cahier (y) à partir de deux achats différents."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la méthode de 'substitution' pour résoudre un tel système ?",
+        "type": "qcm",
+        "options": [
+          "On efface une ligne",
+          "On exprime une inconnue (ex: x) en fonction de l'autre (y) dans la 1ère équation, puis on remplace ce 'x' dans la 2ème équation",
+          "On remplace tout par zéro",
+          "On devine la réponse"
+        ],
+        "answer": 1,
+        "explanation": "Cela permet d'obtenir une équation avec une seule inconnue (y) facile à résoudre."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La méthode de 'combinaison linéaire' (ou addition) consiste à multiplier une (ou les deux) équation(s) pour pouvoir éliminer une inconnue en additionnant les deux lignes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On s'arrange par exemple pour avoir '+3y' en haut et '-3y' en bas, pour qu'ils s'annulent à l'addition."
+      },
+      {
+        "id": "q4",
+        "text": "Graphiquement, à quoi correspond la solution (le couple x; y) d'un système de deux équations du premier degré ?",
+        "type": "qcm",
+        "options": [
+          "À une surface",
+          "Aux coordonnées du POINT D'INTERSECTION des deux droites représentées par ces deux équations",
+          "À un cercle",
+          "À l'origine (0;0)"
+        ],
+        "answer": 1,
+        "explanation": "C'est la méthode de résolution graphique : on trace les droites et on regarde où elles se croisent."
+      },
+      {
+        "id": "q5",
+        "text": "Comment résoudre graphiquement une INÉQUATION du 1er degré à deux inconnues (ex: y > 2x + 1) ?",
+        "type": "qcm",
+        "options": [
+          "On dessine un carré",
+          "On trace la droite frontière (y = 2x + 1), puis on hachure le demi-plan (la zone) qui ne vérifie pas l'inéquation. La zone non hachurée est la solution.",
+          "On efface le repère",
+          "On trace des vagues"
+        ],
+        "answer": 1,
+        "explanation": "Les solutions sont une infinité de points situés dans une région du plan géométrique."
+      }
+    ]
+  },
+  "Fiche_Lecon13_APPLICATIONS_AFFINES": {
+    "title": "Les applications affines",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la forme mathématique d'une fonction (ou application) affine ?",
+        "type": "qcm",
+        "options": [
+          "f(x) = x²",
+          "f(x) = ax + b (où 'a' et 'b' sont des nombres donnés)",
+          "f(x) = 1/x",
+          "f(x) = a + b"
+        ],
+        "answer": 1,
+        "explanation": "C'est une fonction qui, à un nombre x, associe le nombre 'ax + b'."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la représentation graphique (le dessin) d'une fonction affine dans un repère ?",
+        "type": "qcm",
+        "options": [
+          "Une courbe en forme de bol (parabole)",
+          "Une droite qui ne passe pas forcément par l'origine du repère",
+          "Un cercle",
+          "Un point"
+        ],
+        "answer": 1,
+        "explanation": "Pour la tracer, il suffit de calculer les coordonnées de seulement 2 points."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si b = 0 dans f(x) = ax + b, alors f(x) = ax. C'est une application linéaire (une situation de proportionnalité) et sa droite passe obligatoirement par l'origine O(0;0).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'application linéaire est un cas particulier (et plus simple) de l'application affine."
+      },
+      {
+        "id": "q4",
+        "text": "Si f(x) = 3x - 2, comment calcule-t-on l'image du nombre 4 ?",
+        "type": "qcm",
+        "options": [
+          "On fait 3 + 4 - 2",
+          "On remplace x par 4 : f(4) = (3 * 4) - 2 = 12 - 2 = 10",
+          "On divise par 4",
+          "C'est 4"
+        ],
+        "answer": 1,
+        "explanation": "L'image est la valeur de sortie de la 'machine' fonction quand on y entre un nombre."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on le nombre 'x' (celui qu'on met dans la fonction pour trouver l'image) ?",
+        "type": "qcm",
+        "options": [
+          "L'antécédent",
+          "L'image",
+          "Le fantôme",
+          "Le produit"
+        ],
+        "answer": 0,
+        "explanation": "x est l'antécédent, f(x) est l'image."
+      }
+    ]
+  },
+  "Fiche_Lecon14_PYRAMIDE_CONE": {
+    "title": "Pyramide et Cône",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une pyramide régulière ?",
+        "type": "qcm",
+        "options": [
+          "Un cube tordu",
+          "Un solide dont la base est un polygone régulier (ex: un carré parfait) et dont toutes les faces latérales sont des triangles isocèles identiques",
+          "Une boule",
+          "Un cylindre"
+        ],
+        "answer": 1,
+        "explanation": "Les pyramides d'Égypte sont des exemples (presque) parfaits à base carrée."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un cône de révolution ?",
+        "type": "qcm",
+        "options": [
+          "Une pyramide",
+          "Un solide généré par la rotation (révolution) d'un triangle rectangle autour de l'un des côtés de l'angle droit. Sa base est un disque (cercle).",
+          "Un carré qui tourne",
+          "Un tube"
+        ],
+        "answer": 1,
+        "explanation": "C'est la forme d'un cornet de glace ou d'un chapeau de fée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La formule pour calculer le Volume (V) d'une pyramide OU d'un cône est exactement la même : V = (Aire de la base * hauteur) / 3.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le volume de ces solides 'pointus' est le tiers du volume du cylindre ou du pavé de même base et même hauteur."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si l'on coupe une pyramide (ou un cône) par un plan parallèle à sa base ?",
+        "type": "qcm",
+        "options": [
+          "Elle explose",
+          "On obtient une petite pyramide (ou un petit cône) en haut qui est une RÉDUCTION du grand solide, et un 'tronc' en bas",
+          "On obtient un cylindre",
+          "On obtient une sphère"
+        ],
+        "answer": 1,
+        "explanation": "C'est le principe de la section plane."
+      },
+      {
+        "id": "q5",
+        "text": "Dans une réduction (ou agrandissement) de coefficient k, par combien est multiplié le VOLUME initial ?",
+        "type": "qcm",
+        "options": [
+          "Par k",
+          "Par k² (k au carré)",
+          "Par k³ (k au cube, c'est-à-dire k * k * k)",
+          "Par 3"
+        ],
+        "answer": 2,
+        "explanation": "Les longueurs sont multipliées par k, les aires par k², et les volumes par k³."
+      }
+    ]
+  }
+}

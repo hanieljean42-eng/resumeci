@@ -1,0 +1,1226 @@
+{
+  "Fiche_T1_L1_L_histoire_et_la_formation_du_citoyen": {
+    "title": "L'Histoire et la formation du citoyen",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'Histoire ?",
+        "type": "qcm",
+        "options": [
+          "L'étude des animaux préhistoriques",
+          "La science qui étudie le passé des sociétés humaines pour comprendre le présent et préparer l'avenir",
+          "Une légende ancienne",
+          "L'étude du futur"
+        ],
+        "answer": 1,
+        "explanation": "L'Histoire a une fonction sociale et éducative."
+      },
+      {
+        "id": "q2",
+        "text": "Comment l'Histoire participe-t-elle à la formation du citoyen ?",
+        "type": "qcm",
+        "options": [
+          "En lui apprenant à se battre",
+          "En forgeant une conscience nationale (l'identité, le patriotisme), et en tirant les leçons des erreurs du passé pour promouvoir la paix et les droits de l'homme",
+          "En lui apprenant à oublier le passé",
+          "Elle ne sert à rien"
+        ],
+        "answer": 1,
+        "explanation": "Le citoyen éclairé est celui qui connaît l'histoire de son pays et de l'humanité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'historien écrit l'histoire à partir de son imagination.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'historien se base exclusivement sur des SOURCES (documents écrits, vestiges archéologiques, traditions orales)."
+      },
+      {
+        "id": "q4",
+        "text": "Lequel de ces principes est fondamental pour un historien ?",
+        "type": "qcm",
+        "options": [
+          "L'objectivité (la recherche de la vérité par la critique des sources)",
+          "La subjectivité",
+          "Le mensonge patriotique",
+          "La poésie"
+        ],
+        "answer": 0,
+        "explanation": "Même s'il est difficile d'être totalement neutre, l'historien doit être rigoureux et honnête dans son analyse."
+      },
+      {
+        "id": "q5",
+        "text": "En Afrique, quelle source historique a longtemps été primordiale (et l'est encore pour le passé lointain) ?",
+        "type": "qcm",
+        "options": [
+          "La source écrite",
+          "La source audiovisuelle",
+          "La source orale (les récits des griots, les mythes, les témoignages)",
+          "Internet"
+        ],
+        "answer": 2,
+        "explanation": "La tradition orale est une bibliothèque vivante de l'histoire africaine."
+      }
+    ]
+  },
+  "Fiche_T1_L1_La_geographie_objet_interet_et_demarche": {
+    "title": "La Géographie : objet, intérêt et démarche",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'histoire ?",
+        "type": "qcm",
+        "options": [
+          "La science qui étudie le passé de l'humanité à l'aide de sources et de traces",
+          "L'étude du système solaire",
+          "L'invention de récits fantastiques",
+          "La politique actuelle"
+        ],
+        "answer": 0,
+        "explanation": "L'historien cherche à comprendre et expliquer les événements passés."
+      },
+      {
+        "id": "q2",
+        "text": "Que représente la longitude en géographie ?",
+        "type": "qcm",
+        "options": [
+          "La position Est-Ouest par rapport au méridien de Greenwich",
+          "La position Nord-Sud par rapport à l'équateur",
+          "L'altitude d'un point",
+          "La profondeur de l'océan"
+        ],
+        "answer": 0,
+        "explanation": "Les méridiens relient les pôles et mesurent la longitude (de 0 à 180°)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La Révolution Industrielle a commencé au 19ème siècle en Afrique.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Elle a débuté à la fin du 18ème siècle en Grande-Bretagne."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'appelle la période qui a suivi l'indépendance des colonies africaines (années 1960) ?",
+        "type": "qcm",
+        "options": [
+          "Les indépendances ou la décolonisation",
+          "L'Antiquité",
+          "Le Moyen-Âge",
+          "L'ère glaciaire"
+        ],
+        "answer": 0,
+        "explanation": "C'est la période où les pays d'Afrique ont acquis leur souveraineté politique."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le secteur économique qui regroupe l'agriculture, la pêche et l'exploitation forestière ?",
+        "type": "qcm",
+        "options": [
+          "Le secteur primaire",
+          "Le secteur secondaire",
+          "Le secteur tertiaire",
+          "Le secteur quaternaire"
+        ],
+        "answer": 0,
+        "explanation": "Le secteur primaire exploite directement les ressources naturelles."
+      }
+    ]
+  },
+  "Fiche_T1_L2_La_planete_terre": {
+    "title": "La Planète Terre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la forme de la Terre ?",
+        "type": "qcm",
+        "options": [
+          "Parfaitement plate",
+          "Une sphère parfaitement ronde",
+          "Un ellipsoïde (une sphère légèrement aplatie aux pôles et renflée à l'équateur)",
+          "Un cube"
+        ],
+        "answer": 2,
+        "explanation": "C'est la force centrifuge due à sa rotation qui lui donne cette forme."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les deux mouvements principaux de la Terre ?",
+        "type": "qcm",
+        "options": [
+          "La translation et l'oscillation",
+          "La rotation (sur elle-même en 24h) et la révolution (autour du soleil en 365 jours 1/4)",
+          "L'ascension et la chute",
+          "L'expansion et la contraction"
+        ],
+        "answer": 1,
+        "explanation": "La rotation crée l'alternance jour/nuit. La révolution crée les saisons."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'équateur divise la Terre en deux hémisphères (Nord et Sud) et les méridiens sont des demi-cercles imaginaires passant par les pôles.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ce sont les repères de base pour les coordonnées géographiques (latitude et longitude)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que l'hydrosphère ?",
+        "type": "qcm",
+        "options": [
+          "La couche de gaz (l'air)",
+          "L'ensemble des eaux (océans, mers, fleuves, glaces) qui recouvrent environ 71% de la surface terrestre",
+          "La croûte solide de la terre",
+          "La zone où vivent les êtres vivants"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi on l'appelle la 'Planète bleue'."
+      },
+      {
+        "id": "q5",
+        "text": "De quoi est constituée la structure interne de la Terre ?",
+        "type": "qcm",
+        "options": [
+          "Elle est vide à l'intérieur",
+          "D'un noyau (interne et externe), d'un manteau, et d'une croûte terrestre (écorce)",
+          "Uniquement de lave",
+          "Uniquement de roches solides uniformes"
+        ],
+        "answer": 1,
+        "explanation": "Plus on descend vers le centre, plus la température et la pression sont élevées."
+      }
+    ]
+  },
+  "Fiche_T1_L2_Les_methodes_d_etude_de_l_histoire": {
+    "title": "Les méthodes d'étude de l'histoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelles sont les trois grandes étapes de la méthode historique ?",
+        "type": "qcm",
+        "options": [
+          "Invention, écriture, publication",
+          "La recherche des documents (heuristique), la critique des sources, et la synthèse (l'interprétation)",
+          "Observation, expérimentation, conclusion",
+          "La lecture, le résumé, l'exposé"
+        ],
+        "answer": 1,
+        "explanation": "C'est la démarche scientifique de l'historien."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la 'critique externe' d'un document historique ?",
+        "type": "qcm",
+        "options": [
+          "Critiquer les idées de l'auteur",
+          "Vérifier l'authenticité matérielle du document (son papier, son écriture, sa date de fabrication : est-ce un vrai ou un faux ?)",
+          "Critiquer la personne qui l'a trouvé",
+          "Traduire le document"
+        ],
+        "answer": 1,
+        "explanation": "On s'assure d'abord que l'objet n'est pas une falsification."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La 'critique interne' consiste à vérifier le contenu du document, la sincérité de l'auteur et la vraisemblance des faits relatés.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'auteur a-t-il menti, exagéré ou été influencé ? (Exemple: les propagandes de guerre)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles 'sciences auxiliaires' (sciences d'aide) aident souvent l'historien dans son travail ?",
+        "type": "qcm",
+        "options": [
+          "L'astrologie et la magie",
+          "L'archéologie, la linguistique, la paléontologie, la sociologie, l'économie...",
+          "Les mathématiques uniquement",
+          "La médecine et la pharmacie"
+        ],
+        "answer": 1,
+        "explanation": "L'historien fait appel aux autres sciences pour mieux comprendre les sociétés passées."
+      },
+      {
+        "id": "q5",
+        "text": "La datation au Carbone 14 (C14) est une technique scientifique utilisée principalement pour :",
+        "type": "qcm",
+        "options": [
+          "Dater la rédaction d'un livre moderne",
+          "Dater des vestiges organiques très anciens (ossements, bois) pour déterminer leur âge",
+          "Soigner des maladies du passé",
+          "Faire exploser des bombes"
+        ],
+        "answer": 1,
+        "explanation": "C'est une méthode fondamentale pour l'archéologie et la préhistoire."
+      }
+    ]
+  },
+  "Fiche_T1_L3_La_methodologie_de_la_dissertation_et_du_commentaire_de_document": {
+    "title": "Méthodologie Histoire-Géo (Dissertation et Commentaire)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'exigence fondamentale de la dissertation en Histoire-Géographie ?",
+        "type": "qcm",
+        "options": [
+          "Réciter son cours par cœur sans réfléchir",
+          "Construire une argumentation logique (Introduction, Développement structuré, Conclusion) pour répondre à un sujet (problématique)",
+          "Raconter une anecdote personnelle",
+          "Ne faire que des schémas"
+        ],
+        "answer": 1,
+        "explanation": "Comme en français, la dissertation exige réflexion et structure (plan)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les étapes de l'introduction d'une dissertation en HG ?",
+        "type": "qcm",
+        "options": [
+          "Le contexte (amorce), la problématique, l'annonce du plan",
+          "Le titre, le nom, la date",
+          "Le bilan, l'ouverture",
+          "Introduction 1, Introduction 2"
+        ],
+        "answer": 0,
+        "explanation": "C'est la même structure 'Amener, Poser, Diviser'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un commentaire de document en Histoire-Géographie, le candidat doit seulement recopier ou paraphraser le document, sans utiliser ses connaissances personnelles (le cours).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'exercice consiste à EXPLIQUER le document À L'AIDE de vos connaissances (le cours éclaire le document, et le document illustre le cours)."
+      },
+      {
+        "id": "q4",
+        "text": "La première partie du commentaire de document est souvent 'l'introduction'. Que contient-elle obligatoirement ?",
+        "type": "qcm",
+        "options": [
+          "La conclusion",
+          "La présentation du document (Nature, Auteur, Date, Source, Idée générale ou contexte historique)",
+          "Des citations aléatoires",
+          "Un croquis"
+        ],
+        "answer": 1,
+        "explanation": "Il faut présenter l'identité complète du document (la fameuse méthode NADSI ou ANDi)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle erreur grave (hors-sujet) faut-il éviter en Histoire ou Géographie lors de la rédaction ?",
+        "type": "qcm",
+        "options": [
+          "Faire un plan",
+          "Donner des dates et des chiffres",
+          "Le récit chronologique pur sans analyse, l'anachronisme (mélanger les époques), ou donner des opinions politiques personnelles",
+          "Rédiger une conclusion"
+        ],
+        "answer": 2,
+        "explanation": "L'Histoire et la Géo sont des disciplines d'analyse et d'explication objective."
+      }
+    ]
+  },
+  "Fiche_T1_L3_Les_techniques_de_representation_de_la_terre": {
+    "title": "Les techniques de représentation de la Terre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la représentation la plus fidèle (la plus exacte) de la Terre, bien qu'elle soit peu pratique à transporter ?",
+        "type": "qcm",
+        "options": [
+          "Le planisphère",
+          "Le globe terrestre",
+          "Une photo satellitaire plate",
+          "Le croquis"
+        ],
+        "answer": 1,
+        "explanation": "Le globe respecte la forme sphérique et les proportions exactes des continents."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'une 'projection cartographique' (ex: Mercator, Peters) ?",
+        "type": "qcm",
+        "options": [
+          "La lumière d'un projecteur vidéo",
+          "La technique mathématique qui permet de représenter la surface sphérique de la Terre sur une surface plane (une carte)",
+          "Une prédiction du futur de la Terre",
+          "La fabrication des globes"
+        ],
+        "answer": 1,
+        "explanation": "Toute projection sur un planisphère entraîne des déformations (soit des surfaces, soit des distances, soit des angles)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'échelle d'une carte indique le rapport de proportion entre la distance mesurée sur la carte et la distance réelle sur le terrain.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Une échelle de 1/100 000 (ou 1:100 000) signifie que 1 cm sur la carte représente 100 000 cm (soit 1 km) dans la réalité."
+      },
+      {
+        "id": "q4",
+        "text": "Quels sont les éléments obligatoires (l'habillage) que doit comporter toute carte géographique ?",
+        "type": "qcm",
+        "options": [
+          "Titre, Légende, Échelle, Orientation (la flèche du Nord)",
+          "De la couleur bleue",
+          "Le nom de l'auteur en gros",
+          "Un cadre de bois"
+        ],
+        "answer": 0,
+        "explanation": "Sans ces 4 éléments, une carte est illisible et scientifiquement fausse."
+      },
+      {
+        "id": "q5",
+        "text": "La télédétection, les SIG (Systèmes d'Information Géographique) et les images satellites sont des outils de géographie :",
+        "type": "qcm",
+        "options": [
+          "Très anciens (Antiquité)",
+          "Modernes (contemporains), permettant une analyse spatiale très précise et numérisée",
+          "Inventés en Afrique au 15ème siècle",
+          "Qui ne servent à rien"
+        ],
+        "answer": 1,
+        "explanation": "Aujourd'hui, la cartographie est entièrement numérisée (ex: Google Earth, Météo)."
+      }
+    ]
+  },
+  "Fiche_T2_L1_La_prehistoire_en_Afrique_et_dans_le_reste_du_monde": {
+    "title": "La Préhistoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelles sont les deux grandes périodes de la Préhistoire ?",
+        "type": "qcm",
+        "options": [
+          "L'Antiquité et le Moyen Âge",
+          "Le Paléolithique (l'âge de la pierre taillée) et le Néolithique (l'âge de la pierre polie)",
+          "La Renaissance et les Temps Modernes",
+          "Le Jurassique et le Crétacé"
+        ],
+        "answer": 1,
+        "explanation": "La préhistoire se termine avec l'invention de l'écriture (vers 3300 av. J.-C.)."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi appelle-t-on l'Afrique le 'berceau de l'humanité' ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'il y fait chaud",
+          "Parce que c'est sur ce continent qu'on a découvert les plus anciens fossiles d'hominidés (les Australopithèques comme Lucy, Toumaï)",
+          "Parce que l'écriture y a été inventée en premier",
+          "C'est une légende"
+        ],
+        "answer": 1,
+        "explanation": "C'est en Afrique de l'Est et au Tchad que les plus anciennes traces de la lignée humaine ont été mises au jour."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pendant le Paléolithique, les hommes étaient principalement de sédentaires (agriculteurs vivant dans des villages fixes).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Au Paléolithique, ils étaient nomades, chasseurs, pêcheurs et cueilleurs."
+      },
+      {
+        "id": "q4",
+        "text": "Quel événement majeur caractérise la 'Révolution néolithique' (vers 10 000 av. J.-C.) ?",
+        "type": "qcm",
+        "options": [
+          "La découverte du feu",
+          "L'invention de l'agriculture, de l'élevage, et la sédentarisation (premiers villages)",
+          "L'invention de la roue",
+          "Le voyage sur la lune"
+        ],
+        "answer": 1,
+        "explanation": "L'homme passe du statut de prédateur (chasseur) à celui de producteur (paysan)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle évolution biologique (anatomique) a été déterminante dans l'évolution de la lignée humaine ?",
+        "type": "qcm",
+        "options": [
+          "La perte des poils",
+          "L'acquisition de la bipédie (la marche sur deux jambes) qui a libéré les mains, permettant la fabrication d'outils et le développement du cerveau",
+          "Le changement de couleur des yeux",
+          "La vitesse de course"
+        ],
+        "answer": 1,
+        "explanation": "De l'Homo habilis à l'Homo sapiens, la bipédie est fondamentale."
+      }
+    ]
+  },
+  "Fiche_T2_L1_Le_milieu_subequatorial_ivoirien": {
+    "title": "Le milieu subéquatorial ivoirien",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans quelle partie de la Côte d'Ivoire se situe le domaine subéquatorial ?",
+        "type": "qcm",
+        "options": [
+          "Dans la moitié Nord du pays",
+          "Dans la moitié Sud du pays (la zone forestière)",
+          "Au Centre uniquement",
+          "À l'Est uniquement"
+        ],
+        "answer": 1,
+        "explanation": "Ce domaine couvre environ la moitié sud de la Côte d'Ivoire (le 'V' baoulé marque la transition)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les caractéristiques du climat subéquatorial (ou climat attiéen) en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Il y a très peu de pluie (climat sec)",
+          "Il est caractérisé par de fortes chaleurs, une très forte humidité et de grandes précipitations (plus de 1500 mm d'eau par an)",
+          "Il neige en hiver",
+          "Il n'y a qu'une seule saison"
+        ],
+        "answer": 1,
+        "explanation": "L'humidité est quasi constante toute l'année."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le climat subéquatorial ivoirien comporte 4 saisons (2 saisons des pluies et 2 saisons sèches).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Grande saison des pluies (avril-juillet), petite saison sèche (août), petite saison des pluies (septembre-novembre), grande saison sèche (décembre-mars)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la formation végétale (la flore) naturelle dominante dans le milieu subéquatorial ivoirien ?",
+        "type": "qcm",
+        "options": [
+          "La savane herbeuse",
+          "Le désert",
+          "La forêt dense humide (ou forêt sempervirente/mésophile)",
+          "La steppe"
+        ],
+        "answer": 2,
+        "explanation": "Malheureusement, cette forêt dense est aujourd'hui très dégradée par l'action de l'homme."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles cultures agricoles sont typiques (et favorisées) dans ce domaine subéquatorial (le Sud) ?",
+        "type": "qcm",
+        "options": [
+          "Le coton, le mil, le sorgho",
+          "Les cultures pérennes (de rente) comme le cacao, le café, l'hévéa, le palmier à huile, et les vivriers (banane, manioc, igname)",
+          "Le blé, l'orge",
+          "La pomme de terre, la vigne"
+        ],
+        "answer": 1,
+        "explanation": "C'est la grande zone de production des cultures d'exportation de la Côte d'Ivoire."
+      }
+    ]
+  },
+  "Fiche_T2_L2_La_civilisation_de_l_Egypte_ancienne": {
+    "title": "La civilisation de l'Égypte ancienne",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel fleuve est à l'origine du développement et de la richesse de la civilisation de l'Égypte antique (Herodote disait que 'l'Égypte est un don du...') ?",
+        "type": "qcm",
+        "options": [
+          "Le Tigre",
+          "Le Nil",
+          "Le fleuve Congo",
+          "L'Euphrate"
+        ],
+        "answer": 1,
+        "explanation": "Les crues régulières du Nil déposaient du limon très fertile, permettant une agriculture prospère."
+      },
+      {
+        "id": "q2",
+        "text": "Qui détenait le pouvoir absolu (politique, religieux, militaire) dans l'Égypte antique ?",
+        "type": "qcm",
+        "options": [
+          "Le Maire",
+          "Le Pharaon (considéré comme un dieu vivant, fils de Râ)",
+          "Le Président",
+          "Le Sénat"
+        ],
+        "answer": 1,
+        "explanation": "Le Pharaon régnait sur l'empire. Des dynasties célèbres s'y sont succédé (Khéops, Ramsès, Toutânkhamon)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les Égyptiens de l'Antiquité étaient monothéistes (ils ne croyaient qu'en un seul Dieu).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Ils étaient polythéistes (ils vénéraient de très nombreux dieux : Osiris, Isis, Horus, Anubis, Râ...)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'appelle l'écriture sacrée inventée par les Égyptiens de l'Antiquité ?",
+        "type": "qcm",
+        "options": [
+          "L'alphabet latin",
+          "L'écriture cunéiforme",
+          "Les Hiéroglyphes (symboles et dessins gravés sur la pierre ou écrits sur du papyrus)",
+          "Le braille"
+        ],
+        "answer": 2,
+        "explanation": "Ces hiéroglyphes ont été déchiffrés par le français Champollion en 1822 grâce à la pierre de Rosette."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi les Égyptiens pratiquaient-ils la momification et construisaient-ils d'immenses pyramides (tombeaux) ?",
+        "type": "qcm",
+        "options": [
+          "Pour faire de l'art",
+          "Parce qu'ils croyaient fortement en la vie après la mort (la vie dans l'au-delà), qui nécessitait la préservation du corps",
+          "Parce qu'ils avaient trop d'argent",
+          "Pour cacher des trésors aux voleurs"
+        ],
+        "answer": 1,
+        "explanation": "La religion et l'au-delà occupaient une place centrale dans leur civilisation."
+      }
+    ]
+  },
+  "Fiche_T2_L2_Le_milieu_tropical_ivoirien": {
+    "title": "Le milieu tropical ivoirien",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans quelle partie de la Côte d'Ivoire se situe le domaine tropical (climat soudanais ou baouléen) ?",
+        "type": "qcm",
+        "options": [
+          "Dans la moitié Sud",
+          "Dans la moitié Nord et une partie du Centre (au-dessus du 'V' baoulé)",
+          "Seulement à l'Ouest (les montagnes)",
+          "Tout le long de la mer"
+        ],
+        "answer": 1,
+        "explanation": "C'est la région des savanes."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les caractéristiques du climat tropical (soudanais) au Nord de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Il pleut toute l'année",
+          "Il y a deux saisons très distinctes : une longue saison sèche (parfois sous l'influence de l'Harmattan) et une courte saison des pluies. Les précipitations sont plus faibles (moins de 1200 mm/an).",
+          "Il neige souvent",
+          "L'humidité est de 100% tout le temps"
+        ],
+        "answer": 1,
+        "explanation": "L'amplitude thermique (la différence de température entre le jour et la nuit, ou selon les saisons) y est plus forte qu'au Sud."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'Harmattan est un vent chaud, sec et poussiéreux soufflant du Sahara, qui marque durement la saison sèche dans la moitié Nord du pays.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il assèche la végétation et abaisse l'humidité."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la végétation naturelle dominante dans le milieu tropical ivoirien (le Nord) ?",
+        "type": "qcm",
+        "options": [
+          "La forêt dense",
+          "La toundra",
+          "La savane (arborée, arbustive ou herbeuse) avec des arbres adaptés à la sécheresse (baobab, karité, néré)",
+          "Le désert de sable"
+        ],
+        "answer": 2,
+        "explanation": "Le paysage est beaucoup plus ouvert (herbes hautes) qu'au Sud."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles sont les activités agricoles dominantes (cultures) dans cette zone tropicale nord ?",
+        "type": "qcm",
+        "options": [
+          "Le cacao, le café, l'hévéa",
+          "Le coton, l'anacarde (cajou), les céréales (maïs, mil, sorgho, riz), l'igname et un élevage bovin important",
+          "La pomme, la poire, la vigne",
+          "La pêche industrielle uniquement"
+        ],
+        "answer": 1,
+        "explanation": "Le Nord est le domaine de la culture attelée et des céréales."
+      }
+    ]
+  },
+  "Fiche_T2_L3_L_espace_ivoirien_un_environnement_menace": {
+    "title": "L'environnement menacé (Côte d'Ivoire)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la principale menace écologique qui frappe la Côte d'Ivoire, notamment dans la moitié Sud ?",
+        "type": "qcm",
+        "options": [
+          "Les tremblements de terre",
+          "La déforestation massive (destruction accélérée de la forêt dense pour l'agriculture et l'exploitation forestière)",
+          "Les tornades de neige",
+          "L'éruption de volcans"
+        ],
+        "answer": 1,
+        "explanation": "La forêt ivoirienne est passée de 16 millions d'hectares en 1900 à moins de 3 millions aujourd'hui."
+      },
+      {
+        "id": "q2",
+        "text": "Quel phénomène environnemental grave, favorisé par la déforestation et les mauvaises pratiques agricoles (feux de brousse, surpâturage), menace principalement le Nord du pays ?",
+        "type": "qcm",
+        "options": [
+          "La désertification (avancée du désert, sécheresse des sols)",
+          "La fonte des glaciers",
+          "La pollution radioactive",
+          "Les inondations marines"
+        ],
+        "answer": 0,
+        "explanation": "Les sols s'appauvrissent et le désert du Sahel progresse vers le Sud."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'agriculture itinérante sur brûlis (feu de brousse) est une technique moderne qui protège et enrichit les sols de Côte d'Ivoire de façon durable.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux. Cette technique traditionnelle détruit la faune, la flore, et appauvrit les sols à long terme, favorisant l'érosion."
+      },
+      {
+        "id": "q4",
+        "text": "Dans les grandes villes côtières (comme Abidjan), quelles sont les menaces environnementales majeures ?",
+        "type": "qcm",
+        "options": [
+          "Uniquement le bruit",
+          "La pollution (air, eau, déchets industriels et ménagers) et l'érosion côtière (la mer grignote la côte)",
+          "Le manque de soleil",
+          "Les feux de forêt"
+        ],
+        "answer": 1,
+        "explanation": "La gestion des déchets (lagune polluée) et l'érosion (à Grand-Bassam, Port-Bouët) sont très problématiques."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles solutions l'État tente-t-il de mettre en place pour protéger cet environnement menacé ?",
+        "type": "qcm",
+        "options": [
+          "Créer plus d'usines polluantes",
+          "Créer des parcs nationaux (ex: Taï, Comoé), reboiser, interdire certains feux de brousse, et sensibiliser les populations",
+          "Déplacer la population",
+          "Boucher les rivières"
+        ],
+        "answer": 1,
+        "explanation": "La création d'aires protégées et la nouvelle politique forestière visent à sauver ce qui reste de la biodiversité."
+      }
+    ]
+  },
+  "Fiche_T2_L3_La_democratie_athenienne": {
+    "title": "La démocratie athénienne",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans quelle ville (cité-état) de l'Antiquité grecque le régime démocratique est-il né au Ve siècle av. J.-C. ?",
+        "type": "qcm",
+        "options": [
+          "Sparte",
+          "Athènes",
+          "Rome",
+          "Alexandrie"
+        ],
+        "answer": 1,
+        "explanation": "Le siècle de Périclès a marqué l'apogée de cette démocratie athénienne."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie le mot 'Démocratie' (Demos + Kratos) ?",
+        "type": "qcm",
+        "options": [
+          "Le pouvoir aux plus riches",
+          "Le pouvoir du peuple (les citoyens se gouvernent eux-mêmes)",
+          "Le pouvoir d'un seul homme (le roi)",
+          "Le pouvoir des dieux"
+        ],
+        "answer": 1,
+        "explanation": "À Athènes, c'est une démocratie DIRECTE (les citoyens votent eux-mêmes les lois)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans la démocratie athénienne, TOUS les habitants d'Athènes (femmes, esclaves, métèques/étrangers) avaient le statut de citoyen et le droit de vote.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'était une démocratie EXCLUSIVE (ou limitée). Seuls les hommes, nés de parents athéniens et ayant fait leur service militaire (l'éphébie), soit environ 10% de la population, étaient citoyens."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'appelait l'assemblée des citoyens qui votait les lois et prenait les décisions (située sur la colline de la Pnyx) ?",
+        "type": "qcm",
+        "options": [
+          "Le Sénat",
+          "L'Ecclésia",
+          "La Boulê",
+          "L'Héliée"
+        ],
+        "answer": 1,
+        "explanation": "C'est le cœur de la démocratie. La Boulê préparait les lois, l'Héliée jugeait."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que 'l'ostracisme' ?",
+        "type": "qcm",
+        "options": [
+          "Une maladie",
+          "Une procédure de vote permettant d'exiler (chasser de la ville) pour 10 ans un citoyen jugé dangereux pour la démocratie",
+          "Un sport olympique",
+          "La fête du vin"
+        ],
+        "answer": 1,
+        "explanation": "Les citoyens écrivaient le nom sur un morceau de poterie (l'ostrakon)."
+      }
+    ]
+  },
+  "Fiche_T2_L4_La_civilisation_du_Soudan_occidental_au_moyen_age": {
+    "title": "La civilisation du Soudan occidental",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Au Moyen Âge (entre le VIIIe et le XVIe siècle), qu'appelle-t-on le 'Soudan occidental' ?",
+        "type": "qcm",
+        "options": [
+          "L'actuel pays nommé Soudan à l'Est de l'Afrique",
+          "La vaste zone de savane située en Afrique de l'Ouest (entre le Sahara au Nord et la forêt au Sud), qui fut le berceau de grands empires",
+          "L'Afrique du Sud",
+          "Le Maghreb"
+        ],
+        "answer": 1,
+        "explanation": "Le mot arabe 'Bilad-al-Sudan' signifie 'le pays des Noirs'."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les trois grands empires qui se sont succédé ou chevauchés dans le Soudan occidental au Moyen Âge ?",
+        "type": "qcm",
+        "options": [
+          "L'empire Romain, l'empire Ottoman, l'empire Mongol",
+          "L'Empire du Ghana, l'Empire du Mali (ou Mandingue), et l'Empire Songhaï",
+          "L'empire Zoulou, l'empire Kongo, l'empire Monomotapa",
+          "L'empire Inca, Maya, Aztèque"
+        ],
+        "answer": 1,
+        "explanation": "Ces empires ont marqué l'âge d'or de l'Afrique de l'Ouest."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'Empire du Mali a connu son apogée (sommet de sa puissance et richesse) sous le règne de Kankou Moussa (Mansa Moussa) au XIVe siècle.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Son pèlerinage à La Mecque (1324) avec des tonnes d'or a rendu l'empire célèbre dans le monde entier."
+      },
+      {
+        "id": "q4",
+        "text": "Sur quelle activité économique reposait principalement la richesse de ces empires ?",
+        "type": "qcm",
+        "options": [
+          "La vente de pétrole",
+          "Le commerce transsaharien (commerce caravanier à travers le Sahara), basé sur l'échange de l'or, des esclaves, du sel et des produits manufacturés",
+          "La fabrication de voitures",
+          "La pêche marine"
+        ],
+        "answer": 1,
+        "explanation": "Le contrôle des routes de l'or et du sel était la clé de leur pouvoir."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle religion, introduite par les commerçants arabes et berbères, a profondément influencé (et été adoptée par l'élite de) ces empires (notamment le Mali et le Songhaï) ?",
+        "type": "qcm",
+        "options": [
+          "Le Christianisme",
+          "L'Islam",
+          "Le Bouddhisme",
+          "L'Hindouisme"
+        ],
+        "answer": 1,
+        "explanation": "L'Islam a apporté l'écriture arabe, le droit islamique et la création de grandes universités (comme à Tombouctou)."
+      }
+    ]
+  },
+  "Fiche_T2_L5_Les_traites_des_noirs": {
+    "title": "Les traites des Noirs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la 'Traite des Noirs' (ou traite négrière) ?",
+        "type": "qcm",
+        "options": [
+          "Le commerce de produits agricoles africains",
+          "Le commerce, la capture et la déportation d'êtres humains (les populations noires d'Afrique) pour les réduire en esclavage",
+          "La migration volontaire des Africains vers l'Europe",
+          "Un traité de paix"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'une des plus grandes tragédies de l'histoire humaine, qui a duré plusieurs siècles."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles ont été les deux principales traites négrières historiques (avant et pendant les Temps Modernes) ?",
+        "type": "qcm",
+        "options": [
+          "La traite romaine et la traite grecque",
+          "La traite orientale (ou arabo-musulmane, vers le Maghreb et le Moyen-Orient) et la traite atlantique (ou européenne/occidentale, vers l'Amérique)",
+          "La traite asiatique et océanienne",
+          "La traite nordique et sudique"
+        ],
+        "answer": 1,
+        "explanation": "Les deux ont saigné le continent africain, mais la traite atlantique a été la plus massive et systématisée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le 'Commerce triangulaire' désigne le circuit économique entre l'Europe, l'Afrique et l'Amérique pendant la traite atlantique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Navires d'Europe avec des pacotilles -> Achat d'esclaves en Afrique -> Vente en Amérique -> Retour en Europe avec sucre, coton, tabac."
+      },
+      {
+        "id": "q4",
+        "text": "Quel était l'objectif principal de la traite atlantique pour les Européens ?",
+        "type": "qcm",
+        "options": [
+          "Éduquer les Africains",
+          "Fournir une main-d'œuvre servile (gratuite et résistante) pour travailler dans les grandes plantations (canne à sucre, coton, café) et les mines des colonies américaines",
+          "Organiser des compétitions sportives",
+          "Étudier les coutumes africaines"
+        ],
+        "answer": 1,
+        "explanation": "C'était un système économique extrêmement rentable pour l'Europe et destructeur pour l'Afrique."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles ont été les conséquences de ces traites pour l'Afrique ?",
+        "type": "qcm",
+        "options": [
+          "Le développement industriel rapide du continent",
+          "Une catastrophe démographique (des millions de morts et déportés, surtout les plus valides), la destruction des structures politiques, des guerres internes et un retard économique profond",
+          "La création d'écoles modernes",
+          "L'enrichissement global de la population africaine"
+        ],
+        "answer": 1,
+        "explanation": "L'Afrique a été vidée de ses forces vives (pénurie de main d'œuvre), ce qui explique en grande partie son sous-développement ultérieur."
+      }
+    ]
+  },
+  "Fiche_T3_L1_La_revolution_du_neolithique_en_Cote_d_Ivoire": {
+    "title": "La Révolution néolithique (Côte d'Ivoire)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qui caractérise la période du 'Néolithique' (l'âge de la pierre polie) en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "L'utilisation d'ordinateurs",
+          "L'invention de l'agriculture, l'apparition de l'outillage en pierre polie, et l'invention de la céramique (poterie)",
+          "L'utilisation du fer et des armes à feu",
+          "La construction d'immenses châteaux"
+        ],
+        "answer": 1,
+        "explanation": "C'est le moment où les groupes humains ivoiriens, tout comme ailleurs, passent de prédateurs à producteurs."
+      },
+      {
+        "id": "q2",
+        "text": "Quel effet majeur l'invention de l'agriculture (igname, palmier à huile) a-t-elle eu sur le mode de vie des populations préhistoriques ?",
+        "type": "qcm",
+        "options": [
+          "Elles sont devenues encore plus nomades",
+          "Elles se sont sédentarisées (elles se sont fixées sur un territoire pour fonder les premiers villages durables)",
+          "Elles sont parties dans l'espace",
+          "Elles ont arrêté de manger de la viande"
+        ],
+        "answer": 1,
+        "explanation": "Pour cultiver et attendre la récolte, il faut rester sur place. C'est la sédentarisation."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Des vestiges archéologiques prouvant l'existence d'hommes au Néolithique (haches polies, éclats de poteries) ont été retrouvés sur le territoire ivoirien.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Des sites comme Anyama, Bingerville ou Tiassalé ont livré du matériel archéologique néolithique très riche."
+      },
+      {
+        "id": "q4",
+        "text": "L'artisanat se développe fortement au Néolithique. Quelle invention permet de stocker les récoltes (céréales, eau) et de cuire les aliments de manière inédite ?",
+        "type": "qcm",
+        "options": [
+          "Le réfrigérateur électrique",
+          "Le tissage",
+          "La céramique (la poterie en terre cuite)",
+          "La métallurgie de l'aluminium"
+        ],
+        "answer": 2,
+        "explanation": "La poterie est la grande invention 'chimique' et artisanale de cette période."
+      },
+      {
+        "id": "q5",
+        "text": "La sédentarisation et l'agriculture au Néolithique entraînent un autre phénomène démographique important : lequel ?",
+        "type": "qcm",
+        "options": [
+          "La diminution de la population",
+          "Une augmentation importante de la population (croissance démographique) car l'alimentation est plus sûre et abondante",
+          "La disparition des enfants",
+          "L'arrêt des naissances"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'aube de la création des sociétés complexes (spécialisation du travail, hiérarchie sociale)."
+      }
+    ]
+  },
+  "Fiche_T3_L1_Les_grands_milieux_biogeographiques_dans_le_monde": {
+    "title": "Les grands milieux biogéographiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un milieu biogéographique (ou biome) ?",
+        "type": "qcm",
+        "options": [
+          "Une zone où l'on trouve les mêmes magasins",
+          "Un vaste espace terrestre défini par son climat, et caractérisé par des formations végétales (flore) et animales (faune) spécifiques",
+          "Uniquement un océan",
+          "Une frontière politique tracée par l'homme"
+        ],
+        "answer": 1,
+        "explanation": "Exemples de biomes : la forêt équatoriale, la toundra, le désert, la savane."
+      },
+      {
+        "id": "q2",
+        "text": "Quel grand milieu biogéographique se caractérise par des pluies abondantes toute l'année, une chaleur constante, et une forêt dense sempervirente (toujours verte) et très riche en biodiversité ?",
+        "type": "qcm",
+        "options": [
+          "Le milieu polaire",
+          "Le milieu équatorial (ex: Amazonie, Bassin du Congo, Indonésie)",
+          "Le milieu tempéré océanique",
+          "Le milieu désertique"
+        ],
+        "answer": 1,
+        "explanation": "C'est le milieu naturel le plus riche et le plus luxuriant de la planète."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le milieu désertique chaud (Sahara) se caractérise par des précipitations quasi inexistantes, une forte amplitude thermique journalière et une végétation extrêmement rare (xérophile).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La vie y est très difficile, la faune et la flore doivent s'y adapter sévèrement (chameau, cactus)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le paysage végétal typique du climat 'méditerranéen' (été chaud et sec, hiver doux et humide) ?",
+        "type": "qcm",
+        "options": [
+          "La taïga (forêt de sapins)",
+          "La toundra",
+          "La garrigue et le maquis (végétation broussailleuse, oliviers, pins)",
+          "La forêt amazonienne"
+        ],
+        "answer": 2,
+        "explanation": "Cette végétation est très vulnérable aux feux de forêt en été (ex: sud de la France, Californie, Australie du Sud)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment s'appelle l'immense forêt de conifères (sapins, pins) qui couvre les régions froides de l'hémisphère Nord (Canada, Russie, Scandinavie) ?",
+        "type": "qcm",
+        "options": [
+          "La mangrove",
+          "La savane",
+          "La taïga (ou forêt boréale)",
+          "La toundra"
+        ],
+        "answer": 2,
+        "explanation": "Plus au nord de la Taïga (là où il fait trop froid pour les arbres), se trouve la Toundra (mousse et lichens)."
+      }
+    ]
+  },
+  "Fiche_T3_L2_Les_peuples_de_Cote_d_Ivoire_diversite_et_unite": {
+    "title": "Les peuples de Côte d'Ivoire (Mise en place)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La Côte d'Ivoire compte plus de soixante ethnies. Dans quels grands groupes sociolinguistiques principaux sont-elles classées ?",
+        "type": "qcm",
+        "options": [
+          "Bantous et Zoulous",
+          "Quatre grands groupes : Les Akans, les Krous, les Mandés (Nord et Sud) et les Gour (ou Voltaïques)",
+          "Seulement deux : Nordistes et Sudistes",
+          "Européens et Asiatiques"
+        ],
+        "answer": 1,
+        "explanation": "Ces 4 grands groupes reflètent les grandes vagues migratoires historiques."
+      },
+      {
+        "id": "q2",
+        "text": "Le groupe Akan (Baoulé, Agni, Abron...) est majoritairement installé dans quelle zone de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "À l'Ouest",
+          "À l'Extrême Nord",
+          "Au Centre, à l'Est et au Sud-Est",
+          "Dans le désert"
+        ],
+        "answer": 2,
+        "explanation": "Ils ont migré de l'actuel Ghana (royaume Ashanti) principalement entre le XVIIe et le XVIIIe siècle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les Krous (Bétés, Wès, Didas...) sont principalement installés dans le Centre-Ouest et le Sud-Ouest forestier du pays.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ce sont parmi les plus anciens occupants (autochtones) de ces régions forestières."
+      },
+      {
+        "id": "q4",
+        "text": "Lequel de ces groupes a apporté l'Islam et le commerce caravanier au Nord de la Côte d'Ivoire, créant des États comme le royaume de Kong ?",
+        "type": "qcm",
+        "options": [
+          "Les Krous",
+          "Les Mandé-Nord (Malinké/Dioula)",
+          "Les Akans",
+          "Les Agnis"
+        ],
+        "answer": 1,
+        "explanation": "Les Mandé (venus de l'Empire du Mali) sont célèbres pour leur dynamisme commercial."
+      },
+      {
+        "id": "q5",
+        "text": "Malgré cette diversité ethnique (mosaique de peuples), qu'est-ce qui favorise fortement l'unité nationale aujourd'hui ?",
+        "type": "qcm",
+        "options": [
+          "Les guerres permanentes",
+          "Le brassage des populations (exode rural, mariages interethniques), l'utilisation du français comme langue officielle, et les alliances à plaisanterie (Toukpè)",
+          "La séparation stricte des ethnies par la loi",
+          "L'utilisation de l'anglais"
+        ],
+        "answer": 1,
+        "explanation": "Les alliances à plaisanterie (ex: entre Sénoufo et Gouro) sont un puissant ciment de paix sociale."
+      }
+    ]
+  },
+  "Fiche_T3_L2_Les_problemes_environnementaux_actuels": {
+    "title": "Les problèmes environnementaux actuels (Monde)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le problème environnemental mondial numéro un, causé par l'accumulation massive de Gaz à Effet de Serre (GES) dans l'atmosphère ?",
+        "type": "qcm",
+        "options": [
+          "La baisse des impôts",
+          "Le réchauffement (ou changement) climatique",
+          "L'invasion extraterrestre",
+          "Le refroidissement de la terre (une nouvelle aire glaciaire)"
+        ],
+        "answer": 1,
+        "explanation": "L'activité humaine (industries, transports fonctionnant aux énergies fossiles comme le pétrole/charbon) en est la cause principale."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les conséquences directes du réchauffement climatique global ?",
+        "type": "qcm",
+        "options": [
+          "Il n'y a aucune conséquence",
+          "La fonte des glaciers et calottes polaires, l'élévation du niveau de la mer, et la multiplication des catastrophes météorologiques (cyclones, sécheresses extrêmes, inondations)",
+          "Les océans vont s'évaporer totalement d'ici 10 ans",
+          "La diminution du prix du carburant"
+        ],
+        "answer": 1,
+        "explanation": "Des millions de 'réfugiés climatiques' pourraient être contraints de migrer à cause de la montée des eaux."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'érosion de la biodiversité (la disparition accélérée (extinction) d'espèces animales et végétales) est aujourd'hui considérée comme la 6ème extinction de masse de l'histoire de la Terre.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La destruction des habitats naturels, le braconnage, et la pollution détruisent la faune et la flore à une vitesse inédite."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'développement durable' (concept clé pour l'avenir de la planète) ?",
+        "type": "qcm",
+        "options": [
+          "Un développement qui détruit la nature mais enrichit les humains",
+          "Un mode de développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs (conciliation de l'économie, de l'écologie et du social)",
+          "L'arrêt total de toute activité économique",
+          "Uniquement la protection des petits animaux"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'objectif visé par les grandes conférences internationales (COP21 de Paris, etc.)."
+      },
+      {
+        "id": "q5",
+        "text": "Quel problème spécifique est causé par la pollution plastique dans les océans ?",
+        "type": "qcm",
+        "options": [
+          "L'enrichissement des pêcheurs",
+          "L'empoisonnement de la chaîne alimentaire marine, la mort par étouffement ou ingestion (tortues, oiseaux marins), et la formation de 'continents de plastique' (Gargabe patch)",
+          "Les poissons grandissent plus vite",
+          "L'eau devient plus salée"
+        ],
+        "answer": 1,
+        "explanation": "Le plastique met des centaines d'années à se dégrader et se fragmente en microplastiques."
+      }
+    ]
+  }
+}

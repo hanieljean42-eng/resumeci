@@ -1,0 +1,2314 @@
+{
+  "Fiche_Lecon1_La_lettre_personnelle_adressee_a_une_personne_familere": {
+    "title": "La lettre personnelle familière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une lettre personnelle familière ?",
+        "type": "qcm",
+        "options": [
+          "Une lettre adressée au Président",
+          "Une lettre adressée à un parent, un ami ou une connaissance proche",
+          "Une lettre pour chercher du travail",
+          "Un article de journal"
+        ],
+        "answer": 1,
+        "explanation": "C'est une lettre écrite à quelqu'un dont on est proche (famille, amis) pour donner des nouvelles ou en prendre."
+      },
+      {
+        "id": "q2",
+        "text": "Où écrit-on le lieu et la date dans la lettre ?",
+        "type": "qcm",
+        "options": [
+          "En bas à gauche",
+          "En haut à gauche",
+          "En haut à droite",
+          "Au milieu de la page"
+        ],
+        "answer": 2,
+        "explanation": "Le lieu et la date (l'en-tête) s'écrivent toujours en haut et à droite de la feuille (ex: Abidjan, le 12 Mars 2024)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une lettre familière, on utilise généralement le pronom 'Tu'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le vouvoiement est rare, on tutoie la personne puisqu'elle nous est proche ou familière."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on la petite phrase d'introduction comme 'Cher ami,' ou 'Papa chéri,' ?",
+        "type": "qcm",
+        "options": [
+          "La conclusion",
+          "La formule d'appel",
+          "La formule de politesse finale",
+          "Le corps de la lettre"
+        ],
+        "answer": 1,
+        "explanation": "C'est la formule d'appel, elle se place en haut à gauche après le lieu et la date."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit-on toujours faire à la toute fin de la lettre ?",
+        "type": "qcm",
+        "options": [
+          "Dessiner",
+          "Mettre sa signature (son prénom)",
+          "Mettre un timbre",
+          "Écrire l'adresse"
+        ],
+        "answer": 1,
+        "explanation": "L'expéditeur (celui qui écrit) doit toujours signer en bas à droite pour s'identifier."
+      }
+    ]
+  },
+  "Fiche_Lecon2_La_description_d_un_objet_familier": {
+    "title": "La description d'un objet familier",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le but d'un texte descriptif concernant un objet ?",
+        "type": "qcm",
+        "options": [
+          "Raconter une histoire",
+          "Donner son opinion",
+          "Faire voir l'objet par les mots à quelqu'un qui ne le voit pas",
+          "Donner des ordres"
+        ],
+        "answer": 2,
+        "explanation": "Décrire un objet, c'est utiliser les mots pour créer une image mentale chez le lecteur, comme s'il le voyait."
+      },
+      {
+        "id": "q2",
+        "text": "Quels types de mots utilise-t-on beaucoup pour faire une bonne description ?",
+        "type": "qcm",
+        "options": [
+          "Des verbes d'action",
+          "Des adjectifs qualificatifs (couleurs, formes, tailles)",
+          "Des pronoms",
+          "Des adverbes de temps"
+        ],
+        "answer": 1,
+        "explanation": "Les adjectifs qualificatifs (grand, rond, rouge, lisse...) sont essentiels pour préciser les caractéristiques de l'objet."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une description, il est important d'organiser les éléments (ex: de haut en bas, ou de l'extérieur vers l'intérieur).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Une description désordonnée est difficile à comprendre. On utilise un ordre logique et des indicateurs de lieu."
+      },
+      {
+        "id": "q4",
+        "text": "Quel sens (parmi les 5 sens) est le plus sollicité pour décrire l'aspect d'un objet ?",
+        "type": "qcm",
+        "options": [
+          "L'ouïe",
+          "La vue",
+          "L'odorat",
+          "Le goût"
+        ],
+        "answer": 1,
+        "explanation": "La vue est le sens principal pour décrire la forme, la taille et la couleur, bien que le toucher soit aussi souvent utilisé."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle figure de style utilise souvent le mot 'comme' pour faire une description imagée ?",
+        "type": "qcm",
+        "options": [
+          "La métaphore",
+          "La personnification",
+          "La comparaison",
+          "L'énumération"
+        ],
+        "answer": 2,
+        "explanation": "La comparaison met en relation deux éléments grâce à un outil de comparaison ('comme', 'tel que') pour enrichir la description."
+      }
+    ]
+  },
+  "Fiche_Lecon3_La_description_d_un_lieu_non_anime": {
+    "title": "La description d'un lieu (non animé)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que décrire un lieu non animé ?",
+        "type": "qcm",
+        "options": [
+          "Raconter une histoire de fantômes",
+          "Faire un portrait physique d'une personne",
+          "Donner à voir un espace (paysage, monument, pièce) tel qu'il est, sans personnages en action",
+          "Donner des ordres à quelqu'un"
+        ],
+        "answer": 2,
+        "explanation": "Décrire un lieu non animé, c'est utiliser les mots pour 'peindre' un paysage, un bâtiment ou une chambre, comme sur une photo immobile."
+      },
+      {
+        "id": "q2",
+        "text": "Pour bien organiser la description d'une chambre, comment peut-on procéder ?",
+        "type": "qcm",
+        "options": [
+          "On décrit tout au hasard",
+          "On utilise des indicateurs spatiaux (au centre, à gauche, au fond)",
+          "On commence toujours par la couleur",
+          "On donne les noms des amis"
+        ],
+        "answer": 1,
+        "explanation": "Pour que le lecteur puisse imaginer le lieu, il faut structurer l'espace avec des mots comme 'au premier plan, à droite, en haut...'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une description, on utilise souvent l'imparfait de l'indicatif.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'imparfait est le temps privilégié de la description dans un récit au passé (ex: 'La forêt était sombre et les arbres semblaient immenses.')."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle nature de mots est indispensable pour enrichir une description ?",
+        "type": "qcm",
+        "options": [
+          "Les adverbes de temps (demain, hier)",
+          "Les conjonctions de coordination (mais, ou, et...)",
+          "Les adjectifs qualificatifs (grand, bleu, lumineux...)",
+          "Les verbes d'action (courir, sauter)"
+        ],
+        "answer": 2,
+        "explanation": "Les adjectifs qualificatifs (couleurs, formes, tailles) apportent la précision nécessaire pour faire imaginer la scène."
+      },
+      {
+        "id": "q5",
+        "text": "Quel sens (parmi les 5 sens) est le plus souvent sollicité pour décrire un paysage ?",
+        "type": "qcm",
+        "options": [
+          "L'ouïe",
+          "La vue",
+          "L'odorat",
+          "Le goût"
+        ],
+        "answer": 1,
+        "explanation": "La vue est le sens premier pour décrire l'aspect, la lumière et la disposition d'un lieu."
+      }
+    ]
+  },
+  "Fiche_Lecon4_La_lettre_personnelle_adressee_a_une_personne_non_familere": {
+    "title": "La lettre à une personne non familière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À qui écrit-on une lettre personnelle non familière (ou officielle) ?",
+        "type": "qcm",
+        "options": [
+          "À son petit frère",
+          "À son meilleur ami",
+          "À une personne que l'on respecte ou que l'on connaît peu (ex: le directeur de l'école)",
+          "À son chien"
+        ],
+        "answer": 2,
+        "explanation": "C'est une lettre formelle, adressée à une autorité, un supérieur, ou un adulte que l'on vouvoie."
+      },
+      {
+        "id": "q2",
+        "text": "Quel pronom personnel doit-on obligatoirement utiliser dans ce type de lettre ?",
+        "type": "qcm",
+        "options": [
+          "Tu",
+          "Vous",
+          "Il",
+          "Nous"
+        ],
+        "answer": 1,
+        "explanation": "Le vouvoiement ('Vous') est la marque de respect et de distance obligatoire dans une lettre formelle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On peut commencer la lettre par 'Salut Monsieur le Directeur'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! 'Salut' est familier. Il faut écrire 'Monsieur le Directeur,'."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une formule de politesse finale dans une lettre officielle ?",
+        "type": "qcm",
+        "options": [
+          "À plus tard !",
+          "Gros bisous",
+          "Veuillez agréer, Monsieur, l'expression de mes salutations distinguées.",
+          "Tchao !"
+        ],
+        "answer": 2,
+        "explanation": "La lettre officielle se termine toujours par une formule de politesse très respectueuse et codifiée."
+      },
+      {
+        "id": "q5",
+        "text": "Où place-t-on la signature à la fin de la lettre ?",
+        "type": "qcm",
+        "options": [
+          "En haut à gauche",
+          "En bas à droite",
+          "Au milieu",
+          "Derrière la feuille"
+        ],
+        "answer": 1,
+        "explanation": "La signature (nom et prénom) se place toujours en bas, à droite, après la formule de politesse."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Le_recit_simple_et_complet": {
+    "title": "Le récit simple et complet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un récit ?",
+        "type": "qcm",
+        "options": [
+          "Une liste de courses",
+          "Un texte qui raconte une histoire, des événements vécus ou imaginaires",
+          "Un poème",
+          "Une lettre de motivation"
+        ],
+        "answer": 1,
+        "explanation": "Un récit (ou texte narratif) raconte le déroulement d'une histoire dans le temps."
+      },
+      {
+        "id": "q2",
+        "text": "Combien de parties compte généralement le schéma narratif complet d'un récit ?",
+        "type": "qcm",
+        "options": [
+          "2 (le début et la fin)",
+          "3 ou 5 (Situation initiale, péripéties, situation finale...)",
+          "1 seule",
+          "10"
+        ],
+        "answer": 1,
+        "explanation": "Un récit complet comprend une situation initiale (le début), des événements modificateurs (le milieu), et une situation finale (la fin)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un récit au passé, le passé simple est souvent utilisé pour les actions soudaines et importantes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le passé simple fait avancer l'action, tandis que l'imparfait sert pour le décor ou les actions longues."
+      },
+      {
+        "id": "q4",
+        "text": "Quel mot est un indicateur de temps souvent utilisé pour introduire un événement inattendu ?",
+        "type": "qcm",
+        "options": [
+          "Souvent",
+          "Tous les jours",
+          "Soudain",
+          "Autrefois"
+        ],
+        "answer": 2,
+        "explanation": "'Soudain', 'tout à coup' introduisent l'élément perturbateur qui vient bouleverser la situation initiale."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que la situation initiale d'un récit ?",
+        "type": "qcm",
+        "options": [
+          "La conclusion de l'histoire",
+          "Le combat final",
+          "Le début de l'histoire, où tout est calme et on présente les personnages et le lieu",
+          "Le titre du livre"
+        ],
+        "answer": 2,
+        "explanation": "La situation initiale installe le cadre spatio-temporel et l'état de départ des personnages avant que l'action ne commence."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Le_recit_complexe_et_complet": {
+    "title": "Le récit complexe et complet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qui rend un récit 'complexe' comparé à un récit simple ?",
+        "type": "qcm",
+        "options": [
+          "Il est écrit en langue étrangère",
+          "Il comporte des retours en arrière (flashbacks) ou des histoires imbriquées",
+          "Il est très court",
+          "Il n'y a pas de fin"
+        ],
+        "answer": 1,
+        "explanation": "Un récit complexe ne suit pas toujours un ordre chronologique strict. L'auteur peut faire des analepses (retours en arrière) pour expliquer un événement."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on l'élément qui vient bouleverser la situation de départ (situation initiale) ?",
+        "type": "qcm",
+        "options": [
+          "La situation finale",
+          "L'élément perturbateur (ou modificateur)",
+          "Le dénouement",
+          "Le dialogue"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'événement (une rencontre, un accident, un problème) qui déclenche toutes les péripéties."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un récit complexe, il peut y avoir plusieurs personnages principaux et plusieurs intrigues.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'histoire est plus riche et suit souvent plusieurs fils narratifs."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'dénouement' ?",
+        "type": "qcm",
+        "options": [
+          "La résolution du problème, qui amène la situation finale",
+          "Le début de l'histoire",
+          "Un nœud sur une corde",
+          "La description d'un lieu"
+        ],
+        "answer": 0,
+        "explanation": "C'est le moment de l'histoire où la dernière action permet de résoudre l'intrigue et de clore l'action."
+      },
+      {
+        "id": "q5",
+        "text": "Le narrateur est-il obligatoirement un personnage de l'histoire ?",
+        "type": "qcm",
+        "options": [
+          "Oui, toujours (je)",
+          "Non, le narrateur peut être extérieur (il) et omniscient (qui sait tout)",
+          "Oui, sinon c'est un poème",
+          "Non, l'auteur est toujours le narrateur"
+        ],
+        "answer": 1,
+        "explanation": "Le narrateur peut participer à l'histoire (narrateur interne) ou raconter de l'extérieur sans y participer (narrateur externe)."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Le_dialogue_oral_obtenir_une_information": {
+    "title": "Le dialogue : Obtenir une information",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un dialogue ?",
+        "type": "qcm",
+        "options": [
+          "Un texte qu'on lit seul en silence",
+          "Un échange de paroles entre deux ou plusieurs personnes (interlocuteurs)",
+          "Une lettre de motivation",
+          "Un poème"
+        ],
+        "answer": 1,
+        "explanation": "Le dialogue est la transcription d'une conversation."
+      },
+      {
+        "id": "q2",
+        "text": "Pour obtenir une information, quel type de phrase utilise-t-on le plus ?",
+        "type": "qcm",
+        "options": [
+          "La phrase déclarative",
+          "La phrase interrogative (poser une question)",
+          "La phrase exclamative",
+          "La phrase impérative"
+        ],
+        "answer": 1,
+        "explanation": "Pour demander un renseignement, on pose des questions (Où, quand, comment, pourquoi...)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : À l'écrit, un changement d'interlocuteur dans un dialogue est marqué par un tiret (-).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. À chaque fois qu'une nouvelle personne prend la parole, on va à la ligne et on met un tiret."
+      },
+      {
+        "id": "q4",
+        "text": "Comment s'appellent les verbes (ex: dire, répondre, demander) qui introduisent les paroles ?",
+        "type": "qcm",
+        "options": [
+          "Les verbes d'action",
+          "Les verbes d'état",
+          "Les verbes introducteurs de paroles (ou verbes de déclaration)",
+          "Les verbes pronominaux"
+        ],
+        "answer": 2,
+        "explanation": "Exemple: Il *demanda* : 'Quelle heure est-il ?'"
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la bonne attitude pour demander un renseignement à un inconnu dans la rue ?",
+        "type": "qcm",
+        "options": [
+          "Crier",
+          "Être poli, utiliser des formules comme 'S'il vous plaît', 'Pourriez-vous m'indiquer...'",
+          "Tirer son vêtement",
+          "Ne pas lui parler"
+        ],
+        "answer": 1,
+        "explanation": "Le savoir-vivre et la politesse (bonjour, excusez-moi) sont indispensables pour obtenir une bonne réponse."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Le_dialogue_oral_donner_une_information_sur_un_probleme_de_sante": {
+    "title": "Donner une information (Santé)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Chez le médecin, que devez-vous faire lorsqu'il vous pose des questions ?",
+        "type": "qcm",
+        "options": [
+          "Mentir pour ne pas prendre de médicaments",
+          "Donner des informations claires, précises et exactes sur vos symptômes",
+          "Garder le silence",
+          "Pleurer"
+        ],
+        "answer": 1,
+        "explanation": "Le médecin a besoin de connaître la vérité (où vous avez mal, depuis quand) pour poser le bon diagnostic."
+      },
+      {
+        "id": "q2",
+        "text": "Quel mot désigne un 'signe de la maladie' (ex: fièvre, toux) ?",
+        "type": "qcm",
+        "options": [
+          "Une ordonnance",
+          "Un symptôme",
+          "Un vaccin",
+          "Un remède"
+        ],
+        "answer": 1,
+        "explanation": "Le symptôme est ce que le patient ressent (douleur, chaleur) et qui indique une maladie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Il est important d'utiliser un vocabulaire précis du corps humain (tête, ventre, poitrine) pour expliquer son problème.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Dire 'j'ai mal là' n'est pas suffisant. Il faut nommer correctement la partie du corps concernée."
+      },
+      {
+        "id": "q4",
+        "text": "Que vous remet le médecin à la fin de la consultation pour aller à la pharmacie ?",
+        "type": "qcm",
+        "options": [
+          "Un diplôme",
+          "Une facture de téléphone",
+          "Une ordonnance",
+          "Un cahier"
+        ],
+        "answer": 2,
+        "explanation": "L'ordonnance est le document sur lequel le médecin prescrit les médicaments."
+      },
+      {
+        "id": "q5",
+        "text": "Si un ami vous demande comment vous allez, comment informer sans exagérer ?",
+        "type": "qcm",
+        "options": [
+          "'Je vais mourir !' (pour un simple rhume)",
+          "Utiliser le présent de l'indicatif pour décrire son état réel (Ex: 'Je me sens faible, j'ai de la fièvre.')",
+          "Ne rien dire",
+          "'C'est de ta faute.'"
+        ],
+        "answer": 1,
+        "explanation": "On informe l'autre en décrivant avec réalisme ce qu'on ressent."
+      }
+    ]
+  },
+  "Fiche_Lecon9_Le_dialogue_oral_expliquer_une_situation": {
+    "title": "Le dialogue : Expliquer une situation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que justifier ou expliquer une situation ?",
+        "type": "qcm",
+        "options": [
+          "C'est donner les causes, les raisons de ce qui s'est passé",
+          "C'est cacher la vérité",
+          "C'est insulter la personne",
+          "C'est parler très vite"
+        ],
+        "answer": 0,
+        "explanation": "Expliquer, c'est faire comprendre à quelqu'un le pourquoi et le comment d'un événement (ex: expliquer son retard)."
+      },
+      {
+        "id": "q2",
+        "text": "Quel mot de liaison (connecteur logique) introduit souvent la CAUSE d'une situation ?",
+        "type": "qcm",
+        "options": [
+          "Mais",
+          "Parce que (ou Car)",
+          "Donc",
+          "Cependant"
+        ],
+        "answer": 1,
+        "explanation": "On utilise 'parce que' ou 'car' pour introduire la raison. (Je suis en retard *parce qu'*il y avait des embouteillages)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un dialogue d'explication, il faut rester calme et clair pour se faire comprendre.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. S'énerver empêche l'autre personne d'écouter et de comprendre vos arguments."
+      },
+      {
+        "id": "q4",
+        "text": "Si vous avez fait une erreur, comment commencez-vous votre explication ?",
+        "type": "qcm",
+        "options": [
+          "C'est la faute du professeur !",
+          "En présentant d'abord des excuses (Je suis désolé, veuillez m'excuser...)",
+          "Je ne sais pas.",
+          "Je suis le meilleur."
+        ],
+        "answer": 1,
+        "explanation": "La courtoisie exige de s'excuser avant d'expliquer pourquoi la faute a été commise."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le but final d'une bonne explication ?",
+        "type": "qcm",
+        "options": [
+          "Créer une dispute",
+          "Se faire pardonner ou faire comprendre son point de vue",
+          "Faire pleurer l'autre",
+          "Gagner de l'argent"
+        ],
+        "answer": 1,
+        "explanation": "Le but est de rétablir la communication et la compréhension entre les deux personnes."
+      }
+    ]
+  },
+  "Fiche_Lecon10_Lecture_methodique_La_conquete_du_feu": {
+    "title": "La conquête du feu (Lecture)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans le texte 'La conquête du feu', quel est l'élément central (le thème principal) ?",
+        "type": "qcm",
+        "options": [
+          "L'invention de la roue",
+          "La maîtrise du feu par les premiers hommes",
+          "L'invention de l'écriture",
+          "La chasse à l'éléphant"
+        ],
+        "answer": 1,
+        "explanation": "Le texte raconte comment l'homme préhistorique a découvert et appris à utiliser le feu, une révolution majeure pour l'humanité."
+      },
+      {
+        "id": "q2",
+        "text": "Comment la maîtrise du feu a-t-elle transformé la vie des hommes préhistoriques ?",
+        "type": "qcm",
+        "options": [
+          "Elle leur a permis de voler",
+          "Elle a apporté la lumière, la chaleur, la cuisson des aliments et la protection contre les bêtes sauvages",
+          "Elle a détruit leurs maisons",
+          "Elle n'a rien changé"
+        ],
+        "answer": 1,
+        "explanation": "Le feu a radicalement amélioré leurs conditions de survie (alimentation, sécurité, rassemblement social)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un texte narratif, l'auteur cherche à instruire autant qu'à faire imaginer.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Surtout dans un récit historique ou anthropologique, l'auteur informe (comment on faisait du feu) en racontant une histoire palpitante."
+      },
+      {
+        "id": "q4",
+        "text": "Quel champ lexical domine dans un tel texte ?",
+        "type": "qcm",
+        "options": [
+          "Le champ lexical de l'informatique",
+          "Le champ lexical du feu, de la chaleur et de la lumière (flamme, étincelle, brûlant...)",
+          "Le champ lexical de la mer",
+          "Le champ lexical de la musique"
+        ],
+        "answer": 1,
+        "explanation": "Les mots utilisés se rapportent à la thématique de la combustion et de l'éclairage."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi le feu est-il souvent comparé à un 'dieu' ou un 'monstre' dans les textes anciens ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'il parle",
+          "Pour souligner son côté puissant, fascinant mais aussi très dangereux",
+          "Parce qu'il est bleu",
+          "Parce qu'il a des bras"
+        ],
+        "answer": 1,
+        "explanation": "La métaphore insiste sur le respect et la peur que le feu inspirait aux premiers hommes."
+      }
+    ]
+  },
+  "Fiche_Lecon11_Lecture_methodique_Un_combat_epique_dans_Le_secret": {
+    "title": "Un combat épique (Lecture)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un combat 'épique' ?",
+        "type": "qcm",
+        "options": [
+          "Un petit combat rapide",
+          "Un combat grandiose, héroïque, souvent exagéré où les adversaires sont d'une force exceptionnelle",
+          "Une dispute entre amis",
+          "Un match de football"
+        ],
+        "answer": 1,
+        "explanation": "Le registre épique sert à donner une dimension extraordinaire, presque surnaturelle, à un affrontement."
+      },
+      {
+        "id": "q2",
+        "text": "Dans un texte épique, on utilise souvent 'l'hyperbole'. Qu'est-ce que c'est ?",
+        "type": "qcm",
+        "options": [
+          "Une figure de style d'exagération extrême (ex: un bruit à réveiller les morts)",
+          "Une faute d'orthographe",
+          "Un mot très court",
+          "Un personnage drôle"
+        ],
+        "answer": 0,
+        "explanation": "L'hyperbole amplifie la réalité pour impressionner le lecteur et rendre la scène plus intense."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le héros épique montre souvent de la peur et s'enfuit.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Le héros épique se caractérise par son courage surhumain et sa détermination à vaincre le mal."
+      },
+      {
+        "id": "q4",
+        "text": "Quel champ lexical est le plus présent dans un combat épique ?",
+        "type": "qcm",
+        "options": [
+          "La douceur et le sommeil",
+          "Le champ lexical de la violence, des armes et du bruit (sang, épée, fracas...)",
+          "Le champ lexical de la mer",
+          "La cuisine"
+        ],
+        "answer": 1,
+        "explanation": "Les mots utilisés décrivent l'intensité et la brutalité de la confrontation."
+      },
+      {
+        "id": "q5",
+        "text": "Pourquoi l'auteur utilise-t-il des phrases courtes et des verbes d'action au passé simple lors du combat ?",
+        "type": "qcm",
+        "options": [
+          "Pour endormir le lecteur",
+          "Pour accélérer le rythme de la narration et traduire la rapidité des coups",
+          "Parce qu'il ne sait pas écrire de longues phrases",
+          "Pour décrire le paysage"
+        ],
+        "answer": 1,
+        "explanation": "Les phrases courtes enchaînées donnent un rythme haletant au récit de bataille."
+      }
+    ]
+  },
+  "Fiche_Lecon12_Lecture_suivie_Les_triples_de_Kodar": {
+    "title": "Les triplés de Kodar (Lecture suivie)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une 'lecture suivie' (ou œuvre intégrale) ?",
+        "type": "qcm",
+        "options": [
+          "Lire un seul paragraphe",
+          "L'étude d'un livre entier (roman, conte) sur plusieurs séances pour en comprendre toute l'histoire",
+          "Lire un livre à l'envers",
+          "Ne lire que la couverture"
+        ],
+        "answer": 1,
+        "explanation": "À la différence de la lecture méthodique d'un extrait, la lecture suivie permet de comprendre l'évolution complète d'une œuvre."
+      },
+      {
+        "id": "q2",
+        "text": "Dans le conte 'Les triplés de Kodar', quelle est généralement la situation initiale ?",
+        "type": "qcm",
+        "options": [
+          "Ils sont déjà rois",
+          "La présentation des trois frères, de leurs dons particuliers ou de leur quête à accomplir",
+          "La fin du monde",
+          "Ils partent en vacances"
+        ],
+        "answer": 1,
+        "explanation": "Le conte commence par présenter les héros et le problème qui va justifier leur aventure."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un conte traditionnel, le chiffre 3 (trois frères, trois épreuves) est très fréquent.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est ce qu'on appelle la 'loi du trois', typique de la structure des contes oraux africains et mondiaux."
+      },
+      {
+        "id": "q4",
+        "text": "Que doivent souvent prouver les héros à la fin d'un conte ?",
+        "type": "qcm",
+        "options": [
+          "Qu'ils savent courir vite",
+          "Qu'ils sont devenus sages, courageux et unis face à l'adversité",
+          "Qu'ils peuvent dormir longtemps",
+          "Rien du tout"
+        ],
+        "answer": 1,
+        "explanation": "Le conte est un parcours d'initiation. La morale récompense l'union et l'intelligence."
+      },
+      {
+        "id": "q5",
+        "text": "Quel élément magique ou merveilleux trouve-t-on souvent dans ces récits ?",
+        "type": "qcm",
+        "options": [
+          "Des téléphones portables",
+          "Des animaux qui parlent, des objets magiques ou des dons surnaturels",
+          "Des avions",
+          "La télévision"
+        ],
+        "answer": 1,
+        "explanation": "Le registre merveilleux (où la magie est acceptée comme normale) est caractéristique du conte."
+      }
+    ]
+  },
+  "Fiche_Lecon13_Lecture_methodique_La_jarre_passoire_et_l_union": {
+    "title": "La jarre trouée et l'union (Lecture)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que symbolise l'allégorie de 'la jarre trouée' en Afrique (notamment chez le roi Ghézo) ?",
+        "type": "qcm",
+        "options": [
+          "L'importance de boire beaucoup d'eau",
+          "L'union, la solidarité et la nécessité de boucher les trous ensemble pour sauver le pays",
+          "Un ustensile de cuisine cassé",
+          "L'agriculture"
+        ],
+        "answer": 1,
+        "explanation": "La jarre trouée, si tous les fils du pays y mettent leurs doigts, retiendra l'eau. C'est un puissant symbole de l'union nationale."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la morale (ou la leçon) de ce type de texte ?",
+        "type": "qcm",
+        "options": [
+          "Chacun pour soi",
+          "L'union fait la force ; divisés, nous échouons",
+          "Il faut jeter ce qui est cassé",
+          "Ne jamais utiliser d'eau"
+        ],
+        "answer": 1,
+        "explanation": "Le texte vise à persuader le lecteur que seule la solidarité permet de surmonter les grandes épreuves."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Ce texte est argumentatif car il cherche à convaincre le lecteur de l'importance de l'unité.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Même sous forme de fable ou de symbole, le but de l'auteur est de transmettre une thèse forte (l'union)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le texte, qui représente 'l'eau' que la jarre doit retenir ?",
+        "type": "qcm",
+        "options": [
+          "La pluie",
+          "La vie, le bonheur ou la prospérité de la nation",
+          "Le sang",
+          "Un fleuve"
+        ],
+        "answer": 1,
+        "explanation": "L'eau symbolise le salut du royaume, qui s'échappe si les citoyens ne sont pas solidaires."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle figure de style est utilisée quand on représente une idée abstraite (l'union) par une image concrète (la jarre) ?",
+        "type": "qcm",
+        "options": [
+          "Une métaphore filée ou allégorie",
+          "Une hyperbole",
+          "Une rime",
+          "Une faute"
+        ],
+        "answer": 0,
+        "explanation": "L'allégorie permet de rendre une idée morale (la cohésion sociale) facile à comprendre par une image du quotidien."
+      }
+    ]
+  },
+  "Fiche_Lecon14_Lecture_methodique_Un_travail_risque_et_les_droits_des_enfants": {
+    "title": "Travail risqué & droits des enfants",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème de ce texte dénonçant le travail des enfants ?",
+        "type": "qcm",
+        "options": [
+          "Les devoirs à la maison",
+          "L'exploitation des enfants dans des travaux pénibles ou dangereux au détriment de leur école et santé",
+          "Les vacances",
+          "Le sport"
+        ],
+        "answer": 1,
+        "explanation": "Le texte soulève le problème de l'exploitation économique des mineurs (mines, plantations, usines)."
+      },
+      {
+        "id": "q2",
+        "text": "Quel sentiment l'auteur cherche-t-il souvent à susciter chez le lecteur dans ce genre de texte ?",
+        "type": "qcm",
+        "options": [
+          "La joie",
+          "La colère, l'indignation et la pitié pour ces enfants",
+          "L'ennui",
+          "L'amusement"
+        ],
+        "answer": 1,
+        "explanation": "En utilisant un registre pathétique ou polémique, l'auteur veut choquer et faire réagir face à cette injustice."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Selon la Convention des Droits de l'Enfant, la place normale d'un enfant est à l'école, pas au travail forcé.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le droit à l'éducation et la protection contre l'exploitation sont des droits fondamentaux."
+      },
+      {
+        "id": "q4",
+        "text": "Comment l'auteur décrit-il souvent physiquement l'enfant travailleur pour émouvoir le lecteur ?",
+        "type": "qcm",
+        "options": [
+          "Très grand et fort",
+          "Gros et souriant",
+          "Chétif, fatigué, sale, portant un fardeau trop lourd",
+          "Propre et élégant"
+        ],
+        "answer": 2,
+        "explanation": "La description met en évidence la fragilité de l'enfant face à la dureté du travail."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le vocabulaire souvent employé pour décrire les conditions de travail ?",
+        "type": "qcm",
+        "options": [
+          "Vocabulaire de la fête",
+          "Vocabulaire de la souffrance, de l'épuisement et de la douleur",
+          "Vocabulaire du jeu",
+          "Vocabulaire scientifique"
+        ],
+        "answer": 1,
+        "explanation": "Les mots (sueur, blessure, douleur, larmes) soulignent l'aspect insupportable du travail infantile."
+      }
+    ]
+  },
+  "Fiche_Lecon15_La_phrase_et_ses_constituants": {
+    "title": "La phrase et ses constituants",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une phrase à l'écrit ?",
+        "type": "qcm",
+        "options": [
+          "Un groupe de mots pris au hasard",
+          "Une suite de mots qui a un sens, commençant par une majuscule et se terminant par une ponctuation forte (., ?, !)",
+          "Seulement un verbe",
+          "Une ligne complète sur la page"
+        ],
+        "answer": 1,
+        "explanation": "La définition formelle de la phrase impose un sens, une majuscule au début et une ponctuation d'arrêt."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les deux constituants obligatoires d'une phrase simple (phrase verbale minimale) ?",
+        "type": "qcm",
+        "options": [
+          "L'adjectif et le nom",
+          "Le Groupe Nominal Sujet (GNS) et le Groupe Verbal (GV)",
+          "Le complément et le pronom",
+          "L'article et le verbe"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Le chat (GNS) dort (GV).' Ces deux éléments sont souvent indispensables pour que la phrase ait un sens."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Attention !' est une phrase même s'il n'y a pas de verbe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est une phrase non verbale (ou phrase nominale). Elle a un sens complet, une majuscule et un point d'exclamation."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'Les élèves écoutent le professeur.', quel est le Groupe Nominal Sujet ?",
+        "type": "qcm",
+        "options": [
+          "écoutent",
+          "le professeur",
+          "Les élèves",
+          "Les élèves écoutent"
+        ],
+        "answer": 2,
+        "explanation": "'Les élèves' fait l'action (Qui est-ce qui écoute ?)."
+      },
+      {
+        "id": "q5",
+        "text": "Que permet d'ajouter un Complément Circonstanciel (ex: 'dans la classe') à une phrase de base ?",
+        "type": "qcm",
+        "options": [
+          "Il supprime le verbe",
+          "Il apporte des précisions sur les circonstances de l'action (lieu, temps, manière) et peut souvent être déplacé ou supprimé",
+          "Il remplace le sujet",
+          "Rien"
+        ],
+        "answer": 1,
+        "explanation": "Les compléments circonstanciels (CC) enrichissent la phrase minimale mais ne sont généralement pas obligatoires."
+      }
+    ]
+  },
+  "Fiche_Lecon16_Les_types_de_phrases_declarative_interrogative_imperative_exclamative": {
+    "title": "Les 4 types de phrases",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel type de phrase sert à donner une information ou raconter un événement, et se termine par un point (.) ?",
+        "type": "qcm",
+        "options": [
+          "La phrase interrogative",
+          "La phrase impérative",
+          "La phrase déclarative",
+          "La phrase exclamative"
+        ],
+        "answer": 2,
+        "explanation": "La phrase déclarative déclare quelque chose. (Ex: Je vais à l'école.)"
+      },
+      {
+        "id": "q2",
+        "text": "Comment reconnaît-on facilement une phrase interrogative ?",
+        "type": "qcm",
+        "options": [
+          "Elle se termine par un point d'interrogation (?) et pose une question",
+          "Elle n'a pas de majuscule",
+          "Elle donne un ordre",
+          "Elle exprime la joie"
+        ],
+        "answer": 0,
+        "explanation": "La phrase interrogative sert à interroger. (Ex: Quel âge as-tu ?)"
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La phrase 'Ferme la porte !' est une phrase exclamative.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux. Même si elle finit par '!', elle donne un ordre sans sujet exprimé : c'est une phrase IMPÉRATIVE (ou injonctive)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel type de phrase exprime un sentiment fort (joie, colère, surprise) et se termine par (!) ?",
+        "type": "qcm",
+        "options": [
+          "Impérative",
+          "Déclarative",
+          "Exclamative",
+          "Interrogative"
+        ],
+        "answer": 2,
+        "explanation": "La phrase exclamative. (Ex: Quel beau paysage !)"
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces phrases, laquelle est de type impératif ?",
+        "type": "qcm",
+        "options": [
+          "Mangez vos légumes.",
+          "Vous mangez des légumes.",
+          "Pourquoi manges-tu des légumes ?",
+          "Comme ces légumes sont bons !"
+        ],
+        "answer": 0,
+        "explanation": "'Mangez vos légumes' donne un ordre ou un conseil, le verbe est à l'impératif sans pronom sujet apparent."
+      }
+    ]
+  },
+  "Fiche_Lecon17_Les_formes_de_phrase_affirmative_negative_emphatique_active_passive": {
+    "title": "Les formes de phrases",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la différence entre un 'type' de phrase et une 'forme' de phrase ?",
+        "type": "qcm",
+        "options": [
+          "C'est la même chose",
+          "Le type (déclaratif, interrogatif...) est la structure de base. La forme (affirmative, négative) s'ajoute au type.",
+          "La forme concerne l'orthographe",
+          "Le type est toujours au passé"
+        ],
+        "answer": 1,
+        "explanation": "Une phrase a un seul type de base (ex: interrogative) mais peut avoir plusieurs formes en même temps (ex: interrogative + négative + passive)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la forme de la phrase : 'Je n'aime pas le mensonge.' ?",
+        "type": "qcm",
+        "options": [
+          "Forme affirmative",
+          "Forme emphatique",
+          "Forme négative",
+          "Forme passive"
+        ],
+        "answer": 2,
+        "explanation": "La présence des mots de négation (ne... pas) indique la forme négative."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'C'est moi qui ai fait ce dessin.' est à la forme emphatique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La forme emphatique utilise un présentatif (C'est... qui) pour mettre en relief (insister) sur un élément (ici, 'moi')."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'La souris est mangée par le chat.', quelle est la forme ?",
+        "type": "qcm",
+        "options": [
+          "Forme active",
+          "Forme passive",
+          "Forme négative",
+          "Forme exclamative"
+        ],
+        "answer": 1,
+        "explanation": "C'est la forme passive : le sujet (la souris) subit l'action faite par le complément d'agent (par le chat)."
+      },
+      {
+        "id": "q5",
+        "text": "Passez cette phrase à la forme négative : 'Il a toujours faim.'",
+        "type": "qcm",
+        "options": [
+          "Il n'a toujours pas faim.",
+          "Il n'a jamais faim.",
+          "Il a faim.",
+          "Il n'a rien faim."
+        ],
+        "answer": 1,
+        "explanation": "Le contraire de 'toujours' dans une négation est 'ne... jamais'."
+      }
+    ]
+  },
+  "Fiche_Lecon18_Le_groupe_nominal_constituants_fonctions_et_expansions": {
+    "title": "Le Groupe Nominal (GN)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un Groupe Nominal (GN) minimal ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe et un adverbe",
+          "Un déterminant et un nom commun (ou juste un nom propre)",
+          "Une phrase entière",
+          "Un adjectif seul"
+        ],
+        "answer": 1,
+        "explanation": "Le GN minimal est formé d'un nom noyau (le chef du groupe) souvent précédé de son déterminant (ex: Le chien)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on les mots qu'on ajoute au nom noyau pour l'enrichir (ex: Le *grand* chien *noir*) ?",
+        "type": "qcm",
+        "options": [
+          "Des expansions du nom",
+          "Des verbes",
+          "Des pronoms personnels",
+          "Des articles"
+        ],
+        "answer": 0,
+        "explanation": "Les expansions du nom (adjectifs, compléments du nom) servent à donner des précisions sur le nom noyau."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans le GN 'La voiture de mon père', 'de mon père' est un adjectif qualificatif épithète.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! 'de mon père' est un Complément du Nom (CDN), introduit par la préposition 'de'."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la fonction grammaticale du GN souligné : '_Le soleil_ brille.' ?",
+        "type": "qcm",
+        "options": [
+          "Complément d'Objet Direct (COD)",
+          "Sujet du verbe",
+          "Complément Circonstanciel de Lieu",
+          "Attribut du sujet"
+        ],
+        "answer": 1,
+        "explanation": "Le GN 'Le soleil' est le sujet du verbe 'brille' (Qu'est-ce qui brille ?)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans le GN 'Une maison magnifique', 'magnifique' est une expansion de la fonction :",
+        "type": "qcm",
+        "options": [
+          "Complément du nom",
+          "Proposition subordonnée relative",
+          "Adjectif qualificatif épithète du nom",
+          "Adverbe"
+        ],
+        "answer": 2,
+        "explanation": "Un adjectif placé directement à côté du nom qu'il qualifie a la fonction d'épithète."
+      }
+    ]
+  },
+  "Fiche_Lecon19_Les_determinants_denomination_demontratifs_et_possessifs": {
+    "title": "Les déterminants",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quoi sert un déterminant ?",
+        "type": "qcm",
+        "options": [
+          "À remplacer un nom",
+          "À accompagner un nom pour indiquer son genre (masculin/féminin) et son nombre (singulier/pluriel)",
+          "À conjuguer un verbe",
+          "À lier deux phrases"
+        ],
+        "answer": 1,
+        "explanation": "Le déterminant précède toujours le nom (ex: *le* chat, *une* pomme) et s'accorde avec lui."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces mots, lequel est un article défini ?",
+        "type": "qcm",
+        "options": [
+          "Un",
+          "Le",
+          "Mon",
+          "Ce"
+        ],
+        "answer": 1,
+        "explanation": "Les articles définis sont : le, la, les, l'. Ils désignent quelque chose de précis et connu."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Ce, cet, cette, ces' sont des déterminants démonstratifs.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ils servent à montrer (désigner) la personne ou la chose dont on parle (ex: *Ce* garçon)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel déterminant possessif faut-il utiliser : 'C'est la voiture de Paul. C'est ___ voiture.'",
+        "type": "qcm",
+        "options": [
+          "ma",
+          "ta",
+          "sa",
+          "son"
+        ],
+        "answer": 2,
+        "explanation": "La voiture appartient à Paul (3ème personne). Voiture est féminin singulier. Donc 'sa voiture'."
+      },
+      {
+        "id": "q5",
+        "text": "Dans quelle phrase 'leur' est-il un déterminant possessif ?",
+        "type": "qcm",
+        "options": [
+          "Je leur parle souvent.",
+          "Ils ont oublié leur cahier.",
+          "Donne-leur le ballon.",
+          "Je les leur donne."
+        ],
+        "answer": 1,
+        "explanation": "Dans 'leur cahier', 'leur' accompagne le nom 'cahier'. Dans les autres phrases, il est placé avant ou après un verbe, c'est un pronom."
+      }
+    ]
+  },
+  "Fiche_Lecon20_Les_degres_de_comparaison_et_le_superlatif": {
+    "title": "Les degrés de l'adjectif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment exprime-t-on la supériorité (comparatif de supériorité) avec l'adjectif 'grand' ?",
+        "type": "qcm",
+        "options": [
+          "Aussi grand que",
+          "Moins grand que",
+          "Plus grand que",
+          "Le plus grand"
+        ],
+        "answer": 2,
+        "explanation": "'Plus... que' exprime la supériorité. 'Aussi... que' = égalité. 'Moins... que' = infériorité."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'exprime le superlatif (relatif) ?",
+        "type": "qcm",
+        "options": [
+          "L'égalité parfaite",
+          "Le plus haut ou le plus bas degré d'une qualité par rapport à tout un groupe",
+          "Une comparaison entre deux personnes",
+          "Un doute"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'C'est le plus grand de la classe.' Il le compare à tous les autres."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Meilleur' est le comparatif de supériorité de l'adjectif 'bon'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On ne dit pas 'plus bon', on dit 'meilleur' (Ex: Ce gâteau est meilleur que l'autre)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase : 'Elle est très intelligente', quel est le degré de l'adjectif ?",
+        "type": "qcm",
+        "options": [
+          "Comparatif d'égalité",
+          "Superlatif absolu",
+          "Superlatif relatif",
+          "Comparatif de supériorité"
+        ],
+        "answer": 1,
+        "explanation": "Le superlatif absolu s'exprime avec des adverbes comme très, fort, extrêmement. Il exprime un haut degré sans comparer à quelqu'un d'autre."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le superlatif de l'adjectif 'mauvais' ?",
+        "type": "qcm",
+        "options": [
+          "Plus mauvais",
+          "Aussi mauvais",
+          "Le plus mauvais (ou le pire)",
+          "Très mauvais"
+        ],
+        "answer": 2,
+        "explanation": "Le superlatif relatif est 'le plus mauvais' ou 'le pire'."
+      }
+    ]
+  },
+  "Fiche_Lecon21_Les_modalites_du_discours_discours_direct_et_indirect": {
+    "title": "Discours direct et indirect",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment reconnaît-on le discours DIRECT dans un texte ?",
+        "type": "qcm",
+        "options": [
+          "Il n'y a pas de majuscules",
+          "Les paroles sont rapportées exactement telles qu'elles ont été dites, souvent entre guillemets (\")",
+          "Le narrateur résume ce qui s'est dit",
+          "Il est toujours à l'imparfait"
+        ],
+        "answer": 1,
+        "explanation": "Le discours direct donne l'impression d'entendre les personnages parler. Il utilise les guillemets et les tirets."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que le discours INDIRECT ?",
+        "type": "qcm",
+        "options": [
+          "Les paroles sont intégrées au récit par une proposition subordonnée (ex: Il a dit qu'il viendrait)",
+          "Un texte sans verbes",
+          "Une phrase qui pose une question",
+          "Un monologue intérieur"
+        ],
+        "answer": 0,
+        "explanation": "Dans le discours indirect, le narrateur rapporte les paroles sans guillemets, en changeant les pronoms et parfois les temps."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Au discours indirect, on conserve toujours le point d'interrogation si la phrase d'origine était une question.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'interrogation directe (Où vas-tu ?) devient une interrogation indirecte sans point d'interrogation (Il me demande où je vais.)."
+      },
+      {
+        "id": "q4",
+        "text": "Transformez au discours indirect : Paul déclare : 'Je suis fatigué.'",
+        "type": "qcm",
+        "options": [
+          "Paul déclare qu'il est fatigué.",
+          "Paul déclare : 'Il est fatigué.'",
+          "Paul demande s'il est fatigué.",
+          "Paul dit que je suis fatigué."
+        ],
+        "answer": 0,
+        "explanation": "Le pronom 'je' devient 'il' pour concorder avec 'Paul', et on utilise la conjonction 'que'."
+      },
+      {
+        "id": "q5",
+        "text": "Quel mot introduit les paroles dans un récit (ex: déclarer, dire, affirmer) ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe d'état",
+          "Un verbe introducteur de paroles",
+          "Un adverbe de manière",
+          "Un nom commun"
+        ],
+        "answer": 1,
+        "explanation": "Le verbe introducteur (ou verbe de déclaration) est indispensable, particulièrement pour le discours indirect."
+      }
+    ]
+  },
+  "Fiche_Lecon22_Le_verbe_groupes_et_morphologie": {
+    "title": "Le verbe (Groupes et morphologie)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quel groupe appartient le verbe 'CHANTER' ?",
+        "type": "qcm",
+        "options": [
+          "Au 1er groupe",
+          "Au 2e groupe",
+          "Au 3e groupe",
+          "Il n'a pas de groupe"
+        ],
+        "answer": 0,
+        "explanation": "Les verbes du 1er groupe se terminent en -ER à l'infinitif (sauf 'aller')."
+      },
+      {
+        "id": "q2",
+        "text": "Comment reconnaît-on un verbe du 2e groupe (comme 'finir') ?",
+        "type": "qcm",
+        "options": [
+          "Il se termine en -OIR",
+          "Il se termine en -IR et fait 'nous -issons' au présent de l'indicatif (ex: nous finissons)",
+          "Il se termine en -RE",
+          "Il se termine en -ER"
+        ],
+        "answer": 1,
+        "explanation": "Le 2e groupe est régulier : -IR à l'infinitif, et participe présent en -issant (finissant)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le verbe 'ALLER' appartient au 1er groupe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est la grande exception. Bien qu'il se termine par -ER, sa conjugaison est très irrégulière, il appartient donc au 3e groupe."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'radical' d'un verbe ?",
+        "type": "qcm",
+        "options": [
+          "C'est la fin du verbe qui change avec le temps",
+          "C'est la partie fixe (ou racine) du verbe qui porte son sens",
+          "C'est le pronom sujet",
+          "C'est un autre mot pour dire 'infinitif'"
+        ],
+        "answer": 1,
+        "explanation": "Dans 'chant-ons', 'chant-' est le radical et '-ons' est la terminaison."
+      },
+      {
+        "id": "q5",
+        "text": "Quels sont les deux verbes qu'on appelle les 'auxiliaires' ?",
+        "type": "qcm",
+        "options": [
+          "Faire et Dire",
+          "Pouvoir et Vouloir",
+          "Être et Avoir",
+          "Prendre et Venir"
+        ],
+        "answer": 2,
+        "explanation": "Être et Avoir servent à former les temps composés des autres verbes (ex: j'ai chanté, il est venu)."
+      }
+    ]
+  },
+  "Fiche_Lecon23_Le_present_de_l_indicatif_valeurs_et_emplois": {
+    "title": "Le présent de l'indicatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle valeur du présent exprime une action qui se déroule au moment même où l'on parle ?",
+        "type": "qcm",
+        "options": [
+          "Le présent d'habitude",
+          "Le présent d'énonciation (ou actuel)",
+          "Le présent de vérité générale",
+          "Le présent de narration"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Je vous parle en ce moment.' C'est le présent d'énonciation."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase : 'L'eau bout à 100 degrés.', quelle est la valeur du présent ?",
+        "type": "qcm",
+        "options": [
+          "Présent de narration",
+          "Présent d'habitude",
+          "Présent de vérité générale",
+          "Présent de futur proche"
+        ],
+        "answer": 2,
+        "explanation": "Le présent de vérité générale s'emploie pour des faits scientifiques, des proverbes ou des morales toujours vrais."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le présent de narration s'utilise dans un récit au passé pour rendre l'action plus vivante.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il marchait tranquillement. Soudain, un loup bondit (passé simple) et le saisit (présent de narration).'"
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la terminaison de la 1ère personne du singulier (je) pour les verbes du 1er groupe au présent ?",
+        "type": "qcm",
+        "options": [
+          "-s",
+          "-e",
+          "-x",
+          "-t"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: Je chant-e, je jou-e. (Attention, c'est différent pour les autres groupes)."
+      },
+      {
+        "id": "q5",
+        "text": "Conjuguez 'finir' avec 'Nous' au présent :",
+        "type": "qcm",
+        "options": [
+          "Nous finons",
+          "Nous finirons",
+          "Nous finissons",
+          "Nous finisons"
+        ],
+        "answer": 2,
+        "explanation": "Les verbes du 2e groupe prennent la marque '-iss-' avec nous, vous, ils (nous finissons)."
+      }
+    ]
+  },
+  "Fiche_Lecon24_Le_futur_simple_de_l_indicatif": {
+    "title": "Le futur simple",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quoi sert principalement le futur simple ?",
+        "type": "qcm",
+        "options": [
+          "À parler d'une habitude passée",
+          "À exprimer une action qui aura lieu dans l'avenir (par rapport au moment où l'on parle)",
+          "À donner un ordre strict",
+          "À raconter un souvenir"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Demain, je partirai en voyage.'"
+      },
+      {
+        "id": "q2",
+        "text": "Quelles sont les terminaisons du futur simple (qui sont les mêmes pour TOUS les verbes) ?",
+        "type": "qcm",
+        "options": [
+          "-e, -es, -e, -ons, -ez, -ent",
+          "-ai, -as, -a, -ons, -ez, -ont",
+          "-is, -is, -it, -issons, -issez, -issent",
+          "-ais, -ais, -ait, -ions, -iez, -aient"
+        ],
+        "answer": 1,
+        "explanation": "Ces terminaisons (-ai, -as, -a, -ons, -ez, -ont) ressemblent à la conjugaison de l'auxiliaire 'avoir' au présent."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour les verbes du 1er et 2e groupe, on forme souvent le futur en gardant l'infinitif entier.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: Chanter -> je chanter-ai / Finir -> je finir-ai."
+      },
+      {
+        "id": "q4",
+        "text": "Comment conjugue-t-on 'être' avec 'tu' au futur simple ?",
+        "type": "qcm",
+        "options": [
+          "Tu seras",
+          "Tu auras",
+          "Tu est",
+          "Tu serais"
+        ],
+        "answer": 0,
+        "explanation": "Le radical d'être est 'ser-'. Donc : tu ser-as."
+      },
+      {
+        "id": "q5",
+        "text": "Quel verbe du 3e groupe est bien conjugué au futur ?",
+        "type": "qcm",
+        "options": [
+          "Il venira",
+          "Il viendra",
+          "Il venu",
+          "Il viennera"
+        ],
+        "answer": 1,
+        "explanation": "Venir est irrégulier, son radical devient 'viendr-' au futur (il viendra)."
+      }
+    ]
+  },
+  "Fiche_Lecon25_Imparfait_et_passe_compose_valeurs_et_contraste": {
+    "title": "Imparfait et Passé Composé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelles sont les valeurs principales de l'imparfait dans un récit au passé ?",
+        "type": "qcm",
+        "options": [
+          "Des actions soudaines et uniques",
+          "La description, le décor, ou une habitude dans le passé",
+          "Un ordre futur",
+          "Une vérité générale scientifique"
+        ],
+        "answer": 1,
+        "explanation": "L'imparfait installe le décor (Ex: 'Le ciel était bleu.') ou exprime des habitudes ('Tous les jours, il lisait.')."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert le passé composé par rapport à l'imparfait ?",
+        "type": "qcm",
+        "options": [
+          "À raconter des actions courtes, achevées, qui font avancer l'histoire",
+          "À décrire un personnage",
+          "À donner un conseil",
+          "À exprimer une action inachevée"
+        ],
+        "answer": 0,
+        "explanation": "Dans un récit, l'imparfait est l'arrière-plan, et le passé composé indique l'action principale accomplie (surtout à l'oral ou dans les récits modernes)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les terminaisons de l'imparfait sont toujours -ais, -ais, -ait, -ions, -iez, -aient.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Quelle que soit la conjugaison du verbe, ces terminaisons ne changent pas."
+      },
+      {
+        "id": "q4",
+        "text": "De quoi est formé un verbe conjugué au passé composé ?",
+        "type": "qcm",
+        "options": [
+          "Du radical et d'une terminaison",
+          "De l'auxiliaire (être ou avoir) au présent + le participe passé du verbe",
+          "D'un verbe à l'infinitif",
+          "De deux adjectifs"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'J'ai mangé' (Ai = auxiliaire avoir / mangé = participe passé)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la phrase : 'Il pleuvait quand tu as appelé', pourquoi utilise-t-on les deux temps ?",
+        "type": "qcm",
+        "options": [
+          "C'est une erreur",
+          "L'imparfait (pleuvait) est l'action en cours (décor) interrompue par l'action soudaine du passé composé (as appelé)",
+          "Pour faire une rime",
+          "Parce que c'est le futur"
+        ],
+        "answer": 1,
+        "explanation": "L'action continue (pleuvoir) est coupée par une action courte (appeler)."
+      }
+    ]
+  },
+  "Fiche_Lecon26_Les_auxiliaires_d_aspect_futur_proche_passe_proche_action_en_cours": {
+    "title": "Les auxiliaires d'aspect",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un verbe semi-auxiliaire (auxiliaire d'aspect) ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe qui aide à construire le passé composé",
+          "Un verbe (aller, venir de, être en train de) qui s'associe à un infinitif pour préciser si l'action est proche, récente ou en cours",
+          "Un verbe qui n'existe pas",
+          "Un verbe d'état"
+        ],
+        "answer": 1,
+        "explanation": "Ils ne marquent pas le temps principal de l'action mais comment elle se déroule dans le temps (l'aspect)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment exprime-t-on le 'futur proche' ?",
+        "type": "qcm",
+        "options": [
+          "Venir de + Infinitif",
+          "Aller (au présent) + Infinitif",
+          "Avoir + Participe passé",
+          "Être en train de + Infinitif"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Je vais manger' (dans très peu de temps)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Je viens d'arriver' est au passé récent (ou passé proche).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le verbe 'venir' est ici un auxiliaire d'aspect pour montrer que l'action vient tout juste de se terminer."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle tournure exprime une 'action en cours de déroulement' (le progressif) ?",
+        "type": "qcm",
+        "options": [
+          "Il va lire",
+          "Il est en train de lire",
+          "Il vient de lire",
+          "Il a lu"
+        ],
+        "answer": 1,
+        "explanation": "'Être en train de' montre que l'action n'est pas encore finie."
+      },
+      {
+        "id": "q5",
+        "text": "Lequel de ces verbes n'est PAS un auxiliaire d'aspect temporel ?",
+        "type": "qcm",
+        "options": [
+          "Venir (de)",
+          "Aller",
+          "Acheter",
+          "Se mettre (à)"
+        ],
+        "answer": 2,
+        "explanation": "Acheter est un verbe d'action normal. 'Se mettre à' est un auxiliaire d'aspect qui marque le début d'une action (l'inchoatif)."
+      }
+    ]
+  },
+  "Fiche_Lecon27_Le_groupe_verbal_avec_etre_et_les_verbes_d_etat": {
+    "title": "Verbes d'état et attributs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un verbe d'état ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe qui décrit une action physique",
+          "Un verbe qui sert à décrire l'état, l'apparence ou l'évolution du sujet (ex: être, paraître, sembler, devenir...)",
+          "Un verbe conjugué au futur",
+          "Un verbe invariable"
+        ],
+        "answer": 1,
+        "explanation": "Les verbes d'état relient le sujet à une caractéristique (l'attribut)."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase : 'La maison semble abandonnée.', quel est le verbe d'état ?",
+        "type": "qcm",
+        "options": [
+          "abandonnée",
+          "maison",
+          "semble",
+          "La"
+        ],
+        "answer": 2,
+        "explanation": "Le verbe 'sembler' est un verbe d'état (on peut le remplacer par 'être')."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Rester' et 'Demeurer' peuvent être des verbes d'état.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Dans 'Il reste calme', 'rester' exprime le maintien d'un état."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on le mot (ou groupe de mots) qui suit un verbe d'état pour qualifier le sujet ?",
+        "type": "qcm",
+        "options": [
+          "Complément d'objet direct (COD)",
+          "Sujet",
+          "Attribut du sujet",
+          "Adverbe"
+        ],
+        "answer": 2,
+        "explanation": "Après un verbe d'état, on ne trouve jamais de COD, mais un 'attribut du sujet'."
+      },
+      {
+        "id": "q5",
+        "text": "L'attribut du sujet s'accorde-t-il avec le sujet ?",
+        "type": "qcm",
+        "options": [
+          "Oui, toujours en genre et en nombre s'il s'agit d'un adjectif (ex: Elle est heureuse)",
+          "Non, il est invariable",
+          "Seulement au singulier",
+          "Oui, mais il s'accorde avec le verbe"
+        ],
+        "answer": 0,
+        "explanation": "L'attribut qualifiant le sujet, il prend le même genre et nombre que ce dernier."
+      }
+    ]
+  },
+  "Fiche_Lecon28_Les_adverbes_de_temps": {
+    "title": "Les adverbes de temps",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un adverbe ?",
+        "type": "qcm",
+        "options": [
+          "Un mot invariable qui modifie le sens d'un verbe, d'un adjectif ou d'un autre adverbe",
+          "Un nom propre",
+          "Un pronom personnel",
+          "Un verbe conjugué"
+        ],
+        "answer": 0,
+        "explanation": "Contrairement aux adjectifs, les adverbes ne s'accordent pas en genre ou en nombre (ils sont invariables)."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces mots, lequel est un adverbe de temps indiquant le PASSÉ ?",
+        "type": "qcm",
+        "options": [
+          "Demain",
+          "Aujourd'hui",
+          "Autrefois",
+          "Bientôt"
+        ],
+        "answer": 2,
+        "explanation": "Autrefois, jadis, hier... situent l'action dans le passé."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'Soudain' est un adverbe de temps.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il indique la manière et le moment inattendu où une action se produit (très utilisé dans les récits)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel adverbe de temps indique l'AVENIR ?",
+        "type": "qcm",
+        "options": [
+          "Toujours",
+          "Demain",
+          "Maintenant",
+          "Jamais"
+        ],
+        "answer": 1,
+        "explanation": "Demain, bientôt, plus tard projettent l'action dans le futur."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la fonction grammaticale d'un adverbe de temps dans une phrase (ex: 'Hier, il a plu.') ?",
+        "type": "qcm",
+        "options": [
+          "Sujet",
+          "Complément d'Objet Direct (COD)",
+          "Complément Circonstanciel de Temps (CCT)",
+          "Attribut du sujet"
+        ],
+        "answer": 2,
+        "explanation": "L'adverbe de temps occupe souvent la fonction de Complément Circonstanciel de Temps (il répond à la question 'Quand ?')."
+      }
+    ]
+  },
+  "Fiche_Lecon29_Orthographe_lexicale_accents_apostrophe_et_elision": {
+    "title": "Accents, apostrophe et élision",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel accent trouve-t-on sur le 'e' du mot 'père' ?",
+        "type": "qcm",
+        "options": [
+          "L'accent aigu",
+          "L'accent grave",
+          "L'accent circonflexe",
+          "Il n'y a pas d'accent"
+        ],
+        "answer": 1,
+        "explanation": "Le mot 'père' s'écrit avec un accent grave (è)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'élision ?",
+        "type": "qcm",
+        "options": [
+          "Mettre un mot au pluriel",
+          "L'effacement de la voyelle finale (a, e, i) de certains petits mots devant un mot commençant par une voyelle ou un 'h' muet",
+          "Le fait de souligner un mot",
+          "Un type de phrase"
+        ],
+        "answer": 1,
+        "explanation": "L'élision est marquée par l'apostrophe ('). Ex: 'le ami' devient 'l'ami'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On met un accent aigu (é) quand la syllabe suivante se termine par un 'e' muet.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! On met un accent GRAVE (è) si la syllabe suivante contient un e muet (ex: il achète)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans quel mot l'accent circonflexe (^) remplace-t-il souvent un 's' disparu de l'ancien français ?",
+        "type": "qcm",
+        "options": [
+          "Hôpital",
+          "Télévision",
+          "Lumière",
+          "Éléphant"
+        ],
+        "answer": 0,
+        "explanation": "Hôpital vient de l'ancien 'hospital'. L'accent circonflexe garde la trace du 's'."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la bonne orthographe avec l'apostrophe ?",
+        "type": "qcm",
+        "options": [
+          "Si il vient",
+          "S'il vient",
+          "Si'l vient",
+          "S'il' vient"
+        ],
+        "answer": 1,
+        "explanation": "La conjonction 'si' s'élide uniquement devant 'il' et 'ils' (s'il / s'ils)."
+      }
+    ]
+  },
+  "Fiche_Lecon30_Orthographe_lexicale_les_homophones_courants": {
+    "title": "Les homophones courants",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un homophone ?",
+        "type": "qcm",
+        "options": [
+          "Un mot qui s'écrit pareil mais se prononce différemment",
+          "Un mot qui se prononce de la même façon qu'un autre mais qui a un sens différent (ex: ver, vert, verre)",
+          "Un mot très long",
+          "Un synonyme"
+        ],
+        "answer": 1,
+        "explanation": "Homo (même) / phone (son). Ils ont le même son mais un sens et une orthographe différents."
+      },
+      {
+        "id": "q2",
+        "text": "Complétez : '___ chien est dans le jardin ___ l'école.'",
+        "type": "qcm",
+        "options": [
+          "Ce / de",
+          "Se / de",
+          "Ce / d'",
+          "Se / d'"
+        ],
+        "answer": 0,
+        "explanation": "'Ce' est un déterminant démonstratif (ce chien). 'Se' est un pronom réfléchi (il se lave)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : 'A' (sans accent) est le verbe avoir, et on peut le remplacer par 'avait'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Il a faim' -> 'Il avait faim'. 'À' avec accent est une préposition."
+      },
+      {
+        "id": "q4",
+        "text": "Complétez : 'Ils ___ oubliés ___ affaires.'",
+        "type": "qcm",
+        "options": [
+          "on / leur",
+          "ont / leurs",
+          "ont / l'heure",
+          "on / leurs"
+        ],
+        "answer": 1,
+        "explanation": "'ont' (verbe avoir, on peut dire 'avaient'). 'leurs' (déterminant possessif pluriel car il y a plusieurs affaires)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la bonne orthographe : 'Il est ___ tard pour ___.'",
+        "type": "qcm",
+        "options": [
+          "trop / s'a",
+          "tro / ça",
+          "trop / ça",
+          "trot / sa"
+        ],
+        "answer": 2,
+        "explanation": "'Trop' (adverbe) prend un 'p'. 'Ça' (pronom démonstratif) s'écrit avec une cédille."
+      }
+    ]
+  },
+  "Fiche_Lecon31_Orthographe_lexicale_le_doublement_de_la_consonne_dans_les_adverbes_en_ment": {
+    "title": "Les adverbes en -ment (Double consonne)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment forme-t-on généralement un adverbe en '-ment' à partir d'un adjectif (ex: doux) ?",
+        "type": "qcm",
+        "options": [
+          "On ajoute -ment au masculin",
+          "On met l'adjectif au féminin et on ajoute -ment (ex: douce -> doucement)",
+          "On double la consonne finale",
+          "On l'invente"
+        ],
+        "answer": 1,
+        "explanation": "C'est la règle de base : adjectif féminin + ment."
+      },
+      {
+        "id": "q2",
+        "text": "Si l'adjectif masculin se termine par -ant (ex: méchant), comment s'écrit l'adverbe ?",
+        "type": "qcm",
+        "options": [
+          "méchantement",
+          "méchantment",
+          "méchamment",
+          "méchanment"
+        ],
+        "answer": 2,
+        "explanation": "Les adjectifs en -ant forment leur adverbe en -AMMENT (le 'm' est doublé)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'adjectif 'prudent' (terminé par -ent) donne l'adverbe 'prudemment'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les adjectifs en -ent forment leur adverbe en -EMMENT (le 'm' est doublé, mais on écrit e)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est l'adverbe correspondant à l'adjectif 'patient' ?",
+        "type": "qcm",
+        "options": [
+          "Patientement",
+          "Patiamment",
+          "Patiemment",
+          "Patientemment"
+        ],
+        "answer": 2,
+        "explanation": "Terminé par -ent, donc adverbe en -emment."
+      },
+      {
+        "id": "q5",
+        "text": "Et si l'adjectif masculin se termine par une voyelle (ex: vrai, poli) ?",
+        "type": "qcm",
+        "options": [
+          "On ajoute directement -ment (ex: vraiment, poliment)",
+          "On le met au féminin (vraie) puis -ment",
+          "On double la consonne",
+          "On ne peut pas faire d'adverbe"
+        ],
+        "answer": 0,
+        "explanation": "Si le masculin finit par une voyelle, on ajoute -ment sans passer par le féminin."
+      }
+    ]
+  },
+  "Fiche_Lecon32_Orthographe_grammaticale_accord_avec_le_la_les_l": {
+    "title": "Accord avec 'le', 'la', 'les', 'l''",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que sont les mots 'le, la, les, l'' lorsqu'ils sont placés DEVANT UN NOM (ex: les amis) ?",
+        "type": "qcm",
+        "options": [
+          "Des pronoms",
+          "Des articles définis (déterminants)",
+          "Des verbes",
+          "Des adjectifs"
+        ],
+        "answer": 1,
+        "explanation": "Placés devant un nom, ils déterminent ce nom et s'accordent avec lui (genre et nombre)."
+      },
+      {
+        "id": "q2",
+        "text": "Que sont ces mêmes mots (le, la, les, l') lorsqu'ils sont placés DEVANT UN VERBE (ex: Il les regarde) ?",
+        "type": "qcm",
+        "options": [
+          "Des articles définis",
+          "Des pronoms personnels compléments",
+          "Des noms",
+          "Des prépositions"
+        ],
+        "answer": 1,
+        "explanation": "Devant un verbe, ils remplacent un nom pour éviter une répétition. (Ex: Il regarde *les amis* -> Il *les* regarde)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les pronoms 'le, la, les' s'accordent en genre et en nombre avec le nom qu'ils remplacent.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. S'ils remplacent 'la pomme', on utilise 'la'. S'ils remplacent 'les pommes', on utilise 'les'."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'Je la vois', 'la' remplace :",
+        "type": "qcm",
+        "options": [
+          "Un nom masculin singulier",
+          "Un nom féminin pluriel",
+          "Un nom féminin singulier",
+          "Un verbe"
+        ],
+        "answer": 2,
+        "explanation": "'la' est féminin singulier (ex: Je vois la fille -> Je la vois)."
+      },
+      {
+        "id": "q5",
+        "text": "Complétez : 'Ces chaussures sont belles, je vais ___ acheter.'",
+        "type": "qcm",
+        "options": [
+          "le",
+          "la",
+          "les",
+          "l'"
+        ],
+        "answer": 2,
+        "explanation": "'les' remplace 'ces chaussures' (féminin pluriel), placé devant le verbe acheter."
+      }
+    ]
+  },
+  "Fiche_Lecon33_Orthographe_grammaticale_leur_pronom_et_adjectif_possessif": {
+    "title": "Orthographe : 'leur' ou 'leurs' ?",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quand 'leur' prend-il un 's' (leurs) ?",
+        "type": "qcm",
+        "options": [
+          "Quand il est devant un verbe",
+          "Quand il est déterminant possessif et qu'il précède un nom au pluriel",
+          "Toujours",
+          "Jamais"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Ils prennent leurs affaires.' (affaires = nom pluriel, donc 'leurs')."
+      },
+      {
+        "id": "q2",
+        "text": "Quand 'leur' est placé DEVANT UN VERBE (ex: je leur dis), s'accorde-t-il ?",
+        "type": "qcm",
+        "options": [
+          "Oui, avec le verbe",
+          "Oui, avec le sujet",
+          "Non, il est pronom personnel invariable et ne prend jamais de 's'",
+          "Oui, s'il y a plusieurs personnes"
+        ],
+        "answer": 2,
+        "explanation": "Le pronom 'leur' (qui signifie 'à eux / à elles') est invariable. On n'écrit jamais 'leurs' devant un verbe."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans la phrase 'Ils aiment leur maison', on écrit 'leur' sans 's'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le nom 'maison' est singulier (ils n'ont qu'une seule maison pour eux tous), donc 'leur' reste au singulier."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la bonne phrase ?",
+        "type": "qcm",
+        "options": [
+          "Je leurs donne des bonbons.",
+          "Je leur donnes des bonbons.",
+          "Je leur donne des bonbons.",
+          "Je l'heure donne des bonbons."
+        ],
+        "answer": 2,
+        "explanation": "'leur' est pronom (devant le verbe donne), donc sans 's'."
+      },
+      {
+        "id": "q5",
+        "text": "Complétez : 'Les parents appellent ___ enfants et ___ disent de venir.'",
+        "type": "qcm",
+        "options": [
+          "leur / leurs",
+          "leurs / leur",
+          "leurs / leurs",
+          "leur / leur"
+        ],
+        "answer": 1,
+        "explanation": "1er: 'leurs' enfants (déterminant pluriel). 2ème: 'leur' disent (pronom invariable devant un verbe)."
+      }
+    ]
+  },
+  "Fiche_Lecon34_Orthographe_grammaticale_accord_du_participe_passe_avec_avoir_et_etre": {
+    "title": "Accord du participe passé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la règle d'accord du participe passé avec l'auxiliaire ÊTRE ?",
+        "type": "qcm",
+        "options": [
+          "Il ne s'accorde jamais",
+          "Il s'accorde toujours en genre et en nombre avec le SUJET du verbe",
+          "Il s'accorde avec le verbe",
+          "Il s'accorde avec le complément"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Elle est tombée.' (tombée s'accorde avec 'Elle', féminin singulier)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la règle générale d'accord du participe passé avec l'auxiliaire AVOIR ?",
+        "type": "qcm",
+        "options": [
+          "Il s'accorde avec le sujet",
+          "Il ne s'accorde jamais avec le sujet",
+          "Il s'accorde toujours",
+          "Il s'accorde avec l'auxiliaire"
+        ],
+        "answer": 1,
+        "explanation": "Avec 'avoir', on n'accorde jamais avec le sujet. (Ex: Elle a mangé. / Ils ont mangé.)"
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Avec l'auxiliaire avoir, le participe passé s'accorde avec le Complément d'Objet Direct (COD) si celui-ci est placé AVANT le verbe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la grande exception ! Ex: 'Les pommes (COD avant) que j'ai mangées (accord féminin pluriel).'"
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la bonne orthographe : 'Les filles sont ___.'",
+        "type": "qcm",
+        "options": [
+          "parti",
+          "partis",
+          "partie",
+          "parties"
+        ],
+        "answer": 3,
+        "explanation": "Auxiliaire être -> Accord avec le sujet 'Les filles' (féminin pluriel) -> parties."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la bonne orthographe : 'La lettre que j'ai ___.'",
+        "type": "qcm",
+        "options": [
+          "écrit",
+          "écrite",
+          "écrits",
+          "écrites"
+        ],
+        "answer": 1,
+        "explanation": "Auxiliaire avoir + COD placé avant ('que' mis pour 'La lettre', féminin singulier). Donc : écrite."
+      }
+    ]
+  }
+}

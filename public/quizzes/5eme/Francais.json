@@ -1,0 +1,750 @@
+{
+  "Fiche_GRAM_L1_GROUPE_NOMINAL": {
+    "title": "Le Groupe Nominal",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un Groupe Nominal (GN) ?",
+        "type": "qcm",
+        "options": [
+          "Un groupe de verbes",
+          "Un groupe de mots organisé autour d'un nom noyau, souvent précédé d'un déterminant",
+          "Une phrase entière",
+          "Un groupe d'adjectifs"
+        ],
+        "answer": 1,
+        "explanation": "Le mot principal (le 'chef') du groupe est un nom. Ex: 'Le grand chien noir'."
+      },
+      {
+        "id": "q2",
+        "text": "Dans le groupe nominal 'Ce magnifique oiseau bleu', quel est le nom noyau ?",
+        "type": "qcm",
+        "options": [
+          "Ce",
+          "magnifique",
+          "oiseau",
+          "bleu"
+        ],
+        "answer": 2,
+        "explanation": "Tout le groupe tourne autour du nom 'oiseau'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le Groupe Nominal minimal est composé uniquement d'un déterminant et d'un nom.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la forme la plus simple. Ex: 'Le chat'."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on les mots qui viennent enrichir et préciser le nom noyau (ex: un adjectif, un complément du nom) ?",
+        "type": "qcm",
+        "options": [
+          "Des expansions du nom",
+          "Des adverbes",
+          "Des conjonctions",
+          "Des verbes conjugués"
+        ],
+        "answer": 0,
+        "explanation": "L'expansion du nom permet de l'agrandir : 'la voiture' devient 'la belle voiture rouge de mon oncle'."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la phrase 'La porte de la maison est fermée', quelle est la fonction du GN 'de la maison' ?",
+        "type": "qcm",
+        "options": [
+          "Sujet",
+          "Complément d'Objet Direct (COD)",
+          "Complément du nom 'porte'",
+          "Adjectif qualificatif"
+        ],
+        "answer": 2,
+        "explanation": "Il complète le nom 'porte' (laquelle ? celle de la maison). Il est introduit par la préposition 'de'."
+      }
+    ]
+  },
+  "Fiche_GRAM_L2_GROUPE_ADJECTIVAL": {
+    "title": "Le Groupe Adjectival",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un Groupe Adjectival (GAdj) ?",
+        "type": "qcm",
+        "options": [
+          "Un groupe de noms",
+          "Un groupe de mots dont le noyau (le mot principal) est un adjectif qualificatif",
+          "Un adverbe",
+          "Une préposition"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Très fier de lui'. Le mot le plus important est l'adjectif 'fier'."
+      },
+      {
+        "id": "q2",
+        "text": "Par quoi l'adjectif qualificatif peut-il être complété ou modifié à l'intérieur de son groupe ?",
+        "type": "qcm",
+        "options": [
+          "Par un déterminant",
+          "Par un verbe à l'infinitif",
+          "Par un adverbe (ex: TRÈS beau) ou un complément de l'adjectif (ex: facile À COMPRENDRE)",
+          "Par un pronom personnel sujet"
+        ],
+        "answer": 2,
+        "explanation": "L'adverbe intensifie (très, trop, peu) et le complément de l'adjectif (souvent introduit par 'à' ou 'de') donne une précision."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'adjectif qualificatif s'accorde TOUJOURS en genre et en nombre avec le nom ou le pronom qu'il qualifie.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. S'il qualifie 'des filles', l'adjectif sera au féminin pluriel (ex: très contentes)."
+      },
+      {
+        "id": "q4",
+        "text": "Si l'adjectif est placé directement à côté du nom qu'il qualifie (ex: un *grand* arbre), quelle est sa fonction ?",
+        "type": "qcm",
+        "options": [
+          "Attribut du sujet",
+          "Épithète liée",
+          "COD",
+          "Sujet"
+        ],
+        "answer": 1,
+        "explanation": "Il fait partie du groupe nominal et est 'collé' au nom (épithète = placé à côté)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la fonction de l'adjectif s'il est séparé du sujet par un verbe d'état comme 'être' ou 'paraître' (ex: Cet arbre semble *grand*) ?",
+        "type": "qcm",
+        "options": [
+          "Attribut du sujet",
+          "Épithète détachée",
+          "Complément circonstanciel",
+          "Adverbe"
+        ],
+        "answer": 0,
+        "explanation": "L'attribut donne une caractéristique au sujet par l'intermédiaire d'un verbe d'état."
+      }
+    ]
+  },
+  "Fiche_GRAM_L3_PRONOMINALISATION": {
+    "title": "La Pronominalisation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la pronominalisation ?",
+        "type": "qcm",
+        "options": [
+          "Écrire un mot au pluriel",
+          "Remplacer un nom ou un groupe nominal par un pronom pour éviter une répétition",
+          "Ajouter des adjectifs à une phrase",
+          "Mettre une phrase à la voix passive"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'Je vois *Marie*.' -> 'Je *la* vois.'"
+      },
+      {
+        "id": "q2",
+        "text": "Dans la phrase 'Je mange la pomme', si on pronominalise le COD 'la pomme', on obtient :",
+        "type": "qcm",
+        "options": [
+          "Je lui mange.",
+          "Je la mange.",
+          "Je le mange.",
+          "Je en mange."
+        ],
+        "answer": 1,
+        "explanation": "'La pomme' est féminin singulier et COD direct. Le pronom COD correspondant est 'la'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on pronominalise un Complément d'Objet Indirect (COI) animé pluriel (ex: Je parle *aux enfants*), on utilise 'les'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Pour un COI animé pluriel (introduit par 'à'), on utilise 'leur'. (Je *leur* parle)."
+      },
+      {
+        "id": "q4",
+        "text": "Quel pronom utilise-t-on souvent pour remplacer un groupe introduit par la préposition 'de' (ex: Je parle *de mes vacances*) ?",
+        "type": "qcm",
+        "options": [
+          "y",
+          "en",
+          "lui",
+          "les"
+        ],
+        "answer": 1,
+        "explanation": "'J'en parle'. Le pronom 'en' remplace souvent 'de + quelque chose'."
+      },
+      {
+        "id": "q5",
+        "text": "Quel pronom utilise-t-on pour remplacer un complément de lieu (ex: Je vais *à l'école*) ?",
+        "type": "qcm",
+        "options": [
+          "en",
+          "la",
+          "y",
+          "lui"
+        ],
+        "answer": 2,
+        "explanation": "'J'y vais'. Le pronom 'y' remplace souvent 'à/dans/sur + un lieu'."
+      }
+    ]
+  },
+  "Fiche_GRAM_L4_VERBE_FORMES_EMPLOIS": {
+    "title": "Verbes (Formes et emplois)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la particularité d'un verbe 'pronominal' ?",
+        "type": "qcm",
+        "options": [
+          "Il ne se conjugue qu'au présent",
+          "Il se construit avec un pronom réfléchi de la même personne que le sujet (me, te, se, nous, vous, se)",
+          "Il n'a pas de sujet",
+          "Il se conjugue toujours avec 'avoir'"
+        ],
+        "answer": 1,
+        "explanation": "Exemples : se laver, s'enfuir. Le pronom réfléchi change avec le sujet (Je ME lave, tu TE laves)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un verbe impersonnel ?",
+        "type": "qcm",
+        "options": [
+          "Un verbe qui n'existe pas",
+          "Un verbe qui ne se conjugue qu'à la 3e personne du singulier (il) et dont le 'il' ne représente personne (ni homme, ni chose)",
+          "Un verbe qui décrit une personne",
+          "Un verbe conjugué au pluriel"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Il pleut', 'Il faut'. Le 'il' ne remplace rien, c'est un sujet apparent."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Aux temps composés, tous les verbes pronominaux se conjuguent avec l'auxiliaire 'être'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (Ex: Je me SUIS lavé. Elle s'EST enfuie). Jamais avec 'avoir'."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la phrase 'Il neige', le verbe est :",
+        "type": "qcm",
+        "options": [
+          "Pronominal",
+          "Transitif",
+          "Impersonnel (lié à la météorologie)",
+          "À la voix passive"
+        ],
+        "answer": 2,
+        "explanation": "La plupart des verbes météorologiques sont essentiellement impersonnels."
+      },
+      {
+        "id": "q5",
+        "text": "Dans l'emploi pronominal, si l'action est faite par les sujets l'un sur l'autre (ex: Ils se regardent), on dit que c'est un sens :",
+        "type": "qcm",
+        "options": [
+          "Réciproque",
+          "Réfléchi",
+          "Passif",
+          "Impersonnel"
+        ],
+        "answer": 0,
+        "explanation": "Réciproque car A regarde B, et B regarde A en même temps."
+      }
+    ]
+  },
+  "Fiche_GRAM_L5_PHRASE_COMPLEXE": {
+    "title": "La phrase complexe",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la définition d'une phrase complexe ?",
+        "type": "qcm",
+        "options": [
+          "Une phrase très longue, même s'il n'y a qu'un seul verbe",
+          "Une phrase qui contient plusieurs verbes conjugués (et donc plusieurs propositions)",
+          "Une phrase qu'on ne comprend pas",
+          "Une phrase sans ponctuation"
+        ],
+        "answer": 1,
+        "explanation": "Règle de base : il y a autant de propositions dans la phrase qu'il y a de verbes conjugués."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on deux propositions séparées uniquement par un signe de ponctuation (virgule, point-virgule, deux-points) ?",
+        "type": "qcm",
+        "options": [
+          "Coordonnées",
+          "Juxtaposées",
+          "Subordonnées",
+          "Indépendantes"
+        ],
+        "answer": 1,
+        "explanation": "Juxtaposer signifie 'placer à côté de'. (Ex: Le chien aboie, le chat s'enfuit)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux propositions reliées par une conjonction de coordination (mais, ou, et, donc, or, ni, car) sont des propositions coordonnées.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (Ex: Il est fatigué *car* il a beaucoup travaillé)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans une phrase complexe, comment appelle-t-on une proposition qui dépend d'une autre proposition (la proposition principale) et qui commence par un subordonnant (que, parce que, si, quand...) ?",
+        "type": "qcm",
+        "options": [
+          "Une proposition indépendante",
+          "Une proposition subordonnée",
+          "Une proposition coordonnée",
+          "Une phrase simple"
+        ],
+        "answer": 1,
+        "explanation": "La subordonnée n'a pas de sens complet si on l'isole. Elle a besoin de la Principale."
+      },
+      {
+        "id": "q5",
+        "text": "Dans 'Je crois qu'il va pleuvoir', combien y a-t-il de propositions ?",
+        "type": "qcm",
+        "options": [
+          "Une seule",
+          "Deux",
+          "Trois",
+          "Zéro"
+        ],
+        "answer": 1,
+        "explanation": "Il y a 2 verbes conjugués (crois / va). Prop 1 (Principale) : Je crois. Prop 2 (Subordonnée) : qu'il va pleuvoir."
+      }
+    ]
+  },
+  "Fiche_ORTHOGRAPHE_GRAMMATICALE": {
+    "title": "Orthographe grammaticale",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment différencier 'a' (sans accent) et 'à' (avec accent) ?",
+        "type": "qcm",
+        "options": [
+          "C'est la même chose",
+          "'a' est le verbe avoir (on peut le remplacer par 'avait'). 'à' est une préposition.",
+          "'à' est le verbe",
+          "On met un accent quand c'est le début de la phrase"
+        ],
+        "answer": 1,
+        "explanation": "Astuce : Il a (avait) mal à (*avait) la tête."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la règle pour choisir entre un verbe en '-é' (participe passé) ou en '-er' (infinitif) à la fin d'un verbe du 1er groupe ?",
+        "type": "qcm",
+        "options": [
+          "On met toujours -er",
+          "Si on peut remplacer le verbe par 'mordre/vendre' c'est -er (infinitif). Si on peut remplacer par 'mordu/vendu', c'est -é (participe passé).",
+          "On met -er si c'est au pluriel",
+          "C'est un choix libre"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: 'Je vais manger' -> Je vais mordre (-er). 'J'ai mangé' -> J'ai mordu (-é)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On écrit 'son' (sans 't') quand on peut le remplacer par 'mon' ou 'ton' (c'est un déterminant possessif).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Et 'sont' (avec un 't') est le verbe être (remplaçable par 'étaient')."
+      },
+      {
+        "id": "q4",
+        "text": "Comment différencier 'ou' (sans accent) et 'où' (avec accent) ?",
+        "type": "qcm",
+        "options": [
+          "'ou' indique un choix (ou bien). 'où' indique un lieu ou un temps.",
+          "C'est pareil",
+          "L'accent est pour faire joli",
+          "'où' avec accent indique le choix"
+        ],
+        "answer": 0,
+        "explanation": "Ex: Où (lieu) vas-tu ? Tu préfères le thé ou (ou bien) le café ?"
+      },
+      {
+        "id": "q5",
+        "text": "Comment accorder le participe passé employé avec l'auxiliaire 'avoir' ?",
+        "type": "qcm",
+        "options": [
+          "Il s'accorde toujours avec le sujet",
+          "Il ne s'accorde jamais",
+          "Il s'accorde avec le Complément d'Objet Direct (COD) SI le COD est placé AVANT le verbe",
+          "Il s'accorde avec l'auxiliaire"
+        ],
+        "answer": 2,
+        "explanation": "Ex: J'ai mangé les pommes. MAIS : Les pommes que j'ai mangéES (le 'que', mis pour 'les pommes', est placé avant)."
+      }
+    ]
+  },
+  "Fiche_EXP_ECRITE_COMPTE_RENDU": {
+    "title": "Expression Écrite : Le compte rendu",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le but d'un compte rendu ?",
+        "type": "qcm",
+        "options": [
+          "Raconter une histoire inventée",
+          "Rapporter fidèlement et objectivement ce qui s'est passé lors d'un événement (réunion, visite, lecture) pour informer ceux qui n'y étaient pas",
+          "Écrire une lettre d'amour",
+          "Faire rire le lecteur"
+        ],
+        "answer": 1,
+        "explanation": "L'auteur du compte rendu doit être neutre, il ne donne pas son avis personnel."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles informations (les 'circonstances') doit-on obligatoirement trouver au début d'un compte rendu d'événement ?",
+        "type": "qcm",
+        "options": [
+          "La date de naissance du rédacteur",
+          "Le Qui, Quoi, Quand (date/heure) et Où (le lieu) de l'événement",
+          "Le prix du papier",
+          "La météo"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'introduction qui fixe le cadre de l'événement."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un compte rendu, on doit utiliser l'ordre chronologique pour raconter le déroulement des faits.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le développement retrace les étapes de la visite ou les points abordés de la réunion, du début à la fin, en utilisant des mots de liaison (d'abord, ensuite, enfin)."
+      },
+      {
+        "id": "q4",
+        "text": "À quel temps de l'indicatif est le plus souvent rédigé un compte rendu ?",
+        "type": "qcm",
+        "options": [
+          "Au futur simple",
+          "Au passé (passé composé ou passé simple) car l'action est déjà terminée",
+          "À l'imparfait uniquement",
+          "Au conditionnel"
+        ],
+        "answer": 1,
+        "explanation": "On raconte un fait passé."
+      },
+      {
+        "id": "q5",
+        "text": "Comment doit se terminer le compte rendu ?",
+        "type": "qcm",
+        "options": [
+          "Par un poème",
+          "Par une conclusion (fin de l'événement, date de la prochaine réunion ou bilan général de la journée)",
+          "Par un point d'interrogation",
+          "Sans rien dire"
+        ],
+        "answer": 1,
+        "explanation": "La conclusion clôt l'événement rapporté."
+      }
+    ]
+  },
+  "Fiche_EXP_ECRITE_POEME": {
+    "title": "Expression Écrite : Le poème",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment s'appelle une 'ligne' dans un poème (qui commence souvent par une majuscule) ?",
+        "type": "qcm",
+        "options": [
+          "Une phrase",
+          "Un paragraphe",
+          "Un vers",
+          "Une rime"
+        ],
+        "answer": 2,
+        "explanation": "Le poème est structuré en vers, contrairement à la prose (texte normal)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on un bloc ou un groupe de vers séparé par un espace blanc (l'équivalent du paragraphe) ?",
+        "type": "qcm",
+        "options": [
+          "Un chapitre",
+          "Une strophe",
+          "Un tercet",
+          "Un alexandrin"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: un groupe de 4 vers est une strophe appelée 'quatrain'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les rimes sont les sons identiques qui se répètent à la FIN des vers.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la musicalité du poème (ex: fleur / cœur)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle figure de style consiste à comparer deux choses en utilisant un mot-outil (comme, tel, pareil à) ?",
+        "type": "qcm",
+        "options": [
+          "La métaphore",
+          "La personnification",
+          "La comparaison",
+          "L'exagération"
+        ],
+        "answer": 2,
+        "explanation": "Exemple : 'Il est fort COMME un lion.' La poésie utilise beaucoup d'images poétiques."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce qu'une 'personnification' en poésie ?",
+        "type": "qcm",
+        "options": [
+          "Dessiner une personne",
+          "Donner un trait de caractère ou un comportement humain à une chose ou un animal",
+          "Écrire le poème à la première personne",
+          "Compter les syllabes"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Le vent hurlait de colère'. Le vent a un comportement humain."
+      }
+    ]
+  },
+  "Fiche_EXP_ECRITE_PORTRAIT": {
+    "title": "Expression Écrite : Le portrait",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que faire le portrait d'un personnage dans un texte ?",
+        "type": "qcm",
+        "options": [
+          "Le dessiner avec un crayon",
+          "Faire sa description physique et morale (son caractère) avec des mots",
+          "Raconter toute sa vie de la naissance à la mort",
+          "Donner juste son nom"
+        ],
+        "answer": 1,
+        "explanation": "Le portrait littéraire permet au lecteur d'imaginer précisément le personnage."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la description physique, comment doit-on procéder généralement pour être ordonné ?",
+        "type": "qcm",
+        "options": [
+          "Décrire dans le désordre (les pieds, puis les cheveux, puis le genou)",
+          "Suivre un ordre logique : de la tête aux pieds (ou de l'aspect général vers les détails)",
+          "Ne décrire que les vêtements",
+          "Seulement le visage"
+        ],
+        "answer": 1,
+        "explanation": "Un portrait structuré donne une vision claire au lecteur (allure, visage, vêtements)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le portrait 'moral' décrit les qualités, les défauts, les goûts et les habitudes de la personne.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le moral décrit ce qui ne se voit pas directement mais se déduit de son comportement (gentil, colérique, généreux)."
+      },
+      {
+        "id": "q4",
+        "text": "Quels sont les mots les plus importants et les plus utiles pour réussir une bonne description ?",
+        "type": "qcm",
+        "options": [
+          "Les verbes d'action (courir, sauter)",
+          "Les conjonctions de coordination",
+          "Les adjectifs qualificatifs (précis et variés)",
+          "Les pronoms"
+        ],
+        "answer": 2,
+        "explanation": "L'adjectif (ex: grand, ridé, souriant, éblouissant) est l'outil principal de la description."
+      },
+      {
+        "id": "q5",
+        "text": "Quels temps de conjugaison utilise-t-on le plus souvent pour faire un portrait dans un récit au passé ?",
+        "type": "qcm",
+        "options": [
+          "L'imparfait (le temps de la description)",
+          "Le futur",
+          "L'impératif",
+          "Le passé simple"
+        ],
+        "answer": 0,
+        "explanation": "Ex: 'Il ÉTAIT grand, il PORTAIT un chapeau et SEMBLAIT triste.'"
+      }
+    ]
+  },
+  "Fiche_EXP_ECRITE_TEXTE_DESCRIPTIF": {
+    "title": "Expression Écrite : Le texte descriptif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le but d'un texte descriptif concernant un lieu ou un objet ?",
+        "type": "qcm",
+        "options": [
+          "Faire agir le lecteur",
+          "Faire 'voir' le lieu ou l'objet au lecteur grâce aux mots, comme une photographie",
+          "Démontrer une théorie",
+          "Raconter une blague"
+        ],
+        "answer": 1,
+        "explanation": "La description fait appel aux sens (surtout la vue) et à l'imagination."
+      },
+      {
+        "id": "q2",
+        "text": "Pour organiser la description d'un paysage, quels petits mots (indicateurs) doit-on utiliser abondamment ?",
+        "type": "qcm",
+        "options": [
+          "Les indicateurs de temps (hier, demain)",
+          "Les indicateurs de lieu / spatiaux (au premier plan, au fond, à droite, au loin)",
+          "Les indicateurs de conséquence (donc, c'est pourquoi)",
+          "Les verbes de mouvement"
+        ],
+        "answer": 1,
+        "explanation": "Ces mots permettent de situer les éléments dans l'espace."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une description, il est utile de solliciter les cinq sens (la vue, l'ouïe, l'odorat, le toucher).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Dire qu'un lieu 'sent l'humus' ou qu'on entend 'le chant des oiseaux' rend la description très vivante."
+      },
+      {
+        "id": "q4",
+        "text": "Quel type de vocabulaire enrichit considérablement une description de lieu ?",
+        "type": "qcm",
+        "options": [
+          "Le vocabulaire des mathématiques",
+          "Le vocabulaire des formes, des couleurs et de la lumière",
+          "Le vocabulaire juridique",
+          "Le jargon médical"
+        ],
+        "answer": 1,
+        "explanation": "Les couleurs, les contrastes (sombre/lumineux) et les formes (rond, pointu) peignent le tableau."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on les verbes 'statiques' souvent utilisés dans la description (ex: être, paraître, sembler, se trouver) ?",
+        "type": "qcm",
+        "options": [
+          "Les verbes d'action",
+          "Les verbes de mouvement",
+          "Les verbes d'état ou de position",
+          "Les verbes pronominaux"
+        ],
+        "answer": 2,
+        "explanation": "Ils permettent d'attribuer une qualité ou une position ('La maison SE DRESSAIT sur la colline')."
+      }
+    ]
+  },
+  "Fiche_LECTURE_METHODIQUE": {
+    "title": "La Lecture Méthodique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la lecture méthodique au collège ?",
+        "type": "qcm",
+        "options": [
+          "Lire le plus vite possible sans comprendre",
+          "Une technique d'analyse d'un texte qui permet de comprendre en profondeur le sens caché, les intentions de l'auteur et la façon dont le texte est construit",
+          "Apprendre le texte par cœur",
+          "Dessiner le texte"
+        ],
+        "answer": 1,
+        "explanation": "Ce n'est pas une simple lecture, c'est une étude minutieuse des procédés d'écriture."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la première étape (après la lecture) lors d'une séance de lecture méthodique ?",
+        "type": "qcm",
+        "options": [
+          "Écrire la conclusion",
+          "L'étude du 'paratexte' (auteur, titre de l'œuvre, date de parution) et l'émission des 'hypothèses de lecture' (de quoi ça va parler ?)",
+          "Fermer le livre",
+          "Compter les mots"
+        ],
+        "answer": 1,
+        "explanation": "L'introduction (ou situation) permet de savoir d'où est tiré l'extrait."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une lecture méthodique, il ne faut jamais relever de citations du texte.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! C'est tout le contraire. Toute idée avancée doit être justifiée (prouvée) par un mot ou une phrase tirée du texte (un repérage)."
+      },
+      {
+        "id": "q4",
+        "text": "Lors de l'analyse, que doit-on relier pour bien interpréter le texte ?",
+        "type": "qcm",
+        "options": [
+          "La longueur et la largeur",
+          "Le 'fond' (le sens, les idées) et la 'forme' (les outils grammaticaux, le vocabulaire, les figures de style)",
+          "La page gauche et la page droite",
+          "L'auteur et son âge"
+        ],
+        "answer": 1,
+        "explanation": "La lecture méthodique cherche à montrer COMMENT l'auteur a utilisé la grammaire ou le vocabulaire (la forme) pour exprimer son idée (le fond)."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que le 'Bilan' à la fin de la lecture méthodique ?",
+        "type": "qcm",
+        "options": [
+          "La note donnée par le professeur",
+          "Une petite conclusion qui résume les découvertes sur le sens du texte et valide l'hypothèse de départ",
+          "Le résumé de l'histoire entière du livre",
+          "Une punition"
+        ],
+        "answer": 1,
+        "explanation": "Le bilan synthétise l'étude et peut ouvrir sur un autre texte ou une réflexion personnelle."
+      }
+    ]
+  }
+}

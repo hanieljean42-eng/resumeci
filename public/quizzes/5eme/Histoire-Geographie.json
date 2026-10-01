@@ -1,0 +1,682 @@
+{
+  "Fiche_GEO_T1_L1_MILIEU_PHYSIQUE_CI": {
+    "title": "Le milieu physique de la Côte d'Ivoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment se présente le relief général de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Il est très montagneux partout",
+          "Il est plat avec quelques plateaux et montagnes à l'Ouest",
+          "C'est un grand désert",
+          "Il n'y a que des vallées"
+        ],
+        "answer": 1,
+        "explanation": "La majeure partie du pays est constituée de plaines (au sud) et de plateaux, avec des reliefs montagneux (le massif du Nimba, le mont Tonkpi) situés principalement à l'ouest."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le sommet le plus élevé de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Le Mont Tonkpi",
+          "Le Mont Nimba (ou Richard Molard)",
+          "Le Kilimandjaro",
+          "Le Mont Blanc"
+        ],
+        "answer": 1,
+        "explanation": "Le Mont Nimba culmine à 1 752 mètres d'altitude, à la frontière entre la Côte d'Ivoire et la Guinée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le climat de la Côte d'Ivoire est le même du Nord au Sud.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! On distingue un climat subéquatorial au Sud (chaud et humide, 4 saisons) et un climat tropical de transition au Nord (plus sec, 2 saisons principales)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on le grand fleuve qui traverse le pays du Nord au Sud, et qui donne son nom à une région ?",
+        "type": "qcm",
+        "options": [
+          "Le Niger",
+          "Le Bandama",
+          "La Seine",
+          "Le Nil"
+        ],
+        "answer": 1,
+        "explanation": "Le Bandama est le plus long fleuve entièrement situé en Côte d'Ivoire."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle formation végétale est dominante dans le Sud de la Côte d'Ivoire (zone humide) ?",
+        "type": "qcm",
+        "options": [
+          "La savane herbeuse",
+          "Le désert",
+          "La forêt dense",
+          "La steppe"
+        ],
+        "answer": 2,
+        "explanation": "Le Sud, très arrosé, est le domaine de la forêt dense sempervirente (toujours verte)."
+      }
+    ]
+  },
+  "Fiche_GEO_T1_L2_CROISSANCE_DEMOGRAPHIQUE": {
+    "title": "Croissance démographique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'appelle-t-on la croissance démographique ?",
+        "type": "qcm",
+        "options": [
+          "La croissance de l'économie",
+          "L'augmentation de la population sur un territoire donné pendant une période donnée",
+          "La construction de nouveaux bâtiments",
+          "La diminution du nombre de décès"
+        ],
+        "answer": 1,
+        "explanation": "Démographie vient du grec (demos = peuple). C'est l'évolution (généralement à la hausse) du nombre d'habitants."
+      },
+      {
+        "id": "q2",
+        "text": "La population de la Côte d'Ivoire se caractérise par :",
+        "type": "qcm",
+        "options": [
+          "Une forte proportion de personnes âgées",
+          "Une stagnation (elle n'augmente plus)",
+          "Sa grande jeunesse et sa croissance rapide",
+          "Une majorité de femmes de plus de 60 ans"
+        ],
+        "answer": 2,
+        "explanation": "Comme dans beaucoup de pays en développement, la natalité reste forte, ce qui donne une population très jeune."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'immigration (l'arrivée d'étrangers) est un des facteurs de la forte croissance démographique ivoirienne.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La Côte d'Ivoire est un pays d'accueil historique ; l'immigration s'ajoute à l'accroissement naturel (naissances - décès) pour augmenter la population."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est l'une des conséquences négatives d'une croissance démographique trop rapide pour un pays en développement ?",
+        "type": "qcm",
+        "options": [
+          "Trop d'écoles",
+          "La difficulté à fournir des emplois, des logements, des soins et une éducation à tous",
+          "Tout le monde devient riche",
+          "Il y a trop de nourriture"
+        ],
+        "answer": 1,
+        "explanation": "Si la population augmente plus vite que les richesses créées (économie), cela entraîne du chômage et des problèmes d'infrastructures."
+      },
+      {
+        "id": "q5",
+        "text": "Que mesure l'espérance de vie ?",
+        "type": "qcm",
+        "options": [
+          "La durée moyenne de vie qu'une personne peut espérer atteindre à la naissance",
+          "Le temps passé à l'école",
+          "Le nombre d'enfants par femme",
+          "L'âge du plus vieux de la région"
+        ],
+        "answer": 0,
+        "explanation": "L'amélioration des conditions sanitaires et de la médecine fait progressivement augmenter l'espérance de vie."
+      }
+    ]
+  },
+  "Fiche_GEO_T1_L3_EAU_DEVELOPPEMENT_CI": {
+    "title": "L'eau et le développement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En Côte d'Ivoire, l'eau est-elle abondante partout et toute l'année ?",
+        "type": "qcm",
+        "options": [
+          "Oui, partout",
+          "Non, elle est abondante au Sud (climat humide) mais plus rare au Nord (climat plus sec et longue saison sèche)",
+          "Non, il n'y a pas d'eau en CI",
+          "Elle est abondante seulement au Nord"
+        ],
+        "answer": 1,
+        "explanation": "La répartition de l'eau est inégale sur le territoire ivoirien en raison des différences de climat."
+      },
+      {
+        "id": "q2",
+        "text": "Quel aménagement humain permet de retenir l'eau des fleuves pour produire de l'électricité et irriguer les cultures ?",
+        "type": "qcm",
+        "options": [
+          "Un puits",
+          "Un barrage",
+          "Une citerne",
+          "Un château d'eau"
+        ],
+        "answer": 1,
+        "explanation": "Exemples : les barrages de Kossou, de Buyo, d'Ayamé. L'eau retenue crée un lac artificiel utilisé pour l'hydroélectricité et l'agriculture."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'eau est indispensable au développement agricole, mais elle ne sert à rien pour l'industrie.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'industrie utilise énormément d'eau pour refroidir les machines, laver les produits ou l'intégrer dans la fabrication (ex: brasseries)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on la fourniture d'eau potable saine aux populations dans les villes ?",
+        "type": "qcm",
+        "options": [
+          "L'irrigation",
+          "L'adduction d'eau potable",
+          "L'assainissement",
+          "L'inondation"
+        ],
+        "answer": 1,
+        "explanation": "L'adduction permet d'acheminer l'eau traitée (par la SODECI par exemple) jusqu'aux robinets des habitations."
+      },
+      {
+        "id": "q5",
+        "text": "Quel problème environnemental menace les cours d'eau en Côte d'Ivoire (ex: la lagune Ébrié ou certains fleuves) ?",
+        "type": "qcm",
+        "options": [
+          "Ils gèlent",
+          "La pollution (déchets industriels, ordures ménagères, produits chimiques agricoles, orpaillage clandestin)",
+          "Ils sont trop propres",
+          "L'évaporation totale"
+        ],
+        "answer": 1,
+        "explanation": "La pollution détruit l'écosystème aquatique (poissons) et rend l'eau dangereuse pour la consommation humaine."
+      }
+    ]
+  },
+  "Fiche_GEO_T2_L1_METHODES_TECHNIQUES_AGRICOLES": {
+    "title": "Méthodes et techniques agricoles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'agriculture de subsistance (ou traditionnelle) ?",
+        "type": "qcm",
+        "options": [
+          "Une agriculture destinée à l'exportation",
+          "Une agriculture pratiquée sur de petites surfaces avec des outils rudimentaires, visant principalement à nourrir la famille du paysan",
+          "Une agriculture avec beaucoup de tracteurs",
+          "Une agriculture hydroponique"
+        ],
+        "answer": 1,
+        "explanation": "On y cultive des produits vivriers (igname, manioc, maïs, riz) pour la consommation locale, avec très peu de surplus pour la vente."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on la culture sur de vastes étendues, utilisant des machines et des engrais, destinée à la vente (souvent à l'étranger) ?",
+        "type": "qcm",
+        "options": [
+          "Le jardinage",
+          "L'agriculture de rente (ou commerciale / moderne)",
+          "L'agriculture de subsistance",
+          "La cueillette"
+        ],
+        "answer": 1,
+        "explanation": "L'agriculture de rente (cacao, café, hévéa) rapporte des devises (argent) au paysan et à l'État."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'utilisation d'engrais chimiques et de pesticides augmente les rendements agricoles mais peut polluer les sols et l'eau.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'un des enjeux majeurs de l'agriculture moderne : produire beaucoup mais sans détruire l'environnement."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle technique ancestrale, très pratiquée en zone forestière, consiste à abattre les arbres et brûler la végétation avant de semer ?",
+        "type": "qcm",
+        "options": [
+          "L'irrigation",
+          "L'agriculture sur brûlis (culture itinérante)",
+          "La serre",
+          "Le labour mécanisé"
+        ],
+        "answer": 1,
+        "explanation": "Les cendres fertilisent le sol, mais cette méthode favorise la déforestation."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que 'l'assolement' (ou rotation des cultures) ?",
+        "type": "qcm",
+        "options": [
+          "Planter du cacao",
+          "Le fait de changer le type de culture sur un même champ chaque année pour ne pas épuiser le sol",
+          "Cultiver sous serre",
+          "Laisser le champ complètement vide pendant 10 ans"
+        ],
+        "answer": 1,
+        "explanation": "La rotation permet au sol de se régénérer, car chaque plante puise des nutriments différents."
+      }
+    ]
+  },
+  "Fiche_GEO_T2_L3_IMPOT_AMENAGEMENT": {
+    "title": "Impôt et aménagement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'impôt ?",
+        "type": "qcm",
+        "options": [
+          "Un don volontaire",
+          "Un prélèvement obligatoire (en argent) effectué par l'État sur les citoyens ou les entreprises",
+          "Un salaire",
+          "Une amende pour infraction"
+        ],
+        "answer": 1,
+        "explanation": "Les impôts et taxes constituent la principale source de revenus du budget de l'État."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert l'argent des impôts collecté par l'État ?",
+        "type": "qcm",
+        "options": [
+          "À financer l'aménagement du territoire (écoles, routes, hôpitaux) et le fonctionnement des services publics",
+          "À être gardé dans une banque sans y toucher",
+          "À payer les impôts d'un autre pays",
+          "À rien"
+        ],
+        "answer": 0,
+        "explanation": "Payer ses impôts est un acte citoyen qui permet de développer le pays et d'améliorer les conditions de vie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'aménagement du territoire consiste à construire des infrastructures pour réduire les inégalités entre les différentes régions d'un pays.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'objectif est d'équilibrer le développement (ex: construire des universités ou usines à l'intérieur du pays pour désengorger Abidjan)."
+      },
+      {
+        "id": "q4",
+        "text": "Lequel de ces impôts est payé au moment de l'achat de marchandises ou de services (comme au supermarché) ?",
+        "type": "qcm",
+        "options": [
+          "L'impôt sur le revenu",
+          "La TVA (Taxe sur la Valeur Ajoutée)",
+          "L'impôt foncier",
+          "La taxe d'habitation"
+        ],
+        "answer": 1,
+        "explanation": "La TVA est un impôt indirect payé par le consommateur final à chaque achat."
+      },
+      {
+        "id": "q5",
+        "text": "Que se passe-t-il si les citoyens refusent de payer l'impôt (fraude fiscale ou incivisme) ?",
+        "type": "qcm",
+        "options": [
+          "Le pays s'enrichit",
+          "L'État manque d'argent, ce qui freine le développement et dégrade les services publics",
+          "Les routes se construisent toutes seules",
+          "C'est bien pour l'économie"
+        ],
+        "answer": 1,
+        "explanation": "Le civisme fiscal (accepter de payer l'impôt selon ses moyens) est indispensable au développement."
+      }
+    ]
+  },
+  "Fiche_HIST_T1_L1_PREMIERS_HABITANTS_CI": {
+    "title": "Les premiers habitants de la CI",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La Côte d'Ivoire était-elle peuplée pendant la Préhistoire ?",
+        "type": "qcm",
+        "options": [
+          "Oui, des découvertes archéologiques (outils en pierre taillée) prouvent une présence humaine très ancienne",
+          "Non, elle était vide jusqu'en 1900",
+          "Non, il y avait que des dinosaures",
+          "Seulement par des singes"
+        ],
+        "answer": 0,
+        "explanation": "Des vestiges datant du Paléolithique (pierre taillée) et du Néolithique (pierre polie) ont été retrouvés sur le territoire."
+      },
+      {
+        "id": "q2",
+        "text": "Que cherchaient les premiers habitants préhistoriques pour survivre ?",
+        "type": "qcm",
+        "options": [
+          "De l'or",
+          "Leur nourriture par la chasse, la pêche et la cueillette",
+          "À construire des villes",
+          "À faire du commerce avec l'Europe"
+        ],
+        "answer": 1,
+        "explanation": "Les premiers hommes étaient des nomades chasseurs-cueilleurs avant l'invention de l'agriculture."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les pygmées, bien que légendaires dans la tradition orale ivoirienne (souvent appelés petits hommes roux de la forêt), sont considérés comme parmi les plus anciens habitants de la région.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les récits traditionnels de nombreux peuples actuels évoquent la rencontre avec ces premiers occupants de la forêt."
+      },
+      {
+        "id": "q4",
+        "text": "Où les archéologues ivoiriens ont-ils trouvé de nombreux 'amas coquilliers' (restes de repas) prouvant une occupation humaine ancienne près de l'eau ?",
+        "type": "qcm",
+        "options": [
+          "Dans le Nord",
+          "Autour des lagunes du Sud",
+          "Au sommet du Mont Nimba",
+          "Dans le désert"
+        ],
+        "answer": 1,
+        "explanation": "Les populations lagunaires primitives se nourrissaient de coquillages et laissaient ces énormes tas de coquilles vides."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on la science qui étudie l'histoire humaine à partir des vestiges matériels enfouis dans le sol (poteries, outils) ?",
+        "type": "qcm",
+        "options": [
+          "La géologie",
+          "L'archéologie",
+          "L'astronomie",
+          "La philosophie"
+        ],
+        "answer": 1,
+        "explanation": "L'archéologie est essentielle pour connaître l'histoire de la Côte d'Ivoire ancienne, avant l'écriture."
+      }
+    ]
+  },
+  "Fiche_HIST_T1_L2_MOUVEMENTS_MIGRATOIRES": {
+    "title": "Les mouvements migratoires",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une migration dans l'histoire des peuples ?",
+        "type": "qcm",
+        "options": [
+          "Un voyage de tourisme",
+          "Le déplacement massif et définitif d'un groupe humain d'une région à une autre",
+          "Une guerre",
+          "Une maladie"
+        ],
+        "answer": 1,
+        "explanation": "La quasi-totalité des peuples actuels de la Côte d'Ivoire sont issus de migrations depuis l'extérieur (pays voisins) ou de l'intérieur du territoire."
+      },
+      {
+        "id": "q2",
+        "text": "Quelles étaient les principales causes des migrations anciennes (avant le 19e siècle) ?",
+        "type": "qcm",
+        "options": [
+          "La recherche d'écoles",
+          "Les guerres, les querelles de succession, la recherche de bonnes terres agricoles ou le commerce",
+          "L'envie de voir la mer",
+          "La construction d'usines"
+        ],
+        "answer": 1,
+        "explanation": "Les peuples fuyaient des conflits (invasions, querelles de pouvoir) ou cherchaient des terres plus fertiles ou du gibier."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les migrations se sont faites de manière pacifique tout le temps.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux. L'installation des migrants entraînait parfois des conflits armés ou la domination des peuples autochtones, bien qu'il y ait eu aussi des alliances."
+      },
+      {
+        "id": "q4",
+        "text": "Dans quelle grande aire géographique d'origine situe-t-on le foyer de départ du groupe Mandé (Malinké, Dan, Gouro, Yacouba...) ?",
+        "type": "qcm",
+        "options": [
+          "Le Ghana actuel",
+          "Le bassin du fleuve Niger (Mali/Guinée actuels)",
+          "L'Égypte",
+          "L'Europe"
+        ],
+        "answer": 1,
+        "explanation": "Les Mandé (ou Mandingues) sont venus du Nord-Ouest (Empire du Mali)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment l'arrivée de nombreux peuples d'origines diverses a-t-elle influencé la Côte d'Ivoire actuelle ?",
+        "type": "qcm",
+        "options": [
+          "Elle a rendu le pays vide",
+          "Elle a créé un grand brassage culturel et ethnique (mélange de cultures et de langues)",
+          "Tout le monde parle une seule langue",
+          "Aucun impact"
+        ],
+        "answer": 1,
+        "explanation": "La Côte d'Ivoire est une mosaïque de plus de 60 ethnies, fruit de ces brassages historiques."
+      }
+    ]
+  },
+  "Fiche_HIST_T2_L1_ORIGINE_PEUPLES_REGIONS": {
+    "title": "Origine des peuples des régions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quelle région (pays actuel) est venu le grand groupe Akan (Baoulé, Agni, Abron...) aux 17ème et 18ème siècles ?",
+        "type": "qcm",
+        "options": [
+          "Du Mali",
+          "De l'Est (actuel Ghana)",
+          "Du Burkina Faso",
+          "De l'Océan"
+        ],
+        "answer": 1,
+        "explanation": "Les Akan ont fui des querelles de succession, notamment liées à la montée en puissance du royaume Ashanti (au Ghana)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle reine légendaire a dirigé l'exode des Baoulés depuis le Ghana jusqu'au centre de la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Reine Abla Pokou",
+          "Reine de Saba",
+          "Reine Nanny",
+          "Reine Victoria"
+        ],
+        "answer": 0,
+        "explanation": "Selon la légende, la reine Abla Pokou a sacrifié son enfant pour traverser le fleuve Comoé, donnant naissance au nom 'Baoulé' (Bâ-ouli : l'enfant est mort)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les Sénoufos (groupe Gour) sont considérés comme un des peuples les plus anciennement installés dans le Nord du pays.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les Voltaïques (ou Gour) comme les Sénoufos ou les Lobi sont présents depuis très longtemps dans le Nord et Nord-Est."
+      },
+      {
+        "id": "q4",
+        "text": "Dans quelle région de la Côte d'Ivoire se sont installés les peuples Krou (Bété, Wê, Dida, Néyo, etc.) ?",
+        "type": "qcm",
+        "options": [
+          "Dans le Nord désertique",
+          "Dans le Centre-Ouest et le Sud-Ouest forestier",
+          "Exclusivement à Abidjan",
+          "À la frontière du Ghana"
+        ],
+        "answer": 1,
+        "explanation": "Le groupe Krou (venu probablement de l'Ouest, de la région du Libéria) occupe la moitié ouest de la forêt ivoirienne."
+      },
+      {
+        "id": "q5",
+        "text": "Quel peuple fait partie du groupe Mandé-Sud (venus du Nord-Ouest mais installés dans la zone forestière) ?",
+        "type": "qcm",
+        "options": [
+          "Les Baoulés",
+          "Les Yacoubas (Dan) et les Gouros",
+          "Les Agnis",
+          "Les Sénoufos"
+        ],
+        "answer": 1,
+        "explanation": "Bien qu'ils soient apparentés aux Malinkés (Mandé-Nord), ils se sont adaptés à l'environnement de la forêt de l'Ouest et du Centre-Ouest."
+      }
+    ]
+  },
+  "Fiche_HIST_T2_L2_TRAITS_CIVILISATION": {
+    "title": "Les traits de civilisation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une civilisation ?",
+        "type": "qcm",
+        "options": [
+          "Uniquement la façon de s'habiller",
+          "L'ensemble des croyances, coutumes, arts et de l'organisation d'une société",
+          "Une marque de voiture",
+          "Le fait de vivre en ville"
+        ],
+        "answer": 1,
+        "explanation": "Chaque grand groupe ethnique en Côte d'Ivoire a développé des traits de civilisation (culturels, politiques, économiques) qui lui sont propres."
+      },
+      {
+        "id": "q2",
+        "text": "Dans l'organisation politique des peuples Akan (comme les Baoulés ou Agnis), qui dirige traditionnellement le royaume ou la chefferie ?",
+        "type": "qcm",
+        "options": [
+          "Le Président",
+          "Le Roi ou le Chef de village (souvent selon une succession matrilinéaire)",
+          "Un prêtre",
+          "Un conseil de jeunes"
+        ],
+        "answer": 1,
+        "explanation": "Les Akan ont historiquement une forte organisation monarchique centralisée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Chez les peuples Krou, l'organisation sociale est généralement très centralisée avec un Roi qui dirige toute l'ethnie.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux. L'organisation Krou est plutôt 'décentralisée'. L'unité de base est le village (ou la famille élargie) dirigé par un chef, sans véritable 'royaume' réunissant toute l'ethnie."
+      },
+      {
+        "id": "q4",
+        "text": "Quel trait culturel est très caractéristique de la civilisation Sénoufo, marquant l'initiation des jeunes garçons dans le bois sacré ?",
+        "type": "qcm",
+        "options": [
+          "Le baptême",
+          "Le Poro",
+          "La communion",
+          "Le balafon"
+        ],
+        "answer": 1,
+        "explanation": "Le Poro est une institution éducative et religieuse secrète, structurant toute la société Sénoufo."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la civilisation des peuples lagunaires (Sud), quel était un marqueur important de richesse et de rang social avant l'argent moderne ?",
+        "type": "qcm",
+        "options": [
+          "Les voitures",
+          "La monnaie locale : or, poudre d'or ou perles (les manilles)",
+          "Le nombre de téléphones",
+          "Les coquillages"
+        ],
+        "answer": 1,
+        "explanation": "Le commerce avec les Européens sur la côte a très tôt favorisé l'apparition de systèmes d'échange et de signes de richesse (or, manilles, pagnes kita/kenté)."
+      }
+    ]
+  },
+  "Fiche_HIST_T2_L3_CODES_REGLEMENTATION_CONFLITS": {
+    "title": "Codes et réglementation (Conflits)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans les sociétés traditionnelles africaines, quel est le but principal de la résolution d'un conflit ?",
+        "type": "qcm",
+        "options": [
+          "Mettre quelqu'un en prison",
+          "Punir sévèrement le coupable",
+          "Rétablir la paix, la cohésion sociale et l'entente dans le village",
+          "S'enrichir grâce à l'amende"
+        ],
+        "answer": 2,
+        "explanation": "La justice traditionnelle privilégie la réconciliation (l'arbre à palabres) plutôt que la seule punition, pour préserver le groupe."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on la pratique culturelle ivoirienne qui permet à deux ethnies (ou deux familles) alliées de se taquiner et de désamorcer les conflits par l'humour ?",
+        "type": "qcm",
+        "options": [
+          "Le duel",
+          "L'alliance à plaisanterie (le 'Toukpa')",
+          "La guerre sainte",
+          "La bagarre"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Yacouba et Sénoufo, Gouro et Baoulé. Cette alliance ancestrale interdit à ces peuples de se faire la guerre et permet de régler les tensions dans la bonne humeur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans la société traditionnelle, les anciens (les sages) n'ont aucun rôle dans le règlement des conflits.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Les anciens (notables) constituent le conseil du village et sont les juges respectés lors des palabres."
+      },
+      {
+        "id": "q4",
+        "text": "Où se réunissent généralement le chef et les notables pour écouter les parties en conflit et trancher ?",
+        "type": "qcm",
+        "options": [
+          "Dans un tribunal moderne",
+          "Sous l'arbre à palabres",
+          "Dans la forêt sacrée",
+          "Dans un maquis"
+        ],
+        "answer": 1,
+        "explanation": "L'arbre à palabres est l'espace public traditionnel du dialogue et de la justice au cœur du village."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'attitude attendue de la personne reconnue coupable lors d'un jugement traditionnel ?",
+        "type": "qcm",
+        "options": [
+          "Quitter le village",
+          "Demander pardon, payer éventuellement une réparation (animaux, boissons) pour sceller la réconciliation",
+          "Attaquer les juges",
+          "Refuser le verdict"
+        ],
+        "answer": 1,
+        "explanation": "Le partage de la réparation (souvent un repas ou une boisson commune) marque la fin définitive du conflit."
+      }
+    ]
+  }
+}

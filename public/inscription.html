@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Inscription & Pass Réussite | ResumeCI</title>
+  <meta name="description" content="Rejoins ResumeCI en 30 secondes. Débloque le Pack Hors-Ligne, les Pièges d'Examen, les Quiz et Podcasts pour réussir ton BAC et BEPC en Côte d'Ivoire.">
+  <link rel="canonical" href="https://resumeci.me/inscription.html">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:title" content="Inscription | ResumeCI — 714 Fiches BAC & BEPC">
+  <meta property="og:description" content="Crée ton profil en 30 secondes et accède à 714 fiches de résumé pour réussir ton BAC et BEPC en Côte d'Ivoire.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resumeci.me/inscription.html">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --gold: #f59e0b;
+      --bg: #0b1120;
+      --bg-card: rgba(30, 41, 59, 0.92);
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --danger: #ef4444;
+      --radius: 14px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+      color: var(--text);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 12px calc(16px + var(--safe-bottom));
+      overflow-x: hidden;
+    }
+
+    /* ========== CONTAINER ========== */
+    .page-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      animation: fadeUp 0.5s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      text-align: center;
+      padding: 4px 0 0;
+    }
+
+    .header-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      color: #93c5fd;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 5px;
+      background: linear-gradient(135deg, #fff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: clamp(12px, 3.5vw, 13.5px);
+      line-height: 1.5;
+    }
+
+    /* ========== MAIN CARD ========== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(16px, 4.5vw, 24px);
+      box-shadow: 
+        0 20px 45px -10px rgba(0, 0, 0, 0.55),
+        0 0 30px rgba(37, 99, 235, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* ========== PLAN SELECTOR ========== */
+    .plans-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .plans-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .plan {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 11px 12px;
+      background: rgba(15, 23, 42, 0.65);
+      cursor: pointer;
+      transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .plan:active { transform: scale(0.99); }
+
+    .plan.selected-pro {
+      border-color: var(--accent);
+      background: rgba(16, 185, 129, 0.12);
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.18);
+    }
+
+    .plan.selected-starter {
+      border-color: var(--primary-light);
+      background: rgba(37, 99, 235, 0.12);
+      box-shadow: 0 0 14px rgba(37, 99, 235, 0.15);
+    }
+
+    .plan.selected-free {
+      border-color: var(--text-dim);
+      background: rgba(100, 116, 139, 0.12);
+    }
+
+    .plan-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .radio-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--text-dim);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .plan[class*="selected-"] .radio-dot {
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .plan[class*="selected-"] .radio-dot::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .plan-details { min-width: 0; }
+
+    .plan-details h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.3;
+    }
+
+    .plan-details p {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 1px;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+
+    .plan-price {
+      text-align: right;
+      flex-shrink: 0;
+      padding-left: 4px;
+    }
+
+    .plan-price .amount {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .plan-price .period {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .badge-popular {
+      position: absolute;
+      top: -8px;
+      right: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+
+    /* ========== FORM FIELDS ========== */
+    .form-group { margin-bottom: 12px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrap .ic {
+      position: absolute;
+      left: 12px;
+      color: var(--text-dim);
+      font-size: 13px;
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+
+    .field {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1.5px solid var(--border);
+      color: #fff;
+      padding: 11px 12px 11px 36px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .field::placeholder { color: var(--text-dim); }
+
+    .field:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+    }
+
+    .field:focus ~ .ic { color: var(--primary-light); }
+
+    select.field {
+      cursor: pointer;
+      padding-right: 34px;
+    }
+
+    select.field option {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .select-chevron {
+      position: absolute;
+      right: 12px;
+      color: var(--text-dim);
+      font-size: 11px;
+      pointer-events: none;
+    }
+
+    .helper {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      padding-left: 2px;
+    }
+
+    /* ========== PASSWORD TOGGLE ========== */
+    .pwd-toggle {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 14px;
+      cursor: pointer;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .pwd-toggle:hover { color: var(--text); }
+
+    /* ========== SUBMIT BUTTON ========== */
+    .submit-btn {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 13px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      font-size: clamp(13.5px, 3.8vw, 15px);
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+      transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+      margin-top: 14px;
+      min-height: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.45);
+    }
+
+    .submit-btn:active { transform: translateY(0); }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .submit-btn .spinner {
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ========== PAYMENT TRUST ========== */
+    .trust-section {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      text-align: center;
+    }
+
+    .trust-label {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .pay-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .pay-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* ========== LINKS ========== */
+    .switch-link {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .switch-link a {
+      color: #60a5fa;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(96, 165, 250, 0.35);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+
+    .switch-link a:hover { color: #93c5fd; }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-decoration: none;
+      transition: color 0.2s;
+      padding: 4px 0;
+    }
+    .back-link:hover { color: #fff; }
+
+    /* ========== ERROR BANNER ========== */
+    .error-banner {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+      padding: 10px 12px;
+      border-radius: 11px;
+      font-size: 12.5px;
+      margin-bottom: 12px;
+      display: none;
+      line-height: 1.4;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ========== SUCCESS TOAST ========== */
+    .toast-success {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+
+    .toast-success.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 380px) {
+      body { padding: 10px 8px; }
+      .card { padding: 14px 10px; }
+      .plan-details p { max-width: 140px; font-size: 10px; }
+      .plan-details h4 { font-size: 12px; }
+      .plan-price .amount { font-size: 14px; }
+      .pay-badge { font-size: 9.5px; padding: 3px 6px; }
+    }
+
+    @media (max-width: 340px) {
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .header h1 { font-size: 19px; }
+      .plan { padding: 9px 8px; }
+      .plan-details p { max-width: 120px; }
+    }
+
+    @media (min-width: 500px) {
+      body { padding: 24px 16px; }
+      .page-wrap { gap: 18px; }
+    }
+
+    /* Safe area for iPhones with notch */
+    @supports (padding: env(safe-area-inset-bottom)) {
+      body { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toast-success" id="successToast"></div>
+
+  <div class="page-wrap">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-flag"><i class="fas fa-graduation-cap"></i> Collège & Lycée — Côte d'Ivoire 🇨🇮</div>
+      <h1>Rejoins ResumeCI</h1>
+      <p>Crée ton profil en 30 secondes et commence à réviser efficacement.</p>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="card">
+      <div class="error-banner" id="errorBox"></div>
+
+      <form id="regForm" onsubmit="event.preventDefault(); handleRegistration();" novalidate>
+        
+        <!-- PLAN SELECTION -->
+        <div class="plans-label"><i class="fas fa-crown" style="color:var(--gold)"></i> Choisis ta formule</div>
+        <div class="plans-list">
+          <!-- Pass Pro -->
+          <div class="plan selected-pro" id="planPro" onclick="selectPlan('pro')" role="radio" aria-checked="true" tabindex="0">
+            <span class="badge-popular">⭐ Le plus choisi</span>
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Pro Réussite</h4>
+                <p>Hors-Ligne + Pièges d'Examen + Quiz + Audio</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount" style="color:#34d399">1 000 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
+          <!-- Pass Starter -->
+          <div class="plan" id="planStarter" onclick="selectPlan('starter')" role="radio" aria-checked="false" tabindex="0">
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Starter</h4>
+                <p>Pack Hors-Ligne + PDF + Surligneur + Notes</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount">500 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
+          <!-- Gratuit -->
+          <div class="plan" id="planFree" onclick="selectPlan('free')" role="radio" aria-checked="false" tabindex="0">
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Formule Gratuite</h4>
+                <p>714 fiches de cours en lecture libre</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount">0 F</div>
+              <div class="period">100% Gratuit</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM FIELDS -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="regFirstName">Prénom *</label>
+            <div class="input-wrap">
+              <input type="text" id="regFirstName" class="field" placeholder="Ton prénom" required autocomplete="given-name" enterkeyhint="next">
+              <i class="fas fa-user ic"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regLastName">Nom *</label>
+            <div class="input-wrap">
+              <input type="text" id="regLastName" class="field" placeholder="Ton nom" required autocomplete="family-name" enterkeyhint="next">
+              <i class="fas fa-user ic"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regClass">Classe actuelle *</label>
+          <div class="input-wrap">
+            <select id="regClass" class="field" required>
+              <option value="" disabled selected>Sélectionne ta classe</option>
+              <option value="6eme">6ème</option>
+              <option value="5eme">5ème</option>
+              <option value="4eme">4ème</option>
+              <option value="3eme">3ème (Prépa BEPC)</option>
+              <option value="Seconde_A">Seconde A</option>
+              <option value="Seconde_C">Seconde C</option>
+              <option value="Premiere_D">Première D</option>
+              <option value="Terminale_A">Terminale A (BAC A)</option>
+              <option value="Terminale_C">Terminale C (BAC C)</option>
+              <option value="Terminale_D">Terminale D (BAC D)</option>
+            </select>
+            <i class="fas fa-school ic"></i>
+            <i class="fas fa-chevron-down select-chevron"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regWhatsapp">Numéro WhatsApp (10 chiffres) *</label>
+          <div class="input-wrap">
+            <input type="tel" id="regWhatsapp" class="field" placeholder="Ex: 07 08 09 10 11" maxlength="14" required autocomplete="tel" enterkeyhint="next" inputmode="tel">
+            <i class="fab fa-whatsapp ic" style="color:#25d366"></i>
+          </div>
+          <div class="helper">Sert pour te connecter et recevoir tes accès.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Mot de passe secret *</label>
+          <div class="input-wrap">
+            <input type="password" id="regPassword" class="field" placeholder="6 caractères minimum" minlength="6" required autocomplete="new-password" enterkeyhint="done" style="padding-right:40px">
+            <i class="fas fa-lock ic"></i>
+            <button type="button" class="pwd-toggle" onclick="togglePwd()" aria-label="Afficher le mot de passe"><i class="fas fa-eye" id="pwdEyeIcon"></i></button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="regSubmitBtn">
+          <span id="btnIcon"><i class="fas fa-bolt"></i></span>
+          <span id="btnText">Activer mon Pass Pro (1 000 F) 🚀</span>
+        </button>
+
+        <!-- TRUST BADGES -->
+        <div class="trust-section" id="trustSection">
+          <div class="trust-label"><i class="fas fa-shield-halved" style="color:var(--accent)"></i> Paiement mobile instantané & sécurisé</div>
+          <div class="pay-badges">
+            <span class="pay-badge"><i class="fas fa-mobile-screen" style="color:#00aaff"></i> Wave</span>
+            <span class="pay-badge"><i class="fas fa-mobile-screen" style="color:#ff7900"></i> Orange</span>
+            <span class="pay-badge"><i class="fas fa-mobile-screen" style="color:#ffcc00"></i> MTN</span>
+            <span class="pay-badge"><i class="fas fa-mobile-screen" style="color:#004f9e"></i> Moov</span>
+            <span class="pay-badge"><i class="fas fa-credit-card" style="color:var(--accent)"></i> Carte</span>
+          </div>
+        </div>
+
+        <div class="switch-link">
+          Déjà un compte ? <a href="/connexion.html">Connecte-toi ici</a>
+        </div>
+      </form>
+    </div>
+
+    <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Retourner à l'accueil du site</a>
+  </div>
+
+  <script>
+    let selectedTier = 'pro';
+
+    // Pre-fill from URL params
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const urlPass = params.get('pass') || params.get('tier');
+      const urlClass = params.get('classe') || params.get('class');
+      
+      if (urlPass && ['pro', 'starter', 'free'].includes(urlPass.toLowerCase())) {
+        selectPlan(urlPass.toLowerCase());
+      }
+      if (urlClass) {
+        const sel = document.getElementById('regClass');
+        if (sel) sel.value = urlClass;
+      }
+    });
+
+    function selectPlan(tier) {
+      selectedTier = tier;
+      
+      // Reset all plan cards
+      document.getElementById('planPro').className = 'plan' + (tier === 'pro' ? ' selected-pro' : '');
+      document.getElementById('planStarter').className = 'plan' + (tier === 'starter' ? ' selected-starter' : '');
+      document.getElementById('planFree').className = 'plan' + (tier === 'free' ? ' selected-free' : '');
+
+      // Update ARIA
+      document.getElementById('planPro').setAttribute('aria-checked', tier === 'pro');
+      document.getElementById('planStarter').setAttribute('aria-checked', tier === 'starter');
+      document.getElementById('planFree').setAttribute('aria-checked', tier === 'free');
+
+      // Update submit button
+      const btnText = document.getElementById('btnText');
+      const btn = document.getElementById('regSubmitBtn');
+      const trustSection = document.getElementById('trustSection');
+
+      if (tier === 'pro') {
+        btnText.textContent = "Activer mon Pass Pro (1 000 F) 🚀";
+        btn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(16, 185, 129, 0.35)";
+        trustSection.style.display = '';
+      } else if (tier === 'starter') {
+        btnText.textContent = "Activer mon Pass Starter (500 F) ⚡";
+        btn.style.background = "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(37, 99, 235, 0.35)";
+        trustSection.style.display = '';
+      } else {
+        btnText.textContent = "Accéder aux 714 fiches gratuites 📚";
+        btn.style.background = "linear-gradient(135deg, #475569 0%, #334155 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(71, 85, 105, 0.25)";
+        trustSection.style.display = 'none';
+      }
+    }
+
+    function togglePwd() {
+      const pwd = document.getElementById('regPassword');
+      const icon = document.getElementById('pwdEyeIcon');
+      if (pwd.type === 'password') {
+        pwd.type = 'text';
+        icon.className = 'fas fa-eye-slash';
+      } else {
+        pwd.type = 'password';
+        icon.className = 'fas fa-eye';
+      }
+    }
+
+    function showError(msg) {
+      const box = document.getElementById('errorBox');
+      box.innerHTML = msg;
+      box.style.display = 'block';
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function hideError() {
+      document.getElementById('errorBox').style.display = 'none';
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('successToast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    function getPaymentApiBase() {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://127.0.0.1:3000';
+      }
+      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+    }
+
+    function resetSubmitBtn() {
+      const btn = document.getElementById('regSubmitBtn');
+      if (!btn) return;
+      btn.disabled = false;
+      selectPlan(selectedTier);
+    }
+
+    async function handleRegistration() {
+      hideError();
+
+      const fName = document.getElementById('regFirstName').value.trim();
+      const lName = document.getElementById('regLastName').value.trim();
+      const cls = document.getElementById('regClass').value;
+      const wa = document.getElementById('regWhatsapp').value.trim();
+      const pwd = document.getElementById('regPassword').value;
+      const btn = document.getElementById('regSubmitBtn');
+
+      // Validation
+      if (!fName || !lName) {
+        showError("⚠️ Remplis ton prénom et ton nom pour créer ton profil.");
+        return;
+      }
+
+      if (!cls) {
+        showError("⚠️ Sélectionne ta classe actuelle.");
+        return;
+      }
+
+      const cleanWa = wa.replace(/\D/g, '');
+      if (cleanWa.length < 10) {
+        showError("⚠️ En Côte d'Ivoire, les numéros mobiles comportent exactement 10 chiffres (ex: 0708091011).");
+        return;
+      }
+
+      if (pwd.length < 6) {
+        showError("🔒 Le mot de passe doit comporter au moins 6 caractères.");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Création de ton compte...';
+
+      try {
+        // IMPORTANT : Le compte reste TOUJOURS en formule gratuite tant que le paiement n'est pas validé
+        const profile = {
+          uid: 'user_' + Date.now(),
+          firstName: fName,
+          lastName: lName,
+          selectedClass: cls,
+          whatsapp: cleanWa,
+          password: pwd,
+          isPremium: false,
+          premiumPlan: 'free',
+          pendingPlan: selectedTier !== 'free' ? selectedTier : null,
+          premiumExpiresAt: 0,
+          createdAt: new Date().toISOString()
+        };
+
+        localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+
+        // Initialiser la flamme streak à exactement 1 jour pour ce nouvel utilisateur
+        const d = new Date();
+        const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+        localStorage.setItem('resumeci_streak', JSON.stringify({
+          count: 1,
+          lastDay: todayStr,
+          lastActiveAt: Date.now()
+        }));
+
+        // Envoi au serveur et Firestore pour suivi administrateur en temps réel
+        const apiBase = getPaymentApiBase();
+        try {
+          fetch(`${apiBase}/api/register`, {
+            method: 'POST',
+            keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              uid: profile.uid,
+              firstName: fName,
+              lastName: lName,
+              selectedClass: cls,
+              whatsapp: cleanWa,
+              password: pwd,
+              plan: selectedTier,
+              isPremium: false,
+              premiumPlan: 'free',
+              pendingPlan: selectedTier !== 'free' ? selectedTier : null,
+              premiumExpiresAt: 0,
+              userAgent: navigator.userAgent
+            })
+          }).catch(e => console.warn("Erreur sync /api/register:", e));
+        } catch(e) {}
+
+        // Formule Gratuite : redirection directe vers l'accueil
+        if (selectedTier === 'free') {
+          showToast('✅ Compte créé ! Redirection...');
+          setTimeout(() => { window.location.href = '/?welcome=1'; }, 600);
+          return;
+        }
+
+        // Formule Payante : Appel à la passerelle de paiement GeniusPay
+        const tierName = selectedTier === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
+        btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Connexion à la caisse Mobile Money...';
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 45000);
+
+        try {
+          const payRes = await fetch(`${apiBase}/api/pay`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
+            body: JSON.stringify({
+              uid: profile.uid,
+              tierKey: selectedTier,
+              customerName: `${fName} ${lName}`.trim(),
+              customerPhone: cleanWa,
+              customerEmail: 'eleve@resumeci.me',
+              returnOrigin: window.location.origin
+            })
+          });
+          clearTimeout(timeoutId);
+
+          if (!payRes.ok) {
+            throw new Error("GATEWAY_UNAVAILABLE");
+          }
+          const ct = payRes.headers.get('content-type') || '';
+          if (!ct.includes('application/json')) {
+            throw new Error("GATEWAY_RESPONSE_INVALID");
+          }
+
+          const payData = await payRes.json();
+          const checkoutUrl = payData.checkout_url || payData.payment_url;
+
+          if (payData.success && checkoutUrl) {
+            if (payData.reference || payData.payment_reference) {
+              sessionStorage.setItem('last_payment_reference', payData.reference || payData.payment_reference);
+            }
+            // Redirection directe vers l'interface de paiement GeniusPay (Wave, Orange, MTN, Moov)
+            window.location.href = checkoutUrl;
+            return;
+          } else {
+            throw new Error(payData.error || "Impossible d'initier la transaction");
+          }
+        } catch (payErr) {
+          clearTimeout(timeoutId);
+          console.error("Erreur passerelle GeniusPay:", payErr);
+
+          resetSubmitBtn();
+
+          const waText = encodeURIComponent(`Bonjour Haniel_dev, je souhaite activer mon Pass ${tierName} par Wave / Orange Money direct.\nNom: ${fName} ${lName}\nClasse: ${cls}\nWhatsApp: ${cleanWa}`);
+          const waUrl = `https://wa.me/2250150252467?text=${waText}`;
+
+          showError(`
+            <div style="text-align:left;line-height:1.5">
+              <strong style="color:#ef4444;font-size:15px"><i class="fas fa-exclamation-triangle"></i> Caisse de paiement en ligne en attente</strong><br>
+              <span style="font-size:13px;color:#cbd5e1;display:block;margin-top:6px">
+                Ton profil gratuit est bien créé. Le serveur de paiement en ligne met du temps à répondre ou démarre.<br>
+                <strong>Pour activer ton Pass ${tierName} immédiatement :</strong>
+              </span>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+                <a href="${waUrl}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#000;font-weight:700;padding:10px 14px;border-radius:10px;text-decoration:none;font-size:13px">
+                  <i class="fab fa-whatsapp" style="font-size:18px"></i> Payer par Wave / Orange Money direct (WhatsApp)
+                </a>
+                <button type="button" onclick="handleRegistration()" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:9px 12px;border-radius:10px;font-size:13px;cursor:pointer">
+                  🔄 Réessayer la connexion en ligne
+                </button>
+                <a href="/?welcome=1" style="color:#94a3b8;font-size:12px;text-align:center;text-decoration:underline;margin-top:2px">
+                  Accéder à la plateforme en formule Gratuite (714 fiches)
+                </a>
+              </div>
+            </div>
+          `);
+        }
+
+      } catch (err) {
+        console.error("Erreur inscription:", err);
+        resetSubmitBtn();
+        showError("❌ Une erreur est survenue lors de l'enregistrement.");
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const raw = localStorage.getItem('resumeci_profile');
+      if (raw) {
+        try {
+          const prof = JSON.parse(raw);
+          if (prof) {
+            if (prof.firstName) document.getElementById('regFirstName').value = prof.firstName;
+            if (prof.lastName) document.getElementById('regLastName').value = prof.lastName;
+            if (prof.selectedClass) document.getElementById('regClass').value = prof.selectedClass;
+            if (prof.whatsapp) document.getElementById('regWhatsapp').value = prof.whatsapp;
+            if (prof.password) document.getElementById('regPassword').value = prof.password;
+            if (prof.premiumPlan && prof.premiumPlan !== 'free') {
+              selectPlan(prof.premiumPlan);
+            }
+          }
+        } catch(e) {}
+      }
+    });
+  </script>
+</body>
+</html>

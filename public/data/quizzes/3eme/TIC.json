@@ -1,0 +1,227 @@
+{
+  "Fiche_Impression_Document_Calcul": {
+    "title": "Impression d'un document ou d'une feuille de calcul",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que doit-on toujours faire avant d'imprimer définitivement un document ou une feuille de calcul ?",
+        "type": "qcm",
+        "options": ["Éteindre l'ordinateur", "Faire un 'Aperçu avant impression' pour vérifier la mise en page (marges, coupures de tableaux)", "Sauvegarder sur clé USB", "Fermer le logiciel"],
+        "answer": 1,
+        "explanation": "L'aperçu permet de repérer les erreurs de mise en page et d'éviter de gaspiller du papier."
+      },
+      {
+        "id": "q2",
+        "text": "Dans le menu Impression d'un tableur (Excel), si le tableau est très large, quelle orientation de la page est la plus adaptée ?",
+        "type": "qcm",
+        "options": ["Portrait (vertical)", "Paysage (horizontal)", "Diagonale", "Carré"],
+        "answer": 1,
+        "explanation": "Le format paysage permet d'imprimer plus de colonnes sur une seule page."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On est obligé d'imprimer toutes les pages du document en même temps.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! On peut choisir d'imprimer la 'page en cours', une 'sélection' de cellules, ou une plage spécifique (ex: pages 2 à 4)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment définir une 'Zone d'impression' dans un tableur ?",
+        "type": "qcm",
+        "options": ["En coloriant l'écran", "En sélectionnant les cellules voulues, puis en cliquant sur Mise en page > Zone d'impression > Définir", "En cachant les autres colonnes", "En copiant le tableau dans Word"],
+        "answer": 1,
+        "explanation": "Cela indique à l'imprimante d'ignorer tout le reste de la feuille de calcul et de n'imprimer que la zone sélectionnée."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie imprimer en mode 'Recto-Verso' ?",
+        "type": "qcm",
+        "options": ["Imprimer en noir et blanc", "Imprimer très rapidement", "Imprimer sur les deux faces de la feuille de papier (pour économiser)", "Imprimer deux fois le document"],
+        "answer": 2,
+        "explanation": "C'est une pratique écologique et économique."
+      }
+    ]
+  },
+  "Fiche_Les_Listes": {
+    "title": "Les Listes (Programmation / Scratch)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En programmation (ex: sur Scratch), qu'est-ce qu'une 'Liste' ?",
+        "type": "qcm",
+        "options": ["Une erreur de code", "Une structure de données qui permet de stocker et d'organiser plusieurs valeurs (ou éléments) sous un même nom", "Une liste de courses sur papier", "Un sprite (lutin)"],
+        "answer": 1,
+        "explanation": "Contrairement à une variable simple qui stocke UNE valeur, une liste peut stocker des centaines de valeurs (ex: les notes des élèves)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment ajoute-t-on une nouvelle donnée à la fin d'une liste existante dans Scratch ?",
+        "type": "qcm",
+        "options": ["Avec le bloc 'ajouter (chose) à (nom_de_la_liste)'", "En tapant fort sur le clavier", "Avec le bloc 'cacher'", "On ne peut pas ajouter de choses, la liste est bloquée"],
+        "answer": 0,
+        "explanation": "Ce bloc permet de rallonger la liste avec de nouveaux éléments."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une liste, chaque élément possède un numéro d'ordre (un index), permettant de le retrouver (ex: 'Élément 1 de la liste').",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'index (ou la position). On peut ainsi demander au programme d'afficher 'l'élément 3 de ma liste'."
+      },
+      {
+        "id": "q4",
+        "text": "Que fait le bloc 'supprimer l'élément (X) de (liste)' ?",
+        "type": "qcm",
+        "options": ["Il efface toute la liste", "Il supprime l'élément qui se trouve à la position numéro X", "Il fait clignoter l'élément", "Il met l'élément à la fin"],
+        "answer": 1,
+        "explanation": "Si on supprime l'élément 2, l'élément 3 devient le nouveau numéro 2."
+      },
+      {
+        "id": "q5",
+        "text": "Comment savoir combien d'éléments (la taille) contient une liste dans Scratch ?",
+        "type": "qcm",
+        "options": ["Il faut les compter à l'écran", "On utilise le bloc 'longueur de (nom_de_la_liste)'", "On demande au lutin", "C'est toujours écrit 10"],
+        "answer": 1,
+        "explanation": "Le bloc 'longueur de' renvoie un nombre indiquant le total des éléments stockés."
+      }
+    ]
+  },
+  "Fiche_Les_Variables": {
+    "title": "Les Variables (Programmation / Scratch)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En algorithmique et en programmation, qu'est-ce qu'une 'Variable' ?",
+        "type": "qcm",
+        "options": ["Une image qui bouge", "Une 'boîte' en mémoire (ayant un nom) dans laquelle on stocke une donnée (un nombre, un mot) qui peut changer au cours du programme", "Un virus informatique", "Un fond d'écran"],
+        "answer": 1,
+        "explanation": "Exemple : la variable 'Score'. Sa valeur commence à 0, et change (varie) pendant le jeu."
+      },
+      {
+        "id": "q2",
+        "text": "Que fait le bloc Scratch : 'mettre (Score) à 0' (ou initialisation) ?",
+        "type": "qcm",
+        "options": ["Il ajoute 0 au score actuel", "Il donne la valeur de départ zéro à la variable Score (effaçant l'ancienne valeur)", "Il cache le score", "Il termine le jeu"],
+        "answer": 1,
+        "explanation": "L'initialisation est cruciale au début d'un programme (ex: au clic sur le drapeau vert)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le bloc 'ajouter 1 à (Score)' remplace le score actuel par 1.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Il incrémente (additionne 1) la valeur actuelle. Si le score était 5, il devient 6. (C'est différent du bloc 'mettre à')."
+      },
+      {
+        "id": "q4",
+        "text": "Pourquoi utilise-t-on souvent des variables avec les blocs de condition (Si... alors) ?",
+        "type": "qcm",
+        "options": ["Pour faire joli", "Pour tester si une valeur a atteint un but (ex: Si Score > 10 alors Tu as gagné !)", "Pour ralentir l'ordinateur", "Pour créer une liste"],
+        "answer": 1,
+        "explanation": "Les variables permettent au programme de prendre des décisions en fonction de l'évolution des données."
+      },
+      {
+        "id": "q5",
+        "text": "Dans Scratch, si on crée une variable 'Pour tous les lutins' (variable globale), cela signifie que :",
+        "type": "qcm",
+        "options": ["Elle apparaîtra en rouge", "Tous les personnages (lutins) du projet peuvent voir et modifier cette variable (ex: le Timer)", "Seul le lutin chat peut l'utiliser", "Elle sera envoyée sur internet"],
+        "answer": 1,
+        "explanation": "Une variable 'locale' (pour ce lutin uniquement) ne serait connue que par lui-même (ex: ses points de vie personnels)."
+      }
+    ]
+  },
+  "Fiche_Plusieurs_Lutins": {
+    "title": "Programmer avec plusieurs lutins",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans Scratch, que se passe-t-il si j'ai 3 lutins sur la scène ?",
+        "type": "qcm",
+        "options": ["Ils exécutent tous le même code obligatoirement", "Chaque lutin a son propre espace de scripts et peut exécuter des instructions différentes", "Seul le lutin 1 peut bouger", "Ils fusionnent en un seul"],
+        "answer": 1,
+        "explanation": "Le code est attaché à l'objet. Le chat peut avoir un programme pour avancer, et la pomme un programme pour tomber."
+      },
+      {
+        "id": "q2",
+        "text": "Comment un lutin peut-il envoyer un signal pour déclencher l'action d'un AUTRE lutin ?",
+        "type": "qcm",
+        "options": ["En lui criant dessus", "En utilisant les blocs 'envoyer à tous le message X' et 'quand je reçois X'", "En se cognant contre lui", "On ne peut pas"],
+        "answer": 1,
+        "explanation": "Le système de 'messages' (diffusion) permet aux lutins de communiquer entre eux (synchronisation)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux lutins différents peuvent exécuter leur code EXACTEMENT en même temps (en parallèle).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Si chaque lutin a un bloc 'Quand le drapeau vert est cliqué', les deux programmes démarrent simultanément."
+      },
+      {
+        "id": "q4",
+        "text": "Comment faire pour qu'un Lutin A réagisse lorsqu'il touche un Lutin B ?",
+        "type": "qcm",
+        "options": ["Il faut utiliser le bloc capteur 'touchant (Lutin B) ?' dans une condition (Si... alors)", "Il faut les coller à l'écran avec la souris", "C'est automatique", "Il faut utiliser le clavier"],
+        "answer": 0,
+        "explanation": "Les capteurs de contact permettent de créer des interactions physiques dans un jeu."
+      },
+      {
+        "id": "q5",
+        "text": "Lorsqu'on a plusieurs lutins, que permet de faire le bloc 'aller à (Lutin B)' ?",
+        "type": "qcm",
+        "options": ["De téléporter instantanément un lutin à la position (coordonnées) de l'autre lutin", "De changer le costume", "De parler", "De supprimer le Lutin B"],
+        "answer": 0,
+        "explanation": "C'est utile, par exemple, pour faire en sorte qu'une épée suive toujours la position du chevalier."
+      }
+    ]
+  },
+  "Fiche_Traitement_Graphique_Tableur": {
+    "title": "Le Traitement Graphique (Tableur)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un tableur (ex: Excel), quelle est l'utilité principale de créer un graphique ?",
+        "type": "qcm",
+        "options": ["Décorer la feuille pour faire joli", "Représenter visuellement une série de données complexes pour faciliter leur analyse et leur compréhension", "Calculer une moyenne", "Cacher les nombres"],
+        "answer": 1,
+        "explanation": "Un graphique parle plus vite qu'un grand tableau plein de chiffres."
+      },
+      {
+        "id": "q2",
+        "text": "Quel type de graphique est le plus adapté pour représenter l'évolution d'une donnée au fil du temps (ex: la température sur une semaine) ?",
+        "type": "qcm",
+        "options": ["Le diagramme en secteurs (camembert)", "La courbe (ligne)", "Le nuage de points", "L'histogramme 3D"],
+        "answer": 1,
+        "explanation": "La courbe permet de voir immédiatement les montées et les baisses chronologiques."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour qu'un graphique en secteurs (camembert) soit utile, il faut qu'il représente des proportions (des pourcentages) d'un même ensemble dont la somme fait 100%.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le camembert est parfait pour montrer la répartition d'un tout (ex: le budget d'une famille)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la première étape indispensable avant d'insérer un graphique dans le tableur ?",
+        "type": "qcm",
+        "options": ["Sélectionner (surligner avec la souris) les cellules contenant les données et les étiquettes qu'on veut représenter", "Cliquer sur Enregistrer", "Fermer le fichier", "Imprimer la feuille"],
+        "answer": 0,
+        "explanation": "Le logiciel a besoin de savoir quelles données exactes il doit transformer en image."
+      },
+      {
+        "id": "q5",
+        "text": "Que se passe-t-il si je modifie un nombre dans le tableau d'origine APRÈS avoir créé mon graphique ?",
+        "type": "qcm",
+        "options": ["Le graphique explose", "Le graphique se met automatiquement à jour avec la nouvelle valeur (car ils sont liés)", "Rien, il faut tout recommencer", "Le nombre ne peut plus être modifié"],
+        "answer": 1,
+        "explanation": "C'est la puissance du tableur : les données et le graphique sont dynamiquement connectés."
+      }
+    ]
+  }
+}

@@ -1,0 +1,886 @@
+{
+  "Fiche_Lecon1_L_OXYDATION_DES_CORPS_SIMPLES": {
+    "title": "L'oxydation des corps simples",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une réaction d'oxydation en chimie ?",
+        "type": "qcm",
+        "options": [
+          "C'est quand un corps brûle ou réagit avec le dioxygène (O2) pour former un oxyde",
+          "C'est quand un métal devient de l'or",
+          "C'est quand on met de l'eau sur le feu",
+          "C'est le refroidissement d'un gaz"
+        ],
+        "answer": 0,
+        "explanation": "L'oxydation est la combinaison d'un corps simple (carbone, fer, cuivre...) avec le dioxygène."
+      },
+      {
+        "id": "q2",
+        "text": "Quel produit se forme lorsque le fer réagit lentement avec le dioxygène de l'air humide ?",
+        "type": "qcm",
+        "options": [
+          "De la fumée noire",
+          "Du plastique",
+          "De la rouille (oxyde de fer III, Fe2O3)",
+          "De l'acier"
+        ],
+        "answer": 2,
+        "explanation": "La formation de la rouille est une oxydation lente qui finit par détruire (corroder) totalement le fer."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'oxydation du carbone dans le dioxygène est une oxydation 'vive' (elle dégage de la chaleur et une incandescence) et produit du dioxyde de carbone (CO2).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est une combustion. C + O2 -> CO2."
+      },
+      {
+        "id": "q4",
+        "text": "Comment protège-t-on généralement le fer contre la formation de la rouille (l'oxydation à froid) ?",
+        "type": "qcm",
+        "options": [
+          "En le chauffant très fort",
+          "En le peignant, en le graissant ou en le recouvrant d'un autre métal inoxydable (galvanisation)",
+          "En le laissant dans l'eau",
+          "En le grattant tous les jours"
+        ],
+        "answer": 1,
+        "explanation": "Ces couches protectrices empêchent le dioxygène et l'humidité d'entrer en contact avec le fer."
+      },
+      {
+        "id": "q5",
+        "text": "Lequel de ces métaux s'oxyde en se couvrant d'une couche 'protectrice' (vert-de-gris ou alumine) qui arrête la progression de l'oxydation en profondeur ?",
+        "type": "qcm",
+        "options": [
+          "Le fer",
+          "L'aluminium (ou le cuivre)",
+          "Le sodium",
+          "L'or"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à la rouille (qui est poreuse), l'alumine sur l'aluminium est imperméable, ce qui protège le reste du métal."
+      }
+    ]
+  },
+  "Fiche_Lecon2_L_EAU": {
+    "title": "L'eau (Synthèse et Analyse)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la formule chimique de la molécule d'eau ?",
+        "type": "qcm",
+        "options": [
+          "CO2",
+          "H2O",
+          "O2",
+          "NaCl"
+        ],
+        "answer": 1,
+        "explanation": "Elle est composée de 2 atomes d'hydrogène (H) et d'1 atome d'oxygène (O)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'électrolyse de l'eau (analyse) ?",
+        "type": "qcm",
+        "options": [
+          "C'est faire bouillir l'eau",
+          "C'est utiliser le courant électrique pour décomposer l'eau en deux gaz : le dihydrogène (H2) et le dioxygène (O2)",
+          "C'est boire de l'eau",
+          "C'est filtrer l'eau sale"
+        ],
+        "answer": 1,
+        "explanation": "Le courant continu casse la molécule d'eau."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Lors de l'électrolyse de l'eau, le volume de dihydrogène (H2) recueilli est toujours le double du volume de dioxygène (O2) recueilli.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Cela correspond à la formule H2O (deux fois plus de H que de O)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment met-on en évidence la présence du gaz dihydrogène (H2) recueilli lors de l'électrolyse ?",
+        "type": "qcm",
+        "options": [
+          "Il trouble l'eau de chaux",
+          "En approchant une flamme, il se produit une petite détonation (un léger 'aboiement' ou 'pop')",
+          "Il éteint la flamme",
+          "Il sent très mauvais"
+        ],
+        "answer": 1,
+        "explanation": "C'est le test caractéristique du dihydrogène (un gaz très inflammable et explosif)."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le nom de l'expérience inverse, où l'on fait brûler du dihydrogène dans du dioxygène pour former des gouttelettes d'eau ?",
+        "type": "qcm",
+        "options": [
+          "La synthèse de l'eau",
+          "La distillation",
+          "La filtration",
+          "L'évaporation"
+        ],
+        "answer": 0,
+        "explanation": "L'équation est : 2H2 + O2 -> 2H2O."
+      }
+    ]
+  },
+  "Fiche_Lecon3_LES_SOLUTIONS_AQUEUSES": {
+    "title": "Les solutions aqueuses",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une solution aqueuse ?",
+        "type": "qcm",
+        "options": [
+          "De l'eau bouillante",
+          "Un mélange homogène obtenu en dissolvant une substance (soluté) dans de l'eau (le solvant)",
+          "Un mélange de deux métaux",
+          "De l'eau avec du sable"
+        ],
+        "answer": 1,
+        "explanation": "L'eau est le solvant le plus courant. (ex: l'eau salée ou l'eau sucrée)."
+      },
+      {
+        "id": "q2",
+        "text": "Dans une solution d'eau sucrée, l'eau est le solvant. Que représente le sucre ?",
+        "type": "qcm",
+        "options": [
+          "Le liquide",
+          "Le soluté (la substance qui est dissoute)",
+          "Le sédiment",
+          "Le résidu"
+        ],
+        "answer": 1,
+        "explanation": "Solvant (eau) + Soluté (sucre) = Solution."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'eau pure (distillée) est un excellent conducteur de courant électrique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'eau pure (H2O seule) est un très mauvais conducteur (isolant). Ce sont les ions (sels minéraux dissous) qui rendent l'eau conductrice."
+      },
+      {
+        "id": "q4",
+        "text": "Pourquoi une solution d'eau salée (NaCl dissous dans l'eau) conduit-elle bien le courant électrique ?",
+        "type": "qcm",
+        "options": [
+          "Parce qu'elle contient des 'ions' mobiles (des particules chargées électriquement : Na+ et Cl-) qui transportent le courant",
+          "Parce que le sel est un métal",
+          "Parce que le sel brûle",
+          "Parce que l'eau tourne vite"
+        ],
+        "answer": 0,
+        "explanation": "On appelle ces solutions conductrices des solutions ioniques (ou électrolytes)."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie la 'concentration massique' (Cm) d'une solution ?",
+        "type": "qcm",
+        "options": [
+          "Le poids total de la solution",
+          "La masse de soluté (en grammes) dissoute dans un litre de solution (exprimée en g/L)",
+          "Le volume de la bouteille",
+          "La température de l'eau"
+        ],
+        "answer": 1,
+        "explanation": "Formule : Cm = Masse (soluté) / Volume (solution). Plus il y a de sucre dans le même volume, plus la solution est concentrée."
+      }
+    ]
+  },
+  "Fiche_Lecon4_LES_ACIDES_ET_LES_BASES": {
+    "title": "Les acides et les bases",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel appareil ou produit utilise-t-on pour mesurer l'acidité d'une solution aqueuse ?",
+        "type": "qcm",
+        "options": [
+          "Un thermomètre",
+          "Le papier pH ou un pH-mètre",
+          "Une balance",
+          "Un chronomètre"
+        ],
+        "answer": 1,
+        "explanation": "Le pH (Potentiel Hydrogène) mesure l'acidité sur une échelle de 0 à 14."
+      },
+      {
+        "id": "q2",
+        "text": "Une solution est dite 'acide' si son pH est :",
+        "type": "qcm",
+        "options": [
+          "Strictement inférieur à 7 (pH < 7)",
+          "Égal à 7 (pH = 7)",
+          "Strictement supérieur à 7 (pH > 7)",
+          "Égal à 14"
+        ],
+        "answer": 0,
+        "explanation": "Exemples d'acides : le jus de citron (pH~2), le vinaigre, l'acide chlorhydrique (HCl)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'eau pure a un pH égal à 7, elle est donc neutre.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elle n'est ni acide (comme le citron), ni basique (comme l'eau de Javel)."
+      },
+      {
+        "id": "q4",
+        "text": "Que contient majoritairement une solution très acide par rapport à une solution neutre ?",
+        "type": "qcm",
+        "options": [
+          "Elle contient beaucoup plus d'ions Hydrogène (H+)",
+          "Elle contient beaucoup plus d'ions Hydroxyde (OH-)",
+          "Elle ne contient pas d'ions",
+          "Elle contient du sel"
+        ],
+        "answer": 0,
+        "explanation": "C'est la présence importante des ions H+ qui donne son caractère acide et son acidité (goût piquant, attaque des métaux)."
+      },
+      {
+        "id": "q5",
+        "text": "Que se passe-t-il si on mélange une solution acide (pH < 7) avec une solution basique (pH > 7) ?",
+        "type": "qcm",
+        "options": [
+          "Rien du tout",
+          "Elles se neutralisent mutuellement, formant de l'eau et un sel (le pH du mélange tend vers 7)",
+          "Elles gèlent",
+          "Elles deviennent encore plus acides"
+        ],
+        "answer": 1,
+        "explanation": "C'est la réaction de neutralisation acido-basique."
+      }
+    ]
+  },
+  "Fiche_Lecon5_LES_HYDROCARBURES": {
+    "title": "Les Hydrocarbures",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un hydrocarbure en chimie ?",
+        "type": "qcm",
+        "options": [
+          "Un produit qui contient beaucoup d'eau",
+          "Un corps pur dont les molécules ne sont formées que de deux types d'atomes : le Carbone (C) et l'Hydrogène (H)",
+          "Une roche dure",
+          "Un sel minéral"
+        ],
+        "answer": 1,
+        "explanation": "Le pétrole, le gaz naturel (le méthane, le butane) sont des mélanges d'hydrocarbures."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la formule chimique du plus simple des hydrocarbures, le méthane (le gaz de ville) ?",
+        "type": "qcm",
+        "options": [
+          "CO2",
+          "CH4 (1 atome de carbone et 4 d'hydrogène)",
+          "C4H10 (Butane)",
+          "H2O"
+        ],
+        "answer": 1,
+        "explanation": "Le méthane est le principal constituant du gaz naturel."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Lors de la combustion complète d'un hydrocarbure (comme le gaz butane de la gazinière) avec une flamme bleue, il se forme toujours du dioxyde de carbone (CO2) et de l'eau (H2O).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le carbone de l'hydrocarbure donne le CO2, et l'hydrogène donne la vapeur d'eau (H2O)."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si la combustion de l'hydrocarbure est 'incomplète' (pas assez d'oxygène, flamme jaune/éclairante) ?",
+        "type": "qcm",
+        "options": [
+          "La chaleur est plus forte",
+          "Il se forme du carbone noir (la suie) et un gaz mortel et inodore, le monoxyde de carbone (CO)",
+          "L'hydrocarbure se transforme en or",
+          "Il ne se passe rien"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi il est très dangereux d'utiliser un chauffage d'appoint défectueux dans une pièce fermée (risque d'asphyxie au CO)."
+      },
+      {
+        "id": "q5",
+        "text": "D'où proviennent principalement les hydrocarbures que nous utilisons aujourd'hui (pétrole, gaz) ?",
+        "type": "qcm",
+        "options": [
+          "Des nuages",
+          "De la lente décomposition de matières organiques (plancton, végétaux) enfouies sous la terre ou la mer depuis des millions d'années",
+          "De la Lune",
+          "Du volcan"
+        ],
+        "answer": 1,
+        "explanation": "C'est pour cela qu'on les appelle des 'énergies fossiles' non renouvelables."
+      }
+    ]
+  },
+  "Fiche_Lecon6_POIDS_ET_MASSE": {
+    "title": "Poids et Masse",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En physique, quelle est la grande différence entre la 'Masse' et le 'Poids' d'un corps ?",
+        "type": "qcm",
+        "options": [
+          "Aucune, c'est le même mot",
+          "La masse est la quantité de matière (en kg), le poids est la force d'attraction (la gravité) qu'exerce la Terre sur ce corps (en Newton)",
+          "La masse est plus lourde",
+          "Le poids se mesure en grammes"
+        ],
+        "answer": 1,
+        "explanation": "Dans la vie courante on confond les deux, mais en physique, ce sont deux grandeurs totalement différentes."
+      },
+      {
+        "id": "q2",
+        "text": "Quel instrument utilise-t-on pour mesurer le POIDS d'un objet (et quelle est son unité) ?",
+        "type": "qcm",
+        "options": [
+          "Une balance (en kg)",
+          "Un thermomètre (en degrés)",
+          "Un dynamomètre (l'unité est le Newton, de symbole N)",
+          "Un mètre (en m)"
+        ],
+        "answer": 2,
+        "explanation": "Le dynamomètre (avec son ressort) mesure la force avec laquelle l'objet est attiré vers le bas."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si un astronaute va sur la Lune (où la gravité est plus faible), sa masse ne change pas, mais son poids diminue considérablement (il pèse moins lourd).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Sa quantité de matière (sa masse en kg) est identique partout dans l'univers, mais la force qui l'attire (son poids en N) dépend de la planète."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle formule relie le Poids (P) et la masse (m) à la surface de la Terre ?",
+        "type": "qcm",
+        "options": [
+          "P = m + g",
+          "P = m x g (où g est l'intensité de la pesanteur, environ 9,8 ou 10 N/kg)",
+          "P = m / g",
+          "m = P x g"
+        ],
+        "answer": 1,
+        "explanation": "Pour un objet de 10 kg, son poids sur Terre est P = 10 x 10 = 100 Newtons."
+      },
+      {
+        "id": "q5",
+        "text": "Quelles sont les caractéristiques de la force 'Poids' ?",
+        "type": "qcm",
+        "options": [
+          "Elle s'exerce vers le haut",
+          "Elle est toujours appliquée au centre de gravité de l'objet, sa direction est verticale, et son sens est vers le bas (vers le centre de la Terre)",
+          "Elle est horizontale",
+          "Elle n'a pas de sens"
+        ],
+        "answer": 1,
+        "explanation": "C'est la définition du vecteur Poids (P) qui fait tomber les objets (comme la pomme de Newton)."
+      }
+    ]
+  },
+  "Fiche_Lecon7_LA_MASSE_VOLUMIQUE_ET_LA_DENSITE": {
+    "title": "Masse volumique et Densité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la 'masse volumique' d'un corps ?",
+        "type": "qcm",
+        "options": [
+          "Sa longueur",
+          "C'est la masse de ce corps par unité de volume (formule : a = m / V, en kg/m3 ou g/cm3)",
+          "C'est son poids dans l'eau",
+          "C'est la vitesse de l'objet"
+        ],
+        "answer": 1,
+        "explanation": "Elle permet de savoir si une matière est 'lourde ou légère' pour un même volume. (Ex: Le plomb a une forte masse volumique, le polystyrène a une faible masse volumique)."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est approximativement la masse volumique de l'eau pure ?",
+        "type": "qcm",
+        "options": [
+          "1 kg par Litre (soit 1000 kg par m3)",
+          "10 kg par Litre",
+          "100 grammes par Litre",
+          "1 tonne par petit verre"
+        ],
+        "answer": 0,
+        "explanation": "1 Litre d'eau pèse exactement 1 kg (dans des conditions normales)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La 'densité' (d) d'un solide ou d'un liquide, c'est le rapport entre sa masse volumique et celle de l'eau.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elle s'exprime sans unité. La densité de l'eau est de 1. (Densité = Masse de l'objet / Masse du même volume d'eau)."
+      },
+      {
+        "id": "q4",
+        "text": "Si un morceau de bois a une densité de 0,6 (inférieure à 1, la densité de l'eau), que fera-t-il si on le met dans l'eau ?",
+        "type": "qcm",
+        "options": [
+          "Il va couler au fond",
+          "Il va flotter à la surface",
+          "Il va se dissoudre",
+          "Il va exploser"
+        ],
+        "answer": 1,
+        "explanation": "Tout objet de densité inférieure à 1 (moins dense que l'eau) flotte sur l'eau (ex: huile, bois)."
+      },
+      {
+        "id": "q5",
+        "text": "Le fer a une densité d'environ 7,8 (supérieure à 1). Dans l'eau :",
+        "type": "qcm",
+        "options": [
+          "Il flotte",
+          "Il coule",
+          "Il reste en suspension au milieu",
+          "Il saute"
+        ],
+        "answer": 1,
+        "explanation": "Le fer est plus dense que l'eau, il coule (un clou tombe au fond). (Les bateaux en acier flottent grâce à la poussée d'Archimède et à l'air qu'ils contiennent)."
+      }
+    ]
+  },
+  "Fiche_Lecon8_LA_POUSSEE_D_ARCHIMEDE": {
+    "title": "La Poussée d'Archimède",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la Poussée d'Archimède ?",
+        "type": "qcm",
+        "options": [
+          "Le vent qui pousse les voiliers",
+          "La force verticale (dirigée vers le HAUT) qu'un fluide (liquide ou gaz) exerce sur tout corps plongé en son sein",
+          "La force qui fait tomber les pommes",
+          "La pression de l'eau"
+        ],
+        "answer": 1,
+        "explanation": "C'est grâce à cette force qu'on se sent 'plus léger' lorsqu'on se baigne dans la piscine."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le célèbre principe énoncé par le savant grec Archimède ?",
+        "type": "qcm",
+        "options": [
+          "Tout corps plongé dans un fluide ressort mouillé",
+          "Tout corps plongé dans un liquide subit une poussée verticale, de bas en haut, égale au POIDS du volume de liquide déplacé",
+          "L'eau bout à 100 degrés",
+          "La Terre est ronde"
+        ],
+        "answer": 1,
+        "explanation": "C'est ce qui explique la flottaison des énormes bateaux (qui déplacent un énorme volume d'eau)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On peut calculer la valeur de la Poussée d'Archimède (Pa) en mesurant le poids de l'objet dans l'air, puis en soustrayant son poids (apparent) mesuré lorsqu'il est plongé dans l'eau.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Pa = Poids réel (dans l'air) - Poids apparent (dans l'eau)."
+      },
+      {
+        "id": "q4",
+        "text": "De quoi dépend la force de la Poussée d'Archimède exercée sur un objet plongé dans l'eau ?",
+        "type": "qcm",
+        "options": [
+          "De la couleur de l'objet",
+          "Uniquement du VOLUME de la partie de l'objet qui est immergée (plongée dans le liquide)",
+          "De la masse de l'objet",
+          "De l'âge du capitaine"
+        ],
+        "answer": 1,
+        "explanation": "Plus le volume immergé est grand, plus il déplace d'eau, et plus la poussée (qui le soutient vers le haut) est forte."
+      },
+      {
+        "id": "q5",
+        "text": "Pour qu'un objet FLOTTE à la surface de l'eau, il faut que :",
+        "type": "qcm",
+        "options": [
+          "Son poids soit beaucoup plus grand que la Poussée d'Archimède",
+          "Son poids et la Poussée d'Archimède s'équilibrent (soient égaux)",
+          "L'eau soit très chaude",
+          "Il n'y ait pas de vent"
+        ],
+        "answer": 1,
+        "explanation": "À l'équilibre (flottaison), la force qui le tire vers le bas (le poids) est exactement compensée par la force qui le pousse vers le haut (Archimède)."
+      }
+    ]
+  },
+  "Fiche_Lecon9_LE_TRAVAIL_ET_LA_PUISSANCE_MECANIQUES": {
+    "title": "Travail et Puissance mécaniques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En physique, quand dit-on qu'une force effectue un 'Travail' (W) ?",
+        "type": "qcm",
+        "options": [
+          "Quand la personne est fatiguée",
+          "Lorsqu'une force (comme le poids ou la traction) déplace son point d'application sur une certaine distance",
+          "Quand l'objet reste immobile",
+          "Quand un moteur tourne dans le vide"
+        ],
+        "answer": 1,
+        "explanation": "Si je pousse très fort un mur et qu'il ne bouge pas, je m'épuise, mais mon travail mécanique est nul car le déplacement est nul."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité de mesure légale du Travail mécanique (et de l'Énergie) ?",
+        "type": "qcm",
+        "options": [
+          "Le Volt (V)",
+          "Le Newton (N)",
+          "Le Joule (J)",
+          "Le Mètre (m)"
+        ],
+        "answer": 2,
+        "explanation": "Travail (W) = Force (F, en Newtons) x Déplacement (d, en mètres). (N x m = Joules)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Un travail est dit 'moteur' s'il favorise le déplacement (ex: la force du cheval qui tire la charrette).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. À l'inverse, un travail est dit 'résistant' s'il s'oppose au déplacement (ex: la force de frottement des freins)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la Puissance mécanique (P) ?",
+        "type": "qcm",
+        "options": [
+          "La taille du moteur",
+          "C'est la rapidité avec laquelle un travail est effectué (P = Travail / temps)",
+          "La couleur de la voiture",
+          "La force du vent"
+        ],
+        "answer": 1,
+        "explanation": "Deux grues peuvent soulever la même charge (même travail), mais celle qui le fait en moins de temps est la plus puissante."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'unité de mesure légale de la Puissance ?",
+        "type": "qcm",
+        "options": [
+          "Le Joule (J)",
+          "Le Watt (W)",
+          "Le Newton (N)",
+          "L'Ampère (A)"
+        ],
+        "answer": 1,
+        "explanation": "1 Watt = 1 Joule par seconde. (On utilise aussi le cheval-vapeur pour les moteurs de voiture)."
+      }
+    ]
+  },
+  "Fiche_Lecon10_L_ENERGIE_MECANIQUE": {
+    "title": "L'énergie mécanique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'Énergie Cinétique (Ec) d'un objet ?",
+        "type": "qcm",
+        "options": [
+          "C'est l'énergie qu'il possède quand il chauffe",
+          "C'est l'énergie qu'il possède du fait de son MOUVEMENT (sa vitesse)",
+          "C'est l'énergie nucléaire",
+          "C'est son poids"
+        ],
+        "answer": 1,
+        "explanation": "Plus une voiture va vite (vitesse) et plus elle est lourde (masse), plus son énergie cinétique (et donc le danger en cas de choc) est grande. Ec = 1/2 m.v²."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'Énergie Potentielle de pesanteur (Ep) d'un objet ?",
+        "type": "qcm",
+        "options": [
+          "Son électricité",
+          "C'est l'énergie qu'il possède du fait de son ALTITUDE (sa hauteur par rapport au sol)",
+          "Son énergie thermique",
+          "Sa puissance moteur"
+        ],
+        "answer": 1,
+        "explanation": "Une brique posée sur un toit a de l'énergie en réserve (potentielle) à cause de sa hauteur. Si elle tombe, cette énergie se libère. Ep = m.g.h."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'Énergie Mécanique totale (Em) d'un objet est la somme de son énergie cinétique et de son énergie potentielle (Em = Ec + Ep).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est l'énergie totale liée au mouvement et à la position de l'objet."
+      },
+      {
+        "id": "q4",
+        "text": "Lorsqu'une pomme tombe d'un arbre (en négligeant les frottements de l'air), que se passe-t-il au niveau de son énergie ?",
+        "type": "qcm",
+        "options": [
+          "Son énergie totale disparaît",
+          "Elle perd de l'énergie potentielle (car elle descend) qui se transforme en énergie cinétique (car elle accélère et va de plus en plus vite)",
+          "Elle gagne du poids",
+          "Elle se met à briller"
+        ],
+        "answer": 1,
+        "explanation": "C'est le principe de conservation de l'énergie mécanique : l'énergie ne se perd pas, elle se transforme."
+      },
+      {
+        "id": "q5",
+        "text": "Si un cycliste freine pour s'arrêter (son énergie cinétique passe à zéro), où est passée son énergie liée au mouvement ?",
+        "type": "qcm",
+        "options": [
+          "Elle s'est envolée",
+          "Elle s'est transformée en chaleur (énergie thermique) à cause des frottements des freins sur les roues",
+          "Elle est retournée dans les pédales",
+          "Elle s'est transformée en lumière"
+        ],
+        "answer": 1,
+        "explanation": "Les freins chauffent énormément car ils dissipent l'énergie cinétique sous forme de chaleur."
+      }
+    ]
+  },
+  "Fiche_Lecon11_LES_LENTILLES": {
+    "title": "Les lentilles minces",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une lentille convergente (comme une loupe) ?",
+        "type": "qcm",
+        "options": [
+          "Une vitre complètement plate",
+          "Une lentille transparente à bords minces et à centre épais, qui fait converger (se rejoindre en un point) les rayons lumineux qui la traversent",
+          "Une lentille qui assombrit l'image",
+          "Un miroir"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi on peut l'utiliser pour concentrer les rayons du soleil en un point (le foyer) et allumer un feu."
+      },
+      {
+        "id": "q2",
+        "text": "À l'inverse, quel est l'effet d'une lentille 'divergente' (bords épais, centre mince) ?",
+        "type": "qcm",
+        "options": [
+          "Elle écarte les rayons lumineux qui la traversent",
+          "Elle ne laisse pas passer la lumière",
+          "Elle brûle le papier",
+          "Elle transforme l'eau en glace"
+        ],
+        "answer": 0,
+        "explanation": "Les rayons lumineux qui en ressortent s'éloignent les uns des autres (ils divergent)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le 'Foyer image' (F') d'une lentille convergente est le point précis où tous les rayons lumineux parallèles convergent (se croisent) après avoir traversé la lentille.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La distance entre le centre de la lentille (O) et ce foyer (F') s'appelle la 'distance focale'."
+      },
+      {
+        "id": "q4",
+        "text": "Comment est l'image formée sur un écran par une lentille convergente (lorsque l'objet est éloigné) ?",
+        "type": "qcm",
+        "options": [
+          "Elle est toujours dans le même sens que l'objet",
+          "Elle est RENVERSÉE (la tête en bas) et réelle",
+          "Elle est invisible",
+          "Elle clignote"
+        ],
+        "answer": 1,
+        "explanation": "C'est ce qui se passe dans un appareil photo ou dans notre œil : l'image se forme à l'envers."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que la 'Vergence' (C) d'une lentille (qui s'exprime en dioptries, δ) ?",
+        "type": "qcm",
+        "options": [
+          "Son poids",
+          "La capacité (la force) de la lentille à faire converger fortement les rayons (C = 1 / distance focale)",
+          "Son prix",
+          "Sa couleur"
+        ],
+        "answer": 1,
+        "explanation": "Plus la distance focale est courte (lentille très bombée), plus la lentille est puissante (forte vergence). C'est ce qu'utilise l'opticien pour les lunettes."
+      }
+    ]
+  },
+  "Fiche_Lecon12_L_OEIL_ET_L_APPAREIL_PHOTOGRAPHIQUE": {
+    "title": "L'Oeil et l'appareil photographique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle partie de l'œil humain joue le rôle de la pellicule (ou du capteur numérique) de l'appareil photographique, sur laquelle se forme l'image ?",
+        "type": "qcm",
+        "options": [
+          "La cornée",
+          "Le nerf optique",
+          "La rétine",
+          "La paupière"
+        ],
+        "answer": 2,
+        "explanation": "La rétine (au fond de l'œil) capte la lumière et envoie l'information au cerveau."
+      },
+      {
+        "id": "q2",
+        "text": "Dans l'œil, quelle partie joue le rôle de la lentille convergente (l'objectif de l'appareil photo) ?",
+        "type": "qcm",
+        "options": [
+          "Le cristallin",
+          "L'iris",
+          "La pupille",
+          "Le sourcil"
+        ],
+        "answer": 0,
+        "explanation": "Le cristallin est une lentille naturelle souple qui se déforme pour faire la mise au point."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'iris de l'œil, qui s'ouvre et se ferme pour laisser passer plus ou moins de lumière, correspond au 'diaphragme' de l'appareil photo.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Dans le noir, la pupille (le trou au centre de l'iris) s'agrandit pour capter le maximum de lumière."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que 'l'accommodation' de l'œil ?",
+        "type": "qcm",
+        "options": [
+          "Le fait de dormir les yeux ouverts",
+          "La capacité du cristallin à se bomber ou s'étirer (changer sa distance focale) pour voir net les objets rapprochés ou éloignés",
+          "Le fait de pleurer",
+          "Le changement de couleur des yeux"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à l'appareil photo où la lentille avance ou recule (mise au point), notre œil change la forme de sa propre lentille."
+      },
+      {
+        "id": "q5",
+        "text": "Quel défaut visuel (maladie de l'œil) oblige à porter des lunettes avec des lentilles DIVERGENTES pour voir net de loin ?",
+        "type": "qcm",
+        "options": [
+          "La presbytie",
+          "L'hypermétropie",
+          "La myopie",
+          "La cataracte"
+        ],
+        "answer": 2,
+        "explanation": "L'œil myope est 'trop long' ou trop convergent (l'image se forme en avant de la rétine). La lentille divergente repousse l'image sur la rétine."
+      }
+    ]
+  },
+  "Fiche_Lecon13_LE_COURANT_ALTERNATIF": {
+    "title": "Le courant alternatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la différence fondamentale entre le courant continu (pile) et le courant alternatif (prise de la maison) ?",
+        "type": "qcm",
+        "options": [
+          "Le courant alternatif est moins dangereux",
+          "Dans le courant continu, les électrons vont toujours dans le même sens. Dans le courant alternatif, ils font des allers-retours (changent de sens en permanence)",
+          "Le courant alternatif n'allume pas les lampes",
+          "Il n'y a pas de différence"
+        ],
+        "answer": 1,
+        "explanation": "Alternatif signifie qu'il alterne : une fois dans un sens (positif), une fois dans l'autre (négatif)."
+      },
+      {
+        "id": "q2",
+        "text": "Quel appareil (présent dans les vélos ou les centrales électriques) permet de fabriquer du courant alternatif grâce au mouvement d'un aimant devant une bobine de cuivre ?",
+        "type": "qcm",
+        "options": [
+          "Une pile",
+          "Un alternateur (ou génératrice)",
+          "Une résistance",
+          "Un moteur"
+        ],
+        "answer": 1,
+        "explanation": "L'alternateur transforme l'énergie mécanique (mouvement) en énergie électrique alternative."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'oscilloscope est un appareil à écran qui permet de visualiser et de mesurer la 'forme' de la tension alternative au cours du temps (sous forme de vagues ou sinusoïdes).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Il affiche une courbe sinusoïdale (des vagues régulières)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la 'Fréquence' (f) d'une tension alternative ?",
+        "type": "qcm",
+        "options": [
+          "La température du fil",
+          "Le nombre de motifs complets (allers-retours) que fait le courant en une seule seconde",
+          "La force du courant",
+          "Le temps d'une seule vague"
+        ],
+        "answer": 1,
+        "explanation": "Elle se mesure en Hertz (Hz). En Côte d'Ivoire (et en Europe), la fréquence du secteur est de 50 Hz (le courant change de sens 100 fois par seconde)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on la tension maximale (le sommet de la vague sur l'oscilloscope) ?",
+        "type": "qcm",
+        "options": [
+          "La tension efficace (Ueff, celle mesurée par le voltmètre)",
+          "La tension maximale (Umax)",
+          "La période (T)",
+          "La résistance (R)"
+        ],
+        "answer": 1,
+        "explanation": "Le voltmètre ne mesure pas cette crête (Umax, souvent environ 311V pour nos prises), il affiche une moyenne utile : la tension efficace (220V)."
+      }
+    ]
+  }
+}

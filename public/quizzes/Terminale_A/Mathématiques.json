@@ -1,0 +1,546 @@
+{
+  "Fiche_MATHEMATIQUE L1_ Étude de fonctions polynômes et de fonctions rationnelles": {
+    "title": "MATHEMATIQUE L1  Étude de fonctions polynômes et de fonctions rationnelles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'ensemble de définition d'une fonction polynôme ?",
+        "type": "qcm",
+        "options": [
+          "ℝ (l'ensemble des réels)",
+          "ℝ privé de 0",
+          "[0 ; +∞[",
+          "L'ensemble des entiers naturels"
+        ],
+        "answer": 0,
+        "explanation": "Une fonction polynôme est définie et dérivable sur l'ensemble de tous les nombres réels ℝ."
+      },
+      {
+        "id": "q2",
+        "text": "Comment trouve-t-on le signe de la dérivée d'une fonction ?",
+        "type": "qcm",
+        "options": [
+          "En calculant les racines de l'équation f'(x) = 0 et en dressant un tableau de signes",
+          "En calculant f(0)",
+          "En traçant la courbe au hasard",
+          "En regardant la calculatrice"
+        ],
+        "answer": 0,
+        "explanation": "Le tableau de signes de f'(x) donne les variations de la fonction f."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si f'(x) > 0 sur un intervalle, alors la fonction f est strictement décroissante sur cet intervalle.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Si la dérivée est strictement positive, la fonction est strictement croissante."
+      },
+      {
+        "id": "q4",
+        "text": "Que cherche-t-on en premier lors de l'étude d'une fonction rationnelle (fraction) ?",
+        "type": "qcm",
+        "options": [
+          "L'ensemble de définition (valeurs interdites au dénominateur)",
+          "La couleur de la courbe",
+          "Le point (1;1)",
+          "La primitive"
+        ],
+        "answer": 0,
+        "explanation": "Le dénominateur ne peut pas être nul, il faut donc exclure la valeur qui l'annule de l'ensemble de définition."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'indique une limite infinie en un point x=a ?",
+        "type": "qcm",
+        "options": [
+          "Une asymptote verticale d'équation x=a",
+          "Une asymptote horizontale",
+          "Un point d'inflexion",
+          "Une erreur de calcul"
+        ],
+        "answer": 0,
+        "explanation": "Si la limite en a est l'infini, la droite x=a est une asymptote verticale."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L2_ Probabilités": {
+    "title": "MATHEMATIQUE L2  Probabilités",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une expérience aléatoire ?",
+        "type": "qcm",
+        "options": [
+          "Une expérience dont on connaît les résultats possibles sans pouvoir prévoir l'issue",
+          "Une expérience de physique-chimie",
+          "Une expérience dont on connaît l'issue exacte à l'avance",
+          "Une certitude absolue"
+        ],
+        "answer": 0,
+        "explanation": "L'issue relève du hasard (alea)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle l'ensemble de toutes les éventualités ?",
+        "type": "qcm",
+        "options": [
+          "L'univers (noté Ω)",
+          "L'événement",
+          "L'espace vide",
+          "La probabilité"
+        ],
+        "answer": 0,
+        "explanation": "Ω désigne l'univers de l'expérience aléatoire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La probabilité d'un événement A est toujours comprise entre -1 et 1.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Une probabilité est toujours comprise entre 0 et 1 (0 ≤ P(A) ≤ 1)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la formule de la probabilité de l'événement contraire de A (A barre) ?",
+        "type": "qcm",
+        "options": [
+          "P(A̅) = 1 - P(A)",
+          "P(A̅) = P(A) - 1",
+          "P(A̅) = P(Ω) + P(A)",
+          "P(A̅) = 0"
+        ],
+        "answer": 0,
+        "explanation": "La somme des probabilités de A et de son contraire fait toujours 1."
+      },
+      {
+        "id": "q5",
+        "text": "Si deux événements A et B sont incompatibles, que vaut P(A ∩ B) ?",
+        "type": "qcm",
+        "options": [
+          "0 (car A ∩ B = ∅)",
+          "1",
+          "P(A) + P(B)",
+          "P(A) × P(B)"
+        ],
+        "answer": 0,
+        "explanation": "Incompatibles signifie qu'ils ne peuvent pas se réaliser en même temps, donc leur intersection est vide."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L3_ Logarithme népérien": {
+    "title": "MATHEMATIQUE L3  Logarithme népérien",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Sur quel intervalle la fonction logarithme népérien (ln) est-elle définie ?",
+        "type": "qcm",
+        "options": [
+          "]0 ; +∞[ (nombres strictement positifs)",
+          "[-1 ; 1]",
+          "ℝ (tous les réels)",
+          "[0 ; +∞["
+        ],
+        "answer": 0,
+        "explanation": "On ne peut calculer le logarithme que d'un nombre strictement positif."
+      },
+      {
+        "id": "q2",
+        "text": "Que vaut ln(1) ?",
+        "type": "qcm",
+        "options": [
+          "0",
+          "1",
+          "e",
+          "L'infini"
+        ],
+        "answer": 0,
+        "explanation": "La fonction ln s'annule en 1."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La dérivée de la fonction ln(x) est 1/x.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (ln x)' = 1/x pour tout x > 0."
+      },
+      {
+        "id": "q4",
+        "text": "A quoi est égal ln(a × b) ?",
+        "type": "qcm",
+        "options": [
+          "ln(a) + ln(b)",
+          "ln(a) × ln(b)",
+          "ln(a) - ln(b)",
+          "a + b"
+        ],
+        "answer": 0,
+        "explanation": "Le logarithme transforme un produit en une somme."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la limite de ln(x) quand x tend vers +∞ ?",
+        "type": "qcm",
+        "options": [
+          "+∞",
+          "0",
+          "1",
+          "-∞"
+        ],
+        "answer": 0,
+        "explanation": "Bien que sa croissance soit lente, la limite en +∞ est bien +∞."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L4_ Fonction exponentielle": {
+    "title": "MATHEMATIQUE L4  Fonction exponentielle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la relation entre les fonctions exponentielle et logarithme ?",
+        "type": "qcm",
+        "options": [
+          "Elles sont réciproques",
+          "Ce sont les mêmes fonctions",
+          "L'une est la dérivée de l'autre",
+          "Il n'y a aucun rapport"
+        ],
+        "answer": 0,
+        "explanation": "e^x et ln(x) s'annulent mutuellement : ln(e^x) = x."
+      },
+      {
+        "id": "q2",
+        "text": "Que vaut e^0 ?",
+        "type": "qcm",
+        "options": [
+          "1",
+          "0",
+          "e",
+          "-1"
+        ],
+        "answer": 0,
+        "explanation": "Tout nombre non nul élevé à la puissance 0 donne 1, donc e^0 = 1."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'exponentielle d'un réel x peut être négative.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Pour tout x réel, e^x > 0. La courbe est toujours au-dessus de l'axe des abscisses."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la dérivée de la fonction f(x) = e^x ?",
+        "type": "qcm",
+        "options": [
+          "e^x (elle-même)",
+          "1/x",
+          "x * e^(x-1)",
+          "0"
+        ],
+        "answer": 0,
+        "explanation": "La fonction exponentielle a la particularité d'être sa propre dérivée."
+      },
+      {
+        "id": "q5",
+        "text": "A quoi est égal e^(a) / e^(b) ?",
+        "type": "qcm",
+        "options": [
+          "e^(a - b)",
+          "e^(a / b)",
+          "e^(a + b)",
+          "ln(a - b)"
+        ],
+        "answer": 0,
+        "explanation": "L'exponentielle d'un quotient devient la soustraction des exposants."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L5_ Suites numériques": {
+    "title": "MATHEMATIQUE L5  Suites numériques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment passe-t-on d'un terme au suivant dans une suite arithmétique ?",
+        "type": "qcm",
+        "options": [
+          "En ajoutant une constante (la raison r)",
+          "En multipliant par une constante",
+          "En élevant au carré",
+          "En prenant la racine carrée"
+        ],
+        "answer": 0,
+        "explanation": "Une suite est arithmétique si U_n+1 = U_n + r."
+      },
+      {
+        "id": "q2",
+        "text": "Comment passe-t-on d'un terme au suivant dans une suite géométrique ?",
+        "type": "qcm",
+        "options": [
+          "En multipliant par une constante (la raison q)",
+          "En ajoutant une constante",
+          "En divisant par n",
+          "En soustrayant une constante"
+        ],
+        "answer": 0,
+        "explanation": "Une suite est géométrique si V_n+1 = q × V_n."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une augmentation de 5% par an est modélisée par une suite arithmétique.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Une augmentation en pourcentage (ex: × 1,05) correspond à une suite géométrique."
+      },
+      {
+        "id": "q4",
+        "text": "Si la raison d'une suite arithmétique est négative (r < 0), la suite est :",
+        "type": "qcm",
+        "options": [
+          "Strictement décroissante",
+          "Croissante",
+          "Constante",
+          "Alternée"
+        ],
+        "answer": 0,
+        "explanation": "Si on ajoute un nombre négatif à chaque étape, la valeur diminue constamment."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'expression du terme général U_n d'une suite géométrique de premier terme U_0 et de raison q ?",
+        "type": "qcm",
+        "options": [
+          "U_n = U_0 × q^n",
+          "U_n = U_0 + n×q",
+          "U_n = q × U_0^n",
+          "U_n = U_0 / q^n"
+        ],
+        "answer": 0,
+        "explanation": "C'est la formule explicite d'une suite géométrique."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L6_ Statistique à deux variables": {
+    "title": "MATHEMATIQUE L6  Statistique à deux variables",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le point moyen G dans un nuage de points ?",
+        "type": "qcm",
+        "options": [
+          "Le point dont les coordonnées sont la moyenne des X et la moyenne des Y",
+          "Le point le plus haut",
+          "Le point d'intersection avec l'axe des ordonnées",
+          "Le premier point du tableau"
+        ],
+        "answer": 0,
+        "explanation": "G(X̄ ; Ȳ) est le centre de gravité du nuage de points."
+      },
+      {
+        "id": "q2",
+        "text": "Que signifie une covariance positive (Cov > 0) ?",
+        "type": "qcm",
+        "options": [
+          "Les variables X et Y évoluent globalement dans le même sens",
+          "Les variables évoluent en sens contraire",
+          "Il n'y a aucun lien entre elles",
+          "Le nuage forme un cercle parfait"
+        ],
+        "answer": 0,
+        "explanation": "Une covariance positive indique que quand X augmente, Y a tendance à augmenter aussi."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le coefficient de corrélation linéaire r est toujours compris entre -1 et 1.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est une mesure standardisée qui ne peut pas dépasser 1 en valeur absolue."
+      },
+      {
+        "id": "q4",
+        "text": "Si le coefficient de corrélation r est proche de 1, que peut-on dire ?",
+        "type": "qcm",
+        "options": [
+          "La corrélation est forte, un ajustement affine est justifié",
+          "Il n'y a aucun lien entre les variables",
+          "On a fait une erreur de calcul",
+          "Le nuage de points est complètement dispersé"
+        ],
+        "answer": 0,
+        "explanation": "Plus |r| est proche de 1, plus les points sont alignés sur une droite."
+      },
+      {
+        "id": "q5",
+        "text": "Comment s'appelle la droite qui approche au mieux l'ensemble des points ?",
+        "type": "qcm",
+        "options": [
+          "La droite de régression (ou d'ajustement)",
+          "La droite parallèle",
+          "La droite des ordonnées",
+          "La bissectrice"
+        ],
+        "answer": 0,
+        "explanation": "On utilise souvent la méthode des moindres carrés pour obtenir la droite de régression de Y en X."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L7_ Systèmes linéaires dans R x R": {
+    "title": "MATHEMATIQUE L7  Systèmes linéaires dans R x R",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie résoudre un système d'équations dans ℝ×ℝ ?",
+        "type": "qcm",
+        "options": [
+          "Déterminer les couples (x ; y) qui vérifient toutes les équations en même temps",
+          "Trouver une seule inconnue",
+          "Calculer une probabilité",
+          "Tracer un cercle"
+        ],
+        "answer": 0,
+        "explanation": "Un système lie plusieurs inconnues qui doivent vérifier simultanément toutes les équations."
+      },
+      {
+        "id": "q2",
+        "text": "En quoi consiste la méthode de substitution ?",
+        "type": "qcm",
+        "options": [
+          "Exprimer une inconnue en fonction de l'autre, puis remplacer dans la 2ème équation",
+          "Additionner les deux équations directement",
+          "Dessiner les droites",
+          "Deviner les valeurs"
+        ],
+        "answer": 0,
+        "explanation": "On isole par exemple x dans la première équation pour le substituer dans la seconde."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La méthode par combinaison linéaire vise à éliminer une inconnue en additionnant les équations.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On multiplie les lignes par des coefficients pour qu'une inconnue s'annule lors de l'addition."
+      },
+      {
+        "id": "q4",
+        "text": "Face à un système avec des logarithmes (ex: ln(x) + ln(y) = 5), quelle méthode est recommandée ?",
+        "type": "qcm",
+        "options": [
+          "Faire un changement de variable (ex: X = ln(x))",
+          "Utiliser le théorème de Pythagore",
+          "Abandonner l'exercice",
+          "Calculer la dérivée"
+        ],
+        "answer": 0,
+        "explanation": "Le changement de variable permet de se ramener à un système linéaire classique."
+      },
+      {
+        "id": "q5",
+        "text": "Dans un système posant X = e^x et Y = e^y, quelle condition est obligatoire pour X et Y ?",
+        "type": "qcm",
+        "options": [
+          "Ils doivent être strictement positifs",
+          "Ils doivent être négatifs",
+          "Ils doivent être entiers",
+          "Ils peuvent valoir 0"
+        ],
+        "answer": 0,
+        "explanation": "Puisque e^x > 0, les nouvelles variables X et Y trouvées doivent obligatoirement être positives."
+      }
+    ]
+  },
+  "Fiche_MATHEMATIQUE L8_ Primitives et calcul intégral": {
+    "title": "MATHEMATIQUE L8  Primitives et calcul intégral",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une primitive F d'une fonction f ?",
+        "type": "qcm",
+        "options": [
+          "C'est une fonction F telle que sa dérivée F'(x) est égale à f(x)",
+          "C'est la dérivée de f",
+          "C'est la limite de f",
+          "C'est l'inverse de f"
+        ],
+        "answer": 0,
+        "explanation": "Par définition, chercher une primitive est l'opération inverse de la dérivation."
+      },
+      {
+        "id": "q2",
+        "text": "Combien y a-t-il de primitives pour une fonction continue f ?",
+        "type": "qcm",
+        "options": [
+          "Une infinité (elles diffèrent d'une constante)",
+          "Une seule",
+          "Aucune",
+          "Deux exactement"
+        ],
+        "answer": 0,
+        "explanation": "Si F est une primitive, F(x) + c (avec c constant) est aussi une primitive."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'intégrale d'une fonction positive sur [a;b] correspond à l'aire sous la courbe.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Géométriquement, l'intégrale d'une fonction positive calcule l'aire du domaine délimité par la courbe et l'axe des abscisses."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la primitive de la fonction f(x) = 1/x sur ]0 ; +∞[ ?",
+        "type": "qcm",
+        "options": [
+          "ln(x) + constante",
+          "e^x",
+          "x²",
+          "-1/x²"
+        ],
+        "answer": 0,
+        "explanation": "La dérivée de ln(x) étant 1/x, sa primitive est ln(x)."
+      },
+      {
+        "id": "q5",
+        "text": "Comment calcule-t-on l'intégrale de a à b de f(x) si F est une primitive ?",
+        "type": "qcm",
+        "options": [
+          "F(b) - F(a)",
+          "F(a) - F(b)",
+          "f(b) - f(a)",
+          "F(b) / F(a)"
+        ],
+        "answer": 0,
+        "explanation": "Le théorème fondamental de l'analyse stipule que l'intégrale se calcule par la différence des valeurs de la primitive aux bornes."
+      }
+    ]
+  }
+}

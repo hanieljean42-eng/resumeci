@@ -1,0 +1,452 @@
+{
+  "Fiche_Lecon1_Les_constituants_d_un_ordinateur": {
+    "title": "Les constituants d'un ordinateur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est l'élément principal de l'ordinateur qui traite les informations (le cerveau) ?",
+        "type": "qcm",
+        "options": ["L'écran", "L'unité centrale", "Le clavier", "La souris"],
+        "answer": 1,
+        "explanation": "L'unité centrale contient le processeur (le cerveau) et la mémoire. C'est elle qui fait tout le travail de calcul."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces éléments, lequel est un périphérique d'ENTRÉE ?",
+        "type": "qcm",
+        "options": ["L'écran", "L'imprimante", "Le clavier", "Les haut-parleurs"],
+        "answer": 2,
+        "explanation": "Le clavier permet d'entrer des données dans l'ordinateur. L'écran, l'imprimante et les haut-parleurs font sortir l'information."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'écran permet de visualiser les résultats du travail de l'ordinateur.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. L'écran est un périphérique de sortie indispensable pour voir ce que l'on fait."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on le dispositif qui permet de pointer et cliquer sur l'écran ?",
+        "type": "qcm",
+        "options": ["L'imprimante", "Le clavier", "L'unité centrale", "La souris"],
+        "answer": 3,
+        "explanation": "La souris déplace le pointeur sur l'écran et permet de valider des actions en cliquant."
+      },
+      {
+        "id": "q5",
+        "text": "À quoi sert une imprimante ?",
+        "type": "qcm",
+        "options": ["À afficher des vidéos", "À taper du texte", "À reproduire sur papier des documents créés sur l'ordinateur", "À entendre du son"],
+        "answer": 2,
+        "explanation": "L'imprimante est un périphérique de sortie qui transfère des documents numériques sur du papier."
+      }
+    ]
+  },
+  "Fiche_Lecon2_La_souris_et_le_pointeur": {
+    "title": "La souris et le pointeur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que se passe-t-il lorsque je fais un 'clic gauche' sur une icône ?",
+        "type": "qcm",
+        "options": ["J'efface l'icône", "Je sélectionne l'icône", "J'ouvre directement le fichier", "Je déplace l'icône"],
+        "answer": 1,
+        "explanation": "Un simple clic gauche permet de sélectionner un élément."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle action permet d'ouvrir un dossier ou de lancer un programme avec la souris ?",
+        "type": "qcm",
+        "options": ["Le simple clic", "Le clic droit", "Le double clic", "Faire rouler la molette"],
+        "answer": 2,
+        "explanation": "Le double clic rapide (gauche) exécute ou ouvre un élément sélectionné."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le clic droit permet d'afficher un menu contextuel (options cachées).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le clic droit ouvre un menu proposant différentes actions selon l'endroit où on a cliqué (copier, coller, propriétés...)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on la petite flèche qui bouge sur l'écran quand on déplace la souris ?",
+        "type": "qcm",
+        "options": ["L'icône", "Le curseur ou pointeur", "Le clic", "Le bouton"],
+        "answer": 1,
+        "explanation": "Le pointeur est la représentation à l'écran des mouvements de la souris."
+      },
+      {
+        "id": "q5",
+        "text": "À quoi sert principalement la molette située au milieu de la souris ?",
+        "type": "qcm",
+        "options": ["À faire défiler une page vers le haut ou le bas", "À éteindre l'ordinateur", "À taper du texte", "À sélectionner plusieurs fichiers"],
+        "answer": 0,
+        "explanation": "La molette (ou roulette) permet de scroller (faire défiler) facilement le contenu d'une fenêtre."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Utilisation_d_un_logiciel_de_traitement_de_textes": {
+    "title": "Logiciel de traitement de textes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un logiciel de traitement de texte ?",
+        "type": "qcm",
+        "options": ["Un programme pour faire des calculs mathématiques", "Un programme permettant de saisir, corriger et mettre en forme du texte", "Un jeu vidéo", "Un logiciel de dessin"],
+        "answer": 1,
+        "explanation": "Le traitement de texte (comme Microsoft Word) sert à écrire, modifier et mettre en page des documents écrits."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces logiciels, lequel est un logiciel de traitement de texte ?",
+        "type": "qcm",
+        "options": ["Microsoft Excel", "Paint", "Microsoft Word", "VLC"],
+        "answer": 2,
+        "explanation": "Microsoft Word est le logiciel de traitement de texte le plus connu."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On ne peut pas insérer d'images dans un document texte.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Un logiciel de traitement de texte permet d'insérer des images, des tableaux et des formes."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on la barre clignotante qui indique où le texte va s'écrire ?",
+        "type": "qcm",
+        "options": ["Le pointeur", "La souris", "Le curseur de saisie", "La majuscule"],
+        "answer": 2,
+        "explanation": "Le curseur de saisie (ou point d'insertion) clignote pour montrer l'endroit exact où les caractères vont apparaître."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle touche du clavier permet de passer à la ligne (créer un nouveau paragraphe) ?",
+        "type": "qcm",
+        "options": ["Espace", "Entrée", "Échap", "Majuscule"],
+        "answer": 1,
+        "explanation": "La touche 'Entrée' (Return) valide une ligne et permet de passer au paragraphe suivant."
+      }
+    ]
+  },
+  "Fiche_Lecon9_La_decouverte_du_reseau_internet": {
+    "title": "La découverte du réseau internet",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'Internet ?",
+        "type": "qcm",
+        "options": ["Un ordinateur très puissant", "Un réseau informatique mondial reliant des millions d'ordinateurs", "Un logiciel de dessin", "Une marque de téléphone"],
+        "answer": 1,
+        "explanation": "Internet (le 'réseau des réseaux') connecte des ordinateurs du monde entier pour partager des informations."
+      },
+      {
+        "id": "q2",
+        "text": "Quel type de logiciel utilise-t-on pour surfer sur le Web et consulter des sites ?",
+        "type": "qcm",
+        "options": ["Un navigateur web (comme Chrome ou Firefox)", "Un antivirus", "Un traitement de texte", "Un lecteur audio"],
+        "answer": 0,
+        "explanation": "Le navigateur web est le programme indispensable pour afficher les pages internet."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour se connecter à Internet, on a généralement besoin d'un modem ou d'un routeur (box).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Le modem (souvent intégré dans la box internet ou le téléphone) fait le lien entre l'ordinateur et le réseau mondial."
+      },
+      {
+        "id": "q4",
+        "text": "Que signifie le sigle WWW dans une adresse web ?",
+        "type": "qcm",
+        "options": ["World Wide Web (Toile d'araignée mondiale)", "Windows Web World", "Word Wide Windows", "Web World Wide"],
+        "answer": 0,
+        "explanation": "Le World Wide Web (Toile d'araignée mondiale) est le système qui permet de naviguer de page en page grâce à des liens hypertextes."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces éléments, lequel N'EST PAS un service de l'Internet ?",
+        "type": "qcm",
+        "options": ["La messagerie électronique (email)", "La recherche d'informations", "L'impression d'un document local", "Les réseaux sociaux"],
+        "answer": 2,
+        "explanation": "Imprimer un document stocké sur l'ordinateur ne nécessite pas Internet. L'email et le web sont des services d'Internet."
+      }
+    ]
+  },
+  "Fiche_Lecon3_L_utilisation_du_clavier": {
+    "title": "L'utilisation du clavier",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quoi sert principalement le clavier d'un ordinateur ?",
+        "type": "qcm",
+        "options": ["À imprimer des documents", "À dessiner sur l'écran", "À saisir des textes, des chiffres et donner des commandes", "À écouter de la musique"],
+        "answer": 2,
+        "explanation": "Le clavier est un périphérique d'entrée essentiel pour taper du texte et exécuter des raccourcis."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle la touche la plus longue du clavier, située en bas ?",
+        "type": "qcm",
+        "options": ["La touche Entrée", "La barre d'espace", "La touche Échap", "La touche Majuscule"],
+        "answer": 1,
+        "explanation": "La barre d'espace sert à insérer un espace blanc entre deux mots lors de la saisie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La touche 'Entrée' sert uniquement à valider une commande.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Dans un traitement de texte, elle sert aussi à revenir à la ligne et créer un nouveau paragraphe."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle touche permet d'effacer le caractère situé à GAUCHE du curseur ?",
+        "type": "qcm",
+        "options": ["Suppr (Delete)", "Retour arrière (Backspace)", "Échap (Esc)", "Ctrl"],
+        "answer": 1,
+        "explanation": "La touche Retour arrière (souvent représentée par une flèche vers la gauche) efface ce qui se trouve avant le curseur."
+      },
+      {
+        "id": "q5",
+        "text": "Quel type de clavier utilise-t-on le plus souvent dans les pays francophones comme la Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": ["QWERTY", "AZERTY", "DVORAK", "ABCDEF"],
+        "answer": 1,
+        "explanation": "Le clavier AZERTY (nommé d'après ses 6 premières lettres en haut à gauche) est le standard francophone."
+      }
+    ]
+  },
+  "Fiche_Lecon4_Decouverte_d_un_systeme_d_exploitation": {
+    "title": "Le système d'exploitation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un système d'exploitation (OS) ?",
+        "type": "qcm",
+        "options": ["L'écran de l'ordinateur", "Le premier logiciel qui démarre et qui fait fonctionner tout l'ordinateur", "Une souris sans fil", "Un jeu vidéo de guerre"],
+        "answer": 1,
+        "explanation": "Le système d'exploitation (comme Windows, macOS ou Linux) est le programme principal qui gère le matériel et les autres logiciels."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on l'écran principal qui s'affiche une fois l'ordinateur allumé (avec l'image de fond) ?",
+        "type": "qcm",
+        "options": ["Le menu", "Le bureau", "Le navigateur", "La fenêtre"],
+        "answer": 1,
+        "explanation": "Le Bureau est l'espace de travail principal où l'on trouve les icônes, les raccourcis et la barre des tâches."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On peut utiliser un ordinateur sans aucun système d'exploitation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Sans système d'exploitation, l'ordinateur n'est qu'une boîte métallique incapable de comprendre la moindre commande."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une 'fenêtre' en informatique ?",
+        "type": "qcm",
+        "options": ["Un trou dans l'écran", "Un cadre rectangulaire dans lequel s'ouvre un dossier ou un logiciel", "Le nom d'un virus", "Le bouton d'allumage"],
+        "answer": 1,
+        "explanation": "Le système Windows porte ce nom parce que chaque programme s'ouvre dans une zone rectangulaire appelée fenêtre."
+      },
+      {
+        "id": "q5",
+        "text": "Où se trouve généralement le bouton 'Démarrer' sous Windows ?",
+        "type": "qcm",
+        "options": ["En haut à droite", "En bas à gauche (sur la barre des tâches)", "Au milieu de l'écran", "Derrière le clavier"],
+        "answer": 1,
+        "explanation": "Le menu Démarrer, situé en bas à gauche, permet d'accéder aux programmes, aux paramètres et de pouvoir éteindre l'ordinateur."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Utilisation_d_un_logiciel_de_dessins": {
+    "title": "Utilisation d'un logiciel de dessins",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel logiciel de base est souvent utilisé sous Windows pour faire des dessins simples ?",
+        "type": "qcm",
+        "options": ["Microsoft Word", "Paint", "Excel", "VLC"],
+        "answer": 1,
+        "explanation": "Paint (ou MS Paint) est le logiciel de dessin matriciel fourni par défaut avec le système Windows."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert l'outil représenté par un 'pot de peinture' dans ce type de logiciel ?",
+        "type": "qcm",
+        "options": ["À effacer le dessin", "À écrire du texte", "À remplir entièrement de couleur une zone fermée", "À tracer des lignes droites"],
+        "answer": 2,
+        "explanation": "C'est l'outil de 'Remplissage' (Fill). Il colore d'un coup toute une zone de la même couleur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'outil Gomme permet d'effacer une partie du dessin.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. L'outil gomme remplace les pixels dessinés par la couleur d'arrière-plan (généralement le blanc)."
+      },
+      {
+        "id": "q4",
+        "text": "Si tu veux annuler la dernière bêtise que tu as faite sur ton dessin, que fais-tu ?",
+        "type": "qcm",
+        "options": ["J'éteins l'ordinateur", "Je clique sur la flèche bleue 'Annuler' (ou raccourci Ctrl+Z)", "Je jette la souris", "Je prends l'outil crayon"],
+        "answer": 1,
+        "explanation": "La fonction 'Annuler' permet de revenir en arrière d'une action, très pratique en cas d'erreur."
+      },
+      {
+        "id": "q5",
+        "text": "Que faut-il faire pour ne pas perdre son dessin quand on a terminé ?",
+        "type": "qcm",
+        "options": ["Laisser l'ordinateur allumé pour toujours", "Fermer le logiciel sans rien faire", "Cliquer sur Fichier > Enregistrer (ou la disquette) et lui donner un nom", "Imprimer l'écran obligatoirement"],
+        "answer": 2,
+        "explanation": "Enregistrer (Sauvegarder) permet de stocker le fichier sur le disque dur pour pouvoir le rouvrir plus tard."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Saisie_et_mise_en_forme_de_textes": {
+    "title": "Saisie et mise en forme de textes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que signifie 'saisir' un texte en informatique ?",
+        "type": "qcm",
+        "options": ["Prendre l'écran avec ses mains", "Taper le texte à l'aide du clavier", "Imprimer le texte sur papier", "Mettre le texte en couleur"],
+        "answer": 1,
+        "explanation": "La saisie est l'action d'entrer des données (comme du texte) dans l'ordinateur en utilisant le clavier."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la 'mise en forme' d'un texte ?",
+        "type": "qcm",
+        "options": ["Le fait de l'imprimer", "Le fait de le corriger", "Le fait de modifier son apparence (gras, couleur, taille) pour le rendre plus lisible", "Le fait de le supprimer"],
+        "answer": 2,
+        "explanation": "La mise en forme consiste à changer l'aspect visuel du texte : police, taille, couleur, alignement, gras, italique..."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour mettre un mot en gras, il faut D'ABORD le sélectionner (le surligner).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. L'ordinateur doit savoir à quelle partie du texte appliquer la modification. Il faut toujours sélectionner avant d'agir."
+      },
+      {
+        "id": "q4",
+        "text": "À quoi sert le bouton 'G' (ou 'B' en anglais) dans la barre d'outils ?",
+        "type": "qcm",
+        "options": ["Mettre le texte en Gras (plus épais)", "Effacer le texte", "Mettre le texte en Grand", "Souligner le texte"],
+        "answer": 0,
+        "explanation": "Le bouton G sert à appliquer l'attribut Gras (Bold en anglais) au texte sélectionné."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on l'action de justifier, centrer, ou aligner à gauche/droite ?",
+        "type": "qcm",
+        "options": ["Le coloriage", "La correction orthographique", "L'alignement du texte", "L'insertion d'image"],
+        "answer": 2,
+        "explanation": "L'alignement permet de positionner le texte par rapport aux marges de la page."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Impression_de_documents": {
+    "title": "Impression de documents",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel périphérique permet de sortir sur papier un document créé sur l'ordinateur ?",
+        "type": "qcm",
+        "options": ["Le scanner", "Le clavier", "L'imprimante", "Le haut-parleur"],
+        "answer": 2,
+        "explanation": "L'imprimante est le périphérique de sortie qui permet d'imprimer des textes et des images sur du papier."
+      },
+      {
+        "id": "q2",
+        "text": "Dans quel menu se trouve généralement la commande 'Imprimer' ?",
+        "type": "qcm",
+        "options": ["Menu Édition", "Menu Fichier", "Menu Affichage", "Menu Insertion"],
+        "answer": 1,
+        "explanation": "Dans la plupart des logiciels, les commandes liées à la gestion du document (Nouveau, Enregistrer, Imprimer) sont dans le menu Fichier."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Avant d'imprimer, on peut utiliser l'Aperçu avant impression pour voir à quoi ressemblera la page.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est très utile pour vérifier qu'il n'y a pas d'erreurs de mise en page et éviter de gaspiller du papier."
+      },
+      {
+        "id": "q4",
+        "text": "Quel raccourci clavier universel permet de lancer l'impression d'un document ?",
+        "type": "qcm",
+        "options": ["Ctrl + S", "Ctrl + C", "Ctrl + P", "Ctrl + V"],
+        "answer": 2,
+        "explanation": "Ctrl + P (comme Print) ouvre directement la boîte de dialogue d'impression."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la fenêtre d'impression, que signifie 'Nombre de copies' ?",
+        "type": "qcm",
+        "options": ["Le nombre de mots sur la page", "Combien de fois on veut imprimer le même document", "Le prix de l'impression", "Le nombre de cartouches d'encre utilisées"],
+        "answer": 1,
+        "explanation": "Le nombre de copies indique à l'imprimante combien d'exemplaires identiques de la page ou du document elle doit sortir."
+      }
+    ]
+  },
+  "Fiche_Lecon10_Decouverte_d_un_moteur_de_recherche": {
+    "title": "Le moteur de recherche",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un moteur de recherche ?",
+        "type": "qcm",
+        "options": ["Un logiciel pour taper du texte", "Un site web ou un outil permettant de trouver des informations sur Internet grâce à des mots-clés", "Le moteur de l'ordinateur", "Un antivirus"],
+        "answer": 1,
+        "explanation": "Un moteur de recherche explore le Web pour trouver les sites qui correspondent aux mots-clés que vous avez tapés."
+      },
+      {
+        "id": "q2",
+        "text": "Lequel de ces noms est un moteur de recherche très connu ?",
+        "type": "qcm",
+        "options": ["Google", "Microsoft Word", "VLC", "Paint"],
+        "answer": 0,
+        "explanation": "Google est le moteur de recherche le plus utilisé au monde. Il y a aussi Bing, Yahoo, Qwant, etc."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour faire une bonne recherche, il faut taper des phrases très longues et compliquées.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Il vaut mieux utiliser quelques 'mots-clés' précis et pertinents."
+      },
+      {
+        "id": "q4",
+        "text": "Où tape-t-on les mots-clés dans un moteur de recherche ?",
+        "type": "qcm",
+        "options": ["Dans la barre des tâches", "Dans la zone de saisie (la barre de recherche)", "Dans la corbeille", "Directement sur le clavier sans rien ouvrir"],
+        "answer": 1,
+        "explanation": "On tape les mots-clés dans le champ de recherche prévu à cet effet, puis on valide avec 'Entrée' ou le bouton 'Rechercher'."
+      },
+      {
+        "id": "q5",
+        "text": "Que fait le moteur de recherche après que vous ayez validé votre recherche ?",
+        "type": "qcm",
+        "options": ["Il s'éteint", "Il affiche une liste de résultats (liens vers des pages web, images, vidéos) classés par pertinence", "Il télécharge un virus", "Il imprime le résultat"],
+        "answer": 1,
+        "explanation": "Le moteur renvoie une page de résultats (SERP) où vous pouvez cliquer sur les liens qui semblent les plus intéressants."
+      }
+    ]
+  }
+}

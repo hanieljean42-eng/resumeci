@@ -3,6 +3,7 @@
     "rules": "firestore.rules"
   },
   "hosting": {
+    "site": "resumeci-d5c9a",
     "public": "public",
     "ignore": [
       "firebase.json",
@@ -39,7 +40,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com https://www.googletagmanager.com; connect-src 'self' https://api.qrserver.com https://firestore.googleapis.com https://www.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.google-analytics.com https://resumeci-d5c9a.firebaseio.com; frame-src 'self' https://resumeci-d5c9a.firebaseapp.com"
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com https://www.googletagmanager.com; connect-src 'self' https://api.qrserver.com https://firestore.googleapis.com https://www.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.google-analytics.com https://resumeci-d5c9a.firebaseio.com https://resumeci-payment-api.onrender.com https://*.onrender.com https://geniuspay.ci; frame-src 'self' https://resumeci-d5c9a.firebaseapp.com https://geniuspay.ci"
           }
         ]
       },
@@ -121,6 +122,30 @@
       }
     ],
     "rewrites": [
+      {
+        "source": "/inscription",
+        "destination": "/inscription.html"
+      },
+      {
+        "source": "/register",
+        "destination": "/inscription.html"
+      },
+      {
+        "source": "/pass",
+        "destination": "/inscription.html"
+      },
+      {
+        "source": "/connexion",
+        "destination": "/connexion.html"
+      },
+      {
+        "source": "/login",
+        "destination": "/connexion.html"
+      },
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
       {
         "source": "**",
         "destination": "/index.html"

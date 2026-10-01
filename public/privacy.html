@@ -2,85 +2,322 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confidentialité — ResumeCI | Haniel_dev</title>
-  <meta name="description" content="Politique de confidentialité de ResumeCI.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Politique de Confidentialité & Protection des Données — ResumeCI</title>
+  <meta name="description" content="Politique de confidentialité et protection des données personnelles de la plateforme scolaire ResumeCI. Conforme à la loi ivoirienne N° 2013-450.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://resumeci.me/privacy.html">
-  <meta property="og:title" content="Confidentialité — ResumeCI">
-  <meta property="og:description" content="Politique de confidentialité de ResumeCI.">
+  <meta property="og:title" content="Politique de Confidentialité — ResumeCI">
+  <meta property="og:description" content="Découvrez comment ResumeCI protège vos données personnelles et votre vie privée lors de vos révisions scolaires.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resumeci.me/privacy.html">
   <meta property="og:image" content="https://resumeci.me/og-image.png">
   <meta property="og:site_name" content="ResumeCI">
   <meta property="og:locale" content="fr_CI">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Confidentialité — ResumeCI">
-  <meta name="twitter:description" content="Politique de confidentialité de ResumeCI.">
+  <meta name="twitter:title" content="Politique de Confidentialité — ResumeCI">
+  <meta name="twitter:description" content="Protection des données personnelles et respect de la vie privée sur ResumeCI.">
   <meta name="twitter:image" content="https://resumeci.me/og-image.png">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#2563eb">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    body{margin:0;font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
-    main{max-width:860px;margin:0 auto;padding:32px 18px}
-    a{color:#2563eb;text-decoration:none;font-weight:700}
-    .card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(15,23,42,.08)}
-    h1{font-size:32px;margin:0 0 10px;color:#0f172a}
-    h2{font-size:20px;margin-top:26px;color:#0f172a}
-    ul{padding-left:20px}
-    li{margin-bottom:6px}
-    .badge{display:inline-block;background:#ecfdf5;color:#059669;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
-    .footer{margin-top:22px;color:#64748b;font-size:13px;text-align:center}
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+      --success: #10b981;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      padding: 24px 16px 60px;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .back-nav {
+      margin-bottom: 24px;
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 16px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    .back-nav a:hover {
+      background: rgba(59, 130, 246, 0.2);
+      transform: translateX(-3px);
+    }
+    .privacy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .last-updated {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .intro-text {
+      font-size: 15px;
+      color: #cbd5e1;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-top: 32px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i {
+      color: var(--accent);
+      font-size: 18px;
+    }
+    p, li {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 18px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    strong {
+      color: #fff;
+    }
+    .highlight-box {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-size: 13.5px;
+      color: #bfdbfe;
+    }
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .security-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .security-box strong {
+      display: block;
+      color: #f8fafc;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .security-box span {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: block;
+    }
+    .contact-cta {
+      margin-top: 36px;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(124,58,237,0.15));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 18px;
+      text-align: center;
+    }
+    .contact-cta h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .contact-cta p {
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      transition: transform 0.2s ease;
+    }
+    .btn-wa:hover {
+      transform: scale(1.04);
+    }
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+    @media (max-width: 640px) {
+      .privacy-card {
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+      h1 { font-size: 24px; }
+      h2 { font-size: 17px; }
+    }
   </style>
   <script src="/content-protection.js" defer></script>
 </head>
 <body>
   <main>
-    <p><a href="/">← Retour à l'accueil</a></p>
-    <section class="card">
-      <h1>Politique de confidentialité</h1>
-      <p><span class="badge">🔒 Zéro tracking</span></p>
-      <p>ResumeCI fonctionne <strong>entièrement côté navigateur</strong>. Aucune donnée n'est envoyée à un serveur distant.</p>
+    <div class="back-nav">
+      <a href="/"><i class="fas fa-arrow-left"></i> Retour aux fiches</a>
+    </div>
 
-      <h2>1. Données personnelles</h2>
-      <p>Le site <strong>ne demande pas de compte utilisateur</strong> et ne collecte pas d'adresse email. Cependant, si tu choisis de t'inscrire à la <strong>liste d'attente du Pass Réussite</strong>, ton <strong>numéro WhatsApp</strong> est collecté et stocké dans notre base de données (Firebase Firestore) afin de te contacter lors du lancement du service. Ce numéro n'est jamais partagé avec des tiers.</p>
+    <section class="privacy-card">
+      <div class="header-badge">
+        <i class="fas fa-shield-alt"></i> Protection Maximale & Confidentialité
+      </div>
 
-      <h2>2. Stockage local (localStorage)</h2>
-      <p>Certaines fonctionnalités utilisent le stockage local de ton navigateur pour sauvegarder :</p>
+      <h1>Politique de Confidentialité</h1>
+      <div class="last-updated">
+        <i class="fas fa-calendar-check"></i> Dernière mise à jour officielle : 01 Octobre 2026
+      </div>
+
+      <div class="intro-text">
+        Sur <strong>ResumeCI</strong>, nous accordons une importance primordiale à la protection de la vie privée des élèves, parents et enseignants en Côte d'Ivoire. Cette politique détaille de manière transparente et rigoureuse les données collectées, leur utilisation exclusive à des fins éducatives, et vos droits garantis conformément à la <strong>Loi ivoirienne N° 2013-450 du 19 juin 2013</strong> relative à la protection des données à caractère personnel.
+      </div>
+
+      <h2><i class="fas fa-user-check"></i> 1. Données du Compte Élève & Profil</h2>
+      <p>Pour personnaliser tes révisions et synchroniser tes cours, tu as la possibilité de créer ton profil élève. Les informations recueillies sont strictement limitées aux besoins pédagogiques :</p>
       <ul>
-        <li>Tes <strong>favoris</strong> (fiches marquées)</li>
-        <li>Ton <strong>thème</strong> et préférences visuelles</li>
-        <li>Ta <strong>progression</strong> (fiches lues, scores quiz)</li>
-        <li>Ton <strong>plan de révision</strong> personnalisé</li>
-        <li>Tes <strong>notes</strong> prises dans le bloc-notes</li>
-        <li>L'<strong>historique de recherche</strong> (8 dernières recherches)</li>
+        <li><strong>Nom et prénom</strong> ou pseudonyme d'élève.</li>
+        <li><strong>Numéro de téléphone / WhatsApp</strong> : utilisé uniquement pour l'authentification par code sécurisé (OTP) et pour te délivrer l'assistance sur tes cours.</li>
+        <li><strong>Niveau d'étude et Série</strong> (6ème, 5ème, 4ème, 3ème, Seconde, Première, Terminale A/C/D) afin de charger automatiquement les matières adaptées à ton programme officiel national ivoirien.</li>
+        <li><strong>Établissement et Ville</strong> (optionnels) pour ajuster les conseils d'orientation et de révision.</li>
       </ul>
-      <p>Ces données restent <strong>uniquement sur ton appareil</strong>. Elles ne sont jamais envoyées à un serveur. Tu peux les supprimer à tout moment en vidant les données du site dans les paramètres de ton navigateur.</p>
+      <p>Ces données de profil sont sauvegardées de façon chiffrée dans nos bases de données sécurisées <strong>Google Cloud / Firebase Firestore</strong> et ne sont jamais vendues, cédées, ni échangées avec aucun tiers.</p>
 
-      <h2>3. Mesure d'audience</h2>
-      <p>ResumeCI utilise <strong>Google Analytics (GA4)</strong> pour mesurer la fréquentation du site de manière anonyme (nombre de visiteurs, pages les plus consultées). Ces données sont agrégées et ne permettent pas de t'identifier personnellement. Aucun cookie publicitaire ni Facebook Pixel n'est utilisé.</p>
-
-      <h2>4. Installation PWA</h2>
-      <p>Lorsque l'application est installée sur ton téléphone, elle conserve des fichiers en cache (Service Worker) pour :</p>
+      <h2><i class="fas fa-credit-card"></i> 2. Abonnements Pass Réussite & Sécurité des Paiements</h2>
+      <p>Les souscriptions aux formules payantes (<strong>Pass Starter 500 F</strong>, <strong>Pass Pro 1 000 F</strong>, <strong>Pass Élite</strong>) sont traitées via notre partenaire agréé de paiement mobile et bancaire <strong>GeniusPay</strong> :</p>
       <ul>
-        <li>Permettre une navigation <strong>hors-ligne</strong></li>
-        <li>Accélérer le chargement des pages</li>
-        <li>Stocker les fiches téléchargées localement</li>
+        <li>Les règlements s'effectuent en toute sécurité via <strong>Wave, Orange Money Côte d'Ivoire, MTN MoMo, Moov Money</strong> et Cartes bancaires (Visa, Mastercard).</li>
+        <li><strong>Zéro stockage de coordonnées sensibles :</strong> ResumeCI ne stocke <strong>JAMAIS</strong> de numéro de carte de crédit, de code CVV ni de code secret/PIN Mobile Money. Toutes les transactions sont exécutées sur des protocoles chiffrés répondant aux normes internationales <strong>PCI-DSS</strong>.</li>
+        <li>ResumeCI reçoit uniquement la confirmation de succès de la transaction afin d'activer instantanément ton Pass sur ton profil.</li>
       </ul>
 
-      <h2>5. Microphone</h2>
-      <p>La recherche vocale demande l'accès au microphone. Cette permission est <strong>optionnelle</strong> et n'est utilisée que pour la reconnaissance vocale locale. Aucun enregistrement audio n'est conservé ni envoyé.</p>
+      <h2><i class="fas fa-database"></i> 3. Stockage Local (localStorage) & Mode Hors-Ligne</h2>
+      <p>Afin de fonctionner rapidement même avec une connexion internet faible ou instable, ResumeCI exploite les technologies modernes du navigateur (HTML5 localStorage et Service Worker PWA) :</p>
+      <div class="security-grid">
+        <div class="security-box">
+          <strong>⭐ Favoris & Marque-pages</strong>
+          <span>Mémorise tes fiches préférées pour un accès instantané en 1 clic.</span>
+        </div>
+        <div class="security-box">
+          <strong>📊 Suivi & Assiduité</strong>
+          <span>Compteur de fiches consultées, scores aux quiz et flamme de série (streak).</span>
+        </div>
+        <div class="security-box">
+          <strong>📝 Bloc-notes & Surlignages</strong>
+          <span>Tes annotations et surlignages multi-couleurs sauvegardés sur ton appareil.</span>
+        </div>
+        <div class="security-box">
+          <strong>📱 Cache Hors-Ligne</strong>
+          <span>Permet d'ouvrir et de réviser les 714 fiches de cours sans connexion Internet.</span>
+        </div>
+      </div>
+      <p>Ces données locales résident sur ton propre smartphone ou ordinateur. Tu peux à tout moment les vider ou les réinitialiser dans l'onglet « Mémoire & Cache » de tes Statistiques.</p>
 
-      <h2>6. Liens externes</h2>
-      <p>Le site contient des liens vers WhatsApp, Telegram et Facebook pour le partage. Ces services ont leurs propres politiques de confidentialité.</p>
+      <h2><i class="fas fa-microphone"></i> 4. Reconnaissance Vocale & Audio</h2>
+      <p>La recherche vocale nécessite une autorisation ponctuelle d'accès au microphone de ton navigateur. Cet enregistrement audio est traité <strong>localement en temps réel</strong> par l'API Web Speech de ton navigateur. Aucun enregistrement de voix n'est sauvegardé, ni envoyé sur un serveur distant, ni conservé après la recherche.</p>
 
-      <h2>7. Contact</h2>
-      <p>Pour toute demande concernant tes données : <a href="/contact.html">page Contact</a> ou WhatsApp au +225 01 50 25 24 67.</p>
+      <h2><i class="fas fa-ban"></i> 5. Absence Totale de Pistage Publicitaire</h2>
+      <div class="highlight-box">
+        <strong>Engagement éthique de ResumeCI :</strong><br>
+        Notre mission est 100% éducative. Le site ne comporte aucun bandeau publicitaire invasif, aucun traqueur d'agences marketing tierces, aucun pixel publicitaire externe. Nous utilisons uniquement des métriques agrégées anonymes (Google Analytics 4) pour mesurer la performance technique et le volume de consultations des chapitres afin d'améliorer les contenus pour les examens du BAC et BEPC.
+      </div>
 
-      <p style="margin-top:24px;color:#64748b;font-size:12px">Dernière mise à jour : septembre 2026</p>
+      <h2><i class="fas fa-user-shield"></i> 6. Vos Droits & Suppression de Compte</h2>
+      <p>Conformément à la réglementation en vigueur, chaque élève ou responsable légal dispose des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès et de rectification :</strong> Tu peux modifier tes données de profil (nom, classe, établissement) directement dans l'application à tout moment.</li>
+        <li><strong>Droit à l'effacement définitif :</strong> Tu peux demander la suppression intégrale de ton compte et de toutes les données associées en un clic ou par simple message à notre support. Le compte et les identifiants sont alors définitivement purgés sous 48 heures.</li>
+        <li><strong>Droit de résiliation :</strong> Tout abonnement Pass Réussite peut être résilié à tout moment depuis le menu profil.</li>
+      </ul>
+
+      <h2><i class="fas fa-envelope-open-text"></i> 7. Contact & Délégué à la Protection des Données</h2>
+      <p>Pour toute question relative à cette politique de confidentialité, pour faire valoir vos droits ou pour toute assistance :</p>
+      <div class="contact-cta">
+        <h3>Une question concernant tes données personnelles ?</h3>
+        <p>L'équipe d'assistance ResumeCI et le développeur référent Haniel_dev sont à ton écoute directe :</p>
+        <a href="https://wa.me/2250150252467?text=Bonjour%20Haniel_dev,%20j'ai%20une%20question%20sur%20la%20politique%20de%20confidentialit%C3%A9%20de%20ResumeCI." target="_blank" rel="noopener" class="btn-wa">
+          <i class="fab fa-whatsapp"></i> Contacter Haniel_dev sur WhatsApp
+        </a>
+      </div>
     </section>
-    <div class="footer">Créé par <strong>Haniel_dev</strong></div>
+
+    <div class="footer">
+      ResumeCI © 2026 — Plateforme d'apprentissage officielle créée par <strong>Haniel_dev</strong>
+    </div>
   </main>
 </body>
 </html>

@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
@@ -16,6 +16,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+
+// Synchronisation du profil étudiant dans Firestore
+window.syncUserProfileToFirestore = async function(profile) {
+  if (!profile || !profile.uid) return;
+  try {
+    const docRef = doc(db, "users", profile.uid);
+    await setDoc(docRef, {
+      ...profile,
+      updatedAt: serverTimestamp()
+    }, { merge: true });
+    console.log("[Firebase] Profil synchronisé avec succès:", profile.uid);
+  } catch(e) {
+    console.warn("[Firebase] Erreur synchronisation profil:", e);
+  }
+};
 
 // Fonction globale pour traquer les clics
 window.trackPremiumClick = function(featureName) {

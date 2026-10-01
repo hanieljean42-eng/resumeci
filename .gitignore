@@ -20,11 +20,18 @@ _pending_summaries_*.json
 _resume_progress_*.json
 *.pdf
 
-# Firebase
+# Firebase & Keys
 .firebase/
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+*firebase-admin*.json
+serviceAccountKey*.json
+
+# Scratch & Logs
+scratch/
+scratch_*
+deploy.log
 
 # IDE
 .vscode/

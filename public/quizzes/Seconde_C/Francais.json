@@ -1,0 +1,1226 @@
+{
+  "Fiche_EE1_Commentaire_compose_analyser_le_libelle": {
+    "title": "Commentaire composé : Analyser le libellé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le libellé du sujet dans un commentaire composé ?",
+        "type": "qcm",
+        "options": [
+          "La consigne qui indique ce qu'il faut démontrer et les centres d'intérêt imposés",
+          "Le titre du texte",
+          "La biographie de l'auteur",
+          "La conclusion du devoir"
+        ],
+        "answer": 0,
+        "explanation": "Le libellé donne la direction précise du travail à effectuer."
+      },
+      {
+        "id": "q2",
+        "text": "Pourquoi est-il crucial d'analyser le libellé AVANT de lire le texte ?",
+        "type": "qcm",
+        "options": [
+          "Pour écrire plus vite",
+          "Pour orienter sa lecture et savoir exactement quoi chercher (les fameux centres d'intérêt)",
+          "Pour trouver le titre",
+          "Ce n'est pas nécessaire"
+        ],
+        "answer": 1,
+        "explanation": "L'analyse du libellé évite le hors-sujet."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un commentaire composé au baccalauréat, les centres d'intérêt sont souvent donnés dans le sujet.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le sujet demande généralement : 'Vous ferez de ce texte un commentaire composé en montrant d'une part... et d'autre part...'."
+      },
+      {
+        "id": "q4",
+        "text": "Que faut-il faire avec les mots-clés du libellé ?",
+        "type": "qcm",
+        "options": [
+          "Les raturer",
+          "Les souligner, les définir au brouillon et chercher leurs synonymes pour bien comprendre ce qui est demandé",
+          "Les ignorer",
+          "Les recopier 10 fois"
+        ],
+        "answer": 1,
+        "explanation": "Comprendre chaque mot permet de ne pas faire de contresens."
+      },
+      {
+        "id": "q5",
+        "text": "Combien de centres d'intérêt (ou axes de lecture) un sujet de commentaire composé propose-t-il généralement ?",
+        "type": "qcm",
+        "options": [
+          "Un seul",
+          "Deux ou parfois trois",
+          "Cinq",
+          "Aucun"
+        ],
+        "answer": 1,
+        "explanation": "Ils correspondent aux grandes parties de votre développement (I et II)."
+      }
+    ]
+  },
+  "Fiche_EE2_Commentaire_compose_organiser_les_centres_d_interet": {
+    "title": "Commentaire composé : Organiser les centres d'intérêt",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un 'centre d'intérêt' (ou axe de lecture) ?",
+        "type": "qcm",
+        "options": [
+          "Une phrase du texte",
+          "L'idée principale ou le thème majeur d'une grande partie de votre devoir",
+          "Le résumé du texte",
+          "L'introduction"
+        ],
+        "answer": 1,
+        "explanation": "Chaque centre d'intérêt sera développé dans une grande partie (I, II...)."
+      },
+      {
+        "id": "q2",
+        "text": "Comment subdivise-t-on un centre d'intérêt (une grande partie) ?",
+        "type": "qcm",
+        "options": [
+          "En lettres de l'alphabet",
+          "En sous-parties (ou paragraphes), qui correspondent chacune à une idée secondaire (argument) illustrant le centre d'intérêt",
+          "En questions",
+          "En chapitres"
+        ],
+        "answer": 1,
+        "explanation": "Chaque sous-partie (A, B...) démontre un aspect de l'axe principal."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : On peut rédiger un centre d'intérêt en ne parlant que du fond (les idées) dans un paragraphe, et de la forme (figures de style) dans le paragraphe suivant.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La règle d'or du commentaire composé est d'associer systématiquement LE FOND (l'idée) et LA FORME (les procédés stylistiques) dans la même sous-partie."
+      },
+      {
+        "id": "q4",
+        "text": "Dans quel ordre doit-on présenter ses centres d'intérêt dans le plan ?",
+        "type": "qcm",
+        "options": [
+          "Au hasard",
+          "Du plus évident au plus profond (ou du plus simple au plus complexe)",
+          "Du plus long au plus court",
+          "Du fond vers la forme"
+        ],
+        "answer": 1,
+        "explanation": "C'est la progression de la réflexion, on garde le meilleur pour la fin."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit-on placer entre deux grands centres d'intérêt (entre la partie I et la partie II) ?",
+        "type": "qcm",
+        "options": [
+          "Un dessin",
+          "Une phrase de transition, qui fait le bilan de la partie I et annonce la partie II",
+          "La conclusion",
+          "Rien"
+        ],
+        "answer": 1,
+        "explanation": "La transition assure la fluidité et la cohérence de l'argumentation."
+      }
+    ]
+  },
+  "Fiche_EE3_Commentaire_compose_rediger_un_centre_d_interet": {
+    "title": "Commentaire composé : Rédiger un centre d'intérêt",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est composé physiquement un 'centre d'intérêt' (une grande partie) sur votre copie ?",
+        "type": "qcm",
+        "options": [
+          "D'une seule très longue phrase",
+          "D'une petite introduction, de 2 ou 3 sous-parties (paragraphes distincts), et d'une petite conclusion de transition",
+          "De tirets (-)",
+          "De dessins"
+        ],
+        "answer": 1,
+        "explanation": "C'est la structure classique d'une grande partie."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les 3 éléments obligatoires (la règle des 3) dans CHAQUE sous-partie (paragraphe) ?",
+        "type": "qcm",
+        "options": [
+          "Titre, auteur, date",
+          "Idée, Citation du texte, Analyse du procédé stylistique",
+          "Thèse, antithèse, synthèse",
+          "Introduction, développement, conclusion"
+        ],
+        "answer": 1,
+        "explanation": "On énonce l'idée, on cite le texte pour prouver, on analyse comment c'est écrit (figure de style, temps...). C'est le FOND justifié par la FORME."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les citations tirées du texte doivent obligatoirement être mises entre guillemets et intégrées harmonieusement à vos phrases.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les guillemets sont obligatoires pour toute citation."
+      },
+      {
+        "id": "q4",
+        "text": "Quel mot ou expression est indispensable au début de chaque sous-partie (paragraphe) ?",
+        "type": "qcm",
+        "options": [
+          "Bonjour",
+          "Un connecteur logique (De plus, En outre, Cependant...)",
+          "Un prénom",
+          "Une interjection"
+        ],
+        "answer": 1,
+        "explanation": "Les connecteurs assurent la liaison entre vos idées."
+      },
+      {
+        "id": "q5",
+        "text": "Visuellement, comment montre-t-on sur la copie qu'on passe d'une sous-partie à une autre ?",
+        "type": "qcm",
+        "options": [
+          "En changeant de couleur d'encre",
+          "En allant à la ligne et en faisant un petit alinéa (sans sauter de ligne)",
+          "En sautant 3 lignes",
+          "En faisant une croix"
+        ],
+        "answer": 1,
+        "explanation": "On saute une ligne SEULEMENT entre deux grands centres d'intérêt (entre le I et le II)."
+      }
+    ]
+  },
+  "Fiche_EE4_Commentaire_compose_rediger_l_introduction": {
+    "title": "Commentaire composé : L'introduction et la conclusion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelles sont les trois étapes obligatoires de l'introduction d'un commentaire composé ?",
+        "type": "qcm",
+        "options": [
+          "Titre, Nom, Prénom",
+          "L'amorce (présentation), la problématique (ou idée générale), et l'annonce du plan (les axes)",
+          "Sujet, Verbe, Complément",
+          "Introduction, Développement, Conclusion"
+        ],
+        "answer": 1,
+        "explanation": "C'est la règle 'Amener, Poser, Diviser'."
+      },
+      {
+        "id": "q2",
+        "text": "Que doit contenir 'l'amorce' (la présentation) ?",
+        "type": "qcm",
+        "options": [
+          "La liste des figures de style",
+          "Le nom de l'auteur, le titre de l'œuvre (souligné), la date de parution, le genre, et la situation de l'extrait",
+          "Le résumé de tout le livre",
+          "La conclusion"
+        ],
+        "answer": 1,
+        "explanation": "L'amorce situe le texte dans son contexte littéraire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans l'annonce du plan, on peut utiliser des phrases toutes faites comme : 'Dans une première partie nous verrons... et dans une deuxième partie nous analyserons...'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Même si c'est un peu scolaire, c'est clair et efficace."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles sont les deux étapes obligatoires de la CONCLUSION ?",
+        "type": "qcm",
+        "options": [
+          "Oui et Non",
+          "Le bilan (synthèse de l'étude) et l'ouverture (élargissement)",
+          "Le plan et la problématique",
+          "La date et la signature"
+        ],
+        "answer": 1,
+        "explanation": "Bilan (pour fermer l'analyse) et Ouverture (pour montrer sa culture)."
+      },
+      {
+        "id": "q5",
+        "text": "En quoi consiste 'l'ouverture' dans la conclusion ?",
+        "type": "qcm",
+        "options": [
+          "À faire un trou dans la copie",
+          "À ouvrir une fenêtre",
+          "À relier le texte étudié à une autre œuvre, un autre auteur, ou un grand thème (faire un pont littéraire)",
+          "À poser une question au correcteur"
+        ],
+        "answer": 2,
+        "explanation": "C'est la dernière impression laissée au correcteur."
+      }
+    ]
+  },
+  "Fiche_PL1_Les_fonctions_du_langage": {
+    "title": "Les fonctions du langage (Jakobson)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle fonction du langage est centrée sur le DESTINATAIRE (pour le faire agir ou réagir, ex: l'impératif, l'interrogation) ?",
+        "type": "qcm",
+        "options": [
+          "La fonction expressive",
+          "La fonction poétique",
+          "La fonction conative (ou injonctive)",
+          "La fonction référentielle"
+        ],
+        "answer": 2,
+        "explanation": "Ex: 'Fermez la porte !', 'Mange ta soupe !'."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle fonction est centrée sur le CONTEXTE (le référent), pour transmettre une information neutre et objective (ex: article de journal) ?",
+        "type": "qcm",
+        "options": [
+          "La fonction référentielle (ou informative)",
+          "La fonction phatique",
+          "La fonction métalinguistique",
+          "La fonction expressive"
+        ],
+        "answer": 0,
+        "explanation": "Ex: 'La Terre tourne autour du soleil'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La fonction EXPRESSIVE (ou émotive) est centrée sur l'émetteur (celui qui parle) pour exprimer ses sentiments ou son opinion (ex: 'Hélas ! Je suis triste').",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elle utilise souvent la 1ère personne (je) et la ponctuation expressive (!)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle fonction sert à établir, maintenir ou interrompre le CONTACT avec l'interlocuteur (ex: 'Allô ?', 'Tu m'écoutes ?') ?",
+        "type": "qcm",
+        "options": [
+          "La fonction poétique",
+          "La fonction phatique (ou de contact)",
+          "La fonction conative",
+          "La fonction métalinguistique"
+        ],
+        "answer": 1,
+        "explanation": "Elle vérifie que le canal physique fonctionne."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que la fonction POÉTIQUE du langage ?",
+        "type": "qcm",
+        "options": [
+          "Quand on parle de poésie",
+          "Elle est centrée sur le MESSAGE LUI-MÊME, sur sa forme, sa beauté (rimes, jeux de mots, figures de style, slogans publicitaires)",
+          "Quand on explique le code (dictionnaire)",
+          "Quand on donne un ordre"
+        ],
+        "answer": 1,
+        "explanation": "Ex: 'Mélia, j'ai le cœur brisé'. La forme est aussi importante que le fond."
+      }
+    ]
+  },
+  "Fiche_PL2_Moyens_d_expression_d_une_opinion": {
+    "title": "Moyens d'expression d'une opinion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'énonciation ?",
+        "type": "qcm",
+        "options": [
+          "L'action de crier",
+          "L'acte de production d'un énoncé par un locuteur (qui parle/écrit) dans une situation donnée (à qui, où, quand)",
+          "La prononciation",
+          "Un résumé"
+        ],
+        "answer": 1,
+        "explanation": "Analyser l'énonciation, c'est chercher la trace de celui qui parle dans son texte."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces mots, lesquels sont des 'modalisateurs' (mots qui expriment le degré de certitude ou le jugement de celui qui parle) ?",
+        "type": "qcm",
+        "options": [
+          "Le, la, les",
+          "Peut-être, certainement, sans doute, hélas, heureusement",
+          "Bonjour, merci",
+          "Une, deux, trois"
+        ],
+        "answer": 1,
+        "explanation": "Ils montrent si l'auteur est sûr de lui, s'il doute, s'il apprécie ou s'il déprécie."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'emploi du mode 'conditionnel' peut servir à exprimer le doute ou l'incertitude sur une information (ex: 'Le suspect se (trouverait) à Paris').",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les journalistes l'utilisent beaucoup quand l'information n'est pas confirmée."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'un lexique 'mélioratif' (ou appréciatif, laudatif) ?",
+        "type": "qcm",
+        "options": [
+          "Un vocabulaire péjoratif",
+          "Un vocabulaire qui valorise, qui donne une opinion positive (ex: magnifique, génie, sublime)",
+          "Un vocabulaire neutre",
+          "Un vocabulaire médical"
+        ],
+        "answer": 1,
+        "explanation": "Le contraire est le lexique 'péjoratif' (dévalorisant, négatif)."
+      },
+      {
+        "id": "q5",
+        "text": "Quel signe de ponctuation révèle souvent l'implication émotionnelle (surprise, colère, admiration) de celui qui parle ?",
+        "type": "qcm",
+        "options": [
+          "Le point (.)",
+          "La virgule (,)",
+          "Le point d'exclamation (!)",
+          "Le tiret (-)"
+        ],
+        "answer": 2,
+        "explanation": "La ponctuation expressive est une marque forte de l'énonciation."
+      }
+    ]
+  },
+  "Fiche_PL3_Les_connecteurs_logiques": {
+    "title": "Les connecteurs logiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À quoi servent les connecteurs logiques dans un texte argumentatif ?",
+        "type": "qcm",
+        "options": [
+          "À faire joli",
+          "À rendre le texte illisible",
+          "À articuler les idées, marquer les étapes du raisonnement et montrer les relations logiques entre elles (addition, cause, opposition...)",
+          "À remplacer les verbes"
+        ],
+        "answer": 2,
+        "explanation": "Ils sont la charpente de votre argumentation."
+      },
+      {
+        "id": "q2",
+        "text": "Quels connecteurs utilisez-vous pour exprimer l'ADDITION (ajouter une idée à une autre) ?",
+        "type": "qcm",
+        "options": [
+          "Mais, cependant, toutefois",
+          "Et, de plus, en outre, par ailleurs",
+          "Car, parce que, en effet",
+          "Donc, ainsi, c'est pourquoi"
+        ],
+        "answer": 1,
+        "explanation": "Ils permettent d'empiler les arguments allant dans le même sens."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les connecteurs 'Cependant', 'Néanmoins', 'Toutefois' et 'En revanche' marquent l'OPPOSITION (ou la concession).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ils introduisent une idée contraire ou qui nuance la précédente."
+      },
+      {
+        "id": "q4",
+        "text": "Quel connecteur utiliseriez-vous pour annoncer un EXEMPLE ?",
+        "type": "qcm",
+        "options": [
+          "Donc",
+          "Car",
+          "Par exemple, ainsi, notamment, c'est le cas de",
+          "Mais"
+        ],
+        "answer": 2,
+        "explanation": "L'exemple illustre l'argument."
+      },
+      {
+        "id": "q5",
+        "text": "Lesquels de ces connecteurs marquent la CONSÉQUENCE (la conclusion d'un raisonnement) ?",
+        "type": "qcm",
+        "options": [
+          "Parce que, puisque",
+          "Donc, par conséquent, en conséquence, c'est pourquoi, ainsi",
+          "Premièrement, ensuite",
+          "Or, ni"
+        ],
+        "answer": 1,
+        "explanation": "Ils introduisent le résultat."
+      }
+    ]
+  },
+  "Fiche_PL4_Semantique_1": {
+    "title": "Sémantique : Sens propre, sens figuré",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que le 'sens propre' d'un mot ?",
+        "type": "qcm",
+        "options": [
+          "Son sens imagé",
+          "Son sens premier, originel, souvent concret (celui donné en premier dans le dictionnaire)",
+          "Son sens péjoratif",
+          "Son sens propre (sans saleté)"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Il a été piqué par un SERPENT' (l'animal reptile)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que le 'sens figuré' ?",
+        "type": "qcm",
+        "options": [
+          "Le sens premier",
+          "Un sens imagé, abstrait, dérivé du sens propre par comparaison ou métaphore",
+          "Un sens grammatical",
+          "Un synonyme"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Cette femme est un SERPENT' (elle est perfide, dangereuse)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans l'expression 'Dévorer un livre', le verbe dévorer est employé au sens figuré.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. On ne mange pas réellement le livre. Cela signifie 'le lire avec passion et rapidité'."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la 'polysémie' d'un mot ?",
+        "type": "qcm",
+        "options": [
+          "Le fait qu'un mot n'ait qu'un seul sens",
+          "Le fait qu'un mot possède PLUSIEURS sens différents selon le contexte (ex: la 'carte' géographique, la 'carte' à jouer, la 'carte' bancaire)",
+          "Le fait qu'un mot soit difficile à prononcer",
+          "Le fait qu'un mot soit un verbe"
+        ],
+        "answer": 1,
+        "explanation": "La plupart des mots français courants sont polysémiques."
+      },
+      {
+        "id": "q5",
+        "text": "Comment appelle-t-on des mots qui ont le même sens (ou un sens très proche) ?",
+        "type": "qcm",
+        "options": [
+          "Des antonymes",
+          "Des homonymes",
+          "Des paronymes",
+          "Des synonymes (ex: beau, magnifique, superbe)"
+        ],
+        "answer": 3,
+        "explanation": "Ils permettent d'éviter les répétitions."
+      }
+    ]
+  },
+  "Fiche_PL6_Indices_lexicaux_Enonciation": {
+    "title": "Indices personnels et spatio-temporels de l'énonciation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'on appelle les 'indices de la personne' (ou déictiques de personne) dans un texte ?",
+        "type": "qcm",
+        "options": [
+          "Les noms de villes",
+          "Les pronoms personnels de 1ère et 2ème personnes (Je, tu, nous, vous, me, te) et les déterminants possessifs (mon, ton, notre, votre)",
+          "Les verbes à l'infinitif",
+          "Les adjectifs de couleur"
+        ],
+        "answer": 1,
+        "explanation": "Ils désignent qui parle (l'émetteur) et à qui il s'adresse (le récepteur)."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les 'indices spatio-temporels' de l'énonciation ?",
+        "type": "qcm",
+        "options": [
+          "Des adverbes de manière",
+          "Les mots qui situent l'action par rapport au moment et au lieu où parle l'émetteur (Ici, là-bas, maintenant, aujourd'hui, demain, hier)",
+          "Les pronoms relatifs",
+          "Les conjonctions de coordination"
+        ],
+        "answer": 1,
+        "explanation": "Ces mots n'ont de sens que si l'on connaît le moment où la phrase a été prononcée."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans la phrase 'Je viendrai te voir demain ici', les mots 'Je', 'te', 'demain' et 'ici' sont des déictiques de l'énonciation (ils dépendent de la situation de communication).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Si on ne sait pas QUI parle, QUAND il parle, et OÙ il est, on ne comprend pas la phrase."
+      },
+      {
+        "id": "q4",
+        "text": "Le pronom 'Il' (3ème personne) fait-il partie du système de l'énonciation ancrée dans la situation (comme 'je' et 'tu') ?",
+        "type": "qcm",
+        "options": [
+          "Oui",
+          "Non, la 3ème personne est la 'non-personne', elle désigne l'absent, celui dont on parle",
+          "Seulement au pluriel",
+          "Oui, toujours"
+        ],
+        "answer": 1,
+        "explanation": "Le récit traditionnel à la 3ème personne (il, elle) coupe le lien direct émetteur/récepteur."
+      },
+      {
+        "id": "q5",
+        "text": "Si je raconte une histoire au passé dans un roman (récit coupé de l'énonciation), par quoi vais-je remplacer 'ici' et 'aujourd'hui' ?",
+        "type": "qcm",
+        "options": [
+          "Par rien",
+          "Par 'là-bas' et 'le lendemain'",
+          "Par 'là' (ou 'à cet endroit') et 'ce jour-là'",
+          "Je les garde tels quels"
+        ],
+        "answer": 2,
+        "explanation": "C'est la différence entre le discours (ancré) et le récit (coupé)."
+      }
+    ]
+  },
+  "Fiche_PL7_Figures_d_analogie_et_de_substitution": {
+    "title": "Figures de style : Analogie et substitution",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle figure de style compare deux éléments (le comparé et le comparant) à l'aide d'un OUTIL DE COMPARAISON (comme, tel, pareil à, semblable à) ?",
+        "type": "qcm",
+        "options": [
+          "La métaphore",
+          "La personnification",
+          "La comparaison (ex: Il est fort COMME un lion)",
+          "L'antithèse"
+        ],
+        "answer": 2,
+        "explanation": "C'est la figure d'analogie la plus simple."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'une métaphore ?",
+        "type": "qcm",
+        "options": [
+          "Une comparaison AVEC outil de comparaison",
+          "Une comparaison SANS outil de comparaison, qui assimile directement les deux éléments (ex: Ce garçon est un lion / Ma jeunesse ne fut qu'un ténébreux orage)",
+          "Une répétition",
+          "Une exagération"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'image poétique par excellence. Elle crée un raccourci saisissant."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La PERSONNIFICATION consiste à attribuer des comportements ou sentiments humains à un animal, une chose ou une idée.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ex: 'Le vent hurlait de colère', 'La forêt frissonne'."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce qu'une allégorie ?",
+        "type": "qcm",
+        "options": [
+          "Un mensonge",
+          "La représentation d'une idée abstraite (ex: la mort, l'amour, la justice) sous la forme d'un personnage ou d'une figure vivante (souvent avec une Majuscule)",
+          "Une description",
+          "Une blague"
+        ],
+        "answer": 1,
+        "explanation": "Ex: La Faucheuse pour représenter la Mort. Marianne pour représenter la République (La Liberté)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la phrase 'Boire un verre' ou 'Croiser le fer' (pour dire l'épée), quelle figure de substitution utilise-t-on (désigner le contenu par le contenant, ou l'objet par sa matière) ?",
+        "type": "qcm",
+        "options": [
+          "La métaphore",
+          "La métonymie",
+          "L'anaphore",
+          "L'euphémisme"
+        ],
+        "answer": 1,
+        "explanation": "Autre exemple : 'Lire un Hugo' (l'auteur pour l'œuvre)."
+      }
+    ]
+  },
+  "Fiche_PL8_Figures_d_amplification_et_d_attenuation": {
+    "title": "Figures de style : Amplification, atténuation, opposition",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle figure consiste à EXAGÉRER fortement la réalité pour frapper l'imagination (ex: 'Je meurs de faim', 'Je te l'ai dit un million de fois') ?",
+        "type": "qcm",
+        "options": [
+          "La litote",
+          "L'hyperbole",
+          "L'anaphore",
+          "La gradation"
+        ],
+        "answer": 1,
+        "explanation": "L'hyperbole est la figure de l'exagération absolue."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que l'anaphore ?",
+        "type": "qcm",
+        "options": [
+          "Une exagération",
+          "La répétition d'un même mot ou groupe de mots au DÉBUT de phrases, de vers ou de propositions successives (ex: 'Moi président... Moi président...')",
+          "Une insulte",
+          "Le contraire d'un mot"
+        ],
+        "answer": 1,
+        "explanation": "Elle crée un effet d'insistance et de rythme (très utilisé en poésie et en politique)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'euphémisme sert à ATTÉNUER une réalité brutale ou choquante (ex: dire 'Il nous a quittés' au lieu de 'Il est mort', ou 'les non-voyants' au lieu de 'les aveugles').",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. C'est la figure de la politesse et de l'adoucissement."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la litote (souvent sous forme de double négation) ?",
+        "type": "qcm",
+        "options": [
+          "Dire le contraire de ce qu'on pense",
+          "En dire MOINS pour suggérer PLUS (ex: 'Ce n'est pas mauvais' pour dire 'C'est très bon' ; 'Va, je ne te hais point' pour dire 'Je t'aime')",
+          "Parler très vite",
+          "Exagérer"
+        ],
+        "answer": 1,
+        "explanation": "C'est la figure de la retenue."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle figure met en OPPOSITION rapprochée deux termes de sens contraire (ex: 'Un silence assourdissant', 'Cette obscure clarté') ?",
+        "type": "qcm",
+        "options": [
+          "L'hyperbole",
+          "L'anaphore",
+          "L'oxymore",
+          "La métaphore"
+        ],
+        "answer": 2,
+        "explanation": "L'oxymore unit deux mots logiquement incompatibles."
+      }
+    ]
+  },
+  "Fiche_Production_ecrite_Analyser_le_sujet_et_rechercher_les_idees": {
+    "title": "Production écrite : Analyser le sujet et trouver les idées",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Au baccalauréat, devant un sujet de dissertation (production écrite), quelle est la toute première chose à faire au brouillon ?",
+        "type": "qcm",
+        "options": [
+          "Commencer à écrire le développement",
+          "Analyser chaque mot-clé du sujet, le délimiter, et chercher la thèse (l'opinion) discutée",
+          "Rédiger la conclusion",
+          "Dormir"
+        ],
+        "answer": 1,
+        "explanation": "Si on lit le sujet trop vite, on risque le hors-sujet."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que la 'problématique' ?",
+        "type": "qcm",
+        "options": [
+          "Un problème mathématique",
+          "La question centrale (le débat) que soulève le sujet, et à laquelle tout votre devoir devra répondre",
+          "La conclusion du devoir",
+          "Une insulte"
+        ],
+        "answer": 1,
+        "explanation": "Trouver la problématique, c'est comprendre l'enjeu du sujet."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Pour trouver des idées au brouillon, la méthode du questionnement (Qui ? Quoi ? Quand ? Où ? Comment ? Pourquoi ?) est très efficace.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Cela permet d'explorer le sujet sous tous ses angles (remue-méninges ou brainstorming)."
+      },
+      {
+        "id": "q4",
+        "text": "Que faire des idées notées en vrac sur votre brouillon ?",
+        "type": "qcm",
+        "options": [
+          "Les laisser telles quelles et commencer à rédiger",
+          "Les trier : regrouper celles qui vont ensemble, éliminer les hors-sujets, et associer chaque idée (argument) à un exemple concret (une œuvre littéraire)",
+          "Les raturer",
+          "En inventer de nouvelles à chaque fois"
+        ],
+        "answer": 1,
+        "explanation": "Un argument sans exemple n'a pas de valeur."
+      },
+      {
+        "id": "q5",
+        "text": "Si le sujet vous demande de discuter une affirmation (ex: Pensez-vous que la poésie ne sert qu'à exprimer les sentiments personnels ?), quel type de plan est généralement attendu ?",
+        "type": "qcm",
+        "options": [
+          "Un plan chronologique",
+          "Un plan biographique",
+          "Un plan dialectique (Thèse : Oui, elle sert à exprimer les sentiments / Antithèse : Mais elle sert aussi à critiquer, témoigner, embellir le monde)",
+          "Un plan géographique"
+        ],
+        "answer": 2,
+        "explanation": "Le plan dialectique (Thèse / Antithèse / Synthèse) est classique pour discuter une opinion."
+      }
+    ]
+  },
+  "Fiche_Production_ecrite_Organiser_les_idees_et_les_arguments": {
+    "title": "Production écrite : Bâtir le plan",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un plan dans une dissertation ?",
+        "type": "qcm",
+        "options": [
+          "La carte de la ville",
+          "L'architecture de votre devoir, l'organisation logique de vos idées (grandes parties et sous-parties) pour répondre à la problématique",
+          "L'introduction",
+          "Les fautes d'orthographe"
+        ],
+        "answer": 1,
+        "explanation": "Le plan montre le cheminement de votre pensée."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un plan 'thématique' ?",
+        "type": "qcm",
+        "options": [
+          "Un plan qui dit 'Oui' puis 'Non'",
+          "Un plan qui explore différents aspects ou thèmes d'un sujet (ex: I. Aspect psychologique, II. Aspect social, III. Aspect esthétique)",
+          "Un plan qui raconte la vie de l'auteur",
+          "Un plan sans parties"
+        ],
+        "answer": 1,
+        "explanation": "Idéal quand le sujet demande 'Quelles sont les fonctions de...' ou 'Quels sont les thèmes de...'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un plan dialectique (Thèse/Antithèse), l'Antithèse consiste à dire que la Thèse est totalement fausse ou idiote.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'Antithèse n'est pas le contraire absolu, elle apporte une NUANCE, elle montre les limites de la thèse (Ex: 'C'est vrai, MAIS...')."
+      },
+      {
+        "id": "q4",
+        "text": "Combien de grandes parties (I, II, III) un devoir doit-il idéalement comporter ?",
+        "type": "qcm",
+        "options": [
+          "Une seule",
+          "Dix",
+          "Deux ou trois parties équilibrées",
+          "Cinq"
+        ],
+        "answer": 2,
+        "explanation": "Un plan en 2 parties ou 3 parties est la norme académique."
+      },
+      {
+        "id": "q5",
+        "text": "Dans chaque grande partie, comment classe-t-on généralement les arguments (les sous-parties) ?",
+        "type": "qcm",
+        "options": [
+          "Du plus faible (le moins convaincant) au plus fort (le plus convaincant)",
+          "Du plus fort au plus faible",
+          "Au hasard",
+          "Uniquement selon les dates"
+        ],
+        "answer": 0,
+        "explanation": "C'est la progression argumentative classique : on garde le meilleur pour la fin pour convaincre le lecteur."
+      }
+    ]
+  },
+  "Fiche_Production_ecrite_Rediger_introduction_et_conclusion": {
+    "title": "Production écrite : Introduction et Conclusion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'introduction de la dissertation (production écrite) comprend-elle les mêmes 3 étapes (Amorce, Problématique, Plan) que l'introduction du commentaire composé ?",
+        "type": "qcm",
+        "options": [
+          "Non",
+          "Oui (c'est la même technique : Amener, Poser, Diviser)",
+          "Elle a 5 étapes",
+          "Il n'y a pas d'introduction"
+        ],
+        "answer": 1,
+        "explanation": "La structure de l'introduction est universelle pour les exercices littéraires au bac."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la particularité de la 2ème étape (Poser le sujet) dans une dissertation ?",
+        "type": "qcm",
+        "options": [
+          "On doit donner son avis tout de suite",
+          "On doit recopier intégralement ou reformuler élégamment la citation ou la question du sujet, puis en dégager la problématique",
+          "On doit raconter l'histoire du livre",
+          "On écrit le titre en gros"
+        ],
+        "answer": 1,
+        "explanation": "Le correcteur doit savoir quel est votre sujet juste en lisant l'introduction."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Il est conseillé de rédiger l'introduction et la conclusion ENTIÈREMENT AU BROUILLON avant de commencer à rédiger le développement sur la copie propre.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai ! L'introduction et la conclusion sont les vitrines de votre devoir (le premier et le dernier contact avec le correcteur). Elles doivent être parfaites."
+      },
+      {
+        "id": "q4",
+        "text": "Dans la conclusion, la phase de 'Bilan' sert à :",
+        "type": "qcm",
+        "options": [
+          "Répéter exactement l'introduction",
+          "Apporter de nouveaux exemples",
+          "Répondre clairement et définitivement à la problématique posée dans l'introduction, en résumant l'essentiel de la démonstration",
+          "Parler de l'actualité sportive"
+        ],
+        "answer": 2,
+        "explanation": "La conclusion boucle la réflexion commencée en introduction."
+      },
+      {
+        "id": "q5",
+        "text": "Peut-on utiliser la première personne 'Je' ('Moi je pense que...') dans une dissertation littéraire ?",
+        "type": "qcm",
+        "options": [
+          "Oui, tout le temps",
+          "Non, c'est fortement déconseillé. On préfère l'objectivité du 'Nous', du 'On' (nous analyserons, on peut voir) ou des tournures impersonnelles (il convient de...)",
+          "Seulement dans le titre",
+          "Seulement pour parler de soi"
+        ],
+        "answer": 1,
+        "explanation": "Le style doit rester formel, académique et faussement objectif."
+      }
+    ]
+  },
+  "Fiche_Production_ecrite_Rediger_un_paragraphe_argumentatif": {
+    "title": "Production écrite : Le paragraphe argumentatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est composé un paragraphe argumentatif complet (la structure 'AEE') ?",
+        "type": "qcm",
+        "options": [
+          "Titre, Introduction, Fin",
+          "L'Argument (l'idée), l'Explication de cet argument, et l'Exemple (pour illustrer l'idée)",
+          "3 Exemples sans argument",
+          "Uniquement des citations"
+        ],
+        "answer": 1,
+        "explanation": "Argument + Explication + Exemple (ou Argument + Exemple + Analyse de l'exemple)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un argument sans exemple ?",
+        "type": "qcm",
+        "options": [
+          "Un très bon argument",
+          "Une théorie creuse, non démontrée, qui ne convaincra pas le correcteur",
+          "C'est la norme",
+          "Un poème"
+        ],
+        "answer": 1,
+        "explanation": "L'exemple (littéraire ou historique) est la PREUVE concrète de votre argument."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans une dissertation LITTÉRAIRE, les exemples doivent être tirés principalement d'œuvres littéraires (romans, pièces de théâtre, poèmes) et non de son expérience personnelle ('mon oncle a fait ci...').",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le baccalauréat teste votre culture littéraire."
+      },
+      {
+        "id": "q4",
+        "text": "Où place-t-on le mot de liaison (le connecteur logique) dans un paragraphe ?",
+        "type": "qcm",
+        "options": [
+          "À la fin du paragraphe",
+          "Généralement tout au DÉBUT du paragraphe (ex: De plus, En outre, Néanmoins) pour l'articuler au paragraphe précédent",
+          "Au milieu de la citation",
+          "On n'en met pas"
+        ],
+        "answer": 1,
+        "explanation": "Il marque la transition et le sens de l'argument (ajout, opposition)."
+      },
+      {
+        "id": "q5",
+        "text": "Faut-il passer à la ligne à la fin d'un paragraphe argumentatif (sous-partie) ?",
+        "type": "qcm",
+        "options": [
+          "Non, on écrit tout d'un bloc",
+          "Oui, on va à la ligne et on fait un alinéa (un retrait) pour commencer le paragraphe suivant",
+          "Oui, on saute 2 lignes",
+          "On change de page"
+        ],
+        "answer": 1,
+        "explanation": "L'alinéa rend le plan visible d'un seul coup d'œil par le correcteur."
+      }
+    ]
+  },
+  "Fiche_Resume_Texte_Argumentatif_Rediger_le_resume": {
+    "title": "Le résumé : La rédaction finale",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans le résumé d'un texte argumentatif, faut-il respecter la personne et l'énonciation de l'auteur (ex: si l'auteur écrit 'Je pense', doit-on écrire 'Je pense' ou 'L'auteur pense') ?",
+        "type": "qcm",
+        "options": [
+          "On doit écrire 'L'auteur pense'",
+          "On DOIT respecter l'énonciation et dire 'Je' (on se met à la place de l'auteur)",
+          "On utilise le 'Nous'",
+          "On ne met pas de sujet"
+        ],
+        "answer": 1,
+        "explanation": "Règle fondamentale : Le résumé n'est pas un commentaire sur le texte (interdiction d'écrire 'L'auteur dit que...'). Vous ÊTES l'auteur en miniature."
+      },
+      {
+        "id": "q2",
+        "text": "Comment doit être la progression logique du résumé ?",
+        "type": "qcm",
+        "options": [
+          "Totalement différente du texte original",
+          "Elle doit respecter EXACTEMENT le plan, le mouvement de pensée et les articulations (connecteurs logiques) du texte original",
+          "Elle doit commencer par la fin",
+          "Aléatoire"
+        ],
+        "answer": 1,
+        "explanation": "Si le texte a 3 grandes idées successives, le résumé doit avoir ces 3 mêmes idées, dans le même ordre."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans un résumé, il est interdit de faire des citations du texte (recopier des phrases entre guillemets).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le but est de REFORMULER avec vos mots. Le 'montage de citations' est sévèrement puni (note de 0)."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit-on faire concernant la longueur du résumé ?",
+        "type": "qcm",
+        "options": [
+          "Rédiger autant de mots qu'on veut",
+          "Respecter scrupuleusement la proportion demandée (généralement 1/4 du texte, avec une marge de tolérance de +/- 10%)",
+          "Faire un résumé d'une seule phrase",
+          "Faire un résumé plus long que le texte"
+        ],
+        "answer": 1,
+        "explanation": "Si on demande 100 mots +/- 10%, vous devez être entre 90 et 110 mots."
+      },
+      {
+        "id": "q5",
+        "text": "Que signifie 'indiquer le nombre de mots à la fin' (mention obligatoire) ?",
+        "type": "qcm",
+        "options": [
+          "Donner un chiffre au hasard",
+          "Compter exactement le nombre de mots utilisés dans votre résumé final et l'écrire à la fin (ex: 105 mots)",
+          "Compter les lettres",
+          "Compter les lignes"
+        ],
+        "answer": 1,
+        "explanation": "Attention aux règles de comptage : 'l'école' = 2 mots. 'aujourd'hui' = 1 mot. 'c'est-à-dire' = 4 mots."
+      }
+    ]
+  },
+  "Fiche_Resume_Texte_Argumentatif_Repondre_aux_questions_et_analyser_la_situation": {
+    "title": "Le résumé : Analyse et Questions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "À l'examen, l'épreuve de résumé s'accompagne souvent de questions sur le texte (vocabulaire, idées). Que faut-il faire avant de commencer le résumé ?",
+        "type": "qcm",
+        "options": [
+          "Ignorer les questions",
+          "Lire le texte plusieurs fois, puis LIRE et traiter LES QUESTIONS, car elles aident à comprendre les idées clés du texte",
+          "Dormir",
+          "Dessiner"
+        ],
+        "answer": 1,
+        "explanation": "Les questions balisent souvent le chemin et pointent les arguments importants."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que 'l'analyse de la situation de communication' d'un texte ?",
+        "type": "qcm",
+        "options": [
+          "Compter les pages",
+          "Identifier Qui parle, à Qui (le destinataire visé), de Quoi (le thème), et dans quel But (la thèse défendue, l'enjeu)",
+          "La grammaire",
+          "L'orthographe"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'étape indispensable pour cerner l'intention de l'auteur."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Dans la partie 'Questions', si on vous demande le sens d'un mot ou d'une expression, vous devez donner sa définition DANS LE CONTEXTE de la phrase, pas seulement la définition générale du dictionnaire.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le contexte (le sens de la phrase complète) est fondamental (polysémie)."
+      },
+      {
+        "id": "q4",
+        "text": "Comment doit-on rédiger les réponses aux questions de vocabulaire ou d'idées ?",
+        "type": "qcm",
+        "options": [
+          "Mettre un seul mot",
+          "Rédiger des phrases complètes, claires et précises (sujet, verbe, complément)",
+          "Faire des phrases très longues",
+          "Utiliser l'argot"
+        ],
+        "answer": 1,
+        "explanation": "L'expression écrite est évaluée dans toutes les parties de l'épreuve."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est l'erreur fréquente lors de la réponse aux questions sur les idées du texte ?",
+        "type": "qcm",
+        "options": [
+          "Donner son avis personnel (juger l'auteur)",
+          "Expliquer ce que l'auteur veut dire",
+          "Répondre brièvement",
+          "Écrire lisiblement"
+        ],
+        "answer": 0,
+        "explanation": "On ne vous demande pas votre avis (sauf dans la partie 'Discussion'), on vous demande de restituer fidèlement la pensée de l'auteur."
+      }
+    ]
+  },
+  "Fiche_Resume_Texte_Argumentatif_Selection_et_reformulation_des_idees": {
+    "title": "Le résumé : Sélection et Reformulation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est l'opération essentielle au brouillon pour réussir un résumé ?",
+        "type": "qcm",
+        "options": [
+          "Recopier le texte entier",
+          "Repérer les paragraphes, surligner les mots de liaison et repérer l'idée principale (l'argument clé) de chaque paragraphe",
+          "Chercher les rimes",
+          "Compter les mots du texte"
+        ],
+        "answer": 1,
+        "explanation": "Il faut 'squelettiser' le texte (faire apparaître son plan détaillé)."
+      },
+      {
+        "id": "q2",
+        "text": "Que doit-on FAIRE DISPARAÎTRE (supprimer) lors de la sélection des idées ?",
+        "type": "qcm",
+        "options": [
+          "Les arguments principaux",
+          "La thèse de l'auteur",
+          "Les exemples d'illustration, les anecdotes, les répétitions, les digressions, les détails chiffrés trop précis",
+          "Les mots de liaison"
+        ],
+        "answer": 2,
+        "explanation": "Seuls les arguments comptent. L'exemple est supprimé (sauf s'il a valeur d'argument unique, ce qui est rare)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Reformuler (écrire le résumé) consiste simplement à remplacer un ou deux mots de la phrase originale par des synonymes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! La véritable reformulation condense la pensée. Au lieu de remplacer chaque mot, il faut exprimer l'IDÉE GLOBALE de la phrase en utilisant sa propre syntaxe (englober)."
+      },
+      {
+        "id": "q4",
+        "text": "Parmi ces techniques, laquelle permet de réduire efficacement le nombre de mots d'une phrase ?",
+        "type": "qcm",
+        "options": [
+          "Ajouter des adjectifs",
+          "Remplacer une longue énumération ('les pommes, les poires et les scoubidous') par un seul mot englobant ('les fruits' ou 'divers objets')",
+          "Répéter le sujet",
+          "Mettre la phrase au passif"
+        ],
+        "answer": 1,
+        "explanation": "Utiliser un terme générique est la meilleure technique de condensation."
+      },
+      {
+        "id": "q5",
+        "text": "Que doit-on faire si un auteur reprend la même idée dans 3 paragraphes différents pour insister ?",
+        "type": "qcm",
+        "options": [
+          "La répéter 3 fois dans le résumé",
+          "Ne la mentionner qu'une seule fois dans le résumé, à l'endroit le plus opportun du plan",
+          "La supprimer totalement",
+          "La mettre en majuscules"
+        ],
+        "answer": 1,
+        "explanation": "Le résumé déteste la répétition. Une idée = une formulation condensée."
+      }
+    ]
+  }
+}

@@ -1,0 +1,818 @@
+{
+  "Fiche_L1_ADAPTATION_GENERATEUR_RECEPTEUR": {
+    "title": "Adaptation Générateur/Récepteur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'indication inscrite sur une lampe (ex: 6V) ?",
+        "type": "qcm",
+        "options": [
+          "Sa température",
+          "Sa tension d'usage (la tension nominale dont elle a besoin pour fonctionner normalement)",
+          "Son poids",
+          "Sa durée de vie"
+        ],
+        "answer": 1,
+        "explanation": "Le fabricant indique la tension sous laquelle la lampe brillera de façon optimale."
+      },
+      {
+        "id": "q2",
+        "text": "Que se passe-t-il si la tension du générateur (ex: une pile de 1,5V) est beaucoup plus faible que la tension d'usage de la lampe (ex: 6V) ?",
+        "type": "qcm",
+        "options": [
+          "La lampe grille",
+          "La lampe brille faiblement : elle est en sous-tension",
+          "La lampe clignote",
+          "La lampe fonctionne normalement"
+        ],
+        "answer": 1,
+        "explanation": "La pile ne fournit pas assez d'énergie électrique pour allumer correctement la lampe."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on branche une lampe de 6V sur un générateur de 12V, elle est en surtension et risque de griller rapidement.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. La tension du générateur est trop forte (surtension), le filament de la lampe va fondre."
+      },
+      {
+        "id": "q4",
+        "text": "Quand dit-on qu'une lampe est bien 'adaptée' à son générateur ?",
+        "type": "qcm",
+        "options": [
+          "Quand ils sont de la même couleur",
+          "Quand la tension du générateur est environ égale à la tension d'usage de la lampe (ex: pile 6V, lampe 6V)",
+          "Quand la lampe est beaucoup plus forte",
+          "Quand le générateur est 10 fois plus puissant"
+        ],
+        "answer": 1,
+        "explanation": "L'adaptation garantit un bon fonctionnement (éclat normal) et la sécurité du matériel."
+      },
+      {
+        "id": "q5",
+        "text": "Dans le circuit domestique, quelle est la tension (en Côte d'Ivoire) des prises de courant ?",
+        "type": "qcm",
+        "options": [
+          "12 Volts",
+          "110 Volts",
+          "220 Volts (ou 230V)",
+          "500 Volts"
+        ],
+        "answer": 2,
+        "explanation": "La plupart des appareils électroménagers sont prévus pour fonctionner (adaptés) à cette tension secteur de 220V."
+      }
+    ]
+  },
+  "Fiche_L2_ASSOCIATIONS_LAMPES": {
+    "title": "Association des lampes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un circuit en série (en boucle simple) avec deux lampes identiques (L1 et L2), que se passe-t-il si L1 grille ?",
+        "type": "qcm",
+        "options": [
+          "L2 brille plus fort",
+          "L2 s'éteint aussi",
+          "L2 change de couleur",
+          "Rien, L2 continue de briller"
+        ],
+        "answer": 1,
+        "explanation": "Dans un circuit en série, si un composant tombe en panne, le circuit est ouvert et le courant ne passe plus."
+      },
+      {
+        "id": "q2",
+        "text": "Dans un montage avec deux lampes en dérivation (en parallèle), que se passe-t-il si une lampe grille ?",
+        "type": "qcm",
+        "options": [
+          "L'autre s'éteint aussi",
+          "L'autre continue de briller normalement",
+          "Le générateur explose",
+          "Le courant change de sens"
+        ],
+        "answer": 1,
+        "explanation": "Les dipôles branchés en dérivation fonctionnent de manière indépendante (ils forment des boucles distinctes)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : À la maison, les lampes et les appareils ménagers sont toujours montés en série.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Ils sont montés en dérivation. Si on éteint la lumière du salon, le frigo de la cuisine ne s'arrête pas."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un circuit en série, si on ajoute de plus en plus de lampes, comment est leur éclat ?",
+        "type": "qcm",
+        "options": [
+          "Il reste le même",
+          "Il augmente",
+          "Il diminue (l'éclat est de plus en plus faible)",
+          "Elles clignotent"
+        ],
+        "answer": 2,
+        "explanation": "En série, les lampes doivent se 'partager' l'énergie du générateur."
+      },
+      {
+        "id": "q5",
+        "text": "Comment se comportent deux lampes branchées en dérivation par rapport au générateur ?",
+        "type": "qcm",
+        "options": [
+          "Elles reçoivent la même tension que si elles étaient seules (brillance maximale)",
+          "Elles reçoivent la moitié de la tension",
+          "Elles sont en court-circuit",
+          "Elles ne s'allument pas"
+        ],
+        "answer": 0,
+        "explanation": "En dérivation, chaque lampe est soumise directement à la tension du générateur."
+      }
+    ]
+  },
+  "Fiche_L3_ASSOCIATION_PILES_SERIE": {
+    "title": "Association de piles en série",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment associe-t-on correctement deux piles cylindriques (ex: 1,5V) en série ?",
+        "type": "qcm",
+        "options": [
+          "On met en contact les deux pôles positifs (+ contre +)",
+          "On met en contact les deux pôles négatifs (- contre -)",
+          "On met en contact le pôle positif (+) de l'une avec le pôle négatif (-) de l'autre",
+          "On les place côte à côte sans se toucher"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'association en 'concordance'. Les tensions s'ajoutent."
+      },
+      {
+        "id": "q2",
+        "text": "Si j'associe correctement trois piles de 1,5V en série, quelle sera la tension totale de l'ensemble (la batterie ainsi formée) ?",
+        "type": "qcm",
+        "options": [
+          "1,5 V",
+          "3 V",
+          "4,5 V",
+          "6 V"
+        ],
+        "answer": 2,
+        "explanation": "1,5 + 1,5 + 1,5 = 4,5V. (C'est ce qu'on trouve dans une pile plate de 4,5V qui contient 3 piles rondes)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on monte deux piles de 1,5V en opposition (+ contre +), la tension totale est de 3V.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Si elles sont en opposition (montage incorrect), leurs tensions s'annulent : 1,5 - 1,5 = 0V."
+      },
+      {
+        "id": "q4",
+        "text": "Pourquoi associe-t-on des piles en série dans une lampe de poche ou une télécommande ?",
+        "type": "qcm",
+        "options": [
+          "Pour faire joli",
+          "Pour obtenir une tension plus élevée capable de faire fonctionner l'appareil (ex: atteindre 3V avec deux piles)",
+          "Pour avoir moins de courant",
+          "Pour que ce soit plus lourd"
+        ],
+        "answer": 1,
+        "explanation": "L'association en série permet d'additionner les tensions pour s'adapter au récepteur."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce qu'une 'batterie' en électricité ?",
+        "type": "qcm",
+        "options": [
+          "Un instrument de musique",
+          "Un ensemble d'éléments (piles ou accumulateurs) reliés entre eux",
+          "Un fil de cuivre",
+          "Un interrupteur"
+        ],
+        "answer": 1,
+        "explanation": "Exemple: La batterie d'une voiture (12V) est constituée de plusieurs éléments de 2V associés en série."
+      }
+    ]
+  },
+  "Fiche_L4_INTENSITE_COURANT": {
+    "title": "L'intensité du courant électrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment s'appelle l'appareil qui mesure l'intensité du courant électrique ?",
+        "type": "qcm",
+        "options": [
+          "Le voltmètre",
+          "L'ampèremètre",
+          "Le thermomètre",
+          "Le baromètre"
+        ],
+        "answer": 1,
+        "explanation": "Il mesure la quantité de courant (les électrons) qui passe dans le fil."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité de mesure légale de l'intensité du courant ?",
+        "type": "qcm",
+        "options": [
+          "Le Volt (V)",
+          "Le Watt (W)",
+          "L'Ampère (A)",
+          "Le Joule (J)"
+        ],
+        "answer": 2,
+        "explanation": "Du nom du physicien français André-Marie Ampère."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'ampèremètre se branche toujours en dérivation (en parallèle) par rapport au dipôle à mesurer.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'ampèremètre doit se brancher en SÉRIE, le courant doit le traverser pour qu'il puisse le mesurer."
+      },
+      {
+        "id": "q4",
+        "text": "Quel symbole utilise-t-on pour représenter l'intensité dans une formule (ex: _ = 2 A) ?",
+        "type": "qcm",
+        "options": [
+          "U",
+          "I",
+          "R",
+          "P"
+        ],
+        "answer": 1,
+        "explanation": "L'Intensité est notée I (i majuscule)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans un circuit simple en série, comment est l'intensité du courant à différents endroits du circuit ?",
+        "type": "qcm",
+        "options": [
+          "Elle diminue à chaque fois qu'elle traverse une lampe",
+          "Elle est la même partout",
+          "Elle augmente à la fin",
+          "Elle est nulle au milieu"
+        ],
+        "answer": 1,
+        "explanation": "C'est la loi d'unicité de l'intensité. Dans un circuit série, le courant ne se perd pas, I est identique en tout point."
+      }
+    ]
+  },
+  "Fiche_L5_TENSION_ELECTRIQUE": {
+    "title": "La tension électrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel appareil utilise-t-on pour mesurer la tension électrique ?",
+        "type": "qcm",
+        "options": [
+          "Le voltmètre",
+          "L'ampèremètre",
+          "Le dynamomètre",
+          "La balance"
+        ],
+        "answer": 0,
+        "explanation": "Le voltmètre (représenté par un 'V' dans un cercle) mesure la tension aux bornes d'un dipôle."
+      },
+      {
+        "id": "q2",
+        "text": "Comment doit-on brancher un voltmètre dans un circuit ?",
+        "type": "qcm",
+        "options": [
+          "En série",
+          "En dérivation (en parallèle) aux bornes du dipôle dont on veut connaître la tension",
+          "Au hasard",
+          "Uniquement sur l'interrupteur"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à l'ampèremètre, le voltmètre ne doit pas être traversé par tout le courant. On le branche 'par dessus' le dipôle."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'unité de mesure de la tension électrique est le Volt (V).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Du nom d'Alessandro Volta (l'inventeur de la pile électrique)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un circuit, que représente la lettre 'U' ?",
+        "type": "qcm",
+        "options": [
+          "L'intensité",
+          "La masse",
+          "La tension électrique (ex: U = 12 V)",
+          "Le volume"
+        ],
+        "answer": 2,
+        "explanation": "U est le symbole de la grandeur 'Tension' (ex: U pile = 4,5V)."
+      },
+      {
+        "id": "q5",
+        "text": "Si je branche un voltmètre aux bornes d'un fil de connexion simple (un fil normal en bon état parcouru par un courant), que va-t-il afficher ?",
+        "type": "qcm",
+        "options": [
+          "Environ 0 Volt (tension nulle)",
+          "220 Volts",
+          "La tension du générateur",
+          "Le voltmètre va griller"
+        ],
+        "answer": 0,
+        "explanation": "Un fil idéal n'a pas de résistance, donc il n'y a pas de tension à ses bornes (il est transparent pour la tension)."
+      }
+    ]
+  },
+  "Fiche_L6_PRESSION_ATMOSPHERIQUE": {
+    "title": "La pression atmosphérique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la pression atmosphérique ?",
+        "type": "qcm",
+        "options": [
+          "Le poids de l'eau dans l'océan",
+          "La force (ou le poids) exercée par l'air de l'atmosphère sur tous les objets à la surface de la Terre",
+          "La pression dans un pneu",
+          "La force du vent"
+        ],
+        "answer": 1,
+        "explanation": "L'air a une masse. La couche d'air au-dessus de nous pèse et appuie sur nous, c'est la pression atmosphérique."
+      },
+      {
+        "id": "q2",
+        "text": "Quel appareil utilise-t-on pour mesurer la pression atmosphérique ?",
+        "type": "qcm",
+        "options": [
+          "Le baromètre",
+          "Le thermomètre",
+          "Le manomètre",
+          "Le voltmètre"
+        ],
+        "answer": 0,
+        "explanation": "Le baromètre (du grec baros = pesanteur) sert à prévoir la météo (haute pression = beau temps, basse pression = pluie)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'unité de la pression dans le Système International est le Pascal (Pa) ou l'hectopascal (hPa).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (On utilisait aussi le 'bar' ou le 'millibar' ; 1 bar = 100 000 Pa). La pression normale est d'environ 1013 hPa."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il pour la pression atmosphérique lorsqu'on monte en altitude (ex: au sommet d'une montagne) ?",
+        "type": "qcm",
+        "options": [
+          "Elle reste identique",
+          "Elle augmente",
+          "Elle diminue",
+          "Elle disparaît totalement à 10m"
+        ],
+        "answer": 2,
+        "explanation": "En altitude, il y a moins d'air au-dessus de nous, donc la couche d'air est moins lourde : la pression baisse."
+      },
+      {
+        "id": "q5",
+        "text": "Lequel de ces appareils mesure la pression (d'un gaz ou d'un liquide) à l'intérieur d'un récipient fermé, comme un pneu de voiture ?",
+        "type": "qcm",
+        "options": [
+          "Le baromètre",
+          "Le manomètre",
+          "Le pluviomètre",
+          "L'anémomètre"
+        ],
+        "answer": 1,
+        "explanation": "Le baromètre mesure la pression de l'air ambiant libre. Le manomètre mesure la pression d'un fluide enfermé (ex: la bouteille de gaz)."
+      }
+    ]
+  },
+  "Fiche_L7_LES_MELANGES": {
+    "title": "Les mélanges",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un mélange 'homogène' ?",
+        "type": "qcm",
+        "options": [
+          "Un mélange où on peut voir au moins deux constituants différents à l'œil nu (ex: eau + huile)",
+          "Un mélange où on ne distingue pas les différents constituants à l'œil nu, il a un aspect uniforme (ex: eau salée)",
+          "Un mélange très chaud",
+          "Un mélange dangereux"
+        ],
+        "answer": 1,
+        "explanation": "Homo = même. Le sel se dissout dans l'eau et disparaît visuellement."
+      },
+      {
+        "id": "q2",
+        "text": "L'eau boueuse (eau + sable + terre) est un mélange :",
+        "type": "qcm",
+        "options": [
+          "Homogène",
+          "Hétérogène",
+          "Pur",
+          "Insoluble"
+        ],
+        "answer": 1,
+        "explanation": "Hétérogène, car on peut distinguer l'eau des grains de terre à l'œil nu."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux liquides qui ne se mélangent pas (comme l'eau et l'huile) sont dits 'miscibles'.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Ils sont dits NON miscibles. (Eau + sirop = liquides miscibles)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle technique utilise-t-on pour séparer les gros constituants solides d'un liquide dans un mélange hétérogène, en laissant reposer le mélange ?",
+        "type": "qcm",
+        "options": [
+          "La distillation",
+          "L'évaporation",
+          "La décantation",
+          "La congélation"
+        ],
+        "answer": 2,
+        "explanation": "Lors de la décantation, les particules lourdes (terre) tombent au fond sous l'effet de leur poids."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle méthode permet d'obtenir un liquide limpide à partir d'un liquide trouble, en le faisant passer à travers un papier spécial ?",
+        "type": "qcm",
+        "options": [
+          "La filtration",
+          "La décantation",
+          "La vaporisation",
+          "L'aimantation"
+        ],
+        "answer": 0,
+        "explanation": "Le filtre retient les petites particules solides et laisse passer le liquide clair appelé 'filtrat'."
+      }
+    ]
+  },
+  "Fiche_L8_ATOMES_MOLECULES": {
+    "title": "Atomes et molécules",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un atome (en chimie de niveau collège) ?",
+        "type": "qcm",
+        "options": [
+          "Une grande cellule",
+          "La plus petite particule de matière invisible à l'œil nu (la brique de base de la matière)",
+          "Un insecte",
+          "Une étoile"
+        ],
+        "answer": 1,
+        "explanation": "Tous les objets et les êtres vivants sont constitués d'atomes."
+      },
+      {
+        "id": "q2",
+        "text": "Par quelle lettre (symbole chimique) représente-t-on l'atome d'Oxygène ?",
+        "type": "qcm",
+        "options": [
+          "O",
+          "Ox",
+          "C",
+          "H"
+        ],
+        "answer": 0,
+        "explanation": "C = Carbone, H = Hydrogène, O = Oxygène."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une molécule est un regroupement de plusieurs atomes attachés entre eux.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les atomes s'assemblent pour former des molécules (ex: l'eau, le sucre)."
+      },
+      {
+        "id": "q4",
+        "text": "Que signifie la formule chimique de l'eau : H2O ?",
+        "type": "qcm",
+        "options": [
+          "2 atomes d'Hydrogène et 1 atome d'Oxygène",
+          "2 atomes d'Oxygène et 1 d'Hydrogène",
+          "De l'Hélium et de l'Or",
+          "De l'Hydrogène à 20 degrés"
+        ],
+        "answer": 0,
+        "explanation": "Le chiffre 2 s'applique à l'atome qui le précède (H)."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la couleur utilisée par convention pour représenter la 'boule' d'un atome de Carbone dans les modèles moléculaires ?",
+        "type": "qcm",
+        "options": [
+          "Rouge",
+          "Blanc",
+          "Noir",
+          "Bleu"
+        ],
+        "answer": 2,
+        "explanation": "Carbone = Noir (comme le charbon), Oxygène = Rouge, Hydrogène = Blanc, Azote = Bleu."
+      }
+    ]
+  },
+  "Fiche_L9_COMBUSTION_CARBONE": {
+    "title": "La combustion du carbone",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans une réaction chimique de combustion, comment appelle-t-on la substance qui brûle (ex: le charbon de bois) ?",
+        "type": "qcm",
+        "options": [
+          "Le comburant",
+          "Le combustible",
+          "L'extincteur",
+          "Le réactif neutre"
+        ],
+        "answer": 1,
+        "explanation": "Le combustible (le bois, le gaz, le carbone) est ce qui est consommé."
+      },
+      {
+        "id": "q2",
+        "text": "Quel gaz présent dans l'air est indispensable pour qu'il y ait du feu (c'est le comburant) ?",
+        "type": "qcm",
+        "options": [
+          "Le dioxyde de carbone",
+          "L'azote",
+          "Le dioxygène",
+          "L'hélium"
+        ],
+        "answer": 2,
+        "explanation": "Sans dioxygène, la flamme s'étouffe (c'est pour cela qu'on met une couverture sur un feu)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Lors de la combustion complète du carbone dans le dioxygène, il se forme un nouveau gaz, le dioxyde de carbone (CO2).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le Carbone (C) et le Dioxygène (O2) réagissent pour créer du CO2."
+      },
+      {
+        "id": "q4",
+        "text": "Quel produit utilise-t-on au laboratoire pour prouver la présence du dioxyde de carbone (CO2) généré par la combustion ?",
+        "type": "qcm",
+        "options": [
+          "L'alcool",
+          "L'eau de chaux (qui se trouble / blanchit en présence de CO2)",
+          "L'eau salée",
+          "Le sirop"
+        ],
+        "answer": 1,
+        "explanation": "L'eau de chaux est le test caractéristique du CO2."
+      },
+      {
+        "id": "q5",
+        "text": "Lors d'une réaction chimique (comme C + O2 -> CO2) :",
+        "type": "qcm",
+        "options": [
+          "Les réactifs disparaissent et des produits (nouveaux corps) apparaissent",
+          "Les réactifs ne changent pas",
+          "Rien ne se passe",
+          "Il fait plus froid"
+        ],
+        "answer": 0,
+        "explanation": "C'est la définition d'une réaction chimique : transformation des réactifs (carbone et oxygène) en un produit différent (CO2)."
+      }
+    ]
+  },
+  "Fiche_L10_COMBUSTION_SOUFRE": {
+    "title": "La combustion du soufre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quelle couleur est le soufre en poudre avant sa combustion ?",
+        "type": "qcm",
+        "options": [
+          "Noir",
+          "Jaune",
+          "Rouge",
+          "Blanc"
+        ],
+        "answer": 1,
+        "explanation": "Le soufre à l'état solide est une poudre ou un bloc jaune."
+      },
+      {
+        "id": "q2",
+        "text": "De quelle couleur est la flamme lorsque l'on fait brûler du soufre dans le dioxygène pur ?",
+        "type": "qcm",
+        "options": [
+          "Jaune",
+          "Verte",
+          "Bleue très vive",
+          "Rouge"
+        ],
+        "answer": 2,
+        "explanation": "La combustion du soufre dans le dioxygène produit une magnifique petite flamme bleue."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La combustion du soufre produit un gaz à l'odeur très agréable, utilisé comme parfum.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Elle produit du dioxyde de soufre (SO2), un gaz suffocant, toxique, à l'odeur très piquante d'allumette craquée."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est l'équation bilan (simplifiée) de la combustion du soufre dans le dioxygène ?",
+        "type": "qcm",
+        "options": [
+          "S + O2 -> SO2",
+          "C + O2 -> CO2",
+          "H + O -> H2O",
+          "Fe + O -> FeO"
+        ],
+        "answer": 0,
+        "explanation": "Soufre (S) + Dioxygène (O2) donne le dioxyde de soufre (SO2)."
+      },
+      {
+        "id": "q5",
+        "text": "Le gaz produit par la combustion du soufre (SO2) est connu pour être un polluant majeur responsable de :",
+        "type": "qcm",
+        "options": [
+          "La neige en Afrique",
+          "Les pluies acides (qui détruisent les forêts)",
+          "La douceur de l'air",
+          "La fabrication du sucre"
+        ],
+        "answer": 1,
+        "explanation": "Le dioxyde de soufre, rejeté par les usines, se mélange à l'eau des nuages pour retomber sous forme de pluie acide."
+      }
+    ]
+  },
+  "Fiche_L11_DILATATION_SOLIDES": {
+    "title": "La dilatation des solides",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que la dilatation thermique d'un solide ?",
+        "type": "qcm",
+        "options": [
+          "Le solide change de couleur",
+          "L'augmentation du volume (ou de la longueur) du solide sous l'effet de la chaleur",
+          "La fonte du solide",
+          "Le fait qu'il devienne mou"
+        ],
+        "answer": 1,
+        "explanation": "La plupart des solides se dilatent (gonflent) quand on les chauffe."
+      },
+      {
+        "id": "q2",
+        "text": "Que se passe-t-il lorsque ce même solide refroidit ?",
+        "type": "qcm",
+        "options": [
+          "Il se dilate encore plus",
+          "Il explose",
+          "Il se contracte (son volume diminue et revient à la normale)",
+          "Il reste gros pour toujours"
+        ],
+        "answer": 2,
+        "explanation": "C'est la contraction thermique, phénomène inverse de la dilatation."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Tous les solides (fer, cuivre, aluminium, verre) se dilatent exactement de la même manière à la même température.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Chaque matériau a un 'coefficient de dilatation' différent. L'aluminium se dilate plus que le fer, par exemple."
+      },
+      {
+        "id": "q4",
+        "text": "L'expérience classique de la 'sphère de s'Gravesande' consiste à passer une boule de métal dans un anneau. Quand la boule est très chauffée :",
+        "type": "qcm",
+        "options": [
+          "Elle passe plus facilement",
+          "Elle ne passe plus à travers l'anneau car son volume a augmenté",
+          "L'anneau fond",
+          "Elle devient invisible"
+        ],
+        "answer": 1,
+        "explanation": "C'est la preuve visuelle de la dilatation du métal."
+      },
+      {
+        "id": "q5",
+        "text": "Dans la vie courante, quelle précaution prend-on lors de la construction des ponts métalliques ou des rails de train pour éviter qu'ils ne se déforment l'été ?",
+        "type": "qcm",
+        "options": [
+          "On les peint en blanc",
+          "On laisse des 'joints de dilatation' (petits espaces vides) entre les morceaux",
+          "On met de la glace dessus",
+          "On utilise du plastique"
+        ],
+        "answer": 1,
+        "explanation": "Ces espaces vides permettent au métal de s'allonger par forte chaleur sans tordre la structure."
+      }
+    ]
+  },
+  "Fiche_L13_DILATATION_GAZ": {
+    "title": "La dilatation des gaz",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les gaz subissent-ils aussi la dilatation sous l'effet de la chaleur (comme les solides et les liquides) ?",
+        "type": "qcm",
+        "options": [
+          "Non, jamais",
+          "Oui, et ils se dilatent beaucoup PLUS que les solides et les liquides",
+          "Oui, mais très faiblement",
+          "Seulement s'ils sont verts"
+        ],
+        "answer": 1,
+        "explanation": "Les gaz sont très sensibles aux variations de température : leur volume augmente fortement quand on les chauffe (s'ils ne sont pas bloqués)."
+      },
+      {
+        "id": "q2",
+        "text": "Si l'on place un ballon de baudruche légèrement gonflé (bien fermé) dans un réfrigérateur, que va-t-il se passer ?",
+        "type": "qcm",
+        "options": [
+          "Il va éclater",
+          "Il va gonfler encore plus",
+          "Il va se dégonfler (se contracter) sous l'effet du froid",
+          "Il va devenir dur comme de la pierre"
+        ],
+        "answer": 2,
+        "explanation": "Le froid contracte le gaz contenu à l'intérieur, diminuant son volume."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on chauffe un gaz enfermé dans un récipient rigide (qui ne peut pas s'agrandir, ex: une bouteille en verre fermée), c'est sa PRESSION qui va augmenter au lieu de son volume.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ne pouvant pas occuper plus d'espace, les molécules de gaz s'agitent et tapent plus fort sur les parois (la pression augmente et peut faire exploser le récipient)."
+      },
+      {
+        "id": "q4",
+        "text": "Pourquoi une montgolfière s'envole-t-elle quand on allume le brûleur ?",
+        "type": "qcm",
+        "options": [
+          "Parce que le feu fait peur",
+          "Parce que l'air chauffé dans le ballon se dilate, devient plus léger (moins dense) que l'air froid autour, et monte",
+          "Parce que c'est magique",
+          "Parce que le gaz produit du vent vers le bas"
+        ],
+        "answer": 1,
+        "explanation": "C'est le principe d'Archimède dans l'air. L'air chaud monte car il est moins dense."
+      },
+      {
+        "id": "q5",
+        "text": "Contrairement aux solides, est-ce que tous les gaz différents (air, azote, CO2) se dilatent de la même manière pour une même augmentation de température ?",
+        "type": "qcm",
+        "options": [
+          "Oui, tous les gaz ont pratiquement le même comportement face à la dilatation thermique",
+          "Non, l'air se dilate 10 fois plus que le CO2",
+          "Non, l'oxygène ne se dilate pas",
+          "Ça dépend de la pression"
+        ],
+        "answer": 0,
+        "explanation": "Tous les gaz parfaits ont un coefficient de dilatation identique (contrairement aux solides qui dépendent de leur matière)."
+      }
+    ]
+  }
+}

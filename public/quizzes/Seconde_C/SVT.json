@@ -1,0 +1,954 @@
+{
+  "Fiche_Lecon1_La_structure_geologique_de_la_Cote_d_Ivoire": {
+    "title": "La structure géologique de la Côte d'Ivoire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "De quoi est principalement constitué le socle géologique (le sous-sol) de la majeure partie de la Côte d'Ivoire (environ 97,5% du territoire) ?",
+        "type": "qcm",
+        "options": [
+          "De roches sédimentaires récentes",
+          "D'un socle Précambrien très ancien (roches magmatiques comme le granite, et métamorphiques)",
+          "Uniquement de sable",
+          "De volcans en éruption"
+        ],
+        "answer": 1,
+        "explanation": "C'est un vieux socle durci et érodé."
+      },
+      {
+        "id": "q2",
+        "text": "Où se trouve le bassin sédimentaire (la seule zone de roches sédimentaires) en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Au Nord (frontière avec le Mali)",
+          "Dans une étroite bande le long du littoral marin (la côte Sud), d'Abidjan à Fresco (environ 2,5% du territoire)",
+          "Au Centre du pays",
+          "À l'Ouest dans les montagnes"
+        ],
+        "answer": 1,
+        "explanation": "C'est dans ce bassin marin que l'on trouve le pétrole ivoirien."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le socle précambrien de Côte d'Ivoire est très riche en minerais (or, fer, manganèse, diamant, bauxite).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Ces roches très anciennes renferment les grandes richesses minières du pays."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on les alignements de collines ou de montagnes qui parsèment l'Ouest du pays (ex: le Mont Tonkpi) ?",
+        "type": "qcm",
+        "options": [
+          "Le bassin versant",
+          "Les reliefs de plissement birimien",
+          "Le volcanisme actif",
+          "Les dunes de sable"
+        ],
+        "answer": 1,
+        "explanation": "L'orogenèse éburnéenne (très ancienne) a plissé ces roches."
+      },
+      {
+        "id": "q5",
+        "text": "Le bassin sédimentaire ivoirien est très propice à la découverte de quelles ressources naturelles stratégiques ?",
+        "type": "qcm",
+        "options": [
+          "L'or et le diamant",
+          "Le charbon et le fer",
+          "Les hydrocarbures (pétrole brut et gaz naturel)",
+          "L'uranium"
+        ],
+        "answer": 2,
+        "explanation": "Le pétrole et le gaz se forment presque exclusivement dans des bassins sédimentaires (par décomposition marine)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_L_alteration_chimique_des_roches_magmatiques": {
+    "title": "L'altération des roches magmatiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'altération chimique d'une roche (ex: le granite) ?",
+        "type": "qcm",
+        "options": [
+          "Sa destruction violente par un marteau",
+          "La décomposition lente des minéraux de la roche par l'action de l'EAU et du climat, transformant la roche dure en particules meubles (argile, sable)",
+          "La fonte de la roche par le feu",
+          "Son déplacement par le vent"
+        ],
+        "answer": 1,
+        "explanation": "C'est le processus qui forme le sol (la terre) à partir de la roche mère."
+      },
+      {
+        "id": "q2",
+        "text": "Le granite est composé de 3 minéraux principaux : le quartz, le mica et le feldspath. Quel est le minéral le plus RÉSISTANT à l'altération chimique (il reste intact) ?",
+        "type": "qcm",
+        "options": [
+          "Le mica",
+          "Le feldspath",
+          "Le quartz",
+          "Ils sont tous aussi fragiles"
+        ],
+        "answer": 2,
+        "explanation": "Le quartz, inaltérable, formera les grains de sable résiduels."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : En s'altérant sous l'action de l'eau, les feldspaths du granite se transforment chimiquement en argile.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Cette argile constitue la base meuble des sols cultivables."
+      },
+      {
+        "id": "q4",
+        "text": "Quel est le nom de l'arène (le sable grossier) qui reste sur place après l'altération incomplète d'un massif de granite ?",
+        "type": "qcm",
+        "options": [
+          "Le limon",
+          "L'arène granitique",
+          "L'argile pure",
+          "La lave"
+        ],
+        "answer": 1,
+        "explanation": "C'est un mélange de grains de quartz, d'argile et de mica."
+      },
+      {
+        "id": "q5",
+        "text": "Quel facteur climatique ACCÉLÈRE fortement l'altération chimique des roches en Côte d'Ivoire ?",
+        "type": "qcm",
+        "options": [
+          "Le gel en hiver",
+          "L'association de températures élevées et de très fortes pluies d'eau tiède (climat tropical/équatorial)",
+          "Le vent sec du désert (Harmattan)",
+          "L'absence totale d'eau"
+        ],
+        "answer": 1,
+        "explanation": "L'eau chaude est un puissant solvant chimique (hydrolyse rapide)."
+      }
+    ]
+  },
+  "Fiche_Lecon3_La_formation_des_roches_sedimentaires": {
+    "title": "La formation des roches sédimentaires",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "D'où proviennent les 'sédiments' qui formeront plus tard les roches sédimentaires ?",
+        "type": "qcm",
+        "options": [
+          "Du refroidissement du magma des volcans",
+          "Des particules issues de l'érosion des roches préexistantes, transportées par l'eau ou le vent, et des débris d'êtres vivants (coquillages)",
+          "Des météorites tombées du ciel",
+          "De l'ébullition de l'eau"
+        ],
+        "answer": 1,
+        "explanation": "Exemples de sédiments : le sable, la boue, les graviers."
+      },
+      {
+        "id": "q2",
+        "text": "Où les sédiments s'accumulent-ils (se déposent-ils) principalement à la fin de leur transport ?",
+        "type": "qcm",
+        "options": [
+          "Au sommet des montagnes",
+          "Dans les nuages",
+          "Dans les 'bassins sédimentaires' (les fonds marins, les lacs, le fond des vallées)",
+          "Dans l'espace"
+        ],
+        "answer": 2,
+        "explanation": "Le dépôt se fait en couches superposées appelées 'strates'."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La diagenèse est le processus par lequel des sédiments meubles (mous, comme du sable) se transforment en une roche solide compacte (comme le grès) grâce à la pression et la sédimentation.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le poids des couches supérieures compacte et cimente les sédiments (lithification)."
+      },
+      {
+        "id": "q4",
+        "text": "Parmi ces roches, laquelle est une roche sédimentaire d'origine chimique (précipitation des sels dissous dans l'eau) ?",
+        "type": "qcm",
+        "options": [
+          "Le granite",
+          "Le basalte",
+          "Le sel gemme (halite) ou le gypse",
+          "L'obsidienne"
+        ],
+        "answer": 2,
+        "explanation": "Ces roches se forment souvent suite à l'évaporation d'une mer fermée (lagune)."
+      },
+      {
+        "id": "q5",
+        "text": "Quels précieux vestiges historiques, utiles aux géologues et paléontologues, trouve-t-on PRESQUE EXCLUSIVEMENT emprisonnés dans les roches sédimentaires ?",
+        "type": "qcm",
+        "options": [
+          "Des diamants",
+          "Du magma frais",
+          "Des fossiles (restes d'animaux ou de plantes du passé)",
+          "De l'uranium"
+        ],
+        "answer": 2,
+        "explanation": "Le calcaire, par exemple, est souvent formé d'une accumulation d'anciennes coquilles fossilisées."
+      }
+    ]
+  },
+  "Fiche_Lecon4_La_formation_des_roches_metamorphiques": {
+    "title": "La formation des roches métamorphiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une roche métamorphique (ex: le marbre, l'ardoise, le gneiss) ?",
+        "type": "qcm",
+        "options": [
+          "Une roche directement issue de la lave",
+          "Une roche sédimentaire récente",
+          "Une ancienne roche préexistante (magmatique ou sédimentaire) qui a subi une transformation à l'état SOLIDE sous l'effet de fortes températures ou pressions",
+          "Une roche extraterrestre"
+        ],
+        "answer": 2,
+        "explanation": "Le métamorphisme signifie 'changement de forme'. La roche change d'aspect sans jamais fondre totalement."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les deux grands facteurs physiques qui déclenchent le métamorphisme en profondeur ?",
+        "type": "qcm",
+        "options": [
+          "L'eau et la lumière",
+          "La température (la chaleur) et la pression (liée à l'enfouissement ou aux collisions de plaques tectoniques)",
+          "Le vent et le froid",
+          "L'oxygène et le CO2"
+        ],
+        "answer": 1,
+        "explanation": "Ces conditions forcent les minéraux de la roche à se réorganiser (recristallisation)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si la roche soumise à la chaleur fond complètement (devient liquide/magma), on considère qu'elle est toujours en métamorphisme.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Si elle fond totalement, ce n'est plus du métamorphisme (qui se fait à l'état solide). On passe alors dans le domaine du magmatisme (formation de roches magmatiques en refroidissant)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle caractéristique visuelle (structure) est typique des roches métamorphiques soumises à de fortes pressions (comme le micaschiste) ?",
+        "type": "qcm",
+        "options": [
+          "Elles sont remplies de gros trous d'air (bulles)",
+          "La foliation ou schistosité (les minéraux s'aplatissent et s'alignent en feuillets parallèles empilés, la roche se débite en plaques)",
+          "Elles sont parfaitement rondes",
+          "Elles sont transparentes"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'aspect 'feuilleté' (comme un millefeuille) dû à l'écrasement."
+      },
+      {
+        "id": "q5",
+        "text": "Le calcaire (roche sédimentaire) se transforme sous l'effet de la chaleur (métamorphisme de contact) pour devenir une célèbre roche noble et très dure utilisée en sculpture :",
+        "type": "qcm",
+        "options": [
+          "Le granite",
+          "Le marbre",
+          "Le charbon",
+          "L'argile"
+        ],
+        "answer": 1,
+        "explanation": "Le marbre est du calcaire métamorphisé."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Le_devenir_des_roches_metamorphiques": {
+    "title": "Le devenir des roches métamorphiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que se passe-t-il lorsque des roches métamorphiques sont enfouies tellement profondément (par subduction ou collision) que la température dépasse leur point de fusion (anatexie) ?",
+        "type": "qcm",
+        "options": [
+          "Elles se transforment en gaz",
+          "Elles fondent pour devenir du magma (liquide), puis, en refroidissant, elles formeront une nouvelle roche MAGMATIQUE (ex: un granite d'anatexie)",
+          "Elles deviennent des fossiles",
+          "Elles remontent instantanément à la surface"
+        ],
+        "answer": 1,
+        "explanation": "C'est la fin du domaine métamorphique et le retour au domaine magmatique."
+      },
+      {
+        "id": "q2",
+        "text": "Comment des roches métamorphiques formées à des kilomètres de profondeur (ex: les gneiss du socle ivoirien) peuvent-elles se retrouver aujourd'hui à la surface de la terre, sous nos pieds ?",
+        "type": "qcm",
+        "options": [
+          "Elles sont tombées du ciel",
+          "Grâce aux mouvements tectoniques (qui soulèvent les montagnes) suivis de l'érosion intense (qui décape les couches supérieures pendant des millions d'années)",
+          "Elles sont liquides et remontent comme de l'eau",
+          "Grâce aux tremblements de terre quotidiens"
+        ],
+        "answer": 1,
+        "explanation": "L'érosion agit comme une gomme géante, mettant à nu le cœur ancien des montagnes."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Une fois à l'air libre, les roches métamorphiques sont invincibles et ne s'altèrent plus.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Une fois à la surface, elles subissent l'altération chimique (eau, climat) et l'érosion, pour devenir des sédiments. C'est le grand cycle des roches !"
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que le 'cycle des roches' (le cycle géologique) ?",
+        "type": "qcm",
+        "options": [
+          "La vitesse à laquelle tombent les roches",
+          "Le processus continu (sur des millions d'années) où les roches magmatiques, sédimentaires et métamorphiques se transforment perpétuellement les unes en les autres",
+          "Le fait de tourner des pierres rondes",
+          "L'âge de la terre"
+        ],
+        "answer": 1,
+        "explanation": "Magma -> Roche magmatique -> Érosion -> Sédiment -> Roche sédimentaire -> Enfouissement -> Roche métamorphique -> Fusion -> Magma..."
+      },
+      {
+        "id": "q5",
+        "text": "De manière générale, le sous-sol profond de la Côte d'Ivoire (le socle cristallin et cristallophyllien) est majoritairement composé de roches métamorphiques et magmatiques formées il y a :",
+        "type": "qcm",
+        "options": [
+          "Quelques milliers d'années",
+          "Environ 2 milliards d'années (au Précambrien)",
+          "Il y a 50 ans",
+          "Il y a 10 millions d'années"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'un des socles les plus vieux et stables de la planète."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Les_relations_entre_les_etres_vivants_dans_un_ecosysteme": {
+    "title": "Les relations entre êtres vivants",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans une chaîne alimentaire, qu'est-ce que la relation de 'prédation' ?",
+        "type": "qcm",
+        "options": [
+          "Deux animaux qui mangent la même chose",
+          "Une relation où un individu (le prédateur) tue et mange un autre individu (la proie) pour se nourrir",
+          "Une entraide mutuelle",
+          "Deux animaux qui s'ignorent"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : Le lion (prédateur) mange la gazelle (proie)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce que le 'parasitisme' (ex: le moustique pique l'homme, ou le ténia dans l'intestin) ?",
+        "type": "qcm",
+        "options": [
+          "Une relation bénéfique pour les deux",
+          "Une relation où un être (le parasite) vit aux dépens d'un autre (l'hôte) en lui causant des dommages (maladies, affaiblissement), mais sans le tuer immédiatement",
+          "Une compétition pour le même territoire",
+          "Le fait de fuir devant un danger"
+        ],
+        "answer": 1,
+        "explanation": "Le parasite profite, l'hôte subit (+/-)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Le 'symbiose' (ou mutualisme) est une association intime et durable entre deux espèces différentes où CHACUNE tire un bénéfice de l'autre (gagnant-gagnant).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. (+/+). Exemple : L'abeille pollinise la fleur en échange du nectar, ou le lichen (champignon + algue)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'appelle-t-on la 'compétition' dans un écosystème ?",
+        "type": "qcm",
+        "options": [
+          "Une course organisée par l'homme",
+          "Une lutte entre deux individus (de la même espèce ou non) pour l'accès à une même ressource limitée (nourriture, eau, territoire, femelle)",
+          "L'entraide d'un troupeau pour se protéger",
+          "Le camouflage d'une proie"
+        ],
+        "answer": 1,
+        "explanation": "La compétition régule la population des espèces dans le milieu (-/-)."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que le 'commensalisme' (ex: le poisson rémora qui s'accroche au requin pour manger les restes de ses proies) ?",
+        "type": "qcm",
+        "options": [
+          "Le requin mange le rémora",
+          "Une relation où une espèce (le commensal) tire profit de l'association sans nuire ni apporter de bénéfice à l'autre (l'hôte)",
+          "Le partage volontaire de nourriture",
+          "La construction d'un nid à deux"
+        ],
+        "answer": 1,
+        "explanation": "C'est une relation (+/0). L'hôte n'est pas dérangé."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Le_changement_climatique": {
+    "title": "Le changement climatique (Approfondi)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Au niveau biologique, quel processus naturel effectué par l'Océan et la Forêt permet de réguler l'effet de serre en absorbant le CO2 atmosphérique ?",
+        "type": "qcm",
+        "options": [
+          "La respiration animale",
+          "La photosynthèse (par les plantes terrestres et le phytoplancton marin)",
+          "La digestion des poissons",
+          "L'éruption volcanique"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi océans et forêts sont les 'poumons' climatiques de la Terre."
+      },
+      {
+        "id": "q2",
+        "text": "Outre le CO2, quel gaz très puissant, lié à l'élevage intensif (les rots des vaches) et à la décomposition (décharges, fonte du permafrost), contribue fortement à l'effet de serre additionnel ?",
+        "type": "qcm",
+        "options": [
+          "L'Oxygène (O2)",
+          "L'Azote (N2)",
+          "Le Méthane (CH4)",
+          "L'Hélium"
+        ],
+        "answer": 2,
+        "explanation": "Le méthane a un pouvoir réchauffant beaucoup plus élevé que le CO2, même s'il y en a moins."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'acidification des océans (le fait que l'eau devienne acide) est une conséquence directe de l'absorption d'une trop grande quantité de CO2, ce qui détruit les coraux.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le CO2 dissous dans l'eau forme de l'acide carbonique, menaçant la vie marine à coquille calcaire."
+      },
+      {
+        "id": "q4",
+        "text": "Comment le changement climatique impacte-t-il la santé humaine (notamment dans les régions tropicales) ?",
+        "type": "qcm",
+        "options": [
+          "Il guérit les maladies respiratoires",
+          "Il favorise l'expansion géographique de maladies à vecteurs (comme les moustiques porteurs de la dengue ou du paludisme) vers de nouvelles régions réchauffées",
+          "Il réduit les allergies",
+          "Il augmente la vue"
+        ],
+        "answer": 1,
+        "explanation": "La santé, l'agriculture et l'économie mondiale sont gravement menacées."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle est la principale solution globale ('atténuation') recommandée par le GIEC (le groupe d'experts climatiques) pour limiter le réchauffement ?",
+        "type": "qcm",
+        "options": [
+          "Détruire toutes les forêts",
+          "Construire de plus gros climatiseurs",
+          "Atteindre la 'neutralité carbone' en remplaçant les énergies fossiles par des énergies renouvelables et en réduisant la consommation d'énergie",
+          "Quitter la planète Terre"
+        ],
+        "answer": 2,
+        "explanation": "L'objectif des accords internationaux est de limiter le réchauffement bien en dessous de 2°C d'ici 2100."
+      }
+    ]
+  },
+  "Fiche_Lecon8_L_organisation_d_une_cellule": {
+    "title": "L'organisation d'une cellule (Ultrastructure)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Grâce à l'invention de quel appareil au 20ème siècle a-t-on pu découvrir les détails infimes de l'intérieur de la cellule (les petits organites invisibles avant) ?",
+        "type": "qcm",
+        "options": [
+          "Le télescope spatial",
+          "Le microscope électronique (qui grossit jusqu'à 1 million de fois)",
+          "La loupe de bijoutier",
+          "L'IRM"
+        ],
+        "answer": 1,
+        "explanation": "Le microscope optique (classique) ne permettait de voir que le noyau, le cytoplasme et la membrane."
+      },
+      {
+        "id": "q2",
+        "text": "Dans une cellule (animale ou végétale), quel organite (en forme de petit haricot replié à l'intérieur) est la 'centrale énergétique' de la cellule (lieu de la respiration cellulaire) ?",
+        "type": "qcm",
+        "options": [
+          "Le noyau",
+          "La mitochondrie",
+          "La vacuole",
+          "Le lysosome"
+        ],
+        "answer": 1,
+        "explanation": "Elle produit l'énergie nécessaire à la vie de la cellule (l'ATP)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les chloroplastes (qui contiennent la chlorophylle et font la photosynthèse) sont présents dans TOUTES les cellules animales et végétales.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Ils sont EXCLUSIVEMENT présents dans les cellules végétales chlorophylliennes (vertes)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le noyau, sous quelle forme est stockée l'information génétique (lorsque la cellule ne se divise pas) ?",
+        "type": "qcm",
+        "options": [
+          "Sous forme de protéines",
+          "Sous forme d'un amas de fils d'ADN appelé la 'chromatine' (qui s'enroulera plus tard pour former les chromosomes)",
+          "Sous forme d'eau pure",
+          "Sous forme d'air"
+        ],
+        "answer": 1,
+        "explanation": "Le noyau protège le précieux code génétique."
+      },
+      {
+        "id": "q5",
+        "text": "Les bactéries sont des cellules très différentes des cellules humaines. Quelle est leur grande particularité ?",
+        "type": "qcm",
+        "options": [
+          "Elles n'ont pas d'ADN",
+          "Ce sont des cellules 'Procaryotes', c'est-à-dire qu'elles ne possèdent pas de vrai NOYAU (l'ADN flotte libre dans le cytoplasme)",
+          "Elles sont plus grosses qu'une baleine",
+          "Elles n'ont pas de membrane"
+        ],
+        "answer": 1,
+        "explanation": "Les cellules humaines ou végétales sont 'Eucaryotes' (avec un vrai noyau délimité par une membrane)."
+      }
+    ]
+  },
+  "Fiche_Lecon9_La_division_cellulaire": {
+    "title": "La division cellulaire (Détails)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que se passe-t-il visuellement dans le noyau au TOUT DÉBUT de la division cellulaire (lors de la Prophase) ?",
+        "type": "qcm",
+        "options": [
+          "Le noyau disparaît et on ne voit plus rien",
+          "L'amas de chromatine se condense (s'enroule fortement sur lui-même) et les 'chromosomes' en forme de X deviennent visibles au microscope",
+          "L'ADN sort de la cellule",
+          "La cellule explose"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'étape de condensation du matériel génétique (le fil devient une pelote compacte)."
+      },
+      {
+        "id": "q2",
+        "text": "Un chromosome visible en début de mitose est formé de deux 'bâtonnets' identiques attachés par le milieu. Comment s'appellent ces bâtonnets et ce milieu ?",
+        "type": "qcm",
+        "options": [
+          "Deux branches reliées par un tronc",
+          "Deux chromatides (sœurs) reliées par le centromère",
+          "Deux pattes reliées par le corps",
+          "Deux bras reliés par la tête"
+        ],
+        "answer": 1,
+        "explanation": "Comme l'ADN a été dupliqué (copié) avant la division, le chromosome porte 2 copies identiques (les 2 chromatides)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Lors de l'Anaphase (3ème étape de la mitose), les chromosomes entiers se déplacent tous ensemble vers un seul pôle de la cellule.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Lors de l'anaphase, le centromère se casse : les deux chromatides sœurs se séparent et chacune est tirée vers un pôle opposé de la cellule. Il y a un partage rigoureusement égal."
+      },
+      {
+        "id": "q4",
+        "text": "Comment se fait la division d'une cellule VÉGÉTALE à la fin de la Télophase (séparation du cytoplasme) ?",
+        "type": "qcm",
+        "options": [
+          "La cellule s'étrangle au milieu comme une cellule animale",
+          "Une nouvelle paroi rigide (phragmoplaste) se construit au centre, séparant la grande cellule en deux 'boîtes'",
+          "Elle explose en deux",
+          "Elle ne se divise jamais au milieu"
+        ],
+        "answer": 1,
+        "explanation": "La paroi de la cellule végétale l'empêche de s'étrangler souplement."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le but biologique principal de la mitose pour un être humain (organisme pluricellulaire) ?",
+        "type": "qcm",
+        "options": [
+          "Produire des spermatozoïdes ou des ovules",
+          "La respiration et la digestion",
+          "La croissance de l'organisme (grandir) et le renouvellement/réparation des cellules mortes ou blessées (cicatrisation)",
+          "Modifier l'ADN"
+        ],
+        "answer": 2,
+        "explanation": "Chaque seconde, des millions de vos cellules meurent et sont remplacées par mitose."
+      }
+    ]
+  },
+  "Fiche_Lecon10_L_evolution_de_l_equipement_chromosomique_d_une_cellule": {
+    "title": "L'équipement chromosomique de la cellule",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Combien de chromosomes (en tout) contient une cellule humaine normale (hors cellules sexuelles) ?",
+        "type": "qcm",
+        "options": [
+          "10",
+          "46 (soit 23 paires)",
+          "23",
+          "48"
+        ],
+        "answer": 1,
+        "explanation": "L'homme possède 23 paires de chromosomes. Cette formule est dite diploïde (2n=46)."
+      },
+      {
+        "id": "q2",
+        "text": "Qu'est-ce qu'un caryotype ?",
+        "type": "qcm",
+        "options": [
+          "Un appareil de mesure",
+          "Le classement ordonné de l'ensemble des chromosomes d'une cellule, classés par paires et par taille (du plus grand au plus petit)",
+          "Un type de cellule sanguine",
+          "Une maladie génétique"
+        ],
+        "answer": 1,
+        "explanation": "Le caryotype permet de détecter des anomalies du nombre de chromosomes (ex: Trisomie 21) ou de déterminer le sexe chromosomique."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Chez l'être humain, la 23ème paire de chromosomes (les chromosomes sexuels ou gonosomes) détermine le sexe génétique. XX pour la femme, et XY pour l'homme.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les 22 autres paires sont identiques chez les hommes et les femmes (les autosomes)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la particularité génétique des cellules reproductrices (les gamètes : spermatozoïde et ovule) par rapport aux autres cellules du corps ?",
+        "type": "qcm",
+        "options": [
+          "Elles n'ont pas de chromosomes",
+          "Elles ont deux fois plus de chromosomes (92)",
+          "Elles possèdent la MOITIÉ des chromosomes (soit 23 chromosomes simples, formule haploïde n=23)",
+          "Elles sont identiques aux autres"
+        ],
+        "answer": 2,
+        "explanation": "Elles sont produites par un mécanisme spécial : la méiose."
+      },
+      {
+        "id": "q5",
+        "text": "Que se passe-t-il lors de la fécondation (rencontre du spermatozoïde et de l'ovule) concernant les chromosomes ?",
+        "type": "qcm",
+        "options": [
+          "Les chromosomes sont détruits",
+          "Le spermatozoïde (n=23) et l'ovule (n=23) fusionnent pour rétablir la quantité normale de chromosomes dans la cellule-œuf (2n=46)",
+          "L'enfant aura 23 chromosomes",
+          "L'enfant aura 92 chromosomes"
+        ],
+        "answer": 1,
+        "explanation": "Chaque parent donne la moitié de l'équipement chromosomique à l'enfant."
+      }
+    ]
+  },
+  "Fiche_Lecon11_L_absorption_de_l_eau_par_la_plante": {
+    "title": "L'absorption de l'eau par la plante",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Par quelle partie très spécifique de ses racines la plante terrestre absorbe-t-elle la majorité de l'eau contenue dans le sol ?",
+        "type": "qcm",
+        "options": [
+          "Par les feuilles",
+          "Par l'écorce",
+          "Par la zone pilifère (qui porte les milliers de fins 'poils absorbants')",
+          "Par le bout pointu (la coiffe)"
+        ],
+        "answer": 2,
+        "explanation": "Ces poils fins augmentent considérablement la surface de contact entre la racine et le sol humide."
+      },
+      {
+        "id": "q2",
+        "text": "Comment s'appelle le phénomène physique (loi de diffusion) qui permet à l'eau du sol de rentrer, à travers la membrane, à l'intérieur de la cellule du poil absorbant ?",
+        "type": "qcm",
+        "options": [
+          "La photosynthèse",
+          "L'osmose (l'eau passe du milieu le moins concentré en sels vers le milieu le plus concentré)",
+          "L'évaporation",
+          "La digestion"
+        ],
+        "answer": 1,
+        "explanation": "L'intérieur de la racine étant plus 'concentré' que l'eau du sol, il aspire l'eau."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si on arrose une plante avec de l'eau TRÈS SALÉE, la plante va boire énormément et pousser très vite.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! Si l'eau du sol est plus salée (concentrée) que l'intérieur de la plante, l'osmose s'inverse : l'eau va SORTIR de la plante, qui va se faner et mourir (plasmolyse)."
+      },
+      {
+        "id": "q4",
+        "text": "Qu'est-ce que la 'sève brute' ?",
+        "type": "qcm",
+        "options": [
+          "Le sucre pur",
+          "Le mélange d'eau et de sels minéraux absorbés par les racines, qui monte vers les feuilles",
+          "Le sang de la plante",
+          "Le jus des fruits"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'eau minéralisée indispensable à la photosynthèse."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le moteur principal qui fait 'monter' la sève brute (l'eau) des racines jusqu'en haut des très grands arbres ?",
+        "type": "qcm",
+        "options": [
+          "Un cœur qui pompe",
+          "Le vent qui souffle en bas",
+          "La transpiration foliaire (les feuilles perdent de l'eau par évaporation, ce qui crée une 'aspiration' dans les vaisseaux depuis les racines)",
+          "La lumière du soleil qui attire l'eau directement"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'évapotranspiration qui tire la colonne d'eau vers le haut."
+      }
+    ]
+  },
+  "Fiche_Lecon12_L_influence_des_sels_mineraux_sur_la_croissance_de_la_plante_verte": {
+    "title": "L'influence des sels minéraux (Plante verte)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Outre l'eau, de quoi la plante verte a-t-elle ABOSLUMENT besoin dans le sol pour grandir normalement ?",
+        "type": "qcm",
+        "options": [
+          "De sucre en poudre",
+          "De viande hachée",
+          "D'ions minéraux (sels minéraux) dissous dans l'eau",
+          "D'air pur sous terre"
+        ],
+        "answer": 2,
+        "explanation": "L'eau pure (distillée) ne suffit pas à la survie de la plante à long terme."
+      },
+      {
+        "id": "q2",
+        "text": "Quels sont les trois 'macroéléments' (éléments minéraux majeurs N, P, K) fondamentaux présents dans les engrais agricoles ?",
+        "type": "qcm",
+        "options": [
+          "Or, Argent, Cuivre",
+          "Azote (N), Phosphore (P), Potassium (K)",
+          "Fer, Calcium, Magnésium",
+          "Carbone, Oxygène, Hydrogène"
+        ],
+        "answer": 1,
+        "explanation": "Ce sont les éléments dont la plante a besoin en très grande quantité."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si une plante manque d'Azote (carence en N), elle grandit plus vite mais ses feuilles restent petites.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 1,
+        "explanation": "Faux ! L'Azote favorise la croissance des feuilles et des tiges. Une carence en azote entraîne un arrêt de croissance et un jaunissement global de la plante."
+      },
+      {
+        "id": "q4",
+        "text": "Que se passe-t-il si l'on donne à la plante une dose beaucoup trop forte d'engrais (sels minéraux) ?",
+        "type": "qcm",
+        "options": [
+          "La plante devient géante très vite",
+          "La solution du sol devient trop concentrée (toxique), la plante ne peut plus absorber d'eau (loi de l'osmose) et elle meurt de 'soif'",
+          "La plante devient toxique pour l'homme",
+          "Rien ne se passe"
+        ],
+        "answer": 1,
+        "explanation": "L'excès de sels minéraux 'brûle' les racines. C'est la toxicité par excès."
+      },
+      {
+        "id": "q5",
+        "text": "Dans l'agriculture moderne, comment appelle-t-on la culture de plantes sans sol (la terre est remplacée par un support inerte irrigué par une solution d'eau et de sels minéraux parfaitement dosée) ?",
+        "type": "qcm",
+        "options": [
+          "La culture en plein air",
+          "La culture hors-sol ou hydroponie",
+          "L'agriculture biologique",
+          "La jachère"
+        ],
+        "answer": 1,
+        "explanation": "C'est la preuve que la terre n'est qu'un support physique et un garde-manger ; l'eau et les minéraux suffisent."
+      }
+    ]
+  },
+  "Fiche_Lecon13_L_absorption_des_sels_mineraux_par_la_plante_verte": {
+    "title": "L'absorption des sels minéraux (Détails)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'absorption de l'eau se fait passivement par osmose. Comment se fait l'absorption des sels minéraux (ions) par les poils absorbants ?",
+        "type": "qcm",
+        "options": [
+          "Elle se fait par osmose inverse",
+          "Elle est 'sélective' et 'active' (la plante choisit les ions dont elle a besoin et utilise de l'énergie pour les faire entrer contre le gradient de concentration)",
+          "Les sels entrent par des trous immenses",
+          "Les racines mangent des petits cailloux"
+        ],
+        "answer": 1,
+        "explanation": "L'absorption active nécessite que les cellules de la racine respirent et dépensent de l'énergie (ATP)."
+      },
+      {
+        "id": "q2",
+        "text": "Que prouve le fait qu'une plante peut concentrer du potassium dans sa racine, même si le sol autour en contient très peu ?",
+        "type": "qcm",
+        "options": [
+          "Que la plante fabrique le potassium",
+          "Que l'absorption est un phénomène biologique actif (transport actif pompe) et non pas une simple diffusion mécanique",
+          "Que l'eau coule vers le haut",
+          "Que le sol s'est enrichi tout seul"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à l'osmose, le transport actif permet d'accumuler une substance."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'absorption d'un ion minéral précis (ex: le potassium) par la racine peut empêcher l'absorption d'un autre ion de charge similaire. C'est ce qu'on appelle l'antagonisme ionique.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. L'excès d'un engrais peut bloquer l'absorption d'un autre élément vital, provoquant une carence induite."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le sol, les éléments minéraux doivent obligatoirement être sous quelle forme pour pouvoir traverser la membrane de la cellule racinaire ?",
+        "type": "qcm",
+        "options": [
+          "Sous forme de gros blocs solides",
+          "Sous forme dissoute dans l'eau (des ions, ex: K+, NO3-)",
+          "Sous forme gazeuse uniquement",
+          "Sous forme de plastique"
+        ],
+        "answer": 1,
+        "explanation": "C'est pourquoi un sol sec empêche toute nutrition minérale, même s'il est plein d'engrais solide."
+      },
+      {
+        "id": "q5",
+        "text": "Quels facteurs physiques du sol influencent (favorisent ou bloquent) la respiration des racines et donc l'absorption active des sels minéraux ?",
+        "type": "qcm",
+        "options": [
+          "La couleur du sol",
+          "L'aération du sol (oxygène) et la température (un sol froid ou noyé d'eau asphixie les racines)",
+          "La présence d'animaux",
+          "Le vent au-dessus du sol"
+        ],
+        "answer": 1,
+        "explanation": "Un sol bien labouré et aéré améliore la nutrition minérale des plantes."
+      }
+    ]
+  },
+  "Fiche_Lecon14_Le_devenir_des_substances_absorbees_par_la_plante_verte": {
+    "title": "Le devenir des substances absorbées",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Où l'eau et les sels minéraux (la sève brute) se dirigent-ils une fois absorbés par les racines ?",
+        "type": "qcm",
+        "options": [
+          "Ils restent dans les racines",
+          "Ils montent par les vaisseaux de bois (xylème) vers les organes aériens, principalement les feuilles",
+          "Ils ressortent dans le sol",
+          "Ils vont dans les fruits d'abord"
+        ],
+        "answer": 1,
+        "explanation": "Les feuilles sont 'l'usine chimique' de la plante (lieu de la photosynthèse)."
+      },
+      {
+        "id": "q2",
+        "text": "Dans les feuilles, à quoi servent l'eau et les sels minéraux apportés par la sève brute ?",
+        "type": "qcm",
+        "options": [
+          "À laver la feuille",
+          "Ils s'associent au CO2 de l'air pour fabriquer la matière organique (sucres, protéines) grâce à l'énergie lumineuse (photosynthèse)",
+          "Ils font rougir la feuille",
+          "À faire tomber la feuille en automne"
+        ],
+        "answer": 1,
+        "explanation": "L'eau fournit l'hydrogène (H) et les sels minéraux (azote N, soufre S) permettent de fabriquer les protéines."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : La 'sève élaborée' est le liquide riche en sucres et autres matières organiques fabriquées dans les feuilles, qui redescend pour nourrir toute la plante.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Elle circule dans d'autres vaisseaux (le phloème) vers les tiges, les racines et les fruits."
+      },
+      {
+        "id": "q4",
+        "text": "Que fait la plante des excès de matières organiques qu'elle a fabriquées grâce à l'eau et aux sels minéraux ?",
+        "type": "qcm",
+        "options": [
+          "Elle les jette",
+          "Elle les rejette sous forme de gaz",
+          "Elle les stocke comme réserves dans des organes spécialisés (tubercules d'igname, graines, fruits, racines)",
+          "Elle les donne aux insectes"
+        ],
+        "answer": 2,
+        "explanation": "C'est grâce à ce stockage que l'homme et les animaux se nourrissent (nous mangeons les réserves de la plante)."
+      },
+      {
+        "id": "q5",
+        "text": "La plante transpire énormément. Quelle proportion de l'eau absorbée par les racines est réellement conservée pour construire la matière vivante de la plante ?",
+        "type": "qcm",
+        "options": [
+          "100% de l'eau",
+          "Environ 50%",
+          "Très peu, à peine 1 à 5% (plus de 95% de l'eau est perdue par transpiration pour réguler la température et faire monter la sève)",
+          "0%"
+        ],
+        "answer": 2,
+        "explanation": "La plante est une immense 'pompe' à eau qui alimente le cycle de l'eau de la planète."
+      }
+    ]
+  }
+}

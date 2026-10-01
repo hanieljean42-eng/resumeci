@@ -1,0 +1,317 @@
+{
+  "Fiche_Lecon1_Les_devoirs_de_parents_et_l_epanouissement_de_l_enfant": {
+    "title": "Devoirs des parents et l'épanouissement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quels sont les devoirs fondamentaux des parents (ou tuteurs) envers leurs enfants selon la loi ?",
+        "type": "qcm",
+        "options": ["Leur acheter des jouets chers", "Assurer leur entretien, leur éducation, leur protection et leur santé (droit à l'alimentation, au logement, aux soins)", "Les laisser faire ce qu'ils veulent", "Les forcer à travailler jeunes"],
+        "answer": 1,
+        "explanation": "L'autorité parentale est un ensemble de devoirs et de droits visant l'intérêt supérieur de l'enfant."
+      },
+      {
+        "id": "q2",
+        "text": "Que se passe-t-il si les parents refusent d'envoyer leur enfant à l'école, bien qu'ils en aient les moyens ?",
+        "type": "qcm",
+        "options": ["L'enfant sera plus heureux", "Ils manquent gravement à leur devoir d'éducation et la loi ivoirienne (qui rend l'école obligatoire) peut les sanctionner", "C'est leur choix", "Rien"],
+        "answer": 1,
+        "explanation": "L'école est obligatoire pour tous les enfants (filles et garçons) de 6 à 16 ans en Côte d'Ivoire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les châtiments corporels violents (frapper brutalement) sont une bonne méthode d'éducation recommandée par la loi.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! La loi interdit les violences et la maltraitance sur les enfants. L'éducation doit se faire dans le respect de l'intégrité de l'enfant."
+      },
+      {
+        "id": "q4",
+        "text": "En retour des soins et de l'éducation reçus, quel est le principal devoir de l'enfant envers ses parents ?",
+        "type": "qcm",
+        "options": ["Leur donner de l'argent", "Fuguer de la maison", "Le respect, l'obéissance, l'aide et l'assistance (notamment quand ils seront âgés)", "Rien du tout"],
+        "answer": 2,
+        "explanation": "La solidarité familiale et le respect filial sont au cœur des valeurs ivoiriennes et de la loi."
+      },
+      {
+        "id": "q5",
+        "text": "Quel est le but final des devoirs parentaux ?",
+        "type": "qcm",
+        "options": ["Faire souffrir l'enfant", "L'épanouissement total de l'enfant (physique, intellectuel et moral) pour qu'il devienne un adulte responsable", "Le forcer au mariage", "Rendre l'enfant célèbre"],
+        "answer": 1,
+        "explanation": "Un enfant bien encadré a toutes les chances de réussir sa vie et de contribuer à la société."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Les_organisations_humanitaires_et_l_assistance_aux_populations_en_detresse": {
+    "title": "Les organisations humanitaires",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'une organisation humanitaire ?",
+        "type": "qcm",
+        "options": ["Une entreprise qui vend des armes", "Une organisation indépendante, sans but lucratif, qui a pour mission de secourir et d'assister les populations en situation de détresse", "Un parti politique", "Une banque"],
+        "answer": 1,
+        "explanation": "Leur but est de sauver des vies et d'alléger les souffrances lors de crises graves."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi ces organisations, laquelle est spécifiquement médicale et intervient souvent dans les zones de guerre ou d'épidémie ?",
+        "type": "qcm",
+        "options": ["Médecins Sans Frontières (MSF)", "L'Organisation Mondiale du Commerce (OMC)", "Le Ministère de l'Éducation", "Amnesty International"],
+        "answer": 0,
+        "explanation": "MSF apporte une assistance médicale d'urgence."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les principes fondamentaux de l'action humanitaire (comme pour la Croix-Rouge) sont l'humanité, l'impartialité, la neutralité et l'indépendance.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. C'est grâce à cette neutralité (ne pas prendre parti dans les conflits) qu'ils peuvent accéder aux victimes des deux camps."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles sont les 'populations en détresse' qui ont besoin de cette assistance ?",
+        "type": "qcm",
+        "options": ["Les touristes en vacances", "Les victimes de guerres, de catastrophes naturelles (séismes, inondations), de famines ou d'épidémies graves", "Les sportifs de haut niveau", "Les politiciens"],
+        "answer": 1,
+        "explanation": "Ces populations sont extrêmement vulnérables et privées des moyens de survie basiques (eau, nourriture, abri, soins)."
+      },
+      {
+        "id": "q5",
+        "text": "Quel organisme de l'ONU est spécifiquement chargé de la protection des 'réfugiés' qui ont dû fuir leur pays ?",
+        "type": "qcm",
+        "options": ["L'UNICEF", "L'UNESCO", "Le Haut Commissariat des Nations Unies pour les Réfugiés (HCR)", "Le FMI"],
+        "answer": 2,
+        "explanation": "Le HCR gère les camps de réfugiés et les protège juridiquement."
+      }
+    ]
+  },
+  "Fiche_Lecon3_Les_instruments_et_mecanismes_juridiques_contre_les_violences_faites_aux_personnes_vulnerables": {
+    "title": "Protection contre les violences (Personnes vulnérables)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qui sont considérées comme les 'personnes vulnérables' dans la société ?",
+        "type": "qcm",
+        "options": ["Les jeunes hommes sportifs", "Les enfants, les femmes, les personnes âgées et les personnes en situation de handicap", "Les personnes très riches", "Les policiers"],
+        "answer": 1,
+        "explanation": "Leur état physique ou leur statut social les expose davantage aux abus et aux violences."
+      },
+      {
+        "id": "q2",
+        "text": "Comment appelle-t-on les violences basées sur le fait d'être un homme ou une femme (ex: excision, mariage forcé, violences conjugales) ?",
+        "type": "qcm",
+        "options": ["Les violences routières", "Les Violences Basées sur le Genre (VBG)", "Les violences politiques", "Les bagarres de cour de récréation"],
+        "answer": 1,
+        "explanation": "Les VBG touchent majoritairement les femmes et les petites filles."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : L'excision (mutilation génitale féminine) est une simple coutume, elle n'est pas punie par la loi en Côte d'Ivoire.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! C'est un crime passible d'une lourde peine de prison, car elle porte gravement atteinte à l'intégrité physique de la femme."
+      },
+      {
+        "id": "q4",
+        "text": "Que doit faire une victime (ou un témoin) de violences physiques ou sexuelles ?",
+        "type": "qcm",
+        "options": ["Se taire pour préserver l'honneur de la famille", "Briser le silence : aller à l'hôpital pour les soins et un certificat médical, puis porter plainte à la police ou la gendarmerie", "Se venger seul", "Déménager"],
+        "answer": 1,
+        "explanation": "Le silence protège le coupable. L'État a mis en place des cliniques juridiques et des numéros verts pour accompagner les victimes."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle loi internationale fondamentale protège spécifiquement les enfants contre toutes les formes de violence ou d'exploitation ?",
+        "type": "qcm",
+        "options": ["Le Code de la Route", "La Convention relative aux Droits de l'Enfant (CDE)", "Le Traité de Versailles", "La loi de l'attraction"],
+        "answer": 1,
+        "explanation": "Signée en 1989, elle impose aux États de protéger les enfants."
+      }
+    ]
+  },
+  "Fiche_Lecon4_Les_partis_politiques_les_institutions_de_la_republique_et_la_paix_sociale": {
+    "title": "Partis politiques et Institutions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un parti politique ?",
+        "type": "qcm",
+        "options": ["Un club de football", "Une association de citoyens qui partagent les mêmes idées politiques et dont le but est de conquérir le pouvoir de l'État par les élections", "Une ONG médicale", "Une chorale"],
+        "answer": 1,
+        "explanation": "La Constitution autorise le 'multipartisme', permettant à plusieurs partis d'exister librement."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le rôle positif des partis politiques en démocratie ?",
+        "type": "qcm",
+        "options": ["Faire des guerres civiles", "Créer la division dans le pays", "Animer la vie politique, proposer des projets de société, et former les citoyens", "Voler l'argent public"],
+        "answer": 2,
+        "explanation": "Ils permettent au peuple d'avoir le choix entre différentes visions de développement du pays."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Les 'Institutions de la République' (Présidence, Assemblée Nationale, Justice) appartiennent au parti qui a gagné les élections.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! Les Institutions appartiennent à TOUTE la Nation, à tous les Ivoiriens. Elles doivent être respectées et neutres, quel que soit le dirigeant."
+      },
+      {
+        "id": "q4",
+        "text": "Comment doit se faire le changement de pouvoir (l'alternance) pour préserver la paix sociale ?",
+        "type": "qcm",
+        "options": ["Par un coup d'État militaire", "Par des rébellions armées", "Uniquement par les urnes, lors d'élections transparentes et apaisées", "Par la magie"],
+        "answer": 2,
+        "explanation": "Le recours à la violence pour prendre ou garder le pouvoir détruit la paix et le pays."
+      },
+      {
+        "id": "q5",
+        "text": "En période électorale, quel doit être le comportement du citoyen et des militants ?",
+        "type": "qcm",
+        "options": ["Tolérance, respect du choix des autres (adversaires, pas ennemis) et acceptation des résultats validés par les institutions", "Casser les urnes si leur candidat perd", "Insulter les autres candidats", "Ne pas aller voter"],
+        "answer": 0,
+        "explanation": "Le jeu démocratique impose le 'fair-play'. La paix sociale dépend de la maturité des citoyens."
+      }
+    ]
+  },
+  "Fiche_Lecon6_L_impot_et_le_developpement_de_la_nation": {
+    "title": "L'impôt et le développement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'impôt ?",
+        "type": "qcm",
+        "options": ["Un vol organisé par l'État", "Une contribution financière obligatoire que tous les citoyens et entreprises doivent payer à l'État selon leurs revenus", "Un don volontaire", "L'argent de poche"],
+        "answer": 1,
+        "explanation": "Payer ses impôts est l'un des premiers devoirs du citoyen."
+      },
+      {
+        "id": "q2",
+        "text": "À quoi sert principalement l'argent collecté par les impôts ?",
+        "type": "qcm",
+        "options": ["À enrichir les ministres", "À financer le développement du pays (routes, hôpitaux, écoles) et payer les fonctionnaires (enseignants, médecins, policiers)", "À organiser des fêtes", "À rien"],
+        "answer": 1,
+        "explanation": "Sans impôts, l'État n'a pas d'argent pour construire des infrastructures publiques gratuites ou offrir des services."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si un commerçant fraude (cache ses revenus pour ne pas payer l'impôt), cela n'a aucune conséquence pour le pays.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! La fraude fiscale appauvrit l'État, ce qui ralentit la construction d'hôpitaux ou le bitumage des routes dont tout le monde a besoin."
+      },
+      {
+        "id": "q4",
+        "text": "La TVA (Taxe sur la Valeur Ajoutée) est un exemple de :",
+        "type": "qcm",
+        "options": ["Impôt direct (prélevé sur le salaire)", "Impôt indirect (inclus dans le prix des produits qu'on achète au magasin)", "Impôt foncier", "Amende"],
+        "answer": 1,
+        "explanation": "Même sans être salarié, on paie des impôts indirectement en achetant de l'électricité, du carburant ou du sucre."
+      },
+      {
+        "id": "q5",
+        "text": "Qu'est-ce que le 'civisme fiscal' ?",
+        "type": "qcm",
+        "options": ["Fuir quand on voit le percepteur des impôts", "Le fait de payer ses impôts honnêtement, à temps, et sans qu'on nous y force (par patriotisme)", "Refuser de payer", "Payer avec de la fausse monnaie"],
+        "answer": 1,
+        "explanation": "Le civisme fiscal est la marque d'un bon citoyen conscient qu'il participe ainsi au développement de la Côte d'Ivoire."
+      }
+    ]
+  },
+  "Fiche_Lecon7_L_utilisation_rationnelle_des_biens_publics_et_le_developpement_du_pays": {
+    "title": "L'utilisation des biens publics",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce qu'un bien public (ou 'chose publique' / res publica) ?",
+        "type": "qcm",
+        "options": ["Le sac personnel de l'élève", "Un bien (bâtiment, matériel, route) qui appartient à l'État ou à la commune, financé par l'argent de tous pour l'usage de tous", "La maison du Maire", "Le téléphone du professeur"],
+        "answer": 1,
+        "explanation": "Les feux tricolores, les bancs de l'école, les lampadaires sont des biens publics."
+      },
+      {
+        "id": "q2",
+        "text": "Comment doit-on se comporter face aux tables-bancs de l'école ou aux bus de la SOTRA ?",
+        "type": "qcm",
+        "options": ["On doit écrire dessus", "On peut les casser quand on est en grève", "On doit les entretenir, les protéger et les utiliser avec soin, car ils sont pour tout le monde", "On peut les emporter chez soi"],
+        "answer": 2,
+        "explanation": "Protéger le bien public permet à l'État d'investir dans de NOUVEAUX projets au lieu de toujours devoir réparer les biens cassés."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Laisser l'eau couler ou les lumières allumées inutilement dans un établissement public n'est pas grave, puisque c'est l'État qui paie.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux ! L'État paie avec notre argent (les impôts). Le gaspillage freine le développement et crée des pénuries pour les autres."
+      },
+      {
+        "id": "q4",
+        "text": "Comment appelle-t-on l'acte grave qui consiste pour un fonctionnaire à voler de l'argent public pour son enrichissement personnel ?",
+        "type": "qcm",
+        "options": ["Le civisme", "La bravoure", "Le détournement de fonds publics (ou la corruption)", "Le prêt"],
+        "answer": 2,
+        "explanation": "C'est un crime puni par la loi, car il vole l'argent destiné au développement de la nation."
+      },
+      {
+        "id": "q5",
+        "text": "Détruire les feux tricolores lors d'une manifestation est un acte de :",
+        "type": "qcm",
+        "options": ["Vandalisme et d'incivisme", "Démocratie", "Liberté d'expression", "Courage"],
+        "answer": 0,
+        "explanation": "Ce vandalisme détruit des biens chers et cause des accidents mortels. C'est le contraire du civisme."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Le_projet_d_entreprise_et_l_insertion_sociale": {
+    "title": "Projet d'entreprise et insertion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Qu'est-ce que l'entrepreneuriat ?",
+        "type": "qcm",
+        "options": ["Le fait de dormir", "L'action de créer, de développer et de gérer une entreprise pour répondre à un besoin et créer de la richesse", "Le fait de chercher un emploi dans la Fonction Publique", "Une maladie"],
+        "answer": 1,
+        "explanation": "C'est l'initiative privée, par opposition au statut de salarié ou de fonctionnaire."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'étape cruciale (le document) qu'un futur entrepreneur doit rédiger pour vérifier que son idée sera rentable et pour convaincre une banque ?",
+        "type": "qcm",
+        "options": ["Une lettre d'amour", "Un poème", "Un plan d'affaires (Business Plan)", "Son testament"],
+        "answer": 2,
+        "explanation": "Le Business Plan évalue les coûts, la clientèle visée et les bénéfices espérés."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Avec le chômage élevé, la création d'entreprise est une excellente solution pour l'insertion socio-professionnelle des jeunes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai. Au lieu d'attendre que l'État l'embauche, le jeune 'créateur d'emplois' devient autonome et peut même embaucher d'autres jeunes."
+      },
+      {
+        "id": "q4",
+        "text": "Quelles qualités personnelles un jeune entrepreneur doit-il cultiver pour réussir ?",
+        "type": "qcm",
+        "options": ["La paresse et le désespoir", "L'audace, la persévérance, la rigueur dans la gestion et le sens de l'innovation", "La violence", "La magie"],
+        "answer": 1,
+        "explanation": "Créer une entreprise est difficile au début, il faut savoir affronter les échecs sans se décourager."
+      },
+      {
+        "id": "q5",
+        "text": "Outre les banques classiques, quelles structures financent souvent les petits projets d'entreprises (AGR) des jeunes ou des femmes ?",
+        "type": "qcm",
+        "options": ["Les pharmacies", "Les supermarchés", "Les Institutions de Microfinance (IMF) ou les fonds de l'État pour la jeunesse", "Les écoles"],
+        "answer": 2,
+        "explanation": "Le microcrédit permet de démarrer avec un petit capital."
+      }
+    ]
+  }
+}

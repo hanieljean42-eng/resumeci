@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/enhancements.css?v=2.4.5">
-  <script type="module" src="/firebase-config.js"></script>
-  <script src="/enhancements.js?v=2.4.5" defer></script>
+  <link rel="stylesheet" href="/enhancements.css?v=3.2.0">
+  <script type="module" src="/firebase-config.js?v=3.2.0"></script>
+  <script src="/enhancements.js?v=3.2.0" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flashcards — Révision Espacée BAC | ResumeCI</title>
   <meta name="description" content="Révisez efficacement avec les flashcards à répétition espacée de ResumeCI. Mémorisez vos fiches BAC Terminale A et D en Côte d'Ivoire.">
@@ -120,48 +120,10 @@
   <button class="audio-btn" id="audioBtn" title="Lire la carte"><i class="fas fa-volume-up"></i></button>
 
   <div class="container">
-    <!-- TEASER COMPTE À REBOURS OFFICIEL 01 OCTOBRE -->
-    <div class="rci-countdown-card" style="margin-top:10px;">
-      <div class="rci-cd-top-badge"><i class="fas fa-clone"></i> Flashcards Intelligentes ResumeCI 2026</div>
-      <h2 class="rci-cd-title">Ouverture officielle le 01 Octobre 2026 à 00h00 pile</h2>
-      <div class="rci-cd-date-tag"><i class="fas fa-clock"></i> Heure officielle d'Abidjan (GMT)</div>
-      <p class="rci-cd-subtitle">Les Flashcards de répétition espacée sont en cours de calibrage pédagogique et seront disponibles dès le lancement de la Grande Mise à Jour !</p>
-      
-      <div class="rci-cd-timer-grid">
-        <div class="rci-cd-unit"><div class="rci-cd-num rci-cd-days">--</div><div class="rci-cd-lbl">Jours</div></div>
-        <div class="rci-cd-unit"><div class="rci-cd-num rci-cd-hours">--</div><div class="rci-cd-lbl">Heures</div></div>
-        <div class="rci-cd-unit"><div class="rci-cd-num rci-cd-minutes">--</div><div class="rci-cd-lbl">Minutes</div></div>
-        <div class="rci-cd-unit"><div class="rci-cd-num rci-cd-seconds">--</div><div class="rci-cd-lbl">Secondes</div></div>
-      </div>
-
-      <div class="rci-cd-below">
-        <div class="rci-cd-below-title"><i class="fas fa-brain"></i> Pourquoi les Flashcards vont révolutionner tes notes :</div>
-        <ul class="rci-cd-features-list">
-          <li class="rci-cd-feature-item"><span class="rci-cd-feature-icon">🧠</span><div class="rci-cd-feature-text"><strong>Répétition Scientifique (Ebbinghaus) :</strong> Tu révises les cartes difficiles plus souvent et les faciles au bon moment pour ancrer le cours à vie.</div></li>
-          <li class="rci-cd-feature-item"><span class="rci-cd-feature-icon">⚡</span><div class="rci-cd-feature-text"><strong>Mémorisation 3x plus rapide :</strong> Plus besoin de relire 10 fois la même page, ton cerveau apprend activement.</div></li>
-          <li class="rci-cd-feature-item"><span class="rci-cd-feature-icon">📚</span><div class="rci-cd-feature-text"><strong>Toutes les matières couvertes :</strong> Définitions de Français, formules de Maths et Physique, dates d'Histoire, schémas de SVT.</div></li>
-          <li class="rci-cd-feature-item"><span class="rci-cd-feature-icon">📊</span><div class="rci-cd-feature-text"><strong>Suivi de progression :</strong> Visualise ton pourcentage de maîtrise jour après jour.</div></li>
-        </ul>
-
-        <div class="rci-cd-cta-box">
-          <div class="rci-cd-cta-title">📲 ALERTE WHATSAPP OUVERTURE FLASHCARDS</div>
-          <div class="rci-cd-cta-desc">Inscris ton numéro à 10 chiffres pour recevoir ton accès prioritaire le 01 Octobre à 00h00 pile :</div>
-          <div class="rci-cd-input-group">
-            <span style="background:#1e293b;border:1.5px solid #334155;border-radius:10px;padding:11px 12px;font-weight:700;font-size:13px;color:#94a3b8;display:flex;align-items:center;">🇨🇮 +225</span>
-            <input type="tel" class="rci-cd-input" maxlength="10" placeholder="Ex: 0104911010" inputmode="numeric" onkeypress="if(event.key==='Enter')submitCountdownWaitlist(this.nextElementSibling)">
-            <button type="button" class="rci-cd-submit-btn" onclick="submitCountdownWaitlist(this)"><i class="fas fa-paper-plane"></i> M'inscrire</button>
-          </div>
-          <div style="margin-top:14px;">
-            <a href="/" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);padding:8px 16px;border-radius:8px;color:#38bdf8;font-size:12.5px;font-weight:700;text-decoration:none;"><i class="fas fa-arrow-left"></i> Revenir réviser les 714 fiches de cours</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contenu des flashcards masqué jusqu'au lancement -->
-    <div id="flashcardsContent" style="display:none;">
+    <!-- Contenu des flashcards -->
+    <div id="flashcardsContent">
       <div class="deck-selector">
-      <label>Paquet de cartes</label>
+      <label id="deckSelectLabel">Paquet de cartes 🔒 <span style="font-size:11px;color:#94a3b8;font-weight:400;">(Pass Pro)</span></label>
       <select id="deckSelect">
         <option value="">-- Choisir une matière --</option>
       </select>
@@ -348,6 +310,17 @@
     }
 
     function startSession() {
+      if (!window.userHasFeature || !window.userHasFeature('Flashcards (Répétition Espacée)')) {
+        if (typeof window.openPremiumTeaser === 'function') {
+          window.openPremiumTeaser('Flashcards (Répétition Espacée)');
+        } else if (typeof window.openElitePassModal === 'function') {
+          window.openElitePassModal('Pass Pro');
+        } else {
+          window.location.href = '/?openPass=pro';
+        }
+        clearSession();
+        return;
+      }
       const { due, newCards, learned } = getDueCards(currentDeck);
       // Compute remaining new allowed today for this deck
       const left = getRemainingNewToday(currentDeck);
@@ -522,6 +495,17 @@
     });
 
     // Init
+    function updateFlashcardsLockBadge() {
+      const lbl = document.getElementById('deckSelectLabel');
+      if (!lbl) return;
+      if (window.userHasFeature && window.userHasFeature('Flashcards (Répétition Espacée)')) {
+        lbl.innerHTML = 'Paquet de cartes <span style="font-size:11px;color:#10b981;font-weight:600;">(Débloqué ✓)</span>';
+      } else {
+        lbl.innerHTML = 'Paquet de cartes 🔒 <span style="font-size:11px;color:#94a3b8;font-weight:400;">(Pass Pro)</span>';
+      }
+    }
+    updateFlashcardsLockBadge();
+
     populateDecks();
     clearSession();
     // SW registration for this page
