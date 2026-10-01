@@ -816,7 +816,7 @@
         return;
       }
 
-      const cleanWa = wa.replace(/\D/g, '');
+      const cleanWa = wa.replace(/\D/g, '').slice(-10);
       if (cleanWa.length < 10) {
         showError("⚠️ En Côte d'Ivoire, les numéros mobiles comportent exactement 10 chiffres (ex: 0708091011).");
         return;
