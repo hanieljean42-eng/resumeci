@@ -303,6 +303,10 @@ window.userHasFeature = function(featureName) {
   if (plan === 'elite') {
     return isStarterFeature || isProFeature || isEliteFeature;
   }
+  // VIP et Annuel : accès TOTAL à toutes les fonctionnalités
+  if (plan === 'vip' || plan === 'annual' || plan === 'annuel') {
+    return true;
+  }
 
   return false;
 };
@@ -854,10 +858,26 @@ window.openProfileView = function () {
     if (badgeEl) {
       const isPrem = Boolean(window.USER_PROFILE.isPremium);
       const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
-      if (isPrem && plan !== 'free') {
-        const pName = plan === 'pro' ? 'Pro' : (plan === 'starter' ? 'Starter' : plan.toUpperCase());
-        badgeEl.textContent = `👑 Pass ${pName} (Actif - 30j)`;
-        badgeEl.style.background = '#10b981';
+      const expiresAt = Number(window.USER_PROFILE.premiumExpiresAt) || 0;
+      const now = Date.now();
+      const isActive = isPrem && plan !== 'free' && (expiresAt === 0 || expiresAt > now);
+      if (isActive) {
+        const planNames = {
+          'starter': 'Starter',
+          'pro': 'Pro',
+          'elite': 'Élite',
+          'vip': 'VIP ⭐',
+          'annual': 'Annuel',
+          'annuel': 'Annuel'
+        };
+        const pName = planNames[plan] || plan.toUpperCase();
+        let daysLeft = '';
+        if (expiresAt > 0) {
+          const d = Math.ceil((expiresAt - now) / (24 * 60 * 60 * 1000));
+          daysLeft = ` - ${d}j restants`;
+        }
+        badgeEl.textContent = `👑 Pass ${pName} (Actif${daysLeft})`;
+        badgeEl.style.background = plan === 'vip' ? '#f59e0b' : '#10b981';
         badgeEl.style.color = '#fff';
       } else {
         badgeEl.textContent = 'Gratuit (Limité)';
