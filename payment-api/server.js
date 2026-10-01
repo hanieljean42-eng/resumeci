@@ -631,6 +631,120 @@ app.get('/api/user-status', async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
+// ROUTE 4.7 : AUTHENTIFICATION / CONNEXION ÉLÈVE & RESTAURATION ABONNEMENT
+// --------------------------------------------------------------------------
+app.post('/api/login', async (req, res) => {
+  try {
+    const rawPhone = req.body.whatsapp || req.body.phone || req.body.contact || '';
+    const cleanPhone = String(rawPhone).replace(/\D/g, '').slice(-10);
+    const password = String(req.body.password || '').trim();
+
+    if (!cleanPhone || cleanPhone.length < 10) {
+      return res.status(400).json({ success: false, error: "Numéro WhatsApp à 10 chiffres requis." });
+    }
+    if (!password) {
+      return res.status(400).json({ success: false, error: "Mot de passe requis." });
+    }
+
+    let foundUser = null;
+
+    if (db) {
+      // 1. Recherche directe par doc ID = numéro de téléphone
+      try {
+        const docSnap = await db.collection('users').doc(cleanPhone).get();
+        if (docSnap.exists) {
+          foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+        }
+      } catch (e) {}
+
+      // 2. Recherche par champ whatsapp == cleanPhone
+      if (!foundUser) {
+        try {
+          const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
+          if (!qSnap.empty) {
+            const doc = qSnap.docs[0];
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+          }
+        } catch (e) {}
+      }
+
+      // 3. Recherche par champ contact == cleanPhone
+      if (!foundUser) {
+        try {
+          const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
+          if (!qSnap.empty) {
+            const doc = qSnap.docs[0];
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+          }
+        } catch (e) {}
+      }
+
+      // 4. Recherche dans la waitlist si l'utilisateur s'y était inscrit
+      if (!foundUser) {
+        try {
+          const wSnap = await db.collection('waitlist').doc(cleanPhone).get();
+          if (wSnap.exists) {
+            foundUser = { ...wSnap.data(), uid: wSnap.data().uid || wSnap.id };
+          }
+        } catch (e) {}
+      }
+    }
+
+    if (!foundUser) {
+      return res.status(404).json({
+        success: false,
+        error: "Aucun compte trouvé avec ce numéro WhatsApp (+225 " + cleanPhone + "). Vérifie le numéro ou inscris-toi."
+      });
+    }
+
+    // Vérification du mot de passe
+    if (foundUser.password && String(foundUser.password).trim() !== password) {
+      return res.status(401).json({
+        success: false,
+        error: "Mot de passe incorrect. Vérifie ta saisie ou contacte l'assistance."
+      });
+    }
+
+    const now = Date.now();
+    const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
+    const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
+    const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
+    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
+
+    const fName = foundUser.firstName || (foundUser.fullName ? foundUser.fullName.split(' ')[0] : 'Élève');
+    const lName = foundUser.lastName || (foundUser.fullName ? foundUser.fullName.split(' ').slice(1).join(' ') : '');
+    const fullName = foundUser.fullName || `${fName} ${lName}`.trim() || 'Élève';
+
+    const profile = {
+      uid: foundUser.uid || `user_${cleanPhone}`,
+      firstName: fName,
+      lastName: lName,
+      fullName: fullName,
+      selectedClass: foundUser.selectedClass || foundUser.classe || '3eme',
+      whatsapp: cleanPhone,
+      phone: cleanPhone,
+      password: foundUser.password || password,
+      isPremium: isPremium,
+      premiumPlan: premiumPlan,
+      premiumExpiresAt: effectiveExpiresAt,
+      subscriptionType: foundUser.subscriptionType || 'monthly',
+      createdAt: foundUser.createdAt || new Date().toISOString()
+    };
+
+    console.log(`[Login] ✅ Connexion réussie pour ${fullName} (${cleanPhone}) - Pass: ${premiumPlan} (isPremium: ${isPremium})`);
+
+    res.json({
+      success: true,
+      profile: profile,
+      message: "Connexion réussie !"
+    });
+  } catch (err) {
+    console.error('[Login] Erreur:', err);
+    res.status(500).json({ success: false, error: "Erreur serveur lors de la connexion." });
+  }
+});
+
+// --------------------------------------------------------------------------
 // ROUTE 5 : API ADMIN - UTILISATEURS UNIFIÉS (users + waitlist)
 // --------------------------------------------------------------------------
 app.get('/api/admin/users', async (req, res) => {
