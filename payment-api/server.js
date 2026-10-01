@@ -13,7 +13,7 @@ try {
     credential = admin.credential.cert(sa);
   } else {
     const fs = require('fs');
-    const saPath = path.join(__dirname, 'firebase-admin.json');
+    const saPath = path.join(__dirname, 'payment-api/firebase-admin.json');
     if (fs.existsSync(saPath)) {
       const sa = require(saPath);
       credential = admin.credential.cert(sa);
@@ -31,12 +31,12 @@ try {
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Charger .env si existant
 try {
   const fs = require('fs');
-  const envPath = fs.existsSync(path.join(__dirname, '.env')) ? path.join(__dirname, '.env') : path.join(__dirname, '../.env');
+  const envPath = fs.existsSync(path.join(__dirname, '.env')) ? path.join(__dirname, '.env') : path.join(__dirname, 'payment-api/.env');
   if (fs.existsSync(envPath)) {
     fs.readFileSync(envPath, 'utf8').split('\n').forEach(l => {
       const p = l.trim().split('=');
@@ -105,10 +105,14 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
       // Mettre à jour tous les profils existants associés à ce contact
       try {
         const snap = await db.collection('users').where('whatsapp', '==', cleanPhone).get();
-        snap.forEach(async doc => {
-          await doc.ref.set(updateData, { merge: true });
+        const batch = db.batch();
+        snap.forEach(doc => {
+          batch.set(doc.ref, updateData, { merge: true });
         });
-      } catch (e) {}
+        await batch.commit();
+      } catch (e) {
+        console.warn('[Unlock] Erreur MAJ batch:', e.message);
+      }
     }
   }
 
@@ -353,7 +357,6 @@ app.post('/api/confirm-payment', async (req, res) => {
       return res.status(400).json({ error: "UID requis" });
     }
 
-    // Si une référence de transaction est passée, vérifier d'abord son statut réel
     if (reference) {
       try {
         const gpRes = await queryGeniusPayPayment(reference);
@@ -647,7 +650,7 @@ app.post('/api/login', async (req, res) => {
     const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
     const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
     const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
-    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
+    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + 30 * 24 * 60 * 60 * 1000)) : 0;
 
     const fName = foundUser.firstName || (foundUser.fullName ? foundUser.fullName.split(' ')[0] : 'Élève');
     const lName = foundUser.lastName || (foundUser.fullName ? foundUser.fullName.split(' ').slice(1).join(' ') : '');
@@ -689,7 +692,6 @@ app.get('/api/admin/users', async (req, res) => {
   try {
     const userMap = new Map();
     if (db) {
-      // 1. Charger 'users'
       const snapUsers = await db.collection('users').get();
       snapUsers.forEach(doc => {
         const d = doc.data();
@@ -699,7 +701,6 @@ app.get('/api/admin/users', async (req, res) => {
         }
       });
 
-      // 2. Charger 'waitlist' pour les inscrits de première heure
       const snapWait = await db.collection('waitlist').get();
       snapWait.forEach(doc => {
         const d = doc.data();
@@ -826,10 +827,8 @@ app.post('/api/admin/set-plan', async (req, res) => {
     if (selectedClass) updateData.selectedClass = selectedClass;
 
     if (db) {
-      // 1. Mettre à jour par target (UID ou Doc direct)
       await db.collection('users').doc(target).set(updateData, { merge: true });
 
-      // 2. Si c'est un numéro ivoirien à 10 chiffres, mettre à jour le document correspondant
       if (cleanTarget.length === 10) {
         await db.collection('users').doc(cleanTarget).set({
           ...updateData,
@@ -838,9 +837,11 @@ app.post('/api/admin/set-plan', async (req, res) => {
         }, { merge: true });
 
         const snap = await db.collection('users').where('whatsapp', '==', cleanTarget).get();
-        snap.forEach(async doc => {
-          await doc.ref.set(updateData, { merge: true });
+        const batch = db.batch();
+        snap.forEach(doc => {
+          batch.set(doc.ref, updateData, { merge: true });
         });
+        await batch.commit();
       }
     }
 

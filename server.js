@@ -105,10 +105,14 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
       // Mettre à jour tous les profils existants associés à ce contact
       try {
         const snap = await db.collection('users').where('whatsapp', '==', cleanPhone).get();
-        snap.forEach(async doc => {
-          await doc.ref.set(updateData, { merge: true });
+        const batch = db.batch();
+        snap.forEach(doc => {
+          batch.set(doc.ref, updateData, { merge: true });
         });
-      } catch (e) {}
+        await batch.commit();
+      } catch (e) {
+        console.warn('[Unlock] Erreur MAJ batch:', e.message);
+      }
     }
   }
 
@@ -833,9 +837,11 @@ app.post('/api/admin/set-plan', async (req, res) => {
         }, { merge: true });
 
         const snap = await db.collection('users').where('whatsapp', '==', cleanTarget).get();
-        snap.forEach(async doc => {
-          await doc.ref.set(updateData, { merge: true });
+        const batch = db.batch();
+        snap.forEach(doc => {
+          batch.set(doc.ref, updateData, { merge: true });
         });
+        await batch.commit();
       }
     }
 

@@ -2,22 +2,18 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Waitlist: create public, lecture autorisée pour les admins authentifiés
+    // Waitlist: création et lecture
     match /waitlist/{document} {
-      allow create: if true;
-      allow read: if request.auth != null;
-      allow update, delete: if request.auth != null;
+      allow read, write: if true;
     }
 
-    // Utilisateurs et Inscriptions: création/mise à jour, lecture pour admins authentifiés
+    // Utilisateurs et Inscriptions: lecture et écriture publiques (auth par numéro/mdp géré côté application)
     match /users/{userId} {
-      allow create, update: if true;
-      allow read: if request.auth != null;
+      allow read, write: if true;
     }
 
     match /inscriptions/{userId} {
-      allow create, update: if true;
-      allow read: if request.auth != null;
+      allow read, write: if true;
     }
 
     // Bloquer le reste par défaut
