@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script type="module" src="/firebase-config.js?v=3.3.4"></script>
 
   <style>
     :root {
@@ -846,6 +847,15 @@
         };
 
         localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+        localStorage.setItem('user_profile', JSON.stringify(profile));
+        localStorage.setItem('resumeci_user', JSON.stringify(profile));
+
+        // Synchroniser instantanément le profil dans Firestore en local (< 100ms)
+        if (typeof window.syncUserProfileToFirestore === 'function') {
+          try {
+            window.syncUserProfileToFirestore(profile);
+          } catch(e) {}
+        }
 
         // Initialiser la flamme streak à exactement 1 jour pour ce nouvel utilisateur
         const d = new Date();
@@ -855,6 +865,7 @@
           lastDay: todayStr,
           lastActiveAt: Date.now()
         }));
+
 
         // Envoi au serveur et Firestore pour suivi administrateur en temps réel
         const apiBase = getPaymentApiBase();

@@ -394,13 +394,14 @@
       const pwd = document.getElementById('logPassword').value;
       const btn = document.getElementById('logSubmitBtn');
 
-      const cleanWa = wa.replace(/\D/g, '');
-      if (cleanWa.length < 10) {
-        showError("⚠️ Le numéro WhatsApp doit comporter 10 chiffres.");
+      const cleanWa = wa.replace(/\D/g, '').slice(-10);
+      if (cleanWa.length !== 10) {
+        showError("⚠️ Le numéro WhatsApp doit comporter 10 chiffres (ex: 07 08 09 10 11).");
         return;
       }
 
-      if (!pwd) {
+      const cleanPwd = pwd.trim();
+      if (!cleanPwd) {
         showError("⚠️ Entre ton mot de passe.");
         return;
       }
@@ -416,7 +417,7 @@
           try {
             const fbUser = await window.fetchUserProfileFromFirestore(cleanWa);
             if (fbUser) {
-              if (fbUser.password && String(fbUser.password).trim() !== pwd) {
+              if (fbUser.password && String(fbUser.password).trim() !== cleanPwd) {
                 showError("❌ Mot de passe incorrect. Vérifie ta saisie ou contacte l'assistance.");
                 resetBtn();
                 return;
@@ -479,6 +480,17 @@
         // 3. Si le compte a été identifié (Firestore ou API Backend)
         if (profile) {
           localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+          localStorage.setItem('user_profile', JSON.stringify(profile));
+          localStorage.setItem('resumeci_user', JSON.stringify(profile));
+          localStorage.setItem('resumeci_student_user', JSON.stringify(profile));
+
+          // Auto-guérison si le mot de passe était manquant dans la base
+          if (typeof window.syncUserProfileToFirestore === 'function') {
+            try {
+              window.syncUserProfileToFirestore(profile);
+            } catch(e) {}
+          }
+
           if (!localStorage.getItem('resumeci_streak')) {
             const d = new Date();
             const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -491,9 +503,10 @@
           btn.innerHTML = '<i class="fas fa-check"></i> Connecté ! Redirection...';
           setTimeout(() => {
             window.location.href = '/?welcome=1';
-          }, 400);
+          }, 350);
           return;
         }
+
 
         // 4. Secours local si hors-ligne
         const raw = localStorage.getItem('resumeci_profile');

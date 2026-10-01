@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Espace Administrateur - Tableau de Bord ResumeCI</title>
+  <title>Administration ResumeCI — Espace Gestion Élèves & Abonnements</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       --bg: #090d16;
-      --card-bg: #131b2e;
+      --card-bg: #121a2d;
       --card-border: #1e293b;
       --text: #f8fafc;
       --text-muted: #94a3b8;
@@ -21,9 +21,7 @@
       --success: #10b981;
       --warning: #f59e0b;
       --danger: #ef4444;
-      --orange: #f97316;
-      --mtn: #eab308;
-      --moov: #06b6d4;
+      --vip: #f59e0b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +33,7 @@
       line-height: 1.5;
     }
 
-    /* Écran de connexion */
+    /* Écran de Connexion */
     .login-container {
       display: flex;
       align-items: center;
@@ -54,127 +52,86 @@
       text-align: center;
     }
     .login-card .logo-badge {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 18px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      border-radius: 16px;
-      display: flex;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      color: white;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 20px;
       box-shadow: 0 10px 25px rgba(59,130,246,0.3);
     }
-    .login-card h1 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .login-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-    }
-    .form-group {
-      text-align: left;
-      margin-bottom: 18px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .login-card h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .login-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 26px; }
+    .form-group { text-align: left; margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
     .form-group input {
       width: 100%;
-      padding: 13px 16px;
-      background: #0b1120;
-      border: 1px solid #27354f;
-      border-radius: 12px;
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px 14px;
       color: #fff;
       font-size: 14px;
       outline: none;
-      transition: all 0.2s;
+      transition: 0.2s;
     }
-    .form-group input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
-    }
-    .btn-primary {
+    .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
+    .btn-login {
       width: 100%;
-      padding: 14px;
-      background: linear-gradient(135deg, #3b82f6, #6366f1);
-      color: white;
+      background: var(--primary);
+      color: #fff;
       border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
+      border-radius: 10px;
+      padding: 13px;
+      font-weight: 800;
+      font-size: 14.5px;
       cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.2s;
+      margin-top: 10px;
     }
-    .btn-primary:hover {
-      opacity: 0.95;
-      transform: translateY(-1px);
-    }
-    .btn-primary:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .login-msg {
-      margin-top: 14px;
-      font-size: 12px;
-      display: none;
-    }
-    .login-msg.error { color: var(--danger); display: block; }
-    .login-msg.warning { color: var(--warning); display: block; }
+    .btn-login:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .login-error { color: var(--danger); font-size: 13px; margin-top: 14px; display: none; font-weight: 600; }
 
-    /* Dashboard */
+    /* Dashboard Principal */
     .dashboard-container {
       display: none;
-      max-width: 1260px;
+      max-width: 1360px;
       margin: 0 auto;
-      padding: 30px 20px 80px;
+      padding: 24px;
     }
     .dashboard-container.active { display: block; }
 
-    /* Entête Navbar */
+    /* Barre supérieure */
     .dash-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       padding-bottom: 20px;
       border-bottom: 1px solid var(--card-border);
     }
     .header-titles h1 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
-      color: #fff;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .header-titles p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .header-titles p { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
     .btn-header {
-      padding: 9px 16px;
+      padding: 10px 16px;
       border-radius: 10px;
       font-size: 13px;
       font-weight: 700;
@@ -183,273 +140,132 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.2s;
+      transition: 0.2s;
     }
-    .btn-refresh {
-      background: #1e293b;
-      color: #f8fafc;
-      border: 1px solid #334155;
+    .btn-create {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16,185,129,0.35);
     }
-    .btn-refresh:hover { background: #334155; }
-    .btn-refresh.spinning i {
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-    .btn-logout {
-      background: rgba(239,68,68,0.15);
-      color: #f87171;
-      border: 1px solid rgba(239,68,68,0.3);
-    }
-    .btn-logout:hover {
-      background: var(--danger);
-      color: white;
-    }
+    .btn-create:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(16,185,129,0.45); }
+    .btn-secondary { background: #1e293b; color: #f8fafc; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-logout { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .btn-logout:hover { background: var(--danger); color: #fff; }
 
-    /* Cartes Statistiques Clés (4 Cartes : Total, Gratuit, Starter, Pro) */
-    .stats-row {
+    /* 4 Cartes Statistiques Clés */
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      gap: 16px;
       margin-bottom: 24px;
     }
     .stat-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 22px;
+      padding: 20px;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
     .stat-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--card-accent, var(--primary));
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent-color, var(--primary));
     }
-    .stat-icon {
-      position: absolute;
-      right: 18px;
-      top: 18px;
-      font-size: 26px;
-      opacity: 0.18;
-      color: #fff;
-    }
-    .stat-card .label {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-    }
-    .stat-card .number {
-      font-size: 34px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.1;
-    }
-    .stat-card .subtext {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .stat-card .label { font-size: 11.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card .number { font-size: 32px; font-weight: 800; color: #fff; margin: 6px 0 2px; }
+    .stat-card .sub { font-size: 12px; color: var(--text-muted); }
 
-    /* Section Répartition par Classe */
-    .classes-section {
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 18px 22px;
-      margin-bottom: 24px;
-    }
-    .classes-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .classes-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #e2e8f0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .classes-bar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .cls-chip {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 20px;
-      padding: 7px 14px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #cbd5e1;
-      transition: all 0.2s;
-    }
-    .cls-chip strong {
-      color: #a78bfa;
-      font-weight: 800;
-    }
-
-    /* Répartition Opérateurs */
-    .operators-bar {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-    .op-chip {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12.5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-    }
-    .op-chip .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    /* Zone Tableau et Outils */
-    .content-box {
+    /* Barre d'outils et recherche */
+    .toolbar-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-    .toolbar {
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 20px;
     }
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: #0b1120;
-      border: 1px solid #27354f;
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .search-wrapper i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      background: #090d16;
+      border: 1px solid var(--card-border);
       border-radius: 10px;
-      padding: 9px 14px;
-      width: 100%;
-      max-width: 320px;
-      gap: 10px;
-    }
-    .search-box i { color: var(--text-muted); font-size: 14px; }
-    .search-box input {
-      background: transparent;
-      border: none;
+      padding: 11px 14px 11px 40px;
       color: #fff;
-      font-size: 13px;
-      width: 100%;
+      font-size: 13.5px;
       outline: none;
+      transition: 0.2s;
     }
-    .toolbar-actions {
+    .search-wrapper input:focus { border-color: var(--primary); }
+
+    .filters-group {
       display: flex;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
     }
-    .filter-select {
-      background: #0b1120;
-      border: 1px solid #27354f;
+    .select-filter {
+      background: #090d16;
+      border: 1px solid var(--card-border);
       border-radius: 10px;
-      padding: 9px 12px;
+      padding: 10px 14px;
       color: #fff;
       font-size: 13px;
+      font-weight: 600;
       outline: none;
       cursor: pointer;
     }
-    .filter-select:focus {
-      border-color: var(--primary);
-    }
-    .btn-export {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s;
-    }
-    .btn-export:hover { opacity: 0.92; transform: translateY(-1px); }
+    .select-filter option { background: #090d16; }
 
-    /* Tableau */
-    .table-responsive {
-      overflow-x: auto;
-      border-radius: 12px;
-      border: 1px solid #1f293d;
+    /* Tableau des Élèves */
+    .table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    thead {
-      background: #0c1427;
-    }
-    th {
+    .table-responsive { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; }
+    thead th {
+      background: #0d1424;
       padding: 14px 18px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
+      font-size: 11.5px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid #1f293d;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--card-border);
       white-space: nowrap;
     }
-    td {
+    tbody td {
       padding: 14px 18px;
-      font-size: 13px;
-      border-bottom: 1px solid #182338;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
       vertical-align: middle;
       white-space: nowrap;
     }
-    tbody tr:hover {
-      background: rgba(255,255,255,0.02);
-    }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
 
     /* Badges */
-    .badge-op {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-    .badge-orange { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
-    .badge-mtn { background: rgba(234,179,8,0.15); color: #facc15; border: 1px solid rgba(234,179,8,0.3); }
-    .badge-moov { background: rgba(6,182,212,0.15); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3); }
-    .badge-other { background: rgba(148,163,184,0.15); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.3); }
-
     .badge-class {
       display: inline-flex;
       align-items: center;
@@ -462,7 +278,6 @@
       color: #c084fc;
       border: 1px solid rgba(139,92,246,0.3);
     }
-
     .badge-plan {
       display: inline-flex;
       align-items: center;
@@ -472,27 +287,16 @@
       font-size: 11.5px;
       font-weight: 700;
     }
-    .badge-plan-free {
-      background: rgba(100,116,139,0.18);
-      color: #94a3b8;
-      border: 1px solid rgba(100,116,139,0.3);
-    }
-    .badge-plan-starter {
-      background: rgba(37,99,235,0.18);
-      color: #60a5fa;
-      border: 1px solid rgba(37,99,235,0.35);
-    }
-    .badge-plan-pro {
-      background: rgba(16,185,129,0.18);
-      color: #34d399;
-      border: 1px solid rgba(16,185,129,0.35);
-    }
+    .badge-plan-free { background: rgba(100,116,139,0.18); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+    .badge-plan-starter { background: rgba(37,99,235,0.18); color: #60a5fa; border: 1px solid rgba(37,99,235,0.35); }
+    .badge-plan-pro { background: rgba(16,185,129,0.18); color: #34d399; border: 1px solid rgba(16,185,129,0.35); }
+    .badge-plan-vip { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); }
 
-    .btn-wa-contact {
+    .btn-wa-link {
       background: rgba(16,185,129,0.15);
       color: #34d399;
       border: 1px solid rgba(16,185,129,0.3);
-      padding: 7px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 700;
@@ -500,192 +304,102 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s;
+      transition: 0.2s;
     }
-    .btn-wa-contact:hover {
-      background: #10b981;
-      color: white;
-    }
+    .btn-wa-link:hover { background: #10b981; color: #fff; }
 
-    .phone-text {
-      font-weight: 800;
-      font-size: 13.5px;
-      letter-spacing: 0.5px;
-      color: #fff;
-    }
-
-    .empty-state {
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--text-muted);
-    }
-    .empty-state i {
-      font-size: 40px;
-      margin-bottom: 12px;
-      opacity: 0.4;
-    }
-  
     .btn-action-grant {
-      background: linear-gradient(135deg, #8b5cf6, #6366f1);
-      color: white;
-      border: none;
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-      box-shadow: 0 4px 10px rgba(139,92,246,0.3);
-    }
-    .btn-action-grant:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 14px rgba(139,92,246,0.45);
-    }
-    .btn-action-revoke {
-      background: rgba(239, 68, 68, 0.16);
-      color: #f87171;
-      border: 1px solid rgba(239, 68, 68, 0.35);
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-action-revoke:hover {
-      background: #ef4444;
-      color: white;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
-    }
-    .btn-action-quick-pro {
-      background: rgba(16, 185, 129, 0.16);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      padding: 7px 12px;
-      border-radius: 8px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-action-quick-pro:hover {
-      background: #10b981;
-      color: white;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-    }
-    .actions-flex {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .badge-plan-annual {
-      background: rgba(245, 158, 11, 0.18);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.35);
-    }
-    .badge-plan-vip {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(139, 92, 246, 0.25));
-      color: #fcd34d;
-      border: 1px solid rgba(245, 158, 11, 0.4);
-    }
-    .tab-nav-bar {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 12px;
-    }
-    .tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      padding: 11px 20px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s;
-    }
-    .tab-btn:hover {
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-    }
-    .tab-btn.active {
       background: #1e293b;
-      border-color: #3b82f6;
-      color: #60a5fa;
+      color: #f8fafc;
+      border: 1px solid #334155;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.2s;
     }
-    .admin-modal-overlay {
+    .btn-action-grant:hover { background: var(--primary); border-color: var(--primary); }
+
+    .btn-action-sendwa {
+      background: rgba(37,211,102,0.15);
+      color: #25d366;
+      border: 1px solid rgba(37,211,102,0.3);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.2s;
+    }
+    .btn-action-sendwa:hover { background: #25d366; color: #090d16; }
+
+    /* Modales */
+    .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(4, 7, 15, 0.88);
-      backdrop-filter: blur(8px);
-      z-index: 99999;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px;
+      z-index: 1000;
     }
-    .admin-modal-overlay.active {
-      display: flex;
-    }
-    .admin-modal-card {
-      background: #111827;
-      border: 1px solid #1f2937;
+    .modal-overlay.active { display: flex; }
+    .modal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: 20px;
       max-width: 520px;
       width: 100%;
-      padding: 26px;
+      padding: 28px;
       box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-      position: relative;
     }
-    .plan-radio-card {
-      border: 1px solid #374151;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-header h2 { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .modal-close { background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; }
+
+    .plan-card-opt {
+      background: #090d16;
+      border: 2px solid var(--card-border);
       border-radius: 12px;
-      padding: 11px 14px;
-      background: #1f2937;
-      cursor: pointer;
+      padding: 12px 14px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: pointer;
       transition: 0.2s;
-      margin-bottom: 8px;
     }
-    .plan-radio-card:hover {
-      border-color: #6366f1;
-    }
-    .plan-radio-card.selected {
-      border-color: #10b981;
-      background: rgba(16, 185, 129, 0.12);
-    }
-    .status-pill {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-    }
-    .status-completed { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #059669; }
-    .status-processing { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #d97706; }
-    .status-pending { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #2563eb; }
-    .status-failed { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #dc2626; }
+    .plan-card-opt.selected { border-color: var(--success); background: rgba(16,185,129,0.08); }
+    .plan-card-opt .title { font-weight: 800; font-size: 13.5px; }
+    .plan-card-opt .desc { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
 
+    .modal-actions { display: flex; gap: 10px; margin-top: 22px; }
+    .modal-actions button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+    }
+
+    .empty-state { text-align: center; padding: 48px 20px; color: var(--text-muted); }
+    .empty-state i { font-size: 36px; margin-bottom: 10px; opacity: 0.4; }
   </style>
 </head>
 <body>
@@ -695,10 +409,10 @@
     <div class="login-card">
       <div class="logo-badge"><i class="fas fa-shield-halved"></i></div>
       <h1>Espace Administrateur</h1>
-      <p>Connectez-vous pour consulter et gérer les inscriptions d'élèves et les abonnements ResumeCI.</p>
+      <p>Connecte-toi pour gérer les élèves et leurs abonnements ResumeCI.</p>
       
       <div class="form-group">
-        <label for="adminEmail">Adresse Email</label>
+        <label for="adminEmail">Email Administrateur</label>
         <input type="email" id="adminEmail" placeholder="admin@resumeci.me" autocomplete="email">
       </div>
       
@@ -707,30 +421,29 @@
         <input type="password" id="adminPassword" placeholder="••••••••" autocomplete="current-password">
       </div>
       
-      <button class="btn-primary" id="loginBtn" onclick="handleLogin()">
-        <i class="fas fa-lock"></i> Se connecter
+      <button class="btn-login" id="loginBtn" onclick="handleLogin()">
+        <i class="fas fa-lock"></i> Se Connecter
       </button>
       
-      <div class="login-msg error" id="loginError"></div>
-      <div class="login-msg warning" id="attemptsWarning"></div>
+      <div class="login-error" id="loginError"></div>
     </div>
   </div>
 
-  <!-- 2. Tableau de Bord Administrateur -->
+  <!-- 2. Dashboard Administrateur Reaménagé -->
   <div class="dashboard-container" id="dashboard">
     
-    <!-- Entête -->
+    <!-- En-tête simplifié -->
     <header class="dash-header">
       <div class="header-titles">
-        <h1>📊 Tableau de Bord - Inscriptions & Abonnements ResumeCI</h1>
-        <p>Suivi en temps réel des élèves inscrits, des formules choisies (Gratuit, Starter, Pro) et de leurs classes.</p>
+        <h1>📊 Tableau de Bord ResumeCI</h1>
+        <p>Gestion simplifiée des comptes élèves, activations Pass et synchronisation en direct.</p>
       </div>
       <div class="header-actions">
-        <button class="btn-header" onclick="openCreateUserModal()" style="background:linear-gradient(135deg, #10b981, #059669); color:#fff; border:none; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
-          <i class="fas fa-user-plus"></i> ➕ Créer un Compte (Accès Gratuit)
+        <button class="btn-header btn-create" onclick="openCreateUserModal()">
+          <i class="fas fa-user-plus"></i> ➕ Créer un Compte Élève
         </button>
-        <button class="btn-header btn-refresh" id="btnRefresh" onclick="loadData(true)">
-          <i class="fas fa-arrows-rotate"></i> Actualiser la liste
+        <button class="btn-header btn-secondary" id="btnRefresh" onclick="loadData(true)">
+          <i class="fas fa-arrows-rotate"></i> Actualiser
         </button>
         <button class="btn-header btn-logout" onclick="handleLogout()">
           <i class="fas fa-arrow-right-from-bracket"></i> Déconnexion
@@ -738,173 +451,89 @@
       </div>
     </header>
 
-    <!-- Cartes Statistiques Clés (Total, Gratuit, Starter, Pro) -->
-    <div class="stats-row">
-      <div class="stat-card" style="--card-accent: #3b82f6;">
-        <i class="fas fa-users stat-icon"></i>
+    <!-- 4 Cartes Clés (Sans distraction) -->
+    <div class="stats-grid">
+      <div class="stat-card" style="--accent-color: #3b82f6;">
         <div class="label">Total Élèves Inscrits</div>
         <div class="number" id="statTotalCount">0</div>
-        <div class="subtext"><i class="fas fa-check-circle" style="color:#10b981;"></i> Tous profils uniques</div>
+        <div class="sub"><i class="fas fa-users" style="color:#3b82f6;"></i> Profils enregistrés</div>
       </div>
 
-      <div class="stat-card" style="--card-accent: #64748b;">
-        <i class="fas fa-book-open stat-icon"></i>
-        <div class="label">Formule Gratuite (0 F)</div>
-        <div class="number" id="statFreeCount">0</div>
-        <div class="subtext"><i class="fas fa-unlock" style="color:#94a3b8;"></i> 714 fiches en lecture libre</div>
-      </div>
-
-      <div class="stat-card" style="--card-accent: #2563eb;">
-        <i class="fas fa-bolt stat-icon"></i>
-        <div class="label">Pass Starter (500 F)</div>
-        <div class="number" id="statStarterCount">0</div>
-        <div class="subtext"><i class="fas fa-download" style="color:#60a5fa;"></i> Pack Hors-Ligne & PDF</div>
-      </div>
-
-      <div class="stat-card" style="--card-accent: #10b981;">
-        <i class="fas fa-crown stat-icon"></i>
+      <div class="stat-card" style="--accent-color: #10b981;">
         <div class="label">Pass Pro (1 000 F)</div>
-        <div class="number" id="statProCount">0</div>
-        <div class="subtext"><i class="fas fa-gem" style="color:#34d399;"></i> Audio, Pièges d'Examen, Quiz</div>
+        <div class="number" id="statProCount" style="color:#34d399;">0</div>
+        <div class="sub"><i class="fas fa-crown" style="color:#10b981;"></i> Abonnés Pro actifs</div>
+      </div>
+
+      <div class="stat-card" style="--accent-color: #60a5fa;">
+        <div class="label">Pass Starter (500 F)</div>
+        <div class="number" id="statStarterCount" style="color:#60a5fa;">0</div>
+        <div class="sub"><i class="fas fa-bolt" style="color:#60a5fa;"></i> Packs hors-ligne actifs</div>
+      </div>
+
+      <div class="stat-card" style="--accent-color: #f59e0b;">
+        <div class="label">Pass VIP & Annuel</div>
+        <div class="number" id="statVipCount" style="color:#fbbf24;">0</div>
+        <div class="sub"><i class="fas fa-gem" style="color:#f59e0b;"></i> Accès permanents & 1 an</div>
       </div>
     </div>
 
-    <!-- Répartition par Classe -->
-    <div class="classes-section">
-      <div class="classes-header">
-        <div class="classes-title">
-          <i class="fas fa-graduation-cap" style="color:#a78bfa;"></i> Répartition des élèves par classe :
-        </div>
+    <!-- Barre d'outils et recherche épurée -->
+    <div class="toolbar-box">
+      <div class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Rechercher par nom ou numéro WhatsApp..." oninput="filterTable()">
       </div>
-      <div class="classes-bar" id="classesBar">
-        <div class="cls-chip">6ème : <strong id="cnt_6eme">0</strong></div>
-        <div class="cls-chip">5ème : <strong id="cnt_5eme">0</strong></div>
-        <div class="cls-chip">4ème : <strong id="cnt_4eme">0</strong></div>
-        <div class="cls-chip">3ème (BEPC) : <strong id="cnt_3eme">0</strong></div>
-        <div class="cls-chip">Seconde A : <strong id="cnt_Seconde_A">0</strong></div>
-        <div class="cls-chip">Seconde C : <strong id="cnt_Seconde_C">0</strong></div>
-        <div class="cls-chip">Première D : <strong id="cnt_Premiere_D">0</strong></div>
-        <div class="cls-chip">Terminale A : <strong id="cnt_Terminale_A">0</strong></div>
-        <div class="cls-chip">Terminale C : <strong id="cnt_Terminale_C">0</strong></div>
-        <div class="cls-chip">Terminale D : <strong id="cnt_Terminale_D">0</strong></div>
-      </div>
-    </div>
 
-    <!-- Répartition Opérateurs en Côte d'Ivoire -->
-    <div class="operators-bar">
-      <div class="op-chip">
-        <span class="dot" style="background:#f97316;"></span>
-        <span>Orange CI (07) : <strong id="countOrange">0</strong></span>
-      </div>
-      <div class="op-chip">
-        <span class="dot" style="background:#eab308;"></span>
-        <span>MTN CI (05) : <strong id="countMtn">0</strong></span>
-      </div>
-      <div class="op-chip">
-        <span class="dot" style="background:#06b6d4;"></span>
-        <span>Moov CI (01) : <strong id="countMoov">0</strong></span>
-      </div>
-      <div class="op-chip">
-        <span class="dot" style="background:#94a3b8;"></span>
-        <span>Autres : <strong id="countOther">0</strong></span>
-      </div>
-    </div>
+      <div class="filters-group">
+        <select id="filterClass" class="select-filter" onchange="filterTable()">
+          <option value="all">Toutes les classes</option>
+          <option value="6eme">6ème</option>
+          <option value="5eme">5ème</option>
+          <option value="4eme">4ème</option>
+          <option value="3eme">3ème (BEPC)</option>
+          <option value="Seconde_A">Seconde A</option>
+          <option value="Seconde_C">Seconde C</option>
+          <option value="Premiere_D">Première D</option>
+          <option value="Terminale_A">Terminale A</option>
+          <option value="Terminale_C">Terminale C</option>
+          <option value="Terminale_D">Terminale D</option>
+        </select>
 
-    <!-- NOUVELLE SECTION : ENVOI DIRECT WHATSAPP SANS PRÉNOM (INVITATION OFFICIELLE) -->
-    <div class="content-box" style="margin-bottom: 24px; border-left: 4px solid #25d366;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:36px; height:36px; border-radius:10px; background:rgba(37,211,102,0.15); color:#25d366; display:flex; align-items:center; justify-content:center; font-size:18px;">
-            <i class="fab fa-whatsapp"></i>
-          </div>
-          <div>
-            <h3 style="margin:0; font-size:16px; color:#fff; font-weight:800;">Envoi Direct WhatsApp (Invitation & Annonce Mise à Jour)</h3>
-            <p style="margin:2px 0 0; font-size:12px; color:var(--text-muted);">Envoie le message officiel de la mise à jour à n'importe quel élève ou parent (sans prénom, universel).</p>
-          </div>
-        </div>
-        <button class="btn-export" onclick="copyOfficialMessage()" style="background:#25d366; color:#0f172a; font-weight:800; border:none; cursor:pointer;">
-          <i class="fas fa-copy"></i> Copier le message pour un groupe / canal
+        <select id="filterPlan" class="select-filter" onchange="filterTable()">
+          <option value="all">Tous les forfaits</option>
+          <option value="pro">Pass Pro</option>
+          <option value="starter">Pass Starter</option>
+          <option value="vip">Pass VIP / Annuel</option>
+          <option value="free">Gratuit</option>
+        </select>
+
+        <button class="btn-header btn-secondary" onclick="exportCSV()">
+          <i class="fas fa-file-csv"></i> Exporter
         </button>
       </div>
-
-      <div style="background: rgba(15,23,42,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; margin-bottom: 16px;">
-        <div style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: #a78bfa; margin-bottom: 6px;">Message officiel pré-rempli (sans prénom) :</div>
-        <div id="officialMessagePreview" style="font-size: 13px; line-height: 1.5; color: #e2e8f0; white-space: pre-wrap;">Bonjour ! La nouvelle mise à jour de ResumeCI est enfin disponible ! Retrouvez vos 714 fiches de cours gratuites, résumés officiels et outils d'élite pour réussir votre année scolaire au BEPC et au BAC. Vous pouvez dès maintenant créer votre profil ou vous connecter sur : https://resumeci.me/inscription.html</div>
-      </div>
-
-      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-        <div style="position:relative; flex:1; min-width:260px;">
-          <i class="fab fa-whatsapp" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:#25d366; font-size:16px;"></i>
-          <input type="tel" id="directWaInput" placeholder="Numéro WhatsApp de l'élève (ex: 07 08 09 10 11 ou 05...)" style="width:100%; background:var(--bg-card); border:1px solid var(--border-color); border-radius:10px; padding:12px 14px 12px 40px; color:#fff; font-size:14px; outline:none;" onkeypress="if(event.key==='Enter') sendDirectWhatsApp()">
-        </div>
-        <button onclick="sendDirectWhatsApp()" style="background:linear-gradient(135deg, #25d366, #128c7e); color:#fff; border:none; border-radius:10px; padding:12px 22px; font-weight:800; font-size:13.5px; cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 4px 12px rgba(37,211,102,0.3); transition:0.2s;">
-          <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp 🚀
-        </button>
-      </div>
-      <div id="directWaFeedback" style="margin-top:8px; font-size:12.5px; display:none;"></div>
     </div>
 
-    <!-- Conteneur Tableau de Données -->
-    <div class="content-box">
-      <div class="toolbar">
-        <div class="search-box">
-          <i class="fas fa-magnifying-glass"></i>
-          <input type="text" id="searchInput" placeholder="Rechercher par nom ou numéro..." oninput="filterTable()">
-        </div>
-
-        <div class="toolbar-actions">
-          <!-- Filtre Formule -->
-          <select id="filterPlan" class="filter-select" onchange="filterTable()">
-            <option value="all">Toutes les formules</option>
-            <option value="free">Formule Gratuite (0 F)</option>
-            <option value="starter">Pass Starter (500 F)</option>
-            <option value="pro">Pass Pro (1 000 F)</option>
-          </select>
-
-          <!-- Filtre Classe -->
-          <select id="filterClass" class="filter-select" onchange="filterTable()">
-            <option value="all">Toutes les classes</option>
-            <option value="6eme">6ème</option>
-            <option value="5eme">5ème</option>
-            <option value="4eme">4ème</option>
-            <option value="3eme">3ème (BEPC)</option>
-            <option value="Seconde_A">Seconde A</option>
-            <option value="Seconde_C">Seconde C</option>
-            <option value="Premiere_D">Première D</option>
-            <option value="Terminale_A">Terminale A</option>
-            <option value="Terminale_C">Terminale C</option>
-            <option value="Terminale_D">Terminale D</option>
-          </select>
-
-          <button class="btn-export" onclick="openCreateUserModal()" style="background:linear-gradient(135deg, #10b981, #059669);">
-            <i class="fas fa-user-plus"></i> Nouveau Compte
-          </button>
-          <button class="btn-export" onclick="exportCSV()">
-            <i class="fas fa-file-excel"></i> Exporter la liste (Excel / CSV)
-          </button>
-        </div>
-      </div>
-
+    <!-- Tableau Moderne et Épuré -->
+    <div class="table-card">
       <div class="table-responsive">
         <table>
           <thead>
             <tr>
-              <th style="width: 40px;">#</th>
+              <th style="width: 50px;">#</th>
               <th>Élève (Nom & Prénom)</th>
-              <th>Numéro WhatsApp</th>
               <th>Classe</th>
-              <th>Formule</th>
-              <th>Opérateur</th>
+              <th>Numéro WhatsApp</th>
+              <th>Formule & Forfait</th>
               <th>Date d'inscription</th>
-              <th>Appareil</th>
-              <th style="text-align: right; min-width: 230px;">Actions Administrateur</th>
+              <th style="text-align: right;">Actions Rapides</th>
             </tr>
           </thead>
           <tbody id="tableBody">
             <tr>
-              <td colspan="9" class="empty-state">
-                <i class="fas fa-circle-notch fa-spin"></i>
-                <p>Chargement des élèves inscrits en cours...</p>
+              <td colspan="7" class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Chargement des élèves...</p>
               </td>
             </tr>
           </tbody>
@@ -914,17 +543,170 @@
 
   </div>
 
+  <!-- MODAL : CRÉER UN COMPTE ÉLÈVE DIRECTEMENT -->
+  <div class="modal-overlay" id="createUserModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2><i class="fas fa-user-plus" style="color:#10b981;"></i> Créer un Compte Élève</h2>
+        <button class="modal-close" onclick="closeCreateUserModal()"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="form-group">
+        <label>Nom complet de l'élève</label>
+        <input type="text" id="newFullName" placeholder="Ex: Kouassi Jean-Marc">
+      </div>
+
+      <div class="form-group">
+        <label>Numéro WhatsApp (10 chiffres)</label>
+        <input type="tel" id="newPhone" placeholder="Ex: 0708091011 ou 05...">
+      </div>
+
+      <div class="form-group">
+        <label>Classe</label>
+        <select id="newClass" class="select-filter" style="width:100%; padding:12px;">
+          <option value="3eme">3ème (BEPC)</option>
+          <option value="Terminale_D">Terminale D</option>
+          <option value="Terminale_A">Terminale A</option>
+          <option value="Terminale_C">Terminale C</option>
+          <option value="Premiere_D">Première D</option>
+          <option value="Seconde_A">Seconde A</option>
+          <option value="Seconde_C">Seconde C</option>
+          <option value="6eme">6ème</option>
+          <option value="5eme">5ème</option>
+          <option value="4eme">4ème</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Mot de passe provisoire</label>
+        <input type="text" id="newPassword" value="123456" placeholder="Mot de passe">
+      </div>
+
+      <div class="form-group">
+        <label>Forfait à attribuer</label>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div class="plan-card-opt selected" id="opt_pro" onclick="selectNewPlan('pro')">
+            <div>
+              <div class="title" style="color:#34d399;">Pass Pro</div>
+              <div class="desc">Accès total 30j</div>
+            </div>
+          </div>
+          <div class="plan-card-opt" id="opt_starter" onclick="selectNewPlan('starter')">
+            <div>
+              <div class="title" style="color:#60a5fa;">Pass Starter</div>
+              <div class="desc">PDF & Hors-ligne 30j</div>
+            </div>
+          </div>
+          <div class="plan-card-opt" id="opt_vip" onclick="selectNewPlan('vip')">
+            <div>
+              <div class="title" style="color:#fbbf24;">Pass VIP ⭐</div>
+              <div class="desc">Permanent</div>
+            </div>
+          </div>
+          <div class="plan-card-opt" id="opt_free" onclick="selectNewPlan('free')">
+            <div>
+              <div class="title" style="color:#94a3b8;">Gratuit</div>
+              <div class="desc">Standard (0 F)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="createFeedback" style="font-size:13px; font-weight:700; margin-bottom:12px; display:none;"></div>
+
+      <div class="modal-actions">
+        <button onclick="closeCreateUserModal()" style="background:#1e293b; color:var(--text-muted);">Annuler</button>
+        <button id="btnCreateSubmit" onclick="submitCreateUser()" style="background:linear-gradient(135deg, #10b981, #059669); color:#fff;">
+          <i class="fas fa-check"></i> Créer le compte
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : GÉRER L'ABONNEMENT D'UN ÉLÈVE EN 1 CLIC -->
+  <div class="modal-overlay" id="grantModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2><i class="fas fa-crown" style="color:#f59e0b;"></i> Gérer le Pass</h2>
+        <button class="modal-close" onclick="closeGrantModal()"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div style="background:#090d16; border-radius:12px; padding:14px; margin-bottom:16px;">
+        <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Élève :</div>
+        <div style="font-size:16px; font-weight:800; color:#fff;" id="grantStudentName">-</div>
+        <div style="font-size:13px; color:#38bdf8; font-weight:700; margin-top:2px;" id="grantStudentPhone">-</div>
+      </div>
+
+      <div class="form-group">
+        <label>Choisir la formule à appliquer :</label>
+        <div class="plan-card-opt" id="gopt_pro" onclick="selectGrantPlan('pro')">
+          <div>
+            <div class="title" style="color:#34d399;"><i class="fas fa-crown"></i> Pass Pro (30 jours)</div>
+            <div class="desc">Accès total fiches, audios, quiz, pièges d'examen</div>
+          </div>
+        </div>
+        <div class="plan-card-opt" id="gopt_starter" onclick="selectGrantPlan('starter')">
+          <div>
+            <div class="title" style="color:#60a5fa;"><i class="fas fa-bolt"></i> Pass Starter (30 jours)</div>
+            <div class="desc">Téléchargement PDF et packs hors-ligne</div>
+          </div>
+        </div>
+        <div class="plan-card-opt" id="gopt_vip" onclick="selectGrantPlan('vip')">
+          <div>
+            <div class="title" style="color:#fbbf24;"><i class="fas fa-gem"></i> Pass VIP (Permanent)</div>
+            <div class="desc">Accès complet illimité sans expiration</div>
+          </div>
+        </div>
+        <div class="plan-card-opt" id="gopt_free" onclick="selectGrantPlan('free')">
+          <div>
+            <div class="title" style="color:#f87171;"><i class="fas fa-ban"></i> Arrêter le Pass (Passer en Gratuit)</div>
+            <div class="desc">Désactiver l'accès premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="grantFeedback" style="font-size:13px; font-weight:700; margin-bottom:12px; display:none;"></div>
+
+      <div class="modal-actions">
+        <button onclick="closeGrantModal()" style="background:#1e293b; color:var(--text-muted);">Annuler</button>
+        <button id="btnGrantSubmit" onclick="submitGrantPlan()" style="background:var(--primary); color:#fff;">
+          <i class="fas fa-check"></i> Enregistrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : CONFIRMATION SUCCÈS & ENVOI WHATSAPP -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card" style="text-align:center;">
+      <div style="width:56px; height:56px; border-radius:50%; background:rgba(16,185,129,0.2); color:#10b981; display:inline-flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:14px;">
+        <i class="fas fa-check"></i>
+      </div>
+      <h2 style="font-size:19px; font-weight:800; margin-bottom:6px;">Compte Créé avec Succès !</h2>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">L'élève peut dès maintenant se connecter sur son espace élève.</p>
+
+      <div style="background:#090d16; border-radius:14px; padding:16px; text-align:left; margin-bottom:20px; font-size:13px; border:1px solid var(--card-border);">
+        <div style="margin-bottom:8px;">👤 <b>Nom :</b> <span id="succName">-</span></div>
+        <div style="margin-bottom:8px;">📱 <b>Identifiant (WhatsApp) :</b> <span id="succPhone" style="color:#38bdf8; font-weight:700;">-</span></div>
+        <div style="margin-bottom:8px;">🔑 <b>Mot de passe :</b> <span id="succPwd" style="color:#34d399; font-weight:800; font-family:'JetBrains Mono',monospace;">-</span></div>
+        <div>👑 <b>Forfait activé :</b> <span id="succPlan" style="font-weight:800;">-</span></div>
+      </div>
+
+      <button onclick="sendAccessViaWhatsApp()" style="width:100%; background:linear-gradient(135deg, #25d366, #128c7e); color:#fff; border:none; border-radius:12px; padding:14px; font-size:14px; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 6px 18px rgba(37,211,102,0.35); margin-bottom:10px;">
+        <i class="fab fa-whatsapp" style="font-size:18px;"></i> Envoyer les accès sur WhatsApp 🚀
+      </button>
+
+      <button onclick="closeSuccessModal()" style="width:100%; background:transparent; border:1px solid var(--card-border); color:var(--text-muted); border-radius:12px; padding:10px; font-size:13px; cursor:pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-    import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-
-    window.getAdminApiBase = function() {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:3000';
-      }
-      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
-    };
+    import { getFirestore, collection, doc, setDoc, getDocs, query, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
@@ -939,17 +721,32 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    let loginAttempts = 0;
-    const MAX_ATTEMPTS = 5;
-    let fullList = [];
+    window.getAdminApiBase = function() {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://127.0.0.1:3000';
+      }
+      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+    };
 
-    // Surveillance de l'état d'authentification
+    let fullList = [];
+    let currentNewPlan = 'pro';
+    let currentGrantTarget = null;
+    let currentGrantPlan = 'pro';
+    let lastCreatedUser = null;
+
+    // Surveillance Auth
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        sessionStorage.setItem('rci_admin_logged', '1');
         showDashboard();
         loadData();
       } else {
-        showLogin();
+        if (sessionStorage.getItem('rci_admin_logged') === '1') {
+          showDashboard();
+          loadData();
+        } else {
+          showLogin();
+        }
       }
     });
 
@@ -967,294 +764,143 @@
       const email = document.getElementById('adminEmail').value.trim();
       const password = document.getElementById('adminPassword').value;
       const errorEl = document.getElementById('loginError');
-      const warningEl = document.getElementById('attemptsWarning');
       const btn = document.getElementById('loginBtn');
 
       if (!email || !password) {
-        errorEl.textContent = "Veuillez saisir votre email et mot de passe administrateur.";
-        errorEl.classList.add('error');
-        return;
-      }
-
-      if (loginAttempts >= MAX_ATTEMPTS) {
-        errorEl.textContent = "Trop de tentatives échouées. Veuillez patienter avant de réessayer.";
-        errorEl.classList.add('error');
-        btn.disabled = true;
+        errorEl.textContent = "Veuillez saisir votre email et mot de passe.";
+        errorEl.style.display = 'block';
         return;
       }
 
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connexion en cours...';
-      errorEl.classList.remove('error');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connexion...';
+      errorEl.style.display = 'none';
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
       } catch(e) {
-        loginAttempts++;
-        const remaining = MAX_ATTEMPTS - loginAttempts;
-        let msg = "Identifiants incorrects.";
-        if (e.code === 'auth/user-not-found') msg = "Aucun administrateur trouvé avec cet email.";
-        if (e.code === 'auth/wrong-password') msg = "Mot de passe incorrect.";
-        if (e.code === 'auth/too-many-requests') msg = "Compte momentanément bloqué suite à plusieurs échecs.";
-        
-        errorEl.textContent = msg;
-        errorEl.classList.add('error');
-        if (remaining > 0 && remaining <= 3) {
-          warningEl.textContent = `⚠️ Il vous reste ${remaining} tentative(s).`;
-        }
+        errorEl.textContent = "Identifiants administrateur incorrects.";
+        errorEl.style.display = 'block';
         btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-lock"></i> Se connecter';
+        btn.innerHTML = '<i class="fas fa-lock"></i> Se Connecter';
       }
     };
 
     window.handleLogout = async function() {
-      await signOut(auth);
+      sessionStorage.removeItem('rci_admin_logged');
+      try { await signOut(auth); } catch(e){}
+      showLogin();
     };
 
-    function parseDate(ts) {
-      if (!ts) return null;
-      if (typeof ts.toDate === 'function') return ts.toDate();
-      const d = new Date(ts);
-      return isNaN(d.getTime()) ? null : d;
-    }
-
-    function detectOperator(phone) {
-      const clean = (phone || '').replace(/\D/g, '');
-      const last10 = clean.slice(-10);
-      if (/^07/.test(last10)) return { name: 'Orange CI', class: 'badge-orange', icon: '🟠' };
-      if (/^05/.test(last10)) return { name: 'MTN CI', class: 'badge-mtn', icon: '🟡' };
-      if (/^01/.test(last10)) return { name: 'Moov CI', class: 'badge-moov', icon: '🔵' };
-      return { name: 'Autre', class: 'badge-other', icon: '⚪' };
-    }
-
-    function detectDevice(ua) {
-      if (!ua) return '🌐 Web';
-      if (/iPhone|iPad/i.test(ua)) return '📱 iPhone';
-      if (/Android/i.test(ua)) return '📱 Android';
-      if (/Windows/i.test(ua)) return '💻 Windows';
-      if (/Mac/i.test(ua)) return '💻 Mac';
-      return '📱 Mobile / Web';
-    }
-
-    function formatClassName(cls) {
-      if (!cls) return 'Non précisée';
-      const map = {
-        '6eme': '6ème',
-        '5eme': '5ème',
-        '4eme': '4ème',
-        '3eme': '3ème (BEPC)',
-        'Seconde_A': 'Seconde A',
-        'Seconde_C': 'Seconde C',
-        'Premiere_D': 'Première D',
-        'Terminale_A': 'Terminale A',
-        'Terminale_C': 'Terminale C',
-        'Terminale_D': 'Terminale D'
-      };
-      return map[cls] || cls;
-    }
-
+    // Chargement Unifié des Données
     window.loadData = async function(manualRefresh = false) {
-      const refreshBtn = document.getElementById('btnRefresh');
-      if (manualRefresh && refreshBtn) refreshBtn.classList.add('spinning');
+      const btnRef = document.getElementById('btnRefresh');
+      if (manualRefresh && btnRef) btnRef.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Actualisation...';
 
       const userMap = new Map();
 
       try {
-        // 1. Appel API locale/serveur (/api/admin/users)
+        // 1. Charger depuis Firestore Client SDK
         try {
-          const res = await fetch(window.getAdminApiBase() + '/api/admin/users');
-          if (res.ok) {
-            const apiData = await res.json();
-            if (apiData.success && Array.isArray(apiData.users)) {
-              apiData.users.forEach(u => {
-                const rawPhone = u.whatsapp || u.contact || '';
-                const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
-                if (cleanPhone) {
-                  userMap.set(cleanPhone, {
-                    ...u,
-                    contact: cleanPhone,
-                    whatsapp: cleanPhone,
-                    source: 'api'
-                  });
+          const snap = await getDocs(query(collection(db, "users"), limit(800)));
+          snap.forEach(d => {
+            const data = d.data();
+            const phone = String(data.whatsapp || data.contact || d.id).replace(/\D/g, '').slice(-10);
+            if (phone.length === 10) {
+              userMap.set(phone, { ...data, whatsapp: phone, contact: phone, id: d.id });
+            }
+          });
+        } catch(e) {
+          console.warn("Firestore direct read:", e.message);
+        }
+
+        // 2. Charger depuis l'API Backend
+        try {
+          const apiRes = await fetch(`${window.getAdminApiBase()}/api/admin/users`);
+          if (apiRes.ok) {
+            const apiJson = await apiRes.json();
+            if (apiJson.success && Array.isArray(apiJson.users)) {
+              apiJson.users.forEach(u => {
+                const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+                if (phone.length === 10) {
+                  const existing = userMap.get(phone) || {};
+                  userMap.set(phone, { ...existing, ...u, whatsapp: phone, contact: phone });
                 }
               });
             }
           }
         } catch(e) {
-          console.warn("API /api/admin/users non jointe:", e.message);
+          console.warn("Backend API users:", e.message);
         }
-
-        // 2. Récupération Firestore : collection 'users'
-        try {
-          const qUsers = query(collection(db, "users"), limit(500));
-          const snapUsers = await getDocs(qUsers);
-          snapUsers.forEach(docSnap => {
-            const data = docSnap.data();
-            const rawPhone = data.whatsapp || data.contact || '';
-            const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
-            if (cleanPhone) {
-              const existing = userMap.get(cleanPhone) || {};
-              userMap.set(cleanPhone, {
-                ...existing,
-                ...data,
-                contact: cleanPhone,
-                whatsapp: cleanPhone
-              });
-            }
-          });
-        } catch(err) {
-          console.warn("Firestore 'users' read:", err.message);
-        }
-
-        // 3. Récupération Firestore : collection 'waitlist' (anciens inscrits)
-        try {
-          const qWait = query(collection(db, "waitlist"), limit(500));
-          const snapWait = await getDocs(qWait);
-          snapWait.forEach(docSnap => {
-            const data = docSnap.data();
-            const rawPhone = data.contact || '';
-            const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
-            if (cleanPhone && !userMap.has(cleanPhone)) {
-              userMap.set(cleanPhone, {
-                fullName: 'Inscrit VIP',
-                firstName: 'Élève',
-                lastName: 'VIP',
-                contact: cleanPhone,
-                whatsapp: cleanPhone,
-                selectedClass: 'Non précisé',
-                plan: 'free',
-                isPremium: false,
-                timestamp: data.timestamp,
-                createdAt: data.timestamp ? (data.timestamp.toDate ? data.timestamp.toDate().toISOString() : data.timestamp) : new Date().toISOString(),
-                userAgent: data.userAgent || 'Web',
-                source: 'waitlist'
-              });
-            }
-          });
-        } catch(err) {
-          console.warn("Firestore 'waitlist' read:", err.message);
-        }
-
-        // 4. Récupération localStorage local de secours
-        try {
-          const localWait = JSON.parse(localStorage.getItem('resumeci_waitlist_local') || '[]');
-          localWait.forEach(item => {
-            const rawPhone = item.contact || '';
-            const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
-            if (cleanPhone && !userMap.has(cleanPhone)) {
-              userMap.set(cleanPhone, {
-                fullName: 'Inscrit Local',
-                firstName: 'Élève',
-                lastName: '',
-                contact: cleanPhone,
-                whatsapp: cleanPhone,
-                selectedClass: 'Non précisé',
-                plan: 'free',
-                isPremium: false,
-                createdAt: item.timestamp,
-                userAgent: navigator.userAgent
-              });
-            }
-          });
-        } catch(e){}
 
         fullList = Array.from(userMap.values());
-
+        
         // Trier par date décroissante
-        fullList.sort((a,b) => {
-          const da = parseDate(a.createdAt || a.timestamp) || new Date(0);
-          const dbDate = parseDate(b.createdAt || b.timestamp) || new Date(0);
-          return dbDate - da;
+        fullList.sort((a, b) => {
+          const tA = new Date(a.createdAt || a.updatedAt || 0).getTime();
+          const tB = new Date(b.createdAt || b.updatedAt || 0).getTime();
+          return tB - tA;
         });
 
-        // 5. Calcul des métriques par Formule
-        let totalCount = fullList.length;
-        let freeCount = 0;
-        let starterCount = 0;
-        let proCount = 0;
-
-        const classCounts = {
-          '6eme': 0, '5eme': 0, '4eme': 0, '3eme': 0,
-          'Seconde_A': 0, 'Seconde_C': 0, 'Premiere_D': 0,
-          'Terminale_A': 0, 'Terminale_C': 0, 'Terminale_D': 0
-        };
-
-        let oCount = 0, mCount = 0, mvCount = 0, otherCount = 0;
-
-        fullList.forEach(item => {
-          // Normalisation du plan
-          const p = (item.plan || (item.isPremium ? (item.premiumPlan || 'pro') : 'free')).toLowerCase();
-          if (p === 'starter') starterCount++;
-          else if (p === 'pro') proCount++;
-          else freeCount++;
-
-          // Comptage des classes
-          const cls = item.selectedClass;
-          if (classCounts[cls] !== undefined) {
-            classCounts[cls]++;
-          }
-
-          // Opérateurs
-          const op = detectOperator(item.contact || item.whatsapp);
-          if (op.name === 'Orange CI') oCount++;
-          else if (op.name === 'MTN CI') mCount++;
-          else if (op.name === 'Moov CI') mvCount++;
-          else otherCount++;
-        });
-
-        // Mise à jour de l'affichage des KPIs
-        document.getElementById('statTotalCount').textContent = totalCount;
-        const tub = document.getElementById('tabUsersBadge'); if (tub) tub.textContent = totalCount;
-        document.getElementById('statFreeCount').textContent = freeCount;
-        document.getElementById('statStarterCount').textContent = starterCount;
-        document.getElementById('statProCount').textContent = proCount;
-
-        // Mise à jour des compteurs par classe
-        for (const [key, val] of Object.entries(classCounts)) {
-          const el = document.getElementById(`cnt_${key}`);
-          if (el) el.textContent = val;
-        }
-
-        // Opérateurs
-        document.getElementById('countOrange').textContent = oCount;
-        document.getElementById('countMtn').textContent = mCount;
-        document.getElementById('countMoov').textContent = mvCount;
-        document.getElementById('countOther').textContent = otherCount;
-
-        // Rendu du tableau
+        updateKPIs();
         filterTable();
 
-      } catch(e) {
-        console.error("Load error:", e);
-        document.getElementById('tableBody').innerHTML = `
-          <tr>
-            <td colspan="9" class="empty-state" style="color:var(--danger)">
-              <i class="fas fa-triangle-exclamation"></i>
-              <p>Erreur lors du chargement des données. Veuillez vérifier la connexion au serveur.</p>
-            </td>
-          </tr>`;
+      } catch(err) {
+        console.error("Erreur loadData:", err);
       } finally {
-        if (refreshBtn) refreshBtn.classList.remove('spinning');
+        if (manualRefresh && btnRef) {
+          btnRef.innerHTML = '<i class="fas fa-arrows-rotate"></i> Actualiser';
+        }
       }
     };
 
+    function updateKPIs() {
+      const now = Date.now();
+      let total = fullList.length;
+      let pro = 0;
+      let starter = 0;
+      let vip = 0;
+
+      fullList.forEach(u => {
+        const plan = (u.premiumPlan || u.plan || 'free').toLowerCase();
+        const exp = Number(u.premiumExpiresAt) || 0;
+        const isActive = Boolean(u.isPremium && (exp === 0 || exp > now));
+
+        if (isActive) {
+          if (plan === 'pro') pro++;
+          else if (plan === 'starter') starter++;
+          else if (plan === 'vip' || plan === 'annual' || plan === 'annuel' || plan === 'elite') vip++;
+        }
+      });
+
+      document.getElementById('statTotalCount').textContent = total.toLocaleString('fr-FR');
+      document.getElementById('statProCount').textContent = pro.toLocaleString('fr-FR');
+      document.getElementById('statStarterCount').textContent = starter.toLocaleString('fr-FR');
+      document.getElementById('statVipCount').textContent = vip.toLocaleString('fr-FR');
+    }
+
     window.filterTable = function() {
-      const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
-      const planFilter = document.getElementById('filterPlan').value;
-      const classFilter = document.getElementById('filterClass').value;
+      const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+      const fClass = document.getElementById('filterClass').value;
+      const fPlan = document.getElementById('filterPlan').value;
 
-      let filtered = fullList.filter(item => {
-        // Filtre texte (nom, prénom ou téléphone)
-        const nameMatch = (item.fullName || `${item.firstName || ''} ${item.lastName || ''}`).toLowerCase().includes(query);
-        const phoneMatch = (item.contact || item.whatsapp || '').includes(query);
-        if (query && !nameMatch && !phoneMatch) return false;
+      const filtered = fullList.filter(u => {
+        const phone = (u.whatsapp || u.contact || '').toLowerCase();
+        const name = (u.fullName || `${u.firstName || ''} ${u.lastName || ''}`).toLowerCase();
+        const cls = (u.selectedClass || u.classe || '').toLowerCase();
+        const plan = (u.premiumPlan || u.plan || 'free').toLowerCase();
 
-        // Filtre Formule
-        const p = (item.plan || (item.isPremium ? (item.premiumPlan || 'pro') : 'free')).toLowerCase();
-        if (planFilter !== 'all' && p !== planFilter) return false;
+        // Filtre texte
+        if (q && !phone.includes(q) && !name.includes(q)) return false;
 
-        // Filtre Classe
-        if (classFilter !== 'all' && item.selectedClass !== classFilter) return false;
+        // Filtre classe
+        if (fClass !== 'all' && cls !== fClass.toLowerCase()) return false;
+
+        // Filtre formule
+        if (fPlan !== 'all') {
+          if (fPlan === 'vip' && (plan !== 'vip' && plan !== 'annual' && plan !== 'annuel' && plan !== 'elite')) return false;
+          if (fPlan !== 'vip' && plan !== fPlan) return false;
+        }
 
         return true;
       });
@@ -1264,355 +910,85 @@
 
     function renderTable(list) {
       const tbody = document.getElementById('tableBody');
+      if (!tbody) return;
+
       if (!list || list.length === 0) {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="9" class="empty-state">
-              <i class="fas fa-user-slash"></i>
-              <p>Aucun élève trouvé avec les critères sélectionnés.</p>
-            </td>
-          </tr>`;
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><i class="fas fa-users-slash"></i><p>Aucun élève ne correspond à cette recherche.</p></td></tr>';
         return;
       }
 
+      const now = Date.now();
       let html = '';
-      list.forEach((item, index) => {
-        const d = parseDate(item.createdAt || item.timestamp);
-        const dateStr = d ? d.toLocaleString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }) : 'Date inconnue';
-        const cleanPhone = (item.contact || item.whatsapp || '').replace(/\D/g, '');
-        const op = detectOperator(cleanPhone);
-        const device = detectDevice(item.userAgent);
-        const formattedPhone = cleanPhone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
 
-        // Formule & Statut d'abonnement réel
-        const plan = (item.plan || (item.isPremium ? (item.premiumPlan || 'pro') : 'free')).toLowerCase();
-        const nowMs = Date.now();
-        const exp = Number(item.premiumExpiresAt) || 0;
-        const isCurrentlyPremium = Boolean(item.isPremium && (exp === 0 || exp > nowMs));
+      list.forEach((u, i) => {
+        const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+        const name = u.fullName || `${u.firstName || 'Élève'} ${u.lastName || ''}`.trim() || 'Élève';
+        const cls = u.selectedClass || u.classe || 'Non précisée';
+        const plan = (u.premiumPlan || u.plan || 'free').toLowerCase();
+        const exp = Number(u.premiumExpiresAt) || 0;
+        const isActive = Boolean(u.isPremium && (exp === 0 || exp > now));
 
-        let planBadge = '<span class="badge-plan badge-plan-free"><i class="fas fa-unlock"></i> Gratuit (0 F)</span>';
-        if (isCurrentlyPremium) {
-          if (plan === 'starter') {
-            planBadge = '<span class="badge-plan badge-plan-starter"><i class="fas fa-bolt"></i> Starter (Actif)</span>';
-          } else if (plan === 'annual') {
-            planBadge = '<span class="badge-plan badge-plan-annual"><i class="fas fa-star"></i> Annuel (Actif)</span>';
-          } else if (plan === 'vip') {
-            planBadge = '<span class="badge-plan badge-plan-vip"><i class="fas fa-gem"></i> VIP Illimité</span>';
-          } else {
-            planBadge = '<span class="badge-plan badge-plan-pro"><i class="fas fa-crown"></i> Pro (Actif)</span>';
+        let planBadge = '<span class="badge-plan badge-plan-free">Gratuit</span>';
+        if (isActive) {
+          if (plan === 'pro') {
+            const d = exp > 0 ? Math.ceil((exp - now) / 86400000) : 30;
+            planBadge = `<span class="badge-plan badge-plan-pro"><i class="fas fa-crown"></i> Pass Pro (${d}j)</span>`;
+          } else if (plan === 'starter') {
+            const d = exp > 0 ? Math.ceil((exp - now) / 86400000) : 30;
+            planBadge = `<span class="badge-plan badge-plan-starter"><i class="fas fa-bolt"></i> Pass Starter (${d}j)</span>`;
+          } else if (plan === 'vip' || plan === 'annual' || plan === 'annuel') {
+            planBadge = `<span class="badge-plan badge-plan-vip"><i class="fas fa-gem"></i> Pass VIP ⭐</span>`;
           }
-        } else if (item.status === 'suspended' || item.adminRevoked) {
-          planBadge = '<span class="badge-plan badge-plan-free" style="border-color:#ef4444; color:#f87171;"><i class="fas fa-ban"></i> Suspendu</span>';
         }
 
-        // Classe
-        const className = formatClassName(item.selectedClass);
-
-        // Nom complet
-        const displayName = item.fullName || `${item.firstName || ''} ${item.lastName || ''}`.trim() || 'Élève';
-
-        // Message WhatsApp pré-rempli officiel universel (SANS prénom)
-        const waMsg = OFFICIAL_WA_MSG;
-
-        let actionBtns = '';
-        if (isCurrentlyPremium) {
-          actionBtns = `
-            <button class="btn-action-revoke" onclick="quickRevokeSubscription('${cleanPhone}', '${escapeQuotes(displayName)}')" title="Arrêter immédiatement cet abonnement">
-              <i class="fas fa-ban"></i> Arrêter Pass
-            </button>
-            <button class="btn-action-grant" onclick="openGrantSubModal('${cleanPhone}', '${escapeQuotes(displayName)}', '${plan}', '${item.uid || ''}')" title="Modifier la formule">
-              <i class="fas fa-sliders"></i> Forfait
-            </button>
-          `;
-        } else {
-          actionBtns = `
-            <button class="btn-action-quick-pro" onclick="quickGrantPro('${cleanPhone}', '${escapeQuotes(displayName)}')" title="Activer 30 jours de Pass Pro (Gratuit pour vous)">
-              <i class="fas fa-crown"></i> Activer Pro (30j)
-            </button>
-            <button class="btn-action-grant" onclick="openGrantSubModal('${cleanPhone}', '${escapeQuotes(displayName)}', '${plan}', '${item.uid || ''}')" title="Choisir une formule">
-              <i class="fas fa-sliders"></i> Forfait
-            </button>
-          `;
-        }
+        const dateStr = u.createdAt ? new Date(u.createdAt).toLocaleDateString('fr-FR', { day:'2-digit', month:'short', year:'numeric' }) : '-';
+        const formattedPhone = phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
 
         html += `
           <tr>
-            <td style="color:var(--text-muted); font-weight:700;">${index + 1}</td>
+            <td style="color:var(--text-muted); font-weight:700;">${i + 1}</td>
             <td>
-              <strong style="color:#fff; font-size:13.5px;">${displayName}</strong>
+              <strong style="color:#fff; font-size:14px;">${escapeHtml(name)}</strong>
+              ${u.adminCreated ? '<span style="font-size:10px; background:rgba(16,185,129,0.15); color:#34d399; padding:2px 6px; border-radius:4px; margin-left:6px; font-weight:700;">Admin</span>' : ''}
             </td>
+            <td><span class="badge-class">${escapeHtml(cls)}</span></td>
             <td>
-              <span class="phone-text">+225 ${formattedPhone}</span>
+              <a href="https://wa.me/225${phone}" target="_blank" class="btn-wa-link" title="Discuter sur WhatsApp">
+                <i class="fab fa-whatsapp"></i> +225 ${formattedPhone}
+              </a>
             </td>
-            <td>
-              <span class="badge-class"><i class="fas fa-school"></i> ${className}</span>
+            <td>${planBadge}</td>
+            <td style="color:var(--text-muted); font-size:12.5px;">${dateStr}</td>
+            <td style="text-align:right;">
+              <button class="btn-action-grant" onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${plan}', '${escapeQuotes(u.id || u.uid || '')}')" title="Modifier le pass">
+                <i class="fas fa-crown"></i> Gérer Pass
+              </button>
+              <button class="btn-action-sendwa" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '${escapeQuotes(u.password || '123456')}', '${plan}')" title="Envoyer identifiants sur WhatsApp">
+                <i class="fab fa-whatsapp"></i> Accès
+              </button>
             </td>
-            <td>
-              ${planBadge}
-            </td>
-            <td>
-              <span class="badge-op ${op.class}">${op.icon} ${op.name}</span>
-            </td>
-            <td style="color:var(--text-muted); font-size:12px;">${dateStr}</td>
-            <td style="color:var(--text-muted); font-size:12px;">${device}</td>
-            <td style="text-align: right;">
-              <div class="actions-flex">
-                ${actionBtns}
-                <a href="https://wa.me/225${cleanPhone}?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener" class="btn-wa-contact" title="Envoyer un message WhatsApp">
-                  <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-              </div>
-            </td>
-          </tr>`;
+
+          </tr>
+        `;
       });
+
       tbody.innerHTML = html;
     }
 
-    const OFFICIAL_WA_MSG = "Bonjour ! La nouvelle mise à jour de ResumeCI est enfin disponible ! Retrouvez vos 714 fiches de cours gratuites, résumés officiels et outils d'élite pour réussir votre année scolaire au BEPC et au BAC. Vous pouvez dès maintenant créer votre profil ou vous connecter sur : https://resumeci.me/inscription.html";
-
-    window.copyOfficialMessage = function() {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(OFFICIAL_WA_MSG).then(() => {
-          alert("✅ Message officiel copié dans le presse-papier ! Tu peux le coller directement sur WhatsApp ou dans un groupe.");
-        }).catch(() => {
-          fallbackCopy();
-        });
-      } else {
-        fallbackCopy();
-      }
-
-      function fallbackCopy() {
-        const ta = document.createElement('textarea');
-        ta.value = OFFICIAL_WA_MSG;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        alert("✅ Message officiel copié dans le presse-papier !");
-      }
-    };
-
-    window.sendDirectWhatsApp = function() {
-      const input = document.getElementById('directWaInput');
-      const feedback = document.getElementById('directWaFeedback');
-      const val = (input.value || '').replace(/\D/g, '');
-      const cleanWa = val.slice(-10);
-
-      if (cleanWa.length < 10) {
-        feedback.style.display = 'block';
-        feedback.style.color = '#ef4444';
-        feedback.innerHTML = '⚠️ Veuillez entrer un numéro de téléphone valide à 10 chiffres (ex: 07 08 09 10 11).';
-        return;
-      }
-
-      feedback.style.display = 'block';
-      feedback.style.color = '#10b981';
-      feedback.innerHTML = `✅ Ouverture de WhatsApp pour le +225 ${cleanWa}...`;
-
-      const targetUrl = `https://wa.me/225${cleanWa}?text=${encodeURIComponent(OFFICIAL_WA_MSG)}`;
-      window.open(targetUrl, '_blank');
-      input.value = '';
-    };
-
-    window.exportCSV = function() {
-      if (!fullList.length) {
-        alert("Aucun inscrit à exporter pour le moment.");
-        return;
-      }
-      let csv = "\uFEFF"; // BOM UTF-8 pour Excel
-      csv += "N°;Nom_Prenom;Numero_WhatsApp;Classe;Formule;Operateur;Date_Inscription;Heure_Inscription;Appareil\n";
-
-      fullList.forEach((item, idx) => {
-        const d = parseDate(item.createdAt || item.timestamp);
-        const dateStr = d ? d.toLocaleDateString('fr-FR') : '';
-        const timeStr = d ? d.toLocaleTimeString('fr-FR') : '';
-        const cleanPhone = (item.contact || item.whatsapp || '').replace(/\D/g, '');
-        const op = detectOperator(cleanPhone);
-        const device = detectDevice(item.userAgent);
-        const plan = (item.plan || (item.isPremium ? (item.premiumPlan || 'pro') : 'free')).toUpperCase();
-        const displayName = item.fullName || `${item.firstName || ''} ${item.lastName || ''}`.trim() || 'Élève';
-        const cls = formatClassName(item.selectedClass);
-
-        csv += `"${idx + 1}";"${displayName}";"+225 ${cleanPhone}";"${cls}";"${plan}";"${op.name}";"${dateStr}";"${timeStr}";"${device}"\n`;
-      });
-
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = `Inscriptions_ResumeCI_${new Date().toISOString().slice(0,10)}.csv`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
-
-    // Validation touche Entrée sur le mot de passe
-    document.getElementById('adminPassword').addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') handleLogin();
-    });
-  
-    function escapeQuotes(str) {
-      if (!str) return '';
-      return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    function escapeHtml(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function escapeQuotes(s) {
+      return String(s || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
 
-    // --- GESTION DES ONGLETS ADMINISTRATEUR ---
-    window.switchAdminTab = function(tabName) {
-      const isUsers = tabName === 'users';
-      const btnUsers = document.getElementById('tabBtnUsers');
-      const btnPay = document.getElementById('tabBtnPayments');
-      if (btnUsers) btnUsers.classList.toggle('active', isUsers);
-      if (btnPay) btnPay.classList.toggle('active', !isUsers);
-
-      const userSections = document.querySelectorAll('.stats-row, .classes-section, .operators-bar, #dashboard > .content-box');
-      userSections.forEach(el => {
-        el.style.display = isUsers ? '' : 'none';
-      });
-
-      const paymentsTab = document.getElementById('sectionPaymentsTab');
-      if (paymentsTab) paymentsTab.style.display = isUsers ? 'none' : 'block';
-
-      if (!isUsers) {
-        window.loadGeniusPayTransactions();
-      }
-    };
-
-    // =========================================================================
-    // GESTION DES ABONNEMENTS : ACTIVER, MODIFIER OU ARRÊTER EN 1 CLIC
-    // =========================================================================
-
-    // 1. ARRÊTER / RÉSILIER IMMÉDIATEMENT L'ABONNEMENT D'UN ÉLÈVE
-    window.quickRevokeSubscription = async function(phone, name) {
-      if (!confirm(`⚠️ ATTENTION : Voulez-vous vraiment ARRÊTER immédiatement l'abonnement de ${name} (+225 ${phone}) ?\n\nSes accès Premium seront révoqués et il repassera immédiatement sur la formule Gratuite.`)) {
-        return;
-      }
-
-      const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
-      try {
-        // A. Mise à jour directe Firestore avec le Client SDK
-        try {
-          await setDoc(doc(db, "users", cleanPhone), {
-            isPremium: false,
-            plan: 'free',
-            premiumPlan: 'free',
-            premiumExpiresAt: 0,
-            status: 'suspended',
-            adminRevoked: true,
-            revokedAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString()
-          }, { merge: true });
-        } catch (sdkErr) {
-          console.warn("Direct Firestore SDK revoke:", sdkErr);
-        }
-
-        // B. Notification serveur API
-        try {
-          const apiBase = window.getAdminApiBase();
-          fetch(`${apiBase}/api/admin/set-plan`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              target: cleanPhone,
-              plan: 'free',
-              days: 0,
-              reason: 'Abonnement arrêté manuellement par l\'administrateur'
-            })
-          }).catch(e => console.warn("API set-plan revoke:", e));
-        } catch (e) {}
-
-        // C. Mise à jour de la mémoire locale et réaffichage instantané
-        const found = fullList.find(u => (u.contact === cleanPhone || u.whatsapp === cleanPhone));
-        if (found) {
-          found.isPremium = false;
-          found.plan = 'free';
-          found.premiumPlan = 'free';
-          found.premiumExpiresAt = 0;
-          found.status = 'suspended';
-          found.adminRevoked = true;
-        }
-
-        filterTable();
-        alert(`✅ Abonnement de ${name} arrêté avec succès. L'élève est repassé en formule Gratuite.`);
-      } catch (err) {
-        console.error("Erreur arrêt abonnement:", err);
-        alert(`❌ Erreur lors de l'arrêt de l'abonnement : ${err.message}`);
-      }
-    };
-
-    // 2. ACCORDER LE PASS PRO EN 1 CLIC (100% GRATUIT ADMIN)
-    window.quickGrantPro = async function(phone, name) {
-      if (!confirm(`👑 Voulez-vous activer 30 jours de PASS PRO pour ${name} (+225 ${phone}) ?\n\n(C'est 100% GRATUIT pour vous en tant qu'administrateur)`)) {
-        return;
-      }
-
-      const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
-      const expiresAt = Date.now() + 30 * 24 * 60 * 60 * 1000;
-
-      try {
-        // A. Mise à jour directe Firestore
-        try {
-          await setDoc(doc(db, "users", cleanPhone), {
-            isPremium: true,
-            plan: 'pro',
-            premiumPlan: 'pro',
-            premiumExpiresAt: expiresAt,
-            subscriptionType: 'monthly',
-            adminGranted: true,
-            status: 'active',
-            adminRevoked: false,
-            adminGrantReason: 'Pass Pro offert par l\'administrateur',
-            updatedAt: new Date().toISOString()
-          }, { merge: true });
-        } catch (sdkErr) {
-          console.warn("Direct Firestore SDK grant:", sdkErr);
-        }
-
-        // B. Notification serveur API
-        try {
-          const apiBase = window.getAdminApiBase();
-          fetch(`${apiBase}/api/admin/set-plan`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              target: cleanPhone,
-              plan: 'pro',
-              days: 30,
-              reason: 'Pass Pro accordé par l\'administrateur',
-              fullName: name
-            })
-          }).catch(e => console.warn("API set-plan grant:", e));
-        } catch (e) {}
-
-        // C. Mise à jour de l'affichage
-        const found = fullList.find(u => (u.contact === cleanPhone || u.whatsapp === cleanPhone));
-        if (found) {
-          found.isPremium = true;
-          found.plan = 'pro';
-          found.premiumPlan = 'pro';
-          found.premiumExpiresAt = expiresAt;
-          found.status = 'active';
-          found.adminRevoked = false;
-        }
-
-        filterTable();
-        alert(`✅ Pass Pro (30 jours) accordé avec succès à ${name} !`);
-      } catch (err) {
-        console.error("Erreur activation Pass Pro:", err);
-        alert(`❌ Erreur : ${err.message}`);
-      }
-    };
-
-    // =========================================================================
-    // CRÉATION DE COMPTE ÉLÈVE DIRECTEMENT DEPUIS ADMIN.HTML (100% GRATUIT)
-    // =========================================================================
-    let currentCreatePlan = 'pro';
-
+    // Modal Création Compte Élève
     window.openCreateUserModal = function() {
-      document.getElementById('createFullName').value = '';
-      document.getElementById('createPhone').value = '';
-      document.getElementById('createPassword').value = '123456';
-      document.getElementById('createReason').value = 'Créé manuellement par admin';
+      document.getElementById('newFullName').value = '';
+      document.getElementById('newPhone').value = '';
+      document.getElementById('newPassword').value = '123456';
       document.getElementById('createFeedback').style.display = 'none';
-      window.selectCreateModalPlan('pro');
+      selectNewPlan('pro');
       document.getElementById('createUserModal').classList.add('active');
     };
 
@@ -1620,664 +996,252 @@
       document.getElementById('createUserModal').classList.remove('active');
     };
 
-    window.selectCreateModalPlan = function(planKey) {
-      currentCreatePlan = planKey;
-      ['pro', 'starter', 'annual', 'vip', 'free'].forEach(k => {
-        const el = document.getElementById('cplan_' + k);
-        if (el) el.classList.toggle('selected', k === planKey);
+    window.selectNewPlan = function(p) {
+      currentNewPlan = p;
+      ['pro', 'starter', 'vip', 'free'].forEach(k => {
+        const el = document.getElementById('opt_' + k);
+        if (el) el.classList.toggle('selected', k === p);
       });
     };
 
     window.submitCreateUser = async function() {
-      const name = document.getElementById('createFullName').value.trim();
-      const rawPhone = document.getElementById('createPhone').value.trim();
-      const cls = document.getElementById('createClass').value;
-      const pwd = document.getElementById('createPassword').value.trim() || '123456';
-      const reason = document.getElementById('createReason').value.trim();
-      const btn = document.getElementById('btnSubmitCreateUser');
+      const name = document.getElementById('newFullName').value.trim();
+      const rawPhone = document.getElementById('newPhone').value.trim();
+      const cls = document.getElementById('newClass').value;
+      const pwd = document.getElementById('newPassword').value.trim() || '123456';
       const feedback = document.getElementById('createFeedback');
+      const btn = document.getElementById('btnCreateSubmit');
 
-      const cleanPhone = rawPhone.replace(/\D/g, '').slice(-10);
-
+      const phone = rawPhone.replace(/\D/g, '').slice(-10);
       if (!name) {
-        feedback.style.display = 'block';
+        feedback.textContent = "Veuillez entrer le nom complet de l'élève.";
         feedback.style.color = '#ef4444';
-        feedback.innerHTML = '⚠️ Veuillez entrer le nom complet de l\'élève.';
+        feedback.style.display = 'block';
         return;
       }
-
-      if (cleanPhone.length < 10) {
-        feedback.style.display = 'block';
+      if (phone.length !== 10) {
+        feedback.textContent = "Numéro WhatsApp invalide (10 chiffres requis).";
         feedback.style.color = '#ef4444';
-        feedback.innerHTML = '⚠️ Veuillez entrer un numéro à 10 chiffres (ex: 07 08 09 10 11).';
+        feedback.style.display = 'block';
         return;
       }
 
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création du compte en cours...';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création...';
       feedback.style.display = 'none';
 
-      const daysMap = { free: 0, starter: 30, pro: 30, annual: 365, vip: 3650 };
-      const targetDays = daysMap[currentCreatePlan] || 30;
-      const isFree = currentCreatePlan === 'free';
-      const expiresAt = isFree ? 0 : (Date.now() + targetDays * 86400000);
+      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650 };
+      const days = daysMap[currentNewPlan] || 30;
+      const isFree = currentNewPlan === 'free';
+      const expiresAt = isFree ? 0 : (Date.now() + days * 86400000);
       const uid = 'admin_' + Date.now();
 
-      const newUserData = {
+      const userData = {
         uid: uid,
         fullName: name,
         firstName: name.split(' ')[0] || name,
         lastName: name.split(' ').slice(1).join(' ') || '',
-        whatsapp: cleanPhone,
-        contact: cleanPhone,
+        whatsapp: phone,
+        contact: phone,
         selectedClass: cls,
         classe: cls,
         password: pwd,
-        plan: currentCreatePlan,
-        premiumPlan: currentCreatePlan,
+        plan: currentNewPlan,
+        premiumPlan: currentNewPlan,
         isPremium: !isFree,
         premiumExpiresAt: expiresAt,
-        subscriptionType: targetDays >= 300 ? 'yearly' : 'monthly',
+        subscriptionType: days >= 300 ? 'yearly' : 'monthly',
         adminCreated: true,
-        adminGranted: !isFree,
-        adminGrantReason: reason || 'Compte créé par l\'administrateur',
-        status: isFree ? 'standard' : 'active',
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       };
 
       try {
-        // 1. Enregistrement direct Firestore Client SDK
+        // 1. Enregistrement direct dans Firestore
         try {
-          await setDoc(doc(db, "users", cleanPhone), newUserData, { merge: true });
-          await setDoc(doc(db, "users", uid), newUserData, { merge: true });
-        } catch (sdkErr) {
-          console.warn("Direct Firestore SDK createUser:", sdkErr);
+          await setDoc(doc(db, "users", phone), userData, { merge: true });
+          await setDoc(doc(db, "users", uid), userData, { merge: true });
+        } catch(e) {
+          console.warn("Direct Firestore setDoc:", e.message);
         }
 
-        // 2. Appel API Backend
+        // 2. Appel API backend
         try {
-          const apiBase = window.getAdminApiBase();
-          await fetch(`${apiBase}/api/admin/create-user`, {
+          await fetch(`${window.getAdminApiBase()}/api/admin/create-user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               fullName: name,
-              phone: cleanPhone,
+              phone: phone,
               selectedClass: cls,
               password: pwd,
-              plan: currentCreatePlan,
-              days: targetDays,
-              reason: reason
+              plan: currentNewPlan,
+              days: days
             })
           });
-        } catch (apiErr) {
-          console.warn("API create-user fallback:", apiErr);
-        }
+        } catch(e) {}
 
-        // 3. Ajouter directement en haut de la liste pour affichage immédiat
-        fullList.unshift(newUserData);
+        fullList.unshift(userData);
+        updateKPIs();
         filterTable();
 
-        // 4. Fermer la modal de saisie et afficher la confirmation de succès avec partage WhatsApp
-        window.closeCreateUserModal();
-        window.showCreatedSuccess(name, cleanPhone, pwd, currentCreatePlan, cls);
+        closeCreateUserModal();
+        showCreatedSuccess(name, phone, pwd, currentNewPlan, cls);
 
-      } catch (err) {
-        console.error("Erreur création compte:", err);
-        feedback.style.display = 'block';
+      } catch(err) {
+        feedback.textContent = `Erreur : ${err.message}`;
         feedback.style.color = '#ef4444';
-        feedback.innerHTML = `❌ Erreur lors de la création : ${err.message}`;
+        feedback.style.display = 'block';
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check"></i> Créer et Activer le compte (0 F)';
+        btn.innerHTML = '<i class="fas fa-check"></i> Créer le compte';
       }
     };
 
-    let lastCreatedUser = null;
-    window.showCreatedSuccess = function(name, phone, pwd, plan, cls) {
+    function showCreatedSuccess(name, phone, pwd, plan, cls) {
       lastCreatedUser = { name, phone, pwd, plan, cls };
-      document.getElementById('succStudentName').textContent = name;
-      document.getElementById('succStudentPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
-      document.getElementById('succStudentPwd').textContent = pwd;
-      document.getElementById('succStudentPlan').textContent = plan.toUpperCase();
-      document.getElementById('createdSuccessModal').classList.add('active');
-    };
+      document.getElementById('succName').textContent = name;
+      document.getElementById('succPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+      document.getElementById('succPwd').textContent = pwd;
+      document.getElementById('succPlan').textContent = plan.toUpperCase();
+      document.getElementById('successModal').classList.add('active');
+    }
 
-    window.closeCreatedSuccessModal = function() {
-      document.getElementById('createdSuccessModal').classList.remove('active');
+    window.closeSuccessModal = function() {
+      document.getElementById('successModal').classList.remove('active');
       lastCreatedUser = null;
     };
 
     window.sendAccessViaWhatsApp = function() {
       if (!lastCreatedUser) return;
       const u = lastCreatedUser;
-      const planName = u.plan === 'pro' ? 'Pass Pro (30 jours)' : (u.plan === 'starter' ? 'Pass Starter (30 jours)' : (u.plan === 'annual' ? 'Pass Annuel (1 An)' : (u.plan === 'vip' ? 'Pass VIP Illimité' : 'Formule Gratuite')));
-      const msg = `Bonjour ${u.name} !\n\nTon compte ResumeCI a été créé avec succès par l'administrateur avec la formule : *${planName}* ! 🎓\n\nVoici tes accès personnels pour te connecter et réviser tes 714 fiches de cours, audios et quiz :\n\n📱 Identifiant (WhatsApp) : *+225 ${u.phone}*\n🔑 Mot de passe : *${u.pwd}*\n\n👉 Connecte-toi directement ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI !`;
+      window.sendCredentialsWhatsApp(u.phone, u.name, u.pwd, u.plan);
+    };
 
-      const url = `https://wa.me/225${u.phone}?text=${encodeURIComponent(msg)}`;
+    window.sendCredentialsWhatsApp = function(phone, name, pwd, plan) {
+      const planName = plan === 'pro' ? 'Pass Pro (30 jours)' : (plan === 'starter' ? 'Pass Starter (30 jours)' : (plan === 'vip' ? 'Pass VIP Permanent' : 'Formule Gratuite'));
+      const msg = `Bonjour ${name} !\n\nTon compte ResumeCI a été activé avec succès par l'administrateur avec le forfait : *${planName}* ! 🎓\n\nVoici tes accès personnels pour te connecter et réviser tes 714 fiches de cours, audios et quiz :\n\n📱 Identifiant (WhatsApp) : *+225 ${phone}*\n🔑 Mot de passe : *${pwd}*\n\n👉 Connecte-toi directement ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI !`;
+      const url = `https://wa.me/225${phone}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     };
 
-    // =========================================================================
-    // MODAL D'ATTRIBUTION D'ABONNEMENT (MODIFIER OU ARRÊTER)
-    // =========================================================================
-    let currentGrantTarget = null;
-    let currentGrantPlan = 'pro';
-
-    window.openGrantSubModal = function(phone, name, currentPlan, uid) {
-      currentGrantTarget = { phone, name, currentPlan, uid };
-      document.getElementById('modalStudentName').textContent = name || 'Élève';
-      document.getElementById('modalStudentPhone').textContent = '+225 ' + String(phone).replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
-      document.getElementById('modalGrantReason').value = '';
-      document.getElementById('modalGrantFeedback').style.display = 'none';
-
-      const defaultSelect = (currentPlan === 'starter' || currentPlan === 'annual' || currentPlan === 'vip' || currentPlan === 'pro') ? currentPlan : 'pro';
-      window.selectModalPlan(defaultSelect);
-
-      document.getElementById('grantSubModal').classList.add('active');
+    // Modal Attribution / Modification de Pass
+    window.openGrantModal = function(phone, name, currentPlan, docId) {
+      currentGrantTarget = { phone, name, docId: docId || phone };
+      document.getElementById('grantStudentName').textContent = name;
+      document.getElementById('grantStudentPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+      document.getElementById('grantFeedback').style.display = 'none';
+      selectGrantPlan(currentPlan === 'starter' || currentPlan === 'vip' ? currentPlan : 'pro');
+      document.getElementById('grantModal').classList.add('active');
     };
 
-    window.closeGrantSubModal = function() {
-      document.getElementById('grantSubModal').classList.remove('active');
+    window.closeGrantModal = function() {
+      document.getElementById('grantModal').classList.remove('active');
       currentGrantTarget = null;
     };
 
-    window.selectModalPlan = function(planKey) {
-      currentGrantPlan = planKey;
-      ['pro', 'starter', 'annual', 'vip', 'free'].forEach(k => {
-        const el = document.getElementById('card_plan_' + k);
-        if (el) el.classList.toggle('selected', k === planKey);
+    window.selectGrantPlan = function(p) {
+      currentGrantPlan = p;
+      ['pro', 'starter', 'vip', 'free'].forEach(k => {
+        const el = document.getElementById('gopt_' + k);
+        if (el) el.classList.toggle('selected', k === p);
       });
     };
 
-    window.revokeInGrantModal = async function() {
+    window.submitGrantPlan = async function() {
       if (!currentGrantTarget) return;
-      if (!confirm(`Arrêter immédiatement l'abonnement de ${currentGrantTarget.name} ? L'élève repassera en formule gratuite.`)) return;
-      window.selectModalPlan('free');
-      await window.submitGrantSubscription();
-    };
-
-    window.submitGrantSubscription = async function() {
-      if (!currentGrantTarget) return;
-      const btn = document.getElementById('modalBtnSubmit');
-      const feedback = document.getElementById('modalGrantFeedback');
-      const reason = document.getElementById('modalGrantReason').value.trim();
+      const btn = document.getElementById('btnGrantSubmit');
+      const feedback = document.getElementById('grantFeedback');
 
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement en cours...';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Application...';
       feedback.style.display = 'none';
 
-      const daysMap = { free: 0, starter: 30, pro: 30, annual: 365, vip: 3650 };
-      const targetDays = daysMap[currentGrantPlan] || 30;
+      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650 };
+      const days = daysMap[currentGrantPlan] || 30;
       const isFree = currentGrantPlan === 'free';
-      const expiresAt = isFree ? 0 : (Date.now() + targetDays * 86400000);
+      const expiresAt = isFree ? 0 : (Date.now() + days * 86400000);
 
       try {
-        const apiBase = window.getAdminApiBase();
-        const res = await fetch(`${apiBase}/api/admin/set-plan`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            target: currentGrantTarget.phone || currentGrantTarget.uid,
-            plan: currentGrantPlan,
-            days: targetDays,
-            reason: reason || (isFree ? 'Abonnement arrêté par l\'administrateur' : 'Attribué par l\'administrateur'),
-            fullName: currentGrantTarget.name
-          })
-        });
+        const updatePayload = {
+          isPremium: !isFree,
+          plan: currentGrantPlan,
+          premiumPlan: currentGrantPlan,
+          premiumExpiresAt: expiresAt,
+          updatedAt: new Date().toISOString()
+        };
 
-        // Mise à jour directe Firestore avec le Client SDK
+        // Direct Firestore sur l'ID téléphone et sur l'UID document
+        if (currentGrantTarget.phone) {
+          await setDoc(doc(db, "users", currentGrantTarget.phone), updatePayload, { merge: true });
+        }
+        if (currentGrantTarget.docId && currentGrantTarget.docId !== currentGrantTarget.phone) {
+          await setDoc(doc(db, "users", currentGrantTarget.docId), updatePayload, { merge: true });
+        }
+
+        // Backend API
         try {
-          if (currentGrantTarget.phone) {
-            const cleanPhone = String(currentGrantTarget.phone).replace(/\D/g, '').slice(-10);
-            await setDoc(doc(db, "users", cleanPhone), {
-              isPremium: !isFree,
+          await fetch(`${window.getAdminApiBase()}/api/admin/set-plan`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              target: currentGrantTarget.phone,
               plan: currentGrantPlan,
-              premiumPlan: currentGrantPlan,
-              premiumExpiresAt: expiresAt,
-              subscriptionType: targetDays >= 300 ? 'yearly' : 'monthly',
-              adminGranted: true,
-              adminRevoked: isFree,
-              status: isFree ? 'suspended' : 'active',
-              adminGrantReason: reason || (isFree ? 'Abonnement arrêté par admin' : 'Attribué par admin'),
-              updatedAt: new Date().toISOString()
-            }, { merge: true });
-          }
-        } catch(sdkErr) {
-          console.warn('Sync SDK Firestore direct:', sdkErr);
-        }
-
-        const foundItem = fullList.find(u => (u.contact === currentGrantTarget.phone || u.whatsapp === currentGrantTarget.phone));
-        if (foundItem) {
-          foundItem.plan = currentGrantPlan;
-          foundItem.isPremium = !isFree;
-          foundItem.premiumPlan = currentGrantPlan;
-          foundItem.premiumExpiresAt = expiresAt;
-          foundItem.status = isFree ? 'suspended' : 'active';
-          foundItem.adminRevoked = isFree;
-        }
-
-        filterTable();
-
-        feedback.style.display = 'block';
-        feedback.style.color = isFree ? '#f87171' : '#10b981';
-        feedback.innerHTML = isFree 
-          ? `⛔ Abonnement de <b>${currentGrantTarget.name}</b> arrêté avec succès.`
-          : `✅ Formule <b>${currentGrantPlan.toUpperCase()}</b> accordée avec succès à ${currentGrantTarget.name} !`;
-
-        setTimeout(() => {
-          window.closeGrantSubModal();
-        }, 1200);
-
-      } catch (err) {
-        console.error('Erreur set-plan:', err);
-        feedback.style.display = 'block';
-        feedback.style.color = '#ef4444';
-        feedback.innerHTML = `❌ Erreur : ${err.message}`;
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check"></i> Valider et Appliquer';
-      }
-    };
-     window.loadGeniusPayTransactions = async function(manual = false) {
-      const tbody = document.getElementById('paymentsTableBody');
-      if (manual && tbody) {
-        tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><i class="fas fa-circle-notch fa-spin"></i><p>Actualisation des paiements...</p></td></tr>';
-      }
-      try {
-        const apiBase = window.getAdminApiBase();
-        const res = await fetch(`${apiBase}/api/admin/transactions`);
-        const json = await res.json();
-        if (json.success && Array.isArray(json.data)) {
-          liveTransactions = json.data;
-          renderPaymentsTable(liveTransactions);
-          const badge = document.getElementById('tabPaymentsBadge');
-          if (badge) badge.textContent = `${liveTransactions.length} reçus`;
-        } else {
-          if (tbody) tbody.innerHTML = '<tr><td colspan="9" class="empty-state" style="color:var(--danger)"><i class="fas fa-triangle-exclamation"></i><p>Impossible de lire les transactions GeniusPay.</p></td></tr>';
-        }
-      } catch(e) {
-        if (tbody) tbody.innerHTML = '<tr><td colspan="9" class="empty-state" style="color:var(--danger)"><i class="fas fa-triangle-exclamation"></i><p>Erreur réseau lors de la récupération des paiements.</p></td></tr>';
-      }
-    };
-
-    window.filterPaymentsTable = function() {
-      const q = (document.getElementById('searchPaymentInput').value || '').trim().toLowerCase();
-      const filtered = liveTransactions.filter(t => {
-        const ref = (t.reference || '').toLowerCase();
-        const name = (t.customer_name || '').toLowerCase();
-        const phone = (t.customer_phone || '').toLowerCase();
-        return !q || ref.includes(q) || name.includes(q) || phone.includes(q);
-      });
-      renderPaymentsTable(filtered);
-    };
-
-    function renderPaymentsTable(list) {
-      const tbody = document.getElementById('paymentsTableBody');
-      if (!tbody) return;
-      if (!list || list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><i class="fas fa-receipt"></i><p>Aucune transaction trouvée.</p></td></tr>';
-        return;
-      }
-      let html = '';
-      list.forEach((t, i) => {
-        const d = new Date(t.created_at);
-        const dateStr = isNaN(d.getTime()) ? t.created_at : d.toLocaleString('fr-FR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
-        const amt = Number(t.amount) || 0;
-        const isCompleted = t.status === 'completed' || t.status === 'success';
-        const isProcessing = t.status === 'processing';
-        const statusCls = isCompleted ? 'status-completed' : (isProcessing ? 'status-processing' : 'status-pending');
-        const statusLabel = isCompleted ? 'Payé (Validé)' : (isProcessing ? 'En cours' : 'Initié');
-        const cleanPhone = (t.customer_phone || '').replace(/\\D/g, '').slice(-10);
-        const tierToGrant = amt >= 1000 ? 'pro' : 'starter';
-
-        html += `
-          <tr>
-            <td style="color:var(--text-muted); font-weight:700;">${i + 1}</td>
-            <td><strong style="color:#38bdf8; font-family:monospace; font-size:13px;">${t.reference}</strong></td>
-            <td><strong style="color:#fff;">${t.customer_name || 'Élève'}</strong></td>
-            <td><span class="phone-text">${t.customer_phone || '-'}</span></td>
-            <td><span style="font-weight:800; color:#34d399; font-size:14px;">${amt.toLocaleString('fr-FR')} F</span></td>
-            <td><span style="text-transform:capitalize; font-weight:700; color:#cbd5e1;">${t.payment_method === 'wave' ? '🌊 Wave' : (t.payment_method || 'Mobile Money')}</span></td>
-            <td><span class="status-pill ${statusCls}">${statusLabel}</span></td>
-            <td style="color:var(--text-muted); font-size:12px;">${dateStr}</td>
-            <td style="text-align:right;">
-              <button onclick="quickUnlockFromTransaction('${t.reference}', '${cleanPhone}', '${escapeQuotes(t.customer_name)}', '${tierToGrant}')" class="btn-action-grant" style="${isCompleted ? 'background:linear-gradient(135deg, #10b981, #059669);' : ''}">
-                <i class="fas fa-crown"></i> Débloquer ${tierToGrant.toUpperCase()}
-              </button>
-            </td>
-          </tr>
-        `;
-      });
-      tbody.innerHTML = html;
-    }
-
-    window.quickUnlockFromTransaction = async function(ref, phone, name, tier) {
-      if (!confirm(`Voulez-vous débloquer immédiatement le Pass ${tier.toUpperCase()} (30 jours) pour ${name} (${phone}) suite à la transaction ${ref} ?`)) return;
-      try {
-        const apiBase = window.getAdminApiBase();
-        const res = await fetch(`${apiBase}/api/admin/set-plan`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            target: phone,
-            plan: tier,
-            days: 30,
-            reason: 'Validé suite paiement ' + ref,
-            fullName: name
-          })
-        });
-        const d = await res.json();
-
-        // Direct Client SDK sync
-        try {
-          const expiresAt = d.premiumExpiresAt || (Date.now() + 30 * 86400000);
-          await setDoc(doc(db, "users", phone), {
-            isPremium: true,
-            plan: tier,
-            premiumPlan: tier,
-            premiumExpiresAt: expiresAt,
-            subscriptionType: 'monthly',
-            adminGranted: true,
-            adminGrantReason: 'Validé suite paiement ' + ref,
-            updatedAt: new Date().toISOString()
-          }, { merge: true });
+              days: days,
+              fullName: currentGrantTarget.name
+            })
+          });
         } catch(e) {}
 
-        if (d.success) {
-          alert(`✅ Pass ${tier.toUpperCase()} débloqué avec succès pour ${name} !`);
-          window.loadData();
-        } else {
-          alert(`❌ Erreur : ${d.error}`);
+        const item = fullList.find(u => (u.whatsapp === currentGrantTarget.phone || u.contact === currentGrantTarget.phone));
+        if (item) {
+          item.plan = currentGrantPlan;
+          item.premiumPlan = currentGrantPlan;
+          item.isPremium = !isFree;
+          item.premiumExpiresAt = expiresAt;
         }
-      } catch(e) {
-        alert(`❌ Erreur : ${e.message}`);
+
+        updateKPIs();
+        filterTable();
+
+        feedback.textContent = isFree ? "Abonnement arrêté avec succès." : `Pass ${currentGrantPlan.toUpperCase()} accordé avec succès !`;
+        feedback.style.color = isFree ? '#f87171' : '#10b981';
+        feedback.style.display = 'block';
+
+        setTimeout(() => closeGrantModal(), 800);
+
+      } catch(err) {
+        feedback.textContent = `Erreur : ${err.message}`;
+        feedback.style.color = '#ef4444';
+        feedback.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-check"></i> Enregistrer';
       }
+    };
+
+    // Export CSV
+    window.exportCSV = function() {
+      if (!fullList.length) { alert("Aucune donnée à exporter."); return; }
+      let csv = "Nom,Telephone,Classe,Forfait,Statut,Date\n";
+      fullList.forEach(u => {
+        const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+        const name = (u.fullName || `${u.firstName || ''} ${u.lastName || ''}`).replace(/,/g, ' ');
+        const cls = (u.selectedClass || u.classe || '').replace(/,/g, ' ');
+        const plan = (u.premiumPlan || u.plan || 'free');
+        const isPrem = u.isPremium ? 'Actif' : 'Gratuit';
+        const dt = u.createdAt ? new Date(u.createdAt).toLocaleDateString('fr-FR') : '';
+        csv += `"${name}","+225 ${phone}","${cls}","${plan}","${isPrem}","${dt}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `eleves_resumeci_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
     };
 
   </script>
-
-  <!-- MODAL : ATTRIBUER OU MODIFIER UN ABONNEMENT -->
-  <div class="admin-modal-overlay" id="grantSubModal">
-    <div class="admin-modal-card">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:38px; height:38px; border-radius:10px; background:rgba(139,92,246,0.2); color:#a78bfa; display:flex; align-items:center; justify-content:center; font-size:18px;">
-            <i class="fas fa-crown"></i>
-          </div>
-          <div>
-            <h2 style="font-size:17px; font-weight:800; color:#fff; margin:0;">Gérer l'Abonnement</h2>
-            <p style="font-size:12px; color:var(--text-muted); margin:0;">Attribuer ou modifier la formule de l'élève en 1 clic</p>
-          </div>
-        </div>
-        <button onclick="closeGrantSubModal()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;"><i class="fas fa-xmark"></i></button>
-      </div>
-
-      <div style="background:#1e293b; border-radius:12px; padding:12px 16px; margin-bottom:18px; font-size:13px;">
-        <div style="color:var(--text-muted); font-size:11px; text-transform:uppercase; font-weight:700;">Élève sélectionné :</div>
-        <div style="font-size:15px; font-weight:800; color:#fff; margin-top:2px;" id="modalStudentName">-</div>
-        <div style="font-size:13px; color:#38bdf8; font-weight:700; margin-top:2px;" id="modalStudentPhone">-</div>
-      </div>
-
-      <div style="margin-bottom:14px;">
-        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:8px;">Choisir la formule à appliquer :</label>
-
-        <div class="plan-radio-card" id="card_plan_pro" onclick="selectModalPlan('pro')">
-          <div>
-            <div style="font-weight:800; font-size:13.5px; color:#34d399;"><i class="fas fa-crown"></i> Pass Pro (1 000 FCFA / mois)</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Accès complet illimité (Audios, Pièges d'Examen, Quiz & Fiches)</div>
-          </div>
-          <span style="color:#34d399; font-weight:800;">30 jours</span>
-        </div>
-
-        <div class="plan-radio-card" id="card_plan_starter" onclick="selectModalPlan('starter')">
-          <div>
-            <div style="font-weight:800; font-size:13.5px; color:#60a5fa;"><i class="fas fa-bolt"></i> Pass Starter (500 FCFA / mois)</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Pack hors-ligne & Téléchargements fiches</div>
-          </div>
-          <span style="color:#60a5fa; font-weight:800;">30 jours</span>
-        </div>
-
-        <div class="plan-radio-card" id="card_plan_annual" onclick="selectModalPlan('annual')">
-          <div>
-            <div style="font-weight:800; font-size:13.5px; color:#fbbf24;"><i class="fas fa-star"></i> Pass Annuel (10 000 FCFA / an)</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Accès Pro permanent pour toute l'année scolaire</div>
-          </div>
-          <span style="color:#fbbf24; font-weight:800;">365 jours</span>
-        </div>
-
-        <div class="plan-radio-card" id="card_plan_vip" onclick="selectModalPlan('vip')">
-          <div>
-            <div style="font-weight:800; font-size:13.5px; color:#fcd34d;"><i class="fas fa-gem"></i> Pass VIP Permanent (Illimité)</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Accès complet permanent sans date d'expiration</div>
-          </div>
-          <span style="color:#fcd34d; font-weight:800;">Permanent</span>
-        </div>
-
-        <div class="plan-radio-card" id="card_plan_free" onclick="selectModalPlan('free')">
-          <div>
-            <div style="font-weight:800; font-size:13.5px; color:#94a3b8;"><i class="fas fa-unlock"></i> Gratuit / Arrêter l'Abonnement</div>
-            <div style="font-size:11.5px; color:var(--text-muted);">Désactiver le pass premium (l'élève repasse en formule gratuite)</div>
-          </div>
-          <span style="color:#94a3b8; font-weight:800;">Standard</span>
-        </div>
-      </div>
-
-      <div style="margin-bottom:18px;">
-        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Motif de l'attribution ou arrêt (facultatif) :</label>
-        <input type="text" id="modalGrantReason" placeholder="Ex: Paiement Wave reçu, Régularisation..." style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13px; outline:none;">
-      </div>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button onclick="closeGrantSubModal()" style="flex:1; min-width:90px; background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:12px; border-radius:10px; font-weight:700; cursor:pointer;">Annuler</button>
-        <button onclick="revokeInGrantModal()" style="flex:1.3; min-width:140px; background:rgba(239,68,68,0.18); border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:12px; border-radius:10px; font-weight:800; cursor:pointer;" title="Arrêter immédiatement cet abonnement">
-          <i class="fas fa-ban"></i> Arrêter Pass
-        </button>
-        <button id="modalBtnSubmit" onclick="submitGrantSubscription()" style="flex:2; min-width:170px; background:linear-gradient(135deg, #10b981, #059669); border:none; color:#fff; padding:12px; border-radius:10px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(16,185,129,0.3);">
-          <i class="fas fa-check"></i> Valider Formule (Gratuit)
-        </button>
-      </div>
-      <div id="modalGrantFeedback" style="margin-top:10px; font-size:12.5px; text-align:center; display:none;"></div>
-    </div>
-  </div>
-
-  <!-- MODAL : CRÉER UN COMPTE ÉLÈVE & ATTRIBUER UN ACCÈS (100% GRATUIT ADMIN) -->
-  <div class="admin-modal-overlay" id="createUserModal">
-    <div class="admin-modal-card" style="max-width: 560px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:40px; height:40px; border-radius:12px; background:rgba(16,185,129,0.2); color:#10b981; display:flex; align-items:center; justify-content:center; font-size:19px;">
-            <i class="fas fa-user-plus"></i>
-          </div>
-          <div>
-            <h2 style="font-size:17.5px; font-weight:800; color:#fff; margin:0;">Créer un Compte Élève</h2>
-            <p style="font-size:12px; color:var(--text-muted); margin:0;">Attribuez immédiatement l'abonnement de votre choix (100% Gratuit pour vous)</p>
-          </div>
-        </div>
-        <button onclick="closeCreateUserModal()" style="background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;"><i class="fas fa-xmark"></i></button>
-      </div>
-
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
-        <div>
-          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Nom & Prénom(s) * :</label>
-          <input type="text" id="createFullName" placeholder="Ex: Kouamé Ange" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
-        </div>
-        <div>
-          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Numéro WhatsApp (10 chiffres) * :</label>
-          <input type="tel" id="createPhone" placeholder="Ex: 07 08 09 10 11" maxlength="14" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
-        <div>
-          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Classe de l'élève :</label>
-          <select id="createClass" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 12px; color:#fff; font-size:13.5px; outline:none;">
-            <option value="3eme" selected>3ème (BEPC)</option>
-            <option value="Terminale_D">Terminale D (BAC D)</option>
-            <option value="Terminale_A">Terminale A (BAC A)</option>
-            <option value="Terminale_C">Terminale C (BAC C)</option>
-            <option value="Premiere_D">Première D</option>
-            <option value="Seconde_C">Seconde C</option>
-            <option value="Seconde_A">Seconde A</option>
-            <option value="4eme">4ème</option>
-            <option value="5eme">5ème</option>
-            <option value="6eme">6ème</option>
-          </select>
-        </div>
-        <div>
-          <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Mot de passe de l'élève :</label>
-          <input type="text" id="createPassword" value="123456" placeholder="Par défaut : 123456" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:10px 14px; color:#fff; font-size:13.5px; outline:none;">
-        </div>
-      </div>
-
-      <div style="margin-bottom:14px;">
-        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:8px;">Choisir la Formule à Débloquer (0 F pour vous) :</label>
-
-        <div class="plan-radio-card selected" id="cplan_pro" onclick="selectCreateModalPlan('pro')">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:#34d399;"><i class="fas fa-crown"></i> Pass Pro (30 jours) - RECOMMANDÉ</div>
-            <div style="font-size:11px; color:var(--text-muted);">Accès illimité à tous les audios, quiz, pièges d'examen & fiches</div>
-          </div>
-          <span style="color:#34d399; font-weight:800; font-size:12px;">30 jours</span>
-        </div>
-
-        <div class="plan-radio-card" id="cplan_starter" onclick="selectCreateModalPlan('starter')">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:#60a5fa;"><i class="fas fa-bolt"></i> Pass Starter (30 jours)</div>
-            <div style="font-size:11px; color:var(--text-muted);">Pack hors-ligne & téléchargements de résumés</div>
-          </div>
-          <span style="color:#60a5fa; font-weight:800; font-size:12px;">30 jours</span>
-        </div>
-
-        <div class="plan-radio-card" id="cplan_annual" onclick="selectCreateModalPlan('annual')">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:#fbbf24;"><i class="fas fa-star"></i> Pass Annuel (365 jours)</div>
-            <div style="font-size:11px; color:var(--text-muted);">Accès Pro complet pour toute l'année scolaire 2024-2025</div>
-          </div>
-          <span style="color:#fbbf24; font-weight:800; font-size:12px;">1 An</span>
-        </div>
-
-        <div class="plan-radio-card" id="cplan_vip" onclick="selectCreateModalPlan('vip')">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:#fcd34d;"><i class="fas fa-gem"></i> Pass VIP Permanent (Illimité)</div>
-            <div style="font-size:11px; color:var(--text-muted);">Accès permanent à vie sans aucune expiration</div>
-          </div>
-          <span style="color:#fcd34d; font-weight:800; font-size:12px;">Permanent</span>
-        </div>
-
-        <div class="plan-radio-card" id="cplan_free" onclick="selectCreateModalPlan('free')">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:#94a3b8;"><i class="fas fa-unlock"></i> Formule Gratuite (0 F)</div>
-            <div style="font-size:11px; color:var(--text-muted);">Accès standard uniquement</div>
-          </div>
-          <span style="color:#94a3b8; font-weight:800; font-size:12px;">Standard</span>
-        </div>
-      </div>
-
-      <div style="margin-bottom:16px;">
-        <label style="display:block; font-size:11px; text-transform:uppercase; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Motif / Note interne :</label>
-        <input type="text" id="createReason" value="Créé manuellement par admin" style="width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px; padding:9px 12px; color:#fff; font-size:12.5px; outline:none;">
-      </div>
-
-      <div style="display:flex; gap:10px;">
-        <button onclick="closeCreateUserModal()" style="flex:1; background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:12px; border-radius:10px; font-weight:700; cursor:pointer;">Annuler</button>
-        <button id="btnSubmitCreateUser" onclick="submitCreateUser()" style="flex:2; background:linear-gradient(135deg, #10b981, #059669); border:none; color:#fff; padding:12px; border-radius:10px; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
-          <i class="fas fa-check"></i> Créer et Activer le compte (0 F)
-        </button>
-      </div>
-      <div id="createFeedback" style="margin-top:10px; font-size:12.5px; text-align:center; display:none;"></div>
-    </div>
-  </div>
-
-  <!-- MODAL : CONFIRMATION COMPTE CRÉÉ & ENVOI WHATSAPP -->
-  <div class="admin-modal-overlay" id="createdSuccessModal">
-    <div class="admin-modal-card" style="max-width: 480px; text-align:center;">
-      <div style="width:58px; height:58px; border-radius:50%; background:rgba(16,185,129,0.2); color:#10b981; display:flex; align-items:center; justify-content:center; font-size:26px; margin: 0 auto 14px;">
-        <i class="fas fa-check"></i>
-      </div>
-      <h2 style="font-size:20px; font-weight:800; color:#fff; margin-bottom:6px;">Compte Créé & Activé avec Succès !</h2>
-      <p style="font-size:13px; color:var(--text-muted); margin-bottom:18px;">L'élève peut dès maintenant se connecter sur <b>resumeci.me/connexion.html</b> avec ses accès.</p>
-
-      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:14px; text-align:left; margin-bottom:20px; font-size:13px;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-          <span style="color:var(--text-muted);">Élève :</span>
-          <strong style="color:#fff;" id="succStudentName">-</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-          <span style="color:var(--text-muted);">Identifiant (Tél) :</span>
-          <strong style="color:#38bdf8;" id="succStudentPhone">-</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-          <span style="color:var(--text-muted);">Mot de passe :</span>
-          <strong style="color:#a78bfa;" id="succStudentPwd">-</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between;">
-          <span style="color:var(--text-muted);">Formule accordée :</span>
-          <strong style="color:#34d399;" id="succStudentPlan">PRO</strong>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <button onclick="sendAccessViaWhatsApp()" style="background:linear-gradient(135deg, #25d366, #128c7e); color:#fff; border:none; padding:13px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 4px 14px rgba(37,211,102,0.35);">
-          <i class="fab fa-whatsapp" style="font-size:18px;"></i> Envoyer les accès par WhatsApp 📲
-        </button>
-        <button onclick="closeCreatedSuccessModal()" style="background:#1e293b; border:1px solid #334155; color:var(--text-muted); padding:11px; border-radius:10px; font-weight:700; cursor:pointer;">
-          Terminer & Fermer
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION ONGLET 2 : SUIVI DES PAIEMENTS RÉELS GENIUSPAY & WAVE -->
-  <div id="sectionPaymentsTab" style="display:none;">
-    <div class="content-box" style="margin-bottom: 24px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
-        <div>
-          <h2 style="font-size:18px; font-weight:800; color:#fff; margin:0;"><i class="fas fa-receipt" style="color:#10b981;"></i> Transactions Réelles en Temps Réel (GeniusPay & Wave)</h2>
-          <p style="font-size:12.5px; color:var(--text-muted); margin:4px 0 0;">Liste certifiée des paiements reçus avec leurs statuts (completed, processing, pending). Cliquez sur "Débloquer" pour activer immédiatement un élève.</p>
-        </div>
-        <div style="display:flex; gap:10px;">
-          <button class="btn-header btn-refresh" onclick="loadGeniusPayTransactions(true)">
-            <i class="fas fa-arrows-rotate"></i> Actualiser les paiements
-          </button>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div class="search-box" style="max-width: 450px;">
-          <i class="fas fa-magnifying-glass"></i>
-          <input type="text" id="searchPaymentInput" placeholder="Rechercher par référence MTX- ou numéro..." oninput="filterPaymentsTable()">
-        </div>
-      </div>
-
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th style="width: 36px;">#</th>
-              <th>Référence GeniusPay</th>
-              <th>Client / Élève</th>
-              <th>Téléphone</th>
-              <th>Montant</th>
-              <th>Méthode</th>
-              <th>Statut</th>
-              <th>Date & Heure</th>
-              <th style="text-align: right;">Action Déblocage</th>
-            </tr>
-          </thead>
-          <tbody id="paymentsTableBody">
-            <tr>
-              <td colspan="9" class="empty-state">
-                <i class="fas fa-circle-notch fa-spin"></i>
-                <p>Chargement des paiements réels GeniusPay...</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
 </body>
 </html>

@@ -441,11 +441,12 @@ app.post('/api/webhook', async (req, res) => {
 // --------------------------------------------------------------------------
 app.post('/api/register', async (req, res) => {
   try {
-    const { uid, firstName, lastName, selectedClass, whatsapp, plan, isPremium, userAgent } = req.body;
+    const { uid, firstName, lastName, selectedClass, whatsapp, password, plan, isPremium, userAgent } = req.body;
     if (!whatsapp) {
       return res.status(400).json({ error: "Numéro WhatsApp obligatoire" });
     }
     const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
+    const cleanPwd = String(password || '123456').trim();
     const userDoc = {
       uid: uid || ('user_' + Date.now()),
       firstName: (firstName || '').trim(),
@@ -454,6 +455,7 @@ app.post('/api/register', async (req, res) => {
       selectedClass: selectedClass || 'Non précisé',
       whatsapp: cleanWa,
       contact: cleanWa,
+      password: cleanPwd,
       plan: plan || 'free',
       isPremium: Boolean(isPremium && plan !== 'free'),
       createdAt: new Date().toISOString(),
@@ -475,70 +477,6 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-// --------------------------------------------------------------------------
-// ROUTE 4.5 : CONNEXION ÉLÈVE & RESTAURATION ABONNEMENT PAYÉ
-// --------------------------------------------------------------------------
-app.post('/api/login', async (req, res) => {
-  try {
-    const { whatsapp, password } = req.body;
-    if (!whatsapp) return res.status(400).json({ error: "Numéro WhatsApp obligatoire." });
-    const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
-
-    let foundUser = null;
-    if (db) {
-      // 1. Chercher par id = cleanWa
-      const docDirect = await db.collection('users').doc(cleanWa).get();
-      if (docDirect.exists) {
-        foundUser = { ...docDirect.data(), uid: docDirect.id };
-      }
-
-      // 2. Si pas trouvé, chercher dans toute la collection
-      if (!foundUser) {
-        const snap = await db.collection('users').get();
-        snap.forEach(doc => {
-          const data = doc.data();
-          const dWa = String(data.whatsapp || data.contact || '').replace(/\D/g, '').slice(-10);
-          if (dWa === cleanWa) {
-            foundUser = { ...data, uid: data.uid || doc.id };
-          }
-        });
-      }
-    }
-
-    if (!foundUser) {
-      return res.status(404).json({ error: "Aucun compte trouvé avec ce numéro WhatsApp." });
-    }
-
-    if (foundUser.password && password && foundUser.password !== password) {
-      return res.status(401).json({ error: "Mot de passe incorrect." });
-    }
-
-    const now = Date.now();
-    const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
-    const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
-    const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
-    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
-
-    res.json({
-      success: true,
-      profile: {
-        uid: foundUser.uid || ('user_' + Date.now()),
-        firstName: foundUser.firstName || 'Élève',
-        lastName: foundUser.lastName || '',
-        fullName: foundUser.fullName || `${foundUser.firstName || ''} ${foundUser.lastName || ''}`.trim(),
-        selectedClass: foundUser.selectedClass || '3eme',
-        whatsapp: cleanWa,
-        password: password || foundUser.password || '',
-        isPremium: isPremium,
-        premiumPlan: premiumPlan,
-        premiumExpiresAt: effectiveExpiresAt,
-        subscriptionType: foundUser.subscriptionType || 'monthly'
-      }
-    });
-  } catch (err) {
-    res.status(500).json({ error: "Erreur connexion" });
-  }
-});
 
 // --------------------------------------------------------------------------
 // ROUTE 4.6 : STATUT UTILISATEUR & SYNCHRONISATION EN DIRECT
