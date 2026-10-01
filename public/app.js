@@ -64,6 +64,42 @@ window.syncUserProfileFromRemote = async function() {
   const uid = window.USER_PROFILE.uid || '';
   if (!phone && !uid) return null;
 
+  // 1. Tenter d'abord la récupération ultra-rapide directe depuis Firestore (temps de réponse < 100ms)
+  try {
+    if (typeof window.fetchUserProfileFromFirestore === 'function') {
+      const fbUser = await window.fetchUserProfileFromFirestore(phone, uid);
+      if (fbUser) {
+        const now = Date.now();
+        const expiresAt = Number(fbUser.premiumExpiresAt) || 0;
+        const isPrem = Boolean(fbUser.isPremium && (expiresAt === 0 || expiresAt > now));
+        const plan = isPrem ? (fbUser.premiumPlan || fbUser.plan || 'pro') : 'free';
+        let changed = false;
+
+        if (window.USER_PROFILE.isPremium !== isPrem) {
+          window.USER_PROFILE.isPremium = isPrem;
+          changed = true;
+        }
+        if (window.USER_PROFILE.premiumPlan !== plan) {
+          window.USER_PROFILE.premiumPlan = plan;
+          changed = true;
+        }
+        if (expiresAt && window.USER_PROFILE.premiumExpiresAt !== expiresAt) {
+          window.USER_PROFILE.premiumExpiresAt = expiresAt;
+          changed = true;
+        }
+        if (changed) {
+          localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+          if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+          if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+        }
+        return window.USER_PROFILE;
+      }
+    }
+  } catch (fbErr) {
+    console.warn("[Sync] Direct Firestore check warning:", fbErr);
+  }
+
+  // 2. Repli vers l'API Backend
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
     const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {

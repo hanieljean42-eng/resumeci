@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-import { getFirestore, collection, addDoc, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, getDoc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
@@ -16,6 +16,26 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+
+// Récupération instantanée directe du statut utilisateur depuis Firestore (temps de réponse < 100ms)
+window.fetchUserProfileFromFirestore = async function(phone, uid) {
+  const cleanPhone = String(phone || '').replace(/\D/g, '').slice(-10);
+  try {
+    let userSnap = null;
+    if (cleanPhone.length === 10) {
+      userSnap = await getDoc(doc(db, "users", cleanPhone));
+    }
+    if ((!userSnap || !userSnap.exists()) && uid) {
+      userSnap = await getDoc(doc(db, "users", uid));
+    }
+    if (userSnap && userSnap.exists()) {
+      return { id: userSnap.id, ...userSnap.data() };
+    }
+  } catch(e) {
+    console.warn("[Firebase] fetchUserProfileFromFirestore error:", e);
+  }
+  return null;
+};
 
 // Synchronisation du profil étudiant dans Firestore
 window.syncUserProfileToFirestore = async function(profile) {
