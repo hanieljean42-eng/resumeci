@@ -754,20 +754,40 @@
         localStorage.setItem('rci-welcome','1');
       },2000);
     }
-    // Service Worker registration & aggressive update checking
+    // Service Worker registration & aggressive update checking across all pages
     try {
       if ('serviceWorker' in navigator) {
+        let isEnhanceReloading = false;
+
+        navigator.serviceWorker.addEventListener('controllerchange', async () => {
+          if (isEnhanceReloading) return;
+          isEnhanceReloading = true;
+          console.log('[PWA] Nouveau Service Worker actif -> Actualisation immédiate');
+          try {
+            if ('caches' in window) {
+              const keys = await caches.keys();
+              await Promise.all(keys.map(k => caches.delete(k)));
+            }
+          } catch(e) {}
+          window.location.reload();
+        });
+
         navigator.serviceWorker.register('/sw.js').then(reg => {
           reg.update();
         }).catch(e => {});
 
-        navigator.serviceWorker.addEventListener('message', e => {
-          if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
-            console.log("Mise à jour v2.2.0 détectée, actualisation...");
-            if (!sessionStorage.getItem('resumeci_reloaded_220')) {
-              sessionStorage.setItem('resumeci_reloaded_220', '1');
-              window.location.reload();
-            }
+        navigator.serviceWorker.addEventListener('message', async e => {
+          if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_UPDATE_RELOAD' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
+            if (isEnhanceReloading) return;
+            isEnhanceReloading = true;
+            console.log('[PWA] Signal de mise à jour reçu -> Purge du cache et rechargement...');
+            try {
+              if ('caches' in window) {
+                const keys = await caches.keys();
+                await Promise.all(keys.map(k => caches.delete(k)));
+              }
+            } catch(e) {}
+            window.location.reload();
           }
         });
       }

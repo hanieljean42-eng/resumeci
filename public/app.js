@@ -385,17 +385,45 @@ function updateSidebarPassBtn() {
   }
 }
 window.updateSidebarPassBtn = updateSidebarPassBtn;
+const CURRENT_APP_VERSION = '3.3.1';
 const VERSION_KEY = 'resumeci_last_version';
 const UPDATE_DISMISSED_KEY = 'resumeci_update_dismissed';
+let isAppReloading = false;
+
+async function forcePurgeAndReload(newVersion) {
+  if (isAppReloading) return;
+  isAppReloading = true;
+  console.log('🚀 [ResumeCI] Mise à jour forcée vers v' + newVersion + ' — Purge complète du cache...');
+  try {
+    localStorage.setItem(VERSION_KEY, newVersion);
+    localStorage.setItem('rci_app_v', newVersion);
+    if ('caches' in window) {
+      const ks = await caches.keys();
+      await Promise.all(ks.map(k => caches.delete(k)));
+    }
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ type: 'PURGE_ALL_CACHE' });
+    }
+  } catch (e) {
+    console.error('Erreur purge cache:', e);
+  }
+  window.location.reload(true);
+}
+
 async function checkForUpdates() {
   try {
-    const versionData = await fetch('/data/version.json?v=' + Date.now())
+    const versionData = await fetch('/data/version.json?v=' + Date.now(), { cache: 'no-store' })
       .then(r => r.json())
       .catch(() => null);
     if (!versionData) return;
     const lastVersion = localStorage.getItem(VERSION_KEY);
-    const dismissedVersion = localStorage.getItem(UPDATE_DISMISSED_KEY);
+    
     if (versionData.version !== lastVersion) {
+      if (versionData.forceReload || versionData.forcePurgeCache) {
+        await forcePurgeAndReload(versionData.version);
+        return;
+      }
+      const dismissedVersion = localStorage.getItem(UPDATE_DISMISSED_KEY);
       if (versionData.forceShow || dismissedVersion !== versionData.version) {
         showUpdateNotification(versionData);
       }
@@ -2940,6 +2968,20 @@ window.addEventListener('beforeunload', () => {
 });
 let swReady = null;
 if ('serviceWorker' in navigator) {
+  // Écoute du changement de contrôleur SW (Standard PWA : reload immédiat lors de skipWaiting)
+  navigator.serviceWorker.addEventListener('controllerchange', async () => {
+    if (isAppReloading) return;
+    isAppReloading = true;
+    console.log('🔄 Nouveau contrôleur Service Worker actif -> Actualisation automatique');
+    try {
+      if ('caches' in window) {
+        const ks = await caches.keys();
+        await Promise.all(ks.map(k => caches.delete(k)));
+      }
+    } catch(e) {}
+    window.location.reload();
+  });
+
   navigator.serviceWorker.register('/sw.js').then(reg => {
     swReady = reg;
     console.log('SW registered');
@@ -2949,16 +2991,28 @@ if ('serviceWorker' in navigator) {
       if (newWorker) {
         newWorker.addEventListener('statechange', () => {
           if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            console.log('Nouvelle version v3.0.0 installée -> rechargement automatique');
-            window.location.reload();
+            console.log('Nouvelle version Service Worker installée -> actualisation automatique');
+            if (!isAppReloading) {
+              isAppReloading = true;
+              window.location.reload();
+            }
           }
         });
       }
     });
-    navigator.serviceWorker.addEventListener('message', e => {
-      if (e.data.type === 'SW_UPDATED') {
-        console.log('SW_UPDATED reçu:', e.data.version);
-        window.location.reload();
+    navigator.serviceWorker.addEventListener('message', async e => {
+      if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_UPDATE_RELOAD' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
+        console.log('SW_UPDATED / FORCE_UPDATE_RELOAD reçu:', e.data.version);
+        if (!isAppReloading) {
+          isAppReloading = true;
+          try {
+            if ('caches' in window) {
+              const ks = await caches.keys();
+              await Promise.all(ks.map(k => caches.delete(k)));
+            }
+          } catch(err) {}
+          window.location.reload();
+        }
       }
       if (e.data.type === 'CACHE_DONE') {
         document.querySelectorAll('.dl-btn.downloading').forEach(btn => {
@@ -2982,6 +3036,24 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.controller.postMessage({ type: 'GET_CACHED' });
       }
     }, 1e3);
+  });
+
+  // Polling automatique pour les PWA installées (toutes les 30s + au focus/visibilitychange)
+  setInterval(() => {
+    checkForUpdates();
+    if (swReady) { try { swReady.update(); } catch(e){} }
+  }, 30000);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      checkForUpdates();
+      if (swReady) { try { swReady.update(); } catch(e){} }
+    }
+  });
+
+  window.addEventListener('focus', () => {
+    checkForUpdates();
+    if (swReady) { try { swReady.update(); } catch(e){} }
   });
 }
 window._cachedUrls = new Set();

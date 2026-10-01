@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v46';
+const CACHE_SHELL = 'resumeci-shell-v50';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -18,15 +18,15 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/main.css?v=3.2.0',
-  '/enhancements.css?v=3.2.0',
-  '/enhancements.js?v=3.2.0',
-  '/firebase-config.js?v=3.2.0',
-  '/content-protection.js?v=3.2.0',
-  '/quiz.css?v=3.2.0',
-  '/quiz.js?v=3.2.0',
-  '/flashcards.js?v=3.2.0',
-  '/app.js?v=3.2.0'
+  '/main.css?v=3.3.1',
+  '/enhancements.css?v=3.3.1',
+  '/enhancements.js?v=3.3.1',
+  '/firebase-config.js?v=3.3.1',
+  '/content-protection.js?v=3.3.1',
+  '/quiz.css?v=3.3.1',
+  '/quiz.js?v=3.3.1',
+  '/flashcards.js?v=3.3.1',
+  '/app.js?v=3.3.1'
 ];
 
 // Install: cache shell files and skip waiting immediately
@@ -42,10 +42,16 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_SHELL && k !== CACHE_FICHES).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== CACHE_SHELL && k !== CACHE_FICHES).map(k => {
+        console.log('[SW] Purging old cache:', k);
+        return caches.delete(k);
+      }))
     ).then(() => self.clients.claim()).then(() => {
       return self.clients.matchAll({ type: 'window' }).then(clients => {
-        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: '3.0.0' }));
+        clients.forEach(client => {
+          client.postMessage({ type: 'FORCE_UPDATE_RELOAD', version: '3.3.1' });
+          client.postMessage({ type: 'SW_UPDATED', version: '3.3.1' });
+        });
       });
     })
   );
@@ -126,9 +132,9 @@ self.addEventListener('message', e => {
     });
   }
 
-  if (e.data && e.data.type === 'CLEAR_CACHE') {
-    caches.delete(CACHE_FICHES).then(() => {
-      e.source.postMessage({ type: 'CACHE_CLEARED' });
+  if (e.data && (e.data.type === 'CLEAR_CACHE' || e.data.type === 'PURGE_ALL_CACHE')) {
+    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).then(() => {
+      e.source && e.source.postMessage({ type: 'CACHE_CLEARED' });
     });
   }
 });

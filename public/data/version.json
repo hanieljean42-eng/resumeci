@@ -1,8 +1,11 @@
 {
-  "version": "3.3.0",
+  "version": "3.3.1",
+  "build": 3310,
   "date": "2026-10-01",
-  "title": "Plateforme ResumeCI en Ligne 🎓",
-  "message": "Bienvenue sur ResumeCI ! Accède à l'intégralité des 714 fiches de cours, Flashcards, Quiz et outils de révision.",
+  "forceReload": true,
+  "forcePurgeCache": true,
+  "title": "Plateforme ResumeCI Mise à Jour 🚀",
+  "message": "Bienvenue sur ResumeCI ! Accède à l'intégralité des 714 fiches de cours, Flashcards, Quiz et paiement automatique GeniusPay.",
   "features": [
     "📚 714 Fiches de cours Collège & Lycée",
     "🃏 Flashcards scientifiques par répétition espacée",
@@ -10,7 +13,7 @@
     "📴 Packs hors-ligne pour réviser sans connexion Internet",
     "🧠 Récitation Active (Active Recall) avec masquage intelligent",
     "⚠️ Rubriques 'Pièges d'Examen' avec astuces des correcteurs",
-    "👑 Formules Pass Réussite (Starter, Pro, Élite)"
+    "👑 Formules Pass Réussite avec activation automatique 100% sécurisée"
   ],
   "forceShow": false
 }

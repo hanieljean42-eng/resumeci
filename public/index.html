@@ -29,31 +29,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script>
-    // Purge automatique du cache navigateur pour forcer la mise à jour v3.2.0
+    // Purge automatique et forcée du cache pour la mise à jour v3.3.1
     (function() {
-      var currentVer = '3.2.0';
+      var TARGET_VER = '3.3.1';
       var storedVer = localStorage.getItem('rci_app_v');
-      if (storedVer !== currentVer) {
+      if (storedVer !== TARGET_VER) {
+        localStorage.setItem('rci_app_v', TARGET_VER);
+        localStorage.setItem('resumeci_last_version', TARGET_VER);
         if ('caches' in window) {
           caches.keys().then(function(names) {
-            names.forEach(function(name) {
-              if (name !== 'resumeci-fiches-v3') caches.delete(name);
-            });
+            return Promise.all(names.map(function(name) {
+              return caches.delete(name);
+            }));
+          }).then(function() {
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs) {
+                regs.forEach(function(reg) { try { reg.update(); } catch(e){} });
+              });
+            }
+            if (storedVer) {
+              window.location.reload(true);
+            }
           });
+        } else if (storedVer) {
+          window.location.reload(true);
         }
-        localStorage.setItem('rci_app_v', currentVer);
       }
     })();
   </script>
-  <link rel="stylesheet" href="/enhancements.css?v=3.2.0">
-  <link rel="stylesheet" href="/quiz.css?v=3.2.0">
+  <link rel="stylesheet" href="/enhancements.css?v=3.3.1">
+  <link rel="stylesheet" href="/quiz.css?v=3.3.1">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-  <script src="/enhancements.js?v=3.2.0" defer></script>
-  <script type="module" src="/firebase-config.js?v=3.2.0"></script>
-  <script src="/content-protection.js?v=3.2.0" defer></script>
-  <script src="/quiz.js?v=3.2.0" defer></script>
-  <script src="/flashcards.js?v=3.2.0" defer></script>
+  <script src="/enhancements.js?v=3.3.1" defer></script>
+  <script type="module" src="/firebase-config.js?v=3.3.1"></script>
+  <script src="/content-protection.js?v=3.3.1" defer></script>
+  <script src="/quiz.js?v=3.3.1" defer></script>
+  <script src="/flashcards.js?v=3.3.1" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -96,7 +108,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="/main.css?v=3.2.0">
+  <link rel="stylesheet" href="/main.css?v=3.3.1">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
@@ -197,7 +209,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.2.0" defer></script>
+  <script src="/app.js?v=3.3.1" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
