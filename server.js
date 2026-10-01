@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const https = require('https');
-const admin = require('firebase-admin');
+const adminModule = require('firebase-admin');
+const admin = adminModule.default || adminModule;
 
 let db = null;
 try {
@@ -533,6 +534,96 @@ app.post('/api/login', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ error: "Erreur connexion" });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 4.6 : STATUT UTILISATEUR & SYNCHRONISATION EN DIRECT
+// --------------------------------------------------------------------------
+app.get('/api/user-status', async (req, res) => {
+  try {
+    const rawPhone = req.query.phone || req.query.whatsapp || req.query.contact || '';
+    const rawUid = req.query.uid || '';
+    const cleanPhone = String(rawPhone).replace(/\D/g, '').slice(-10);
+
+    if (!cleanPhone && !rawUid) {
+      return res.status(400).json({ error: "Numéro de téléphone ou UID requis." });
+    }
+
+    let foundUser = null;
+
+    if (db) {
+      // 1. Recherche par numéro à 10 chiffres (doc ID)
+      if (cleanPhone.length === 10) {
+        try {
+          const docSnap = await db.collection('users').doc(cleanPhone).get();
+          if (docSnap.exists) {
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+          }
+        } catch (e) {}
+      }
+
+      // 2. Recherche par UID (doc ID)
+      if (!foundUser && rawUid) {
+        try {
+          const docSnap = await db.collection('users').doc(rawUid).get();
+          if (docSnap.exists) {
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+          }
+        } catch (e) {}
+      }
+
+      // 3. Recherche par champ whatsapp == cleanPhone
+      if (!foundUser && cleanPhone.length === 10) {
+        try {
+          const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
+          if (!qSnap.empty) {
+            const doc = qSnap.docs[0];
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+          }
+        } catch (e) {}
+      }
+
+      // 4. Recherche par champ contact == cleanPhone
+      if (!foundUser && cleanPhone.length === 10) {
+        try {
+          const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
+          if (!qSnap.empty) {
+            const doc = qSnap.docs[0];
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+          }
+        } catch (e) {}
+      }
+    }
+
+    if (!foundUser) {
+      return res.status(404).json({ success: false, error: "Utilisateur non trouvé" });
+    }
+
+    const now = Date.now();
+    const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
+    const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
+    const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
+    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
+
+    res.json({
+      success: true,
+      user: {
+        uid: foundUser.uid || rawUid,
+        whatsapp: cleanPhone || foundUser.whatsapp,
+        fullName: foundUser.fullName || `${foundUser.firstName || ''} ${foundUser.lastName || ''}`.trim() || 'Élève',
+        firstName: foundUser.firstName || 'Élève',
+        lastName: foundUser.lastName || '',
+        selectedClass: foundUser.selectedClass || '3eme',
+        isPremium: isPremium,
+        premiumPlan: premiumPlan,
+        premiumExpiresAt: effectiveExpiresAt,
+        subscriptionType: foundUser.subscriptionType || 'monthly'
+      }
+    });
+  } catch (err) {
+    console.error('[User Status] Erreur:', err);
+    res.status(500).json({ error: "Erreur serveur vérification statut" });
   }
 });
 

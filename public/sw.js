@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v52';
+const CACHE_SHELL = 'resumeci-shell-v54';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -18,15 +18,15 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/main.css?v=3.3.2',
-  '/enhancements.css?v=3.3.2',
-  '/enhancements.js?v=3.3.2',
-  '/firebase-config.js?v=3.3.2',
-  '/content-protection.js?v=3.3.2',
-  '/quiz.css?v=3.3.2',
-  '/quiz.js?v=3.3.2',
-  '/flashcards.js?v=3.3.2',
-  '/app.js?v=3.3.2'
+  '/main.css?v=3.3.4',
+  '/enhancements.css?v=3.3.4',
+  '/enhancements.js?v=3.3.4',
+  '/firebase-config.js?v=3.3.4',
+  '/content-protection.js?v=3.3.4',
+  '/quiz.css?v=3.3.4',
+  '/quiz.js?v=3.3.4',
+  '/flashcards.js?v=3.3.4',
+  '/app.js?v=3.3.4'
 ];
 
 // Install: cache shell files and skip waiting immediately
@@ -38,7 +38,7 @@ self.addEventListener('install', e => {
   );
 });
 
-// Activate: purge all old caches and notify all clients immediately
+// Activate: purge all old caches and claim clients safely
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
@@ -46,14 +46,7 @@ self.addEventListener('activate', e => {
         console.log('[SW] Purging old cache:', k);
         return caches.delete(k);
       }))
-    ).then(() => self.clients.claim()).then(() => {
-      return self.clients.matchAll({ type: 'window' }).then(clients => {
-        clients.forEach(client => {
-          client.postMessage({ type: 'FORCE_UPDATE_RELOAD', version: '3.3.2' });
-          client.postMessage({ type: 'SW_UPDATED', version: '3.3.2' });
-        });
-      });
-    })
+    ).then(() => self.clients.claim())
   );
 });
 

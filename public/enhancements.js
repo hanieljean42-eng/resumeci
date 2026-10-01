@@ -778,16 +778,7 @@
 
         navigator.serviceWorker.addEventListener('message', async e => {
           if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_UPDATE_RELOAD' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
-            if (isEnhanceReloading) return;
-            isEnhanceReloading = true;
-            console.log('[PWA] Signal de mise à jour reçu -> Purge du cache et rechargement...');
-            try {
-              if ('caches' in window) {
-                const keys = await caches.keys();
-                await Promise.all(keys.map(k => caches.delete(k)));
-              }
-            } catch(e) {}
-            window.location.reload();
+            console.log('[PWA] Signal de mise à jour reçu en arrière-plan.');
           }
         });
       }

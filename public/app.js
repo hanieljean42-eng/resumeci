@@ -51,6 +51,55 @@ function esc(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
+window.getPaymentApiBase = function() {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'http://127.0.0.1:3000';
+  }
+  return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+};
+
+window.syncUserProfileFromRemote = async function() {
+  if (!window.USER_PROFILE) return null;
+  const phone = String(window.USER_PROFILE.whatsapp || window.USER_PROFILE.contact || window.USER_PROFILE.phone || '').replace(/\D/g, '').slice(-10);
+  const uid = window.USER_PROFILE.uid || '';
+  if (!phone && !uid) return null;
+
+  try {
+    const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
+    const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data && data.success && data.user) {
+      const u = data.user;
+      let changed = false;
+      if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
+        window.USER_PROFILE.isPremium = Boolean(u.isPremium);
+        changed = true;
+      }
+      if (u.premiumPlan && window.USER_PROFILE.premiumPlan !== u.premiumPlan) {
+        window.USER_PROFILE.premiumPlan = u.premiumPlan;
+        changed = true;
+      }
+      if (u.premiumExpiresAt && window.USER_PROFILE.premiumExpiresAt !== u.premiumExpiresAt) {
+        window.USER_PROFILE.premiumExpiresAt = u.premiumExpiresAt;
+        changed = true;
+      }
+      if (changed) {
+        localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+      }
+      return window.USER_PROFILE;
+    }
+  } catch (err) {
+    console.warn("Erreur synchronisation profil distant:", err);
+  }
+  return null;
+};
+
 // ==================== GESTION DU PROFIL UTILISATEUR & PASS ====================
 window.loadUserProfile = async function() {
   try {
@@ -61,6 +110,11 @@ window.loadUserProfile = async function() {
       return null;
     }
     window.USER_PROFILE = JSON.parse(raw);
+    setTimeout(() => {
+      if (typeof window.syncUserProfileFromRemote === 'function') {
+        window.syncUserProfileFromRemote();
+      }
+    }, 150);
     return window.USER_PROFILE;
   } catch(e) {
     console.warn("Erreur chargement profil:", e);
@@ -418,7 +472,7 @@ function updateSidebarPassBtn() {
   }
 }
 window.updateSidebarPassBtn = updateSidebarPassBtn;
-const CURRENT_APP_VERSION = '3.3.1';
+const CURRENT_APP_VERSION = '3.3.4';
 const VERSION_KEY = 'resumeci_last_version';
 const UPDATE_DISMISSED_KEY = 'resumeci_update_dismissed';
 let isAppReloading = false;
@@ -744,40 +798,46 @@ window.openProfileView = function () {
     window.location.href = '/connexion.html';
     return;
   }
-  const fullName = `${window.USER_PROFILE.firstName || ''} ${window.USER_PROFILE.lastName || ''}`.trim() || 'Élève';
-  const clsDisplay = (window.USER_PROFILE.selectedClass || '').replace('_', ' ') || 'Non définie';
-  const waDisplay = window.USER_PROFILE.whatsapp || 'Non renseigné';
-  
-  const fnEl = document.getElementById('vpFullName');
-  if (fnEl) fnEl.textContent = fullName;
-  
-  const clsEl = document.getElementById('vpClass');
-  if (clsEl) clsEl.textContent = clsDisplay;
 
-  const waEl = document.getElementById('vpWhatsapp');
-  if (waEl) waEl.textContent = waDisplay;
+  function renderProfileDetails() {
+    if (!window.USER_PROFILE) return;
+    const fullName = `${window.USER_PROFILE.firstName || ''} ${window.USER_PROFILE.lastName || ''}`.trim() || 'Élève';
+    const clsDisplay = (window.USER_PROFILE.selectedClass || '').replace('_', ' ') || 'Non définie';
+    const waDisplay = window.USER_PROFILE.whatsapp || 'Non renseigné';
+    
+    const fnEl = document.getElementById('vpFullName');
+    if (fnEl) fnEl.textContent = fullName;
+    
+    const clsEl = document.getElementById('vpClass');
+    if (clsEl) clsEl.textContent = clsDisplay;
 
-  const badgeEl = document.getElementById('vpPlanBadge');
-  if (badgeEl) {
-    const isPrem = Boolean(window.USER_PROFILE.isPremium);
-    const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
-    if (isPrem && plan !== 'free') {
-      const pName = plan === 'pro' ? 'Pro' : (plan === 'starter' ? 'Starter' : plan.toUpperCase());
-      badgeEl.textContent = `👑 Pass ${pName} (Actif - 30j)`;
-      badgeEl.style.background = '#10b981';
-      badgeEl.style.color = '#fff';
-    } else {
-      badgeEl.textContent = 'Gratuit (Limité)';
-      badgeEl.style.background = '#e2e8f0';
-      badgeEl.style.color = '#475569';
+    const waEl = document.getElementById('vpWhatsapp');
+    if (waEl) waEl.textContent = waDisplay;
+
+    const badgeEl = document.getElementById('vpPlanBadge');
+    if (badgeEl) {
+      const isPrem = Boolean(window.USER_PROFILE.isPremium);
+      const plan = (window.USER_PROFILE.premiumPlan || 'free').toLowerCase();
+      if (isPrem && plan !== 'free') {
+        const pName = plan === 'pro' ? 'Pro' : (plan === 'starter' ? 'Starter' : plan.toUpperCase());
+        badgeEl.textContent = `👑 Pass ${pName} (Actif - 30j)`;
+        badgeEl.style.background = '#10b981';
+        badgeEl.style.color = '#fff';
+      } else {
+        badgeEl.textContent = 'Gratuit (Limité)';
+        badgeEl.style.background = '#e2e8f0';
+        badgeEl.style.color = '#475569';
+      }
+    }
+
+    const manageSubBtn = document.getElementById('vpManageSubBtn');
+    if (manageSubBtn) {
+      const hasSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+      manageSubBtn.style.display = hasSub ? 'inline-block' : 'none';
     }
   }
 
-  const manageSubBtn = document.getElementById('vpManageSubBtn');
-  if (manageSubBtn) {
-    const hasSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
-    manageSubBtn.style.display = hasSub ? 'inline-block' : 'none';
-  }
+  renderProfileDetails();
 
   const messages = [
     'Continue tes efforts, la réussite est au bout du chemin ! 🚀',
@@ -796,6 +856,13 @@ window.openProfileView = function () {
   }
 
   document.getElementById('viewProfileModalOverlay')?.classList.add('show');
+
+  // Synchronisation en direct depuis Firestore / Serveur
+  if (typeof window.syncUserProfileFromRemote === 'function') {
+    window.syncUserProfileFromRemote().then(() => {
+      renderProfileDetails();
+    });
+  }
 };
 
 /* ==================== MOTEUR DE FLAMME D'ASSIDUITÉ (CYCLE 24H) ==================== */
@@ -1202,11 +1269,19 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
   // Activer Wave par défaut
   window.selectPaymentMethod('wave');
 
+  // S'assurer que le panneau de paiement s'affiche au-dessus de tout panneau déjà présent
+  if (modal.parentElement !== document.body) {
+    document.body.appendChild(modal);
+  }
+  modal.style.zIndex = '100050';
   modal.classList.add('show');
 };
 
 window.closePaymentCheckoutModal = function() {
-  document.getElementById('paymentCheckoutModal')?.classList.remove('show');
+  const modal = document.getElementById('paymentCheckoutModal');
+  if (modal) {
+    modal.classList.remove('show');
+  }
 };
 
 window.selectPaymentMethod = function(method) {
@@ -3180,17 +3255,7 @@ if ('serviceWorker' in navigator) {
     });
     navigator.serviceWorker.addEventListener('message', async e => {
       if (e.data && (e.data.type === 'SW_UPDATED' || e.data.type === 'FORCE_UPDATE_RELOAD' || e.data.type === 'FORCE_REFRESH_NEW_VERSION')) {
-        console.log('SW_UPDATED / FORCE_UPDATE_RELOAD reçu:', e.data.version);
-        if (!isAppReloading) {
-          isAppReloading = true;
-          try {
-            if ('caches' in window) {
-              const ks = await caches.keys();
-              await Promise.all(ks.map(k => caches.delete(k)));
-            }
-          } catch(err) {}
-          window.location.reload();
-        }
+        console.log('[SW] Mise à jour disponible en arrière-plan:', e.data.version);
       }
       if (e.data.type === 'CACHE_DONE') {
         document.querySelectorAll('.dl-btn.downloading').forEach(btn => {

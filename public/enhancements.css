@@ -2321,6 +2321,22 @@ body.dark-mode .study-btn.locked {
 }
 
 /* ==================== MODAL DE PAIEMENT SÉCURISÉ CÔTE D'IVOIRE ==================== */
+#paymentCheckoutModal {
+  z-index: 100050 !important;
+}
+#paymentCheckoutModal.show,
+#paymentCheckoutModal.active {
+  display: flex !important;
+  z-index: 100050 !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(15, 23, 42, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px !important;
+}
 .checkout-modal-card {
   max-width: 440px !important;
   width: 92% !important;
