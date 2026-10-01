@@ -1077,7 +1077,14 @@ function closeStreakWelcomeModal() {
 }
 window.closeStreakWelcomeModal = closeStreakWelcomeModal;
 
-window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
+window.initiatePremiumPayment = function (btn, tierKey = 'pro') {
+  window.openPaymentCheckoutModal(tierKey);
+};
+
+let currentCheckoutTier = 'starter';
+let currentCheckoutMethod = 'wave';
+
+window.openPaymentCheckoutModal = function(tierKey = 'pro') {
   if (!window.USER_PROFILE) {
     if (window.toast) toast("Connecte-toi ou crée ton compte en 30 secondes pour activer ton Pass.", 'info');
     window.location.href = '/connexion.html';
@@ -1129,19 +1136,156 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
     return;
   }
 
-  // 4. Passage à la formule supérieure (Upgrade, ex: Starter vers Pro)
-  // On poursuit la création du paiement pour le nouveau Pass !
+  currentCheckoutTier = tierKey;
+  currentCheckoutMethod = 'wave'; // Wave 100% par défaut
 
-  const originalText = btn.innerHTML;
-  btn.innerHTML =
-    '<div class="spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:8px"></div> Création du paiement...';
-  btn.disabled = true;
+  const modal = document.getElementById('paymentCheckoutModal');
+  if (!modal) return;
 
-  const name = (window.USER_PROFILE.firstName || '') + ' ' + (window.USER_PROFILE.lastName || '');
-  const cls = window.USER_PROFILE.selectedClass || '';
-  const uid = window.USER_PROFILE.uid || '';
+  const isPro = tierKey === 'pro';
+  const price = isPro ? '1 000' : '500';
+  const title = isPro ? 'Pass Pro (1 000 FCFA)' : 'Pass Starter (500 FCFA)';
+
+  const titleEl = document.getElementById('checkoutPlanTitle');
+  if (titleEl) titleEl.textContent = `Activer ${title}`;
+
+  const priceBadge = document.getElementById('checkoutPriceBadge');
+  if (priceBadge) priceBadge.textContent = `${price} FCFA / 30 jours`;
+
+  // Pré-remplir le numéro si existant dans le profil
+  const phoneInput = document.getElementById('checkoutPhoneInput');
+  const existingPhone = window.USER_PROFILE?.whatsapp || window.USER_PROFILE?.phone || '';
+  if (phoneInput) {
+    phoneInput.value = '';
+    if (existingPhone) {
+      phoneInput.value = existingPhone;
+      window.handleCheckoutPhoneInput(phoneInput);
+    } else {
+      const counter = document.getElementById('checkoutDigitCounter');
+      if (counter) counter.textContent = '0 / 10 chiffres';
+    }
+  }
+
+  // Activer Wave par défaut
+  window.selectPaymentMethod('wave');
+
+  modal.classList.add('show');
+};
+
+window.closePaymentCheckoutModal = function() {
+  document.getElementById('paymentCheckoutModal')?.classList.remove('show');
+};
+
+window.selectPaymentMethod = function(method) {
+  currentCheckoutMethod = method;
+  document.querySelectorAll('.pm-method-card').forEach(card => {
+    card.classList.toggle('active', card.dataset.method === method);
+  });
+
+  const isPro = currentCheckoutTier === 'pro';
+  const price = isPro ? '1 000' : '500';
+  const textEl = document.getElementById('checkoutSubmitText');
+  const btn = document.getElementById('checkoutSubmitBtn');
+
+  const names = {
+    wave: 'Wave',
+    orange_money: 'Orange Money',
+    mtn_money: 'MTN MoMo',
+    moov_money: 'Moov Money'
+  };
+
+  const icons = {
+    wave: '🌊',
+    orange_money: '🟠',
+    mtn_money: '🟡',
+    moov_money: '🔵'
+  };
+
+  if (textEl) {
+    textEl.innerHTML = `${icons[method] || '💳'} Payer ${price} FCFA avec ${names[method] || 'Wave'}`;
+  }
+
+  if (btn) {
+    if (method === 'wave') {
+      btn.style.background = 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)';
+      btn.style.boxShadow = '0 4px 15px rgba(2, 132, 199, 0.35)';
+    } else if (method === 'orange_money') {
+      btn.style.background = 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
+      btn.style.boxShadow = '0 4px 15px rgba(234, 88, 12, 0.35)';
+    } else if (method === 'mtn_money') {
+      btn.style.background = 'linear-gradient(135deg, #ca8a04 0%, #a16207 100%)';
+      btn.style.boxShadow = '0 4px 15px rgba(202, 138, 4, 0.35)';
+    } else if (method === 'moov_money') {
+      btn.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
+      btn.style.boxShadow = '0 4px 15px rgba(37, 99, 235, 0.35)';
+    }
+  }
+};
+
+window.handleCheckoutPhoneInput = function(el) {
+  if (!el) return;
+  let raw = el.value.replace(/\D/g, '');
+  if (raw.startsWith('225') && raw.length > 10) {
+    raw = raw.slice(3);
+  }
+  raw = raw.slice(0, 10);
+
+  let formatted = '';
+  for (let i = 0; i < raw.length; i++) {
+    if (i > 0 && i % 2 === 0) formatted += ' ';
+    formatted += raw[i];
+  }
+  el.value = formatted;
+
+  const count = raw.length;
+  const counter = document.getElementById('checkoutDigitCounter');
+  const wrap = document.getElementById('checkoutPhoneWrap');
+
+  if (counter) {
+    if (count === 10) {
+      counter.textContent = '✅ 10/10 (Valide)';
+      counter.style.color = '#10b981';
+    } else {
+      counter.textContent = count + ' / 10 chiffres';
+      counter.style.color = '#64748b';
+    }
+  }
+
+  if (wrap) {
+    if (count === 10) {
+      wrap.style.borderColor = '#10b981';
+    } else {
+      wrap.style.borderColor = '';
+    }
+  }
+};
+
+window.submitCheckoutPayment = async function() {
+  const btn = document.getElementById('checkoutSubmitBtn');
+  const textEl = document.getElementById('checkoutSubmitText');
+  const phoneInput = document.getElementById('checkoutPhoneInput');
+
+  let rawPhone = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+  if (rawPhone.startsWith('225') && rawPhone.length > 10) {
+    rawPhone = rawPhone.slice(3);
+  }
+
+  if (rawPhone.length < 10) {
+    if (window.toast) toast("Veuillez saisir votre numéro à 10 chiffres (ex: 07 12 34 56 78)", "warn");
+    phoneInput?.focus();
+    return;
+  }
+
+  const originalContent = textEl ? textEl.innerHTML : '';
+  if (btn) btn.disabled = true;
+  if (textEl) {
+    textEl.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:8px"></div> Connexion sécurisée en cours...';
+  }
+
+  const name = (window.USER_PROFILE?.firstName || '') + ' ' + (window.USER_PROFILE?.lastName || '');
+  const uid = window.USER_PROFILE?.uid || '';
   const email = 'eleve@resumeci.me';
-  const phone = window.USER_PROFILE.whatsapp || '+2250000000000';
+  const fullPhone = '+225' + rawPhone;
   const returnOrigin = window.location.origin;
 
   try {
@@ -1151,22 +1295,22 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         uid: uid,
-        tierKey: tierKey,
-        customerName: name.trim(),
-        customerPhone: phone,
+        tierKey: currentCheckoutTier,
+        paymentMethod: currentCheckoutMethod,
+        customerName: name.trim() || 'Élève',
+        customerPhone: fullPhone,
         customerEmail: email,
         returnOrigin: returnOrigin
-      }),
+      })
     });
-    if (!res.ok) {
-      throw new Error("GATEWAY_UNAVAILABLE");
-    }
+
+    if (!res.ok) throw new Error("GATEWAY_UNAVAILABLE");
     const ct = res.headers.get('content-type') || '';
-    if (!ct.includes('application/json')) {
-      throw new Error("GATEWAY_RESPONSE_INVALID");
-    }
+    if (!ct.includes('application/json')) throw new Error("GATEWAY_RESPONSE_INVALID");
+
     const data = await res.json();
     const checkoutUrl = data.checkout_url || data.payment_url;
+
     if (data.success && checkoutUrl) {
       if (data.reference || data.payment_reference) {
         sessionStorage.setItem('last_payment_reference', data.reference || data.payment_reference);
@@ -1177,24 +1321,24 @@ window.initiatePremiumPayment = async function (btn, tierKey = 'pro') {
       throw new Error(data.error || 'Erreur de paiement');
     }
   } catch (err) {
-    console.error("Erreur paiement:", err);
-    const pTierLabel = tierKey === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
+    console.error("Erreur checkout:", err);
+    if (btn) btn.disabled = false;
+    if (textEl) textEl.innerHTML = originalContent;
+
+    const pTierLabel = currentCheckoutTier === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
     window.showActionNotice({
       type: 'error',
       icon: '💳',
-      title: 'Paiement en ligne temporairement indisponible',
-      subtitle: `Pass ${tierKey === 'pro' ? 'Pro' : 'Starter'}`,
-      message: "La caisse de paiement automatique est actuellement en cours de liaison ou de maintenance.\n\n💡 Pas d'inquiétude ! Tu peux régler directement par Wave ou Orange Money et faire activer ton compte immédiatement.",
+      title: 'Paiement temporairement indisponible',
+      subtitle: `Pass ${pTierLabel}`,
+      message: "La caisse de paiement automatique rencontre une latence. Tu peux régler directement par Wave ou Orange Money et faire activer ton compte immédiatement.",
       primaryBtnText: '📲 Payer par Wave / Orange Money direct',
       onPrimary: () => {
-        const pName = (window.USER_PROFILE?.firstName || '') + ' ' + (window.USER_PROFILE?.lastName || '');
-        const waMsg = encodeURIComponent(`Bonjour Haniel_dev, je souhaite activer le Pass ${pTierLabel} par Wave / Orange Money direct. Mon nom: ${pName}. Mon WhatsApp: ${phone}.`);
+        const waMsg = encodeURIComponent(`Bonjour Haniel_dev, je souhaite activer le Pass ${pTierLabel}. Mon nom: ${name}. Mon numéro: ${fullPhone}.`);
         window.open(`https://wa.me/2250150252467?text=${waMsg}`, '_blank');
       },
       secondaryBtnText: 'Réessayer en ligne'
     });
-    btn.innerHTML = originalText;
-    btn.disabled = false;
   }
 };
 document.addEventListener('DOMContentLoaded', () => {
@@ -2005,6 +2149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'actionNoticeModal',
     'eliteComingSoonModal',
     'activeSubscriptionModal',
+    'paymentCheckoutModal',
     'pdfQuotaReachedModal',
     'packAlreadyDownloadedModal',
     'packDownloadSuccessModal',

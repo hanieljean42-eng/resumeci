@@ -29,9 +29,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script>
-    // Purge automatique et forcée du cache pour la mise à jour v3.3.1
+    // Purge automatique et forcée du cache pour la mise à jour v3.3.2
     (function() {
-      var TARGET_VER = '3.3.1';
+      var TARGET_VER = '3.3.2';
       var storedVer = localStorage.getItem('rci_app_v');
       if (storedVer !== TARGET_VER) {
         localStorage.setItem('rci_app_v', TARGET_VER);
@@ -57,15 +57,15 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="/enhancements.css?v=3.3.1">
-  <link rel="stylesheet" href="/quiz.css?v=3.3.1">
+  <link rel="stylesheet" href="/enhancements.css?v=3.3.2">
+  <link rel="stylesheet" href="/quiz.css?v=3.3.2">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-  <script src="/enhancements.js?v=3.3.1" defer></script>
-  <script type="module" src="/firebase-config.js?v=3.3.1"></script>
-  <script src="/content-protection.js?v=3.3.1" defer></script>
-  <script src="/quiz.js?v=3.3.1" defer></script>
-  <script src="/flashcards.js?v=3.3.1" defer></script>
+  <script src="/enhancements.js?v=3.3.2" defer></script>
+  <script type="module" src="/firebase-config.js?v=3.3.2"></script>
+  <script src="/content-protection.js?v=3.3.2" defer></script>
+  <script src="/quiz.js?v=3.3.2" defer></script>
+  <script src="/flashcards.js?v=3.3.2" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -108,7 +108,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="/main.css?v=3.3.1">
+  <link rel="stylesheet" href="/main.css?v=3.3.2">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
@@ -209,7 +209,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.3.1" defer></script>
+  <script src="/app.js?v=3.3.2" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1835,6 +1835,112 @@
           <p class="sub-no-refund-warning">
             ⚠️ <strong>Règle de résiliation :</strong> La résiliation prend effet immédiatement et ne donne droit à aucun remboursement.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Paiement Sécurisé Côte d'Ivoire (Wave par défaut) -->
+  <div class="profile-modal-overlay" id="paymentCheckoutModal">
+    <div class="profile-modal checkout-modal-card">
+      <button class="modal-close" onclick="closePaymentCheckoutModal();" aria-label="Fermer">&times;</button>
+      
+      <div class="checkout-header">
+        <div class="checkout-badge-secure">
+          <i class="fas fa-shield-halved"></i> PAIEMENT SÉCURISÉ CÔTE D'IVOIRE
+        </div>
+        <h2 id="checkoutPlanTitle">Activer mon Pass</h2>
+        <div class="checkout-price-pill" id="checkoutPriceBadge">500 FCFA / 30 jours</div>
+      </div>
+
+      <div class="profile-modal-body" style="padding: 16px 20px 22px;">
+        <!-- 1. PAYS (Fixé à Côte d'Ivoire par défaut) -->
+        <div class="checkout-field-group">
+          <label class="checkout-label">
+            <span>Pays de paiement</span>
+            <span class="checkout-hint-badge">🇨🇮 Côte d'Ivoire (+225)</span>
+          </label>
+          <div class="checkout-country-box">
+            <span class="cc-flag">🇨🇮</span>
+            <div class="cc-info">
+              <span class="cc-name">Côte d'Ivoire (+225)</span>
+              <span class="cc-sub">Wave • Orange Money • MTN MoMo • Moov</span>
+            </div>
+            <span class="cc-check"><i class="fas fa-check-circle"></i> Par défaut</span>
+          </div>
+        </div>
+
+        <!-- 2. CHOIX DU RÉSEAU (Wave sélectionné par défaut) -->
+        <div class="checkout-field-group">
+          <label class="checkout-label">
+            <span>Moyen de paiement / Opérateur</span>
+            <span class="checkout-recommended-pill" style="font-size:11px;font-weight:700;color:#0284c7;background:#e0f2fe;padding:2px 7px;border-radius:6px;">⚡ Wave par défaut</span>
+          </label>
+          <div class="payment-methods-grid">
+            <div class="pm-method-card active" data-method="wave" onclick="selectPaymentMethod('wave')">
+              <div class="pmm-badge">Recommandé</div>
+              <div class="pmm-icon-wrap" style="background:#0284c7;color:#fff;">🌊</div>
+              <div class="pmm-title">Wave</div>
+              <div class="pmm-speed">1 clic • Sans frais</div>
+            </div>
+
+            <div class="pm-method-card" data-method="orange_money" onclick="selectPaymentMethod('orange_money')">
+              <div class="pmm-icon-wrap" style="background:#ea580c;color:#fff;">🟠</div>
+              <div class="pmm-title">Orange Money</div>
+              <div class="pmm-speed">Validation #144#</div>
+            </div>
+
+            <div class="pm-method-card" data-method="mtn_money" onclick="selectPaymentMethod('mtn_money')">
+              <div class="pmm-icon-wrap" style="background:#eab308;color:#000;">🟡</div>
+              <div class="pmm-title">MTN MoMo</div>
+              <div class="pmm-speed">Validation *133#</div>
+            </div>
+
+            <div class="pm-method-card" data-method="moov_money" onclick="selectPaymentMethod('moov_money')">
+              <div class="pmm-icon-wrap" style="background:#2563eb;color:#fff;">🔵</div>
+              <div class="pmm-title">Moov Money</div>
+              <div class="pmm-speed">Validation *155#</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. NUMÉRO DE TÉLÉPHONE (Formaté Côte d'Ivoire) -->
+        <div class="checkout-field-group">
+          <label class="checkout-label" for="checkoutPhoneInput">
+            <span>Numéro de compte (Wave / Orange / MTN / Moov)</span>
+            <span id="checkoutDigitCounter" class="digit-counter" style="font-size:11px;font-weight:700;color:#64748b;">0 / 10 chiffres</span>
+          </label>
+          <div class="checkout-phone-input-wrap" id="checkoutPhoneWrap">
+            <span class="cpi-prefix">🇨🇮 +225</span>
+            <input 
+              type="tel" 
+              id="checkoutPhoneInput" 
+              class="cpi-input" 
+              placeholder="07 12 34 56 78" 
+              maxlength="14"
+              autocomplete="tel-national"
+              oninput="handleCheckoutPhoneInput(this)"
+            />
+          </div>
+          <p class="cpi-helper" id="checkoutPhoneHelper">
+            💡 Saisis ton numéro à 10 chiffres pour valider le paiement.
+          </p>
+        </div>
+
+        <!-- 4. BOUTON DE VALIDATION DIRECTE -->
+        <button id="checkoutSubmitBtn" class="pm-btn checkout-submit-btn" onclick="submitCheckoutPayment()">
+          <span id="checkoutSubmitText">🌊 Payer 500 FCFA avec Wave</span>
+        </button>
+
+        <!-- 5. RÉASSURANCE & AIDE WHATSAPP -->
+        <div class="checkout-security-footer">
+          <div class="csf-row">
+            <span><i class="fas fa-lock" style="color:#10b981;"></i> Transaction chiffrée SSL</span>
+            <span><i class="fas fa-bolt" style="color:#f59e0b;"></i> Activation automatique en 5s</span>
+          </div>
+          <div class="csf-help">
+            Besoin d'aide ? <a href="https://wa.me/2250150252467?text=Bonjour%20ResumeCI,%20j'ai%20besoin%20d'aide%20pour%20payer%20mon%20Pass%20R%C3%A9ussite" target="_blank" rel="noopener">Assistance WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>

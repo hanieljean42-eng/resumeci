@@ -2319,3 +2319,289 @@ body.dark-mode .study-btn.locked {
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* ==================== MODAL DE PAIEMENT SÉCURISÉ CÔTE D'IVOIRE ==================== */
+.checkout-modal-card {
+  max-width: 440px !important;
+  width: 92% !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35) !important;
+  padding: 0 !important;
+  background: #ffffff;
+  text-align: left;
+}
+body.dark-mode .checkout-modal-card {
+  background: #0f172a;
+  color: #f8fafc;
+}
+.checkout-header {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);
+  padding: 22px 20px 18px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+.checkout-badge-secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.checkout-header h2 {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+.checkout-price-pill {
+  display: inline-block;
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.checkout-field-group {
+  margin-bottom: 16px;
+}
+.checkout-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 7px;
+}
+body.dark-mode .checkout-label {
+  color: #cbd5e1;
+}
+.checkout-hint-badge {
+  font-size: 11px;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+body.dark-mode .checkout-hint-badge {
+  background: #0369a1;
+  color: #e0f2fe;
+}
+.checkout-country-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+}
+body.dark-mode .checkout-country-box {
+  background: #1e293b;
+  border-color: #334155;
+}
+.checkout-country-box .cc-flag {
+  font-size: 24px;
+  line-height: 1;
+}
+.checkout-country-box .cc-info {
+  flex: 1;
+}
+.checkout-country-box .cc-name {
+  display: block;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: #0f172a;
+}
+body.dark-mode .checkout-country-box .cc-name {
+  color: #f8fafc;
+}
+.checkout-country-box .cc-sub {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+}
+.checkout-country-box .cc-check {
+  font-size: 11px;
+  font-weight: 800;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+.pm-method-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+body.dark-mode .pm-method-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+.pm-method-card:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+}
+.pm-method-card.active {
+  border-color: #0284c7;
+  background: #f0f9ff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.18);
+}
+body.dark-mode .pm-method-card.active {
+  background: rgba(2, 132, 199, 0.15);
+  border-color: #38bdf8;
+}
+.pm-method-card .pmm-badge {
+  position: absolute;
+  top: -8px;
+  right: 6px;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+}
+.pm-method-card .pmm-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.pm-method-card .pmm-title {
+  font-weight: 800;
+  font-size: 12.5px;
+  color: #0f172a;
+}
+body.dark-mode .pm-method-card .pmm-title {
+  color: #f8fafc;
+}
+.pm-method-card .pmm-speed {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 2px;
+}
+.checkout-phone-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+body.dark-mode .checkout-phone-input-wrap {
+  background: #1e293b;
+  border-color: #334155;
+}
+.checkout-phone-input-wrap:focus-within {
+  border-color: #0284c7;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+body.dark-mode .checkout-phone-input-wrap:focus-within {
+  background: #0f172a;
+}
+.cpi-prefix {
+  padding: 10px 12px;
+  font-weight: 800;
+  font-size: 13px;
+  color: #334155;
+  background: #e2e8f0;
+  border-right: 1px solid #cbd5e1;
+  user-select: none;
+}
+body.dark-mode .cpi-prefix {
+  background: #334155;
+  color: #f8fafc;
+  border-right-color: #475569;
+}
+.cpi-input {
+  flex: 1;
+  padding: 11px 12px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  letter-spacing: 0.5px;
+}
+body.dark-mode .cpi-input {
+  color: #ffffff;
+}
+.cpi-helper {
+  font-size: 11px;
+  color: #64748b;
+  margin: 5px 0 0;
+  line-height: 1.4;
+}
+.checkout-submit-btn {
+  width: 100%;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+.checkout-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+}
+.checkout-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.checkout-security-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11.5px;
+  color: #64748b;
+}
+.checkout-security-footer .csf-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+.checkout-security-footer .csf-help a {
+  color: #0284c7;
+  font-weight: 700;
+  text-decoration: underline;
+}

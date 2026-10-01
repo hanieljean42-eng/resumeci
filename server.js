@@ -130,7 +130,7 @@ function updateUserPlanLocal(uid, tierKey, expiresAt = null) {
 // ROUTE 1 : INITIER PAIEMENT
 app.post('/api/pay', async (req, res) => {
   try {
-    const { uid, tierKey, customerName, customerPhone, customerEmail, returnOrigin } = req.body;
+    const { uid, tierKey, customerName, customerPhone, customerEmail, paymentMethod, returnOrigin } = req.body;
     if (!uid || !tierKey || !PAYMENT_PLANS[tierKey]) {
       return res.status(400).json({ error: "Données invalides (uid ou tierKey manquant)" });
     }
@@ -141,22 +141,41 @@ app.post('/api/pay', async (req, res) => {
     const origin = returnOrigin || `http://localhost:${PORT}`;
     const redirectUrl = `${origin}/?payment=success&tier=${tierKey}&uid=${uid}`;
 
+    // Formatage strict du téléphone ivoirien au format international +225XXXXXXXXXX
+    let cleanPhone = customerPhone ? String(customerPhone).replace(/\D/g, '') : '';
+    let formattedPhone = '+2250700000000';
+    if (cleanPhone.startsWith('225') && cleanPhone.length >= 12) {
+      formattedPhone = '+' + cleanPhone;
+    } else if (cleanPhone.length === 10) {
+      formattedPhone = '+225' + cleanPhone;
+    } else if (cleanPhone.length > 0) {
+      formattedPhone = '+225' + cleanPhone.slice(-10);
+    }
+
+    const chosenMethod = (paymentMethod || 'wave').toLowerCase();
+
     const payload = {
       amount: plan.price,
       currency: "XOF",
       description: `Pass Réussite ${plan.name} - 30 jours`,
+      country: "CI",
       customer: {
         name: customerName || 'Élève',
         email: customerEmail || 'eleve@resumeci.me',
-        phone: customerPhone || '+2250100000000'
+        phone: formattedPhone,
+        country: "CI"
       },
-      metadata: { uid, tierKey, type: 'monthly' },
+      metadata: { uid, tierKey, type: 'monthly', method: chosenMethod },
       success_url: redirectUrl,
       return_url: redirectUrl,
       cancel_url: `${origin}/?payment=cancelled`
     };
 
-    console.log(`[Paiement] Création transaction GeniusPay pour ${uid} - Forfait ${tierKey} (${plan.price} FCFA)`);
+    if (chosenMethod === 'wave') {
+      payload.payment_method = 'wave';
+    }
+
+    console.log(`[Paiement] Création transaction GeniusPay pour ${uid} - Forfait ${tierKey} (${plan.price} FCFA) - Tel: ${formattedPhone} - Méthode: ${chosenMethod}`);
 
     const result = await new Promise((resolve, reject) => {
       const postData = JSON.stringify(payload);
@@ -194,11 +213,14 @@ app.post('/api/pay', async (req, res) => {
       req.end();
     });
 
-    if (result.success && result.data && result.data.checkout_url) {
+    const targetUrl = result.data?.payment_url || result.data?.checkout_url;
+    if (result.success && result.data && targetUrl) {
       res.json({
         success: true,
-        checkout_url: result.data.checkout_url,
-        payment_reference: result.data.reference || null
+        checkout_url: targetUrl,
+        payment_url: targetUrl,
+        payment_reference: result.data.reference || null,
+        payment_method: result.data.payment_method || chosenMethod
       });
     } else {
       console.error("[Paiement] Erreur GeniusPay:", result);
