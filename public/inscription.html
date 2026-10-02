@@ -831,65 +831,83 @@
       btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Création de ton compte...';
 
       try {
-        // IMPORTANT : Le compte reste TOUJOURS en formule gratuite tant que le paiement n'est pas validé
-        const profile = {
-          uid: 'user_' + Date.now(),
+        // IMPORTANT : Le compte reste TOUJOURS en formule gratuite tant que le paiement n'est pas validé.
+        // Le compte est créé côté serveur (un numéro = un seul compte) et on ATTEND sa confirmation
+        // avant de continuer, sinon l'élève ne pourrait plus se reconnecter après déconnexion.
+        const apiBase = getPaymentApiBase();
+        const payload = {
           firstName: fName,
           lastName: lName,
           selectedClass: cls,
           whatsapp: cleanWa,
           password: pwd,
-          isPremium: false,
-          premiumPlan: 'free',
-          pendingPlan: selectedTier !== 'free' ? selectedTier : null,
-          premiumExpiresAt: 0,
-          createdAt: new Date().toISOString()
+          plan: selectedTier,
+          userAgent: navigator.userAgent
         };
 
+        let regData = null;
+        let lastNetworkError = null;
+        for (let attempt = 1; attempt <= 2 && !regData; attempt++) {
+          if (attempt > 1) btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Le serveur démarre, nouvelle tentative...';
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 40000);
+          try {
+            const regRes = await fetch(`${apiBase}/api/register`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              signal: controller.signal,
+              body: JSON.stringify(payload)
+            });
+            clearTimeout(timeoutId);
+            const ct = regRes.headers.get('content-type') || '';
+            const data = ct.includes('application/json') ? await regRes.json() : null;
+            if (regRes.ok && data && data.success && data.user) {
+              regData = data;
+            } else if (data && data.error) {
+              showError("❌ " + data.error + (data.code === 'ACCOUNT_EXISTS'
+                ? " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>" : ""));
+              resetSubmitBtn();
+              return;
+            } else {
+              lastNetworkError = new Error("Réponse serveur invalide (" + regRes.status + ")");
+            }
+          } catch (netErr) {
+            clearTimeout(timeoutId);
+            lastNetworkError = netErr;
+            console.warn("Tentative " + attempt + " /api/register échouée:", netErr);
+          }
+        }
+
+        if (!regData) {
+          console.error("Inscription impossible:", lastNetworkError);
+          showError("❌ Impossible de joindre le serveur d'inscription. Vérifie ta connexion internet et réessaie dans quelques secondes.");
+          resetSubmitBtn();
+          return;
+        }
+
+        const profile = regData.user;
         localStorage.setItem('resumeci_profile', JSON.stringify(profile));
         localStorage.setItem('user_profile', JSON.stringify(profile));
         localStorage.setItem('resumeci_user', JSON.stringify(profile));
-
-        // Synchroniser instantanément le profil dans Firestore en local (< 100ms)
-        if (typeof window.syncUserProfileToFirestore === 'function') {
-          try {
-            window.syncUserProfileToFirestore(profile);
-          } catch(e) {}
-        }
+        localStorage.setItem('resumeci_student_user', JSON.stringify(profile));
 
         // Initialiser la flamme streak à exactement 1 jour pour ce nouvel utilisateur
-        const d = new Date();
-        const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-        localStorage.setItem('resumeci_streak', JSON.stringify({
-          count: 1,
-          lastDay: todayStr,
-          lastActiveAt: Date.now()
-        }));
+        if (!regData.existing || !localStorage.getItem('resumeci_streak')) {
+          const d = new Date();
+          const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+          localStorage.setItem('resumeci_streak', JSON.stringify({
+            count: 1,
+            lastDay: todayStr,
+            lastActiveAt: Date.now()
+          }));
+        }
 
-
-        // Envoi au serveur et Firestore pour suivi administrateur en temps réel
-        const apiBase = getPaymentApiBase();
-        try {
-          fetch(`${apiBase}/api/register`, {
-            method: 'POST',
-            keepalive: true,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              uid: profile.uid,
-              firstName: fName,
-              lastName: lName,
-              selectedClass: cls,
-              whatsapp: cleanWa,
-              password: pwd,
-              plan: selectedTier,
-              isPremium: false,
-              premiumPlan: 'free',
-              pendingPlan: selectedTier !== 'free' ? selectedTier : null,
-              premiumExpiresAt: 0,
-              userAgent: navigator.userAgent
-            })
-          }).catch(e => console.warn("Erreur sync /api/register:", e));
-        } catch(e) {}
+        // Compte déjà existant avec le bon mot de passe : simple reconnexion
+        if (regData.existing) {
+          showToast('✅ Compte retrouvé ! Connexion...');
+          setTimeout(() => { window.location.href = '/?welcome=1'; }, 600);
+          return;
+        }
 
         // Formule Gratuite : redirection directe vers l'accueil
         if (selectedTier === 'free') {
@@ -981,6 +999,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Réveil anticipé du serveur d'inscription (hébergement gratuit en veille)
+      try { fetch(`${getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch(e) {}
+
       const raw = localStorage.getItem('resumeci_profile');
       if (raw) {
         try {

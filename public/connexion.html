@@ -450,30 +450,45 @@
         }
 
         // 2. Si pas trouvé via Firestore direct, appeler l'API Backend (/api/login)
+        // (2 tentatives : l'hébergement gratuit peut mettre ~30s à sortir de veille)
+        let apiUnreachable = false;
         if (!profile) {
           const apiBase = getPaymentApiBase();
-          try {
-            const apiRes = await fetch(`${apiBase}/api/login`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ whatsapp: cleanWa, password: pwd })
-            });
+          for (let attempt = 1; attempt <= 2 && !profile; attempt++) {
+            if (attempt > 1) btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Le serveur démarre, nouvelle tentative...';
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 40000);
+            try {
+              const apiRes = await fetch(`${apiBase}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                signal: controller.signal,
+                body: JSON.stringify({ whatsapp: cleanWa, password: pwd })
+              });
+              clearTimeout(timeoutId);
+              apiUnreachable = false;
 
-            if (apiRes.ok && apiRes.headers.get('content-type')?.includes('application/json')) {
-              const apiData = await apiRes.json();
-              if (apiData.success && apiData.profile) {
-                profile = apiData.profile;
+              const isJson = apiRes.headers.get('content-type')?.includes('application/json');
+              if (apiRes.ok && isJson) {
+                const apiData = await apiRes.json();
+                if (apiData.success && apiData.profile) {
+                  profile = apiData.profile;
+                }
+              } else if (isJson) {
+                const errData = await apiRes.json();
+                if (errData && errData.error) {
+                  showError("❌ " + errData.error);
+                  resetBtn();
+                  return;
+                }
+              } else {
+                apiUnreachable = true;
               }
-            } else if (apiRes.headers.get('content-type')?.includes('application/json')) {
-              const errData = await apiRes.json();
-              if (errData && errData.error) {
-                showError("❌ " + errData.error);
-                resetBtn();
-                return;
-              }
+            } catch(apiErr) {
+              clearTimeout(timeoutId);
+              apiUnreachable = true;
+              console.warn("Tentative " + attempt + " API login non joignable:", apiErr);
             }
-          } catch(apiErr) {
-            console.warn("API login non joignable:", apiErr);
           }
         }
 
@@ -522,7 +537,11 @@
           }
         }
 
-        showError("❌ Aucun compte trouvé avec ce numéro WhatsApp (+225 " + cleanWa + "). <br><a href='/inscription.html' style='color:#60a5fa;font-weight:700'>Clique ici pour créer ton compte en 30 secondes</a>.");
+        if (apiUnreachable) {
+          showError("❌ Impossible de joindre le serveur de connexion. Vérifie ta connexion internet et réessaie dans quelques secondes.");
+        } else {
+          showError("❌ Aucun compte trouvé avec ce numéro WhatsApp (+225 " + cleanWa + "). <br><a href='/inscription.html' style='color:#60a5fa;font-weight:700'>Clique ici pour créer ton compte en 30 secondes</a>.");
+        }
         resetBtn();
 
       } catch (err) {
@@ -539,6 +558,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Réveil anticipé du serveur de connexion (hébergement gratuit en veille)
+      try { fetch(`${getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch(e) {}
+
       const raw = localStorage.getItem('resumeci_profile');
       if (raw) {
         try {

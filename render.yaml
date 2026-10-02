@@ -15,5 +15,9 @@ services:
         value: pk_live_m8I9zvRmqZcv1GTkjcsqs97w0i8hclYL
       - key: GENIUSPAY_SECRET_KEY
         sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: ADMIN_EMAILS
+        value: djeble.haniel@gmail.com
       - key: GENIUSPAY_API_URL
         value: https://geniuspay.ci/api/v1/merchant/payments

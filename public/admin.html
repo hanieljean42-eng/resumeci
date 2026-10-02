@@ -631,21 +631,24 @@
     // Date du topbar
     document.getElementById('topbarDate').textContent = new Date().toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
 
-    // Auth
+    // Auth : la session est uniquement celle de Firebase Auth (aucun contournement local)
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        sessionStorage.setItem('rci_admin_logged', '1');
         showDashboard();
         loadData();
       } else {
-        if (sessionStorage.getItem('rci_admin_logged') === '1') {
-          showDashboard();
-          loadData();
-        } else {
-          showLogin();
-        }
+        showLogin();
       }
     });
+
+    // Appels API admin authentifiés par le jeton Firebase de l'administrateur connecté
+    async function adminFetch(path, options = {}) {
+      const user = auth.currentUser;
+      if (!user) throw new Error("Session administrateur expirée.");
+      const token = await user.getIdToken();
+      const headers = { ...(options.headers || {}), 'Authorization': `Bearer ${token}` };
+      return fetch(`${window.getAdminApiBase()}${path}`, { ...options, headers });
+    }
 
     function showLogin() {
       document.getElementById('loginScreen').style.display = 'flex';
@@ -683,7 +686,6 @@
     };
 
     window.handleLogout = async function() {
-      sessionStorage.removeItem('rci_admin_logged');
       try { await signOut(auth); } catch(e) {}
       showLogin();
     };
@@ -710,7 +712,7 @@
 
         // 2. API Backend
         try {
-          const apiRes = await fetch(`${window.getAdminApiBase()}/api/admin/users`);
+          const apiRes = await adminFetch('/api/admin/users');
           if (apiRes.ok) {
             const apiJson = await apiRes.json();
             if (apiJson.success && Array.isArray(apiJson.users)) {
@@ -994,7 +996,7 @@
 
         // 2. API Backend
         try {
-          await fetch(`${window.getAdminApiBase()}/api/admin/create-user`, {
+          await adminFetch('/api/admin/create-user', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ fullName: name, phone, selectedClass: cls, password: pwd, plan: currentNewPlan, days })
@@ -1089,16 +1091,18 @@
           updatedAt: new Date().toISOString()
         };
 
-        if (currentGrantTarget.phone) {
-          await setDoc(doc(db, "users", currentGrantTarget.phone), updatePayload, { merge: true });
-        }
-        if (currentGrantTarget.docId && currentGrantTarget.docId !== currentGrantTarget.phone) {
-          await setDoc(doc(db, "users", currentGrantTarget.docId), updatePayload, { merge: true });
-        }
+        try {
+          if (currentGrantTarget.phone) {
+            await setDoc(doc(db, "users", currentGrantTarget.phone), updatePayload, { merge: true });
+          }
+          if (currentGrantTarget.docId && currentGrantTarget.docId !== currentGrantTarget.phone) {
+            await setDoc(doc(db, "users", currentGrantTarget.docId), updatePayload, { merge: true });
+          }
+        } catch(e) { console.warn("Firestore setDoc:", e.message); }
 
         // Backend API
         try {
-          await fetch(`${window.getAdminApiBase()}/api/admin/set-plan`, {
+          await adminFetch('/api/admin/set-plan', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

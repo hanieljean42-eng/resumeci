@@ -2,18 +2,32 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Waitlist: création et lecture
-    match /waitlist/{document} {
-      allow read, write: if true;
+    // Administrateur : compte Firebase Auth (email/mot de passe) utilisé par /admin.html
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() in ['djeble.haniel@gmail.com'];
     }
 
-    // Utilisateurs et Inscriptions: lecture et écriture publiques (auth par numéro/mdp géré côté application)
+    // Waitlist : création publique (formulaire VIP) avec validation stricte, lecture réservée à l'admin
+    match /waitlist/{document} {
+      allow create: if request.resource.data.keys().hasAll(['contact', 'feature', 'timestamp'])
+                    && request.resource.data.contact is string
+                    && request.resource.data.contact.size() > 0
+                    && request.resource.data.contact.size() <= 25
+                    && request.resource.data.feature is string
+                    && request.resource.data.feature.size() <= 100;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Utilisateurs et inscriptions : contiennent des mots de passe et des statuts d'abonnement.
+    // Toutes les lectures/écritures élèves passent par l'API backend (Admin SDK, non soumis à ces règles).
     match /users/{userId} {
-      allow read, write: if true;
+      allow read, write: if isAdmin();
     }
 
     match /inscriptions/{userId} {
-      allow read, write: if true;
+      allow read, write: if isAdmin();
     }
 
     // Bloquer le reste par défaut

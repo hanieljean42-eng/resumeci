@@ -1,9 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const https = require('https');
 const adminModule = require('firebase-admin');
 const admin = adminModule.default || adminModule;
+
+// Résout un fichier que le serveur tourne depuis la racine du repo ou depuis payment-api/ (Render: rootDir ./payment-api)
+function resolveLocal(...candidates) {
+  return candidates.map(p => path.resolve(__dirname, p)).find(p => fs.existsSync(p)) || null;
+}
 
 let db = null;
 try {
@@ -12,17 +18,17 @@ try {
     const sa = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
     credential = admin.credential.cert(sa);
   } else {
-    const fs = require('fs');
-    const saPath = path.join(__dirname, 'payment-api/firebase-admin.json');
-    if (fs.existsSync(saPath)) {
-      const sa = require(saPath);
-      credential = admin.credential.cert(sa);
+    const saPath = resolveLocal('firebase-admin.json', 'payment-api/firebase-admin.json', '../payment-api/firebase-admin.json');
+    if (saPath) {
+      credential = admin.credential.cert(require(saPath));
     }
   }
   if (credential) {
     admin.initializeApp({ credential });
     db = admin.firestore();
     console.log('✅ Firebase Admin connecté (Firestore)');
+  } else {
+    console.warn('⚠️ Aucun compte de service Firebase trouvé (FIREBASE_SERVICE_ACCOUNT ou firebase-admin.json). Firestore désactivé.');
   }
 } catch (e) {
   console.warn('⚠️ Firebase Admin non connecté:', e.message);
@@ -31,13 +37,13 @@ try {
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+const publicDir = resolveLocal('public', '../public');
+if (publicDir) app.use(express.static(publicDir));
 
 // Charger .env si existant
 try {
-  const fs = require('fs');
-  const envPath = fs.existsSync(path.join(__dirname, '.env')) ? path.join(__dirname, '.env') : path.join(__dirname, 'payment-api/.env');
-  if (fs.existsSync(envPath)) {
+  const envPath = resolveLocal('.env', 'payment-api/.env', '../.env');
+  if (envPath) {
     fs.readFileSync(envPath, 'utf8').split('\n').forEach(l => {
       const p = l.trim().split('=');
       if (p.length >= 2 && !p[0].startsWith('#') && !process.env[p[0].trim()]) {
@@ -61,6 +67,73 @@ const PLANS = {
 };
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Emails autorisés à utiliser les routes /api/admin/* (séparés par des virgules)
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'djeble.haniel@gmail.com')
+  .split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+
+// Middleware : vérifie le jeton Firebase Auth (Authorization: Bearer <idToken>) et l'email admin
+async function requireAdmin(req, res, next) {
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7).trim() : '';
+  if (!token) {
+    return res.status(401).json({ error: "Authentification administrateur requise." });
+  }
+  try {
+    const decoded = await admin.auth().verifyIdToken(token);
+    const email = String(decoded.email || '').toLowerCase();
+    if (!ADMIN_EMAILS.includes(email)) {
+      console.warn(`[Admin] Tentative d'accès refusée pour ${email || decoded.uid}`);
+      return res.status(403).json({ error: "Accès refusé." });
+    }
+    req.adminUser = decoded;
+    next();
+  } catch (e) {
+    return res.status(401).json({ error: "Jeton administrateur invalide ou expiré." });
+  }
+}
+app.use('/api/admin', requireAdmin);
+
+// Helper : retrouve le compte unique associé à un numéro (doc ID = numéro, puis champs whatsapp / contact pour les anciens comptes)
+async function findUserByPhone(cleanPhone) {
+  if (!db || !cleanPhone || cleanPhone.length !== 10) return null;
+  const users = db.collection('users');
+  const direct = await users.doc(cleanPhone).get();
+  if (direct.exists) return { ...direct.data(), uid: direct.data().uid || direct.id, _docId: direct.id };
+  for (const field of ['whatsapp', 'contact']) {
+    const snap = await users.where(field, '==', cleanPhone).limit(1).get();
+    if (!snap.empty) {
+      const d = snap.docs[0];
+      return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
+    }
+  }
+  return null;
+}
+
+// Helper : profil normalisé renvoyé au client (statut premium recalculé)
+function buildProfile(user, cleanPhone, password) {
+  const now = Date.now();
+  const expiresAt = Number(user.premiumExpiresAt) || 0;
+  const isPremium = Boolean(user.isPremium && (expiresAt === 0 || expiresAt > now));
+  const premiumPlan = isPremium ? (user.premiumPlan || user.plan || 'pro') : 'free';
+  const fName = user.firstName || (user.fullName ? user.fullName.split(' ')[0] : 'Élève');
+  const lName = user.lastName || (user.fullName ? user.fullName.split(' ').slice(1).join(' ') : '');
+  return {
+    uid: user.uid || cleanPhone,
+    firstName: fName,
+    lastName: lName,
+    fullName: user.fullName || `${fName} ${lName}`.trim() || 'Élève',
+    selectedClass: user.selectedClass || user.classe || '3eme',
+    whatsapp: cleanPhone,
+    phone: cleanPhone,
+    password: user.password || password,
+    isPremium,
+    premiumPlan,
+    premiumExpiresAt: isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0,
+    subscriptionType: user.subscriptionType || 'monthly',
+    createdAt: user.createdAt || new Date().toISOString()
+  };
+}
 
 // Helper: Débloquer un compte dans Firestore de façon universelle (par UID et/ou Téléphone)
 async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, extra = {}) {
@@ -444,14 +517,35 @@ app.post('/api/webhook', async (req, res) => {
 // --------------------------------------------------------------------------
 app.post('/api/register', async (req, res) => {
   try {
-    const { uid, firstName, lastName, selectedClass, whatsapp, password, plan, isPremium, userAgent } = req.body;
-    if (!whatsapp) {
-      return res.status(400).json({ error: "Numéro WhatsApp obligatoire" });
+    const { firstName, lastName, selectedClass, whatsapp, password, plan, userAgent } = req.body;
+    const cleanWa = String(whatsapp || '').replace(/\D/g, '').slice(-10);
+    const cleanPwd = String(password || '').trim();
+    if (cleanWa.length !== 10) {
+      return res.status(400).json({ error: "Numéro WhatsApp à 10 chiffres obligatoire." });
     }
-    const cleanWa = String(whatsapp).replace(/\D/g, '').slice(-10);
-    const cleanPwd = String(password || '123456').trim();
+    if (cleanPwd.length < 6) {
+      return res.status(400).json({ error: "Le mot de passe doit comporter au moins 6 caractères." });
+    }
+    if (!db) {
+      return res.status(503).json({ error: "Service d'inscription temporairement indisponible. Réessaie dans quelques instants." });
+    }
+
+    // Un numéro = un seul compte : le document est identifié par le numéro de téléphone
+    const existing = await findUserByPhone(cleanWa);
+    if (existing) {
+      const storedPwd = String(existing.password || '').trim();
+      if (storedPwd && storedPwd === cleanPwd) {
+        console.log(`[Register] Compte déjà existant pour ${cleanWa}, reconnexion.`);
+        return res.json({ success: true, existing: true, user: buildProfile(existing, cleanWa, cleanPwd) });
+      }
+      return res.status(409).json({
+        error: "Un compte existe déjà avec ce numéro WhatsApp. Connecte-toi avec ton mot de passe ou contacte l'assistance si tu l'as oublié.",
+        code: 'ACCOUNT_EXISTS'
+      });
+    }
+
     const userDoc = {
-      uid: uid || ('user_' + Date.now()),
+      uid: cleanWa,
       firstName: (firstName || '').trim(),
       lastName: (lastName || '').trim(),
       fullName: `${firstName || ''} ${lastName || ''}`.trim() || 'Élève',
@@ -459,21 +553,19 @@ app.post('/api/register', async (req, res) => {
       whatsapp: cleanWa,
       contact: cleanWa,
       password: cleanPwd,
-      plan: plan || 'free',
-      isPremium: Boolean(isPremium && plan !== 'free'),
+      plan: 'free',
+      premiumPlan: 'free',
+      isPremium: false,
+      premiumExpiresAt: 0,
+      pendingPlan: plan && plan !== 'free' ? plan : null,
       createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
       userAgent: userAgent || req.headers['user-agent'] || 'Web'
     };
 
-    if (db) {
-      try {
-        await db.collection('users').doc(userDoc.uid).set(userDoc, { merge: true });
-        await db.collection('users').doc(cleanWa).set(userDoc, { merge: true });
-      } catch (err) {
-        console.warn('[Register] Erreur Firestore:', err.message);
-      }
-    }
-    res.json({ success: true, user: userDoc });
+    await db.collection('users').doc(cleanWa).set(userDoc);
+    console.log(`[Register] ✅ Nouveau compte créé pour ${userDoc.fullName} (${cleanWa})`);
+    res.json({ success: true, existing: false, user: buildProfile(userDoc, cleanWa, cleanPwd) });
   } catch (err) {
     console.error('[Register] Erreur:', err);
     res.status(500).json({ error: "Erreur enregistrement" });
@@ -587,49 +679,11 @@ app.post('/api/login', async (req, res) => {
       return res.status(400).json({ success: false, error: "Mot de passe requis." });
     }
 
-    let foundUser = null;
-
-    if (db) {
-      // 1. Recherche directe par doc ID = numéro de téléphone
-      try {
-        const docSnap = await db.collection('users').doc(cleanPhone).get();
-        if (docSnap.exists) {
-          foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
-        }
-      } catch (e) {}
-
-      // 2. Recherche par champ whatsapp == cleanPhone
-      if (!foundUser) {
-        try {
-          const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
-          if (!qSnap.empty) {
-            const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
-          }
-        } catch (e) {}
-      }
-
-      // 3. Recherche par champ contact == cleanPhone
-      if (!foundUser) {
-        try {
-          const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
-          if (!qSnap.empty) {
-            const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
-          }
-        } catch (e) {}
-      }
-
-      // 4. Recherche dans la waitlist si l'utilisateur s'y était inscrit
-      if (!foundUser) {
-        try {
-          const wSnap = await db.collection('waitlist').doc(cleanPhone).get();
-          if (wSnap.exists) {
-            foundUser = { ...wSnap.data(), uid: wSnap.data().uid || wSnap.id };
-          }
-        } catch (e) {}
-      }
+    if (!db) {
+      return res.status(503).json({ success: false, error: "Service de connexion temporairement indisponible. Réessaie dans quelques instants." });
     }
+
+    const foundUser = await findUserByPhone(cleanPhone);
 
     if (!foundUser) {
       return res.status(404).json({
@@ -646,33 +700,9 @@ app.post('/api/login', async (req, res) => {
       });
     }
 
-    const now = Date.now();
-    const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
-    const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
-    const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
-    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + 30 * 24 * 60 * 60 * 1000)) : 0;
+    const profile = buildProfile(foundUser, cleanPhone, password);
 
-    const fName = foundUser.firstName || (foundUser.fullName ? foundUser.fullName.split(' ')[0] : 'Élève');
-    const lName = foundUser.lastName || (foundUser.fullName ? foundUser.fullName.split(' ').slice(1).join(' ') : '');
-    const fullName = foundUser.fullName || `${fName} ${lName}`.trim() || 'Élève';
-
-    const profile = {
-      uid: foundUser.uid || `user_${cleanPhone}`,
-      firstName: fName,
-      lastName: lName,
-      fullName: fullName,
-      selectedClass: foundUser.selectedClass || foundUser.classe || '3eme',
-      whatsapp: cleanPhone,
-      phone: cleanPhone,
-      password: foundUser.password || password,
-      isPremium: isPremium,
-      premiumPlan: premiumPlan,
-      premiumExpiresAt: effectiveExpiresAt,
-      subscriptionType: foundUser.subscriptionType || 'monthly',
-      createdAt: foundUser.createdAt || new Date().toISOString()
-    };
-
-    console.log(`[Login] ✅ Connexion réussie pour ${fullName} (${cleanPhone}) - Pass: ${premiumPlan} (isPremium: ${isPremium})`);
+    console.log(`[Login] ✅ Connexion réussie pour ${profile.fullName} (${cleanPhone}) - Pass: ${profile.premiumPlan} (isPremium: ${profile.isPremium})`);
 
     res.json({
       success: true,
