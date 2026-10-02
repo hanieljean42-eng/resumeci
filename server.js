@@ -3,6 +3,8 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
 const adminModule = require('firebase-admin');
 const admin = adminModule.default || adminModule;
 
@@ -58,6 +60,12 @@ const GENIUSPAY_PUBLIC_KEY = process.env.GENIUSPAY_PUBLIC_KEY || '';
 const GENIUSPAY_SECRET_KEY = process.env.GENIUSPAY_SECRET_KEY || '';
 const GENIUSPAY_API_URL = process.env.GENIUSPAY_API_URL || 'https://geniuspay.ci/api/v1/merchant/payments';
 
+// Webhook : jeton secret partagé, transmis à GeniusPay dans l'URL de callback et vérifié à la réception
+const WEBHOOK_SECRET = String(process.env.WEBHOOK_SECRET || '').trim();
+const PUBLIC_API_URL = (process.env.PUBLIC_API_URL || 'https://resumeci-payment-api.onrender.com').replace(/\/$/, '');
+const WEBHOOK_URL = `${PUBLIC_API_URL}/api/webhook${WEBHOOK_SECRET ? `?token=${encodeURIComponent(WEBHOOK_SECRET)}` : ''}`;
+if (!WEBHOOK_SECRET) console.warn('⚠️ WEBHOOK_SECRET non défini : le webhook GeniusPay accepte toute requête (le statut est tout de même re-vérifié auprès de GeniusPay).');
+
 // Forfaits
 const PLANS = {
   starter: { name: 'Starter (Mensuel)', price: 500, days: 30, available: true },
@@ -110,8 +118,38 @@ async function findUserByPhone(cleanPhone) {
   return null;
 }
 
+// Helpers mots de passe : stockage haché (bcrypt). Les anciens comptes ont un champ `password` en clair,
+// accepté une dernière fois puis migré vers `passwordHash` lors de la connexion.
+const BCRYPT_ROUNDS = 10;
+function hashPassword(pwd) {
+  return bcrypt.hash(String(pwd), BCRYPT_ROUNDS);
+}
+async function verifyPassword(pwd, user) {
+  const candidate = String(pwd || '').trim();
+  if (!candidate) return false;
+  if (user.passwordHash) return bcrypt.compare(candidate, user.passwordHash);
+  if (user.password) return String(user.password).trim() === candidate;
+  return false;
+}
+async function migrateLegacyPassword(user, pwd) {
+  if (!db || user.passwordHash || !user._docId) return;
+  try {
+    await db.collection('users').doc(user._docId).set({
+      passwordHash: await hashPassword(pwd),
+      password: admin.firestore.FieldValue.delete(),
+      updatedAt: new Date().toISOString()
+    }, { merge: true });
+  } catch (e) {
+    console.warn('[Auth] Migration mot de passe impossible:', e.message);
+  }
+}
+function stripSecrets(user) {
+  const { password, passwordHash, _docId, ...rest } = user;
+  return rest;
+}
+
 // Helper : profil normalisé renvoyé au client (statut premium recalculé)
-function buildProfile(user, cleanPhone, password) {
+function buildProfile(user, cleanPhone) {
   const now = Date.now();
   const expiresAt = Number(user.premiumExpiresAt) || 0;
   const isPremium = Boolean(user.isPremium && (expiresAt === 0 || expiresAt > now));
@@ -126,7 +164,6 @@ function buildProfile(user, cleanPhone, password) {
     selectedClass: user.selectedClass || user.classe || '3eme',
     whatsapp: cleanPhone,
     phone: cleanPhone,
-    password: user.password || password,
     isPremium,
     premiumPlan,
     premiumExpiresAt: isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0,
@@ -299,8 +336,8 @@ app.post('/api/pay', async (req, res) => {
         type: 'monthly',
         method: chosenMethod
       },
-      webhook_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
-      callback_url: 'https://resumeci-payment-api.onrender.com/api/webhook',
+      webhook_url: WEBHOOK_URL,
+      callback_url: WEBHOOK_URL,
       success_url: redirectUrl,
       return_url: redirectUrl,
       cancel_url: `${origin}/?payment=cancelled`
@@ -391,7 +428,7 @@ app.get('/api/check-payment/:ref', async (req, res) => {
     const phone = pay.customer?.phone || meta.phone || null;
 
     if (isCompleted) {
-      const result = await unlockUserInFirestore(uid, phone, tierKey, 30, {
+      const result = await unlockUserInFirestore(uid, phone, tierKey, PLANS[tierKey]?.days || 30, {
         lastPaymentRef: ref,
         paymentAmount: amount,
         paymentMethod: pay.payment_method || 'wave'
@@ -429,43 +466,40 @@ app.post('/api/confirm-payment', async (req, res) => {
     if (!uid) {
       return res.status(400).json({ error: "UID requis" });
     }
-
-    if (reference) {
-      try {
-        const gpRes = await queryGeniusPayPayment(reference);
-        if (gpRes.success && gpRes.data && (gpRes.data.status === 'completed' || gpRes.data.status === 'success')) {
-          const pay = gpRes.data;
-          const amt = Number(pay.amount) || 0;
-          const actualTier = pay.metadata?.tierKey || tierKey || (amt >= 1000 ? 'pro' : 'starter');
-          const unl = await unlockUserInFirestore(uid, pay.customer?.phone, actualTier, 30, {
-            lastPaymentRef: reference,
-            paymentAmount: amt,
-            paymentMethod: pay.payment_method || 'wave'
-          });
-          return res.json({
-            success: true,
-            tierKey: actualTier,
-            premiumExpiresAt: unl ? unl.expiresAt : (Date.now() + THIRTY_DAYS_MS),
-            message: `Pass ${actualTier} activé avec succès.`
-          });
-        }
-      } catch (err) {
-        console.warn('[ConfirmPayment] Erreur vérification référence:', err.message);
-      }
+    // Aucun déblocage sans preuve de paiement : la référence GeniusPay est obligatoire et vérifiée côté serveur.
+    if (!reference) {
+      return res.status(400).json({
+        success: false,
+        error: "Référence de paiement requise. Si tu as déjà payé, ton Pass sera activé automatiquement dès confirmation par l'opérateur."
+      });
     }
 
-    const actualTier = tierKey || 'starter';
-    const expiresAt = Date.now() + THIRTY_DAYS_MS;
+    const gpRes = await queryGeniusPayPayment(reference);
+    const pay = gpRes && gpRes.success ? gpRes.data : null;
+    if (!pay) {
+      return res.status(404).json({ success: false, error: "Paiement introuvable chez GeniusPay." });
+    }
+    if (pay.status !== 'completed' && pay.status !== 'success') {
+      return res.status(402).json({ success: false, status: pay.status || 'pending', error: "Paiement non encore confirmé." });
+    }
+    if (pay.metadata?.uid && pay.metadata.uid !== uid) {
+      console.warn(`[ConfirmPayment] UID ${uid} ne correspond pas au paiement ${reference} (${pay.metadata.uid})`);
+      return res.status(403).json({ success: false, error: "Ce paiement est associé à un autre compte." });
+    }
 
-    console.log(`[Activation] Déblocage manuel/retour pour ${uid} : Pass ${actualTier} pour 30 jours`);
-
-    await unlockUserInFirestore(uid, null, actualTier, 30);
-
+    const amt = Number(pay.amount) || 0;
+    const actualTier = pay.metadata?.tierKey || tierKey || (amt >= 1000 ? 'pro' : 'starter');
+    const unl = await unlockUserInFirestore(uid, pay.customer?.phone || pay.metadata?.phone, actualTier, PLANS[actualTier]?.days || 30, {
+      lastPaymentRef: reference,
+      paymentAmount: amt,
+      paymentMethod: pay.payment_method || 'wave'
+    });
     res.json({
       success: true,
+      isPremium: true,
       tierKey: actualTier,
-      premiumExpiresAt: expiresAt,
-      message: `Pass ${actualTier} activé avec succès pour 30 jours.`
+      premiumExpiresAt: unl ? unl.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+      message: `Pass ${actualTier} activé avec succès.`
     });
 
   } catch (error) {
@@ -479,31 +513,46 @@ app.post('/api/confirm-payment', async (req, res) => {
 // --------------------------------------------------------------------------
 app.post('/api/webhook', async (req, res) => {
   try {
-    const event = req.body;
+    // 1. Jeton secret : l'URL de webhook transmise à GeniusPay contient ?token=WEBHOOK_SECRET
+    if (WEBHOOK_SECRET) {
+      const provided = String(req.query.token || req.headers['x-webhook-token'] || '');
+      const a = Buffer.from(provided), b = Buffer.from(WEBHOOK_SECRET);
+      if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) {
+        console.warn('[Webhook] Jeton invalide, requête ignorée.');
+        return res.status(401).send('Unauthorized');
+      }
+    }
+
+    const event = req.body || {};
+    const pay = event.data || event;
+    const ref = pay.reference || null;
     console.log('[Webhook] Événement reçu de GeniusPay:', JSON.stringify(event));
 
-    const isSuccess =
-      (event && event.data && (event.data.status === 'success' || event.data.status === 'completed')) ||
-      (event && event.status === 'success') ||
-      (event && event.event === 'payment.successful');
-
-    if (isSuccess) {
-      const pay = event.data || event;
-      const metadata = pay.metadata || {};
-      const amount = Number(pay.amount) || 0;
-      const tierKey = metadata.tierKey || (amount >= 1000 ? 'pro' : 'starter');
-      const uid = metadata.uid || null;
-      const phone = pay.customer?.phone || metadata.phone || null;
-      const ref = pay.reference || null;
-
-      console.log(`[Webhook] Déblocage automatique de ${uid || phone} pour le forfait ${tierKey} (30 jours)`);
-      await unlockUserInFirestore(uid, phone, tierKey, 30, {
-        lastPaymentRef: ref,
-        paymentAmount: amount,
-        paymentMethod: pay.payment_method || 'wave'
-      });
-      console.log("[Webhook] Profil Firestore mis à jour avec succès !");
+    if (!ref) {
+      return res.status(200).send('Webhook ignoré (aucune référence)');
     }
+
+    // 2. Ne jamais faire confiance au contenu du webhook : re-vérification du statut auprès de l'API GeniusPay
+    const gpRes = await queryGeniusPayPayment(ref);
+    const verified = gpRes && gpRes.success ? gpRes.data : null;
+    if (!verified || (verified.status !== 'completed' && verified.status !== 'success')) {
+      console.log(`[Webhook] Paiement ${ref} non confirmé par GeniusPay (statut: ${verified ? verified.status : 'inconnu'}).`);
+      return res.status(200).send('Webhook reçu, paiement non confirmé');
+    }
+
+    const metadata = verified.metadata || {};
+    const amount = Number(verified.amount) || 0;
+    const tierKey = metadata.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+    const uid = metadata.uid || null;
+    const phone = verified.customer?.phone || metadata.phone || null;
+
+    console.log(`[Webhook] Déblocage automatique de ${uid || phone} pour le forfait ${tierKey}`);
+    await unlockUserInFirestore(uid, phone, tierKey, PLANS[tierKey]?.days || 30, {
+      lastPaymentRef: ref,
+      paymentAmount: amount,
+      paymentMethod: verified.payment_method || 'wave'
+    });
+    console.log("[Webhook] Profil Firestore mis à jour avec succès !");
 
     res.status(200).send('Webhook traité avec succès');
   } catch (error) {
@@ -533,10 +582,10 @@ app.post('/api/register', async (req, res) => {
     // Un numéro = un seul compte : le document est identifié par le numéro de téléphone
     const existing = await findUserByPhone(cleanWa);
     if (existing) {
-      const storedPwd = String(existing.password || '').trim();
-      if (storedPwd && storedPwd === cleanPwd) {
+      if (await verifyPassword(cleanPwd, existing)) {
+        await migrateLegacyPassword(existing, cleanPwd);
         console.log(`[Register] Compte déjà existant pour ${cleanWa}, reconnexion.`);
-        return res.json({ success: true, existing: true, user: buildProfile(existing, cleanWa, cleanPwd) });
+        return res.json({ success: true, existing: true, user: buildProfile(existing, cleanWa) });
       }
       return res.status(409).json({
         error: "Un compte existe déjà avec ce numéro WhatsApp. Connecte-toi avec ton mot de passe ou contacte l'assistance si tu l'as oublié.",
@@ -552,7 +601,7 @@ app.post('/api/register', async (req, res) => {
       selectedClass: selectedClass || 'Non précisé',
       whatsapp: cleanWa,
       contact: cleanWa,
-      password: cleanPwd,
+      passwordHash: await hashPassword(cleanPwd),
       plan: 'free',
       premiumPlan: 'free',
       isPremium: false,
@@ -565,7 +614,7 @@ app.post('/api/register', async (req, res) => {
 
     await db.collection('users').doc(cleanWa).set(userDoc);
     console.log(`[Register] ✅ Nouveau compte créé pour ${userDoc.fullName} (${cleanWa})`);
-    res.json({ success: true, existing: false, user: buildProfile(userDoc, cleanWa, cleanPwd) });
+    res.json({ success: true, existing: false, user: buildProfile(userDoc, cleanWa) });
   } catch (err) {
     console.error('[Register] Erreur:', err);
     res.status(500).json({ error: "Erreur enregistrement" });
@@ -692,15 +741,16 @@ app.post('/api/login', async (req, res) => {
       });
     }
 
-    // Vérification du mot de passe
-    if (foundUser.password && String(foundUser.password).trim() !== password) {
+    // Vérification du mot de passe (hash bcrypt, ou ancien mot de passe en clair migré à la volée)
+    if (!(await verifyPassword(password, foundUser))) {
       return res.status(401).json({
         success: false,
         error: "Mot de passe incorrect. Vérifie ta saisie ou contacte l'assistance."
       });
     }
+    await migrateLegacyPassword(foundUser, password);
 
-    const profile = buildProfile(foundUser, cleanPhone, password);
+    const profile = buildProfile(foundUser, cleanPhone);
 
     console.log(`[Login] ✅ Connexion réussie pour ${profile.fullName} (${cleanPhone}) - Pass: ${profile.premiumPlan} (isPremium: ${profile.isPremium})`);
 
@@ -727,7 +777,7 @@ app.get('/api/admin/users', async (req, res) => {
         const d = doc.data();
         const phone = String(d.whatsapp || d.contact || '').replace(/\D/g, '').slice(-10);
         if (phone) {
-          userMap.set(phone, { ...d, contact: phone, whatsapp: phone, id: doc.id });
+          userMap.set(phone, { ...stripSecrets(d), contact: phone, whatsapp: phone, id: doc.id });
         }
       });
 
@@ -778,20 +828,23 @@ app.post('/api/admin/create-user', async (req, res) => {
     const isFree = chosenPlan === 'free';
     const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30));
     const expiresAt = isFree ? 0 : (Date.now() + durationDays * 24 * 60 * 60 * 1000);
-    const uid = 'admin_user_' + Date.now();
     const fName = firstName || (fullName ? fullName.split(' ')[0] : 'Élève');
     const lName = lastName || (fullName ? fullName.split(' ').slice(1).join(' ') : '');
     const full = fullName || `${fName} ${lName}`.trim() || 'Élève';
+    const clearPassword = String(password || '').trim() || Math.random().toString(36).slice(-8);
+
+    // Un numéro = un seul document (doc ID = numéro). Si le compte existe, on le met à jour sans changer son mot de passe.
+    const existing = await findUserByPhone(cleanPhone);
+    const docId = existing ? existing._docId : cleanPhone;
 
     const userData = {
-      uid,
+      uid: existing ? (existing.uid || docId) : cleanPhone,
       fullName: full,
       firstName: fName,
       lastName: lName,
       whatsapp: cleanPhone,
       contact: cleanPhone,
       selectedClass: selectedClass || '3eme',
-      password: password || '123456',
       plan: chosenPlan,
       premiumPlan: chosenPlan,
       isPremium: !isFree,
@@ -799,17 +852,25 @@ app.post('/api/admin/create-user', async (req, res) => {
       subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
       adminCreated: true,
       adminGrantReason: reason || 'Compte créé par l\'administrateur (Accès accordé)',
-      createdAt: new Date().toISOString(),
+      createdAt: existing ? (existing.createdAt || new Date().toISOString()) : new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
+    if (!existing) userData.passwordHash = await hashPassword(clearPassword);
 
     if (db) {
-      await db.collection('users').doc(cleanPhone).set(userData, { merge: true });
-      await db.collection('users').doc(uid).set(userData, { merge: true });
+      await db.collection('users').doc(docId).set(userData, { merge: true });
     }
 
-    console.log(`[Admin CreateUser] ✅ Compte créé avec succès pour ${full} (${cleanPhone}) - Forfait: ${chosenPlan}`);
-    res.json({ success: true, user: userData, message: `Compte ${full} créé avec succès.` });
+    console.log(`[Admin CreateUser] ✅ Compte ${existing ? 'mis à jour' : 'créé'} pour ${full} (${cleanPhone}) - Forfait: ${chosenPlan}`);
+    // Le mot de passe en clair n'est renvoyé qu'une seule fois, à la création, pour être transmis à l'élève.
+    res.json({
+      success: true,
+      existing: Boolean(existing),
+      user: { ...stripSecrets(userData), ...(existing ? {} : { password: clearPassword }) },
+      message: existing
+        ? `Compte ${full} déjà existant : forfait mis à jour (mot de passe inchangé).`
+        : `Compte ${full} créé avec succès.`
+    });
   } catch (err) {
     console.error('[Admin CreateUser] Erreur:', err);
     res.status(500).json({ error: "Erreur création compte", details: err.message });

@@ -19,5 +19,9 @@ services:
         sync: false
       - key: ADMIN_EMAILS
         value: djeble.haniel@gmail.com
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: PUBLIC_API_URL
+        value: https://resumeci-payment-api.onrender.com
       - key: GENIUSPAY_API_URL
         value: https://geniuspay.ci/api/v1/merchant/payments

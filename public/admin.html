@@ -481,7 +481,7 @@
       </div>
       <div class="field-group">
         <label>Mot de passe provisoire</label>
-        <input type="text" id="newPassword" value="123456" placeholder="Mot de passe">
+        <input type="text" id="newPassword" placeholder="Laisser vide = généré automatiquement" minlength="6" autocomplete="off">
       </div>
       <div class="field-group">
         <label>Forfait à attribuer</label>
@@ -827,7 +827,7 @@
             </div>
             <div style="display:flex; gap:6px; flex-shrink:0;">
               <button onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${plan}', '${escapeQuotes(u.id || u.uid || '')}')" style="width:34px; height:34px; border-radius:8px; border:1px solid var(--border); background:var(--surface-3); color:var(--amber); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.15s;" title="Gérer le Pass"><i class="fas fa-crown" style="font-size:12px;"></i></button>
-              <button onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '${escapeQuotes(u.password || '123456')}', '${plan}')" style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(37,211,102,0.2); background:rgba(37,211,102,0.1); color:#25d366; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.15s;" title="Envoyer accès WhatsApp"><i class="fab fa-whatsapp" style="font-size:13px;"></i></button>
+              <button onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${plan}')" style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(37,211,102,0.2); background:rgba(37,211,102,0.1); color:#25d366; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.15s;" title="Envoyer accès WhatsApp"><i class="fab fa-whatsapp" style="font-size:13px;"></i></button>
             </div>
           </div>
         `;
@@ -902,14 +902,14 @@
               </div>
               <div class="result-stat">
                 <div class="result-stat-label">Mot de passe</div>
-                <div class="result-stat-value" style="font-family:'JetBrains Mono',monospace; color:var(--emerald);">${escapeHtml(u.password || '123456')}</div>
+                <div class="result-stat-value" style="font-size:11px; color:var(--text-dim);" title="Les mots de passe sont chiffrés et ne peuvent pas être consultés">🔒 Chiffré (défini par l'élève)</div>
               </div>
             </div>
             <div class="result-actions">
               <button class="btn-result btn-result-emerald" onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${plan}', '${escapeQuotes(u.id || u.uid || '')}')">
                 <i class="fas fa-crown"></i> Gérer Pass
               </button>
-              <button class="btn-result btn-result-wa" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '${escapeQuotes(u.password || '123456')}', '${plan}')">
+              <button class="btn-result btn-result-wa" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${plan}')">
                 <i class="fab fa-whatsapp"></i> Envoyer Accès
               </button>
               <button class="btn-result btn-result-ghost" onclick="window.open('https://wa.me/225${phone}','_blank')">
@@ -954,13 +954,15 @@
       const name = document.getElementById('newFullName').value.trim();
       const rawPhone = document.getElementById('newPhone').value.trim();
       const cls = document.getElementById('newClass').value;
-      const pwd = document.getElementById('newPassword').value.trim() || '123456';
+      // Vide = mot de passe aléatoire généré par le serveur (affiché une seule fois à la création)
+      const pwd = document.getElementById('newPassword').value.trim();
       const feedback = document.getElementById('createFeedback');
       const btn = document.getElementById('btnCreateSubmit');
 
       const phone = rawPhone.replace(/\D/g, '').slice(-10);
       if (!name) { showFeedback(feedback, "Nom complet requis.", true); return; }
       if (phone.length !== 10) { showFeedback(feedback, "Numéro WhatsApp invalide (10 chiffres).", true); return; }
+      if (pwd && pwd.length < 6) { showFeedback(feedback, "Le mot de passe doit comporter au moins 6 caractères (ou laisse vide pour en générer un).", true); return; }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création...';
@@ -968,46 +970,31 @@
 
       const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650 };
       const days = daysMap[currentNewPlan] || 30;
-      const isFree = currentNewPlan === 'free';
-      const expiresAt = isFree ? 0 : (Date.now() + days * 86400000);
-      const uid = 'admin_' + Date.now();
-
-      const userData = {
-        uid, fullName: name,
-        firstName: name.split(' ')[0] || name,
-        lastName: name.split(' ').slice(1).join(' ') || '',
-        whatsapp: phone, contact: phone,
-        selectedClass: cls, classe: cls,
-        password: pwd,
-        plan: currentNewPlan, premiumPlan: currentNewPlan,
-        isPremium: !isFree, premiumExpiresAt: expiresAt,
-        subscriptionType: days >= 300 ? 'yearly' : 'monthly',
-        adminCreated: true,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
 
       try {
-        // 1. Firestore direct
-        try {
-          await setDoc(doc(db, "users", phone), userData, { merge: true });
-          await setDoc(doc(db, "users", uid), userData, { merge: true });
-        } catch(e) { console.warn("Firestore setDoc:", e.message); }
+        // Création côté serveur uniquement : le mot de passe est haché par l'API et jamais stocké en clair
+        const apiRes = await adminFetch('/api/admin/create-user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName: name, phone, selectedClass: cls, password: pwd, plan: currentNewPlan, days })
+        });
+        const apiJson = await apiRes.json().catch(() => ({}));
+        if (!apiRes.ok || !apiJson.success) {
+          throw new Error(apiJson.error || `Serveur indisponible (${apiRes.status})`);
+        }
 
-        // 2. API Backend
-        try {
-          await adminFetch('/api/admin/create-user', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ fullName: name, phone, selectedClass: cls, password: pwd, plan: currentNewPlan, days })
-          });
-        } catch(e) {}
-
-        fullList.unshift(userData);
+        const userData = { ...apiJson.user, whatsapp: phone, contact: phone };
+        const idx = fullList.findIndex(u => (u.whatsapp === phone || u.contact === phone));
+        if (idx >= 0) fullList[idx] = { ...fullList[idx], ...userData }; else fullList.unshift(userData);
         updateKPIs();
         renderPremiumList();
-        closeCreateUserModal();
-        showCreatedSuccess(name, phone, pwd, currentNewPlan);
+        if (apiJson.existing) {
+          showFeedback(feedback, apiJson.message || "Compte existant mis à jour (mot de passe inchangé).", false);
+          setTimeout(() => loadData(), 400);
+        } else {
+          closeCreateUserModal();
+          showCreatedSuccess(name, phone, apiJson.user.password || pwd, currentNewPlan);
+        }
       } catch(err) {
         showFeedback(feedback, `Erreur : ${err.message}`, true);
       } finally {
@@ -1039,7 +1026,8 @@
 
     window.sendCredentialsWhatsApp = function(phone, name, pwd, plan) {
       const planName = plan === 'pro' ? 'Pass Pro (30 jours)' : (plan === 'starter' ? 'Pass Starter (30 jours)' : (plan === 'vip' ? 'Pass VIP Permanent' : 'Formule Gratuite'));
-      const msg = `Bonjour ${name} !\n\nTon compte ResumeCI a été activé avec succès avec le forfait : *${planName}* ! 🎓\n\nVoici tes accès personnels :\n\n📱 Identifiant (WhatsApp) : *+225 ${phone}*\n🔑 Mot de passe : *${pwd}*\n\n👉 Connecte-toi ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI ! 🚀`;
+      const pwdLine = pwd ? `🔑 Mot de passe : *${pwd}*\n` : `🔑 Mot de passe : celui que tu as choisi à l'inscription\n`;
+      const msg = `Bonjour ${name} !\n\nTon compte ResumeCI a été activé avec succès avec le forfait : *${planName}* ! 🎓\n\nVoici tes accès personnels :\n\n📱 Identifiant (WhatsApp) : *+225 ${phone}*\n${pwdLine}\n👉 Connecte-toi ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI ! 🚀`;
       const url = `https://wa.me/225${phone}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
     };
