@@ -4102,6 +4102,15 @@ function showAnnouncement() {
 // Annonce désactivée pour la version en production
 // setTimeout(showAnnouncement, 500);
 function handleInitialRoute() {
+  // Fiche ouverte directement (rechargement / lien partagé) puis renvoyée vers l'app via ?fiche=/fiches/...
+  const requestedFiche = new URLSearchParams(window.location.search).get('fiche');
+  if (requestedFiche) {
+    const fParts = requestedFiche.replace(/^\//, '').split('/').map(decodeURIComponent);
+    if (fParts.length >= 4 && fParts[0] === 'fiches') {
+      showFiche(fParts[1], fParts[2], fParts[3], true);
+      return;
+    }
+  }
   const path = window.location.pathname.replace(/^\//, '');
   if (path && path !== 'index.html') {
     const parts = path.split('/').map(decodeURIComponent);

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ResumeCI — Vidéo promo</title>
+<style>
+  /* Toutes les animations sont pilotées par generate_video.js (pause + currentTime) : rendu déterministe image par image. */
+  :root { --w: 1080px; --h: 1920px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: var(--w); height: var(--h); overflow: hidden; background: #0b1220; }
+  body { font-family: "Segoe UI", Inter, -apple-system, Roboto, Arial, sans-serif; color: #fff; position: relative; }
+
+  .bg { position: absolute; inset: 0; background: radial-gradient(circle at 20% 10%, #1e3a8a 0, #0b1220 45%), radial-gradient(circle at 85% 90%, #065f46 0, transparent 40%); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; animation: float 18s ease-in-out both; }
+  .blob.b1 { width: 700px; height: 700px; background: #2563eb; top: -200px; left: -200px; }
+  .blob.b2 { width: 600px; height: 600px; background: #10b981; bottom: -150px; right: -150px; animation-delay: -6s; }
+  .blob.b3 { width: 400px; height: 400px; background: #f59e0b; top: 45%; left: 60%; opacity: .25; animation-delay: -12s; }
+  @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,-80px) scale(1.15); } }
+
+  .scene { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 80px; opacity: 0; animation: scene 1s both; }
+  @keyframes scene { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }
+
+  .pop { opacity: 0; transform: translateY(60px) scale(.92); animation: pop .7s cubic-bezier(.2,.9,.3,1.2) both; }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+
+  .logo { font-size: 128px; font-weight: 900; letter-spacing: -3px; line-height: 1; }
+  .logo span { color: #60a5fa; }
+  .tag { margin-top: 28px; font-size: 44px; color: #cbd5e1; font-weight: 600; }
+  .badge { display: inline-block; margin-top: 40px; padding: 18px 40px; border-radius: 999px; background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.25); font-size: 38px; font-weight: 700; }
+
+  .h1 { font-size: 92px; font-weight: 900; line-height: 1.08; letter-spacing: -2px; }
+  .h1 em { font-style: normal; color: #fbbf24; }
+  .sub { margin-top: 30px; font-size: 42px; color: #cbd5e1; line-height: 1.4; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; width: 100%; margin-top: 60px; }
+  .card { background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.14); border-radius: 36px; padding: 44px 30px; font-size: 40px; font-weight: 700; backdrop-filter: blur(8px); }
+  .card .ico { font-size: 92px; display: block; margin-bottom: 18px; }
+
+  .fiche { width: 100%; background: #fff; color: #1e293b; border-radius: 40px; padding: 56px 50px; text-align: left; margin-top: 60px; box-shadow: 0 40px 90px rgba(0,0,0,.45); }
+  .fiche .ft { text-align: center; color: #16a34a; font-weight: 900; font-size: 44px; border-bottom: 6px solid #16a34a; padding-bottom: 20px; margin-bottom: 30px; }
+  .fiche .def { background: #ecfdf5; border-left: 12px solid #22c55e; padding: 22px 28px; border-radius: 0 20px 20px 0; font-size: 34px; margin: 18px 0; }
+  .fiche .imp { background: #eff6ff; border-left: 12px solid #2563eb; padding: 22px 28px; border-radius: 0 20px 20px 0; font-size: 34px; margin: 18px 0; }
+  .fiche .sch { background: #fef3c7; border-left: 12px solid #f59e0b; padding: 22px 28px; border-radius: 0 20px 20px 0; font-size: 34px; margin: 18px 0; font-weight: 700; color: #92400e; }
+
+  .url { margin-top: 56px; background: #fff; color: #1d4ed8; font-weight: 900; font-size: 54px; padding: 34px 48px; border-radius: 30px; letter-spacing: -1px; box-shadow: 0 30px 70px rgba(37,99,235,.45); word-break: break-all; }
+  .cta { margin-top: 36px; background: linear-gradient(135deg,#f59e0b,#f97316); color: #1a0f00; font-weight: 900; font-size: 50px; padding: 34px 60px; border-radius: 999px;
+         animation-name: pop, pulse; animation-duration: .7s, 1.2s; animation-timing-function: cubic-bezier(.2,.9,.3,1.2), ease-in-out; animation-iteration-count: 1, infinite; animation-fill-mode: both, both; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .82; } }
+  .qr { margin-top: 48px; width: 420px; height: 420px; background: #fff; border-radius: 36px; padding: 24px; }
+  .qr img { width: 100%; height: 100%; display: block; }
+  .steps { margin-top: 50px; display: flex; flex-direction: column; gap: 22px; width: 100%; }
+  .step { display: flex; align-items: center; gap: 28px; background: rgba(255,255,255,.08); border-radius: 30px; padding: 28px 34px; font-size: 40px; font-weight: 600; text-align: left; }
+  .step b { width: 84px; height: 84px; border-radius: 50%; background: #2563eb; display: inline-flex; align-items: center; justify-content: center; font-size: 42px; flex-shrink: 0; }
+
+  .footer { position: absolute; bottom: 70px; left: 0; right: 0; text-align: center; font-size: 34px; color: #94a3b8; font-weight: 600; }
+  .footer strong { color: #fff; }
+
+  /* --- Chronologie (secondes) : S1 0-4 | S2 4-8.5 | S3 8.5-13 | S4 13-17.5 | S5 17.5-22 --- */
+  #s1 { animation-delay: 0s; animation-duration: 4s; }
+  #s2 { animation-delay: 4s; animation-duration: 4.5s; }
+  #s3 { animation-delay: 8.5s; animation-duration: 4.5s; }
+  #s4 { animation-delay: 13s; animation-duration: 4.5s; }
+  #s5 { animation-delay: 17.5s; animation-duration: 4.5s; }
+
+  #s1 .p1 { animation-delay: .2s; } #s1 .p2 { animation-delay: .8s; } #s1 .p3 { animation-delay: 1.4s; }
+  #s2 .p1 { animation-delay: 4.3s; } #s2 .p2 { animation-delay: 4.9s; }
+  #s2 .c1 { animation-delay: 5.4s; } #s2 .c2 { animation-delay: 5.6s; } #s2 .c3 { animation-delay: 5.8s; } #s2 .c4 { animation-delay: 6s; }
+  #s3 .p1 { animation-delay: 8.8s; } #s3 .p2 { animation-delay: 9.4s; }
+  #s4 .p1 { animation-delay: 13.3s; } #s4 .st1 { animation-delay: 13.9s; } #s4 .st2 { animation-delay: 14.3s; } #s4 .st3 { animation-delay: 14.7s; }
+  #s5 .p1 { animation-delay: 17.8s; } #s5 .p2 { animation-delay: 18.3s; } #s5 .p3 { animation-delay: 18.8s; } #s5 .p4 { animation-delay: 19.3s; }
+</style>
+</head>
+<body>
+  <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+
+  <!-- Scène 1 : marque -->
+  <section class="scene" id="s1">
+    <div class="logo pop p1">📚 Resume<span>CI</span></div>
+    <div class="tag pop p2">Les fiches de révision des élèves de Côte d'Ivoire</div>
+    <div class="badge pop p3">6ème → Terminale · BEPC & BAC</div>
+  </section>
+
+  <!-- Scène 2 : problème + matières -->
+  <section class="scene" id="s2">
+    <div class="h1 pop p1">Tu révises avec des cours <em>trop longs</em> ?</div>
+    <div class="sub pop p2">Retrouve l'essentiel de chaque leçon en une fiche claire.</div>
+    <div class="cards">
+      <div class="card pop c1"><span class="ico">📐</span>Maths</div>
+      <div class="card pop c2"><span class="ico">⚛️</span>Physique-Chimie</div>
+      <div class="card pop c3"><span class="ico">🧬</span>SVT</div>
+      <div class="card pop c4"><span class="ico">📜</span>Français · Hist-Géo · Philo</div>
+    </div>
+  </section>
+
+  <!-- Scène 3 : aperçu d'une fiche -->
+  <section class="scene" id="s3">
+    <div class="h1 pop p1"><em>714 fiches</em> prêtes à réviser</div>
+    <div class="fiche pop p2">
+      <div class="ft">📝 FICHE DE RÉSUMÉ · Maths 3ème</div>
+      <div class="def"><b>Égalité de quotients :</b> a/b = c/d ⟺ a×d = b×c</div>
+      <div class="sch">(a + b)² = a² + 2ab + b²</div>
+      <div class="imp"><b>Factoriser</b> = écrire sous forme de produit</div>
+    </div>
+  </section>
+
+  <!-- Scène 4 : fonctionnalités -->
+  <section class="scene" id="s4">
+    <div class="h1 pop p1">Tout pour <em>réussir</em></div>
+    <div class="steps">
+      <div class="step pop st1"><b>🎯</b> Quiz interactifs sur chaque fiche</div>
+      <div class="step pop st2"><b>🃏</b> Flashcards & Pièges d'Examen</div>
+      <div class="step pop st3"><b>📴</b> Packs hors-ligne : révise sans connexion</div>
+    </div>
+  </section>
+
+  <!-- Scène 5 : appel à l'action -->
+  <section class="scene" id="s5">
+    <div class="h1 pop p1">Inscription <em>gratuite</em><br>en 30 secondes</div>
+    <div class="url pop p2">resumeci.me/inscription.html</div>
+    <div class="cta pop p3">👉 Je crée mon compte</div>
+    <div class="qr pop p4"><img alt="QR" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=0&data=https%3A%2F%2Fresumeci.me%2Finscription.html"></div>
+  </section>
+
+  <div class="footer">Rejoins des milliers d'élèves sur <strong>resumeci.me</strong></div>
+
+  <script>
+    // Pilotage image par image : met toutes les animations en pause à l'instant t (ms).
+    window.__seek = function (ms) {
+      document.getAnimations().forEach(function (a) { a.pause(); a.currentTime = ms; });
+    };
+    window.__duration = 22000;
+  </script>
+</body>
+</html>
