@@ -967,6 +967,58 @@ app.get('/api/admin/transactions', async (req, res) => {
   }
 });
 
+// --------------------------------------------------------------------------
+// ROUTE 8 : CHATBOT IA VIA CODECRAFT API
+// --------------------------------------------------------------------------
+app.post('/api/ask-ai', async (req, res) => {
+  try {
+    const { message } = req.body;
+    if (!message) {
+      return res.status(400).json({ error: "Message requis" });
+    }
+
+    const CODECRAFT_API_KEY = process.env.CODECRAFT_API_KEY;
+    if (!CODECRAFT_API_KEY) {
+      console.error('[Ask AI] CODECRAFT_API_KEY non configurée.');
+      return res.status(503).json({ error: "Assistant IA non configuré sur ce serveur." });
+    }
+
+    const response = await fetch('https://codecraftapi.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${CODECRAFT_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "claude-3-haiku-20240307", // ou le modèle fourni par CodeCraft
+        messages: [
+          {
+            role: "system",
+            content: "Tu es l'assistant virtuel officiel de ResumeCI..." // Placez le prompt entier ici plus tard
+          },
+          {
+            role: "user",
+            content: message
+          }
+        ],
+        temperature: 0.7,
+      })
+    });
+
+    const data = await response.json();
+    
+    if (!response.ok) {
+      console.error("[CodeCraft API] Erreur:", data);
+      return res.status(500).json({ error: "Erreur de communication avec l'IA CodeCraft", details: data });
+    }
+
+    res.json({ success: true, reply: data.choices[0].message.content });
+  } catch (error) {
+    console.error("[Ask AI] Erreur interceptée:", error);
+    res.status(500).json({ error: "Erreur interne de l'assistant IA" });
+  }
+});
+
 // Santé du serveur
 app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
