@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-import { getFirestore, collection, addDoc, doc, getDoc, setDoc, query, where, limit, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxw83mK-UNubhekwCQsFzBvM4zTvMuq5o",
@@ -17,81 +17,26 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Récupération instantanée directe du statut utilisateur depuis Firestore (temps de réponse < 100ms)
-window.fetchUserProfileFromFirestore = async function(phone, uid) {
-  const cleanPhone = String(phone || '').replace(/\D/g, '').slice(-10);
-  try {
-    let userSnap = null;
-    // 1. Recherche directe par Doc ID = cleanPhone
-    if (cleanPhone.length === 10) {
-      userSnap = await getDoc(doc(db, "users", cleanPhone));
-    }
-    // 2. Recherche par Doc ID = uid
-    if ((!userSnap || !userSnap.exists()) && uid) {
-      userSnap = await getDoc(doc(db, "users", uid));
-    }
-    if (userSnap && userSnap.exists()) {
-      return { id: userSnap.id, ...userSnap.data() };
-    }
-    // 3. Recherche par champ whatsapp == cleanPhone
-    if (cleanPhone.length === 10) {
-      try {
-        const qWa = query(collection(db, "users"), where("whatsapp", "==", cleanPhone), limit(1));
-        const snapWa = await getDocs(qWa);
-        if (!snapWa.empty) {
-          const d = snapWa.docs[0];
-          return { id: d.id, ...d.data() };
-        }
-      } catch (e) {}
+// Les profils élèves (collection `users`) ne sont jamais lus ni écrits depuis le navigateur :
+// les règles Firestore les réservent à l'admin, tout passe par l'API (/api/login, /api/register, /api/user-status).
 
-      // 4. Recherche par champ contact == cleanPhone
-      try {
-        const qCo = query(collection(db, "users"), where("contact", "==", cleanPhone), limit(1));
-        const snapCo = await getDocs(qCo);
-        if (!snapCo.empty) {
-          const d = snapCo.docs[0];
-          return { id: d.id, ...d.data() };
-        }
-      } catch (e) {}
-
-      // 5. Recherche dans waitlist (si ancien compte pré-inscrit)
-      try {
-        const wSnap = await getDoc(doc(db, "waitlist", cleanPhone));
-        if (wSnap.exists()) {
-          return { id: wSnap.id, ...wSnap.data() };
-        }
-      } catch (e) {}
-    }
-  } catch(e) {
-    console.warn("[Firebase] fetchUserProfileFromFirestore error:", e);
-  }
-  return null;
+// Nettoyage des anciens profils locaux qui contenaient le mot de passe en clair
+const PROFILE_STORAGE_KEYS = ['resumeci_profile', 'user_profile', 'resumeci_user', 'resumeci_student_user'];
+window.stripProfileSecrets = function(profile) {
+  if (!profile || typeof profile !== 'object') return profile;
+  const { password, passwordHash, ...safe } = profile;
+  return safe;
 };
-
-// Synchronisation du profil étudiant dans Firestore
-window.syncUserProfileToFirestore = async function(profile) {
-  if (!profile) return;
-  const cleanPhone = String(profile.whatsapp || profile.contact || profile.phone || '').replace(/\D/g, '').slice(-10);
-  const uid = profile.uid || (cleanPhone ? `user_${cleanPhone}` : `user_${Date.now()}`);
-  try {
-    const dataToSave = {
-      ...profile,
-      uid: uid,
-      whatsapp: cleanPhone || profile.whatsapp || '',
-      contact: cleanPhone || profile.contact || '',
-      updatedAt: serverTimestamp()
-    };
-    if (cleanPhone && cleanPhone.length === 10) {
-      await setDoc(doc(db, "users", cleanPhone), dataToSave, { merge: true });
+try {
+  PROFILE_STORAGE_KEYS.forEach(key => {
+    const raw = localStorage.getItem(key);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object' && ('password' in parsed || 'passwordHash' in parsed)) {
+      localStorage.setItem(key, JSON.stringify(window.stripProfileSecrets(parsed)));
     }
-    if (uid) {
-      await setDoc(doc(db, "users", uid), dataToSave, { merge: true });
-    }
-    console.log("[Firebase] Profil synchronisé avec succès:", cleanPhone || uid);
-  } catch(e) {
-    console.warn("[Firebase] Erreur synchronisation profil:", e);
-  }
-};
+  });
+} catch (e) {}
 
 // Vérification de la présence d'un abonnement actif
 window.hasActiveSubscription = function() {

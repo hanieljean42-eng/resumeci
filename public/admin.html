@@ -481,7 +481,7 @@
       </div>
       <div class="field-group">
         <label>Mot de passe provisoire</label>
-        <input type="text" id="newPassword" placeholder="Laisser vide = généré automatiquement" minlength="6" autocomplete="off">
+        <input type="text" id="newPassword" placeholder="Laisser vide = généré automatiquement" minlength="8" autocomplete="off">
       </div>
       <div class="field-group">
         <label>Forfait à attribuer</label>
@@ -962,7 +962,7 @@
       const phone = rawPhone.replace(/\D/g, '').slice(-10);
       if (!name) { showFeedback(feedback, "Nom complet requis.", true); return; }
       if (phone.length !== 10) { showFeedback(feedback, "Numéro WhatsApp invalide (10 chiffres).", true); return; }
-      if (pwd && pwd.length < 6) { showFeedback(feedback, "Le mot de passe doit comporter au moins 6 caractères (ou laisse vide pour en générer un).", true); return; }
+      if (pwd && pwd.length < 8) { showFeedback(feedback, "Le mot de passe doit comporter au moins 8 caractères (ou laisse vide pour en générer un).", true); return; }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création...';

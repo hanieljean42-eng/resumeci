@@ -64,42 +64,7 @@ window.syncUserProfileFromRemote = async function() {
   const uid = window.USER_PROFILE.uid || '';
   if (!phone && !uid) return null;
 
-  // 1. Tenter d'abord la récupération ultra-rapide directe depuis Firestore (temps de réponse < 100ms)
-  try {
-    if (typeof window.fetchUserProfileFromFirestore === 'function') {
-      const fbUser = await window.fetchUserProfileFromFirestore(phone, uid);
-      if (fbUser) {
-        const now = Date.now();
-        const expiresAt = Number(fbUser.premiumExpiresAt) || 0;
-        const isPrem = Boolean(fbUser.isPremium && (expiresAt === 0 || expiresAt > now));
-        const plan = isPrem ? (fbUser.premiumPlan || fbUser.plan || 'pro') : 'free';
-        let changed = false;
-
-        if (window.USER_PROFILE.isPremium !== isPrem) {
-          window.USER_PROFILE.isPremium = isPrem;
-          changed = true;
-        }
-        if (window.USER_PROFILE.premiumPlan !== plan) {
-          window.USER_PROFILE.premiumPlan = plan;
-          changed = true;
-        }
-        if (expiresAt && window.USER_PROFILE.premiumExpiresAt !== expiresAt) {
-          window.USER_PROFILE.premiumExpiresAt = expiresAt;
-          changed = true;
-        }
-        if (changed) {
-          localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-          if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-          if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-        }
-        return window.USER_PROFILE;
-      }
-    }
-  } catch (fbErr) {
-    console.warn("[Sync] Direct Firestore check warning:", fbErr);
-  }
-
-  // 2. Repli vers l'API Backend
+  // Statut premium fourni uniquement par l'API (la collection Firestore `users` est réservée à l'admin)
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
     const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
@@ -145,7 +110,13 @@ window.loadUserProfile = async function() {
       window.USER_PROFILE = null;
       return null;
     }
-    window.USER_PROFILE = JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (parsed && ('password' in parsed || 'passwordHash' in parsed)) {
+      delete parsed.password;
+      delete parsed.passwordHash;
+      localStorage.setItem('resumeci_profile', JSON.stringify(parsed));
+    }
+    window.USER_PROFILE = parsed;
     setTimeout(() => {
       if (typeof window.syncUserProfileFromRemote === 'function') {
         window.syncUserProfileFromRemote();
@@ -168,7 +139,6 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
       lastName: lastName,
       selectedClass: selectedClass,
       whatsapp: whatsapp,
-      password: password,
       isPremium: isPaid,
       premiumPlan: tierKey || 'free',
       premiumExpiresAt: isPaid ? Date.now() + (30 * 24 * 60 * 60 * 1000) : 0,
@@ -200,26 +170,26 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
 };
 
 window.loginUserProfile = async function(firstName, lastName, whatsapp, password) {
+  // Authentification uniquement côté serveur : aucun mot de passe n'est stocké ni comparé dans le navigateur
   try {
-    const raw = localStorage.getItem('resumeci_profile');
-    if (raw) {
-      const p = JSON.parse(raw);
-      // Vérification stricte : WhatsApp doit correspondre ET mot de passe correct
-      if (p.whatsapp === whatsapp && p.password === password) {
-        window.USER_PROFILE = p;
-        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-        return { success: true, profile: p };
-      }
-      // WhatsApp correspond mais mot de passe incorrect
-      if (p.whatsapp === whatsapp && p.password !== password) {
-        return { error: "Mot de passe incorrect." };
-      }
+    const cleanWa = String(whatsapp || '').replace(/\D/g, '').slice(-10);
+    const res = await fetch(`${window.getPaymentApiBase()}/api/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ whatsapp: cleanWa, password: password })
+    });
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data || !data.success || !data.profile) {
+      return { error: (data && data.error) || "Identifiants invalides." };
     }
-    // Aucun profil trouvé — ne PAS créer de profil premium gratuit
-    return { error: "Aucun compte trouvé sur cet appareil. Inscris-toi d'abord." };
+    const { password: _pw, passwordHash: _ph, ...profile } = data.profile;
+    window.USER_PROFILE = profile;
+    localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+    if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+    return { success: true, profile: profile };
   } catch(e) {
-    return { error: "Identifiants invalides." };
+    return { error: "Impossible de joindre le serveur de connexion. Réessaie dans quelques secondes." };
   }
 };
 
@@ -725,13 +695,13 @@ window.submitProfile = async function () {
   }
 
   // Mode Inscription initiale
-  if (!pwd || pwd.length < 6) {
+  if (!pwd || pwd.length < 8) {
     window.showActionNotice({
       type: 'warning',
       icon: '🔒',
       title: 'Mot de passe trop court',
       subtitle: 'Sécurité de ton compte',
-      message: 'Le mot de passe doit comporter au moins 6 caractères pour sécuriser tes fiches et tes statistiques.',
+      message: 'Le mot de passe doit comporter au moins 8 caractères pour sécuriser tes fiches et tes statistiques.',
       primaryBtnText: 'Modifier le mot de passe'
     });
     if (btn) {
