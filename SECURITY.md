@@ -39,7 +39,7 @@ Contacter l'administrateur en privé (WhatsApp de l'assistance ou email admin). 
   à tous et le verrouillage repose sur le profil stocké dans `localStorage`. Un utilisateur peut modifier ce profil et
   débloquer l'interface. Évolution proposée : servir le contenu premium depuis l'API (endpoint authentifié par jeton
   de session signé, ex. Firebase Auth custom token ou JWT court) et ne plus publier ce contenu dans `public/`.
-- **`/api/user-status`** renvoie le nom et le statut d'un compte à partir d'un numéro, sans authentification.
+- **`/api/user-status`** : sans jeton de session (`sessionToken` HMAC, 180 jours, remis par `/api/login` et `/api/register`), la route ne renvoie que le statut d'abonnement (`isPremium`, `premiumPlan`, `premiumExpiresAt`) ; nom, classe et numéro exigent `Authorization: Bearer <sessionToken>` du même compte. Le statut premium d'un numéro reste donc consultable. Le secret de signature est `SESSION_SECRET` (à défaut `WEBHOOK_SECRET`).
   À protéger par un jeton de session lors de la migration ci-dessus.
 - **CSP `script-src 'unsafe-inline'`** conservée : de nombreux scripts et gestionnaires `onclick` sont inline.
   Leur migration vers des fichiers externes (ou des nonces/hashes) est un chantier séparé.

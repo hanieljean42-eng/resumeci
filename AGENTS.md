@@ -29,3 +29,5 @@
 - Aucun déblocage premium sans référence GeniusPay vérifiée côté serveur (`/api/confirm-payment`, `/api/webhook`), `/api/check-payment`, et `/api/user-status` via `users/{uid}.pendingPayment` mémorisé par `/api/pay`).
 - Paiements : `/api/pay` réutilise la transaction GeniusPay encore en attente (même formule, < 10 min) ; le front surveille le paiement (`watchPendingPayment`) et re-rend la vue au déblocage.
 - Routes `/api/admin/*` : jeton Firebase ID (`Authorization: Bearer`) + email dans `ADMIN_EMAILS`.
+- Session élève : `buildProfile` ajoute un `sessionToken` signé (HMAC, `SESSION_SECRET` ou `WEBHOOK_SECRET`) stocké dans `resumeci_profile` ; `syncUserProfileFromRemote` l'envoie en `Authorization: Bearer`. Sans jeton, `/api/user-status` ne renvoie que le statut premium.
+- Accueil : `public/index.html` affiche `#introScreen` aux visiteurs sans profil ; « Continuer » mène à `/inscription.html` (plus de redirection automatique dans le `<head>`).

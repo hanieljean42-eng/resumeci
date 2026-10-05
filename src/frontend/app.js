@@ -152,9 +152,11 @@ window.syncUserProfileFromRemote = async function() {
   // Statut premium fourni uniquement par l'API (la collection Firestore `users` est réservée à l'admin)
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
+    const headers = { 'Accept': 'application/json' };
+    if (window.USER_PROFILE.sessionToken) headers.Authorization = `Bearer ${window.USER_PROFILE.sessionToken}`;
     const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
       method: 'GET',
-      headers: { 'Accept': 'application/json' }
+      headers
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -419,7 +421,8 @@ async function loadData() {
   updateAudioFabVisual();
   updateSidebarPassBtn();
   if (!window.USER_PROFILE) {
-    window.location.href = '/connexion.html';
+    // Visiteur sans compte : il reste sur la page d'accueil, « Continuer » mène à l'inscription
+    if (!document.getElementById('introScreen')) window.location.href = '/connexion.html';
     return;
   }
 }
@@ -1469,14 +1472,18 @@ window.submitCheckoutPayment = async function() {
   }
 };
 document.addEventListener('DOMContentLoaded', () => {
-  const introSeen = localStorage.getItem('rci_intro_seen');
-  if (introSeen === '1' || window.USER_PROFILE) {
+  const hasAccount = () => Boolean(window.USER_PROFILE || localStorage.getItem('resumeci_profile'));
+  if (hasAccount()) {
     const intro = document.getElementById('introScreen');
     if (intro) intro.style.display = 'none';
     const appLayout = document.getElementById('appLayout');
     if (appLayout) appLayout.classList.remove('is-hidden');
   }
   document.getElementById('continueBtn')?.addEventListener('click', () => {
+    if (!hasAccount()) {
+      window.location.href = '/inscription.html';
+      return;
+    }
     localStorage.setItem('rci_intro_seen', '1');
     const intro = document.getElementById('introScreen');
     if (intro) intro.style.display = 'none';
