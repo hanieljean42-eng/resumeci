@@ -670,7 +670,7 @@
         <div class="form-group">
           <label class="form-label" for="regPassword">Mot de passe secret *</label>
           <div class="input-wrap">
-            <input type="password" id="regPassword" class="field" placeholder="6 caractères minimum" minlength="6" required autocomplete="new-password" enterkeyhint="done" style="padding-right:40px">
+            <input type="password" id="regPassword" class="field" placeholder="8 caractères minimum" minlength="8" required autocomplete="new-password" enterkeyhint="done" style="padding-right:40px">
             <i class="fas fa-lock ic"></i>
             <button type="button" class="pwd-toggle" onclick="togglePwd()" aria-label="Afficher le mot de passe"><i class="fas fa-eye" id="pwdEyeIcon"></i></button>
           </div>
@@ -827,8 +827,8 @@
         return;
       }
 
-      if (pwd.length < 6) {
-        showError("🔒 Le mot de passe doit comporter au moins 6 caractères.");
+      if (pwd.length < 8) {
+        showError("🔒 Le mot de passe doit comporter au moins 8 caractères.");
         return;
       }
 
@@ -869,7 +869,7 @@
             if (regRes.ok && data && data.success && data.user) {
               regData = data;
             } else if (data && data.error) {
-              showError("❌ " + data.error + (data.code === 'ACCOUNT_EXISTS'
+              showError("❌ " + data.error + (regRes.status === 401
                 ? " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>" : ""));
               resetSubmitBtn();
               return;
@@ -890,7 +890,7 @@
           return;
         }
 
-        const profile = regData.user;
+        const { password: _pw, passwordHash: _ph, ...profile } = regData.user;
         localStorage.setItem('resumeci_profile', JSON.stringify(profile));
         localStorage.setItem('user_profile', JSON.stringify(profile));
         localStorage.setItem('resumeci_user', JSON.stringify(profile));
@@ -957,7 +957,9 @@
 
           if (payData.success && checkoutUrl) {
             if (payData.reference || payData.payment_reference) {
-              sessionStorage.setItem('last_payment_reference', payData.reference || payData.payment_reference);
+              localStorage.setItem('last_payment_reference', payData.reference || payData.payment_reference);
+              localStorage.setItem('last_payment_tier', selectedTier);
+              localStorage.setItem('last_payment_at', String(Date.now()));
             }
             // Redirection directe vers l'interface de paiement GeniusPay (Wave, Orange, MTN, Moov)
             window.location.href = checkoutUrl;
@@ -1016,7 +1018,6 @@
             if (prof.lastName) document.getElementById('regLastName').value = prof.lastName;
             if (prof.selectedClass) document.getElementById('regClass').value = prof.selectedClass;
             if (prof.whatsapp) document.getElementById('regWhatsapp').value = prof.whatsapp;
-            if (prof.password) document.getElementById('regPassword').value = prof.password;
             if (prof.premiumPlan && prof.premiumPlan !== 'free') {
               selectPlan(prof.premiumPlan);
             }

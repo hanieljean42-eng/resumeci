@@ -58,48 +58,98 @@ window.getPaymentApiBase = function() {
   return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
 };
 
+// ==================== PAIEMENT EN ATTENTE & DÉBLOCAGE IMMÉDIAT ====================
+// La référence est gardée dans localStorage (et non sessionStorage) : au retour de Wave,
+// le navigateur rouvre souvent le site dans un nouvel onglet.
+const PENDING_PAY_KEYS = ['last_payment_reference', 'last_payment_tier', 'last_payment_at'];
+const PAY_FAILED_STATUSES = ['failed', 'cancelled', 'canceled', 'expired', 'refunded', 'rejected'];
+window.getPendingPaymentRef = function() {
+  const at = Number(localStorage.getItem('last_payment_at')) || 0;
+  if (at && Date.now() - at > 48 * 3600 * 1000) { window.clearPendingPaymentRef(); return ''; }
+  return localStorage.getItem('last_payment_reference') || sessionStorage.getItem('last_payment_reference') || '';
+};
+window.setPendingPaymentRef = function(reference, tier) {
+  if (!reference) return;
+  localStorage.setItem('last_payment_reference', reference);
+  localStorage.setItem('last_payment_tier', tier || 'starter');
+  localStorage.setItem('last_payment_at', String(Date.now()));
+};
+window.clearPendingPaymentRef = function() {
+  PENDING_PAY_KEYS.forEach(k => { localStorage.removeItem(k); sessionStorage.removeItem(k); });
+};
+window.refreshPremiumUI = function(rerender) {
+  if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+  if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+  // Re-rendu de la vue courante pour retirer les cadenas sans recharger la page
+  if (rerender && window.DATA && window.DATA.structure) window.dispatchEvent(new PopStateEvent('popstate'));
+};
+window.applyPremiumUnlock = function(tier, expiresAt) {
+  if (!window.USER_PROFILE) return;
+  window.USER_PROFILE.premiumPlan = tier || window.USER_PROFILE.premiumPlan || 'starter';
+  window.USER_PROFILE.isPremium = true;
+  if (expiresAt) window.USER_PROFILE.premiumExpiresAt = expiresAt;
+  localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+  window.refreshPremiumUI(true);
+};
+
+// Surveille un paiement jusqu'à confirmation : toutes les 3 s pendant 90 s, puis toutes les 10 s
+// pendant 15 min, et immédiatement quand l'élève revient sur l'onglet (retour de l'app Wave).
+window.watchPendingPayment = function(reference, tier) {
+  if (window._payWatch) return;
+  const apiBase = window.getPaymentApiBase();
+  const started = Date.now();
+  let busy = false, timer = null;
+  const onVis = () => { if (document.visibilityState === 'visible') { clearTimeout(timer); check(); } };
+  const stop = () => { clearTimeout(timer); document.removeEventListener('visibilitychange', onVis); window._payWatch = null; };
+  const schedule = () => {
+    const elapsed = Date.now() - started;
+    if (elapsed > 15 * 60 * 1000) return stop();
+    timer = setTimeout(check, elapsed < 90000 ? 3000 : 10000);
+  };
+  const check = async () => {
+    if (busy) return;
+    busy = true;
+    try {
+      const ref = window.getPendingPaymentRef() || reference;
+      if (ref) {
+        const r = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(ref)}`, { cache: 'no-store' });
+        const d = await r.json().catch(() => null);
+        if (d && d.success && d.status === 'completed') {
+          stop();
+          window.clearPendingPaymentRef();
+          window.applyPremiumUnlock(d.tierKey || tier, d.premiumExpiresAt);
+          showSubscriptionSuccessModal(d.tierKey || tier, d.premiumExpiresAt);
+          return;
+        }
+        if (d && PAY_FAILED_STATUSES.includes(d.status)) { stop(); window.clearPendingPaymentRef(); return; }
+      } else if (typeof window.syncUserProfileFromRemote === 'function') {
+        const before = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+        await window.syncUserProfileFromRemote();
+        const sub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+        if (sub) {
+          stop();
+          if (!before) showSubscriptionSuccessModal(sub.tier, sub.expiresAt);
+          return;
+        }
+      }
+    } catch (e) {
+    } finally {
+      busy = false;
+    }
+    schedule();
+  };
+  document.addEventListener('visibilitychange', onVis);
+  window._payWatch = { stop };
+  check();
+};
+
 window.syncUserProfileFromRemote = async function() {
   if (!window.USER_PROFILE) return null;
   const phone = String(window.USER_PROFILE.whatsapp || window.USER_PROFILE.contact || window.USER_PROFILE.phone || '').replace(/\D/g, '').slice(-10);
   const uid = window.USER_PROFILE.uid || '';
   if (!phone && !uid) return null;
 
-  // 1. Tenter d'abord la récupération ultra-rapide directe depuis Firestore (temps de réponse < 100ms)
-  try {
-    if (typeof window.fetchUserProfileFromFirestore === 'function') {
-      const fbUser = await window.fetchUserProfileFromFirestore(phone, uid);
-      if (fbUser) {
-        const now = Date.now();
-        const expiresAt = Number(fbUser.premiumExpiresAt) || 0;
-        const isPrem = Boolean(fbUser.isPremium && (expiresAt === 0 || expiresAt > now));
-        const plan = isPrem ? (fbUser.premiumPlan || fbUser.plan || 'pro') : 'free';
-        let changed = false;
-
-        if (window.USER_PROFILE.isPremium !== isPrem) {
-          window.USER_PROFILE.isPremium = isPrem;
-          changed = true;
-        }
-        if (window.USER_PROFILE.premiumPlan !== plan) {
-          window.USER_PROFILE.premiumPlan = plan;
-          changed = true;
-        }
-        if (expiresAt && window.USER_PROFILE.premiumExpiresAt !== expiresAt) {
-          window.USER_PROFILE.premiumExpiresAt = expiresAt;
-          changed = true;
-        }
-        if (changed) {
-          localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-          if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-          if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-        }
-        return window.USER_PROFILE;
-      }
-    }
-  } catch (fbErr) {
-    console.warn("[Sync] Direct Firestore check warning:", fbErr);
-  }
-
-  // 2. Repli vers l'API Backend
+  // Statut premium fourni uniquement par l'API (la collection Firestore `users` est réservée à l'admin)
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
     const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
@@ -110,6 +160,7 @@ window.syncUserProfileFromRemote = async function() {
     const data = await res.json();
     if (data && data.success && data.user) {
       const u = data.user;
+      const wasPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(window.USER_PROFILE.isPremium);
       let changed = false;
       if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
         window.USER_PROFILE.isPremium = Boolean(u.isPremium);
@@ -125,8 +176,9 @@ window.syncUserProfileFromRemote = async function() {
       }
       if (changed) {
         localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+        const isNowPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(u.isPremium);
+        if (isNowPremium) window.clearPendingPaymentRef();
+        window.refreshPremiumUI(isNowPremium !== wasPremium);
       }
       return window.USER_PROFILE;
     }
@@ -145,7 +197,13 @@ window.loadUserProfile = async function() {
       window.USER_PROFILE = null;
       return null;
     }
-    window.USER_PROFILE = JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (parsed && ('password' in parsed || 'passwordHash' in parsed)) {
+      delete parsed.password;
+      delete parsed.passwordHash;
+      localStorage.setItem('resumeci_profile', JSON.stringify(parsed));
+    }
+    window.USER_PROFILE = parsed;
     setTimeout(() => {
       if (typeof window.syncUserProfileFromRemote === 'function') {
         window.syncUserProfileFromRemote();
@@ -168,7 +226,6 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
       lastName: lastName,
       selectedClass: selectedClass,
       whatsapp: whatsapp,
-      password: password,
       isPremium: isPaid,
       premiumPlan: tierKey || 'free',
       premiumExpiresAt: isPaid ? Date.now() + (30 * 24 * 60 * 60 * 1000) : 0,
@@ -200,26 +257,26 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
 };
 
 window.loginUserProfile = async function(firstName, lastName, whatsapp, password) {
+  // Authentification uniquement côté serveur : aucun mot de passe n'est stocké ni comparé dans le navigateur
   try {
-    const raw = localStorage.getItem('resumeci_profile');
-    if (raw) {
-      const p = JSON.parse(raw);
-      // Vérification stricte : WhatsApp doit correspondre ET mot de passe correct
-      if (p.whatsapp === whatsapp && p.password === password) {
-        window.USER_PROFILE = p;
-        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-        return { success: true, profile: p };
-      }
-      // WhatsApp correspond mais mot de passe incorrect
-      if (p.whatsapp === whatsapp && p.password !== password) {
-        return { error: "Mot de passe incorrect." };
-      }
+    const cleanWa = String(whatsapp || '').replace(/\D/g, '').slice(-10);
+    const res = await fetch(`${window.getPaymentApiBase()}/api/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ whatsapp: cleanWa, password: password })
+    });
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data || !data.success || !data.profile) {
+      return { error: (data && data.error) || "Identifiants invalides." };
     }
-    // Aucun profil trouvé — ne PAS créer de profil premium gratuit
-    return { error: "Aucun compte trouvé sur cet appareil. Inscris-toi d'abord." };
+    const { password: _pw, passwordHash: _ph, ...profile } = data.profile;
+    window.USER_PROFILE = profile;
+    localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+    if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+    return { success: true, profile: profile };
   } catch(e) {
-    return { error: "Identifiants invalides." };
+    return { error: "Impossible de joindre le serveur de connexion. Réessaie dans quelques secondes." };
   }
 };
 
@@ -347,88 +404,17 @@ async function loadData() {
   checkForUpdates();
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get('payment');
-  const storedPendingRef = sessionStorage.getItem('last_payment_reference');
-  const storedPendingTier = sessionStorage.getItem('last_payment_tier') || 'pro';
+  const storedPendingRef = window.getPendingPaymentRef();
+  const storedPendingTier = localStorage.getItem('last_payment_tier') || sessionStorage.getItem('last_payment_tier') || 'starter';
 
   if (paymentStatus === 'success' || urlParams.get('payment_success') || storedPendingRef) {
     const tier = urlParams.get('tier') || storedPendingTier || 'starter';
-    const targetUid = urlParams.get('uid') || window.USER_PROFILE?.uid;
     const reference = urlParams.get('reference') || urlParams.get('payment_reference') || urlParams.get('ref') || storedPendingRef || '';
     if (paymentStatus === 'success') {
       window.history.replaceState({}, '', window.location.pathname);
     }
-    if (targetUid || reference) {
-      setTimeout(async () => {
-        try {
-          const apiBase = window.getPaymentApiBase();
-          // 1. Si référence présente, interroger directement check-payment
-          let confirmData = null;
-          if (reference) {
-            try {
-              const chkRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(reference)}`);
-              confirmData = await chkRes.json();
-            } catch(e) {}
-          }
-
-          // 2. Si pas encore validé, tenter confirm-payment
-          if (!confirmData || !confirmData.success || confirmData.status !== 'completed') {
-            const confirmRes = await fetch(`${apiBase}/api/confirm-payment`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ uid: targetUid || window.USER_PROFILE?.uid, tierKey: tier, reference: reference })
-            });
-            confirmData = await confirmRes.json();
-          }
-
-          if (confirmData && confirmData.success && (confirmData.isPremium || confirmData.status === 'completed')) {
-            sessionStorage.removeItem('last_payment_reference');
-            sessionStorage.removeItem('last_payment_tier');
-            const unlockedTier = confirmData.tierKey || tier;
-            if (window.USER_PROFILE) {
-              window.USER_PROFILE.premiumPlan = unlockedTier;
-              window.USER_PROFILE.isPremium = true;
-              window.USER_PROFILE.premiumExpiresAt = confirmData.premiumExpiresAt;
-              localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-            }
-            updateAudioFabVisual();
-            updateSidebarPassBtn();
-            showSubscriptionSuccessModal(unlockedTier, confirmData.premiumExpiresAt);
-          } else if (storedPendingRef) {
-            // L'élève revient de Wave : lancer une vérification discrète toutes les 4s pendant 40s
-            let pollAttempts = 0;
-            const pollInterval = setInterval(async () => {
-              pollAttempts++;
-              const curRef = sessionStorage.getItem('last_payment_reference');
-              if (!curRef || pollAttempts > 10) {
-                clearInterval(pollInterval);
-                return;
-              }
-              try {
-                const pRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(curRef)}`);
-                const pData = await pRes.json();
-                if (pData.success && pData.status === 'completed') {
-                  clearInterval(pollInterval);
-                  sessionStorage.removeItem('last_payment_reference');
-                  sessionStorage.removeItem('last_payment_tier');
-                  const pTier = pData.tierKey || tier;
-                  if (window.USER_PROFILE) {
-                    window.USER_PROFILE.premiumPlan = pTier;
-                    window.USER_PROFILE.isPremium = true;
-                    window.USER_PROFILE.premiumExpiresAt = pData.premiumExpiresAt;
-                    localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-                  }
-                  updateAudioFabVisual();
-                  updateSidebarPassBtn();
-                  showSubscriptionSuccessModal(pTier, pData.premiumExpiresAt);
-                }
-              } catch(e) {}
-            }, 4000);
-          }
-        } catch(e) {
-          console.error("Erreur confirmation paiement:", e);
-        }
-      }, 500);
-    }
+    if (reference && reference !== storedPendingRef) window.setPendingPaymentRef(reference, tier);
+    if (window.USER_PROFILE) setTimeout(() => window.watchPendingPayment(reference, tier), 300);
   }
   updateAudioFabVisual();
   updateSidebarPassBtn();
@@ -725,13 +711,13 @@ window.submitProfile = async function () {
   }
 
   // Mode Inscription initiale
-  if (!pwd || pwd.length < 6) {
+  if (!pwd || pwd.length < 8) {
     window.showActionNotice({
       type: 'warning',
       icon: '🔒',
       title: 'Mot de passe trop court',
       subtitle: 'Sécurité de ton compte',
-      message: 'Le mot de passe doit comporter au moins 6 caractères pour sécuriser tes fiches et tes statistiques.',
+      message: 'Le mot de passe doit comporter au moins 8 caractères pour sécuriser tes fiches et tes statistiques.',
       primaryBtnText: 'Modifier le mot de passe'
     });
     if (btn) {
@@ -1241,6 +1227,8 @@ let currentCheckoutTier = 'starter';
 let currentCheckoutMethod = 'wave';
 
 window.openPaymentCheckoutModal = function(tierKey = 'pro') {
+  // Réveille l'API Render (plan gratuit en veille) pendant que l'élève choisit sa formule
+  try { fetch(`${window.getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch (e) {}
   if (!window.USER_PROFILE) {
     if (window.toast) toast("Connecte-toi ou crée ton compte en 30 secondes pour activer ton Pass.", 'info');
     window.location.href = '/connexion.html';
@@ -1452,7 +1440,7 @@ window.submitCheckoutPayment = async function() {
 
     if (data.success && checkoutUrl) {
       if (data.reference || data.payment_reference) {
-        sessionStorage.setItem('last_payment_reference', data.reference || data.payment_reference);
+        window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier);
       }
       window.location.href = checkoutUrl;
       return;

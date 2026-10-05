@@ -417,44 +417,7 @@
       try {
         let profile = null;
 
-        // 1. Tenter d'abord la récupération ultra-rapide directe via Firestore (< 100ms)
-        if (typeof window.fetchUserProfileFromFirestore === 'function') {
-          try {
-            const fbUser = await window.fetchUserProfileFromFirestore(cleanWa);
-            if (fbUser) {
-              if (fbUser.password && String(fbUser.password).trim() !== cleanPwd) {
-                showError("❌ Mot de passe incorrect. Vérifie ta saisie ou contacte l'assistance.");
-                resetBtn();
-                return;
-              }
-              const now = Date.now();
-              const expiresAt = Number(fbUser.premiumExpiresAt) || 0;
-              const isPremium = Boolean(fbUser.isPremium && (expiresAt === 0 || expiresAt > now));
-              const premiumPlan = isPremium ? (fbUser.premiumPlan || fbUser.plan || 'pro') : 'free';
-              const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + 30 * 24 * 60 * 60 * 1000)) : 0;
-
-              profile = {
-                uid: fbUser.uid || fbUser.id || `user_${cleanWa}`,
-                firstName: fbUser.firstName || (fbUser.fullName ? fbUser.fullName.split(' ')[0] : 'Élève'),
-                lastName: fbUser.lastName || (fbUser.fullName ? fbUser.fullName.split(' ').slice(1).join(' ') : ''),
-                fullName: fbUser.fullName || `${fbUser.firstName || ''} ${fbUser.lastName || ''}`.trim() || 'Élève',
-                selectedClass: fbUser.selectedClass || fbUser.classe || '3eme',
-                whatsapp: cleanWa,
-                phone: cleanWa,
-                password: fbUser.password || pwd,
-                isPremium: isPremium,
-                premiumPlan: premiumPlan,
-                premiumExpiresAt: effectiveExpiresAt,
-                subscriptionType: fbUser.subscriptionType || 'monthly',
-                createdAt: fbUser.createdAt || new Date().toISOString()
-              };
-            }
-          } catch (fbErr) {
-            console.warn("Direct Firestore login check warning:", fbErr);
-          }
-        }
-
-        // 2. Si pas trouvé via Firestore direct, appeler l'API Backend (/api/login)
+        // Authentification uniquement via l'API Backend (/api/login)
         // (2 tentatives : l'hébergement gratuit peut mettre ~30s à sortir de veille)
         let apiUnreachable = false;
         if (!profile) {
@@ -497,19 +460,13 @@
           }
         }
 
-        // 3. Si le compte a été identifié (Firestore ou API Backend)
         if (profile) {
+          delete profile.password;
+          delete profile.passwordHash;
           localStorage.setItem('resumeci_profile', JSON.stringify(profile));
           localStorage.setItem('user_profile', JSON.stringify(profile));
           localStorage.setItem('resumeci_user', JSON.stringify(profile));
           localStorage.setItem('resumeci_student_user', JSON.stringify(profile));
-
-          // Auto-guérison si le mot de passe était manquant dans la base
-          if (typeof window.syncUserProfileToFirestore === 'function') {
-            try {
-              window.syncUserProfileToFirestore(profile);
-            } catch(e) {}
-          }
 
           if (!localStorage.getItem('resumeci_streak')) {
             const d = new Date();
@@ -528,24 +485,10 @@
         }
 
 
-        // 4. Secours local si hors-ligne
-        const raw = localStorage.getItem('resumeci_profile');
-        if (raw) {
-          const localProf = JSON.parse(raw);
-          if (localProf.whatsapp === cleanWa && (localProf.password === pwd || !localProf.password)) {
-            window.location.href = '/?welcome=1';
-            return;
-          } else if (localProf.whatsapp === cleanWa && localProf.password !== pwd) {
-            showError("❌ Mot de passe incorrect. Réessaie ou contacte l'assistance.");
-            resetBtn();
-            return;
-          }
-        }
-
         if (apiUnreachable) {
           showError("❌ Impossible de joindre le serveur de connexion. Vérifie ta connexion internet et réessaie dans quelques secondes.");
         } else {
-          showError("❌ Aucun compte trouvé avec ce numéro WhatsApp (+225 " + cleanWa + "). <br><a href='/inscription.html' style='color:#60a5fa;font-weight:700'>Clique ici pour créer ton compte en 30 secondes</a>.");
+          showError("❌ Identifiants invalides. <br><a href='/inscription.html' style='color:#60a5fa;font-weight:700'>Pas encore de compte ? Inscris-toi en 30 secondes</a>.");
         }
         resetBtn();
 

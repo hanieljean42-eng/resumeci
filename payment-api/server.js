@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
@@ -12,6 +14,21 @@ const admin = adminModule.default || adminModule;
 function resolveLocal(...candidates) {
   return candidates.map(p => path.resolve(__dirname, p)).find(p => fs.existsSync(p)) || null;
 }
+
+// Charger .env si existant
+try {
+  const envPath = resolveLocal('.env', 'payment-api/.env', '../.env');
+  if (envPath) {
+    fs.readFileSync(envPath, 'utf8').split('\n').forEach(l => {
+      const p = l.trim().split('=');
+      if (p.length >= 2 && !p[0].startsWith('#') && !process.env[p[0].trim()]) {
+        process.env[p[0].trim()] = p.slice(1).join('=').trim();
+      }
+    });
+  }
+} catch (e) {}
+
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 let db = null;
 try {
@@ -37,23 +54,50 @@ try {
 }
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+// Render place l'API derrière un proxy : nécessaire pour que le rate limiting utilise la vraie IP client
+app.set('trust proxy', 1);
+app.disable('x-powered-by');
+// CSP gérée par Firebase Hosting pour le frontend ; l'API ne renvoie que du JSON
+app.use(helmet({ contentSecurityPolicy: false }));
+
+const ALLOWED_ORIGINS = [
+  'https://resumeci.me',
+  'https://www.resumeci.me',
+  'https://resumeci-d5c9a.web.app',
+  'https://resumeci-d5c9a.firebaseapp.com'
+];
+const LOCALHOST_ORIGIN = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
+app.use(cors({
+  origin(origin, callback) {
+    // Requêtes serveur à serveur (webhook GeniusPay, health checks) : pas d'en-tête Origin
+    if (!origin) return callback(null, true);
+    if (ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
+    if (!IS_PRODUCTION && LOCALHOST_ORIGIN.test(origin)) return callback(null, true);
+    return callback(null, false);
+  }
+}));
+app.use(express.json({ limit: '100kb' }));
+
+function limiter(windowMs, max) {
+  return rateLimit({
+    windowMs,
+    limit: max,
+    standardHeaders: 'draft-7',
+    legacyHeaders: false,
+    message: { success: false, error: "Trop de tentatives. Réessaie plus tard." }
+  });
+}
+const loginLimiter = limiter(15 * 60 * 1000, 10);
+const registerLimiter = limiter(60 * 60 * 1000, 5);
+const paymentLimiter = limiter(15 * 60 * 1000, 30);
+// Vérification de statut : appelée en boucle après Wave, souvent derrière un même NAT opérateur.
+const checkPaymentLimiter = limiter(15 * 60 * 1000, 300);
+app.use('/api/login', loginLimiter);
+app.use('/api/register', registerLimiter);
+app.use('/api/pay', paymentLimiter);
+app.use('/api/check-payment', checkPaymentLimiter);
 const publicDir = resolveLocal('public', '../public');
 if (publicDir) app.use(express.static(publicDir));
-
-// Charger .env si existant
-try {
-  const envPath = resolveLocal('.env', 'payment-api/.env', '../.env');
-  if (envPath) {
-    fs.readFileSync(envPath, 'utf8').split('\n').forEach(l => {
-      const p = l.trim().split('=');
-      if (p.length >= 2 && !p[0].startsWith('#') && !process.env[p[0].trim()]) {
-        process.env[p[0].trim()] = p.slice(1).join('=').trim();
-      }
-    });
-  }
-} catch (e) {}
 
 // Clés d'API GeniusPay
 const GENIUSPAY_PUBLIC_KEY = process.env.GENIUSPAY_PUBLIC_KEY || '';
@@ -64,7 +108,16 @@ const GENIUSPAY_API_URL = process.env.GENIUSPAY_API_URL || 'https://geniuspay.ci
 const WEBHOOK_SECRET = String(process.env.WEBHOOK_SECRET || '').trim();
 const PUBLIC_API_URL = (process.env.PUBLIC_API_URL || 'https://resumeci-payment-api.onrender.com').replace(/\/$/, '');
 const WEBHOOK_URL = `${PUBLIC_API_URL}/api/webhook${WEBHOOK_SECRET ? `?token=${encodeURIComponent(WEBHOOK_SECRET)}` : ''}`;
-if (!WEBHOOK_SECRET) console.warn('⚠️ WEBHOOK_SECRET non défini : le webhook GeniusPay accepte toute requête (le statut est tout de même re-vérifié auprès de GeniusPay).');
+if (!WEBHOOK_SECRET) {
+  if (IS_PRODUCTION) {
+    console.error('❌ WEBHOOK_SECRET doit être défini en production. Arrêt du serveur.');
+    process.exit(1);
+  }
+  console.warn('⚠️ WEBHOOK_SECRET non défini : le webhook GeniusPay accepte toute requête (le statut est tout de même re-vérifié auprès de GeniusPay).');
+}
+
+const MIN_PASSWORD_LENGTH = 8;
+const INVALID_CREDENTIALS = "Identifiants invalides. Vérifie ton numéro WhatsApp et ton mot de passe.";
 
 // Forfaits
 const PLANS = {
@@ -123,6 +176,11 @@ async function findUserByPhone(cleanPhone) {
 const BCRYPT_ROUNDS = 10;
 function hashPassword(pwd) {
   return bcrypt.hash(String(pwd), BCRYPT_ROUNDS);
+}
+// Hash factice : compte inexistant => même coût bcrypt qu'un mauvais mot de passe (pas d'énumération par le temps de réponse)
+const DUMMY_PASSWORD_HASH = bcrypt.hashSync(crypto.randomBytes(16).toString('hex'), BCRYPT_ROUNDS);
+async function burnPasswordCheck(pwd) {
+  await bcrypt.compare(String(pwd || ''), DUMMY_PASSWORD_HASH);
 }
 async function verifyPassword(pwd, user) {
   const candidate = String(pwd || '').trim();
@@ -188,6 +246,7 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
     subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
     lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    pendingPayment: admin.firestore.FieldValue.delete(),
     ...extra
   };
 
@@ -230,6 +289,48 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
   return { expiresAt, tierKey };
 }
 
+// Helper : traitement idempotent d'un paiement GeniusPay déjà vérifié "completed".
+// Chaque référence est enregistrée dans `payments/{reference}` : une référence déjà traitée
+// ne débloque plus rien (pas de réinitialisation de premiumExpiresAt par rejeu).
+const ALREADY_EXISTS = 6;
+async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, paymentMethod, source }) {
+  if (!db) throw new Error('Firestore non initialisé');
+  const ref = db.collection('payments').doc(String(reference));
+  try {
+    await ref.create({
+      reference: String(reference),
+      uid: uid || null,
+      phone: phone || null,
+      tierKey,
+      amount,
+      paymentMethod: paymentMethod || null,
+      source,
+      status: 'processing',
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+  } catch (e) {
+    if (e.code === ALREADY_EXISTS) {
+      const existing = (await ref.get()).data() || {};
+      return { alreadyProcessed: true, tierKey: existing.tierKey || tierKey, expiresAt: existing.expiresAt || null };
+    }
+    throw e;
+  }
+  try {
+    const result = await unlockUserInFirestore(uid, phone, tierKey, PLANS[tierKey]?.days || 30, {
+      lastPaymentRef: String(reference),
+      paymentAmount: amount,
+      paymentMethod: paymentMethod || 'wave'
+    });
+    const expiresAt = result ? result.expiresAt : null;
+    await ref.set({ status: 'processed', expiresAt, processedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
+    return { alreadyProcessed: false, tierKey, expiresAt };
+  } catch (e) {
+    // Échec du déblocage : libérer la référence pour permettre un nouvel essai
+    await ref.delete().catch(() => {});
+    throw e;
+  }
+}
+
 // Helper: Requête de consultation d'une transaction GeniusPay
 function queryGeniusPayPayment(reference) {
   return new Promise((resolve, reject) => {
@@ -254,6 +355,38 @@ function queryGeniusPayPayment(reference) {
     req.on('error', reject);
     req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
   });
+}
+
+const PENDING_STATUSES = new Set(['pending', 'initiated', 'created', 'processing']);
+const FAILED_STATUSES = new Set(['failed', 'cancelled', 'canceled', 'expired', 'refunded', 'rejected']);
+const PENDING_REUSE_MS = 10 * 60 * 1000;
+const PENDING_MAX_AGE_MS = 48 * 60 * 60 * 1000;
+
+// Paiement en attente mémorisé sur le profil : permet le déblocage même si l'élève revient
+// de Wave dans un autre onglet (référence perdue côté navigateur) ou si le webhook n'arrive pas.
+async function resolvePendingPayment(userRef, userData) {
+  const pending = userData && userData.pendingPayment;
+  if (!db || !pending || !pending.reference) return null;
+  if (!/^[A-Za-z0-9_-]{1,100}$/.test(String(pending.reference))) return null;
+  const clear = () => userRef.update({ pendingPayment: admin.firestore.FieldValue.delete() }).catch(() => {});
+  if (Date.now() - (Number(pending.createdAt) || 0) > PENDING_MAX_AGE_MS) { await clear(); return null; }
+
+  const gpRes = await queryGeniusPayPayment(pending.reference).catch(() => null);
+  const pay = gpRes && gpRes.success ? gpRes.data : null;
+  if (!pay) return null;
+  if (FAILED_STATUSES.has(pay.status)) { await clear(); return null; }
+  if (pay.status !== 'completed' && pay.status !== 'success') return null;
+
+  const meta = pay.metadata || {};
+  const amount = Number(pay.amount) || 0;
+  const tierKey = meta.tierKey || pending.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+  const result = await processVerifiedPayment(pending.reference, {
+    uid: meta.uid || userData.uid || userRef.id,
+    phone: pay.customer?.phone || meta.phone || null,
+    tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'user-status'
+  });
+  if (result.alreadyProcessed) await clear();
+  return result;
 }
 
 // Helper: Lister les paiements récents GeniusPay
@@ -315,6 +448,29 @@ app.post('/api/pay', async (req, res) => {
     }
 
     const chosenMethod = (paymentMethod || 'wave').toLowerCase();
+
+    // Réutilise la transaction encore en attente (double clic, retour arrière, serveur lent)
+    // au lieu d'en créer une nouvelle chez GeniusPay à chaque tentative.
+    const userRef = db ? db.collection('users').doc(String(uid)) : null;
+    if (userRef) {
+      const userSnap = await userRef.get().catch(() => null);
+      const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
+      if (pending && pending.tierKey === tierKey && pending.checkoutUrl &&
+          Date.now() - (Number(pending.createdAt) || 0) < PENDING_REUSE_MS) {
+        const gp = await queryGeniusPayPayment(pending.reference).catch(() => null);
+        const st = gp && gp.success && gp.data ? gp.data.status : null;
+        if (PENDING_STATUSES.has(st)) {
+          return res.json({
+            success: true,
+            reused: true,
+            checkout_url: pending.checkoutUrl,
+            payment_url: pending.checkoutUrl,
+            payment_reference: pending.reference,
+            payment_method: chosenMethod
+          });
+        }
+      }
+    }
 
     // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
     const payload = {
@@ -388,6 +544,11 @@ app.post('/api/pay', async (req, res) => {
 
     const targetUrl = result.data?.payment_url || result.data?.checkout_url;
     if (result.success && result.data && targetUrl) {
+      if (userRef && result.data.reference) {
+        userRef.update({
+          pendingPayment: { reference: String(result.data.reference), tierKey, checkoutUrl: targetUrl, createdAt: Date.now() }
+        }).catch(() => {});
+      }
       res.json({
         success: true,
         checkout_url: targetUrl,
@@ -396,8 +557,8 @@ app.post('/api/pay', async (req, res) => {
         payment_method: result.data.payment_method || chosenMethod
       });
     } else {
-      console.error("[Paiement] Erreur GeniusPay:", result);
-      res.status(500).json({ error: "Impossible d'initier le paiement chez GeniusPay", details: result });
+      console.error("[Paiement] Erreur GeniusPay:", result && (result.message || result.error || 'réponse inattendue'));
+      res.status(500).json({ error: "Impossible d'initier le paiement chez GeniusPay" });
     }
 
   } catch (error) {
@@ -411,8 +572,9 @@ app.post('/api/pay', async (req, res) => {
 // --------------------------------------------------------------------------
 app.get('/api/check-payment/:ref', async (req, res) => {
   try {
-    const ref = req.params.ref;
-    if (!ref) return res.status(400).json({ error: "Référence de transaction requise." });
+    const ref = String(req.params.ref || '').trim();
+    if (!ref || !/^[A-Za-z0-9_-]{1,100}$/.test(ref)) return res.status(400).json({ error: "Référence de transaction invalide." });
+    if (!db) return res.status(503).json({ error: "Service temporairement indisponible." });
 
     const gpRes = await queryGeniusPayPayment(ref);
     if (!gpRes.success || !gpRes.data) {
@@ -428,18 +590,17 @@ app.get('/api/check-payment/:ref', async (req, res) => {
     const phone = pay.customer?.phone || meta.phone || null;
 
     if (isCompleted) {
-      const result = await unlockUserInFirestore(uid, phone, tierKey, PLANS[tierKey]?.days || 30, {
-        lastPaymentRef: ref,
-        paymentAmount: amount,
-        paymentMethod: pay.payment_method || 'wave'
+      const result = await processVerifiedPayment(ref, {
+        uid, phone, tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'check-payment'
       });
 
       return res.json({
         success: true,
         status: 'completed',
-        tierKey: tierKey,
+        alreadyProcessed: result.alreadyProcessed,
+        tierKey: result.tierKey,
         isPremium: true,
-        premiumExpiresAt: result ? result.expiresAt : (Date.now() + THIRTY_DAYS_MS),
+        premiumExpiresAt: result.expiresAt || (Date.now() + THIRTY_DAYS_MS),
         customerName: pay.customer?.name || 'Élève',
         amount: amount
       });
@@ -452,7 +613,7 @@ app.get('/api/check-payment/:ref', async (req, res) => {
     });
   } catch (err) {
     console.error('[CheckPayment] Erreur:', err.message);
-    res.status(500).json({ error: "Erreur vérification paiement", details: err.message });
+    res.status(500).json({ error: "Erreur vérification paiement" });
   }
 });
 
@@ -473,6 +634,10 @@ app.post('/api/confirm-payment', async (req, res) => {
         error: "Référence de paiement requise. Si tu as déjà payé, ton Pass sera activé automatiquement dès confirmation par l'opérateur."
       });
     }
+    if (!/^[A-Za-z0-9_-]{1,100}$/.test(String(reference))) {
+      return res.status(400).json({ success: false, error: "Référence de paiement invalide." });
+    }
+    if (!db) return res.status(503).json({ success: false, error: "Service temporairement indisponible." });
 
     const gpRes = await queryGeniusPayPayment(reference);
     const pay = gpRes && gpRes.success ? gpRes.data : null;
@@ -489,17 +654,21 @@ app.post('/api/confirm-payment', async (req, res) => {
 
     const amt = Number(pay.amount) || 0;
     const actualTier = pay.metadata?.tierKey || tierKey || (amt >= 1000 ? 'pro' : 'starter');
-    const unl = await unlockUserInFirestore(uid, pay.customer?.phone || pay.metadata?.phone, actualTier, PLANS[actualTier]?.days || 30, {
-      lastPaymentRef: reference,
-      paymentAmount: amt,
-      paymentMethod: pay.payment_method || 'wave'
+    const unl = await processVerifiedPayment(reference, {
+      uid,
+      phone: pay.customer?.phone || pay.metadata?.phone,
+      tierKey: actualTier,
+      amount: amt,
+      paymentMethod: pay.payment_method || 'wave',
+      source: 'confirm-payment'
     });
     res.json({
       success: true,
       isPremium: true,
-      tierKey: actualTier,
-      premiumExpiresAt: unl ? unl.expiresAt : (Date.now() + THIRTY_DAYS_MS),
-      message: `Pass ${actualTier} activé avec succès.`
+      alreadyProcessed: unl.alreadyProcessed,
+      tierKey: unl.tierKey,
+      premiumExpiresAt: unl.expiresAt || (Date.now() + THIRTY_DAYS_MS),
+      message: `Pass ${unl.tierKey} activé avec succès.`
     });
 
   } catch (error) {
@@ -513,9 +682,9 @@ app.post('/api/confirm-payment', async (req, res) => {
 // --------------------------------------------------------------------------
 app.post('/api/webhook', async (req, res) => {
   try {
-    // 1. Jeton secret : l'URL de webhook transmise à GeniusPay contient ?token=WEBHOOK_SECRET
+    // 1. Jeton secret : ?token=WEBHOOK_SECRET (URL transmise à GeniusPay) ou en-tête x-webhook-token
     if (WEBHOOK_SECRET) {
-      const provided = String(req.query.token || req.headers['x-webhook-token'] || '');
+      const provided = String(req.headers['x-webhook-token'] || req.query.token || '');
       const a = Buffer.from(provided), b = Buffer.from(WEBHOOK_SECRET);
       if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) {
         console.warn('[Webhook] Jeton invalide, requête ignorée.');
@@ -526,10 +695,10 @@ app.post('/api/webhook', async (req, res) => {
     const event = req.body || {};
     const pay = event.data || event;
     const ref = pay.reference || null;
-    console.log('[Webhook] Événement reçu de GeniusPay:', JSON.stringify(event));
+    console.log(`[Webhook] Événement reçu (référence: ${ref || 'aucune'}, type: ${event.event || event.type || 'inconnu'})`);
 
-    if (!ref) {
-      return res.status(200).send('Webhook ignoré (aucune référence)');
+    if (!ref || !/^[A-Za-z0-9_-]{1,100}$/.test(String(ref))) {
+      return res.status(200).send('Webhook ignoré (référence absente ou invalide)');
     }
 
     // 2. Ne jamais faire confiance au contenu du webhook : re-vérification du statut auprès de l'API GeniusPay
@@ -546,13 +715,15 @@ app.post('/api/webhook', async (req, res) => {
     const uid = metadata.uid || null;
     const phone = verified.customer?.phone || metadata.phone || null;
 
-    console.log(`[Webhook] Déblocage automatique de ${uid || phone} pour le forfait ${tierKey}`);
-    await unlockUserInFirestore(uid, phone, tierKey, PLANS[tierKey]?.days || 30, {
-      lastPaymentRef: ref,
-      paymentAmount: amount,
-      paymentMethod: verified.payment_method || 'wave'
+    if (!db) return res.status(503).send('Service indisponible');
+    const result = await processVerifiedPayment(ref, {
+      uid, phone, tierKey, amount, paymentMethod: verified.payment_method || 'wave', source: 'webhook'
     });
-    console.log("[Webhook] Profil Firestore mis à jour avec succès !");
+    if (result.alreadyProcessed) {
+      console.log(`[Webhook] Paiement ${ref} déjà traité, ignoré.`);
+      return res.status(200).send('Webhook déjà traité');
+    }
+    console.log(`[Webhook] Paiement ${ref} traité (forfait ${tierKey}).`);
 
     res.status(200).send('Webhook traité avec succès');
   } catch (error) {
@@ -572,8 +743,8 @@ app.post('/api/register', async (req, res) => {
     if (cleanWa.length !== 10) {
       return res.status(400).json({ error: "Numéro WhatsApp à 10 chiffres obligatoire." });
     }
-    if (cleanPwd.length < 6) {
-      return res.status(400).json({ error: "Le mot de passe doit comporter au moins 6 caractères." });
+    if (cleanPwd.length < MIN_PASSWORD_LENGTH) {
+      return res.status(400).json({ error: `Le mot de passe doit comporter au moins ${MIN_PASSWORD_LENGTH} caractères.` });
     }
     if (!db) {
       return res.status(503).json({ error: "Service d'inscription temporairement indisponible. Réessaie dans quelques instants." });
@@ -587,10 +758,7 @@ app.post('/api/register', async (req, res) => {
         console.log(`[Register] Compte déjà existant pour ${cleanWa}, reconnexion.`);
         return res.json({ success: true, existing: true, user: buildProfile(existing, cleanWa) });
       }
-      return res.status(409).json({
-        error: "Un compte existe déjà avec ce numéro WhatsApp. Connecte-toi avec ton mot de passe ou contacte l'assistance si tu l'as oublié.",
-        code: 'ACCOUNT_EXISTS'
-      });
+      return res.status(401).json({ success: false, error: INVALID_CREDENTIALS });
     }
 
     const userDoc = {
@@ -636,6 +804,7 @@ app.get('/api/user-status', async (req, res) => {
     }
 
     let foundUser = null;
+    let foundRef = null;
 
     if (db) {
       // 1. Recherche par numéro à 10 chiffres (doc ID)
@@ -643,7 +812,7 @@ app.get('/api/user-status', async (req, res) => {
         try {
           const docSnap = await db.collection('users').doc(cleanPhone).get();
           if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
           }
         } catch (e) {}
       }
@@ -653,7 +822,7 @@ app.get('/api/user-status', async (req, res) => {
         try {
           const docSnap = await db.collection('users').doc(rawUid).get();
           if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
           }
         } catch (e) {}
       }
@@ -664,7 +833,7 @@ app.get('/api/user-status', async (req, res) => {
           const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
           if (!qSnap.empty) {
             const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
           }
         } catch (e) {}
       }
@@ -675,7 +844,7 @@ app.get('/api/user-status', async (req, res) => {
           const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
           if (!qSnap.empty) {
             const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
           }
         } catch (e) {}
       }
@@ -683,6 +852,18 @@ app.get('/api/user-status', async (req, res) => {
 
     if (!foundUser) {
       return res.status(404).json({ success: false, error: "Utilisateur non trouvé" });
+    }
+
+    if (foundRef && foundUser.pendingPayment) {
+      try {
+        const resolved = await resolvePendingPayment(foundRef, foundUser);
+        if (resolved) {
+          const fresh = await foundRef.get();
+          if (fresh.exists) foundUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id };
+        }
+      } catch (e) {
+        console.warn('[User Status] Vérification paiement en attente impossible:', e.message);
+      }
     }
 
     const now = Date.now();
@@ -734,25 +915,21 @@ app.post('/api/login', async (req, res) => {
 
     const foundUser = await findUserByPhone(cleanPhone);
 
+    // Même réponse (code + message) pour compte inexistant et mauvais mot de passe
     if (!foundUser) {
-      return res.status(404).json({
-        success: false,
-        error: "Aucun compte trouvé avec ce numéro WhatsApp (+225 " + cleanPhone + "). Vérifie le numéro ou inscris-toi."
-      });
+      await burnPasswordCheck(password);
+      return res.status(401).json({ success: false, error: INVALID_CREDENTIALS });
     }
 
     // Vérification du mot de passe (hash bcrypt, ou ancien mot de passe en clair migré à la volée)
     if (!(await verifyPassword(password, foundUser))) {
-      return res.status(401).json({
-        success: false,
-        error: "Mot de passe incorrect. Vérifie ta saisie ou contacte l'assistance."
-      });
+      return res.status(401).json({ success: false, error: INVALID_CREDENTIALS });
     }
     await migrateLegacyPassword(foundUser, password);
 
     const profile = buildProfile(foundUser, cleanPhone);
 
-    console.log(`[Login] ✅ Connexion réussie pour ${profile.fullName} (${cleanPhone}) - Pass: ${profile.premiumPlan} (isPremium: ${profile.isPremium})`);
+    console.log(`[Login] ✅ Connexion réussie (uid: ${profile.uid}) - Pass: ${profile.premiumPlan}`);
 
     res.json({
       success: true,
@@ -831,7 +1008,11 @@ app.post('/api/admin/create-user', async (req, res) => {
     const fName = firstName || (fullName ? fullName.split(' ')[0] : 'Élève');
     const lName = lastName || (fullName ? fullName.split(' ').slice(1).join(' ') : '');
     const full = fullName || `${fName} ${lName}`.trim() || 'Élève';
-    const clearPassword = String(password || '').trim() || Math.random().toString(36).slice(-8);
+    const providedPassword = String(password || '').trim();
+    if (providedPassword && providedPassword.length < MIN_PASSWORD_LENGTH) {
+      return res.status(400).json({ error: `Le mot de passe doit comporter au moins ${MIN_PASSWORD_LENGTH} caractères.` });
+    }
+    const clearPassword = providedPassword || crypto.randomBytes(9).toString('base64url');
 
     // Un numéro = un seul document (doc ID = numéro). Si le compte existe, on le met à jour sans changer son mot de passe.
     const existing = await findUserByPhone(cleanPhone);
@@ -873,7 +1054,7 @@ app.post('/api/admin/create-user', async (req, res) => {
     });
   } catch (err) {
     console.error('[Admin CreateUser] Erreur:', err);
-    res.status(500).json({ error: "Erreur création compte", details: err.message });
+    res.status(500).json({ error: "Erreur création compte" });
   }
 });
 
@@ -948,7 +1129,7 @@ app.post('/api/admin/set-plan', async (req, res) => {
     });
   } catch (err) {
     console.error('[Admin SetPlan] Erreur:', err);
-    res.status(500).json({ error: "Erreur attribution abonnement", details: err.message });
+    res.status(500).json({ error: "Erreur attribution abonnement" });
   }
 });
 
@@ -963,11 +1144,56 @@ app.get('/api/admin/transactions', async (req, res) => {
     res.json(result);
   } catch (err) {
     console.error('[Admin Transactions] Erreur:', err.message);
-    res.status(500).json({ error: "Impossible de récupérer les transactions GeniusPay", details: err.message });
+    res.status(500).json({ error: "Impossible de récupérer les transactions GeniusPay" });
   }
 });
 
 // Santé du serveur
+// --------------------------------------------------------------------------
+// ROUTE 8 : CHATBOT IA VIA CODECRAFT API
+// --------------------------------------------------------------------------
+app.post('/api/ask-ai', limiter(15 * 60 * 1000, 30), async (req, res) => {
+  try {
+    const message = typeof req.body?.message === 'string' ? req.body.message.slice(0, 4000) : '';
+    if (!message) {
+      return res.status(400).json({ error: "Message requis" });
+    }
+
+    const CODECRAFT_API_KEY = process.env.CODECRAFT_API_KEY;
+    if (!CODECRAFT_API_KEY) {
+      console.error('[Ask AI] CODECRAFT_API_KEY non configurée.');
+      return res.status(503).json({ error: "Assistant IA non configuré sur ce serveur." });
+    }
+
+    const response = await fetch('https://codecraftapi.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${CODECRAFT_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "claude-3-haiku-20240307",
+        messages: [
+          { role: "system", content: "Tu es l'assistant virtuel officiel de ResumeCI..." },
+          { role: "user", content: message }
+        ],
+        temperature: 0.7,
+      })
+    });
+
+    const data = await response.json().catch(() => null);
+    if (!response.ok || !data?.choices?.[0]?.message) {
+      console.error("[CodeCraft API] Erreur HTTP", response.status);
+      return res.status(502).json({ error: "Erreur de communication avec l'IA CodeCraft" });
+    }
+
+    res.json({ success: true, reply: data.choices[0].message.content });
+  } catch (error) {
+    console.error("[Ask AI] Erreur interceptée:", error.message);
+    res.status(500).json({ error: "Erreur interne de l'assistant IA" });
+  }
+});
+
 app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
