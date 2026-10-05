@@ -26,5 +26,6 @@
 - `WEBHOOK_SECRET` obligatoire en production (le serveur refuse de démarrer sinon).
 - Ne jamais commiter `data/`, `data_*/`, `_extracts_*`, `.env`, `firebase-admin.json` (voir `.gitignore`, `SECURITY.md`).
 - Un numéro WhatsApp = un seul document `users/{numero}` (uid = numéro).
-- Aucun déblocage premium sans référence GeniusPay vérifiée côté serveur (`/api/confirm-payment`, `/api/webhook`).
+- Aucun déblocage premium sans référence GeniusPay vérifiée côté serveur (`/api/confirm-payment`, `/api/webhook`), `/api/check-payment`, et `/api/user-status` via `users/{uid}.pendingPayment` mémorisé par `/api/pay`).
+- Paiements : `/api/pay` réutilise la transaction GeniusPay encore en attente (même formule, < 10 min) ; le front surveille le paiement (`watchPendingPayment`) et re-rend la vue au déblocage.
 - Routes `/api/admin/*` : jeton Firebase ID (`Authorization: Bearer`) + email dans `ADMIN_EMAILS`.

@@ -957,7 +957,9 @@
 
           if (payData.success && checkoutUrl) {
             if (payData.reference || payData.payment_reference) {
-              sessionStorage.setItem('last_payment_reference', payData.reference || payData.payment_reference);
+              localStorage.setItem('last_payment_reference', payData.reference || payData.payment_reference);
+              localStorage.setItem('last_payment_tier', selectedTier);
+              localStorage.setItem('last_payment_at', String(Date.now()));
             }
             // Redirection directe vers l'interface de paiement GeniusPay (Wave, Orange, MTN, Moov)
             window.location.href = checkoutUrl;

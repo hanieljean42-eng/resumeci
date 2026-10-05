@@ -90,10 +90,12 @@ function limiter(windowMs, max) {
 const loginLimiter = limiter(15 * 60 * 1000, 10);
 const registerLimiter = limiter(60 * 60 * 1000, 5);
 const paymentLimiter = limiter(15 * 60 * 1000, 30);
+// Vérification de statut : appelée en boucle après Wave, souvent derrière un même NAT opérateur.
+const checkPaymentLimiter = limiter(15 * 60 * 1000, 300);
 app.use('/api/login', loginLimiter);
 app.use('/api/register', registerLimiter);
 app.use('/api/pay', paymentLimiter);
-app.use('/api/check-payment', paymentLimiter);
+app.use('/api/check-payment', checkPaymentLimiter);
 const publicDir = resolveLocal('public', '../public');
 if (publicDir) app.use(express.static(publicDir));
 
@@ -244,6 +246,7 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
     subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
     lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
     updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    pendingPayment: admin.firestore.FieldValue.delete(),
     ...extra
   };
 
@@ -354,6 +357,38 @@ function queryGeniusPayPayment(reference) {
   });
 }
 
+const PENDING_STATUSES = new Set(['pending', 'initiated', 'created', 'processing']);
+const FAILED_STATUSES = new Set(['failed', 'cancelled', 'canceled', 'expired', 'refunded', 'rejected']);
+const PENDING_REUSE_MS = 10 * 60 * 1000;
+const PENDING_MAX_AGE_MS = 48 * 60 * 60 * 1000;
+
+// Paiement en attente mémorisé sur le profil : permet le déblocage même si l'élève revient
+// de Wave dans un autre onglet (référence perdue côté navigateur) ou si le webhook n'arrive pas.
+async function resolvePendingPayment(userRef, userData) {
+  const pending = userData && userData.pendingPayment;
+  if (!db || !pending || !pending.reference) return null;
+  if (!/^[A-Za-z0-9_-]{1,100}$/.test(String(pending.reference))) return null;
+  const clear = () => userRef.update({ pendingPayment: admin.firestore.FieldValue.delete() }).catch(() => {});
+  if (Date.now() - (Number(pending.createdAt) || 0) > PENDING_MAX_AGE_MS) { await clear(); return null; }
+
+  const gpRes = await queryGeniusPayPayment(pending.reference).catch(() => null);
+  const pay = gpRes && gpRes.success ? gpRes.data : null;
+  if (!pay) return null;
+  if (FAILED_STATUSES.has(pay.status)) { await clear(); return null; }
+  if (pay.status !== 'completed' && pay.status !== 'success') return null;
+
+  const meta = pay.metadata || {};
+  const amount = Number(pay.amount) || 0;
+  const tierKey = meta.tierKey || pending.tierKey || (amount >= 1000 ? 'pro' : 'starter');
+  const result = await processVerifiedPayment(pending.reference, {
+    uid: meta.uid || userData.uid || userRef.id,
+    phone: pay.customer?.phone || meta.phone || null,
+    tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'user-status'
+  });
+  if (result.alreadyProcessed) await clear();
+  return result;
+}
+
 // Helper: Lister les paiements récents GeniusPay
 function fetchGeniusPayPayments(page = 1, perPage = 30) {
   return new Promise((resolve, reject) => {
@@ -413,6 +448,29 @@ app.post('/api/pay', async (req, res) => {
     }
 
     const chosenMethod = (paymentMethod || 'wave').toLowerCase();
+
+    // Réutilise la transaction encore en attente (double clic, retour arrière, serveur lent)
+    // au lieu d'en créer une nouvelle chez GeniusPay à chaque tentative.
+    const userRef = db ? db.collection('users').doc(String(uid)) : null;
+    if (userRef) {
+      const userSnap = await userRef.get().catch(() => null);
+      const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
+      if (pending && pending.tierKey === tierKey && pending.checkoutUrl &&
+          Date.now() - (Number(pending.createdAt) || 0) < PENDING_REUSE_MS) {
+        const gp = await queryGeniusPayPayment(pending.reference).catch(() => null);
+        const st = gp && gp.success && gp.data ? gp.data.status : null;
+        if (PENDING_STATUSES.has(st)) {
+          return res.json({
+            success: true,
+            reused: true,
+            checkout_url: pending.checkoutUrl,
+            payment_url: pending.checkoutUrl,
+            payment_reference: pending.reference,
+            payment_method: chosenMethod
+          });
+        }
+      }
+    }
 
     // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
     const payload = {
@@ -486,6 +544,11 @@ app.post('/api/pay', async (req, res) => {
 
     const targetUrl = result.data?.payment_url || result.data?.checkout_url;
     if (result.success && result.data && targetUrl) {
+      if (userRef && result.data.reference) {
+        userRef.update({
+          pendingPayment: { reference: String(result.data.reference), tierKey, checkoutUrl: targetUrl, createdAt: Date.now() }
+        }).catch(() => {});
+      }
       res.json({
         success: true,
         checkout_url: targetUrl,
@@ -741,6 +804,7 @@ app.get('/api/user-status', async (req, res) => {
     }
 
     let foundUser = null;
+    let foundRef = null;
 
     if (db) {
       // 1. Recherche par numéro à 10 chiffres (doc ID)
@@ -748,7 +812,7 @@ app.get('/api/user-status', async (req, res) => {
         try {
           const docSnap = await db.collection('users').doc(cleanPhone).get();
           if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
           }
         } catch (e) {}
       }
@@ -758,7 +822,7 @@ app.get('/api/user-status', async (req, res) => {
         try {
           const docSnap = await db.collection('users').doc(rawUid).get();
           if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id };
+            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
           }
         } catch (e) {}
       }
@@ -769,7 +833,7 @@ app.get('/api/user-status', async (req, res) => {
           const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
           if (!qSnap.empty) {
             const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
           }
         } catch (e) {}
       }
@@ -780,7 +844,7 @@ app.get('/api/user-status', async (req, res) => {
           const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
           if (!qSnap.empty) {
             const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id };
+            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
           }
         } catch (e) {}
       }
@@ -788,6 +852,18 @@ app.get('/api/user-status', async (req, res) => {
 
     if (!foundUser) {
       return res.status(404).json({ success: false, error: "Utilisateur non trouvé" });
+    }
+
+    if (foundRef && foundUser.pendingPayment) {
+      try {
+        const resolved = await resolvePendingPayment(foundRef, foundUser);
+        if (resolved) {
+          const fresh = await foundRef.get();
+          if (fresh.exists) foundUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id };
+        }
+      } catch (e) {
+        console.warn('[User Status] Vérification paiement en attente impossible:', e.message);
+      }
     }
 
     const now = Date.now();
