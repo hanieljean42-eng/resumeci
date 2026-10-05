@@ -3,19 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <script>
-    // Nouveau visiteur (aucun compte sur cet appareil) : page d'inscription immédiate,
-    // avant le chargement de l'application complète (~1 Mo).
-    (function () {
-      try {
-        var hasProfile = !!localStorage.getItem('resumeci_profile');
-        var q = window.location.search;
-        if (!hasProfile && q.indexOf('payment') === -1 && q.indexOf('force=1') === -1) {
-          window.location.replace('/inscription.html');
-        }
-      } catch (e) {}
-    })();
-  </script>
   <title>ResumeCI — Fiches de Résumé | Collège & Lycée CI</title>
   <meta name="description" content="ResumeCI : 714 fiches de résumé gratuites pour le Collège et Lycée en Côte d'Ivoire. 6ème, 5ème, 4ème, 3ème, Seconde, Première D, Terminale. Maths, Physique, Chimie, Français, SVT, Histoire-Géo. Révisions BAC, BEPC.">
   <meta name="keywords" content="fiches résumé Côte d'Ivoire, fiches de cours CI, révision BAC Côte d'Ivoire, BEPC, collège Abidjan, lycée, 6ème, 5ème, 4ème, 3ème, Seconde A, Seconde C, Première, Terminale A, Terminale C, Terminale D, maths, physique chimie, français, SVT, histoire géographie, révision, fiches gratuites, cours en ligne Côte d'Ivoire">
@@ -131,6 +118,7 @@
         </div>
         <div class="intro-actions">
           <button class="intro-continue" id="continueBtn"><i class="fas fa-arrow-right"></i> Continuer</button>
+          <a class="intro-note" href="/connexion.html" style="color:#2563eb;font-weight:700;text-decoration:none">J'ai déjà un compte · Me connecter</a>
           <span class="intro-note"><i class="fas fa-circle-info"></i> Les fiches restent séparées du nom du créateur.</span>
         </div>
       </div>
@@ -211,7 +199,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.3.8" defer></script>
+  <script src="/app.js?v=3.3.9" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}

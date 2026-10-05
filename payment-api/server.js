@@ -117,6 +117,29 @@ if (!WEBHOOK_SECRET) {
 }
 
 const MIN_PASSWORD_LENGTH = 8;
+
+// Jeton de session signé (HMAC) remis au login/inscription : protège les données personnelles de /api/user-status
+const SESSION_SECRET = String(process.env.SESSION_SECRET || WEBHOOK_SECRET || '').trim() || crypto.randomBytes(32).toString('hex');
+const SESSION_TTL_MS = 180 * 24 * 60 * 60 * 1000;
+function sessionSignature(payload) {
+  return crypto.createHmac('sha256', SESSION_SECRET).update(`session:${payload}`).digest('base64url');
+}
+function signSession(uid) {
+  const payload = `${String(uid)}.${Date.now() + SESSION_TTL_MS}`;
+  return `${Buffer.from(payload).toString('base64url')}.${sessionSignature(payload)}`;
+}
+function verifySession(token) {
+  const [encoded, sig] = String(token || '').split('.');
+  if (!encoded || !sig) return null;
+  const payload = Buffer.from(encoded, 'base64url').toString();
+  const a = Buffer.from(sig);
+  const b = Buffer.from(sessionSignature(payload));
+  if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) return null;
+  const i = payload.lastIndexOf('.');
+  const uid = payload.slice(0, i);
+  if (!uid || !(Number(payload.slice(i + 1)) > Date.now())) return null;
+  return uid;
+}
 const INVALID_CREDENTIALS = "Identifiants invalides. Vérifie ton numéro WhatsApp et ton mot de passe.";
 
 // Forfaits
@@ -226,7 +249,8 @@ function buildProfile(user, cleanPhone) {
     premiumPlan,
     premiumExpiresAt: isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0,
     subscriptionType: user.subscriptionType || 'monthly',
-    createdAt: user.createdAt || new Date().toISOString()
+    createdAt: user.createdAt || new Date().toISOString(),
+    sessionToken: signSession(user.uid || cleanPhone)
   };
 }
 
@@ -871,6 +895,17 @@ app.get('/api/user-status', async (req, res) => {
     const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
     const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
     const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
+
+    // Sans jeton de session valide pour ce compte : statut d'abonnement uniquement (aucune donnée personnelle)
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    const ownerIds = [foundUser.uid, foundUser.whatsapp, foundUser.contact, foundRef && foundRef.id].filter(Boolean).map(String);
+    if (!sessionUid || !ownerIds.includes(sessionUid)) {
+      return res.json({
+        success: true,
+        limited: true,
+        user: { isPremium, premiumPlan, premiumExpiresAt: effectiveExpiresAt }
+      });
+    }
 
     res.json({
       success: true,
