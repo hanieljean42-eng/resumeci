@@ -84,6 +84,10 @@ async function downloadFile(url, outputPath, cookies) {
 class EcoleCIScraper {
   constructor(options = {}) {
     this.targetClass = options.targetClass || null;
+    this.niveau = options.niveau || CONFIG.visitor.niveau;
+    if (options.phone) CONFIG.visitor.phone = options.phone;
+    if (options.dataDir) CONFIG.dataDir = options.dataDir;
+    if (options.outputDir) CONFIG.outputDir = options.outputDir;
     this.browser = null;
     this.page = null;
     this.cookies = [];
@@ -134,7 +138,7 @@ class EcoleCIScraper {
 
     try {
       // Sélectionner niveau : Lycée
-      await this.page.select('#niveauenseignement', CONFIG.visitor.niveau);
+      await this.page.select('#niveauenseignement', this.niveau);
       await sleep(1500); // Attendre le chargement dynamique des classes
       
       await this.screenshot('02_niveau_selected');

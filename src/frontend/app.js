@@ -1337,8 +1337,6 @@ window.selectPaymentMethod = function(method) {
   const isPro = currentCheckoutTier === 'pro';
   const price = isPro ? '1 000' : '500';
   const textEl = document.getElementById('checkoutSubmitText');
-  const btn = document.getElementById('checkoutSubmitBtn');
-
   const names = {
     wave: 'Wave',
     orange_money: 'Orange Money',
@@ -1346,31 +1344,8 @@ window.selectPaymentMethod = function(method) {
     moov_money: 'Moov Money'
   };
 
-  const icons = {
-    wave: '🌊',
-    orange_money: '🟠',
-    mtn_money: '🟡',
-    moov_money: '🔵'
-  };
-
   if (textEl) {
-    textEl.innerHTML = `${icons[method] || '💳'} Payer ${price} FCFA avec ${names[method] || 'Wave'}`;
-  }
-
-  if (btn) {
-    if (method === 'wave') {
-      btn.style.background = 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(2, 132, 199, 0.35)';
-    } else if (method === 'orange_money') {
-      btn.style.background = 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(234, 88, 12, 0.35)';
-    } else if (method === 'mtn_money') {
-      btn.style.background = 'linear-gradient(135deg, #ca8a04 0%, #a16207 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(202, 138, 4, 0.35)';
-    } else if (method === 'moov_money') {
-      btn.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(37, 99, 235, 0.35)';
-    }
+    textEl.textContent = `Payer ${price} FCFA avec ${names[method] || 'Wave'}`;
   }
 };
 
