@@ -644,7 +644,6 @@
               <option value="" disabled selected>Sélectionne ta classe</option>
               <option value="6eme">6ème</option>
               <option value="5eme">5ème</option>
-              <option value="4eme">4ème</option>
               <option value="3eme">3ème (Prépa BEPC)</option>
               <option value="Seconde_A">Seconde A</option>
               <option value="Seconde_C">Seconde C</option>
@@ -786,11 +785,17 @@
       setTimeout(() => t.classList.remove('show'), 3000);
     }
 
-    function getPaymentApiBase() {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:3000';
+    function getPaymentApiCandidates() {
+      if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+      const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+      if (isLocal) {
+        return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
       }
-      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+      return ['https://resumeci-payment-api.onrender.com'];
+    }
+
+    function getPaymentApiBase() {
+      return getPaymentApiCandidates()[0];
     }
 
     function resetSubmitBtn() {
@@ -839,53 +844,58 @@
         // IMPORTANT : Le compte reste TOUJOURS en formule gratuite tant que le paiement n'est pas validé.
         // Le compte est créé côté serveur (un numéro = un seul compte) et on ATTEND sa confirmation
         // avant de continuer, sinon l'élève ne pourrait plus se reconnecter après déconnexion.
-        const apiBase = getPaymentApiBase();
-        const payload = {
-          firstName: fName,
-          lastName: lName,
-          selectedClass: cls,
-          whatsapp: cleanWa,
-          password: pwd,
-          plan: selectedTier,
-          userAgent: navigator.userAgent
-        };
-
+        // Récupération des serveurs disponibles (local + Render en secours)
+        const candidates = getPaymentApiCandidates();
         let regData = null;
-        let lastNetworkError = null;
-        for (let attempt = 1; attempt <= 2 && !regData; attempt++) {
-          if (attempt > 1) btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Le serveur démarre, nouvelle tentative...';
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 40000);
-          try {
-            const regRes = await fetch(`${apiBase}/api/register`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              signal: controller.signal,
-              body: JSON.stringify(payload)
-            });
-            clearTimeout(timeoutId);
-            const ct = regRes.headers.get('content-type') || '';
-            const data = ct.includes('application/json') ? await regRes.json() : null;
-            if (regRes.ok && data && data.success && data.user) {
-              regData = data;
-            } else if (data && data.error) {
-              showError("❌ " + data.error + (regRes.status === 401
-                ? " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>" : ""));
-              resetSubmitBtn();
-              return;
-            } else {
-              lastNetworkError = new Error("Réponse serveur invalide (" + regRes.status + ")");
+        let lastErrorMsg = null;
+        let activeApiBase = candidates[0];
+
+        for (let cIdx = 0; cIdx < candidates.length; cIdx++) {
+          const apiBase = candidates[cIdx];
+          if (regData) break;
+
+          for (let attempt = 1; attempt <= 2 && !regData; attempt++) {
+            if (attempt > 1 || cIdx > 0) {
+              btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Connexion au serveur d\'inscription...';
             }
-          } catch (netErr) {
-            clearTimeout(timeoutId);
-            lastNetworkError = netErr;
-            console.warn("Tentative " + attempt + " /api/register échouée:", netErr);
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 45000);
+            try {
+              const regRes = await fetch(`${apiBase}/api/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                signal: controller.signal,
+                body: JSON.stringify(payload)
+              });
+              clearTimeout(timeoutId);
+              const ct = regRes.headers.get('content-type') || '';
+              const data = ct.includes('application/json') ? await regRes.json() : null;
+              if (regRes.ok && data && data.success && data.user) {
+                regData = data;
+                activeApiBase = apiBase;
+                break;
+              } else if (data && (data.code === 'ACCOUNT_EXISTS' || regRes.status === 409 || regRes.status === 401)) {
+                showError("❌ " + data.error + " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>");
+                resetSubmitBtn();
+                return;
+              } else if (data && data.error && regRes.status !== 503) {
+                showError("❌ " + data.error);
+                resetSubmitBtn();
+                return;
+              } else {
+                lastErrorMsg = (data && data.error) || ("Réponse serveur invalide (" + regRes.status + ")");
+              }
+            } catch (netErr) {
+              clearTimeout(timeoutId);
+              lastErrorMsg = netErr.name === 'AbortError' ? "Le serveur démarre, veuillez patienter..." : "Serveur injoignable";
+              console.warn("Tentative " + attempt + " sur " + apiBase + " échouée:", netErr);
+            }
           }
         }
 
         if (!regData) {
-          console.error("Inscription impossible:", lastNetworkError);
-          showError("❌ Impossible de joindre le serveur d'inscription. Vérifie ta connexion internet et réessaie dans quelques secondes.");
+          console.error("Inscription impossible:", lastErrorMsg);
+          showError("❌ " + (lastErrorMsg || "Impossible de joindre le serveur d'inscription. Vérifie ta connexion internet et réessaie dans quelques secondes."));
           resetSubmitBtn();
           return;
         }
@@ -929,7 +939,7 @@
         const timeoutId = setTimeout(() => controller.abort(), 45000);
 
         try {
-          const payRes = await fetch(`${apiBase}/api/pay`, {
+          const payRes = await fetch(`${activeApiBase}/api/pay`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             signal: controller.signal,
@@ -1006,8 +1016,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Réveil anticipé du serveur d'inscription (hébergement gratuit en veille)
-      try { fetch(`${getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch(e) {}
+      // Réveil anticipé des serveurs (local et Render)
+      getPaymentApiCandidates().forEach(base => {
+        try { fetch(`${base}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch(e) {}
+      });
 
       const raw = localStorage.getItem('resumeci_profile');
       if (raw) {

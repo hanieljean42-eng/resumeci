@@ -476,7 +476,6 @@
           <option value="Seconde_C">Seconde C</option>
           <option value="6eme">6ème</option>
           <option value="5eme">5ème</option>
-          <option value="4eme">4ème</option>
         </select>
       </div>
       <div class="field-group">
@@ -615,11 +614,17 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    window.getAdminApiBase = function() {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:3000';
+    window.getAdminApiCandidates = function() {
+      if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+      const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+      if (isLocal) {
+        return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
       }
-      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+      return ['https://resumeci-payment-api.onrender.com'];
+    };
+
+    window.getAdminApiBase = function() {
+      return window.getAdminApiCandidates()[0];
     };
 
     let fullList = [];
@@ -647,7 +652,18 @@
       if (!user) throw new Error("Session administrateur expirée.");
       const token = await user.getIdToken();
       const headers = { ...(options.headers || {}), 'Authorization': `Bearer ${token}` };
-      return fetch(`${window.getAdminApiBase()}${path}`, { ...options, headers });
+      const candidates = window.getAdminApiCandidates();
+      let lastErr = null;
+      for (const base of candidates) {
+        try {
+          const res = await fetch(`${base}${path}`, { ...options, headers });
+          if (res.status !== 503) return res;
+          lastErr = new Error(`Serveur indisponible (${res.status})`);
+        } catch(e) {
+          lastErr = e;
+        }
+      }
+      throw lastErr || new Error("Serveur admin injoignable");
     }
 
     function showLogin() {

@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v59';
+const CACHE_SHELL = 'resumeci-shell-v60';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -20,13 +20,13 @@ const SHELL_FILES = [
   '/data/search-index.json',
   '/main.css?v=3.3.4',
   '/enhancements.css?v=3.3.4',
-  '/enhancements.js?v=3.3.4',
+  '/enhancements.js?v=3.3.5',
   '/firebase-config.js?v=3.3.5',
   '/content-protection.js?v=3.3.5',
   '/quiz.css?v=3.3.4',
   '/quiz.js?v=3.3.4',
   '/flashcards.js?v=3.3.4',
-  '/app.js?v=3.3.8'
+  '/app.js?v=3.3.9'
 ];
 
 // Install: cache shell files and skip waiting immediately

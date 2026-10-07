@@ -51,11 +51,17 @@ function esc(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
-window.getPaymentApiBase = function() {
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    return 'http://127.0.0.1:3000';
+window.getPaymentApiCandidates = function() {
+  if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+  const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+  if (isLocal) {
+    return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
   }
-  return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+  return ['https://resumeci-payment-api.onrender.com'];
+};
+
+window.getPaymentApiBase = function() {
+  return window.getPaymentApiCandidates()[0];
 };
 
 // ==================== PAIEMENT EN ATTENTE & DÉBLOCAGE IMMÉDIAT ====================
@@ -150,42 +156,58 @@ window.syncUserProfileFromRemote = async function() {
   if (!phone && !uid) return null;
 
   // Statut premium fourni uniquement par l'API (la collection Firestore `users` est réservée à l'admin)
-  try {
-    const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
-    const headers = { 'Accept': 'application/json' };
-    if (window.USER_PROFILE.sessionToken) headers.Authorization = `Bearer ${window.USER_PROFILE.sessionToken}`;
-    const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
-      method: 'GET',
-      headers
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data && data.success && data.user) {
-      const u = data.user;
-      const wasPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(window.USER_PROFILE.isPremium);
-      let changed = false;
-      if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
-        window.USER_PROFILE.isPremium = Boolean(u.isPremium);
-        changed = true;
+  // Utilisation de la liste de candidats d'API avec repli automatique (Localhost -> Render)
+  const candidates = typeof window.getPaymentApiCandidates === 'function'
+    ? window.getPaymentApiCandidates()
+    : [typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com'];
+
+  const headers = { 'Accept': 'application/json' };
+  if (window.USER_PROFILE && window.USER_PROFILE.sessionToken) {
+    headers.Authorization = 'Bearer ' + window.USER_PROFILE.sessionToken;
+  }
+
+  for (const apiBase of candidates) {
+    try {
+      const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
+        method: 'GET',
+        headers
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data && data.success && data.user) {
+        const u = data.user;
+        const wasPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(window.USER_PROFILE.isPremium);
+        let changed = false;
+        if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
+          window.USER_PROFILE.isPremium = Boolean(u.isPremium);
+          changed = true;
+        }
+        if (u.premiumPlan && window.USER_PROFILE.premiumPlan !== u.premiumPlan) {
+          window.USER_PROFILE.premiumPlan = u.premiumPlan;
+          changed = true;
+        }
+        if (u.premiumExpiresAt && window.USER_PROFILE.premiumExpiresAt !== u.premiumExpiresAt) {
+          window.USER_PROFILE.premiumExpiresAt = u.premiumExpiresAt;
+          changed = true;
+        }
+        if (changed) {
+          localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+          const isNowPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(u.isPremium);
+          if (isNowPremium && typeof window.clearPendingPaymentRef === 'function') {
+            window.clearPendingPaymentRef();
+          }
+          if (typeof window.refreshPremiumUI === 'function') {
+            window.refreshPremiumUI(isNowPremium !== wasPremium);
+          } else {
+            if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+            if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+          }
+        }
+        return window.USER_PROFILE;
       }
-      if (u.premiumPlan && window.USER_PROFILE.premiumPlan !== u.premiumPlan) {
-        window.USER_PROFILE.premiumPlan = u.premiumPlan;
-        changed = true;
-      }
-      if (u.premiumExpiresAt && window.USER_PROFILE.premiumExpiresAt !== u.premiumExpiresAt) {
-        window.USER_PROFILE.premiumExpiresAt = u.premiumExpiresAt;
-        changed = true;
-      }
-      if (changed) {
-        localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-        const isNowPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(u.isPremium);
-        if (isNowPremium) window.clearPendingPaymentRef();
-        window.refreshPremiumUI(isNowPremium !== wasPremium);
-      }
-      return window.USER_PROFILE;
+    } catch (err) {
+      // Continue next candidate if failed
     }
-  } catch (err) {
-    console.warn("Erreur synchronisation profil distant:", err);
   }
   return null;
 };
@@ -398,10 +420,7 @@ async function loadData() {
     updateTopbarStreak();
   }
   window.getPaymentApiBase = function() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://127.0.0.1:3000';
-    }
-    return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+    return window.getPaymentApiCandidates ? window.getPaymentApiCandidates()[0] : (window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com');
   };
   checkForUpdates();
   const urlParams = new URLSearchParams(window.location.search);

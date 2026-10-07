@@ -39,6 +39,12 @@ serviceAccountKey*.json
 scratch/
 scratch_*
 deploy.log
+all_links.txt
+*_source.html
+scrape_*.py
+Fiches_Resume/
+.agents/
+_drafts/
 
 # IDE
 .vscode/

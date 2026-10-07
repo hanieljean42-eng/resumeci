@@ -31,23 +31,68 @@ try {
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 let db = null;
+let authService = null;
+let FieldValue = null;
+
 try {
+  let certFn = null;
+  let initializeAppFn = null;
+  let getFirestoreFn = null;
+  let getAuthFn = null;
+
+  try {
+    const appMod = require('firebase-admin/app');
+    initializeAppFn = appMod.initializeApp;
+    certFn = appMod.cert;
+    const fsMod = require('firebase-admin/firestore');
+    getFirestoreFn = fsMod.getFirestore;
+    FieldValue = fsMod.FieldValue;
+    const authMod = require('firebase-admin/auth');
+    getAuthFn = authMod.getAuth;
+  } catch (modErr) {
+    initializeAppFn = admin.initializeApp ? admin.initializeApp.bind(admin) : null;
+    certFn = admin.credential && admin.credential.cert ? admin.credential.cert.bind(admin.credential) : null;
+    getFirestoreFn = admin.firestore ? admin.firestore.bind(admin) : null;
+    FieldValue = admin.firestore && admin.firestore.FieldValue ? admin.firestore.FieldValue : null;
+    getAuthFn = admin.auth ? admin.auth.bind(admin) : null;
+  }
+
   let credential = null;
+  let saObj = null;
+
   if (process.env.FIREBASE_SERVICE_ACCOUNT) {
-    const sa = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-    credential = admin.credential.cert(sa);
+    try {
+      saObj = typeof process.env.FIREBASE_SERVICE_ACCOUNT === 'string'
+        ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+        : process.env.FIREBASE_SERVICE_ACCOUNT;
+    } catch (e) {
+      console.warn('⚠️ Erreur parsing FIREBASE_SERVICE_ACCOUNT JSON:', e.message);
+    }
   } else {
     const saPath = resolveLocal('firebase-admin.json', 'payment-api/firebase-admin.json', '../payment-api/firebase-admin.json');
     if (saPath) {
-      credential = admin.credential.cert(require(saPath));
+      saObj = require(saPath);
     }
   }
-  if (credential) {
-    admin.initializeApp({ credential });
-    db = admin.firestore();
-    console.log('✅ Firebase Admin connecté (Firestore)');
+
+  if (saObj) {
+    if (typeof certFn === 'function') {
+      credential = certFn(saObj);
+    } else if (admin.credential && typeof admin.credential.cert === 'function') {
+      credential = admin.credential.cert(saObj);
+    }
+  }
+
+  if (credential && typeof initializeAppFn === 'function') {
+    const firebaseApp = initializeAppFn({ credential });
+    db = typeof getFirestoreFn === 'function' ? getFirestoreFn(firebaseApp) : (typeof admin.firestore === 'function' ? admin.firestore() : null);
+    authService = typeof getAuthFn === 'function' ? getAuthFn(firebaseApp) : (typeof admin.auth === 'function' ? admin.auth() : null);
+    if (!FieldValue && db && db.constructor && db.constructor.FieldValue) {
+      FieldValue = db.constructor.FieldValue;
+    }
+    console.log('✅ Firebase Admin connecté (Firestore & Auth)');
   } else {
-    console.warn('⚠️ Aucun compte de service Firebase trouvé (FIREBASE_SERVICE_ACCOUNT ou firebase-admin.json). Firestore désactivé.');
+    console.warn('⚠️ Aucun compte de service Firebase valide trouvé (FIREBASE_SERVICE_ACCOUNT ou firebase-admin.json). Firestore désactivé.');
   }
 } catch (e) {
   console.warn('⚠️ Firebase Admin non connecté:', e.message);
@@ -164,7 +209,9 @@ async function requireAdmin(req, res, next) {
     return res.status(401).json({ error: "Authentification administrateur requise." });
   }
   try {
-    const decoded = await admin.auth().verifyIdToken(token);
+    const authToUse = authService || (admin.auth && admin.auth());
+    if (!authToUse) throw new Error("Service d'authentification non initialisé");
+    const decoded = await authToUse.verifyIdToken(token);
     const email = String(decoded.email || '').toLowerCase();
     if (!ADMIN_EMAILS.includes(email)) {
       console.warn(`[Admin] Tentative d'accès refusée pour ${email || decoded.uid}`);
@@ -215,9 +262,10 @@ async function verifyPassword(pwd, user) {
 async function migrateLegacyPassword(user, pwd) {
   if (!db || user.passwordHash || !user._docId) return;
   try {
+    const fv = FieldValue || admin.firestore?.FieldValue;
     await db.collection('users').doc(user._docId).set({
       passwordHash: await hashPassword(pwd),
-      password: admin.firestore.FieldValue.delete(),
+      password: fv ? fv.delete() : undefined,
       updatedAt: new Date().toISOString()
     }, { merge: true });
   } catch (e) {
@@ -262,15 +310,16 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
   }
   const durationMs = durationDays * 24 * 60 * 60 * 1000;
   const expiresAt = Date.now() + durationMs;
+  const fv = FieldValue || admin.firestore?.FieldValue;
   const updateData = {
     premiumPlan: tierKey || 'pro',
     plan: tierKey || 'pro',
     isPremium: true,
     premiumExpiresAt: expiresAt,
     subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
-    lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
-    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-    pendingPayment: admin.firestore.FieldValue.delete(),
+    lastPaymentDate: fv ? fv.serverTimestamp() : new Date().toISOString(),
+    updatedAt: fv ? fv.serverTimestamp() : new Date().toISOString(),
+    pendingPayment: fv ? fv.delete() : undefined,
     ...extra
   };
 
@@ -1110,6 +1159,7 @@ app.post('/api/admin/set-plan', async (req, res) => {
     const durationMs = durationDays * 24 * 60 * 60 * 1000;
     const expiresAt = isFree ? 0 : (Date.now() + durationMs);
 
+    const fv = FieldValue || admin.firestore?.FieldValue;
     const updateData = {
       isPremium: !isFree,
       plan: chosenPlan,
@@ -1118,8 +1168,8 @@ app.post('/api/admin/set-plan', async (req, res) => {
       subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
       adminGranted: true,
       adminGrantReason: reason || (isFree ? 'Abonnement arrêté par l\'administrateur' : 'Attribué par l\'administrateur'),
-      adminGrantedAt: admin.firestore.FieldValue.serverTimestamp(),
-      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+      adminGrantedAt: fv ? fv.serverTimestamp() : new Date().toISOString(),
+      updatedAt: fv ? fv.serverTimestamp() : new Date().toISOString()
     };
 
     if (isFree) {
@@ -1180,52 +1230,6 @@ app.get('/api/admin/transactions', async (req, res) => {
   } catch (err) {
     console.error('[Admin Transactions] Erreur:', err.message);
     res.status(500).json({ error: "Impossible de récupérer les transactions GeniusPay" });
-  }
-});
-
-// Santé du serveur
-// --------------------------------------------------------------------------
-// ROUTE 8 : CHATBOT IA VIA CODECRAFT API
-// --------------------------------------------------------------------------
-app.post('/api/ask-ai', limiter(15 * 60 * 1000, 30), async (req, res) => {
-  try {
-    const message = typeof req.body?.message === 'string' ? req.body.message.slice(0, 4000) : '';
-    if (!message) {
-      return res.status(400).json({ error: "Message requis" });
-    }
-
-    const CODECRAFT_API_KEY = process.env.CODECRAFT_API_KEY;
-    if (!CODECRAFT_API_KEY) {
-      console.error('[Ask AI] CODECRAFT_API_KEY non configurée.');
-      return res.status(503).json({ error: "Assistant IA non configuré sur ce serveur." });
-    }
-
-    const response = await fetch('https://codecraftapi.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${CODECRAFT_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "claude-3-haiku-20240307",
-        messages: [
-          { role: "system", content: "Tu es l'assistant virtuel officiel de ResumeCI..." },
-          { role: "user", content: message }
-        ],
-        temperature: 0.7,
-      })
-    });
-
-    const data = await response.json().catch(() => null);
-    if (!response.ok || !data?.choices?.[0]?.message) {
-      console.error("[CodeCraft API] Erreur HTTP", response.status);
-      return res.status(502).json({ error: "Erreur de communication avec l'IA CodeCraft" });
-    }
-
-    res.json({ success: true, reply: data.choices[0].message.content });
-  } catch (error) {
-    console.error("[Ask AI] Erreur interceptée:", error.message);
-    res.status(500).json({ error: "Erreur interne de l'assistant IA" });
   }
 });
 

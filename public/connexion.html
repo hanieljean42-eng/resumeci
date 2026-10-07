@@ -385,11 +385,17 @@
       document.getElementById('errorBox').style.display = 'none';
     }
 
-    function getPaymentApiBase() {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:3000';
+    function getPaymentApiCandidates() {
+      if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+      const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+      if (isLocal) {
+        return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
       }
-      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+      return ['https://resumeci-payment-api.onrender.com'];
+    }
+
+    function getPaymentApiBase() {
+      return getPaymentApiCandidates()[0];
     }
 
     async function handleLogin() {
@@ -417,45 +423,50 @@
       try {
         let profile = null;
 
-        // Authentification uniquement via l'API Backend (/api/login)
-        // (2 tentatives : l'hébergement gratuit peut mettre ~30s à sortir de veille)
+        // Authentification via l'API Backend (/api/login) avec repli automatique (local <-> Render)
         let apiUnreachable = false;
+        let lastApiError = null;
         if (!profile) {
-          const apiBase = getPaymentApiBase();
-          for (let attempt = 1; attempt <= 2 && !profile; attempt++) {
-            if (attempt > 1) btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Le serveur démarre, nouvelle tentative...';
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 40000);
-            try {
-              const apiRes = await fetch(`${apiBase}/api/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                signal: controller.signal,
-                body: JSON.stringify({ whatsapp: cleanWa, password: pwd })
-              });
-              clearTimeout(timeoutId);
-              apiUnreachable = false;
+          const candidates = getPaymentApiCandidates();
+          for (let cIdx = 0; cIdx < candidates.length && !profile; cIdx++) {
+            const apiBase = candidates[cIdx];
+            for (let attempt = 1; attempt <= 2 && !profile; attempt++) {
+              if (attempt > 1 || cIdx > 0) btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Connexion au serveur...';
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(), 45000);
+              try {
+                const apiRes = await fetch(`${apiBase}/api/login`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  signal: controller.signal,
+                  body: JSON.stringify({ whatsapp: cleanWa, password: pwd })
+                });
+                clearTimeout(timeoutId);
 
-              const isJson = apiRes.headers.get('content-type')?.includes('application/json');
-              if (apiRes.ok && isJson) {
-                const apiData = await apiRes.json();
-                if (apiData.success && apiData.profile) {
-                  profile = apiData.profile;
+                const isJson = apiRes.headers.get('content-type')?.includes('application/json');
+                if (apiRes.ok && isJson) {
+                  const apiData = await apiRes.json();
+                  if (apiData.success && apiData.profile) {
+                    profile = apiData.profile;
+                    apiUnreachable = false;
+                    break;
+                  }
+                } else if (isJson) {
+                  const errData = await apiRes.json();
+                  if (errData && errData.error && apiRes.status !== 503) {
+                    showError("❌ " + errData.error);
+                    resetBtn();
+                    return;
+                  }
+                  lastApiError = errData?.error;
+                } else {
+                  apiUnreachable = true;
                 }
-              } else if (isJson) {
-                const errData = await apiRes.json();
-                if (errData && errData.error) {
-                  showError("❌ " + errData.error);
-                  resetBtn();
-                  return;
-                }
-              } else {
+              } catch(apiErr) {
+                clearTimeout(timeoutId);
                 apiUnreachable = true;
+                console.warn("Tentative " + attempt + " API sur " + apiBase + " non joignable:", apiErr);
               }
-            } catch(apiErr) {
-              clearTimeout(timeoutId);
-              apiUnreachable = true;
-              console.warn("Tentative " + attempt + " API login non joignable:", apiErr);
             }
           }
         }

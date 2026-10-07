@@ -398,7 +398,6 @@
       <select id="plannerClass" class="planner-input">
         <option value="6eme">6ème</option>
         <option value="5eme">5ème</option>
-        <option value="4eme">4ème</option>
         <option value="3eme">3ème (BEPC)</option>
         <option value="2nde_A">Seconde A</option>
         <option value="2nde_C">Seconde C</option>
