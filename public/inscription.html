@@ -844,6 +844,16 @@
         // IMPORTANT : Le compte reste TOUJOURS en formule gratuite tant que le paiement n'est pas validé.
         // Le compte est créé côté serveur (un numéro = un seul compte) et on ATTEND sa confirmation
         // avant de continuer, sinon l'élève ne pourrait plus se reconnecter après déconnexion.
+        const payload = {
+          firstName: fName,
+          lastName: lName,
+          selectedClass: cls,
+          whatsapp: cleanWa,
+          password: pwd,
+          plan: selectedTier,
+          userAgent: navigator.userAgent
+        };
+
         // Récupération des serveurs disponibles (local + Render en secours)
         const candidates = getPaymentApiCandidates();
         let regData = null;
@@ -887,7 +897,7 @@
               }
             } catch (netErr) {
               clearTimeout(timeoutId);
-              lastErrorMsg = netErr.name === 'AbortError' ? "Le serveur démarre, veuillez patienter..." : "Serveur injoignable";
+              lastErrorMsg = netErr.name === 'AbortError' ? "Le serveur démarre, veuillez patienter..." : (netErr.message || "Serveur injoignable");
               console.warn("Tentative " + attempt + " sur " + apiBase + " échouée:", netErr);
             }
           }
