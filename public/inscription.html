@@ -723,36 +723,51 @@
       selectedTier = tier;
       
       // Reset all plan cards
-      document.getElementById('planPro').className = 'plan' + (tier === 'pro' ? ' selected-pro' : '');
-      document.getElementById('planStarter').className = 'plan' + (tier === 'starter' ? ' selected-starter' : '');
-      document.getElementById('planFree').className = 'plan' + (tier === 'free' ? ' selected-free' : '');
-
-      // Update ARIA
-      document.getElementById('planPro').setAttribute('aria-checked', tier === 'pro');
-      document.getElementById('planStarter').setAttribute('aria-checked', tier === 'starter');
-      document.getElementById('planFree').setAttribute('aria-checked', tier === 'free');
+      const pPro = document.getElementById('planPro');
+      const pStarter = document.getElementById('planStarter');
+      const pFree = document.getElementById('planFree');
+      if (pPro) {
+        pPro.className = 'plan' + (tier === 'pro' ? ' selected-pro' : '');
+        pPro.setAttribute('aria-checked', tier === 'pro');
+      }
+      if (pStarter) {
+        pStarter.className = 'plan' + (tier === 'starter' ? ' selected-starter' : '');
+        pStarter.setAttribute('aria-checked', tier === 'starter');
+      }
+      if (pFree) {
+        pFree.className = 'plan' + (tier === 'free' ? ' selected-free' : '');
+        pFree.setAttribute('aria-checked', tier === 'free');
+      }
 
       // Update submit button
-      const btnText = document.getElementById('btnText');
       const btn = document.getElementById('regSubmitBtn');
       const trustSection = document.getElementById('trustSection');
+      if (!btn) return;
+
+      let iconHtml = '<i class="fas fa-bolt"></i>';
+      let label = "Activer mon Pass Pro (1 000 F) 🚀";
 
       if (tier === 'pro') {
-        btnText.textContent = "Activer mon Pass Pro (1 000 F) 🚀";
+        iconHtml = '<i class="fas fa-bolt"></i>';
+        label = "Activer mon Pass Pro (1 000 F) 🚀";
         btn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(16, 185, 129, 0.35)";
-        trustSection.style.display = '';
+        if (trustSection) trustSection.style.display = '';
       } else if (tier === 'starter') {
-        btnText.textContent = "Activer mon Pass Starter (500 F) ⚡";
+        iconHtml = '<i class="fas fa-bolt"></i>';
+        label = "Activer mon Pass Starter (500 F) ⚡";
         btn.style.background = "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(37, 99, 235, 0.35)";
-        trustSection.style.display = '';
+        if (trustSection) trustSection.style.display = '';
       } else {
-        btnText.textContent = "Accéder aux 714 fiches gratuites 📚";
+        iconHtml = '<i class="fas fa-book-open"></i>';
+        label = "Accéder aux 714 fiches gratuites 📚";
         btn.style.background = "linear-gradient(135deg, #475569 0%, #334155 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(71, 85, 105, 0.25)";
-        trustSection.style.display = 'none';
+        if (trustSection) trustSection.style.display = 'none';
       }
+
+      btn.innerHTML = `<span id="btnIcon">${iconHtml}</span> <span id="btnText">${label}</span>`;
     }
 
     function togglePwd() {
@@ -780,9 +795,11 @@
 
     function showToast(msg) {
       const t = document.getElementById('successToast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 3000);
+      if (t) {
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3000);
+      }
     }
 
     function getPaymentApiCandidates() {
