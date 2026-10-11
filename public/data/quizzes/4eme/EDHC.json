@@ -1,0 +1,587 @@
+{
+  "Fiche_EDHC_4eme_L1_Promotion_droits_enfant": {
+    "title": "La promotion des droits de l'enfant",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Promouvoir les droits de l'enfant consiste à :",
+        "type": "qcm",
+        "options": ["Punir les enfants", "Faire connaître, respecter et appliquer les droits de l'enfant", "Empêcher les enfants de jouer", "Envoyer tous les enfants travailler"],
+        "answer": 1,
+        "explanation": "La promotion comprend la sensibilisation, la protection contre les abus, le scolarisation et toutes les actions qui font vivre les droits de l'enfant (survie, développement, protection, participation)."
+      },
+      {
+        "id": "q2",
+        "text": "Les personnes ressources qui aident à promouvoir les droits de l'enfant sont :",
+        "type": "qcm",
+        "options": ["Les étrangers seulement", "Les parents, enseignants, chefs de village, leaders religieux et travailleurs sociaux", "Les enfants eux-mêmes", "Les militaires"],
+        "answer": 1,
+        "explanation": "Les personnes ressources sont les acteurs de proximité capables d'informer, de conseiller et de signaler les violations : famille, école, autorités coutumières, services sociaux."
+      },
+      {
+        "id": "q3",
+        "text": "Parmi les institutions de protection de l'enfant, on trouve :",
+        "type": "qcm",
+        "options": ["La CEDEAO", "Le Ministère de la Femme et de la Solidarité, les brigades de police et la Convention Internationale des Droits de l'Enfant (texte de référence)", "Les banques", "Les entreprises privées"],
+        "answer": 1,
+        "explanation": "Les institutions étatiques (ministère en charge de la famille, police de la protection de l'enfance, tribunaux) mettent en œuvre la CIDE (1989), la convention internationale de référence ratifiée par la Côte d'Ivoire."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : la promotion des droits de l'enfant ne concerne que le gouvernement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "C'est l'affaire de tous : État, familles, écoles, communautés, ONG et enfants eux-mêmes. Chacun a un rôle dans la protection et l'épanouissement de l'enfant."
+      },
+      {
+        "id": "q5",
+        "text": "La promotion des droits de l'enfant est importante parce qu'elle :",
+        "type": "qcm",
+        "options": ["Donne des droits aux adultes", "Garantit la survie, la protection, l'éducation et l'épanouissement de chaque enfant", "Rend les enfants désobéissants", "Supprime les devoirs"],
+        "answer": 1,
+        "explanation": "Protéger les droits de l'enfant, c'est investir dans l'avenir : un enfant protégé, nourri, soigné et scolarisé devient un adulte responsable et utile à la nation."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L2_Enfants_soldats": {
+    "title": "Les enfants-soldats et leur réinsertion",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un enfant-soldat est :",
+        "type": "qcm",
+        "options": ["Un enfant qui joue à la guerre", "Toute personne de moins de 18 ans recrutée ou utilisée par une force ou un groupe armé", "Un jeune militaire de 25 ans", "Un enfant qui aime les armes"],
+        "answer": 1,
+        "explanation": "Définition internationale : enfant-soldat = toute personne de moins de 18 ans associée à une force armée, en tant que combattant, cuisinier, messager ou à des fins d'exploitation. C'est une violation grave des droits de l'enfant."
+      },
+      {
+        "id": "q2",
+        "text": "Les causes du recrutement des enfants-soldats incluent :",
+        "type": "qcm",
+        "options": ["Leur grande force physique", "La pauvreté, les conflits armés, l'enlèvement et la manipulation", "Leur envie de voyager", "Le sport"],
+        "answer": 1,
+        "explanation": "Les enfants sont recrutés de force (enlèvement) ou enrôlés par misère, propagande ou vengeance ; leur innocence les rend faciles à manipuler, obéissants et peu coûteux."
+      },
+      {
+        "id": "q3",
+        "text": "Les conséquences pour l'enfant-soldat sont :",
+        "type": "qcm",
+        "options": ["Aucune s'il survit", "Traumatismes psychologiques, blessures, perte de scolarité et exclusion sociale", "Un enrichissement", "Une promotion sociale"],
+        "answer": 1,
+        "explanation": "L'enfant-soldat subit des séquelles physiques et psychologiques durables, perd des années d'école, porte parfois la culpabilité d'actes commis et est souvent rejeté par sa communauté."
+      },
+      {
+        "id": "q4",
+        "text": "La réinsertion d'un ancien enfant-soldat passe par :",
+        "type": "qcm",
+        "options": ["Sa mise en prison", "Le désarmement, la prise en charge psychosociale, la rescolarisation et la réunification familiale", "Son exil", "L'oubli total"],
+        "answer": 1,
+        "explanation": "Les programmes DDR (Désarmement, Démobilisation, Réinsertion) prévoient soins, soutien psychologique, retour à l'école ou apprentissage, et réconciliation familiale et communautaire."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le recrutement d'enfants-soldats est un crime de guerre interdit par le droit international.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Le Statut de Rome (Cour pénale internationale) et la CIDE interdisent le recrutement de mineurs dans les conflits : les responsables en répondent devant la justice internationale."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L3_Instruments_lutte_discriminations": {
+    "title": "Les instruments de lutte contre les discriminations",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une discrimination est :",
+        "type": "qcm",
+        "options": ["Un compliment", "Un traitement injuste fondé sur un critère (sexe, ethnie, religion, handicap, origine)", "Une récompense", "Une loi"],
+        "answer": 1,
+        "explanation": "Discriminer, c'est traiter différemment et injustement une personne à cause d'un motif prohibé (sexe, ethnie, race, religion, handicap, opinion politique…), lui refusant des droits ou des chances égales."
+      },
+      {
+        "id": "q2",
+        "text": "Les instruments de lutte contre les discriminations sont :",
+        "type": "qcm",
+        "options": ["Des armes", "Les textes juridiques : Constitution, conventions internationales et lois ivoiriennes", "Des slogans", "Des jugements privés"],
+        "answer": 1,
+        "explanation": "Les « instruments » sont les textes qui posent le principe d'égalité : la Constitution ivoirienne, la Déclaration universelle des droits de l'homme, les conventions ONU et OIT, les lois nationales."
+      },
+      {
+        "id": "q3",
+        "text": "Les mécanismes de protection sont :",
+        "type": "qcm",
+        "options": ["Des machines", "Les structures chargées d'appliquer les textes : tribunaux, Conseil National des Droits de l'Homme (CNDH), services publics, ONG", "Des armées", "Des banques"],
+        "answer": 1,
+        "explanation": "Les mécanismes sont les organes qui font vivre les droits : la justice, le CNDH, les ministères, les ONG de défense des droits humains. Ils reçoivent les plaintes et sanctionnent."
+      },
+      {
+        "id": "q4",
+        "text": "Victime de discrimination, la voie de recours est :",
+        "type": "qcm",
+        "options": ["La vengeance", "Saisir la justice, le CNDH ou une ONG de défense des droits", "Se taire", "Changer de pays"],
+        "answer": 1,
+        "explanation": "La victime peut porter plainte devant les tribunaux, saisir le Conseil National des Droits de l'Homme ou se faire accompagner par une ONG : le recours légal remplace la violence privée."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la lutte contre les discriminations renforce l'égalité et la cohésion sociale.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Lutter contre les discriminations garantit à chacun les mêmes droits et les mêmes chances : c'est le fondement de la justice, de la paix sociale et du vivre-ensemble."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L4_Symboles_institutions_Republique": {
+    "title": "Symboles et institutions de la République",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les symboles de la République de Côte d'Ivoire sont :",
+        "type": "qcm",
+        "options": ["Le drapeau, l'hymne national (L'Abidjanaise), les armoiries et la devise", "Le maillot de football", "Les monuments", "La monnaie"],
+        "answer": 0,
+        "explanation": "Les symboles incarnent la nation : le drapeau orange-blanc-vert, l'hymne L'Abidjanaise, les armoiries (éléphant), la devise « Union – Discipline – Travail » et le sceau."
+      },
+      {
+        "id": "q2",
+        "text": "Le comportement responsable face aux symboles de la République est :",
+        "type": "qcm",
+        "options": ["Les déchirer", "Les respecter : se lever à l'hymne, saluer le drapeau, ne jamais les souiller", "Les ignorer", "Les vendre"],
+        "answer": 1,
+        "explanation": "Respecter les symboles, c'est respecter la nation : attitude recueillie pendant l'hymne, drapeau jamais souillé ni traîné au sol, usage digne des armoiries."
+      },
+      {
+        "id": "q3",
+        "text": "Le Président de la République est :",
+        "type": "qcm",
+        "options": ["Le chef du village", "Le chef de l'État élu au suffrage universel, garant des institutions", "Un roi", "Le maire"],
+        "answer": 1,
+        "explanation": "Le Président dirige l'exécutif : il est élu par le peuple, garantit la Constitution, nomme le gouvernement et représente le pays à l'étranger."
+      },
+      {
+        "id": "q4",
+        "text": "Le Parlement ivoirien comprend :",
+        "type": "qcm",
+        "options": ["Une seule chambre", "Deux chambres : l'Assemblée nationale et le Sénat", "Trois chambres", "Aucune chambre"],
+        "answer": 1,
+        "explanation": "Depuis la Constitution de 2016, le Parlement ivoirien est bicaméral : l'Assemblée nationale (députés élus) et le Sénat. Il vote les lois et contrôle l'action du gouvernement."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : respecter les institutions de la République signifie obéir aux lois et respecter les autorités élues.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les institutions tirent leur légitimité du peuple et de la Constitution : les respecter (lois, autorités, décisions de justice) garantit l'ordre républicain et la démocratie."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L5_Impot_responsabilites_fiscales": {
+    "title": "L'impôt et les responsabilités fiscales du citoyen",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'impôt est :",
+        "type": "qcm",
+        "options": ["Un don volontaire", "Une contribution financière obligatoire prélevée par l'État pour financer les services publics", "Une amende", "Un salaire"],
+        "answer": 1,
+        "explanation": "L'impôt est un prélèvement obligatoire, sans contrepartie directe, qui finance l'école, l'hôpital, les routes, la sécurité : c'est la contribution de chacun à la vie collective."
+      },
+      {
+        "id": "q2",
+        "text": "On distingue :",
+        "type": "qcm",
+        "options": ["Impôts chers et impôts bon marché", "Impôts directs (sur le revenu, la propriété) et indirects (sur la consommation, comme la TVA)", "Impôts légers et lourds", "Impôts urbains et ruraux"],
+        "answer": 1,
+        "explanation": "Impôts directs : payés directement par le contribuable (impôt sur le revenu, patente). Impôts indirects : inclus dans les prix (TVA, droits de douane)."
+      },
+      {
+        "id": "q3",
+        "text": "En Côte d'Ivoire, la structure de recouvrement des impôts est :",
+        "type": "qcm",
+        "options": ["La police", "La Direction Générale des Impôts (DGI)", "La CEDEAO", "Les banques"],
+        "answer": 1,
+        "explanation": "La DGI collecte les impôts ; la Direction des Douanes collecte les droits de douane ; le Trésor encaisse les fonds publics."
+      },
+      {
+        "id": "q4",
+        "text": "L'impôt est important parce qu'il :",
+        "type": "qcm",
+        "options": ["Enrichit les fonctionnaires", "Finance les services publics (écoles, hôpitaux, routes, sécurité) et fait fonctionner l'État", "Punit les pauvres", "Supprime la richesse"],
+        "answer": 1,
+        "explanation": "Sans impôt, pas d'État ni de services publics : il finance l'instruction, la santé, les infrastructures et la défense — il est le « prix » de la civilisation collective."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la responsabilité fiscale du citoyen consiste à déclarer ses revenus et payer ses impôts à temps.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Être fiscalement responsable = déclarer honnêtement, payer à temps et combattre la fraude et l'évasion fiscale qui privent le pays de ressources."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L6_Societe_civile": {
+    "title": "La société civile",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La société civile désigne :",
+        "type": "qcm",
+        "options": ["L'armée", "L'ensemble des organisations non étatiques et non lucratives : ONG, syndicats, associations, medias, organisations religieuses", "Le gouvernement", "Les entreprises"],
+        "answer": 1,
+        "explanation": "La société civile regroupe les organisations volontaires intermédiaires entre le citoyen et l'État : ONG, syndicats, associations de jeunes et de femmes, organisations paysannes, medias."
+      },
+      {
+        "id": "q2",
+        "text": "Les principes de la société civile sont :",
+        "type": "qcm",
+        "options": ["La violence", "L'adhésion volontaire, le non-lucratif, l'autonomie et la démocratie interne", "Le profit", "L'obéissance à l'État"],
+        "answer": 1,
+        "explanation": "La société civile repose sur la liberté d'association : on y adhère volontairement, elle ne poursuit pas le profit, elle est indépendante du pouvoir et s'autogère démocratiquement."
+      },
+      {
+        "id": "q3",
+        "text": "En démocratie, la société civile joue le rôle de :",
+        "type": "qcm",
+        "options": ["Parti au pouvoir", "Contre-pouvoir, porte-parole des citoyens et acteur de développement", "Police", "Justice"],
+        "answer": 1,
+        "explanation": "Elle contrôle l'action publique, défend les droits, sensibilise les populations, supplée l'État dans les services sociaux et aide à la participation citoyenne."
+      },
+      {
+        "id": "q4",
+        "text": "Le comportement responsable du citoyen vis-à-vis de la société civile est :",
+        "type": "qcm",
+        "options": ["L'ignorer", "Participer à ses actions citoyennes : associations, consultations publiques, bénévolat", "La saborder", "En profiter pour s'enrichir"],
+        "answer": 1,
+        "explanation": "Une société civile forte exige des citoyens engagés : adhérer, participer, donner son avis lors des consultations publiques — c'est la démocratie participative."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une société civile dynamique renforce la démocratie et le contrôle citoyen du pouvoir.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Là où la société civile est libre et active, les gouvernants sont surveillés, les débats publics existent et les droits sont mieux défendus."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L7_Ressources_familiales": {
+    "title": "La gestion des ressources familiales",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les ressources familiales comprennent :",
+        "type": "qcm",
+        "options": ["Uniquement l'argent", "Les ressources financières, humaines (temps, compétences) et matérielles (biens, terres)", "Les dettes", "Les aides étrangères"],
+        "answer": 1,
+        "explanation": "La famille dispose de trois types de ressources : financières (revenus), humaines (travail, savoir-faire, temps) et matérielles (logement, terres, biens)."
+      },
+      {
+        "id": "q2",
+        "text": "Les besoins prioritaires d'une famille sont :",
+        "type": "qcm",
+        "options": ["Les loisirs et les voyages", "L'alimentation, la santé, l'éducation et le logement", "Le téléphone dernier cri", "Les fêtes"],
+        "answer": 1,
+        "explanation": "Les besoins vitaux passent avant les souhaits : se nourrir, se soigner, scolariser les enfants et se loger décemment sont la priorité du budget familial."
+      },
+      {
+        "id": "q3",
+        "text": "La gestion rationnelle des ressources familiales consiste à :",
+        "type": "qcm",
+        "options": ["Dépenser tout le revenu", "Établir un budget, prioriser les besoins vitaux, épargner et éviter le gaspillage", "Emprunter toujours plus", "Vendre les biens"],
+        "answer": 1,
+        "explanation": "Gérer rationnellement = planifier les dépenses (budget), distinguer besoins et désirs, mettre de côté pour les imprévus (épargne) et faire participer toute la famille."
+      },
+      {
+        "id": "q4",
+        "text": "Une bonne gestion des ressources apporte :",
+        "type": "qcm",
+        "options": ["Des dettes", "La sécurité, l'autonomie, la réduction des conflits et la préparation de l'avenir", "L'ennui", "La pauvreté"],
+        "answer": 1,
+        "explanation": "La famille qui gère bien vit dans la dignité, fait face aux urgences (maladie, rentrée scolaire), évite les disputes d'argent et investit dans l'avenir des enfants."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'épargne, même modeste et régulière, est un pilier de la sécurité financière familiale.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Épargner régulièrement crée un coussin pour les urgences et permet de financer des projets (études, maison, activité) sans s'endetter."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L8_Entreprise_insertion": {
+    "title": "L'entreprise et l'insertion socio-économique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une entreprise est :",
+        "type": "qcm",
+        "options": ["Une ONG", "Une unité économique qui produit des biens ou des services pour les vendre", "Un ministère", "Une école"],
+        "answer": 1,
+        "explanation": "L'entreprise combine travail, capital et savoir pour produire des biens ou des services vendus sur un marché dans le but de réaliser un profit et de créer des emplois."
+      },
+      {
+        "id": "q2",
+        "text": "On distingue les entreprises :",
+        "type": "qcm",
+        "options": ["Bonnes et mauvaises", "Individuelles, sociétaires (à plusieurs associés), publiques et privées", "Rapides et lentes", "Agréées ou non"],
+        "answer": 1,
+        "explanation": "Selon la forme : entreprise individuelle (un seul propriétaire), sociétés (associés), entreprises publiques (État) ou privées. Selon la taille : micro, petites, moyennes, grandes."
+      },
+      {
+        "id": "q3",
+        "text": "Les AGR (Activités Génératrices de Revenus) sont :",
+        "type": "qcm",
+        "options": ["Des multinationales", "De petites activités économiques (commerce, élevage, artisanat, services) créant un revenu régulier", "Des impôts", "Des prêts bancaires"],
+        "answer": 1,
+        "explanation": "Les microentreprises ou AGR permettent à un jeune ou à une famille de gagner sa vie avec peu de capital : petits commerces, artisanat, maraîchage, élevage, services."
+      },
+      {
+        "id": "q4",
+        "text": "Créer son entreprise permet :",
+        "type": "qcm",
+        "options": ["De dépendre de l'État", "L'autonomie financière, la création d'emplois et la contribution au développement", "De faire faillite", "De ne pas travailler"],
+        "answer": 1,
+        "explanation": "L'entrepreneuriat est une voie d'insertion socio-économique : il donne un revenu, emploie d'autres personnes, produit des biens utiles et paie des impôts au profit du pays."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'école peut préparer à l'entrepreneuriat par l'esprit d'initiative et les compétences acquises.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La formation scolaire développe calcul, langue, sens de l'organisation et de la responsabilité : autant d'atouts pour créer et gérer une activité génératrice de revenus."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L9_Alliances_interethniques": {
+    "title": "Les alliances interethniques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les peuples Kwa de Côte d'Ivoire comprennent les sous-groupes :",
+        "type": "qcm",
+        "options": ["Mandé et Voltaïque", "Baoulé-Anyin (Kwa lagunaires du centre-est) et Bété-Abbé (Kwa du sud-ouest)", "Dioula et Sénoufo", "Peul et Lobi"],
+        "answer": 1,
+        "explanation": "Le groupe Kwa se subdivise : les Kwa « lagunaires » (Agni, Baoulé, Abbey, Ebrié…) au centre et à l'est, et les Kwa « forestiers » (Bété, Dida, Guéré…) à l'ouest."
+      },
+      {
+        "id": "q2",
+        "text": "Les peuples Krou occupent :",
+        "type": "qcm",
+        "options": ["Le nord du pays", "Le sud-ouest forestier (Wè, Kroumen, Bakwé…)", "La côte est", "La savane"],
+        "answer": 1,
+        "explanation": "Les Krou sont installés dans la zone forestière du sud-ouest ivoirien et du Liberia voisin : Kroumen, Wè (Guéré), Bakwé, Neyo…"
+      },
+      {
+        "id": "q3",
+        "text": "Une alliance interethnique (ou « parenté à plaisanterie ») est :",
+        "type": "qcm",
+        "options": ["Une guerre", "Un pacte traditionnel de fraternité et de non-agression entre ethnies ou villages, scellé autrefois", "Un mariage obligatoire", "Un contrat commercial"],
+        "answer": 1,
+        "explanation": "Les alliances lient des groupes (ex. Baoulé-Sénoufo, Bété-Agni) par des serments historiques : elles autorisent la plaisanterie réciproque, interdisent le conflit et obligent à l'entraide."
+      },
+      {
+        "id": "q4",
+        "text": "L'importance des alliances est qu'elles :",
+        "type": "qcm",
+        "options": ["Créent des conflits", "Consolident la cohésion sociale, la paix et le vivre-ensemble entre les ethnies", "Sont dépassées", "Favorisent le tribalisme"],
+        "answer": 1,
+        "explanation": "En institutionnalisant la convivialité et l'interdiction de s'affronter, les alliances désamorent les tensions et tissent la nation : elles sont un modèle ivoirien de gestion de la diversité."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la « parenté à plaisanterie » permet de dire des choses fortes à un allié sans qu'il se fâche, ce qui canalise les tensions.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La plaisanterie codifiée permet de « décharger » les reproches en riant : la transgression verbale autorisée évite la violence réelle et renforce le lien entre partenaires."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L10_Grossesses_IST_SIDA": {
+    "title": "Grossesses précoces, IST et SIDA",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les causes des grossesses précoces en milieu scolaire incluent :",
+        "type": "qcm",
+        "options": ["L'école", "Les rapports sexuels non protégés, le manque d'information, la pauvreté et la pression sociale", "Le sport", "L'âge du mariage"],
+        "answer": 1,
+        "explanation": "Les grossesses d'adolescentes résultent de rapports non protégés favorisés par l'ignorance, les mauvaises compagnies, la misère (rapports transactionnels) et le non-respect de l'abstinence."
+      },
+      {
+        "id": "q2",
+        "text": "Une IST est :",
+        "type": "qcm",
+        "options": ["Une maladie de l'air", "Une infection transmise lors des rapports sexuels (VIH/SIDA, gonorrhée, syphilis…)", "Une allergie", "Une blessure"],
+        "answer": 1,
+        "explanation": "Les IST se transmettent surtout par voie sexuelle non protégée : VIH/SIDA (virus), gonococcie, syphilis, chlamydiae. Non traitées, elles causent stérilité, maladies chroniques et parfois la mort."
+      },
+      {
+        "id": "q3",
+        "text": "Les conséquences d'une grossesse précoce sur la scolarité sont :",
+        "type": "qcm",
+        "options": ["Aucune", "L'interruption ou l'abandon des études et la précarité", "La réussite automatique", "Une bourse"],
+        "answer": 1,
+        "explanation": "La maternité précoce oblige souvent à quitter l'école, enferme dans la pauvreté et expose à des complications de santé — c'est un facteur majeur d'échec scolaire des filles."
+      },
+      {
+        "id": "q4",
+        "text": "Les comportements responsables pour éviter grossesses précoces et IST sont :",
+        "type": "qcm",
+        "options": ["L'ignorance", "L'abstinence, la fidélité, l'usage du préservatif et l'information (dépistage, éducation)", "La précipitation", "Le silence"],
+        "answer": 1,
+        "explanation": "Les stratégies : abstinence pour les élèves, fidélité mutuelle, préservatif, dépistage du VIH, éducation sexuelle et choix éclairé — l'objectif est de préserver sa santé et son avenir."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le SIDA (VIH) se transmet par la salive, le partage de repas ou les poignées de main.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Non : le VIH se transmet par le sang, les rapports sexuels non protégés et de la mère à l'enfant. Le vivre-ensemble sans crainte (partage de repas, contact courant) ne transmet pas le virus."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L11_Comportements_adolescent": {
+    "title": "Les comportements responsables de l'adolescent",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'adolescence est la période :",
+        "type": "qcm",
+        "options": ["De la petite enfance", "De transition entre l'enfance et l'âge adulte (environ 10-19 ans)", "De la vieillesse", "Du mariage"],
+        "answer": 1,
+        "explanation": "L'adolescence est le passage de l'enfant à l'adulte, marqué par la puberté, la recherche d'identité et d'indépendance — une période riche mais vulnérable."
+      },
+      {
+        "id": "q2",
+        "text": "Les dangers auxquels l'adolescent est exposé incluent :",
+        "type": "qcm",
+        "options": ["La lecture", "La drogue, l'alcool, les mauvaises compagnies, les rapports non protégés et l'échec scolaire", "Le travail à l'école", "La prière"],
+        "answer": 1,
+        "explanation": "Par besoin d'appartenance et de sensations, l'adolescent peut céder aux conduites à risque : substances, délinquance, sexualité précoce — qui hypothèquent sa santé et son avenir."
+      },
+      {
+        "id": "q3",
+        "text": "Un comportement responsable pour l'adolescent consiste à :",
+        "type": "qcm",
+        "options": ["Suivre tout le monde", "Choisir de bonnes fréquentations, respecter les règles, travailler à l'école et refuser les conduites à risque", "Fuguer", "Imiter les stars"],
+        "answer": 1,
+        "explanation": "Être responsable, c'est faire des choix éclairés : fréquentations saines, respect des parents et des règles, assiduité scolaire, refus de la drogue et des comportements dangereux."
+      },
+      {
+        "id": "q4",
+        "text": "L'importance des comportements responsables est qu'ils :",
+        "type": "qcm",
+        "options": ["Ennuient", "Préservent la santé, la scolarité et l'avenir, et construisent une personnalité équilibrée", "Rendent célèbre", "Suppriment la liberté"],
+        "answer": 1,
+        "explanation": "Les choix posés à l'adolescence déterminent l'adulte de demain : responsabilité = santé préservée, études réussies, relations saines et estime de soi."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'influence du groupe peut pousser l'adolescent à adopter des comportements à risque.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La pression des pairs est forte à l'adolescence : dire non aux mauvaises compagnies et savoir choisir ses amis est une compétence de vie essentielle."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L12_Preservation_environnement": {
+    "title": "La préservation de l'environnement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'environnement est :",
+        "type": "qcm",
+        "options": ["La maison", "L'ensemble des éléments naturels (air, eau, sol, végétation, animaux) et humains qui entourent l'homme", "L'école", "La ville"],
+        "answer": 1,
+        "explanation": "L'environnement comprend le milieu naturel et le cadre de vie bâti : sa qualité conditionne notre santé et notre survie."
+      },
+      {
+        "id": "q2",
+        "text": "Les causes de la dégradation de l'environnement en Côte d'Ivoire sont :",
+        "type": "qcm",
+        "options": ["La plantation d'arbres", "La déforestation, la pollution, les bushfires (feux de brousse), les rejets industriels et le mauvais traitement des déchets", "Le recyclage", "Les aires protégées"],
+        "answer": 1,
+        "explanation": "Les principales pressions : déboisement pour l'agriculture et le bois, feux de brousse, ordures sauvages, rejets toxiques, orpaillage sauvage — qui détruisent sols, eaux et forêts."
+      },
+      {
+        "id": "q3",
+        "text": "Les conséquences de la dégradation environnementale sont :",
+        "type": "qcm",
+        "options": ["Plus de pluies", "Sols appauvris, désertification, maladies, réchauffement et disparition d'espèces", "L'abondance", "La beauté du paysage"],
+        "answer": 1,
+        "explanation": "Dégrader la nature revient à détruire nos propres ressources : perte de fertilité, sécheresses, inondations, maladies liées à la pollution, extinction des espèces."
+      },
+      {
+        "id": "q4",
+        "text": "Les mesures de préservation comprennent :",
+        "type": "qcm",
+        "options": ["Brûler les ordures", "Le reboisement, le tri et le recyclage des déchets, l'interdiction des feux de brousse et l'assainissement", "Abattre les arbres", "Jeter l'eau usée dans la lagune"],
+        "answer": 1,
+        "explanation": "Préserver = replanter les forêts, gérer les déchets (tri, recyclage, dépôts autorisés), protéger l'eau, faire respecter les lois environnementales et éduquer les populations."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : chaque citoyen peut contribuer à la préservation par des gestes simples (planter, ne pas jeter, économiser l'eau).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La protection de l'environnement commence par les comportements quotidiens : ne pas jeter d'ordures, planter des arbres, économiser l'eau et l'énergie, sensibiliser autour de soi."
+      }
+    ]
+  },
+  "Fiche_EDHC_4eme_L13_Points_d_eau": {
+    "title": "La préservation des points d'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "On distingue deux types de points d'eau :",
+        "type": "qcm",
+        "options": ["Chauds et froids", "Naturels (sources, puits, mares, rivières, nappes) et artificiels (bornes-fontaines, forages, châteaux d'eau)", "Salés et doux", "Grands et petits"],
+        "answer": 1,
+        "explanation": "Points d'eau naturels : ceux que fournit la nature (sources, rivières, nappes phréatiques). Points d'eau artificiels : ouvrages réalisés par l'homme (forages, puits modernes, bornes-fontaines)."
+      },
+      {
+        "id": "q2",
+        "text": "Les trois facteurs de pollution des points d'eau sont :",
+        "type": "qcm",
+        "options": ["La pluie, le vent et le soleil", "Les rejets industriels et agricoles, les eaux usées domestiques et les déchets solides", "Les poissons", "Les arbres"],
+        "answer": 1,
+        "explanation": "Les points d'eau sont pollués par : les produits chimiques (engrais, usines), les eaux usées et les excréments (péril fécal), et les déchets solides jetés dans ou près de l'eau."
+      },
+      {
+        "id": "q3",
+        "text": "La consommation d'eau polluée provoque :",
+        "type": "qcm",
+        "options": ["La bonne santé", "Des maladies hydriques : choléra, typhoïde, dysenteries, bilharziose", "La force", "La beauté"],
+        "answer": 1,
+        "explanation": "L'eau contaminée véhicule microbes et parasites responsables des diarrhées (1ʳᵉ cause de mortalité infantile), du choléra, de la typhoïde et des parasitoses."
+      },
+      {
+        "id": "q4",
+        "text": "Les mesures de préservation des points d'eau sont :",
+        "type": "qcm",
+        "options": ["Laver dans la source", "Éloigner les latrines et les fumiers, clôturer les points d'eau, interdire les rejets, traiter les eaux usées", "Jeter les ordures", "Puiser sans règle"],
+        "answer": 1,
+        "explanation": "Préserver = protéger le périmètre (pas de latrines ni de champs traités à proximité), clôturer, réglementer les rejets industriels, gérer les déchets et traiter l'eau avant consommation."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : protéger les points d'eau garantit l'accès durable de la population à une eau saine.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'eau est vitale et limitée : préserver les sources et les ouvrages de la pollution assure la santé publique et la sécurité alimentaire des générations futures."
+      }
+    ]
+  }
+}

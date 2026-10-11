@@ -1,0 +1,362 @@
+{
+  "Fiche_SVT_1A_L1_Reflexe_conditionnel": {
+    "title": "Le réflexe conditionnel",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un réflexe conditionnel est :",
+        "type": "qcm",
+        "options": ["Un réflexe inné présent dès la naissance", "Une réponse apprise à un stimulus initialement neutre, acquise par association", "Une maladie nerveuse", "Un mouvement volontaire"],
+        "answer": 1,
+        "explanation": "Contrairement au réflexe inné (congénital, involontaire), le réflexe conditionnel s'acquiert par apprentissage : un stimulus neutre associé à un stimulus naturel finit par provoquer seul la réponse."
+      },
+      {
+        "id": "q2",
+        "text": "L'expérience de Pavlov a montré que :",
+        "type": "qcm",
+        "options": ["Les chiens ne salivent jamais", "Un chien apprend à saliver au son d'une cloche associée à la nourriture", "La salivation n'est pas un réflexe", "La cloche nourrit le chien"],
+        "answer": 1,
+        "explanation": "Pavlov associait le son d'une cloche (stimulus neutre) à la viande (stimulus naturel). Après apprentissage, le son seul provoquait la salivation : le stimulus neutre est devenu un stimulus conditionnel."
+      },
+      {
+        "id": "q3",
+        "text": "Le mécanisme nerveux du réflexe conditionnel implique :",
+        "type": "qcm",
+        "options": ["La moelle épinière seulement", "Le cerveau (le cortex) qui établit la liaison entre les centres nerveux", "Les muscles seulement", "Le cœur"],
+        "answer": 1,
+        "explanation": "Le réflexe conditionnel met en jeu le cortex cérébral : il relie le centre du stimulus neutre et le centre du stimulus naturel, créant un nouvel arc réflexe acquis."
+      },
+      {
+        "id": "q4",
+        "text": "Les réflexes conditionnels offrent à l'animal :",
+        "type": "qcm",
+        "options": ["Une rigidité", "Une meilleure adaptation au milieu : anticipation, protection et recherche de nourriture", "Une maladie", "Une immobilité"],
+        "answer": 1,
+        "explanation": "L'apprentissage permet à l'animal d'anticiper le danger ou la nourriture sur un simple signal : c'est un avantage adaptatif majeur pour la survie."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un réflexe conditionnel peut disparaître (extinction) si le stimulus conditionnel n'est plus associé au stimulus naturel.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Si la cloche sonne sans jamais être suivie de nourriture, la salivation diminue puis disparaît : c'est l'extinction, preuve que le réflexe conditionnel est acquis et non définitif."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L2_Effets_des_drogues": {
+    "title": "Les effets des drogues sur le système nerveux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une drogue est une substance qui :",
+        "type": "qcm",
+        "options": ["Nourrit le corps", "Modifie le fonctionnement du système nerveux et peut créer une dépendance", "Est toujours un médicament", "Est naturelle donc sans danger"],
+        "answer": 1,
+        "explanation": "La drogue (stupéfiant ou psychotrope) agit sur le cerveau : elle modifie la perception, l'humeur ou le comportement et peut entraîner dépendance et toxicomanie."
+      },
+      {
+        "id": "q2",
+        "text": "Les drogues se classent en :",
+        "type": "qcm",
+        "options": ["Bonnes et mauvaises", "Stimulants, dépresseurs (sédatifs) et hallucinogènes", "Solides et liquides", "Chères et bon marché"],
+        "answer": 1,
+        "explanation": "Trois familles : stimulants (cocaïne, amphétamines — accélèrent), dépresseurs (alcool, héroïne, tranquillisants — ralentissent), hallucinogènes (LSD, cannabis — perturbent les perceptions)."
+      },
+      {
+        "id": "q3",
+        "text": "La synapse est :",
+        "type": "qcm",
+        "options": ["Un os du crâne", "La zone de contact entre deux neurones où passe le message nerveux par des neurotransmetteurs", "Une drogue", "Un muscle"],
+        "answer": 1,
+        "explanation": "Entre deux neurones, le message est transmis par des molécules chimiques (neurotransmetteurs : dopamine, sérotonine…) libérées dans la synapse."
+      },
+      {
+        "id": "q4",
+        "text": "Les drogues agissent principalement en :",
+        "type": "qcm",
+        "options": ["Réparant les neurones", "Perturbant les neurotransmetteurs au niveau des synapses (imitation, blocage ou excès)", "Nourrissant le cerveau", "Rien"],
+        "answer": 1,
+        "explanation": "Chaque drogue modifie la transmission synaptique : la cocaïne bloque la recapture de la dopamine (excès), les opiacés imitent les endorphines — d'où l'effet et la dépendance."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la dépendance est un état où l'organisme réclame la drogue ; l'arrêt brutal provoque le syndrome de sevrage.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La consommation répétée adapte le cerveau : il a besoin de la drogue pour fonctionner (dépendance physique) ; l'arrêt provoque tremblements, douleurs et angoisses — le sevrage."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L3_Anomalies_chromosomiques": {
+    "title": "Les anomalies chromosomiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le caryotype humain normal comporte :",
+        "type": "qcm",
+        "options": ["23 chromosomes", "46 chromosomes (22 paires d'autosomes + 1 paire de chromosomes sexuels)", "44 chromosomes", "48 chromosomes"],
+        "answer": 1,
+        "explanation": "Le caryotype humain : 2n = 46 chromosomes = 22 paires d'autosomes + 1 paire de gonosomes (XX chez la femme, XY chez l'homme)."
+      },
+      {
+        "id": "q2",
+        "text": "La trisomie 21 (syndrome de Down) est :",
+        "type": "qcm",
+        "options": ["L'absence d'un chromosome", "La présence d'un chromosome 21 surnuméraire (47 chromosomes)", "Une maladie infectieuse", "Une anomalie du chromosome X"],
+        "answer": 1,
+        "explanation": "Trisomie 21 = 3 exemplaires du chromosome 21 au lieu de 2 (47 chromosomes) : elle provoque retard mental, traits caractéristiques et anomalies cardiaques."
+      },
+      {
+        "id": "q3",
+        "text": "La méiose atypique responsable des anomalies est :",
+        "type": "qcm",
+        "options": ["La mitose normale", "La non-disjonction : deux chromosomes homologues ne se séparent pas, produisant des gamètes à n+1 ou n−1", "La fécondation", "La mitose"],
+        "answer": 1,
+        "explanation": "La non-disjonction méiotique : une paire de chromosomes ne se sépare pas → gamète avec 2 exemplaires (24 chromosomes) ou aucun (22) → zygote trisomique ou monosomique après fécondation."
+      },
+      {
+        "id": "q4",
+        "text": "Le syndrome de Turner est caractérisé par le caryotype :",
+        "type": "qcm",
+        "options": ["47, XXY", "45, X (un seul chromosome X)", "46, XX", "47, XYY"],
+        "answer": 1,
+        "explanation": "Turner = monosomie X : la femme n'a qu'un seul chromosome X (45, X) → petite taille et stérilité. Klinefelter = 47, XXY : homme avec un X surnuméraire → stérilité et signes féminins."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le risque de trisomie 21 augmente avec l'âge de la mère.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'ovule subit sa méiose longtemps après sa formation : plus la mère est âgée, plus le risque de non-disjonction est élevé — d'où le diagnostic prénatal proposé."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L4_Cycles_sexuels_chez_la_femme": {
+    "title": "Les cycles sexuels chez la femme",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le cycle féminin de 28 jours synchronise :",
+        "type": "qcm",
+        "options": ["Un seul organe", "Trois cycles : ovarien (follicules), utérin (muqueuse) et hormonal", "Le cycle cardiaque", "La respiration"],
+        "answer": 1,
+        "explanation": "Trois cycles couplés : cycle ovarien (maturation du follicule puis corps jaune), cycle utérin (prolifération puis sécrétion de la muqueuse) et cycle hormonal (FSH, LH, œstrogènes, progestérone)."
+      },
+      {
+        "id": "q2",
+        "text": "L'ovulation a lieu :",
+        "type": "qcm",
+        "options": ["Le 1er jour du cycle", "Vers le 14e jour, sous l'effet du pic de LH", "Pendant les règles", "Au 28e jour"],
+        "answer": 1,
+        "explanation": "Au milieu du cycle (~J14), le pic de LH déclenche la libération de l'ovule mûr : c'est l'ovulation, la période de fécondité maximale."
+      },
+      {
+        "id": "q3",
+        "text": "La FSH et la LH sont produites par :",
+        "type": "qcm",
+        "options": ["Les ovaires", "L'hypophyse (glande sous le cerveau)", "L'utérus", "Le foie"],
+        "answer": 1,
+        "explanation": "L'hypophyse sécrète FSH (stimule la croissance des follicules) et LH (déclenche l'ovulation et forme le corps jaune) sous le contrôle de l'hypothalamus."
+      },
+      {
+        "id": "q4",
+        "text": "La progestérone et les œstrogènes agissent par :",
+        "type": "qcm",
+        "options": ["Stimulation permanente", "Rétroaction : un taux élevé bloque la sécrétion de FSH/LH (rétrocontrôle négatif)", "Aucun contrôle", "Destruction de l'ovaire"],
+        "answer": 1,
+        "explanation": "C'est le mécanisme de régulation : les hormones ovariennes exercent un rétrocontrôle négatif sur l'hypophyse et l'hypothalamus — base du fonctionnement de la pilule contraceptive."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les règles correspondent à l'évacuation de la muqueuse utérine quand il n'y a pas eu fécondation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Sans grossesse, le corps jaune régresse → chute de progestérone → la muqueuse épaissie se détache et saigne : c'est la menstruation qui marque le début d'un nouveau cycle."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L5_Regulation_des_naissances": {
+    "title": "La régulation des naissances",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le planning familial consiste à :",
+        "type": "qcm",
+        "options": ["Interdire les enfants", "Choisir volontairement le nombre et l'espacement des naissances", "Abandonner les enfants", "Stériliser"],
+        "answer": 1,
+        "explanation": "Le planning familial permet au couple de décider librement du nombre d'enfants et de l'intervalle entre eux, grâce aux méthodes de contraception adaptées."
+      },
+      {
+        "id": "q2",
+        "text": "Les méthodes naturelles de régulation sont :",
+        "type": "qcm",
+        "options": ["La pilule", "L'abstinence périodique (méthode des températures, Ogino) et le retrait", "Le stérilet", "Le préservatif"],
+        "answer": 1,
+        "explanation": "Méthodes naturelles : éviter les rapports pendant la période fertile (méthode du calendrier/Ogino, courbe de température, observation de la glaire), le retrait — moins fiables."
+      },
+      {
+        "id": "q3",
+        "text": "La pilule combinée agit en :",
+        "type": "qcm",
+        "options": ["Tuant les spermatozoïdes", "Bloquant l'ovulation par apport d'œstrogènes et progestérone (rétrocontrôle)", "Empêchant la nidation uniquement", "Stérilisant"],
+        "answer": 1,
+        "explanation": "La pilule apporte des hormones qui trompent l'hypophyse : le taux élevé bloque FSH/LH → pas d'ovulation. C'est une méthode chimique très fiable prise correctement."
+      },
+      {
+        "id": "q4",
+        "text": "Les méthodes mécaniques sont :",
+        "type": "qcm",
+        "options": ["La pilule", "Le préservatif et le stérilet (DIU)", "La température", "Le calendrier"],
+        "answer": 1,
+        "explanation": "Mécaniques = barrière physique : préservatif masculin/féminin (bloque les spermatozoïdes ET protège des IST) et stérilet (empêche la nidation dans l'utérus)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'espacement des naissances protège la santé de la mère et des enfants et améliore la condition de vie de la famille.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Avantages du planning : moins de grossesses à risque et de mortalité maternelle/infantile, meilleure éducation et nutrition des enfants, meilleures ressources familiales."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L6_Transmission_liee_autosomes": {
+    "title": "La transmission héréditaire liée aux autosomes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un gène récessif :",
+        "type": "qcm",
+        "options": ["S'exprime toujours", "Ne s'exprime qu'à l'état homozygote (deux copies)", "Est porté par le X", "Est dominant"],
+        "answer": 1,
+        "explanation": "L'allèle récessif (noté en minuscule) ne s'exprime que si l'individu en possède deux copies (aa) ; à l'état hétérozygote (Aa), le dominant masque le récessif."
+      },
+      {
+        "id": "q2",
+        "text": "L'albinisme est :",
+        "type": "qcm",
+        "options": ["Une maladie dominante", "Une anomalie récessive autosomale : absence de mélanine", "Une anomalie du chromosome X", "Une infection"],
+        "answer": 1,
+        "explanation": "Albinisme : mutation récessive sur un autosome → l'individu aa ne produit pas de mélanine (peau, poils, yeux dépigmentés). Deux parents porteurs sains (Aa) peuvent avoir un enfant albinos (1 chance sur 4)."
+      },
+      {
+        "id": "q3",
+        "text": "La drépanocytose (anémie falciforme) se caractérise par :",
+        "type": "qcm",
+        "options": ["Des globules rouges ronds", "Des globules rouges en forme de faucille ; maladie récessive où les hétérozygotes sont protégés du paludisme", "Un excès de fer", "Une maladie dominante"],
+        "answer": 1,
+        "explanation": "Mutation de l'hémoglobine : les homozygotes malades (SS) souffrent d'anémie grave ; les hétérozygotes (AS, « drépanocytaires ») sont quasiment sains et mieux protégés du paludisme grave — codominance apparente."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un arbre généalogique, un caractère récessif se reconnaît par :",
+        "type": "qcm",
+        "options": ["Il touche toutes les générations", "Il saute des générations : des parents sains peuvent avoir un enfant malade", "Il touche seulement les garçons", "Il est toujours mortel"],
+        "answer": 1,
+        "explanation": "Le récessif peut rester caché chez les porteurs hétérozygotes sains : il « saute » des générations. Un dominant touche au moins un parent à chaque génération malade."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : deux parents hétérozygotes Aa ont statistiquement 25 % de chances d'avoir un enfant aa (malade si a est récessif pathologique).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Croisement Aa × Aa → génotypes : 1 AA : 2 Aa : 1 aa → 25 % d'homozygotes aa — probabilité d'un enfant malade par grossesse."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L8_Production_d_energie_par_la_cellule": {
+    "title": "La production d'énergie par la cellule",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les deux voies de production d'énergie cellulaire sont :",
+        "type": "qcm",
+        "options": ["Photosynthèse et digestion", "La respiration (aérobie) et la fermentation (anaérobie)", "La division et la mort", "L'absorption et l'excrétion"],
+        "answer": 1,
+        "explanation": "La cellule produit de l'ATP par : la respiration cellulaire (avec O₂ — rendement élevé) ou la fermentation (sans O₂ — rendement faible)."
+      },
+      {
+        "id": "q2",
+        "text": "La respiration cellulaire se déroule principalement dans :",
+        "type": "qcm",
+        "options": ["Le noyau", "Les mitochondries", "Le cytoplasme seul", "La membrane"],
+        "answer": 1,
+        "explanation": "Les mitochondries sont les « centrales énergétiques » : c'est là que le glucose est oxydé par l'O₂ en CO₂ + H₂O, libérant de l'énergie stockée en ATP."
+      },
+      {
+        "id": "q3",
+        "text": "L'équation globale de la respiration est :",
+        "type": "qcm",
+        "options": ["CO₂ + H₂O → glucose + O₂", "Glucose + O₂ → CO₂ + H₂O + énergie (ATP)", "Glucose → alcool", "O₂ → CO₂"],
+        "answer": 1,
+        "explanation": "C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + énergie : l'inverse de la photosynthèse. Le glucose est « brûlé » en présence d'oxygène."
+      },
+      {
+        "id": "q4",
+        "text": "La fermentation alcoolique :",
+        "type": "qcm",
+        "options": ["Utilise beaucoup d'oxygène", "Transforme le glucose en alcool + CO₂ sans O₂, avec faible rendement", "Produit de l'eau", "Se fait dans les muscles"],
+        "answer": 1,
+        "explanation": "Sans O₂, la levure transforme le glucose en éthanol + CO₂ (glucose → 2 C₂H₅OH + 2 CO₂ + peu d'ATP) : utilisée pour le vin, la bière et le levage du pain."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la respiration produit beaucoup plus d'ATP que la fermentation pour la même quantité de glucose.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La respiration dégrade totalement le glucose (jusqu'à ~36-38 ATP) ; la fermentation ne le décompose que partiellement (2 ATP) : le rendement aérobie est environ 18 fois supérieur."
+      }
+    ]
+  },
+  "Fiche_SVT_1A_L9_Mise_en_reserve_des_nutriments": {
+    "title": "La mise en réserve des nutriments",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les nutriments en excès sont stockés sous forme de :",
+        "type": "qcm",
+        "options": ["Vitamines", "Glycogène (foie et muscles) et triglycérides (tissu adipeux)", "Eau", "Protéines libres"],
+        "answer": 1,
+        "explanation": "Le glucose excédentaire devient glycogène (réserve rapide dans le foie et les muscles) ; les lipides sont stockés en triglycérides dans le tissu adipeux (réserve énergétique majeure)."
+      },
+      {
+        "id": "q2",
+        "text": "La glycémie est :",
+        "type": "qcm",
+        "options": ["Le taux de sel dans le sang", "Le taux de glucose dans le sang, maintenu constant (~1 g/L)", "Le taux d'oxygène", "Le taux de globules rouges"],
+        "answer": 1,
+        "explanation": "La glycémie normale à jeun ≈ 0,8-1 g/L : sa constance est vitale (le cerveau a besoin de glucose en continu) ; elle est régulée par le pancréas."
+      },
+      {
+        "id": "q3",
+        "text": "Quand la glycémie augmente après un repas, le pancréas sécrète :",
+        "type": "qcm",
+        "options": ["Du glucagon", "De l'insuline", "De l'adrénaline", "De la thyroxine"],
+        "answer": 1,
+        "explanation": "L'insuline (cellules β des îlots de Langerhans) fait entrer le glucose dans les cellules et le transforme en glycogène : la glycémie redescend."
+      },
+      {
+        "id": "q4",
+        "text": "Quand la glycémie baisse, le pancréas sécrète :",
+        "type": "qcm",
+        "options": ["De l'insuline", "Du glucagon qui dégrade le glycogène du foie en glucose", "De la bile", "De l'urée"],
+        "answer": 1,
+        "explanation": "Le glucagon (cellules α) a l'effet inverse de l'insuline : il déclenche la glycogénolyse hépatique — le foie libère du glucose dans le sang."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le diabète est un dérèglement de la glycémie, souvent par insuffisance ou inefficacité de l'insuline.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Diabète de type 1 : absence d'insuline ; type 2 : résistance à l'insuline → hyperglycémie chronique qui endommage les organes."
+      }
+    ]
+  }
+}

@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb">
   <link rel="stylesheet" href="/enhancements.css?v=3.3.1">
-  <script type="module" src="/firebase-config.js?v=3.3.1"></script>
+  <script type="module" src="/firebase-config.js?v=3.3.5"></script>
   <script src="/enhancements.js?v=3.3.1" defer></script>
   <style>
     :root{--bg:#f8fafc;--card:#ffffff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--accent:#2563eb}
@@ -99,12 +99,12 @@
 
       function populateFilters(struct){
         const classes = Object.keys(struct||{});
-        selClass.innerHTML = '<option value="">Toutes les classes</option>' + classes.map(c=>`<option value="${c}">${c.replace('_',' ')}</option>`).join('');
+        selClass.innerHTML = '<option value="">Toutes les classes</option>' + classes.map(c=>`<option value="${esc(c)}">${esc(c.replace('_',' '))}</option>`).join('');
         selSubject.innerHTML = '<option value="">Toutes les matières</option>';
         selClass.addEventListener('change', ()=>{
           const c = selClass.value;
           const subjects = c && struct[c] ? Object.keys(struct[c]) : [];
-          selSubject.innerHTML = '<option value="">Toutes les matières</option>' + subjects.map(s=>`<option value="${s}">${s}</option>`).join('');
+          selSubject.innerHTML = '<option value="">Toutes les matières</option>' + subjects.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');
           run(input.value);
         });
         selSubject.addEventListener('change', ()=> run(input.value));
@@ -137,7 +137,8 @@
         return list.filter(it => (!c || it.cls===c) && (!s || it.subject===s));
       }
 
-      function esc(html){ return String(html||'').replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m])); }
+      // Échappement HTML de toute donnée injectée via innerHTML (index, structure, paramètres d'URL)
+      function esc(html){ return String(html||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
       function highlight(txt, tokens){
         let out = esc(txt||'');
         for(const t of tokens){ if(!t) continue; const re = new RegExp(`(${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'ig'); out = out.replace(re,'<mark>$1</mark>'); }
@@ -160,7 +161,7 @@
           const url = `/fiches/${encodeURIComponent(it.cls)}/${encodeURIComponent(it.subject)}/${encodeURIComponent(it.file)}`;
           const snippetSrc = (it.text||'');
           const snippet = highlight(snippetSrc.slice(0,160), tokens) + (snippetSrc && snippetSrc.length>160 ? '…' : '');
-          card.innerHTML = `<a href="${url}">${highlight(it.name,tokens)}</a><div class="snippet">${snippet}</div>`;
+          card.innerHTML = `<a href="${esc(url)}">${highlight(it.name,tokens)}</a><div class="snippet">${snippet}</div>`;
           frag.appendChild(card);
         });
         resultsEl.appendChild(frag);

@@ -12,8 +12,11 @@ const ALLOWED_SUBJECTS = {
   '6eme': ['Anglais', 'EDHC', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
   '5eme': ['Mathematiques', 'SVT', 'EDHC', 'Histoire-Geographie', 'Physique-Chimie', 'Technologie', 'Francais'],
   '3eme': ['EDHC', 'EPS', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
+  '4eme': ['Allemand', 'Anglais', 'EDHC', 'Espagnol', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
   Seconde_A: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
   Seconde_C: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT'],
+  Premiere_A: ['Allemand', 'Espagnol', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'SVT', 'Philosophie'],
+  Premiere_C: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'Philosophie'],
   Premiere_D: ['Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'Philosophie'],
   Terminale_C: ['Mathématiques', 'Physique - Chimie'], // ← TES DOSSIERS Terminale_C
   Terminale_D: ['Français', 'Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],

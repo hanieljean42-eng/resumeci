@@ -3,6 +3,10 @@
  * © 2026 ResumeCI / Haniel_dev — Tous droits réservés.
  * Ce script protège le contenu contre la copie, le vol et la reproduction non autorisée.
  * Désactivé sur mobile/iPhone pour une meilleure expérience utilisateur.
+ *
+ * ⚠️ Ce script est une simple dissuasion, PAS une mesure de sécurité : tout le contenu reste
+ * téléchargeable (outils de développement, curl, désactivation de JavaScript). Ne jamais s'y fier
+ * pour protéger du contenu premium ou des données sensibles (voir SECURITY.md).
  */
 (function() {
   'use strict';

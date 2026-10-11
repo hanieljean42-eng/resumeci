@@ -1,0 +1,317 @@
+{
+  "Fiche_ALL_4eme_T1L1_Hallo": {
+    "title": "Hallo — Se saluer et se présenter",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour saluer le matin en allemand, on dit :",
+        "type": "qcm",
+        "options": ["Guten Abend", "Guten Morgen", "Gute Nacht", "Tschüss"],
+        "answer": 1,
+        "explanation": "« Guten Morgen » = bonjour (le matin) ; « Guten Tag » le jour ; « Guten Abend » le soir ; « Gute Nacht » pour souhaiter bonne nuit ; « Tschüss » = au revoir (familier)."
+      },
+      {
+        "id": "q2",
+        "text": "Le verbe « heißen » (s'appeler) conjugué à la 1ʳᵉ personne du singulier donne :",
+        "type": "qcm",
+        "options": ["ich heiße", "du heiß", "er heißen", "wir heißt"],
+        "answer": 0,
+        "explanation": "ich heiße, du heißt, er/sie/es heißt, wir heißen, ihr heißt, sie heißen. « Ich heiße Amani » = je m'appelle Amani."
+      },
+      {
+        "id": "q3",
+        "text": "Pour dire « Je viens de Côte d'Ivoire », on dit :",
+        "type": "qcm",
+        "options": ["Ich wohne in der Elfenbeinküste", "Ich komme aus der Elfenbeinküste", "Ich bin die Elfenbeinküste", "Ich habe die Elfenbeinküste"],
+        "answer": 1,
+        "explanation": "La provenance s'exprime avec « kommen aus » : Ich komme aus der Elfenbeinküste. Le lieu d'habitation s'exprime avec « wohnen in » : Ich wohne in Abidjan."
+      },
+      {
+        "id": "q4",
+        "text": "Au présent, « wir » (nous) + « wohnen » se conjugue :",
+        "type": "qcm",
+        "options": ["wir wohnt", "wir wohnen", "wir wohnst", "wir wohne"],
+        "answer": 1,
+        "explanation": "Au pluriel, wir et sie prennent la forme de l'infinitif : wir wohnen, wir kommen, wir machen. La désinence -en est conservée."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « sein » au présent donne « ich bin, du bist, er ist ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Sein est irrégulier : ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. C'est le verbe le plus fréquent à mémoriser par cœur."
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T1L2_Wie_alt_bist_du": {
+    "title": "Wie alt bist du ? — Les nombres et l'âge",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« zwölf » en allemand signifie :",
+        "type": "qcm",
+        "options": ["2", "12", "20", "7"],
+        "answer": 1,
+        "explanation": "zwölf = 12. À retenir : eins(1), zwei(2), drei(3), vier(4), fünf(5), sechs(6), sieben(7), acht(8), neun(9), zehn(10), elf(11), zwölf(12)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour demander l'âge, on dit :",
+        "type": "qcm",
+        "options": ["Wie heißt du ?", "Wie alt bist du ?", "Wo wohnst du ?", "Wie geht es dir ?"],
+        "answer": 1,
+        "explanation": "« Wie alt bist du ? » = quel âge as-tu ? On répond : « Ich bin … Jahre alt » = j'ai … ans."
+      },
+      {
+        "id": "q3",
+        "text": "« Ich bin vierzehn Jahre alt » signifie :",
+        "type": "qcm",
+        "options": ["J'ai 4 ans", "J'ai 14 ans", "J'ai 40 ans", "J'ai 15 ans"],
+        "answer": 1,
+        "explanation": "vierzehn = 14 (vier + zehn). Les nombres 13-19 se forment par le chiffre des unités + « zehn » : dreizehn(13), vierzehn(14), fünfzehn(15)…"
+      },
+      {
+        "id": "q4",
+        "text": "Le verbe « haben » (avoir) à la 2ᵉ personne du singulier donne :",
+        "type": "qcm",
+        "options": ["du habe", "du hast", "du hat", "du habt"],
+        "answer": 1,
+        "explanation": "haben est irrégulier à la 2ᵉ et 3ᵉ personne du singulier : du hast, er hat (le « b » disparaît). ich habe, wir haben, ihr habt."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « sagen » (dire) est un verbe régulier : ich sage, du sagst, er sagt.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "sagen suit la conjugaison régulière au présent : -e, -st, -t, -en, -t, -en. ich sage, du sagst, er sagt, wir sagen, ihr sagt, sie sagen."
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T2L1_Meine_Schule": {
+    "title": "Meine Schule — L'école et l'accusatif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« das Heft » signifie :",
+        "type": "qcm",
+        "options": ["Le livre", "Le cahier", "Le stylo", "Le cartable"],
+        "answer": 1,
+        "explanation": "das Heft = le cahier ; das Buch = le livre ; der Stift/der Kuli = le stylo ; die Schultasche = le cartable ; der Bleistift = le crayon."
+      },
+      {
+        "id": "q2",
+        "text": "L'accusatif est le cas :",
+        "type": "qcm",
+        "options": ["Du sujet", "Du complément d'objet direct (COD)", "Du complément de lieu", "De la possession"],
+        "answer": 1,
+        "explanation": "L'accusatif marque le COD : « Ich kaufe den Stift » (j'achète le stylo — COD). En allemand seul le masculin change : der → den, ein → einen."
+      },
+      {
+        "id": "q3",
+        "text": "À l'accusatif, l'article défini masculin « der » devient :",
+        "type": "qcm",
+        "options": ["dem", "den", "das", "die"],
+        "answer": 1,
+        "explanation": "Accusatif : der → den (masculin) ; die, das et die (pluriel) restent inchangés. Indéfini : ein → einen (masculin) ; eine et ein inchangés."
+      },
+      {
+        "id": "q4",
+        "text": "« Ich kaufe ___ Buch » (j'achète un livre, das Buch) : la bonne forme est :",
+        "type": "qcm",
+        "options": ["einen", "ein", "eine", "einem"],
+        "answer": 1,
+        "explanation": "das Buch est neutre : l'article indéfini neutre « ein » ne change pas à l'accusatif. Seul le masculin change (ein → einen)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « lernen » est un verbe régulier : ich lerne, du lernst, er lernt, wir lernen.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "lernen (apprendre) et kaufen (acheter) sont des verbes faibles réguliers : radical + -e, -st, -t, -en, -t, -en."
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T3L1_Mein_Traumberuf": {
+    "title": "Mein Traumberuf — Les métiers et les verbes de modalité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« der Traumberuf » signifie :",
+        "type": "qcm",
+        "options": ["Le cauchemar", "Le métier de rêve", "Le travail de nuit", "Le salaire"],
+        "answer": 1,
+        "explanation": "der Traum = le rêve + der Beruf = le métier → der Traumberuf = le métier dont on rêve."
+      },
+      {
+        "id": "q2",
+        "text": "Les Modalverben (verbes de modalité) servent à exprimer :",
+        "type": "qcm",
+        "options": ["La couleur", "La capacité, le souhait, le devoir ou la permission (können, wollen, müssen, dürfen…)", "La météo", "Le pluriel"],
+        "answer": 1,
+        "explanation": "können (pouvoir/savoir), wollen (vouloir), müssen (devoir), dürfen (avoir la permission), sollen (devoir/conseil), mögen (aimer). Le modal se conjugue et l'infinitif va en fin de phrase."
+      },
+      {
+        "id": "q3",
+        "text": "Dans « Ich will Arzt werden », la place des verbes est :",
+        "type": "qcm",
+        "options": ["Les deux verbes ensemble", "Le modal conjugué en 2ᵉ position, l'infinitif en fin de phrase", "L'infinitif d'abord", "L'ordre n'importe pas"],
+        "answer": 1,
+        "explanation": "Règle de construction : sujet + modal conjugué + … + infinitif à la fin. « Ich will Arzt werden » = je veux devenir médecin."
+      },
+      {
+        "id": "q4",
+        "text": "« können » à la 1ʳᵉ personne du singulier donne :",
+        "type": "qcm",
+        "options": ["ich könne", "ich kann", "ich kannt", "ich könntest"],
+        "answer": 1,
+        "explanation": "können : ich kann, du kannst, er kann, wir können, ihr könnt, sie können. Le radical change au singulier (ö → a)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « weil » (parce que) est une conjonction de subordination qui renvoie le verbe conjugué à la fin de la proposition.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Avec weil, dass, wenn…, le verbe conjugué va en fin de subordonnée : « Ich lerne Deutsch, weil es wichtig ist. »"
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T3L2_Mein_Vorbild": {
+    "title": "Mein Vorbild — Verbes forts et Perfekt",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« das Vorbild » signifie :",
+        "type": "qcm",
+        "options": ["L'ennemi", "Le modèle, la personne dont on s'inspire", "Le voisin", "Le professeur"],
+        "answer": 1,
+        "explanation": "das Vorbild = le modèle, l'exemple à suivre (une personne qu'on admire). « Mein Vorbild ist mein Vater » = mon modèle, c'est mon père."
+      },
+      {
+        "id": "q2",
+        "text": "Un verbe fort au présent :",
+        "type": "qcm",
+        "options": ["Ne change jamais", "Change sa voyelle radicale à la 2ᵉ et 3ᵉ personne du singulier (ex. lesen : du liest, er liest)", "Prend toujours -en", "Est un nom"],
+        "answer": 1,
+        "explanation": "Les verbes forts modifient la voyelle du radical : lesen → du liest ; fahren → du fährst ; sprechen → du sprichst ; geben → du gibst."
+      },
+      {
+        "id": "q3",
+        "text": "Le Perfekt (passé composé) se forme avec :",
+        "type": "qcm",
+        "options": ["Le verbe seul", "haben ou sein au présent + participe passé en fin de phrase", "L'infinitif", "Le modal"],
+        "answer": 1,
+        "explanation": "Perfekt = auxiliaire (haben ou sein) conjugué en 2ᵉ position + participe passé à la fin : « Ich habe ein Buch gelesen » = j'ai lu un livre."
+      },
+      {
+        "id": "q4",
+        "text": "L'auxiliaire « sein » s'utilise au Perfekt avec les verbes exprimant :",
+        "type": "qcm",
+        "options": ["Les couleurs", "Le déplacement ou le changement d'état (gehen, kommen, sein, bleiben)", "La pensée", "La possession"],
+        "answer": 1,
+        "explanation": "Verbes de mouvement/changement + sein : « Ich bin nach Abidjan gefahren » = je suis allé à Abidjan. Tous les autres verbes prennent haben."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « sprechen » (parler) au Perfekt donne « ich habe gesprochen ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "sprechen n'est pas un verbe de mouvement → auxiliaire haben + participe gesprochen : « Ich habe mit ihm gesprochen » = j'ai parlé avec lui."
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T4L1_Ich_habe_Schmerzen": {
+    "title": "Ich habe Schmerzen — Le corps et la santé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« Ich habe Schmerzen » signifie :",
+        "type": "qcm",
+        "options": ["J'ai faim", "J'ai mal / je souffre", "Je suis content", "J'ai sommeil"],
+        "answer": 1,
+        "explanation": "die Schmerzen = les douleurs. « Ich habe Schmerzen » = j'ai mal. Pour préciser : « Ich habe Kopfschmerzen » = j'ai mal à la tête."
+      },
+      {
+        "id": "q2",
+        "text": "« der Kopf » signifie :",
+        "type": "qcm",
+        "options": ["Le pied", "La tête", "La main", "Le ventre"],
+        "answer": 1,
+        "explanation": "Körperteile : der Kopf (tête), der Bauch (ventre), der Arm (bras), das Bein (jambe), die Hand (main), der Fuß (pied), das Auge (œil), das Ohr (oreille), der Zahn (dent), der Hals (gorge/cou)."
+      },
+      {
+        "id": "q3",
+        "text": "« Ich habe Bauchschmerzen » veut dire :",
+        "type": "qcm",
+        "options": ["J'ai mal à la tête", "J'ai mal au ventre", "J'ai mal aux dents", "J'ai mal à la gorge"],
+        "answer": 1,
+        "explanation": "der Bauch + die Schmerzen = die Bauchschmerzen (maux de ventre). La douleur se combine au nom de la partie du corps : Kopfschmerzen, Zahnschmerzen, Halsschmerzen."
+      },
+      {
+        "id": "q4",
+        "text": "Le pluriel de « der Zahn » (la dent) est :",
+        "type": "qcm",
+        "options": ["die Zahnen", "die Zähne", "die Zahns", "die Zänhe"],
+        "answer": 1,
+        "explanation": "der Zahn → die Zähne : pluriel avec Umlaut (a → ä) + -e. Beaucoup de noms masculins prennent l'Umlaut au pluriel : die Ärzte, die Hände, die Füße."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : au pluriel, tous les noms allemands prennent l'article « die » quel que soit leur genre au singulier.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Au pluriel, il n'y a plus de distinction de genre : der Kopf, die Hand, das Bein → tous prennent « die » : die Köpfe, die Hände, die Beine."
+      }
+    ]
+  },
+  "Fiche_ALL_4eme_T4L2_Treib_doch_Sport": {
+    "title": "Treib doch Sport ! — Le sport et l'impératif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« Treib doch Sport ! » est une phrase à l'impératif qui signifie :",
+        "type": "qcm",
+        "options": ["Je déteste le sport", "Fais du sport donc !", "Le sport est interdit", "Tu joues bien"],
+        "answer": 1,
+        "explanation": "Sport treiben = faire du sport ; « doch » renforce le conseil. L'impératif sert à donner un ordre ou un conseil."
+      },
+      {
+        "id": "q2",
+        "text": "L'impératif à la 2ᵉ personne du singulier (du) se forme :",
+        "type": "qcm",
+        "options": ["Avec l'infinitif entier", "Avec le radical du verbe seul, éventuellement +e (Treib !, Komm !, Mach !)", "Avec le participe passé", "Avec « du » obligatoire"],
+        "answer": 1,
+        "explanation": "Impératif singulier = radical (sans « du ») : Komm ! (viens !), Mach ! (fais !), Treib ! Pour les verbes forts à changement e→i(e), le changement s'applique : lies !, sprich !"
+      },
+      {
+        "id": "q3",
+        "text": "« Spielt Fußball ! » s'adresse à :",
+        "type": "qcm",
+        "options": ["Une seule personne (du)", "Plusieurs personnes (ihr)", "Une personne de politesse (Sie)", "Personne"],
+        "answer": 1,
+        "explanation": "À la 2ᵉ personne du pluriel (ihr), l'impératif = radical + -t, comme au présent : spielt !, kommt !, macht ! Au vouvoiement (Sie) : infinitif après Sie : « Kommen Sie ! »"
+      },
+      {
+        "id": "q4",
+        "text": "« dreißig » signifie :",
+        "type": "qcm",
+        "options": ["3", "13", "30", "33"],
+        "answer": 2,
+        "explanation": "Les dizaines : zwanzig(20), dreißig(30), vierzig(40), fünfzig(50), sechzig(60), siebzig(70), achtzig(80), neunzig(90), hundert(100)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : en allemand, 25 se dit « fünfundzwanzig » — l'unité d'abord puis la dizaine.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les nombres composés s'inversent : unité + und + dizaine : 25 = fünfundzwanzig (cinq-et-vingt), 47 = siebenundvierzig."
+      }
+    ]
+  }
+}

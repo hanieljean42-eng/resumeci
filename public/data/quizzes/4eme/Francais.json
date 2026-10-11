@@ -1,0 +1,47 @@
+{
+  "Fiche_FR_4eme_Lettre_officielle": {
+    "title": "La lettre officielle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une lettre officielle (ou lettre administrative) est :",
+        "type": "qcm",
+        "options": ["Une lettre entre amis", "Un courrier adressé à une autorité ou une institution pour demander, signaler ou remercier", "Un texte littéraire", "Un journal intime"],
+        "answer": 1,
+        "explanation": "La lettre officielle est un écrit formel destiné à une autorité (maire, directeur, ministre) ou à une administration : demande d'emploi, réclamation, invitation, démission…"
+      },
+      {
+        "id": "q2",
+        "text": "La structure d'une lettre officielle comprend :",
+        "type": "qcm",
+        "options": ["Un titre et des vers", "L'expéditeur, le destinataire, l'objet, le corps avec formules de politesse, la date et la signature", "Des dialogues", "Des images"],
+        "answer": 1,
+        "explanation": "Éléments obligatoires : coordonnées de l'expéditeur (en haut à gauche), celles du destinataire (en haut à droite), lieu et date, objet précis, corps de la lettre, formule de politesse, signature."
+      },
+      {
+        "id": "q3",
+        "text": "L'objet de la lettre officielle :",
+        "type": "qcm",
+        "options": ["Est facultatif", "Résume en quelques mots le but du courrier (ex. « Demande de stage »)", "Est un poème", "Se place en bas de page"],
+        "answer": 1,
+        "explanation": "Placé avant le corps, l'objet annonce clairement le sujet du courrier : « Objet : Demande de bourse », « Objet : Réclamation ». Il doit être bref et précis."
+      },
+      {
+        "id": "q4",
+        "text": "La formule de politesse finale d'une lettre officielle est par exemple :",
+        "type": "qcm",
+        "options": ["« Bisous, à bientôt »", "« Je vous prie d'agréer, Monsieur le Maire, l'expression de ma haute considération »", "« Salut ! »", "« Cordialement mon ami »"],
+        "answer": 1,
+        "explanation": "La formule de sort varie selon le rang du destinataire et reste très codifiée : « Je vous prie d'agréer… mes respectueuses salutations » ; on n'écrit jamais « Cordialement » à une haute autorité."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une bonne lettre officielle doit être claire, concise, correcte dans la langue et respectueuse du destinataire.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les qualités de la lettre officielle : un ton respectueux, des phrases claires et courtes, un plan logique (introduction, développement, conclusion) et l'absence de fautes — la forme compte autant que le fond."
+      }
+    ]
+  }
+}

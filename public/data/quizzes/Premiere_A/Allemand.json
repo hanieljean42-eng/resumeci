@@ -1,0 +1,227 @@
+{
+  "Fiche_ALL_1A_L1_F1_Fuers_Leben_lernen": {
+    "title": "Fürs Leben lernen — le système scolaire allemand",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le système scolaire allemand (das deutsche Schulsystem) est :",
+        "type": "qcm",
+        "options": ["Identique au français", "Différencié : après la Grundschule, on choisit Hauptschule, Realschule ou Gymnasium", "Obligatoire jusqu'à 20 ans", "Sans filières"],
+        "answer": 1,
+        "explanation": "Après l'école primaire (Grundschule, 4 ans), l'élève va en Hauptschule (voie courte, métiers manuels), Realschule (voie moyenne) ou Gymnasium (lycée → Abitur → université)."
+      },
+      {
+        "id": "q2",
+        "text": "« Abitur » (ou Abi) est :",
+        "type": "qcm",
+        "options": ["Une école", "Le diplôme de fin de Gymnasium donnant accès à l'université", "Une note", "Une matière"],
+        "answer": 1,
+        "explanation": "L'Abitur est l'équivalent du baccalauréat : il sanctionne la fin du Gymnasium (classe 12 ou 13) et ouvre les portes des universités."
+      },
+      {
+        "id": "q3",
+        "text": "Le Konjunktiv II au passé (irréel du passé) se forme avec :",
+        "type": "qcm",
+        "options": ["haben/sein + participe", "hätte/wäre + participe passé : « Ich hätte gelernt » = j'aurais appris", "wurde + infinitif", "könnte seul"],
+        "answer": 1,
+        "explanation": "Konj. II passé = hätte ou wäre (au choix selon l'auxiliaire) + participe : « Ich wäre gekommen » (je serais venu), « Ich hätte gesehen » (j'aurais vu) — exprime l'irréel du passé."
+      },
+      {
+        "id": "q4",
+        "text": "« Wenn ich Zeit gehabt hätte, ___ ich dich besucht. » Complète :",
+        "type": "qcm",
+        "options": ["werde", "hätte", "habe", "wäre"],
+        "answer": 1,
+        "explanation": "Irréel du passé : si j'avais eu le temps, je t'aurais rendu visite — hätte gehabt (condition) → hätte besucht (conséquence) car besuchen prend haben."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le Konjunktiv II passé exprime une hypothèse qui n'est pas réalisée (irréel du passé).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Konj. II passé = condition non remplie : « Hätte ich gewusst… » (si j'avais su… — mais je ne savais pas). Contraire du Konj. II présent (irréel du présent/futur : würde + infinitif)."
+      }
+    ]
+  },
+  "Fiche_ALL_1A_L1_F2_SMV_Adjektive_Lassen": {
+    "title": "SMV et adjektive + prépositions — lassen",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« SMV » (Schülermitverantwortung) désigne :",
+        "type": "qcm",
+        "options": ["Un professeur", "La participation des élèves à la gestion de l'école (délégation de responsabilité)", "Une note", "Un examen"],
+        "answer": 1,
+        "explanation": "La SMV = co-responsabilité des élèves : ils participent aux décisions de l'école (délégués, projets, règlement) — un pilier de la démocratie scolaire allemande."
+      },
+      {
+        "id": "q2",
+        "text": "« lassen » peut exprimer :",
+        "type": "qcm",
+        "options": ["Seulement « laisser »", "Laisser / faire faire quelque chose (Ich lasse mein Fahrrad reparieren = je fais réparer mon vélo)", "Aller", "Voir"],
+        "answer": 1,
+        "explanation": "lassen a plusieurs sens : laisser (Ich lasse es = je le laisse), faire faire (lassen + infinitif = faire faire par quelqu'un d'autre), se laisser (Das lässt sich machen = ça peut se faire)."
+      },
+      {
+        "id": "q3",
+        "text": "Certains adjectifs exigent une préposition fixe, par exemple :",
+        "type": "qcm",
+        "options": ["glücklich über (content de), stolz auf (fier de), wütend auf (en colère contre), bereit zu (prêt à)", "gut mit", "schön für", "nett bei"],
+        "answer": 0,
+        "explanation": "Les adjectifs allemands prennent des prépositions obligatoires : stolz auf + accusatif, wütend auf + acc., bereit zu + dat., glücklich über + acc., verliebt in + acc."
+      },
+      {
+        "id": "q4",
+        "text": "« Ich bin stolz ___ meine Schule. » Complète :",
+        "type": "qcm",
+        "options": ["mit", "auf", "für", "von"],
+        "answer": 1,
+        "explanation": "stolz auf + accusatif = fier de : « Ich bin stolz auf meine Schule » = je suis fier de mon école."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « wütend auf jemanden sein » signifie être en colère contre quelqu'un.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "wütend auf + accusatif = furieux contre : « Sie ist wütend auf ihn » = elle est en colère contre lui."
+      }
+    ]
+  },
+  "Fiche_ALL_1A_L2_F1_Kein_bisschen_erwachsen": {
+    "title": "Kein bisschen erwachsen — les conjonctions doubles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« kein bisschen erwachsen » signifie :",
+        "type": "qcm",
+        "options": ["Très adulte", "Pas du tout adulte / pas le moindrement adulte", "Adulte", "Enfant"],
+        "answer": 1,
+        "explanation": "kein bisschen = pas le moindre, pas du tout : « Er ist kein bisschen erwachsen » = il n'est pas du tout adulte — expression pour parler des jeunes qui se comportent encore comme des enfants."
+      },
+      {
+        "id": "q2",
+        "text": "Les conjonctions doubles (korrelative Konjunktionen) sont :",
+        "type": "qcm",
+        "options": ["et / ou", "sowohl… als auch, nicht nur… sondern auch, entweder… oder, weder… noch", "der, die, das", "sehr / viel"],
+        "answer": 1,
+        "explanation": "sowohl… als auch = aussi bien… que ; nicht nur… sondern auch = non seulement… mais aussi ; entweder… oder = soit… ou ; weder… noch = ni… ni."
+      },
+      {
+        "id": "q3",
+        "text": "« ___ er ist jung, ___ ist er verantwortungsvoll. » (ni… ni, négatif) Complète :",
+        "type": "qcm",
+        "options": ["Sowohl… als auch", "Weder… noch", "Nicht nur… sondern auch", "Entweder… oder"],
+        "answer": 1,
+        "explanation": "weder… noch = ni… ni (double négation) : « Er ist weder jung noch verantwortungsvoll » = il n'est ni jeune ni responsable."
+      },
+      {
+        "id": "q4",
+        "text": "« nicht nur… sondern auch » exprime :",
+        "type": "qcm",
+        "options": ["Une opposition", "Un ajout : non seulement… mais aussi", "Une alternative", "Une négation"],
+        "answer": 1,
+        "explanation": "« Er ist nicht nur intelligent, sondern auch fleißig » = il est non seulement intelligent mais aussi travailleur — l'ajout renforce la qualité."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les verbes de modalité expriment la nécessité (müssen), la capacité (können), le vouloir (wollen), la permission (dürfen), le souhait (mögen) et le devoir (sollen).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les 6 Modalverben : müssen (devoir/nécessité), können (pouvoir/capacité), wollen (vouloir), dürfen (permission), sollen (devoir/conseil), mögen (aimer/souhaiter)."
+      }
+    ]
+  },
+  "Fiche_ALL_1A_L2_F2_Temporalsaetze_Beruf": {
+    "title": "Mein Wunschberuf — les subordonnées temporelles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les Temporalsätze (subordonnées temporelles) sont introduites par :",
+        "type": "qcm",
+        "options": ["dass, weil", "wenn, als, während, bevor, nachdem, bis, seitdem", "der, die", "sehr"],
+        "answer": 1,
+        "explanation": "Conjonctions temporelles : wenn (quand — présent/répété/passé répété), als (quand — passé unique), während (pendant que), bevor (avant que), nachdem (après que), bis (jusqu'à), seitdem (depuis que)."
+      },
+      {
+        "id": "q2",
+        "text": "La différence entre « wenn » et « als » :",
+        "type": "qcm",
+        "options": ["Aucune", "wenn = présent/futur ou passé répété ; als = événement unique au passé", "als = futur", "wenn = passé unique"],
+        "answer": 1,
+        "explanation": "als = moment précis au passé : « Als ich 10 Jahre alt war, zogen wir um » = quand j'avais 10 ans. wenn = habitude/présent/futur : « Wenn ich Zeit habe, komme ich » = quand j'ai le temps."
+      },
+      {
+        "id": "q3",
+        "text": "Dans une subordonnée temporelle, le verbe conjugué va :",
+        "type": "qcm",
+        "options": ["Au début", "À la fin de la subordonnée", "Au milieu", "Il n'y a pas de règle"],
+        "answer": 1,
+        "explanation": "Après wenn/als/während/bevor/nachdem… le verbe conjugué est rejeté à la fin : « Wenn ich mein Abitur mache, will ich Arzt werden » = quand je passerai mon bac, je veux devenir médecin."
+      },
+      {
+        "id": "q4",
+        "text": "« nachdem » (après que) peut être remplacé par la préposition :",
+        "type": "qcm",
+        "options": ["vor", "nach + datif : « nach dem Essen » = après le repas", "bei", "mit"],
+        "answer": 1,
+        "explanation": "nachdem + phrase (avec verbe) ↔ nach + nom (sans verbe) : « Nachdem ich gegessen habe » = « Nach dem Essen » = après avoir mangé."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « bevor » (avant que) peut être remplacé par « vor » + datif : « vor der Arbeit » = avant le travail.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "bevor + phrase ↔ vor + datif : « Bevor ich gehe » = « Vor dem Gehen » = avant de partir. Même logique que nachdem/nach."
+      }
+    ]
+  },
+  "Fiche_ALL_1A_L3_F1_Lesen_Jugendbuecher": {
+    "title": "Lesen — Bücher und Filme (livres de jeunesse)",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« das Jugendbuch / die Jugendbücher » désigne :",
+        "type": "qcm",
+        "options": ["Un dictionnaire", "Un livre pour la jeunesse / les livres de jeunesse", "Un cahier", "Un film"],
+        "answer": 1,
+        "explanation": "Jugend = jeunesse + Buch = livre → Jugendbuch = livre de jeunesse (romans pour adolescents). Genres : Krimi (policier), Fantasy, Liebesroman (roman d'amour), Abenteuerroman (roman d'aventure)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour parler de ses goûts de lecture, on dit :",
+        "type": "qcm",
+        "options": ["« Ich lese gern Krimis / Ich mag Fantasy »", "« Ich esse Bücher »", "« Ich schlafe »", "« Ich spreche »"],
+        "answer": 0,
+        "explanation": "Exprimer les goûts de lecture : « Ich lese gern + genre », « Ich mag + nom », « Ich interessiere mich für + acc. », « Mein Lieblingsbuch ist… »"
+      },
+      {
+        "id": "q3",
+        "text": "« der Krimi » désigne :",
+        "type": "qcm",
+        "options": ["Un roman d'amour", "Un roman policier / thriller", "Une BD", "Un poème"],
+        "answer": 1,
+        "explanation": "der Krimi (Kriminalroman) = le polar/detective : genre populaire chez les jeunes. Autres : der Thriller, die Liebesgeschichte (histoire d'amour), das Märchen (conte)."
+      },
+      {
+        "id": "q4",
+        "text": "« lesen » (lire) est un verbe :",
+        "type": "qcm",
+        "options": ["Régulier", "Fort : ich lese, du liest, er liest, las, gelesen", "De modalité", "Pronominal"],
+        "answer": 1,
+        "explanation": "lesen : e→ie au singulier (du liest, er liest) ; passé : las ; participe : gelesen. Verbe fort essentiel."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : pour recommander un livre on dit « Ich empfehle dir dieses Buch » ou « Das Buch ist lesenswert » (ça vaut le coup de lire).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Recommander : « Ich empfehle dir… » (je te recommande), « Es lohnt sich, das Buch zu lesen » (ça vaut la peine de le lire), « lesenswert » = digne d'être lu."
+      }
+    ]
+  }
+}

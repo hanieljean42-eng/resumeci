@@ -471,6 +471,8 @@
           <option value="Terminale_D">Terminale D</option>
           <option value="Terminale_A">Terminale A</option>
           <option value="Terminale_C">Terminale C</option>
+          <option value="Premiere_A">Première A</option>
+          <option value="Premiere_C">Première C</option>
           <option value="Premiere_D">Première D</option>
           <option value="Seconde_A">Seconde A</option>
           <option value="Seconde_C">Seconde C</option>
@@ -481,7 +483,7 @@
       </div>
       <div class="field-group">
         <label>Mot de passe provisoire</label>
-        <input type="text" id="newPassword" placeholder="Laisser vide = généré automatiquement" minlength="6" autocomplete="off">
+        <input type="text" id="newPassword" placeholder="Laisser vide = généré automatiquement" minlength="8" autocomplete="off">
       </div>
       <div class="field-group">
         <label>Forfait à attribuer</label>
@@ -615,11 +617,17 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    window.getAdminApiBase = function() {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        return 'http://127.0.0.1:3000';
+    window.getAdminApiCandidates = function() {
+      if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+      const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+      if (isLocal) {
+        return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
       }
-      return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+      return ['https://resumeci-payment-api.onrender.com'];
+    };
+
+    window.getAdminApiBase = function() {
+      return window.getAdminApiCandidates()[0];
     };
 
     let fullList = [];
@@ -647,7 +655,18 @@
       if (!user) throw new Error("Session administrateur expirée.");
       const token = await user.getIdToken();
       const headers = { ...(options.headers || {}), 'Authorization': `Bearer ${token}` };
-      return fetch(`${window.getAdminApiBase()}${path}`, { ...options, headers });
+      const candidates = window.getAdminApiCandidates();
+      let lastErr = null;
+      for (const base of candidates) {
+        try {
+          const res = await fetch(`${base}${path}`, { ...options, headers });
+          if (res.status !== 503) return res;
+          lastErr = new Error(`Serveur indisponible (${res.status})`);
+        } catch(e) {
+          lastErr = e;
+        }
+      }
+      throw lastErr || new Error("Serveur admin injoignable");
     }
 
     function showLogin() {
@@ -962,7 +981,7 @@
       const phone = rawPhone.replace(/\D/g, '').slice(-10);
       if (!name) { showFeedback(feedback, "Nom complet requis.", true); return; }
       if (phone.length !== 10) { showFeedback(feedback, "Numéro WhatsApp invalide (10 chiffres).", true); return; }
-      if (pwd && pwd.length < 6) { showFeedback(feedback, "Le mot de passe doit comporter au moins 6 caractères (ou laisse vide pour en générer un).", true); return; }
+      if (pwd && pwd.length < 8) { showFeedback(feedback, "Le mot de passe doit comporter au moins 8 caractères (ou laisse vide pour en générer un).", true); return; }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création...';

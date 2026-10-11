@@ -1,0 +1,902 @@
+{
+  "Fiche_ANG_4eme_U1L1_Past_holidays": {
+    "title": "Talking about past holidays",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To talk about past holidays, we use the :",
+        "type": "qcm",
+        "options": ["Present simple", "Past simple", "Future", "Present continuous"],
+        "answer": 1,
+        "explanation": "Finished past events take the past simple: \"Last holiday, I visited my grandmother in the village.\" Regular verbs take -ed; irregular verbs have special forms (go → went)."
+      },
+      {
+        "id": "q2",
+        "text": "The past form of \"go\" is :",
+        "type": "qcm",
+        "options": ["goed", "went", "gone", "goes"],
+        "answer": 1,
+        "explanation": "go is irregular: go → went (past simple) → gone (past participle). Other examples: see → saw, eat → ate, swim → swam, travel → travelled."
+      },
+      {
+        "id": "q3",
+        "text": "Which question asks about past holidays ?",
+        "type": "qcm",
+        "options": ["Do you visit the beach ?", "Did you visit the beach last year ?", "Will you visit the beach ?", "Are you visiting the beach ?"],
+        "answer": 1,
+        "explanation": "Past simple questions use Did + subject + base verb (no -ed on the main verb): \"Did you enjoy your holidays?\""
+      },
+      {
+        "id": "q4",
+        "text": "\"Last holiday, we ___ to the seaside.\" Choose the correct verb :",
+        "type": "qcm",
+        "options": ["travel", "travelled", "travelling", "travels"],
+        "answer": 1,
+        "explanation": "\"Last holiday\" indicates a finished past → past simple: travelled (regular verb, -ed)."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : Holiday activities vocabulary includes swimming, fishing, visiting grandparents and playing with friends.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Typical holiday activities: to swim, to fish, to visit relatives, to play games, to travel, to rest — all useful to describe your vacations."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U1L2_School_memories": {
+    "title": "School memories — used to",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To describe a past habit we no longer do, we use :",
+        "type": "qcm",
+        "options": ["will", "used to + infinitive", "have to", "the present"],
+        "answer": 1,
+        "explanation": "\"Used to + verb\" expresses a past habit or state that has stopped: \"I used to play football every evening at primary school.\""
+      },
+      {
+        "id": "q2",
+        "text": "The negative form of \"I used to walk to school\" is :",
+        "type": "qcm",
+        "options": ["I didn't used to walk", "I didn't use to walk", "I not used to walk", "I use not to walk"],
+        "answer": 1,
+        "explanation": "Negative : didn't + use to (no -d!): \"I didn't use to like English but now I do.\" Same for questions: \"Did you use to…?\""
+      },
+      {
+        "id": "q3",
+        "text": "\"I ___ be afraid of teachers, but now I'm not.\" Complete :",
+        "type": "qcm",
+        "options": ["use to", "used to", "am used to", "usually"],
+        "answer": 1,
+        "explanation": "Affirmative form = used to + infinitive. \"I used to be afraid\" = a past state that no longer exists."
+      },
+      {
+        "id": "q4",
+        "text": "School memories vocabulary includes :",
+        "type": "qcm",
+        "options": ["Boarding school, schoolmates, teachers, playground", "Aeroplane, passport, visa", "Hospital, nurse, medicine", "Farm, crops, harvest"],
+        "answer": 0,
+        "explanation": "School memories: boarding school (internat), schoolmates (camarades), playground (cour de récréation), classrooms, strict teachers, games."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"Used to\" can describe both past habits (I used to play) and past states (I used to be shy).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Used to works with action verbs (habits) AND state verbs (be, like, live): \"I used to live in Bouaké\" = a state that has changed."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U1L3_Conditions": {
+    "title": "Expressing conditions — if",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "A first conditional sentence (real condition) is formed with :",
+        "type": "qcm",
+        "options": ["If + past, will + verb", "If + present, will + infinitive", "If + present, present", "If + will, will"],
+        "answer": 1,
+        "explanation": "If + present simple → will + infinitive: \"If you work hard, you will pass your exams.\" The condition is possible/real."
+      },
+      {
+        "id": "q2",
+        "text": "\"If you don't study, you ___ fail.\" Complete :",
+        "type": "qcm",
+        "options": ["would", "will", "won't", "will to"],
+        "answer": 2,
+        "explanation": "Negative consequence: will not → won't: \"If you don't study, you won't pass your BEPC.\""
+      },
+      {
+        "id": "q3",
+        "text": "School results vocabulary includes :",
+        "type": "qcm",
+        "options": ["Pass, fail, succeed, get good marks", "Cook, eat, drink", "Fly, land, take off", "Sing, dance"],
+        "answer": 0,
+        "explanation": "Results vocabulary: to pass (réussir), to fail (échouer), to succeed (réussir), to get good/bad marks, to work hard, to be lazy."
+      },
+      {
+        "id": "q4",
+        "text": "\"If it rains, we ___ at home.\" Choose :",
+        "type": "qcm",
+        "options": ["stay will", "will stay", "stayed", "staying"],
+        "answer": 1,
+        "explanation": "First conditional: if + present → will + infinitive: \"If it rains, we will stay at home.\" The main clause carries the future."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : In a conditional sentence, \"will\" never goes in the if-clause.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Rule: \"will\" belongs to the main clause, never after \"if\": say \"If you work, you will succeed\" NOT ✗ \"If you will work…\"."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U2L1_Rural_women": {
+    "title": "Rural women — can/be able to, reported speech",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To express ability in the present, we use :",
+        "type": "qcm",
+        "options": ["must", "can / be able to", "should", "used to"],
+        "answer": 1,
+        "explanation": "\"Rural women can cultivate rice\" = ability. \"Be able to\" is more flexible: it works in all tenses (was able to, will be able to)."
+      },
+      {
+        "id": "q2",
+        "text": "Rural women's activities include :",
+        "type": "qcm",
+        "options": ["Flying planes", "Farming, selling at the market, fetching water, cooking", "Driving trains", "Teaching at university"],
+        "answer": 1,
+        "explanation": "Vocabulary: to farm/cultivate, to sell at the market, to fetch water (puiser l'eau), to cook, to take care of children, to harvest."
+      },
+      {
+        "id": "q3",
+        "text": "Direct → indirect speech: \"I am tired,\" she says →",
+        "type": "qcm",
+        "options": ["She says I am tired", "She says (that) she is tired", "She says am tired", "She tired says"],
+        "answer": 1,
+        "explanation": "In indirect speech, the pronoun adapts to the speaker: \"I\" becomes \"she\". The tense stays the same if the reporting verb is in the present (says)."
+      },
+      {
+        "id": "q4",
+        "text": "\"She can sell her products at the market\" means she :",
+        "type": "qcm",
+        "options": ["must sell", "is able to sell", "will sell", "sells always"],
+        "answer": 1,
+        "explanation": "Can = ability or possibility: she is able to sell / it is possible for her to sell."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"be able to\" can replace \"can\" in all tenses: was able to (past), will be able to (future).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "\"Can\" has no infinitive or future form: for other tenses we use \"be able to\": yesterday I was able to finish; tomorrow I will be able to go."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U2L2_Women_rights": {
+    "title": "Women's rights",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Women's rights include :",
+        "type": "qcm",
+        "options": ["The right to vote, to education, to work and to own property", "Only the right to cook", "No rights at all", "Only men's rights"],
+        "answer": 0,
+        "explanation": "Rights vocabulary: the right to education (droit à l'éducation), the right to vote (droit de vote), the right to work, the right to own property (propriété), equality."
+      },
+      {
+        "id": "q2",
+        "text": "\"Equality\" means :",
+        "type": "qcm",
+        "options": ["Being different", "Having the same rights and opportunities", "Being richer", "Being stronger"],
+        "answer": 1,
+        "explanation": "Equality (égalité) = same rights, same chances for men and women. Opposite: inequality/discrimination."
+      },
+      {
+        "id": "q3",
+        "text": "\"Girls must go to school\" expresses :",
+        "type": "qcm",
+        "options": ["A wish", "An obligation", "A refusal", "A question"],
+        "answer": 1,
+        "explanation": "\"Must\" expresses obligation: sending girls to school is a duty and a right, not a choice."
+      },
+      {
+        "id": "q4",
+        "text": "A synonym of \"to fight for rights\" is :",
+        "type": "qcm",
+        "options": ["to give up", "to defend / to struggle for rights", "to forget rights", "to sleep"],
+        "answer": 1,
+        "explanation": "To fight for / to defend / to struggle for rights = lutter pour les droits. Related vocabulary: freedom, justice, discrimination, empower."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : Promoting women's rights helps the development of the whole country.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Educated and empowered women contribute to the economy, to children's education and to health: women's rights benefit the entire society."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U2L3_Girls_school": {
+    "title": "Girls' schooling — opinions and comparisons",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To give an opinion, we say :",
+        "type": "qcm",
+        "options": ["I think that… / In my opinion…", "Go there !", "Once upon a time", "What time is it ?"],
+        "answer": 0,
+        "explanation": "Opinion phrases: \"I think (that)…\", \"In my opinion…\", \"I believe…\", \"For me…\". Example: \"I think girls should stay at school.\""
+      },
+      {
+        "id": "q2",
+        "text": "The comparative of superiority of a short adjective is :",
+        "type": "qcm",
+        "options": ["more + adjective", "adjective + -er + than", "the most", "as + adjective + as"],
+        "answer": 1,
+        "explanation": "Short adjectives: + -er + than: \"Boys are taller than girls at this age.\" Long adjectives take \"more…than\": \"more important than\"."
+      },
+      {
+        "id": "q3",
+        "text": "The comparative of equality is formed with :",
+        "type": "qcm",
+        "options": ["more…than", "as + adjective + as", "-er than", "the best"],
+        "answer": 1,
+        "explanation": "\"as + adjective + as\" = aussi… que : \"Girls are as intelligent as boys.\" Negative: \"not as/so…as\" = pas aussi… que."
+      },
+      {
+        "id": "q4",
+        "text": "\"Education is as important for girls ___ for boys.\" Complete :",
+        "type": "qcm",
+        "options": ["than", "as", "that", "more"],
+        "answer": 1,
+        "explanation": "Equality: as…as. \"Girls' schooling is as important as boys'\" — equal importance."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : For long adjectives (3+ syllables), the comparative uses \"more … than\".",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Long adjectives: more + adjective + than: \"more important than\", \"more difficult than\". Never \"importanter\"!"
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U3L1_Transport": {
+    "title": "Means of transport — on/by/in, wishes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To say how we travel, we use :",
+        "type": "qcm",
+        "options": ["by + transport name (by bus, by car, by train)", "with + transport", "at + transport", "for + transport"],
+        "answer": 0,
+        "explanation": "\"by + moyen de transport\" (no article): by bus, by taxi, by plane, by canoe. Exceptions: on foot, on a bike/motorbike, in a car (when specified: \"in my father's car\")."
+      },
+      {
+        "id": "q2",
+        "text": "Means of transport in Côte d'Ivoire include :",
+        "type": "qcm",
+        "options": ["Submarine", "Gbaka, woro-woro, moto-taxi, bus, canoe, plane", "Horse carriage only", "Rocket"],
+        "answer": 1,
+        "explanation": "Local means of transport: gbaka (minibus), woro-woro (taxi communal), moto-taxi, bus, ferry, canoe (pirogue), taxi, private car, bicycle, plane."
+      },
+      {
+        "id": "q3",
+        "text": "To express a wish politely, we say :",
+        "type": "qcm",
+        "options": ["I want to travel / I would like to travel", "Travel now !", "I travel yesterday", "No travel"],
+        "answer": 0,
+        "explanation": "\"I want to\" = je veux (direct); \"I would like to\" = j'aimerais (poli). Example: \"I would like to travel by plane.\""
+      },
+      {
+        "id": "q4",
+        "text": "« Je vais à l'école à pied » =",
+        "type": "qcm",
+        "options": ["I go to school by foot", "I go to school on foot", "I go to school in foot", "I go to school with foot"],
+        "answer": 1,
+        "explanation": "Walking = \"on foot\" (fixed expression, never \"by foot\"). Other movements: by bike/on a bike, by bus, by taxi."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"by\" is used with the general means of transport (by bus), but \"on\" or \"in\" is used when the vehicle is specified (in my father's car, on my bike).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Rule: by + vehicle (general, no article) vs in/on + determiner + vehicle (specific): \"I came by car\" vs \"I came in my uncle's car\"."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U3L2_Travel_plane": {
+    "title": "Travelling by plane — necessity and preferences",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Airport vocabulary includes :",
+        "type": "qcm",
+        "options": ["Ticket, passport, boarding pass, luggage, flight", "Stove, fridge, plate", "Blackboard, chalk", "Cow, tractor"],
+        "answer": 0,
+        "explanation": "At the airport: ticket (billet), passport (passeport), boarding pass (carte d'embarquement), luggage/baggage (bagages), flight (vol), to check in (enregistrer), departure/arrival."
+      },
+      {
+        "id": "q2",
+        "text": "To express necessity, we use :",
+        "type": "qcm",
+        "options": ["want to", "need to + infinitive", "like to", "enjoy"],
+        "answer": 1,
+        "explanation": "\"need to + verb\" = avoir besoin de : \"You need to check in two hours before the flight.\" Negative: \"don't need to\" = pas nécessaire."
+      },
+      {
+        "id": "q3",
+        "text": "To express a preference between two options, we say :",
+        "type": "qcm",
+        "options": ["I prefer travelling by plane to travelling by road", "I hate planes", "Travel !", "Planes are big"],
+        "answer": 0,
+        "explanation": "Prefer X to Y = préférer X à Y : \"I prefer the plane to the bus because it is faster.\" Also: \"I like… better than…\" / \"I'd rather…\"."
+      },
+      {
+        "id": "q4",
+        "text": "\"You ___ to show your passport at the boarding gate.\" Complete :",
+        "type": "qcm",
+        "options": ["need", "needing", "needs", "needed to"],
+        "answer": 0,
+        "explanation": "need to + infinitive: \"You need to show your passport\" = tu dois présenter ton passeport."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"prefer … to …\" never takes \"than\".",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Say \"I prefer planes to trains\" — never \"prefer…than…\"! Alternative form: \"I would rather fly than take the bus\" (would rather + infinitive…than…)."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U3L3_New_life_UK": {
+    "title": "A new life in the UK — reported speech and past simple",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "In reported speech, \"She said she was happy\" reports the direct sentence :",
+        "type": "qcm",
+        "options": ["She says : \"I am happy.\"", "\"I am happy,\" she said", "\"You are happy,\" she said", "\"She is happy,\" I said"],
+        "answer": 1,
+        "explanation": "Direct : \"I am happy,\" she said. Indirect : she said (that) she was happy — the tense moves back one step (am → was) because the reporting verb is in the past."
+      },
+      {
+        "id": "q2",
+        "text": "When the reporting verb is in the past (said), the present simple becomes :",
+        "type": "qcm",
+        "options": ["Future", "Past simple", "Present perfect", "Infinitive"],
+        "answer": 1,
+        "explanation": "Backshift: present → past (am → was, live → lived); past simple → past perfect (lived → had lived); will → would; can → could."
+      },
+      {
+        "id": "q3",
+        "text": "Living abroad vocabulary includes :",
+        "type": "qcm",
+        "options": ["to settle, to adapt, homesickness, a new culture", "to sleep all day", "to cry", "nothing"],
+        "answer": 0,
+        "explanation": "Vocabulary: to settle (s'installer), to adapt to (s'adapter), homesickness (mal du pays), culture shock, foreign (étranger), newcomer (nouveau venu)."
+      },
+      {
+        "id": "q4",
+        "text": "« Il a dit qu'il vivait à Londres » in indirect speech :",
+        "type": "qcm",
+        "options": ["He said he lives in London", "He said he lived in London", "He says he lived in London", "He said live London"],
+        "answer": 1,
+        "explanation": "said (past) → backshift: lives → lived. \"He said he lived in London.\""
+      },
+      {
+        "id": "q5",
+        "text": "True or False : The past simple describes finished actions at a definite past time (yesterday, last year, in 2020).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Past simple = completed action + finished time marker: \"I arrived in the UK in 2020.\" With an unfinished time (this week, ever, already) → present perfect."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U4L1_Fashion_wear": {
+    "title": "Fashion — present simple vs present continuous",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "The present continuous describes :",
+        "type": "qcm",
+        "options": ["A habit", "An action happening now", "The past", "A truth"],
+        "answer": 1,
+        "explanation": "Present continuous (be + V-ing) = action en cours : \"She is wearing a red dress today.\" Present simple = habit/fact : \"She wears nice clothes.\""
+      },
+      {
+        "id": "q2",
+        "text": "Fashion vocabulary includes :",
+        "type": "qcm",
+        "options": ["trendy, old-fashioned, to wear, outfit, style", "to plough, harvest", "to fly, land", "to heal, medicine"],
+        "answer": 0,
+        "explanation": "Fashion words: trendy (à la mode), old-fashioned (démodé), to wear (porter), outfit (tenue), style, elegant, casual, smart."
+      },
+      {
+        "id": "q3",
+        "text": "\"Look ! She ___ a beautiful pagne.\" Choose :",
+        "type": "qcm",
+        "options": ["wears", "is wearing", "wore", "wear"],
+        "answer": 1,
+        "explanation": "\"Look !\" signals an action happening now → present continuous: is wearing (be + V-ing)."
+      },
+      {
+        "id": "q4",
+        "text": "\"He always ___ elegant clothes.\" (habit) Choose :",
+        "type": "qcm",
+        "options": ["is wearing", "wearing", "wears", "wear"],
+        "answer": 2,
+        "explanation": "\"Always\" = habit → present simple, 3rd person -s : wears."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"to wear\" = porter (vêtement) ; the past is \"wore\" and the participle is \"worn\".",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Irregular verb : wear → wore → worn. \"She wore a nice dress yesterday\" / \"This dress was worn by a queen.\""
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U4L2_Passive_fashion": {
+    "title": "Passive voice — describing how clothes are made",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "The passive voice is formed with :",
+        "type": "qcm",
+        "options": ["have + infinitive", "be + past participle", "do + verb", "will + -ed"],
+        "answer": 1,
+        "explanation": "Passive = subject + be (conjugated) + past participle : \"Pagnes are made in Côte d'Ivoire.\" The doer is introduced by \"by\" (often omitted)."
+      },
+      {
+        "id": "q2",
+        "text": "Active : \"Weavers make kente cloth.\" → Passive :",
+        "type": "qcm",
+        "options": ["Kente cloth makes weavers", "Kente cloth is made by weavers", "Weavers are made by kente cloth", "Kente is making"],
+        "answer": 1,
+        "explanation": "The object (kente cloth) becomes the subject ; be + past participle (made) ; the agent follows \"by\"."
+      },
+      {
+        "id": "q3",
+        "text": "We use the passive when :",
+        "type": "qcm",
+        "options": ["The action is less important than the doer", "The doer is unknown, obvious or less important than the action/result", "We want to blame someone", "Talking about the future"],
+        "answer": 1,
+        "explanation": "The passive highlights the process or the product, not the person : \"Cotton is grown in the north\" (the growers are obvious/unimportant)."
+      },
+      {
+        "id": "q4",
+        "text": "\"Used to\" expresses :",
+        "type": "qcm",
+        "options": ["The future", "A past habit or state that no longer exists", "A permanent truth", "The present"],
+        "answer": 1,
+        "explanation": "\"People used to wear traditional clothes more often\" = habitude passée qui a changé."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"This pagne was woven by hand\" is a passive sentence in the past.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "was (past of be) + woven (past participle of weave) = passive past. The agent is \"by hand\" (à la main)."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U4L3_Success_story": {
+    "title": "A success story — present perfect vs past simple",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "The present perfect links :",
+        "type": "qcm",
+        "options": ["Two future actions", "A past action to the present (result visible now)", "Two past actions", "Nothing"],
+        "answer": 1,
+        "explanation": "have/has + past participle : the action is past but its result matters now : \"She has become a famous designer\" (she IS famous now)."
+      },
+      {
+        "id": "q2",
+        "text": "Choose the correct sentence for a finished, dated past action :",
+        "type": "qcm",
+        "options": ["She has started her business in 2015", "She started her business in 2015", "She starts her business in 2015", "She is starting in 2015"],
+        "answer": 1,
+        "explanation": "With a finished time marker (in 2015, yesterday, last year), English uses the past simple — never the present perfect."
+      },
+      {
+        "id": "q3",
+        "text": "Present perfect markers include :",
+        "type": "qcm",
+        "options": ["yesterday, last week", "already, just, ever, never, since, for", "tomorrow", "in 1990"],
+        "answer": 1,
+        "explanation": "Unfinished/linked-to-now markers → present perfect : \"I have already sold 100 pagnes\", \"I have never been to Paris\", \"since 2015\", \"for 5 years\"."
+      },
+      {
+        "id": "q4",
+        "text": "\"She ___ (sell) 1 000 outfits since 2020.\" Choose :",
+        "type": "qcm",
+        "options": ["sold", "has sold", "sells", "is selling"],
+        "answer": 1,
+        "explanation": "\"since 2020\" links past to present → present perfect : has sold."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"for\" indicates a duration (for ten years) ; \"since\" indicates a starting point (since 2014).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "for + durée (for 5 years, for two months) ; since + point de départ (since Monday, since 2014, since she was a child)."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U5L1_Wish_city": {
+    "title": "Wishes about the city — wish + past, used to",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To express a wish about the present (regret), we use :",
+        "type": "qcm",
+        "options": ["wish + present", "wish + past tense", "hope + will", "want + infinitive"],
+        "answer": 1,
+        "explanation": "\"I wish + past\" = regret about the present : \"I wish I lived in a cleaner city.\" (= malheureusement, ce n'est pas le cas)."
+      },
+      {
+        "id": "q2",
+        "text": "\"I wish my city ___ less polluted.\" Complete :",
+        "type": "qcm",
+        "options": ["is", "was/were", "will be", "be"],
+        "answer": 1,
+        "explanation": "After \"I wish\", use the past tense for a present regret : \"I wish my city were cleaner\" (were preferred for all persons in formal English)."
+      },
+      {
+        "id": "q3",
+        "text": "\"There used to be\" expresses :",
+        "type": "qcm",
+        "options": ["The present", "Something that existed before but no longer does", "The future", "A wish"],
+        "answer": 1,
+        "explanation": "\"There used to be a forest here, but now there are buildings\" = comparaison passé/présent : ce qui existait avant a disparu."
+      },
+      {
+        "id": "q4",
+        "text": "City vocabulary includes :",
+        "type": "qcm",
+        "options": ["traffic jam, pollution, slum, skyscraper, crowded", "cow, field, harvest", "nothing", "ocean"],
+        "answer": 0,
+        "explanation": "City words : traffic jam (embouteillage), pollution, slum (bidonville), skyscraper (gratte-ciel), crowded (bondé), noise, public transport."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"I wish I were rich\" and \"I wish I was rich\" are both heard ; \"were\" is the more formal form.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "After \"I wish\", \"were\" applies to all persons in careful English (subjunctive) : \"I wish I were a bird.\" In everyday speech, \"was\" is also accepted."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U5L2_Village_life": {
+    "title": "Village life — feelings and questions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To express feelings, we use the structure :",
+        "type": "qcm",
+        "options": ["feel + adjective", "feel + infinitive", "to feeling", "felt to"],
+        "answer": 0,
+        "explanation": "\"feel + adjective\" : I feel happy/sad/tired/lonely/safe. \"In the village, people feel safe and peaceful.\""
+      },
+      {
+        "id": "q2",
+        "text": "Village life vocabulary includes :",
+        "type": "qcm",
+        "options": ["traffic jams", "peaceful, quiet, farming, close-knit community, fresh air", "skyscrapers", "pollution"],
+        "answer": 1,
+        "explanation": "Village words : peaceful (paisible), quiet (calme), farming (agriculture), community (communauté), fresh air, friendly neighbours ; opposites of city life."
+      },
+      {
+        "id": "q3",
+        "text": "The question \"___ do you like village life ? — Because it is quiet.\" uses :",
+        "type": "qcm",
+        "options": ["What", "Why", "When", "How many"],
+        "answer": 1,
+        "explanation": "\"Why…?\" asks for a reason ; the answer begins with \"Because…\"."
+      },
+      {
+        "id": "q4",
+        "text": "\"___ people live in this village ? — About 500.\" Complete :",
+        "type": "qcm",
+        "options": ["How much", "How many", "How long", "How far"],
+        "answer": 1,
+        "explanation": "How many + countable noun (people, houses) ; how much + uncountable (water, time, money)."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : Comparing village and city : \"The village is quieter than the city, but the city is more exciting.\"",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Correct comparatives : quiet → quieter (-er for short adjective) ; exciting → more exciting (long adjective). Both forms are grammatically right."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U5L3_So_that": {
+    "title": "Expressing consequence — so…that",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "\"The city is so noisy that I can't sleep\" expresses :",
+        "type": "qcm",
+        "options": ["A cause", "A consequence", "A wish", "A question"],
+        "answer": 1,
+        "explanation": "\"so + adjective + that\" = tellement… que : it introduces the consequence of a quality : so noisy → can't sleep."
+      },
+      {
+        "id": "q2",
+        "text": "\"so + adjective + that\" : choose the correct sentence :",
+        "type": "qcm",
+        "options": ["The village was so beautiful that we stayed a week", "So beautiful village", "The village that was so beautiful", "So that beautiful village"],
+        "answer": 0,
+        "explanation": "Structure : so + adjective + that + clause : \"so beautiful that we stayed a week\" = si beau que nous sommes restés une semaine."
+      },
+      {
+        "id": "q3",
+        "text": "With an adverb, the structure becomes :",
+        "type": "qcm",
+        "options": ["so + adverb + that : \"He ran so fast that nobody could catch him\"", "so + noun", "too + adverb", "very + that"],
+        "answer": 0,
+        "explanation": "so + adverb + that : \"so fast\", \"so slowly\", \"so well\" — the rule is the same : so + adverb + that + consequence."
+      },
+      {
+        "id": "q4",
+        "text": "Rural exodus vocabulary includes :",
+        "type": "qcm",
+        "options": ["to leave the village, to migrate, to look for jobs", "to stay forever", "to sleep", "to eat"],
+        "answer": 0,
+        "explanation": "Rural exodus : people leave the countryside for the city → migrate (migrer), look for jobs (chercher du travail), overcrowding (surpeuplement), opportunity (opportunité)."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : « Il est si pauvre qu'il ne peut pas payer l'école » = \"He is so poor that he can't pay for school.\"",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Correct translation of the cause-consequence structure : so + adjective (poor) + that + result clause."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U6L1_My_rights": {
+    "title": "My rights — requests, must/mustn't",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To make a polite request, we say :",
+        "type": "qcm",
+        "options": ["Give me !", "Can/Could I have my ID card, please ?", "Now !", "You must give me"],
+        "answer": 1,
+        "explanation": "Polite requests : \"Can I…?\", \"Could I…?\", \"May I…?\" + please. \"Could\" is more polite than \"can\"."
+      },
+      {
+        "id": "q2",
+        "text": "\"must\" expresses :",
+        "type": "qcm",
+        "options": ["A wish", "A strong obligation", "A refusal", "A possibility"],
+        "answer": 1,
+        "explanation": "must = obligation forte : \"You must respect the law.\" Opposite : mustn't = interdiction : \"You mustn't steal.\""
+      },
+      {
+        "id": "q3",
+        "text": "\"mustn't\" means :",
+        "type": "qcm",
+        "options": ["No necessity", "Prohibition (it is forbidden)", "Permission", "A question"],
+        "answer": 1,
+        "explanation": "mustn't = interdit : \"You mustn't cheat in exams.\" Careful : \"don't have to\" = no necessity (not forbidden, just not necessary)."
+      },
+      {
+        "id": "q4",
+        "text": "Rights vocabulary includes :",
+        "type": "qcm",
+        "options": ["the right to education, to health, to vote, an ID card, a birth certificate", "to sleep all day", "to steal", "nothing"],
+        "answer": 0,
+        "explanation": "Documents/rights : birth certificate (acte de naissance), ID card (carte d'identité), the right to… (droit à/de), freedom, justice."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"You mustn't litter here\" means littering is forbidden.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "mustn't = prohibition : \"You mustn't litter\" = il est interdit de jeter des ordures. Compare : \"You don't have to litter\" = pas nécessaire (but not forbidden)."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U6L2_Duties": {
+    "title": "Duties — have to / don't have to",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To express duties, we use :",
+        "type": "qcm",
+        "options": ["like to", "have to / must + infinitive", "prefer", "want"],
+        "answer": 1,
+        "explanation": "\"have to + verb\" = devoir (external obligation) : \"Citizens have to pay taxes.\" \"must\" = strong/moral duty : \"We must respect our parents.\""
+      },
+      {
+        "id": "q2",
+        "text": "A citizen's duties include :",
+        "type": "qcm",
+        "options": ["Stealing", "Paying taxes, respecting the law, voting, protecting the environment", "Littering", "Fighting"],
+        "answer": 1,
+        "explanation": "Duties vocabulary : to pay taxes (payer des impôts), to respect the law, to vote, to go to school, to protect the environment, to be honest."
+      },
+      {
+        "id": "q3",
+        "text": "\"You don't have to come early\" means :",
+        "type": "qcm",
+        "options": ["You mustn't come early", "It is not necessary to come early", "You can't come", "Come early !"],
+        "answer": 1,
+        "explanation": "\"don't have to\" = absence of necessity (pas obligé), NOT a prohibition. Compare : mustn't = interdiction."
+      },
+      {
+        "id": "q4",
+        "text": "\"She ___ go to school every day\" (obligation). Choose :",
+        "type": "qcm",
+        "options": ["have to", "has to", "having to", "must to"],
+        "answer": 1,
+        "explanation": "3rd person singular : has to. \"She has to go to school\" = elle doit aller à l'école."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"mustn't\" and \"don't have to\" have the same meaning.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Different : mustn't = forbidden (interdit) ; don't have to = not necessary (pas obligé, mais possible). Example : \"You don't have to wear a uniform on Friday.\""
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U6L3_Tolerance": {
+    "title": "Tolerance — obligation with have got to",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Tolerance means :",
+        "type": "qcm",
+        "options": ["Fighting others", "Accepting and respecting differences (religion, ethnicity, opinions)", "Being selfish", "Ignoring people"],
+        "answer": 1,
+        "explanation": "Tolerance = respect and acceptance of differences : peaceful coexistence (coexistence pacifique). Opposite : intolerance, hatred (haine)."
+      },
+      {
+        "id": "q2",
+        "text": "\"have got to\" expresses :",
+        "type": "qcm",
+        "options": ["A preference", "An obligation, like \"have to\"", "A past action", "A wish"],
+        "answer": 1,
+        "explanation": "\"I've got to go\" = \"I have to go\" = je dois partir (obligation). More common in spoken British English : \"We've got to be tolerant.\""
+      },
+      {
+        "id": "q3",
+        "text": "Peace vocabulary includes :",
+        "type": "qcm",
+        "options": ["war, fight, hatred", "peace, respect, harmony, coexistence, dialogue", "violence", "conflict"],
+        "answer": 1,
+        "explanation": "Peace vocabulary : peace (paix), respect, harmony (harmonie), coexistence, dialogue, brotherhood (fraternité), non-violence, understanding."
+      },
+      {
+        "id": "q4",
+        "text": "\"We ___ respect other people's beliefs.\" (obligation) Choose :",
+        "type": "qcm",
+        "options": ["must to", "have got to / must / have to", "want", "like"],
+        "answer": 1,
+        "explanation": "All three express obligation : \"We must / have to / have got to respect other people's beliefs\" = nous devons respecter les croyances des autres."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : Tolerance contributes to social peace and national unity.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "A tolerant society accepts differences and lives in peace : dialogue instead of conflict → national unity and development."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U7L1_Avoid_diseases": {
+    "title": "Avoiding diseases — should, passive voice, malaria",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To give advice, we use :",
+        "type": "qcm",
+        "options": ["must only", "should / shouldn't + infinitive", "used to", "will"],
+        "answer": 1,
+        "explanation": "should = conseil : \"You should sleep under a mosquito net.\" shouldn't = déconseillé : \"You shouldn't drink dirty water.\""
+      },
+      {
+        "id": "q2",
+        "text": "Malaria is transmitted by :",
+        "type": "qcm",
+        "options": ["Dirty hands", "The bite of the female Anopheles mosquito", "Food", "Air"],
+        "answer": 1,
+        "explanation": "Malaria (paludisme) is caused by the Plasmodium parasite, inoculated by the bite of an infected female Anopheles mosquito. Prevention : mosquito nets, eliminating stagnant water."
+      },
+      {
+        "id": "q3",
+        "text": "Passive : \"Malaria ___ by mosquitoes.\" Choose :",
+        "type": "qcm",
+        "options": ["transmits", "is transmitted", "transmitting", "transmitted"],
+        "answer": 1,
+        "explanation": "Passive = be + past participle : \"is transmitted\" (present passive). The agent follows \"by\"."
+      },
+      {
+        "id": "q4",
+        "text": "Health vocabulary includes :",
+        "type": "qcm",
+        "options": ["disease, fever, mosquito net, prevention, treatment", "plane, ticket", "book, pen", "shoe, dress"],
+        "answer": 0,
+        "explanation": "Health words : disease (maladie), fever (fièvre), mosquito net (moustiquaire), prevention, treatment (traitement), symptoms, to fall ill (tomber malade), hygiene."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : \"Stagnant water should be eliminated around houses\" is a passive sentence giving advice.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "should + be + past participle = passive advice : \"should be eliminated\" = devrait être éliminée. Common in prevention messages."
+      }
+    ]
+  },
+  "Fiche_ANG_4eme_U7L2_School_clean": {
+    "title": "Keeping the school clean — opinions and suggestions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "To express an opinion, we say :",
+        "type": "qcm",
+        "options": ["Go away !", "I think (that)… / In my opinion… / I believe…", "Maybe no", "Never mind"],
+        "answer": 1,
+        "explanation": "Opinion starters : \"I think (that) our school is clean\", \"In my opinion…\", \"I believe that…\", \"For me…\"."
+      },
+      {
+        "id": "q2",
+        "text": "To make a suggestion, we say :",
+        "type": "qcm",
+        "options": ["You must !", "Why don't we clean the classroom ? / Let's clean ! / How about cleaning ?", "You failed !", "No idea"],
+        "answer": 1,
+        "explanation": "Suggestions : \"Why don't we/you + verb…?\", \"Let's + verb\", \"How about + -ing\", \"We could + verb\". All propose an action politely."
+      },
+      {
+        "id": "q3",
+        "text": "Hygiene vocabulary at school includes :",
+        "type": "qcm",
+        "options": ["to sweep, to dust, a dustbin, to litter, a broom", "to fly", "to sing", "to paint"],
+        "answer": 0,
+        "explanation": "Hygiene words : to sweep (balayer), to dust (épousseter), dustbin (poubelle), to litter (jeter des ordures), broom (balai), clean (propre) / dirty (sale)."
+      },
+      {
+        "id": "q4",
+        "text": "« Pourquoi ne pas balayer la cour ? » =",
+        "type": "qcm",
+        "options": ["Why we sweep the yard ?", "Why don't we sweep the yard ?", "Why not we sweep ?", "Why we don't sweep ?"],
+        "answer": 1,
+        "explanation": "\"Why don't we + infinitive\" = pourquoi ne pas… : \"Why don't we sweep the yard ?\" — classic suggestion form."
+      },
+      {
+        "id": "q5",
+        "text": "True or False : Good hygiene at school prevents diseases and creates a better learning environment.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "A clean school = fewer diseases (less malaria, diarrhoea, infections) and a pleasant environment where students learn better."
+      }
+    ]
+  }
+}

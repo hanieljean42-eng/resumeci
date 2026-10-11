@@ -1,0 +1,362 @@
+{
+  "Fiche_SVT_1C_L1_Structure_interne_du_globe": {
+    "title": "La structure interne du globe",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les manifestations de l'activité interne du globe sont :",
+        "type": "qcm",
+        "options": ["La pluie", "Les séismes (tremblements de terre), le volcanisme et la géothermie", "Le vent", "Les marées"],
+        "answer": 1,
+        "explanation": "L'intérieur de la Terre est actif : séismes, volcans, sources chaudes et gradients géothermiques prouvent l'énergie interne — indices de la structure interne."
+      },
+      {
+        "id": "q2",
+        "text": "Les ondes sismiques permettent de :",
+        "type": "qcm",
+        "options": ["Prévoir la météo", "Explorer la structure interne de la Terre (sondage de l'intérieur)", "Créer des volcans", "Mesurer la température"],
+        "answer": 1,
+        "explanation": "Les ondes P (primaires, rapides, traversent solide et liquide) et S (secondaires, lentes, bloquées par les liquides) révèlent la nature des couches traversées."
+      },
+      {
+        "id": "q3",
+        "text": "Le fait que les ondes S ne traversent pas le noyau externe prouve :",
+        "type": "qcm",
+        "options": ["Que le noyau externe est solide", "Que le noyau externe est liquide", "Que le noyau n'existe pas", "Que la Terre est creuse"],
+        "answer": 1,
+        "explanation": "Les ondes S (de cisaillement) ne se propagent pas dans un liquide : leur disparition à la limite manteau-noyau externe (Gutenberg, 2900 km) prouve que le noyau externe est liquide."
+      },
+      {
+        "id": "q4",
+        "text": "La structure interne du globe comprend de l'extérieur vers le centre :",
+        "type": "qcm",
+        "options": ["Noyau → manteau → croûte", "Croûte → manteau → noyau (externe puis interne)", "Croûte → noyau → manteau", "Atmosphère → océan → terre"],
+        "answer": 1,
+        "explanation": "Trois couches principales : croûte (0-100 km), manteau (jusqu'à ~2900 km), noyau externe liquide (~2900-5100 km) et noyau interne solide (graine)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les discontinuités (Moho, Gutenberg, Lehmann) marquent les limites entre les couches de la Terre détectées par les ondes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Moho (croûte-manteau), Gutenberg (manteau-noyau, ~2900 km), Lehmann (noyau externe-interne) : les variations brutales de vitesse des ondes révèlent ces frontières."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L3_Échanges_d_ions_au_niveau_du_sol": {
+    "title": "Les échanges d'ions au niveau du sol",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le complexe argilo-humique (CAH) est :",
+        "type": "qcm",
+        "options": ["Un minéral", "L'association de l'argile et de l'humus chargée négativement qui fixe et échange les ions", "Un insecte", "Une roche"],
+        "answer": 1,
+        "explanation": "Le CAH = argile + humus liés : ses charges négatives retiennent les cations (Ca²⁺, K⁺, Mg²⁺…) disponibles pour les plantes — c'est le « garde-manger » du sol."
+      },
+      {
+        "id": "q2",
+        "text": "Le pouvoir absorbant du sol est sa capacité à :",
+        "type": "qcm",
+        "options": ["Absorber l'eau", "Retenir et restituer les cations nutritifs aux racines", "Produire des fleurs", "Faire pousser les pierres"],
+        "answer": 1,
+        "explanation": "Le pouvoir absorbant (ou complexe absorbant) = capacité du CAH à fixer les ions contre le lessivage puis à les céder aux racines — il conditionne la fertilité."
+      },
+      {
+        "id": "q3",
+        "text": "Le mécanisme d'échange d'ions consiste en :",
+        "type": "qcm",
+        "options": ["Une filtration", "L'échange de cations entre le complexe absorbant et la solution du sol autour des racines", "Une évaporation", "Un gel"],
+        "answer": 1,
+        "explanation": "Les racines émettent H⁺ qui libère les cations nutritifs du complexe : H⁺ prend leur place sur le CAH, les ions minéraux passent dans la solution du sol puis dans la racine — équilibre d'échange."
+      },
+      {
+        "id": "q4",
+        "text": "Les ions échangés importants pour la plante sont :",
+        "type": "qcm",
+        "options": ["Les électrons", "Ca²⁺, K⁺, Mg²⁺, NH₄⁺ (cations nutritifs)", "Les protons seulement", "L'oxygène"],
+        "answer": 1,
+        "explanation": "Cations adsorbés et échangés : Ca²⁺, K⁺, Mg²⁺, NH₄⁺, Fe³⁺… — fournissent les sels minéraux dont la plante a besoin pour croître."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un sol riche en humus a un fort pouvoir absorbant et donc une meilleure fertilité.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'humus (avec l'argile) compose le CAH : plus le sol est riche en humus, plus il fixe et restitue les ions → plus il est fertile. D'où l'importance de la matière organique."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L4_Gametogenese_chez_les_mammiferes": {
+    "title": "La gamétogenèse chez les mammifères",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les gonades qui produisent les gamètes sont :",
+        "type": "qcm",
+        "options": ["Le foie", "Les testicules (spermatozoïdes) et les ovaires (ovules)", "Les reins", "Le cœur"],
+        "answer": 1,
+        "explanation": "Testicules → spermatogenèse (spermatozoïdes) ; ovaires → ovogenèse (ovules). La gamétogenèse transforme des cellules souches diploïdes en gamètes haploïdes."
+      },
+      {
+        "id": "q2",
+        "text": "Les 4 phases de la spermatogenèse sont :",
+        "type": "qcm",
+        "options": ["Naissance → croissance → vieillesse → mort", "Multiplication, croissance, maturation (méiose), différenciation", "Ovulation → fécondation", "Une seule phase"],
+        "answer": 1,
+        "explanation": "Spermatogenèse : multiplication (spermatogonies mitotiques), croissance (spermatocytes I), maturation-méiose (spermatocytes II → spermatides), différenciation (spermatides → spermatozoïdes)."
+      },
+      {
+        "id": "q3",
+        "text": "La méiose produit :",
+        "type": "qcm",
+        "options": ["2 cellules identiques", "4 cellules haploïdes (n chromosomes) à partir d'une cellule diploïde (2n)", "Des organes", "Des hormones"],
+        "answer": 1,
+        "explanation": "La méiose réduit le nombre de chromosomes de moitié : 2n → n (2 divisions) → 4 cellules haploïdes génétiquement différentes (brassage)."
+      },
+      {
+        "id": "q4",
+        "text": "L'ovogenèse diffère de la spermatogenèse car elle est :",
+        "type": "qcm",
+        "options": ["Identique", "Discontinue, inégale (un seul ovule + globules polaires) et bloquée avant la fécondation", "Continue", "Plus rapide"],
+        "answer": 1,
+        "explanation": "Ovogenèse : commence chez l'embryon, s'arrête, reprend à la puberté — chaque méiose donne 1 ovule fonctionnel + globules polaires (cytocinèse inégale) ; bloquée en métaphase II jusqu'à la fécondation."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la spermatogenèse produit 4 spermatozoïdes fonctionnels par méiose, l'ovogenèse seulement 1 ovule.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Différence clé : spermatogenèse = 4 spermatozoïdes mobiles ; ovogenèse = 1 ovule volumineux (réserves) + 3 globules polaires qui dégénèrent."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L5_Fecondation_chez_les_mammiferes": {
+    "title": "La fécondation chez les mammifères",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La fécondation est :",
+        "type": "qcm",
+        "options": ["La division d'une cellule", "L'union des noyaux d'un spermatozoïde et d'un ovule formant la cellule-œuf diploïde", "La production d'ovules", "La menstruation"],
+        "answer": 1,
+        "explanation": "Fécondation = fusion de deux gamètes haploïdes (n + n) → zygote diploïde (2n) qui restaure le nombre de chromosomes de l'espèce."
+      },
+      {
+        "id": "q2",
+        "text": "Chez les mammifères, la fécondation a lieu dans :",
+        "type": "qcm",
+        "options": ["L'ovaire", "Le tiers externe de la trompe (trompe de Fallope/trompe utérine)", "Le vagin", "L'utérus"],
+        "answer": 1,
+        "explanation": "L'ovule libéré est capté par le pavillon de la trompe ; les spermatozoïdes remontent le tractus : la rencontre se fait dans l'ampoule (tiers externe de la trompe)."
+      },
+      {
+        "id": "q3",
+        "text": "La réaction corticale de la fécondation sert à :",
+        "type": "qcm",
+        "options": ["Attirer les spermatozoïdes", "Empêcher la polyspermie (plusieurs spermatozoïdes dans l'ovule)", "Nourrir l'embryon", "Diviser l'œuf"],
+        "answer": 1,
+        "explanation": "Dès qu'un spermatozoïde entre, la membrane de l'ovule se modifie (réaction corticale) : elle devient imperméable aux autres spermatozoïdes → un seul gagne."
+      },
+      {
+        "id": "q4",
+        "text": "L'importance de la fécondation est qu'elle :",
+        "type": "qcm",
+        "options": ["Clone les parents", "Restaure la diploïdie ET combine les patrimoines des deux parents (brassage)", "Arrête le développement", "Produit des hormones"],
+        "answer": 1,
+        "explanation": "Double rôle : rétablit le nombre de chromosomes (2n) et mélange les gènes paternels et maternels → diversité génétique de la descendance."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : après la fécondation, la cellule-œuf migre vers l'utérus en se divisant (segmentation) puis s'implante (nidation).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Le zygote descend la trompe en se segmentant (morula → blastocyste) et s'implante dans la muqueuse utérine ~6 jours après la fécondation — début de la grossesse."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L6_Synthese_des_proteines": {
+    "title": "La synthèse des protéines",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les acteurs de la synthèse protéique sont :",
+        "type": "qcm",
+        "options": ["Lipides et glucides", "ADN (gène), ARN messager, ribosomes et ARN de transfert", "L'eau", "Les hormones"],
+        "answer": 1,
+        "explanation": "ADN = matrice du gène (nucléotide) ; ARNm = copie transportée ; ribosome = usine d'assemblage ; ARNt = transporteur d'acides aminés ; enzymes = catalyseurs."
+      },
+      {
+        "id": "q2",
+        "text": "Le code génétique est :",
+        "type": "qcm",
+        "options": ["Un secret", "La correspondance entre triplets de nucléotides (codons) et acides aminés — 64 codons pour 20 acides aminés", "Un alphabet", "Un gène"],
+        "answer": 1,
+        "explanation": "Chaque triplet de bases (ex. AUG = méthionine, UUU = phénylalanine) code un acide aminé : le code est universel, dégénéré (plusieurs codons/acide aminé) et non chevauchant."
+      },
+      {
+        "id": "q3",
+        "text": "La transcription consiste à :",
+        "type": "qcm",
+        "options": ["Traduire une protéine", "Copier le gène en ARN messager dans le noyau", "Fabriquer de l'ADN", "Digérer"],
+        "answer": 1,
+        "explanation": "Transcription (noyau) : l'ARN polymérase copie le brin codant de l'ADN en ARNm complémentaire (A↔U, T↔A, C↔G, G↔C) — l'ARNm quitte ensuite le noyau."
+      },
+      {
+        "id": "q4",
+        "text": "La traduction se déroule :",
+        "type": "qcm",
+        "options": ["Dans le noyau", "Dans le cytoplasme sur les ribosomes qui assemblent les acides aminés selon l'ordre des codons", "Dans le sang", "Dans la membrane"],
+        "answer": 1,
+        "explanation": "Traduction : le ribosome lit l'ARNm codon par codon ; les ARNt amènent les acides aminés correspondants qui s'enchaînent → polypeptide puis protéine."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la synthèse protéique va de l'ADN à la protéine : ADN → ARNm → protéine (dogme central de la biologie).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Dogme central : ADN (transcription) → ARNm (traduction) → protéine : l'information génétique se traduit en caractères."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L7_Transmission_d_un_caractere_hereditaire": {
+    "title": "Transmission d'un caractère héréditaire — dominance et codominance",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un allèle dominant :",
+        "type": "qcm",
+        "options": ["Ne s'exprime jamais", "S'exprime même à l'état hétérozygote (Aa)", "Est toujours muté", "Est récessif"],
+        "answer": 1,
+        "explanation": "L'allèle dominant (noté majuscule) s'impose : l'hétérozygote Aa a le même phénotype que l'homozygote AA. Le récessif ne s'exprime qu'en homozygote aa."
+      },
+      {
+        "id": "q2",
+        "text": "Dans la dominance complète, le croisement AA × aa donne :",
+        "type": "qcm",
+        "options": ["Un phénotype intermédiaire", "100 % d'hétérozygotes Aa tous de phénotype dominant", "50 % aa", "Des mutants"],
+        "answer": 1,
+        "explanation": "AA (gamètes A) × aa (gamètes a) → 100 % Aa : tous les descendants ont le phénotype de l'allèle dominant — cas du pelage noir dominant chez la souris."
+      },
+      {
+        "id": "q3",
+        "text": "La codominance se caractérise par :",
+        "type": "qcm",
+        "options": ["Un allèle caché", "L'expression simultanée des deux allèles : phénotype intermédiaire ou mixte", "L'absence de variation", "Une maladie"],
+        "answer": 1,
+        "explanation": "Exemple de la belle de nuit : croisement fleur rouge × fleur blanche → hétérozygote fleur ROSE : aucun allèle ne domine, les deux s'expriment → phénotype intermédiaire."
+      },
+      {
+        "id": "q4",
+        "text": "En F2 (Aa × Aa) avec dominance, les proportions sont :",
+        "type": "qcm",
+        "options": ["100 % dominant", "75 % phénotype dominant, 25 % phénotype récessif (3/4 - 1/4)", "50-50", "Tous récessifs"],
+        "answer": 1,
+        "explanation": "Aa × Aa → 1 AA : 2 Aa : 1 aa → phénotypes : 3/4 dominant (AA+Aa) : 1/4 récessif (aa) — la proportion de Mendel."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : en codominance F2, les proportions sont 1/4 dominant, 2/4 intermédiaires, 1/4 récessif (1-2-1).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "En codominance les trois génotypes donnent trois phénotypes distincts : AA (1/4) / Aa intermédiaire (1/2) / aa (1/4) — pas de masquage."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L8_Photosynthese": {
+    "title": "La photosynthèse",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les facteurs de la photosynthèse sont :",
+        "type": "qcm",
+        "options": ["Seulement la lumière", "La lumière, l'eau, le CO₂ et la chlorophylle", "L'oxygène", "Le glucose"],
+        "answer": 1,
+        "explanation": "La photosynthèse utilise : CO₂ + H₂O, captés par la chlorophylle verte, grâce à l'énergie lumineuse → produit glucose + O₂ : 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂."
+      },
+      {
+        "id": "q2",
+        "text": "La photosynthèse a lieu dans :",
+        "type": "qcm",
+        "options": ["Les mitochondries", "Les chloroplastes (organites verts) des cellules chlorophylliennes", "Le noyau", "La racine"],
+        "answer": 1,
+        "explanation": "Le chloroplaste contient les thylakoïdes (pigments verts) et le stroma : c'est l'usine photosynthétique de la cellule végétale."
+      },
+      {
+        "id": "q3",
+        "text": "La phase lumineuse produit :",
+        "type": "qcm",
+        "options": ["Du glucose", "De l'ATP et du NADPH, en libérant O₂ (photolyse de l'eau)", "Du CO₂", "De la chlorophylle"],
+        "answer": 1,
+        "explanation": "Phase claire (thylakoïdes) : la lumière excite la chlorophylle, photolyse de l'eau → O₂ + ATP + NADPH (énergie chimique) utilisés en phase 2."
+      },
+      {
+        "id": "q4",
+        "text": "La phase sombre (cycle de Calvin) :",
+        "type": "qcm",
+        "options": ["Produit de l'oxygène", "Fixe le CO₂ et le transforme en glucose grâce à l'ATP et au NADPH de la phase 1", "Se passe de nuit seulement", "Est inutile"],
+        "answer": 1,
+        "explanation": "Cycle de Calvin (stroma) : le CO₂ est fixé puis réduit par l'ATP/NADPH → glucides. « Sombre » = n'exige pas la lumière directement, mais utilise ses produits."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'oxygène rejeté par les plantes provient de la photolyse de l'eau, pas du CO₂.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les expériences aux isotopes ont prouvé que le O₂ dégagé vient de l'éclatement des molécules d'eau (photolyse) en phase lumineuse."
+      }
+    ]
+  },
+  "Fiche_SVT_1C_L9_Ecosysteme_naturel_et_agrosysteme": {
+    "title": "Écosystème naturel et agrosystème",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un écosystème naturel se caractérise par :",
+        "type": "qcm",
+        "options": ["Une seule espèce", "Une diversité biologique élevée, des chaînes alimentaires complexes et un équilibre spontané", "L'intervention de l'homme", "La monoculture"],
+        "answer": 1,
+        "explanation": "Écosystème naturel (forêt, savane) : riche biodiversité, réseaux trophiques variés, auto-régulation — l'homme n'intervient pas."
+      },
+      {
+        "id": "q2",
+        "text": "Un agrosystème est :",
+        "type": "qcm",
+        "options": ["Une forêt vierge", "Un écosystème modifié par l'agriculture : monoculture, faible diversité, dépendant de l'énergie externe (engrais, travail)", "Un désert", "Une ville"],
+        "answer": 1,
+        "explanation": "L'agrosystème simplifie la nature : une espèce cultivée, biodiversité réduite, nécessite intrants (engrais, pesticides, irrigation) — productif mais fragile."
+      },
+      {
+        "id": "q3",
+        "text": "La biomasse est :",
+        "type": "qcm",
+        "options": ["Le sol", "La masse totale de matière vivante d'un écosystème", "L'énergie solaire", "L'eau"],
+        "answer": 1,
+        "explanation": "Biomasse = masse de matière organique vivante (t/ha) ; la productivité primaire = la matière produite par photosynthèse par unité de temps."
+      },
+      {
+        "id": "q4",
+        "text": "L'efficacité énergétique entre niveaux trophiques est environ :",
+        "type": "qcm",
+        "options": ["100 %", "10 % (chaque niveau ne transmet qu'environ 10 % de l'énergie)", "50 %", "1 %"],
+        "answer": 1,
+        "explanation": "La règle des 10 % : ~90 % de l'énergie est perdue en chaleur et respiration à chaque maillon — d'où des chaînes courtes et la pyramide des biomasses."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la monoculture intensive maximise le rendement à court terme mais fragilise l'écosystème et le sol.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Monoculture : rendement élevé immédiat mais appauvrissement du sol, sensibilité aux parasites et maladies — d'où les pratiques durables (rotation, agroécologie)."
+      }
+    ]
+  }
+}

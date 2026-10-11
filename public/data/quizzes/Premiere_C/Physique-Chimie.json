@@ -1,0 +1,1420 @@
+{
+  "Fiche_LECON_5__PETROLE_ET_GAZ_NATURELS": {
+    "title": "LECON 4 Petrole et gaz naturels",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 4 Petrole et gaz naturels\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LEÇON_1__TRAVAIL_ET_PUISSANCE_D_UNE_FORCE_DANS_LE_CAS_D_UN_MOUVEMENT_DE_TRANSLATION": {
+    "title": "LECON 1 Travail et puissance d une force",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Comment se calcule le travail W d'une force constante F lors d'un déplacement AB ?",
+        "type": "qcm",
+        "options": [
+          "W = F . AB = F * AB * cos(alpha)",
+          "W = F / AB",
+          "W = m * g * h",
+          "W = 1/2 * m * v²"
+        ],
+        "answer": 0,
+        "explanation": "Le travail est le produit scalaire du vecteur force par le vecteur déplacement."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est l'unité du travail dans le Système International ?",
+        "type": "qcm",
+        "options": [
+          "Le Joule (J)",
+          "Le Newton (N)",
+          "Le Watt (W)",
+          "Le Pascal (Pa)"
+        ],
+        "answer": 0,
+        "explanation": "Le travail, comme l'énergie, s'exprime en Joules."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Si l'angle entre la force et le déplacement est supérieur à 90°, le travail est moteur.",
+        "type": "vrai_faux",
+        "options": [
+          "Faux",
+          "Vrai"
+        ],
+        "answer": 0,
+        "explanation": "Faux. Le cosinus est négatif, le travail est donc résistant (< 0)."
+      },
+      {
+        "id": "q4",
+        "text": "Quelle est la définition de la puissance moyenne P d'une force ?",
+        "type": "qcm",
+        "options": [
+          "Le quotient du travail W par la durée Δt (P = W / Δt)",
+          "Le produit de la force par la vitesse",
+          "L'intégrale du travail",
+          "La somme des forces"
+        ],
+        "answer": 0,
+        "explanation": "La puissance représente la rapidité avec laquelle le travail est fourni."
+      },
+      {
+        "id": "q5",
+        "text": "Comment s'exprime le travail du poids d'un corps se déplaçant d'une altitude zA à une altitude zB ?",
+        "type": "qcm",
+        "options": [
+          "W(P) = mg(zA - zB)",
+          "W(P) = mg(zB - zA)",
+          "W(P) = 0",
+          "W(P) = 1/2 m(vB² - vA²)"
+        ],
+        "answer": 0,
+        "explanation": "Le travail du poids ne dépend pas du chemin suivi, mais uniquement de la différence d'altitude."
+      }
+    ]
+  },
+  "Fiche_LEÇON_2__HYDROCARBURES_SATURÉS___LES_ALCANES": {
+    "title": "LECON 1 Hydrocarbures satures Les alcanes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quelle est la formule générale d'un alcane (hydrocarbure saturé acyclique) ?",
+        "type": "qcm",
+        "options": [
+          "CnH2n+2",
+          "CnH2n",
+          "CnH2n-2",
+          "CnH2n+1OH"
+        ],
+        "answer": 0,
+        "explanation": "Les alcanes ne comportent que des liaisons simples Carbone-Carbone."
+      },
+      {
+        "id": "q2",
+        "text": "Quel est le nom de l'alcane à 4 atomes de carbone (C4H10) ?",
+        "type": "qcm",
+        "options": [
+          "Le butane",
+          "Le méthane",
+          "L'éthane",
+          "Le propane"
+        ],
+        "answer": 0,
+        "explanation": "Méthane (1), Éthane (2), Propane (3), Butane (4)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : Deux isomères d'alcanes ont la même formule brute mais des formules semi-développées différentes.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Le butane normal et le méthylpropane (isobutane) ont tous deux la formule C4H10."
+      },
+      {
+        "id": "q4",
+        "text": "Quels sont les produits de la combustion complète d'un alcane ?",
+        "type": "qcm",
+        "options": [
+          "Du dioxyde de carbone (CO2) et de l'eau (H2O)",
+          "Du monoxyde de carbone (CO) et du carbone (C)",
+          "Un alcool et de l'hydrogène",
+          "Rien, la réaction est impossible"
+        ],
+        "answer": 0,
+        "explanation": "Une combustion complète dans le dioxygène produit toujours du CO2 et de H2O."
+      },
+      {
+        "id": "q5",
+        "text": "Quelle réaction caractéristique des alcanes permet de remplacer un atome d'hydrogène par un atome d'halogène (ex: chlore) ?",
+        "type": "qcm",
+        "options": [
+          "La réaction de substitution",
+          "La réaction d'addition",
+          "La réaction de polymérisation",
+          "L'estérification"
+        ],
+        "answer": 0,
+        "explanation": "Exemple avec le méthane et le chlore (à la lumière) pour donner du chlorométhane (CH3Cl)."
+      }
+    ]
+  },
+  "Fiche_leçon_3__ENERGIE_CINÉTIQUE": {
+    "title": "lecon 7 Energie cinetique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"lecon 7 Energie cinetique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LEÇON_5__ENERGIE_MECANIQUE": {
+    "title": "LECON 9 Energie mecanique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 9 Energie mecanique\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LEÇON_7__L_ÉTHANOL": {
+    "title": "LECON 6 L ethanol",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 6 L ethanol\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LEÇON_8__ESTÉRIFICATION_ET_HYDROLYSE_D_UN_ESTER": {
+    "title": "LECON 7 Esterification et hydrolyse d un ester",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quel est le thème principal abordé dans la leçon : \"LECON 7 Esterification et hydrolyse d un ester\" ?",
+        "type": "qcm",
+        "options": [
+          "Les notions clés du chapitre",
+          "Un sujet hors programme",
+          "Des anecdotes historiques",
+          "Rien de particulier"
+        ],
+        "answer": 0,
+        "explanation": "Cette leçon aborde les concepts fondamentaux inscrits au programme de Première D."
+      },
+      {
+        "id": "q2",
+        "text": "Quelle est la compétence visée par cette leçon ?",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'objectif est d'acquérir des connaissances solides et de savoir les appliquer dans des exercices ou dissertations."
+      },
+      {
+        "id": "q3",
+        "text": "Pour maîtriser ce chapitre, il est recommandé de :",
+        "type": "qcm",
+        "options": [
+          "Mémoriser et comprendre les définitions, formules ou dates clés",
+          "Ne rien lire",
+          "Regarder seulement le titre",
+          "Apprendre par cœur sans comprendre"
+        ],
+        "answer": 0,
+        "explanation": "La compréhension combinée à la mémorisation est la clé du succès."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Les exercices associés à cette leçon reprennent généralement les exemples vus dans le cours.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Vrai. Les exercices d'application permettent de valider la bonne compréhension du cours."
+      },
+      {
+        "id": "q5",
+        "text": "Lors des devoirs ou des examens portant sur cette leçon, il faut particulièrement prêter attention à :",
+        "type": "qcm",
+        "options": [
+          "La rigueur de la rédaction et de la démonstration",
+          "La couleur de l'encre",
+          "La taille de l'écriture",
+          "Rien du tout"
+        ],
+        "answer": 0,
+        "explanation": "Une bonne rédaction (arguments, calculs, orthographe) est toujours valorisée par les correcteurs."
+      }
+    ]
+  },
+  "Fiche_LECON_11__CLASSIFICATION_QUANTITATIVE_DES_COUPLES_OXYDANTS_REDUCTEURS": {
+    "title": "Classification quantitative des couples oxydants-réducteurs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une pile électrochimique transforme :",
+        "type": "qcm",
+        "options": [
+          "L'énergie électrique en énergie chimique",
+          "L'énergie chimique en énergie électrique",
+          "La chaleur en électricité",
+          "L'énergie mécanique en chimie"
+        ],
+        "answer": 1,
+        "explanation": "La pile convertit l'énergie d'une réaction d'oxydoréduction spontanée en courant électrique : électrons libérés à l'anode (−) circulent vers la cathode (+)."
+      },
+      {
+        "id": "q2",
+        "text": "Dans une pile, l'anode est :",
+        "type": "qcm",
+        "options": [
+          "Le pôle + où a lieu la réduction",
+          "Le pôle − où a lieu l'oxydation",
+          "Le pont salin",
+          "L'électrolyte"
+        ],
+        "answer": 1,
+        "explanation": "Anode = pôle négatif = siège de l'oxydation (le réducteur cède ses électrons) ; cathode = pôle positif = siège de la réduction."
+      },
+      {
+        "id": "q3",
+        "text": "Le potentiel standard d'oxydoréduction E° permet de :",
+        "type": "qcm",
+        "options": [
+          "Mesurer la température",
+          "Classer les couples : plus E° est élevé, plus l'oxydant est fort",
+          "Calculer le pH",
+          "Prévoir la couleur"
+        ],
+        "answer": 1,
+        "explanation": "E° mesure la force d'un couple : grand E° = oxydant fort / réducteur faible ; petit E° = réducteur fort. Référence : le couple H⁺/H₂ (E° = 0 V)."
+      },
+      {
+        "id": "q4",
+        "text": "La règle du gamma (γ) prédit :",
+        "type": "qcm",
+        "options": [
+          "Le pH de la solution",
+          "Quelle réaction spontanée se produit entre l'oxydant du couple de plus haut potentiel et le réducteur du couple de plus bas potentiel",
+          "La couleur de la pile",
+          "La masse du métal"
+        ],
+        "answer": 1,
+        "explanation": "On place les couples par E° croissant : la réaction spontanée relie l'oxydant du couple le plus élevé au réducteur du plus bas — le γ montre les sens des électrons."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la f.é.m. d'une pile vaut E°(cathode) − E°(anode), soit E° du couple de la réduction moins celui de l'oxydation.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "f.é.m. = E°(+) − E°(−) : ex. pile Daniell Cu/Zn : 0,34 − (−0,76) = 1,10 V."
+      }
+    ]
+  },
+  "Fiche_LECON_12__REFLEXION_ET_REFRACTION_DE_LA_LUMIERE": {
+    "title": "Réflexion et réfraction de la lumière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La 2ᵉ loi de la réflexion (Descartes) énonce :",
+        "type": "qcm",
+        "options": [
+          "L'angle d'incidence est différent de l'angle de réflexion",
+          "L'angle de réflexion r est égal à l'angle d'incidence i (r = i)",
+          "Le rayon réfléchi est perpendiculaire au miroir",
+          "La lumière s'arrête"
+        ],
+        "answer": 1,
+        "explanation": "Le rayon réfléchi est dans le plan d'incidence et r = i : les angles sont mesurés par rapport à la normale à la surface."
+      },
+      {
+        "id": "q2",
+        "text": "La loi de Snell-Descartes de la réfraction s'écrit :",
+        "type": "qcm",
+        "options": [
+          "n₁ sin i₁ = n₂ sin i₂",
+          "sin i₁ / sin i₂ = n₁/n₂ toujours",
+          "i₁ = i₂",
+          "n₁ = n₂"
+        ],
+        "answer": 0,
+        "explanation": "n₁ sin i₁ = n₂ sin i₂ : le rayon réfracté se rapproche de la normale quand il entre dans un milieu plus réfringent (n₂ > n₁)."
+      },
+      {
+        "id": "q3",
+        "text": "La réflexion totale se produit quand :",
+        "type": "qcm",
+        "options": [
+          "La lumière passe toujours",
+          "Le rayon passe d'un milieu plus réfringent vers un moins réfringent avec un angle supérieur à l'angle limite",
+          "i = 0",
+          "n₁ < n₂"
+        ],
+        "answer": 1,
+        "explanation": "Si n₁ > n₂ et i₁ > angle limite (sin λ = n₂/n₁), tout le rayon est réfléchi : c'est le principe de la fibre optique."
+      },
+      {
+        "id": "q4",
+        "text": "L'angle limite de réfraction pour le passage verre (n=1,5) → air (n=1) vérifie :",
+        "type": "qcm",
+        "options": [
+          "sin λ = 1,5",
+          "sin λ = n_air/n_verre = 1/1,5 soit λ ≈ 42°",
+          "λ = 90°",
+          "λ = 0"
+        ],
+        "answer": 1,
+        "explanation": "sin λ = n₂/n₁ = 1/1,5 → λ ≈ 41,8° : au-delà de ~42° d'incidence, la lumière reste piégée dans le verre."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'indice de réfraction n = c/v relie la célérité de la lumière dans le vide à celle dans le milieu (toujours n ≥ 1).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "n = c/v : la lumière ralentit dans les milieux matériels (eau : 1,33 ; verre : ~1,5) ; n = 1 dans le vide et ~1 dans l'air."
+      }
+    ]
+  },
+  "Fiche_LECON_15__CORROSION_ET_PROTECTION_DES_METAUX": {
+    "title": "Corrosion et protection des métaux",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La corrosion est :",
+        "type": "qcm",
+        "options": [
+          "Une réduction du métal",
+          "L'oxydation du métal par son environnement (oxygène, eau) qui le dégrade",
+          "Un polissage",
+          "Une solidification"
+        ],
+        "answer": 1,
+        "explanation": "La corrosion = retour du métal à son état oxydé naturel (minerais) : le fer s'oxyde en rouille Fe₂O₃·nH₂O par l'action de O₂ et H₂O."
+      },
+      {
+        "id": "q2",
+        "text": "Les deux types de corrosion sont :",
+        "type": "qcm",
+        "options": [
+          "Humide et sèche",
+          "Chimique (voie sèche, haute température) et électrochimique (solution aqueuse)",
+          "Interne et externe",
+          "Lente et rapide"
+        ],
+        "answer": 1,
+        "explanation": "Corrosion sèche : attaque chimique directe à chaud ; corrosion électrochimique : micropiles formées dans le milieu humide — la plus courante et destructrice."
+      },
+      {
+        "id": "q3",
+        "text": "La protection par revêtement (peinture, graissage) agit en :",
+        "type": "qcm",
+        "options": [
+          "Changeant le métal",
+          "Isolant le métal du milieu corrosif (barrière physique)",
+          "Accélérant l'oxydation",
+          "Chauffant"
+        ],
+        "answer": 1,
+        "explanation": "Les revêtements (peinture, vernis, graisse, galvanisation par zinc) empêchent le contact métal-air/eau — protection passive."
+      },
+      {
+        "id": "q4",
+        "text": "La protection par anode sacrificielle consiste à :",
+        "type": "qcm",
+        "options": [
+          "Peindre le métal",
+          "Fixer un métal plus réducteur qui s'oxyde à la place du métal protégé",
+          "Refroidir",
+          "Isoler électriquement"
+        ],
+        "answer": 1,
+        "explanation": "Un métal plus réducteur (Zn, Mg) fixé au fer s'oxyde à sa place : il est « sacrifié » — utilisé sur les coques de navires et pipelines."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la galvanisation (dépôt de zinc) protège le fer même si le revêtement est rayé, car le zinc, plus réducteur, s'oxyde en priorité.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Le zinc joue à la fois le rôle de barrière et d'anode sacrificielle : c'est la protection du fer galvanisé, différente de l'étamage (Sn, moins réducteur)."
+      }
+    ]
+  },
+  "Fiche_LECON_6__CHAMP_ELECTROSTATIQUE": {
+    "title": "Le champ électrostatique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La force électrostatique entre deux charges est donnée par :",
+        "type": "qcm",
+        "options": [
+          "La loi d'Ohm",
+          "La loi de Coulomb : F = k|q₁q₂|/d²",
+          "F = ma",
+          "La loi de Joule"
+        ],
+        "answer": 1,
+        "explanation": "F = k·|q₁·q₂|/d² avec k = 9·10⁹ SI : attractive si charges de signes contraires, répulsive si même signe — analogue à la gravitation mais bipolaire."
+      },
+      {
+        "id": "q2",
+        "text": "Le champ électrostatique E créé par une charge q est :",
+        "type": "qcm",
+        "options": [
+          "E = q·d",
+          "E = F/q' = k·q/d² : force par unité de charge",
+          "E = IR",
+          "Constant partout"
+        ],
+        "answer": 1,
+        "explanation": "E = F/q' (en N/C ou V/m) : le champ est radial, sortant pour q > 0 et rentrant pour q < 0 — il décrit l'action électrique de q en tout point."
+      },
+      {
+        "id": "q3",
+        "text": "Les lignes de champ électrostatique :",
+        "type": "qcm",
+        "options": [
+          "Se coupent",
+          "Sont tangentes au vecteur champ et orientées vers les charges négatives",
+          "Forment des boucles",
+          "Sont invisibles sans charge"
+        ],
+        "answer": 1,
+        "explanation": "Une ligne de champ part des charges + et aboutit aux − ; le champ est tangent à la ligne et les lignes ne se croisent jamais."
+      },
+      {
+        "id": "q4",
+        "text": "Entre deux plaques planes chargées (condensateur), le champ est :",
+        "type": "qcm",
+        "options": [
+          "Nul",
+          "Uniforme : E = U/d (même direction, même intensité partout)",
+          "Radial",
+          "Variable"
+        ],
+        "answer": 1,
+        "explanation": "Champ uniforme entre plaques : E = U/d où U est la tension entre elles — utilisé pour dévier des faisceaux (oscilloscope)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le pendule électrostatique en équilibre illustre la relation tan α = F_electrique/P entre force électrique et poids.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "À l'équilibre, la bille chargée dévie : tan α = Fe/P permet de mesurer la charge ou le champ — méthode classique de mesure électrostatique."
+      }
+    ]
+  },
+  "Fiche_LECON_8__PUISSANCE_ET_ENERGIE_ELECTRIQUE": {
+    "title": "Puissance et énergie électrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un conducteur ohmique (résistor) transforme :",
+        "type": "qcm",
+        "options": [
+          "L'énergie électrique en chaleur (effet Joule) : P = RI²",
+          "La chaleur en électricité",
+          "Le courant en lumière uniquement",
+          "Rien"
+        ],
+        "answer": 0,
+        "explanation": "La puissance dissipée par un résistor : P = U·I = R·I² (effet Joule) — 100 % de l'énergie électrique reçue devient chaleur."
+      },
+      {
+        "id": "q2",
+        "text": "Le générateur (pile) se caractérise par :",
+        "type": "qcm",
+        "options": [
+          "Sa résistance seule",
+          "Sa f.é.m. E et sa résistance interne r : U = E − rI",
+          "Sa couleur",
+          "Son volume"
+        ],
+        "answer": 1,
+        "explanation": "Générateur = source d'énergie : U = E − rI ; il fournit P = UI au circuit, reçoit EI et dissipe rI² en interne."
+      },
+      {
+        "id": "q3",
+        "text": "Un récepteur actif (moteur, électrolyseur) vérifie :",
+        "type": "qcm",
+        "options": [
+          "U = RI",
+          "U = E' + r'I où E' est la force contre-électromotrice",
+          "U = 0",
+          "P = 0"
+        ],
+        "answer": 1,
+        "explanation": "La f.c.é.m. E' correspond à l'énergie convertie en autre forme (mécanique, chimique) ; r'I² est la perte Joule du récepteur."
+      },
+      {
+        "id": "q4",
+        "text": "La loi de Pouillet donne l'intensité d'un circuit série :",
+        "type": "qcm",
+        "options": [
+          "I = U/R",
+          "I = (E − ΣE')/(R + r + Σr') : f.é.m. nette sur résistance totale",
+          "I = P/U",
+          "I = 0"
+        ],
+        "answer": 1,
+        "explanation": "Pouillet généralise Ohm : I = (ΣE − ΣE')/(R_totale) — le numérateur regroupe les f.é.m. des générateurs moins les f.c.é.m. des récepteurs actifs."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le rendement électrique d'un dipôle est le rapport énergie utile / énergie reçue (η = P_utile/P_reçue ≤ 1).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "η = W_utile/W_reçue : pour le générateur η = U/E ; pour le moteur η = E'/U — le reste part en effet Joule."
+      }
+    ]
+  },
+  "Fiche_LEÇON_10__L_AMPLIFICATEUR_OPERATIONNEL": {
+    "title": "L'amplificateur opérationnel",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'amplificateur opérationnel (AO) possède :",
+        "type": "qcm",
+        "options": [
+          "Une entrée",
+          "Deux entrées (+ non-inverseuse et − inverseuse) et une sortie",
+          "Trois sorties",
+          "Aucune alimentation"
+        ],
+        "answer": 1,
+        "explanation": "L'AO reçoit E+ et E− : sa tension de sortie Vs = A·(V+ − V−) avec un gain A énorme (~10⁵) — il amplifie la différence de potentiel."
+      },
+      {
+        "id": "q2",
+        "text": "En régime linéaire (avec réaction sur l'entrée −), l'AO vérifie :",
+        "type": "qcm",
+        "options": [
+          "Vs = +Vsat",
+          "ε = V+ − V− ≈ 0 (entrées quasiment au même potentiel)",
+          "I+ = I− = grand",
+          "Aucune règle"
+        ],
+        "answer": 1,
+        "explanation": "Régime linéaire : la réaction négative stabilise Vs entre −Vsat et +Vsat et impose ε ≈ 0 ; l'AO est un « suiveur/amplificateur » stable."
+      },
+      {
+        "id": "q3",
+        "text": "Le montage amplificateur non-inverseur a un gain :",
+        "type": "qcm",
+        "options": [
+          "−R₂/R₁",
+          "1 + R₂/R₁ (toujours ≥ 1)",
+          "R₁/R₂",
+          "Nul"
+        ],
+        "answer": 1,
+        "explanation": "Non-inverseur : Vs/Ve = 1 + R₂/R₁ — le signal entre en E+ et le gain est positif ; l'inverseur donne −R₂/R₁."
+      },
+      {
+        "id": "q4",
+        "text": "En régime saturé (comparateur), la sortie Vs vaut :",
+        "type": "qcm",
+        "options": [
+          "0",
+          "+Vsat si V+ > V−, −Vsat si V+ < V−",
+          "La moyenne des entrées",
+          "Ve"
+        ],
+        "answer": 1,
+        "explanation": "Sans réaction, le gain infini sature : Vs bascule à ±Vsat selon le signe de ε — l'AO compare deux tensions."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les courants d'entrée de l'AO sont négligeables (I+ = I− ≈ 0) car son impédance d'entrée est très élevée.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'AO ne « pompe » pas de courant : I+ = I− ≈ 0 — hypothèse fondamentale pour les montages (diviseur de tension, filtre…)."
+      }
+    ]
+  },
+  "Fiche_LEÇON_11__INTRODUCTION_A_L_OPTIQUE_GEOMETRIQUE": {
+    "title": "Introduction à l'optique géométrique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une source de lumière est un corps qui :",
+        "type": "qcm",
+        "options": [
+          "Réfléchit la lumière",
+          "Émet sa propre lumière (soleil, lampe, laser)",
+          "Absorbe toute la lumière",
+          "Est invisible"
+        ],
+        "answer": 1,
+        "explanation": "Source primaire = émet sa lumière ; objet diffusant = renvoie la lumière reçue (lune, feuille blanche) — le récepteur (œil, capteur) la reçoit."
+      },
+      {
+        "id": "q2",
+        "text": "La célérité de la lumière dans le vide vaut :",
+        "type": "qcm",
+        "options": [
+          "340 m/s",
+          "c ≈ 3·10⁸ m/s",
+          "10⁹ m/s",
+          "Infinie"
+        ],
+        "answer": 1,
+        "explanation": "c = 3,00·10⁸ m/s ≈ 300 000 km/s dans le vide ; dans un milieu d'indice n : v = c/n < c."
+      },
+      {
+        "id": "q3",
+        "text": "L'indice de réfraction d'un milieu est :",
+        "type": "qcm",
+        "options": [
+          "n = v/c",
+          "n = c/v, toujours ≥ 1",
+          "n = 0",
+          "n = c·v"
+        ],
+        "answer": 1,
+        "explanation": "n = c/v : rapport entre la vitesse de la lumière dans le vide et dans le milieu — le milieu est dit d'autant plus réfringent que n est grand."
+      },
+      {
+        "id": "q4",
+        "text": "En milieu homogène et transparent, la lumière se propage :",
+        "type": "qcm",
+        "options": [
+          "En zigzag",
+          "En ligne droite (modèle du rayon lumineux)",
+          "En cercle",
+          "Pas du tout"
+        ],
+        "answer": 1,
+        "explanation": "Propagation rectiligne : postulat de l'optique géométrique qui explique ombres, éclipses et le principe de Fermat."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la lumière est une onde électromagnétique caractérisée par sa longueur d'onde λ (visible : ~400 à 800 nm).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "La lumière visible = ondes EM de λ entre ~400 nm (violet) et ~800 nm (rouge) ; la couleur dépend de λ."
+      }
+    ]
+  },
+  "Fiche_LEÇON_12__COUPLES_OXYDANTS_REDUCTEURS_EN_SOLUTION_AQUEUSE_DOSAGE": {
+    "title": "Couples oxydants-réducteurs en solution aqueuse — dosage",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Dans un couple Ox/Red :",
+        "type": "qcm",
+        "options": [
+          "L'oxydant gagne des électrons : Ox + ne⁻ ⇌ Red",
+          "Le réducteur gagne des électrons",
+          "Pas de transfert",
+          "L'oxydant est réduit par lui-même"
+        ],
+        "answer": 0,
+        "explanation": "Ox + ne⁻ ⇌ Red : l'oxydant capte des électrons (réduction), le réducteur les cède (oxydation) — « le gagnant est réduit »."
+      },
+      {
+        "id": "q2",
+        "text": "Pour équilibrer une demi-équation redox en milieu acide, on équilibre dans l'ordre :",
+        "type": "qcm",
+        "options": [
+          "Les électrons d'abord",
+          "Les atomes, puis l'oxygène avec H₂O, l'hydrogène avec H⁺, et la charge avec les électrons",
+          "Seulement les charges",
+          "Au hasard"
+        ],
+        "answer": 1,
+        "explanation": "Méthode : 1) équilibrer l'élément ; 2) O avec H₂O ; 3) H avec H⁺ ; 4) charge avec e⁻. En milieu basique, on ajoute HO⁻ pour éliminer H⁺."
+      },
+      {
+        "id": "q3",
+        "text": "La règle du gamma permet de :",
+        "type": "qcm",
+        "options": [
+          "Calculer le pH",
+          "Prévoir la réaction naturelle entre l'oxydant du couple de plus haut potentiel et le réducteur de plus bas",
+          "Équilibrer les masses",
+          "Rien"
+        ],
+        "answer": 1,
+        "explanation": "En plaçant les couples sur une échelle de potentiel, la réaction spontanée relie en γ l'oxydant le plus fort au réducteur le plus fort."
+      },
+      {
+        "id": "q4",
+        "text": "Un dosage par oxydoréduction permet de :",
+        "type": "qcm",
+        "options": [
+          "Peser le liquide",
+          "Déterminer une concentration grâce à une réaction redox quantitative (ex : permanganate / fer II)",
+          "Filtrer",
+          "Refroidir"
+        ],
+        "answer": 1,
+        "explanation": "Titrage redox : on dose un réducteur par un oxydant titrant ; à l'équivalence, les quantités sont en proportions stœchiométriques — ex. MnO₄⁻ violet décoloré par Fe²⁺."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : à l'équivalence d'un dosage, les réactifs ont été mélangés dans les proportions stœchiométriques de l'équation.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "L'équivalence = juste équilibre n(Ox versé)/a = n(Red initial)/b : on en déduit la concentration inconnue."
+      }
+    ]
+  },
+  "Fiche_LEÇON_13__OXYDORÉDUCTION_PAR_VOIE_SÈCHE": {
+    "title": "Oxydoréduction par voie sèche",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'oxydation du magnésium par le dioxygène s'écrit :",
+        "type": "qcm",
+        "options": [
+          "Mg + O₂ → MgO₂",
+          "2 Mg + O₂ → 2 MgO : vive lumière blanche",
+          "Mg → Mg²⁺ seul",
+          "Mg + H₂O → MgO"
+        ],
+        "answer": 1,
+        "explanation": "Le ruban de magnésium brûle avec une flamme éblouissante : 2Mg + O₂ → 2MgO (oxyde de magnésium blanc) — réaction exothermique."
+      },
+      {
+        "id": "q2",
+        "text": "La réduction de l'oxyde de cuivre II par le carbone :",
+        "type": "qcm",
+        "options": [
+          "CuO + C → Cu + CO impossible",
+          "2 CuO + C → 2 Cu + CO₂ : le carbone réduit CuO en cuivre métallique",
+          "Cu + CO₂ → CuO",
+          "Pas de réaction"
+        ],
+        "answer": 1,
+        "explanation": "Le carbone « arrache » l'oxygène de CuO : apparaît le métal cuivre rouge — réaction de réduction métallurgique classique."
+      },
+      {
+        "id": "q3",
+        "text": "L'aluminothermie est :",
+        "type": "qcm",
+        "options": [
+          "La fusion de l'aluminium",
+          "La réduction d'un oxyde métallique (Fe₂O₃) par l'aluminium : réaction très exothermique servant à souder les rails",
+          "L'oxydation de l'air",
+          "Une électrolyse"
+        ],
+        "answer": 1,
+        "explanation": "Fe₂O₃ + 2 Al → 2 Fe + Al₂O₃ : dégagement de chaleur énorme (~2000 °C) qui produit du fer fondu — soudure thermite."
+      },
+      {
+        "id": "q4",
+        "text": "Le nombre d'oxydation (n.o.) d'un élément :",
+        "type": "qcm",
+        "options": [
+          "Est sa masse",
+          "Caractérise son état d'oxydation : il augmente en cas d'oxydation, diminue en cas de réduction",
+          "Est toujours nul",
+          "Est la température"
+        ],
+        "answer": 1,
+        "explanation": "n.o. : corps pur = 0 ; ion = sa charge ; dans un composé, somme = charge globale — l'oxydation = augmentation du n.o."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : dans une réaction par voie sèche, il n'y a pas d'ions mais un transfert d'électrons entre solides ou gaz à haute température.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "La voie sèche se fait sans solvant : réactions entre solides/gaz en présence de chaleur — contrairement aux réactions en solution aqueuse."
+      }
+    ]
+  },
+  "Fiche_LEÇON_14__ELECTROLYSE": {
+    "title": "L'électrolyse",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'électrolyse est :",
+        "type": "qcm",
+        "options": [
+          "Une réaction spontanée",
+          "Une réaction d'oxydoréduction forcée par le passage du courant électrique",
+          "Une combustion",
+          "Une dissolution"
+        ],
+        "answer": 1,
+        "explanation": "Contrairement à la pile (spontanée), l'électrolyse impose au courant de forcer la réaction dans le sens non naturel : elle transforme l'énergie électrique en énergie chimique."
+      },
+      {
+        "id": "q2",
+        "text": "À l'anode d'une électrolyse a lieu :",
+        "type": "qcm",
+        "options": [
+          "La réduction",
+          "L'oxydation (le réducteur cède ses électrons)",
+          "La fusion",
+          "Le dégagement de O₂ toujours"
+        ],
+        "answer": 1,
+        "explanation": "Convention identique à la pile : anode = oxydation (pôle + de l'électrolyseur), cathode = réduction (pôle −)."
+      },
+      {
+        "id": "q3",
+        "text": "L'électrolyse de l'eau produit :",
+        "type": "qcm",
+        "options": [
+          "Uniquement H₂",
+          "H₂ à la cathode et O₂ à l'anode : 2H₂O → 2H₂ + O₂",
+          "De la vapeur",
+          "Du sel"
+        ],
+        "answer": 1,
+        "explanation": "Avec électrolyte : cathode : 2H⁺ + 2e⁻ → H₂ ; anode : eau oxydée → O₂ — rapport volumique H₂/O₂ = 2."
+      },
+      {
+        "id": "q4",
+        "text": "Une application majeure de l'électrolyse est :",
+        "type": "qcm",
+        "options": [
+          "La corrosion",
+          "La protection par dépôt métallique (électrolytique : chrome, argenture) et la production de métaux (aluminium)",
+          "La photosynthèse",
+          "La fusion"
+        ],
+        "answer": 1,
+        "explanation": "Électrolyse : raffinage du cuivre, production d'aluminium (électrolyse de l'alumine fondue), nickelage/chromage décoratifs et protecteurs."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la quantité d'électricité Q = I·t relie l'intensité et la durée de l'électrolyse à la masse de métal déposée (loi de Faraday).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Q = I·Δt (en coulombs) ; n(e⁻) = Q/F avec F ≈ 96 500 C/mol : on calcule la masse ou le volume produit à chaque électrode."
+      }
+    ]
+  },
+  "Fiche_LEÇON_3__HYDROCARBURES_INSATURÉS_ALCÈNES_ET_ALCYNES": {
+    "title": "Hydrocarbures insaturés : alcènes et alcynes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un alcène est un hydrocarbure possédant :",
+        "type": "qcm",
+        "options": [
+          "Une triple liaison",
+          "Une double liaison C=C et la formule C_nH_{2n}",
+          "Seulement des liaisons simples",
+          "Un cycle"
+        ],
+        "answer": 1,
+        "explanation": "Alcène = double liaison carbone-carbone : éthène C₂H₄, propène C₃H₆ — formule brute C_nH_{2n}."
+      },
+      {
+        "id": "q2",
+        "text": "Un alcyne possède :",
+        "type": "qcm",
+        "options": [
+          "Une double liaison",
+          "Une triple liaison C≡C et la formule C_nH_{2n−2}",
+          "Un atome d'oxygène",
+          "Un cycle aromatique"
+        ],
+        "answer": 1,
+        "explanation": "Alcyne = triple liaison : éthyne/acétylène C₂H₂ (chaleau oxycoupeur) — plus insaturé que l'alcène."
+      },
+      {
+        "id": "q3",
+        "text": "La réaction caractéristique des alcènes est :",
+        "type": "qcm",
+        "options": [
+          "La substitution",
+          "L'addition sur la double liaison (hydrogénation, halogénation, hydratation)",
+          "La combustion seule",
+          "L'oxydation douce"
+        ],
+        "answer": 1,
+        "explanation": "La double liaison s'ouvre pour fixer deux atomes/groupes : H₂ → alcane ; Br₂ → décoloration (test d'insaturation) ; H₂O → alcool."
+      },
+      {
+        "id": "q4",
+        "text": "Le test à l'eau de brome permet de :",
+        "type": "qcm",
+        "options": [
+          "Identifier les alcanes",
+          "Reconnaître une insaturation : Br₂ orange se décolore sur les alcènes/alcynes",
+          "Mesurer le pH",
+          "Vérifier la pureté"
+        ],
+        "answer": 1,
+        "explanation": "Br₂ s'additionne sur les liaisons multiples → décoloration de l'eau de brome : test d'insaturation (les alcanes ne réagissent pas ainsi)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la combustion complète d'un hydrocarbure donne toujours CO₂ et H₂O (alcane, alcène ou alcyne).",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Combustion complète : C_nH_m + O₂ → n CO₂ + m/2 H₂O — seuls CO₂ et eau se forment quel que soit le type d'hydrocarbure."
+      }
+    ]
+  },
+  "Fiche_LEÇON_3__LES_LENTILLES_MINCES": {
+    "title": "Les lentilles minces",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une lentille convergente a :",
+        "type": "qcm",
+        "options": [
+          "Les bords épais",
+          "Le centre plus épais que les bords et fait converger les rayons parallèles",
+          "Aucune action sur la lumière",
+          "Un foyer négatif"
+        ],
+        "answer": 1,
+        "explanation": "Convergente (biconvexe…) : les rayons parallèles à l'axe convergent au foyer image F' — utilisée pour corriger l'hypermétropie."
+      },
+      {
+        "id": "q2",
+        "text": "La distance focale f' et la vergence C sont liées par :",
+        "type": "qcm",
+        "options": [
+          "C = f'",
+          "C = 1/f' (f' en mètres, C en dioptries δ)",
+          "f' = C²",
+          "C = 0"
+        ],
+        "answer": 1,
+        "explanation": "C = 1/f' : vergence en dioptries ; f' > 0 pour convergente, f' < 0 pour divergente — « plus la vergence, plus la lentille est puissante »."
+      },
+      {
+        "id": "q3",
+        "text": "Le rayon passant par le centre optique O :",
+        "type": "qcm",
+        "options": [
+          "Est dévié",
+          "N'est pas dévié (traversée sans déviation)",
+          "Est réfléchi",
+          "S'arrête"
+        ],
+        "answer": 1,
+        "explanation": "3 rayons utiles : parallèle à l'axe → passe par F' ; passant par F → ressort parallèle ; passant par O → non dévié."
+      },
+      {
+        "id": "q4",
+        "text": "La formule de conjugaison (Descartes) des lentilles est :",
+        "type": "qcm",
+        "options": [
+          "1/OA + 1/OA' = 0",
+          "1/OA' − 1/OA = 1/f' en mesures algébriques",
+          "OA = OA'",
+          "f' = OA + OA'"
+        ],
+        "answer": 1,
+        "explanation": "1/OA' − 1/OA = 1/f' : relie positions de l'objet (OA < 0) et de l'image (OA') à la focale — le grandissement γ = OA'/OA = A'B'/AB."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un objet placé avant le foyer objet (|OA| > f') d'une lentille convergente donne une image réelle renversée.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Objet avant F : image réelle, renversée, de l'autre côté (projection possible) ; objet entre F et O : image virtuelle droite — principe de la loupe."
+      }
+    ]
+  },
+  "Fiche_LEÇON_4__ENERGIE_POTENTIELLE": {
+    "title": "L'énergie potentielle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'énergie potentielle de pesanteur d'un corps de masse m à l'altitude z est :",
+        "type": "qcm",
+        "options": [
+          "Epp = ½mv²",
+          "Epp = m·g·z",
+          "Epp = m·z",
+          "Epp = 0"
+        ],
+        "answer": 1,
+        "explanation": "Epp = m g z : l'énergie stockée par un corps du fait de sa position dans le champ de pesanteur — nulle au niveau de référence z = 0."
+      },
+      {
+        "id": "q2",
+        "text": "L'énergie potentielle élastique d'un ressort de raideur k allongé de x est :",
+        "type": "qcm",
+        "options": [
+          "kx",
+          "Epe = ½ k x²",
+          "kx²",
+          "½kx"
+        ],
+        "answer": 1,
+        "explanation": "Epe = ½kx² : le ressort comprimé ou étiré stocke de l'énergie qu'il restitue en se détendant — énergie de déformation."
+      },
+      {
+        "id": "q3",
+        "text": "La variation d'énergie potentielle entre deux points est égale :",
+        "type": "qcm",
+        "options": [
+          "À la vitesse",
+          "À l'opposé du travail de la force conservative : ΔEp = −W(F)",
+          "À zéro toujours",
+          "À la puissance"
+        ],
+        "answer": 1,
+        "explanation": "ΔEp = −W_forces conservatives : quand le corps monte (travail résistant du poids), Epp augmente ; quand il descend, elle diminue."
+      },
+      {
+        "id": "q4",
+        "text": "L'énergie potentielle se mesure en :",
+        "type": "qcm",
+        "options": [
+          "Watts",
+          "Joules (J)",
+          "Newtons",
+          "Volts"
+        ],
+        "answer": 1,
+        "explanation": "Comme toute énergie : le joule (J) ; 1 J = 1 kg·m²/s²."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'énergie potentielle de pesanteur dépend du choix du niveau de référence (z = 0), mais sa variation entre deux points n'en dépend pas.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Epp = mgz change avec l'origine choisie, mais ΔEpp = mg·Δz est indépendante de la référence — seule la différence compte physiquement."
+      }
+    ]
+  },
+  "Fiche_LEÇON_6__QUELQUES_COMPOSES_OXYGÈNES": {
+    "title": "Quelques composés oxygénés",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un alcool se caractérise par le groupe :",
+        "type": "qcm",
+        "options": [
+          "−COOH",
+          "−OH (hydroxyle) porté par un carbone tétragonal : R−OH",
+          "−CO−",
+          "−O−"
+        ],
+        "answer": 1,
+        "explanation": "L'alcool a le groupe hydroxyle −OH : éthanol C₂H₅OH ; classes primaire (RCH₂OH), secondaire (R₂CHOH), tertiaire (R₃COH) selon le nombre de carbones liés au C porteur."
+      },
+      {
+        "id": "q2",
+        "text": "Alcools, aldéhydes et cétones se distinguent par :",
+        "type": "qcm",
+        "options": [
+          "Leur couleur",
+          "Le groupe fonctionnel : alcool −OH ; aldéhyde/cétone = carbonylé C=O (aldéhyde en bout de chaîne, cétone au milieu)",
+          "L'odeur uniquement",
+          "Leur masse"
+        ],
+        "answer": 1,
+        "explanation": "Carbonyle C=O : aldéhyde R−CHO (carbonyle terminal) vs cétone R−CO−R' (carbonyle interne) — tests DNPH (précipité jaune), liqueur de Fehling et Schiff pour aldéhyde seul."
+      },
+      {
+        "id": "q3",
+        "text": "L'oxydation ménagée d'un alcool primaire donne :",
+        "type": "qcm",
+        "options": [
+          "Directement un acide",
+          "Un aldéhyde puis, si excès d'oxydant, un acide carboxylique",
+          "Une cétone",
+          "Un éther"
+        ],
+        "answer": 1,
+        "explanation": "Alcool primaire → aldéhyde → acide carboxylique ; alcool secondaire → cétone ; alcool tertiaire : pas d'oxydation ménagée (pas de H sur le carbone fonctionnel)."
+      },
+      {
+        "id": "q4",
+        "text": "Un acide carboxylique a pour groupe fonctionnel :",
+        "type": "qcm",
+        "options": [
+          "−OH",
+          "−COOH (carboxyle)",
+          "−O−",
+          "−NH₂"
+        ],
+        "answer": 1,
+        "explanation": "R−COOH : donne des solutions acides (pH < 7) ; ex : acide éthanoïque CH₃COOH (vinaigre) — formé par oxydation complète des alcools primaires."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un éther-oxyde a la formule R−O−R' : deux groupes alkyles liés par un oxygène.",
+        "type": "vrai_faux",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "answer": 0,
+        "explanation": "Éther R−O−R' : liaison simple C−O−C ; ex : diéthyléther C₂H₅−O−C₂H₅ — solvant et anesthésique historique."
+      }
+    ]
+  }
+}

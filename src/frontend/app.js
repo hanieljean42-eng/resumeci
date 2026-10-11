@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '3eme', 'Seconde_A', 'Seconde_C', 'Terminale_A', 'Terminale_C', 'Terminale_D'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -51,11 +51,102 @@ function esc(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
-window.getPaymentApiBase = function() {
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    return 'http://127.0.0.1:3000';
+window.getPaymentApiCandidates = function() {
+  if (window.RESUMECI_API_URL) return [window.RESUMECI_API_URL];
+  const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+  if (isLocal) {
+    return ['http://127.0.0.1:3000', 'https://resumeci-payment-api.onrender.com'];
   }
-  return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+  return ['https://resumeci-payment-api.onrender.com'];
+};
+
+window.getPaymentApiBase = function() {
+  return window.getPaymentApiCandidates()[0];
+};
+
+// ==================== PAIEMENT EN ATTENTE & DÉBLOCAGE IMMÉDIAT ====================
+// La référence est gardée dans localStorage (et non sessionStorage) : au retour de Wave,
+// le navigateur rouvre souvent le site dans un nouvel onglet.
+const PENDING_PAY_KEYS = ['last_payment_reference', 'last_payment_tier', 'last_payment_at'];
+const PAY_FAILED_STATUSES = ['failed', 'cancelled', 'canceled', 'expired', 'refunded', 'rejected'];
+window.getPendingPaymentRef = function() {
+  const at = Number(localStorage.getItem('last_payment_at')) || 0;
+  if (at && Date.now() - at > 48 * 3600 * 1000) { window.clearPendingPaymentRef(); return ''; }
+  return localStorage.getItem('last_payment_reference') || sessionStorage.getItem('last_payment_reference') || '';
+};
+window.setPendingPaymentRef = function(reference, tier) {
+  if (!reference) return;
+  localStorage.setItem('last_payment_reference', reference);
+  localStorage.setItem('last_payment_tier', tier || 'starter');
+  localStorage.setItem('last_payment_at', String(Date.now()));
+};
+window.clearPendingPaymentRef = function() {
+  PENDING_PAY_KEYS.forEach(k => { localStorage.removeItem(k); sessionStorage.removeItem(k); });
+};
+window.refreshPremiumUI = function(rerender) {
+  if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+  if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+  // Re-rendu de la vue courante pour retirer les cadenas sans recharger la page
+  if (rerender && window.DATA && window.DATA.structure) window.dispatchEvent(new PopStateEvent('popstate'));
+};
+window.applyPremiumUnlock = function(tier, expiresAt) {
+  if (!window.USER_PROFILE) return;
+  window.USER_PROFILE.premiumPlan = tier || window.USER_PROFILE.premiumPlan || 'starter';
+  window.USER_PROFILE.isPremium = true;
+  if (expiresAt) window.USER_PROFILE.premiumExpiresAt = expiresAt;
+  localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+  window.refreshPremiumUI(true);
+};
+
+// Surveille un paiement jusqu'à confirmation : toutes les 3 s pendant 90 s, puis toutes les 10 s
+// pendant 15 min, et immédiatement quand l'élève revient sur l'onglet (retour de l'app Wave).
+window.watchPendingPayment = function(reference, tier) {
+  if (window._payWatch) return;
+  const apiBase = window.getPaymentApiBase();
+  const started = Date.now();
+  let busy = false, timer = null;
+  const onVis = () => { if (document.visibilityState === 'visible') { clearTimeout(timer); check(); } };
+  const stop = () => { clearTimeout(timer); document.removeEventListener('visibilitychange', onVis); window._payWatch = null; };
+  const schedule = () => {
+    const elapsed = Date.now() - started;
+    if (elapsed > 15 * 60 * 1000) return stop();
+    timer = setTimeout(check, elapsed < 90000 ? 3000 : 10000);
+  };
+  const check = async () => {
+    if (busy) return;
+    busy = true;
+    try {
+      const ref = window.getPendingPaymentRef() || reference;
+      if (ref) {
+        const r = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(ref)}`, { cache: 'no-store' });
+        const d = await r.json().catch(() => null);
+        if (d && d.success && d.status === 'completed') {
+          stop();
+          window.clearPendingPaymentRef();
+          window.applyPremiumUnlock(d.tierKey || tier, d.premiumExpiresAt);
+          showSubscriptionSuccessModal(d.tierKey || tier, d.premiumExpiresAt);
+          return;
+        }
+        if (d && PAY_FAILED_STATUSES.includes(d.status)) { stop(); window.clearPendingPaymentRef(); return; }
+      } else if (typeof window.syncUserProfileFromRemote === 'function') {
+        const before = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+        await window.syncUserProfileFromRemote();
+        const sub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+        if (sub) {
+          stop();
+          if (!before) showSubscriptionSuccessModal(sub.tier, sub.expiresAt);
+          return;
+        }
+      }
+    } catch (e) {
+    } finally {
+      busy = false;
+    }
+    schedule();
+  };
+  document.addEventListener('visibilitychange', onVis);
+  window._payWatch = { stop };
+  check();
 };
 
 window.syncUserProfileFromRemote = async function() {
@@ -64,74 +155,59 @@ window.syncUserProfileFromRemote = async function() {
   const uid = window.USER_PROFILE.uid || '';
   if (!phone && !uid) return null;
 
-  // 1. Tenter d'abord la récupération ultra-rapide directe depuis Firestore (temps de réponse < 100ms)
-  try {
-    if (typeof window.fetchUserProfileFromFirestore === 'function') {
-      const fbUser = await window.fetchUserProfileFromFirestore(phone, uid);
-      if (fbUser) {
-        const now = Date.now();
-        const expiresAt = Number(fbUser.premiumExpiresAt) || 0;
-        const isPrem = Boolean(fbUser.isPremium && (expiresAt === 0 || expiresAt > now));
-        const plan = isPrem ? (fbUser.premiumPlan || fbUser.plan || 'pro') : 'free';
-        let changed = false;
+  // Statut premium fourni uniquement par l'API (la collection Firestore `users` est réservée à l'admin)
+  // Utilisation de la liste de candidats d'API avec repli automatique (Localhost -> Render)
+  const candidates = typeof window.getPaymentApiCandidates === 'function'
+    ? window.getPaymentApiCandidates()
+    : [typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com'];
 
-        if (window.USER_PROFILE.isPremium !== isPrem) {
-          window.USER_PROFILE.isPremium = isPrem;
+  const headers = { 'Accept': 'application/json' };
+  if (window.USER_PROFILE && window.USER_PROFILE.sessionToken) {
+    headers.Authorization = 'Bearer ' + window.USER_PROFILE.sessionToken;
+  }
+
+  for (const apiBase of candidates) {
+    try {
+      const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
+        method: 'GET',
+        headers
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data && data.success && data.user) {
+        const u = data.user;
+        const wasPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(window.USER_PROFILE.isPremium);
+        let changed = false;
+        if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
+          window.USER_PROFILE.isPremium = Boolean(u.isPremium);
           changed = true;
         }
-        if (window.USER_PROFILE.premiumPlan !== plan) {
-          window.USER_PROFILE.premiumPlan = plan;
+        if (u.premiumPlan && window.USER_PROFILE.premiumPlan !== u.premiumPlan) {
+          window.USER_PROFILE.premiumPlan = u.premiumPlan;
           changed = true;
         }
-        if (expiresAt && window.USER_PROFILE.premiumExpiresAt !== expiresAt) {
-          window.USER_PROFILE.premiumExpiresAt = expiresAt;
+        if (u.premiumExpiresAt && window.USER_PROFILE.premiumExpiresAt !== u.premiumExpiresAt) {
+          window.USER_PROFILE.premiumExpiresAt = u.premiumExpiresAt;
           changed = true;
         }
         if (changed) {
           localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-          if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-          if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+          const isNowPremium = window.hasActiveSubscription ? Boolean(window.hasActiveSubscription()) : Boolean(u.isPremium);
+          if (isNowPremium && typeof window.clearPendingPaymentRef === 'function') {
+            window.clearPendingPaymentRef();
+          }
+          if (typeof window.refreshPremiumUI === 'function') {
+            window.refreshPremiumUI(isNowPremium !== wasPremium);
+          } else {
+            if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+            if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+          }
         }
         return window.USER_PROFILE;
       }
+    } catch (err) {
+      // Continue next candidate if failed
     }
-  } catch (fbErr) {
-    console.warn("[Sync] Direct Firestore check warning:", fbErr);
-  }
-
-  // 2. Repli vers l'API Backend
-  try {
-    const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
-    const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
-      method: 'GET',
-      headers: { 'Accept': 'application/json' }
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data && data.success && data.user) {
-      const u = data.user;
-      let changed = false;
-      if (typeof u.isPremium !== 'undefined' && window.USER_PROFILE.isPremium !== u.isPremium) {
-        window.USER_PROFILE.isPremium = Boolean(u.isPremium);
-        changed = true;
-      }
-      if (u.premiumPlan && window.USER_PROFILE.premiumPlan !== u.premiumPlan) {
-        window.USER_PROFILE.premiumPlan = u.premiumPlan;
-        changed = true;
-      }
-      if (u.premiumExpiresAt && window.USER_PROFILE.premiumExpiresAt !== u.premiumExpiresAt) {
-        window.USER_PROFILE.premiumExpiresAt = u.premiumExpiresAt;
-        changed = true;
-      }
-      if (changed) {
-        localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-      }
-      return window.USER_PROFILE;
-    }
-  } catch (err) {
-    console.warn("Erreur synchronisation profil distant:", err);
   }
   return null;
 };
@@ -145,7 +221,13 @@ window.loadUserProfile = async function() {
       window.USER_PROFILE = null;
       return null;
     }
-    window.USER_PROFILE = JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (parsed && ('password' in parsed || 'passwordHash' in parsed)) {
+      delete parsed.password;
+      delete parsed.passwordHash;
+      localStorage.setItem('resumeci_profile', JSON.stringify(parsed));
+    }
+    window.USER_PROFILE = parsed;
     setTimeout(() => {
       if (typeof window.syncUserProfileFromRemote === 'function') {
         window.syncUserProfileFromRemote();
@@ -168,7 +250,6 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
       lastName: lastName,
       selectedClass: selectedClass,
       whatsapp: whatsapp,
-      password: password,
       isPremium: isPaid,
       premiumPlan: tierKey || 'free',
       premiumExpiresAt: isPaid ? Date.now() + (30 * 24 * 60 * 60 * 1000) : 0,
@@ -200,26 +281,26 @@ window.saveUserProfile = async function(firstName, lastName, selectedClass, what
 };
 
 window.loginUserProfile = async function(firstName, lastName, whatsapp, password) {
+  // Authentification uniquement côté serveur : aucun mot de passe n'est stocké ni comparé dans le navigateur
   try {
-    const raw = localStorage.getItem('resumeci_profile');
-    if (raw) {
-      const p = JSON.parse(raw);
-      // Vérification stricte : WhatsApp doit correspondre ET mot de passe correct
-      if (p.whatsapp === whatsapp && p.password === password) {
-        window.USER_PROFILE = p;
-        if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
-        if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
-        return { success: true, profile: p };
-      }
-      // WhatsApp correspond mais mot de passe incorrect
-      if (p.whatsapp === whatsapp && p.password !== password) {
-        return { error: "Mot de passe incorrect." };
-      }
+    const cleanWa = String(whatsapp || '').replace(/\D/g, '').slice(-10);
+    const res = await fetch(`${window.getPaymentApiBase()}/api/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ whatsapp: cleanWa, password: password })
+    });
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data || !data.success || !data.profile) {
+      return { error: (data && data.error) || "Identifiants invalides." };
     }
-    // Aucun profil trouvé — ne PAS créer de profil premium gratuit
-    return { error: "Aucun compte trouvé sur cet appareil. Inscris-toi d'abord." };
+    const { password: _pw, passwordHash: _ph, ...profile } = data.profile;
+    window.USER_PROFILE = profile;
+    localStorage.setItem('resumeci_profile', JSON.stringify(profile));
+    if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
+    if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+    return { success: true, profile: profile };
   } catch(e) {
-    return { error: "Identifiants invalides." };
+    return { error: "Impossible de joindre le serveur de connexion. Réessaie dans quelques secondes." };
   }
 };
 
@@ -339,101 +420,28 @@ async function loadData() {
     updateTopbarStreak();
   }
   window.getPaymentApiBase = function() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://127.0.0.1:3000';
-    }
-    return window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com';
+    return window.getPaymentApiCandidates ? window.getPaymentApiCandidates()[0] : (window.RESUMECI_API_URL || 'https://resumeci-payment-api.onrender.com');
   };
   checkForUpdates();
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get('payment');
-  const storedPendingRef = sessionStorage.getItem('last_payment_reference');
-  const storedPendingTier = sessionStorage.getItem('last_payment_tier') || 'pro';
+  const storedPendingRef = window.getPendingPaymentRef();
+  const storedPendingTier = localStorage.getItem('last_payment_tier') || sessionStorage.getItem('last_payment_tier') || 'starter';
 
   if (paymentStatus === 'success' || urlParams.get('payment_success') || storedPendingRef) {
     const tier = urlParams.get('tier') || storedPendingTier || 'starter';
-    const targetUid = urlParams.get('uid') || window.USER_PROFILE?.uid;
     const reference = urlParams.get('reference') || urlParams.get('payment_reference') || urlParams.get('ref') || storedPendingRef || '';
     if (paymentStatus === 'success') {
       window.history.replaceState({}, '', window.location.pathname);
     }
-    if (targetUid || reference) {
-      setTimeout(async () => {
-        try {
-          const apiBase = window.getPaymentApiBase();
-          // 1. Si référence présente, interroger directement check-payment
-          let confirmData = null;
-          if (reference) {
-            try {
-              const chkRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(reference)}`);
-              confirmData = await chkRes.json();
-            } catch(e) {}
-          }
-
-          // 2. Si pas encore validé, tenter confirm-payment
-          if (!confirmData || !confirmData.success || confirmData.status !== 'completed') {
-            const confirmRes = await fetch(`${apiBase}/api/confirm-payment`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ uid: targetUid || window.USER_PROFILE?.uid, tierKey: tier, reference: reference })
-            });
-            confirmData = await confirmRes.json();
-          }
-
-          if (confirmData && confirmData.success && (confirmData.isPremium || confirmData.status === 'completed')) {
-            sessionStorage.removeItem('last_payment_reference');
-            sessionStorage.removeItem('last_payment_tier');
-            const unlockedTier = confirmData.tierKey || tier;
-            if (window.USER_PROFILE) {
-              window.USER_PROFILE.premiumPlan = unlockedTier;
-              window.USER_PROFILE.isPremium = true;
-              window.USER_PROFILE.premiumExpiresAt = confirmData.premiumExpiresAt;
-              localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-            }
-            updateAudioFabVisual();
-            updateSidebarPassBtn();
-            showSubscriptionSuccessModal(unlockedTier, confirmData.premiumExpiresAt);
-          } else if (storedPendingRef) {
-            // L'élève revient de Wave : lancer une vérification discrète toutes les 4s pendant 40s
-            let pollAttempts = 0;
-            const pollInterval = setInterval(async () => {
-              pollAttempts++;
-              const curRef = sessionStorage.getItem('last_payment_reference');
-              if (!curRef || pollAttempts > 10) {
-                clearInterval(pollInterval);
-                return;
-              }
-              try {
-                const pRes = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(curRef)}`);
-                const pData = await pRes.json();
-                if (pData.success && pData.status === 'completed') {
-                  clearInterval(pollInterval);
-                  sessionStorage.removeItem('last_payment_reference');
-                  sessionStorage.removeItem('last_payment_tier');
-                  const pTier = pData.tierKey || tier;
-                  if (window.USER_PROFILE) {
-                    window.USER_PROFILE.premiumPlan = pTier;
-                    window.USER_PROFILE.isPremium = true;
-                    window.USER_PROFILE.premiumExpiresAt = pData.premiumExpiresAt;
-                    localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
-                  }
-                  updateAudioFabVisual();
-                  updateSidebarPassBtn();
-                  showSubscriptionSuccessModal(pTier, pData.premiumExpiresAt);
-                }
-              } catch(e) {}
-            }, 4000);
-          }
-        } catch(e) {
-          console.error("Erreur confirmation paiement:", e);
-        }
-      }, 500);
-    }
+    if (reference && reference !== storedPendingRef) window.setPendingPaymentRef(reference, tier);
+    if (window.USER_PROFILE) setTimeout(() => window.watchPendingPayment(reference, tier), 300);
   }
   updateAudioFabVisual();
   updateSidebarPassBtn();
   if (!window.USER_PROFILE) {
-    window.location.href = '/connexion.html';
+    // Visiteur sans compte : il reste sur la page d'accueil, « Continuer » mène à l'inscription
+    if (!document.getElementById('introScreen')) window.location.href = '/connexion.html';
     return;
   }
 }
@@ -725,13 +733,13 @@ window.submitProfile = async function () {
   }
 
   // Mode Inscription initiale
-  if (!pwd || pwd.length < 6) {
+  if (!pwd || pwd.length < 8) {
     window.showActionNotice({
       type: 'warning',
       icon: '🔒',
       title: 'Mot de passe trop court',
       subtitle: 'Sécurité de ton compte',
-      message: 'Le mot de passe doit comporter au moins 6 caractères pour sécuriser tes fiches et tes statistiques.',
+      message: 'Le mot de passe doit comporter au moins 8 caractères pour sécuriser tes fiches et tes statistiques.',
       primaryBtnText: 'Modifier le mot de passe'
     });
     if (btn) {
@@ -1241,6 +1249,8 @@ let currentCheckoutTier = 'starter';
 let currentCheckoutMethod = 'wave';
 
 window.openPaymentCheckoutModal = function(tierKey = 'pro') {
+  // Réveille l'API Render (plan gratuit en veille) pendant que l'élève choisit sa formule
+  try { fetch(`${window.getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch (e) {}
   if (!window.USER_PROFILE) {
     if (window.toast) toast("Connecte-toi ou crée ton compte en 30 secondes pour activer ton Pass.", 'info');
     window.location.href = '/connexion.html';
@@ -1349,8 +1359,6 @@ window.selectPaymentMethod = function(method) {
   const isPro = currentCheckoutTier === 'pro';
   const price = isPro ? '1 000' : '500';
   const textEl = document.getElementById('checkoutSubmitText');
-  const btn = document.getElementById('checkoutSubmitBtn');
-
   const names = {
     wave: 'Wave',
     orange_money: 'Orange Money',
@@ -1358,31 +1366,8 @@ window.selectPaymentMethod = function(method) {
     moov_money: 'Moov Money'
   };
 
-  const icons = {
-    wave: '🌊',
-    orange_money: '🟠',
-    mtn_money: '🟡',
-    moov_money: '🔵'
-  };
-
   if (textEl) {
-    textEl.innerHTML = `${icons[method] || '💳'} Payer ${price} FCFA avec ${names[method] || 'Wave'}`;
-  }
-
-  if (btn) {
-    if (method === 'wave') {
-      btn.style.background = 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(2, 132, 199, 0.35)';
-    } else if (method === 'orange_money') {
-      btn.style.background = 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(234, 88, 12, 0.35)';
-    } else if (method === 'mtn_money') {
-      btn.style.background = 'linear-gradient(135deg, #ca8a04 0%, #a16207 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(202, 138, 4, 0.35)';
-    } else if (method === 'moov_money') {
-      btn.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
-      btn.style.boxShadow = '0 4px 15px rgba(37, 99, 235, 0.35)';
-    }
+    textEl.textContent = `Payer ${price} FCFA avec ${names[method] || 'Wave'}`;
   }
 };
 
@@ -1477,7 +1462,7 @@ window.submitCheckoutPayment = async function() {
 
     if (data.success && checkoutUrl) {
       if (data.reference || data.payment_reference) {
-        sessionStorage.setItem('last_payment_reference', data.reference || data.payment_reference);
+        window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier);
       }
       window.location.href = checkoutUrl;
       return;
@@ -1506,14 +1491,18 @@ window.submitCheckoutPayment = async function() {
   }
 };
 document.addEventListener('DOMContentLoaded', () => {
-  const introSeen = localStorage.getItem('rci_intro_seen');
-  if (introSeen === '1' || window.USER_PROFILE) {
+  const hasAccount = () => Boolean(window.USER_PROFILE || localStorage.getItem('resumeci_profile'));
+  if (hasAccount()) {
     const intro = document.getElementById('introScreen');
     if (intro) intro.style.display = 'none';
     const appLayout = document.getElementById('appLayout');
     if (appLayout) appLayout.classList.remove('is-hidden');
   }
   document.getElementById('continueBtn')?.addEventListener('click', () => {
+    if (!hasAccount()) {
+      window.location.href = '/inscription.html';
+      return;
+    }
     localStorage.setItem('rci_intro_seen', '1');
     const intro = document.getElementById('introScreen');
     if (intro) intro.style.display = 'none';
@@ -1673,8 +1662,8 @@ function toggleDarkMode() {
   localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 async function shareSite() {
-  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 714 Fiches BAC & BEPC';
-  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
+  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 1009 Fiches BAC & BEPC';
+  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 1009 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
   const url = 'https://resumeci.me/inscription.html';
   if (navigator.share) await navigator.share({ title: title, text: text, url: url }).catch(() => {});
   else {
@@ -4063,7 +4052,7 @@ function showAnnouncement() {
         <div class="ann-spark s3"></div>
         <div class="ann-label" style="background:#10b981;color:#fff;font-weight:800;">✨ NOUVELLE PLATEFORME EN LIGNE</div>
         <h2 style="font-size:22px;margin:6px 0 4px;">Bienvenue sur ResumeCI ! 🎓</h2>
-        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">714 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
+        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">1009 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
       </div>
       <div class="ann-body" style="padding:16px;">
         <div style="font-size:12px;font-weight:800;color:#0f172a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.3px;">
