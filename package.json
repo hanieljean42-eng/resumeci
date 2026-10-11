@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "node src/build_static.js",
+    "telecharger": "node src/telecharger_ecole_ci.js",
     "minify": "terser src/frontend/app.js -o public/app.js",
     "start": "node server.js",
     "dev": "node server.js",
