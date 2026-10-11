@@ -23,9 +23,12 @@ if (!CLASSE) {
 
 const COURS_DIR_MAP = {
   '6eme': path.join(__dirname, '..', 'Cours_6eme'),
+  '4eme': path.join(__dirname, '..', 'Cours_4eme'),
   '3eme': path.join(__dirname, '..', 'Cours_3eme'),
   'Seconde_A': path.join(__dirname, '..', 'Cours_Seconde_A'),
   'Seconde_C': path.join(__dirname, '..', 'Cours_Seconde_C'),
+  'Premiere_A': path.join(__dirname, '..', 'Cours_Premiere_A'),
+  'Premiere_C': path.join(__dirname, '..', 'Cours_Premiere_C'),
   'Premiere_D': path.join(__dirname, '..', 'Cours_Premiere_D'),
   // Nouvelles variantes pour le scraper dédié mathématiques Seconde
   'Seconde_A_Math': path.join(__dirname, '..', 'Cours_Seconde_Math', 'Seconde_A'),

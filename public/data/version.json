@@ -1,19 +1,20 @@
 {
-  "version": "3.3.7",
-  "build": 3370,
-  "date": "2026-10-06",
+  "version": "3.4.0",
+  "build": 3400,
+  "date": "2026-10-13",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Plateforme ResumeCI Mise à Jour 🚀",
-  "message": "Page d'accueil avant l'inscription + données des comptes protégées",
+  "title": "Nouvelles Classes + Quiz Partout 🚀",
+  "message": "Trois nouvelles classes arrivent : 4ème, Première A et Première C, avec quiz et flashcards sur chaque fiche !",
   "features": [
-    "📚 714 Fiches de cours Collège & Lycée",
-    "🃏 Flashcards scientifiques par répétition espacée",
-    "🎯 Quiz interactifs avec QCM, Vrai/Faux et chronomètre",
+    "📚 1009 Fiches de cours Collège & Lycée",
+    "� Classe de 4ème : 100 fiches dans 9 matières",
+    "� Première A : 97 fiches dans 7 matières",
+    "🆕 Première C : 98 fiches dans 6 matières",
+    "🎯 Quiz interactifs sur TOUTES les fiches 4ème, 1ʳᵉ A et 1ʳᵉ C (295 nouveaux quiz)",
+    "🃏 Flashcards automatiques sur toutes les nouvelles fiches",
     "📴 Packs hors-ligne pour réviser sans connexion Internet",
-    "🧠 Récitation Active (Active Recall) avec masquage intelligent",
-    "⚠️ Rubriques 'Pièges d'Examen' avec astuces des correcteurs",
     "👑 Formules Pass Réussite avec activation automatique 100% sécurisée"
   ],
-  "forceShow": false
+  "forceShow": true
 }

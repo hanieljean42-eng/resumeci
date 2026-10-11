@@ -1,0 +1,587 @@
+{
+  "Fiche_Lecon1_Sources_et_recepteurs_de_lumiere": {
+    "title": "Sources et récepteurs de lumière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une source primaire de lumière est un objet qui :",
+        "type": "qcm",
+        "options": ["Renvoie la lumière reçue", "Produit sa propre lumière", "Absorbe la lumière", "Réfléchit toujours la lumière blanche"],
+        "answer": 1,
+        "explanation": "Une source primaire (ou source de lumière) produit la lumière qu'elle émet : le Soleil, une lampe allumée, une bougie. Les objets qui ne font que renvoyer la lumière reçue sont des sources secondaires."
+      },
+      {
+        "id": "q2",
+        "text": "La Lune est :",
+        "type": "qcm",
+        "options": ["Une source primaire", "Un objet diffusant (source secondaire)", "Un récepteur qui émet de la lumière", "Un objet transparent"],
+        "answer": 1,
+        "explanation": "La Lune ne produit pas de lumière : elle diffuse la lumière du Soleil vers nous. C'est une source secondaire, comme tout objet éclairé visible."
+      },
+      {
+        "id": "q3",
+        "text": "Un récepteur de lumière est un objet qui :",
+        "type": "qcm",
+        "options": ["Produit de la lumière", "Reçoit la lumière et peut la transformer", "Diffuse la lumière du Soleil", "Est toujours opaque"],
+        "answer": 1,
+        "explanation": "Le récepteur reçoit la lumière : œil, appareil photo, cellule photoélectrique, panneau solaire (qui transforme la lumière en électricité)."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : un objet peut être à la fois source et récepteur de lumière.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Oui : une vitre éclairée reçoit la lumière et la diffuse — elle est récepteur ET source secondaire. Tout objet éclairé diffusant de la lumière joue ce double rôle."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces objets, lequel est une source primaire ?",
+        "type": "qcm",
+        "options": ["Un miroir", "Un écran de téléphone allumé", "La Lune", "Un mur blanc éclairé"],
+        "answer": 1,
+        "explanation": "L'écran allumé produit sa propre lumière (source primaire). Le miroir, la Lune et le mur éclairé ne font que renvoyer la lumière reçue (sources secondaires)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Propagation_de_la_lumiere": {
+    "title": "Propagation de la lumière",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La lumière se propage en ligne droite dans un milieu :",
+        "type": "qcm",
+        "options": ["Opaque", "Transparent et homogène", "Réfléchissant", "Quelconque"],
+        "answer": 1,
+        "explanation": "C'est le principe de propagation rectiligne : dans un milieu transparent et homogène (air, vide, eau pure), la lumière se propage en ligne droite."
+      },
+      {
+        "id": "q2",
+        "text": "Un milieu translucide est un milieu qui :",
+        "type": "qcm",
+        "options": ["Laisse passer toute la lumière nettement", "Laisse passer la lumière sans permettre de voir nettement", "Ne laisse passer aucune lumière", "Réfléchit toute la lumière"],
+        "answer": 1,
+        "explanation": "Un milieu translucide (verre dépoli, papier calque) laisse passer une partie de la lumière mais la diffuse : on ne distingue pas les objets à travers. Contrairement au transparent (vision nette) et à l'opaque (aucune lumière)."
+      },
+      {
+        "id": "q3",
+        "text": "La vitesse de la lumière dans le vide est environ :",
+        "type": "qcm",
+        "options": ["300 km/s", "3 000 km/s", "300 000 km/s", "30 000 km/s"],
+        "answer": 2,
+        "explanation": "c ≈ 300 000 km/s (3 × 10⁸ m/s). C'est une vitesse limite : aucun objet ni signal ne peut voyager plus vite."
+      },
+      {
+        "id": "q4",
+        "text": "Une année-lumière est :",
+        "type": "qcm",
+        "options": ["Une durée égale à un an", "La distance parcourue par la lumière en un an", "Le temps mis par la lumière pour venir du Soleil", "La distance Terre-Soleil"],
+        "answer": 1,
+        "explanation": "L'année-lumière (a.l.) est une unité de distance, pas de temps : c'est la distance que la lumière parcourt en un an, soit environ 9 460 milliards de km. Elle sert à mesurer les distances astronomiques."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la chambre noire illustre la propagation rectiligne de la lumière.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Dans une chambre noire, la lumière traverse un petit trou et forme une image renversée sur l'écran opposé — preuve directe que la lumière voyage en ligne droite."
+      }
+    ]
+  },
+  "Fiche_Lecon3_Phases_de_la_Lune_et_eclipses": {
+    "title": "Phases de la Lune et éclipses",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'ombre propre d'un objet est :",
+        "type": "qcm",
+        "options": ["L'ombre portée sur un écran", "La partie non éclairée de l'objet", "L'ombre d'un objet transparent", "La pénombre"],
+        "answer": 1,
+        "explanation": "On distingue l'ombre propre (partie de l'objet qui ne reçoit pas de lumière) et l'ombre portée (zone noire projetée sur un écran ou une surface derrière l'objet)."
+      },
+      {
+        "id": "q2",
+        "text": "Les phases de la Lune sont dues :",
+        "type": "qcm",
+        "options": ["À l'ombre de la Terre sur la Lune", "Aux positions relatives Soleil-Terre-Lune", "À la rotation de la Terre", "Aux nuages"],
+        "answer": 1,
+        "explanation": "La Lune diffuse la lumière du Soleil : selon sa position par rapport à la Terre et au Soleil, on en voit une partie éclairée variable — ce sont les phases (nouvelle lune, premier quartier, pleine lune, dernier quartier)."
+      },
+      {
+        "id": "q3",
+        "text": "Une éclipse de Soleil se produit lorsque :",
+        "type": "qcm",
+        "options": ["La Terre est entre le Soleil et la Lune", "La Lune est entre le Soleil et la Terre", "Le Soleil est entre la Terre et la Lune", "La Lune passe dans l'ombre de Mars"],
+        "answer": 1,
+        "explanation": "Éclipse de Soleil : la Lune passe devant le Soleil et projette son ombre sur la Terre (alignement Soleil-Lune-Terre, à la nouvelle lune)."
+      },
+      {
+        "id": "q4",
+        "text": "Une éclipse de Lune se produit lorsque :",
+        "type": "qcm",
+        "options": ["La Lune est entre le Soleil et la Terre", "La Lune passe dans l'ombre de la Terre", "La Lune s'éteint", "Le Soleil est caché par un nuage"],
+        "answer": 1,
+        "explanation": "Éclipse de Lune : la Lune pleine traverse l'ombre portée de la Terre (alignement Soleil-Terre-Lune, à la pleine lune)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : à la pleine lune, la face de la Lune visible depuis la Terre est entièrement éclairée.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "À la pleine lune, la Terre est entre le Soleil et la Lune (sans être exactement alignée) : la face visible de la Lune reçoit pleinement la lumière solaire et apparaît comme un disque entier."
+      }
+    ]
+  },
+  "Fiche_Lecon4_Analyse_et_synthese_de_la_lumiere_blanche": {
+    "title": "Analyse et synthèse de la lumière blanche",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'analyse de la lumière blanche avec un prisme montre qu'elle est constituée :",
+        "type": "qcm",
+        "options": ["D'une seule couleur", "De toutes les couleurs de l'arc-en-ciel", "De trois couleurs seulement", "De lumière invisible uniquement"],
+        "answer": 1,
+        "explanation": "Le prisme (ou le réseau) décompose la lumière blanche en un spectre continu du rouge au violet : la lumière blanche est un mélange de toutes les radiations colorées."
+      },
+      {
+        "id": "q2",
+        "text": "La synthèse de la lumière blanche peut se faire :",
+        "type": "qcm",
+        "options": ["En soustrayant les couleurs", "En superposant les lumières rouge, verte et bleue", "En mélangeant les peintures", "Avec un seul laser"],
+        "answer": 1,
+        "explanation": "Synthèse additive : la superposition des trois lumières primaires (rouge, vert, bleu) en bonnes proportions redonne la lumière blanche — principe des écrans."
+      },
+      {
+        "id": "q3",
+        "text": "Un objet apparaît rouge sous lumière blanche parce qu'il :",
+        "type": "qcm",
+        "options": ["Absorbe le rouge", "Diffuse le rouge et absorbe les autres couleurs", "Produit du rouge", "Est transparent"],
+        "answer": 1,
+        "explanation": "La couleur d'un objet est celle de la lumière qu'il diffuse. Un objet rouge diffuse le rouge et absorbe les autres radiations. Éclairé en lumière verte, il apparaîtra presque noir."
+      },
+      {
+        "id": "q4",
+        "text": "Un objet blanc sous lumière blanche :",
+        "type": "qcm",
+        "options": ["Absorbe toutes les couleurs", "Diffuse toutes les couleurs", "Absorbe le bleu", "N'émet pas de lumière visible"],
+        "answer": 1,
+        "explanation": "Un objet blanc diffuse toutes les radiations sans en absorber ; un objet noir les absorbe toutes. C'est pourquoi le noir chauffe plus au soleil."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une lumière colorée qui traverse un filtre de la même couleur ressort inchangée, mais est arrêtée par un filtre de couleur complémentaire.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Un filtre ne transmet que sa propre couleur : le filtre rouge laisse passer le rouge et absorbe le reste. C'est la synthèse soustractive."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Aimant_et_bobine": {
+    "title": "Aimant et bobine",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un aimant possède :",
+        "type": "qcm",
+        "options": ["Un seul pôle", "Deux pôles : nord et sud", "Trois pôles", "Un pôle positif et un pôle négatif"],
+        "answer": 1,
+        "explanation": "Tout aimant possède deux pôles indissociables : un pôle Nord et un pôle Sud. Même coupé en deux, chaque morceau redevient un aimant complet."
+      },
+      {
+        "id": "q2",
+        "text": "Deux pôles de même nom (Nord-Nord ou Sud-Sud) :",
+        "type": "qcm",
+        "options": ["S'attirent", "Se repoussent", "S'annulent", "N'interagissent pas"],
+        "answer": 1,
+        "explanation": "Règle des pôles : deux pôles de même nom se repoussent ; deux pôles de noms contraires (Nord-Sud) s'attirent."
+      },
+      {
+        "id": "q3",
+        "text": "Une bobine parcourue par un courant se comporte comme :",
+        "type": "qcm",
+        "options": ["Un isolant", "Un aimant", "Un récepteur de lumière", "Un condensateur"],
+        "answer": 1,
+        "explanation": "Une bobine traversée par un courant crée un champ magnétique : elle a deux faces, une face Nord et une face Sud, identifiables avec une boussole."
+      },
+      {
+        "id": "q4",
+        "text": "Un électroaimant est :",
+        "type": "qcm",
+        "options": ["Un aimant permanent", "Une bobine avec un noyau de fer doux qui ne s'aimante que sous courant", "Un aimant qui attire le cuivre", "Une pile"],
+        "answer": 1,
+        "explanation": "L'électroaimant combine une bobine et un noyau de fer doux : il n'attire que lorsque le courant circule. Applications : grues de tri, sonneries, relais."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un aimant attire tous les métaux.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Un aimant n'attire que les matériaux ferromagnétiques : fer, acier, nickel, cobalt. Il n'attire ni le cuivre, ni l'aluminium, ni le plastique."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Production_d_une_tension_alternative": {
+    "title": "Production d'une tension alternative",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une tension apparaît aux bornes d'une bobine lorsqu'on :",
+        "type": "qcm",
+        "options": ["La pose près d'un aimant immobile", "Fait tourner un aimant devant elle (ou l'inverse)", "La branche sur une pile", "La chauffe"],
+        "answer": 1,
+        "explanation": "C'est le mouvement relatif de l'aimant par rapport à la bobine qui produit une tension induite : pas de mouvement, pas de tension. C'est l'induction électromagnétique."
+      },
+      {
+        "id": "q2",
+        "text": "La tension produite par la rotation d'un aimant devant une bobine est :",
+        "type": "qcm",
+        "options": ["Continue", "Alternative", "Nulle", "Toujours positive"],
+        "answer": 1,
+        "explanation": "La tension change de signe à chaque passage d'un pôle : elle est alternative (positive puis négative). C'est le principe de l'alternateur et de la dynamo de vélo."
+      },
+      {
+        "id": "q3",
+        "text": "À l'oscilloscope, une tension alternative se présente comme :",
+        "type": "qcm",
+        "options": ["Une ligne horizontale", "Une courbe qui monte et descend régulièrement", "Des points au hasard", "Une ligne verticale"],
+        "answer": 1,
+        "explanation": "L'oscilloscope affiche la tension en fonction du temps : une tension alternative donne une courbe oscillant au-dessus et en dessous de zéro (sinusoïde si la rotation est régulière)."
+      },
+      {
+        "id": "q4",
+        "text": "Plus l'aimant tourne vite devant la bobine :",
+        "type": "qcm",
+        "options": ["Plus la tension est faible", "Plus la fréquence de la tension produite est élevée", "Plus la tension devient continue", "Moins il y a de courant"],
+        "answer": 1,
+        "explanation": "La fréquence de la tension produite augmente avec la vitesse de rotation : chaque tour complet de l'aimant correspond à un cycle de la tension."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la dynamo d'un vélo transforme l'énergie mécanique (rotation) en énergie électrique.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La dynamo utilise le mouvement de la roue pour faire tourner un aimant dans une bobine : conversion d'énergie mécanique en énergie électrique par induction."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Tension_alternative_sinusoidale": {
+    "title": "Tension alternative sinusoïdale",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La période T d'une tension sinusoïdale est :",
+        "type": "qcm",
+        "options": ["La valeur maximale de la tension", "La durée d'un motif élémentaire qui se répète", "Le nombre de cycles par seconde", "La moitié de la fréquence"],
+        "answer": 1,
+        "explanation": "La période T est la durée d'un motif complet qui se répète identique à lui-même ; elle se mesure en secondes sur l'oscillogramme."
+      },
+      {
+        "id": "q2",
+        "text": "La fréquence f est reliée à la période T par :",
+        "type": "qcm",
+        "options": ["f = T", "f = 1/T", "f = T/2", "f = T × U"],
+        "answer": 1,
+        "explanation": "f = 1/T : la fréquence (en hertz, Hz) est l'inverse de la période (en secondes). Si T = 0,02 s, alors f = 50 Hz."
+      },
+      {
+        "id": "q3",
+        "text": "La fréquence du courant du secteur en Côte d'Ivoire est :",
+        "type": "qcm",
+        "options": ["60 Hz", "50 Hz", "220 Hz", "100 Hz"],
+        "answer": 1,
+        "explanation": "Le secteur ivoirien (et européen) délivre une tension de 220 V efficaces à la fréquence de 50 Hz (50 cycles par seconde)."
+      },
+      {
+        "id": "q4",
+        "text": "Sur un oscillogramme, la valeur maximale U_max d'une tension se mesure :",
+        "type": "qcm",
+        "options": ["Horizontalement", "Verticalement, du sommet à l'axe horizontal", "Sur l'axe des temps", "Entre deux sommets"],
+        "answer": 1,
+        "explanation": "L'amplitude se lit verticalement : U_max = nombre de carreaux verticaux × sensibilité (V/div). La période se lit horizontalement : T = nombre de carreaux × balayage."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une tension continue de 12 V donne le même oscillogramme qu'une tension sinusoïdale de 12 V.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Non : la tension continue donne une ligne horizontale constante ; la tension sinusoïdale donne une courbe oscillante qui passe alternativement par des valeurs positives et négatives."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Dangers_du_courant_du_secteur": {
+    "title": "Les dangers du courant du secteur",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La tension du secteur distribuée en Côte d'Ivoire est de :",
+        "type": "qcm",
+        "options": ["110 V continu", "220 V alternatif 50 Hz", "380 V entre chaque prise", "12 V"],
+        "answer": 1,
+        "explanation": "Le réseau ivoirien délivre 220 V (efficaces) en courant alternatif à 50 Hz entre phase et neutre. C'est une tension dangereuse pour l'organisme."
+      },
+      {
+        "id": "q2",
+        "text": "L'électrisation est :",
+        "type": "qcm",
+        "options": ["La coupure de courant", "Le passage du courant à travers le corps humain", "Le branchement d'un appareil", "La production d'électricité"],
+        "answer": 1,
+        "explanation": "L'électrisation est le passage du courant dans le corps : ses effets vont de la simple sensation (picotement) à la tétanisation des muscles, l'arrêt respiratoire et la fibrillation cardiaque pouvant être mortelle."
+      },
+      {
+        "id": "q3",
+        "text": "Le disjoncteur différentiel protège :",
+        "type": "qcm",
+        "options": ["Les appareils contre les surtensions", "Les personnes en coupant le circuit dès qu'une fuite de courant est détectée", "Contre la foudre", "Les fils contre l'usure"],
+        "answer": 1,
+        "explanation": "Le disjoncteur différentiel compare le courant qui part et celui qui revient : en cas de différence (fuite à travers un corps vers la terre), il coupe instantanément le circuit — c'est la protection des personnes."
+      },
+      {
+        "id": "q4",
+        "text": "La prise de terre sert à :",
+        "type": "qcm",
+        "options": ["Économiser l'électricité", "Évacuer vers le sol les courants de défaut", "Augmenter la tension", "Protéger les appareils de la poussière"],
+        "answer": 1,
+        "explanation": "La prise de terre relie les carcasses métalliques des appareils au sol : en cas de défaut d'isolement, le courant s'écoule dans la terre au lieu de traverser la personne qui touche l'appareil."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : il est sans danger de toucher un appareil électrique les mains mouillées.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "L'eau diminue la résistance du corps : à tension égale, le courant traversant le corps est beaucoup plus fort avec les mains mouillées. C'est une règle de sécurité fondamentale."
+      }
+    ]
+  },
+  "Fiche_Lecon9_Transformation_redressement_lissage": {
+    "title": "Transformation, redressement et lissage d'une tension",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un transformateur sert à :",
+        "type": "qcm",
+        "options": ["Transformer le courant continu en alternatif", "Modifier la valeur d'une tension alternative", "Stocker l'électricité", "Protéger contre la foudre"],
+        "answer": 1,
+        "explanation": "Le transformateur modifie la valeur d'une tension alternative : élévateur (u₂ > u₁) ou abaisseur (u₂ < u₁). Il ne fonctionne qu'en alternatif."
+      },
+      {
+        "id": "q2",
+        "text": "Une diode laisse passer le courant :",
+        "type": "qcm",
+        "options": ["Dans les deux sens", "Dans un seul sens", "Jamais", "Seulement la nuit"],
+        "answer": 1,
+        "explanation": "La diode est un composant unidirectionnel : elle conduit le courant dans le sens passant et le bloque dans l'autre. C'est la base du redressement."
+      },
+      {
+        "id": "q3",
+        "text": "Le rôle du pont de diodes est de :",
+        "type": "qcm",
+        "options": ["Élever la tension", "Redresser la tension alternative en tension de signe unique", "Mesurer la tension", "Lisser la tension"],
+        "answer": 1,
+        "explanation": "Le pont de Graëte (4 diodes) redresse les deux alternances : la tension de sortie garde un signe unique mais ondule encore — c'est le redressement double alternance."
+      },
+      {
+        "id": "q4",
+        "text": "Le condensateur en sortie du redresseur sert à :",
+        "type": "qcm",
+        "options": ["Augmenter la fréquence", "Lisser la tension pour la rendre presque continue", "Changer le sens du courant", "Refroidir le montage"],
+        "answer": 1,
+        "explanation": "Le condensateur se charge aux sommets de la tension redressée et se décharge entre eux : la tension ondulée devient quasi continue — c'est le lissage."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un adaptateur secteur contient successivement un transformateur, un pont de diodes et un condensateur.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "C'est la chaîne complète : le transformateur abaisse le 220 V alternatif, le pont de diodes redresse, le condensateur lisse → on obtient une basse tension quasi continue pour l'appareil."
+      }
+    ]
+  },
+  "Fiche_Lecon10_Atomes_et_ions": {
+    "title": "Atomes et ions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un atome est constitué :",
+        "type": "qcm",
+        "options": ["D'un noyau seul", "D'un noyau (protons + neutrons) entouré d'électrons", "De molécules", "De charges positives uniquement"],
+        "answer": 1,
+        "explanation": "L'atome comprend un noyau central (protons chargés + et neutrons neutres) et des électrons chargés - qui gravitent autour. L'atome est électriquement neutre : autant de protons que d'électrons."
+      },
+      {
+        "id": "q2",
+        "text": "Un ion est :",
+        "type": "qcm",
+        "options": ["Un atome neutre", "Un atome (ou groupe d'atomes) ayant gagné ou perdu des électrons", "Une molécule d'eau", "Un électron libre"],
+        "answer": 1,
+        "explanation": "L'ion se forme par perte ou gain d'électrons : un atome qui perd des électrons devient un cation positif (ex. Na⁺, Cu²⁺) ; celui qui en gagne devient un anion négatif (ex. Cl⁻)."
+      },
+      {
+        "id": "q3",
+        "text": "L'ion Cu²⁺ est un atome de cuivre qui a :",
+        "type": "qcm",
+        "options": ["Gagné 2 électrons", "Perdu 2 électrons", "Gagné 2 protons", "Perdu 2 neutrons"],
+        "answer": 1,
+        "explanation": "La charge 2+ signifie 2 électrons en moins (charges négatives perdues → excès de charge positive). Le noyau (protons, neutrons) ne change jamais en chimie."
+      },
+      {
+        "id": "q4",
+        "text": "Une solution contenant des ions :",
+        "type": "qcm",
+        "options": ["Ne conduit pas le courant", "Conduit le courant électrique", "Est toujours colorée", "Est dangereuse"],
+        "answer": 1,
+        "explanation": "Les solutions ioniques (électrolytes) conduisent le courant grâce au déplacement des ions positifs et négatifs. L'eau pure, sans ions, conduit très mal."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le test à l'hydroxyde de sodium (soude) permet d'identifier certains ions métalliques par la couleur du précipité formé.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Oui : la soude donne des précipités caractéristiques — bleu avec Cu²⁺, vert avec Fe²⁺, rouille avec Fe³⁺, blanc avec Zn²⁺ — c'est un test d'identification classique."
+      }
+    ]
+  },
+  "Fiche_Lecon11_Transformation_cuivre_ion": {
+    "title": "Transformation entre le cuivre métal et l'ion Cu²⁺",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Quand un clou en fer trempe dans une solution de sulfate de cuivre :",
+        "type": "qcm",
+        "options": ["Il se dissout totalement sans dépôt", "Le fer perd des électrons (Fe → Fe²⁺) et le cuivre se dépose", "La solution devient incolore instantanément", "Rien ne se passe"],
+        "answer": 1,
+        "explanation": "Le fer, plus réducteur, cède des électrons aux ions Cu²⁺ : Fe → Fe²⁺ + 2e⁻ et Cu²⁺ + 2e⁻ → Cu. Le cuivre métal se dépose sur le clou et la solution bleue pâlit."
+      },
+      {
+        "id": "q2",
+        "text": "L'action de l'acide nitrique sur le cuivre métal produit :",
+        "type": "qcm",
+        "options": ["Du dihydrogène", "Des ions Cu²⁺ (solution bleue) et un gaz roux", "De l'oxygène pur", "Un précipité blanc"],
+        "answer": 1,
+        "explanation": "Le cuivre métal est oxydé en ion Cu²⁺ (coloration bleue de la solution) tandis que l'acide nitrique se réduit en dégageant un gaz roux toxique (vapeurs nitreuses)."
+      },
+      {
+        "id": "q3",
+        "text": "Dans une électrolyse, la transformation chimique est provoquée par :",
+        "type": "qcm",
+        "options": ["La chaleur", "Un courant électrique", "La lumière", "Un aimant"],
+        "answer": 1,
+        "explanation": "L'électrolyse force une réaction chimique grâce à un générateur : le courant impose le transfert d'électrons. Elle permet le dépôt de métaux (cuivrage, argenture, galvanoplastie)."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un métal, le courant électrique est dû au déplacement :",
+        "type": "qcm",
+        "options": ["Des ions", "Des électrons", "Des protons", "Des atomes"],
+        "answer": 1,
+        "explanation": "Dans les métaux, les porteurs de charge sont les électrons libres. Dans les solutions aqueuses, ce sont les ions (positifs et négatifs) qui assurent le passage du courant."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : dans une solution aqueuse, le courant est transporté par les électrons libres.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Non : dans une solution, les porteurs de charge sont les ions qui migrent (cations vers la cathode, anions vers l'anode). Les électrons ne circulent que dans les métaux."
+      }
+    ]
+  },
+  "Fiche_Lecon12_Traitement_de_l_eau": {
+    "title": "Le traitement de l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Parmi ces causes, laquelle est une pollution de l'eau ?",
+        "type": "qcm",
+        "options": ["La pluie", "Les rejets industriels et agricoles (engrais, pesticides)", "L'évaporation", "La fonte des neiges"],
+        "answer": 1,
+        "explanation": "L'eau est polluée par les rejets industriels, les pesticides et engrais agricoles, les eaux usées domestiques et les déchets. Ces pollutions rendent l'eau impropre à la consommation."
+      },
+      {
+        "id": "q2",
+        "text": "Dans une station de traitement, la décantation sert à :",
+        "type": "qcm",
+        "options": ["Tuer les microbes", "Laisser déposer les particules lourdes au fond", "Ajouter du chlore", "Dessaler l'eau"],
+        "answer": 1,
+        "explanation": "La décantation laisse les particules solides se déposer au fond du bassin par gravité. Elle est souvent précédée de la coagulation-floculation (alun) qui agglomère les fines particules."
+      },
+      {
+        "id": "q3",
+        "text": "La désinfection de l'eau (chlore, ozone) a pour but de :",
+        "type": "qcm",
+        "options": ["Retirer les sels", "Détruire les micro-organismes pathogènes", "Rendre l'eau douce", "Clarifier l'eau"],
+        "answer": 1,
+        "explanation": "Dernière étape du traitement : la désinfection élimine bactéries et virus. Le chlore est le désinfectant le plus utilisé car il laisse un résidu protecteur dans le réseau."
+      },
+      {
+        "id": "q4",
+        "text": "La filtration dans le traitement de l'eau retient :",
+        "type": "qcm",
+        "options": ["Les ions dissous", "Les particules fines en suspension", "Les microbes uniquement", "Le chlore"],
+        "answer": 1,
+        "explanation": "Après décantation, la filtration à travers des couches de sable retient les particules fines restantes. L'ordre classique : coagulation → décantation → filtration → désinfection."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : fermer le robinet pendant le brossage des dents et réparer les fuites sont des éco-gestes contre le gaspillage.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'eau potable est une ressource coûteuse à produire : fermer le robinet, réparer les fuites, réutiliser l'eau de pluie sont des gestes simples qui préservent la ressource et la facture."
+      }
+    ]
+  },
+  "Fiche_Lecon13_Qualite_de_l_eau": {
+    "title": "Qualité de l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une eau potable est une eau :",
+        "type": "qcm",
+        "options": ["Sans goût", "Qui respecte les normes de l'OMS et ne présente aucun danger pour la santé", "Toujours minérale", "Parfaitement pure"],
+        "answer": 1,
+        "explanation": "Potable ne veut pas dire pure : l'eau potable contient des sels minéraux utiles mais ne doit dépasser aucun seuil de pollution ni contenir de germes pathogènes — elle répond aux normes OMS."
+      },
+      {
+        "id": "q2",
+        "text": "La dureté de l'eau est due à la présence :",
+        "type": "qcm",
+        "options": ["De chlore", "Des ions calcium Ca²⁺ et magnésium Mg²⁺", "De microbes", "De sable"],
+        "answer": 1,
+        "explanation": "Une eau « dure » est riche en ions Ca²⁺ et Mg²⁺ : elle mousse peu avec le savon et entartre les canalisations et chauffe-eau. Une eau « douce » en contient peu."
+      },
+      {
+        "id": "q3",
+        "text": "Le nitrate dans l'eau provient principalement :",
+        "type": "qcm",
+        "options": ["De l'air", "Des engrais agricoles et des eaux usées", "Du chlore de traitement", "Du calcaire"],
+        "answer": 1,
+        "explanation": "Les nitrates (NO₃⁻) proviennent des engrais et des rejets organiques ; au-delà des normes ils sont dangereux (surtout pour les nourrissons). Leur concentration est un paramètre de qualité surveillé."
+      },
+      {
+        "id": "q4",
+        "text": "Quels ions sont indispensables à l'organisme et présents dans l'eau de boisson ?",
+        "type": "qcm",
+        "options": ["Ions plomb et mercure", "Ions calcium, magnésium, sodium, potassium", "Ions pesticides", "Aucun ion"],
+        "answer": 1,
+        "explanation": "L'eau apporte des sels minéraux utiles : Ca²⁺ (os), Mg²⁺ (muscles, nerfs), Na⁺ et K⁺ (équilibre cellulaire). Une eau totalement déminéralisée n'est pas idéale pour l'alimentation."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le test à la soude permet de détecter les ions fer ou cuivre dans une eau.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La soude (NaOH) forme des précipités colorés avec les ions métalliques (bleu pour Cu²⁺, vert pour Fe²⁺, rouille pour Fe³⁺) : c'est un test d'identification applicable au contrôle d'une eau."
+      }
+    ]
+  }
+}

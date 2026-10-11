@@ -82,6 +82,20 @@ Chaque prompt ci-dessous active directement le bon **Skill** déjà installé da
 
 ---
 
+### 🟠 PROMPT 5 : L'Agent Scraper des Cours de l'État (ecole-ci.org)
+
+> **À copier-coller dans Devin :**  
+> ```text
+> Agis en tant qu'Agent Scraper. Utilise le skill `scraper-cours-ecole-ci`.
+> MISSION : Télécharger les cours PDF de la classe de [4ème / 1ère A / 1ère C] depuis ecole-ci.org et extraire les textes bruts.
+> RÈGLES STRICTES D'ÉCONOMIE DE TOKENS :
+> 1. N'écris pas de nouveau scraper. Utilise les scripts existants dans `src/` (ex: `node src/scraper_college.js 4eme` ou `node src/extract_lessons.js 4eme`).
+> 2. Ne touche à AUCUN fichier frontend ni backend.
+> 3. Range les textes extraits dans le dossier `_extracts_[Classe]/` et termine la session.
+> ```
+
+---
+
 ## 📁 RÉCAPITULATIF DES SKILLS INSTALLÉS DANS VOTRE PROJET
 
 Vos skills sont enregistrés dans **`.devin/skills/`** et **`.agents/skills/`** :
@@ -89,3 +103,4 @@ Vos skills sont enregistrés dans **`.devin/skills/`** et **`.agents/skills/`** 
 2. **`backend-api-paiements`** : Verrouille `payment-api/server.js`, sécurise GeniusPay et Firestore.
 3. **`generation-fiches-cours`** : Gabarit HTML officiel APC pour créer les fiches sans scanner tout le site.
 4. **`devops-deploiement-cache`** : Déploiement direct sans fioritures et gestion du cache `?v=`.
+5. **`scraper-cours-ecole-ci`** : Téléchargement automatique des PDF et extraction de texte depuis ecole-ci.org.

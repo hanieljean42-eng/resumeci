@@ -1,0 +1,722 @@
+{
+  "Fiche_MATHS_1C_L2__BARYCENTRE": {
+    "title": "Barycentre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le barycentre de deux points A et B affectés des coefficients a et b est :",
+        "type": "qcm",
+        "options": ["Le milieu de [AB]", "Le point G tel que a·GA + b·GB = 0 (vecteurs) avec a + b ≠ 0", "Un point quelconque", "Le centre du cercle"],
+        "answer": 1,
+        "explanation": "G = barycentre de (A;a)(B;b) ⟺ a·GA + b·GB = 0 (somme vectorielle nulle) : c'est le « centre de gravité » pondéré des points."
+      },
+      {
+        "id": "q2",
+        "text": "Les coordonnées du barycentre de (A;2) et (B;1) avec A(x_A;y_A) et B(x_B;y_B) sont :",
+        "type": "qcm",
+        "options": ["(x_A + x_B)/2", "((2x_A + x_B)/3 ; (2y_A + y_B)/3)", "(x_A ; y_A)", "(x_B ; y_B)"],
+        "answer": 1,
+        "explanation": "x_G = (a·x_A + b·x_B)/(a + b) : le coefficient « pèse » sur le point. Plus a est grand, plus G se rapproche de A."
+      },
+      {
+        "id": "q3",
+        "text": "Si a = b, le barycentre de (A;a)(B;a) est :",
+        "type": "qcm",
+        "options": ["A", "B", "Le milieu de [AB] (isobarycentre)", "Inexistant"],
+        "answer": 2,
+        "explanation": "Coefficients égaux → isobarycentre = milieu : le barycentre généralise le milieu (cas particulier a = b = 1)."
+      },
+      {
+        "id": "q4",
+        "text": "Si a + b = 0 :",
+        "type": "qcm",
+        "options": ["Le barycentre est A", "Le barycentre n'existe pas (vecteur a·GA + b·GB constant non nul)", "Le barycentre est le milieu", "Tout point est barycentre"],
+        "answer": 1,
+        "explanation": "Si a + b = 0, le vecteur a·GA + b·GB = a·GA − a·GB = a·BA ≠ 0 (si A ≠ B) : pas de point solution."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le centre de gravité d'un triangle est le barycentre de ses trois sommets affectés de coefficients égaux.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "G = isobarycentre de A, B, C = point de concours des médianes : il est aux 2/3 de chaque médiane — application majeure du barycentre."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L1_Equations_et_inequations_du_second_degre_dans_IR": {
+    "title": "Équations et inéquations du second degré",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le discriminant de ax² + bx + c est :",
+        "type": "qcm",
+        "options": ["a + b + c", "Δ = b² − 4ac", "Δ = b − 4ac", "√(b² − 4ac)"],
+        "answer": 1,
+        "explanation": "Δ = b² − 4ac détermine les racines : Δ > 0 → 2 racines ; Δ = 0 → racine double ; Δ < 0 → pas de racine réelle."
+      },
+      {
+        "id": "q2",
+        "text": "Si Δ > 0, les deux racines sont :",
+        "type": "qcm",
+        "options": ["x = −b/2a", "x = (−b ± √Δ)/(2a)", "x = ±√(−b)", "x = b/a"],
+        "answer": 1,
+        "explanation": "x₁ = (−b − √Δ)/2a et x₂ = (−b + √Δ)/2a : formules de résolution de l'équation du second degré."
+      },
+      {
+        "id": "q3",
+        "text": "Le signe de ax² + bx + c (a > 0, Δ > 0) :",
+        "type": "qcm",
+        "options": ["Toujours positif", "Positif à l'extérieur des racines, négatif entre x₁ et x₂", "Négatif partout", "Positif entre les racines"],
+        "answer": 1,
+        "explanation": "Règle : « du signe de a à l'extérieur des racines » — a > 0 : + | − | + avec le − entre x₁ et x₂."
+      },
+      {
+        "id": "q4",
+        "text": "Une équation bicarrée x⁴ + bx² + c = 0 se résout en posant :",
+        "type": "qcm",
+        "options": ["X = x", "X = x² (changement de variable → second degré)", "X = x³", "X = 1/x"],
+        "answer": 1,
+        "explanation": "x⁴ + bx² + c = 0 → X² + bX + c = 0 avec X = x² : on résout en X puis on revient à x = ±√X (X ≥ 0)."
+      },
+      {
+        "id": "q5",
+        "text": "La somme S et le produit P des racines sont :",
+        "type": "qcm",
+        "options": ["S = −b/a et P = c/a", "S = b/a et P = −c/a", "S = c/a et P = b/a", "S = Δ et P = a"],
+        "answer": 0,
+        "explanation": "Relations de Viète : x₁ + x₂ = −b/a et x₁·x₂ = c/a — permet de trouver deux nombres connaissant somme et produit : x² − Sx + P = 0."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L3_Generalites_sur_les_fonctions": {
+    "title": "Généralités sur les fonctions — applications",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une application f : E → F est injective si :",
+        "type": "qcm",
+        "options": ["Chaque élément de F a un antécédent", "Deux éléments distincts de E ont des images distinctes : f(x₁) = f(x₂) ⟹ x₁ = x₂", "Elle est constante", "Elle est paire"],
+        "answer": 1,
+        "explanation": "Injection = pas de collision : deux éléments différents ne peuvent pas avoir la même image — chaque image a au plus un antécédent."
+      },
+      {
+        "id": "q2",
+        "text": "Une application f : E → F est surjective si :",
+        "type": "qcm",
+        "options": ["Les images sont distinctes", "Tout élément de F a au moins un antécédent dans E", "f est injective", "f est croissante"],
+        "answer": 1,
+        "explanation": "Surjection = tout l'ensemble d'arrivée est atteint : ∀y ∈ F, ∃x ∈ E, f(x) = y — pas d'élément « orphelin » dans F."
+      },
+      {
+        "id": "q3",
+        "text": "Une bijection est une application :",
+        "type": "qcm",
+        "options": ["Seulement injective", "À la fois injective et surjective : chaque élément a exactement un antécédent", "Seulement surjective", "Constante"],
+        "answer": 1,
+        "explanation": "Bijection = injective + surjective : correspondance un-à-un parfaite → elle admet une bijection réciproque f⁻¹."
+      },
+      {
+        "id": "q4",
+        "text": "La bijection réciproque f⁻¹ vérifie :",
+        "type": "qcm",
+        "options": ["f⁻¹ = f", "f⁻¹ ∘ f = f ∘ f⁻¹ = identité", "f⁻¹ = −f", "f⁻¹ = 1/f"],
+        "answer": 1,
+        "explanation": "f⁻¹ « annule » f : f⁻¹(f(x)) = x. Elle existe si et seulement si f est bijective : sa courbe est symétrique de celle de f par rapport à y = x."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une fonction strictement monotone sur un intervalle I définit une bijection de I sur f(I).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Stricte monotonie → injectivité (images distinctes) + surjectivité sur l'image → bijection de I sur f(I) : théorème-clé pour les réciproques."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L4_Denombrement": {
+    "title": "Dénombrement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une p-liste (p-uplet) est :",
+        "type": "qcm",
+        "options": ["Un sous-ensemble", "Une liste ordonnée de p éléments avec répétition possible : nᵖ", "Une permutation", "Une combinaison"],
+        "answer": 1,
+        "explanation": "p-liste = tirage successif avec remise : l'ordre compte, les répétitions sont permises → nᵖ possibilités."
+      },
+      {
+        "id": "q2",
+        "text": "Un arrangement de p éléments parmi n :",
+        "type": "qcm",
+        "options": ["Autorise les répétitions", "Est une liste ordonnée sans répétition : A(n,p) = n!/(n−p)!", "Ignore l'ordre", "Est nᵖ"],
+        "answer": 1,
+        "explanation": "Arrangement = tirage successif sans remise, ordre important : A(n,p) = n(n−1)…(n−p+1)."
+      },
+      {
+        "id": "q3",
+        "text": "Une combinaison de p éléments parmi n :",
+        "type": "qcm",
+        "options": ["Tient compte de l'ordre", "Est un sous-ensemble (pas d'ordre) : C(n,p) = n!/[p!(n−p)!]", "Répète les éléments", "Est n!"],
+        "answer": 1,
+        "explanation": "Combinaison = choix sans ordre ni répétition : {a,b} = {b,a} → on divise l'arrangement par p! pour éliminer les permutations."
+      },
+      {
+        "id": "q4",
+        "text": "Pour former un mot de 3 lettres distinctes parmi 5 lettres, on utilise :",
+        "type": "qcm",
+        "options": ["C(5,3)", "A(5,3) = 60 car l'ordre des lettres compte", "5³", "3!"],
+        "answer": 1,
+        "explanation": "Les lettres sont distinctes (sans répétition) et l'ordre forme le mot → arrangement : A(5,3) = 5 × 4 × 3 = 60 mots."
+      },
+      {
+        "id": "q5",
+        "text": "Tirer 3 cartes simultanément dans un jeu de 10 utilise :",
+        "type": "qcm",
+        "options": ["A(10,3)", "C(10,3) = 120 car la main n'a pas d'ordre", "10³", "3!"],
+        "answer": 1,
+        "explanation": "Tirage simultané → pas d'ordre ni répétition → combinaison : C(10,3) = 10!/(3!·7!) = 120 mains."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L5_Limites_et_continuite": {
+    "title": "Limites et continuité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "f est continue en a si :",
+        "type": "qcm",
+        "options": ["f(a) = 0", "lim(x→a) f(x) = f(a) — la limite existe et égale l'image", "f'(a) existe", "f est définie"],
+        "answer": 1,
+        "explanation": "Continuité en a : la fonction approche sa valeur : pas de saut ni de trou dans la courbe en a."
+      },
+      {
+        "id": "q2",
+        "text": "Limite à gauche et à droite différentes signifie :",
+        "type": "qcm",
+        "options": ["La fonction est continue", "La fonction n'a pas de limite en ce point (discontinuité)", "La fonction est dérivable", "Rien de spécial"],
+        "answer": 1,
+        "explanation": "La limite existe ⟺ limite à gauche = limite à droite : des valeurs différentes → saut de la courbe → discontinuité."
+      },
+      {
+        "id": "q3",
+        "text": "Les fonctions de référence continues sur leur domaine sont :",
+        "type": "qcm",
+        "options": ["1/x partout", "Les polynômes, sin, cos, exp sur ℝ ; 1/x sur ℝ*", "√x sur ℝ", "tan x partout"],
+        "answer": 1,
+        "explanation": "Continuité = sur le domaine de définition : x² partout, √x sur [0;+∞[, 1/x sur ℝ* — chaque fonction est continue là où elle est définie."
+      },
+      {
+        "id": "q4",
+        "text": "lim(x→+∞) 1/x est :",
+        "type": "qcm",
+        "options": ["+∞", "0", "1", "−∞"],
+        "answer": 1,
+        "explanation": "1/x → 0 quand x → ±∞ : l'inverse d'une quantité infiniment grande est infiniment petit."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les opérations (somme, produit, composée) conservent la continuité sur les domaines où elles sont définies.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Somme, produit, composée et quotient (dénominateur non nul) de fonctions continues sont continues : on construit ainsi des fonctions continues complexes."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L6_Angles_orientes_et_trigonometrie": {
+    "title": "Angles orientés et trigonométrie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les mesures d'un angle orienté se donnent :",
+        "type": "qcm",
+        "options": ["À 360° près", "Modulo 2π : θ + 2kπ (k ∈ ℤ)", "Une seule valeur", "En degrés seulement"],
+        "answer": 1,
+        "explanation": "Un angle orienté a une infinité de mesures différant d'un multiple de 2π : la mesure principale est celle dans ]−π ; π]."
+      },
+      {
+        "id": "q2",
+        "text": "La relation de Chasles pour les angles orientés est :",
+        "type": "qcm",
+        "options": ["(u,v) + (v,w) = (u,w)", "(u,v) = (v,u)", "(u,v)² = u² + v²", "u × v = 0"],
+        "answer": 0,
+        "explanation": "(u,v) + (v,w) = (u,w) [2π] : on « enchaîne » les angles comme les vecteurs — l'outil fondamental des calculs d'angles."
+      },
+      {
+        "id": "q3",
+        "text": "Le cercle trigonométrique place :",
+        "type": "qcm",
+        "options": ["Le cosinus sur l'axe vertical", "Le cosinus sur l'axe horizontal, le sinus sur l'axe vertical, rayon 1, sens anti-horaire positif", "La tangente au centre", "L'angle nul en haut"],
+        "answer": 1,
+        "explanation": "Cercle unitaire : M(θ) = (cos θ ; sin θ), sens trigonométrique (direct) = anti-horaire — lecture immédiate des lignes trigonométriques."
+      },
+      {
+        "id": "q4",
+        "text": "cos(π/3) et sin(π/6) valent :",
+        "type": "qcm",
+        "options": ["√3/2 et 1/2", "1/2 et 1/2", "1 et 0", "√2/2 et √2/2"],
+        "answer": 1,
+        "explanation": "cos(π/3) = 1/2 ; sin(π/6) = 1/2 : valeurs remarquables à connaître (30°, 45°, 60° : √3/2, √2/2, 1/2)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : cos²x + sin²x = 1 pour tout réel x (identité fondamentale de la trigonométrie).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Sur le cercle unitaire, cos²x + sin²x = rayon² = 1 : identité de Pythagore trigonométrique, base des formules d'addition."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L7_Extension_de_la_notion_de_limite": {
+    "title": "Extension de la notion de limite",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "lim(x→a) f(x) = +∞ signifie :",
+        "type": "qcm",
+        "options": ["f(a) = ∞", "f(x) devient aussi grande qu'on veut quand x approche a — asymptote verticale", "f est continue", "La courbe s'arrête"],
+        "answer": 1,
+        "explanation": "Limite infinie en un point → la courbe s'envole verticalement : la droite x = a est asymptote verticale."
+      },
+      {
+        "id": "q2",
+        "text": "lim(x→+∞) f(x) = l (fini) signifie :",
+        "type": "qcm",
+        "options": ["f explose", "La courbe se rapproche de la droite y = l : asymptote horizontale", "f = 0", "Pas de sens"],
+        "answer": 1,
+        "explanation": "Limite finie à l'infini → la courbe a une asymptote horizontale y = l : elle « s'aplatit » vers cette valeur."
+      },
+      {
+        "id": "q3",
+        "text": "lim(x→+∞) x² + x est :",
+        "type": "qcm",
+        "options": ["0", "+∞ (le terme de plus haut degré l'emporte)", "1", "Indéterminé"],
+        "answer": 1,
+        "explanation": "Pour un polynôme à l'infini, le terme dominant impose la limite : x² → +∞ entraîne la somme."
+      },
+      {
+        "id": "q4",
+        "text": "lim f = +∞ et lim g = −∞ : lim (f + g) est :",
+        "type": "qcm",
+        "options": ["0", "+∞", "Indéterminée (forme ∞ − ∞)", "−∞"],
+        "answer": 2,
+        "explanation": "∞ − ∞ est une forme indéterminée : tout est possible ; il faut lever l'indétermination (factorisation, conjugué…)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : lim 1/f quand f → 0⁺ donne +∞ ; quand f → 0⁻ donne −∞.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'inverse d'un infiniment petit est infiniment grand avec le signe du dénominateur : 1/0⁺ = +∞, 1/0⁻ = −∞."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L8_Composees_de_transformations": {
+    "title": "Composées de transformations du plan",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La composée de deux translations est :",
+        "type": "qcm",
+        "options": ["Une rotation", "Une translation dont le vecteur est la somme des deux vecteurs", "Une symétrie", "L'identité"],
+        "answer": 1,
+        "explanation": "t_u ∘ t_v = translation de vecteur u + v : les vecteurs s'ajoutent — toujours une translation."
+      },
+      {
+        "id": "q2",
+        "text": "La composée de deux rotations de même centre est :",
+        "type": "qcm",
+        "options": ["Une translation", "Une rotation de même centre dont l'angle est la somme des angles", "Une homothétie", "Une symétrie"],
+        "answer": 1,
+        "explanation": "r(A,α) ∘ r(A,β) = r(A, α+β) : les angles s'additionnent quand le centre est commun ; sinon la composée dépend des centres."
+      },
+      {
+        "id": "q3",
+        "text": "La composée de deux homothéties de même centre est :",
+        "type": "qcm",
+        "options": ["Une homothétie dont le rapport est le produit des rapports", "Une translation", "Une rotation", "Toujours l'identité"],
+        "answer": 0,
+        "explanation": "h(O,k) ∘ h(O,k') = h(O, k·k') : les rapports se multiplient ; si k·k' = 1 on retrouve l'identité."
+      },
+      {
+        "id": "q4",
+        "text": "La composée de deux symétries orthogonales d'axes parallèles est :",
+        "type": "qcm",
+        "options": ["Une symétrie", "Une translation de vecteur 2 fois le vecteur normal entre les axes", "Une rotation", "L'identité"],
+        "answer": 1,
+        "explanation": "s_d' ∘ s_d (d ∥ d') = translation de vecteur 2·u où u est le vecteur perpendiculaire allant de d vers d' : le point fait l'aller-retour décalé."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la composée de deux symétries orthogonales d'axes sécants en O est une rotation de centre O d'angle double.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "s_d' ∘ s_d (d ∩ d' = O) = rotation de centre O et d'angle 2(d,d') : le double de l'angle entre les axes."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L9_Derivation": {
+    "title": "Dérivation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "f est dérivable en a si :",
+        "type": "qcm",
+        "options": ["f(a) existe", "Le taux d'accroissement admet une limite finie : f'(a) = lim [f(a+h)−f(a)]/h", "f est continue", "f(a) = 0"],
+        "answer": 1,
+        "explanation": "Dérivabilité = existence d'une limite finie du taux d'accroissement : f'(a) est le coefficient directeur de la tangente."
+      },
+      {
+        "id": "q2",
+        "text": "La dérivée de (u + v) et de (u·v) sont :",
+        "type": "qcm",
+        "options": ["u' + v' et u'v'", "u' + v' et u'v + uv'", "u'v' et u'v", "u + v et uv"],
+        "answer": 1,
+        "explanation": "(u+v)' = u'+v' ; (uv)' = u'v + uv' (pas u'v' !) ; (u/v)' = (u'v − uv')/v² — les opérations de la dérivation."
+      },
+      {
+        "id": "q3",
+        "text": "La dérivée de √x et de 1/x sont :",
+        "type": "qcm",
+        "options": ["1/2√x et 1/x²", "1/(2√x) et −1/x²", "√x et x", "1 et 0"],
+        "answer": 1,
+        "explanation": "(√x)' = 1/(2√x) ; (1/x)' = −1/x² ; (xⁿ)' = nxⁿ⁻¹ — formules de référence à maîtriser."
+      },
+      {
+        "id": "q4",
+        "text": "L'équation de la tangente en a est :",
+        "type": "qcm",
+        "options": ["y = f'(x)", "y = f'(a)(x − a) + f(a)", "y = ax + f(a)", "y = f(a)"],
+        "answer": 1,
+        "explanation": "La tangente est la droite de pente f'(a) passant par (a ; f(a)) : c'est l'approximation affine de la courbe au voisinage de a."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : si f'(x) > 0 sur I, f est strictement croissante sur I ; le signe de f' donne le sens de variation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "f' > 0 → croissante ; f' < 0 → décroissante ; f' nulle + changement de signe → extremum — lien fondamental dérivée/variation."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L10_Probabilite": {
+    "title": "Probabilité",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La probabilité d'un événement est un nombre :",
+        "type": "qcm",
+        "options": ["Entier", "Compris entre 0 et 1", "Négatif", "Supérieur à 1"],
+        "answer": 1,
+        "explanation": "0 ≤ P(A) ≤ 1 : 0 = événement impossible, 1 = événement certain. P(Ā) = 1 − P(A) pour le contraire."
+      },
+      {
+        "id": "q2",
+        "text": "En équiprobabilité, P(A) = :",
+        "type": "qcm",
+        "options": ["effectif de A × effectif total", "card(A)/card(Ω) = nombre de cas favorables / nombre de cas possibles", "1 − A", "card(Ω)"],
+        "answer": 1,
+        "explanation": "Quand toutes les issues ont la même chance : P = favorables/possibles — le dénombrement devient l'outil de calcul."
+      },
+      {
+        "id": "q3",
+        "text": "L'événement contraire de A a pour probabilité :",
+        "type": "qcm",
+        "options": ["P(A)", "1 − P(A)", "0", "P(A)²"],
+        "answer": 1,
+        "explanation": "P(Ā) = 1 − P(A) : très utile quand « au moins un » = contraire de « aucun » : P(au moins un) = 1 − P(aucun)."
+      },
+      {
+        "id": "q4",
+        "text": "Un dé à 6 faces : la probabilité d'obtenir un nombre pair est :",
+        "type": "qcm",
+        "options": ["1/6", "3/6 = 1/2", "1/3", "1"],
+        "answer": 1,
+        "explanation": "Cas favorables {2,4,6} = 3 sur 6 possibles → 3/6 = 1/2 par équiprobabilité."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la probabilité d'obtenir « au moins un 6 » en lançant deux dés est 1 − (5/6)².",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "« Au moins un 6 » = contraire de « aucun 6 » : P(aucun 6) = (5/6)² → P(au moins un) = 1 − 25/36 = 11/36."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L11_Etude_et_representation_graphique_d_une_fonction": {
+    "title": "Étude et représentation graphique d'une fonction",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une fonction paire a sa courbe :",
+        "type": "qcm",
+        "options": ["Symétrique par rapport à l'origine", "Symétrique par rapport à l'axe des ordonnées", "Symétrique par rapport à y = x", "Sans symétrie"],
+        "answer": 1,
+        "explanation": "f paire (f(−x) = f(x)) → la partie de courbe à gauche de Oy est le miroir de celle à droite — on n'étudie que x ≥ 0."
+      },
+      {
+        "id": "q2",
+        "text": "La droite x = a est axe de symétrie si :",
+        "type": "qcm",
+        "options": ["f(a) = 0", "f(a + h) = f(a − h) pour tout h", "f est paire", "f'(a) = 0"],
+        "answer": 1,
+        "explanation": "f(a + h) = f(a − h) : les points équidistants de a ont la même image — généralisation de la parité (a = 0 → paire)."
+      },
+      {
+        "id": "q3",
+        "text": "Le point A(a ; b) est centre de symétrie si :",
+        "type": "qcm",
+        "options": ["f(a) = b", "f(a + h) + f(a − h) = 2b", "f est impaire", "f'(a) = 0"],
+        "answer": 1,
+        "explanation": "f(a+h) + f(a−h) = 2b : la moyenne des images symétriques vaut b — cas particulier a = b = 0 → f impaire (centre origine)."
+      },
+      {
+        "id": "q4",
+        "text": "Une fonction périodique de période T vérifie :",
+        "type": "qcm",
+        "options": ["f(x + T) = f(x) pour tout x", "f(T) = 0", "f est bornée", "f'(T) = 0"],
+        "answer": 0,
+        "explanation": "Périodicité : la courbe se répète identiquement tous les T (sin, cos : 2π) — on l'étudie sur une seule période."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la droite y = ax + b est asymptote oblique à la courbe de f si lim [f(x) − (ax + b)] = 0 à l'infini.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Asymptote oblique : la courbe se rapproche de la droite sans la toucher forcément : f(x) − (ax+b) → 0 quand x → ±∞."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L12_Orthogonalite_dans_l_espace": {
+    "title": "Orthogonalité dans l'espace",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Deux droites de l'espace sont orthogonales si :",
+        "type": "qcm",
+        "options": ["Elles se coupent", "Une parallèle à l'une est perpendiculaire à l'autre (elles n'ont pas besoin de se couper)", "Elles sont parallèles", "Elles sont coplanaires"],
+        "answer": 1,
+        "explanation": "Dans l'espace, l'orthogonalité ne demande pas l'intersection : deux droites sont orthogonales si la parallèle à l'une menée par un point de l'autre lui est perpendiculaire."
+      },
+      {
+        "id": "q2",
+        "text": "Une droite est perpendiculaire à un plan si :",
+        "type": "qcm",
+        "options": ["Elle coupe le plan", "Elle est orthogonale à toute droite du plan", "Elle est parallèle au plan", "Elle est dans le plan"],
+        "answer": 1,
+        "explanation": "d ⊥ plan P ⟺ d est orthogonale à toute droite de P — suffisant de vérifier 2 droites sécantes de P : le « théorème de la porte »."
+      },
+      {
+        "id": "q3",
+        "text": "Deux plans sont perpendiculaires si :",
+        "type": "qcm",
+        "options": ["Ils sont parallèles", "L'un contient une droite perpendiculaire à l'autre", "Ils ne se coupent pas", "Ils ont un point commun"],
+        "answer": 1,
+        "explanation": "P ⊥ Q ⟺ P contient une droite perpendiculaire à Q : l'angle diédre entre eux est droit — comme un mur debout sur le sol."
+      },
+      {
+        "id": "q4",
+        "text": "La projection orthogonale d'un point A sur un plan P est :",
+        "type": "qcm",
+        "options": ["A", "Le pied de la perpendiculaire à P passant par A", "Le milieu du plan", "Un point quelconque"],
+        "answer": 1,
+        "explanation": "Le projeté orthogonal H de A sur P est l'intersection de la perpendiculaire à P issue de A : c'est le point de P le plus proche de A."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la distance d'un point à un plan est la longueur entre le point et son projeté orthogonal.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "d(A, P) = AH où H est le projeté orthogonal : le plus court chemin du point au plan — généralisation de la distance point-droite."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires": {
+    "title": "Systèmes d'équations linéaires",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un système de 2 équations à 2 inconnues ax + by = c :",
+        "type": "qcm",
+        "options": ["A toujours une solution", "A une solution unique, aucune ou une infinité selon les droites", "A deux solutions", "N'a pas de sens géométrique"],
+        "answer": 1,
+        "explanation": "Géométriquement, deux droites : sécantes (unique), parallèles distinctes (aucune) ou confondues (infinité de solutions)."
+      },
+      {
+        "id": "q2",
+        "text": "La méthode de substitution consiste à :",
+        "type": "qcm",
+        "options": ["Additionner les équations", "Exprimer une inconnue en fonction de l'autre dans une équation puis la remplacer dans l'autre", "Tracer les droites", "Calculer le discriminant"],
+        "answer": 1,
+        "explanation": "On isole x (ou y) d'une équation, on l'injecte dans l'autre → équation à 1 inconnue → puis on remonte à x."
+      },
+      {
+        "id": "q3",
+        "text": "Le pivot de Gauss consiste à :",
+        "type": "qcm",
+        "options": ["Deviner la solution", "Éliminer progressivement les inconnues par combinaisons d'équations pour triangulariser le système", "Remplacer les inconnues", "Tracer"],
+        "answer": 1,
+        "explanation": "Pivot de Gauss : combinaisons Lᵢ ← Lᵢ + kLⱼ pour annuler les coefficients sous le pivot → système triangulaire → remontée."
+      },
+      {
+        "id": "q4",
+        "text": "Le système {x + y = 5 ; x − y = 1} a pour solution :",
+        "type": "qcm",
+        "options": ["x = 3, y = 2", "x = 2, y = 3", "x = 4, y = 1", "Aucune"],
+        "answer": 0,
+        "explanation": "Addition des deux équations : 2x = 6 → x = 3 ; soustraction : 2y = 4 → y = 2. Vérif : 3 + 2 = 5 ✓, 3 − 2 = 1 ✓."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un système 3×3 se résout par le pivot de Gauss en éliminant x des lignes 2-3 puis y de la ligne 3.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "C'est exactement le principe : triangularisation successive → z trouvé en dernière ligne, puis remontée vers y puis x."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L15_Suites_numeriques": {
+    "title": "Suites numériques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une suite arithmétique de raison r vérifie :",
+        "type": "qcm",
+        "options": ["U_{n+1} = r·U_n", "U_{n+1} = U_n + r : on ajoute toujours la même raison", "U_n = constante", "U_{n+1} = U_n²"],
+        "answer": 1,
+        "explanation": "Arithmétique : terme suivant = précédent + r → terme général U_n = U_0 + n·r ou U_n = U_p + (n−p)·r."
+      },
+      {
+        "id": "q2",
+        "text": "Une suite géométrique de raison q vérifie :",
+        "type": "qcm",
+        "options": ["U_{n+1} = U_n + q", "U_{n+1} = q·U_n : on multiplie par la raison", "U_n = U_0", "U_{n+1} = 1/U_n"],
+        "answer": 1,
+        "explanation": "Géométrique : terme suivant = précédent × q → terme général U_n = U_0 × qⁿ."
+      },
+      {
+        "id": "q3",
+        "text": "La somme des n premiers termes d'une suite arithmétique est :",
+        "type": "qcm",
+        "options": ["n × U_n", "n(U_0 + U_{n-1})/2 = nombre de termes × (1er + dernier)/2", "U_0 × n!", "U_0 · qⁿ"],
+        "answer": 1,
+        "explanation": "S = nombre de termes × (premier terme + dernier terme) / 2 : formule de Gauss pour la somme arithmétique."
+      },
+      {
+        "id": "q4",
+        "text": "La somme des n premiers termes d'une suite géométrique (q ≠ 1) est :",
+        "type": "qcm",
+        "options": ["U_0 × n", "U_0 × (1 − qⁿ)/(1 − q)", "n(U_0 + U_n)/2", "qⁿ"],
+        "answer": 1,
+        "explanation": "S = U_0 · (1 − qⁿ)/(1 − q) = premier terme × (1 − raison^nombre de termes)/(1 − raison)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : 1 + 2 + 4 + … + 2ⁿ⁻¹ = 2ⁿ − 1 (somme géométrique de raison 2).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "S = 1×(1−2ⁿ)/(1−2) = (1−2ⁿ)/(−1) = 2ⁿ − 1 — la fameuse légende des grains de riz sur l'échiquier."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L16_Vecteurs_de_l_espace": {
+    "title": "Vecteurs de l'espace",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Deux vecteurs colinéaires sont :",
+        "type": "qcm",
+        "options": ["Perpendiculaires", "Proportionnels : u = k·v — ils dirigent des droites parallèles ou confondues", "Égaux en longueur", "Coplanaires"],
+        "answer": 1,
+        "explanation": "u et v colinéaires ⟺ ∃k, u = kv : même direction (parallèles). Test : le déterminant des composantes est nul."
+      },
+      {
+        "id": "q2",
+        "text": "Trois vecteurs coplanaires sont :",
+        "type": "qcm",
+        "options": ["Colinéaires", "Liés par une combinaison : w = a·u + b·v (dans un même plan)", "Orthogonaux", "Nuls"],
+        "answer": 1,
+        "explanation": "u, v, w coplanaires ⟺ w s'écrit comme combinaison linéaire de u et v : ils vivent dans un même plan — l'équivalent 3D de la colinéarité."
+      },
+      {
+        "id": "q3",
+        "text": "Le produit scalaire u·v = :",
+        "type": "qcm",
+        "options": ["u × v", "|u|·|v|·cos(u,v)", "u + v", "0"],
+        "answer": 1,
+        "explanation": "u·v = |u||v|cosθ : avec des coordonnées u·v = x₁x₂ + y₁y₂ + z₁z₂ — nul ⟺ vecteurs orthogonaux."
+      },
+      {
+        "id": "q4",
+        "text": "Une base de l'espace est formée de :",
+        "type": "qcm",
+        "options": ["2 vecteurs", "3 vecteurs non coplanaires", "1 vecteur", "4 vecteurs"],
+        "answer": 1,
+        "explanation": "Trois vecteurs non coplanaires forment une base : tout vecteur de l'espace s'écrit de manière unique comme leur combinaison linéaire."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : u·v = 0 caractérise l'orthogonalité des vecteurs u et v.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "u ⊥ v ⟺ u·v = 0 : critère algébrique d'orthogonalité fondamental en géométrie vectorielle (droites, plans, projections)."
+      }
+    ]
+  },
+  "Fiche_MATHS_1C_L17_Statistiques": {
+    "title": "Statistiques",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La classe modale d'une série à classes est :",
+        "type": "qcm",
+        "options": ["La plus grande classe", "La classe d'effectif (ou de densité) maximal", "La classe centrale", "La première classe"],
+        "answer": 1,
+        "explanation": "Classe modale = celle où la densité (effectif/amplitude) est la plus forte : le « pic » de l'histogramme."
+      },
+      {
+        "id": "q2",
+        "text": "La médiane est la valeur qui :",
+        "type": "qcm",
+        "options": ["Est la moyenne", "Partage l'effectif total en deux moitiés égales", "Est le mode", "Est la plus grande"],
+        "answer": 1,
+        "explanation": "La médiane Me est la valeur telle que 50 % de l'effectif est en dessous et 50 % au-dessus — plus robuste que la moyenne face aux valeurs extrêmes."
+      },
+      {
+        "id": "q3",
+        "text": "Les quartiles partagent la série en :",
+        "type": "qcm",
+        "options": ["2 moitiés", "4 quarts : Q1 (25 %), Me=Q2 (50 %), Q3 (75 %)", "10 déciles", "100 centiles"],
+        "answer": 1,
+        "explanation": "Q1 = valeur du 25ᵉ centile, Q2 = médiane (50 %), Q3 = 75 % : l'écart interquartile Q3 − Q1 mesure la dispersion de la moitié centrale."
+      },
+      {
+        "id": "q4",
+        "text": "L'écart-type mesure :",
+        "type": "qcm",
+        "options": ["La position", "La dispersion des valeurs autour de la moyenne", "La médiane", "Le total"],
+        "answer": 1,
+        "explanation": "σ = √V avec V = Σnᵢ(xᵢ − x̄)²/N : faible = données concentrées autour de la moyenne ; fort = données étalées."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'interpolation linéaire permet d'estimer la médiane à l'intérieur de sa classe quand les données sont groupées.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "On suppose l'effectif uniformément réparti dans la classe médiane : on interpole entre les bornes pour situer le 50ᵉ centile."
+      }
+    ]
+  }
+}

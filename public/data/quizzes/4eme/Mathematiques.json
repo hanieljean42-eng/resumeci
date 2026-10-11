@@ -1,0 +1,407 @@
+{
+  "Fiche_Lecon1_Nombres_decimaux_relatifs": {
+    "title": "Nombres décimaux relatifs — puissances de 10 et notation scientifique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Que vaut 10⁻³ ?",
+        "type": "qcm",
+        "options": ["-1000", "0,001", "1000", "-0,001"],
+        "answer": 1,
+        "explanation": "Un exposant négatif indique un quotient : 10⁻³ = 1/10³ = 1/1000 = 0,001. Le signe « - » porte sur l'exposant, pas sur le signe du résultat qui reste positif."
+      },
+      {
+        "id": "q2",
+        "text": "La notation scientifique de 0,00045 est :",
+        "type": "qcm",
+        "options": ["45 × 10⁻⁵", "4,5 × 10⁻⁴", "4,5 × 10⁴", "0,45 × 10⁻³"],
+        "answer": 1,
+        "explanation": "En notation scientifique, on écrit a × 10ⁿ avec 1 ≤ a < 10. Ici a = 4,5 et on a déplacé la virgule de 4 rangs vers la droite, donc n = -4."
+      },
+      {
+        "id": "q3",
+        "text": "Dans l'écriture scientifique a × 10ⁿ, le nombre a doit vérifier :",
+        "type": "qcm",
+        "options": ["a > 0", "1 ≤ a < 10", "a entier naturel", "0 ≤ a ≤ 1"],
+        "answer": 1,
+        "explanation": "Par définition, a est un nombre décimal vérifiant 1 ≤ a < 10 : il n'a qu'un seul chiffre non nul avant la virgule."
+      },
+      {
+        "id": "q4",
+        "text": "0,000 000 45 est un nombre décimal d'ordre :",
+        "type": "qcm",
+        "options": ["4", "5", "6", "7"],
+        "answer": 3,
+        "explanation": "Un nombre décimal est d'ordre n lorsqu'il possède n chiffres après la virgule. Ici il y a 7 chiffres après la virgule (6 zéros puis 45), donc il est d'ordre 7."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : 10² × 10³ = 10⁶",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "On additionne les exposants pour un produit de puissances de même base : 10² × 10³ = 10²⁺³ = 10⁵, et non 10⁶ (on ne multiplie jamais les exposants)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_Angles": {
+    "title": "Angles — alternes-internes, correspondants, angle au centre et arcs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Deux angles alternes-internes formés par deux droites parallèles et une sécante sont :",
+        "type": "qcm",
+        "options": ["Supplémentaires", "De même mesure", "Complémentaires", "Opposés par le sommet"],
+        "answer": 1,
+        "explanation": "Lorsque deux droites sont parallèles coupées par une sécante, les angles alternes-internes sont toujours de même mesure. C'est aussi un moyen de prouver que deux droites sont parallèles."
+      },
+      {
+        "id": "q2",
+        "text": "Où se situe le sommet d'un angle au centre d'un cercle ?",
+        "type": "qcm",
+        "options": ["Sur le cercle", "Au centre du cercle", "Sur la corde", "À l'extérieur du cercle"],
+        "answer": 1,
+        "explanation": "Un angle au centre a son sommet au centre O du cercle ; ses côtés sont deux rayons qui interceptent un arc de cercle."
+      },
+      {
+        "id": "q3",
+        "text": "Deux angles correspondants formés par deux droites parallèles et une sécante sont :",
+        "type": "qcm",
+        "options": ["Supplémentaires", "Opposés", "De même mesure", "Adjacents"],
+        "answer": 2,
+        "explanation": "Comme les alternes-internes, les angles correspondants sont de même mesure lorsque les droites sont parallèles. Réciproquement, cette égalité permet de prouver le parallélisme."
+      },
+      {
+        "id": "q4",
+        "text": "Dans un même cercle, deux cordes de même longueur interceptent :",
+        "type": "qcm",
+        "options": ["Des arcs inégaux", "Des arcs de même mesure", "Des angles supplémentaires", "Des diamètres"],
+        "answer": 1,
+        "explanation": "Propriété : dans un même cercle (ou des cercles de même rayon), deux cordes égales interceptent deux arcs égaux, et réciproquement deux arcs égaux sont sous-tendus par des cordes égales."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : pour prouver que deux droites sont parallèles, il suffit de trouver deux angles alternes-internes de même mesure.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "C'est la réciproque de la propriété : si deux angles alternes-internes (ou correspondants) formés par une sécante sont égaux, alors les deux droites sont parallèles."
+      }
+    ]
+  },
+  "Fiche_Lecon3_Nombres_rationnels": {
+    "title": "Nombres rationnels — PPCM, PGCD, opérations et approximations",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le PPCM de 12 et 18 est :",
+        "type": "qcm",
+        "options": ["6", "36", "72", "216"],
+        "answer": 1,
+        "explanation": "Multiples de 12 : 12, 24, 36… ; multiples de 18 : 18, 36… Le plus petit commun multiple est 36. On peut aussi le calculer avec PGCD(12;18) = 6 : PPCM = (12×18)/6 = 36."
+      },
+      {
+        "id": "q2",
+        "text": "Un nombre rationnel est un nombre qui peut s'écrire :",
+        "type": "qcm",
+        "options": ["Sous forme de racine carrée", "Sous la forme a/b avec a ∈ ℤ et b ∈ ℤ*", "Uniquement sous forme décimale", "Comme un entier naturel"],
+        "answer": 1,
+        "explanation": "Un rationnel est le quotient a/b de deux entiers relatifs avec b ≠ 0. Les entiers et les décimaux sont des cas particuliers de rationnels : ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ."
+      },
+      {
+        "id": "q3",
+        "text": "Le quotient de a/b par c/d (c/d ≠ 0) est égal à :",
+        "type": "qcm",
+        "options": ["ac/bd", "a/b × c/d", "a/b × d/c", "(a+c)/(b+d)"],
+        "answer": 2,
+        "explanation": "Diviser par un rationnel revient à multiplier par son inverse : (a/b) ÷ (c/d) = (a/b) × (d/c) = ad/bc."
+      },
+      {
+        "id": "q4",
+        "text": "La troncature à l'unité de 4,78 est :",
+        "type": "qcm",
+        "options": ["5", "4,7", "4", "4,8"],
+        "answer": 2,
+        "explanation": "La troncature supprime tous les chiffres au-delà du rang demandé sans arrondir : tronquer 4,78 à l'unité donne 4 (alors que l'arrondi donnerait 5)."
+      },
+      {
+        "id": "q5",
+        "text": "L'arrondi au dixième de 7,26 est :",
+        "type": "qcm",
+        "options": ["7,3", "7,2", "7", "7,26"],
+        "answer": 0,
+        "explanation": "Le chiffre des centièmes est 6 ≥ 5, donc on augmente le chiffre des dixièmes d'une unité : 7,26 ≈ 7,3."
+      }
+    ]
+  },
+  "Fiche_Lecon4_Distances": {
+    "title": "Distances — point-droite, droites parallèles et bissectrice",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La distance d'un point A à une droite (d) est :",
+        "type": "qcm",
+        "options": ["La longueur du segment [AB] où B est un point quelconque de (d)", "La longueur AH où H est le projeté orthogonal de A sur (d)", "La longueur de la droite (d)", "La moitié de la longueur du segment joignant A à (d)"],
+        "answer": 1,
+        "explanation": "La distance d'un point à une droite est la longueur du segment joignant le point à son projeté orthogonal sur la droite : c'est le plus court chemin du point à la droite."
+      },
+      {
+        "id": "q2",
+        "text": "Deux droites parallèles (d) et (d') : leur distance est égale à :",
+        "type": "qcm",
+        "options": ["La distance d'un point de (d) à la droite (d')", "Zéro", "La moitié de la distance entre deux points quelconques", "Elle varie selon le point choisi"],
+        "answer": 0,
+        "explanation": "La distance de deux droites parallèles est la distance d'un point quelconque de l'une à l'autre : elle ne dépend pas du point choisi, elle est constante."
+      },
+      {
+        "id": "q3",
+        "text": "La bissectrice d'un angle est l'ensemble des points :",
+        "type": "qcm",
+        "options": ["Équidistants des deux sommets", "Équidistants des deux côtés de l'angle", "Situés à l'intérieur de l'angle", "À égale distance du sommet"],
+        "answer": 1,
+        "explanation": "Caractérisation fondamentale : un point est sur la bissectrice d'un angle si et seulement s'il est à égale distance des deux côtés (demi-droites) de l'angle."
+      },
+      {
+        "id": "q4",
+        "text": "Le centre du cercle inscrit dans un triangle se trouve :",
+        "type": "qcm",
+        "options": ["Au milieu de l'hypoténuse", "À l'intersection des médiatrices", "À l'intersection des bissectrices", "À l'intersection des médianes"],
+        "answer": 2,
+        "explanation": "Les trois bissectrices d'un triangle sont concourantes en un point équidistant des trois côtés : c'est le centre du cercle inscrit (tangent aux trois côtés)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'aire d'un triangle se calcule par A = (1/2) × a × h où h est la distance du sommet opposé au côté de longueur a.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La hauteur issue d'un sommet est précisément la distance de ce sommet à la droite portant le côté opposé : Aire = (base × hauteur) / 2."
+      }
+    ]
+  },
+  "Fiche_Lecon5_Calcul_litteral": {
+    "title": "Calcul littéral — développer, réduire et factoriser",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'expression -3(x - 4) est égale à :",
+        "type": "qcm",
+        "options": ["-3x - 12", "-3x + 12", "-3x - 4", "3x - 12"],
+        "answer": 1,
+        "explanation": "On distribue -3 sur chaque terme : -3 × x + (-3) × (-4) = -3x + 12. Attention au signe : -3 × (-4) = +12."
+      },
+      {
+        "id": "q2",
+        "text": "(a + b)² est égal à :",
+        "type": "qcm",
+        "options": ["a² + b²", "a² - 2ab + b²", "a² + 2ab + b²", "a² - b²"],
+        "answer": 2,
+        "explanation": "Premier produit remarquable : (a + b)² = a² + 2ab + b². Le double produit 2ab ne doit jamais être oublié : (a+b)² ≠ a² + b²."
+      },
+      {
+        "id": "q3",
+        "text": "(a - b)(a + b) est égal à :",
+        "type": "qcm",
+        "options": ["a² - 2ab + b²", "a² + b²", "a² - b²", "2a - 2b"],
+        "answer": 2,
+        "explanation": "Troisième produit remarquable : (a - b)(a + b) = a² - b². C'est aussi la forme factorisée d'une différence de deux carrés, très utile pour factoriser."
+      },
+      {
+        "id": "q4",
+        "text": "Factoriser 5x² + 10x donne :",
+        "type": "qcm",
+        "options": ["5(x² + 2x)", "5x(x + 2)", "x(5x + 10)", "5x²(1 + 2)"],
+        "answer": 1,
+        "explanation": "Le facteur commun est 5x : 5x² + 10x = 5x × x + 5x × 2 = 5x(x + 2). Le facteur commun doit être le plus grand possible."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : factoriser une expression, c'est l'écrire sous forme d'une somme.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Factoriser, c'est transformer une somme en un produit de facteurs (mise en évidence d'un facteur commun ou produit remarquable). Développer fait l'inverse : transformer un produit en somme."
+      }
+    ]
+  },
+  "Fiche_Lecon6_Cercles_et_triangles": {
+    "title": "Cercles et triangles — tangente, théorème des milieux, droites remarquables",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une tangente à un cercle en un point A est :",
+        "type": "qcm",
+        "options": ["Une droite qui coupe le cercle en deux points", "La droite perpendiculaire en A au rayon [OA]", "Une droite qui ne touche pas le cercle", "Une corde du cercle"],
+        "answer": 1,
+        "explanation": "La tangente en A au cercle de centre O est la droite perpendiculaire en A au rayon [OA] : elle touche le cercle en un seul point."
+      },
+      {
+        "id": "q2",
+        "text": "La droite passant par les milieux de deux côtés d'un triangle est :",
+        "type": "qcm",
+        "options": ["Perpendiculaire au troisième côté", "Parallèle au troisième côté et de moitié de sa longueur", "Égale au tiers du troisième côté", "Une médiatrice"],
+        "answer": 1,
+        "explanation": "Théorème des milieux : le segment joignant les milieux de deux côtés est parallèle au troisième côté, et sa longueur vaut la moitié de celle du troisième côté."
+      },
+      {
+        "id": "q3",
+        "text": "Le point de concours des médiatrices d'un triangle est :",
+        "type": "qcm",
+        "options": ["L'orthocentre", "Le centre de gravité", "Le centre du cercle inscrit", "Le centre du cercle circonscrit"],
+        "answer": 3,
+        "explanation": "Les médiatrices sont concourantes en un point équidistant des trois sommets : c'est le centre du cercle circonscrit au triangle."
+      },
+      {
+        "id": "q4",
+        "text": "Une droite et un cercle sont dits sécants lorsque :",
+        "type": "qcm",
+        "options": ["Ils n'ont aucun point commun", "Ils ont un seul point commun", "Ils ont deux points communs", "La droite passe par le centre"],
+        "answer": 2,
+        "explanation": "Positions relatives : extérieure (aucun point commun, d > r), tangente (un point commun, d = r), sécante (deux points communs, d < r) où d est la distance du centre à la droite."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le centre de gravité d'un triangle est le point de concours des trois médianes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les trois médianes (droites joignant un sommet au milieu du côté opposé) sont concourantes au centre de gravité, situé aux 2/3 de chaque médiane en partant du sommet."
+      }
+    ]
+  },
+  "Fiche_Lecon7_Equations_et_inequations": {
+    "title": "Équations et inéquations du premier degré dans ℚ",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La solution de l'équation 2x + 6 = 0 est :",
+        "type": "qcm",
+        "options": ["x = 3", "x = -3", "x = 6", "x = -6"],
+        "answer": 1,
+        "explanation": "2x = -6 donc x = -6/2 = -3. On vérifie : 2×(-3) + 6 = 0. ✓"
+      },
+      {
+        "id": "q2",
+        "text": "En multipliant les deux membres d'une inégalité par un nombre strictement négatif :",
+        "type": "qcm",
+        "options": ["L'inégalité ne change pas", "Le sens de l'inégalité change", "L'inégalité devient une égalité", "On obtient toujours un résultat négatif"],
+        "answer": 1,
+        "explanation": "Règle essentielle : multiplier (ou diviser) par un nombre négatif inverse le sens de l'inégalité. Exemple : -2x > 4 ⟺ x < -2 (le signe > devient <)."
+      },
+      {
+        "id": "q3",
+        "text": "L'ensemble des solutions de x - 3 ≤ 2 est :",
+        "type": "qcm",
+        "options": ["x ≤ 5", "x ≥ 5", "x < -1", "x ≤ -1"],
+        "answer": 0,
+        "explanation": "On ajoute 3 aux deux membres sans changer le sens : x ≤ 2 + 3 = 5. Ajouter ou soustraire un même nombre conserve le sens de l'inégalité."
+      },
+      {
+        "id": "q4",
+        "text": "Résoudre -3x > 9 donne :",
+        "type": "qcm",
+        "options": ["x > -3", "x < -3", "x > 3", "x < 3"],
+        "answer": 1,
+        "explanation": "On divise par -3 (nombre négatif) donc on inverse le sens : x < 9/(-3) = -3. Vérification : si x = -4, -3×(-4) = 12 > 9 ✓."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'équation 0x = 5 a pour solution x = 0.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "0x = 5 est impossible : quel que soit x, le premier membre vaut 0 ≠ 5. Cette équation n'a aucune solution (l'équation 0x = 0, elle, admet tout réel comme solution)."
+      }
+    ]
+  },
+  "Fiche_Lecon8_Statistiques": {
+    "title": "Statistiques — mode, moyenne et diagramme semi-circulaire",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le mode d'une série statistique est :",
+        "type": "qcm",
+        "options": ["La valeur la plus grande", "La valeur d'effectif maximum", "La moyenne des valeurs", "La valeur centrale"],
+        "answer": 1,
+        "explanation": "Le mode est la (ou les) modalité dont l'effectif est le plus grand. Une série peut avoir plusieurs modes si plusieurs valeurs ont le même effectif maximal."
+      },
+      {
+        "id": "q2",
+        "text": "La moyenne des notes 8 ; 12 ; 10 ; 14 est :",
+        "type": "qcm",
+        "options": ["10", "11", "12", "10,5"],
+        "answer": 1,
+        "explanation": "Moyenne = (8 + 12 + 10 + 14) / 4 = 44/4 = 11."
+      },
+      {
+        "id": "q3",
+        "text": "Dans un diagramme semi-circulaire, la totalité de l'effectif correspond à un angle de :",
+        "type": "qcm",
+        "options": ["360°", "90°", "180°", "100°"],
+        "answer": 2,
+        "explanation": "Le diagramme est un demi-disque : l'effectif total correspond à un angle plat de 180°. Chaque modalité a un angle proportionnel à son effectif : angle = (effectif / effectif total) × 180°."
+      },
+      {
+        "id": "q4",
+        "text": "Une classe de 30 élèves : 12 pratiquent le football. Dans un diagramme semi-circulaire, le football occupe un angle de :",
+        "type": "qcm",
+        "options": ["72°", "60°", "36°", "120°"],
+        "answer": 0,
+        "explanation": "Angle = (12/30) × 180° = 0,4 × 180° = 72°."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : pour calculer une moyenne pondérée, on multiplie chaque valeur par son effectif, on additionne, puis on divise par l'effectif total.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "C'est exactement la formule : moyenne = Σ(valeur × effectif) / effectif total. Exemple : notes 10 (×2) et 15 (×3) → moyenne = (20 + 45)/5 = 13."
+      }
+    ]
+  },
+  "Fiche_Lecon9_Perspective_cavaliere": {
+    "title": "Perspective cavalière — représentation des solides",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En perspective cavalière, les arêtes parallèles sur le solide :",
+        "type": "qcm",
+        "options": ["Deviennent sécantes sur le dessin", "Restent parallèles sur le dessin", "Se confondent", "Deviennet perpendiculaires"],
+        "answer": 1,
+        "explanation": "Règle de conservation : des droites parallèles sur l'objet restent représentées par des droites parallèles. C'est l'une des 5 règles de la perspective cavalière."
+      },
+      {
+        "id": "q2",
+        "text": "En perspective cavalière, les longueurs réelles sont conservées :",
+        "type": "qcm",
+        "options": ["Sur toutes les arêtes", "Uniquement sur les arêtes parallèles au plan frontal", "Uniquement sur les fuyantes", "Jamais"],
+        "answer": 1,
+        "explanation": "Les dimensions réelles sont conservées sur les droites parallèles au plan frontal (face de face). Sur les fuyantes (arêtes en profondeur), les longueurs sont multipliées par un coefficient de réduction."
+      },
+      {
+        "id": "q3",
+        "text": "Les fuyantes sont les droites représentant :",
+        "type": "qcm",
+        "options": ["Les arêtes de la face avant", "Les arêtes perpendiculaires au plan frontal", "Les arêtes cachées", "Les diagonales"],
+        "answer": 1,
+        "explanation": "Les fuyantes représentent les arêtes perpendiculaires au plan de face (celles qui « partent en profondeur »). Elles font un angle de fuite donné avec l'horizontale et subissent le coefficient de réduction."
+      },
+      {
+        "id": "q4",
+        "text": "Les arêtes invisibles d'un solide sont représentées :",
+        "type": "qcm",
+        "options": ["En traits pleins", "En pointillés", "En rouge", "On ne les représente pas"],
+        "answer": 1,
+        "explanation": "Convention de la perspective cavalière : les arêtes visibles sont tracées en traits pleins et les arêtes cachées en pointillés."
+      },
+      {
+        "id": "q5",
+        "text": "Un cube d'arête 4 cm est dessiné avec un coefficient de réduction 0,5 sur les fuyantes. La longueur d'une fuyante sur le dessin est :",
+        "type": "qcm",
+        "options": ["4 cm", "8 cm", "2 cm", "0,5 cm"],
+        "answer": 2,
+        "explanation": "Sur les fuyantes, longueur dessinée = longueur réelle × coefficient = 4 × 0,5 = 2 cm. La face avant, parallèle au plan frontal, conserve ses vraies dimensions (4 cm)."
+      }
+    ]
+  }
+}

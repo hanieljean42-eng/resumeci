@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '3eme', 'Seconde_A', 'Seconde_C', 'Terminale_A', 'Terminale_C', 'Terminale_D'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -1662,8 +1662,8 @@ function toggleDarkMode() {
   localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 async function shareSite() {
-  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 714 Fiches BAC & BEPC';
-  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
+  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 1009 Fiches BAC & BEPC';
+  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 1009 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
   const url = 'https://resumeci.me/inscription.html';
   if (navigator.share) await navigator.share({ title: title, text: text, url: url }).catch(() => {});
   else {
@@ -4052,7 +4052,7 @@ function showAnnouncement() {
         <div class="ann-spark s3"></div>
         <div class="ann-label" style="background:#10b981;color:#fff;font-weight:800;">✨ NOUVELLE PLATEFORME EN LIGNE</div>
         <h2 style="font-size:22px;margin:6px 0 4px;">Bienvenue sur ResumeCI ! 🎓</h2>
-        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">714 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
+        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">1009 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
       </div>
       <div class="ann-body" style="padding:16px;">
         <div style="font-size:12px;font-weight:800;color:#0f172a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.3px;">

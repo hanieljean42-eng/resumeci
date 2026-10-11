@@ -1,0 +1,92 @@
+{
+  "Fiche_HIS_4eme_Revolution_Francaise_1789": {
+    "title": "La Révolution française de 1789",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La société française d'Ancien Régime était divisée en trois ordres :",
+        "type": "qcm",
+        "options": ["Rois, nobles et paysans", "Le clergé, la noblesse et le tiers état", "Les riches, les moyens et les pauvres", "Les villes, les campagnes et les colonies"],
+        "answer": 1,
+        "explanation": "Les deux premiers ordres (clergé, noblesse) étaient privilégiés et exemptés d'impôts ; le tiers état (~97 % de la population) payait tous les impôts — cette inégalité a nourri la révolte."
+      },
+      {
+        "id": "q2",
+        "text": "Parmi les causes de la Révolution figure la philosophie des Lumières qui défendait :",
+        "type": "qcm",
+        "options": ["Le pouvoir absolu", "La liberté, l'égalité et la séparation des pouvoirs", "Le retour au Moyen Âge", "L'esclavage"],
+        "answer": 1,
+        "explanation": "Voltaire, Rousseau, Montesquieu ont critiqué l'absolutisme et les privilèges et proposé de nouvelles idées : liberté, égalité devant la loi, souveraineté du peuple, séparation des pouvoirs."
+      },
+      {
+        "id": "q3",
+        "text": "La prise de la Bastille, symbole du début de la Révolution, a eu lieu le :",
+        "type": "qcm",
+        "options": ["14 juillet 1789", "4 juillet 1776", "1er janvier 1789", "21 janvier 1793"],
+        "answer": 0,
+        "explanation": "Le 14 juillet 1789, le peuple de Paris prend la forteresse royale de la Bastille — événement marquant l'entrée du peuple dans la Révolution, devenu fête nationale française."
+      },
+      {
+        "id": "q4",
+        "text": "La Déclaration des droits de l'homme et du citoyen (août 1789) proclame :",
+        "type": "qcm",
+        "options": ["La monarchie absolue", "La liberté, l'égalité en droits de tous les hommes et la souveraineté nationale", "Les privilèges de la noblesse", "La guerre"],
+        "answer": 1,
+        "explanation": "Texte fondateur : « Les hommes naissent et demeurent libres et égaux en droits » — liberté, propriété, sûreté, résistance à l'oppression, et la souveraineté réside dans la nation."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la Révolution met fin à la monarchie absolue et aux privilèges, et fait naître les principes républicains modernes.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La Révolution abolit les privilèges (nuit du 4 août), proclame les droits de l'homme, met fin à l'absolutisme puis à la monarchie (1792) : elle fonde les valeurs de liberté, d'égalité et de citoyenneté."
+      }
+    ]
+  },
+  "Fiche_GEO_4eme_CEDEAO_Succes_et_Limites": {
+    "title": "La CEDEAO : succès et limites",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La CEDEAO a été créée en :",
+        "type": "qcm",
+        "options": ["1960", "1975 à Lagos (Traité de Lagos)", "1990", "2000"],
+        "answer": 1,
+        "explanation": "La Communauté Économique des États de l'Afrique de l'Ouest est née du Traité de Lagos du 28 mai 1975 ; son siège est à Abuja (Nigeria)."
+      },
+      {
+        "id": "q2",
+        "text": "L'objectif principal de la CEDEAO est :",
+        "type": "qcm",
+        "options": ["Créer une seule armée", "Promouvoir la coopération et l'intégration économiques des États membres", "Coloniser l'Afrique", "Fusionner tous les pays"],
+        "answer": 1,
+        "explanation": "La CEDEAO vise l'intégration régionale : libre circulation des personnes et des biens, marché commun, monnaie unique (projet ECO), coopération politique et sécuritaire."
+      },
+      {
+        "id": "q3",
+        "text": "Parmi les succès de la CEDEAO, on peut citer :",
+        "type": "qcm",
+        "options": ["La monnaie unique déjà adoptée partout", "La libre circulation des personnes et l'intervention de l'ECOMOG pour la paix", "La suppression des frontières", "La fin de toutes les guerres"],
+        "answer": 1,
+        "explanation": "Réussites : libre circulation des personnes et biens, ECOMOG (force d'intervention) déployée dans les crises (Liberia, Sierra Leone, Mali), médiation politique."
+      },
+      {
+        "id": "q4",
+        "text": "Les limites de la CEDEAO sont :",
+        "type": "qcm",
+        "options": ["Trop de puissance", "Faibles échanges intra-régionaux, dépendance extérieure, rivalités anglophone/francophone et retard de la monnaie unique", "Son siège à Abidjan", "Trop de membres"],
+        "answer": 1,
+        "explanation": "Les échanges entre membres restent faibles (~10 %), les États restent tournés vers leurs anciens partenaires, le projet de monnaie unique ECO accumule les retards, et les rivalités linguistiques freinent l'intégration."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la Côte d'Ivoire est membre fondateur de la CEDEAO et l'une de ses principales économies.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La Côte d'Ivoire a signé le Traité de Lagos en 1975 ; elle est la 3ᵉ économie de l'espace et contribue aux institutions (BCEAO de l'UEMOA au sein de la zone franc)."
+      }
+    ]
+  }
+}

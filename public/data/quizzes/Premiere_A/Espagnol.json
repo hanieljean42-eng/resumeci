@@ -1,0 +1,1217 @@
+{
+  "Fiche_ESP_1A_L1_Realites_espagnol_dans_le_monde": {
+    "title": "Réalités : l'espagnol dans le monde et l'obligation personnelle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'espagnol est parlé aujourd'hui par :",
+        "type": "qcm",
+        "options": ["100 millions de personnes", "Plus de 500 millions de personnes, 2ᵉ langue maternelle mondiale", "Seulement en Espagne", "Un milliard de personnes"],
+        "answer": 1,
+        "explanation": "L'espagnol compte plus de 500 millions de locuteurs natifs — 2ᵉ langue maternelle mondiale après le chinois — répartie en Espagne, en Amérique latine et aux États-Unis."
+      },
+      {
+        "id": "q2",
+        "text": "L'expression de l'obligation personnelle se fait avec :",
+        "type": "qcm",
+        "options": ["hay que + infinitivo", "tener que + infinitivo : « Tengo que estudiar » = je dois étudier", "querer + infinitivo", "gustar"],
+        "answer": 1,
+        "explanation": "tener que + infinitivo = obligation personnelle (le sujet décide) ; hay que + infinitivo = obligation impersonnelle (c'est nécessaire pour tous)."
+      },
+      {
+        "id": "q3",
+        "text": "« Debo estudiar » et « Tengo que estudiar » :",
+        "type": "qcm",
+        "options": ["Sont contraires", "Expriment tous deux l'obligation : deber = devoir moral ; tener que = obligation pratique", "Sont des souhaits", "Sont des questions"],
+        "answer": 1,
+        "explanation": "deber (+infinitif) = devoir moral/norme ; tener que = obligation personnelle ou externe ; deber de = supposition (il doit être malade = il est probablement malade)."
+      },
+      {
+        "id": "q4",
+        "text": "Le défi économique de l'Espagne mentionné est :",
+        "type": "qcm",
+        "options": ["Aucun défi", "Le chômage (surtout des jeunes), la dette et les crises économiques", "Trop de richesse", "Le manque de tourisme"],
+        "answer": 1,
+        "explanation": "L'Espagne a connu la crise de 2008, un chômage record (paro juvenil), mais reste une économie forte : tourisme, industrie automobile, agriculture exportatrice."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « hay que + infinitivo » exprime une obligation impersonnelle valable pour tout le monde.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "hay que + infinitivo = il faut (impersonnel, on) : « Hay que trabajar » = il faut travailler — règle générale, pas de sujet précis."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L2_Realites_Amerique_hispanique": {
+    "title": "Réalités : l'Amérique hispanique — pretérito imperfecto",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'Amérique hispanique est une mosaïque ethnique composée de :",
+        "type": "qcm",
+        "options": ["Un seul peuple", "Amerindiens, Européens, Africains et leurs métissages", "Asiatiques uniquement", "Européens seulement"],
+        "answer": 1,
+        "explanation": "Le melting-pot hispano-américain : Amérindiens (Incas, Aztèques, Mayas), colons espagnols, esclaves africains → mestizos, mulatos, zambos — grande diversité ethnique."
+      },
+      {
+        "id": "q2",
+        "text": "Le pretérito imperfecto sert à décrire :",
+        "type": "qcm",
+        "options": ["Le futur", "Des actions habituelles, des descriptions et des circonstances au passé", "Le présent", "Le subjonctif"],
+        "answer": 1,
+        "explanation": "L'imparfait : habitudes (todos los días iba…), descriptions (el cielo era azul), arrière-plan (mientras caminaba…) — action non bornée dans le temps."
+      },
+      {
+        "id": "q3",
+        "text": "La terminaison de « hablar » à l'imparfait, 1ʳᵉ personne :",
+        "type": "qcm",
+        "options": ["hablé", "hablaba", "hablara", "hablo"],
+        "answer": 1,
+        "explanation": "Verbes -ar : -aba, -abas, -aba, -ábamos, -abais, -aban. Verbes -er/-ir : -ía, -ías, -ía, -íamos, -íais, -ían : comía, vivía."
+      },
+      {
+        "id": "q4",
+        "text": "« Cuando era niño, jugaba en el campo » illustre :",
+        "type": "qcm",
+        "options": ["Le passé composé", "L'imparfait pour une habitude de l'enfance", "Le futur", "Le présent"],
+        "answer": 1,
+        "explanation": "era (être, imparfait) + jugaba (habitude répétée) = « quand j'étais enfant, je jouais à la campagne » — deux actions habituelles au passé."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les trois seuls verbes irréguliers à l'imparfait sont ser (era), ir (iba) et ver (veía).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "ser→era, ir→iba, ver→veía : les seuls irréguliers de l'imparfait — à mémoriser : « ser iba a ver » !"
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L3_Realites_Guinee_Equatoriale": {
+    "title": "Réalités : la Guinée Équatoriale — expression de la fréquence",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« El español es innegociable » signifie que :",
+        "type": "qcm",
+        "options": ["L'espagnol est à vendre", "L'espagnol est une langue non négociable, pilier de l'identité équato-guinéenne", "L'espagnol est interdit", "L'espagnol est difficile"],
+        "answer": 1,
+        "explanation": "En Guinée Équatoriale, l'espagnol est langue officielle et marqueur identitaire : le gouvernement le défend comme « innegociable » face à l'influence française croissante."
+      },
+      {
+        "id": "q2",
+        "text": "L'expression de la fréquence se fait avec :",
+        "type": "qcm",
+        "options": ["siempre, a menudo, a veces, rara vez, nunca", "ayer, mañana", "aquí, allí", "muy, poco"],
+        "answer": 0,
+        "explanation": "Adverbes de fréquence : siempre (toujours), a menudo (souvent), a veces (parfois), rara vez (rarement), nunca (jamais) + expressions : todos los días, una vez a la semana."
+      },
+      {
+        "id": "q3",
+        "text": "« todos los días » signifie :",
+        "type": "qcm",
+        "options": ["tous les mois", "tous les jours", "toujours", "parfois"],
+        "answer": 1,
+        "explanation": "Fréquence temporelle : todos los días (chaque jour), cada semana (chaque semaine), dos veces al mes (deux fois par mois), una vez al año."
+      },
+      {
+        "id": "q4",
+        "text": "La Guinée Équatoriale :",
+        "type": "qcm",
+        "options": ["Parle portugais", "Est le seul pays d'Afrique hispanophone ; ses langues officielles sont espagnol, français et portugais", "N'a pas de langue officielle", "Parle anglais"],
+        "answer": 1,
+        "explanation": "Ancienne colonie espagnole indépendante depuis 1968 ; l'espagnol y est langue officielle (avec le français depuis 1982 et le portugais) — seule Afrique hispanophone."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « a menudo » = souvent ; son contraire est « rara vez » = rarement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Échelle de fréquence : siempre > a menudo > a veces > rara vez > nunca : a menudo (souvent) s'oppose à rara vez (rarement)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L4_Describir": {
+    "title": "Décrire — el adjetivo calificativo",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Décrire consiste à :",
+        "type": "qcm",
+        "options": ["Raconter une histoire", "Présenter les caractéristiques physiques, morales ou matérielles d'une personne, d'un lieu ou d'un objet", "Argumenter", "Demander"],
+        "answer": 1,
+        "explanation": "La description (descripción) peint par les mots : aspect extérieur (físico), caractère (carácter), ambiance — elle s'appuie sur les adjectifs qualificatifs."
+      },
+      {
+        "id": "q2",
+        "text": "L'adjectif qualificatif s'accorde :",
+        "type": "qcm",
+        "options": ["En nombre seulement", "En genre et en nombre avec le nom : el chico alto / la chica alta / los chicos altos", "Jamais", "Au verbe"],
+        "answer": 1,
+        "explanation": "Accord : masculin/féminin × singulier/pluriel : alto, alta, altos, altas. Adjectifs en -e ou -r : grande/grandes, trabajador/trabajadora."
+      },
+      {
+        "id": "q3",
+        "text": "« una mujer trabajadora » montre :",
+        "type": "qcm",
+        "options": ["Un accord fautif", "L'adjectif trabajador au féminin : trabajadora", "Un nom pluriel", "Un verbe"],
+        "answer": 1,
+        "explanation": "Adjectifs en -dor/-ón/-án/-ín : féminin en -a : trabajador→trabajadora, hablador→habladora, holgazán→holgazana."
+      },
+      {
+        "id": "q4",
+        "text": "Pour décrire une personne on utilise :",
+        "type": "qcm",
+        "options": ["Uniquement ser", "ser (caractéristiques), estar (état), tener (possession), parecer (apparence)", "haber", "hacer"],
+        "answer": 1,
+        "explanation": "ser + caractéristique (es alto/inteligente), estar + état (está cansado), tener + possession (tiene ojos azules), parecer + apparence (parece joven)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'adjectif espagnol se place normalement après le nom, sauf pour exprimer la qualité subjective (buen, gran, mal…) qui peut passer avant.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Position normale = après : « un libro interesante ». Avant = effet de style ou apocope : « un buen hombre », « un gran país », « mi primera vez »."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L5_Relatar_un_hecho": {
+    "title": "Relater un hecho — les temps du récit",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Raconter un fait (relatar) consiste à :",
+        "type": "qcm",
+        "options": ["Décrire des sentiments", "Rapporter chronologiquement des événements passés ou présents", "Donner son avis", "Poser des questions"],
+        "answer": 1,
+        "explanation": "Le récit (relato) ordonne des faits dans le temps : accident, match, voyage — avec des connecteurs chronologiques et les temps du passé."
+      },
+      {
+        "id": "q2",
+        "text": "Le pretérito indefinido exprime :",
+        "type": "qcm",
+        "options": ["Une habitude", "Une action passée terminée, ponctuelle et datée : « ayer llegué »", "Une description", "Le futur"],
+        "answer": 1,
+        "explanation": "Indefinido = action unique et achevée : « El lunes llegué a Abiyán » — contraire de l'imparfait (habitude/description)."
+      },
+      {
+        "id": "q3",
+        "text": "« Mientras caminaba, empezó a llover » combine :",
+        "type": "qcm",
+        "options": ["Deux indefinidos", "Imparfait (arrière-plan) + indefinido (action ponctuelle)", "Deux imparfaits", "Présent + futur"],
+        "answer": 1,
+        "explanation": "caminaba (imparfait = la toile de fond, l'action en cours) + empezó (indefinido = l'événement qui survient) — schéma classique du récit."
+      },
+      {
+        "id": "q4",
+        "text": "Les connecteurs du récit sont :",
+        "type": "qcm",
+        "options": ["porque, pero", "primero, luego, después, entonces, finalmente", "muy, tan", "sí, no"],
+        "answer": 1,
+        "explanation": "Chronologie : al principio, primero, luego/después, entonces, más tarde, al final/finalmente, de repente (soudain)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « ir » et « ser » ont la même conjugaison à l'indefinido : fui, fuiste, fue, fuimos, fuisteis, fueron.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Piège classique : fui = je fus (ser) ET j'allai (ir) — le contexte tranche : « Fui al mercado » (ir) vs « Fui un buen estudiante » (ser)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L6_Insistir": {
+    "title": "Insistir — l'expression de l'insistance",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour insister, on utilise :",
+        "type": "qcm",
+        "options": ["« Insisto en que… / Te repito que… / Es importante que… / De verdad… »", "« Tal vez »", "« No sé »", "« Adiós »"],
+        "answer": 0,
+        "explanation": "Insistance : Insisto en que (j'insiste pour que), Te repito que (je te répète que), Es importante/urgente que, De verdad, ¡Por favor, hazlo !"
+      },
+      {
+        "id": "q2",
+        "text": "« Insisto en que vengas » utilise :",
+        "type": "qcm",
+        "options": ["L'indicatif", "Le subjonctif après « insistir en que »", "L'infinitif", "L'impératif"],
+        "answer": 1,
+        "explanation": "insistir en que + subjonctif = insister pour que quelqu'un fasse : « Insisto en que estudies » = j'insiste pour que tu étudies."
+      },
+      {
+        "id": "q3",
+        "text": "La répétition comme procédé d'insistance :",
+        "type": "qcm",
+        "options": ["Est un défaut", "Renforce le message : « Ven, ven ahora » ou « Es muy, muy importante »", "Est interdite", "Est un nom"],
+        "answer": 1,
+        "explanation": "Répéter mot ou structure insiste : « ¡Ven, ven ! » ; « muy, muy difícil » ; « te lo digo otra vez » — l'emphase par la répétition."
+      },
+      {
+        "id": "q4",
+        "text": "« Te lo digo otra vez » signifie :",
+        "type": "qcm",
+        "options": ["Je te salue", "Je te le répète une autre fois", "Je t'écoute", "Je t'aime"],
+        "answer": 1,
+        "explanation": "otra vez = une autre fois/encore : « Te lo digo otra vez » = je te le dis encore — formule typique de l'insistance."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'insistance peut aussi se marquer par l'impératif : « ¡Hazlo ya ! » = fais-le tout de suite !",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'impératif + ya/ahora = insistance pressante : « ¡Hazlo ya ! », « ¡Ven ahora mismo ! » = ordre ou demande pressante."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L7_Resumir": {
+    "title": "Resumir — les marqueurs du résumé",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Résumer consiste à :",
+        "type": "qcm",
+        "options": ["Recopier tout le texte", "Reformuler brièvement l'essentiel sans détails ni exemples", "Traduire", "Argumenter"],
+        "answer": 1,
+        "explanation": "Le resumen condense : on garde l'idée principale, on supprime détails, exemples et répétitions — avec ses propres mots."
+      },
+      {
+        "id": "q2",
+        "text": "Les marqueurs du résumé sont :",
+        "type": "qcm",
+        "options": ["porque, pero", "en resumen, en síntesis, en definitiva, es decir, en conclusión", "ayer, mañana", "muy, tan"],
+        "answer": 1,
+        "explanation": "Marqueurs de synthèse : en resumen (en résumé), en síntesis (en synthèse), en definitiva (en définitive), es decir (c'est-à-dire), en conclusión (en conclusion)."
+      },
+      {
+        "id": "q3",
+        "text": "« es decir » sert à :",
+        "type": "qcm",
+        "options": ["Poser une question", "Reformuler autrement (c'est-à-dire) : simplifier ce qui précède", "Raconter", "Saluer"],
+        "answer": 1,
+        "explanation": "es decir introduit une reformulation : « Es vegetariano, es decir, no come carne » — précise ou simplifie une idée."
+      },
+      {
+        "id": "q4",
+        "text": "Un bon résumé doit :",
+        "type": "qcm",
+        "options": ["Être plus long que le texte", "Être fidèle à l'idée, plus court, dans ses propres mots et sans opinion personnelle", "Critiquer le texte", "Être poétique"],
+        "answer": 1,
+        "explanation": "Règles du résumé : fidélité à la pensée de l'auteur (pas d'avis), brièveté (environ 1/4 du texte), reformulation personnelle, connecteurs logiques."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « en definitiva » marque une conclusion : « En definitiva, el autor defiende… ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "en definitiva = en définitive/en fin de compte : introduit le bilan final d'une argumentation ou d'un résumé."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L8_Preguntar": {
+    "title": "Preguntar — les techniques interrogatives",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les deux techniques interrogatives sont :",
+        "type": "qcm",
+        "options": ["Directe et indirecte", "Positive et négative", "Longue et courte", "Écrite et orale"],
+        "answer": 0,
+        "explanation": "Question directe : avec ¿ … ? et mot interrogatif (¿Qué…?). Question indirecte : introduite par un verbe : « Quiero saber si vienes » ou « Me pregunto qué hace »."
+      },
+      {
+        "id": "q2",
+        "text": "Les mots interrogatifs espagnols prennent :",
+        "type": "qcm",
+        "options": ["Pas d'accent", "Un accent écrit : qué, quién, dónde, cuándo, cuánto, cómo, por qué", "Une majuscule", "Un tiret"],
+        "answer": 1,
+        "explanation": "Tous les mots interrogatifs/exclamatifs portent l'accent écrit : ¿Qué? ¿Quién? ¿Dónde? ¿Cuándo? ¿Cuánto? ¿Cómo? ¿Por qué? — sans accent dans les autres contextes."
+      },
+      {
+        "id": "q3",
+        "text": "« ¿Cuál ? » et « ¿Qué ? » :",
+        "type": "qcm",
+        "options": ["Sont toujours interchangeables", "¿Cuál ? = choix parmi plusieurs (lequel) ; ¿Qué ? = nature ou définition (quoi)", "¿Cuál ? = personne", "¿Qué ? = où"],
+        "answer": 1,
+        "explanation": "¿Cuál ? sélectionne : « ¿Cuál es tu color favorito ? » (parmi les couleurs). ¿Qué ? définit ou identifie : « ¿Qué es eso ? »"
+      },
+      {
+        "id": "q4",
+        "text": "En question indirecte, l'ordre est :",
+        "type": "qcm",
+        "options": ["Comme la question directe", "Affirmatif : « Me pregunto dónde vive » (pas d'inversion ni de ¿?)", "Inversé", "Pas de verbe"],
+        "answer": 1,
+        "explanation": "Question indirecte : le mot interrogatif garde son accent mais s'intègre dans une phrase affirmative, sans ¿? : « No sé qué quieres »."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « si » introduit une question indirecte fermée (oui/non) : « Me pregunta si vendré ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Quand la question n'attend que sí/no, on l'introduit par si (sans accent !) : « ¿Vendrás ? » → « Me pregunta si vendré » — attention à ne pas confondre avec sí (oui)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L9_Dar_una_opinion": {
+    "title": "Dar una opinión — opinion + subjonctif",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour donner son opinion :",
+        "type": "qcm",
+        "options": ["« Pienso que… / Creo que… / En mi opinión… / Me parece que… »", "« No sé »", "« ¡Cállate ! »", "« ¿Qué hora es ? »"],
+        "answer": 0,
+        "explanation": "Formules d'opinion : Pienso/Creo que (indicatif), En mi opinión, A mi juicio, Me parece que, Considero que, Desde mi punto de vista."
+      },
+      {
+        "id": "q2",
+        "text": "Après « creo que » on utilise :",
+        "type": "qcm",
+        "options": ["Le subjonctif", "L'indicatif (opinion affirmée)", "L'impératif", "L'infinitif"],
+        "answer": 1,
+        "explanation": "creer/pensar + INDICATIF : « Creo que es verdad » — l'affirmation exprime la certitude. Mais NÉGATIF + subjonctif : « No creo que sea verdad »."
+      },
+      {
+        "id": "q3",
+        "text": "« No creo que sea verdad » utilise le subjonctif parce que :",
+        "type": "qcm",
+        "options": ["C'est une règle au hasard", "La négation de l'opinion exprime le doute → subjonctif", "C'est plus simple", "C'est au passé"],
+        "answer": 1,
+        "explanation": "Quand on nie son opinion (no creo que, no pienso que, no me parece que), l'incertitude s'exprime par le subjonctif : « No creo que venga » = je ne pense pas qu'il vienne (doute)."
+      },
+      {
+        "id": "q4",
+        "text": "« En mi opinión, el deporte es importante » exprime :",
+        "type": "qcm",
+        "options": ["Un fait prouvé", "Une opinion personnelle marquée par la première personne", "Un ordre", "Une question"],
+        "answer": 1,
+        "explanation": "En mi opinión signale que le propos est subjectif : l'opinion engage son auteur et n'a pas valeur de vérité absolue."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « Estoy de acuerdo (con) » permet d'approuver l'opinion d'autrui ; « No estoy de acuerdo » la contredit poliment.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Accord/désaccord : Estoy de acuerdo (je suis d'accord), Tienes razón (tu as raison), No estoy de acuerdo, No me parece bien — nuance du dialogue argumentatif."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L10_Aprobar_desaprobar": {
+    "title": "Aprobar y desaprobar",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour approuver en espagnol :",
+        "type": "qcm",
+        "options": ["« Está mal »", "« Está bien / Muy bien / Me parece perfecto / Estoy de acuerdo »", "« ¡Qué horror ! »", "« No me gusta »"],
+        "answer": 1,
+        "explanation": "Approbation : Está bien, Muy bien, Me parece bien/perfecto, Estoy de acuerdo, ¡Bravo !, ¡Excelente ! — expressions de satisfaction ou de consentement."
+      },
+      {
+        "id": "q2",
+        "text": "Pour désapprouver :",
+        "type": "qcm",
+        "options": ["« ¡Bravo ! »", "« Está mal / No me parece bien / Es injusto / ¡Qué vergüenza ! »", "« Muy bien »", "« Gracias »"],
+        "answer": 1,
+        "explanation": "Désapprobation : Está mal, No me parece bien, Es injusto/inaceptable, ¡Qué vergüenza !, ¡Qué lástima ! — jugement négatif sur une conduite."
+      },
+      {
+        "id": "q3",
+        "text": "« Me parece bien » et « Está bien » :",
+        "type": "qcm",
+        "options": ["Sont contraires", "Expriment tous deux l'approbation", "Sont des questions", "Sont des insultes"],
+        "answer": 1,
+        "explanation": "Approbation synonyme : me parece bien (il me semble bien), está bien (c'est bien), es correcto, tiene razón — nuances de degré."
+      },
+      {
+        "id": "q4",
+        "text": "« aprobar » dans le sens scolaire signifie :",
+        "type": "qcm",
+        "options": ["Échouer", "Réussir un examen", "Dormir", "Arriver"],
+        "answer": 1,
+        "explanation": "aprobar un examen = réussir ; suspender = échouer : « Aprobé el BEPC » = j'ai réussi le BEPC."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « ¡Qué lástima ! » exprime le regret ou la compassion, pas une approbation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "¡Qué lástima ! = quel dommage ! — plainte ou compassion face à une situation malheureuse, contraire d'une approbation."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L11_Expresar_la_certidumbre": {
+    "title": "Expresar la certidumbre",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer la certitude :",
+        "type": "qcm",
+        "options": ["« Tal vez »", "« Estoy seguro (de que)… / Es cierto que… / Sin duda… / Evidentemente… »", "« Quizás »", "« No sé »"],
+        "answer": 1,
+        "explanation": "Certitude : Estoy seguro de que, Es cierto/verdad que, Sin duda, Por supuesto, Evidentemente, Claro que, Es evidente que + indicatif."
+      },
+      {
+        "id": "q2",
+        "text": "« Estoy seguro de que vendrá » signifie :",
+        "type": "qcm",
+        "options": ["Je doute qu'il vienne", "Je suis sûr qu'il viendra", "Il ne viendra pas", "Je ne sais pas"],
+        "answer": 1,
+        "explanation": "estar seguro de que + indicatif = certitude personnelle forte : « Estoy seguro de que es verdad » = je suis sûr que c'est vrai."
+      },
+      {
+        "id": "q3",
+        "text": "Le contraire de la certitude s'exprime par :",
+        "type": "qcm",
+        "options": ["« Es cierto »", "« No estoy seguro / Dudo que… + subjonctif / Quizás »", "« Claro que »", "« Evidentemente »"],
+        "answer": 1,
+        "explanation": "Doute/incertitude : No estoy seguro, Dudo que + subjonctif, Quizás/tal vez, Puede que + subjonctif — l'incertitude appelle le subjonctif."
+      },
+      {
+        "id": "q4",
+        "text": "« Sin duda » signifie :",
+        "type": "qcm",
+        "options": ["Peut-être", "Sans doute = certainement", "En doute", "Pas sûr"],
+        "answer": 1,
+        "explanation": "Sin duda = sans aucun doute : « Sin duda, es el mejor » = c'est certainement le meilleur — adverbe de certitude forte."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la certitude s'exprime avec l'indicatif car l'énoncé est présenté comme vrai : « Es cierto que llueve ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Certitude → indicatif : Es cierto que, Es verdad que, Sin duda… — le fait est présenté comme réel. Le doute appellerait le subjonctif."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L12_Expresar_la_capacidad": {
+    "title": "Expresar la capacidad e incapacidad",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer la capacité :",
+        "type": "qcm",
+        "options": ["« Puedo / Sé / Soy capaz de / Tengo la capacidad de »", "« No sé »", "« Tengo hambre »", "« Estoy triste »"],
+        "answer": 0,
+        "explanation": "Capacité : puedo + infinitif (je peux), sé + infinitif (je sais faire), soy capaz de + infinitif, puedo hacerlo (je peux le faire), es posible."
+      },
+      {
+        "id": "q2",
+        "text": "« Sé nadar » signifie :",
+        "type": "qcm",
+        "options": ["Je suis nager", "Je sais nager (compétence acquise)", "Je nage", "Je veux nager"],
+        "answer": 1,
+        "explanation": "saber + infinitivo = savoir faire (compétence) : « Sé tocar el piano » = je sais jouer du piano. ≠ poder (possibilité : « Puedo ir » = je peux y aller)."
+      },
+      {
+        "id": "q3",
+        "text": "Pour exprimer l'incapacité :",
+        "type": "qcm",
+        "options": ["« Puedo »", "« No puedo / No sé / Soy incapaz de / Es imposible »", "« Sí »", "« Claro »"],
+        "answer": 1,
+        "explanation": "Incapacité : no puedo (je ne peux pas), no sé + infinitif (je ne sais pas faire), soy incapaz de, me es imposible — négation de la capacité."
+      },
+      {
+        "id": "q4",
+        "text": "La différence entre « poder » et « saber » :",
+        "type": "qcm",
+        "options": ["Aucune", "poder = pouvoir/possibilité ; saber = savoir-faire/compétence", "saber = force", "poder = connaissance"],
+        "answer": 1,
+        "explanation": "« Puedo ir » = il m'est possible d'y aller (circonstances) ; « Sé ir » = je sais comment y aller (compétence). Confusion fréquente avec le français « pouvoir »."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « soy capaz de resolver el problema » = je suis capable de résoudre le problème — autre forme de la capacité.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "ser capaz de + infinitivo = être capable de : équivalent de poder mais souligne la capacité personnelle."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L13_Expresar_la_probabilidad": {
+    "title": "Expresar la probabilidad",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer la probabilité :",
+        "type": "qcm",
+        "options": ["« Es cierto »", "« Quizás / Tal vez / Puede que + subjonctif / Es probable que + subjonctif »", "« Sin duda »", "« Claro que »"],
+        "answer": 1,
+        "explanation": "Probabilité : quizás/tal vez (peut-être), puede que + subj. (il se peut que), es probable que + subj., posiblemente, probablemente."
+      },
+      {
+        "id": "q2",
+        "text": "« Puede que llueva mañana » signifie :",
+        "type": "qcm",
+        "options": ["Il pleuvra sûrement", "Il se peut qu'il pleuve demain", "Il ne pleuvra pas", "J'ai vu la pluie"],
+        "answer": 1,
+        "explanation": "puede que + subjonctif = il se peut que (probabilité moyenne) : « Puede que venga » = il se peut qu'il vienne."
+      },
+      {
+        "id": "q3",
+        "text": "Après « es probable que », on utilise :",
+        "type": "qcm",
+        "options": ["L'indicatif", "Le subjonctif (incertitude)", "L'infinitif", "L'impératif"],
+        "answer": 1,
+        "explanation": "es probable que + subjonctif : la probabilité n'est pas une certitude → subjonctif : « Es probable que estudie » = il est probable qu'il étudie."
+      },
+      {
+        "id": "q4",
+        "text": "« quizás » peut être suivi :",
+        "type": "qcm",
+        "options": ["Uniquement de l'indicatif", "De l'indicatif ou du subjonctif selon le degré de doute", "De l'impératif", "De rien"],
+        "answer": 1,
+        "explanation": "quizás/tal vez + indicatif (plus probable) ou subjonctif (plus douteux) : « Quizás viene » (probable) vs « Quizás venga » (incertain)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la certitude (es cierto que) prend l'indicatif, la probabilité (es probable que) prend le subjonctif.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Règle des modes : fait certain → indicatif ; fait probable/douteux/possible → subjonctif. La nuance de certitude choisit le mode."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L14_Expresar_la_indignacion": {
+    "title": "Expresar la indignación",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer l'indignation :",
+        "type": "qcm",
+        "options": ["« ¡Qué bien ! »", "« ¡Es un escándalo ! / ¡Es injusto ! / ¡Qué vergüenza ! / ¡Me indigna que… ! »", "« ¡Bravo ! »", "« Gracias »"],
+        "answer": 1,
+        "explanation": "Indignation : ¡Es un escándalo ! (c'est un scandale !), ¡Es injusto !, ¡Qué vergüenza !, ¡Me indigna/enfurece que…! — protestation morale face à l'injustice."
+      },
+      {
+        "id": "q2",
+        "text": "« Me indigna que haya tanta corrupción » utilise :",
+        "type": "qcm",
+        "options": ["L'indicatif", "Le subjonctif après l'expression de sentiment", "L'infinitif", "Le passé composé"],
+        "answer": 1,
+        "explanation": "Expressions de sentiment + subjonctif : me indigna que, me enfurece que, es una vergüenza que — la subordonnée de sentiment prend le subjonctif."
+      },
+      {
+        "id": "q3",
+        "text": "« ¡Qué vergüenza ! » exprime :",
+        "type": "qcm",
+        "options": ["La fierté", "La honte/l'indignation morale", "La joie", "La faim"],
+        "answer": 1,
+        "explanation": "¡Qué vergüenza ! = quelle honte ! — condamne une conduite scandaleuse : « ¡Qué vergüenza que roben así ! »"
+      },
+      {
+        "id": "q4",
+        "text": "L'indignation diffère de la désapprobation par :",
+        "type": "qcm",
+        "options": ["Rien", "Son intensité : l'indignation est une désapprobation forte, souvent morale, face à l'injustice", "Le sujet", "Le temps"],
+        "answer": 1,
+        "explanation": "Désapprobation = jugement négatif modéré ; indignation = colère morale vive face à l'inacceptable (injustice, corruption, mensonge)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « ¡Es intolerable que maltraten a los niños ! » exprime à la fois une opinion et une indignation.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "« Es intolerable que » + subjonctif condamne fortement : le propos juge (opinion) et s'indigne (sentiment) — registre de l'engagement moral."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L15_Expresar_el_temor": {
+    "title": "Expresar el temor",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer la peur :",
+        "type": "qcm",
+        "options": ["« ¡Qué alegría ! »", "« Tengo miedo de… / Temer que… / Me da miedo… / Tener pánico »", "« ¡Bravo ! »", "« Estoy contento »"],
+        "answer": 1,
+        "explanation": "Peur : Tengo miedo de (j'ai peur de), Temer que + subj. (je crains que), Me da miedo (ça me fait peur), Tener pánico (paniquer), Estar aterrado."
+      },
+      {
+        "id": "q2",
+        "text": "« Temo que sea tarde » signifie :",
+        "type": "qcm",
+        "options": ["J'espère qu'il est tard", "Je crains qu'il soit tard", "Il est tard", "Je suis en retard"],
+        "answer": 1,
+        "explanation": "temer que + subjonctif = craindre que : « Temo que haya un problema » = je crains qu'il y ait un problème — inquiétude sur une éventualité."
+      },
+      {
+        "id": "q3",
+        "text": "« miedo » et « temor » :",
+        "type": "qcm",
+        "options": ["Sont contraires", "Signifient tous deux la peur (miedo = nom courant ; temor = plus soutenu)", "Sont des verbes", "Sont des adjectifs"],
+        "answer": 1,
+        "explanation": "miedo = peur (nom courant : tengo miedo) ; temor = crainte (soutenu : temo que) ; pánico = panique ; pavor = épouvante."
+      },
+      {
+        "id": "q4",
+        "text": "« Tengo miedo de los perros » signifie :",
+        "type": "qcm",
+        "options": ["J'aime les chiens", "J'ai peur des chiens", "Les chiens sont beaux", "Je promène le chien"],
+        "answer": 1,
+        "explanation": "tener miedo de + nom/infinitif = avoir peur de : « Tengo miedo de volar » = j'ai peur de prendre l'avion."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les expressions de peur et d'émotion (temer, tener miedo de que) exigent le subjonctif dans la subordonnée.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Sentiments + que + subjonctif : temo que venga, me alegro de que vengas, siento que estés triste — l'émotion commande le subjonctif."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L16_Elogiar": {
+    "title": "Elogiar — rendre hommage",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« elogiar » signifie :",
+        "type": "qcm",
+        "options": ["Critiquer", "Louer, faire l'éloge de, rendre hommage à", "Insulter", "Oublier"],
+        "answer": 1,
+        "explanation": "elogiar = faire l'éloge : « Elogió su trabajo » = il a loué son travail — exprimer l'admiration pour une personne ou un acte."
+      },
+      {
+        "id": "q2",
+        "text": "Les deux types d'adjectifs sont :",
+        "type": "qcm",
+        "options": ["Grands et petits", "Qualificatifs (propriété) et relationnels (appartenance : nacional, escolar)", "Beaux et laids", "Nombreux"],
+        "answer": 1,
+        "explanation": "Adjectif qualificatif (qualité : bueno, grande) vs relationnel (appartenance : económico, nacional, escolar — ne se gradue pas)."
+      },
+      {
+        "id": "q3",
+        "text": "Pour rendre hommage :",
+        "type": "qcm",
+        "options": ["« Es injusto »", "« ¡Bravo ! / Es admirable / Le rindo homenaje / Es un ejemplo a seguir »", "« Es malo »", "« No sé »"],
+        "answer": 1,
+        "explanation": "Hommage : ¡Bravo !, Le rindo homenaje (je lui rends hommage), Es admirable/ejemplar, Es un ejemplo a seguir (un modèle), Lo felicito."
+      },
+      {
+        "id": "q4",
+        "text": "L'adjectif relationnel se distingue par :",
+        "type": "qcm",
+        "options": ["Il est graduable", "Il ne peut pas être gradué (*muy nacional) car il exprime l'appartenance", "Il est négatif", "Il est rare"],
+        "answer": 1,
+        "explanation": "On peut être « muy bueno » (qualificatif) mais pas « *muy económico » : l'adjectif relationnel exprime un domaine, pas une qualité graduable."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « hacer un elogio » = faire un éloge ; « rendir homenaje a alguien » = rendre hommage à quelqu'un.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Formules cérémonielles : rendir homenaje a (rendre hommage à), hacer un elogio de (faire l'éloge de), tributar (rendre tribut)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L17_Expresar_la_intencion": {
+    "title": "Expresar la intención",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer une intention :",
+        "type": "qcm",
+        "options": ["« No sé »", "« Tengo la intención de… / Pienso + infinitivo / Mi propósito es… / Voy a + infinitivo »", "« Tal vez »", "« Adiós »"],
+        "answer": 1,
+        "explanation": "Intention : Tengo la intención de (j'ai l'intention de), Pienso + inf. (je compte), Mi propósito es, Voy a (je vais — futur proche), Quiero (je veux)."
+      },
+      {
+        "id": "q2",
+        "text": "« Voy a estudiar medicina » exprime :",
+        "type": "qcm",
+        "options": ["Le passé", "Un projet/intention proche : je vais étudier la médecine", "Un ordre", "Une question"],
+        "answer": 1,
+        "explanation": "ir a + infinitivo = futur proche + projet : « Voy a aprender español » = je vais apprendre l'espagnol — la forme la plus courante d'intention."
+      },
+      {
+        "id": "q3",
+        "text": "« pensar + infinitivo » signifie :",
+        "type": "qcm",
+        "options": ["Réfléchir", "Avoir l'intention de : « Pienso viajar » = je compte voyager", "Dormir", "Penser à"],
+        "answer": 1,
+        "explanation": "pensar + infinitivo = projeter de : « Pienso ir al médico » = je compte aller chez le médecin — projet réfléchi."
+      },
+      {
+        "id": "q4",
+        "text": "« Mi propósito es terminar el año con buenas notas » signifie :",
+        "type": "qcm",
+        "options": ["Mon rêve est de dormir", "Mon but/intention est de finir l'année avec de bonnes notes", "Je suis paresseux", "J'ai fini l'école"],
+        "answer": 1,
+        "explanation": "propósito = but, intention : exprime une volonté déterminée — langage de la résolution ou de l'objectif."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « tener la intención de » est plus soutenu que « voy a » mais les deux expriment un projet futur.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Registre : voy a (courant, parlé) ; tengo la intención de / mi propósito es (formel) — même contenu intentionnel, autre ton."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L18_Expresar_la_esperanza": {
+    "title": "Expresar la esperanza",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour exprimer l'espoir :",
+        "type": "qcm",
+        "options": ["« ¡Qué lástima ! »", "« Espero que… / Ojalá… / Tengo la esperanza de… / Con suerte… »", "« Estoy enfadado »", "« No sé »"],
+        "answer": 1,
+        "explanation": "Espoir : Espero que + subj. (j'espère que), Ojalá + subj. (puisse… !), Tengo la esperanza de, Con suerte (avec de la chance), Esperemos que."
+      },
+      {
+        "id": "q2",
+        "text": "« Ojalá » exprime :",
+        "type": "qcm",
+        "options": ["Un fait", "Un vœu ardent (de l'arabe 'si Dieu le veut') : Ojalá + subjonctif = puisse… !", "Un adieu", "Un nom"],
+        "answer": 1,
+        "explanation": "¡Ojalá ! = plaise à Dieu / si seulement : « ¡Ojalá apruebe el examen ! » = puisse-t-il réussir l'examen ! — vœu très expressif."
+      },
+      {
+        "id": "q3",
+        "text": "Après « espero que », on utilise :",
+        "type": "qcm",
+        "options": ["L'indicatif", "Le subjonctif (espérance sur une action future ou incertaine)", "L'infinitif", "L'impératif"],
+        "answer": 1,
+        "explanation": "esperar que + subjonctif : « Espero que vengas » = j'espère que tu viendras — l'espoir porte sur une éventualité → subjonctif."
+      },
+      {
+        "id": "q4",
+        "text": "« esperar » a trois sens :",
+        "type": "qcm",
+        "options": ["attendre seulement", "attendre, espérer, attendre de (une personne)", "dormir", "manger"],
+        "answer": 1,
+        "explanation": "esperar : attendre (espero el bus), espérer (espero aprobar), attendre quelqu'un (te espero) — le contexte départage."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « espero » (j'espère) et « espero » (j'attends) sont le même verbe esperar conjugué à la 1ʳᵉ personne.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "esperar : espero = j'attends OU j'espère — le sens se déduit du contexte : « Espero el autobús » (attendre) vs « Espero que venga » (espérer)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L19_Dar_consignas": {
+    "title": "Dar consignas",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une consigne (consigna) est :",
+        "type": "qcm",
+        "options": ["Un compliment", "Une instruction précise à suivre (ordre de travail, règle, directive)", "Un poème", "Une question"],
+        "answer": 1,
+        "explanation": "La consigne guide l'action : « Redacta un resumen de 10 líneas » — l'enseignant, le règlement ou la loi donne une directive à exécuter."
+      },
+      {
+        "id": "q2",
+        "text": "Les formes de la consigne sont :",
+        "type": "qcm",
+        "options": ["Uniquement l'impératif", "L'impératif, l'infinitif et hay que/debe + infinitivo", "Le subjonctif", "Le passé"],
+        "answer": 1,
+        "explanation": "Consigne par : impératif (Abre el libro), infinitif (No fumar), impersonnel (Hay que respetar / Se debe pagar), nom (Prohibido el paso)."
+      },
+      {
+        "id": "q3",
+        "text": "« No fumar » est une consigne :",
+        "type": "qcm",
+        "options": ["Positive par l'impératif", "Négative par l'infinitif = interdiction impersonnelle", "Une question", "Un compliment"],
+        "answer": 1,
+        "explanation": "Infinitif + no = panneau d'interdiction : No fumar (défense de fumer), No pasar (ne pas passer), Prohibido fumar."
+      },
+      {
+        "id": "q4",
+        "text": "« Hay que llegar a tiempo » est une consigne :",
+        "type": "qcm",
+        "options": ["Personnelle", "Impersonnelle valable pour tous : il faut arriver à l'heure", "Une question", "Un vœu"],
+        "answer": 1,
+        "explanation": "hay que + infinitivo = règle générale impersonnelle : « Hay que silenciar el móvil » = il faut mettre le téléphone en silencieux."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « Se ruega no tocar » est une consigne indirecte plus polie que « No toques ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Se ruega (on prie de) = consigne polie des musées et panneaux officiels — version douce de l'interdiction impersonnelle."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L20_Expresar_la_solicitacion": {
+    "title": "Expresar la solicitación",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "« solicitar » signifie :",
+        "type": "qcm",
+        "options": ["Refuser", "Solliciter, demander formellement (demande, postulation)", "Offrir", "Commander"],
+        "answer": 1,
+        "explanation": "solicitar = demander formellement : solicitar un empleo (postuler), solicitar información, una solicitud = une demande (candidature)."
+      },
+      {
+        "id": "q2",
+        "text": "Les formes de la sollicitation sont :",
+        "type": "qcm",
+        "options": ["L'impératif seul", "« Le solicito… / ¿Podría… ? / Le agradecería que… / Quisiera pedirle… »", "Des insultes", "Des questions"],
+        "answer": 1,
+        "explanation": "Sollicitation polie : Le solicito + nom, ¿Podría + infinitivo ? (pourriez-vous), Le agradecería que + subj., Quisiera pedirle — registre formel."
+      },
+      {
+        "id": "q3",
+        "text": "« ¿Podría ayudarme, por favor ? » est :",
+        "type": "qcm",
+        "options": ["Un ordre", "Une demande polie = pourriez-vous m'aider s'il vous plaît ?", "Une insulte", "Une question d'examen"],
+        "answer": 1,
+        "explanation": "¿Podría + infinitivo ? = conditionnel de politesse : la forme la plus courante de la demande respectueuse en espagnol."
+      },
+      {
+        "id": "q4",
+        "text": "« Una solicitud de empleo » est :",
+        "type": "qcm",
+        "options": ["Un CV", "Une demande d'emploi / candidature", "Un salaire", "Un métier"],
+        "answer": 1,
+        "explanation": "solicitud = demande écrite formelle : solicitud de empleo (demande d'emploi), solicitud de beca (demande de bourse) — document administratif."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « Le agradecería que me enviara el documento » est une sollicitation très polie (conditionnel + imparfait du subjonctif).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Le agradecería que + subjonctif imparfait = je vous serais reconnaissant de bien vouloir… — la formule la plus élégante de la lettre officielle espagnole."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L21_Aconsejar": {
+    "title": "Aconsejar",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour conseiller :",
+        "type": "qcm",
+        "options": ["« Te prohíbo »", "« Te aconsejo + infinitivo / Deberías + infinitivo / Te recomiendo + subj. / Es mejor que + subj. »", "« Está mal »", "« Adiós »"],
+        "answer": 1,
+        "explanation": "Conseil : Te aconsejo + infinitivo, Deberías (tu devrais), Te recomiendo que + subj., Es mejor que + subj., Yo que tú… (si j'étais toi)."
+      },
+      {
+        "id": "q2",
+        "text": "« Deberías dormir más » signifie :",
+        "type": "qcm",
+        "options": ["Tu dors trop", "Tu devrais dormir plus", "Tu dois dormir", "Je dors"],
+        "answer": 1,
+        "explanation": "deberías (conditionnel de deber) = tu devrais — conseil adouci : « Deberías hacer deporte » = tu devrais faire du sport."
+      },
+      {
+        "id": "q3",
+        "text": "« Yo que tú, iría al médico » est :",
+        "type": "qcm",
+        "options": ["Un ordre", "Un conseil indirect : si j'étais toi, j'irais chez le médecin", "Une question", "Un reproche"],
+        "answer": 1,
+        "explanation": "« Yo que tú » + conditionnel = conseil par identification : on se met à la place de l'autre — très naturel à l'oral."
+      },
+      {
+        "id": "q4",
+        "text": "« Te recomiendo que descanses » utilise :",
+        "type": "qcm",
+        "options": ["L'indicatif", "Le subjonctif (recommandation)", "L'impératif", "Le passé"],
+        "answer": 1,
+        "explanation": "recomendar/aconsejar que + subjonctif : « Te recomiendo que estudies » — le conseil porte sur une action souhaitée → subjonctif."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « Es mejor que + subjonctif » et « Es bueno + infinitivo » donnent tous deux un conseil impersonnel ou personnel.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Es mejor que + subj. = c'est mieux que tu (conseil ciblé) ; Es bueno + inf. = il est bon de (conseil général) — deux registres du conseil."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L22_Dar_ordenes": {
+    "title": "Dar órdenes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour donner un ordre :",
+        "type": "qcm",
+        "options": ["« Por favor »", "L'impératif : « ¡Ven ! / ¡Siéntate ! / ¡Cállate ! » ou « Te ordeno que + subj. »", "« Tal vez »", "« Gracias »"],
+        "answer": 1,
+        "explanation": "Ordre : impératif (¡Ven ! ¡Habla !), infinitif de règlement (Silencio), Te ordeno/mando que + subj., ¡Fuera ! (dehors !), ¡Vamos !"
+      },
+      {
+        "id": "q2",
+        "text": "L'impératif de « venir » au tu es :",
+        "type": "qcm",
+        "options": ["vienes", "ven (irrégulier)", "vena", "venga"],
+        "answer": 1,
+        "explanation": "Impératif tu irrégulier : ven (venir), ve (ir), di (decir), haz (hacer), pon (poner), sal (salir), ten (tener), sé (ser)."
+      },
+      {
+        "id": "q3",
+        "text": "« ¡Cállate ! » est un ordre pour :",
+        "type": "qcm",
+        "options": ["Parler", "Se taire (callarse = se taire)", "Manger", "Dormir"],
+        "answer": 1,
+        "explanation": "¡Cállate ! = tais-toi ! (verbe pronominal callarse). Attention à la correction : on dit à un proche, pas à un supérieur."
+      },
+      {
+        "id": "q4",
+        "text": "La négation de l'impératif utilise :",
+        "type": "qcm",
+        "options": ["No + impératif", "No + subjonctif présent : « No vengas » = ne viens pas", "Nunca + infinitif", "No + indicatif"],
+        "answer": 1,
+        "explanation": "Interdiction : no + subjonctif présent : No fumes (ne fume pas), No entres (n'entre pas), No lo hagas (ne le fais pas)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « ¡Venga ! » (vouvoiement) et « ¡Ven ! » (tutoiement) sont deux formes d'impératif de venir.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "ven = impératif tu (familier) ; venga = impératif usted (formel, = subjonctif présent) — niveau de politesse différent."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L23_Convencer": {
+    "title": "Convencer",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Pour convaincre quelqu'un :",
+        "type": "qcm",
+        "options": ["L'insulter", "Présenter des arguments : « Créeme, es bueno para ti / Piénsalo bien / Te conviene »", "Crier", "Partir"],
+        "answer": 1,
+        "explanation": "Convaincre = persuader par des raisons : Créeme (crois-moi), Piénsalo (réfléchis), Te conviene (ça t'avantage), Mira los hechos (regarde les faits)."
+      },
+      {
+        "id": "q2",
+        "text": "« convencer » et « persuadir » :",
+        "type": "qcm",
+        "options": ["Sont contraires", "Signifient tous deux amener quelqu'un à changer d'avis ou d'attitude", "Sont des noms", "Signifient menacer"],
+        "answer": 1,
+        "explanation": "convencer = persuader : « Lo convencí de quedarse » = je l'ai convaincu de rester — la persuasion s'appuie sur les arguments, pas la force."
+      },
+      {
+        "id": "q3",
+        "text": "« Te conviene estudiar » signifie :",
+        "type": "qcm",
+        "options": ["Tu es paresseux", "C'est dans ton intérêt d'étudier", "Tu étudies trop", "Étudie !"],
+        "answer": 1,
+        "explanation": "convenir = convenir/être bon : « Te conviene + infinitivo » argumente par l'intérêt personnel — technique persuasive douce."
+      },
+      {
+        "id": "q4",
+        "text": "Convaincre diffère d'ordonner par :",
+        "type": "qcm",
+        "options": ["Rien", "La méthode : convaincre persuade par les arguments ; ordonner impose par l'autorité", "La longueur", "Le volume"],
+        "answer": 1,
+        "explanation": "convencer ≠ ordenar : la persuasion laisse l'autre libre de décider, l'ordre impose — nuance du pouvoir de langage."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : pour convaincre, on combine souvent consigne + justification : « Ven a votar porque es tu deber cívico ».",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Schéma persuasif : proposition (Ven a votar) + raison (porque es tu deber) — l'argument fait l'efficacité de la persuasion."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L24_Comentar_una_imagen": {
+    "title": "Comentar una imagen",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Commenter une image se fait en :",
+        "type": "qcm",
+        "options": ["Une seule phrase", "4 étapes : description, analyse, interprétation, opinion personnelle", "Un dessin", "Une traduction"],
+        "answer": 1,
+        "explanation": "Méthode : 1) décrire objectivement (qué veo), 2) analyser les éléments (colores, composición), 3) interpréter le sens (qué significa), 4) donner son avis (mi opinión)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour décrire une image on dit :",
+        "type": "qcm",
+        "options": ["« No veo nada »", "« En la imagen veo… / Se observa… / A la izquierda hay… »", "« Me voy »", "« Está mal »"],
+        "answer": 1,
+        "explanation": "Description : En la imagen veo (dans l'image je vois), Se observa (on observe), A la izquierda/derecha (à gauche/droite), En primer plano (au premier plan), Al fondo (à l'arrière-plan)."
+      },
+      {
+        "id": "q3",
+        "text": "« En primer plano » signifie :",
+        "type": "qcm",
+        "options": ["Au premier plan (avant)", "Au fond", "Sur le côté", "En haut"],
+        "answer": 0,
+        "explanation": "Vocabulaire spatial de l'image : en primer plano (avant-plan), al fondo (arrière-plan), a la izquierda/derecha, en el centro, arriba/abajo."
+      },
+      {
+        "id": "q4",
+        "text": "L'interprétation de l'image répond à la question :",
+        "type": "qcm",
+        "options": ["Quoi ?", "Que veut dire l'image ? Quel est son message ?", "Qui l'a peinte ?", "Quelle heure est-il ?"],
+        "answer": 1,
+        "explanation": "Interpréter = dégager l'intention : qué mensaje transmite, qué quiere decir — l'image dit quelque chose au-delà de ce qu'elle montre."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « Me parece que la imagen critica… » est une formule d'opinion adaptée à l'étape d'interprétation ou de jugement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Le commentaire se conclut par un avis argumenté : Me parece que, En mi opinión, Creo que la imagen quiere… — marque l'engagement personnel."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L26_Redactar_un_dialogo": {
+    "title": "Redactar un diálogo",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les éléments du dialogue écrit sont :",
+        "type": "qcm",
+        "options": ["Uniquement les répliques", "Les personnages, les répliques (parlées) et les didascalies (indications scéniques)", "Des images", "Des chiffres"],
+        "answer": 1,
+        "explanation": "Dialogue = répliques des personnages + didascalies (entra, sale, dice gritando) qui précisent gestes, tons et déplacements."
+      },
+      {
+        "id": "q2",
+        "text": "En espagnol, la réplique est introduite par :",
+        "type": "qcm",
+        "options": ["Des guillemets", "Le tiret cadratin (—) : « —Hola, ¿cómo estás? »", "Deux points", "Rien"],
+        "answer": 1,
+        "explanation": "Convention typographique espagnole : le tiret long (—) marque chaque prise de parole, pas les guillemets français."
+      },
+      {
+        "id": "q3",
+        "text": "Discours direct → indirect : « ayer » devient :",
+        "type": "qcm",
+        "options": ["hoy", "el día anterior / aquel día", "mañana", "ahora"],
+        "answer": 1,
+        "explanation": "Marqueurs temporels : ayer → el día anterior, hoy → ese día, mañana → el día siguiente, ahora → entonces, aquí → allí."
+      },
+      {
+        "id": "q4",
+        "text": "« Me dijo : \"Estoy cansado\" » au discours indirect :",
+        "type": "qcm",
+        "options": ["Me dijo que estoy cansado", "Me dijo que estaba cansado", "Me dijo cansado", "Me dije cansado"],
+        "answer": 1,
+        "explanation": "Recul temporel : estoy → estaba (présent → imparfait) car le verbe rapporteur est au passé : me dijo que estaba cansado."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : dans un dialogue, chaque changement d'interlocuteur mérite une nouvelle réplique précédée du tiret.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Clarté du dialogue : — réplique A / — réplique B / — réplique A : on sait qui parle à chaque tiret (éventuellement + didascalie)."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L27_Producir_un_relato": {
+    "title": "Producir un relato",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les éléments du récit sont :",
+        "type": "qcm",
+        "options": ["Des chiffres", "Le narrateur, les personnages, l'espace (lieu), le temps et l'intrigue", "Des images", "Des lois"],
+        "answer": 1,
+        "explanation": "Constituants narratifs : qui raconte (narrador), qui agit (personajes), où (espacio), quand (tiempo), quoi (acción/intriga avec nœud et dénouement)."
+      },
+      {
+        "id": "q2",
+        "text": "La structure du récit suit :",
+        "type": "qcm",
+        "options": ["Le hasard", "Situation initiale → élément perturbateur → péripéties → dénouement", "La fin d'abord", "Pas d'ordre"],
+        "answer": 1,
+        "explanation": "Schéma narratif : équilibre initial rompu par un événement, complications, puis résolution (dénouement) — structure du conte et du roman."
+      },
+      {
+        "id": "q3",
+        "text": "Les marcadores textuales (marqueurs narratifs) sont :",
+        "type": "qcm",
+        "options": ["Adjectifs", "Temps du passé, connecteurs chronologiques et expressions spatiales qui guident le lecteur", "Des chiffres", "Des titres"],
+        "answer": 1,
+        "explanation": "Marqueurs : una vez, había una vez, entonces, de repente, mientras tanto, al final — plus les temps du récit (imparfait, passé simple)."
+      },
+      {
+        "id": "q4",
+        "text": "« Había una vez… » est :",
+        "type": "qcm",
+        "options": ["Une fin", "L'ouverture classique du conte espagnol (= il était une fois)", "Un titre", "Un adieu"],
+        "answer": 1,
+        "explanation": "« Había una vez » = il était une fois : l'incipit traditionnel du cuento, suivi d'un lieu et d'un personnage : « …un bosque donde vivía… »"
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le dénouement est la conclusion du récit où se résout le nœud de l'intrigue.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Dénouement (desenlace) = résolution finale : heureuse (happy end) ou tragique — l'intrigue se dénoue et le récit se clôt."
+      }
+    ]
+  },
+  "Fiche_ESP_1A_L28_Argumentar": {
+    "title": "Argumentar",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Argumenter consiste à :",
+        "type": "qcm",
+        "options": ["Raconter", "Défendre une thèse par des arguments (raisons) et des exemples", "Décrire", "Demander"],
+        "answer": 1,
+        "explanation": "L'argumentation persuade : thèse (ce qu'on défend) + arguments (raisons) + exemples (illustrations) + conclusion — écrit ou oral."
+      },
+      {
+        "id": "q2",
+        "text": "Les marqueurs argumentatifs sont :",
+        "type": "qcm",
+        "options": ["ayer, mañana", "en primer lugar, además, por lo tanto, sin embargo, en conclusión", "muy, tan", "¡hola!"],
+        "answer": 1,
+        "explanation": "Connecteurs : en primer lugar (d'abord), además (de plus), sin embargo (cependant), por lo tanto/por eso (donc), en conclusión (en conclusion)."
+      },
+      {
+        "id": "q3",
+        "text": "« sin embargo » exprime :",
+        "type": "qcm",
+        "options": ["L'accord", "L'opposition : cependant, néanmoins", "La cause", "Le temps"],
+        "answer": 1,
+        "explanation": "sin embargo = cependant : marque le contre-argument ou la nuance : « Es difícil; sin embargo, es posible »."
+      },
+      {
+        "id": "q4",
+        "text": "Le plan d'argumentation type est :",
+        "type": "qcm",
+        "options": ["Au hasard", "Introduction (thèse) → arguments + exemples → contre-argument réfuté → conclusion", "Conclusion d'abord", "Des dialogues"],
+        "answer": 1,
+        "explanation": "Structure dialectique : poser la thèse, la justifier (2-3 arguments illustrés), envisager et réfuter l'objection, conclure — le plan de la dissertation."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : « por lo tanto » et « por eso » introduisent la conséquence logique d'un raisonnement.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Conséquence/conclusion : por lo tanto (par conséquent), por eso (c'est pourquoi), en consecuencia, así pues — relient l'argument à sa conclusion."
+      }
+    ]
+  }
+}

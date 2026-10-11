@@ -1,0 +1,407 @@
+{
+  "Fiche_SVT_4eme_L1_Transformations_corps_adolescence": {
+    "title": "Les transformations du corps à l'adolescence",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La puberté est la période :",
+        "type": "qcm",
+        "options": ["De la naissance à 10 ans", "Où le corps de l'enfant se transforme en corps d'adulte capable de se reproduire", "Qui suit la vieillesse", "Réservée aux filles"],
+        "answer": 1,
+        "explanation": "La puberté désigne l'ensemble des transformations morphologiques, physiologiques et psychologiques qui font passer de l'enfance à l'âge adulte ; elle survient vers 11-13 ans chez la fille et 12-14 ans chez le garçon."
+      },
+      {
+        "id": "q2",
+        "text": "Quel signe de puberté est commun aux deux sexes ?",
+        "type": "qcm",
+        "options": ["Les règles", "La poussée des poils pubiens et l'apparition de l'acné", "Le développement des seins", "La mue de la voix"],
+        "answer": 1,
+        "explanation": "Les signes communs : croissance rapide, pilosité (pubis, aisselles), acné, transpiration plus importante. Les règles et le développement des seins sont propres à la fille ; la mue de la voix et l'éjaculation sont propres au garçon."
+      },
+      {
+        "id": "q3",
+        "text": "Les premières règles chez la fille sont appelées :",
+        "type": "qcm",
+        "options": ["Ovulation", "Ménarche", "Ménopause", "Fécondation"],
+        "answer": 1,
+        "explanation": "Le ménarche est l'apparition des premières règles (menstruations) : il marque le début des cycles ovariens et signifie que la fille peut désormais être enceinte."
+      },
+      {
+        "id": "q4",
+        "text": "Sur le plan physiologique, la puberté se traduit par :",
+        "type": "qcm",
+        "options": ["L'arrêt de la croissance", "La mise en fonctionnement des organes génitaux (ovaires et testicules)", "La disparition des poils", "Une baisse des hormones"],
+        "answer": 1,
+        "explanation": "Sous l'effet des hormones, les ovaires produisent des ovules et les testicules des spermatozoïdes : les organes génitaux deviennent fonctionnels."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les transformations psychologiques de l'adolescence incluent la recherche d'indépendance et les changements d'humeur.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'adolescence s'accompagne de transformations psychologiques : besoin d'autonomie, importance du regard des autres, timidité ou audace, instabilité de l'humeur."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L2_Cellules_sexuelles": {
+    "title": "Les cellules sexuelles et la fécondation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les gamètes sont :",
+        "type": "qcm",
+        "options": ["Les cellules de la peau", "Les cellules reproductrices : spermatozoïde (mâle) et ovule (femelle)", "Des hormones", "Des organes génitaux"],
+        "answer": 1,
+        "explanation": "Les gamètes sont les cellules de la reproduction : le spermatozoïde (petit, mobile, produit par les testicules) et l'ovule (grosse cellule immobile produite par les ovaires)."
+      },
+      {
+        "id": "q2",
+        "text": "La fécondation a lieu habituellement :",
+        "type": "qcm",
+        "options": ["Dans l'utérus", "Dans le tiers externe de la trompe de Fallope", "Dans le vagin", "Dans l'ovaire"],
+        "answer": 1,
+        "explanation": "Après l'ovulation, l'ovule est capté par la trompe ; les spermatozoïdes remontent le vagin, l'utérus puis la trompe : la rencontre se fait dans le tiers externe de la trompe."
+      },
+      {
+        "id": "q3",
+        "text": "La fécondation est :",
+        "type": "qcm",
+        "options": ["La rencontre de plusieurs spermatozoïdes avec l'ovule", "L'union d'un seul spermatozoïde et de l'ovule formant une cellule-œuf", "La sortie de l'ovule de l'ovaire", "La nidation"],
+        "answer": 1,
+        "explanation": "Un seul spermatozoïde franchit la membrane de l'ovule ; les noyaux des deux gamètes fusionnent pour former la cellule-œuf (zygote), première cellule du nouvel individu."
+      },
+      {
+        "id": "q4",
+        "text": "Après la fécondation, la cellule-œuf :",
+        "type": "qcm",
+        "options": ["Reste immobile dans la trompe", "Se divise en descendant vers l'utérus où elle se fixe (nidation)", "Meurt en 24 h", "Retourne dans l'ovaire"],
+        "answer": 1,
+        "explanation": "La cellule-œuf subit des divisions successives (segmentation) pendant sa migration vers l'utérus, où l'embryon s'implante dans la muqueuse : c'est la nidation, début de la grossesse."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : si la fécondation n'a pas lieu, l'ovule est éliminé lors des règles.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Sans fécondation, l'ovule non fécondé dégénère et la muqueuse utérine épaissie se détache : c'est l'écoulement des règles."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L3_Formation_roches_endogenes": {
+    "title": "Formation des roches endogènes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une roche endogène est une roche formée :",
+        "type": "qcm",
+        "options": ["Par accumulation de débris", "Par refroidissement du magma", "Par action du vent", "Par les fossiles"],
+        "answer": 1,
+        "explanation": "Les roches endogènes naissent du refroidissement du magma (roche fondue) : en profondeur pour les roches plutoniques (refroidissement lent), en surface ou sous l'eau pour les roches volcaniques (refroidissement rapide)."
+      },
+      {
+        "id": "q2",
+        "text": "Le granite est une roche :",
+        "type": "qcm",
+        "options": ["Volcanique formée en surface", "Plutonique à structure grenue formée en profondeur", "Sédimentaire", "Vitreuse"],
+        "answer": 1,
+        "explanation": "Le granite s'est formé par refroidissement lent du magma en profondeur : les minéraux ont eu le temps de cristalliser en cristaux visibles à l'œil nu — c'est la structure grenue."
+      },
+      {
+        "id": "q3",
+        "text": "Le basalte se forme :",
+        "type": "qcm",
+        "options": ["En profondeur par refroidissement lent", "En surface par refroidissement rapide de la lave", "Par compaction de sédiments", "Dans les rivières"],
+        "answer": 1,
+        "explanation": "Le basalte est une roche volcanique : la lave refroidit vite en surface, les cristaux n'ont pas le temps de croître → structure microlitique (cristaux microscopiques)."
+      },
+      {
+        "id": "q4",
+        "text": "L'expérience du refroidissement du bichromate de potassium fondu montre que :",
+        "type": "qcm",
+        "options": ["Le refroidissement rapide donne de gros cristaux", "Le refroidissement lent donne de gros cristaux, le rapide de petits", "Le refroidissement ne change rien", "La matière disparaît"],
+        "answer": 1,
+        "explanation": "Refroidi lentement, le sel fondu forme de grands cristaux (analogie avec le granite) ; refroidi rapidement, il forme de fins cristaux voire un verre (analogie avec le basalte/l'obsidienne)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'obsidienne (verre volcanique) résulte d'un refroidissement brutal du magma.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'obsidienne a une structure vitreuse (aucun cristal) : la lave s'est figée si vite que les minéraux n'ont pas pu cristalliser."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L4_Degradation_roches": {
+    "title": "La dégradation des roches",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La dégradation des roches se déroule :",
+        "type": "qcm",
+        "options": ["En une seule étape", "Par étapes : fissuration, fragmention puis altération chimique", "Uniquement sous l'eau", "La nuit"],
+        "answer": 1,
+        "explanation": "Les roches se dégradent progressivement : les fissures s'élargissent (mécanique) puis les minéraux sont transformés par les agents chimiques (eau, air, végétaux)."
+      },
+      {
+        "id": "q2",
+        "text": "L'action mécanique du gel sur une roche consiste en :",
+        "type": "qcm",
+        "options": ["La dissolution des minéraux", "L'éclatement de la roche car l'eau augmente de volume en gelant dans les fissures", "Le chauffage de la roche", "Le dépôt de sel"],
+        "answer": 1,
+        "explanation": "L'eau infiltrée dans les fissures gèle et prend plus de volume (~9 %) : la pression exercée éclate la roche. C'est la cryoclastie, efficace en montagne."
+      },
+      {
+        "id": "q3",
+        "text": "Les agents de dégradation des roches sont :",
+        "type": "qcm",
+        "options": ["Uniquement l'eau", "L'eau, le gel, le vent, les variations de température et les êtres vivants (racines, lichens)", "Uniquement les animaux", "Le feu"],
+        "answer": 1,
+        "explanation": "Les agents sont mécaniques (gel, variations thermiques, vent, ruissellement, racines) et chimiques (eau chargée en gaz carbonique, acides des végétaux) qui dissolvent ou transforment les minéraux."
+      },
+      {
+        "id": "q4",
+        "text": "L'eau chargée en dioxyde de carbone attaque le calcaire en le :",
+        "type": "qcm",
+        "options": ["Fondant", "Dissolvant (carbonatation)", "Colorant", "Durcissant"],
+        "answer": 1,
+        "explanation": "L'eau + CO₂ forme un acide faible qui dissout le calcaire : c'est la carbonatation, responsable des grottes et du relief karstique."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la dégradation des roches fournit les éléments qui participent à la formation des sols.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les fragments et minéraux altérés issus de la dégradation constituent l'arène et les éléments fins du sol : la dégradation est la première étape de la pédogenèse."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L5_Formation_des_sols": {
+    "title": "La formation des sols",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un sol se forme :",
+        "type": "qcm",
+        "options": ["En un jour", "Par un processus lent de mise en place de couches appelées horizons", "Par éruption volcanique", "Par pollution"],
+        "answer": 1,
+        "explanation": "La pédogenèse est un processus très lent (des centaines d'années) : les débris de roche altérés s'organisent en couches superposées, les horizons, qui forment le profil du sol."
+      },
+      {
+        "id": "q2",
+        "text": "L'horizon A (ou horizon organo-minéral) est :",
+        "type": "qcm",
+        "options": ["La couche de roche mère", "La couche supérieure riche en humus et en vie", "La couche de sable pur", "Le sous-sol"],
+        "answer": 1,
+        "explanation": "De haut en bas : horizon A (humus mélangé aux minéraux, zone de vie et de lessivage), horizon B (accumulation d'argile et d'oxydes), horizon C (roche mère fragmentée)."
+      },
+      {
+        "id": "q3",
+        "text": "L'humus provient de :",
+        "type": "qcm",
+        "options": ["La roche fondue", "La décomposition des restes végétaux et animaux par les organismes du sol", "L'eau de pluie", "Le sable"],
+        "answer": 1,
+        "explanation": "L'humus est la matière organique décomposée par les décomposeurs (vers de terre, champignons, bactéries) : il donne sa couleur foncée et sa fertilité à l'horizon A."
+      },
+      {
+        "id": "q4",
+        "text": "Le tri manuel d'un échantillon de sol permet de distinguer :",
+        "type": "qcm",
+        "options": ["Uniquement du sable", "Des constituants d'origine minérale (cailloux, sable, limon, argile) et organique (restes d'êtres vivants)", "Des microbes", "De l'eau"],
+        "answer": 1,
+        "explanation": "Le sol est un mélange : éléments minéraux issus de la roche dégradée + éléments organiques issus des êtres vivants + eau + air dans les pores."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les vers de terre participent à la formation du sol en brassant la matière et en digérant les débris.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "La faune du sol (lombrics, termites) mélange les horizons, aère le sol et transforme les débris en humus : ce sont des agents essentiels de la pédogenèse."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L6_Textures_des_sols": {
+    "title": "Les textures des sols",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'analyse granulométrique consiste à :",
+        "type": "qcm",
+        "options": ["Peser le sol", "Séparer et mesurer les proportions des particules selon leur taille (tamisage et sédimentation)", "Compter les vers", "Mesurer le pH"],
+        "answer": 1,
+        "explanation": "On classe les particules minérales par taille : cailloux/graviers (> 2 mm), sables (2 mm – 0,02 mm), limons (0,02 – 0,002 mm) et argiles (< 0,002 mm)."
+      },
+      {
+        "id": "q2",
+        "text": "La texture d'un sol est définie par :",
+        "type": "qcm",
+        "options": ["Sa couleur", "Les proportions relatives de sable, limon et argile", "Sa profondeur", "Sa température"],
+        "answer": 1,
+        "explanation": "La texture = pourcentages des trois fractions fines (sable, limon, argile) déterminés par analyse ; elle se représente sur le diagramme triangulaire des textures."
+      },
+      {
+        "id": "q3",
+        "text": "Un sol équilibré (texture « limoneuse » ou franche) contient :",
+        "type": "qcm",
+        "options": ["100 % d'argile", "Des proportions équilibrées des trois fractions, favorable à l'agriculture", "Uniquement du sable", "Uniquement du limon"],
+        "answer": 1,
+        "explanation": "Le meilleur sol agricole associe ~ 1/3 de sable (aération, drainage), ~ 1/3 de limon (fraîcheur) et ~ 1/3 d'argile (rétention d'eau et d'éléments nutritifs)."
+      },
+      {
+        "id": "q4",
+        "text": "Un sol sableux :",
+        "type": "qcm",
+        "options": ["Retient très bien l'eau", "Draine vite et retient mal l'eau et les éléments nutritifs", "Est toujours fertile", "Ne se réchauffe jamais"],
+        "answer": 1,
+        "explanation": "Le sable a de grosses particules et de grands pores : l'eau et les engrais s'écoulent rapidement → sol léger, facile à travailler mais peu fertile sans amendement."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un sol très argileux se fissure au sec et devient collant et asphyxiant quand il est mouillé.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "L'argile a des particules très fines : mouillée elle est plastique et imperméable (asphyxie racinaire) ; sèche elle durcit et se crevasse. D'où l'intérêt de l'apport d'humus pour l'alléger."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L7_Maladies_liees_eau": {
+    "title": "Les maladies liées à l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les maladies du péril fécal se transmettent par :",
+        "type": "qcm",
+        "options": ["Les moustiques", "L'eau ou les aliments souillés par des matières fécales", "L'air", "Le contact de la peau"],
+        "answer": 1,
+        "explanation": "Le péril fécal : des microbes excrétés dans les selles contaminent l'eau ou les aliments → typhoïde, choléra, dysenteries, amibiase. L'agent passe de la bouche à l'anus puis à la bouche d'un autre hôte."
+      },
+      {
+        "id": "q2",
+        "text": "Le paludisme est transmis par :",
+        "type": "qcm",
+        "options": ["L'eau souillée bue", "La piqûre de l'anophèle femelle", "Les aliments", "La toux"],
+        "answer": 1,
+        "explanation": "Le plasmodium (agent du paludisme) est inoculé par la piqûre d'un moustique femelle du genre Anophèle ; le moustique se reproduit dans les eaux stagnantes."
+      },
+      {
+        "id": "q3",
+        "text": "La bilharziose se contracte :",
+        "type": "qcm",
+        "options": ["En buvant de l'eau bouillie", "Au contact de l'eau douce infestée de larves issues de mollusques", "Par piqûre de moustique", "En mangeant du poisson"],
+        "answer": 1,
+        "explanation": "La bilharziose (schistosomiase) : les larves libérées par des mollusques d'eau douce percent la peau des baigneurs ; les œufs du ver sont excrétés dans les urines/selles et contaminent l'eau."
+      },
+      {
+        "id": "q4",
+        "text": "Dans le cycle de la bilharziose, l'hôte intermédiaire est :",
+        "type": "qcm",
+        "options": ["Le moustique", "Le mollusque (gastéropode d'eau douce)", "Le poisson", "La mouche"],
+        "answer": 1,
+        "explanation": "Le parasite passe par deux hôtes : l'homme (hôte définitif où le ver se reproduit) et le mollusque (hôte intermédiaire où les larves se multiplient avant de recontaminer l'homme)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : l'eau stagnante favorise la reproduction du moustique vecteur du paludisme.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Les larves d'anophèles se développent dans les eaux stagnantes (mares, flaques, rizières) : assainir ces points d'eau est une mesure essentielle de lutte contre le paludisme."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L8_Lutte_maladies_eau": {
+    "title": "La lutte contre les maladies liées à l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La lutte préventive (prophylaxie) consiste à :",
+        "type": "qcm",
+        "options": ["Soigner les malades", "Empêcher la maladie d'apparaître en coupant la chaîne de transmission", "Construire des hôpitaux", "Vacciner contre toutes les maladies"],
+        "answer": 1,
+        "explanation": "La prophylaxie agit avant la maladie : eau potable, hygiène des mains et des aliments, moustiquaires, destruction des gîtes larvaires, chaussures contre la bilharziose."
+      },
+      {
+        "id": "q2",
+        "text": "La lutte curative consiste à :",
+        "type": "qcm",
+        "options": ["Prévenir la maladie", "Traiter le malade pour le guérir et tarir la source d'agents pathogènes", "Détruire les moustiques", "Assainir les marais"],
+        "answer": 1,
+        "explanation": "Le traitement curatif (médicaments contre le palu, antibiotiques contre le choléra/typhoïde, praziquantel contre la bilharziose) guérit le malade et l'empêche de recontaminer l'eau ou le vecteur."
+      },
+      {
+        "id": "q3",
+        "text": "Contre le paludisme, la mesure préventive essentielle est :",
+        "type": "qcm",
+        "options": ["Boire de l'eau minérale", "Dormir sous moustiquaire imprégnée et éliminer les eaux stagnantes", "Se vacciner chaque mois", "Éviter le poisson"],
+        "answer": 1,
+        "explanation": "La moustiquaire empêche les piqûres nocturnes de l'anophèle ; l'assainissement (vidange des eaux stagnantes, larvicides) réduit les moustiques. Ce sont les deux volets de la lutte antivectorielle."
+      },
+      {
+        "id": "q4",
+        "text": "Contre les maladies du péril fécal, les mesures efficaces sont :",
+        "type": "qcm",
+        "options": ["Se laver les mains après les selles, boire une eau saine, cuire les aliments", "Ne jamais nager", "Porter un masque", "Dormir tard"],
+        "answer": 0,
+        "explanation": "On coupe la chaîne bouche-selles : hygiène des mains, latrines éloignées des points d'eau, eau bouillie ou traitée, aliments lavés et cuits."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : traiter tous les malades de bilharziose dans un village aide à interrompre le cycle du parasite dans le milieu.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Traiter les malades tarit la source d'œufs qui contaminaient l'eau ; combiné au port de chaussures et à la lutte contre les mollusques hôtes, cela brise le cycle parasitaire."
+      }
+    ]
+  },
+  "Fiche_SVT_4eme_L9_Traitement_eau": {
+    "title": "Le traitement de l'eau",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Faire bouillir l'eau pendant quelques minutes permet de :",
+        "type": "qcm",
+        "options": ["La débarrasser des sels", "Détruire les microbes pathogènes", "La dessaler", "L'aérer"],
+        "answer": 1,
+        "explanation": "L'ébullition tue bactéries, virus et larves : c'est le moyen le plus simple et le plus sûr de rendre une eau douteuse potable. Elle ne retire ni sels ni particules."
+      },
+      {
+        "id": "q2",
+        "text": "L'expérience des 3 tubes d'eau souillée (brut / bouilli / filtré) montre que :",
+        "type": "qcm",
+        "options": ["L'ébullition et la filtration ont le même effet", "L'eau bouillie contient moins de microbes que l'eau brute", "L'eau brute est la plus saine", "La chaleur développe les microbes"],
+        "answer": 1,
+        "explanation": "Au microscope, l'eau brute grouille de micro-organismes ; après ébullition leur nombre chute fortement. La filtration retient surtout les particules, pas tous les microbes."
+      },
+      {
+        "id": "q3",
+        "text": "Le filtre à eau simple est constitué de couches de :",
+        "type": "qcm",
+        "options": ["Plastique", "Sable fin, sable grossier et gravier/charbon", "Sel", "Terre argileuse seule"],
+        "answer": 1,
+        "explanation": "Un filtre domestique superpose gravier, sable grossier, sable fin (parfois charbon) : l'eau traversant les couches laisse derrière elle particules et une partie des organismes."
+      },
+      {
+        "id": "q4",
+        "text": "Pour rendre une eau de puits vraiment potable, après filtration il faut :",
+        "type": "qcm",
+        "options": ["La laisser reposer", "La désinfecter (ébullition ou chlore) pour détruire les microbes restants", "La sucrer", "La congeler"],
+        "answer": 1,
+        "explanation": "La filtration ne retire pas tous les microbes : seule la désinfection (ébullition, eau de Javel dosée, pastilles de chlore) garantit l'innocuité microbiologique."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : une eau claire à l'œil nu est forcément potable.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Les microbes pathogènes sont invisibles à l'œil nu : une eau limpide peut être contaminée. Seule une analyse ou un traitement (ébullition/désinfection) garantit la potabilité."
+      }
+    ]
+  }
+}

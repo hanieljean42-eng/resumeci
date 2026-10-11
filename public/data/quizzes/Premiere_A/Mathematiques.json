@@ -1,0 +1,272 @@
+{
+  "Fiche_MATHS_1A_L1_Equations_et_inequations_dans_R": {
+    "title": "Équations et inéquations du second degré dans ℝ",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un polynôme du second degré a la forme :",
+        "type": "qcm",
+        "options": ["ax + b", "ax² + bx + c avec a ≠ 0", "ax³ + bx²", "a/x"],
+        "answer": 1,
+        "explanation": "P(x) = ax² + bx + c, a ≠ 0 : c'est un trinôme du second degré. Les coefficients sont réels et le terme dominant est en x²."
+      },
+      {
+        "id": "q2",
+        "text": "Le discriminant Δ = b² − 4ac sert à :",
+        "type": "qcm",
+        "options": ["Dériver", "Déterminer le nombre et la nature des racines de ax² + bx + c = 0", "Intégrer", "Factoriser tout polynôme"],
+        "answer": 1,
+        "explanation": "Δ > 0 → deux racines réelles distinctes x₁ = (−b−√Δ)/2a et x₂ = (−b+√Δ)/2a ; Δ = 0 → racine double x₀ = −b/2a ; Δ < 0 → pas de racine réelle."
+      },
+      {
+        "id": "q3",
+        "text": "Si Δ > 0, le trinôme se factorise en :",
+        "type": "qcm",
+        "options": ["(x − x₁)(x − x₂)", "a(x − x₁)(x − x₂)", "a(x − x₀)²", "Il ne se factorise pas"],
+        "answer": 1,
+        "explanation": "ax² + bx + c = a(x − x₁)(x − x₂) quand Δ > 0 ; si Δ = 0 : a(x − x₀)² ; si Δ < 0 : pas de factorisation dans ℝ."
+      },
+      {
+        "id": "q4",
+        "text": "Le signe de ax² + bx + c (a > 0) est :",
+        "type": "qcm",
+        "options": ["Toujours positif", "Positif à l'extérieur des racines, négatif entre elles", "Négatif partout", "Positif entre les racines"],
+        "answer": 1,
+        "explanation": "La parabole a > 0 s'ouvre vers le haut : P(x) > 0 pour x < x₁ et x > x₂, P(x) < 0 pour x₁ < x < x₂. « Du signe de a à l'extérieur des racines. »"
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : pour résoudre une inéquation rationnelle P(x)/Q(x) ≥ 0, on dresse un tableau de signes croisant P(x) et Q(x) en excluant les valeurs interdites.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "On factorise numérateur et dénominateur, on fait le tableau de signes, et on exclut toujours les racines de Q(x) (valeurs interdites)."
+      }
+    ]
+  },
+  "Fiche_MATHS_1A_L2_Denombrement": {
+    "title": "Dénombrement",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une p-liste d'un ensemble à n éléments est :",
+        "type": "qcm",
+        "options": ["Un sous-ensemble", "Une liste ordonnée de p éléments avec répétition possible : nᵖ", "Une permutation", "Une combinaison"],
+        "answer": 1,
+        "explanation": "La p-liste (ou arrangement avec répétition) : on choisit p éléments dans l'ordre, les éléments peuvent se répéter → nᵖ listes."
+      },
+      {
+        "id": "q2",
+        "text": "Le nombre d'arrangements de p éléments pris parmi n est :",
+        "type": "qcm",
+        "options": ["nᵖ", "A(n,p) = n!/(n−p)!", "C(n,p)", "p!"],
+        "answer": 1,
+        "explanation": "Arrangement = liste ordonnée SANS répétition : A(n,p) = n(n−1)…(n−p+1) = n!/(n−p)!. L'ordre compte : ABC ≠ ACB."
+      },
+      {
+        "id": "q3",
+        "text": "Le nombre de combinaisons de p éléments parmi n est :",
+        "type": "qcm",
+        "options": ["n!/(n−p)!", "C(n,p) = n! / [p!(n−p)!]", "nᵖ", "p!"],
+        "answer": 1,
+        "explanation": "Combinaison = sous-ensemble (l'ordre ne compte pas) : C(n,p) = A(n,p)/p!. {A,B} = {B,A} : on divise par le nombre de permutations de p éléments."
+      },
+      {
+        "id": "q4",
+        "text": "Le nombre de permutations de n éléments est :",
+        "type": "qcm",
+        "options": ["n²", "n!", "2ⁿ", "n"],
+        "answer": 1,
+        "explanation": "Permutation = arrangement de tous les éléments : P(n) = n! = n × (n−1) × … × 1. Ex. 3 éléments : 3! = 6 permutations."
+      },
+      {
+        "id": "q5",
+        "text": "De combien de façons peut-on choisir un podium (1er, 2e, 3e) parmi 10 coureurs ?",
+        "type": "qcm",
+        "options": ["C(10,3) = 120", "A(10,3) = 720", "10³ = 1000", "3! = 6"],
+        "answer": 1,
+        "explanation": "Le podium est ordonné (l'ordre compte) → arrangement : A(10,3) = 10 × 9 × 8 = 720 possibilités."
+      }
+    ]
+  },
+  "Fiche_MATHS_1A_L3_Generalites_sur_les_fonctions": {
+    "title": "Généralités sur les fonctions — parité et symétrie",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une fonction f est paire si :",
+        "type": "qcm",
+        "options": ["f(−x) = −f(x)", "f(−x) = f(x) pour tout x", "f(x) = 0", "f est croissante"],
+        "answer": 1,
+        "explanation": "f paire ⟺ f(−x) = f(x) : sa courbe est symétrique par rapport à l'axe des ordonnées (ex. x², cos x, |x|)."
+      },
+      {
+        "id": "q2",
+        "text": "Une fonction f est impaire si :",
+        "type": "qcm",
+        "options": ["f(−x) = f(x)", "f(−x) = −f(x) pour tout x", "f(x) = x²", "f est décroissante"],
+        "answer": 1,
+        "explanation": "f impaire ⟺ f(−x) = −f(x) : sa courbe est symétrique par rapport à l'origine O (ex. x, x³, sin x)."
+      },
+      {
+        "id": "q3",
+        "text": "La courbe d'une fonction paire admet comme axe de symétrie :",
+        "type": "qcm",
+        "options": ["L'axe des abscisses", "L'axe des ordonnées (x = 0)", "La bissectrice y = x", "L'origine"],
+        "answer": 1,
+        "explanation": "Parité paire → symétrie par rapport à l'axe vertical (Oy) : la partie gauche est le miroir de la partie droite."
+      },
+      {
+        "id": "q4",
+        "text": "La droite x = a est axe de symétrie de la courbe de f si :",
+        "type": "qcm",
+        "options": ["f(a) = 0", "f(a + x) = f(a − x) pour tout x", "f est paire", "f'(a) = 0"],
+        "answer": 1,
+        "explanation": "Symétrie d'axe x = a ⟺ f(a + h) = f(a − h) : les points à égale distance de a ont la même image. Ex. parabole x² → axe x = 0."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le point Ω(a ; b) est centre de symétrie de la courbe si f(a + x) + f(a − x) = 2b.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Centre de symétrie Ω(a;b) ⟺ f(a+h) + f(a−h) = 2b : la moyenne des images symétriques vaut b. Pour l'origine : f(−x) = −f(x) (fonction impaire)."
+      }
+    ]
+  },
+  "Fiche_MATHS_1A_L4_Derivabilite_et_etude_de_fonctions": {
+    "title": "Dérivabilité et étude de fonctions",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le nombre dérivé f'(a) est :",
+        "type": "qcm",
+        "options": ["La pente de la sécante", "La limite du taux d'accroissement quand h → 0 : lim [f(a+h)−f(a)]/h", "f(a)", "L'aire sous la courbe"],
+        "answer": 1,
+        "explanation": "f'(a) = lim (h→0) [f(a+h) − f(a)]/h : c'est le coefficient directeur de la tangente à la courbe au point d'abscisse a."
+      },
+      {
+        "id": "q2",
+        "text": "La dérivée de f(x) = xⁿ est :",
+        "type": "qcm",
+        "options": ["xⁿ⁻¹", "n·xⁿ⁻¹", "xⁿ⁺¹/(n+1)", "n·xⁿ"],
+        "answer": 1,
+        "explanation": "(xⁿ)' = n·xⁿ⁻¹ : (x²)' = 2x, (x³)' = 3x², (x)' = 1, (1/x)' = −1/x²."
+      },
+      {
+        "id": "q3",
+        "text": "L'équation de la tangente à la courbe en a est :",
+        "type": "qcm",
+        "options": ["y = f(a)", "y = f'(a)(x − a) + f(a)", "y = ax + b", "y = f'(x)"],
+        "answer": 1,
+        "explanation": "La tangente en a : y = f'(a)·(x − a) + f(a) — droite passant par (a ; f(a)) de coefficient directeur f'(a)."
+      },
+      {
+        "id": "q4",
+        "text": "f'(x) > 0 sur un intervalle I signifie que f est :",
+        "type": "qcm",
+        "options": ["Décroissante", "Strictement croissante sur I", "Constante", "Négative"],
+        "answer": 1,
+        "explanation": "Signe de la dérivée = sens de variation : f' > 0 → f croissante ; f' < 0 → f décroissante ; f' = 0 → extremum possible (si f' change de signe)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : un extremum relatif en a existe si f'(a) = 0 ET f' change de signe en a.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "f'(a) = 0 ne suffit pas (point d'inflexion possible comme x³ en 0) : il faut que f' s'annule ET change de signe → maximum ou minimum relatif."
+      }
+    ]
+  },
+  "Fiche_MATHS_1A_L6_Statistiques": {
+    "title": "Statistiques — séries à classes",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "L'amplitude d'une classe [a ; b[ est :",
+        "type": "qcm",
+        "options": ["a + b", "b − a", "(a + b)/2", "a × b"],
+        "answer": 1,
+        "explanation": "Amplitude = borne supérieure − borne inférieure : la classe [10 ; 20[ a pour amplitude 10."
+      },
+      {
+        "id": "q2",
+        "text": "Le centre d'une classe [a ; b[ est :",
+        "type": "qcm",
+        "options": ["b − a", "(a + b)/2", "a", "b"],
+        "answer": 1,
+        "explanation": "Centre = (borne inférieure + borne supérieure) / 2 : point milieu de la classe, utilisé pour le calcul de la moyenne."
+      },
+      {
+        "id": "q3",
+        "text": "La moyenne d'une série à classes se calcule avec :",
+        "type": "qcm",
+        "options": ["Les bornes", "Les centres de classes pondérés par les effectifs : x̄ = Σ(nᵢ·cᵢ)/N", "La médiane", "La somme des classes"],
+        "answer": 1,
+        "explanation": "On assimile chaque classe à son centre : moyenne = Σ(centre × effectif) / effectif total."
+      },
+      {
+        "id": "q4",
+        "text": "L'écart-type mesure :",
+        "type": "qcm",
+        "options": ["La moyenne", "La dispersion des valeurs autour de la moyenne", "La médiane", "Le mode"],
+        "answer": 1,
+        "explanation": "L'écart-type σ = √variance = racine de la moyenne des carrés des écarts à la moyenne : il quantifie la dispersion (homogène si faible, dispersé si fort)."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : le polygone des effectifs relie les sommets des bâtons ou les milieux des sommets des rectangles de l'histogramme.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Le polygone des effectifs joint les points (centre de classe ; effectif ou fréquence) : il dessine le profil de la distribution."
+      }
+    ]
+  },
+  "Fiche_MATHS_1A_L7_Systemes_d_inequations_lineaires": {
+    "title": "Systèmes d'inéquations linéaires — résolution graphique",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une inéquation du premier degré à deux inconnues ax + by ≤ c définit :",
+        "type": "qcm",
+        "options": ["Un point", "Un demi-plan délimité par la droite d'équation ax + by = c", "Une courbe", "Une équation"],
+        "answer": 1,
+        "explanation": "La droite ax + by = c partage le plan en deux demi-plans : l'inéquation sélectionne l'un des deux (on teste un point, souvent O)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour déterminer le bon demi-plan, on :",
+        "type": "qcm",
+        "options": ["Devine", "Teste un point (souvent l'origine O) dans l'inéquation", "Trace la parabole", "Calcule Δ"],
+        "answer": 1,
+        "explanation": "On remplace (x ; y) par les coordonnées d'un point-test : si l'inégalité est vraie, le demi-plan solution est celui contenant ce point."
+      },
+      {
+        "id": "q3",
+        "text": "Un système d'inéquations linéaires admet pour solution :",
+        "type": "qcm",
+        "options": ["Une seule droite", "L'intersection des demi-plans solutions (région polygonale)", "Un point seul", "Rien"],
+        "answer": 1,
+        "explanation": "Chaque inéquation donne un demi-plan ; l'intersection de tous ces demi-plans forme la région solution, souvent un polygone ouvert ou fermé."
+      },
+      {
+        "id": "q4",
+        "text": "Pour x + 2y ≤ 4, le point O(0 ; 0) est-il solution ?",
+        "type": "qcm",
+        "options": ["Non", "Oui : 0 + 0 = 0 ≤ 4", "On ne peut pas savoir", "Seulement si x > 0"],
+        "answer": 1,
+        "explanation": "0 + 2×0 = 0 ≤ 4 : vrai → O appartient au demi-plan solution ; on hachure le demi-plan qui ne convient pas."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : les systèmes d'inéquations modélisent des contraintes réelles (budget, ressources) dont les solutions forment une région admissible.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Programmation linéaire : les contraintes (budget, temps, stock) deviennent des inéquations → la zone des solutions possibles où optimiser (max/min) est un polygone."
+      }
+    ]
+  }
+}
