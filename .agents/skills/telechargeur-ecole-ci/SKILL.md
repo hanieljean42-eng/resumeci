@@ -62,6 +62,9 @@ Pour plusieurs classes, lance une commande par classe (séquentiellement, jamais
    Noms nettoyés : `/ \ : * ? " < > |` → `_`. Doublons de titre suffixés par l'id du cours.
 5. **Clôture** : revérifie chaque fichier (signature `%PDF-`, taille > 1 Ko) et écrit
    `[DEST]/[CLASSE]/_rapport.json` (statut par leçon : `ok`, `deja_present`, `pas_de_resume`, `erreur`, `invalide`).
+   Un PDF identique (même SHA-1) à une autre leçon est signalé `⚠️ PDF identique` et marqué `doublonDe` dans le
+   rapport : c'est en général une erreur du site (ex. PREMIERE A › Français « PL_LEÇON N°3 » et « N°5 » pointent vers un
+   PDF de Maths `TC-Maths-13…`). Ne pas en faire de fiche, le signaler à l'utilisateur.
    Code de sortie `2` s'il reste des erreurs → relancer la même commande (la reprise ne re-télécharge que le manquant).
 
 ## 4. Après le téléchargement

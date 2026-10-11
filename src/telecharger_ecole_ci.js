@@ -17,6 +17,7 @@
  *   --delai-min/--delai-max <ms>  Temporisation entre deux requêtes (défaut 1500–2500 ms).
  *   --navigateur          Force la connexion via Chrome (puppeteer-core) au lieu de HTTP.
  */
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -323,9 +324,10 @@ async function main() {
   const matieres = pickSubjects(opts.matieres, matieresSite, classe.name);
 
   const destRoot = path.resolve(opts.dest);
-  const classDir = path.join(destRoot, sanitize(opts.classe));
+  const classDir = path.join(destRoot, sanitize(classe.name));
   const report = { classe: classe.name, date: new Date().toISOString(), matieres: [] };
-  const totals = { ok: 0, skip: 0, err: 0, none: 0, bytes: 0 };
+  const totals = { ok: 0, skip: 0, err: 0, none: 0, dup: 0, bytes: 0 };
+  const seenHashes = new Map();
 
   for (const mat of matieres) {
     const matDir = path.join(classDir, sanitize(mat.name));
@@ -373,7 +375,13 @@ async function main() {
         const { buf, url } = await s.downloadPdf(link.href);
         fs.mkdirSync(dir, { recursive: true });
         fs.writeFileSync(file, buf);
-        Object.assign(rec, { statut: 'ok', pdf: url, octets: buf.length });
+        const sha1 = crypto.createHash('sha1').update(buf).digest('hex');
+        Object.assign(rec, { statut: 'ok', pdf: url, octets: buf.length, sha1 });
+        if (seenHashes.has(sha1)) {
+          rec.doublonDe = seenHashes.get(sha1);
+          totals.dup++;
+          log('⚠️', `${tag} PDF identique à « ${rec.doublonDe} » (erreur probable du site, à vérifier)`);
+        } else seenHashes.set(sha1, c.title);
         totals.ok++;
         totals.bytes += buf.length;
         log('📥', `${tag} ${base}.pdf (${(buf.length / 1024).toFixed(0)} Ko)`);
@@ -407,7 +415,7 @@ async function main() {
   fs.mkdirSync(classDir, { recursive: true });
   fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
   log('🧾', `Rapport : ${reportFile}`);
-  log('🏁', `Terminé — ${totals.ok} téléchargé(s) (${(totals.bytes / 1048576).toFixed(1)} Mo), ${totals.skip} déjà présent(s), ${totals.none} sans résumé, ${totals.err} erreur(s)`);
+  log('🏁', `Terminé — ${totals.ok} téléchargé(s) (${(totals.bytes / 1048576).toFixed(1)} Mo), ${totals.skip} déjà présent(s), ${totals.none} sans résumé, ${totals.dup} doublon(s), ${totals.err} erreur(s)`);
   process.exitCode = totals.err ? 2 : 0;
 }
 
