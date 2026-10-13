@@ -241,20 +241,47 @@ async function requireAdmin(req, res, next) {
 }
 app.use('/api/admin', requireAdmin);
 
-// Helper : retrouve le compte unique associé à un numéro (doc ID = numéro, puis champs whatsapp / contact pour les anciens comptes)
-async function findUserByPhone(cleanPhone) {
-  if (!db || !cleanPhone || cleanPhone.length !== 10) return null;
+// Helper : retrouve un compte par n'importe quel identifiant connu —
+// doc ID, champ uid, whatsapp, contact ou phone, dans tous les formats
+// courants (10 chiffres, 225XXXXXXXXXX, +225XXXXXXXXXX). Indispensable car
+// d'anciens comptes ont des doc IDs ou des champs qui ne correspondent pas
+// au numéro à 10 chiffres (sinon premium/fiches introuvables pour eux).
+async function findUserByAnyId(rawId) {
+  if (!db || rawId === undefined || rawId === null || rawId === '') return null;
   const users = db.collection('users');
-  const direct = await users.doc(cleanPhone).get();
-  if (direct.exists) return { ...direct.data(), uid: direct.data().uid || direct.id, _docId: direct.id };
-  for (const field of ['whatsapp', 'contact']) {
-    const snap = await users.where(field, '==', cleanPhone).limit(1).get();
-    if (!snap.empty) {
-      const d = snap.docs[0];
-      return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
+  const id = String(rawId).trim();
+  const digits = id.replace(/\D/g, '');
+  const phone10 = digits.length >= 10 ? digits.slice(-10) : '';
+  const candidates = new Set([id]);
+  if (phone10.length === 10) {
+    candidates.add(phone10);
+    candidates.add('225' + phone10);
+    candidates.add('+225' + phone10);
+  }
+  for (const cand of candidates) {
+    try {
+      const d = await users.doc(cand).get();
+      if (d.exists) return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
+    } catch (e) {}
+  }
+  for (const field of ['uid', 'whatsapp', 'contact', 'phone']) {
+    for (const cand of candidates) {
+      try {
+        const snap = await users.where(field, '==', cand).limit(1).get();
+        if (!snap.empty) {
+          const d = snap.docs[0];
+          return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
+        }
+      } catch (e) {}
     }
   }
   return null;
+}
+
+// Helper : retrouve le compte unique associé à un numéro (doc ID = numéro, puis champs whatsapp / contact pour les anciens comptes)
+async function findUserByPhone(cleanPhone) {
+  if (!cleanPhone || String(cleanPhone).length !== 10) return null;
+  return findUserByAnyId(cleanPhone);
 }
 
 // Helpers mots de passe : stockage haché (bcrypt). Les anciens comptes ont un champ `password` en clair,
@@ -339,35 +366,51 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
     ...extra
   };
 
-  // 1. Débloquer par UID si renseigné
-  if (uid) {
+  // 1. Résoudre le VRAI document du compte — l'uid est prioritaire (c'est le
+  // compte qui a initié le paiement) ; le téléphone sert de repli (ex. metadata
+  // perdue). Ne jamais écrire doc(uid) à l'aveugle : un uid exotique créerait
+  // un doc fantôme premium sans toucher le vrai compte.
+  const targets = new Map();
+  const resolvedUid = uid ? await findUserByAnyId(uid).catch(() => null) : null;
+  const cleanPhone = phone ? String(phone).replace(/\D/g, '').slice(-10) : '';
+  const resolvedPhone = (!resolvedUid && cleanPhone.length === 10)
+    ? await findUserByAnyId(phone).catch(() => null)
+    : null;
+  for (const u of [resolvedUid, resolvedPhone]) {
+    if (u && u._docId) targets.set(u._docId, db.collection('users').doc(u._docId));
+  }
+
+  const uidDigits = String(uid || '').replace(/\D/g, '');
+  const canonicalPhone = cleanPhone.length === 10 ? cleanPhone
+    : (uidDigits.length >= 10 ? uidDigits.slice(-10) : '');
+
+  if (targets.size === 0) {
+    // Aucun compte existant : créer un doc canonique identifié par le numéro
+    // (sinon par l'uid fourni — le paiement EST vérifié à ce stade).
+    const newId = canonicalPhone || String(uid || cleanPhone);
+    targets.set(newId, db.collection('users').doc(newId));
+  }
+
+  for (const ref of targets.values()) {
     try {
-      await db.collection('users').doc(uid).set(updateData, { merge: true });
+      await ref.set({
+        ...updateData,
+        ...(canonicalPhone ? { whatsapp: canonicalPhone, contact: canonicalPhone } : {})
+      }, { merge: true });
     } catch (e) {
-      console.warn('[Unlock] Erreur doc UID:', e.message);
+      console.warn('[Unlock] Erreur MAJ doc:', e.message);
     }
   }
 
-  // 2. Débloquer par Téléphone (format 10 chiffres ivoirien)
-  if (phone) {
-    const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
-    if (cleanPhone.length === 10) {
+  // 2. Doublons hérités : aligner tous les docs qui partagent le même contact
+  if (canonicalPhone) {
+    for (const field of ['whatsapp', 'contact']) {
       try {
-        await db.collection('users').doc(cleanPhone).set({
-          ...updateData,
-          whatsapp: cleanPhone,
-          contact: cleanPhone
-        }, { merge: true });
-      } catch (e) {}
-
-      // Mettre à jour tous les profils existants associés à ce contact
-      try {
-        const snap = await db.collection('users').where('whatsapp', '==', cleanPhone).get();
+        const snap = await db.collection('users').where(field, '==', canonicalPhone).get();
         const batch = db.batch();
-        snap.forEach(doc => {
-          batch.set(doc.ref, updateData, { merge: true });
-        });
-        await batch.commit();
+        let n = 0;
+        snap.forEach(doc => { if (!targets.has(doc.id)) { batch.set(doc.ref, updateData, { merge: true }); n++; } });
+        if (n) await batch.commit();
       } catch (e) {
         console.warn('[Unlock] Erreur MAJ batch:', e.message);
       }
@@ -545,7 +588,11 @@ app.post('/api/pay', async (req, res) => {
 
     // Réutilise la transaction encore en attente (double clic, retour arrière, serveur lent)
     // au lieu d'en créer une nouvelle chez GeniusPay à chaque tentative.
-    const userRef = db ? db.collection('users').doc(safeUid) : null;
+    // On résout le VRAI doc du compte (doc ID ≠ uid possible sur anciens comptes)
+    // pour que pendingPayment soit déposé là où /api/user-status le retrouvera.
+    const payingUser = db ? await findUserByAnyId(safeUid).catch(() => null) : null;
+    const accountDocId = payingUser ? payingUser._docId : safeUid;
+    const userRef = db ? db.collection('users').doc(accountDocId) : null;
     if (userRef) {
       const userSnap = await userRef.get().catch(() => null);
       const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
@@ -579,7 +626,7 @@ app.post('/api/pay', async (req, res) => {
         country: "CI"
       },
       metadata: {
-        uid: safeUid,
+        uid: accountDocId,
         phone: formattedPhone,
         customerPhone: cleanPhone.slice(-10),
         tierKey: tierKey,
@@ -639,9 +686,10 @@ app.post('/api/pay', async (req, res) => {
     const targetUrl = result.data?.payment_url || result.data?.checkout_url;
     if (result.success && result.data && targetUrl) {
       if (userRef && result.data.reference) {
-        userRef.update({
+        // set+merge (et non update) : fonctionne aussi si le doc vient d'être résolu
+        userRef.set({
           pendingPayment: { reference: String(result.data.reference), tierKey, checkoutUrl: targetUrl, createdAt: Date.now() }
-        }).catch(() => {});
+        }, { merge: true }).catch(() => {});
       }
       res.json({
         success: true,
@@ -907,46 +955,13 @@ const userStatusHandler = async (req, res) => {
     let foundRef = null;
 
     if (db) {
-      // 1. Recherche par numéro à 10 chiffres (doc ID)
-      if (cleanPhone.length === 10) {
-        try {
-          const docSnap = await db.collection('users').doc(cleanPhone).get();
-          if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
-          }
-        } catch (e) {}
-      }
-
-      // 2. Recherche par UID (doc ID)
-      if (!foundUser && rawUid) {
-        try {
-          const docSnap = await db.collection('users').doc(rawUid).get();
-          if (docSnap.exists) {
-            foundUser = { ...docSnap.data(), uid: docSnap.data().uid || docSnap.id }; foundRef = docSnap.ref;
-          }
-        } catch (e) {}
-      }
-
-      // 3. Recherche par champ whatsapp == cleanPhone
-      if (!foundUser && cleanPhone.length === 10) {
-        try {
-          const qSnap = await db.collection('users').where('whatsapp', '==', cleanPhone).limit(1).get();
-          if (!qSnap.empty) {
-            const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
-          }
-        } catch (e) {}
-      }
-
-      // 4. Recherche par champ contact == cleanPhone
-      if (!foundUser && cleanPhone.length === 10) {
-        try {
-          const qSnap = await db.collection('users').where('contact', '==', cleanPhone).limit(1).get();
-          if (!qSnap.empty) {
-            const doc = qSnap.docs[0];
-            foundUser = { ...doc.data(), uid: doc.data().uid || doc.id }; foundRef = doc.ref;
-          }
-        } catch (e) {}
+      // Résolution universelle : doc ID, champ uid, whatsapp/contact/phone
+      // dans tous les formats (10 chiffres, 225..., +225...) — les anciens
+      // comptes n'ont pas forcément un doc ID = numéro.
+      foundUser = (rawUid ? await findUserByAnyId(rawUid).catch(() => null) : null)
+               || (cleanPhone.length === 10 ? await findUserByAnyId(cleanPhone).catch(() => null) : null);
+      if (foundUser && foundUser._docId) {
+        foundRef = db.collection('users').doc(foundUser._docId);
       }
     }
 
@@ -1046,12 +1061,7 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     const subFiches = (getSecureFichesIndex()[cls] || {})[sub] || [];
     const isTrialFiche = subFiches.length > 0 && subFiches[0] === file;
     if (!isTrialFiche) {
-      let user = null;
-      if (db) {
-        const doc = await db.collection('users').doc(sessionUid).get();
-        if (doc.exists) user = { ...doc.data(), uid: doc.data().uid || doc.id };
-      }
-      if (!user) user = await findUserByPhone(sessionUid);
+      const user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
       const expiresAt = user ? (Number(user.premiumExpiresAt) || 0) : 0;
       const plan = String(user && (user.premiumPlan || user.plan) || '');
       const premiumActive = Boolean(user && user.isPremium && (expiresAt === 0 || expiresAt > Date.now()));
@@ -1279,21 +1289,29 @@ app.post('/api/admin/set-plan', async (req, res) => {
     if (selectedClass && CLASS_KEY_RE.test(String(selectedClass))) updateData.selectedClass = selectedClass;
 
     if (db) {
-      await db.collection('users').doc(target).set(updateData, { merge: true });
+      // Résoudre le vrai doc (doc ID ≠ uid/whatsapp possible sur anciens comptes)
+      const resolvedUser = await findUserByAnyId(target).catch(() => null);
+      const docIds = new Set([String(target)]);
+      if (resolvedUser && resolvedUser._docId) docIds.add(resolvedUser._docId);
+      if (cleanTarget.length === 10) docIds.add(cleanTarget);
+      for (const id of docIds) {
+        await db.collection('users').doc(id).set({
+          ...updateData,
+          ...(cleanTarget.length === 10 ? { whatsapp: cleanTarget, contact: cleanTarget } : {})
+        }, { merge: true }).catch(() => {});
+      }
 
       if (cleanTarget.length === 10) {
-        await db.collection('users').doc(cleanTarget).set({
-          ...updateData,
-          whatsapp: cleanTarget,
-          contact: cleanTarget
-        }, { merge: true });
-
-        const snap = await db.collection('users').where('whatsapp', '==', cleanTarget).get();
-        const batch = db.batch();
-        snap.forEach(doc => {
-          batch.set(doc.ref, updateData, { merge: true });
-        });
-        await batch.commit();
+        // Aligner aussi les doublons partageant le même contact
+        for (const field of ['whatsapp', 'contact', 'uid']) {
+          try {
+            const snap = await db.collection('users').where(field, '==', cleanTarget).get();
+            const batch = db.batch();
+            let n = 0;
+            snap.forEach(doc => { if (!docIds.has(doc.id)) { batch.set(doc.ref, updateData, { merge: true }); n++; } });
+            if (n) await batch.commit();
+          } catch (e) {}
+        }
       }
     }
 
