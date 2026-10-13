@@ -1479,18 +1479,22 @@
       white-space: nowrap;
     }
     .pmm-icon-wrap {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
       margin: 0 auto 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
-      background: #f1f5f9;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       color: #334155;
+      overflow: hidden;
+      padding: 3px;
     }
-    .pm-method-card.active .pmm-icon-wrap { background: #2563eb; color: #fff; }
+    .pmm-icon-wrap img { width: 100%; height: 100%; object-fit: contain; border-radius: 7px; display: block; }
+    .pm-method-card.active .pmm-icon-wrap { background: #ffffff; border-color: #2563eb; }
     .pmm-title { font-size: 12px; font-weight: 800; color: #1e293b; margin-bottom: 2px; }
     body.dark-mode .pmm-title { color: #f1f5f9; }
     .pmm-speed { font-size: 9.5px; color: #64748b; }
@@ -2059,25 +2063,25 @@
           <div class="payment-methods-grid">
             <div class="pm-method-card active" data-method="wave" onclick="selectPaymentMethod('wave')">
               <div class="pmm-badge">Recommandé</div>
-              <div class="pmm-icon-wrap">🌊</div>
+              <div class="pmm-icon-wrap"><img src="assets/pay/wave.png" alt="Wave" loading="lazy"></div>
               <div class="pmm-title">Wave</div>
               <div class="pmm-speed">1 clic • Sans frais</div>
             </div>
 
             <div class="pm-method-card" data-method="orange_money" onclick="selectPaymentMethod('orange_money')">
-              <div class="pmm-icon-wrap">🟠</div>
+              <div class="pmm-icon-wrap"><img src="assets/pay/orange.png" alt="Orange Money" loading="lazy"></div>
               <div class="pmm-title">Orange Money</div>
               <div class="pmm-speed">Validation #144#</div>
             </div>
 
             <div class="pm-method-card" data-method="mtn_money" onclick="selectPaymentMethod('mtn_money')">
-              <div class="pmm-icon-wrap">🟡</div>
+              <div class="pmm-icon-wrap"><img src="assets/pay/mtn.png" alt="MTN MoMo" loading="lazy"></div>
               <div class="pmm-title">MTN MoMo</div>
               <div class="pmm-speed">Validation *133#</div>
             </div>
 
             <div class="pm-method-card" data-method="moov_money" onclick="selectPaymentMethod('moov_money')">
-              <div class="pmm-icon-wrap">🔵</div>
+              <div class="pmm-icon-wrap"><img src="assets/pay/moov.webp" alt="Moov Money" loading="lazy"></div>
               <div class="pmm-title">Moov Money</div>
               <div class="pmm-speed">Validation *155#</div>
             </div>
