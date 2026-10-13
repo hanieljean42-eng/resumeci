@@ -374,6 +374,7 @@
       }
     }
 
+    function esc(s){ return String(s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
     function showError(msg) {
       const box = document.getElementById('errorBox');
       box.innerHTML = msg;
@@ -454,7 +455,7 @@
                 } else if (isJson) {
                   const errData = await apiRes.json();
                   if (errData && errData.error && apiRes.status !== 503) {
-                    showError("❌ " + errData.error);
+                    showError("❌ " + esc(errData.error));
                     resetBtn();
                     return;
                   }

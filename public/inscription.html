@@ -878,6 +878,7 @@
       }
     }
 
+    function esc(s){ return String(s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
     function showError(msg) {
       const box = document.getElementById('errorBox');
       box.innerHTML = msg;
@@ -998,11 +999,11 @@
                 activeApiBase = apiBase;
                 break;
               } else if (data && (data.code === 'ACCOUNT_EXISTS' || regRes.status === 409 || regRes.status === 401)) {
-                showError("❌ " + data.error + " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>");
+                showError("❌ " + esc(data.error) + " <br><a href='/connexion.html' style='color:#60a5fa;font-weight:700'>Me connecter à mon compte</a>");
                 resetSubmitBtn();
                 return;
               } else if (data && data.error && regRes.status !== 503) {
-                showError("❌ " + data.error);
+                showError("❌ " + esc(data.error));
                 resetSubmitBtn();
                 return;
               } else {
@@ -1018,7 +1019,7 @@
 
         if (!regData) {
           console.error("Inscription impossible:", lastErrorMsg);
-          showError("❌ " + (lastErrorMsg || "Impossible de joindre le serveur d'inscription. Vérifie ta connexion internet et réessaie dans quelques secondes."));
+          showError("❌ " + esc(lastErrorMsg || "Impossible de joindre le serveur d'inscription. Vérifie ta connexion internet et réessaie dans quelques secondes."));
           resetSubmitBtn();
           return;
         }

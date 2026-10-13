@@ -600,6 +600,7 @@ async function checkForUpdates() {
   }
 }
 function showUpdateNotification(data) {
+  const esc = typeof escHtml === 'function' ? escHtml : (v => String(v || ''));
   const overlay = document.createElement('div');
   overlay.id = 'updateOverlay';
   overlay.style.cssText =
@@ -608,11 +609,11 @@ function showUpdateNotification(data) {
     ? data.features
         .map(
           f =>
-            `<li style="margin:6px 0;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#10b981">✓</span>${f}</li>`
+            `<li style="margin:6px 0;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#10b981">✓</span>${esc(f)}</li>`
         )
         .join('')
     : '';
-  overlay.innerHTML = `\n        <div style="width:100%;max-width:420px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:slideUp .5s cubic-bezier(.2,1,.3,1)">\n          <div style="background:linear-gradient(135deg,#7c3aed,#2563eb);padding:24px 20px;text-align:center;color:#fff">\n            <div style="font-size:40px;margin-bottom:10px">🎉</div>\n            <h2 style="font-size:20px;font-weight:800;margin:0 0 6px">${data.title || 'Mise à jour disponible !'}</h2>\n            <p style="font-size:13px;opacity:.9;margin:0">Version ${data.version} • ${data.date || ''}</p>\n          </div>\n          <div style="padding:20px">\n            <p style="font-size:14px;color:#475569;line-height:1.6;margin:0 0 16px">${data.message || 'Nouvelles fonctionnalités disponibles !'}</p>\n            ${features ? `<ul style="list-style:none;padding:0;margin:0 0 20px;font-size:13px;color:#334155;background:#f8fafc;border-radius:12px;padding:16px">${features}</ul>` : ''}\n            <div style="display:flex;gap:10px">\n              <button id="updateDismiss" style="flex:1;padding:12px;border:1px solid #e2e8f0;background:#fff;border-radius:10px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:.2s">Plus tard</button>\n              <button id="updateReload" style="flex:1;padding:12px;border:none;background:linear-gradient(135deg,#7c3aed,#2563eb);border-radius:10px;font-size:13px;font-weight:700;color:#fff;cursor:pointer;transition:.2s">Actualiser</button>\n            </div>\n          </div>\n        </div>\n      `;
+  overlay.innerHTML = `\n        <div style="width:100%;max-width:420px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:slideUp .5s cubic-bezier(.2,1,.3,1)">\n          <div style="background:linear-gradient(135deg,#7c3aed,#2563eb);padding:24px 20px;text-align:center;color:#fff">\n            <div style="font-size:40px;margin-bottom:10px">🎉</div>\n            <h2 style="font-size:20px;font-weight:800;margin:0 0 6px">${esc(data.title || 'Mise à jour disponible !')}</h2>\n            <p style="font-size:13px;opacity:.9;margin:0">Version ${esc(data.version)} • ${esc(data.date || '')}</p>\n          </div>\n          <div style="padding:20px">\n            <p style="font-size:14px;color:#475569;line-height:1.6;margin:0 0 16px">${esc(data.message || 'Nouvelles fonctionnalités disponibles !')}</p>\n            ${features ? `<ul style="list-style:none;padding:0;margin:0 0 20px;font-size:13px;color:#334155;background:#f8fafc;border-radius:12px;padding:16px">${features}</ul>` : ''}\n            <div style="display:flex;gap:10px">\n              <button id="updateDismiss" style="flex:1;padding:12px;border:1px solid #e2e8f0;background:#fff;border-radius:10px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:.2s">Plus tard</button>\n              <button id="updateReload" style="flex:1;padding:12px;border:none;background:linear-gradient(135deg,#7c3aed,#2563eb);border-radius:10px;font-size:13px;font-weight:700;color:#fff;cursor:pointer;transition:.2s">Actualiser</button>\n            </div>\n          </div>\n        </div>\n      `;
   document.body.appendChild(overlay);
   document.getElementById('updateDismiss').addEventListener('click', () => {
     localStorage.setItem(UPDATE_DISMISSED_KEY, data.version);

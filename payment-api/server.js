@@ -162,6 +162,17 @@ if (!WEBHOOK_SECRET) {
 }
 
 const MIN_PASSWORD_LENGTH = 8;
+const MAX_PASSWORD_LENGTH = 128;
+
+// Masque un numéro dans les logs (RGPD-lite : pas de numéro en clair dans les logs Render)
+const maskPhone = (p) => {
+  const s = String(p || '');
+  return s.length > 6 ? s.slice(0, 5) + '•••••' + s.slice(-2) : '•••';
+};
+// Plans reconnus par la plateforme (école + université)
+const KNOWN_PLANS = new Set(['free', 'starter', 'pro', 'vip', 'annual', 'annuel', 'elite', 'uni_starter', 'uni_pro', 'uni_elite']);
+const CLASS_KEY_RE = /^[A-Za-z0-9_]{1,50}$/;
+const clampStr = (v, max) => String(v || '').slice(0, max);
 
 // Jeton de session signé (HMAC) remis au login/inscription : protège les données personnelles de /api/user-status
 const SESSION_SECRET = String(process.env.SESSION_SECRET || WEBHOOK_SECRET || '').trim() || crypto.randomBytes(32).toString('hex');
@@ -366,7 +377,7 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
     }
   }
 
-  console.log(`[Unlock] ✅ Compte débloqué avec succès: UID=${uid} / Phone=${phone} -> Pass ${tierKey} (${durationDays}j)`);
+  console.log(`[Unlock] ✅ Compte débloqué: ${maskPhone(phone || uid)} -> Pass ${tierKey} (${durationDays}j)`);
   return { expiresAt, tierKey };
 }
 
@@ -502,8 +513,10 @@ function fetchGeniusPayPayments(page = 1, perPage = 30) {
 app.post('/api/pay', async (req, res) => {
   try {
     const { uid, tierKey, customerName, customerPhone, customerEmail, paymentMethod, returnOrigin } = req.body;
+    const safeUid = clampStr(uid, 64);
+    const safeCustomerName = clampStr(customerName, 120);
 
-    if (!uid || !tierKey || !PLANS[tierKey]) {
+    if (!safeUid || !tierKey || !PLANS[tierKey]) {
       return res.status(400).json({ error: "Données invalides (uid ou tierKey manquant)" });
     }
 
@@ -517,7 +530,7 @@ app.post('/api/pay', async (req, res) => {
     // returnOrigin doit rester un domaine autorisé : sinon un attaquant pourrait
     // rediriger l'élève vers un site de phishing après le paiement (open redirect).
     const origin = ALLOWED_ORIGINS.includes(returnOrigin) ? returnOrigin : 'https://resumeci.me';
-    const redirectUrl = `${origin}/?payment=success&tier=${tierKey}&uid=${uid}`;
+    const redirectUrl = `${origin}/?payment=success&tier=${tierKey}&uid=${safeUid}`;
 
     // Formatage strict du téléphone ivoirien au format international +225XXXXXXXXXX
     let cleanPhone = customerPhone ? String(customerPhone).replace(/\D/g, '') : '';
@@ -530,11 +543,12 @@ app.post('/api/pay', async (req, res) => {
       formattedPhone = '+225' + cleanPhone.slice(-10);
     }
 
-    const chosenMethod = (paymentMethod || 'wave').toLowerCase();
+    const requestedMethod = String(paymentMethod || 'wave').toLowerCase();
+    const chosenMethod = ['wave', 'orange_money', 'mtn_money', 'moov_money'].includes(requestedMethod) ? requestedMethod : 'wave';
 
     // Réutilise la transaction encore en attente (double clic, retour arrière, serveur lent)
     // au lieu d'en créer une nouvelle chez GeniusPay à chaque tentative.
-    const userRef = db ? db.collection('users').doc(String(uid)) : null;
+    const userRef = db ? db.collection('users').doc(safeUid) : null;
     if (userRef) {
       const userSnap = await userRef.get().catch(() => null);
       const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
@@ -562,13 +576,13 @@ app.post('/api/pay', async (req, res) => {
       description: `Pass Réussite ${plan.name} - ResumeCI`,
       country: "CI",
       customer: {
-        name: customerName || 'Élève',
+        name: safeCustomerName || 'Élève',
         email: customerEmail || 'eleve@resumeci.me',
         phone: formattedPhone,
         country: "CI"
       },
       metadata: {
-        uid: uid,
+        uid: safeUid,
         phone: formattedPhone,
         customerPhone: cleanPhone.slice(-10),
         tierKey: tierKey,
@@ -587,7 +601,7 @@ app.post('/api/pay', async (req, res) => {
       payload.payment_method = 'wave';
     }
 
-    console.log(`[Paiement] Création transaction GeniusPay pour ${uid} - Forfait ${tierKey} (${plan.price} FCFA) - Tel: ${formattedPhone} - Méthode: ${chosenMethod}`);
+    console.log(`[Paiement] Transaction GeniusPay ${maskPhone(safeUid)} - Forfait ${tierKey} (${plan.price} FCFA) - Tel: ${maskPhone(formattedPhone)} - Méthode: ${chosenMethod}`);
 
     const result = await new Promise((resolve, reject) => {
       const postData = JSON.stringify(payload);
@@ -823,11 +837,14 @@ app.post('/api/register', async (req, res) => {
     const { firstName, lastName, selectedClass, whatsapp, password, plan, userAgent } = req.body;
     const cleanWa = String(whatsapp || '').replace(/\D/g, '').slice(-10);
     const cleanPwd = String(password || '').trim();
+    const safeFirst = clampStr(firstName, 60).trim();
+    const safeLast = clampStr(lastName, 60).trim();
+    const safeClass = CLASS_KEY_RE.test(String(selectedClass || '')) ? selectedClass : 'Non précisé';
     if (cleanWa.length !== 10) {
       return res.status(400).json({ error: "Numéro WhatsApp à 10 chiffres obligatoire." });
     }
-    if (cleanPwd.length < MIN_PASSWORD_LENGTH) {
-      return res.status(400).json({ error: `Le mot de passe doit comporter au moins ${MIN_PASSWORD_LENGTH} caractères.` });
+    if (cleanPwd.length < MIN_PASSWORD_LENGTH || cleanPwd.length > MAX_PASSWORD_LENGTH) {
+      return res.status(400).json({ error: `Le mot de passe doit comporter entre ${MIN_PASSWORD_LENGTH} et ${MAX_PASSWORD_LENGTH} caractères.` });
     }
     if (!db) {
       return res.status(503).json({ error: "Service d'inscription temporairement indisponible. Réessaie dans quelques instants." });
@@ -838,7 +855,7 @@ app.post('/api/register', async (req, res) => {
     if (existing) {
       if (await verifyPassword(cleanPwd, existing)) {
         await migrateLegacyPassword(existing, cleanPwd);
-        console.log(`[Register] Compte déjà existant pour ${cleanWa}, reconnexion.`);
+        console.log(`[Register] Compte déjà existant pour ${maskPhone(cleanWa)}, reconnexion.`);
         return res.json({ success: true, existing: true, user: buildProfile(existing, cleanWa) });
       }
       return res.status(401).json({ success: false, error: INVALID_CREDENTIALS });
@@ -846,10 +863,10 @@ app.post('/api/register', async (req, res) => {
 
     const userDoc = {
       uid: cleanWa,
-      firstName: (firstName || '').trim(),
-      lastName: (lastName || '').trim(),
-      fullName: `${firstName || ''} ${lastName || ''}`.trim() || (String(selectedClass || '').startsWith('Licence_') ? 'Étudiant(e)' : 'Élève'),
-      selectedClass: selectedClass || 'Non précisé',
+      firstName: safeFirst,
+      lastName: safeLast,
+      fullName: `${safeFirst} ${safeLast}`.trim() || (String(safeClass).startsWith('Licence_') ? 'Étudiant(e)' : 'Élève'),
+      selectedClass: safeClass,
       whatsapp: cleanWa,
       contact: cleanWa,
       passwordHash: await hashPassword(cleanPwd),
@@ -864,7 +881,7 @@ app.post('/api/register', async (req, res) => {
     };
 
     await db.collection('users').doc(cleanWa).set(userDoc);
-    console.log(`[Register] ✅ Nouveau compte créé pour ${userDoc.fullName} (${cleanWa})`);
+    console.log(`[Register] ✅ Nouveau compte créé pour ${userDoc.fullName} (${maskPhone(cleanWa)})`);
     res.json({ success: true, existing: false, user: buildProfile(userDoc, cleanWa) });
   } catch (err) {
     console.error('[Register] Erreur:', err);
@@ -1070,6 +1087,9 @@ app.post('/api/login', async (req, res) => {
     if (!password) {
       return res.status(400).json({ success: false, error: "Mot de passe requis." });
     }
+    if (password.length > MAX_PASSWORD_LENGTH) {
+      return res.status(401).json({ success: false, error: INVALID_CREDENTIALS });
+    }
 
     if (!db) {
       return res.status(503).json({ success: false, error: "Service de connexion temporairement indisponible. Réessaie dans quelques instants." });
@@ -1091,7 +1111,7 @@ app.post('/api/login', async (req, res) => {
 
     const profile = buildProfile(foundUser, cleanPhone);
 
-    console.log(`[Login] ✅ Connexion réussie (uid: ${profile.uid}) - Pass: ${profile.premiumPlan}`);
+    console.log(`[Login] ✅ Connexion réussie (${maskPhone(profile.uid)}) - Pass: ${profile.premiumPlan}`);
 
     res.json({
       success: true,
@@ -1163,13 +1183,13 @@ app.post('/api/admin/create-user', async (req, res) => {
       return res.status(400).json({ error: "Numéro de téléphone à 10 chiffres requis (ex: 0708091011)." });
     }
 
-    const chosenPlan = plan || 'pro';
+    const chosenPlan = KNOWN_PLANS.has(String(plan || '')) ? plan : 'pro';
     const isFree = chosenPlan === 'free';
-    const durationDays = Number(days) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30));
+    const durationDays = Math.min(Math.max(Number(days) || 0, 0), 3650) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30));
     const expiresAt = isFree ? 0 : (Date.now() + durationDays * 24 * 60 * 60 * 1000);
-    const fName = firstName || (fullName ? fullName.split(' ')[0] : 'Élève');
-    const lName = lastName || (fullName ? fullName.split(' ').slice(1).join(' ') : '');
-    const full = fullName || `${fName} ${lName}`.trim() || 'Élève';
+    const fName = clampStr(firstName || (fullName ? fullName.split(' ')[0] : 'Élève'), 60);
+    const lName = clampStr(lastName || (fullName ? fullName.split(' ').slice(1).join(' ') : ''), 60);
+    const full = clampStr(fullName || `${fName} ${lName}`.trim() || 'Élève', 120);
     const providedPassword = String(password || '').trim();
     if (providedPassword && providedPassword.length < MIN_PASSWORD_LENGTH) {
       return res.status(400).json({ error: `Le mot de passe doit comporter au moins ${MIN_PASSWORD_LENGTH} caractères.` });
@@ -1187,7 +1207,7 @@ app.post('/api/admin/create-user', async (req, res) => {
       lastName: lName,
       whatsapp: cleanPhone,
       contact: cleanPhone,
-      selectedClass: selectedClass || '3eme',
+      selectedClass: CLASS_KEY_RE.test(String(selectedClass || '')) ? selectedClass : 'Non précisé',
       plan: chosenPlan,
       premiumPlan: chosenPlan,
       isPremium: !isFree,
@@ -1231,9 +1251,9 @@ app.post('/api/admin/set-plan', async (req, res) => {
     }
 
     const cleanTarget = String(target).replace(/\D/g, '').slice(-10);
-    const chosenPlan = plan || 'pro';
+    const chosenPlan = KNOWN_PLANS.has(String(plan || '')) ? plan : 'pro';
     const isFree = chosenPlan === 'free';
-    const durationDays = isFree ? 0 : (Number(days) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30)));
+    const durationDays = isFree ? 0 : (Math.min(Math.max(Number(days) || 0, 0), 3650) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30)));
     const durationMs = durationDays * 24 * 60 * 60 * 1000;
     const expiresAt = isFree ? 0 : (Date.now() + durationMs);
 
@@ -1258,8 +1278,8 @@ app.post('/api/admin/set-plan', async (req, res) => {
       updateData.adminRevoked = false;
     }
 
-    if (fullName) updateData.fullName = fullName;
-    if (selectedClass) updateData.selectedClass = selectedClass;
+    if (fullName) updateData.fullName = clampStr(fullName, 120);
+    if (selectedClass && CLASS_KEY_RE.test(String(selectedClass))) updateData.selectedClass = selectedClass;
 
     if (db) {
       await db.collection('users').doc(target).set(updateData, { merge: true });
@@ -1304,8 +1324,8 @@ app.post('/api/admin/delete-user', async (req, res) => {
     if (!db) return res.status(503).json({ error: "Base de données indisponible" });
     const { target, docId } = req.body || {};
     const candidates = [...new Set([docId, target].filter(Boolean).map(String))];
-    if (!candidates.length) {
-      return res.status(400).json({ error: "Identifiant de l'inscrit requis." });
+    if (!candidates.length || candidates.some(id => id.length > 128 || id.includes('/'))) {
+      return res.status(400).json({ error: "Identifiant de l'inscrit invalide." });
     }
 
     let deleted = null;
@@ -1363,6 +1383,9 @@ app.post('/api/admin/delete-class', async (req, res) => {
       return res.status(400).json({ error: "Classe à supprimer requise." });
     }
     const cls = String(selectedClass);
+    if (cls.length > 60 || cls.includes('/')) {
+      return res.status(400).json({ error: "Classe invalide." });
+    }
     const toDelete = new Map();
     for (const field of ['selectedClass', 'classe']) {
       const snap = await db.collection('users').where(field, '==', cls).get();
