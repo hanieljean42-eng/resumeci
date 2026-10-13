@@ -87,9 +87,6 @@ try {
     const firebaseApp = initializeAppFn({ credential });
     db = typeof getFirestoreFn === 'function' ? getFirestoreFn(firebaseApp) : (typeof admin.firestore === 'function' ? admin.firestore() : null);
     authService = typeof getAuthFn === 'function' ? getAuthFn(firebaseApp) : (typeof admin.auth === 'function' ? admin.auth() : null);
-    if (!FieldValue && db && db.constructor && db.constructor.FieldValue) {
-      FieldValue = db.constructor.FieldValue;
-    }
     console.log('✅ Firebase Admin connecté (Firestore & Auth)');
   } else {
     console.warn('⚠️ Aucun compte de service Firebase valide trouvé (FIREBASE_SERVICE_ACCOUNT ou firebase-admin.json). Firestore désactivé.');
