@@ -514,7 +514,9 @@ app.post('/api/pay', async (req, res) => {
     }
 
     const plan = PLANS[tierKey];
-    const origin = returnOrigin || 'https://resumeci.me';
+    // returnOrigin doit rester un domaine autorisé : sinon un attaquant pourrait
+    // rediriger l'élève vers un site de phishing après le paiement (open redirect).
+    const origin = ALLOWED_ORIGINS.includes(returnOrigin) ? returnOrigin : 'https://resumeci.me';
     const redirectUrl = `${origin}/?payment=success&tier=${tierKey}&uid=${uid}`;
 
     // Formatage strict du téléphone ivoirien au format international +225XXXXXXXXXX
