@@ -46,6 +46,11 @@ Fiches_Resume/
 .agents/
 !.agents/skills/
 _drafts/
+# Fichiers de travail à la racine (brouillons de fiches, extraits, captures, tests)
+/_*
+screen_*.png
+test_*.py
+src/agent_ecole_ci_download.py
 
 # IDE
 .vscode/
