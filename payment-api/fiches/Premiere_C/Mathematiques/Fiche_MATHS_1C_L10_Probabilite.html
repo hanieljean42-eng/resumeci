@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MATHS 1C L10 Probabilite — Mathematiques Premiere C | ResumeCI</title><meta name="description" content="Probabilité - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Probabilité I. Vocabulaire des événements Expérience aléatoire : expérience dont "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html"><meta property="og:title" content="MATHS 1C L10 Probabilite — Mathematiques Premiere C | ResumeCI"><meta property="og:description" content="Probabilité - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Probabilité I. Vocabulaire des événements Expérience aléatoire : expérience dont "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="MATHS 1C L10 Probabilite — Mathematiques Premiere C | ResumeCI"><meta name="twitter:description" content="Probabilité - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Probabilité I. Vocabulaire des événements Expérience aléatoire : expérience dont "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Premiere C","item":"https://resumeci.me/#Premiere_C"},{"@type":"ListItem","position":3,"name":"Mathematiques","item":"https://resumeci.me/#Premiere_C/Mathematiques"},{"@type":"ListItem","position":4,"name":"MATHS 1C L10 Probabilite","item":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MATHS 1C L10 Probabilite — Mathematiques Premiere C | ResumeCI","description":"Probabilité - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Probabilité I. Vocabulaire des événements Expérience aléatoire : expérience dont ","url":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L10_Probabilite.html","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Premiere C","about":"Mathematiques","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première C</span>
+      <span class="chip">Mathématiques</span>
+      <span class="chip">Probabilité</span>
+    </div>
+  </div>
+
+  <h2>I. Vocabulaire des événements</h2>
+
+  <div class="definition">
+    <strong>Expérience aléatoire :</strong> expérience dont on ne connaît pas d'avance le résultat mais dont on connaît tous les résultats possibles.<br>
+    <strong>Éventualité :</strong> chaque résultat possible. <strong>Univers (U ou Ω) :</strong> ensemble de toutes les éventualités.<br>
+    Exemple : lancer de deux pièces → U = {(P,P), (P,F), (F,P), (F,F)}.
+  </div>
+
+  <div class="definition">
+    <strong>Événement :</strong> toute partie de l'univers U.
+    <ul>
+      <li><strong>Élémentaire :</strong> singleton {eᵢ} ;</li>
+      <li><strong>Impossible :</strong> ∅ ;</li>
+      <li><strong>Certain :</strong> U tout entier.</li>
+    </ul>
+  </div>
+
+  <div class="schema">
+    <strong>Correspondance ensembles ↔ probabilités :</strong>
+    <table>
+      <tr><th>Ensembles</th><th>Probabilités</th></tr>
+      <tr><td>A ∩ B</td><td>« A et B » : eᵢ réalise A <strong>et</strong> B</td></tr>
+      <tr><td>A ∪ B</td><td>« A ou B » : eᵢ réalise A <strong>ou</strong> B</td></tr>
+      <tr><td>Ā (complémentaire)</td><td>événement contraire : A ∪ Ā = U et A ∩ Ā = ∅</td></tr>
+      <tr><td>A ∩ B = ∅</td><td>A et B <strong>incompatibles</strong> (disjoints)</td></tr>
+    </table>
+  </div>
+
+  <h2>II. Probabilité d'un événement</h2>
+
+  <div class="definition">
+    <strong>Définition :</strong> une probabilité P sur U associe à chaque événement A un réel P(A) ∈ [0 ; 1] tel que :
+    <ul>
+      <li><strong>P(U) = 1</strong></li>
+      <li>Si A et B sont <strong>incompatibles</strong> : P(A ∪ B) = P(A) + P(B)</li>
+    </ul>
+  </div>
+
+  <div class="important">
+    <strong>Propriétés :</strong>
+    <ul>
+      <li><strong>P(Ā) = 1 − P(A)</strong> ;</li>
+      <li>P(∅) = 0 ;</li>
+      <li>A = {e₁ ; … ; eₖ} → P(A) = P({e₁}) + … + P({eₖ}) ;</li>
+      <li><strong>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</strong> (formule générale, même si A et B compatibles).</li>
+    </ul>
+  </div>
+
+  <h2>III. Équiprobabilité</h2>
+
+  <div class="definition">
+    <strong>Équiprobabilité :</strong> tous les événements élémentaires ont la même probabilité. Si card(U) = n, chaque éventualité a pour probabilité <strong>1/n</strong>.
+  </div>
+
+  <div class="important">
+    <strong>Formule fondamentale :</strong> en situation d'équiprobabilité,<br>
+    <strong>P(A) = nombre de cas favorables / nombre de cas possibles = card(A) / card(U)</strong>
+  </div>
+
+  <div class="schema">
+    <strong>Mots-clés signalant l'équiprobabilité :</strong> « équitable », « équilibré », « parfait », « uniforme », « même chance », « indiscernable au toucher », « au hasard ».
+  </div>
+
+  <h2>IV. Lien avec le dénombrement</h2>
+
+  <div class="important">
+    <strong>Méthode :</strong> quand l'univers est grand, on ne liste pas les cas — on utilise le <strong>dénombrement</strong> (L4) :
+    <ul>
+      <li>p-uplets (ordre, répétition) → tirages successifs <strong>avec</strong> remise, codes ;</li>
+      <li>arrangements A<sub>n</sub><sup>p</sup> (ordre, sans répétition) → tirages <strong>sans</strong> remise ordonnés ;</li>
+      <li>combinaisons C<sub>n</sub><sup>p</sup> (sans ordre) → choix simultanés, délégations.</li>
+    </ul>
+    Exemple : délégation de 4 membres parmi 10 → card(U) = C₁₀⁴ = 210 ; délégations contenant un couple donné → C₈² = 28 → P = 28/210 = 2/15.
+  </div>
+
+  <div class="schema">
+    <strong>Astuce — événement contraire :</strong> quand le calcul direct demande plusieurs cas (« au moins un », « l'un ou l'autre »), passer par P(Ā) = 1 − P(A).<br>
+    Exemple : « M. ou Mme dans la délégation » → contraire = « ni l'un ni l'autre » = C₈⁴/210 = 70/210 = 1/3 → P = 1 − 1/3 = 2/3.
+  </div>
+
+  <div class="important">
+    <strong>⚠️ Pièges fréquents :</strong>
+    <ul>
+      <li>P(A ∪ B) = P(A) + P(B) n'est vraie que si A et B sont <strong>incompatibles</strong> — sinon retrancher P(A ∩ B) ;</li>
+      <li>Toujours justifier l'équiprobabilité avant d'appliquer card(A)/card(U) ;</li>
+      <li>Attention aux tirages <strong>sans remise</strong> : arrangements/combinaisons, pas de répétition ;</li>
+      <li>Vérifier que la probabilité obtenue est bien dans [0 ; 1] et simplifier la fraction.</li>
+    </ul>
+  </div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div><div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div></body>
+</html>

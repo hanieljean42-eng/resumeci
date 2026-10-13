@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="/icon-192.png">
   <meta name="theme-color" content="#0f172a">
   <meta property="og:title" content="Inscription | ResumeCI — 1009 Fiches BAC & BEPC">
-  <meta property="og:description" content="Crée ton profil en 30 secondes et accède à 1009 fiches de résumé pour réussir ton BAC et BEPC en Côte d'Ivoire.">
+  <meta property="og:description" content="Crée ton profil en 30 secondes et révise avec les fiches, quiz et flashcards ResumeCI — Collège, Lycée & Université en Côte d'Ivoire.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resumeci.me/inscription.html">
 
@@ -609,7 +609,70 @@
               <div class="radio-dot"></div>
               <div class="plan-details">
                 <h4>Formule Gratuite</h4>
-                <p>1009 fiches de cours en lecture libre</p>
+                <p>1re leçon de chaque matière en lecture libre</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount">0 F</div>
+              <div class="period">100% Gratuit</div>
+            </div>
+          </div>
+
+          <!-- ======= FORMULES UNIVERSITÉ (affichées si filière Licence) ======= -->
+          <!-- Pass Étudiant -->
+          <div class="plan" id="planUniStarter" onclick="selectPlan('uni_starter')" role="radio" aria-checked="false" tabindex="0" style="display:none">
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Étudiant</h4>
+                <p>Hors-Ligne + PDF + Surligneur + Notes + Stats</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount">1 000 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
+          <!-- Pass Licence Pro -->
+          <div class="plan" id="planUniPro" onclick="selectPlan('uni_pro')" role="radio" aria-checked="false" tabindex="0" style="display:none">
+            <span class="badge-popular">⭐ Le plus complet</span>
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Licence Pro</h4>
+                <p>Tout inclus : Quiz + Flashcards + Audio + Pièges</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount" style="color:#34d399">2 000 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
+          <!-- Pass Excellence (en préparation) -->
+          <div class="plan" id="planUniElite" role="radio" aria-checked="false" style="display:none;opacity:0.7;cursor:default">
+            <span class="badge-popular" style="background:#a855f7">🔬 En préparation</span>
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Excellence</h4>
+                <p>Tuteur IA 24h/24 + Sujets de partiels corrigés</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount" style="color:#a855f7">3 000 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
+          <!-- Essai Gratuit Université (1re leçon de chaque matière) -->
+          <div class="plan" id="planUniFree" onclick="selectPlan('free')" role="radio" aria-checked="false" tabindex="0" style="display:none">
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Essai Gratuit</h4>
+                <p>1re leçon de chaque matière en lecture libre</p>
               </div>
             </div>
             <div class="plan-price">
@@ -654,6 +717,9 @@
               <option value="Terminale_A">Terminale A (BAC A)</option>
               <option value="Terminale_C">Terminale C (BAC C)</option>
               <option value="Terminale_D">Terminale D (BAC D)</option>
+              <optgroup label="🎓 Université">
+                <option value="Licence_1_Droit">Licence 1 Droit</option>
+              </optgroup>
             </select>
             <i class="fas fa-school ic"></i>
             <i class="fas fa-chevron-down select-chevron"></i>
@@ -713,7 +779,7 @@
       const urlPass = params.get('pass') || params.get('tier');
       const urlClass = params.get('classe') || params.get('class');
       
-      if (urlPass && ['pro', 'starter', 'free'].includes(urlPass.toLowerCase())) {
+      if (urlPass && ['pro', 'starter', 'free', 'uni_starter', 'uni_pro'].includes(urlPass.toLowerCase())) {
         selectPlan(urlPass.toLowerCase());
       }
       if (urlClass) {
@@ -724,22 +790,30 @@
 
     function selectPlan(tier) {
       selectedTier = tier;
-      
-      // Reset all plan cards
-      const pPro = document.getElementById('planPro');
-      const pStarter = document.getElementById('planStarter');
-      const pFree = document.getElementById('planFree');
-      if (pPro) {
-        pPro.className = 'plan' + (tier === 'pro' ? ' selected-pro' : '');
-        pPro.setAttribute('aria-checked', tier === 'pro');
-      }
-      if (pStarter) {
-        pStarter.className = 'plan' + (tier === 'starter' ? ' selected-starter' : '');
-        pStarter.setAttribute('aria-checked', tier === 'starter');
-      }
-      if (pFree) {
-        pFree.className = 'plan' + (tier === 'free' ? ' selected-free' : '');
-        pFree.setAttribute('aria-checked', tier === 'free');
+
+      const univMode = !!document.getElementById('planUniPro') && document.getElementById('planUniPro').style.display !== 'none';
+      const planEls = {
+        pro: 'planPro', starter: 'planStarter',
+        uni_starter: 'planUniStarter', uni_pro: 'planUniPro', uni_elite: 'planUniElite'
+      };
+      // 'free' pointe sur la carte Essai Université en mode univ, sinon sur la Formule Gratuite
+      planEls.free = univMode ? 'planUniFree' : 'planFree';
+      const selCls = {
+        pro: 'selected-pro', uni_pro: 'selected-pro',
+        starter: 'selected-starter', uni_starter: 'selected-starter',
+        free: 'selected-free'
+      };
+      Object.entries(planEls).forEach(([t, id]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = 'plan' + (tier === t && selCls[t] ? ' ' + selCls[t] : '');
+        el.setAttribute('aria-checked', tier === t);
+      });
+      // L'autre carte gratuite (masquée) garde son état neutre
+      const otherFree = document.getElementById(univMode ? 'planFree' : 'planUniFree');
+      if (otherFree) {
+        otherFree.className = 'plan';
+        otherFree.setAttribute('aria-checked', 'false');
       }
 
       // Update submit button
@@ -756,15 +830,34 @@
         btn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(16, 185, 129, 0.35)";
         if (trustSection) trustSection.style.display = '';
+      } else if (tier === 'uni_pro') {
+        iconHtml = '<i class="fas fa-bolt"></i>';
+        label = "Activer mon Pass Licence Pro (2 000 F) 🚀";
+        btn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(16, 185, 129, 0.35)";
+        if (trustSection) trustSection.style.display = '';
+      } else if (tier === 'uni_elite') {
+        iconHtml = '<i class="fas fa-bolt"></i>';
+        label = "Activer mon Pass Excellence (3 000 F) 🔬";
+        btn.style.background = "linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(124, 58, 237, 0.35)";
+        if (trustSection) trustSection.style.display = '';
       } else if (tier === 'starter') {
         iconHtml = '<i class="fas fa-bolt"></i>';
         label = "Activer mon Pass Starter (500 F) ⚡";
         btn.style.background = "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(37, 99, 235, 0.35)";
         if (trustSection) trustSection.style.display = '';
+      } else if (tier === 'uni_starter') {
+        iconHtml = '<i class="fas fa-bolt"></i>';
+        label = "Activer mon Pass Étudiant (1 000 F) ⚡";
+        btn.style.background = "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(37, 99, 235, 0.35)";
+        if (trustSection) trustSection.style.display = '';
       } else {
         iconHtml = '<i class="fas fa-book-open"></i>';
-        label = "Accéder aux 1009 fiches gratuites 📚";
+        const isUniv = ((document.getElementById('regClass') || {}).value || '').startsWith('Licence_');
+        label = isUniv ? "S'inscrire en Essai Gratuit 📚" : "Accéder à l'essai gratuit (1re leçon/matière) 📚";
         btn.style.background = "linear-gradient(135deg, #475569 0%, #334155 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(71, 85, 105, 0.25)";
         if (trustSection) trustSection.style.display = 'none';
@@ -842,7 +935,7 @@
       }
 
       if (!cls) {
-        showError("⚠️ Sélectionne ta classe actuelle.");
+        showError("⚠️ Sélectionne ta classe ou ta filière.");
         return;
       }
 
@@ -962,7 +1055,11 @@
         }
 
         // Formule Payante : Appel à la passerelle de paiement GeniusPay
-        const tierName = selectedTier === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
+        const tierNames = {
+          pro: 'Pro (1 000 FCFA)', starter: 'Starter (500 FCFA)',
+          uni_starter: 'Étudiant (1 000 FCFA)', uni_pro: 'Licence Pro (2 000 FCFA)', uni_elite: 'Excellence (3 000 FCFA)'
+        };
+        const tierName = tierNames[selectedTier] || 'Pro (1 000 FCFA)';
         btn.innerHTML = '<i class="fas fa-spinner spinner"></i> Connexion à la caisse Mobile Money...';
 
         const controller = new AbortController();
@@ -978,7 +1075,7 @@
               tierKey: selectedTier,
               customerName: `${fName} ${lName}`.trim(),
               customerPhone: cleanWa,
-              customerEmail: 'eleve@resumeci.me',
+              customerEmail: cls.startsWith('Licence_') ? 'etudiant@resumeci.me' : 'eleve@resumeci.me',
               returnOrigin: window.location.origin
             })
           });
@@ -1031,7 +1128,7 @@
                   🔄 Réessayer la connexion en ligne
                 </button>
                 <a href="/?welcome=1" style="color:#94a3b8;font-size:12px;text-align:center;text-decoration:underline;margin-top:2px">
-                  Accéder à la plateforme en formule Gratuite (1009 fiches)
+                  Accéder à l'essai gratuit (1re leçon de chaque matière)
                 </a>
               </div>
             </div>
@@ -1045,7 +1142,47 @@
       }
     }
 
+    // Bascule toute la page entre l'environnement Collège/Lycée et Université
+    function applyEnvMode(isUniv) {
+      const flag = document.querySelector('.header-flag');
+      if (flag) flag.innerHTML = isUniv
+        ? '<i class="fas fa-graduation-cap"></i> Université — Côte d\'Ivoire 🇨🇮'
+        : '<i class="fas fa-graduation-cap"></i> Collège & Lycée — Côte d\'Ivoire 🇨🇮';
+
+      const plansLabel = document.querySelector('.plans-label');
+      if (plansLabel) plansLabel.innerHTML = isUniv
+        ? '<i class="fas fa-crown" style="color:var(--gold)"></i> Choisis ton Pass Université'
+        : '<i class="fas fa-crown" style="color:var(--gold)"></i> Choisis ta formule';
+
+      const clsLabel = document.querySelector('label[for="regClass"]');
+      if (clsLabel) clsLabel.textContent = isUniv ? 'Filière / Niveau *' : 'Classe actuelle *';
+
+      ['planPro', 'planStarter', 'planFree'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = isUniv ? 'none' : '';
+      });
+      ['planUniStarter', 'planUniPro', 'planUniElite', 'planUniFree'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = isUniv ? '' : 'none';
+      });
+
+      // Université : Pass Licence Pro par défaut (l'Essai Gratuit reste choisissable)
+      if (isUniv && !['uni_starter', 'uni_pro', 'uni_elite', 'free'].includes(selectedTier)) {
+        selectPlan('uni_pro');
+      } else if (!isUniv && selectedTier.startsWith('uni_')) {
+        selectPlan('pro');
+      } else {
+        selectPlan(selectedTier);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      // Classe universitaire : adapter tout l'environnement (plans, libellés, tarifs)
+      const regClassEl = document.getElementById('regClass');
+      if (regClassEl) regClassEl.addEventListener('change', function () {
+        applyEnvMode(this.value.startsWith('Licence_'));
+      });
+
       // Réveil anticipé des serveurs (local et Render)
       getPaymentApiCandidates().forEach(base => {
         try { fetch(`${base}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch(e) {}
@@ -1066,6 +1203,9 @@
           }
         } catch(e) {}
       }
+
+      // Appliquer le bon environnement si une filière Licence est déjà choisie (profil ou URL)
+      if (regClassEl) applyEnvMode(regClassEl.value.startsWith('Licence_'));
     });
   </script>
 </body>

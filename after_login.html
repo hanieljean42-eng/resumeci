@@ -1,0 +1,2078 @@
+<html dir="ltr" lang="fr" xml:lang="fr" class="html yui3-js-enabled"><head>
+        <title>Tableau de bord | Lycée Numérique</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//lyc.ecole-ci.org/pluginfile.php/1/theme_mb2nl/favicon/1776147135/rci.ico">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="moodle, Tableau de bord | Lycée Numérique">
+<link rel="stylesheet" type="text/css" href="https://lyc.ecole-ci.org/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css"><script charset="utf-8" id="yui_3_18_1_1_1791723857772_12" src="https://lyc.ecole-ci.org/theme/yui_combo.php?3.18.1/event-mousewheel/event-mousewheel-min.js&amp;3.18.1/event-resize/event-resize-min.js&amp;3.18.1/event-hover/event-hover-min.js&amp;3.18.1/event-touch/event-touch-min.js&amp;3.18.1/event-move/event-move-min.js&amp;3.18.1/event-flick/event-flick-min.js&amp;3.18.1/event-valuechange/event-valuechange-min.js&amp;3.18.1/event-tap/event-tap-min.js&amp;m/1776147135/core/event/event-min.js" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://lyc.ecole-ci.org/theme/styles.php/mb2nl/1776147135_1661148015/all">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/lyc.ecole-ci.org","homeurl":{},"sesskey":"5qivIS67HF","sessiontimeout":"3600","sessiontimeoutwarning":"1200","themerev":"1776147135","slasharguments":1,"theme":"mb2nl","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1776147135","admin":"admin","svgicons":true,"usertimezone":"UTC","language":"fr","courseId":1,"courseContextId":2,"contextid":132443,"contextInstanceId":61085,"langrev":1791692643,"templaterev":"1776147135","siteId":1};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/lyc.ecole-ci.org\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/lyc.ecole-ci.org\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/lyc.ecole-ci.org\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/lyc.ecole-ci.org\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/lyc.ecole-ci.org\/theme\/yui_combo.php?m\/1776147135\/","combine":true,"comboBase":"https:\/\/lyc.ecole-ci.org\/theme\/yui_combo.php?","ext":false,"root":"m\/1776147135\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_role-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_mb2shortcodes-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_wiris-button":{"requires":["moodle-editor_atto-plugin","get"]}}},"gallery":{"name":"gallery","base":"https:\/\/lyc.ecole-ci.org\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/lyc.ecole-ci.org\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1776147135\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/lyc.ecole-ci.org\/lib\/javascript.php\/1776147135\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/lyc.ecole-ci.org\/lib\/javascript.php\/1776147135\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>-->
+<style>
+	/* =========================================================
+	DPFC — Textes officiels 2026-2027
+	Version complète, verticale, compacte et responsive
+	========================================================= */
+
+	.dpfc-docs-2627,
+	.dpfc-docs-2627 * {
+		box-sizing: border-box;
+	}
+
+	.dpfc-docs-2627 {
+		--orange: #f47721;
+		--orange-light: #fff2e8;
+
+		--green: #16834b;
+		--green-light: #eaf7f0;
+
+		--blue: #256f9f;
+		--blue-light: #eaf4fb;
+
+		--dark: #173247;
+		--text: #344754;
+		--muted: #657783;
+		--border: #dce5e9;
+
+		position: relative;
+		width: 100%;
+		margin: 10px 0;
+		padding: 16px 14px 14px;
+
+		overflow: hidden;
+
+		background:
+			radial-gradient(
+				circle at 100% 0,
+				rgba(244, 119, 33, 0.09),
+				transparent 34%
+			),
+			linear-gradient(135deg, #ffffff 0%, #f7fafb 100%);
+
+		border: 1px solid var(--border);
+		border-radius: 15px;
+
+		box-shadow:
+			0 5px 15px rgba(23, 50, 71, 0.07),
+			0 14px 28px rgba(23, 50, 71, 0.04);
+
+		color: var(--text);
+		font-family: inherit;
+	}
+
+	/* Bande supérieure orange, blanc et vert */
+
+	.dpfc-docs-2627::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+
+		height: 5px;
+
+		background: linear-gradient(
+			90deg,
+			var(--orange) 0%,
+			var(--orange) 33.33%,
+			#ffffff 33.33%,
+			#ffffff 66.66%,
+			var(--green) 66.66%,
+			var(--green) 100%
+		);
+	}
+
+	/* En-tête */
+
+	.dpfc-docs-2627__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 8px 14px;
+
+		margin: 3px 3px 12px;
+	}
+
+	.dpfc-docs-2627__title {
+		margin: 0;
+
+		color: var(--dark);
+		font-size: clamp(18px, 1.7vw, 22px);
+		font-weight: 800;
+		line-height: 1.25;
+		letter-spacing: -0.01em;
+	}
+
+	.dpfc-docs-2627__status {
+		display: inline-flex;
+		align-items: center;
+		gap: 7px;
+
+		padding: 5px 11px;
+
+		background: var(--orange-light);
+		border: 1px solid rgba(244, 119, 33, 0.25);
+		border-radius: 999px;
+
+		color: #a94709;
+		font-size: clamp(10px, 0.8vw, 12px);
+		font-weight: 800;
+		line-height: 1.2;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	.dpfc-docs-2627__status::before {
+		content: "";
+
+		width: 7px;
+		height: 7px;
+
+		background: var(--green);
+		border-radius: 50%;
+
+		box-shadow: 0 0 0 3px rgba(22, 131, 75, 0.14);
+	}
+
+	/* Liste verticale */
+
+	.dpfc-docs-2627__list {
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+	}
+
+	.dpfc-docs-2627__item {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Boutons */
+
+	.dpfc-docs-2627__link {
+		--accent: var(--orange);
+		--soft: var(--orange-light);
+
+		display: grid;
+		grid-template-columns: 44px minmax(0, 1fr) 30px;
+		align-items: center;
+		gap: 12px;
+
+		width: 100%;
+		min-height: 68px;
+		padding: 9px 13px;
+
+		background: rgba(255, 255, 255, 0.98);
+
+		border: 1px solid var(--border);
+		border-left: 5px solid var(--accent);
+		border-radius: 11px;
+
+		color: var(--text) !important;
+		text-decoration: none !important;
+
+		box-shadow: 0 3px 9px rgba(23, 50, 71, 0.06);
+
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease,
+			box-shadow 0.2s ease,
+			background-color 0.2s ease;
+	}
+
+	.dpfc-docs-2627__link--orange {
+		--accent: var(--orange);
+		--soft: var(--orange-light);
+	}
+
+	.dpfc-docs-2627__link--green {
+		--accent: var(--green);
+		--soft: var(--green-light);
+	}
+
+	.dpfc-docs-2627__link--blue {
+		--accent: var(--blue);
+		--soft: var(--blue-light);
+	}
+
+	.dpfc-docs-2627__link:hover {
+		transform: translateX(4px);
+
+		background: var(--soft);
+		border-color: var(--accent);
+
+		color: var(--text) !important;
+		text-decoration: none !important;
+
+		box-shadow:
+			0 6px 14px rgba(23, 50, 71, 0.10),
+			0 12px 22px rgba(23, 50, 71, 0.05);
+	}
+
+	.dpfc-docs-2627__link:focus {
+		color: var(--text) !important;
+		text-decoration: none !important;
+	}
+
+	.dpfc-docs-2627__link:focus-visible {
+		outline: 3px solid var(--accent);
+		outline-offset: 3px;
+	}
+
+	/* Icône PDF */
+
+	.dpfc-docs-2627__pdf {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 44px;
+		height: 44px;
+
+		background: var(--soft);
+		border: 1px solid var(--accent);
+		border-radius: 10px;
+
+		color: var(--accent);
+		font-size: 10px;
+		font-weight: 900;
+		line-height: 1;
+		letter-spacing: -0.2px;
+	}
+
+	/* Contenu textuel */
+
+	.dpfc-docs-2627__content {
+		display: block;
+		min-width: 0;
+	}
+
+	.dpfc-docs-2627__category {
+		display: block;
+		margin-bottom: 4px;
+
+		color: var(--accent);
+		font-size: clamp(11px, 0.85vw, 13px);
+		font-weight: 800;
+		line-height: 1.2;
+		letter-spacing: 0.035em;
+		text-transform: uppercase;
+	}
+
+	.dpfc-docs-2627__label {
+		display: block;
+
+		color: var(--dark);
+		font-size: clamp(14px, 1.15vw, 16.5px);
+		font-weight: 700;
+		line-height: 1.38;
+
+		overflow-wrap: anywhere;
+	}
+
+	/* Flèche */
+
+	.dpfc-docs-2627__arrow {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 30px;
+		height: 30px;
+
+		background: var(--soft);
+		border-radius: 50%;
+
+		color: var(--accent);
+		font-size: 17px;
+		font-weight: 800;
+		line-height: 1;
+
+		transition: transform 0.2s ease;
+	}
+
+	.dpfc-docs-2627__link:hover .dpfc-docs-2627__arrow {
+		transform: translate(2px, -2px);
+	}
+
+	/* Tablettes */
+
+	@media screen and (max-width: 768px) {
+		.dpfc-docs-2627 {
+			padding: 15px 11px 11px;
+		}
+
+		.dpfc-docs-2627__title {
+			font-size: 18px;
+		}
+
+		.dpfc-docs-2627__status {
+			font-size: 10px;
+		}
+
+		.dpfc-docs-2627__link {
+			grid-template-columns: 41px minmax(0, 1fr) 28px;
+			gap: 10px;
+
+			min-height: 66px;
+			padding: 8px 11px;
+		}
+
+		.dpfc-docs-2627__pdf {
+			width: 41px;
+			height: 41px;
+		}
+
+		.dpfc-docs-2627__category {
+			font-size: 11px;
+		}
+
+		.dpfc-docs-2627__label {
+			font-size: 14.5px;
+		}
+
+		.dpfc-docs-2627__arrow {
+			width: 28px;
+			height: 28px;
+			font-size: 16px;
+		}
+	}
+
+	/* Téléphones */
+
+	@media screen and (max-width: 520px) {
+		.dpfc-docs-2627 {
+			margin: 8px 0;
+			padding: 14px 8px 8px;
+
+			border-radius: 12px;
+		}
+
+		.dpfc-docs-2627__header {
+			align-items: flex-start;
+			margin: 2px 2px 10px;
+		}
+
+		.dpfc-docs-2627__title {
+			font-size: 17px;
+		}
+
+		.dpfc-docs-2627__status {
+			padding: 4px 8px;
+			font-size: 9px;
+		}
+
+		.dpfc-docs-2627__list {
+			gap: 8px;
+		}
+
+		.dpfc-docs-2627__link {
+			grid-template-columns: 38px minmax(0, 1fr) 26px;
+			gap: 8px;
+
+			min-height: 64px;
+			padding: 8px;
+
+			border-left-width: 4px;
+			border-radius: 9px;
+		}
+
+		.dpfc-docs-2627__pdf {
+			width: 38px;
+			height: 38px;
+
+			border-radius: 9px;
+			font-size: 9px;
+		}
+
+		.dpfc-docs-2627__category {
+			margin-bottom: 3px;
+
+			font-size: 10px;
+		}
+
+		.dpfc-docs-2627__label {
+			font-size: 13.5px;
+			line-height: 1.38;
+		}
+
+		.dpfc-docs-2627__arrow {
+			width: 26px;
+			height: 26px;
+
+			font-size: 15px;
+		}
+	}
+
+	/* Très petits téléphones */
+
+	@media screen and (max-width: 360px) {
+		.dpfc-docs-2627__header {
+			flex-direction: column;
+		}
+
+		.dpfc-docs-2627__link {
+			grid-template-columns: 36px minmax(0, 1fr) 24px;
+			gap: 7px;
+
+			padding: 7px;
+		}
+
+		.dpfc-docs-2627__pdf {
+			width: 36px;
+			height: 36px;
+		}
+
+		.dpfc-docs-2627__label {
+			font-size: 13px;
+		}
+
+		.dpfc-docs-2627__arrow {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	/* Accessibilité */
+
+	@media (prefers-reduced-motion: reduce) {
+		.dpfc-docs-2627__link,
+		.dpfc-docs-2627__arrow {
+			transition: none;
+		}
+
+		.dpfc-docs-2627__link:hover,
+		.dpfc-docs-2627__link:hover .dpfc-docs-2627__arrow {
+			transform: none;
+		}
+	}
+</style>
+<style>
+.dpfc-secondaire-national,
+.dpfc-secondaire-national * {
+    box-sizing: border-box;
+}
+
+.dpfc-secondaire-national {
+    --ci-orange: #f27a24;
+    --ci-green: #16854b;
+    --ink: #243744;
+    --muted: #687984;
+    --line: #dce5ea;
+    --face: #ffffff;
+    --face-low: #f3f6f8;
+    --edge: #cbd5db;
+
+    position: relative;
+    width: 100%;
+    margin: 18px 0;
+    padding: clamp(18px, 3vw, 32px);
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 0 0, rgba(242, 122, 36, .10), transparent 28%),
+        radial-gradient(circle at 100% 100%, rgba(22, 133, 75, .09), transparent 32%),
+        #ffffff;
+
+    border: 1px solid rgba(36, 55, 68, .10);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(36, 55, 68, .07);
+    color: var(--ink);
+    font-family: inherit;
+}
+
+.dpfc-secondaire-national::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--ci-orange) 0 33.333%,
+        #ffffff 33.333% 66.666%,
+        var(--ci-green) 66.666% 100%
+    );
+    box-shadow: 0 1px 0 rgba(36, 55, 68, .08);
+}
+
+.dpfc-secondaire-national__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 3px 0 22px;
+}
+
+.dpfc-secondaire-national__title {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(21px, 2.4vw, 31px);
+    font-weight: 850;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+}
+
+.dpfc-secondaire-national__mark {
+    display: inline-grid;
+    flex: 0 0 auto;
+    grid-template-columns: repeat(3, 12px);
+    height: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(36, 55, 68, .11);
+    border-radius: 999px;
+    box-shadow: 0 2px 5px rgba(36, 55, 68, .10);
+}
+
+.dpfc-secondaire-national__mark span:nth-child(1) {
+    background: var(--ci-orange);
+}
+
+.dpfc-secondaire-national__mark span:nth-child(2) {
+    background: #ffffff;
+}
+
+.dpfc-secondaire-national__mark span:nth-child(3) {
+    background: var(--ci-green);
+}
+
+.dpfc-secondaire-national__disciplines {
+    display: grid;
+    gap: 16px;
+}
+
+.dpfc-secondaire-national__discipline {
+    position: relative;
+    margin: 0;
+    padding: 15px;
+
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid rgba(36, 55, 68, .09);
+    border-radius: 14px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .95) inset,
+        0 5px 14px rgba(36, 55, 68, .045);
+}
+
+.dpfc-secondaire-national__discipline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 92px;
+    height: 3px;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(
+        90deg,
+        var(--ci-orange) 0 33.333%,
+        #f6f7f8 33.333% 66.666%,
+        var(--ci-green) 66.666% 100%
+    );
+}
+
+.dpfc-secondaire-national__discipline-title {
+    margin: 2px 0 12px;
+    color: var(--ink);
+    font-size: clamp(16px, 1.35vw, 19px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.dpfc-secondaire-national__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dpfc-secondaire-national__item {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.dpfc-secondaire-national__button {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 22px;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 52px;
+    padding: 7px 8px;
+
+    background: linear-gradient(180deg, var(--face) 0%, var(--face-low) 100%);
+    border: 1px solid #d7e0e5;
+    border-bottom-color: #bac7ce;
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 0 var(--edge),
+        0 7px 13px rgba(36, 55, 68, .10),
+        0 1px 0 rgba(255, 255, 255, .95) inset;
+
+    color: var(--ink) !important;
+    text-decoration: none !important;
+    cursor: pointer;
+
+    transform: translateY(0);
+    transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+}
+
+.dpfc-secondaire-national__button:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+    border-color: #c8d5dc;
+    color: var(--ink) !important;
+    text-decoration: none !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 0 var(--edge),
+        0 10px 18px rgba(36, 55, 68, .13),
+        0 1px 0 rgba(255, 255, 255, .98) inset;
+}
+
+.dpfc-secondaire-national__button:active {
+    transform: translateY(3px);
+    box-shadow:
+        0 1px 0 var(--edge),
+        0 3px 7px rgba(36, 55, 68, .09),
+        0 1px 0 rgba(255, 255, 255, .95) inset;
+}
+
+.dpfc-secondaire-national__button:focus-visible {
+    outline: 3px solid rgba(242, 122, 36, .28);
+    outline-offset: 3px;
+}
+
+.dpfc-secondaire-national__pdf {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(242, 122, 36, .14) 0%,
+            #ffffff 48%,
+            rgba(22, 133, 75, .13) 100%);
+    border: 1px solid #d3dde2;
+    border-radius: 8px;
+    box-shadow:
+        0 2px 0 #c7d1d7,
+        0 3px 7px rgba(36, 55, 68, .08);
+
+    color: #3c5260;
+    font-size: 8px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -.1px;
+}
+
+.dpfc-secondaire-national__label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: var(--ink);
+    font-size: clamp(12.5px, 1vw, 14px);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.dpfc-secondaire-national__external {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+
+    background: #ffffff;
+    border: 1px solid #d7e0e5;
+    border-radius: 50%;
+    box-shadow: 0 2px 0 #cad4da;
+
+    color: var(--ci-green);
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.dpfc-secondaire-national__button--disabled {
+    cursor: not-allowed;
+    opacity: .63;
+    filter: grayscale(.35);
+    box-shadow:
+        0 3px 0 #d3dbe0,
+        0 5px 10px rgba(36, 55, 68, .07);
+}
+
+.dpfc-secondaire-national__button--disabled:hover,
+.dpfc-secondaire-national__button--disabled:active {
+    background: linear-gradient(180deg, var(--face) 0%, var(--face-low) 100%);
+    border-color: #d7e0e5;
+    transform: none;
+    box-shadow:
+        0 3px 0 #d3dbe0,
+        0 5px 10px rgba(36, 55, 68, .07);
+}
+
+.dpfc-secondaire-national__button--disabled
+.dpfc-secondaire-national__external {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+@media screen and (max-width: 760px) {
+    .dpfc-secondaire-national {
+        padding: 18px 12px 15px;
+        border-radius: 14px;
+    }
+
+    .dpfc-secondaire-national__header {
+        align-items: flex-start;
+        margin-bottom: 17px;
+    }
+
+    .dpfc-secondaire-national__discipline {
+        padding: 13px 11px;
+    }
+
+    .dpfc-secondaire-national__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .dpfc-secondaire-national__button {
+        grid-template-columns: 32px minmax(0, 1fr) 21px;
+        gap: 7px;
+        min-height: 50px;
+        padding: 6px 7px;
+    }
+
+    .dpfc-secondaire-national__pdf {
+        width: 32px;
+        height: 32px;
+    }
+
+    .dpfc-secondaire-national__label {
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .dpfc-secondaire-national {
+        margin: 12px 0;
+        padding: 16px 9px 12px;
+    }
+
+    .dpfc-secondaire-national__title {
+        font-size: 19px;
+    }
+
+    .dpfc-secondaire-national__mark {
+        grid-template-columns: repeat(3, 9px);
+        height: 10px;
+    }
+
+    .dpfc-secondaire-national__disciplines {
+        gap: 12px;
+    }
+
+    .dpfc-secondaire-national__discipline-title {
+        font-size: 15.5px;
+    }
+
+    .dpfc-secondaire-national__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dpfc-secondaire-national__button {
+        min-height: 49px;
+    }
+
+    .dpfc-secondaire-national__label {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dpfc-secondaire-national__button {
+        transition: none;
+    }
+
+    .dpfc-secondaire-national__button:hover,
+    .dpfc-secondaire-national__button:active {
+        transform: none;
+    }
+}
+</style>	
+        <style id="ascsb_style">:root{--acsb-bg: #181818;--acsb-color: #ffffff;--acsb-bocolor: #282828;--acsb-filtercolor: brightness(0) saturate(100%) invert(100%) sepia(91%) saturate(0%) hue-rotate(298deg) brightness(105%) contrast(101%);}.acsb_contrastlight{--acsb-bg: #ffffff;--acsb-color: #000000;--acsb-bocolor: #dddddd;--acsb-filtercolor: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7494%) hue-rotate(292deg) brightness(70%) contrast(100%);}.acsb_contrastdark .breadcrumb ul li+li::before,.acsb_contrastlight .breadcrumb ul li+li::before,.acsb_contrastdark .breadcrumb ol li+li::before,.acsb_contrastlight .breadcrumb ol li+li::before,.acsb_contrastdark .block_tree a,.acsb_contrastlight .block_tree a,.acsb_contrastdark .popover-region-header-container,.acsb_contrastlight .popover-region-header-container,.acsb_contrastdark .popover-region-toggle::before,.acsb_contrastlight .popover-region-toggle::before,.acsb_contrastdark .popover-region-toggle::after,.acsb_contrastlight .popover-region-toggle::after,.acsb_contrastdark .control-area,.acsb_contrastlight .control-area,.acsb_contrastdark .notification-area,.acsb_contrastlight .notification-area,.acsb_contrastdark .courseindex-item,.acsb_contrastlight .courseindex-item,.acsb_contrastdark .changenumsections,.acsb_contrastlight .changenumsections,.acsb_contrastdark .pluscontainer,.acsb_contrastlight .pluscontainer,.acsb_contrastdark .inplaceeditable,.acsb_contrastlight .inplaceeditable,.acsb_contrastdark .sectionname a,.acsb_contrastlight .sectionname a,.acsb_contrastdark [type="text"],.acsb_contrastlight [type="text"],.acsb_contrastdark fieldset,.acsb_contrastlight fieldset,.acsb_contrastdark fieldset>*,.acsb_contrastlight fieldset>*,.acsb_contrastdark .filepicker-container,.acsb_contrastlight .filepicker-container,.acsb_contrastdark .moreless-toggler,.acsb_contrastlight .moreless-toggler,.acsb_contrastdark select,.acsb_contrastlight select,.acsb_contrastdark .form-control,.acsb_contrastlight .form-control,.acsb_contrastdark input,.acsb_contrastlight input,.acsb_contrastdark textarea,.acsb_contrastlight textarea,.acsb_contrastdark .fm-empty-container,.acsb_contrastlight .fm-empty-container,.acsb_contrastdark .sp-replacer,.acsb_contrastlight .sp-replacer,.acsb_contrastdark .sp-container,.acsb_contrastlight .sp-container,.acsb_contrastdark .sp-picker-container,.acsb_contrastlight .sp-picker-container,.acsb_contrastdark .tox-tinymce,.acsb_contrastlight .tox-tinymce,.acsb_contrastdark .tox-editor-header,.acsb_contrastlight .tox-editor-header,.acsb_contrastdark .tox-menubar,.acsb_contrastlight .tox-menubar,.acsb_contrastdark .tox-toolbar-overlord,.acsb_contrastlight .tox-toolbar-overlord,.acsb_contrastdark .tox-statusbar,.acsb_contrastlight .tox-statusbar,.acsb_contrastdark .tox-mbtn,.acsb_contrastlight .tox-mbtn,.acsb_contrastdark .tox-toolbar__primary,.acsb_contrastlight .tox-toolbar__primary,.acsb_contrastdark .tox-edit-area__iframe,.acsb_contrastlight .tox-edit-area__iframe,.acsb_contrastdark .tox-tbtn svg,.acsb_contrastlight .tox-tbtn svg,.acsb_contrastdark .tox-toolbar__overflow,.acsb_contrastlight .tox-toolbar__overflow,.acsb_contrastdark .tox-statusbar__text-container *,.acsb_contrastlight .tox-statusbar__text-container *,.acsb_contrastdark .tox-menu,.acsb_contrastlight .tox-menu,.acsb_contrastdark .tox-collection__item,.acsb_contrastlight .tox-collection__item,.acsb_contrastdark .tox-collection__group,.acsb_contrastlight .tox-collection__group,.acsb_contrastdark .tox .tox-collection__item-caret svg,.acsb_contrastlight .tox .tox-collection__item-caret svg,.acsb_contrastdark .tox-collection__item-accessory,.acsb_contrastlight .tox-collection__item-accessory,.acsb_contrastdark .tox-pop__dialog,.acsb_contrastlight .tox-pop__dialog,.acsb_contrastdark .tox-tbtn,.acsb_contrastlight .tox-tbtn,.acsb_contrastdark .CodeMirror,.acsb_contrastlight .CodeMirror,.acsb_contrastdark .CodeMirror-linenumber,.acsb_contrastlight .CodeMirror-linenumber,.acsb_contrastdark .CodeMirror-gutters,.acsb_contrastlight .CodeMirror-gutters,.acsb_contrastdark .editor_atto_toolbar,.acsb_contrastlight .editor_atto_toolbar,.acsb_contrastdark .atto_group,.acsb_contrastlight .atto_group,.acsb_contrastdark .atto_group button,.acsb_contrastlight .atto_group button,.acsb_contrastdark .atto_group button i,.acsb_contrastlight .atto_group button i,.acsb_contrastdark .modal-body,.acsb_contrastlight .modal-body,.acsb_contrastdark .modal-content,.acsb_contrastlight .modal-content,.acsb_contrastdark .modal-header,.acsb_contrastlight .modal-header,.acsb_contrastdark .modal-footer,.acsb_contrastlight .modal-footer,.acsb_contrastdark .modal-header *,.acsb_contrastlight .modal-header *,.acsb_contrastdark .modal-footer *,.acsb_contrastlight .modal-footer *,.acsb_contrastdark .moodle-dialogue-wrap,.acsb_contrastlight .moodle-dialogue-wrap,.acsb_contrastdark .moodle-dialogue-hd,.acsb_contrastlight .moodle-dialogue-hd,.acsb_contrastdark .badge,.acsb_contrastlight .badge,.acsb_contrastdark .yui3-calendar-content,.acsb_contrastlight .yui3-calendar-content,.acsb_contrastdark .yui3-calendar-header,.acsb_contrastlight .yui3-calendar-header,.acsb_contrastdark .filepicker-filelist,.acsb_contrastlight .filepicker-filelist,.acsb_contrastdark tr,.acsb_contrastlight tr,.acsb_contrastdark th,.acsb_contrastlight th,.acsb_contrastdark td,.acsb_contrastlight td,.acsb_contrastdark th *,.acsb_contrastlight th *,.acsb_contrastdark td *,.acsb_contrastlight td *,.acsb_contrastdark h1,.acsb_contrastlight h1,.acsb_contrastdark h2,.acsb_contrastlight h2,.acsb_contrastdark h3,.acsb_contrastlight h3,.acsb_contrastdark h4,.acsb_contrastlight h4,.acsb_contrastdark h5,.acsb_contrastlight h5,.acsb_contrastdark h6,.acsb_contrastlight h6,.acsb_contrastdark .h1,.acsb_contrastlight .h1,.acsb_contrastdark .h2,.acsb_contrastlight .h2,.acsb_contrastdark .h3,.acsb_contrastlight .h3,.acsb_contrastdark .h4,.acsb_contrastlight .h4,.acsb_contrastdark .h5,.acsb_contrastlight .h5,.acsb_contrastdark .h6,.acsb_contrastlight .h6,.acsb_contrastdark .card,.acsb_contrastlight .card,.acsb_contrastdark .text-truncate,.acsb_contrastlight .text-truncate,.acsb_contrastdark .activityiconcontainer,.acsb_contrastlight .activityiconcontainer,.acsb_contrastdark .btn,.acsb_contrastlight .btn,.acsb_contrastdark .btn i,.acsb_contrastlight .btn i,.acsb_contrastdark .multiline,.acsb_contrastlight .multiline,.acsb_contrastdark .card-footer,.acsb_contrastlight .card-footer,.acsb_contrastdark .progress-text,.acsb_contrastlight .progress-text,.acsb_contrastdark button:not(#acsb-menu button):not(.acsb-trigger),.acsb_contrastlight button:not(#acsb-menu button):not(.acsb-trigger),.acsb_contrastdark button i:not(#acsb-menu button i),.acsb_contrastlight button i:not(#acsb-menu button i),.acsb_contrastdark .list-group-item,.acsb_contrastlight .list-group-item,.acsb_contrastdark .bg-white,.acsb_contrastlight .bg-white,.acsb_contrastdark .linkbtn,.acsb_contrastlight .linkbtn,.acsb_contrastdark .title,.acsb_contrastlight .title,.acsb_contrastdark .course-popover-inner,.acsb_contrastlight .course-popover-inner,.acsb_contrastdark .course-popover-inner *,.acsb_contrastlight .course-popover-inner *,.acsb_contrastdark .item-actions button,.acsb_contrastlight .item-actions button,.acsb_contrastdark .popover-header,.acsb_contrastlight .popover-header,.acsb_contrastdark .popover-body,.acsb_contrastlight .popover-body,.acsb_contrastdark footer button,.acsb_contrastlight footer button,.acsb_contrastdark .day,.acsb_contrastlight .day,.acsb_contrastdark .message,.acsb_contrastlight .message,.acsb_contrastdark .message *,.acsb_contrastlight .message *,.acsb_contrastdark .dropdown-menu,.acsb_contrastlight .dropdown-menu,.acsb_contrastdark .dropdown-menu *,.acsb_contrastlight .dropdown-menu *,.acsb_contrastdark .dropdown-item,.acsb_contrastlight .dropdown-item,.acsb_contrastdark nav,.acsb_contrastlight nav,.acsb_contrastdark .nav-item,.acsb_contrastlight .nav-item,.acsb_contrastdark .nav-link,.acsb_contrastlight .nav-link,.acsb_contrastdark .nav-tabs,.acsb_contrastlight .nav-tabs,.acsb_contrastdark .border-bottom,.acsb_contrastlight .border-bottom,.acsb_contrastdark .border-top,.acsb_contrastlight .border-top,.acsb_contrastdark .border-right,.acsb_contrastlight .border-right,.acsb_contrastdark .border-left,.acsb_contrastlight .border-left,.acsb_contrastdark .categoryname,.acsb_contrastlight .categoryname,.acsb_contrastdark .coursebox,.acsb_contrastlight .coursebox,.acsb_contrastdark .info a,.acsb_contrastlight .info a,.acsb_contrastdark .enrolmenticons,.acsb_contrastlight .enrolmenticons,.acsb_contrastdark .categoryname::before,.acsb_contrastlight .categoryname::before,.acsb_contrastdark .teachers,.acsb_contrastlight .teachers,.acsb_contrastdark .mb2-pb-testimonials-item,.acsb_contrastlight .mb2-pb-testimonials-item,.acsb_contrastdark .mb2-pb-testimonials-item *,.acsb_contrastlight .mb2-pb-testimonials-item *,.acsb_contrastdark .course-quick,.acsb_contrastlight .course-quick,.acsb_contrastdark .course-quick *,.acsb_contrastlight .course-quick *,.acsb_contrastdark .mb2-editor,.acsb_contrastlight .mb2-editor,.acsb_contrastdark .mb2-editor-document,.acsb_contrastlight .mb2-editor-document,.acsb_contrastdark .mb2-editor-document *,.acsb_contrastlight .mb2-editor-document *,.acsb_contrastdark .mb2mm-wrap:before,.acsb_contrastlight .mb2mm-wrap:before,.acsb_contrastdark .search-field,.acsb_contrastlight .search-field,.acsb_contrastdark .theme-footer a,.acsb_contrastlight .theme-footer a,.acsb_contrastdark .theme-course-item-inner,.acsb_contrastlight .theme-course-item-inner,.acsb_contrastdark .event-title,.acsb_contrastlight .event-title,.acsb_contrastdark .event-details,.acsb_contrastlight .event-details,.acsb_contrastdark .myc-readmore,.acsb_contrastlight .myc-readmore,.acsb_contrastdark .tpheader_dark.tpheaderl_modern .breadcrumb a,.acsb_contrastlight .tpheader_dark.tpheaderl_modern .breadcrumb a,.acsb_contrastdark .tgsdbc_dark .sidebar-content,.acsb_contrastlight .tgsdbc_dark .sidebar-content,.acsb_contrastdark .cfilter-wrap,.acsb_contrastlight .cfilter-wrap{background-color: var(--acsb-bg) !important;color: var(--acsb-color) !important;border-color: var(--acsb-bocolor) !important;}.acsb_contrastdark .mb2-pb-row.light .mb2-pb-row-inner,.acsb_contrastdark .tpheader_light #page-header,.acsb_contrastdark .toggle-content .content:before,.acsb_contrastdark .tgsdb-chome .course-title{background-color: var(--acsb-bg) !important;border-color: var(--acsb-bocolor) !important;background-image: none !important;}.acsb_contrastlight .mb2-pb-row.dark .mb2-pb-row-inner,.acsb_contrastlight .tpheader_dark #page-header{background-color: var(--acsb-bg) !important;border-color: var(--acsb-bocolor) !important;background-image: none !important;}.acsb_contrastdark svg image,.acsb_contrastlight svg image,.acsb_contrastdark img.icon,.acsb_contrastlight img.icon,.acsb_contrastdark .activityicon,.acsb_contrastlight .activityicon{filter: var(--acsb-filtercolor) !important;}</style>    <style id="theme_custom_style">:root{--mb2-htmlscl:0px;}</style>    
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="https://lyc.ecole-ci.org/lib/requirejs.php/1776147135/core/first.js"></script></head><body id="page-my-index" class="limitedwidth format-site path-my chrome dir-ltr lang-fr yui-skin-sam yui3-skin-sam lyc-ecole-ci-org pagelayout-mydashboard course-1 context-132443 theme theme-lfw issection coursenav noediting fsmod0 fsmodedh nobuilderpage loggedin roleshortname-visiteur coursegrid0 sticky-nav3 theme-hidden-region-mode hide-sidebars nosidebar-case css_af5e css_31a2 css_rbxt css_6wum css_hy9f blockstyle-minimal theader_light2 tpheader_dark tpheaderl_modern tpheader_gradient tpheader_wave tpheader_color tnavheader tnavheader_light2 hnavpos1 navalignright jsenabled page-loaded">
+<div>
+    <a class="sr-only sr-only-focusable" href="#main-navigation">Skip to navigation</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-mobilenav">Skip to navigation</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-search">Skip to search form</a>
+    <a class="sr-only sr-only-focusable" href="#themeskipto-login">Skip to profile</a>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Passer au contenu principal</a>
+    <a class="sr-only sr-only-focusable" href="#acsb-menu_launcher">Skip to accessibility options</a>
+    <a class="sr-only sr-only-focusable" href="#footer">Skip to footer</a>
+</div><script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/polyfills/polyfill.js"></script>
+<script src="https://lyc.ecole-ci.org/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div><script src="https://lyc.ecole-ci.org/theme/jquery.php/core/jquery-3.7.1.min.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+<a class="sr-only sr-only-focusable" href="#skip_acsb-menu">Skip accessibility options</a><button id="acsb-menu_launcher" type="button" class="acsb-trigger" aria-label="Accessibility options"><span class="acsb-icon-main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M423.9 255.8L411 413.1c-3.3 40.7-63.9 35.1-60.6-4.9l10-122.5-41.1 2.3c10.1 20.7 15.8 43.9 15.8 68.5 0 41.2-16.1 78.7-42.3 106.5l-39.3-39.3c57.9-63.7 13.1-167.2-74-167.2-25.9 0-49.5 9.9-67.2 26L73 243.2c22-20.7 50.1-35.1 81.4-40.2l75.3-85.7-42.6-24.8-51.6 46c-30 26.8-70.6-18.5-40.5-45.4l68-60.7c9.8-8.8 24.1-10.2 35.5-3.6 0 0 139.3 80.9 139.5 81.1 16.2 10.1 20.7 36 6.1 52.6L285.7 229l106.1-5.9c18.5-1.1 33.6 14.4 32.1 32.7zm-64.9-154c28.1 0 50.9-22.8 50.9-50.9C409.9 22.8 387.1 0 359 0c-28.1 0-50.9 22.8-50.9 50.9 0 28.1 22.8 50.9 50.9 50.9zM179.6 456.5c-80.6 0-127.4-90.6-82.7-156.1l-39.7-39.7C36.4 287 24 320.3 24 356.4c0 130.7 150.7 201.4 251.4 122.5l-39.7-39.7c-16 10.9-35.3 17.3-56.1 17.3z"></path></svg></span><span class="acsb-icon-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg></span></button><div id="acsb-menu" class="acsb-block"><div class="acsb-block-header d-flex justify-content-between align-items-center"><button type="button" class="themereset acsb-reset d-inline-flex justify-content-center align-items-center" aria-label="Réinitialiser"><span class="acsb-btn-icon"><i class="ri-loop-left-line"></i></span><span class="acsb-btn-text">Réinitialiser</span></button><div class="acsb-block-close"><button type="button" class="themereset acsb-close d-inline-flex justify-content-center align-items-center" aria-label="Fermer"><span class="acsb-btn-icon"><i class="ri-close-fill"></i></span><span class="acsb-btn-text">Fermer</span></button></div></div><div class="acsb-block-inner d-flex flex-column"><div class="acsb-section acsb-profiles"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_profiles" aria-expanded="true" aria-label="Profils d'accessibilité"><span class="btntext">Profils d'accessibilité</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_profiles" class="acsb-section-content"><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="visualimpairment" data-acsb="readablefont,textsizelarge,highsaturation,bigblackcursor" aria-label="Déficience visuelle" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-eye-line"></i></span><span class="acsb-profile-title">Déficience visuelle</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="seizureandepileptic" data-acsb="lowsaturation,stopanimations" aria-label="Crise épileptique" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-flashlight-fill"></i></span><span class="acsb-profile-title">Crise épileptique</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="colorvisiondeficiency" data-acsb="readablefont,highcontrast,highsaturation" aria-label="Déficience de la vision des couleurs" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-contrast-drop-fill"></i></span><span class="acsb-profile-title">Déficience de la vision des couleurs</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="adhd" data-acsb="lowsaturation,readingmask,stopanimations" aria-label="Le trouble du déficit de l'attention" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-focus-2-fill"></i></span><span class="acsb-profile-title">Le trouble du déficit de l'attention</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="dyslexia" data-acsb="dyslexic,readingguide" aria-label="Dyslexie" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-font-size"></i></span><span class="acsb-profile-title">Dyslexie</span></button><button type="button" class="acsb-profile-item acsb-btn-css themereset d-flex flex-row align-items-center" data-id="learning" data-acsb="readablefont,textsizenormal,readingguide" aria-label="S'accommoder" aria-checked="false" role="checkbox"><span class="acsb-profile-icon"><i class="ri-book-read-line"></i></span><span class="acsb-profile-title">S'accommoder</span></button></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_2" aria-expanded="true" aria-label="Ajustements de contenu"><span class="btntext">Ajustements de contenu</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_2" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="readablefont" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="dyslexic" aria-label="Police lisible" aria-checked="false" role="checkbox"><i class="ri-font-family"></i><span class="acsb-item-title">Police lisible</span></button></div><div class="acsb-item"><button type="button" data-id="dyslexic" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="readablefont" aria-label="Police adaptée à la dyslexie" aria-checked="false" role="checkbox"><i class="ri-font-size"></i><span class="acsb-item-title">Police adaptée à la dyslexie</span></button></div><div class="acsb-item"><button type="button" data-id="highlighttitles" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en surbrillance les titres" aria-checked="false" role="checkbox"><i class="ri-heading"></i><span class="acsb-item-title">Mettre en surbrillance les titres</span></button></div><div class="acsb-item"><button type="button" data-id="highlightlinks" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en évidence les liens" aria-checked="false" role="checkbox"><i class="ri-link"></i><span class="acsb-item-title">Mettre en évidence les liens</span></button></div><div class="acsb-item"><button type="button" data-id="highlightbuttons" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Mettre en surbrillance les boutons" aria-checked="false" role="checkbox"><i class="ri-mouse-line"></i><span class="acsb-item-title">Mettre en surbrillance les boutons</span></button></div><div class="acsb-item"><button type="button" data-id="hideimages" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Masquer les images" aria-checked="false" role="checkbox"><i class="ri-image-2-line"></i><span class="acsb-item-title">Masquer les images</span></button></div><div class="acsb-item"><button type="button" data-id="tooltips" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Info-bulles" aria-checked="false" role="checkbox"><i class="ri-feedback-line"></i><span class="acsb-item-title">Info-bulles</span></button></div><div class="acsb-item"><button type="button" data-id="stopanimations" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Arrêter les animations" aria-checked="false" role="checkbox"><i class="ri-stop-line"></i><span class="acsb-item-title">Arrêter les animations</span></button></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-font-size-2"></i><span class="acsb-item-group-title">Taille du texte</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="textsizenormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizelarge,textsizebig" aria-label="Taille du texte: plus 1" aria-checked="false" role="checkbox"><span class="acsb-item-title">+</span></button><button type="button" data-id="textsizelarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizenormal,textsizebig" aria-label="Taille du texte: plus 2" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="textsizebig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textsizenormal,textsizelarge" aria-label="Taille du texte: plus 3" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ + +</span></button></div></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-line-height"></i><span class="acsb-item-group-title">Hauteur de la ligne</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="lineheightnormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightlarge,lineheightbig" aria-label="Hauteur de la ligne: plus 1" aria-checked="false" role="checkbox"><span class="acsb-item-title">+</span></button><button type="button" data-id="lineheightlarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightnormal,lineheightbig" aria-label="Hauteur de la ligne: plus 2" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="lineheightbig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="lineheightnormal,lineheightlarge" aria-label="Hauteur de la ligne: plus 3" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ + +</span></button></div></div><div class="acsb-item acsb-item-group"><div class="acsb-group-title"><i class="ri-text-spacing"></i><span class="acsb-item-group-title">Espacement du texte</span></div><div class="acsb-group-buttons d-flex flex-row justify-content-between"><button type="button" data-id="textspacingnormal" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacinglarge,textspacingbig" aria-label="Espacement du texte: plus 1" aria-checked="false" role="checkbox"><span class="acsb-item-title">+</span></button><button type="button" data-id="textspacinglarge" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacingnormal,textspacingbig" aria-label="Espacement du texte: plus 2" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ +</span></button><button type="button" data-id="textspacingbig" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="textspacingnormal,textspacinglarge" aria-label="Espacement du texte: plus 3" aria-checked="false" role="checkbox"><span class="acsb-item-title">+ + +</span></button></div></div></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_16" aria-expanded="true" aria-label="Réglages de couleur"><span class="btntext">Réglages de couleur</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_16" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="contrastdark" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastlight,invertcolors,changecolors" aria-label="Contraste sombre" aria-checked="false" role="checkbox"><i class="ri-moon-fill"></i><span class="acsb-item-title">Contraste sombre</span></button></div><div class="acsb-item"><button type="button" data-id="contrastlight" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,invertcolors,changecolors" aria-label="Contraste lumineux" aria-checked="false" role="checkbox"><i class="ri-sun-fill"></i><span class="acsb-item-title">Contraste lumineux</span></button></div><div class="acsb-item"><button type="button" data-id="invertcolors" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,contrastlight,highcontrast,highsaturation,lowsaturation,monochrome,changecolors" aria-label="Inverser les couleurs" aria-checked="false" role="checkbox"><i class="ri-contrast-line"></i><span class="acsb-item-title">Inverser les couleurs</span></button></div><div class="acsb-item"><button type="button" data-id="changecolors" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="contrastdark,contrastlight,highcontrast,highsaturation,lowsaturation,monochrome,invertcolors" aria-label="Changer les couleurs" aria-checked="false" role="checkbox"><i class="ri-exchange-2-line"></i><span class="acsb-item-title">Changer les couleurs</span></button></div><div class="acsb-item"><button type="button" data-id="highcontrast" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="invertcolors,changecolors,lowsaturation,monochrome,highsaturation" aria-label="Contraste élevé" aria-checked="false" role="checkbox"><i class="ri-contrast-fill"></i><span class="acsb-item-title">Contraste élevé</span></button></div><div class="acsb-item"><button type="button" data-id="highsaturation" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,lowsaturation,monochrome,invertcolors,changecolors" aria-label="Saturation élevée" aria-checked="false" role="checkbox"><i class="ri-drop-fill"></i><span class="acsb-item-title">Saturation élevée</span></button></div><div class="acsb-item"><button type="button" data-id="lowsaturation" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,highsaturation,monochrome,invertcolors,changecolors" aria-label="Faible saturation" aria-checked="false" role="checkbox"><i class="ri-contrast-drop-2-line"></i><span class="acsb-item-title">Faible saturation</span></button></div><div class="acsb-item"><button type="button" data-id="monochrome" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="highcontrast,highsaturation,lowsaturation,invertcolors,changecolors" aria-label="Monochrome" aria-checked="false" role="checkbox"><i class="ri-contrast-drop-fill"></i><span class="acsb-item-title">Monochrome</span></button></div></div></div><div class="acsb-section"><button type="button" class="themereset acsb-title d-flex flex-row justify-content-between align-items-center" aria-controls="acsb_section_27" aria-expanded="true" aria-label="Réglages d'orientation"><span class="btntext">Réglages d'orientation</span><span class="btnicon d-inline-flex justify-content-center align-items-center"><i class="ri-add-fill"></i><i class="ri-subtract-fill"></i></span></button><div id="acsb_section_27" class="acsb-section-content d-flex flex-wrap justify-content-between"><div class="acsb-item"><button type="button" data-id="readingguide" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Guide de lecture" aria-checked="false" role="checkbox"><i class="ri-subtract-fill"></i><span class="acsb-item-title">Guide de lecture</span></button></div><div class="acsb-item"><button type="button" data-id="readingmask" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="" aria-label="Masque de lecture" aria-checked="false" role="checkbox"><i class="ri-send-backward"></i><span class="acsb-item-title">Masque de lecture</span></button></div><div class="acsb-item"><button type="button" data-id="bigblackcursor" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="bigwhitecursor" aria-label="Gros curseur noir" aria-checked="false" role="checkbox"><i class="ri-cursor-fill"></i><span class="acsb-item-title">Gros curseur noir</span></button></div><div class="acsb-item"><button type="button" data-id="bigwhitecursor" class="acsb-button acsb-btn-css themereset d-flex flex-column justify-content-center align-items-center" data-disable="bigblackcursor" aria-label="Gros curseur blanc" aria-checked="false" role="checkbox"><i class="ri-cursor-line"></i><span class="acsb-item-title">Gros curseur blanc</span></button></div></div></div></div><div class="acsb-block-footer"><a class="help-link d-inline-flex align-items-center" href="https://lyc.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a></div></div><span id="skip_acsb-menu"></span><div class="page-outer position-relative d-flex flex-column" id="page">
+<!--  <div id="page"> -->
+    <header id="main-header" style="">
+		<div class="mb2notices"></div>				<div class="header-innner">
+		<div class="header-inner2">
+							<div class="sticky-replace-el" style="height: 0px;"></div>
+						<div id="master-header">
+			<div class="master-header-inner">
+	        	<div class="container-fluid">
+	            	<div class="row">
+	                	<div class="col-md-12">
+						<div class="flexcols">
+		                    <div class="logo-wrap">
+	<div class="main-logo">
+		<a href="https://lyc.ecole-ci.org/" aria-label="CÔTE D'IVOIRE Lycée Numérique">
+			<img class="logo-light no_svg" src="//lyc.ecole-ci.org/pluginfile.php/1/theme_mb2nl/logo/1776147135/lycee.png" alt="CÔTE D'IVOIRE Lycée Numérique"><img class="logo-dark no_svg" src="//lyc.ecole-ci.org/pluginfile.php/1/theme_mb2nl/logodark/1776147135/lycee.png" alt="CÔTE D'IVOIRE Lycée Numérique">		</a>
+	</div>
+</div>
+															<div id="quicklinks" class="quicklinks"><button id="quicklinks-toggle" type="button" class="themereset" aria-label="Raccourcis" aria-expanded="false" aria-controls="quicklinks-list"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></button><ul id="quicklinks-list" class="quicklinks-list"><li class="item-frontpage"><a href="https://lyc.ecole-ci.org/?redirect=0" class="item-link d-flex flex-row align-items-center"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-home-line"></i></span><span class="text">Classe virtuelle</span></a></li><li class="item-courses"><a href="https://lyc.ecole-ci.org/course/" class="item-link d-flex flex-row align-items-center"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-book-2-line"></i></span><span class="text">Tous les cours et supports</span></a></li></ul></div>												
+															<div class="menu-toggle">
+	<span id="themeskipto-mobilenav"></span>
+	<button class="show-menu themereset p-0 lhsmall d-inline-flex justify-content-center align-items-center" title="Toggle primary menu" aria-controls="main-navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+</div>														        <div id="main-navigation" class="navigation-header"><div class="mnavtop menu-extracontent">
+	<div class="menu-extracontent-controls d-flex flex-row justify-content-center align-items-center">
+					<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-quicklinks d-inline-flex flex-column justify-content-center align-items-center" aria-label="Raccourcis" aria-controls="menu-quicklinkscontainer" aria-expanded="false"><i class="ri-apps-2-line"></i><span class="d-block mt-1 label tsizexxsmall">Raccourcis</span></button>
+				<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-search d-inline-flex flex-column justify-content-center align-items-center" aria-label="Toggle search form" aria-controls="menu-searchcontainer" aria-expanded="false"><i class="ri-search-line"></i><span class="d-block mt-1 label tsizexxsmall">Rechercher</span></button>
+		<button class="themereset p-0 menu-extra-controls-btn menu-extra-controls-login d-inline-flex flex-column justify-content-center align-items-center" aria-label="Toggle login form" aria-controls="menu-logincontainer" aria-expanded="false"><i class="ri-user-3-line"></i><span class="d-block mt-1 label tsizexxsmall">Henoc</span></button>
+					</div>
+			<div id="menu-quicklinkscontainer" class="menu-extracontent-content">
+			<ul class="quicklinks-list"><li class="item-frontpage"><a href="https://lyc.ecole-ci.org/?redirect=0" class="item-link d-flex flex-row align-items-center"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-home-line"></i></span><span class="text">Classe virtuelle</span></a></li><li class="item-courses"><a href="https://lyc.ecole-ci.org/course/" class="item-link d-flex flex-row align-items-center"><span class="static-icon d-inline-flex justify-content-center align-items-center" aria-hidden="true"><i class="ri-book-2-line"></i></span><span class="text">Tous les cours et supports</span></a></li></ul>		</div>
+		<div id="menu-searchcontainer" class="menu-extracontent-content menu-searchcontainer"><div class="form-inner"><form id="menu-search" action="https://lyc.ecole-ci.org/course/search.php" class=" d-flex justify-content-center align-items-center"><input id="menu-searchbox" type="text" value="" placeholder="Rechercher" name="search"><button type="submit" aria-label="Rechercher"><i class="ri-search-line"></i></button></form></div></div>	<div id="menu-logincontainer" class="menu-extracontent-content menu-logincontainer theme-loginform"><div class="form-inner"><div class="user-picture-container mb-4 d-flex align-items-center"><a href="https://lyc.ecole-ci.org/user/profile.php?id=61085" class="d-inline-block aabtn"><span class="userinitials size-80" title="Henoc Haniel" aria-label="Henoc Haniel" role="img">HH</span></a><div class="user-description ml-4"><div class="user-info"><div class="user-name h4 mb-2"><span class="firstname mr-1">Henoc</span><span class="lastname">Haniel</span></div><div class="user-roles"><span class="user-role mr-1 role-visiteur">Visiteur</span></div><span class="email">0594889379@ecole-ci.online</span></div></div></div><ul class="theme-usermenu"><li class="menu-item notifications"><a href="https://lyc.ecole-ci.org/message/output/popup/notifications.php">Notifications</a></li><li class="menu-item divider noid"></li><li class="menu-item profile"><a href="https://lyc.ecole-ci.org/user/profile.php">Profil</a></li><li class="menu-item grades"><a href="https://lyc.ecole-ci.org/grade/report/overview/index.php">Notes</a></li><li class="menu-item divider noid"></li><li class="menu-item preferences"><a href="https://lyc.ecole-ci.org/user/preferences.php">Préférences</a></li></ul><div class="user-footer mt-4 d-flex justify-content-between align-items-center"><a class="help-link d-inline-flex align-items-center" href="https://lyc.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a><a class="logout-link d-inline-flex align-items-center" href="https://lyc.ecole-ci.org/login/logout.php?sesskey=5qivIS67HF"><span class="link-icon mr-1"><i class="ri-logout-circle-line"></i></span><span class="link-text">Déconnexion</span></a></div></div></div>		</div><ul class="mb2mm"></ul><div class="mobile-navbottom extra-content" id="mobilemenu_extra-content">
+			<div class="mobile-buttons mt-4 d-flex flex-wrap justify-content-center align-items-center pos-3"><a class="link-replace mb2-pb-btn typeprimary" href="/login/logout.php"><span class="text">Se déconnecter</span></a></div>	</div>
+</div>						    																																				<div class="header-tools tools-pos2 hnavtype1"><div class="theme-plugins"><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="61085" data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-6acb898e3c3576acb898de45dc14" aria-haspopup="true" aria-label=" Afficher la fenêtre des notifications sans nouvelle notification   " tabindex="0">
+                <i class="icon fa fa-bell-o fa-fw " title="Ouvrir/fermer le menu notifications" role="img" aria-label="Ouvrir/fermer le menu notifications"></i>
+        <div class="count-container hidden" data-region="count-container" aria-hidden="true">
+            0
+        </div>
+
+    <span class="text1">Notifications</span></div>
+    <div id="popover-region-container-6acb898e3c3576acb898de45dc14" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Fenêtre de notification" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button" href="#" title="Tout marquer comme lu" data-action="mark-all-read" role="button" aria-label="Tout marquer comme lu">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw " title="Chargement" role="img" aria-label="Chargement"></i></span>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Vous n’avez pas de notification</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw " title="Chargement" role="img" aria-label="Chargement"></i></span>
+        </div>
+                <a class="see-all-link" href="https://lyc.ecole-ci.org/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Tout afficher</div>
+                    </div>
+                </a>
+    </div>
+</div></div><div id="themeskipto-search" class="sr-only sr-only-focusable"></div><button id="theme-search-btn" class="header-tools-link tool-search themereset" data-id="search" aria-label="Rechercher" data-toggle="modal" data-target="#header-modal-search"><i class="icon1 ri-search-line"></i><span class="text1">Rechercher</span></button><div id="themeskipto-login" class="sr-only sr-only-focusable"></div><button class="header-tools-link themereset tool-login" data-id="login" data-toggle="modal" data-target="#header-modal-login" aria-label="Henoc"><span class="userinitials size-40" title="Henoc Haniel" aria-label="Henoc Haniel" role="img">HH</span><span class="sr-only">Henoc</span></button></div>								<div class="header-buttons d-flex align-items-center pos-2"><a class="link-replace mb2-pb-btn typeprimary" href="/login/logout.php"><span class="text">Se déconnecter</span></a></div>																												</div>
+	                </div>
+	            </div>
+			</div>
+	        </div>
+			</div>
+					    		</div><!-- end .header-inner2 -->
+	</div><!-- end .header-innner -->
+	</header><!-- end #main-header -->	
+<div class="pagelayout d-flex flex-row">
+<div class="pagelayout-b d-flex flex-column">
+<div class="pagelayout-content d-flex flex-column">
+<div id="page-header" class="nobg">
+		<div class="inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+					<div class="page-heading flexcols">
+						<div class="page-header-left">
+							<h1 class="heding h2 nocourse">
+																	Tableau de bord 															</h1>
+						</div>
+						<div class="page-header-right">
+																									
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+			<div class="page-breadcrumb breadcrumb_modern">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="flexcols">
+					<div class="breadcrumb"><nav aria-label="Barre de navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://lyc.ecole-ci.org/my/" aria-current="page">
+                        Tableau de bord
+                    </a>
+                </li>
+        </ol>
+</nav></div>
+					<div class="actions">
+																	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	</div>
+<div class="page-b"><div class="mb2notices"></div><div id="main-content">
+    <div class="container-fluid">
+        <div id="theme-main-content" class="row">
+            <section id="region-main" class="content-col col-lg-9">
+				                <div id="page-content">					
+					<span class="notifications" id="user-notifications"></span>															
+					                		<aside id="block-region-content-top" class="content-top style-none block-region" data-blockregion="content-top" data-droptarget="1"><h2 class="sr-only">Blocs</h2><section id="inst25708" class=" block_html block  card mb-3" role="complementary" data-block="html" data-instance-id="25708" aria-label="Texte">
+
+    <div class="card-body p-3">
+
+
+
+        <div class="card-text content mt-3">
+            <div class="no-overflow"><section class="dpfc-docs-2627" aria-labelledby="dpfc-docs-2627-title">
+
+	<header class="dpfc-docs-2627__header">
+
+		<h2 id="dpfc-docs-2627-title" class="dpfc-docs-2627__title">
+
+			Textes officiels 2026-2027
+		</h2>
+
+		<span class="dpfc-docs-2627__status">
+			Publication en cours
+		</span>
+
+	</header>
+
+	<ul class="dpfc-docs-2627__list">
+
+		<!-- Document 1 -->
+
+		<li class="dpfc-docs-2627__item">
+
+			<a class="dpfc-docs-2627__link dpfc-docs-2627__link--orange" href="https://dpfc-ci.net/dpfc/2027/textes_officiels/Circulaires%20DPFC%202026%20-%202027.pdf" target="_blank" rel="noopener noreferrer">
+
+				<span class="dpfc-docs-2627__pdf" aria-hidden="true">
+					PDF
+				</span>
+
+				<span class="dpfc-docs-2627__content">
+
+					<span class="dpfc-docs-2627__category">
+						Circulaire n° 0327
+					</span>
+
+					<span class="dpfc-docs-2627__label">
+						Modalités de passage en classe supérieure dans
+						l’enseignement primaire et secondaire général
+					</span>
+
+				</span>
+
+				<span class="dpfc-docs-2627__arrow" aria-hidden="true">
+					↗
+				</span>
+
+			</a>
+
+		</li>
+
+		<!-- Document 2 -->
+
+		<li class="dpfc-docs-2627__item">
+
+			<a class="dpfc-docs-2627__link dpfc-docs-2627__link--green" href="https://dpfc-ci.net/dpfc/2027/textes_officiels/PLANNING%20DE%20LA%20JOURNEE%202026-2027%20_%20ENSEIGNEMENT%20PRESCOLAIRE_0001.pdf" target="_blank" rel="noopener noreferrer">
+
+				<span class="dpfc-docs-2627__pdf" aria-hidden="true">
+					PDF
+				</span>
+
+				<span class="dpfc-docs-2627__content">
+
+					<span class="dpfc-docs-2627__category">
+						Enseignement préscolaire
+					</span>
+
+					<span class="dpfc-docs-2627__label">
+						Planification des activités dans l’enseignement
+						préscolaire
+					</span>
+
+				</span>
+
+				<span class="dpfc-docs-2627__arrow" aria-hidden="true">
+					↗
+				</span>
+
+			</a>
+
+		</li>
+
+		<!-- Document 3 -->
+
+		<li class="dpfc-docs-2627__item">
+
+			<a class="dpfc-docs-2627__link dpfc-docs-2627__link--blue" href="https://dpfc-ci.net/dpfc/2027/textes_officiels/EMPLOI%20DU%20TEMPS%20DE%20L%27ENSEIGNEMENT%20PRIMAIRE%20_%202026-2027.pdf" target="_blank" rel="noopener noreferrer">
+
+				<span class="dpfc-docs-2627__pdf" aria-hidden="true">
+					PDF
+				</span>
+
+				<span class="dpfc-docs-2627__content">
+
+					<span class="dpfc-docs-2627__category">
+						Enseignement primaire
+					</span>
+
+					<span class="dpfc-docs-2627__label">
+						Emplois du temps de l’enseignement primaire
+						2026-2027
+					</span>
+
+				</span>
+
+				<span class="dpfc-docs-2627__arrow" aria-hidden="true">
+					↗
+				</span>
+
+			</a>
+
+		</li>
+
+	</ul>
+
+</section></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section></aside>             							                	<div role="main"><span id="maincontent"></span><aside id="block-region-content" class="block-region" data-blockregion="content" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-1" class="sr-only sr-only-focusable">Passer Cours consultés récemment</a>
+
+<section id="inst9" class=" block_recentlyaccessedcourses block  card mb-3" role="complementary" data-block="recentlyaccessedcourses" data-instance-id="9" aria-labelledby="instance-9-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-9-header" class="h5 card-title d-inline">Cours consultés récemment</h3>
+
+
+        <div class="card-text content mt-3">
+            <div id="block-recentlyaccessedcourses-6acb898de45da6acb898de45dc1" class="block-recentlyaccessedcourses block-cards" data-region="recentlyaccessedcourses" data-userid="61085" data-displaycoursecategory="1">
+    <div class="container-fluid p-0">
+        <div id="recentlyaccessedcourses-view-6acb898de45da6acb898de45dc1" data-region="recentlyaccessedcourses-view">
+            <div data-region="loading-placeholder" class="hidden">
+                <div class="card-grid mx-0 mt-5 row row-cols-1 row-cols-sm-2 row-cols-md-3 flex-nowrap overflow-hidden" style="height: 13.05rem">
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                    <div class="col p-0"><div class="card border-0 px-1">
+    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+    </div>
+    <div class="card-body pr-1 course-info-container">
+        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+    </div>
+</div>
+</div>
+                </div>
+            </div>
+            <div class="" data-region="view-content">
+                    <div class="d-flex paging-bar-container mb-3" data-region="paging-bar-container">
+                        <div data-region="paging-control-container" class="d-flex">
+                        
+                            <nav id="paging-bar-6acb898de45da6acb898de45dc1" class="" data-region="paging-bar" data-ignore-control-while-loading="" data-hide-control-on-single-page="" data-active-page-number="1" aria-label="Navigation par pages" data-aria-label-components-pagination-item="pagedcontentnavigationitem, core" data-aria-label-components-pagination-active-item="pagedcontentnavigationactiveitem, core" style="opacity: 1; visibility: visible;">
+                        
+                                <ul class="pagination mb-0">
+                                                                <li class="page-item disabled" data-region="page-item" data-control="previous" aria-disabled="true">
+                        
+                            <a href="#" class="page-link" data-region="page-link" aria-label="Page précédente">
+                        <span class="icon-no-margin dir-rtl-hide" aria-hidden="true"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                        <span class="icon-no-margin dir-ltr-hide" aria-hidden="true"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+                                        <li class="page-item" data-region="page-item" data-control="next">
+                        
+                            <a href="#" class="page-link" data-region="page-link" aria-label="Page suivante">
+                        <span class="icon-no-margin dir-rtl-hide" aria-hidden="true"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                        <span class="icon-no-margin dir-ltr-hide" aria-hidden="true"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                            </a>
+                        </li>
+        </ul>
+                            </nav>
+                        </div>
+                    </div>
+                <div class="card-carousel mx-0 justify-content-center flex-nowrap overflow-hidden" data-region="card-deck" role="list"><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="863">
+    <a href="https://lyc.ecole-ci.org/course/view.php?id=863" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NDYiIGhlaWdodD0iNTE1Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMjIzLCAyMzAsIDIzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjEyNCIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQ5LjYsIC00Mi45NTQ4NjAwMjc3MDgpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4xMjQiIGZpbGw9IiNkZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM5Ni44LCAtNDIuOTU0ODYwMDI3NzA4KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDkuNiwgNDcyLjUwMzQ2MDMwNDc5KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTYuOCwgNDcyLjUwMzQ2MDMwNDc5KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC44LCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC44LCA1MTUuNDU4MzIwMzMyNSkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjAyODY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTkuMiwgLTQyLjk1NDg2MDAyNzcwOCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjAyODY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTkuMiwgNDcyLjUwMzQ2MDMwNDc5KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDU0NjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzMuNiwgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA1NDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTczLjYsIDUxNS40NTgzMjAzMzI1KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDgsIC00Mi45NTQ4NjAwMjc3MDgpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0OCwgNDcyLjUwMzQ2MDMwNDc5KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyMi40LCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyMi40LCA1MTUuNDU4MzIwMzMyNSkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQ5LjYsIDQyLjk1NDg2MDAyNzcwOCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk2LjgsIDQyLjk1NDg2MDAyNzcwOCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQuOCwgODUuOTA5NzIwMDU1NDE2KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDgwNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5OS4yLCA0Mi45NTQ4NjAwMjc3MDgpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTczLjYsIDg1LjkwOTcyMDA1NTQxNikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjE0MTMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDgsIDQyLjk1NDg2MDAyNzcwOCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA3MiIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIyLjQsIDg1LjkwOTcyMDA1NTQxNikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjExNTMzMzMzMzMzMzMzIiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDkuNiwgMTI4Ljg2NDU4MDA4MzEyKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM5Ni44LCAxMjguODY0NTgwMDgzMTIpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0LjgsIDE3MS44MTk0NDAxMTA4MykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA1NDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTkuMiwgMTI4Ljg2NDU4MDA4MzEyKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzMuNiwgMTcxLjgxOTQ0MDExMDgzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDgsIDEyOC44NjQ1ODAwODMxMikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIyLjQsIDE3MS44MTk0NDAxMTA4MykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjE0MTMzMzMzMzMzMzMzIiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDkuNiwgMjE0Ljc3NDMwMDEzODU0KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM5Ni44LCAyMTQuNzc0MzAwMTM4NTQpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4wNDYiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0LjgsIDI1Ny43MjkxNjAxNjYyNSkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA2MzMzMzMzMzMzMzMzMyIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTkuMiwgMjE0Ljc3NDMwMDEzODU0KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzMuNiwgMjU3LjcyOTE2MDE2NjI1KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTUiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0OCwgMjE0Ljc3NDMwMDEzODU0KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDU0NjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjIuNCwgMjU3LjcyOTE2MDE2NjI1KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00OS42LCAzMDAuNjg0MDIwMTkzOTYpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsNDIuOTU0ODYwMDI3NzA4LDI0LjgsMCw3NC40LDAsOTkuMiw0Mi45NTQ4NjAwMjc3MDgsNzQuNCw4NS45MDk3MjAwNTU0MTYsMjQuOCw4NS45MDk3MjAwNTU0MTYsMCw0Mi45NTQ4NjAwMjc3MDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGwtb3BhY2l0eT0iMC4xMTUzMzMzMzMzMzMzMyIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk2LjgsIDMwMC42ODQwMjAxOTM5NikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA3MiIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQuOCwgMzQzLjYzODg4MDIyMTY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTUiIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk5LjIsIDMwMC42ODQwMjAxOTM5NikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjEzMjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzMuNiwgMzQzLjYzODg4MDIyMTY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDgsIDMwMC42ODQwMjAxOTM5NikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjE1IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMjIuNCwgMzQzLjYzODg4MDIyMTY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDkuNiwgMzg2LjU5Mzc0MDI0OTM3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTYuOCwgMzg2LjU5Mzc0MDI0OTM3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0LjgsIDQyOS41NDg2MDAyNzcwOCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA2MzMzMzMzMzMzMzMzMyIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTkuMiwgMzg2LjU5Mzc0MDI0OTM3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDI4NjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzMuNiwgNDI5LjU0ODYwMDI3NzA4KSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLDQyLjk1NDg2MDAyNzcwOCwyNC44LDAsNzQuNCwwLDk5LjIsNDIuOTU0ODYwMDI3NzA4LDc0LjQsODUuOTA5NzIwMDU1NDE2LDI0LjgsODUuOTA5NzIwMDU1NDE2LDAsNDIuOTU0ODYwMDI3NzA4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBmaWxsPSIjZGRkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNDgsIDM4Ni41OTM3NDAyNDkzNykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCw0Mi45NTQ4NjAwMjc3MDgsMjQuOCwwLDc0LjQsMCw5OS4yLDQyLjk1NDg2MDAyNzcwOCw3NC40LDg1LjkwOTcyMDA1NTQxNiwyNC44LDg1LjkwOTcyMDA1NTQxNiwwLDQyLjk1NDg2MDAyNzcwOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbC1vcGFjaXR5PSIwLjA3MiIgZmlsbD0iI2RkZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIyLjQsIDQyOS41NDg2MDAyNzcwOCkiIC8+PC9zdmc+&quot;);">            
+            <span class="sr-only">EE 2: Com_composé_rédiger_un_CI</span>
+
+
+            <span id="favorite-icon-863-3" data-region="favourite-icon" data-course-id="863">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-863-3">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://lyc.ecole-ci.org/course/view.php?id=863" class="aalink coursename mb-1">
+
+
+                    <span id="favorite-icon-863-3" data-region="favourite-icon" data-course-id="863">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">EE 2: Com_composé_rédiger_un_CI</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Français</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://lyc.ecole-ci.org/course/view.php?id=863" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="864">
+    <a href="https://lyc.ecole-ci.org/course/view.php?id=864" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMzIwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMCwgMTg0LCAxNDgpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjEzMjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4xNDEzMzMzMzMzMzMzMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTMuMzMzMzMzMzMzMzMzLCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wMjg2NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwNi42NjY2NjY2NjY2NywgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDYzMzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsIDApIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA5OCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjEzLjMzMzMzMzMzMzMzLCAwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ni42NjY2NjY2NjY2NywgMCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDUzLjMzMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDgwNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My4zMzMzMzMzMzMzMzMsIDUzLjMzMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDYuNjY2NjY2NjY2NjcsIDUzLjMzMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDk4IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsIDUzLjMzMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxMy4zMzMzMzMzMzMzMywgNTMuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ni42NjY2NjY2NjY2NywgNTMuMzMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMTA2LjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wMjg2NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjMzMzMzMzMzMzMzMywgMTA2LjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wODA2NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwNi42NjY2NjY2NjY2NywgMTA2LjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYwLCAxMDYuNjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjA1NDY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjEzLjMzMzMzMzMzMzMzLCAxMDYuNjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY2LjY2NjY2NjY2NjY3LCAxMDYuNjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjAyODY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMTYwKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4xNDEzMzMzMzMzMzMzMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTMuMzMzMzMzMzMzMzMzLCAxNjApIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjAyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDYuNjY2NjY2NjY2NjcsIDE2MCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDU0NjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsIDE2MCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTMuMzMzMzMzMzMzMzMsIDE2MCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMDQ2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjYuNjY2NjY2NjY2NjcsIDE2MCkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDg5MzMzMzMzMzMzMzMzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAyMTMuMzMzMzMzMzMzMzMpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjEzMjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My4zMzMzMzMzMzMzMzMsIDIxMy4zMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDYuNjY2NjY2NjY2NjcsIDIxMy4zMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsIDIxMy4zMzMzMzMzMzMzMykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxMy4zMzMzMzMzMzMzMywgMjEzLjMzMzMzMzMzMzMzKSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY2LjY2NjY2NjY2NjY3LCAyMTMuMzMzMzMzMzMzMzMpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA5OCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMjY2LjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4xMjQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzLjMzMzMzMzMzMzMzMywgMjY2LjY2NjY2NjY2NjY3KSIgLz48cG9seWxpbmUgcG9pbnRzPSIxNy42LDAsMzUuNzMzMzMzMzMzMzMzLDAsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsNTMuMzMzMzMzMzMzMzMzLDE3LjYsNTMuMzMzMzMzMzMzMzMzLDAsMzUuNzMzMzMzMzMzMzMzLDAsMTcuNiwxNy42LDAiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xMTUzMzMzMzMzMzMzMyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2LjY2NjY2NjY2NjY3LCAyNjYuNjY2NjY2NjY2NjcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjE3LjYsMCwzNS43MzMzMzMzMzMzMzMsMCw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDM1LjczMzMzMzMzMzMzMyw1My4zMzMzMzMzMzMzMzMsMTcuNiw1My4zMzMzMzMzMzMzMzMsMCwzNS43MzMzMzMzMzMzMzMsMCwxNy42LDE3LjYsMCIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjE1IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsIDI2Ni42NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTMuMzMzMzMzMzMzMzMsIDI2Ni42NjY2NjY2NjY2NykiIC8+PHBvbHlsaW5lIHBvaW50cz0iMTcuNiwwLDM1LjczMzMzMzMzMzMzMywwLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywzNS43MzMzMzMzMzMzMzMsMzUuNzMzMzMzMzMzMzMzLDUzLjMzMzMzMzMzMzMzMywxNy42LDUzLjMzMzMzMzMzMzMzMywwLDM1LjczMzMzMzMzMzMzMywwLDE3LjYsMTcuNiwwIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDIiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ni42NjY2NjY2NjY2NywgMjY2LjY2NjY2NjY2NjY3KSIgLz48L3N2Zz4=&quot;);">            
+            <span class="sr-only">EE 1: Com_composé_analyser_const_organiser_CI</span>
+
+
+            <span id="favorite-icon-864-4" data-region="favourite-icon" data-course-id="864">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-864-4">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://lyc.ecole-ci.org/course/view.php?id=864" class="aalink coursename mb-1">
+
+
+                    <span id="favorite-icon-864-4" data-region="favourite-icon" data-course-id="864">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">EE 1: Com_composé_analyser_const_organiser_CI</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Français</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://lyc.ecole-ci.org/course/view.php?id=864" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="3922">
+    <a href="https://lyc.ecole-ci.org/course/view.php?id=3922" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODUiIGhlaWdodD0iNDg1Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMTYyLCAxNTUsIDI1NCkiIC8+PHJlY3QgeD0iMCIgeT0iOCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTgiIG9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMCIgeT0iMzMiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjE3IiBvcGFjaXR5PSIwLjEyNCIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIwIiB5PSI2MyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTQiIG9wYWNpdHk9IjAuMDk4IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjAiIHk9IjkwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIyMCIgb3BhY2l0eT0iMC4xNSIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIwIiB5PSIxMjUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEyIiBvcGFjaXR5PSIwLjA4MDY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIwIiB5PSIxNTYiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjYiIG9wYWNpdHk9IjAuMDI4NjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjAiIHk9IjE3OCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iOSIgb3BhY2l0eT0iMC4wNTQ2NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIC8+PHJlY3QgeD0iMCIgeT0iMTk2IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNSIgb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIwIiB5PSIyMjIiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjgiIG9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjAiIHk9IjI0NCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iNiIgb3BhY2l0eT0iMC4wMjg2NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMCIgeT0iMjYyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI4IiBvcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIwIiB5PSIyODMiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjE1IiBvcGFjaXR5PSIwLjEwNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiAvPjxyZWN0IHg9IjAiIHk9IjMwMyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTgiIG9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMCIgeT0iMzI4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxNSIgb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIwIiB5PSIzNTciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEzIiBvcGFjaXR5PSIwLjA4OTMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIwIiB5PSIzOTAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjYiIG9wYWNpdHk9IjAuMDI4NjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjAiIHk9IjQxMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTIiIG9wYWNpdHk9IjAuMDgwNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjAiIHk9IjQzOSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTkiIG9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIC8+PHJlY3QgeD0iMCIgeT0iNDcyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMyIgb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIC8+PHJlY3QgeD0iOCIgeT0iMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMzMiIHk9IjAiIHdpZHRoPSIxNyIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjEyNCIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSI2MyIgeT0iMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDk4IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjkwIiB5PSIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xNSIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIxMjUiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjA4MDY2NjY2NjY2NjY2NyIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIxNTYiIHk9IjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDI4NjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjE3OCIgeT0iMCIgd2lkdGg9IjkiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wNTQ2NjY2NjY2NjY2NjciIGZpbGw9IiNkZGQiIC8+PHJlY3QgeD0iMTk2IiB5PSIwIiB3aWR0aD0iMTUiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIyMjIiIHk9IjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDQ2IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjI0NCIgeT0iMCIgd2lkdGg9IjYiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wMjg2NjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMjYyIiB5PSIwIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjA0NiIgZmlsbD0iIzIyMiIgLz48cmVjdCB4PSIyODMiIHk9IjAiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjEwNjY2NjY2NjY2NjY3IiBmaWxsPSIjZGRkIiAvPjxyZWN0IHg9IjMwMyIgeT0iMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIGZpbGw9IiMyMjIiIC8+PHJlY3QgeD0iMzI4IiB5PSIwIiB3aWR0aD0iMTUiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4xMDY2NjY2NjY2NjY2NyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIzNTciIHk9IjAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMDAlIiBvcGFjaXR5PSIwLjA4OTMzMzMzMzMzMzMzMyIgZmlsbD0iI2RkZCIgLz48cmVjdCB4PSIzOTAiIHk9IjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDI4NjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjQxMCIgeT0iMCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMDgwNjY2NjY2NjY2NjY3IiBmaWxsPSIjMjIyIiAvPjxyZWN0IHg9IjQzOSIgeT0iMCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjEwMCUiIG9wYWNpdHk9IjAuMTQxMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIC8+PHJlY3QgeD0iNDcyIiB5PSIwIiB3aWR0aD0iMTMiIGhlaWdodD0iMTAwJSIgb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMiIGZpbGw9IiNkZGQiIC8+PC9zdmc+&quot;);">            
+            <span class="sr-only">SVT 1ère A_L1_Le Reflexe conditionnel copie 1</span>
+
+
+            <span id="favorite-icon-3922-5" data-region="favourite-icon" data-course-id="3922">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-3922-5">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://lyc.ecole-ci.org/course/view.php?id=3922" class="aalink coursename mb-1">
+
+
+                    <span id="favorite-icon-3922-5" data-region="favourite-icon" data-course-id="3922">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">SVT 1ère A_L1_Le Reflexe conditionnel copie 1</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">PREMIERE A</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://lyc.ecole-ci.org/course/view.php?id=3922" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div><div class="myc-item card course-card dashboard-card position-relative" role="listitem" data-region="course-content" data-course-id="2826">
+    <a href="https://lyc.ecole-ci.org/course/view.php?id=2826" tabindex="-1">
+        <div class="card-img dashboard-card-img card-img-top position-relative" style="background-image: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMTI5Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMTc4LCAxOTAsIDE5NSkiIC8+PHJlY3QgeD0iLTExLjgzMzMzMzMzMzMzMyIgeT0iLTExLjgzMzMzMzMzMzMzMyIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wODkzMzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgLz48cmVjdCB4PSIxMDAuMTU4NTM1Nzc5MTMiIHk9Ii0xMS44MzMzMzMzMzMzMzMiIHdpZHRoPSIyMy42NjY2NjY2NjY2NjciIGhlaWdodD0iMjMuNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDg5MzMzMzMzMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEiIC8+PHJlY3QgeD0iLTExLjgzMzMzMzMzMzMzMyIgeT0iMTE3LjQ4MzczODIyNDkzIiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjA4OTMzMzMzMzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIxIiAvPjxyZWN0IHg9IjEwMC4xNTg1MzU3NzkxMyIgeT0iMTE3LjQ4MzczODIyNDkzIiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjA4OTMzMzMzMzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIxIiAvPjxyZWN0IHg9IjQ0LjE2MjYwMTIyMjg5OCIgeT0iMjAuNDk1OTM0NTU2MjMyIiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgc3Ryb2tlLXdpZHRoPSIxIiAvPjxyZWN0IHg9Ii0xMS44MzMzMzMzMzMzMzMiIHk9IjUyLjgyNTIwMjQ0NTc5NyIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMiIgc3Ryb2tlLXdpZHRoPSIxIiAvPjxyZWN0IHg9IjEwMC4xNTg1MzU3NzkxMyIgeT0iNTIuODI1MjAyNDQ1Nzk3IiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjAyIiBzdHJva2Utd2lkdGg9IjEiIC8+PHJlY3QgeD0iNDQuMTYyNjAxMjIyODk4IiB5PSI4NS4xNTQ0NzAzMzUzNjIiIHdpZHRoPSIyMy42NjY2NjY2NjY2NjciIGhlaWdodD0iMjMuNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDU0NjY2NjY2NjY2NjY3IiBzdHJva2Utd2lkdGg9IjEiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCwgMCwgMjAuNDk1OTM0NTU2MjMyLCAxMS44MzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NywgMCwgMCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjEyNCIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS44MzMzMzMzMzMzMzMsIC0xMS44MzMzMzMzMzMzMzMpIHJvdGF0ZSgwLCAxMS44MzMzMzMzMzMzMzMsIDEwLjI0Nzk2NzI3ODExNikiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCwgMCwgMjAuNDk1OTM0NTU2MjMyLCAxMS44MzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NywgMCwgMCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjEyNCIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS44MzMzMzMzMzMzMzMsIDE0MS4xNTA0MDQ4OTE1OSkgcm90YXRlKDAsIDExLjgzMzMzMzMzMzMzMywgMTAuMjQ3OTY3Mjc4MTE2KSBzY2FsZSgxLCAtMSkiIC8+PHBvbHlsaW5lIHBvaW50cz0iMCwgMCwgMjAuNDk1OTM0NTU2MjMyLCAxMS44MzMzMzMzMzMzMzMsIDAsIDIzLjY2NjY2NjY2NjY2NywgMCwgMCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA2MzMzMzMzMzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAuMTU4NTM1Nzc5MTMsIC0xMS44MzMzMzMzMzMzMzMpIHJvdGF0ZSgwLCAxMS44MzMzMzMzMzMzMzMsIDEwLjI0Nzk2NzI3ODExNikgc2NhbGUoLTEsIDEpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsIDAsIDIwLjQ5NTkzNDU1NjIzMiwgMTEuODMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjcsIDAsIDAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwLjE1ODUzNTc3OTEzLCAxNDEuMTUwNDA0ODkxNTkpIHJvdGF0ZSgwLCAxMS44MzMzMzMzMzMzMzMsIDEwLjI0Nzk2NzI3ODExNikgc2NhbGUoLTEsIC0xKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLCAwLCAyMC40OTU5MzQ1NTYyMzIsIDExLjgzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3LCAwLCAwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDM3MzMzMzMzMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY3LjgyOTI2Nzg4OTU2NSwgMjAuNDk1OTM0NTU2MjMyKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLCAwLCAyMC40OTU5MzQ1NTYyMzIsIDExLjgzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3LCAwLCAwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTE1MzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQuMTYyNjAxMjIyODk4LCAyMC40OTU5MzQ1NTYyMzIpIHNjYWxlKC0xLCAxKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLCAwLCAyMC40OTU5MzQ1NTYyMzIsIDExLjgzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3LCAwLCAwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDIiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjcuODI5MjY3ODg5NTY1LCAxMDguODIxMTM3MDAyMDMpIHNjYWxlKDEsIC0xKSIgLz48cG9seWxpbmUgcG9pbnRzPSIwLCAwLCAyMC40OTU5MzQ1NTYyMzIsIDExLjgzMzMzMzMzMzMzMywgMCwgMjMuNjY2NjY2NjY2NjY3LCAwLCAwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMTI0IiBzdHJva2Utd2lkdGg9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0LjE2MjYwMTIyMjg5OCwgMTA4LjgyMTEzNzAwMjAzKSBzY2FsZSgtMSwgLTEpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsIDAsIDIwLjQ5NTkzNDU1NjIzMiwgMTEuODMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjcsIDAsIDAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEuODMzMzMzMzMzMzMzLCA1Mi44MjUyMDI0NDU3OTcpIiAvPjxwb2x5bGluZSBwb2ludHM9IjAsIDAsIDIwLjQ5NTkzNDU1NjIzMiwgMTEuODMzMzMzMzMzMzMzLCAwLCAyMy42NjY2NjY2NjY2NjcsIDAsIDAiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xMTUzMzMzMzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAuMTU4NTM1Nzc5MTMsIDUyLjgyNTIwMjQ0NTc5Nykgc2NhbGUoLTEsIDEpIiAvPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMy42NjY2NjY2NjY2NjciIGhlaWdodD0iMjMuNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjZGRkIiBmaWxsLW9wYWNpdHk9IjAuMDcyIiBzdHJva2Utd2lkdGg9IjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjgzMzMzMzMzMzMzMywgMTEuODMzMzMzMzMzMzMzKSByb3RhdGUoLTMwLCAwLCAwKSIgLz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA4MDY2NjY2NjY2NjY2NyIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InNjYWxlKC0xLCAxKSB0cmFuc2xhdGUoLTEwMC4xNTg1MzU3NzkxMywgMTEuODMzMzMzMzMzMzMzKSByb3RhdGUoLTMwLCAwLCAwKSIgLz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjMuNjY2NjY2NjY2NjY3IiBoZWlnaHQ9IjIzLjY2NjY2NjY2NjY2NyIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iIzIyMiIgZmlsbC1vcGFjaXR5PSIwLjA0NiIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS44MzMzMzMzMzMzMzMsIDI5LjE1ODUzNTc3OTEzKSByb3RhdGUoMzAsIDAsIDIzLjY2NjY2NjY2NjY2NykiIC8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wODA2NjY2NjY2NjY2NjciIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJzY2FsZSgtMSwgMSkgdHJhbnNsYXRlKC0xMDAuMTU4NTM1Nzc5MTMsIDI5LjE1ODUzNTc3OTEzKSByb3RhdGUoMzAsIDAsIDIzLjY2NjY2NjY2NjY2NykiIC8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMzczMzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkgdHJhbnNsYXRlKDExLjgzMzMzMzMzMzMzMywgLTEwMC4xNTg1MzU3NzkxMykgcm90YXRlKDMwLCAwLCAyMy42NjY2NjY2NjY2NjcpIiAvPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMy42NjY2NjY2NjY2NjciIGhlaWdodD0iMjMuNjY2NjY2NjY2NjY3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBmaWxsPSIjMjIyIiBmaWxsLW9wYWNpdHk9IjAuMTMyNjY2NjY2NjY2NjciIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJzY2FsZSgtMSwgLTEpIHRyYW5zbGF0ZSgtMTAwLjE1ODUzNTc3OTEzLCAtMTAwLjE1ODUzNTc3OTEzKSByb3RhdGUoMzAsIDAsIDIzLjY2NjY2NjY2NjY2NykiIC8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNjMzMzMzMzMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMSIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkgdHJhbnNsYXRlKDExLjgzMzMzMzMzMzMzMywgLTExNy40ODM3MzgyMjQ5Mykgcm90YXRlKC0zMCwgMCwgMCkiIC8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIzLjY2NjY2NjY2NjY2NyIgaGVpZ2h0PSIyMy42NjY2NjY2NjY2NjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xMzI2NjY2NjY2NjY2NyIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InNjYWxlKC0xLCAtMSkgdHJhbnNsYXRlKC0xMDAuMTU4NTM1Nzc5MTMsIC0xMTcuNDgzNzM4MjI0OTMpIHJvdGF0ZSgtMzAsIDAsIDApIiAvPjwvc3ZnPg==&quot;);">            
+            <span class="sr-only">LEÇON 18:Réactions nucléaires spontanées</span>
+
+
+            <span id="favorite-icon-2826-6" data-region="favourite-icon" data-course-id="2826">
+                <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                    <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                    <span class="sr-only">Le cours est marqué comme favori</span>
+                </span>
+            </span>
+        </div>
+    </a>
+    <div class="card-body pt-3 pb-3 pr-0 pl-0 course-info-container" id="course-info-container-2826-6">
+        <div class="d-flex align-items-start">
+            <div class="w-100">
+                <a href="https://lyc.ecole-ci.org/course/view.php?id=2826" class="aalink coursename mb-1">
+
+
+                    <span id="favorite-icon-2826-6" data-region="favourite-icon" data-course-id="2826">
+                        <span class="text-primary hidden" data-region="is-favourite" aria-hidden="true">
+                            <i class="icon fa fa-star fa-fw " title="Cours marqué comme favori" role="img" aria-label="Cours marqué comme favori"></i>
+                            <span class="sr-only">Le cours est marqué comme favori</span>
+                        </span>
+                    </span>
+                    <span class="sr-only">
+                        Nom du cours
+                    </span>
+ <span class="multiline h5 mb-0">LEÇON 18:Réactions nucléaires spontanées</span>                 </a>
+                <div class="myc-catname d-flex align-items-center tsizesmall lhmedium mt-1">
+                    <i class="ri-folder-3-line mr-1 lhsmall"></i> 
+            <span class="sr-only">
+                Catégorie de cours
+            </span>
+            <span class="">Physique - Chimie</span>
+    
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="card-footer dashboard-card-footer bg-white border-0 w-100 p-0">
+            <a href="https://lyc.ecole-ci.org/course/view.php?id=2826" class="myc-readmore mb2-pb-btn mb2-pb-btn typeprimary w-100">Accéder au cours</a>
+                <div class="myc-progress-bar no-completion mt-2">
+                    <span class="sr-only">Progression du cours&nbsp;:</span>
+                    <span class="progress-text tsizesmall d-inline-block">Aucun critère d'achèvement</span>
+                    <div class="progress-area"><div class="progress-val" style="width:0%;"></div></div>  
+                </div>
+        </div>  
+    </div>
+</div></div>
+            </div>
+            <div class="hidden text-xs-center text-center mt-3" data-region="empty-message">
+                <img class="empty-placeholder-image-lg mt-1" src="https://lyc.ecole-ci.org/theme/image.php/mb2nl/block_recentlyaccessedcourses/1776147135/courses" alt="">
+                <p class="text-muted mt-3">Pas de cours récent</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span></aside></div>                    					                	                </div>
+            </section>
+                        	            <section class="sidebar-col col-lg-3">
+	            	<aside id="block-region-side-post" class="side-post style-minimal block-region" data-blockregion="side-post" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-2" class="sr-only sr-only-focusable">Passer Calendrier</a>
+
+<section id="inst6" class=" block_calendar_month block  card mb-3" role="complementary" data-block="calendar_month" data-instance-id="6" aria-labelledby="instance-6-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-6-header" class="h5 card-title d-inline">Calendrier</h3>
+
+
+        <div class="card-text content mt-3">
+            <div data-region="calendar" class="maincalendar"><div id="calendar-month-6acb898e0643c6acb898de45dc2-1" data-template="core_calendar/month_detailed">
+    <div class="header d-flex flex-wrap p-1">
+            <label class="sr-only" for="calendar-course-filter-1">Liste des cours</label><select class="select custom-select cal_courses_flt ml-1 mr-auto" id="calendar-course-filter-1" name="course"><option selected="selected" value="1">Tous les cours et supports</option></select>
+    </div>
+    <div aria-live="polite" class="sr-only calendar-announcements"></div>
+    <div class="calendarwrapper" data-courseid="1" data-context-id="0" data-month="10" data-year="2026" data-view="monthblock">
+        <div id="month-navigation-6acb898e0643c6acb898de45dc2-1" class="controls">
+            <div class="calendar-controls">
+                <a href="https://lyc.ecole-ci.org/calendar/view.php?view=month&amp;time=1788220800" class="arrow_link previous" title="Mois précédent" data-year="2026" data-month="9" data-drop-zone="nav-link">
+                    <span class="arrow" aria-hidden="true">◄</span>
+                    &nbsp;
+                    <span class="arrow_text">septembre</span>
+                </a>
+                <span class="hide"> | </span>
+                    <h4 class="current">octobre 2026</h4>
+                <span class="hide"> | </span>
+                <a href="https://lyc.ecole-ci.org/calendar/view.php?view=month&amp;time=1793491200" class="arrow_link next" title="Mois prochain" data-year="2026" data-month="11" data-drop-zone="nav-link">
+                    <span class="arrow_text">novembre</span>
+                    &nbsp;
+                    <span class="arrow" aria-hidden="true">►</span>
+                </a>
+            </div>
+        </div>
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw " title="Chargement" role="img" aria-label="Chargement"></i></span>
+        </span>
+        <div class="theme-table-wrap"><table id="month-detailed-6acb898e0643c6acb898de45dc2-1" class="calendarmonth calendartable mb-0">
+            <thead>
+                <tr>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Lundi</span>
+                        <span aria-hidden="true">Lu</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Mardi</span>
+                        <span aria-hidden="true">Ma</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Mercredi</span>
+                        <span aria-hidden="true">Me</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Jeudi</span>
+                        <span aria-hidden="true">Je</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Vendredi</span>
+                        <span aria-hidden="true">Ve</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Samedi</span>
+                        <span aria-hidden="true">Sa</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Dimanche</span>
+                        <span aria-hidden="true">Di</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-region="month-view-week">
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="day text-sm-center text-md-left" data-day="1" data-day-timestamp="1790812800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1790859917">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 1 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">1</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 1 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">1</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="2" data-day-timestamp="1790899200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1790946317">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 2 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">2</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 2 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">2</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="3" data-day-timestamp="1790985600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791032717">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 3 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">3</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 3 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">3</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="4" data-day-timestamp="1791072000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791119117">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 4 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">4</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 4 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">4</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="5" data-day-timestamp="1791158400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791205517">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 5 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">5</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 5 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">5</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="6" data-day-timestamp="1791244800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791291917">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 6 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">6</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 6 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">6</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="7" data-day-timestamp="1791331200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791378317">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 7 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">7</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 7 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">7</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="8" data-day-timestamp="1791417600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791464717">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 8 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">8</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 8 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">8</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="9" data-day-timestamp="1791504000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791551117">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 9 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">9</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 9 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">9</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="10" data-day-timestamp="1791590400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791637517">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 10 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">10</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 10 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">10</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left today weekend" data-day="11" data-day-timestamp="1791676800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791723917" title="Aujourd’hui">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 11 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">11</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 11 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">11</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="12" data-day-timestamp="1791763200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791810317">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 12 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">12</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 12 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">12</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="13" data-day-timestamp="1791849600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791896717">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 13 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">13</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 13 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">13</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="14" data-day-timestamp="1791936000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1791983117">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 14 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">14</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 14 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">14</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="15" data-day-timestamp="1792022400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792069518">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 15 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">15</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 15 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">15</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="16" data-day-timestamp="1792108800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792155918">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 16 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">16</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 16 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">16</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="17" data-day-timestamp="1792195200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792242318">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 17 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">17</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 17 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">17</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="18" data-day-timestamp="1792281600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792328718">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 18 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">18</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 18 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">18</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="19" data-day-timestamp="1792368000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792415118">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 19 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">19</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 19 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">19</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="20" data-day-timestamp="1792454400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792501518">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 20 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">20</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 20 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">20</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="21" data-day-timestamp="1792540800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792587918">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 21 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">21</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 21 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">21</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="22" data-day-timestamp="1792627200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792674318">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 22 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">22</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 22 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">22</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="23" data-day-timestamp="1792713600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792760718">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 23 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">23</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 23 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">23</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="24" data-day-timestamp="1792800000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792847118">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 24 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">24</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 24 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">24</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="25" data-day-timestamp="1792886400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1792933518">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, dimanche 25 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">25</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, dimanche 25 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">25</span></span></span>
+                            </div>
+                        </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-sm-center text-md-left" data-day="26" data-day-timestamp="1792972800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793019918">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, lundi 26 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">26</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, lundi 26 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">26</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="27" data-day-timestamp="1793059200" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793106318">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mardi 27 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">27</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mardi 27 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">27</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="28" data-day-timestamp="1793145600" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793192718">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, mercredi 28 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">28</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, mercredi 28 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">28</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="29" data-day-timestamp="1793232000" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793279118">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, jeudi 29 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">29</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, jeudi 29 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">29</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left" data-day="30" data-day-timestamp="1793318400" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793365518">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, vendredi 30 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">30</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, vendredi 30 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">30</span></span></span>
+                            </div>
+                        </td>
+                        <td class="day text-sm-center text-md-left weekend" data-day="31" data-day-timestamp="1793404800" data-drop-zone="month-view-day" data-region="day" data-new-event-timestamp="1793451918">
+                            <div class="d-none d-md-block hidden-phone text-xs-center">
+                                <span class="sr-only">Aucun événement, samedi 31 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">31</span></span></span>
+                            </div>
+                            <div class="d-md-none hidden-desktop hidden-tablet">
+                                <span class="sr-only">Aucun événement, samedi 31 octobre</span>
+                                    <span aria-hidden="true"><span class="day-number-circle"><span class="day-number">31</span></span></span>
+                            </div>
+                        </td>
+                        <td class="dayblank">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+</div></div>
+            <div class="footer"><div class="bottom">
+        <span class="footer-link">
+            <a href="https://lyc.ecole-ci.org/calendar/view.php?view=month&amp;time=1791723917&amp;course=1">Calendrier complet</a>
+        </span>
+</div></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-2"></span><a href="#sb-3" class="sr-only sr-only-focusable">Passer Événements à venir</a>
+
+<section id="inst7" class=" block_calendar_upcoming block  card mb-3" role="complementary" data-block="calendar_upcoming" data-instance-id="7" aria-labelledby="instance-7-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-7-header" class="h5 card-title d-inline">Événements à venir</h3>
+
+
+        <div class="card-text content mt-3">
+            <div id="calendar-upcoming-block-6acb898e0b7376acb898de45dc3" data-template="core_calendar/upcoming_mini">
+    <div class="card-text content calendarwrapper" id="month-upcoming-mini-6acb898e0b7376acb898de45dc3" data-context-id="0" data-courseid="1" data-categoryid="0">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-sm fa-fw " title="Chargement" role="img" aria-label="Chargement"></i></span>
+        </span>
+            Aucun événement à venir
+    </div>
+</div>
+            <div class="footer"><div class="gotocal"><a href="https://lyc.ecole-ci.org/calendar/view.php?view=upcoming">Vers le calendrier…</a></div></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-3"></span></aside>	            </section>
+                    </div>
+    </div>
+</div>
+<div class="mb2notices"></div><div id="bottom" class="dark1">
+			            <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-12">
+                    <aside id="block-region-bottom" class="bottom style-bottom block-region" data-blockregion="bottom" data-droptarget="1"><h2 class="sr-only">Blocs</h2><a href="#sb-7" class="sr-only sr-only-focusable">Passer Utilisateurs en ligne</a>
+
+<section id="inst4" class=" block_online_users block  card mb-3" role="complementary" data-block="online_users" data-instance-id="4" aria-labelledby="instance-4-header">
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-4-header" class="h5 card-title d-inline">Utilisateurs en ligne</h3>
+
+
+        <div class="card-text content mt-3">
+            <div class="info">41 utilisateurs en ligne (5 dernières minutes)</div><ul class="list">
+<li class="listentry"><div class="user"><a href="https://lyc.ecole-ci.org/user/view.php?id=61085&amp;course=1" title="1 s"><span class="userinitials size-30" title="Henoc Haniel" aria-label="Henoc Haniel" role="img">HH</span>Henoc Haniel</a></div><div class="uservisibility"><a title="Cacher mon statut en ligne des autres utilisateurs" data-action="hide" data-userid="61085" id="change-user-visibility" href=""><i class="icon fa fa-eye fa-fw " title="Cacher mon statut en ligne des autres utilisateurs" role="img" aria-label="Cacher mon statut en ligne des autres utilisateurs"></i></a></div></li>
+<li class="listentry"><div class="otherusers"><span>Autres utilisateurs (40)</span></div></li>
+</ul><div class="clearer"><!-- --></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-7"></span></aside>                    </div>
+            </div>
+            </div>
+            </div>
+</div> <!-- //end #page-b -->
+</div> <!--  end .pagelayout-content -->
+<div class="page-c">
+<footer id="footer" class="theme-footer dark1 main-footer">
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="footer-content flexcols">
+					<div class="footer-text">
+						<p>Copyright ©  <span class="cyear">2026</span> MENA - CÔTE D'IVOIRE</p>
+											</div>
+                	                </div>
+				<div class="footer-tools"></div>				     		</div>
+        </div>
+    </div>
+<div class="usertour">
+    <a id="resetpagetour" href="#">Relancer la visite guidée sur cette page</a>
+</div></footer>
+</div><!-- //end #page-c -->
+</div><!--  end pagelayout-b -->
+</div><!--  end .pagelayout -->
+<!-- </div> //end #page -->
+</div><!-- end #page-outer -->
+<div class="fixed-bar">
+		<button class="theme-hide-sidebar mode2 iconbutton" data-showtext="Show sidebars" data-hidetext="Hide sidebars" aria-expanded="false" aria-controls="theme-main-content" aria-label="Show sidebars" data-text_show="Show sidebars" data-text_hide="Hide sidebars"><span class="svgicon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 64c0 17.7-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32H256c17.7 0 32 14.3 32 32zm0 256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c17.7 0 32 14.3 32 32zM0 192c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></span></button></div>
+<button type="button" class="themereset theme-scrolltt" aria-label="Niveau supérieur"><i class="pe-7s-angle-up" data-scrollspeed="400"></i></button><a href="#page" class="sr-only sr-only-focusable">Scroll to top</a>
+	<div id="header-modal-login" class="modal theme-modal-scale theme-forms login" role="dialog" tabindex="0" aria-labelledby="header-modal-login" aria-describedby="header-modal-login" aria-modal="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="theme-modal-container"><button class="close-container themereset" data-dismiss="modal" aria-label="Fermer">×</button><div id="login_6acb898e42cfb" class="theme-loginform panel-item panel-login"><div class="user-picture-container mb-4 d-flex align-items-center"><a href="https://lyc.ecole-ci.org/user/profile.php?id=61085" class="d-inline-block aabtn"><span class="userinitials size-80" title="Henoc Haniel" aria-label="Henoc Haniel" role="img">HH</span></a><div class="user-description ml-4"><div class="user-info"><div class="user-name h4 mb-2"><span class="firstname mr-1">Henoc</span><span class="lastname">Haniel</span></div><div class="user-roles"><span class="user-role mr-1 role-visiteur">Visiteur</span></div><span class="email">0594889379@ecole-ci.online</span></div></div></div><ul class="theme-usermenu"><li class="menu-item profile"><a href="https://lyc.ecole-ci.org/user/profile.php">Profil</a></li><li class="menu-item grades"><a href="https://lyc.ecole-ci.org/grade/report/overview/index.php">Notes</a></li><li class="menu-item divider noid"></li><li class="menu-item preferences"><a href="https://lyc.ecole-ci.org/user/preferences.php">Préférences</a></li></ul><div class="user-footer mt-4 d-flex justify-content-between align-items-center"><a class="help-link d-inline-flex align-items-center" href="https://lyc.ecole-ci.org/user/contactsitesupport.php" aria-label="Aide"><span class="link-icon mr-1"><i class="ri-question-line"></i></span><span class="link-text">Aide</span></a><a class="logout-link d-inline-flex align-items-center" href="https://lyc.ecole-ci.org/login/logout.php?sesskey=5qivIS67HF"><span class="link-icon mr-1"><i class="ri-logout-circle-line"></i></span><span class="link-text">Déconnexion</span></a></div></div><button class="themereset themekeynavonly" data-dismiss="modal">Fermer</button></div></div></div></div>	<div id="header-modal-search" class="modal theme-modal-scale theme-forms search" role="dialog" tabindex="0" aria-labelledby="header-modal-search" aria-describedby="header-modal-search" aria-modal="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="theme-modal-container"><button class="close-container themereset" data-dismiss="modal" aria-label="Fermer">×</button><div id="search_6acb898e4514c" class="theme-searchform panel-item panel-search"><div class="form-inner"><form id="theme-search" action="https://lyc.ecole-ci.org/course/search.php" class=" d-flex justify-content-center align-items-center"><input id="theme-searchbox" type="text" value="" placeholder="Rechercher" name="search"><button type="submit" aria-label="Rechercher"><i class="ri-search-line"></i></button></form></div></div><button class="themereset themekeynavonly" data-dismiss="modal">Fermer</button></div></div></div></div>
+<!--<script src="/login/mealm/js/confettis.js"></script>--><script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://lyc.ecole-ci.org/lib/requirejs.php/1776147135/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('fr');
+});;
+require(['theme_boost/loader']);;
+M.util.js_pending('theme_mb2nl/actions'); require(['theme_mb2nl/actions'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/actions');});;
+M.util.js_pending('theme_mb2nl/access'); require(['theme_mb2nl/access'], function(amd) {amd.focusClass(); M.util.js_complete('theme_mb2nl/access');});;
+M.util.js_pending('theme_mb2nl/sidebars'); require(['theme_mb2nl/sidebars'], function(amd) {amd.sidebarToggle(); M.util.js_complete('theme_mb2nl/sidebars');});;
+M.util.js_pending('theme_mb2nl/scrollpos'); require(['theme_mb2nl/scrollpos'], function(amd) {amd.panelLink(); M.util.js_complete('theme_mb2nl/scrollpos');});;
+M.util.js_pending('theme_mb2nl/megamenu'); require(['theme_mb2nl/megamenu'], function(amd) {amd.setWrapPos(); M.util.js_complete('theme_mb2nl/megamenu');});;
+M.util.js_pending('theme_mb2nl/megamenu'); require(['theme_mb2nl/megamenu'], function(amd) {amd.toggleSubmenus(); M.util.js_complete('theme_mb2nl/megamenu');});;
+M.util.js_pending('theme_mb2nl/stickynav'); require(['theme_mb2nl/stickynav'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/stickynav');});;
+M.util.js_pending('theme_mb2nl/tgsdb'); require(['theme_mb2nl/tgsdb'], function(amd) {amd.init(); M.util.js_complete('theme_mb2nl/tgsdb');});;
+M.util.js_pending('theme_mb2nl/mb2notices'); require(['theme_mb2nl/mb2notices'], function(amd) {amd.closeNotice(); M.util.js_complete('theme_mb2nl/mb2notices');});;
+
+require(
+[
+    'jquery',
+    'block_recentlyaccessedcourses/main'
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#block-recentlyaccessedcourses-6acb898de45da6acb898de45dc1');
+    var userid = root.attr('data-userid');
+
+    Main.init(userid, root);
+});
+;
+
+require(['jquery', 'core_calendar/month_navigation_drag_drop'], function($, DragDrop) {
+    var root = $('#month-navigation-6acb898e0643c6acb898de45dc2-1');
+    DragDrop.init(root);
+});
+;
+
+require([
+    'jquery',
+    'core_calendar/month_view_drag_drop'
+], function(
+    $,
+    DragDrop
+) {
+    var root = $('#month-detailed-6acb898e0643c6acb898de45dc2-1');
+    DragDrop.init(root);
+});
+;
+
+require(['jquery', 'core_calendar/calendar', 'core_calendar/popover'], function($, Calendar, calendarPopover) {
+    const isCalendarBlock = true;
+    Calendar.init($("#calendar-month-6acb898e0643c6acb898de45dc2-1"), isCalendarBlock);
+});
+;
+M.util.js_pending('core_calendar/popover'); require(['core_calendar/popover'], function(amd) {M.util.js_complete('core_calendar/popover');});;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+    var root = $('#month-upcoming-mini-6acb898e0b7376acb898de45dc3');
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-upcoming-mini-6acb898e0b7376acb898de45dc3-filterChanged");
+
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        var target = $("#month-upcoming-mini-6acb898e0b7376acb898de45dc3").find(CalendarSelectors.eventType[data.type]);
+
+        var transitionPromise = $.Deferred();
+        if (data.hidden) {
+            transitionPromise.then(function() {
+                return target.slideUp('fast').promise();
+            });
+        } else {
+            transitionPromise.then(function() {
+                return target.slideDown('fast').promise();
+            });
+        }
+
+        transitionPromise.then(function() {
+            M.util.js_complete("month-upcoming-mini-6acb898e0b7376acb898de45dc3-filterChanged");
+
+            return;
+        });
+
+        transitionPromise.resolve();
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+    CalendarView.init($("#calendar-upcoming-block-6acb898e0b7376acb898de45dc3"), 'upcoming');
+});
+;
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("18349"); M.util.js_complete('block_navigation/navblock');});;
+M.util.js_pending('tool_usertours/usertours'); require(['tool_usertours/usertours'], function(amd) {amd.init([{"tourId":"2","startTour":false,"filtervalues":{"cssselector":{}}}], ["tool_usertours\/filter_cssselector"]); M.util.js_complete('tool_usertours/usertours');});;
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("18350", null); M.util.js_complete('block_settings/settingsblock');});;
+M.util.js_pending('block_online_users/change_user_visibility'); require(['block_online_users/change_user_visibility'], function(amd) {amd.init(); M.util.js_complete('block_online_users/change_user_visibility');});;
+M.util.js_pending('theme_mb2nl/access'); require(['theme_mb2nl/access'], function(amd) {amd.acsbTools(); M.util.js_complete('theme_mb2nl/access');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+M.util.js_pending('theme_mb2nl/quicklinks'); require(['theme_mb2nl/quicklinks'], function(amd) {amd.quickLinksInit(); M.util.js_complete('theme_mb2nl/quicklinks');});;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(132443, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});;
+M.util.js_pending('core/storage_validation'); require(['core/storage_validation'], function(amd) {amd.init(1791723917); M.util.js_complete('core/storage_validation');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/mb2nl_helper.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/inview.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/swiper.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/jarallax.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/magnific-popup.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/typed.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/lazyload.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/mb2nl_plugins.js"></script>
+<script src="https://lyc.ecole-ci.org/lib/javascript.php/1776147135/theme/mb2nl/script/mb2nl.js"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","viewallcourses":"Afficher tous les cours","cancel":"Annuler","morehelp":"Plus d\u2019aide","loadinghelp":"Chargement\u2026","confirm":"Confirmer","areyousure":"Voulez-vous vraiment continuer\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue","file":"Fichier","url":"URL","collapseall":"Tout replier","expandall":"Tout d\u00e9plier"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Il y a {$a} liens qui pointent vers ce fichier","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer les commentaires s\u00e9lectionn\u00e9s\u00a0?","confirmation":"Confirmation"},"debug":{"debuginfo":"Info de d\u00e9bogage","line":"Ligne","stacktrace":"Trace de la pile"},"langconfig":{"labelsep":"&nbsp;"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+var mb2nljs = {"scp":"\/","headerhsm":58,"moretext":"Afficher plus\u2026","lesstext":"Afficher moins\u2026","collapseall":"Tout replier","expandall":"Tout d\u00e9plier","messages":"Messages personnels","notifications":"Notifications"};var jsselectors = ["body",".fsmod-footer",".page-bgimg",".theme-scrolltt",".header-inner",".top-bar",".master-header-inner",".breadcrumb-item","#region-main",".page-breadcrumb.breadcrumb_classic","#page-header",".theme-footer",".mb2-pb-date",".page-b",".slide-contentnav-link",".pbanimnum-number",".pbanimnum-icon",".theme-text-text",".theme-text-text *",".text",".text-muted","pre",".theme-table-wrap",".icon","label",".text-truncate",".bg-light",".page-link","dt","dd",".slide-desc",".tcolorh",".badge",".box-title",".box-title-text",".box-desc",".theme-boxicon-icon",".theme-boxicon-icon i",".boxcontent-desc",".box-desc-text",".theme-header-subtitle",".event-duration",".event-date",".event-date span",".eventname",".footer-link a",".iconel i",".list-text",".theme-list li",".theme-list a",".social-list a",".share-list a",".tab-pane",".tab-pane *",".theme-slide-title",".theme-slider-desc",".select-items-container",".mb2-pb-select_item",".mb2-pb-btn","#page button",".showmore-container button *","#page button i",".mb2-pb-btn i",".fixed-bar button",".panel-link",".header-tools-link i",".mb2-accordion button",".mb2-accordion button i",".embed-video-bg i",".accimg-item",".accimg-plus",".block_coursetoc .coursetoc-sectionlist",".enrollment-page #page-content",".card-body",".day-number",".quicklinks-list",".item-link",".static-icon",".static-icon i",".menu-extracontent-content",".quicklinks path",".mb2mm-action",".mb2mm-mega-action",".mb2mm-heading",".mb2mm-icon",".mb2mm-label",".mb2mm-sublabel",".mb2mm-mega-action",".mb2mm-toggle",".mb2mm-arrow",".link-replace",".mobile-navto",".mobile-navbottom",".menu-extracontent-controls",".menu-extra-controls-btn",".lang-list a",".show-menu",".theme-usermenu",".theme-usermenu li",".theme-usermenu a",".logout-link",".theme-loginform .help-link",".admin-region",".theme-links a",".mb2tmpl-acccontent>div",".mb2megamenu-item-header",".mb2megamenu-item-header .item-label",".mb2megamenu-builder-footer",".dashboard-tabs",".theme-dashboard",".block-item-inner",".action-menu",".action-menu-item",".mb2pb-editfooter","input","textarea","select",".form-label",".form-control",".col-form-label *",".form-description",".mb2-pb-announcements-title",".mb2-pb-announcements-content",".mb2-pb-announcements-item",".pagelayout-content",".pagelayout-a",".pagelayout-b",".toggle-sidebar-nav",".toggle-sidebar-nav button",".footer-tools",".footer-tools a",".footer-content",".alert",".filter-content",".box",".boxlist a",".boxlist span",".activityiconcontainer.content",".activityname",".activityname a",".instructor-meta *",".course-link-item a",".course-link-item path",".toggle-icon",".progress-value",".theme-turnediting",".course-nav-list-item-list-container",".course-nav-list-ccontent",".activity",".theme-course-teacher-inner",".info-courses",".info-students",".teacher-info i",".theme-courses-topbar","#fsmod-header",".fsmod-course-sections",".coursetoc-section-tite",".fsmod-section-tools",".fsmod-section",".fsmod-course-content",".coursenav-link",".fsmod-backlink",".fsmod-showhide-sidebar path",".coursenav-link span",".sidebar-inner",".course-slogan",".course-categories-tree",".course-meta1",".course-meta2",".price",".enrol-course-nav",".enrol-course-nav ul",".course-description-item",".children-category a",".cat-image",".cat-image path",".theme-course-filter .field-container input+i",".coursetabs-tablist",".coursetabs-catitem span",".course-custom-fileds",".course-custom-fileds li",".activity-header",".tcolorl",".tcolorn",".course-categories-tree a",".filter-heading",".filter-toggle",".toggle-list-btn",".course-info2-inner",".enrol-course-nav-inner",".availabilityinfo",".course-section-header",".activity-item",".section-collapsemenu",".course-nav-button",".modified",".nav-buttons",".coursetoc-tools",".coursetoc-sinput",".comment-link",".message-app",".drawer-top",".drawer-top a",".drawer-top i",".popover-region-container",".popover-region-footer-container",".popover-region-seeall-text",".mb2config-heading",".mb2config-spacer",".mb2pb-videopopup-icon",".mb2pb-videopopup-text",".bgcolor",".theme-boxicon",".mb2-pb-ba_content"];
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {M.util.help_popups.setup(Y);
+ M.util.js_pending('random6acb898de45dc15'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6acb898de45dc15'); });
+})();
+//]]>
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><div></div><div></div></body></html>

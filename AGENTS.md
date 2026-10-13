@@ -14,6 +14,11 @@
 - Déploiement front + règles : `firebase deploy --only firestore:rules,hosting`.
 - Render se déploie automatiquement depuis GitHub (vérifier la branche suivie dans le dashboard Render).
 
+## Classes universitaires
+- Une filière universitaire est une classe comme les autres : `Fiches_Resume/Licence_{N}_{Filiere}/{Matiere}/` (ex. `Licence_1_Droit/Droit_Constitutionnel/`), sans page ni JS à part.
+- Pour l'activer : ajouter la classe et ses matières dans `ALLOWED_SUBJECTS` (`src/build_static.js`), dans `CLASS_ORDER` (`src/frontend/app.js`, puis `npm run minify`) et une `<option>` dans `regClass` (`public/inscription.html`).
+- Quiz : `public/data/quizzes/{Classe}/{Matiere}.json` (même nom que le dossier matière).
+
 ## Cache
 - Bumper `?v=` de l'asset modifié dans `public/index.html` + `public/sw.js`, et `CACHE_SHELL` dans `sw.js`.
 

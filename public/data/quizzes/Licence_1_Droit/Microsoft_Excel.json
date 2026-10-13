@@ -1,0 +1,82 @@
+{
+  "Fiche_Chapitre1_INTRODUCTION_EXCEL": {
+    "title": "Introduction à Excel",
+    "questions": [
+      { "id": "q1", "text": "Qu'est-ce qu'Excel ?", "type": "qcm", "options": ["Un traitement de texte", "Un tableur : logiciel de calcul organisé en classeurs (.xlsx) contenant des feuilles de calcul", "Un navigateur", "Un OS"], "answer": 1, "explanation": "Excel est un tableur : le fichier est un classeur (.xlsx) composé de feuilles de calcul organisées en lignes et colonnes." },
+      { "id": "q2", "text": "Quelles sont les dimensions d'une feuille Excel ?", "type": "qcm", "options": ["256 colonnes", "16 384 colonnes (A à XFD) et 1 048 576 lignes", "100 lignes", "Illimitées"], "answer": 1, "explanation": "Une feuille Excel compte 16 384 colonnes (A à XFD) et 1 048 576 lignes — cellule = intersection d'une colonne et d'une ligne." },
+      { "id": "q3", "text": "Quels éléments composent l'interface Excel ?", "type": "qcm", "options": ["Seulement la grille", "Le ruban, la Zone Nom, la barre de formule, la grille et la barre d'état", "Le menu Démarrer", "Le Bureau"], "answer": 1, "explanation": "Interface : ruban (onglets), Zone Nom (adresse de la cellule active), barre de formule (contenu), barre d'état (moyenne, somme)." },
+      { "id": "q4", "text": "Qu'est-ce que la Zone Nom ?", "type": "qcm", "options": ["Le nom du fichier", "La zone affichant l'adresse ou le nom de la cellule/plage sélectionnée (ex. A1)", "La barre d'onglets", "Le titre"], "answer": 1, "explanation": "La Zone Nom (à gauche de la barre de formule) affiche la référence de la cellule active ou le nom d'une plage nommée." },
+      { "id": "q5", "text": "Vrai ou Faux : un classeur peut être enregistré au format PDF ou protégé par mot de passe.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : Excel permet l'enregistrement en .xlsx, l'export en PDF et la protection du classeur par mot de passe." }
+    ]
+  },
+  "Fiche_Chapitre2_GESTION_FEUILLES_CLASSEURS": {
+    "title": "Gestion des feuilles et des classeurs",
+    "questions": [
+      { "id": "q1", "text": "Comment sélectionner plusieurs feuilles adjacentes ?", "type": "qcm", "options": ["Ctrl+clic", "Maj + clic sur le dernier onglet (touches Maj pour adjacentes, Ctrl pour non adjacentes)", "Alt+clic", "Double clic"], "answer": 1, "explanation": "Maj + clic sélectionne les onglets adjacents ; Ctrl + clic sélectionne des onglets non adjacents — créant un groupe de travail." },
+      { "id": "q2", "text": "Qu'est-ce qu'un groupe de travail dans Excel ?", "type": "qcm", "options": ["Une équipe", "L'ensemble des feuilles sélectionnées ensemble : toute saisie/modification s'applique à toutes en même temps", "Une cellule", "Un graphique"], "answer": 1, "explanation": "Quand plusieurs feuilles forment un groupe de travail, les modifications sont répercutées sur toutes — attention à dégrouper après." },
+      { "id": "q3", "text": "Comment déplacer ou copier une feuille ?", "type": "qcm", "options": ["Impossible", "Par clic droit sur l'onglet → « Déplacer ou copier » (cocher « Créer une copie » pour copier), ou glisser l'onglet", "Par Ctrl+C seul", "Par le clavier"], "answer": 1, "explanation": "Clic droit sur l'onglet → « Déplacer ou copier » ; cocher « Créer une copie » duplique la feuille dans le même classeur ou un autre." },
+      { "id": "q4", "text": "À quoi sert « Figer les volets » ?", "type": "qcm", "options": ["À bloquer le fichier", "À maintenir visibles les lignes/colonnes d'en-tête pendant le défilement", "À protéger la feuille", "À zoomer"], "answer": 1, "explanation": "Figer les volets (onglet Affichage) garde les titres de lignes ou colonnes affichés pendant le défilement du reste de la feuille." },
+      { "id": "q5", "text": "Vrai ou Faux : l'affichage côte à côte permet de comparer deux fenêtres avec défilement synchrone.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : Affichage → « Côte à côte » affiche deux fenêtres et le « défilement synchrone » les fait défiler ensemble pour la comparaison." }
+    ]
+  },
+  "Fiche_Chapitre3_SAISIE_DONNEES": {
+    "title": "Saisie des données",
+    "questions": [
+      { "id": "q1", "text": "Comment saisir une valeur dans plusieurs cellules à la fois ?", "type": "qcm", "options": ["Impossible", "Sélectionner la plage, saisir, puis Ctrl+Entrée pour remplir toutes les cellules", "Entrée seule", "F2"], "answer": 1, "explanation": "Après avoir sélectionné la plage et tapé la valeur, Ctrl+Entrée remplit toutes les cellules sélectionnées d'un coup." },
+      { "id": "q2", "text": "Que signifie l'affichage « ##### » dans une cellule ?", "type": "qcm", "options": ["Une erreur de formule", "La colonne est trop étroite pour afficher le nombre ou la date", "Un virus", "Une cellule vide"], "answer": 1, "explanation": "« ##### » indique que la cellule n'est pas assez large : élargir la colonne résout le débordement — les grandes valeurs passent en notation scientifique." },
+      { "id": "q3", "text": "Comment forcer Excel à traiter un nombre comme du texte ?", "type": "qcm", "options": ["Impossible", "Préfixer la saisie d'une apostrophe (') ou formater la cellule en Texte", "Mettre des guillemets", "Écrire en majuscules"], "answer": 1, "explanation": "L'apostrophe initiale force le format texte : le contenu est aligné à gauche et n'entre pas dans les calculs." },
+      { "id": "q4", "text": "Comment sélectionner une plage sur une autre feuille ?", "type": "qcm", "options": ["On ne peut pas", "Par la syntaxe Feuil3!A4:E8 dans la Zone Nom ou par F5/Atteindre", "Par Ctrl+A", "Par double clic"], "answer": 1, "explanation": "La syntaxe Feuil3!A4:E8 (NomFeuille!Plage) désigne une plage d'une autre feuille — utilisable dans les formules ou l'atteinte." },
+      { "id": "q5", "text": "Vrai ou Faux : la validation des données limite ce qu'on peut saisir dans une cellule.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : Données → Validation des données restreint la saisie (liste, nombre, date…) et peut afficher un message d'erreur." }
+    ]
+  },
+  "Fiche_Chapitre4_SERIES_DONNEES": {
+    "title": "Les séries de données",
+    "questions": [
+      { "id": "q1", "text": "Qu'est-ce que la poignée de recopie ?", "type": "qcm", "options": ["Une souris", "Le petit carré en bas à droite de la cellule active, à glisser pour étendre une série", "Une formule", "Un onglet"], "answer": 1, "explanation": "La poignée de recopie incrémentée permet de prolonger une série (jours, mois, nombres) en la glissant." },
+      { "id": "q2", "text": "Qu'est-ce qu'une série linéaire ?", "type": "qcm", "options": ["Une suite aléatoire", "Une progression arithmétique : chaque terme = précédent + pas constant (déduit de 2 termes initiaux)", "Une suite géométrique", "Une date"], "answer": 1, "explanation": "La série linéaire ajoute un pas constant ; avec 2 valeurs initiales Excel calcule le pas et prolonge la série." },
+      { "id": "q3", "text": "Qu'est-ce qu'une série géométrique ?", "type": "qcm", "options": ["Addition", "Une progression où chaque terme = précédent × raison — via la fenêtre Série", "Une liste", "Une date"], "answer": 1, "explanation": "La série géométrique multiplie par une raison fixe ; elle se définit dans la fenêtre Série (Accueil → Remplissage → Série)." },
+      { "id": "q4", "text": "Qu'est-ce qu'une série chronologique ?", "type": "qcm", "options": ["Des lettres", "Une suite de dates/heures incrémentées selon un pas (jours, semaines, mois, années)", "Un nombre", "Une formule"], "answer": 1, "explanation": "La série chronologique prolonge des dates/heures selon un pas choisi — la recopie incrémente automatiquement les jours." },
+      { "id": "q5", "text": "Vrai ou Faux : on peut créer des listes personnalisées (jours, mois, services) pour la recopie.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : les listes personnalisées (Fichier → Options → Options avancées → Modifier les listes) permettent de créer des séries réutilisables par la poignée." }
+    ]
+  },
+  "Fiche_Chapitre5_DEPLACER_COPIER_COLLER_TRI": {
+    "title": "Déplacer, copier, coller, trier",
+    "questions": [
+      { "id": "q1", "text": "Combien d'éléments le Presse-papiers Office peut-il contenir ?", "type": "qcm", "options": ["1", "24 éléments", "10", "Illimité"], "answer": 1, "explanation": "Le Presse-papiers Office mémorise jusqu'à 24 éléments copiés, réutilisables dans tout Office." },
+      { "id": "q2", "text": "Que fait Ctrl+X / Ctrl+C / Ctrl+V ?", "type": "qcm", "options": ["Ouvrir", "Couper, copier, coller la sélection", "Annuler", "Imprimer"], "answer": 1, "explanation": "Ctrl+X coupe (déplace), Ctrl+C copie, Ctrl+V colle — avec options de collage (Transposer, valeurs, liaison)." },
+      { "id": "q3", "text": "Comment déplacer des données vers une autre feuille ?", "type": "qcm", "options": ["Impossible", "Glisser la plage en maintenant Alt enfoncé jusqu'à l'onglet de la feuille cible", "Par copier-coller seul", "Par Ctrl+X"], "answer": 1, "explanation": "Alt + glissé d'une sélection permet de la déplacer vers une autre feuille ; Ctrl+Alt+glissé la copie." },
+      { "id": "q4", "text": "À quoi sert le Collage spécial ?", "type": "qcm", "options": ["À coller tel quel", "À coller en appliquant une option : Transposer, valeurs seules, liaison, ou une opération (addition, multiplication)", "À supprimer", "À imprimer"], "answer": 1, "explanation": "Le Collage spécial permet de coller des valeurs sans formules, de transposer (lignes↔colonnes), de lier à la source, ou d'appliquer une opération." },
+      { "id": "q5", "text": "Vrai ou Faux : le tri peut se faire sur plusieurs niveaux de critères.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : la fenêtre Tri (Données → Trier) permet d'ajouter des niveaux : trier d'abord par colonne A, puis par colonne B, etc." }
+    ]
+  },
+  "Fiche_Chapitre6_FORMULES_FONCTIONS": {
+    "title": "Formules et fonctions",
+    "questions": [
+      { "id": "q1", "text": "Par quel signe commence toute formule Excel ?", "type": "qcm", "options": ["+", "Le signe égal (=)", ":", "-"], "answer": 1, "explanation": "Toute formule commence par = ; les calculs respectent les priorités (* / avant + −) et & concatène du texte." },
+      { "id": "q2", "text": "Quelle différence entre référence relative et absolue ?", "type": "qcm", "options": ["Aucune", "Relative (A1) : change à la recopie ; absolue ($A$1) : reste fixe ; mixte ($A1, A$1) : une seule dimension fixée — touche F4", "L'une est plus courte", "L'une est protégée"], "answer": 1, "explanation": "La référence relative s'adapte à la copie ; le $ fige colonne ($A) ou ligne ($1) ; F4 bascule entre les 4 types." },
+      { "id": "q3", "text": "Comment référencer une plage sur plusieurs feuilles (référence 3D) ?", "type": "qcm", "options": ["Feuil1+Feuil2", "Feuil1:Feuil3!A1 — la plage traverse les feuilles de Feuil1 à Feuil3", "Feuil1!A1 seule", "A1:A10"], "answer": 1, "explanation": "La syntaxe Feuil1:Feuil3!A1 agrège la même cellule sur plusieurs feuilles contiguës — référence tridimensionnelle." },
+      { "id": "q4", "text": "Que fait la fonction SI ?", "type": "qcm", "options": ["Elle additionne", "=SI(test; valeur_si_vrai; valeur_si_faux) : elle renvoie un résultat selon qu'une condition est vraie ou fausse", "Elle compte", "Elle trie"], "answer": 1, "explanation": "SI évalue un test logique et renvoie une valeur si vrai, une autre si faux — base des formules conditionnelles." },
+      { "id": "q5", "text": "Vrai ou Faux : une formule erronée affiche un code commençant par # (ex. #DIV/0!, #NOM?, #REF!).", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : les erreurs commencent par # — #DIV/0! (division par zéro), #NOM? (nom inconnu), #REF! (référence invalide), #VALEUR!." }
+    ]
+  },
+  "Fiche_Chapitre7_MISE_EN_FORME_DIMENSION": {
+    "title": "Mise en forme et dimension",
+    "questions": [
+      { "id": "q1", "text": "Quelle différence entre format Monétaire et Comptabilité ?", "type": "qcm", "options": ["Identiques", "Monétaire : symbole accolé au nombre ; Comptabilité : symbole aligné à gauche de la cellule, nombres alignés à droite", "L'un est en euros", "L'un est en dollars"], "answer": 1, "explanation": "Le format Comptabilité aligne le symbole monétaire à gauche et les montants à droite pour une lecture en colonne ; le Monétaire accole le symbole." },
+      { "id": "q2", "text": "Comment passer à la ligne dans une même cellule ?", "type": "qcm", "options": ["Entrée", "Alt+Entrée insère un saut de ligne ; « Renvoyer à la ligne automatiquement » adapte au format", "Maj+Entrée", "Tab"], "answer": 1, "explanation": "Alt+Entrée crée un saut de ligne dans la cellule ; le renvoi à la ligne automatique ajuste le texte à la largeur." },
+      { "id": "q3", "text": "Que se passe-t-il lors de la fusion de cellules ?", "type": "qcm", "options": ["Tout est conservé", "Seule la valeur de la cellule supérieure gauche est conservée — les autres sont perdues", "Les valeurs s'additionnent", "La feuille se bloque"], "answer": 1, "explanation": "La fusion conserve uniquement la valeur de la cellule en haut à gauche ; les autres contenus sont perdus." },
+      { "id": "q4", "text": "Quels sont les éléments de mise en forme ?", "type": "qcm", "options": ["Un seul", "Format de nombre, alignement, police, bordure, remplissage, protection (6 éléments)", "La couleur seule", "La taille"], "answer": 1, "explanation": "La boîte Format de cellule regroupe : Nombre, Alignement, Police, Bordure, Remplissage, Protection." },
+      { "id": "q5", "text": "Vrai ou Faux : le format Texte affiche le contenu tel quel, sans calcul.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : une cellule au format Texte affiche la saisie littéralement — un nombre saisi n'est pas utilisable dans les calculs." }
+    ]
+  },
+  "Fiche_Chapitre8_GRAPHIQUES": {
+    "title": "Les graphiques",
+    "questions": [
+      { "id": "q1", "text": "Comment créer un graphique ?", "type": "qcm", "options": ["Par une macro", "Sélectionner les données (avec étiquettes) → Insertion → choisir le type de graphique", "Par le ruban Accueil", "Par F11 seul"], "answer": 1, "explanation": "On sélectionne la plage incluant les étiquettes puis Insertion → Graphiques ; Excel crée une zone de graphique liée aux données." },
+      { "id": "q2", "text": "Qu'est-ce que la zone de graphique ?", "type": "qcm", "options": ["Une cellule", "Le conteneur du graphique — objet déplaçable et redimensionnable restant lié à la plage source", "Un onglet", "Une image fixe"], "answer": 1, "explanation": "La zone de graphique est l'objet global ; déplacée ou copiée, elle conserve le lien dynamique avec les données sources." },
+      { "id": "q3", "text": "À quoi sert un axe secondaire ?", "type": "qcm", "options": ["À décorer", "À représenter sur un même graphique deux séries d'échelles très différentes (ex. quantités et montants)", "À effacer", "À trier"], "answer": 1, "explanation": "L'axe secondaire (clic droit sur la série → Mettre en forme → Axe secondaire) trace une seconde échelle verticale." },
+      { "id": "q4", "text": "Comment comparer les lignes et les colonnes dans un graphique ?", "type": "qcm", "options": ["Impossible", "En intervertissant les lignes/colonnes via « Sélectionner des données » → « Intervertir ligne/colonne »", "En supprimant", "En triant"], "answer": 1, "explanation": "Intervertir ligne/colonne permute les séries et les catégories — on choisit ce qui est comparé à quoi." },
+      { "id": "q5", "text": "Vrai ou Faux : on peut excentrer un secteur dans un graphique circulaire pour le mettre en évidence.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : on peut extraire/excentrer un point de secteur d'un graphique en secteurs (camembert) pour le distinguer visuellement." }
+    ]
+  }
+}

@@ -7,6 +7,9 @@ const SOURCE_DIR = path.join(ROOT, 'Fiches_Resume');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const OUT_FICHES_DIR = path.join(PUBLIC_DIR, 'fiches');
 const OUT_DATA_DIR = path.join(PUBLIC_DIR, 'data');
+// Toutes les fiches sont servies par l'API (/api/fiche) avec sessionToken — jamais publiques
+const SECURE_FICHES_DIR = path.join(ROOT, 'payment-api', 'fiches');
+const isSecureClass = () => true;
 const SITE_URL = (process.env.SITE_URL || 'https://resumeci.me').replace(/\/$/, '');
 const ALLOWED_SUBJECTS = {
   '6eme': ['Anglais', 'EDHC', 'Francais', 'Histoire-Geographie', 'Mathematiques', 'Physique-Chimie', 'SVT', 'TIC'],
@@ -21,6 +24,7 @@ const ALLOWED_SUBJECTS = {
   Terminale_C: ['Mathématiques', 'Physique - Chimie'], // ← TES DOSSIERS Terminale_C
   Terminale_D: ['Français', 'Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
+  Licence_1_Droit: ['Droit_Constitutionnel', 'Droit_des_Obligations', 'Introduction_Etude_Droit', 'Methodologie_Juridique', 'Techniques_Expression_Francaise', 'Histoire_Droit_Institutions', 'Droits_de_l_Homme', 'Relations_Internationales', 'Economie_Politique', 'Droit_de_la_Famille', 'Ethique_Juridique', 'Droit_Anglais', 'Microsoft_Excel'],
 };
 
 function ensureDir(dir) {
@@ -103,7 +107,8 @@ function addFicheSeo(html, meta) {
   const today = new Date().toISOString().split('T')[0];
   const breadcrumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":SITE_URL},{"@type":"ListItem","position":2,"name":meta.cls.replace('_',' '),"item":`${SITE_URL}/#${meta.cls}`},{"@type":"ListItem","position":3,"name":meta.subject,"item":`${SITE_URL}/#${meta.cls}/${meta.subject}`},{"@type":"ListItem","position":4,"name":meta.name,"item":url}]};
   const article = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"url":url,"datePublished":today,"dateModified":today,"author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":SITE_URL},"inLanguage":"fr-CI","educationalLevel":meta.cls.replace('_',' '),"about":meta.subject,"learningResourceType":"Fiche de résumé"};
-  const head = `<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>${escapeHtml(title)}</title><meta name=\"description\" content=\"${escapeHtml(description)}\"><meta name=\"robots\" content=\"index, follow\"><link rel=\"canonical\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"fr-CI\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"x-default\" href=\"${url}\"><meta property=\"og:title\" content=\"${escapeHtml(title)}\"><meta property=\"og:description\" content=\"${escapeHtml(description)}\"><meta property=\"og:type\" content=\"article\"><meta property=\"og:url\" content=\"${url}\"><meta property=\"og:image\" content=\"${SITE_URL}/og-image.png\"><meta property=\"og:site_name\" content=\"ResumeCI\"><meta property=\"og:locale\" content=\"fr_CI\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"${escapeHtml(title)}\"><meta name=\"twitter:description\" content=\"${escapeHtml(description)}\"><meta name=\"twitter:image\" content=\"${SITE_URL}/og-image.png\"><script type=\"application/ld+json\">${JSON.stringify(breadcrumb)}</script><script type=\"application/ld+json\">${JSON.stringify(article)}</script><link rel=\"stylesheet\" href=\"/fiche-standalone.css?v=1\"><script src=\"/fiche-standalone.js?v=1\"></script></head>`;
+  const robotsMeta = meta && isSecureClass(meta.cls) ? 'noindex, nofollow' : 'index, follow';
+  const head = `<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>${escapeHtml(title)}</title><meta name=\"description\" content=\"${escapeHtml(description)}\"><meta name=\"robots\" content=\"${robotsMeta}\"><link rel=\"canonical\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"fr-CI\" href=\"${url}\"><link rel=\"alternate\" hreflang=\"x-default\" href=\"${url}\"><meta property=\"og:title\" content=\"${escapeHtml(title)}\"><meta property=\"og:description\" content=\"${escapeHtml(description)}\"><meta property=\"og:type\" content=\"article\"><meta property=\"og:url\" content=\"${url}\"><meta property=\"og:image\" content=\"${SITE_URL}/og-image.png\"><meta property=\"og:site_name\" content=\"ResumeCI\"><meta property=\"og:locale\" content=\"fr_CI\"><meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"${escapeHtml(title)}\"><meta name=\"twitter:description\" content=\"${escapeHtml(description)}\"><meta name=\"twitter:image\" content=\"${SITE_URL}/og-image.png\"><script type=\"application/ld+json\">${JSON.stringify(breadcrumb)}</script><script type=\"application/ld+json\">${JSON.stringify(article)}</script><link rel=\"stylesheet\" href=\"/fiche-standalone.css?v=1\"><script src=\"/fiche-standalone.js?v=1\"></script></head>`;
   if (/<head[\s\S]*?<\/head>/i.test(html)) return html.replace(/<head[\s\S]*?<\/head>/i, head);
   if (/<html[^>]*>/i.test(html)) return html.replace(/<html[^>]*>/i, match => `${match}${head}`);
   return `<!DOCTYPE html><html lang="fr">${head}<body>${html}</body></html>`;
@@ -201,6 +206,8 @@ function generateSeoFiles(structure) {
   ];
   const ficheItems = [];
   for (const [cls, subjects] of Object.entries(structure)) {
+    // Les fiches sont servies par l'API (paywall) : pas d'URL publique à indexer
+    if (isSecureClass(cls)) continue;
     for (const [subject, fiches] of Object.entries(subjects)) {
       for (const fiche of fiches) {
         ficheItems.push({
@@ -220,7 +227,7 @@ function generateSeoFiles(structure) {
 }
 
 function generateHtmlSitemap(structure) {
-  const sections = Object.entries(structure).map(([cls, subjects]) => `<h2>${escapeHtml(cls.replace('_', ' '))}</h2>${Object.entries(subjects).map(([subject, fiches]) => `<h3>${escapeHtml(subject)}</h3><ul>${fiches.map(fiche => `<li><a href="${fiche.url}">${escapeHtml(fiche.name)}</a></li>`).join('')}</ul>`).join('')}`).join('');
+  const sections = Object.entries(structure).filter(([cls]) => !isSecureClass(cls)).map(([cls, subjects]) => `<h2>${escapeHtml(cls.replace('_', ' '))}</h2>${Object.entries(subjects).map(([subject, fiches]) => `<h3>${escapeHtml(subject)}</h3><ul>${fiches.map(fiche => `<li><a href="${fiche.url}">${escapeHtml(fiche.name)}</a></li>`).join('')}</ul>`).join('')}`).join('');
   const html = `<!DOCTYPE html><html lang=\"fr\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex, follow\"><title>Plan du site — ResumeCI</title><meta name=\"description\" content=\"Plan du site ResumeCI : toutes les fiches de résumé Terminale A et Terminale D pour réviser le BAC en Côte d'Ivoire.\"><link rel=\"canonical\" href=\"${SITE_URL}/sitemap.html\"><style>body{font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7;margin:0}main{max-width:980px;margin:auto;padding:28px 18px}a{color:#2563eb;text-decoration:none;font-weight:700}.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(15,23,42,.08)}h1{margin-top:0}h2{margin-top:28px;color:#0f172a}h3{color:#475569}li{margin:6px 0}</style></head><body><main><p><a href=\"/\">← Retour à l'accueil</a></p><div class=\"card\"><h1>Plan du site ResumeCI</h1><p>Toutes les fiches de résumé disponibles pour réviser le BAC en Côte d'Ivoire.</p>${sections}</div></main></body></html>`;
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.html'), html, 'utf8');
 }
@@ -230,7 +237,8 @@ function generateSearchIndex(structure) {
   for (const [cls, subjects] of Object.entries(structure)) {
     for (const [subject, fiches] of Object.entries(subjects)) {
       for (const fiche of fiches) {
-        const filePath = path.join(OUT_FICHES_DIR, cls, subject, fiche.file);
+        const baseDir = isSecureClass(cls) ? SECURE_FICHES_DIR : OUT_FICHES_DIR;
+        const filePath = path.join(baseDir, cls, subject, fiche.file);
         const html = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : '';
         const text = html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 1600);
         entries.push({ cls, subject, file: fiche.file, name: fiche.name, path: fiche.path, text });
@@ -290,14 +298,33 @@ function injectIndexSeoBlock(structure, stats) {
 
 function main() {
   if (fs.existsSync(OUT_FICHES_DIR)) fs.rmSync(OUT_FICHES_DIR, { recursive: true, force: true });
+  if (fs.existsSync(SECURE_FICHES_DIR)) fs.rmSync(SECURE_FICHES_DIR, { recursive: true, force: true });
   ensureDir(OUT_FICHES_DIR);
+  ensureDir(SECURE_FICHES_DIR);
   ensureDir(OUT_DATA_DIR);
 
-  copyDir(SOURCE_DIR, OUT_FICHES_DIR);
+  // Toutes les classes partent dans payment-api/fiches/ (paywall API) — public/fiches/ reste vide
+  for (const cls of fs.readdirSync(SOURCE_DIR)) {
+    const clsDir = path.join(SOURCE_DIR, cls);
+    if (!fs.statSync(clsDir).isDirectory()) continue;
+    const dest = isSecureClass(cls) ? SECURE_FICHES_DIR : OUT_FICHES_DIR;
+    copyDir(clsDir, path.join(dest, cls), cls);
+  }
   const { structure, stats } = buildStructure();
 
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'structure.json'), JSON.stringify(structure, null, 2), 'utf8');
   fs.writeFileSync(path.join(OUT_DATA_DIR, 'stats.json'), JSON.stringify(stats, null, 2), 'utf8');
+
+  // Index ordonné des fiches sécurisées : la 1re fiche de chaque matière = essai gratuit côté API
+  const secureIndex = {};
+  for (const [cls, subjects] of Object.entries(structure)) {
+    if (!isSecureClass(cls)) continue;
+    secureIndex[cls] = {};
+    for (const [subject, fiches] of Object.entries(subjects)) {
+      secureIndex[cls][subject] = fiches.map(f => f.file);
+    }
+  }
+  fs.writeFileSync(path.join(ROOT, 'payment-api', 'fiches-index.json'), JSON.stringify(secureIndex, null, 2), 'utf8');
   generateSearchIndex(structure);
   generateSeoFiles(structure);
   generateHtmlSitemap(structure);

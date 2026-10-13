@@ -54,12 +54,24 @@
       fn.includes('annale') || 
       fn.includes('simulateur');
 
-    if (plan === 'starter') return isStarterFeature;
-    if (plan === 'pro') return isStarterFeature || isProFeature;
-    if (plan === 'elite') return isStarterFeature || isProFeature || isEliteFeature;
+    // Les forfaits universitaires (uni_*) donnent les mêmes droits que leur équivalent scolaire
+    const planLevel = plan.replace(/^uni_/, '');
+    if (planLevel === 'starter') return isStarterFeature;
+    if (planLevel === 'pro') return isStarterFeature || isProFeature;
+    if (planLevel === 'elite') return isStarterFeature || isProFeature || isEliteFeature;
 
     return false;
   };
+
+  // Détecte un utilisateur universitaire (classe commençant par 'Licence_')
+  if (typeof window.isUniversityUser !== 'function') {
+    window.isUniversityUser = function() {
+      try {
+        const prof = window.USER_PROFILE || JSON.parse(localStorage.getItem('resumeci_profile') || 'null');
+        return String(prof && prof.selectedClass || '').startsWith('Licence_');
+      } catch (e) { return false; }
+    };
+  }
 
   // Fallback redirection de paiement si appelée hors de la SPA principale
   if (typeof window.initiatePremiumPayment !== 'function') {
@@ -394,8 +406,10 @@
       <input type="date" id="plannerDate" class="planner-input" value="${saved ? saved.date : ''}" min="${today}">
       <label style="font-size:12px;color:#475569;font-weight:600">⏰ Heure de début quotidienne</label>
       <input type="time" id="plannerTime" class="planner-input" value="${saved && saved.time ? saved.time : '17:00'}">
-      <label style="font-size:12px;color:#475569;font-weight:600">🎓 Classe</label>
+      <label style="font-size:12px;color:#475569;font-weight:600">🎓 ${(window.isUniversityUser && window.isUniversityUser()) ? 'Filière' : 'Classe'}</label>
       <select id="plannerClass" class="planner-input">
+        ${(window.isUniversityUser && window.isUniversityUser()) ? `
+        <option value="Licence_1_Droit">Licence 1 Droit</option>` : `
         <option value="6eme">6ème</option>
         <option value="5eme">5ème</option>
         <option value="3eme">3ème (BEPC)</option>
@@ -405,7 +419,7 @@
         <option value="1ere_D">Première D</option>
         <option value="Terminale_A">Terminale A (BAC)</option>
         <option value="Terminale_C">Terminale C (BAC)</option>
-        <option value="Terminale_D">Terminale D (BAC)</option>
+        <option value="Terminale_D">Terminale D (BAC)</option>`}
       </select>
       <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes/jour</label>
       <input type="number" id="plannerMin" class="planner-input" value="${saved ? saved.minutes : 45}" min="15" max="240">
@@ -590,7 +604,10 @@
   // ==================== SHARE MENU (WhatsApp + QR + Copy) ====================
   window.openShareMenu=function(){
     const url='https://resumeci.me/inscription.html';
-    const msg=encodeURIComponent('🚀 La nouvelle mise à jour de ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils d\'élite pour réussir ton année scolaire au BEPC et au BAC. Inscris-toi dès maintenant via : https://resumeci.me/inscription.html');
+    const shareMsgTxt = (window.isUniversityUser && window.isUniversityUser())
+      ? '🎓 ResumeCI Université est enfin disponible ! Retrouve les fiches de cours de ta filière, quiz et outils pour réussir tes partiels. Inscris-toi dès maintenant via : https://resumeci.me/inscription.html'
+      : '🚀 La nouvelle mise à jour de ResumeCI est enfin disponible ! Retrouve 714 fiches de cours gratuites, résumés officiels et outils d\'élite pour réussir ton année scolaire au BEPC et au BAC. Inscris-toi dès maintenant via : https://resumeci.me/inscription.html';
+    const msg=encodeURIComponent(shareMsgTxt);
     const html=`
       <p style="color:#64748b;font-size:13px;margin-bottom:14px">Partage la mise à jour avec tes camarades :</p>
       <div style="display:flex;flex-direction:column;gap:8px">
@@ -1042,10 +1059,14 @@ window.openPremiumTeaser = async function(featureName) {
 
   if (window.trackPremiumClick) window.trackPremiumClick(featureName);
 
+  const isUnivTeaser = window.isUniversityUser && window.isUniversityUser();
   const plans = window.PREMIUM_PLANS || {
     starter: { name: 'Starter', price: 500, emoji: '🥉' },
     pro: { name: 'Pro', price: 1000, emoji: '🥈' },
-    elite: { name: 'Élite', price: 2000, emoji: '🥇' }
+    elite: { name: 'Élite', price: 2000, emoji: '🥇' },
+    uni_starter: { name: 'Étudiant', price: 1000, emoji: '🎓' },
+    uni_pro: { name: 'Licence Pro', price: 2000, emoji: '⚖️' },
+    uni_elite: { name: 'Excellence', price: 3000, emoji: '🏛️' }
   };
 
   const fnLower = String(featureName || '').toLowerCase();
@@ -1095,7 +1116,9 @@ window.openPremiumTeaser = async function(featureName) {
     featureTitle = 'Pièges Fréquents d\'Examen & Astuces du Correcteur';
     featureIcon = '⚠️';
     minTier = 'pro';
-    featureDesc = 'Ne perds plus de points bêtement ! Découvre les erreurs types commises par 80% des élèves aux examens du BAC/BEPC et les conseils directs des correcteurs officiels.';
+    featureDesc = isUnivTeaser
+      ? 'Ne perds plus de points bêtement ! Découvre les erreurs types commises par la majorité des étudiants aux partiels et les conseils directs des correcteurs.'
+      : 'Ne perds plus de points bêtement ! Découvre les erreurs types commises par 80% des élèves aux examens du BAC/BEPC et les conseils directs des correcteurs officiels.';
     includedText = 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>. Le Pass Starter à 500 F ne comprend pas les pièges d\'examen.';
   } else if (fnLower.includes('audio') || fnLower.includes('podcast')) {
     featureTitle = 'Podcasts Audio (Lecture Vocale)';
@@ -1130,11 +1153,27 @@ window.openPremiumTeaser = async function(featureName) {
       : 'Inclus dans le <strong>Pass Pro (1 000 FCFA / mois)</strong>.';
   }
 
+  // Adaptation Espace Universitaire : grille tarifaire et vocabulaire dédiés
+  if (isUnivTeaser) {
+    if (minTier === 'starter') minTier = 'uni_starter';
+    else if (minTier === 'pro') minTier = 'uni_pro';
+    else if (minTier === 'elite') minTier = 'uni_elite';
+    includedText = String(includedText || '')
+      .replace(/Pass Starter \(500 FCFA \/ mois\)/g, 'Pass Étudiant (1 000 FCFA / mois)')
+      .replace(/Pass Pro \(1 000 FCFA \/ mois\)/g, 'Pass Licence Pro (2 000 FCFA / mois)')
+      .replace(/Pass Starter à 500 F/g, 'Pass Étudiant à 1 000 F')
+      .replace(/élèves/g, 'étudiants')
+      .replace(/BAC\/BEPC|BAC|BEPC/g, 'partiels');
+    featureDesc = String(featureDesc || '').replace(/élèves/g, 'étudiants');
+  }
+
   const renderPlanCard = (tierKey) => {
     const plan = plans[tierKey];
 
     // Le pack Élite est présenté dans son panneau de prestige
-    if (tierKey === 'elite') {
+    if (tierKey === 'elite' || tierKey === 'uni_elite') {
+      const eliteBaseName = tierKey === 'uni_elite' ? 'Pass Licence Pro' : 'Pass Pro';
+      const eliteAnnals = tierKey === 'uni_elite' ? 'Annales & Sujets de Partiels' : 'Annales & Sujets BAC/BEPC';
       return `
         <div class="pricing-card" style="border: 2px dashed #a855f7; border-radius: 14px; padding: 15px; margin-bottom: 12px; background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); position: relative; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.12);">
           <div style="position: absolute; top: -10px; right: 10px; background: linear-gradient(135deg, #7c3aed, #9333ea); color: white; padding: 2px 10px; border-radius: 10px; font-size: 10px; font-weight: 800; letter-spacing: 0.4px;">🥇 FORMULE SUPRÊME</div>
@@ -1143,9 +1182,9 @@ window.openPremiumTeaser = async function(featureName) {
             <span style="font-weight: 800; color: #7e22ce;">${plan.price} FCFA <span style="font-size:10px;font-weight:normal;color:#9333ea">/ mois</span></span>
           </div>
           <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 12px; color: #6b21a8; line-height: 1.6;">
-            <li>✔️ <b>Tout le Pass Pro inclus +</b></li>
-            <li>🤖 <b>Professeur IA Personnel 24h/24</b> (Questions illimitées)</li>
-            <li>📜 <b>Annales & Sujets BAC/BEPC</b> avec corrigés types officiels</li>
+            <li>✔️ <b>Tout le ${eliteBaseName} inclus +</b></li>
+            <li>🤖 <b>${tierKey === 'uni_elite' ? 'Tuteur IA Personnel 24h/24' : 'Professeur IA Personnel 24h/24'}</b> (Questions illimitées)</li>
+            <li>📜 <b>${eliteAnnals}</b> avec corrigés types officiels</li>
             <li>⏱️ <b>Simulateurs d'Examens Blancs</b> en conditions réelles</li>
           </ul>
           <button onclick="if(typeof window.openElitePassModal==='function'){window.openElitePassModal('elite');}else if(typeof window.showActionNotice==='function'){window.showActionNotice({type:'vip',icon:'👑',title:'Pass Élite',subtitle:'Bientôt disponible',message:'Cette formule suprême sera activée très prochainement !'});}" class="btn-submit-waitlist" style="background: linear-gradient(135deg, #7c3aed, #9333ea); color: white; width: 100%; padding: 11px; font-size: 13px; font-weight: 800; border-radius: 10px; cursor: pointer; border: none; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);">
@@ -1155,17 +1194,18 @@ window.openPremiumTeaser = async function(featureName) {
       `;
     }
 
-    const TIER_LEVELS = { starter: 1, pro: 2, elite: 3 };
+    const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3 };
     const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
     const currentLevel = activeSub ? (TIER_LEVELS[activeSub.tier] || 0) : 0;
     const targetLevel = TIER_LEVELS[tierKey] || 0;
+    const minLevel = TIER_LEVELS[minTier] || 1;
     const isCurrentPlan = activeSub && activeSub.tier === tierKey;
     const isUpgrade = activeSub && (targetLevel > currentLevel);
     const isDowngrade = activeSub && (targetLevel < currentLevel);
 
     const isRecommended = !activeSub && (tierKey === minTier);
-    const isLocked = !activeSub && (tierKey === 'starter' && minTier === 'pro');
-    const isFullIncluded = !activeSub && (tierKey === 'pro' && minTier === 'starter');
+    const isLocked = !activeSub && (targetLevel < minLevel);
+    const isFullIncluded = !activeSub && (targetLevel === 2 && minLevel === 1);
 
     let cardBadge = '';
     let cardBorderColor = '#e2e8f0';
@@ -1188,7 +1228,7 @@ window.openPremiumTeaser = async function(featureName) {
       cardBorderColor = '#93c5fd';
       cardBg = '#eff6ff';
     } else if (isLocked) {
-      cardBadge = '<div style="position: absolute; top: -10px; right: 10px; background: #94a3b8; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">⚠️ Non inclus dans Starter</div>';
+      cardBadge = `<div style="position: absolute; top: -10px; right: 10px; background: #94a3b8; color: white; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: bold;">⚠️ Non inclus dans ${isUnivTeaser ? 'Pass Étudiant' : 'Starter'}</div>`;
       cardBorderColor = '#e2e8f0';
       cardBg = '#f8fafc';
     }
@@ -1201,15 +1241,15 @@ window.openPremiumTeaser = async function(featureName) {
           <span style="font-weight: bold; color: #1e293b;">${plan.price} FCFA <span style="font-size:10px;font-weight:normal;color:#64748b">/ mois</span></span>
         </div>
         <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 12px; color: #475569; line-height: 1.6;">
-          ${tierKey === 'starter' ? `
+          ${targetLevel === 1 ? `
             <li>✔️ <b>Pack Hors-Ligne</b> complet dans l'App (sans connexion)</li>
             <li>✔️ <b>Téléchargement PDF</b> officiel (3 fiches / mois)</li>
             <li>✔️ <b>Statistiques</b> de révision & flamme streak</li>
             <li>🖍️ <b>Surligneur multi-couleurs</b> & Mode Tap</li>
             <li>📝 <b>Mes Notes Personnelles</b> sur chaque fiche</li>
           ` : ''}
-          ${tierKey === 'pro' ? `
-            <li>✔️ <b>Tout le Pass Starter inclus +</b></li>
+          ${targetLevel === 2 ? `
+            <li>✔️ <b>Tout le ${isUnivTeaser ? 'Pass Étudiant' : 'Pass Starter'} inclus +</b></li>
             <li>🧠 <b>Récitation Active</b> (Floutage intelligent de cours)</li>
             <li>⚠️ <b>Pièges d'Examen & Astuces</b> du correcteur</li>
             <li>🎧 <b>Podcasts Audio</b> (Lecture vocale illimitée)</li>
@@ -1231,7 +1271,7 @@ window.openPremiumTeaser = async function(featureName) {
           </button>
         ` : `
           <button onclick="initiatePremiumPayment(this, '${tierKey}')" class="btn-submit-waitlist" style="background: ${isLocked ? '#94a3b8' : (isRecommended ? 'linear-gradient(135deg, #10b981, #059669)' : (isFullIncluded ? 'linear-gradient(135deg, #2563eb, #1d4ed8)' : '#3b82f6'))}; width: 100%; padding: 11px; font-size: 13px; font-weight: 800; border-radius: 10px; border: none; color: white; cursor: ${isLocked ? 'not-allowed' : 'pointer'}; box-shadow: ${isLocked ? 'none' : '0 4px 12px rgba(0,0,0,0.12)'};" ${isLocked ? 'disabled title="Ce forfait ne débloque pas cette fonctionnalité"' : ''}>
-            ${isLocked ? '<i class="fas fa-lock"></i> Requiert le Pass Pro (1 000 F)' : (isRecommended ? `<i class="fas fa-bolt" style="color:#fef08a"></i> Choisir ${plan.name} (${plan.price} F / mois)` : `<i class="fas fa-crown" style="color:#fde047"></i> Choisir ${plan.name} (${plan.price} F / mois)`)}
+            ${isLocked ? `<i class="fas fa-lock"></i> Requiert le ${isUnivTeaser ? 'Pass Licence Pro (2 000 F)' : 'Pass Pro (1 000 F)'}` : (isRecommended ? `<i class="fas fa-bolt" style="color:#fef08a"></i> Choisir ${plan.name} (${plan.price} F / mois)` : `<i class="fas fa-crown" style="color:#fde047"></i> Choisir ${plan.name} (${plan.price} F / mois)`)}
           </button>
         `))}
       </div>
@@ -1241,15 +1281,15 @@ window.openPremiumTeaser = async function(featureName) {
   const html = `
     <div class="teaser-container" style="text-align: left; padding: 4px 0;">
       <!-- Hero Bannière d'Explication de la Fonctionnalité Cliquée -->
-      <div class="teaser-feature-header" style="background: ${minTier === 'starter' ? 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' : 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)'}; border: 1.5px solid ${minTier === 'starter' ? '#10b981' : '#3b82f6'}; border-radius: 14px; padding: 13px 15px; margin-bottom: 14px; text-align: left; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
+      <div class="teaser-feature-header" style="background: ${(minTier === 'starter' || minTier === 'uni_starter') ? 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' : 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)'}; border: 1.5px solid ${(minTier === 'starter' || minTier === 'uni_starter') ? '#10b981' : '#3b82f6'}; border-radius: 14px; padding: 13px 15px; margin-bottom: 14px; text-align: left; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
         <div style="display: flex; align-items: flex-start; gap: 12px;">
           <div style="font-size: 26px; line-height: 1; flex-shrink: 0; background: #ffffff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">${featureIcon}</div>
           <div style="flex: 1;">
-            <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: ${minTier === 'starter' ? '#047857' : '#1d4ed8'}; margin-bottom: 2px;">
+            <div style="font-size: 10.5px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: ${(minTier === 'starter' || minTier === 'uni_starter') ? '#047857' : '#1d4ed8'}; margin-bottom: 2px;">
               🔒 FONCTIONNALITÉ AVEC CADENAS
             </div>
             <h4 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 800; color: #0f172a;">${featureTitle}</h4>
-            <div style="font-size: 12px; font-weight: 700; color: ${minTier === 'starter' ? '#065f46' : '#1e40af'}; margin-bottom: 4px;">
+            <div style="font-size: 12px; font-weight: 700; color: ${(minTier === 'starter' || minTier === 'uni_starter') ? '#065f46' : '#1e40af'}; margin-bottom: 4px;">
               👉 ${includedText}
             </div>
             <div style="font-size: 11.5px; color: #475569; line-height: 1.4;">${featureDesc}</div>
@@ -1262,9 +1302,7 @@ window.openPremiumTeaser = async function(featureName) {
       </p>
 
       <div class="pricing-tiers">
-        ${renderPlanCard('starter')}
-        ${renderPlanCard('pro')}
-        ${renderPlanCard('elite')}
+        ${isUnivTeaser ? renderPlanCard('uni_starter') + renderPlanCard('uni_pro') + renderPlanCard('uni_elite') : renderPlanCard('starter') + renderPlanCard('pro') + renderPlanCard('elite')}
       </div>
 
       <div class="teaser-guarantee" style="text-align: center; margin-top: 14px; font-size: 12px; color: #64748b; line-height: 1.6;">
@@ -1276,10 +1314,11 @@ window.openPremiumTeaser = async function(featureName) {
     </div>
   `;
 
+  const teaserModalTitle = isUnivTeaser ? '👑 Débloquer mon Pass Université' : '👑 Débloquer mon Pass Réussite';
   if (typeof window.openModal === 'function') {
-    window.openModal('👑 Débloquer mon Pass Réussite', html, 'premiumModal');
+    window.openModal(teaserModalTitle, html, 'premiumModal');
   } else if (typeof openModal === 'function') {
-    openModal('👑 Débloquer mon Pass Réussite', html, 'premiumModal');
+    openModal(teaserModalTitle, html, 'premiumModal');
   } else if (typeof window.showActionNotice === 'function') {
     window.showActionNotice({
       type: 'vip',
@@ -1531,14 +1570,17 @@ window.getExamTrapsHtml = function(cls, sub, file) {
     </div>
   ` : '';
 
-  const examTag = (cls && (cls.toLowerCase().includes('terminale') || cls.toLowerCase().includes('premiere'))) ? 'Épreuve BAC CI' : 'Épreuve BEPC & Devoirs';
+  const isUnivTraps = (window.isUniversityUser && window.isUniversityUser()) || String(cls || '').startsWith('Licence_');
+  const examTag = isUnivTraps
+    ? 'Épreuve de Partiel'
+    : (cls && (cls.toLowerCase().includes('terminale') || cls.toLowerCase().includes('premiere'))) ? 'Épreuve BAC CI' : 'Épreuve BEPC & Devoirs';
 
   const hasTraps = window.userHasFeature ? window.userHasFeature('Pièges d\'Examen') : false;
   if (!hasTraps) {
     return `
       <div class="exam-traps-card exam-traps-locked" id="examTrapsCard" onclick="openPremiumTeaser('Pièges Fréquents d\'Examen & Astuces')">
         <div class="exam-traps-badge-row">
-          <span class="exam-traps-pill" style="background:#dc2626;"><i class="fas fa-lock"></i> Exclusivité Pass Pro</span>
+          <span class="exam-traps-pill" style="background:#dc2626;"><i class="fas fa-lock"></i> Exclusivité ${isUnivTraps ? 'Pass Licence Pro' : 'Pass Pro'}</span>
           <span class="exam-traps-tag">${examTag}</span>
         </div>
         <h4 class="exam-traps-title">⚠️ Les erreurs qui coûtent cher le jour J 🔒</h4>
@@ -1546,7 +1588,7 @@ window.getExamTrapsHtml = function(cls, sub, file) {
         <div class="exam-traps-blur-preview">
           <div class="exam-traps-blur-overlay">
             <button class="exam-traps-unlock-btn" onclick="event.stopPropagation();openPremiumTeaser('Pièges Fréquents d\'Examen & Astuces')">
-              <i class="fas fa-lock"></i> Débloquer les Pièges & Astuces (Pass Pro 1 000 F)
+              <i class="fas fa-lock"></i> Débloquer les Pièges & Astuces (${isUnivTraps ? 'Pass Licence Pro 2 000 F' : 'Pass Pro 1 000 F'})
             </button>
           </div>
           <ul class="exam-traps-list" style="filter:blur(5px);pointer-events:none;user-select:none;opacity:0.4;">
@@ -1564,7 +1606,7 @@ window.getExamTrapsHtml = function(cls, sub, file) {
         <span class="exam-traps-tag">${examTag}</span>
       </div>
       <h4 class="exam-traps-title">⚠️ Les erreurs qui coûtent cher le jour J</h4>
-      <div class="exam-traps-intro">Voici ce que <strong>80% des élèves ratent ou négligent</strong> sur ce chapitre lors des compositions et examens nationaux :</div>
+      <div class="exam-traps-intro">Voici ce que <strong>80% des ${isUnivTraps ? 'étudiants' : 'élèves'} ratent ou négligent</strong> sur ce chapitre lors ${isUnivTraps ? 'des partiels' : 'des compositions et examens nationaux'} :</div>
       <ul class="exam-traps-list">
         ${itemsHtml}
       </ul>
@@ -1575,6 +1617,9 @@ window.getExamTrapsHtml = function(cls, sub, file) {
 
 // 1 A & 1 B : Barre d'Outils d'Étude sous la fiche
 window.getFicheStudyBarHtml = function(cls, sub, file) {
+  const isUnivBar = (window.isUniversityUser && window.isUniversityUser()) || String(cls || '').startsWith('Licence_');
+  const proTip = isUnivBar ? 'Pass Licence Pro 2 000 F' : 'Pass Pro 1 000 F';
+  const starterTip = isUnivBar ? 'Pass Étudiant 1 000 F' : 'Pass Starter 500 F';
   const hasRecall = window.userHasFeature ? window.userHasFeature('Récitation Active') : false;
   const hasHl = window.userHasFeature ? window.userHasFeature('Surligneur de Fiche') : false;
   const hasNotes = window.userHasFeature ? window.userHasFeature('Mes Notes Personnelles') : false;
@@ -1583,7 +1628,7 @@ window.getFicheStudyBarHtml = function(cls, sub, file) {
     ? `<button id="btnStudyRecall" class="study-btn" onclick="toggleActiveRecall()" title="Masquer les formules et définitions pour tester ta mémoire">
         <i class="fas fa-eye-slash"></i> <span>Récitation Active</span>
       </button>`
-    : `<button id="btnStudyRecall" class="study-btn locked" onclick="openPremiumTeaser('Récitation Active (Active Recall)')" title="Récitation Active (Inclus dans le Pass Pro 1 000 F)">
+    : `<button id="btnStudyRecall" class="study-btn locked" onclick="openPremiumTeaser('Récitation Active (Active Recall)')" title="Récitation Active (Inclus dans le ${proTip})">
         <i class="fas fa-lock" style="color:#d97706"></i> <span>Récitation Active 🔒</span>
       </button>`;
 
@@ -1591,7 +1636,7 @@ window.getFicheStudyBarHtml = function(cls, sub, file) {
     ? `<button id="btnStudyHl" class="study-btn" onclick="toggleHighlighterMode()" title="Surligner les passages clés de cette leçon">
         <i class="fas fa-highlighter"></i> <span>Surligner</span>
       </button>`
-    : `<button id="btnStudyHl" class="study-btn locked" onclick="openPremiumTeaser('Surligneur de Fiche')" title="Surligneur (Inclus dès le Pass Starter 500 F)">
+    : `<button id="btnStudyHl" class="study-btn locked" onclick="openPremiumTeaser('Surligneur de Fiche')" title="Surligneur (Inclus dès le ${starterTip})">
         <i class="fas fa-lock" style="color:#059669"></i> <span>Surligner 🔒</span>
       </button>`;
 
@@ -1600,7 +1645,7 @@ window.getFicheStudyBarHtml = function(cls, sub, file) {
         <i class="fas fa-pen-to-square"></i> <span>Mes Notes</span>
         <span id="ficheNotesBadge" class="study-badge-count" style="display:none">1</span>
       </button>`
-    : `<button id="btnStudyNotes" class="study-btn locked" onclick="openPremiumTeaser('Mes Notes Personnelles')" title="Mes Notes (Inclus dès le Pass Starter 500 F)">
+    : `<button id="btnStudyNotes" class="study-btn locked" onclick="openPremiumTeaser('Mes Notes Personnelles')" title="Mes Notes (Inclus dès le ${starterTip})">
         <i class="fas fa-lock" style="color:#2563eb"></i> <span>Mes Notes 🔒</span>
       </button>`;
 

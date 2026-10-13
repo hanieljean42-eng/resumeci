@@ -192,14 +192,22 @@ const PLANS = {
   starter: { name: 'Starter (Mensuel)', price: 500, days: 30, available: true },
   pro: { name: 'Pro (Mensuel)', price: 1000, days: 30, available: true },
   annual: { name: 'Annuel (365 jours)', price: 10000, days: 365, available: true },
-  elite: { name: 'Élite', price: 2000, days: 30, available: false }
+  elite: { name: 'Élite', price: 2000, days: 30, available: false },
+  // Forfaits Espace Universitaire (étudiants — minimum 1 000 F)
+  uni_starter: { name: 'Pass Étudiant (Mensuel)', price: 1000, days: 30, available: true },
+  uni_pro: { name: 'Pass Licence Pro (Mensuel)', price: 2000, days: 30, available: true },
+  uni_elite: { name: 'Pass Excellence (Mensuel)', price: 3000, days: 30, available: false }
 };
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
-// Emails autorisés à utiliser les routes /api/admin/* (séparés par des virgules)
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'djeble.haniel@gmail.com')
+// Emails autorisés à utiliser les routes /api/admin/* (séparés par des virgules).
+// Aucune valeur par défaut : sans ADMIN_EMAILS, les routes admin sont inaccessibles (fail-closed).
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || '')
   .split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+if (ADMIN_EMAILS.length === 0) {
+  console.warn('⚠️ ADMIN_EMAILS non défini : les routes /api/admin/* seront inaccessibles.');
+}
 
 // Middleware : vérifie le jeton Firebase Auth (Authorization: Bearer <idToken>) et l'email admin
 async function requireAdmin(req, res, next) {
@@ -838,7 +846,7 @@ app.post('/api/register', async (req, res) => {
       uid: cleanWa,
       firstName: (firstName || '').trim(),
       lastName: (lastName || '').trim(),
-      fullName: `${firstName || ''} ${lastName || ''}`.trim() || 'Élève',
+      fullName: `${firstName || ''} ${lastName || ''}`.trim() || (String(selectedClass || '').startsWith('Licence_') ? 'Étudiant(e)' : 'Élève'),
       selectedClass: selectedClass || 'Non précisé',
       whatsapp: cleanWa,
       contact: cleanWa,
@@ -847,7 +855,7 @@ app.post('/api/register', async (req, res) => {
       premiumPlan: 'free',
       isPremium: false,
       premiumExpiresAt: 0,
-      pendingPlan: plan && plan !== 'free' ? plan : null,
+      pendingPlan: plan && plan !== 'free' && PLANS[plan] ? plan : null,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       userAgent: userAgent || req.headers['user-agent'] || 'Web'
@@ -974,6 +982,69 @@ app.get('/api/user-status', async (req, res) => {
   } catch (err) {
     console.error('[User Status] Erreur:', err);
     res.status(500).json({ error: "Erreur serveur vérification statut" });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 4.6 : FICHES SÉCURISÉES (toutes les classes)
+// Aucun fichier de fiche n'est hébergé publiquement : ils vivent dans
+// payment-api/fiches/ et ne sont servis qu'aux comptes authentifiés
+// (sessionToken). La 1re fiche de chaque matière est en essai gratuit ;
+// les autres exigent un Pass actif (école : dès 500 F ; Licence : uni_*).
+// --------------------------------------------------------------------------
+const SECURE_FICHES_DIR = path.join(__dirname, 'fiches');
+const SECURE_FICHES_INDEX_PATH = path.join(__dirname, 'fiches-index.json');
+let secureFichesIndexCache = null;
+function getSecureFichesIndex() {
+  if (secureFichesIndexCache) return secureFichesIndexCache;
+  try {
+    secureFichesIndexCache = JSON.parse(fs.readFileSync(SECURE_FICHES_INDEX_PATH, 'utf8'));
+  } catch (e) {
+    console.warn('[Fiches] fiches-index.json introuvable : essai gratuit désactivé.');
+    secureFichesIndexCache = {};
+  }
+  return secureFichesIndexCache;
+}
+// Quota généreux : le pack hors-ligne télécharge toute une classe (~150 fiches) en une rafale
+const ficheLimiter = limiter(15 * 60 * 1000, 1200);
+app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
+  try {
+    const { cls, sub, file } = req.params;
+    const unsafe = p => !p || p.includes('..') || p.includes('/') || p.includes('\\');
+    if (unsafe(cls) || unsafe(sub) || unsafe(file) || !file.endsWith('.html')) {
+      return res.status(404).json({ success: false, error: 'Fiche introuvable.' });
+    }
+    const filePath = path.join(SECURE_FICHES_DIR, cls, sub, file);
+    if (!filePath.startsWith(SECURE_FICHES_DIR + path.sep) || !fs.existsSync(filePath)) {
+      return res.status(404).json({ success: false, error: 'Fiche introuvable.' });
+    }
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'auth_required' });
+    }
+    const subFiches = (getSecureFichesIndex()[cls] || {})[sub] || [];
+    const isTrialFiche = subFiches.length > 0 && subFiches[0] === file;
+    if (!isTrialFiche) {
+      let user = null;
+      if (db) {
+        const doc = await db.collection('users').doc(sessionUid).get();
+        if (doc.exists) user = { ...doc.data(), uid: doc.data().uid || doc.id };
+      }
+      if (!user) user = await findUserByPhone(sessionUid);
+      const expiresAt = user ? (Number(user.premiumExpiresAt) || 0) : 0;
+      const plan = String(user && (user.premiumPlan || user.plan) || '');
+      const premiumActive = Boolean(user && user.isPremium && (expiresAt === 0 || expiresAt > Date.now()));
+      // Université : Pass étudiant (uni_*) requis. École : n'importe quel Pass actif (dès 500 F).
+      const isPremium = premiumActive && (cls.startsWith('Licence_') ? plan.startsWith('uni_') : true);
+      if (!isPremium) {
+        return res.status(403).json({ success: false, error: 'premium_required' });
+      }
+    }
+    res.set('Cache-Control', 'private, max-age=300');
+    res.sendFile(filePath);
+  } catch (e) {
+    console.error('[Fiche] Erreur:', e);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
   }
 });
 

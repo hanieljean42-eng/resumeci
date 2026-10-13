@@ -96,11 +96,45 @@ Chaque prompt ci-dessous active directement le bon **Skill** déjà installé da
 
 ---
 
+### 🎓 PROMPT 6 : Espace Universitaire Complet (Clone de l'Environnement ResumeCI)
+
+> **À copier-coller dans Devin :**  
+> ```text
+> Utilise le skill `espace-universitaire` situé dans .devin/skills/espace-universitaire/SKILL.md.
+>
+> MISSION : Construire et déployer l'ENVIRONNEMENT COMPLET de ResumeCI pour l'Espace Universitaire (Licence 1 Droit), en répliquant fidèlement 100% des fonctionnalités du Collège et Lycée :
+>
+> 1. ARCHITECTURE DES DONNÉES :
+>    - Crée le fichier `public/data/structure-universite.json` selon le modèle du skill pour lister les facultés, filières, UE et fiches.
+>
+> 2. CLONE DE L'ENVIRONNEMENT & FONCTIONNALITÉS SUR public/universite.html :
+>    - Barre de navigation supérieure (fil d'ariane, recherche instantanée de notions/articles, bouton mode sombre, favoris).
+>    - Sidebar ou sélecteur de filières (Faculté des Sciences Juridiques -> L1 Droit, L2 Droit, etc.).
+>    - Composant Lecteur Audio TTS (synthèse vocale avec bouton flottant audioFab pour écouter les fiches en déplacement).
+>    - Système de Quizz chronométrés & Galops d'essai relié à public/quizzes/Licence_1_Droit/[Matiere].json.
+>    - Flashcards de mémorisation (articles de codes, arrêts et définitions doctrinales).
+>    - Modal de progression & statistiques étudiantes.
+>    - Modal d'abonnement Pass Licence (Wave, Orange, MTN, Moov Money).
+>    - Bulle d'assistance IA pour aide à la méthode et aux cas pratiques.
+>
+> 3. RÈGLES STRICTES D'ÉCONOMIE DE TOKENS (DEVIN PRO) :
+>    - Ne scanne AUCUN dossier du collège ou lycée (3eme, 6eme, Terminale, etc.).
+>    - Ne lis JAMAIS le fichier volumineux `public/app.js` (minifié).
+>    - Utilise directement les gabarits prêts à l'emploi définis dans le skill `espace-universitaire`.
+>    - Travaille uniquement dans `public/universite.html`, `public/data/structure-universite.json`, `public/fiches/Licence_1_Droit/` et `public/quizzes/Licence_1_Droit/`.
+> ```
+
+---
+
 ## 📁 RÉCAPITULATIF DES SKILLS INSTALLÉS DANS VOTRE PROJET
 
 Vos skills sont enregistrés dans **`.devin/skills/`** et **`.agents/skills/`** :
 1. **`frontend-pwa-ui`** : Verrouille le front, empêche de lire `public/app.js`, automatise `npm run minify`.
 2. **`backend-api-paiements`** : Verrouille `payment-api/server.js`, sécurise GeniusPay et Firestore.
-3. **`generation-fiches-cours`** : Gabarit HTML officiel APC pour créer les fiches sans scanner tout le site.
-4. **`devops-deploiement-cache`** : Déploiement direct sans fioritures et gestion du cache `?v=`.
-5. **`scraper-cours-ecole-ci`** : Téléchargement automatique des PDF et extraction de texte depuis ecole-ci.org.
+3. **`generation-fiches-cours`** : Gabarit HTML officiel APC pour créer les fiches secondaires sans scanner tout le site.
+4. **`espace-universitaire`** : Dédié au supérieur (L1 Droit, partiels, TD, `universite.html`) sans gaspiller de tokens sur le secondaire.
+5. **`clone-frontend-universite`** : Cartographie complète du frontend ResumeCI pour reproduire toute la chaîne (inscription, connexion, fiches, quiz, audio, favoris, stats, paiement).
+6. **`devops-deploiement-cache`** : Déploiement direct sans fioritures et gestion du cache `?v=`.
+7. **`scraper-cours-ecole-ci`** : Téléchargement automatique des PDF et extraction de texte depuis ecole-ci.org.
+
+

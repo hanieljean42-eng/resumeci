@@ -1,0 +1,42 @@
+{
+  "Fiche_Lecon1_LA_PHRASE_MODES_ET_TEMPS_VERBAUX": {
+    "title": "La phrase : modes et temps verbaux",
+    "questions": [
+      { "id": "q1", "text": "Quels sont les types de phrases en français ?", "type": "qcm", "options": ["Déclarative, interrogative, impérative, exclamative", "Simple et complexe uniquement", "Active et passive", "Courte et longue"], "answer": 0, "explanation": "Quatre types : déclarative (affirmer), interrogative (questionner), impérative (ordonner), exclamative (s'exclamer)." },
+      { "id": "q2", "text": "Quels sont les modes verbaux personnels ?", "type": "qcm", "options": ["Indicatif, subjonctif, conditionnel, impératif", "Présent et futur", "Infinitif et participe", "Actif et passif"], "answer": 0, "explanation": "Modes personnels : indicatif (réel), subjonctif (possible/volu), conditionnel (hypothèse), impératif (ordre). Infinitif, participe et gérondif sont impersonnels." },
+      { "id": "q3", "text": "Quel mode exprime le souhait, le doute ou l'obligation après « que » ?", "type": "qcm", "options": ["L'indicatif", "Le subjonctif", "Le conditionnel", "L'impératif"], "answer": 1, "explanation": "Le subjonctif suit « que » après les verbes de volonté, sentiment, doute : « il faut que tu viennes »." },
+      { "id": "q4", "text": "Vrai ou Faux : le conditionnel s'emploie dans la subordonnée introduite par « si » pour exprimer l'hypothèse.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : « Si j'avais le temps, je viendrais » — l'imparfait dans la si-proposition, le conditionnel dans la principale." },
+      { "id": "q5", "text": "Quels temps forment les « temps du récit » ?", "type": "qcm", "options": ["Présent et futur", "Passé simple, imparfait, plus-que-parfait, passé composé", "Subjonctif présent", "Infinitif"], "answer": 1, "explanation": "Le passé simple narre l'action achevée, l'imparfait peint et explique, le plus-que-parfait exprime l'antériorité, le passé composé relie au présent." }
+    ]
+  },
+  "Fiche_Lecon2_PONCTUATION_PARTICIPE_PASSE_SEMANTIQUE": {
+    "title": "Ponctuation, participe passé et sémantique",
+    "questions": [
+      { "id": "q1", "text": "Quel signe de ponctuation précède une énumération ou une explication ?", "type": "qcm", "options": ["Le point-virgule", "Les deux-points", "La virgule", "Les points de suspension"], "answer": 1, "explanation": "Les deux-points introduisent une énumération, une explication, une citation ou une cause." },
+      { "id": "q2", "text": "Avec l'auxiliaire « avoir », quand le participe passé s'accorde-t-il ?", "type": "qcm", "options": ["Jamais", "Quand le COD le précède", "Toujours avec le sujet", "Avec le COI"], "answer": 1, "explanation": "Avec « avoir », le participe passé s'accorde avec le COD seulement si celui-ci est placé avant le verbe : « les lettres que j'ai écrites »." },
+      { "id": "q3", "text": "Qu'appelle-t-on champ lexical ?", "type": "qcm", "options": ["Une liste de verbes", "L'ensemble des mots se rapportant à une même notion dans un texte", "Un dictionnaire", "Une figure de style"], "answer": 1, "explanation": "Le champ lexical regroupe les termes d'un même thème (ex : champ de la justice : juge, tribunal, verdict, arrêt)." },
+      { "id": "q4", "text": "Vrai ou Faux : le point-virgule sépare deux propositions liées par le sens.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : le point-virgule articule deux énoncés proches logiquement ou des éléments d'énumération complexes." },
+      { "id": "q5", "text": "Qu'est-ce qu'un synonyme ?", "type": "qcm", "options": ["Un mot de sens contraire", "Un mot de sens voisin pouvant remplacer un autre dans un contexte", "Un mot étranger", "Un mot composé"], "answer": 1, "explanation": "Le synonyme a un sens proche (content/heureux) ; l'antonyme un sens contraire (jour/nuit) ; l'homonyme le même son mais un sens différent." }
+    ]
+  },
+  "Fiche_Lecon3_LES_ECRITS_PROFESSIONNELS": {
+    "title": "Les écrits professionnels",
+    "questions": [
+      { "id": "q1", "text": "Quelles sont les parties obligatoires d'une lettre administrative ?", "type": "qcm", "options": ["Nom, adresse, objet, corps, formule de politesse, signature", "Titre, sommaire, conclusion", "Seulement le corps", "Une date seulement"], "answer": 0, "explanation": "La lettre administrative/professionnelle : coordonnées de l'expéditeur et du destinataire, lieu et date, objet, salutation, corps, formule de politesse, signature." },
+      { "id": "q2", "text": "Qu'est-ce qu'un procès-verbal ?", "type": "qcm", "options": ["Un courrier publicitaire", "Un document écrit constatant des faits ou des débats (réunion, audition, délibération)", "Un roman policier", "Une facture"], "answer": 1, "explanation": "Le PV constate par écrit des événements, décisions ou débats : il a valeur de preuve (réunion, constat, audience)." },
+      { "id": "q3", "text": "Quelles qualités doit présenter un écrit professionnel ?", "type": "qcm", "options": ["Long et littéraire", "Clair, concis, correct et adapté au destinataire", "Familier", "Vague"], "answer": 1, "explanation": "L'écrit professionnel vise l'efficacité : clarté, concision, correction orthographique, adaptation au destinataire." },
+      { "id": "q4", "text": "Vrai ou Faux : la formule de politesse finale doit toujours être identique à la formule d'appel.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : il y a correspondance entre l'appel (Monsieur le Directeur) et la formule finale (Veuillez agréer, Monsieur le Directeur, …)." },
+      { "id": "q5", "text": "Qu'est-ce qu'un curriculum vitae ?", "type": "qcm", "options": ["Un certificat médical", "Un document synthétique présentant formation, expériences et compétences d'un candidat", "Un contrat de travail", "Un bulletin de paie"], "answer": 1, "explanation": "Le CV présente par rubriques le parcours d'un candidat : état civil, formation, expérience, compétences, loisirs." }
+    ]
+  },
+  "Fiche_Lecon4_RESUME_VOCABULAIRE_DISCUSSION": {
+    "title": "Résumé, vocabulaire et discussion",
+    "questions": [
+      { "id": "q1", "text": "Quelles sont les règles du résumé de texte ?", "type": "qcm", "options": ["Recopier des phrases clés", "Respecter le nombre de mots, reformuler sans rien ajouter ni omettre l'essentiel, rédiger en phrases liées", "Donner son avis", "Traduire le texte"], "answer": 1, "explanation": "Le résumé contracte le texte (quart ou cinquième), reformule fidèlement les idées sans commentaire personnel et lie les phrases." },
+      { "id": "q2", "text": "Quelles étapes permettent de réussir un résumé ?", "type": "qcm", "options": ["Écrire d'abord", "Lecture attentive, repérage des idées essentielles (unité de texte), hiérarchisation, reformulation liée, comptage", "Copier le titre", "Traduire"], "answer": 1, "explanation": "On lit, on dégage l'idée générale et les idées principales par unité, on reformule avec des connecteurs et on respecte la longueur." },
+      { "id": "q3", "text": "Quels mots assurent la cohérence d'un résumé ?", "type": "qcm", "options": ["Les adjectifs", "Les connecteurs logiques et les mots de liaison (d'abord, en outre, cependant, enfin)", "Les chiffres", "Les noms propres"], "answer": 1, "explanation": "Les connecteurs enchaînent les idées : d'abord, ensuite, par ailleurs, en revanche, enfin — ils donnent sa fluidité au résumé." },
+      { "id": "q4", "text": "Vrai ou Faux : le résumé doit contenir les exemples et les citations du texte.", "type": "vrai_faux", "options": ["Vrai", "Faux"], "answer": 1, "explanation": "Faux : on élimine exemples, citations, répétitions et détails — on ne garde que les idées essentielles." },
+      { "id": "q5", "text": "Qu'est-ce que la discussion (ou débat) en expression ?", "type": "qcm", "options": ["Une dispute", "Un échange organisé d'arguments contradictoires sur une question, avec des règles de parole", "Un monologue", "Une dictée"], "answer": 1, "explanation": "La discussion confronte des arguments pour/contre dans un cadre réglé (modérateur, tours de parole, respect de l'adversaire)." }
+    ]
+  }
+}

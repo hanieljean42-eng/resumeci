@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MATHS 1C L13 Systemes d equations lineaires — Mathematiques Premiere C | ResumeCI</title><meta name="description" content="Systèmes d'équations linéaires dans ℝ² et ℝ³ - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Systèmes d'équations linéaires dans ℝ² et ℝ³ I. "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html"><meta property="og:title" content="MATHS 1C L13 Systemes d equations lineaires — Mathematiques Premiere C | ResumeCI"><meta property="og:description" content="Systèmes d'équations linéaires dans ℝ² et ℝ³ - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Systèmes d'équations linéaires dans ℝ² et ℝ³ I. "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="MATHS 1C L13 Systemes d equations lineaires — Mathematiques Premiere C | ResumeCI"><meta name="twitter:description" content="Systèmes d'équations linéaires dans ℝ² et ℝ³ - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Systèmes d'équations linéaires dans ℝ² et ℝ³ I. "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Premiere C","item":"https://resumeci.me/#Premiere_C"},{"@type":"ListItem","position":3,"name":"Mathematiques","item":"https://resumeci.me/#Premiere_C/Mathematiques"},{"@type":"ListItem","position":4,"name":"MATHS 1C L13 Systemes d equations lineaires","item":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MATHS 1C L13 Systemes d equations lineaires — Mathematiques Premiere C | ResumeCI","description":"Systèmes d'équations linéaires dans ℝ² et ℝ³ - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Systèmes d'équations linéaires dans ℝ² et ℝ³ I. ","url":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L13_Systemes_d_equations_lineaires.html","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Premiere C","about":"Mathematiques","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première C</span>
+      <span class="chip">Mathématiques</span>
+      <span class="chip">Systèmes d'équations linéaires dans ℝ² et ℝ³</span>
+    </div>
+  </div>
+
+  <h2>I. Systèmes de deux équations dans ℝ²</h2>
+
+  <div class="definition">
+    <strong>Système :</strong> (S) : { ax + by = c ; a′x + b′y = c′ } avec (a,b) ≠ (0,0) et (a′,b′) ≠ (0,0).<br>
+    <strong>Déterminant :</strong> D = |a b ; a′ b′| = <strong>ab′ − a′b</strong>.
+  </div>
+
+  <div class="important">
+    <strong>Discussion selon D :</strong>
+    <ul>
+      <li><strong>D ≠ 0</strong> → le système admet une <strong>unique solution</strong> ;</li>
+      <li><strong>D = 0</strong> → <strong>aucune</strong> solution ou une <strong>infinité</strong> de solutions (vérifier si un couple solution d'une équation vérifie l'autre).</li>
+    </ul>
+  </div>
+
+  <div class="schema">
+    <strong>Formules de Cramer (D ≠ 0) :</strong><br>
+    Dx = |c b ; c′ b′| = cb′ − c′b ; Dy = |a c ; a′ c′| = ac′ − a′c<br>
+    <strong>x = Dx/D et y = Dy/D</strong>
+  </div>
+
+  <div class="important">
+    <strong>Méthodes de résolution :</strong>
+    <ul>
+      <li><strong>Substitution :</strong> exprimer une inconnue en fonction de l'autre dans une équation, puis remplacer dans l'autre ;</li>
+      <li><strong>Combinaison :</strong> multiplier les lignes et les additionner pour éliminer une inconnue ;</li>
+      <li><strong>Déterminant :</strong> formules de Cramer ci-dessus ;</li>
+      <li><strong>Graphique :</strong> chaque équation est une droite — la solution est le <strong>point d'intersection</strong> (sécantes → 1 solution ; parallèles distinctes → 0 ; confondues → ∞).</li>
+    </ul>
+  </div>
+
+  <h2>II. Systèmes de trois équations dans ℝ³</h2>
+
+  <div class="definition">
+    <strong>Système linéaire 3×3 :</strong> { ax + by + cz = m ; a′x + b′y + c′z = m′ ; a″x + b″y + c″z = m″ }<br>
+    <strong>Système triangulaire :</strong> { ax + by + cz = m ; b′y + c′z = m′ ; c″z = m″ } — se résout « en cascade » de bas en haut.
+  </div>
+
+  <h3>1. Méthode de substitution</h3>
+
+  <div class="schema">
+    <strong>Principe :</strong> exprimer une inconnue (souvent x) en fonction des autres dans une équation, la remplacer dans les deux autres → système 2×2 en y et z → résoudre → remonter pour x.
+  </div>
+
+  <h3>2. Méthode du pivot de Gauss</h3>
+
+  <div class="schema">
+    <strong>Principe :</strong> transformer le système en système <strong>triangulaire</strong> par des opérations sur les lignes (Lᵢ ← Lᵢ − kLⱼ) :
+    <ol>
+      <li>Éliminer x dans L₂ et L₃ en utilisant L₁ (ex. L′₂ = L₂ − 5L₁ ; L′₃ = L₃ − 3L₁) ;</li>
+      <li>Éliminer y dans L″₃ en utilisant L′₂ ;</li>
+      <li>La dernière ligne donne z → remonter pour y puis x.</li>
+    </ol>
+    <strong>Vocabulaire :</strong> L₁ est le <strong>pivot</strong>. On note (L′ᵢ) = combinaison de lignes.
+  </div>
+
+  <div class="important">
+    <strong>Cas particuliers :</strong> si une ligne obtenue est du type 0 = k (k ≠ 0) → <strong>pas de solution</strong> ; si elle devient 0 = 0 (lignes proportionnelles) → <strong>infinité</strong> de solutions.
+  </div>
+
+  <h2>III. Applications</h2>
+
+  <div class="important">
+    <strong>Mise en équation de problèmes :</strong>
+    <ul>
+      <li><strong>Parabole par 3 points :</strong> y = ax² + bx + c passant par 3 points → système 3×3 en (a, b, c) ;</li>
+      <li><strong>Concours de 3 droites :</strong> résoudre le système de deux équations de droites, puis vérifier si la solution appartient à la troisième ;</li>
+      <li><strong>Problèmes concrets :</strong> traduire chaque information en une équation (ex. nombre à 3 chiffres : somme des chiffres, permutations → 3 équations en chiffres x, y, z).</li>
+    </ul>
+  </div>
+
+  <div class="important">
+    <strong>⚠️ Pièges fréquents :</strong>
+    <ul>
+      <li>Toujours <strong>vérifier la solution</strong> en la replaçant dans TOUTES les équations ;</li>
+      <li>D = 0 ne veut pas dire « pas de solution » : cela peut être une <strong>infinité</strong> — il faut trancher ;</li>
+      <li>Dans le pivot de Gauss, une erreur de signe dans Lᵢ − kLⱼ fausse tout le calcul : vérifier chaque ligne ;</li>
+      <li>Donner la solution sous forme d'<strong>ensemble ordonné</strong> : S = {(x ; y ; z)} — l'ordre des coordonnées compte.</li>
+    </ul>
+  </div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div><div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div></body>
+</html>

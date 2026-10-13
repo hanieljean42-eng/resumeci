@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -49,6 +49,9 @@ function getColor(i) {
 }
 function esc(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+function escHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 window.getPaymentApiCandidates = function() {
@@ -330,6 +333,30 @@ window.logoutUser = function() {
   window.location.href = '/connexion.html';
 };
 
+// ==================== ESPACE UNIVERSITAIRE ====================
+// Détecte un utilisateur universitaire (classe commençant par 'Licence_')
+window.isUniversityUser = function() {
+  try {
+    const prof = window.USER_PROFILE || JSON.parse(localStorage.getItem('resumeci_profile') || 'null');
+    return String(prof && prof.selectedClass || '').startsWith('Licence_');
+  } catch (e) { return false; }
+};
+
+// Grille tarifaire complète (collège/lycée + université)
+window.PREMIUM_PLANS = {
+  starter: { name: 'Starter', price: 500, emoji: '🥉' },
+  pro: { name: 'Pro', price: 1000, emoji: '🥈' },
+  elite: { name: 'Élite', price: 2000, emoji: '🥇' },
+  uni_starter: { name: 'Étudiant', price: 1000, emoji: '🎓' },
+  uni_pro: { name: 'Licence Pro', price: 2000, emoji: '⚖️' },
+  uni_elite: { name: 'Excellence', price: 3000, emoji: '🏛️' }
+};
+
+// Traduction du vocabulaire selon le profil (élève ↔ étudiant)
+window.studentLabel = function(feminine) {
+  return window.isUniversityUser() ? (feminine ? 'étudiante' : 'étudiant') : 'élève';
+};
+
 window.userHasFeature = function(featureName) {
   if (!window.USER_PROFILE) return false;
   
@@ -375,13 +402,15 @@ window.userHasFeature = function(featureName) {
     fn.includes('annale') || 
     fn.includes('simulateur');
 
-  if (plan === 'starter') {
+  // Les forfaits universitaires (uni_*) donnent les mêmes droits que leur équivalent scolaire
+  const planLevel = plan.replace(/^uni_/, '');
+  if (planLevel === 'starter') {
     return isStarterFeature;
   }
-  if (plan === 'pro') {
+  if (planLevel === 'pro') {
     return isStarterFeature || isProFeature;
   }
-  if (plan === 'elite') {
+  if (planLevel === 'elite') {
     return isStarterFeature || isProFeature || isEliteFeature;
   }
   // VIP et Annuel : accès TOTAL à toutes les fonctionnalités
@@ -639,8 +668,8 @@ function renderSidebar() {
   for (const [cls, subjects] of classesToRender) {
     const total = Object.values(subjects).reduce((s, a) => s + a.length, 0);
     const clsIcon =
-      cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
-    h += `<div class="nav-class"><div class="nav-class-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${clsIcon} ${cls.replace('_', ' ')}</span><span class="badge">${total}</span></div><div class="nav-subjects">`;
+      String(cls).startsWith('Licence_') ? '🎓' : cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
+    h += `<div class="nav-class"><div class="nav-class-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${clsIcon} ${cls.replace(/_/g, ' ')}</span><span class="badge">${total}</span></div><div class="nav-subjects">`;
     for (const [sub, fiches] of Object.entries(subjects)) {
       h += `<div class="nav-subject"><div class="nav-subject-header" onclick="this.parentElement.classList.toggle('open')"><i class="fas fa-chevron-right chevron"></i><span>${getIcon(sub)} ${sub}</span><span class="count">${fiches.length}</span></div><div class="nav-lessons">`;
       for (let fi = 0; fi < fiches.length; fi++) {
@@ -803,7 +832,7 @@ window.submitLogin = async function () {
       icon: '⚠️',
       title: 'Champs Manquants',
       subtitle: 'Connexion à ton compte',
-      message: 'Tous les champs sont obligatoires pour te connecter à ton espace élève.',
+      message: 'Tous les champs sont obligatoires pour te connecter à ton espace ' + (window.isUniversityUser && window.isUniversityUser() ? 'étudiant' : 'élève') + '.',
       primaryBtnText: 'Remplir mes identifiants'
     });
     if (btn) {
@@ -849,15 +878,23 @@ window.openProfileView = function () {
 
   function renderProfileDetails() {
     if (!window.USER_PROFILE) return;
-    const fullName = `${window.USER_PROFILE.firstName || ''} ${window.USER_PROFILE.lastName || ''}`.trim() || 'Élève';
-    const clsDisplay = (window.USER_PROFILE.selectedClass || '').replace('_', ' ') || 'Non définie';
+    const isUniv = window.isUniversityUser && window.isUniversityUser();
+    const fullName = `${window.USER_PROFILE.firstName || ''} ${window.USER_PROFILE.lastName || ''}`.trim() || (isUniv ? 'Étudiant(e)' : 'Élève');
+    const clsDisplay = (window.USER_PROFILE.selectedClass || '').replace(/_/g, ' ') || 'Non définie';
     const waDisplay = window.USER_PROFILE.whatsapp || 'Non renseigné';
-    
+
+    const titleEl = document.querySelector('#viewProfileModalOverlay .profile-modal-header h2');
+    if (titleEl) titleEl.textContent = isUniv ? 'Mon Profil Étudiant(e)' : 'Mon Profil Élève';
+
     const fnEl = document.getElementById('vpFullName');
     if (fnEl) fnEl.textContent = fullName;
-    
+
     const clsEl = document.getElementById('vpClass');
-    if (clsEl) clsEl.textContent = clsDisplay;
+    if (clsEl) {
+      clsEl.textContent = clsDisplay;
+      const clsLabel = clsEl.parentElement ? clsEl.parentElement.querySelector('strong') : null;
+      if (clsLabel) clsLabel.textContent = isUniv ? 'Filière :' : 'Classe :';
+    }
 
     const waEl = document.getElementById('vpWhatsapp');
     if (waEl) waEl.textContent = waDisplay;
@@ -876,7 +913,10 @@ window.openProfileView = function () {
           'elite': 'Élite',
           'vip': 'VIP ⭐',
           'annual': 'Annuel',
-          'annuel': 'Annuel'
+          'annuel': 'Annuel',
+          'uni_starter': 'Étudiant',
+          'uni_pro': 'Licence Pro',
+          'uni_elite': 'Excellence'
         };
         const pName = planNames[plan] || plan.toUpperCase();
         let daysLeft = '';
@@ -1257,7 +1297,7 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
     return;
   }
 
-  const TIER_LEVELS = { starter: 1, pro: 2, elite: 3 };
+  const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3 };
   const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
   const currentLevel = activeSub ? (TIER_LEVELS[activeSub.tier] || 0) : 0;
   const targetLevel = TIER_LEVELS[tierKey] || 0;
@@ -1270,19 +1310,21 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
 
   // 2. Si l'utilisateur possède déjà une formule supérieure (ex: a Pro et clique sur Starter)
   if (activeSub && currentLevel > targetLevel) {
+    const subName = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[activeSub.tier]) ? window.PREMIUM_PLANS[activeSub.tier].name : activeSub.tier.toUpperCase();
+    const entryName = window.isUniversityUser && window.isUniversityUser() ? 'Pass Étudiant' : 'Pass Starter';
     window.showActionNotice({
       type: 'info',
       icon: '👑',
       title: 'Formule Supérieure Déjà Active',
       subtitle: `Pass ${activeSub.tier.toUpperCase()} actif`,
-      message: `Tu es déjà abonné(e) au Pass ${activeSub.tier === 'pro' ? 'Pro' : 'Élite'}.\n\nCette formule inclut déjà l'intégralité des avantages du Pass Starter et bien plus encore !\n\nTu n'as aucun paiement supplémentaire à effectuer.`,
+      message: `Tu es déjà abonné(e) au Pass ${subName}.\n\nCette formule inclut déjà l'intégralité des avantages du ${entryName} et bien plus encore !\n\nTu n'as aucun paiement supplémentaire à effectuer.`,
       primaryBtnText: 'Continuer mes révisions'
     });
     return;
   }
 
   // 3. Formule Élite (en finalisation)
-  if (tierKey === 'elite') {
+  if (tierKey === 'elite' || tierKey === 'uni_elite') {
     if (typeof window.openElitePassModal === 'function') {
       window.openElitePassModal('elite');
     } else if (typeof window.showActionNotice === 'function') {
@@ -1291,7 +1333,9 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
         icon: '👑',
         title: 'Pack Élite en finalisation',
         subtitle: 'Professeur IA & Sujets d\'examen',
-        message: "Le Pack Élite (Professeur IA & Sujets d'examen du BAC/BEPC) est actuellement en cours de finalisation par nos professeurs partenaires.\n\n👉 Nous t'invitons à choisir le Pack Starter (500 FCFA/mois) ou le Pack Pro (1000 FCFA/mois) pour réviser dès aujourd'hui !",
+        message: window.isUniversityUser && window.isUniversityUser()
+          ? "Le Pass Excellence (Tuteur IA & Sujets de partiels corrigés) est actuellement en cours de finalisation par nos enseignants partenaires.\n\n👉 Nous t'invitons à choisir le Pass Étudiant (1 000 FCFA/mois) ou le Pass Licence Pro (2 000 FCFA/mois) pour réviser dès aujourd'hui !"
+          : "Le Pack Élite (Professeur IA & Sujets d'examen du BAC/BEPC) est actuellement en cours de finalisation par nos professeurs partenaires.\n\n👉 Nous t'invitons à choisir le Pack Starter (500 FCFA/mois) ou le Pack Pro (1000 FCFA/mois) pour réviser dès aujourd'hui !",
         primaryBtnText: '👑 Découvrir Starter & Pro',
         primaryBtnAction: () => {
           if (typeof openPremiumTeaser === 'function') openPremiumTeaser('Pass Réussite Pro');
@@ -1308,9 +1352,9 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
   const modal = document.getElementById('paymentCheckoutModal');
   if (!modal) return;
 
-  const isPro = tierKey === 'pro';
-  const price = isPro ? '1 000' : '500';
-  const title = isPro ? 'Pass Pro (1 000 FCFA)' : 'Pass Starter (500 FCFA)';
+  const planInfo = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[tierKey]) || { name: 'Pro', price: 1000 };
+  const price = planInfo.price.toLocaleString('fr-FR');
+  const title = `Pass ${planInfo.name} (${price} FCFA)`;
 
   const titleEl = document.getElementById('checkoutPlanTitle');
   if (titleEl) titleEl.textContent = `Activer ${title}`;
@@ -1356,8 +1400,8 @@ window.selectPaymentMethod = function(method) {
     card.classList.toggle('active', card.dataset.method === method);
   });
 
-  const isPro = currentCheckoutTier === 'pro';
-  const price = isPro ? '1 000' : '500';
+  const planInfo = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[currentCheckoutTier]) || { name: 'Pro', price: 1000 };
+  const price = planInfo.price.toLocaleString('fr-FR');
   const textEl = document.getElementById('checkoutSubmitText');
   const names = {
     wave: 'Wave',
@@ -1431,9 +1475,10 @@ window.submitCheckoutPayment = async function() {
     textEl.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:8px"></div> Connexion sécurisée en cours...';
   }
 
+  const isUnivCheckout = window.isUniversityUser && window.isUniversityUser();
   const name = (window.USER_PROFILE?.firstName || '') + ' ' + (window.USER_PROFILE?.lastName || '');
   const uid = window.USER_PROFILE?.uid || '';
-  const email = 'eleve@resumeci.me';
+  const email = isUnivCheckout ? 'etudiant@resumeci.me' : 'eleve@resumeci.me';
   const fullPhone = '+225' + rawPhone;
   const returnOrigin = window.location.origin;
 
@@ -1446,7 +1491,7 @@ window.submitCheckoutPayment = async function() {
         uid: uid,
         tierKey: currentCheckoutTier,
         paymentMethod: currentCheckoutMethod,
-        customerName: name.trim() || 'Élève',
+        customerName: name.trim() || (isUnivCheckout ? 'Étudiant(e)' : 'Élève'),
         customerPhone: fullPhone,
         customerEmail: email,
         returnOrigin: returnOrigin
@@ -1474,7 +1519,8 @@ window.submitCheckoutPayment = async function() {
     if (btn) btn.disabled = false;
     if (textEl) textEl.innerHTML = originalContent;
 
-    const pTierLabel = currentCheckoutTier === 'pro' ? 'Pro (1 000 FCFA)' : 'Starter (500 FCFA)';
+    const pTierInfo = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[currentCheckoutTier]) || { name: 'Pro', price: 1000 };
+    const pTierLabel = `${pTierInfo.name} (${pTierInfo.price.toLocaleString('fr-FR')} FCFA)`;
     window.showActionNotice({
       type: 'error',
       icon: '💳',
@@ -1662,8 +1708,11 @@ function toggleDarkMode() {
   localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 async function shareSite() {
-  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : 'ResumeCI — 1009 Fiches BAC & BEPC';
-  const text = "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve 1009 fiches de cours gratuites, résumés officiels et outils pour réussir ton année scolaire. Inscris-toi ici : https://resumeci.me/inscription.html";
+  const isUnivShare = window.isUniversityUser && window.isUniversityUser();
+  const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : (isUnivShare ? 'ResumeCI — Espace Universitaire' : 'ResumeCI — 1009 Fiches BAC & BEPC');
+  const text = isUnivShare
+    ? "🎓 ResumeCI Université est enfin disponible ! Retrouve les fiches de cours de ta filière, résumés officiels, quiz et outils pour réussir ton année universitaire. Inscris-toi ici : https://resumeci.me/inscription.html"
+    : "🚀 La mise à jour ResumeCI est enfin disponible ! Retrouve plus de 1 100 fiches de cours, résumés officiels et outils pour réussir ton année scolaire. Essai gratuit (1re leçon de chaque matière) : https://resumeci.me/inscription.html";
   const url = 'https://resumeci.me/inscription.html';
   if (navigator.share) await navigator.share({ title: title, text: text, url: url }).catch(() => {});
   else {
@@ -1711,7 +1760,7 @@ async function searchLessons(query) {
   ).slice(0, 8);
   const box = document.querySelector('.search-results') || document.createElement('div');
   box.className = 'search-results';
-  box.innerHTML = `<h3>Résultats de recherche</h3>${matches.length ? matches.map(item => `<a class="search-result" href="#" onclick="openSearchResult('${esc(item.cls)}','${esc(item.subject)}','${esc(item.file)}');return false"><strong>${item.name}</strong><span>${item.cls.replace('_', ' ')} · ${item.subject}</span></a>`).join('') : '<p style="color:var(--text-muted);font-size:13px;margin-top:8px">Aucun résultat trouvé pour ta classe.</p>'}`;
+  box.innerHTML = `<h3>Résultats de recherche</h3>${matches.length ? matches.map(item => `<a class="search-result" href="#" onclick="openSearchResult('${esc(item.cls)}','${esc(item.subject)}','${esc(item.file)}');return false"><strong>${escHtml(item.name)}</strong><span>${escHtml(item.cls.replace(/_/g, ' '))} · ${escHtml(item.subject)}</span></a>`).join('') : '<p style="color:var(--text-muted);font-size:13px;margin-top:8px">Aucun résultat trouvé pour ta classe.</p>'}`;
   document.getElementById('content').prepend(box);
 }
 function showDashboard(push = true) {
@@ -1735,7 +1784,7 @@ function showDashboard(push = true) {
       .map(([s, f]) => `<span class="subject-tag">${getIcon(s)} ${s} (${f.length})</span>`)
       .join('');
     const cIcon =
-      cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
+      String(cls).startsWith('Licence_') ? '🎓' : cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
     const total = Object.values(subjects).reduce((s, a) => s + a.length, 0);
     const hasOfflinePack = window.userHasFeature ? window.userHasFeature('Pack Hors-Ligne Complet') : false;
     const isDownloaded = isClassDownloaded(cls);
@@ -1756,7 +1805,7 @@ function showDashboard(push = true) {
   let heroDesc = "Collège & Lycée — Côte d'Ivoire";
   if (window.USER_PROFILE && window.USER_PROFILE.firstName) {
     heroTitle = 'Bonjour ' + window.USER_PROFILE.firstName + ' !';
-    heroDesc = 'Tes fiches de révision pour la ' + window.USER_PROFILE.selectedClass.replace('_', ' ');
+    heroDesc = 'Tes fiches de révision pour la ' + window.USER_PROFILE.selectedClass.replace(/_/g, ' ');
   }
   const totalFichesInView = classesToRender.reduce(
     (s, [_, c]) => s + Object.values(c).reduce((sum, f) => sum + f.length, 0),
@@ -1776,7 +1825,9 @@ function updatePageTitle(title) {
   if (metaDesc && title.includes('Fiche')) {
     metaDesc.setAttribute(
       'content',
-      title + ". Fiche de résumé gratuite pour le Collège et Lycée en Côte d'Ivoire. Révisions BAC et BEPC."
+      title + (window.isUniversityUser && window.isUniversityUser()
+        ? ". Fiche de cours pour l'Université en Côte d'Ivoire. Révisions de partiels et examens universitaires."
+        : ". Fiche de résumé gratuite pour le Collège et Lycée en Côte d'Ivoire. Révisions BAC et BEPC.")
     );
   }
 }
@@ -1784,12 +1835,12 @@ function showClass(cls, push = true) {
   if (push && window.location.pathname !== '/classes/' + cls) history.pushState(null, '', '/classes/' + cls);
   CURRENT_FICHE = null;
   window.CURRENT_FICHE = null;
-  updatePageTitle('Fiches ' + cls.replace('_', ' ') + ' - Toutes matières');
+  updatePageTitle('Fiches ' + cls.replace(/_/g, ' ') + ' - Toutes matières');
   const subjects = DATA.structure[cls];
   const cIcon =
-    cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
+    String(cls).startsWith('Licence_') ? '🎓' : cls === 'Terminale_A' ? '🅰️' : cls === 'Terminale_D' ? '🅳' : cls === '5eme' ? '5️⃣' : cls === '3eme' ? '3️⃣' : '📘';
   document.getElementById('breadcrumb').innerHTML =
-    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cIcon} ${cls.replace('_', ' ')}</span>`;
+    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="current">${cIcon} ${cls.replace(/_/g, ' ')}</span>`;
   document.getElementById('topbarActions').innerHTML =
     `<button class="btn" onclick="showDashboard()"><i class="fas fa-arrow-left"></i> Retour</button>${getTopbarStreakAndProfileHtml()}`;
   let totalFiches = Object.values(subjects).reduce((s, a) => s + a.length, 0);
@@ -1804,9 +1855,11 @@ function showClass(cls, push = true) {
       offlineBannerHtml = `<div class="class-offline-banner unlocked" onclick="downloadClassOffline('${cls}')"><div class="cob-left"><span class="cob-badge" style="background:#10b981;color:#fff;">✨ Pass Débloqué</span><div class="cob-title"><i class="fas fa-cloud-arrow-down" style="color:#10b981"></i> Pack Hors-Ligne • ${totalFiches} fiches</div><div class="cob-desc">Télécharge toutes les fiches de ${clsCleanName} pour réviser sans connexion Internet</div></div><button class="cob-btn" style="background:#10b981;"><i class="fas fa-download"></i> Télécharger</button></div>`;
     }
   } else {
-    offlineBannerHtml = `<div class="class-offline-banner" onclick="window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><div class="cob-left"><span class="cob-badge">👑 Inclus dès le Pass Starter (500 F)</span><div class="cob-title"><i class="fas fa-lock" style="color:#f59e0b"></i> Pack Hors-Ligne • ${totalFiches} fiches 🔒</div><div class="cob-desc">Télécharge toutes les fiches de ${clsCleanName} pour réviser sans connexion Internet</div></div><button class="cob-btn" onclick="event.stopPropagation();window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><i class="fas fa-lock"></i> Télécharger 🔒</button></div>`;
+    const univCls = String(cls).startsWith('Licence_');
+    const minPlanBadge = univCls ? '👑 Inclus dès le Pass Étudiant (1 000 F)' : '👑 Inclus dès le Pass Starter (500 F)';
+    offlineBannerHtml = `<div class="class-offline-banner" onclick="window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><div class="cob-left"><span class="cob-badge">${minPlanBadge}</span><div class="cob-title"><i class="fas fa-lock" style="color:#f59e0b"></i> Pack Hors-Ligne • ${totalFiches} fiches 🔒</div><div class="cob-desc">Télécharge toutes les fiches de ${clsCleanName} pour réviser sans connexion Internet</div></div><button class="cob-btn" onclick="event.stopPropagation();window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><i class="fas fa-lock"></i> Télécharger 🔒</button></div>`;
   }
-  let h = `<div class="subject-grid"><h2>${cIcon} ${cls.replace('_', ' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${totalFiches} leçons</p>${offlineBannerHtml}`;
+  let h = `<div class="subject-grid"><h2>${cIcon} ${cls.replace(/_/g, ' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${totalFiches} leçons</p>${offlineBannerHtml}`;
   let i = 0;
   for (const [sub, fiches] of Object.entries(subjects)) {
     h += `<h3 style="margin:20px 0 10px;font-size:15px;color:var(--text-muted)">${getIcon(sub)} ${sub} (${fiches.length})</h3><div class="lessons-grid">`;
@@ -1829,23 +1882,92 @@ function showClass(cls, push = true) {
   );
   clearActive();
 }
+// Écran de verrouillage des fiches (raison 'premium' ou 'auth') — tarif adapté école/université
+function renderSecureFicheLock(cls, sub, file, reason) {
+  const isUniv = cls.startsWith('Licence_') || (window.isUniversityUser && window.isUniversityUser());
+  const minPrice = isUniv ? '1 000' : '500';
+  const nameLocked = file.replace('Fiche_', '').replace(/\.(html|md)$/, '').replace(/_/g, ' ');
+  updatePageTitle(nameLocked + ' - ' + cls.replace(/_/g, ' ') + ' ' + sub);
+  document.getElementById('breadcrumb').innerHTML =
+    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${escHtml(cls.replace(/_/g, ' '))}</span><span>/</span><span style="color:var(--text-muted)">${escHtml(sub)}</span><span>/</span><span class="current">${escHtml(nameLocked)}</span>`;
+  document.getElementById('topbarActions').innerHTML =
+    `<button class="btn" onclick="showClass('${esc(cls)}')"><i class="fas fa-arrow-left"></i> Retour</button>${getTopbarStreakAndProfileHtml()}`;
+  const isAuth = reason === 'auth';
+  document.getElementById('content').innerHTML = `
+    <div class="fiche-view" style="max-width:560px;margin:40px auto;text-align:center;">
+      <div style="background:var(--card-bg,#fff);border:2px dashed #f59e0b;border-radius:18px;padding:36px 24px;box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        <div style="font-size:44px;margin-bottom:10px;">🔒</div>
+        <h2 style="margin:0 0 8px;font-size:19px;color:var(--text,#0f172a);">${isAuth ? 'Connecte-toi pour lire cette fiche' : 'Fiche réservée aux abonnés'}</h2>
+        <p style="font-size:13.5px;color:var(--text-dim,#64748b);line-height:1.6;margin:0 0 18px;">
+          ${isAuth
+            ? `Les fiches sont réservées aux comptes inscrits : <strong>inscris-toi gratuitement</strong> pour lire la 1re leçon de chaque matière.`
+            : `La <strong>1re leçon de chaque matière</strong> est offerte en essai gratuit.<br>Active un Pass pour lire <strong>${escHtml(nameLocked)}</strong> et toutes tes fiches sans limite.`}
+        </p>
+        <button onclick="${isAuth ? "window.location.href='/inscription.html'" : "if(typeof openPremiumTeaser==='function') openPremiumTeaser('Lecture des fiches')"}" style="padding:13px 26px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 6px 16px rgba(16,185,129,0.3);">
+          ${isAuth ? '🎓 S\u2019inscrire gratuitement' : '👑 Voir les Pass dès ' + minPrice + ' F / mois'}
+        </button>
+      </div>
+    </div>`;
+}
+
+// Lecture d'une fiche via l'API sécurisée (sessionToken + premium vérifiés côté serveur)
+async function fetchSecureFiche(cls, sub, file) {
+  const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+  const apiUrl = `${apiBase}/api/fiche/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
+  const headers = {};
+  if (window.USER_PROFILE && window.USER_PROFILE.sessionToken) headers.Authorization = 'Bearer ' + window.USER_PROFILE.sessionToken;
+  try {
+    const resp = await fetch(apiUrl, { headers });
+    if (!resp.ok) return { status: resp.status };
+    const text = await resp.text();
+    try {
+      const cache = await caches.open('resumeci-fiches-v3');
+      await cache.put(apiUrl, new Response(text, { headers: { 'Content-Type': 'text/html' } }));
+    } catch (e) {}
+    return { status: 200, html: text };
+  } catch (e) {
+    try {
+      const cache = await caches.open('resumeci-fiches-v3');
+      const cached = await cache.match(apiUrl);
+      if (cached) return { status: 200, html: await cached.text() };
+    } catch (e2) {}
+    return { status: 0 };
+  }
+}
+
 async function showFiche(cls, sub, file, push = true) {
   if (push) {
     const url = '/fiches/' + cls + '/' + sub + '/' + file;
     if (window.location.pathname !== url) history.pushState(null, '', url);
   }
+  const isUnivCls = cls.startsWith('Licence_');
+  // 🔒 Lecture des fiches : 1re leçon de chaque matière en essai gratuit (inscription requise) ;
+  // le reste exige un Pass actif (école : tout Pass ; université : Pass étudiant uni_*)
+  const subFiches = (DATA.structure[cls] && DATA.structure[cls][sub]) || [];
+  const isTrialFiche = subFiches.length > 0 && subFiches[0].file === file;
+  const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+  const subTier = String(activeSub && activeSub.tier || '');
+  const hasAccess = isUnivCls ? !!(activeSub && subTier.startsWith('uni_')) : !!activeSub;
+  if (!hasAccess && !isTrialFiche) {
+    renderSecureFicheLock(cls, sub, file, 'premium');
+    return;
+  }
   document.getElementById('content').innerHTML = '<div class="loading"><div class="spinner"></div>Chargement...</div>';
   const name = file.replace('Fiche_', '').replace('.md', '');
-  updatePageTitle(name + ' - ' + cls.replace('_', ' ') + ' ' + sub);
+  updatePageTitle(name + ' - ' + cls.replace(/_/g, ' ') + ' ' + sub);
   document.getElementById('breadcrumb').innerHTML =
-    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${cls.replace('_', ' ')}</span><span>/</span><span style="color:var(--text-muted)">${sub}</span><span>/</span><span class="current">${name}</span>`;
+    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="showDashboard()"></i><span>/</span><span class="clickable" onclick="showClass('${esc(cls)}')">${escHtml(cls.replace(/_/g, ' '))}</span><span>/</span><span style="color:var(--text-muted)">${escHtml(sub)}</span><span>/</span><span class="current">${escHtml(name)}</span>`;
   CURRENT_FICHE = { cls: cls, sub: sub, file: file };
   window.CURRENT_FICHE = CURRENT_FICHE;
   trackFicheRead(cls, sub, file);
   preloadNextFiche(cls, sub, file);
   try {
-    const ficheUrl = `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
-    const rawHtml = await fetch(ficheUrl).then(r => r.text());
+    const res = await fetchSecureFiche(cls, sub, file);
+    if (res.status !== 200) {
+      renderSecureFicheLock(cls, sub, file, res.status === 401 ? 'auth' : 'premium');
+      return;
+    }
+    const rawHtml = res.html;
     const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/);
     const data = { html: bodyMatch ? bodyMatch[1] : rawHtml };
     const favActive = isFavorite(cls, sub, file) ? 'active' : '';
@@ -2109,19 +2231,9 @@ function autoVectorsInElement(rootEl) {
     }
   });
 }
-function preloadNextFiche(cls, sub, file) {
-  const fiches = DATA.structure?.[cls]?.[sub];
-  if (!fiches) return;
-  const idx = fiches.findIndex(f => f.file === file);
-  if (idx >= 0 && idx < fiches.length - 1) {
-    const next = fiches[idx + 1];
-    const url = `/fiches/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(next.file)}`;
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
-    link.href = url;
-    link.as = 'document';
-    document.head.appendChild(link);
-  }
+function preloadNextFiche() {
+  // Désactivé : toutes les fiches sont servies par l'API avec en-tête Authorization —
+  // un prefetch <link> ne peut pas porter de jeton.
 }
 function getMonthlyPdfQuota() {
   const currentMonth = new Date().toISOString().slice(0, 7); // Ex: '2026-09'
@@ -2153,7 +2265,17 @@ function showPdfQuotaReachedModal(quota) {
     const dayStr = nextMonth.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
     badgeEl.textContent = `${dayStr}`;
   }
-  document.getElementById('pdfQuotaReachedModal')?.classList.add('show');
+  const modal = document.getElementById('pdfQuotaReachedModal');
+  const isUniv = window.isUniversityUser && window.isUniversityUser();
+  const qsSpan = modal?.querySelector('.quota-solutions-card .qs-item:last-child .qs-text span');
+  if (qsSpan) qsSpan.textContent = isUniv
+    ? 'Active le Pass Étudiant dès 1 000 FCFA/mois pour débloquer plus de PDF et accéder aux sujets de partiels.'
+    : 'Active le Pass Réussite dès 500 FCFA/mois pour débloquer plus de PDF et accéder aux annales d\'examens.';
+  const vipBtn = modal?.querySelector('.quota-btn-vip');
+  if (vipBtn) vipBtn.innerHTML = isUniv
+    ? '<i class="fas fa-crown" style="margin-right: 6px; color: #fbbf24;"></i> 👑 Découvrir les Pass Université (Dès 1 000 F)'
+    : '<i class="fas fa-crown" style="margin-right: 6px; color: #fbbf24;"></i> 👑 Découvrir les Pass Réussite (Dès 500 F)';
+  modal?.classList.add('show');
 }
 window.showPdfQuotaReachedModal = showPdfQuotaReachedModal;
 
@@ -2240,7 +2362,9 @@ window.openElitePassModal = function(featureName = 'elite') {
         icon: '👑',
         title: 'Pass Élite en préparation',
         subtitle: 'Professeur IA & Sujets d\'examen',
-        message: 'Cette formule suprême est en cours de déploiement. Découvre nos Pass Starter et Pro dès 500 FCFA pour réviser dès aujourd\'hui !'
+        message: window.isUniversityUser && window.isUniversityUser()
+          ? 'Cette formule suprême est en cours de déploiement. Découvre nos Pass Étudiant et Licence Pro dès 1 000 FCFA pour réviser dès aujourd\'hui !'
+          : 'Cette formule suprême est en cours de déploiement. Découvre nos Pass Starter et Pro dès 500 FCFA pour réviser dès aujourd\'hui !'
       });
     }
     return;
@@ -2252,6 +2376,29 @@ window.openElitePassModal = function(featureName = 'elite') {
   const cardIA = document.getElementById('eliteCardIA');
   const cardAnnales = document.getElementById('eliteCardAnnales');
   const cardSimulateur = document.getElementById('eliteCardSimulateur');
+
+  // Environnement université : adapter les textes statiques de la modale
+  const isUnivElite = window.isUniversityUser && window.isUniversityUser();
+  const annalesTitle = cardAnnales?.querySelector('.elite-feat-title');
+  const annalesPill = cardAnnales?.querySelector('.elite-status-pill');
+  const annalesDesc = cardAnnales?.querySelector('.elite-feat-desc');
+  if (annalesTitle) annalesTitle.textContent = isUnivElite ? 'Annales & Sujets de Partiels' : 'Annales BAC & BEPC Corrigées';
+  if (annalesPill) annalesPill.textContent = isUnivElite ? '📑 Archives universitaires' : '📑 10 ans d\'archives';
+  if (annalesDesc) annalesDesc.textContent = isUnivElite
+    ? 'Les sujets d\'examens et de partiels de ta filière avec corrigés types rédigés par des enseignants.'
+    : 'Tous les vrais sujets officiels avec corrigés types rédigés par des inspecteurs et barèmes détaillés.';
+  const iaDesc = cardIA?.querySelector('.elite-feat-desc');
+  if (iaDesc) iaDesc.textContent = isUnivElite
+    ? 'Pose toutes tes questions à tout moment. Il t\'explique tes cours de licence étape par étape.'
+    : 'Pose toutes tes questions à tout moment. Il débloque tes exercices de maths, physique et français étape par étape.';
+  const reassSpan = modal.querySelector('.elite-reassurance-text span');
+  if (reassSpan) reassSpan.textContent = isUnivElite
+    ? 'Toutes les fiches, quiz et podcasts audio sont accessibles dès 1 000 FCFA avec le Pass Étudiant.'
+    : 'Toutes les fiches de cours, résumés, quiz et podcasts audio sont 100% accessibles immédiatement dès 500 FCFA avec les Pass Starter & Pro.';
+  const vipBtnEl = modal.querySelector('.elite-btn-vip');
+  if (vipBtnEl) vipBtnEl.innerHTML = isUnivElite
+    ? '<i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Université (Dès 1 000 F)'
+    : '<i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Disponibles (Dès 500 F)';
 
   // Réinitialiser les surbrillances
   [cardIA, cardAnnales, cardSimulateur].forEach(card => card && card.classList.remove('active-target'));
@@ -2266,10 +2413,10 @@ window.openElitePassModal = function(featureName = 'elite') {
       cardIA.classList.add('active-target');
       cardIA.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  } else if (fLower.includes('sujet') || fLower.includes('annale') || fLower.includes('bac') || fLower.includes('bepc')) {
+  } else if (fLower.includes('sujet') || fLower.includes('annale') || fLower.includes('bac') || fLower.includes('bepc') || fLower.includes('partiel')) {
     if (iconEl) iconEl.textContent = '📜';
-    if (titleEl) titleEl.textContent = 'Sujets BAC & BEPC Corrigés 🔒';
-    if (subtitleEl) subtitleEl.textContent = 'Toutes les épreuves officielles décortiquées avec barèmes et corrigés types.';
+    if (titleEl) titleEl.textContent = isUnivElite ? 'Sujets de Partiels Corrigés 🔒' : 'Sujets BAC & BEPC Corrigés 🔒';
+    if (subtitleEl) subtitleEl.textContent = isUnivElite ? 'Toutes les épreuves universitaires décortiquées avec corrigés types.' : 'Toutes les épreuves officielles décortiquées avec barèmes et corrigés types.';
     if (cardAnnales) {
       cardAnnales.classList.add('active-target');
       cardAnnales.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -2285,8 +2432,10 @@ window.openElitePassModal = function(featureName = 'elite') {
   } else {
     // Par défaut : Présentation Globale du Pass Élite
     if (iconEl) iconEl.textContent = '👑';
-    if (titleEl) titleEl.textContent = 'Pass Élite : La Formule Suprême';
-    if (subtitleEl) subtitleEl.textContent = 'L\'excellence absolue : Professeur IA, annales BAC/BEPC et simulateurs d\'examens.';
+    if (titleEl) titleEl.textContent = isUnivElite ? 'Pass Excellence : La Formule Suprême' : 'Pass Élite : La Formule Suprême';
+    if (subtitleEl) subtitleEl.textContent = isUnivElite
+      ? 'L\'excellence absolue : Tuteur IA, annales de partiels et simulateurs d\'examens (3 000 FCFA/mois).'
+      : 'L\'excellence absolue : Professeur IA, annales BAC/BEPC et simulateurs d\'examens.';
   }
 
   modal.classList.add('show');
@@ -2362,9 +2511,10 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
 
   const currentSub = subInfo || window.hasActiveSubscription();
   const tier = currentSub?.tier || 'pro';
-  const planInfo = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[tier]) 
-    ? window.PREMIUM_PLANS[tier] 
-    : { name: tier.toUpperCase(), price: tier === 'starter' ? 500 : 1000, emoji: '👑' };
+  const tierLevel = String(tier).replace(/^uni_/, '');
+  const planInfo = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[tier])
+    ? window.PREMIUM_PLANS[tier]
+    : { name: tier.toUpperCase(), price: 1000, emoji: '👑' };
 
   const nameEl = document.getElementById('asPlanName');
   if (nameEl) {
@@ -2384,7 +2534,7 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
 
   const featsList = document.getElementById('asFeaturesList');
   if (featsList) {
-    if (tier === 'starter') {
+    if (tierLevel === 'starter') {
       featsList.innerHTML = `
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Fiches et résumés officiels en lecture illimitée</li>
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Pack Hors-Ligne dans l'application (PWA)</li>
@@ -2394,8 +2544,9 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Mes Notes Personnelles sur chaque fiche</li>
       `;
     } else {
+      const baseName = tier.startsWith('uni_') ? 'Pass Étudiant' : 'Pass Starter';
       featsList.innerHTML = `
-        <li><i class="fas fa-check-circle" style="color:#10b981;"></i> <b>Tout le Pass Starter inclus</b></li>
+        <li><i class="fas fa-check-circle" style="color:#10b981;"></i> <b>Tout le ${baseName} inclus</b></li>
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Récitation Active (Active Recall sur tout le cours)</li>
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Pièges d'Examen & Astuces des correcteurs</li>
         <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Podcasts Audio (lecture vocale de toutes les leçons)</li>
@@ -2414,26 +2565,32 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
   const upgradeBtn = document.getElementById('asUpgradeBtn');
 
   if (upgradeSection) {
-    if (tier === 'starter') {
+    if (tierLevel === 'starter') {
+      const isUnivSub = window.isUniversityUser && window.isUniversityUser();
+      const nextName = isUnivSub ? 'Pass Licence Pro' : 'Pass Pro';
+      const nextPrice = isUnivSub ? '2 000' : '1 000';
+      const nextTier = isUnivSub ? 'uni_pro' : 'pro';
       upgradeSection.style.display = 'block';
       if (upgradeBadge) upgradeBadge.textContent = '🚀 AMÉLIORATION DISPONIBLE';
       if (upgradeTitle) upgradeTitle.textContent = 'Envie de débloquer la Récitation Active, les Pièges & Podcasts ?';
       if (upgradeDesc) {
-        upgradeDesc.innerHTML = 'Passe au <strong>Pass Pro (1 000 FCFA/mois)</strong> pour profiter de la récitation active, des pièges d\'examen, de la lecture vocale, des flashcards de mémorisation et de tous les quiz interactifs.';
+        upgradeDesc.innerHTML = `Passe au <strong>${nextName} (${nextPrice} FCFA/mois)</strong> pour profiter de la récitation active, des pièges d\'examen, de la lecture vocale, des flashcards de mémorisation et de tous les quiz interactifs.`;
       }
       if (upgradeBtn) {
-        upgradeBtn.innerHTML = '⚡ Passer au Pass Pro (1 000 FCFA / mois)';
+        upgradeBtn.innerHTML = `⚡ Passer au ${nextName} (${nextPrice} FCFA / mois)`;
         upgradeBtn.onclick = function() {
           window.closeActiveSubscriptionModal();
-          window.initiatePremiumPayment(this, 'pro');
+          window.initiatePremiumPayment(this, nextTier);
         };
       }
-    } else if (tier === 'pro') {
+    } else if (tierLevel === 'pro') {
       upgradeSection.style.display = 'block';
       if (upgradeBadge) upgradeBadge.textContent = '🥇 FORMULE SUPRÊME';
       if (upgradeTitle) upgradeTitle.textContent = 'Pass Élite : Professeur IA & Examens';
       if (upgradeDesc) {
-        upgradeDesc.innerHTML = 'La formule suprême avec tuteur IA 24h/24 et annales officielles corrigées du BAC/BEPC arrive très bientôt.';
+        upgradeDesc.innerHTML = window.isUniversityUser && window.isUniversityUser()
+          ? 'La formule suprême avec tuteur IA 24h/24 et annales de partiels corrigées (3 000 FCFA/mois) arrive très bientôt.'
+          : 'La formule suprême avec tuteur IA 24h/24 et annales officielles corrigées du BAC/BEPC arrive très bientôt.';
       }
       if (upgradeBtn) {
         upgradeBtn.innerHTML = '👑 Découvrir les fonctionnalités Élite';
@@ -2803,16 +2960,20 @@ async function downloadClassOffline(cls, force = false) {
       throw new Error("Classe introuvable dans le programme.");
     }
 
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
     const urls = ['/data/structure.json'];
     const subjects = structure[clsKey];
     for (const sub of Object.keys(subjects)) {
       for (const fileObj of subjects[sub]) {
         const fileName = typeof fileObj === 'string' ? fileObj : (fileObj.file || fileObj.name);
         if (fileName) {
-          urls.push(`/fiches/${clsKey}/${sub}/${fileName}`);
+          urls.push(`${apiBase}/api/fiche/${encodeURIComponent(clsKey)}/${encodeURIComponent(sub)}/${encodeURIComponent(fileName)}`);
         }
       }
     }
+    const secureFetchOpts = window.USER_PROFILE && window.USER_PROFILE.sessionToken
+      ? { headers: { Authorization: 'Bearer ' + window.USER_PROFILE.sessionToken } }
+      : {};
 
     const total = urls.length;
     let cachedCount = 0;
@@ -2829,7 +2990,7 @@ async function downloadClassOffline(cls, force = false) {
     for (let idx = 0; idx < urls.length; idx++) {
       const url = urls[idx];
       try {
-        const resp = await fetch(url);
+        const resp = await fetch(url, url.startsWith('http') ? secureFetchOpts : {});
         if (resp && resp.ok) {
           if (cacheObj) {
             await cacheObj.put(url, resp.clone());
@@ -2850,8 +3011,9 @@ async function downloadClassOffline(cls, force = false) {
       }
     }
 
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({ type: 'CACHE_FICHES', urls });
+    const swUrls = urls.filter(u => !u.startsWith('http'));
+    if (swUrls.length && navigator.serviceWorker && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({ type: 'CACHE_FICHES', urls: swUrls });
     }
 
     // Mark as downloaded
@@ -2886,11 +3048,14 @@ function getToolsBar() {
 
   const statsCard = hasStats
     ? `<a class="tool-card" href="#" onclick="openStatistiquesModal(); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques</h4><p>Progression & Données en cache</p></a>`
-    : `<a class="tool-card" href="#" onclick="openPremiumTeaser('Statistiques Avancées'); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques 🔒</h4><p>Progression & Cache (Dès 500 F)</p></a>`;
+    : `<a class="tool-card" href="#" onclick="openPremiumTeaser('Statistiques Avancées'); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques 🔒</h4><p>Progression & Cache (Dès ${window.isUniversityUser && window.isUniversityUser() ? '1 000' : '500'} F)</p></a>`;
 
+  const activeSubName = activeSub && window.PREMIUM_PLANS && window.PREMIUM_PLANS[activeSub.tier]
+    ? window.PREMIUM_PLANS[activeSub.tier].name
+    : (activeSub ? activeSub.tier.toUpperCase() : '');
   const passCard = activeSub
-    ? `<a class="tool-card" href="#" onclick="if(typeof showActiveSubscriptionModal==='function'){showActiveSubscriptionModal();}else if(typeof openElitePassModal==='function'){openElitePassModal('Pass Réussite');} return false;"><div class="tool-icon">👑</div><h4 style="color:#10b981;">Pass ${activeSub.tier.toUpperCase()} Actif ✓</h4><p>Toutes formules débloquées</p></a>`
-    : `<a class="tool-card" href="#" onclick="if(typeof openElitePassModal==='function')openElitePassModal('Pass Réussite'); return false;"><div class="tool-icon">👑</div><h4>Pass Réussite 🔒</h4><p>Activer les formules élèves</p></a>`;
+    ? `<a class="tool-card" href="#" onclick="if(typeof showActiveSubscriptionModal==='function'){showActiveSubscriptionModal();}else if(typeof openElitePassModal==='function'){openElitePassModal('Pass Réussite');} return false;"><div class="tool-icon">👑</div><h4 style="color:#10b981;">Pass ${activeSubName} Actif ✓</h4><p>Toutes formules débloquées</p></a>`
+    : `<a class="tool-card" href="#" onclick="if(typeof openElitePassModal==='function')openElitePassModal('Pass Réussite'); return false;"><div class="tool-icon">👑</div><h4>Pass Réussite 🔒</h4><p>Activer les formules ${window.isUniversityUser && window.isUniversityUser() ? 'étudiantes' : 'élèves'}</p></a>`;
 
   const plannerCard = hasPlanner
     ? `<a class="tool-card" href="#" onclick="if(typeof openPlanner==='function')openPlanner(); return false;"><div class="tool-icon">📅</div><h4>Planning d'Examen</h4><p>Plan personnalisé (Actif ✓)</p></a>`
@@ -3421,7 +3586,7 @@ function renderProgressPanel() {
     const read = Object.keys(p.fiches).filter(k => k.startsWith(cls + '/')).length;
     const pct = total ? Math.round((read / total) * 100) : 0;
     const color = colors[ci % colors.length];
-    bars += `<div class="prog-row"><span class="prog-label">${cls.replace('_', ' ')}</span><div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${color}"></div></div><span class="prog-count">${read}/${total}</span></div>`;
+    bars += `<div class="prog-row"><span class="prog-label">${cls.replace(/_/g, ' ')}</span><div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${color}"></div></div><span class="prog-count">${read}/${total}</span></div>`;
     ci++;
   }
   let weekBars = '';
@@ -4052,7 +4217,7 @@ function showAnnouncement() {
         <div class="ann-spark s3"></div>
         <div class="ann-label" style="background:#10b981;color:#fff;font-weight:800;">✨ NOUVELLE PLATEFORME EN LIGNE</div>
         <h2 style="font-size:22px;margin:6px 0 4px;">Bienvenue sur ResumeCI ! 🎓</h2>
-        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">1009 fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire.</p>
+        <p style="font-size:12.5px;opacity:0.95;margin:0 0 6px;">${window.isUniversityUser && window.isUniversityUser() ? 'Fiches de cours de ta filière, Flashcards, Quiz et outils de révision sont prêts pour ton année universitaire.' : "Fiches de cours, Flashcards scientifiques, Quiz d'examen et outils de révision sont prêts pour ton année scolaire (essai gratuit : 1re leçon de chaque matière)."}</p>
       </div>
       <div class="ann-body" style="padding:16px;">
         <div style="font-size:12px;font-weight:800;color:#0f172a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.3px;">
@@ -4067,7 +4232,7 @@ function showAnnouncement() {
         </div>
 
         <button type="button" onclick="document.getElementById('announceOverlay')?.remove(); if(typeof openElitePassModal==='function') openElitePassModal('Pass Réussite');" style="width:100%;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;border:none;border-radius:12px;padding:12px 14px;font-weight:800;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 4px 14px rgba(37,99,235,0.3);margin-bottom:8px;">
-          👑 Découvrir les Pass dès 500 F / mois
+          👑 Découvrir les Pass dès ${window.isUniversityUser && window.isUniversityUser() ? '1 000' : '500'} F / mois
         </button>
 
         <a href="https://wa.me/2250104911010?text=Bonjour%20Assistance%20ResumeCI%20!%20Je%20souhaite%20des%20informations%20sur%20la%20plateforme." class="ann-wa-btn" target="_blank" rel="noopener" style="background:#10b981;font-size:12px;padding:10px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;color:#fff;text-decoration:none;font-weight:700;">

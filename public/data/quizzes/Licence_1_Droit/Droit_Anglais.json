@@ -1,0 +1,132 @@
+{
+  "Fiche_Unit1_WILLS_AND_LEGAL_MATTERS": {
+    "title": "Unit I — Wills and Legal Matters",
+    "questions": [
+      { "id": "q1", "text": "What is a will?", "type": "qcm", "options": ["A contract", "A document by which a person disposes of their property after death", "A tax form", "A court order"], "answer": 1, "explanation": "A will (testament) is the legal instrument by which a testator directs the distribution of their estate after death." },
+      { "id": "q2", "text": "What does 'intestacy' mean?", "type": "qcm", "options": ["Dying with a will", "Dying without a valid will — the estate devolves according to the statutory rules", "A living will", "A power of attorney"], "answer": 1, "explanation": "Intestacy is the situation of a person who dies without a valid will; the law then determines the heirs." },
+      { "id": "q3", "text": "What is a living will?", "type": "qcm", "options": ["A will made while alive", "An advance decision/statement about medical treatment if one becomes unable to decide", "A testament", "A power of sale"], "answer": 1, "explanation": "A living will (advance decision/statement) expresses wishes about medical care when the person can no longer decide." },
+      { "id": "q4", "text": "True or False: 'power of attorney' is the authority given to a person to act on another's behalf.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: a power of attorney (procuration) authorizes an attorney to act legally or financially for the donor." },
+      { "id": "q5", "text": "What is the difference between solicitor and barrister?", "type": "qcm", "options": ["None", "Solicitor: advises clients and prepares cases; barrister: pleads before the higher courts", "Solicitor pleads", "Barrister drafts contracts only"], "answer": 1, "explanation": "In England, solicitors advise and prepare; barristers specialise in advocacy before the courts (split legal profession)." }
+    ]
+  },
+  "Fiche_Unit2_EMPLOYMENT_LAW_CONTRACT": {
+    "title": "Unit II — Employment Law",
+    "questions": [
+      { "id": "q1", "text": "What does 'wages' refer to?", "type": "qcm", "options": ["A monthly salary", "Payment typically calculated hourly/weekly, often for manual work (vs salary, monthly)", "A bonus", "A pension"], "answer": 1, "explanation": "Wages are usually paid weekly/hourly to workers; a salary is a fixed annual sum paid monthly." },
+      { "id": "q2", "text": "What is 'redundancy'?", "type": "qcm", "options": ["A promotion", "Dismissal because the job no longer exists (economic layoff, licenciement économique)", "A strike", "A resignation"], "answer": 1, "explanation": "Redundancy occurs when the employer abolishes the post — it triggers redundancy pay and specific procedures." },
+      { "id": "q3", "text": "What is 'dismissal'?", "type": "qcm", "options": ["A leave", "Termination of employment by the employer (licenciement)", "A hiring", "A transfer"], "answer": 1, "explanation": "Dismissal is the employer's termination of the contract — fair or unfair; unfair dismissal can be challenged." },
+      { "id": "q4", "text": "True or False: 'sick pay' is the salary paid during illness-related absence.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: sick pay is the remuneration maintained during a justified sickness absence." },
+      { "id": "q5", "text": "What does 'maternity leave' mean?", "type": "qcm", "options": ["Annual holiday", "Leave granted to a mother around childbirth (congé de maternité)", "Retirement", "Sick leave"], "answer": 1, "explanation": "Maternity leave is the statutory absence granted to a mother before and after childbirth." }
+    ]
+  },
+  "Fiche_Unit3_BANKING_FINANCIAL_PROBLEMS": {
+    "title": "Unit III — Banking and Financial Problems",
+    "questions": [
+      { "id": "q1", "text": "What is 'capital flight'?", "type": "qcm", "options": ["An investment", "The rapid outflow of capital from a country (fuite des capitaux)", "A loan", "A deposit"], "answer": 1, "explanation": "Capital flight is the massive movement of funds out of a country, usually due to economic or political instability." },
+      { "id": "q2", "text": "What is the difference between embezzlement and fraud?", "type": "qcm", "options": ["None", "Embezzlement: misappropriation of entrusted funds (détournement); fraud: deception for gain (escroquerie)", "Embezzlement is bigger", "Fraud is legal"], "answer": 1, "explanation": "Embezzlement is the theft of funds entrusted to one's care; fraud is the broader deception for unlawful gain." },
+      { "id": "q3", "text": "What does 'insolvency' mean?", "type": "qcm", "options": ["Profitability", "Inability to pay one's debts as they fall due (insolvabilité)", "Wealth", "Liquidity"], "answer": 1, "explanation": "Insolvency is the state of a debtor unable to meet debts — it can lead to bankruptcy/liquidation." },
+      { "id": "q4", "text": "True or False: 'money laundering' is the process of disguising illegal funds as legitimate.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: money laundering (blanchiment) conceals the criminal origin of funds through a chain of transactions." },
+      { "id": "q5", "text": "What is 'insider dealing'?", "type": "qcm", "options": ["A public trade", "Trading securities using confidential inside information (délit d'initié)", "A merger", "A tender offer"], "answer": 1, "explanation": "Insider dealing is trading on privileged non-public information — a criminal offence." }
+    ]
+  },
+  "Fiche_Unit4_COMPANIES_GOING_PUBLIC": {
+    "title": "Unit IV — Companies Going Public",
+    "questions": [
+      { "id": "q1", "text": "What is a 'quoted company'?", "type": "qcm", "options": ["A private company", "A company whose shares are listed on a stock exchange (société cotée)", "A partnership", "An NGO"], "answer": 1, "explanation": "A quoted/listed company has its shares traded publicly on a stock exchange, unlike a private company." },
+      { "id": "q2", "text": "Why do companies go public?", "type": "qcm", "options": ["To avoid tax", "To raise capital, increase prestige/visibility, and let shareholders trade their shares", "To fire employees", "To merge"], "answer": 1, "explanation": "Going public raises capital from investors, enhances reputation, and provides liquidity to shareholders." },
+      { "id": "q3", "text": "What is a 'shareholder'?", "type": "qcm", "options": ["An employee", "An owner of shares in a company (actionnaire)", "A director", "A creditor"], "answer": 1, "explanation": "A shareholder holds shares (actions) representing part-ownership of the company." },
+      { "id": "q4", "text": "True or False: 'share' means a unit of ownership in a company.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: a share (action) is a unit of capital conferring ownership rights and dividends." },
+      { "id": "q5", "text": "What is a 'quotation' on the stock market?", "type": "qcm", "options": ["A contract", "The listing of a company's shares on the exchange (cotation)", "A will", "A loan"], "answer": 1, "explanation": "A quotation is the official listing/price of a share on a stock exchange." }
+    ]
+  },
+  "Fiche_Unit5_TERRORISM_INTERNATIONAL_LAW": {
+    "title": "Unit V — Terrorism and International Law",
+    "questions": [
+      { "id": "q1", "text": "What is 'extradition'?", "type": "qcm", "options": ["Deportation", "The surrender of an accused person by one state to another for trial or punishment", "Asylum", "A treaty"], "answer": 1, "explanation": "Extradition is the formal transfer of a suspect or convict between states under treaty or reciprocity." },
+      { "id": "q2", "text": "What did the 1972 UN debate on terrorism focus on?", "type": "qcm", "options": ["Banning war", "The causes of terrorism and the right of self-determination of peoples", "Trade", "Climate"], "answer": 1, "explanation": "The 1972 UN debate addressed both the condemnation of terrorism and its root causes, including struggles for self-determination." },
+      { "id": "q3", "text": "What does 'prosecution' mean?", "type": "qcm", "options": ["A defence", "The institution and conduct of criminal proceedings against a person (poursuites judiciaires)", "A pardon", "An acquittal"], "answer": 1, "explanation": "Prosecution is the legal process of charging and trying an accused person by the state." },
+      { "id": "q4", "text": "True or False: states condemn terrorism but disagree on its definition.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: while all condemn terrorism, states disagree on defining it — particularly regarding liberation movements." },
+      { "id": "q5", "text": "What is 'self-determination'?", "type": "qcm", "options": ["Independence day", "The right of peoples to freely determine their political status and development", "A referendum", "A coup"], "answer": 1, "explanation": "Self-determination is the right of peoples to choose their sovereignty and political system — invoked in the terrorism debate." }
+    ]
+  },
+  "Fiche_Unit6_POLITICAL_SYSTEMS": {
+    "title": "Unit VI — Political Systems",
+    "questions": [
+      { "id": "q1", "text": "What is a democracy?", "type": "qcm", "options": ["Rule by one", "Government by the people, directly or through elected representatives", "Rule by the army", "Rule by clergy"], "answer": 1, "explanation": "Democracy: power exercised by the people — direct (citizens decide) or representative (through elected officials)." },
+      { "id": "q2", "text": "What is a monarchy?", "type": "qcm", "options": ["A republic", "A system where the head of state is a hereditary sovereign (king/queen), constitutional or absolute", "A dictatorship", "An anarchy"], "answer": 1, "explanation": "In a monarchy the head of state is a monarch — constitutional (limited powers) or absolute (full powers)." },
+      { "id": "q3", "text": "What is a dictatorship?", "type": "qcm", "options": ["Free elections", "A regime where power is concentrated in one person or party without democratic control", "A federal state", "A monarchy"], "answer": 1, "explanation": "A dictatorship concentrates power in an autocrat/junta, suppressing opposition and freedoms." },
+      { "id": "q4", "text": "True or False: a republic has an elected head of state, not a hereditary monarch.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: in a republic the head of state is elected or appointed for a term — not hereditary." },
+      { "id": "q5", "text": "What is communism as a political system?", "type": "qcm", "options": ["Private ownership", "A system aiming at collective ownership of the means of production and a classless society", "A monarchy", "A theocracy"], "answer": 1, "explanation": "Communism advocates collective ownership and the abolition of classes — historically through a single-party state." }
+    ]
+  },
+  "Fiche_Unit7_MONEY_AND_INCOME": {
+    "title": "Unit VII — Money and Income",
+    "questions": [
+      { "id": "q1", "text": "What is the difference between cash and deposits?", "type": "qcm", "options": ["None", "Cash = physical money (coins/notes); deposits = money held in bank accounts", "Cash is digital", "Deposits are coins"], "answer": 1, "explanation": "Currency/cash is tangible money; deposits are bank money (scriptural) held in accounts." },
+      { "id": "q2", "text": "What are the main types of income?", "type": "qcm", "options": ["Only salary", "Salary, wages, commission, pension, fees", "Only wages", "Only profits"], "answer": 1, "explanation": "Income includes salary (monthly), wages (hourly/weekly), commission (sales %), pension (retirement), fees (professional)." },
+      { "id": "q3", "text": "What does 'outgoings' mean?", "type": "qcm", "options": ["Income", "Expenditure — money spent regularly (dépenses courantes)", "A bonus", "Savings"], "answer": 1, "explanation": "Outgoings are regular expenses (rent, bills) — the counterpart of income in a budget." },
+      { "id": "q4", "text": "True or False: a 'budget' balances expected income and expenditure.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: a budget plans the allocation of income against outgoings/expenses." },
+      { "id": "q5", "text": "What is 'commission'?", "type": "qcm", "options": ["A salary", "Payment proportional to sales or business generated", "A pension", "A wage"], "answer": 1, "explanation": "Commission is income earned as a percentage of sales — typical of commercial agents." }
+    ]
+  },
+  "Fiche_Unit8_THEORY_OF_INTERNATIONAL_RELATIONS": {
+    "title": "Unit VIII — Theory of International Relations",
+    "questions": [
+      { "id": "q1", "text": "What event founded the modern state system?", "type": "qcm", "options": ["World War I", "The Peace of Westphalia (1648) — sovereignty and balance of power", "The UN Charter", "The French Revolution"], "answer": 1, "explanation": "The Peace of Westphalia (1648) established state sovereignty and the balance of power — the Westphalian system." },
+      { "id": "q2", "text": "What is 'sovereignty'?", "type": "qcm", "options": ["A treaty", "The supreme authority of a state over its territory and independence from external powers", "An alliance", "A customs duty"], "answer": 1, "explanation": "Sovereignty is the state's exclusive authority within its borders and its independence in international relations." },
+      { "id": "q3", "text": "What are the systemic tools of IR?", "type": "qcm", "options": ["Only war", "Diplomacy, sanctions, war, and 'naming and shaming'", "Trade only", "Elections"], "answer": 1, "explanation": "States use diplomacy, economic sanctions, armed conflict, and public denunciation (naming & shaming) to influence others." },
+      { "id": "q4", "text": "True or False: international relations only concern states.", "type": "vrai_faux", "options": ["True", "False"], "answer": 1, "explanation": "False: IR also involve international organisations, NGOs and transnational forces." },
+      { "id": "q5", "text": "What are 'sanctions'?", "type": "qcm", "options": ["Rewards", "Coercive measures (economic, diplomatic) to compel a state to change its behaviour", "Treaties", "Alliances"], "answer": 1, "explanation": "Sanctions pressure a state — embargoes, asset freezes, diplomatic isolation — short of war." }
+    ]
+  },
+  "Fiche_Unit9_INTERNATIONAL_ORGANISATIONS": {
+    "title": "Unit IX — International Organisations",
+    "questions": [
+      { "id": "q1", "text": "What is an intergovernmental organisation (IGO)?", "type": "qcm", "options": ["An NGO", "An organisation created by states through a constituent treaty", "A company", "A party"], "answer": 1, "explanation": "An IGO is founded by states via a treaty/charter — it has its own organs and legal personality." },
+      { "id": "q2", "text": "When was the UN created and by which document?", "type": "qcm", "options": ["1919", "1945, by the Charter of San Francisco", "1957", "1948"], "answer": 1, "explanation": "The United Nations was founded in 1945 by the Charter of San Francisco." },
+      { "id": "q3", "text": "What distinguishes an IGO from a mere group of states or treaty?", "type": "qcm", "options": ["Nothing", "An IGO has permanent organs and its own legal personality, unlike a treaty or a loose group", "Size", "Money"], "answer": 1, "explanation": "Unlike a treaty or an informal group, an IGO has standing organs and international legal personality." },
+      { "id": "q4", "text": "True or False: IO membership can be full, associate, or observer.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: states may be full members, associate members, or observers — with different rights." },
+      { "id": "q5", "text": "What is the 'constituent instrument' of an IO?", "type": "qcm", "options": ["Its flag", "The treaty that creates it and sets its organs and powers (charter, statute)", "Its budget", "Its logo"], "answer": 1, "explanation": "The constituent instrument (charter/statute) is the founding treaty defining the IO's structure and competences." }
+    ]
+  },
+  "Fiche_Unit10_FOREIGN_POLICY": {
+    "title": "Unit X — Foreign Policy",
+    "questions": [
+      { "id": "q1", "text": "What is foreign policy?", "type": "qcm", "options": ["Internal law", "The strategy a state follows in its relations with other states", "Fiscal policy", "Education policy"], "answer": 1, "explanation": "Foreign policy is a state's set of objectives and actions toward the external world — diplomacy, alliances, trade." },
+      { "id": "q2", "text": "What is a 'doctrine' in foreign policy?", "type": "qcm", "options": ["A law", "A stated set of principles guiding a state's external action (e.g., Monroe, Truman doctrines)", "A treaty", "A party"], "answer": 1, "explanation": "A foreign policy doctrine is an official statement of principles orienting a state's diplomacy." },
+      { "id": "q3", "text": "Who conducts foreign policy in most states?", "type": "qcm", "options": ["The army", "The head of state/government and the foreign minister — with exceptions (France: President; Finland; USA: President)", "The courts", "The mayors"], "answer": 1, "explanation": "Foreign policy is mainly conducted by the executive (President/PM + foreign minister) — in France it is a presidential domaine réservé." },
+      { "id": "q4", "text": "True or False: in France foreign policy is primarily a presidential domain.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: the French President holds a « domaine réservé » over foreign policy and defence." },
+      { "id": "q5", "text": "What does the Belarus/China example illustrate?", "type": "qcm", "options": ["Trade", "Different foreign policy postures and international responses to them (isolation, sanctions, influence)", "Democracy", "Economics"], "answer": 1, "explanation": "Belarus (isolation/sanctions) and China (assertive diplomacy) illustrate how foreign policy choices shape international standing." }
+    ]
+  },
+  "Fiche_Unit11_HUMAN_RIGHTS_VIOLATIONS": {
+    "title": "Unit XI — Human Rights Violations",
+    "questions": [
+      { "id": "q1", "text": "What does the 1949 Geneva Conventions protect?", "type": "qcm", "options": ["Trade", "Victims of war — wounded soldiers, prisoners, civilians — including the prohibition of torture", "Trade secrets", "Borders"], "answer": 1, "explanation": "The Geneva Conventions (1949) establish humanitarian rules of war: protection of combatants, POWs and civilians; torture is prohibited." },
+      { "id": "q2", "text": "What is a 'prisoner of conscience'?", "type": "qcm", "options": ["A criminal", "A person imprisoned for their beliefs/opinions (Amnesty International's term)", "A soldier", "A debtor"], "answer": 1, "explanation": "A prisoner of conscience is detained solely for their beliefs, religion or opinions — Amnesty campaigns for their release." },
+      { "id": "q3", "text": "What does a 'fair trial' guarantee?", "type": "qcm", "options": ["Nothing", "Independent tribunal, presumption of innocence, defence rights, public hearing, reasonable time", "Speed only", "Secrecy"], "answer": 1, "explanation": "Fair trial guarantees include an impartial court, presumption of innocence, legal assistance, and a public hearing." },
+      { "id": "q4", "text": "True or False: human rights include both individual and collective rights.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: human rights cover individual rights (life, expression) and collective rights (development, self-determination)." },
+      { "id": "q5", "text": "What is 'torture' under international law?", "type": "qcm", "options": ["A punishment", "Severe pain or suffering intentionally inflicted by or with the consent of a public official — absolutely prohibited", "An interrogation", "A fine"], "answer": 1, "explanation": "Torture is intentional severe suffering inflicted for purposes like extracting confessions — prohibited without exception." }
+    ]
+  },
+  "Fiche_Unit12_13_ECONOMICS_CV_APPLICATION": {
+    "title": "Units XII–XIII — Economics, CV and Application Letter",
+    "questions": [
+      { "id": "q1", "text": "What is the 'want-satisfaction chain'?", "type": "qcm", "options": ["A contract", "The economic sequence: needs → production → distribution → consumption → satisfaction", "A law", "A tax"], "answer": 1, "explanation": "The want-satisfaction chain describes how production and distribution meet human needs through consumption." },
+      { "id": "q2", "text": "What is the 'law of diminishing returns'?", "type": "qcm", "options": ["More profit", "Beyond a point, adding a factor of production yields progressively smaller increases in output", "A tax cut", "A surplus"], "answer": 1, "explanation": "Diminishing returns: adding units of one input (land fixed) eventually produces smaller marginal gains." },
+      { "id": "q3", "text": "What should a CV include?", "type": "qcm", "options": ["Only a photo", "Personal details, education, work experience, skills, references", "Only hobbies", "A letter"], "answer": 1, "explanation": "A CV summarises identity, education/qualifications, work experience, skills and referees." },
+      { "id": "q4", "text": "True or False: a covering letter accompanies the CV to explain one's motivation.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: the application/covering letter introduces the candidate and their motivation for the post." },
+      { "id": "q5", "text": "What are 'demand' and 'supply'?", "type": "qcm", "options": ["Taxes", "The quantities buyers want (demand) and sellers offer (supply), determining price", "Imports only", "Wages"], "answer": 1, "explanation": "Demand (demande) and supply (offre) interact to set market prices." }
+    ]
+  },
+  "Fiche_Annexe_FAUX_AMIS_FRANGLAIS": {
+    "title": "Annexe — Faux amis et franglais",
+    "questions": [
+      { "id": "q1", "text": "What are 'false friends' (faux amis)?", "type": "qcm", "options": ["Synonyms", "Words similar in English and French but with different meanings (actual ≠ actuel)", "Identical words", "Abbreviations"], "answer": 1, "explanation": "Faux amis are misleading cognates: 'actual' = réel (not actuel), 'actuel' = current." },
+      { "id": "q2", "text": "What does 'deception' mean in English?", "type": "qcm", "options": ["Disappointment", "Fraud/tromperie — 'déception' means disappointment in French", "A meeting", "A refusal"], "answer": 1, "explanation": "Deception = tromperie (fraud); French 'déception' = disappointment — a classic false friend." },
+      { "id": "q3", "text": "What does 'preservative' mean?", "type": "qcm", "options": ["A condom", "A substance preserving food (conservateur) — 'préservatif' means condom in French", "A medicine", "A document"], "answer": 1, "explanation": "Preservative = conservateur alimentaire; 'préservatif' = condom — a notorious faux ami." },
+      { "id": "q4", "text": "True or False: English legal vocabulary largely derives from Norman French after 1066.", "type": "vrai_faux", "options": ["True", "False"], "answer": 0, "explanation": "True: after the Norman conquest (1066), French became the language of law — hence attorney, court, plaintiff." },
+      { "id": "q5", "text": "What is 'franglais'?", "type": "qcm", "options": ["Old French", "The mixing of English words into French (or the reverse)", "Latin", "Slang"], "answer": 1, "explanation": "Franglais is the import of English vocabulary/expressions into French usage." }
+    ]
+  }
+}

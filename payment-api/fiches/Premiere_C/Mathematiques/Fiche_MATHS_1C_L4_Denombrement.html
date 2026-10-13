@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MATHS 1C L4 Denombrement — Mathematiques Premiere C | ResumeCI</title><meta name="description" content="Dénombrement - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Dénombrement I. Ensembles finis et cardinaux Cardinal : Le cardinal d'un ensembl"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html"><meta property="og:title" content="MATHS 1C L4 Denombrement — Mathematiques Premiere C | ResumeCI"><meta property="og:description" content="Dénombrement - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Dénombrement I. Ensembles finis et cardinaux Cardinal : Le cardinal d'un ensembl"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="MATHS 1C L4 Denombrement — Mathematiques Premiere C | ResumeCI"><meta name="twitter:description" content="Dénombrement - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Dénombrement I. Ensembles finis et cardinaux Cardinal : Le cardinal d'un ensembl"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Premiere C","item":"https://resumeci.me/#Premiere_C"},{"@type":"ListItem","position":3,"name":"Mathematiques","item":"https://resumeci.me/#Premiere_C/Mathematiques"},{"@type":"ListItem","position":4,"name":"MATHS 1C L4 Denombrement","item":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MATHS 1C L4 Denombrement — Mathematiques Premiere C | ResumeCI","description":"Dénombrement - Première C 📝 FICHE DE RÉSUMÉ Première C Mathématiques Dénombrement I. Ensembles finis et cardinaux Cardinal : Le cardinal d'un ensembl","url":"https://resumeci.me/fiches/Premiere_C/Mathematiques/Fiche_MATHS_1C_L4_Denombrement.html","datePublished":"2026-10-13","dateModified":"2026-10-13","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Premiere C","about":"Mathematiques","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+  <div class="header">
+    <h1>📝 FICHE DE RÉSUMÉ</h1>
+    <div class="meta-chips">
+      <span class="chip">Première C</span>
+      <span class="chip">Mathématiques</span>
+      <span class="chip">Dénombrement</span>
+    </div>
+  </div>
+
+  <h2>I. Ensembles finis et cardinaux</h2>
+
+  <div class="definition">
+    <strong>Cardinal :</strong> Le cardinal d'un ensemble fini E, noté Card(E), est le nombre d'éléments de E.<br>
+    <strong>Réunion A ∪ B :</strong> éléments appartenant à A <strong>ou</strong> à B. <strong>Intersection A ∩ B :</strong> éléments appartenant à la fois à A <strong>et</strong> à B.
+  </div>
+
+  <div class="schema">
+    <strong>Formule fondamentale :</strong> Card(A ∪ B) = Card(A) + Card(B) − Card(A ∩ B)
+  </div>
+
+  <div class="definition">
+    <strong>Complémentaire :</strong> Le complémentaire de A dans E, noté CᴇA ou Ā, est l'ensemble des éléments de E n'appartenant pas à A.<br>
+    A ∪ Ā = E ; A ∩ Ā = ∅ ; <strong>card(E) = card(A) + card(Ā)</strong>
+  </div>
+
+  <div class="definition">
+    <strong>Produit cartésien A × B :</strong> ensemble des couples (a ; b) avec a ∈ A et b ∈ B. On a A × A = A², A × A × … × A = Aⁿ (n fois) dont les éléments sont les <strong>n-uplets</strong>.
+  </div>
+
+  <h2>II. Les p-uplets (ou p-listes)</h2>
+
+  <div class="definition">
+    <strong>p-uplet :</strong> Élément de Eᵖ : une liste ordonnée de p éléments de E. <strong>L'ordre compte et la répétition est autorisée</strong> (un même élément peut apparaître plusieurs fois).
+  </div>
+
+  <div class="schema">
+    <strong>Nombre de p-uplets d'un ensemble à n éléments : nᵖ</strong><br>
+    Exemple : un numéro de téléphone à 8 chiffres (chiffres répétables) → 10⁸ numéros possibles.
+  </div>
+
+  <h2>III. Les arrangements</h2>
+
+  <div class="definition">
+    <strong>Arrangement de p éléments :</strong> Tout p-uplet d'éléments de E <strong>deux à deux distincts</strong> (ordre important, répétition impossible).
+  </div>
+
+  <div class="schema">
+    <strong>Aₙᵖ = n × (n−1) × … × (n−p+1) = n!/(n−p)!</strong><br>
+    C'est le produit de p entiers consécutifs dont le plus grand est n. Cas particuliers : Aₙ¹ = n ; Aₙ⁰ = 1.
+  </div>
+
+  <h2>IV. Les permutations</h2>
+
+  <div class="definition">
+    <strong>Permutation :</strong> Tout arrangement des n éléments de E (on ordonne tous les éléments).
+  </div>
+
+  <div class="schema">
+    <strong>Nombre de permutations : Aₙⁿ = n!</strong> avec <strong>n! = n × (n−1) × … × 2 × 1</strong> (« factorielle n »). Exemple : les mots formés avec les 6 lettres de KENDAL → 6! = 720.
+  </div>
+
+  <h2>V. Les combinaisons</h2>
+
+  <div class="definition">
+    <strong>Combinaison de p éléments :</strong> Tout <strong>sous-ensemble</strong> de E ayant p éléments (écriture avec accolades {…} : <strong>l'ordre ne compte pas</strong>, répétition impossible).
+  </div>
+
+  <div class="schema">
+    <strong>Cₙᵖ = Aₙᵖ/p! = n!/[p!(n−p)!]</strong><br>
+    Propriétés : <strong>Cₙⁿ⁻ᵖ = Cₙᵖ</strong> et pour 0 < p < n : <strong>Cₙ₋₁ᵖ⁻¹ + Cₙ₋₁ᵖ = Cₙᵖ</strong> (formule de Pascal).
+  </div>
+
+  <h2>VI. Choisir la bonne formule : les modèles de tirages</h2>
+
+  <div class="schema">
+    <table>
+      <tr><th>Type de tirage</th><th>Ordre / Répétition</th><th>Formule</th></tr>
+      <tr><td>Simultané de p parmi n</td><td>Ordre indifférent</td><td>Cₙᵖ</td></tr>
+      <tr><td>Successif sans remise de p parmi n</td><td>Ordre important, sans répétition</td><td>Aₙᵖ</td></tr>
+      <tr><td>Successif sans remise de n parmi n</td><td>Ordonner tout l'ensemble</td><td>n!</td></tr>
+      <tr><td>Successif avec remise de p parmi n</td><td>Ordre important, répétition possible</td><td>nᵖ</td></tr>
+    </table>
+  </div>
+
+  <div class="important">
+    <strong>Vocabulaire et complémentaire :</strong>
+    <ul>
+      <li>« Tirer <strong>au moins</strong> n éléments » → complémentaire : « tirer au plus n−1 »</li>
+      <li>« Tirer <strong>au plus</strong> n éléments » → complémentaire : « tirer au moins n+1 »</li>
+      <li>Astuce : pour « au moins un », il est souvent plus rapide de calculer le total moins « aucun » (ex. mains d'au moins un as : C₃₂⁸ − C₂₈⁸).</li>
+    </ul>
+  </div>
+
+  <div class="important">
+    <strong>Technique des tirages avec conditions :</strong> on multiplie les choix par catégorie. Ex. une main de 8 cartes avec exactement 2 as et 6 non-as : C₄² × C₂₈⁶.
+  </div>
+
+  <h2>VII. Binôme de Newton</h2>
+
+  <div class="schema">
+    <strong>(a + b)ⁿ = Σₖ₌₀ⁿ Cₙᵏ aᵏbⁿ⁻ᵏ</strong><br>
+    Les coefficients Cₙᵖ se lisent dans le <strong>triangle de Pascal</strong> :<br>
+    n=1 : 1 1 · n=2 : 1 2 1 · n=3 : 1 3 3 1 · n=4 : 1 4 6 4 1 · n=5 : 1 5 10 10 5 1
+  </div>
+
+  <div class="important">
+    <strong>⚠️ Pièges fréquents :</strong>
+    <ul>
+      <li>Confondre arrangement (ordre compte, parenthèses) et combinaison (ordre indifférent, accolades) ;</li>
+      <li>Dans un p-uplet la répétition est permise, jamais dans un arrangement ni une combinaison ;</li>
+      <li>Oublier de retirer Card(A ∩ B) dans Card(A ∪ B) → double comptage ;</li>
+      <li>Pour (a − b)ⁿ, les signes alternent : (a−b)⁵ = a⁵ − 5a⁴b + 10a³b² − 10a²b³ + 5ab⁴ − b⁵.</li>
+    </ul>
+  </div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div><div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div></body>
+</html>

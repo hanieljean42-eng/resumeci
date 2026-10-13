@@ -1,0 +1,3212 @@
+Microsoft EXCEL
+Angora Adrien AMICHIA
+Institut Universitaire d'Abidjan
+Page 188 of 325
+=== PAGE 189 ===
+Microsoft EXCEL
+1
+Microsoft EXCEL
+Angora Adrien AMICHIA
+Page 189 of 325
+=== PAGE 190 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+2
+Syllabus
+INTITULE DU COURS : MICROSOFT EXCEL
+Code : ………….
+*Type : CM et TD
+*Volume horaire : 30H
+UE de rattachement : INFORMATIQUE
+*Niveau du cours : LICENCE 1
+*Département : DROIT
+*Semestre : 2
+*Nombre de crédit : 3
+*Nom de l’enseignant : AMICHIA ANGORA Adrien
+*Contact téléphonique : 49 23 30 34
+*Email : amichiaci@gmail.com
+*Statut : Professionnel d’Entreprise
+*Les objectifs
+Utiliser le logiciel Microsoft Excel pour faire gérer des tableaux de calcul
+*Les objectifs spécifiques
+Au l’issue de la formation l’apprenant doit être capable de :
+Faire des calculs sous Excel,
+Créer des graphiques
+Faire des tris
+Utiliser des fonctions conditionnelles,
+Faire de la mise en forme conditionnelle
+Les pré-requis
+Savoir utiliser une souris et un clavier
+*Le contenu
+CHAPITRE I - Introduction
+CHAPITRE II – Gestion des feuilles et des classeurs
+CHAPITRE III – SAISIE SIMPLE DE DONNEES
+CHAPITRE IV- SERIE DE DONNEES
+Page 190 of 325
+=== PAGE 191 ===
+Microsoft EXCEL
+3
+CHAPITRE V- FORMULE ET LES FONCTIONS
+CHAPITRE VI- DEPLACER COPIER COLLER ET TRI RAPIDE
+CHAPITRE VII - MISE EN FORME ET DIMENSION
+CHAPITRE VIII - GRAPHIQUE
+*Programme du cours
+N° de
+Séance Contenu Lectures/travaux
+Séance 1
+Date :
+CHAPITRE I - Notions de base CM, TD
+Séance 2
+Date :
+CHAPITRE II – CALCULS SOUS EXCEL CM, TD
+Séance 3
+Date :
+CHAPITRE III – REPRESENTATION GRAPHIQUE,
+TRI, LIAISON, FILTRE CM, TD
+Séance 4
+Date :
+CHAPITRE III – REPRESENTATION GRAPHIQUE,
+TRI, LIAISON, FILTRE (Suite)
+CHAPITRE IV- FONCTIONS CONDITIONNELLES,
+FONCTIONS DE RECHERCHE
+CM,TD
+Séance 5
+Date :
+CHAPITRE IV- FONCTIONS CONDITIONNELLES,
+FONCTIONS DE RECHERCHE (Suite)
+CM, TD
+*Méthodes et stratégies pédagogiques
+Le modèle pédagogique est la Pédagogie participative par objectifs. Pour une meilleure
+compréhension, chaque section du cours est suivie d’un TD et de Travaux pratiques. Le travail
+collaboratif est encouragé. Des exercices de cours et mêmes des exercices de recherches sont
+proposés à la fin de chaque séance de cours.
+Langue d’enseignement : FRANÇAIS
+Modalités d’évaluation
+Evaluation continue : 60%
+Participation 10%
+Interrogations 15%
+Devoirs sur table 20%
+Travaux à rendre 15%
+Examen final en fin de semestre 40%
+Page 191 of 325
+=== PAGE 192 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+4
+1ère session : à la fin du cours
+Session de rattrapage (2ème session)
+*Les références bibliographiques
+Cours Bardon Excel 2010
+Aide Microsoft Excel 2010
+Microsoft Office Excel 2013 de Stella Gardiono
+Page 192 of 325
+=== PAGE 193 ===
+Microsoft EXCEL
+5
+Sommaire
+Chapitre I- Introduction……………………………………………….
+Chapitre II- Gestion des feuilles et des classeurs………………………
+Chapitre III- Saisie simple de données…………………………………
+Chapitre IV- Série de données……………………………………….
+Chapitre V- Déplacer, copier, coller et tri rapide………………………
+Chapitre VI- Formule et fonction………………………………………
+Chapitre VII- Mise en forme et dimensions……………………………
+Chapitre VIII- Graphique 1……………………………………...……
+Page 193 of 325
+=== PAGE 194 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+6
+CHAPITRE I – INTRODUCTION
+Microsoft Office Excel est un tableur. Il est une application conçue pour créer et
+utiliser des tableaux, appelés ici « feuilles de calcul ». Il est aussi utilisé pour
+effectuer une suite de calculs ou visualiser sous forme de graphiques des données
+numériques.
+Dans Word, on travaille sur un document. Dans Excel, on travaille sur un
+classeur. Par défaut, le classeur est enregistré dans un fichier portant l’extension
+« .xlsx ».
+I- Fondamentaux Excel 2013
+1- Démarrage du logiciel
+On peut aussi démarrer rapidement un logiciel souvent utilisé en créant un
+raccourci sur le Bureau de Windows.
+La façon la plus
+conventionnelle de
+lancer Excel
+consiste à utiliser le
+menu Démarrer.
+Cliquez
+successivement
+sur : le menu
+Démarrer, Système
+Windows, Ce PC,
+puis double cliquez
+successivement sur
+Disque local (C :),
+Programmes,
+Microsoft Office,
+Office 15 et enfin
+sur EXCEL.EXE.
+Page 194 of 325
+=== PAGE 195 ===
+Microsoft EXCEL
+7
+Pour ce faire, reprenez la procédure de lancement d’Excel et au lieu de double
+cliquer sur EXCEL.EXE, il faut faire un clic droit sur EXCEL.EXE puis cliquer
+successivement sur Envoyer vers et Bureau (créer un raccourci) enfin fermer
+la fenêtre et vous verrez l’icône suivante
+Si vous utilisez Windows 10, vous pouvez également taper Excel dans la zone
+de recherche puis cliquer sur EXCEL 2013, dans la partie supérieure du menu
+Démarrer.
+Page 195 of 325
+=== PAGE 196 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+8
+Par défaut, lorsque vous lancez
+Excel 2013, l’écran de démarrage
+ci-contre s’affiche et cliquez sur
+Nouveau classeur.
+2- FENETRE PRINCIPALE
+La fenêtre principale est l’écran à l’ouverture du logiciel.
+Lorsqu’on passe le pointeur sur un bouton ou sur une étiquette, une « info-
+bulle » explicative s’affiche généralement. Une info-bulle est un rectangle,
+contrairement à ce que suggère le terme de bulle, qui contient une information.
+La fenêtre principale comprend divers éléments communs aux logiciels
+Microsoft Office Excel 2013 :
+Page 196 of 325
+=== PAGE 197 ===
+Microsoft EXCEL
+9
+a- La barre de titre
+C’est la barre horizontale située dans la partie supérieure de la fenêtre. Elle
+contient le nom du Classeur suivi du nom de l’application. Par défaut, le nom du
+nouveau fichier Excel est Classeur1.
+Page 197 of 325
+=== PAGE 198 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+10
+A son extrémité droite, elle comprend trois boutons servant à réduire - et,
+agrandir  ou fermer X la fenêtre du fichier. Quand on clique sur le bouton -, le
+fichier reste ouvert, mais seul son nom apparaît en bas de l’écran. Cliquez dessus
+permet d’afficher à nouveau le fichier.
+b- Le ruban
+Le ruban est la barre horizontale située sous la barre de titre. Il est constitué
+d’onglets regroupant les principales fonctionnalités du logiciel.
+Certaines étiquettes d’onglets sont communes à plusieurs logiciels
+(Fichier, Accueil, Insertion, Mise en page, Révision, Affichage), bien que leurs
+contenus puissent diverger d’un logiciel à l’autre. D’autres onglets sont propres
+à Excel, par Formule et Données.
+ Onglets et commandes
+Chaque onglet est composé de plusieurs groupes de commandes dont
+l’intitulé est indiqué en dessous du groupe de commandes. Exemple : l’onglet
+Accueil de Excel contient le groupe « Presse-papiers », divers groupes de mises
+en forme (« Police », «alignement» et «Nombre»).
+Certaines commandes disposent d’une flèche  permettant d’ouvrir un menu
+ou une galerie.
+ Lanceur de groupe
+A droite de certains intitulés de groupes, est placé un bouton , appelé lanceur
+de boîte de dialogue, car son activation ouvre une fenêtre proposant différentes
+options relatives à ce groupe. Cette fenêtre est amovible : cliquez-glissez sur sa
+barre de titre pour la déplacer.
+ Le ruban est rétractable
+Il existe plusieurs méthodes pour réduire le ruban :
+Page 198 of 325
+=== PAGE 199 ===
+Microsoft EXCEL
+11
+ La méthode la plus simple est propre à Office 2013 : le ruban peut être
+réduit en cliquant sur la flèche (Réduire le ruban) située dans le
+coin inférieur droit du ruban.
+ Le ruban peut être réduit en cliquant sur le bouton (Option
+d’affichage du Ruban) situé à droite de la barre de titre juste à côté du
+bouton ?. Ensuite, en sélectionnant Afficher les onglets et commandes
+dans le menu qui s’affiche pour réafficher le ruban.
+On peut également masquer le ruban en cliquant sur le bouton (Option
+d’affichage du Ruban) puis en sélectionnant Masquer automatiquement le
+ruban dans le menu qui s’affiche pour augmenter l’espace à l’écran pendant une
+lecture.
+Le ruban peut être restauré en cliquant simplement sur le bouton . . . ou sur le
+bouton (Option d’affichage du Ruban) puis en sélectionnant soit
+Afficher les onglets soit Afficher les onglets et commandes
+Enfin, le ruban peut être personnalisé en cliquant sur l’onglet « Fichier » puis
+successivement sur Options et Personnaliser le ruban, ensuite en sélectionnant
+les commandes souhaitées, ensuite en les ajoutant dans un groupe personnalisé
+et en cliquant sur ok.
+c- La barre d’outils Accès rapide
+C’est la petite barre horizontale personnalisable située par defaut à gauche de la
+barre de titre. Elle contient des commandes les plus fréquemment utilisés. Cette
+barre d’outils peut être déplacée à partir de l’un des deux emplacements possibles
+et vous pouvez y ajouter des boutons qui représentent des commandes.
+La barre d’outils Accès Rapide peut être personnalisée en cliquant sur le bouton
+Personnaliser la barre d’outils Accès Rapide puis en sélectionnant la
+commande voulue dans le menu ou la fenêtre qui s’affiche.
+Page 199 of 325
+=== PAGE 200 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+12
+3- ENREGISTRER
+Par sécurité, enregistrez régulièrement votre document : cliquez sur le
+bouton de la barre d’outils Accès rapide (sinon : ouvrez le menu Fichier >
+Enregistrer).
+Lors du premier enregistrement d’un fichier (ou bien : en cliquant sur l’onglet
+Fichier, puis sur « Enregistrer sous » ), on choisit Ordinateur puis Parcourir, la
+fenêtre « Enregistrer sous » apparaît.
+Elle comporte trois zones de saisie. Vous devez choisir :
+ Le dossier dans lequel vous allez stocker votre fichier. Vous
+pouvez utiliser les deux volets de la fenêtre pour le rechercher,
+également créer un nouveau dossier (cliquez sur « Nouveau
+dossier ») ;
+ Le nom du fichier. Choisissez-en un explicite, pour mieux pouvoir
+retrouver votre fichier ensuite. Ce nom peut contenir des espaces,
+mais pas de signes de ponctuation ;
+ Le type du fichier
+Page 200 of 325
+=== PAGE 201 ===
+Microsoft EXCEL
+13
+Enfin Validez.
+ Enregistrement au format PDF ou XPS
+Ces formats de fichiers permettent la diffusion de documents par messagerie, en
+conservant leur mise en forme.
+A condition de disposer du logiciel adéquat, l’utilisateur peut afficher, partager
+et imprimer les fichiers, mais il ne peut pas les modifier.
+Concernant un fichier PDF, il doit disposer d’Acrobat Reader (disponible
+gratuitement sur le site d’Adobe). Concernant un fichier XPS, il doit disposer de
+Microsoft .NET Framework (disponible gratuitement sur le site Microsoft).
+Pour créer une copie de ce document sous l’un de ces deux formats
+: ouvrez le document, puis activez le menu Fichier. Il existe ensuite deux
+méthodes :
+ Cliquez sur « Enregistrer et envoyer » > « Créer un document PDF
+ou XPS » > « Créer PDF/XPS ».
+Renseignez la fenêtre « Publier comme PDF ou XPS », puis validez en
+cliquant sur« Publier ».
+ Ou cliquez d’abord sur « Enregistrer sous ».
+Dans la fenêtre « Enregistrer sous », choisissez « PDF » ou «
+Document XPS » comme type de fichier. Sélectionnez le dossier où
+sera placé le fichier. Saisissez éventuellement un autre nom (par défaut,
+le même nom sera donné, avec l’extension .pdf ou .xps). Validez en
+cliquant sur « Enregistrer ».
+ Personnalisation de l’enregistrement
+Page 201 of 325
+=== PAGE 202 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+14
+On peut paramétrer l’enregistrement, en particulier renseigner la fréquence
+d’enregistrement automatique, et choisir le dossier dans lequel sera placé
+par défaut le nouveau fichier enregistré.
+Pour personnaliser l’enregistrement : activez l’onglet Fichier > « Options
+» > « Enregistrement ». Renseignez la rubrique « Enregistrer (…) ».
+4- PROTECTION D’UN FICHIER PAR MOT DE PASSE
+Ouvrez le menu Fichier > « Informations ». A la rubrique « Autorisations »,
+cliquez sur « Protéger (…) », et choisissez l’option de protection souhaitée.
+Un mot de passe doit comprendre au minimum 8 caractères, l’idéal étant
+de 14 caractères ou davantage. Pour plus de sécurité, vous pouvez inclure
+majuscules, minuscules, chiffres et symboles (point d’interrogation, tiret…).
+S’il est perdu, il n’est pas récupérable.
+5- IMPRESSION
+Si vous souhaitez voir et modifier si nécessaire les paramètres
+d’impression (en précisant notamment les pages à imprimer) avant
+d’imprimer, activez l’onglet Fichier > Imprimer.
+Page 202 of 325
+=== PAGE 203 ===
+Microsoft EXCEL
+15
+Le lien « Mise en page » permet
+d’afficher la fenêtre « Mise en page »,
+qui contient d’autres paramètres
+d’impression. Renseignez le volet
+gauche, puis cliquez sur « Imprimer ».
+Pour lancer directement l’impression du
+fichier, activez le bouton « Impression
+rapide »
+de la barre d’outils Accès rapide. S’il
+n’est pas sur la barre, son équivalent est :
+menu Fichier
+> rubrique « Imprimer » > bouton «
+Imprimer ».
+II- L’écran
+L’écran comprend le ruban, juste en dessous une barre avec deux zones de
+saisie, puis la fenêtre principale qui est le classeur. Le classeur est amovible, par
+cliqué-glissé sur sa barre de titre. En-dessous du classeur, on trouve la barre
+d’état, puis la barre des tâches.
+a- Le classeur
+Un classeur est constitué de feuilles, ayant chacune un onglet.
+Cliquer sur un onglet permet d’afficher la feuille correspondante.
+L’onglet sur fond blanc désigne la feuille active.
+Par défaut, le classeur comporte 3 feuilles, donc 3 onglets. On peut en rajouter,
+le nombre maximal étant 255 feuilles.
+Page 203 of 325
+=== PAGE 204 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+16
+A gauche des onglets, des boutons fléchés de défilement permettent
+d’accéder à l’onglet souhaité, dès lors qu’ils sont nombreux et que certains sont
+masqués. Pour afficher la liste de toutes les feuilles du classeur : clic droit sur
+l’un de ces boutons. Cliquer ensuite sur une feuille permet de l’afficher.
+Suite aux onglets correspondant aux feuilles existantes, un onglet d’info-bulle
+« Insérer une feuille de calcul » permet d’insérer une nouvelle feuille.
+A droite des onglets, une petite barre verticale permet, par cliqué-glissé,
+d’afficher plus ou moins d’onglets (le pointeur se transforme en double-
+flèche).
+b- Dimension des fenêtres – Les deux fenêtres de l’écran
+Pour dimensionner une fenêtre, il y a deux méthodes :
+ On peut utiliser les boutons de dimension des fenêtres, situés en haut à
+droite :
+▬ : C e bouton permet de réduire la fenêtre à un titre dans la
+barre des tâches (en bas de l’écran).
+ : C e bouton permet d’afficher la fenêtre en taille réduite.
+: C e bouton permet d’afficher la fenêtre en plein écran.
+: B o u t o n de suppression, la croix ferme la fenêtre.
+ On peut dimensionner les fenêtres par cliqué-glissé sur leur
+bordure. Si on effectue un cliqué-glissé sur un angle (le
+pointeur se transforme en double- flèche oblique), on modifie
+à la fois la largeur et la hauteur de la fenêtre.
+Page 204 of 325
+=== PAGE 205 ===
+Microsoft EXCEL
+17
+ L’écran coprend deux fenêtres :
+ La fenêtre du programme, constituée du ruban et des différentes
+barres (barre de titre, barre d’outils Accès rapide, barre des deux
+zones de saisie, barre d’état et barre des tâches).
+ La fenêtre du classeur, constituée de sa barre de titre, de la feuille
+de calcul, des onglets et des outils de défilement. Par défaut, elle a
+une taille plein écran.
+Elles ont chacune deux boutons de dimension, ainsi qu’un bouton de suppression.
+Par défaut, les boutons de dimension du classeur sont situés à côté du bouton
+d’aide, d’icône le point d’interrogation. Afin de bien visualiser la fenêtre du
+classeur, appuyez sur le bouton du classeur  , d’info-bulle « Restaurer la fenêtre
+».Pour déplacer la fenêtre, cliquez-glissez sur sa barre de titre. Pour la
+redimensionner, vous pouvez cliquer-glisser sur ses bordures, également
+utiliser les boutons de dimension, situés dans sa barre de titre, à droite.
+ Affichage de feuilles appartenant à des classeurs différents
+Quand on travaille sur des feuilles appartenant à plusieurs classeurs (donc à
+plusieurs fichiers), on ne peut toutes les afficher en plein écran. On est obligé
+de réduire plus ou moins leur affichage.
+c- La feuille de calcul
+ Colonnes et lignes
+Page 205 of 325
+=== PAGE 206 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+18
+Une feuille de calcul comporte :
+ 16 384 colonnes, dont les cases
+d’en-tête sont nommées de A à Z, puis de
+AA à
+AZ, puis de BA à BZ, de CA à CZ, et ainsi
+de suite jusqu’à XFD.
+ 1 048 576 lignes, dont les cases d’en-
+tête sont numérotées de 1 à 1 048 576.
+Une feuille de calcul totalise donc plus de
+17 milliards de cellules (16 384 *1 048 576). De quoi faire bien des calculs !
+Chaque cellule est référencée par la lettre, ou les deux ou trois lettres, de sa
+colonne, suivie du numéro de sa ligne, sans espace entre les deux. Les lettres
+des colonnes et les chiffres des lignes sont indiqués dans les cases d’en-tête de
+la feuille.
+Excel ne reconnaissant pas la casse des lettres (majuscules ou minuscules),
+autant tout écrire en minuscules.
+Quand le pointeur est sur une case d’en-tête, il se transforme en flèche noire,
+désignant la colonne ou la ligne correspondante. Quand il est sur une cellule, il
+se transforme en croix blanche.
+ Cellule active - Plage de cellules - Zone active
+ Cellule active
+La cellule active est la cellule danslaquellevas’inscrirelasaisie. Elle se distingue
+par un cadre plus marqué : . La feuille ne peut en afficher qu’une.
+A l’ouverture du classeur, la cellule active par défaut est A1.
+Le nom de la cellule active apparaît dans la Zone Nom, située à gauche de la
+barre de formule, juste au-dessus de la feuille de calcul. Par défaut, le nom d’une
+cellule est sa référence Colonne Ligne (exemple : F5). On verra qu’on peut
+aussi lui attribuer un nom (exemple : Total).
+Page 206 of 325
+=== PAGE 207 ===
+Microsoft EXCEL
+19
+Quand plusieurs cellules sont sélectionnées, le fond de la cellule active reste
+blanc, tandis que les autres cellules sélectionnées changent de couleur.
+ Plage de cellules
+Tout rectangle de cellules est appelé « plage de cellules », ou « plage ». Dans
+une plage, la cellule active par défaut est la cellule située en haut à gauche.
+On désigne une plage par la référence de sa 1ère cellule en haut à gauche,
+suivie d’un double-point, puis de la référence de sa dernière cellule en bas à droite
+(exemple : B7:E12)
+ Zone active
+C’est la plus petite plage de cellules, commençant par la cellule A1, et contenant
+toutes les données de la feuille.
+ Zone de cellules
+Une zone de cellules est une plage de cellules, dont les cellules voisines sont
+soit des cases d’en-tête de colonnes ou de lignes, soit des cellules vides. La zone
+active peut être constituée de plusieurs zones de cellules.
+d- Les barres de défilement
+En bordure de la feuille de calcul, il y a deux barres de défilement, l’une verticale
+et l’autre horizontale. Elles permettent de se déplacer dans la feuille de calcul. On
+utilise :
+ Les curseurs de défilement vertical et horizontal, par cliqué-glissé.
+ Les boutons fléchés d’extrémités, pour un déplacement progressif,
+colonne par colonne ou ligne par ligne, par clics successifs.
+ Les barres de défilement hors ces boutons et le curseur (c’est-à-dire les
+portions non colorées) pour un déplacement maximal immédiat, par un
+seul clic.
+Page 207 of 325
+=== PAGE 208 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+20
+e- La zone de nom et La Barre de formule
+ La zone de nom
+La « Zone Nom » contient le nom de la cellule active.
+ La barre de formule
+La barre de formule est située à droite de la « Zone Nom ». On peut écrire dans
+la cellule, ou bien écrire directement dans cette zone. Le résultat est le même.
+Quand la saisie est longue, il est plus pratique d’écrire dans la barre de formule.
+La saisie ne risque pas de recouvrir d’autres données de la feuille. Cette barre
+est par ailleurs extensible en largeur et en hauteur :
+ Pour modifier sa largeur : pointez sur le bouton « » situé à droite
+de la Zone Nom.
+Quand le pointeur a l’aspect d’une double-flèche horizontale, cliquez-glissez.
+Pour modifier sa hauteur : pointez sur la bordure inférieure, puis
+cliquez-glissez, ou bien cliquez sur la flèche située à son
+extrémité.
+ Les boutons fx
+Le bouton fx affiche la fenêtre « Insérer une fonction », qui permet d’accéder à
+toutes les fonctions proposées par Excel 2013.
+Les deux boutons suivants apparaissent dès qu’il y a saisie dans une cellule :
+ Le bouton  permet d’annuler la saisie en cours.
+L’équivalent par le clavier est la touche Echap (Esc).
+ Le bouton  permet de valider la saisie. L’équivalent par
+le clavier est la touche Entrée. Cette validation est
+automatique après déplacement sur une autre cellule.
+Page 208 of 325
+=== PAGE 209 ===
+Microsoft EXCEL
+21
+III- La Barre d’état : calculs et modes d’affichage
+La barre d’état permet d’afficher en particulier (faire un clic droit sur la barre,
+puis, dans la liste « Personnaliser la barre d’état », cocher les options souhaitées)
+:
+ Des calculs, après sélection d’une plage de cellules : moyenne des valeurs
+de la plage, nombre de cellules vides, nombre de cellules contenant des
+valeurs (et non du texte), la somme des valeurs de la plage, le
+minimum et le maximum des valeurs.
+ Trois modes d’affichage : « Normal » , « Mise en page » et «
+Aperçu des sauts de page » .
+Pour que ces boutons soient présents sur la barre d’état, l’option « Afficher les
+raccourcis » doit être cochée.
+IV- Paramétrage du logiciel
+Certaines caractéristiques du logiciel sont paramétrables. Pour modifier les
+paramètres, et personnaliser ainsi le logiciel, affichez la fenêtre « Options Excel
+» : ouvrez le menu Fichier > Options. Le volet gauche de la fenêtre liste
+dix catégories : « Général », « Formules »,
+« Vérification », « Enregistrement »… Le volet principal contient les options
+relatives à la catégorie sélectionnée. Exemples
+ Par défaut, un classeur contient 3 feuilles.
+Pour modifier le nombre de feuilles attribué à chaque nouveau classeur, dans la
+fenêtre « Options Excel », choisissez la catégorie « Général ».
+Page 209 of 325
+=== PAGE 210 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+22
+Puis, à la rubrique « Lors de la création de classeurs », dans la zone «
+Inclure ces feuilles », saisissez le nombre de feuilles souhaitées.
+▪ Après validation de la saisie dans une cellule, en tapant Entrée, une
+cellule adjacente est sélectionnée automatiquement afin de permettre la saisie
+suivante. On peut choisir quelle cellule sera sélectionnée : dans la fenêtre
+« Options Excel », sélectionnez la catégorie « Options avancées ».
+Puis, à la rubrique « Options d’édition », la case « Déplacer la sélection
+après validation » étant cochée, choisissez le sens souhaité : Bas, Droite, Haut
+ou Gauche.
+Page 210 of 325
+=== PAGE 211 ===
+Microsoft EXCEL
+23
+Il existe plusieurs possibilités de lancement de Microsoft Excel
+2013 :
+En tapant Excel dans la zone de recherche de Windows
+En double cliquant sur le raccourci d’Excel existant sur le
+bureau
+En ouvrant Disque local (C) dans le Ce PC puis en cliquant
+successivement sur Programmes, Microsoft Office, Office 15
+ensuite en faisant un clic droit sur WINWORD puis en cliquant
+sur Envoyer vers et Bureau (créer un raccourci)
+Un classeur est composé de 255 feuilles de calcul au maximum
+selon les capacités de l’ordinateur.
+Une feuille entière est formée de 16 384 colonnes identifiées
+par des lettres et de 1 048 576 lignes identifiées par des
+nombres
+POINTS IMPORTANTS A RETENIR
+Page 211 of 325
+=== PAGE 212 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+24
+EXERCICES D’ASSIMILATION
+Questions de contrôle de connaissances
+1. Comment crée t-on un raccourci de Microsoft Excel sur le
+bureau ?
+2. Quels sont les onglets spécifiques d’Excel ?
+3. Qu’est-ce que la barre de formule ?
+4. Un classeur est constitué que du ruban ? VRAI ou FAUX ?
+5. Une feuille de calcul est composée de 16 384 colonnes
+identifiées par des lettres et 1 048 576 lignes identifiées par
+des chiffres. VRAI ou FAUX ?
+Page 212 of 325
+=== PAGE 213 ===
+Microsoft EXCEL
+25
+CHAPITRE II – GESTION DES FEUILLES ET DES CLASSEURS
+I- Gestion des feuilles de calcul
+La gestion des feuilles passe par
+leurs onglets. Pour nommer, sélectionner, insérer, supprimer, copier ou déplacer
+une ou plusieurs feuilles, on opère sur les onglets.
+Pour afficher la liste des noms de toutes les feuilles du classeur, faites un clic
+droit sur l’un des boutons de défilement des onglets. Cliquer sur un
+nom affiche la feuille correspondante.
+ Renommer une feuille
+Pour renommer une feuille de calcul, effectuez un clic droit sur un onglet de
+feuille de calcul (en bas à gauche de la fenêtre) et choisissez Renommer dans le
+menu contextuel. Le nom de la feuille se met en surbrillance : saisissez le nouveau
+nom, puis appuyez sur Entrée ou cliquez n’importe où sur la feuille de calcul.
+Vous pouvez alternativement double-cliquer sur l’onglet de la feuille pour mettre
+son nom en surbrillance et procéder comme il vient d’être décrit.
+ Couleur de l’onglet
+Page 213 of 325
+=== PAGE 214 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+26
+Pour choisir la couleur d’un onglet : faites un clic droit sur l’onglet puis
+cliquez sur Couleur d’onglet et enfin choisissez la couleur. Quand la feuille
+correspondante est sélectionnée, son nom est souligné de cette couleur. Sinon,
+l’arrière-plan de l’onglet revêt cette couleur.
+ Sélectionner des feuilles
+Pour sélectionner une ou plusieurs feuilles, on procède ainsi :
+ Une feuille : clic sur l’onglet. L’onglet de la feuille sélectionnée
+devient blanc.
+ Des feuilles adjacentes : clic sur l’onglet de la 1ère ; Maj (Shift) +
+clic sur l’onglet de la dernière.
+ Des feuilles non adjacentes : clic sur l’onglet de la 1ère ; Ctrl + clic
+sur chaque autre onglet de feuille.
+ Toutes les feuilles du classeur : clic droit sur un onglet >
+Sélectionner toutes les feuilles.
+Pour annuler la sélection de feuilles, cliquez sur un onglet non sélectionné. A
+défaut d’onglet visible non sélectionné, faites un clic droit sur l’onglet
+souhaité puis cliquez sur Dissocier les feuilles. Tous les autres onglets seront
+désélectionnés.
+ Groupe de travail
+Plusieurs feuilles sélectionnées constituent ce qui est appelé « un groupe de
+travail ». Dès que deux feuilles sont sélectionnées, cette appellation est indiquée
+dans la barre de titre, juste après le nom du classeur : [Groupe de travail].Quand
+il y a constitution d’un groupe de travail, les saisies sur la feuille active
+peuvent être répercutées sur les autres feuilles du groupe.
+Page 214 of 325
+=== PAGE 215 ===
+Microsoft EXCEL
+27
+ Insérer des feuilles
+Sous l’onglet Accueil, dans le groupe « Cellules », ouvrez le menu déroulant
+du bouton « Insérer » puis cliquez sur « Insérer une feuille ».
+Ou cliquez sur le bouton Plus situé à droite de l’onglet de feuille de calcul. La
+nouvelle feuille apparaît dans le classeur, avec son nom par défaut (normalement
+Feuil2).
+Vous pouvez également effectuer un clic droit sur un onglet de feuille de calcul (en
+bas à gauche de la fenêtre) et choisir Insérer dans le menu contextuel.
+ Supprimer une feuille
+Pour supprimer une feuille de calcul, effectuez un clic droit sur son onglet et
+choisissez supprimer dans le menu contextuel. La feuille disparait
+définitivement du classeur.
+Page 215 of 325
+=== PAGE 216 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+28
+ Déplacer ou Copier une feuille
+ Avec la souris
+Déplacer : sélectionnez l’onglet à déplacer, puis cliquez-glissez dessus
+jusqu’à l’emplacement souhaité. Le curseur prend la forme d’une feuille.
+Copier : cliquez sur l’onglet de la feuille. Puis Ctrl + cliquez-glissez
+jusqu’à l’emplacement souhaité. Le curseur prend la forme d’une feuille avec le
+signe +. La nouvelle feuille prend le nom de la feuille d’origine suivie du n°
+d’exemplaire placé entre parenthèses : par exemple Feuil1 (2), pour la 1ère
+copie de la feuille Feuil1.On peut déplacer ou copier plusieurs feuilles à la fois
+en sélectionnant les onglets correspondants avant de cliquer-glisser.
+ Avec la fenêtre « Déplacer ou copier »
+Sélectionnez les feuilles à déplacer ou à copier. Pour afficher la fenêtre «
+Déplacer ou copier », faites un clic droit sur un onglet sélectionné puis cliquez
+sur Déplacer ou copier. Renseignez la fenêtre, puis validez.
+II- Affichage d’une feuille de calcul
+ Zoom
+Par défaut, le zoom est à 100%. Une valeur supérieure agrandit l’affichage.
+Une valeur inférieure permet d’avoir une meilleure vision d’ensemble sur une
+zone étendue.
+Par défaut, le zoom s’applique à toute la feuille.
+Page 216 of 325
+=== PAGE 217 ===
+Microsoft EXCEL
+29
+Pour modifier le zoom, on peut utiliser la zone zoom de la barre d’état, ou bien
+la fenêtre « Zoom ». Pour afficher cette fenêtre, cliquez sur le bouton « Zoom »,
+sous l’onglet Affichage, ou bien sur le pourcentage de zoom dans la barre d’état.
+Si vous souhaitez « zoomer » sur une plage de cellules, sélectionnez-la d’abord.
+Puis, sous l’onglet Affichage, dans le groupe Zoom, cliquez sur le bouton «
+Zoom sur la sélection », ou bien choisissez l’option « Ajusté à la sélection » dans
+la fenêtre « Zoom ».
+Pour revenir à un affichage normal, c’est-à dire à un zoom de 100%, cliquez par
+exemple sur le bouton « 100% » du groupe Zoom.
+ Plein écran
+Sous l’onglet Affichage, dans le groupe « Affichages classeur », activez le bouton
+« Plein écran ». Le ruban, ainsi que la barre de formule et la barre d’état, sont
+masqués. Cela permet l’affichage d’une plus grande partie de la feuille de calcul.
+Pour désactiver ce mode d’affichage, appuyez sur la touche Echap (Esc).
+ Conserver l’affichage des intitulés des lignes et des colonnes
+Quand la zone active de la feuille de calcul est très large, il n’est plus possible de
+voir ses colonnes de titres quand on affiche des colonnes trop à droite.
+De même, quand la zone active de la feuille s’étale sur une grande hauteur, on
+ne peut plus voir ses lignes de titres quand on affiche les lignes du bas. Les lignes
+et colonnes de titres sont appelées des « volets ».
+Pour conserver l’affichage des volets :
+ Sélectionnez la cellule à gauche de laquelle les colonnes resteront
+affichées, et au- dessus de laquelle les lignes resteront affichées ;
+Page 217 of 325
+=== PAGE 218 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+30
+ Sous l’onglet Affichage, dans le groupe Fenêtre, activez le bouton «
+Figer les volets ». Deux traits noirs continus apparaissent, pour indiquer
+la présence des volets.
+Pour supprimer les volets : cliquez sur le bouton « Figer les volets » > Libérer les
+volets.
+III- Travailler sur plusieurs classeurs
+ Ouvrir plusieurs classeurs
+Si on veut travailler sur plusieurs classeurs, il faut commencer par les ouvrir.
+Affichez la fenêtre « Ouvrir » : ouvrez le menu Fichier > Ouvrir. Si les fichiers
+sont dans le même dossier, faites Ctrl + clic sur chaque nom de classeur à
+ouvrir. Puis ouvrez les classeurs en activant le bouton « Ouvrir » de la fenêtre.
+L’un affiche une feuille sur l’écran, les autres ont leur nom affiché dans la
+barre des tâches.
+ Basculer d’un classeur à l’autre
+Une fois les classeurs ouverts, vous pouvez afficher la feuille d’un classeur en
+cliquant sur le nom de ce classeur dans la barre des tâches.
+Ou bien : sous l’onglet Affichage, dans le groupe Fenêtre, activez le
+bouton « Changement de fenêtre », puis affichez le classeur souhaité.
+ Afficher le même classeur dans plusieurs fenêtres
+Ouvrez le classeur. Sous l’onglet Affichage, dans le groupe Fenêtre, activez le
+bouton « Nouvelle fenêtre ». Le nom de la 2ème fenêtre est celui du classeur suivi
+de « :2 ». Toute modification dans une fenêtre est effectuée sur le classeur.
+Page 218 of 325
+=== PAGE 219 ===
+Microsoft EXCEL
+31
+ Disposer les fenêtres des classeurs ouverts
+Affichez la fenêtre « Réorganiser » : dans le groupe Fenêtre (onglet
+Affichage), cliquez sur le bouton « Réorganiser tout ». La fenêtre propose
+plusieurs options : Mosaïque, Horizontal, Vertical ou Cascade. Tous les
+classeurs ouverts, qu’ils soient réduits à leur nom dans la barre des tâches,
+ou qu’une de leurs feuilles soit affichée, également les fenêtres d’un même
+classeur, seront disposés selon l’option choisie.
+En cochant la case « Fenêtres du classeur actif », il ne sera affiché que les
+fenêtres du même classeur (voir paragraphe précédent « Afficher le même
+classeur dans plusieurs fenêtres »).
+Pour retrouver l’affichage initial, cliquez sur le bouton Agrandir  d’une fenêtre.
+ Comparaison de feuilles de deux classeurs côte à côte
+Si deux classeurs ont une structure similaire, il est intéressant de les mettre côte
+à côte, et de les faire défiler simultanément afin de pouvoir comparer facilement
+leurs données.
+Procédez ainsi :
+ Ouvrez les deux classeurs.
+ Activez le premier classeur.
+ Dans le groupe Fenêtre (onglet Affichage), activez le bouton « Afficher
+côte à côte ».
+Si d’autres classeurs sont ouverts, en plus des deux classeurs concernés, la
+fenêtre « Comparer en côte à côte » permet d’indiquer le classeur avec lequel on
+souhaite comparer les données.
+Les deux classeurs apparaissent l’un en dessous de l’autre.
+Page 219 of 325
+=== PAGE 220 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+32
+Dans le groupe Fenêtre, le bouton d’info-bulle « Défilement synchrone » est
+activé. Le déplacement dans l’un des deux classeurs induit le déplacement dans
+l’autre.
+Si on a redimensionné la fenêtre d’un classeur (par cliqué-glissé sur sa
+bordure inférieure), le bouton « Rétablir la position de la fenêtre » (groupe
+Fenêtre), permet de diviser à nouveau l’écran en deux parties égales pour chacun
+des classeurs.
+Pour revenir à l’affichage normal, désactivez le bouton « Afficher côte à côte
+IV- Protéger feuilles et classeurs
+CHAPITRE III – SAISIE SIMPLE DE DONNEES
+I- Sélection de cellules
+La sélection peut être effectuée avec le clavier et la souris, ou bien avec la
+fenêtre « Atteindre ».
+Pour désélectionner, cliquez n’importe où (s’il s’agit d’une seule cellule, cliquez
+en dehors de la cellule).
+1- Avec le clavier et la souris
+Pour sélectionner :
+ Une cellule
+Pointez sur la cellule. Le pointeur ayant l’aspect d’une croix blanche, cliquez.
+Ou bien, atteignez la cellule avec les touches fléchées du clavier.
+Si vous êtes en cours de saisie, validez (par exemple, en tapant Entrée),
+avant de sélectionner cette cellule en cliquant dessus.
+Pour atteindre :
+Page 220 of 325
+=== PAGE 221 ===
+Microsoft EXCEL
+33
+ La cellule A1 : Ctrl +  (Home)
+ La dernière cellule de la zone active (la plage commençant par A1 et qui
+contient toutes les données) : Ctrl + Fin (End)
+ La première cellule de la ligne active :  (Home)
+ Une cellule en bordure de la zone de cellules (zone entourée de cases
+d’en-tête de lignes ou de colonnes, ou de cellules vides) : pointez sur la
+bordure de la cellule active, en direction de la cellule à atteindre. Quand
+le pointeur se transforme en croix fléchée, double-cliquez.
+Exemple : si vous souhaitez atteindre la dernière cellule de la zone, à droite de
+la cellule active, pointez sur la bordure droite de celle-ci, puis double-cliquez.
+ Des cellules faisant partie de la ligne ou de la colonne de la cellule active
+Pour sélectionner toutes les cellules situées entre la cellule active et la cellule
+en bordure de zone, appuyez sur la touche Maj en double-cliquant sur la
+bordure de la cellule active en direction des cellules à sélectionner.
+ Une plage de cellules
+Cliquez-glissez de la première à la dernière cellule.
+Ou bien sélectionnez la première cellule, puis appuyez sur la touche Maj et
+sélectionnez la dernière cellule de la plage.
+ Des cellules non adjacentes (isolées, en plages, en colonnes ou en lignes)
+Sélectionnez le 1er élément. Puis appuyez sur la touche Ctrl et sélectionnez
+les autres en cliquant, ou en cliquant-glissant, dessus.
+ La zone de la cellule active
+Tapez : Ctrl + *
+Page 221 of 325
+=== PAGE 222 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+34
+ Une colonne ou une ligne
+Pointez sur la bordure externe de la case de l’en-tête. Le pointeur ayant l’aspect
+d’une flèche, cliquez.
+Pour sélectionner :
+ La colonne de la cellule active : Ctrl + Espace.
+ La ligne de la cellule active : Maj (Shift) + Espace.
+Toute la colonne ou toute la ligne de la feuille est sélectionnée.
+ Des colonnes ou des lignes adjacentes
+Cliquez-glissezsurlescasesd’en-tête des colonnes ou des lignes à sélectionner. Ou
+bien : sélectionnez la 1ère, puis faites Maj (Shift) + clic sur la dernière.
+ Des colonnes ou des lignes non adjacentes
+Sélectionnez la première. Puis Ctrl + clic pour sélectionner chacune des autres.
+ Toutes les cellules de la feuille
+ Avec la souris : pointez la case de l’intersection entre
+les deux lignes d’en-têtes (horizontale et verticale). Le pointeur se
+transforme en croix blanche ; cliquez. Toutes les cellules de la feuille
+sont sélectionnées.
+ Avec le clavier : Ctrl + A.
+2- Avec la fenêtre «Atteindre »
+Pour l’afficher : sous l’onglet Accueil, dans le groupe « Edition », activez le
+bouton « Rechercher et sélectionner » puis cliquez sur Atteindre. Ou bien, plus
+rapidement, appuyez sur la touche F5.
+Renseignez la zone « Référence ».
+Page 222 of 325
+=== PAGE 223 ===
+Microsoft EXCEL
+35
+Exemple de sélection de plages non adjacentes, situées sur la feuille active : b2 :
+d5 ; e1 : f8.
+Exemple de sélection de plages situées sur une autre feuille, par exemple
+la feuille « Feuil3 » : feuil3! a4 : e8 ; feuil3! b1 : b5 .
+L’appartenance d’une plage à une feuille se traduit par l’écriture :
+nomfeuille ! plage Il n’est pas nécessaire de mettre un espace après
+un signe de ponctuation ( : ; ou !).
+La fenêtre « Atteindre » permet également :
+ De mémoriser les 4 dernières sélections (affichées dans la zone « Atteindre
+»).
+ D’offrir diverses possibilités de sélection : après activation du bouton «
+Cellules », la fenêtre « Sélectionner les cellules » permet de
+sélectionner des cellules particulières à l’intérieur de la zone active.
+Exemple : cocher l’option « Cellules
+II- Saisie dans les cellules
+Sélectionnez une cellule et saisissez par exemple un texte ou un nombre. Par
+défaut, un texte est aligné à gauche, un nombre est aligné à droite.
+1- Validation et passage à une autre cellule
+Pour valider la saisie, et passer :
+ A la cellule d’en dessous : Entrée ou touche 
+ A la cellule de droite : Tab  ou touche 
+ A la cellule du haut ou à celle du bas : touches fléchées du clavier  ou 
+ A une cellule quelconque : cliquez dessus.
+Par défaut, taper Entrée sélectionne la cellule d’en dessous (option « Bas »).
+Page 223 of 325
+=== PAGE 224 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+36
+Saisie rapide dans une plage sélectionnée :
+ Colonne après colonne (saisie « à la verticale ») : après chaque saisie, y
+compris en fin de colonne, il suffit d’appuyer sur la touche Entrée (à
+condition de ne pas avoir modifié l’option « Bas » de la touche Entrée -
+cf. fin du chapitre INTRODUCTION).
+ Ligne après ligne (saisie « à l’horizontal ») : après chaque saisie, y
+compris en fin de ligne, il suffit d’appuyer sur la touche Tab .
+2- Saisie d’une même valeur dans toutes les cellules d’une plage
+Sélectionnez la plage. Saisissez la valeur. Validez avec Ctrl + Entrée.
+ Débordement
+Quand un texte déborde sur la cellule suivante, une saisie dans celle-ci masque
+le texte de la cellule précédente. Quand une date déborde, la validation
+transforme l’affichage de la date en une suite de dièses (#). Testez : réduisez la
+largeur d’une colonne (par cliqué-glissé sur la bordure droite de sa case d’en-
+tête). Dans une cellule de cette colonne, saisissez une date, puis validez.
+Quand un nombre déborde, il est affiché en notation scientifique, c’est-à-dire
+sous la forme du produit d’un nombre décimal compris entre 1 inclus et 10 exclus
+par une puissance de 10.
+Exemple : le nombre 123456789 qui est environ égal à 1,2 * 108, s’affiche dans
+la cellule1,2E+08.
+S’il y a débordement en notation scientifique, l’affichage du nombre dans la
+cellule est remplacé, comme une date, par une série de dièses.
+Que ce soit un texte, une date ou un nombre qui déborde, le contenu exact de la
+cellule demeure, même si l’affichage est différent. En sélectionnant la cellule
+Page 224 of 325
+=== PAGE 225 ===
+Microsoft EXCEL
+37
+(cliquez dessus), son contenu exact apparaît dans la zone de contenu de cellule
+(barre de formule).
+ Saisie d’un nombre sous forme de texte
+Si on fait précéder un nombre d’une apostrophe (Exemple : ’16), Excel le
+considère comme un texte et l’aligne à gauche dans la cellule.
+Après validation, un triangle vert apparaît en haut à gauche de la cellule
+signalant que ce nombre est de type texte (il ne pourra donc pas
+faire partie de formules mathématiques). Quand la cellule est sélectionnée, une
+balise s’affiche à côté. Elle indique qu’il s’agit d’un nombre stocké sous forme
+de texte et elle propose plusieurs options, en particulier la conversion en
+type nombre.
+ Saisie semi-automatique de données de type texte
+Lorsqu’on effectue des saisies de type texte dans une colonne, Excel les
+mémorise.
+Après avoir tapé une ou plusieurs lettres dans une nouvelle cellule de la
+colonne, dès qu’Excel reconnaît une saisie précédente, celle-ci est
+automatiquement proposée.
+Il ne doit pas y avoir de cellule vide entre la cellule active et la cellule
+reconnue. Tapez sur Entrée pour valider la saisie proposée et passer à la
+cellule suivante.
+On peut également afficher la « Liste déroulante de choix » : faites un clic droit
+dans la cellule juste au-dessus ou juste au-dessous des valeurs déjà saisies >
+« Liste déroulante de choix ».
+Page 225 of 325
+=== PAGE 226 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+38
+Apparaissent dans cette liste tous les contenus de type texte de la colonne.
+La liste s’arrête dès qu’il y a une cellule vide (en dessus ou en dessous).
+Cliquez sur un élément de la liste affiche son contenu dans la cellule.
+ Saisie d’un commentaire
+L’onglet «Révision » contient un groupe de commandes « Commentaires ». On
+peut rattacher un commentaire à une cellule :
+ Sélectionner une cellule
+ Activez le bouton « Nouveau commentaire » du ruban, ou bien clic droit
+Insérer un commentaire. Le commentaire commence par défaut par le nom
+de l’utilisateur. Ce nom peut être modifié ou supprimé.
+Après un clic droit sur la cellule contenant le commentaire, un menu contextuel
+propose les options : Modifier, Effacer, Afficher / Masquer le commentaire.
+Quand le commentaire est masqué, il subsiste dans la cellule un triangle rouge :
+Le commentaire apparaît dès que le pointeur est sur la cellule.
+Pour modifier l’apparence du commentaire, affichez la fenêtre «
+Format de commentaire » : faites un clic droit dans le cadre du commentaire >
+Format de commentaire.
+ Saisie d’une date ou d’une heure
+ Date
+Dès qu’Excel reconnaît une date, il la convertit en numéro de série
+(représentant le nombre de jours écoulés entre cette date et le 1er janvier 1900,
+sinon 1904 en fonction du paramétrage, « Date et heure ») et il lui applique un
+format.
+Pour saisir une date :
+Page 226 of 325
+=== PAGE 227 ===
+Microsoft EXCEL
+39
+ Séparez le jour, le mois et l’année par les caractères / ou –
+ Sinon, si vous écrivez le mois en toutes lettres, vous pouvez aussi
+utiliser des espaces.
+Si le jour n’est pas mentionné, Excel le considère comme étant le 1er jour du
+mois.
+ Heure
+Dès qu’Excel reconnaît des heures, des minutes ou des secondes, il les
+convertit en fractions. Pour le vérifier, il convient de mettre la cellule au format
+Standard (onglet Accueil, groupe "Nombre", ouvrez le menu déroulant et cliquez
+sur Standard).
+Exemples
+ L’heure 6:00 est convertie en 6/ 24, soit 0,25.
+ L’heure 12:30 est convertie en 0,52 (avec un paramétrage de deux
+décimales). En effet 12 h est converti en 12/ 24, soit 0,5.
+30 minutes est converti en 30/ 24 * 60, soit 30/ 1440, soit 0,02.
+ L’heure 00:00:50 est converti en 50/ 24 *60 * 60, soit 50/ 86400, soit
+0,00058 (avec un paramétrage de cinq décimales).
+Seul le caractère : est admis pour séparer les heures et les minutes (exemple :
+9h28 s’écrit 9:28 et est affiché 09:28), ainsi que pour séparer les minutes et les
+secondes.
+Si on écrit 9h28, au lieu de 9:28, on ne pourra pas se servir de cette donnée
+en tant qu’heure, ni dans les calculs ni dans les formules.
+Dates et heures, reconnues en tant que telles par Excel, sont des données
+numériques. Elles sont donc alignées à droite dans les cellules.
+Page 227 of 325
+=== PAGE 228 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+40
+ Saisie restreinte
+La fenêtre « Validation des données » permet de restreindre une saisie. Il est par
+exemple possible de restreindre la saisie à un nombre entier supérieur à 30.
+Commencez par sélectionner les cellules concernées par l’application d’une
+saisie restreinte. Puis, affichez la fenêtre « Validation des données » : sous
+l’onglet « Données », dans le groupe « Outils de données », activez le bouton «
+Validation des données ».
+ Le premier onglet « Options » permet de définir la restriction à appliquer.
+ Le deuxième « Message de saisie » permet de saisir le message à afficher
+lors de la sélection de la cellule.
+ Le troisième « Alerte d’erreur » permet de saisir le message à afficher
+en cas d’erreur de saisie.
+III- Modification des données
+1- Avant validation, si on souhaite recommencer la saisie dans la cellule
+Le bouton  de la barre de formule permet d’annuler la saisie en cours.
+L’équivalent par le clavier est la touche Echap (Esc).
+2- Après validation
+ Soit vous modifiez le contenu de la cellule dans la zone située juste au-
+dessus de la feuille de calcul.
+ Soit vous double-cliquez dans la cellule, puis vous rectifiez.
+ Soit, la cellule étant active, vous tapez F2, puis vous modifiez.
+Page 228 of 325
+=== PAGE 229 ===
+Microsoft EXCEL
+41
+3- Suppression de données
+Sélectionnez la ou les cellules, puis appuyez sur la touche Suppr. Après sélection,
+si vous souhaitez bénéficier d’options d’effacement : sous l’onglet Accueil,
+dans le groupe « Edition », activez le bouton « Effacer ».
+IV- Rechercher, remplacer
+Pour afficher la fenêtre « Rechercher et remplacer » : sous l’onglet Accueil,
+dans le groupe « Edition », activez le bouton « Rechercher ». Cette fenêtre peut
+rester ouverte lors de la saisie dans les cellules.
+1- Rechercher
+Ouvrez l’onglet « Rechercher ». Si la recherche est à effectuer dans une plage de
+cellules de la feuille active, sélectionnez- cette plage de cellules.
+Sinon la recherche s’effectuera sur la zone active (cliquez sur une cellule
+quelconque de la feuille), ou dans le classeur si vous le précisez.
+Vous pouvez utiliser : l’astérisque * pour remplacer 0, 1 ou plusieurs caractères,
+ainsi que le pointd’interrogation ? Pour remplacer un seul caractère.
+Vous pouvez préciser le format des expressions recherchées.
+Page 229 of 325
+=== PAGE 230 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+42
+Le bouton « Suivant » sélectionne les cellules contenant la valeur recherchée, une
+par une.
+Le bouton « Rechercher tout » liste les occurrences correspondant à la
+recherche. Vous pouvez trier les résultats obtenus en cliquant sur un en-tête
+(par exemple, sur « Valeur »). En cliquant sur un résultat, vous sélectionnez sur
+la feuille la cellule le contenant.
+2- Remplacer
+Ouvrez l’onglet « Remplacer ». Le bouton Remplacer permet de remplacer les
+valeurs une par une.
+V- Vérification orthographique
+Si la vérification orthographique est à effectuer dans une plage de cellules de la
+feuille active, sélectionnez-la. Sinon la recherche s’effectue sur la zone active
+(cliquez sur une cellule quelconque de la feuille).
+Pour lancer la vérification orthographique : sous l’onglet « Révision », dans
+le groupe « Vérification », cliquez sur le bouton « Orthographe ». Ou bien
+appuyez sur la touche F7.Si Excel détecte un terme absent du dictionnaire, la
+fenêtre « Orthographe » est affichée. Elle contient des suggestions de correction,
+ainsi que diverses options.
+VI- Insertion et suppression
+1- Distinguer contenant et contenu
+Il faut bien distinguer la suppression du contenant et celle du contenu.
+Exemples : Quand on supprime la donnée d’une cellule, on ne supprime pas
+la case qu’est cette cellule.
+Page 230 of 325
+=== PAGE 231 ===
+Microsoft EXCEL
+43
+Quand on supprime les données d’une colonne, la colonne devient vierge, mais
+elle reste. La suppression du contenant entraîne celle du contenu, mais onn’apas
+l’inverse. Cette partie concerne les différents types de contenants : colonnes,
+lignes et cellules.
+2- Une insertion ou une suppression de contenant entraîne un décalage
+Dès qu’il y a insertion (ou suppression) du contenant, il y a décalage de
+cellules pour insérer (ou supprimer) les nouvelles cellules.
+Les cellules qui ont été décalées, changent de références (sauf si leurs
+références sont liées à des références d’autres cellules).
+Pour insérer ou supprimer des cellules, on peut utiliser :
+ Les options du menu contextuel qui s’affiche après clic droit sur la sélection.
+ Ou bien le ruban : boutons « Insérer » ou « Supprimer » du groupe « Cellules
+» de l’onglet Accueil.
+3- Insertion ou suppression de colonnes ou de lignes
+Le principe est le même pour les colonnes ou pour les lignes.
+ Pour insérer des colonnes :
+ Sélectionnez le nombre de colonnes à gauche desquelles vont être
+insérées les nouvelles colonnes. Le nombre de colonnes insérées
+correspondra au nombre de colonnes sélectionnées.
+ Clic droit sur la sélection > «Insertion ».
+Les colonnes sont aussitôt insérées. Les références des cellules décalées ont
+changé.
+Page 231 of 325
+=== PAGE 232 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+44
+Exemple :
+Saisissez le nombre 5 dans la cellule référencée A1. Puis insérez deux colonnes
+avant la colonne A : sélectionnez les colonnes A et B, en cliquant-glissant sur
+leurs cases d’en-tête. Faites un clic droit sur la sélection > Insertion.
+Après insertion des colonnes, le nombre 5 est dans la cellule référencée C1.
+ Pour insérer des lignes :
+ Sélectionnez le nombre de lignes au-dessus desquelles vont
+être insérées les nouvelles lignes. Le nombre de lignes insérées
+correspond au nombre de lignes sélectionnées.
+ Clic droit sur la sélection > « Insertion ». Les lignes sont aussitôt
+insérées.
+Comme expliqué précédemment, les références des cellules
+décalées ont changé.
+ Pour supprimer des lignes ou des colonnes :
+Sélectionnez-les. Puis faites un clic droit sur la sélection > « Supprimer ».
+Comme pour l’insertion, les références des cellules décalées changent.
+ Insertion ou suppression d’une plage de cellules
+ Sélectionnez la plage de cellules à côté de laquelle sera effectuée
+l’insertion ou la suppression de cellules.
+ Clic droit sur la sélection > « Insérer » ou « Supprimer ».
+ Choisissez l’option souhaitée dans la boîte de dialogue qui s’affiche.
+ Insertion de cellules
+Option « Décalage vers la droite » : Sont insérées le même nombre de cellules
+vierges que celui des cellules sélectionnées. Les cellules sélectionnées sont
+décalées à droite, des cellules vierges prennent leur place.
+Page 232 of 325
+=== PAGE 233 ===
+Microsoft EXCEL
+45
+Option « Décalage vers le bas » : Les cellules sélectionnées sont décalées vers
+le bas, des cellules vierges prennent leur place.
+Option « Ligne entière » : Des lignes entières sont insérées au-dessus des cellules
+sélectionnées, en nombre égal au nombre de lignes de ces dernières (le résultat est
+le même qu’une insertion de lignes, vue au paragraphe précédent « Pour insérer
+des lignes »).
+Option « Colonne entière » : Des colonnes entières sont insérées à gauche des
+cellules sélectionnées, en nombre égal au nombre de colonnes de ces dernières
+(le résultat est le même qu’une insertion de colonnes, vue au paragraphe précédent
+« Pour insérer des colonnes »).
+ Suppression de cellules
+Option « Décalage vers la gauche » : les cellules sélectionnées sont supprimées
+et toutes les cellules de droite qui occupent les lignes de ces cellules, sont décalées
+Option « Colonne entière » : cette fois-ci, toutes les cellules des colonnes de
+droite sont décalées à gauche (le résultat est le même qu’une suppression de
+colonnes).
+Option « Décalage vers le haut » : c’est le même principe que précédemment.
+Les cellules sélectionnées sont supprimées et toutes les cellules d’en-dessous qui
+occupent les colonnes de ces cellules, sont décalées vers le haut.
+Option « Ligne entière » : cette fois-ci, ce sont tous les cellules en dessous
+qui sont décalées vers le haut (et non plus seulement celles qui occupent les
+colonnes des cellules sélectionnées) (le résultat est le même qu’une suppression
+de lignes).
+Page 233 of 325
+=== PAGE 234 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+46
+1. La sélection de cellule peut être effectuée avec le clavier
+ou la souris. Pour désélectionner, cliquez n’importe où (s’il
+s’agit d’une seule cellule, cliquez en dehors de la cellule).
+2. Pour saisir dans une cellule, il faut d’abord la sélectionner
+puis après avoir entré la donnée souhaitée, valider en tapant
+la touche Entrée ou en appuyant une flèche de direction.
+3. Si a donnée est un texte, elle s’alignera automatiquement à
+gauche, à droite si c’est un nombre.
+4. Quand un texte déborde sur la cellule suivante, une saisie
+dans celle-ci masque le texte de la cellule précédente
+5. Que ce soit un texte, une date ou un nombre qui déborde, le
+contenu exact de la cellule demeure, même si l’affichage est
+différent. En sélectionnant la cellule (cliquez dessus), son
+contenu exact apparaît dans la zone de contenu de cellule
+(barre de formule).
+POINTS IMPORTANTS A RETENIR
+Page 234 of 325
+=== PAGE 235 ===
+Microsoft EXCEL
+47
+EXERCICES D’ASSIMILATION
+1. Sélectionnez la plage B1:E8 couvrant les valeurs de la feuille que
+vous allez nommer Région
+2. Sélectionnez la ligne 4 en entier puis la colonne B en entier
+Page 235 of 325
+=== PAGE 236 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+48
+CHAPITRE IV- SERIE DE DONNEES
+La procédure de création d’une série évite de saisir une à une les données.
+Elle est plus rapide et plus fiable que la saisie individuelle de chaque élément
+d’une série.On peut créer une série dans tous les sens (vers le bas, le haut, la droite
+ou la gauche).Pour créer une série numérique , une série chronologique ou
+une série alphanumérique , on se servira :
+ Du cliqué-glissé sur la poignée  d’une sélection de cellules, le pointeur
+revêt l’aspect d’une croix noire  .
+ Du menu de la balise active qui apparaît en fin de cliqué-glissé.
+ De la fenêtre « Série de données ». Pour l’afficher : sous l’onglet Accueil,
+dans le groupe « Edition », activez le bouton « Remplissage » > Série.
+I- Série numérique
+1- Série linéaire
+Une série linéaire est une suite de nombres, chacun (à partir du 2ème) étant
+obtenu en ajoutant un nombre fixe à l’élément précédent. Le nombre ajouté est
+appelé « incrément » ou « pas ». Exemple : 5, 8, 11, 14, 17, 20. Le pas de cette
+série linéaire est 3.
+Pour créer une série linéaire, procédez ainsi :
+ Saisissez les 2 premiers éléments de la série, sur deux cellules adjacentes,
+en ligne ou en colonne. Exemple : saisissez 5 et 8. Excel en déduit le pas
+de la série. Dans l’exemple, le pas est 3.
+ Sélectionnez les 2 cellules ainsi remplies, puis cliquez-glissez à partir
+de la poignée  de la sélection sur les cellules à remplir avec les termes
+suivants de la série.
+Page 236 of 325
+=== PAGE 237 ===
+Microsoft EXCEL
+49
+Exemple : cliquez-glissez sur la poignée de la sélection
+Les saisies étant effectuées à l’horizontal, on peut étendre la série vers la gauche
+ou vers la droite. Deux saisies étant effectuées à la verticale, on peut étendre la
+série vers le bas ou vers le haut. Pendant le cliqué-glissé, une info-bulle indique
+le nombre qui s’affichera dans la cellule.
+Par cliqué-glissé sur la poignée en sens inverse, on peut réduire la série.
+Pour créer une suite de nombres de valeur constante (exemple : 12, 12, 12) :
+saisissez ce nombre. Après validation, sélectionnez la cellule et effectuez un
+cliqué-glissé sur la poignée. Une seule cellule étant sélectionnée, Excel applique
+un pas nul.
+Exemple : saisissez 12. Validez (en appuyant sur la touche Entrée ou en cliquant
+dans une autre cellule). Sélectionnez la cellule. Puis cliquez-glissez sur sa
+poignée dans le sens souhaité.
+On peut ouvrir le menu de la balise pour incrémenter de 1, ou bien afficher
+la fenêtre
+« Série de données » pour incrémenter du pas souhaité. Pour afficher cette
+fenêtre : sous l’onglet Accueil, dans le groupe « Edition », activez le bouton «
+Remplissage » > Série.
+Dans la fenêtre, l’option « Tendance » aboutit au même résultat qu’un cliqué-
+glissé.
+2- Série géométrique
+Une série géométrique est une suite de nombres, chacun (à partir du 2ème) étant
+obtenu en multipliant par un nombre fixe l’élément précédent.
+Exemple : 4, 8, 16, 32, 64. Le pas de cette série géométrique est 2.
+Page 237 of 325
+=== PAGE 238 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+50
+Pour créer une série géométrique, procédez ainsi :
+ Saisissez le 1er élément. Validez.
+ Puis, au choix, sélectionnez :
+ Soit toutes les cellules à remplir,
+ Soit uniquement la cellule du 1er élément. Indiquez alors la
+dernière valeur (exacte ou approximative) de la série. Le nombre de
+termes sera fonction de cette dernière valeur.
+ Affichez la fenêtre « Série de données » : sous l’onglet Accueil, dans le
+groupe « Edition », activez le bouton « Remplissage » > Série.
+Choisissez vos options. Si vous n’avez sélectionné que la cellule du 1er
+élément, indiquez la dernière valeur de la série.
+II- Série chronologique
+Une série chronologique est une suite de dates, chacune (à partir de la 2ème)
+étant obtenue en ajoutant la même durée à la date précédente. La durée ajoutée
+est le « pas » de la série.
+Exemple :
+10/05/2011, 17/05/2011, 24/05/2011. Le pas de cette série chronologique est 7.
+Comme pour la création d’une série linéaire, on peut utiliser pour créer
+une série chronologique : cliqué-glissé sur la poignée de la sélection, balise
+active et fenêtre « Série de données ».
+Pour créer une série chronologique, procédez ainsi :
+ Saisissez la date du 1er élément. Exemple : saisissez 10/05/2011. Puis
+validez.
+Page 238 of 325
+=== PAGE 239 ===
+Microsoft EXCEL
+51
+ Cliquez-glissez sur les cellules à remplir. Excel applique par défaut
+une incrémentation de pas un. Exemple : 10/05/2011, 11/05/2011,
+12/05/2011…
+ Modifiez les saisies si vous le souhaitez, en utilisant :
+ Soit une option proposée dans le menu de la balise active . Excel
+prend en compte que le 1er élément est une date, et propose des
+options en conséquence (exemple : « Incrémenter les mois »).
+ Soit des options proposées dans la fenêtre « Série de données »
+(exemple : choisissez un pas de 7).
+L’utilisation de la balise active est plus rapide. La fenêtre « Série de données
+» offre davantage de possibilités.
+III- Série alphanumérique
+Les valeurs d’une série alphanumérique sont constituées d’un texte fixe et d’un
+nombre qui peut être incrémenté.
+Pour créer une série alphanumérique, procédez ainsi :
+ Saisissez le 1er élément (exemple : couleur 1) ou les deux premiers
+éléments (exemple : forme 5 et forme 7). Validez (cliquez dans une autre
+cellule).
+ Etendez le contenu de la cellule, ou des deux cellules, par cliqué-glissé
+sur la poignée de la sélection (on obtient dans le premier exemple :
+couleur 2, couleur 3... et dans le second exemple : forme 9, forme 11...).
+La fenêtre « Série de données » n’est pas utilisable pour une série alphanumérique.
+Dans l’incrémentation, Excel ne prend en compte que le nombre situé le plus
+à droite (c’est-à-dire la dernière décimale).
+Page 239 of 325
+=== PAGE 240 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+52
+Exemple : saisissez hauteur 1,84. Validez. Cliquez-glissez sur la poignée de la
+cellule.
+Vous obtenez hauteur 1,85 puis hauteur 1,86…
+IV- Série créée à partir d’une liste personnalisée
+Avant de créer la série, il convient de créer la liste personnalisée.
+ Création d’une liste personnalisée
+Pour créer une liste personnalisée, procédez ainsi :
+ Affichez la fenêtre « Listes personnalisées » : ouvrez le menu Fichier >
+Options > Options avancées. Dans la rubrique Général, cliquez sur le
+bouton « Modifier les listes personnalisées » (en bas de la rubrique).
+ Dans la zone « Listes personnalisées », choisissez « Nouvelle liste ».
+ Pour entrer les éléments dans la liste :
+ Soit vous les écrivez : dans la zone « Entrées de la liste », tapez
+chaque élément, en validant avec Entrée après chaque saisie. Pour
+terminer, cliquez sur le bouton Ajouter.
+ Soit vous les importez : cliquez dans la zone à côté du bouton
+Importer.
+Sélectionnez la plage contenant les éléments que doit contenir la liste. Cliquez
+sur le bouton Importer.
+ Validez.
+ Création de la série à partir d’une liste personnalisée
+Dans une cellule, saisissez un élément de la liste. Validez. Cliquez-glissez sur la
+poignée de la cellule dans le sens souhaité. Les éléments de la liste s’affichent
+Page 240 of 325
+=== PAGE 241 ===
+Microsoft EXCEL
+53
+dans les cellules adjacentes. Si on a cliqué sur un nombre de cellules supérieur
+au nombre d’éléments de la liste, celle-ci se répète.
+Page 241 of 325
+=== PAGE 242 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+54
+1- Excel crée automatiquement une série d’entrées comme une
+liste de nombres, de mois et de dates.
+2- La série de données est basée sur le contenu initial de la ou
+des cellules sources.
+3- La série peut être incrémenté ou décrémentée selon que
+l’incrément est positif ou négatif.
+4- Un incrément est un intervalle demandé entre chaque élément
+d’une liste
+POINTS IMPORTANTS A RETENIR
+Page 242 of 325
+=== PAGE 243 ===
+Microsoft EXCEL
+55
+EXERCICES D’ASSIMILATION
+Exercice pratique
+Dans un nouveau classeur, entrez dans la plage A1 :F1, les libellés suivants:
+Matricule, Nom, Prénoms, Âge, Statut, Profession.
+ Créez à partir de ses données une liste personnalisée.
+ Déplacez le pointeur en A5 et tapez le mot statut.
+ Utilisez la poignée de recopie pour afficher la liste contenant le mot Statut dans
+la plage A5 à F5.
+a) Dans un nouveau classeur, créez la liste personnalisée suivante :
+REFERENCE, NOM, FORMATION, SCOLARITE, OCCUPATION,
+SALAIRE
+b) Créez la structure du tableur présentée ci-dessous.
+c) Appliquez la technique de recopie pour obtenir, de A5 à F5, les étiquettes des
+colonnes à partir de la série personnalisée contenant le mot Référence.
+d) En prévision de l’entrée des coordonnées de vingt personnes, dans la colonne A,
+de A6 à A26, appliquez la technique de recopie pour obtenir des numéros de
+référence à partir de 100 avec un incrément de 5.
+Page 243 of 325
+=== PAGE 244 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+56
+CHAPITRE V- DEPLACER COPIER COLLER ET TRI RAPIDE
+Dans ce chapitre, sauf précision d’insertion, le déplacement concernera les
+contenus des cellules. Quand on mentionne « déplacer une plage de cellules », il
+s’agit en fait des valeurs des cellules de cette plage.
+Sans insertion concomitante, déplacer, copier ou coller ne changent pas les
+références des cellules existantes. Ces actions n’entraînent aucun décalage de
+cellules.
+I- Volet presse-papiers
+Ce volet permet de stocker 24 éléments coupés ou copiés. A volonté, un élément
+du Presse-papiers peut être collé par simple clic.
+Pour afficher le volet Presse-papiers : sous l’onglet Accueil, cliquez sur le
+lanceur du groupe Presse-papiers.
+Le bouton « Coller tout » insère d’un bloc tous les éléments, les uns en dessous
+des autres, à partir de la cellule sélectionnée. L’ordre des valeurs insérées est
+inverse de celui affiché dans le Presse-papiers.
+Par défaut, pour que les éléments soient stockés dans le Presse-papiers, il est
+nécessaire que celui-ci soit affiché. Sinon seul est stocké le dernier élément prêt
+à être collé (il est entouré d’une bordure clignotante) et cet élément disparaît du
+volet dès qu’il ne peut plus être collé (disparition de la bordure clignotante).
+II- Déplacer
+Avant de cliquer-glisser pour déplacer ou copier des cellules, le pointeur doit
+avoir la forme d’une croix fléchée.
+Page 244 of 325
+=== PAGE 245 ===
+Microsoft EXCEL
+57
+1- Déplacer les valeurs d’une plage de cellules
+ Avec la souris
+Après sélection, placez le pointeur sur le contour (pointeur en croix fléchée).
+Cliquez- glissez jusqu’à l’emplacement désiré. Le déplacement peut également
+être réalisé avec la commande Couper.
+ Avec la commande Couper
+Procédez ainsi pour déplacer les valeurs d’une plage de cellules :
+ Faites un clic droit sur la plage > Couper (ou Ctrl + X, ou encore dans
+le groupe « Presse-papiers », activez le bouton Couper).
+La sélection affiche une bordure clignotante. Cette bordure disparaîtra
+après collage, ou en double-cliquant dans une cellule, ou encore en tapant sur
+la touche Echap (Esc).
+ Sélectionnez la 1ère cellule (en haut à gauche) de la plage de destination.
+ Clic droit > Coller (ou Ctrl + V ; ou dans le groupe « Presse-papiers »,
+activez le bouton Coller).
+Les valeurs peuvent être déplacées :
+ Sur une autre feuille du même classeur : avec la souris, faites Alt + cliqué-
+glissé sur le contour de la sélection, jusqu’à l’onglet de la feuille de
+destination, puis continuez jusqu’à l’emplacement souhaité sur la nouvelle
+feuille.
+ Ou encore sur une feuille d’un autre classeur : affichez les deux feuilles en
+taille réduite (ouvrez les classeurs, puis cliquez-glissez sur la barre de titre
+pour les disposer à convenance, ou bien : sous l’onglet Affichage, dans
+Page 245 of 325
+=== PAGE 246 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+58
+le groupe Fenêtre, cliquez sur « Réorganiser tout » et choisissez une option
+d’affichage).
+Pour déplacer les valeurs, utilisez l’une des méthodes vues
+précédemment.
+2- Déplacer les valeurs de colonnes ou de lignes
+Pour déplacer des valeurs de colonnes ou de lignes, procédez ainsi :
+ Sélectionnez les valeurs en cliquant-glissant sur les cases d’en-tête.
+Ou bien sélectionnez la 1ère, puis en appuyant sur Maj, sélectionnez la
+dernière.
+ Pointez sur le contour de la sélection (pointeur en croix fléchée), et
+cliquez-glissez jusqu’à l’emplacement souhaité.
+3- Déplacer une plage et l’insérer sur la même feuille
+Avec le déplacement, il y a cette fois-ci également insertion. Il y aura donc
+décalage de cellules.
+Sélectionnez la plage de cellules.
+Ce déplacement peut être réalisé avec la souris, ou bien avec la souris et les menus
+:
+ Avec la souris (cliqué-glissé)
+Appuyez sur la touche Maj en cliquant-glissant jusqu’à l’endroit souhaité
+ Avec la souris et les menus
+ Clic droit sur la sélection > Couper ;
+Page 246 of 325
+=== PAGE 247 ===
+Microsoft EXCEL
+59
+ Clic droit sur la 1ère cellule de la plage de destination > « Insérer
+les cellules coupées ».La fenêtre « Insérer et coller » apparaît.
+Choisissez une option de décalage.
+III- Copier
+1- Copier, puis coller la copie conforme
+La méthode Copier/Coller est similaire à celle du Couper/Coller :
+ Clic droit sur la plage > Copier (ou Ctrl + X ; ou dans le groupe Presse-
+papiers, activez le bouton Copier). La sélection affiche une bordure
+clignotante.
+ Sélectionnez la première cellule de la plage de destination.
+ Clic droit > Coller (ou Ctrl + V, ou bouton Coller du groupe Presse-
+papiers).
+Il est rapide d’effectuer un Copier/Coller à la souris : Ctrl + cliqué-glissé sur le
+contour de la sélection (signe + près du pointeur).
+La bordure clignotante qui entoure la sélection indique que la sélection peut être
+collée à nouveau. La plage peut être collée à volonté tant qu’elle est entourée de
+cette bordure.
+Pour la supprimer : double-cliquez dans une cellule, ou appuyez sur la touche
+Echap (Esc).
+2- Copier une plage et l’insérer sur la même feuille du classeur
+Cette fois-ci, il y a également insertion, donc décalage de cellules.
+ Faites un clic droit sur la sélection > Copier ;
+Page 247 of 325
+=== PAGE 248 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+60
+ Clic droit sur la 1ère cellule de la plage de destination > Insérer les cellules
+copiées. Dans la boîte de dialogue « Insérer et coller », choisissez une
+option de décalage.
+III- Options de collage
+On vient de voir le « Coller » simple, copie conforme de la sélection.
+Il existe diverses autres options de collage, proposées juste avant ou juste après le
+collage.
+Après avoir sélectionné une plage de cellules, puis avoir effectué un « Couper
+» ou un « Copier », cliquez sur la première cellule (en haut à gauche) de la plage
+de destination.
+Diverses options de collage sont proposées :
+ Dans le menu déroulant  du bouton Coller, situé dans le groupe Presse-
+papiers (Onglet Accueil).
+ Dans le menu contextuel qui apparaît après un clic droit sur la sélection
+de la 1ère
+cellule de la plage de destination.
+En pointant sur « Collage spécial », on obtient les mêmes options que
+celles proposées dans le bouton Coller du Presse-papiers.
+ Juste après le collage : dans le menu déroulant du bouton « Options de
+collage » qui s’affiche à l’angle inférieur droit des cellules qui ont été
+collées. Pour afficher le menu de ce bouton, cliquez sur le bouton ou
+bien appuyez sur la touche Ctrl.
+Si vous souhaitez que ce bouton « Options de collage » ne s’affiche plus après
+chaque collage, procédez ainsi : ouvrez le menu Fichier > Options > Options
+avancées.
+Page 248 of 325
+=== PAGE 249 ===
+Microsoft EXCEL
+61
+Dans la rubrique « Couper, copier et coller », décochez la case « Afficher le
+bouton Options de collage lorsqu’un contenu est collé ».
+Pointer sur une option permet d’obtenir l’aperçu du collage correspondant.
+ Coller : on obtient une copie conforme.
+ Formules : collage des formules, sans la mise en forme.
+ Mise en forme des formules et nombres : collage des formules, sans
+élément de mise en forme, collage également des formats des nombres.
+ Conserver la mise en forme source
+ Aucune bordure : collage de tout, sauf des bordures.
+ Conserver les largeurs de colonnes sources : non seulement il y a collage
+des éléments de mise en forme, mais également collage des largeurs de
+colonnes.
+ Transposer : collage avec inversion des colonnes et des lignes.
+ Valeurs : il y a collage des valeurs sans élément de mise en forme.
+Les valeurs, et non les formules, sont collées.
+Exemple : Saisissez 2 dans A2, 3 dans A3 et =A2+A3 dans A4. A4 affiche 5.
+Saisissez 20 dans C2, puis 30 dans C3. Copier A4. Dans C4, faites le collage
+spécial « Formules ». C4 affiche 50, soit la formule =C2+C3, somme des deux
+cellules précédentes. Dans D4, faites le collage spécial « Coller des valeurs ». D4
+affiche la valeur 5.
+ Mise en forme des valeurs et nombres: il y a collage des valeurs, seuls les
+formats de nombres sont conservés.
+ Mise en forme des valeurs et de la source: il y a collage des valeurs, les
+formats sont conservés (pas les autres éléments de mise en forme).
+Page 249 of 325
+=== PAGE 250 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+62
+ Mise en forme : seuls les éléments de mise en forme sont collés (pas les
+données).
+ Coller avec liaison: il y a collage des références des cellules copiées. Si on
+modifie le contenu d’une cellule originale, le contenu de la cellule résultant de
+sa copie sera changé en conséquence.
+Exemple
+Saisissez le mot « chenille » dans la cellule A1. Copiez ce mot dans la cellule C3
+avec l’option « Coller avec liaison ». C3 contient alors $A$1.
+Remplacez le mot « chenille » par le mot « papillon ». Après validation, la
+cellule C3 contient le mot « papillon ».
+ Image : IL y a collage des données sous forme d’image. Les données,
+insérées dans l’image, ne sont plus modifiables.
+Image liée : collage des données sous forme d’image. Si les données
+changent, l’image collée est mise à jour.
+ Fenêtre « Collage spécial »
+Pour afficher la fenêtre « Collage spécial », choisissez l’option « Collage
+spécial » du bouton Coller du groupe Presse-papiers, ou bien choisissez cette
+même option après avoir fait un clic droit sur la 1ère cellule de la plage de
+destination.
+Cette fenêtre présente les rubriques « Coller » et « Opération ».
+ Rubrique « Coller »
+Cette rubrique permet de choisir les éléments qui seront collés.
+Page 250 of 325
+=== PAGE 251 ===
+Microsoft EXCEL
+63
+ Tout : c’est l’option par défaut. Il y a collage de « tout », excepté
+des largeurs de colonnes.
+ Formats : collage uniquement de la mise en forme (de toute la mise
+en forme, et non seulement des formats d’affichage vus). C’est
+l’équivalent du bouton « Reproduire la mise en forme » , situé dans le
+groupe Presse-papiers.
+ Largeurs des colonnes : collage uniquement des largeurs des
+colonnes des cellules.
+ Commentaires : collage des seuls commentaires.
+ Validation : collage des seuls paramètres de validation.
+ Rubrique « Opération »
+Il est possible d’effectuer des opérations entre les données à coller et les
+données contenues dans les cellules de destination : addition, soustraction,
+multiplication et division.
+Soustraction : la donnée de chaque cellule collée est soustraite de la
+donnée de la cellule de destination : donnée destination –donnée collée.
+Division : la donnée de la cellule de destination est divisée par la
+donnée de la cellule collée : donnée destination / donnée collée.
+ Autres options
+Par défaut, les cellules collées, même vides, « écrasent » les données des
+cellules de destination.
+ Blancs non compris : quand cette case est activée, les cellules à
+coller qui sont vides n’effacent pas le contenu des cellules de destination.
+Page 251 of 325
+=== PAGE 252 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+64
+ Coller avec liaison : cette option ne peut être choisie que si, dans
+la rubrique « Coller », l’une des cases « Tout » ou « Tout sauf la bordure
+» a été cochée. Il s'agit de la même option que celle vue précédemment.
+IV- Tri rapide
+Pour trier une colonne de cellules (le tri d’une ligne nécessite l’ouverture de
+la fenêtre « Tri »).
+Indiquez d’abord cette colonne :
+ Cliquez sur une cellule quelconque de la colonne : avec cette méthode,
+le tri s’arrêtera à la première cellule vide trouvée.
+ Ou bien sélectionnez la colonne de valeurs à trier. Dans un ordre
+croissant, les cellules vides seront placées en dernier.
+Sous l’onglet Accueil, dans le groupe « Edition », activez le bouton « Trier
+et filtrer », puis choisissez l’option souhaitée. Pour afficher la fenêtre « Tri
+», cliquez sur l’option « Tri personnalisé ».
+Ou bien : sous l’onglet Données, dans le groupe « Trier et filtrer », activez le
+bouton « Trier de A à Z » ou le bouton « Trier de Z à A ». Pour afficher
+la fenêtre « Tri », cliquez sur le bouton « Trier ».
+En ordre croissant, les chiffres sont placés avant les lettres. Pour les autres
+caractères dont vous auriez besoin de connaître l’ordre : saisissez-les sur une
+colonne, sélectionnez-les, puis triez-les.
+ Fenêtre « Tri »
+Elle est principalement utilisée pour un tableau de données. Elle permet de
+classer les données sur plusieurs niveaux de critères.
+Exemple d’un tableau comportant deux colonnes : noms et prénoms.
+Page 252 of 325
+=== PAGE 253 ===
+Microsoft EXCEL
+65
+Un premier critère de classement peut être l’ordre alphabétique des noms.
+On peut ajouter un second critère (ou « niveau »), l’ordre alphabétique des
+prénoms (intéressant quand il y a des homonymes).
+Pour une colonne de données, la fenêtre « Tri » permet de préciser si la colonne
+comporte un en-tête (exclu du tri) en cochant la case « Mes données ont des en-
+têtes ».On peut également trier une ligne de données. Sélectionnez-la, case
+d’étiquette exclue.Activez le bouton « Options » > « De la gauche vers la
+droite ». Précisez dans la rubrique « Trier » la ligne concernée.
+Si les données sont des dates, il est proposé comme ordre de tri : « Du plus
+ancien au plus récent » ou « Du plus récent au plus ancien ».
+Page 253 of 325
+=== PAGE 254 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+66
+1- Sans insertion concomitante, déplacer, copier ou coller ne
+changent pas les références des cellules existantes. Ces actions
+n’entraînent aucun décalage de cellules.
+2- Le volet Presse-papiers permet de stocker 24 éléments
+coupés ou copiés. A volonté, un élément du Presse-papiers peut
+être collé par simple clic.
+3- Avant de cliquer-glisser pour déplacer ou copier des
+cellules, le pointeur doit avoir la forme d’une croix fléchée.
+4- Pour trier une colonne de cellules, le tri d’une ligne
+nécessite l’ouverture de la fenêtre « Tri ».
+POINTS IMPORTANTS A RETENIR
+Page 254 of 325
+=== PAGE 255 ===
+Microsoft EXCEL
+67
+EXERCICES D’ASSIMILATION
+Exercice pratique
+1. Reproduire le tableau ci-dessous
+2. Trier dans l’ordre alphabétique des régions
+3. Trier dans l’ordre alphabétique des noms
+4. Trier dans l’ordre alphabétique des districts
+Page 255 of 325
+=== PAGE 256 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+68
+CHAPITRE VI- FORMULE ET LES FONCTIONS
+I- LES FORMULES
+Sur le ruban, l’onglet « Formules » regroupe les commandes spécifiques aux
+formules.
+ Toute formule doit commencer par le signe égal =
+Le signe égal indique qu’un résultat doit être donné, contrairement à une saisie
+simple, sans résultat attendu.
+Il n’est pas faux d’écrire dans une cellule = 3, mais cela n’a aucun intérêt. Autant
+écrire directement 3.
+En revanche, on doit écrire = 5 + 2, si on veut obtenir le résultat de la somme
+après validation de la saisie. Si on écrit seulement 5 + 2, on aura toujours
+l’expression 5 + 2 après validation.
+Le pavé numérique d’un ordinateur ne contient pas de signe égal. Remplacez-
+le par le signe +, ou par le signe – si la formule débute par un nombre négatif.
+ Excel ne distingue pas la casse (majuscule ou minuscule)
+Pour être plus rapide, vous pouvez donc écrire une référence de colonne, un nom
+de fonction ou un nom attribué en minuscules.
+ Affichage
+Après validation (tapez Entrée ou cliquez dans une autre cellule), le résultat
+d’une formule apparaît dans la cellule.
+Cette cellule étant sélectionnée, la formule saisie apparaît dans la barre de
+formule. Pour afficher toutes les formules de la feuille de calcul :
+Page 256 of 325
+=== PAGE 257 ===
+Microsoft EXCEL
+69
+ Dans le groupe « Audit de formules », activez le bouton « Afficher les
+formules ».
+ Ou bien, appuyez sur : Ctrl + touche guillemets (utilisez à nouveau ces
+touches pour masquer les formules).
+Si une formule est longue, pour que son affichage soit plus lisible, insérez un ou
+plusieurs sauts de ligne : Alt + Entrée.
+ Indépendance ou dépendance
+Une formule est indépendante lorsqu’elle n’utilise pas la valeur d’une autre
+cellule (exemple = 8 * 5 - 6).
+Dans le cas contraire, on dit qu’elle est dépendante (exemple = A3 + B1).
+On intègre communément des contenus de cellules dans les formules.
+ Les fonctions
+Une formule peut utiliser une ou plusieurs fonctions, relatives à divers domaines.
+Exemple : la fonction somme :
+La formule =SOMME (C5:Z18) renvoie en résultat la somme des valeurs
+contenues dans la plage de cellules C5:Z18 (évitant d’écrire in extenso =C5+C6
++…+Z18).
+L’étude des fonctions constitue l’objet du chapitre 8 – LES FONCTIONS.
+1- Operateurs
+ Opérateurs de calcul
+Pour élaborer une formule de calcul, on se sert d’opérateurs.
+Les opérateurs de calcul sont, par ordre de priorité :
+ multiplication * et division /
+Page 257 of 325
+=== PAGE 258 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+70
+ addition + et soustraction -
+On peut utiliser des parenthèses pour préciser la priorité des calculs. Le
+nombre de parenthèses ouvrantes doit être égal au nombre de parenthèses
+fermantes.
+ Opérateur alphanumérique
+L’esperluette & est l’opérateur permettant de concaténer (c’est-à-dire lier) des
+chaînes de caractères.
+Exemple : saisissez Julie dans A1, Quiberon dans B1, puis dans la cellule C1
+la formule suivante : =A1&« habite à »&B1. La cellule C1 affiche : Julie
+habite à Quiberon. Ne pas oublier le signe égal, il s’agit d’une formule.
+2- Références relatives ou absolues
+Dans une formule, on peut désigner une cellule soit par sa référence
+ColonneLigne (exemple : = 6*J43), soit par son nom.
+Exemple : =6*quantité, si la cellule J43 a été nommée quantité.
+Quand on saisit sa référence, le contour de la cellule change de couleur et
+s’entoure de quatre poignées, ce qui permet de bien la distinguer
+ Insertion d’une référence dans une formule
+Il existe deux méthodes pour saisir la référence d’une cellule dans une formule :
+ Soit on la saisit avec le clavier : on tape la lettre de colonne suivi du n° de
+ligne,
+ Soit on la sélectionne avec la souris, méthode particulièrement intéressante
+quand il s’agit de sélectionner des plages de cellules.
+Page 258 of 325
+=== PAGE 259 ===
+Microsoft EXCEL
+71
+ Références relatives, absolues et mixtes
+ Référence relative
+Une référence relative est une adresse qui s’ajuste automatiquement dans une
+formule lors de la copie de cette formule. Par défaut, les références qui composent
+une formule sont relatives.
+Exemple référence relative : =E4*B2
+ Référence absolue
+Quand la référence à une cellule est absolue, il convient de le préciser sous la
+forme : $colonne$ligne (procédé mémo : la référence au dollar est absolue…).
+Dans ce cas, même si la cellule est recopiée, la valeur reste celle de la cellule
+d’origine. Le symbole $ fige la colonne ou la ligne qui le suit.
+Exemple
+E F G
+1 5 2
+2 =E1
+3 =$E$1
+Dans la cellule E1, saisissez 5 ; dans la cellule F1, saisissez 2.
+Dans la cellule F2, saisissez =E1 (référence relative, donc Excel mémorise
+que F2 contient la valeur de la cellule colonne précédente et ligne précédente).
+Dans la cellule F3, saisissez =$E$1.
+Sélectionnez F2, puis étendez la copie de F2 à G2. La cellule G2 affiche la
+valeur 2 (valeur de la cellule F1, colonne précédente, ligne précédente). La
+valeur de E1 n’a donc pas été préservée.
+Sélectionnez F3, puis étendez la copie de F3 à G3. La cellule G3 affiche la valeur
+5. La valeur de E1 a été cette fois préservée.
+Page 259 of 325
+=== PAGE 260 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+72
+ Référence mixte
+Il est possible d’indiquer une colonne fixe ($ColonneLigne) et une ligne relative,
+ou vice versa (Colonne$Ligne). Exemples : $A8 et A$8.
+ Ecriture du symbole $ avec la touche F4
+Pour passer de l’écriture d’un type de référence à un autre, il est pratique
+d’utiliser la touche F4.Exemple
+Saisissez dans une cellule =A4.
+Appuyez sur F4. La référence devient $A$4.
+Appuyez à nouveau sur F4. On obtient A$4. Puis $A4. Puis A4.
+3- Références : autre feuille, autre classeur
+ Référence d’une cellule appartenant à une autre feuille du
+même classeur
+Exemple
+Prenons le cas d’un classeur à trois feuilles : Feuil1, Feuil2 et Feuil3.
+Etant sur Feuil2 ou sur Feuil3, pour faire appel à la cellule T9 de la Feuil1, on
+écrit : =Feuil1!T9
+On saisit le nom de la feuille, suivi d’un point d’exclamation, puis de la
+référence de la cellule.
+Si le nom de la feuille contient un espace, il doit être entouré d’apostrophes.
+Exemple : =‘Feuille une’!T9
+Page 260 of 325
+=== PAGE 261 ===
+Microsoft EXCEL
+73
+ Utilisation de plages de cellules ayant les mêmes références, situées
+sur des feuilles différentes du même classeur
+On indique le nom des feuilles, suivi d’un point d’exclamation, puis de la
+référence des cellules.
+Exemple
+Si on saisit dans une cellule la formule =somme (Feuil1:Feuil3!G2:H8), on
+obtient la somme des valeurs de toutes les cellules des plages G2:H8 affichées
+sur les trois feuilles.
+Au lieu de saisir entièrement la formule, on peut également procéder ainsi,
+en reprenant l’exemple précédent :
+ Dans la cellule résultat, écrivez =somme (
+ Sélectionnez les feuilles : cliquez sur l’onglet de Feuil1, puis Maj + clic sur
+l’onglet de Feuil3
+ Sélectionnez les cellules de la plage G2:H8
+ Refermez la parenthèse, puis validez.
+ Référence à une cellule appartenant à la feuille d’un autre classeur
+Il s’agit cette fois d’une référence externe. Lorsqu’un classeur comporte
+une telle référence, une fenêtre apparaît à son ouverture, proposant de mettre à
+jour les liaisons.
+Les paramètres de sécurité des liaisons sont modifiables : ouvrez le menu
+Fichier > Options > Centre de gestion de la confidentialité > Paramètres du
+Centre de gestion de la confidentialité > Contenu externe. Dans la rubrique «
+Paramètres de sécurité pour les liaisons du classeur », cochez l’option souhaitée.
+Page 261 of 325
+=== PAGE 262 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+74
+Exemple : pour faire appel à la cellule A2 de la Feuil5 appartenant au
+Classeur1, on écrit =[Classeur1]Feuil5 !A2. Ou bien on écrit le signe égal, puis
+on sélectionne la cellule A2.
+Le nom du classeur auquel appartient la feuille est placé entre crochets. S’il
+contient un espace, on doit ajouter des apostrophes. On écrira par exemple
+=’[Classeur un]Feuil5’!A2. Cette ponctuation doit exactement être respectée. La
+seconde apostrophe est située après le nom de la feuille. Sélectionner la cellule,
+plutôt que d’écrire la formule, facilite la saisie.
+4- Attribution d’un nom
+Un nom peut être attribué à une cellule, à une plage de cellules, à un ensemble
+de plages de cellules, également (plus rarement) à une formule ou à une
+constante.
+Il constitue une référence absolue. Un nom est utilisable dans tout le
+classeur.
+ Affichage des noms attribués
+La liste de tous les noms attribués est affichée dans la fenêtre « Gestionnaire
+de noms ». Pour l’afficher, activez le bouton du même nom, dans le groupe «
+Noms définis », ou bien, plus rapidement, faites : Ctrl + F3.
+Chaque nom qui a été attribué apparaît avec sa valeur, les références des cellules
+concernées, son étendue (c’est-à-dire sa zone d’utilisation, classeur ou feuille),
+éventuellement son commentaire. Le bouton « Filtrer », avec menu déroulant,
+permet de filtrer les noms souhaités.
+Excepté ceux faisant référence à des constantes ou à des formules, les noms
+apparaissent également dans la liste déroulante de la zone Nom, par ordre
+Page 262 of 325
+=== PAGE 263 ===
+Microsoft EXCEL
+75
+alphabétique. Cliquez sur l’un d’eux permet de sélectionner l’ensemble des
+cellules qu’il désigne.
+ Règles concernant le nom :
+ Il doit être différentd’uneréférencelignecolonne.
+ Le premier caractère doit être une lettre ou le caractère de soulignement.
+ Ne pas utiliser d’espace. Le point et le caractère de soulignement
+peuvent le remplacer.
+ Se rappeler qu’Excel ne fait pas la différence entre majuscules et
+minuscules, afin d’éviter d’appeler deux cellules par le même nom
+ Attribution d’un nom
+ Deux méthodes d’attribution d’un nom :
+ Saisie dans la zone Nom
+Cette méthode est rapide. Sélectionnez les cellules dont vous souhaitez nommer
+l’ensemble. Puis saisissez un nom dans la zone Nom (zone gauche au-dessus de
+la grille). Validez par Entrée.
+ Fenêtre « Gestionnaire de noms »
+Elle permet de définir un nom, également de le modifier, de le supprimer, ou de
+modifier les références des cellules qu’il désigne.
+Pourl’afficher, activez le bouton du même nom, dans le groupe « Noms définis
+» (onglet Formules), ou bien, plus rapidement, faites : Ctrl + F3.
+Pour attribuer un nouveau nom, cliquez sur le bouton « Nouveau » de la
+fenêtre. La fenêtre « Nouveau nom » s’affiche.
+Saisissez un nom, ou gardez le nom éventuellement proposé par Excel.
+Page 263 of 325
+=== PAGE 264 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+76
+Au lieu de saisir directement les références, vous pouvez activer le bouton de
+réduction en fin de zone de saisie , puis sélectionner les cellules. Activez le
+bouton d’agrandissement . La fenêtre « Nouveau nom » s’affiche avec les
+références absolues des cellules sélectionnées, précédées du nom de leur feuille,
+dans la zone « Fait référence à ». Ces références peuvent être modifiées.
+Par défaut, le nom est disponible dans tout le classeur. Vous pouvez définir une
+autre zone de validité, une feuille sur laquelle il sera disponible, à l’exclusion des
+autres feuill
+ Attributiond’un nom à une constante
+Dans la fenêtre « Nouveau nom » (utilisée ci-dessus), dans la zone « Fait
+référence à », saisissez la constante, sans le signe égal, s’il s’agit d’une constante
+autrequ’un texte.
+Si la constante est un texte, saisissez le texte précédé du signe égal et entouré de
+guillemets.
+Exemple : =«Le total est ».
+ Attribuer les noms de leurs intitulés aux lignes et aux colonnes
+Procédez ainsi :
+ Sélectionnez le tableau en incluant les intitulés des lignes et des colonnes.
+ Affichez la fenêtre « Créer des noms à partir de la sélection » : activez
+le bouton « Depuis sélection », groupe « Noms définis » (onglet
+Formules).
+Chaque colonne et chaque ligne de la zone de cellules possède alors son nom
+d’intitulé.
+Exemple
+Page 264 of 325
+=== PAGE 265 ===
+Microsoft EXCEL
+77
+A B C D
+1 Mai Juin Juillet
+2 salamandres 84 105 62
+3 grillons 18 72 33
+Sélectionnez les cellules A1 :D3. Activez le bouton « Depuis sélection ». Dans
+la fenêtre « Créer des noms à partir de la sélection », laissez cochées les
+cases « Ligne du haut » et « Colonne de gauche ». Validez.
+Les noms des intitulés des lignes et des colonnes apparaissent maintenant dans la
+liste déroulante de la zone Nom.
+Dans une cellule vide, saisissez =salamandres juillet ou bien =juillet
+salamandres. Validez. Le résultat est 62.
+L’espace inséré entre les mots salamandres et juillet correspond à l’opérateur
+d’intersection. La cellule D2 de valeur 62 est située à l’intersection de la
+ligne nommée salamandres et de la colonne nommée Juillet.
+ Saisie d’un nom dans une formule
+On garde la possibilité d’utiliser les références.
+ Saisie directe
+Un nom peut être saisi directement dans une formule. Il a l’avantage d’être plus
+explicite qu’une référence colonne ligne. Exemple : attribution du nom
+TauxTVA, puis saisie de la formule =D6*(1+TauxTVA).
+ Insertion
+On peut également insérer le nom dans une formule en utilisant le menu déroulant
+du bouton « Utiliser dans la formule », dans le groupe « Noms définis » (groupe
+Formules).
+
+Page 265 of 325
+=== PAGE 266 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+78
+ Reprenons l’exemple précédent. Saisissez =D6*(1+
+Activez le bouton « UtiliserDsFormule » (utiliser dans la formule). Dans
+le menu déroulant, choisissez TauxTVA. Le nom est alors inséré dans la formule.
+Fermez la parenthèse.
+ Autre exemple
+Attribuez le nom Totalité à une plage de cellules. Saisissez dans une
+cellule la formule =somme(Totalité). Le nom Totalité peut être intégré dans la
+formule par saisie directe ou par insertion. On obtient la somme de toutes les
+valeurs des cellules de Totalité.
+ Collage de noms
+Le menu déroulant du bouton « UtiliserDsFormule » (groupe « Noms définis
+», onglet Formules) permet également de coller un nom ou bien la liste des noms
+avec les références des cellules correspondantes : activez l’option « Coller des
+noms », puis renseignez la fenêtre« Coller un nom ».
+ Remplacer les références colonne/ligne par un nom, dans les formules
+déjà saisies
+Après définition d’un nom, on peut vouloir l’appliquer aux formules déjà saisies
+: Ouvrez le menu déroulant du bouton « Définir un nom » (groupe « Noms définis
+», onglet Formules) > Appliquer les noms.
+Dans la fenêtre « Affecter un nom », sélectionnez les noms à appliquer (Ctrl +
+clic).
+Page 266 of 325
+=== PAGE 267 ===
+Microsoft EXCEL
+79
+5- Date et heure
+ DateExcel enregistre une date sous la forme d’un nombre, appelé « numéro
+de série », calculé à partir du 1er janvier 1900. Par exemple, le 12/09/2008
+correspond au numéro de série 39703, ce qui signifie que 39703 jours se sont
+écoulés depuis le 1er janvier 1900.Vous pouvez vérifier si le 1er janvier 1900 est
+bien la date par défaut, avec l’une des méthodes suivantes :
+ Activez Fichier > Options > Options avancées. Dans la rubrique « Lors
+du calcul de ce classeur », vérifiez si la case « Utiliser le calendrier depuis
+1904 » n’est pas cochée.
+ Ou bien : saisissez par exemple 15/1/1900, validez. La saisie est
+automatiquement au format Date ; mettez-la en format Standard (clic droit
+sur la cellule > Format de cellule. Sous l’onglet Nombre, sélectionnez
+Standard, validez). La cellule doit afficher le numéro de série 15 (nombre
+de jours depuis le 1er janvier 1900).
+ Heure
+Excel enregistre une heure sous forme de fraction : heures / 24.
+Exemples : L’heure 12:00 correspond à 12/24, soit 0,5.
+L’heure 18:00 correspond à 18/24 soit 0,75. L’heure 24:00 correspond à 1.
+Comme pour une date, on peut afficher le numéro de série d’une heure, en lui
+appliquant le format Standard (clic droit dans la cellule contenant l’heure >
+Format de cellule > Onglet Nombre > Catégorie Standard. Validez).
+Minutes et secondes sont également enregistrées sous forme de fractions :
+ Les minutes sont converties en : minutes / (24 * 60).
+Page 267 of 325
+=== PAGE 268 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+80
+Exemple : 00:15:00 minutes est converti en 15 / (24 * 60), soit 0,01042.
+ Les secondes sont converties en : secondes / (24 * 60 * 60).
+Exemple : 00:00:45 secondes est converti en 45 / (24 * 60 * 60), soit 0,00052
+(paramétrage à cinq décimales).
+6- Audit de formules, erreurs et références circulaires
+Sous l’onglet Formules, le groupe « Audit de formules » contient les
+commandes spécifiques à l’audit de formules, à la vérification et à la recherche
+d’erreurs, ainsi qu’aux références circulaires.
+Pour afficher toutes les formules de la feuille, activez le bouton « Afficher les
+formules ». Ou bien tapez Ctrl + guillemets (tapez de nouveau Ctrl + guillemets
+pour les masquer).
+ Audit de formules
+Indépendamment de toute erreur, on peut souhaiter auditer une formule, et
+examiner :
+ Les liaisons existantes avec d’autres cellules : antécédents, dépendants.
+ Son évaluation, c’est-à-dire le processus de son calcul.
+ Des valeurs de cellules.
+ Erreurs
+ Messages d’erreurs
+Après validation d’une saisie, lorsqu’Excel repère une erreur, la cellule affiche
+un bref message commençant par un dièse # et indiquant sa nature.
+Exemples de valeurs d’erreurs : #VALEUR !, #NOM ?, #REF !, #N/A
+(valeur non disponible, Not Available).
+Page 268 of 325
+=== PAGE 269 ===
+Microsoft EXCEL
+81
+ Vérification des erreurs
+Pour afficher la fenêtre « Vérification des erreurs », activez le bouton du même
+nom.
+Cette fenêtre indique les cellules contenant une erreur (activez les boutons «
+Précédent » et « Suivant »), et elle peut ainsi aider à la résoudre.
+« Aide sur cette erreur » : permet d’accéder à l’aide en ligne.
+« Afficher les étapes du calcul » : affiche la fenêtre « Evaluation de formule »,
+étudiée ci- dessus au paragraphe Evaluation d’une formule.
+« Ignorerl’erreur » : l’erreur ne sera plus indiquée dans cette fenêtre, à moins que
+ne soit activée l’option « Rétablir les erreurs ignorées ». Pour activer cette
+option, cliquez sur « Fichier » ; dans la fenêtre « Options », choisissez la
+catégorie « Formules », puis à la rubrique « Vérification des erreurs », activez «
+Rétablir les erreurs ignorées ».
+II- LES FONCTIONS
+Excel 2013 propose plus de 300 fonctions, utilisables dans les formules.
+L’onglet« Formules » contient le groupe « Bibliothèque de fonctions ». Si la
+fonction est en début de formule, elle doit être précédée du signe égal.
+Exemple : La formule =MAINTENANT() renvoie la date et l’heure courantes.
+Si des signes dièses # s’affichent, élargissez la colonne (cliquez-glissez sur le
+bord droit de la case d’en-tête de la colonne).
+Un texte peut être juxtaposé à une fonction grâce à l’esperluette &.
+Exemple
+Page 269 of 325
+=== PAGE 270 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+82
+Sélectionnez la plage F1:G3. Saisissez un nombre
+dans chaque cellule, validez après chaque saisie en
+appuyant sur la touche Tab .
+Dans la cellule H1, saisissez la formule =«La somme est »&SOMME(F1;G1).
+Validez. H1 affiche : La somme est 3.
+Les références étant relatives dans cet exemple, on peut recopier la formule par
+cliqué- glissé sur la poignée de la cellule H1 sélectionnée, jusqu’en H3 (ou plus
+rapidement en double- cliquant sur la poignée de H1).
+H2 affiche : La somme est 7, et H3 affiche : La somme est 11.
+1- Arguments
+Sauf exceptions, une fonction requièrent des données, appelées arguments, pour
+retourner un résultat.
+Les arguments sont mis entre parenthèses. On place des parenthèses même en
+l’absence d’argument, afin d’indiquer qu’il s’agit d’une fonction (et non d’un
+nom de cellule).
+Quand il y a plusieurs arguments, ils doivent être séparés par un point-virgule.
+ Exemples de formules utilisant des fonctions
+ Fonction sans argument
+La formule =AUJOURDHUI() renvoie la date courante.
+La formule =ENT(SOMME(E6:G8)) renvoie la partie entière de la somme
+des valeurs de la plage E6:G8.
+ Fonction avec quatre arguments
+Page 270 of 325
+=== PAGE 271 ===
+Microsoft EXCEL
+83
+La formule =SOMME(5;B1:B6;C3;NoErables) renvoie la somme de la
+constante 5, des valeurs de la plage B1:B6, de la valeur de la cellule C3 et
+de la valeur des cellules de l’ensemble nommé NoErables. La fonction SOMME
+peut recevoir de 1 à 30 arguments.
+Comme l’illustrent ces exemples, il existe différent stypes d’arguments.
+Un argument peut être une constante, la référence d’une cellule, les références
+d’une plage, un nom attribué ou une autre fonction.
+2- Recherche et insertion d’une fonction
+Pour utiliser une fonction dans une formule, trois cas se présentent :
+ Soit, bien que sachant ce que vous voulez faire, vous ignorez le nom de
+la fonction à utiliser. Il vous faut alors passer par la fenêtre « Insérer une
+fonction » (voir ci- après « Pour rechercher, puis insérer une fonction »).
+ Soit vous avez récemment utilisé la fonction, ou bien vous connaissez son
+thème et vous saurez la retrouver dans la liste des fonctions de ce thème,
+activez alors le thème correspondant de la Bibliothèque de fonctions.
+ Soit vous connaissez le nom de la fonction. Vous pouvez alors directement
+le saisir, une info-bulle vous aidera si nécessaire pour l’écriture des
+arguments (voir § 3 « Saisie directe » de ce chapitre).
+ Pour rechercher, puis insérer une fonction, procédez ainsi :
+ Sélectionnez la cellule qui contiendra le résultat.
+ Dans le groupe « Bibliothèque de fonctions », cliquez sur le bouton «
+Insérer une fonction », d’icône fx (f est l’initiale de fonction et x
+symbolise un argument). Ou bien dans la barre de formule, cliquez sur le
+bouton « Insérer une fonction ».
+Page 271 of 325
+=== PAGE 272 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+84
+Le signe égal s’affiche aussitôt dans la cellule résultat et la fenêtre « Insérer
+une fonction » apparaît.
+ Recherche de la fonction
+ Soit vous saisissez dans la zone « Rechercher une fonction » ce que
+vous souhaitez faire (par exemple : calculer le reste d’une division),
+puis validez en tapant Entrée. Excel propose alors un choix restreint de
+fonctions.
+ Soit vous sélectionnez dans le menu déroulant une catégorie de
+fonctions, parmi la dizaine de catégories proposées. Selon la catégorie
+choisie, une liste de fonctions s’affiche dans la zone centrale.
+ Sélectionnez une fonction. La sélection d’une fonction par simple clic
+affiche sa syntaxe, en particulier celle de ses arguments, ainsi qu’un bref
+descriptif. Le lien hypertexte Aide donne de plus amples informations.
+Validez le choix par OK, ou en double-cliquant sur la fonction. Ou bien
+saisissez le nom de la fonction dans la zone centrale, puis validez.
+ Une nouvelle fenêtre « Arguments de la fonction » apparaît.
+Saisissez les arguments, ou gardez ceux qui sont éventuellement
+proposés.
+Le résultat s’affiche en bas de la fenêtre au fur et à mesure de la saisie
+des arguments.
+ Validez. La validation insère une parenthèse fermante.
+La fonction dotée de ses arguments est insérée dans la formule, et le résultat
+est affiché dans la cellule.
+Page 272 of 325
+=== PAGE 273 ===
+Microsoft EXCEL
+85
+3- Saisie directe
+Si vous connaissez le nom exact de la fonction que vous souhaitez insérer
+dans une formule, vous pouvez le saisir directement.
+Juste après la saisie de la première parenthèse ouvrante, une info-bulle affiche
+le nom de la fonction et les arguments requis. Les arguments cités entre crochets
+sont facultatifs.
+En cliquant sur le nom de la fonction, l’aide sur cette fonction apparaît.
+En cliquant sur un argument, l’argument correspondant dans la cellule est
+mis en évidence.
+L’insertion des arguments peut être effectuée soit par saisie, soit par sélection
+de cellules. Fermez la parenthèse, puis validez (tapez Entrée ou cliquez dans une
+autre cellule).
+Le résultat de la fonction s’affiche dans la cellule.
+4- Exemples
+ Bouton somme automatique Σ 
+Le bouton « Somme automatique » est situé dans le groupe « Bibliothèque de
+fonctions ».
+Il est également présent sous l’onglet Accueil, dans le groupe « Edition ».
+Sélectionnez la cellule qui contiendra le résultat. Cliquez sur le bouton
+Σ, puis sélectionnez les cellules contenant les valeurs à additionner. Validez.
+Bien que ce bouton soit nommé « Somme automatique », son menu déroulant
+propose également quatre autres fonctions, souvent utilisées : Moyenne, NB,
+Max et Min.
+Page 273 of 325
+=== PAGE 274 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+86
+ la fonction NB
+La fonction NB totalise :
+ Le nombre de cellules contenant des valeurs numériques de chacun
+de ses arguments,
+ En ajoutant éventuellement le nombre de ses arguments qui sont
+des valeurs numériques.
+Exemple : =NB(A1:C1;8;23) affiche pour résultat le nombre de cellules de la
+plage A1:Cl contenant des valeurs numériques, auquel est ajouté 2 (arguments 8
+et 23 de la fonction).
+ La fonction SI
+ Définition
+Une formule contenant la fonction SI est appelée une formule
+conditionnelle. Cette fonction est très utilisée.
+La fonction SI renvoie un résultat qui diffère selon qu’une expression,
+appelée « Test », est vraie ou fausse (expression dite logique) :
+SI (Test; alors Résultat_si_Test_vrai; sinon Résultat_si_Test_faux)
+L’expression Test contient nécessairement un opérateur logique : égal = ,
+supérieur > , supérieur ou égal >= , inférieur < , inférieur ou égal <= .
+Les deux résultats suivants ( Résultat_si_Test_vrai et Résultat_si_Test_faux )
+peuvent contenir des fonctions, des calculs, différents types d’expression (Date,
+Texte, Pourcentage…) etc.
+La fonction SI peut n’être dotée que de deux arguments.
+Exemple
+Page 274 of 325
+=== PAGE 275 ===
+Microsoft EXCEL
+87
+La formule =SI(E6=«Jaune» ;« la couleur est jaune ») renvoie le texte « la
+couleur est jaune » si E6 contient le mot jaune (en minuscules ou en
+majuscules, Excel ne reconnaissant pas la casse), sinon elle renvoie FAUX.
+Page 275 of 325
+=== PAGE 276 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+88
+1- L’objectif d’un tableur est d’effectuer des calculs et des simulations à
+l’aide de formules. Une formule débute par l’opérateur = et contient
+ensuite les adresses des cellules servant au calcul, des valeurs, un ou
+plusieurs des opérateurs de calcul suivants : + (addition) ; –
+(soustraction) ; *(multiplication) ; / (division).
+2- Excel offre différentes méthodes pour l’entrée d’une formule :
+ Les boutons de l’onglet Accueil et Somme automatique de
+l’onglet Formules ;
+ L’insertion directe de la formule ;
+ L’insertion par pointage des cellules ;
+ L’insertion directe d’une fonction intégrée
+3- Une formule peut contenir trois types de référence : relative, absolue
+ou mixte
+4- Les fonctions se composent des éléments suivants qui en forment la
+syntaxe :
+ Le signe = qui annonce la fonction ;
+ Le nom de la fonction ;
+ Les arguments de la fonction, séparés par des points-virgules ;
+ Les parenthèses qui entourent les arguments.
+5- Un argument est une information sur laquelle la fonction s’appuie
+pour générer le résultat demandé. Un argument peut être présenté par
+un nombre, une valeur ou encore une référence de cellule.
+POINTS IMPORTANTS A RETENIR
+Page 276 of 325
+=== PAGE 277 ===
+Microsoft EXCEL
+89
+Exercice 1 :
+Reproduisez le tableau et calculez les différents montants
+Exercice 2 :
+Trouver le montant épargné
+Exercice 3 :
+1. Calculez le Montant remise
+2. Accordez une remise de 10% pour les clients dont le Montant Brut hors taxes
+dépasse 10 000.
+EXERCICES D’ASSIMILIATION
+Page 277 of 325
+=== PAGE 278 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+90
+CHAPITRE VII - MISE EN FORME ET DIMENSION
+ Eléments de mise en forme
+La mise en forme d’une cellule concerne plusieurs éléments :
+ Le « nombre », c’est-à-dire le format d’affichage de la valeur
+(exemples : format monétaire, format pourcentage ou format texte) ;
+ L’alignement de la valeur dans la cellule ;
+ La police des caractères ;
+ La bordure de la case ;
+ Son remplissage ;
+ Son format.
+ Outils de mise en forme
+ Fenêtre « Format de cellule »
+Les cinq premiers éléments cités ci-dessus font chacun l’objet d’un onglet de
+la fenêtre « Format de cellule ».
+Il existe plusieurs méthodes pour afficher cette fenêtre, en particulier les deux
+suivantes :
+ Cliquez sur le lanceur du groupe Nombre.
+ Ou bien : clic droit sur la sélection à mettre en forme > Format de cellule.
+La fenêtre présente des options supplémentaires par rapport aux commandes du
+ruban.
+ Principe d’application d’une mise en forme
+Plutôt que de procéder à la mise en forme cellule par cellule, il est plus
+rapide de sélectionner, avant ou après saisie, le maximum de cellules, avant de
+leur appliquer une mise en forme.
+Page 278 of 325
+=== PAGE 279 ===
+Microsoft EXCEL
+91
+ Sélectionnez les cellules à traiter. Quand une seule cellule est
+sélectionnée, sélectionnez bien la cellule (elle a un contour plus épais), et
+non son contenu (dans ce cas, vous n’aurez accès qu’à l’onglet Police de
+la fenêtre « Format de cellule ») ;
+ Cliquez sur les commandes de mises en forme souhaitées, en utilisant le
+ruban, la mini-barre d’outils ou la fenêtre « Format de cellule ».
+I- Eléments de mise en forme
+1- Formats d’affichage
+Sélectionnez les cellules à traiter.
+Dans le groupe Nombre du ruban, activez le menu déroulant de la zone de saisie.
+Onze formats prédéfinis par Excel sont proposés, avec un aperçu de la cellule
+active (en dessous du nom du format). La dernière option « Autres formats
+numériques » affiche la fenêtre« Format de cellule ».
+ Format Standard
+C’est le format qu’Excel applique par défaut.
+Il consiste en l’alignement à droite d’un nombre ou d’une date, et en
+l’alignement à gauche d’un texte.
+ Format Nombre
+C’est le format communément utilisé pour l’affichage d’un nombre. Exemple :
+3528,10
+Par défaut, Excel affiche un nombre de ce format avec deux décimales et sans
+séparateur de milliers. Vous pouvez modifier le nombre de décimales et ajouter
+un séparateur de milliers.
+Page 279 of 325
+=== PAGE 280 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+92
+2- Nombre de décimales (chiffres après la virgule)
+Dans le ruban ou sur la mini-barre d’outils, vous pouvez utiliser les boutons «
+Réduire les décimales » (d’icône ,00  ,0) ou « Ajouter une décimale » (d’icône
+,0  ,00).
+3- Séparateur des milliers
+Le séparateur des milliers par défaut est l’espace.
+Pour définir un autre séparateur appliqué par défaut, ouvrez le menu Fichier >
+Options > Options avancées. Dans la rubrique « Options d’édition », décochez
+la case « Utiliser les séparateurs système ». Saisissez le caractère souhaité
+comme séparateur des milliers, un point par exemple. Validez.
+Pour que soient insérés (ou supprimés) des séparateurs de milliers dans les
+cellules sélectionnées, de format Nombre, n’utilisez que la fenêtre « Format
+de cellules » : à l’onglet Nombre, cochez la case « Utiliser le séparateur de
+milliers ».
+Si vous cliquez sur le bouton d’icône 000 présent sur le ruban ou sur la mini-
+barre d’outils, le format ne sera plus « Nombre », mais « Comptabilité ».
+ Format Monétaire
+Par défaut, Excel affiche un nombre de ce format avec deux décimales, séparateur
+de milliers et devise. Le symbole de la devise est aligné contre le bord droit de la
+cellule.
+Si la saisie précise la devise par défaut (par exemple si on saisit 219,50 € et que
+l’euro a été défini comme la devise par défaut), le format monétaire est
+automatiquement appliqué à la cellule.
+Page 280 of 325
+=== PAGE 281 ===
+Microsoft EXCEL
+93
+Changement du symbole monétaire par défaut : Démarrer > Panneau de
+configuration, choisissez l’option régionale et le symbole monétaire. Le
+changement est effectif après redémarrage d’Excel.
+Changement du nombre de décimales, ajout ou suppression du séparateur de
+milliers :
+voir paragraphe ci-dessus « Format Nombre ».
+Changement du symbole de la devise : ouvrez la fenêtre « Format de cellules »
+à l’onglet Nombre, et choisissez le symbole souhaité.
+ Format Comptabilité
+Comme un nombre de format Monétaire, un nombre de ce format affiche par
+défaut deux décimales, le séparateur de milliers et la devise.
+Des éléments le différencient cependant du format monétaire :
+ Le symbole de la devise est aligné avec un retraitd’uncaractèreduborddroit
+de la cellule ;
+ Une valeur nulle est remplacée par un tiret, placé au centre ;
+ Montant négatif : le signe moins est aligné, seul, à gauche de la cellule.
+Exemple :
+Le bouton d’icône billets et pièces du groupe Nombre ou de la mini-barre
+d’outils permet d’appliquer directement ce format. En ouvrant son menu
+déroulant, on affiche la fenêtre
+« Format de cellules » à l’onglet Nombre. Elle permet de changer le nombre de
+décimales et la devise.
+Page 281 of 325
+=== PAGE 282 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+94
+ Format Date et Heure
+Dans la fenêtre « Format de cellule », divers types d’affichage sont proposés en
+fonction du paramètre régional choisi.
+Dans le groupe Nombre, le menu déroulant de la zone de saisie propose les
+deux types de date : « Date courte » et « Date longue ». Le format « Date longue
+» affiche également le jour de la date.
+ Format Pourcentage
+Exemple : si on applique le format Pourcentage à la cellule contenant la valeur
+0,055, la valeur affichée devient 5,5% (avec l’option choisie d’une décimale).
+Le bouton d’icône % du groupe Nombre ou de la mini-barre d’outils permet
+d’appliquer directement ce format.
+ Format Fraction
+Le format Fraction permet de représenter un nombre décimal sous la forme de
+sa partie entière suivie d’une fraction. Exemple : 3,5 peut être affiché 3 ½ en
+format Fraction.
+Si une valeur est saisie sous la forme d’un nombre entier suivi d’une fraction,
+le format fraction est automatiquement attribué à la cellule.
+Le dénominateur de la fraction peut être précisé, soit en nombre de chiffres (1,2
+ou 3), soit par une valeur exacte (par exemple demis ou quarts).
+Exemple : 2,581 peut être affiché avec un dénominateur
+ d’un chiffre : 2 4/7
+ ou de deux chiffres : 2 43/74
+ ou de trois chiffres : 2 104/179.
+Page 282 of 325
+=== PAGE 283 ===
+Microsoft EXCEL
+95
+A chaque fois, Excel affiche la fraction la plus proche de la valeur saisie. Le format
+prédéfini d’Excel affiche un dénominateur d’un seul chiffre.
+ Format Texte
+En appliquant à une cellule le format Texte, même un nombre acquiert ce
+format. Il ne pourra donc pas être utilisé dans des formules mathématiques. Une
+formule saisie restera sous sa forme de texte (le résultat ne sera pas affiché).
+ Format Spécial
+La fenêtre « Format de cellule » propose la catégorie « Spécial ».
+Le format Spécial regroupe divers formats particuliers, type Code postal,
+Sécurité Sociale ou Téléphone. Ils dépendent du paramètre régional choisi.
+ Format personnalisé
+Dans la fenêtre « Format de cellule », choisissez la catégorie « Personnalisée ».
+Si vous souhaitez définir un format Personnalisé, vous pouvez l’écrire
+directement, ou plus simplement, vous baser sur un type prédéfini que vous
+modifierez.
+Il existe en effet plusieurs types prédéfinis de format Personnalisé. Pour en
+choisir un, cliquez dessus. Il apparaît dans la zone de texte, sous « Type ».
+Validez.
+Pour créer ou utiliser un format Personnalisé, il convient de connaître la syntaxe
+des codes de format de nombre.
+Il est pratique d’effectuer la saisie dans la cellule souhaitée, puis de définir le
+format Personnalisé. La saisie apparaît ainsi formatée dans la zone « Exemple
+». Vous pouvez si nécessaire modifier alors le format.
+Page 283 of 325
+=== PAGE 284 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+96
+Un format personnalisé comprend une à quatre parties, qui sont séparées par des
+points- virgules.
+4- Alignement et orientation
+L’alignement concerne la disposition du texte dans la cellule. Le mot « texte
+» est pris dans son sens le plus large, désignant une suite de caractères
+quelconques. Seront utilisés :
+ Sur le ruban, le groupe Alignement de l’onglet Accueil ;
+ La fenêtre « Format de cellule », à l’onglet Alignement.
+ Alignement horizontal ou vertical
+ Alignement horizontal (alignement par rapport à la largeur de la cellule)
+L’alignement par défaut est l’alignement Standard : un nombre ou une date
+est aligné à droite (contre le bord droit, sans retrait) ; un texte est aligné à
+gauche (contre le bord gauche, sans retrait).
+Exemples :
+250310 25/03/10
+Texte sans retrait Texte avec retrait
+gauche
+Le groupe « Alignement » contient les trois boutons d’alignement : Aligner à
+gauche ,Centrer (bouton également présent sur la mini-barre d’outils) et
+Aligner à droite .
+Quand il y a alignement à gauche ou à droite, un retrait (espace entre la
+bordure et le texte) est possible. On peut activer les boutons « Diminuer le
+retrait » et « Augmenter le retrait » .
+La fenêtre « Format de cellule » contient d’autrespossibilitésd’alignement.
+L’option Recopié répète le contenu dans la cellule, autant de fois que possible.
+Page 284 of 325
+=== PAGE 285 ===
+Microsoft EXCEL
+97
+L’option Distribué répartit le texte dans la cellule, avec autant de retrait à
+gauche qu’à droite.
+ Alignement vertical (alignement par rapport à la hauteur de la cellule)
+On retrouve les principales options appliquées précédemment, verticalement cette
+fois.
+ Orientation du texte
+Par défaut, le texte est aligné horizontalement, donc avec un angle nul par
+rapport à l’horizontal.
+Seront utilisés :
+ Le bouton Orientation du groupe Alignement ;
+ La zone « degrés » de la fenêtre « Format de cellule ».
+ Texte et dimensions de la cellule
+ « Renvoyer à la ligne automatiquement »
+Le texte ne déborde plus sur les cellules voisines. Il est affiché entièrement
+dans la cellule, qui s’agrandit en hauteur, s’il y a besoin, au fur et à mesure de la
+saisie.
+Activez le bouton « Renvoyer à la ligne automatiquement » du groupe
+Alignement, ou bien cochez la case correspondante de la fenêtre « Format de
+cellule ».
+ « Ajuster »
+En cochant cette case dans la fenêtre « Format de cellule », la taille des
+caractères est réduite, s’il y a besoin, au fur et à mesure de la saisie. La cellule
+garde les mêmes dimensions.
+Page 285 of 325
+=== PAGE 286 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+98
+Ces deux options visent à afficher entièrement un long texte dans la cellule.
+En choisissant la 1ère option, on augmente la hauteur de ligne. En choisissant
+la 2ème option, on réduit la taille des caractères.
+ « Fusionner les cellules »
+Dans la fenêtre « Format de cellule », cette option est souvent combinée
+avec un alignement Centré pour disposer un titre. Si plusieurs cellules
+contiennent une valeur avant la fusion, seule la valeur de la cellule supérieure
+gauche est conservée.
+Sur le ruban, dans le groupe Alignement, le bouton « Fusionner et centrer »
+aboutit directement au même résultat. Ce bouton est également présent sur
+la mini-barre d’outils
+5- Police, bordure, remplissage
+ Police
+Commandes du ruban (ou de la mini-barre d’outils) :
+Dans le groupe Police, on peut directement choisir le type, la taille et la couleur
+des caractères (A), ainsi que le style (gras G, italique I, souligné S). Dans la liste
+de choix, les deux premiers types de police correspondent à ceux utilisés par
+défaut, dans le classeur en cours, pour les en-têtes et le corps (caractères saisis
+dans les cellules).
+Les boutons A et A permettent d’augmenter ou de réduire, à chaque clic,
+d’un point la taille des caractères.
+Fenêtre « Format de cellule », onglet Police :
+Page 286 of 325
+=== PAGE 287 ===
+Microsoft EXCEL
+99
+Dans la fenêtre, sont également proposés des types de soulignement, des couleurs
+personnalisées, ainsi que les attributs Barré, Exposant et Indice.
+ Bordure
+Commandes du ruban (ou de la mini-barre d’outils) :
+Dans le groupe Police, le bouton de bordures (son icône et son info-bulle
+dépendent de la dernière commande appliquée) dispose d’un menu déroulant.
+Tandis que le bouton de la mini-barre d’outils propose des bordures prédéfinies,
+le bouton du ruban propose en plus diverses commandes dans la rubrique «
+Traçage des bordures », qui permettent de tracer des bordures, le pointeur prenant
+l’aspect d’un crayon.
+Traçage des bordures :
+Choisissez d’abord une « Couleur de ligne » et un « Style de trait ».
+Quand le pointeur devient crayon, ou gomme si vous cliquez sur l’option «
+Effacer les bordures », procédez par clics ou par cliqués-glissés. Pour
+appliquer un contour (option« Tracer les bordures ») ou un quadrillage (option
+« Tracer les bordures de grille ») à toute une plage de cellules, cliquez-glissez en
+diagonale.
+Pour terminer, appuyez sur la touche Echap (Esc).
+Fenêtre « Format de cellule », onglet Bordure :
+Définissez :
+ Le style et la couleur de la ligne, dans le cadre gauche ;
+ Puis les bordures souhaitées : cliquez sur un ou plusieurs boutons. Vous
+pouvez également définir des bordures en cliquant dans le cadre de
+l’aperçu.
+Page 287 of 325
+=== PAGE 288 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+100
+ Remplissage
+Commande du ruban (ou de la mini-barre d’outils) :
+Le bouton « Couleur de remplissage » (d’icône pot de peinture) permet
+d’appliquer une couleur de fond. En pointant sur une couleur de la galerie, on a
+un aperçu instantané sur les cellules sélectionnées.
+Fenêtre « Format de cellule », onglet Remplissage : A cet onglet, on peut choisir
+:
+ Soit une couleur d’arrière-plan, agrémentée d’un motif, dont on définit la
+couleur et le type,
+ Soit un dégradé, après affichage de la fenêtre « Motifs et textures » sur
+activation du bouton du même nom. On définit sa couleur et son type.
+II- Création et application d’un style
+Un style est un ensemble d’éléments de mise en forme (format d’affichage,
+alignement, police…) auquel on donne un nom afin de pouvoir ensuite le
+réutiliser. Il est applicable sur toutes les feuilles du classeur.
+Excel 2013 dispose de nombreux styles prédéfinis. On peut créer des styles
+personnalisés. Pour appliquer un style : sélectionnez les cellules à traiter, puis
+cliquez sur le nom du style souhaité.
+Dans le groupe « Style », on utilise le bouton « Styles de cellules ».
+1- Styles prédéfinis
+Pour accéder à la galerie des styles, activez le bouton « Styles de cellules ».
+En pointant sur un style, on a un aperçu instantané sur les cellules sélectionnées
+de la feuille de calcul.
+Cliquer sur le nom d’un style permet de l’appliquer à la sélection de cellules.
+Page 288 of 325
+=== PAGE 289 ===
+Microsoft EXCEL
+101
+2- Création d’un style
+Au lieu d’utiliser plusieurs fois les mêmes éléments de mise en forme, en les
+appliquant successivement, on peut les définir dans un « style », qu’il suffira
+ensuite d’appliquer d’un seul clic.
+On peut commencer par appliquer le style souhaité à une cellule, que l’on
+sélectionne. On retrouvera ainsi ses paramètres de style dans la fenêtre « Format
+de cellule ».
+Pour afficher la fenêtre « Style » : activez le bouton « Styles de cellules » >
+Nouveau style de cellule.
+ Attribuez un nom au style ;
+ Affichez la fenêtre « Format de cellule » en cliquant sur le bouton « Format
+». Définissez les paramètres du style : Nombre, Alignement, Bordure,
+Police...
+ Validez. Le nouveau style apparaît dans la galerie des styles, dans la
+rubrique « Personnalisé ».
+III- Mise en forme conditionnelle
+« Mise en forme conditionnelle » : la mise en forme est conditionnée par le
+contenu de la cellule.
+Page 289 of 325
+=== PAGE 290 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+102
+Par exemple, si la valeur d’une cellule est comprise entre 18 et 24, ses
+caractères sont verts et le style est italique.
+Des mises en forme conditionnelles prédéfinies d’Excel sont disponibles.
+On peut également créer des mises en forme conditionnelles personnalisées.
+Excel 2013 permet de définir des critères portant sur des valeurs appartenant à
+d’autres feuilles du classeur actif.
+Principe de procédure pour définir et appliquer une mise en forme conditionnelle
+:
+ Sélectionnez la plage de cellules à traiter.
+ Dans le groupe Style, cliquez sur le bouton « Mise en forme
+conditionnelle».
+ Pointez sur le type choisi, puis cliquez sur l’option souhaitée. Ou bien,
+cliquez sur « Nouvelle règle » pour créer une règle personnalisée.
+ Renseignez la ou les fenêtre(s).
+ Validez.
+Page 290 of 325
+=== PAGE 291 ===
+Microsoft EXCEL
+103
+1- Mises en forme conditionnelles prédéfinies
+Il existe cinq types prédéfinis de règles.
+ Règles de mise en surbrillance des cellules
+Quand on applique ce type de règle, chaque contenu de cellule sélectionnée est
+comparé àune ou plusieurs valeurs définies.
+Pour définir une valeur, on peut :
+ La saisir directement,
+ Ou sélectionner une cellule la contenant,
+ Ou saisir une formule, précédée du signe égal.
+Mise en forme : elle peut être sélectionnée dans la liste déroulante, ou bien
+définie via la fenêtre « Format de cellule », en choisissant l’option « Format
+personnalisé » en fin de liste.
+ Règles des couleurs plus/moins élevées
+Quand on applique ce type de règle, chaque contenu de cellule sélectionnée est
+comparé à un ensemble des valeurs de la sélection.
+Mise en forme : cf. Paragraphe concernant le type précédent « Règles de
+mise en surbrillance des cellules ».
+ Barres de données
+Quand on applique ce type de règle, chaque cellule sélectionnée comporte une
+barre de couleur, de longueur proportionnelle à sa valeur.
+ Nuances de couleurs
+Quand on applique ce type de règle, les cellules sélectionnées acquièrent des
+remplissages de couleurs différentes en fonction de leur contenu.
+ Jeux d’icônes
+Page 291 of 325
+=== PAGE 292 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+104
+Quand on applique ce type de règle, chaque cellule sélectionnée contient une
+icône, fonction de son contenu. Les jeux d’icônes proposés contiennent 3, 4 ou 5
+icônes.
+ Barres de données, Nuances de couleurs et Jeux d’icônes : Modifier
+une règle de mise en forme
+Pour modifier le paramétrage de la représentation utilisant le type « Base de
+données », « Nuances de couleurs » ou « Jeux d’icônes », utilisez la fenêtre «
+Modifier la règle de mise en forme ».
+Procédez ainsi :
+ Sélectionnez une cellule à laquelle est appliquée la mise en forme
+conditionnelle à appliquer.
+ Sous l’onglet Accueil, dans le groupe Style, activez le bouton «
+Mise en forme conditionnelle » > « Gérer les règles ».
+ Sélectionnez la règle souhaitée, puis cliquez sur «
+Modifier la règle ». Renseignez la fenêtre « Modifier la
+règle de mise en forme ».
+2- Mises en forme conditionnelles personnalisées
+Affichez la fenêtre « Nouvelle règle de mise en forme » : activez le bouton «
+Mise en forme conditionnelle » > Nouvelle règle.
+Six types de règles sont proposés. Dans le cadre supérieur, sélectionnez le type
+souhaité. Dans le cadre inférieur, définissez la règle à appliquer à la sélection de
+cellules.
+3- Gérer les règles
+On peut appliquer à une sélection de cellules plusieurs mises en forme
+conditionnelles. Pour gérer ces règles, utilisez la fenêtre «Gestionnaire des
+Page 292 of 325
+=== PAGE 293 ===
+Microsoft EXCEL
+105
+règles de mise en forme conditionnelle». Pour afficher cette fenêtre : cliquez
+sur le bouton « Mise en forme conditionnelle » > Gérer les règles.
+La fenêtre affiche les règles qui s’appliquent à la sélection de cellules. Les règles
+s’appliquent selon leur ordre de priorité. Une règle est d’autant prioritaire
+qu’elle est placée plus haut dans la fenêtre.
+Les deux boutons fléchés Monter et Descendre permettent de modifier cet
+ordre.
+En cas d’incompatibilité entre plusieurs règles, c’est la dernière règle qui
+s’applique.
+4- Effacer les règles
+Si nécessaire, sélectionnez d’abord les cellules à traiter. Pour effacer les règles,
+activez le bouton « Mise en forme conditionnelle » > Effacer les règles. Précisez
+sur quelles cellules elles doivent être effacées.
+IV- Reproduction d’une mise en forme
+Exemple :
+Prenons le cas d’une cellule dotée du format Texte, avec un alignement gauche
+de retrait 1, un renvoi à la ligne automatique, une couleur de police bleue, styles
+gras et souligné.
+Cette mise en forme est reproductible rapidement sur d’autres cellules, soit en
+créant d’abord le style correspondant, soit en la reproduisant directement
+(voir ce paragraphe ci-après).
+On utilise sur le ruban, dans le groupe Presse-papiers, le bouton d’info-bulle «
+Reproduire la mise en forme », d’icône pinceau . Ce bouton est également
+présent dans la mini-barre d’outils.
+Page 293 of 325
+=== PAGE 294 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+106
+ Sélectionnez la cellule dont vous allez reproduire la mise en
+forme.
+ Cliquez sur le bouton « Reproduire la mise en forme » . Le format de la
+cellule sélectionnée est alors mémorisé. Le pointeur se transforme en
+pinceau.
+ « Peignez » la plage de cellules sur lesquelles vous souhaitez appliquer
+la mise en forme.
+Pour reproduire une mise en forme sur plusieurs plages de cellules, procédez de
+même, mais en double-cliquant sur le bouton « Reproduire la mise en forme ».
+Pour retrouver le curseur normal, désactivez le bouton « Reproduire la mise en
+forme » ou bien appuyez sur la touche Echap (Esc)
+V- Modification du thème
+Un thème est un ensemble d’éléments de mise en forme : couleurs, polices et
+effets de remplissage. L’application d’un thème permet de modifier et
+d’harmoniser les styles appliqués dans le document.
+Seront utilisés les boutons du groupe « Thèmes », sous l’onglet Mise en page.
+Pour accéder à la galerie des thèmes, activez le bouton « Thèmes ». En pointant
+sur un thème, on a un aperçu instantané sur la feuille en cours (modification
+de la police des cases d’en-tête et de celle des caractères des cellules,
+modification des couleurs des styles appliqués).
+Le thème appliqué par défaut est « Office » (ou « Bureau »).
+1- Jeu de couleurs, jeu de polices et jeu d’effets
+Chaque thème a un jeu de couleurs, un jeu de polices et un jeu d’effets.
+Page 294 of 325
+=== PAGE 295 ===
+Microsoft EXCEL
+107
+Les couleurs (remplissage, caractères, bordures…) et les polices (liste de choix
+du bouton « Police ») qui sont proposées, commencent toujours par celles du
+thème actif.
+Il est possible de modifier séparément les couleurs, les polices ou les effets d’un
+thème.
+Cliquer sur un jeu l’applique au thème actif, remplaçant le jeu précédent.
+Jeux de couleurs et jeux de polices s’appliquent respectivement à des couleurs
+et à des polices prédéfinies par Excel.
+Exemple
+Un jeu de couleurs peut modifier un « Style de cellules avec thème » appliqué à
+une plage de cellules (sélectionnez les cellules, puis sous l’onglet Accueil, dans
+le groupe Style, activez le bouton « Styles de cellules » et choisissez un « Style de
+cellules avec thème »).
+En revanche, un jeu de couleurs ne s’appliquera pas aux cellules auxquelles on
+aura donné une couleur de remplissage (sélectionnez les cellules, puis sous
+l’onglet Accueil, dans le groupe Police, activez le bouton et choisissez une
+couleur de remplissage).
+ Couleurs
+Cliquez sur le bouton « Couleurs ». Chaque thème comporte 12 couleurs : 2
+de texte, 2 d’arrière-plan, 6 d’accentuation et 2 de liens hypertexte (lien non
+encore activé et lien qui a été activé).
+Sous le titre « Prédéfini », la liste des thèmes prédéfinis s’affiche, chaque nom
+de thème comportant à sa gauche un jeu de 8 couleurs. Les 4 autres couleurs (2
+de texte et 2 d’arrière- plan) du thème actif sont représentées dans le bouton «
+Couleurs ».
+Page 295 of 325
+=== PAGE 296 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+108
+ Polices
+Cliquez sur le bouton « Polices ». Chaque jeu de polices comporte deux polices
+: l’une pour les casesd’en-tête, l’autre pour le corps (c’est-à-dire les cellules).
+ Création de jeux de couleurs et de jeux de polices
+Il est possible de créer ses propres jeux de couleurs et de polices.
+Par exemple, pour créer un jeu de couleurs : activez le bouton « Couleurs » >
+Nouvelles couleurs de thème, puis renseignez la fenêtre « Créer de nouvelles
+couleurs de thème ».
+Vous pouvez visualiser les modifications dans le cadre « Exemple » de la
+fenêtre. Le bouton « Rétablir » permet de retrouver toutes les couleurs
+initiales. Avant d’enregistrer, attribuez un nom au nouveau jeu.
+Le nouveau jeu de couleurs apparait dans la liste des jeux de couleurs, sous
+le titre « Personnalisé ».
+La procédure est similaire pour créer un jeu de polices.
+ Effets
+Cliquez sur le bouton « Effets ». Les effets s’appliquent sur des objets
+graphiques. On ne peut pas créer de jeux d’effets personnalisés.
+2- Création d’un thème personnalisé
+Il est également possible de créer ses propres thèmes, utilisables sur d’autres
+classeurs.
+On choisit un thème, on effectue les modifications souhaitées (couleurs, polices,
+effets), puis on l’enregistre : activez le bouton « Thèmes » > Enregistrer le thème
+actif.
+Page 296 of 325
+=== PAGE 297 ===
+Microsoft EXCEL
+109
+Dans la fenêtre « Enregistrer le thème actif », attribuez un nom au nouveau
+thème. Le nouveau thème apparait dans la liste des thèmes, sous le titre «
+Personnalisé ».
+VI- Largeurs des colonnes et hauteurs des lignes
+On se sert de la souris, ou bien on utilise le bouton Format du groupe Cellules.
+Les procédures de paramétrage sont similaires pour une colonne ou pour une
+ligne.
+1- Procédure
+ Avec la souris (cliqué-glissé)
+ Réglage de la largeur
+Placez le pointeur sur la bordure droite de la case d’en-tête de la colonne à modifier.
+Concernant la ligne, le réglage par cliqué-glissé s’effectue sur la bordure
+inférieure de la case d’en-tête.
+Quand le pointeur a la forme d’une double-flèche, cliquez-glissez jusqu’à
+obtenir la largeur désirée. Une info-bulle indique la largeur.
+ Ajustement automatique
+Pour que la largeur de la colonne s’ajusteau contenu, double-cliquez sur la
+bordure droite de la case d’en-tête. Si vous supprimez ensuite les textes
+qui « dépassent », la colonne conservera la largeur acquise.
+ Avec le bouton Format
+Sélectionnez la colonne. Ouvrez le menu du bouton « Format ».
+L’option « Largeur de colonne » permet de préciser la largeur exacte souhaitée.
+Option « Ajuster la largeur de colonne » : la largeur de la colonne s’ajuste au
+contenu le plus long.
+Page 297 of 325
+=== PAGE 298 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+110
+Option « Largeur par défaut » : c’est la largeur qui est appliquée à toutes les
+colonnes dontleslargeursn’ontpasétémodifiées.
+Options « Masquer les colonnes » et « Afficher les colonnes » : pour
+afficher des colonnes qui ont été masquées, sélectionnez d’abord la colonne
+précédente et la colonne suivante par cliqué-glissé. Si nécessaire, en particulier
+si la 1ère colonne est masquée, sélectionnez préalablement toute la feuille, en
+cliquant sur la case d’intersection des deux lignes d’en-tête. Puis activez la
+commande « Afficher les colonnes ».
+2- Reproduction de la largeur d’une colonne ou d’une ligne
+Le principe est le même pour une colonne ou pour une ligne.
+Pour reproduire par exemplelalargeurd’unecolonne, procédez ainsi :
+ Sélectionnez cette colonne, en cliquant dans sa case d’en-tête.
+ Cliquez sur le bouton « Reproduire la mise en forme » (ou double-
+cliquez sur ce bouton pour une application à des colonnes non adjacentes).
+ Cliquez ou cliquez-glissez sur les cases d’en-tête des colonnes auxquelles
+vous souhaitez appliquer la mise en forme.
+Page 298 of 325
+=== PAGE 299 ===
+Microsoft EXCEL
+111
+1- Les feuilles de calcul brutes obtenues n’offrent pas toujours la
+clarté nécessaire.
+2- Excel propose cependant de nombreuses options pour renforcer
+la lisibilité des données, en jouant sur les polices de caractère,
+les couleurs, les alignements etc.
+3- Vous pouvez appliquer globalement attributs ci-dessus en
+employant un style prédéfini ou personnalisé.
+4- La mise en forme conditionnelle applique aux cellules
+concernées une mise en forme qui dépend de leur contenu, selon
+des critères que vous définissez vous-même.
+5- Il faut bien distinguer la mise en forme des cellules (choix des
+polices, couleur, bordure, alignement etc) et la mise en forme
+des données qui définit la façon dont sont affichés dates et
+nombres de la feuille de calcul.
+POINTS IMPORTANTS A RETENIR
+Page 299 of 325
+=== PAGE 300 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+112
+EXERCICES D’ASSIMILATION
+Exercice
+1- Sélectionnez les cellules A3:E15, augmentez à 13 la taille des
+caractères.
+2- Sélectionnez les étiquettes du tableau, plage B3:E3 et appliquez
+la police Times new roman. Mettez ces cellules d’étiquettes en
+gras. De même pour A3:A15.
+3- Mettez en italique les cellules A15:E3.
+Page 300 of 325
+=== PAGE 301 ===
+Microsoft EXCEL
+113
+CHAPITRE VIII – GRAPHIQUE 1
+I- Création et modifications d’un graphique
+1- Création et outils
+Un graphique est efficace pour représenter, « faire parler » des données
+chiffrées. Pour créer un graphique, procédez ainsi :
+ Sélectionnez la plage de cellules contenant les données à représenter, y
+compris les intitulés (ou « étiquettes ») des lignes et des colonnes.
+Utilisez si nécessaire la touche Ctrl (cf. chapitre 2 § 1 «
+Sélection de cellules »). Par exemple si des étiquettes ne
+jouxtent pas la plage de cellules à sélectionner.
+ Choisissez la catégorie de graphique : sous l’onglet Insertion, dans le
+groupe Graphiques, cliquez sur la catégorie souhaitée.
+Sont souvent utilisés les types : Colonne , Ligne et Secteurs .
+En cliquant sur le lanceur du groupe, on accède à la galerie des graphiques,
+classés par catégorie.
+ Au sein de la catégorie précédemment choisie, cliquez sur le graphique
+souhaité.
+On peut créer ainsi, sur la même feuille, d’autres graphiques relatives aux mêmes
+données. Quand la zone de graphique est sélectionnée, des commandes « Outils
+de graphique » sont disponibles sur les onglets aux noms explicites : Création,
+Disposition et Mise en forme.
+Par ailleurs, en faisant un clic droit sur un élément de la zone de graphique, on
+affiche le menu propre à cet élément.
+Une zone de graphique sélectionnée est entourée d’un cadre bleuté plus épais.
+Page 301 of 325
+=== PAGE 302 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+114
+Exemple
+On a sélectionné la plage de cellules C1:I5. Dans la catégorie « Ligne », on
+a choisi le premier type de courbe. La zone de graphique apparaît sélectionnée
+(cadre plus épais).
+On appelle communément « graphique » ce qui est en fait la « zone de graphique
+».
+La zone de graphique comprend tous les éléments relatifs au graphique : le
+graphique lui- même, les axes, les étiquettes, etc.
+On peut la déplacer par cliqué-glissé (pointeur en croix fléchée), également
+modifier sa dimension en cliquant-glissant sur son contour, aux endroits affichant
+des points.
+Page 302 of 325
+=== PAGE 303 ===
+Microsoft EXCEL
+115
+2- Emplacement de la zone de graphique
+Par défaut, la zone de graphique est placée sur la feuille où sont situées les
+données.
+Elle peut être déplacée sur une autre feuille du classeur. Il s’agit d’un
+déplacement, non d’une copie.
+Cliquez sur la zone de graphique afin de la sélectionner.
+Puis affichez la fenêtre « Déplacer le graphique » : sous l’onglet Création, dans
+le groupe
+« Emplacement », activez le bouton « Déplacer le graphique ». Indiquez la feuille
+souhaitée. Quel que soit son emplacement, le graphique reste lié aux données
+sources. Il est mis à jour lors de la modification de ces données.
+3- Changement de type de graphique
+Pour changer de type de graphique :
+ Cliquez sur le graphique, puis activez le bouton « Modifier le type de
+graphique » du groupe Type de l’onglet Création.
+ Ou bien faites un clic droit sur le graphique > « Modifier le type de
+graphique ». Dans la fenêtre « Modifier le type de graphique »,
+choisissez le nouveau type souhaité.
+4- Ajout d’un axe secondaire
+Si les valeurs d’une série de données sont d’un ordre de grandeur très différent
+de celui des autres données (par exemple des valeurs exprimées en dizaines,
+quand les autres sont exprimées en milliers), il est nécessaire que cette série ait
+son propre axe vertical.
+Un second axe est qualifié d’axe « secondaire ».
+Page 303 of 325
+=== PAGE 304 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+116
+Pour créer un axe secondaire : clic droit sur cette série (éventuellement, pour
+qu’elle soit visible, créez un autre graphique de type « Ligne ») > « Mettre en
+forme une série de données ».
+Dans la fenêtre « Mise en forme des séries de données », dans la catégorie «
+Options des séries », cochez la case « Axe secondaire ». Validez.
+S’affichent la nouvelle courbe, ainsi que l’axe secondaire sur le côté droit.
+Exemple
+Reprenons l’exemple précédent, afin d’attribuer un axe secondaire à la
+série « Par vélo ».
+Pointez sur la courbe des données
+« Par vélo ». Une info-bulle indiquant
+« Série Par vélo… », faites un clic droit.
+Cliquez sur l’option «
+Mettre en forme une série de
+données », puis sur
+« Options des séries ». Cochez la case
+« Axe secondaire ». Validez.
+L’axe secondaire apparaît à droite. La nouvelle courbe s’affiche.
+5- Données sources
+ Dimensions de la plage des données sources
+Sélectionnez la zone de graphique.
+Pour réduire le nombre de données représentées par le graphique, il suffit de
+cliquer- glisser sur un angle du cadre bleu qui entoure la plage des données
+sources.
+Page 304 of 325
+=== PAGE 305 ===
+Microsoft EXCEL
+117
+On peut également appliquer cette méthode pour augmenter le nombre de
+données représentées, à condition que les nouvelles données jouxtent les données
+déjà représentées.
+ Interversion lignes et colonnes
+Par défaut, les étiquettes des colonnes sont indiquées sur l’axe horizontal du
+graphique. Pour que les étiquettes des lignes les remplacent : sélectionnez la
+zone de graphique. Puis sous l’onglet Création, dans le groupe Données,
+activez le bouton « Intervertir les lignes/colonnes ».
+Exemple : sur l’axe horizontal, les mois sont remplacés par les moyens de
+transport.
+ Ajout d’une série de données non adjacente
+Quel que soit son emplacement, sur la feuille contenant les données déjà
+représentées, ou sur une autre feuille du classeur, une série de données peut être
+ajoutée aux données sources.
+Après sélection de la zone de graphique, il existe deux méthodes pour ajouter une
+série :
+ « Copier/Coller »
+Copiez les cellules de la série, puis collez-les dans la zone de graphique
+sélectionnée.
+ Avec la fenêtre « Modifier la série »
+ Affichez d’abord la fenêtre « Sélectionner la sources de données » en
+activant le bouton « Sélectionner des données » du groupe « Données »
+(onglet Création).
+Ou bien en faisant : clic droit sur la zone de graphique > Sélectionner des données.
+Page 305 of 325
+=== PAGE 306 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+118
+Les données représentées apparaissent entourées. Cliquez sur le bouton « Ajouter
+ La fenêtre « Modifier la série » s’affiche. Dans la zone « Nom de
+la série », saisissez le nom de la série à ajouter, ou sélectionnez la cellule
+de la feuille qui le contient (dans ce cas, il y a mise à jour si le contenu de
+la cellule change).
+Dans la zone « Valeurs de la série », laissez le signe égal =, et sélectionnez
+les cellules contenant les valeurs de la nouvelle série. Validez.
+Exemple : Ajoutez la série « A pied » :
+La courbe bénéficie de l’axe
+secondaire créé pour représenter la série « Par vélo ».
+6- Copier un graphique en image
+On peut copier une zone de graphique en image. Ses éléments ne seront plus
+modifiables. Sélectionnez la zone de graphique. Faites un clic droit dessus >
+Copier.
+Cliquez où vous souhaitez la coller.
+Faites un clic droit et cliquez sur l’option de collage « Image » .
+II- Présentation de la zone de graphique
+1- Disposition des éléments du graphique
+ Dispositions prédéfinies
+Sous l’onglet Création, dans le groupe « Dispositions du graphique »,
+Excel propose des dispositions en fonction du type de graphique.
+Cliquez sur la flèche « Autres » permet d’accéder à la galerie de toutes
+les dispositions proposées.
+ Disposition individuelle des éléments
+Page 306 of 325
+=== PAGE 307 ===
+Microsoft EXCEL
+119
+L’onglet « Disposition » contient les groupes « Etiquettes, Axes et Arrière-plan
+».
+Leurs commandes permettent de modifier des éléments de
+la zone du graphique (exemples : masquage ou affichage,
+emplacement).
+La modification de la « Rotation 3D » d’un graphique en 3D permet
+souvent de le rendre plus lisible : dans le groupe « Arrière-plan », activez
+le bouton « Rotation 3D », et renseignez la fenêtre « Format de la zone
+de graphique ». Toute modification donne lieu à un aperçu instantané du
+changement sur le graphique.
+ Graphique en secteurs : excentration
+ Pour excentrer tous les secteurs
+Faites un clic droit sur le graphique > Mettre en forme une série
+de données. Dans la fenêtre « Mise en forme des séries de
+données », dans la catégorie
+« Options des séries », paramétrez «
+l’explosion» des secteurs.
+On dispose d’un aperçu instantané sur le graphique.
+Exemple à droite d’une explosion des secteurs d’un graphique
+type « Secteurs » :
+ Pour excentrer un seul secteur
+Sélectionnez le secteur à déplacer, puis cliquez-glissez dessus.
+Page 307 of 325
+=== PAGE 308 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+120
+2- Mise en forme
+ Styles prédéfinis
+Sous l’onglet Création, dans le groupe « Styles du graphique », Excel
+propose des styles en fonction du graphique.
+Cliquez sur la flèche « Autres » permet d’accéder à la galerie de tous les
+styles proposés.
+ Mise en forme d’un élément de la zone de graphique
+Une zone de graphique est constituée de divers éléments : axe,
+quadrillage, titre, légende, série, zone de graphique, zone de traçage
+(incluse dans la précédente), etc.
+Ces éléments sont modifiables séparément (exemple : cadre de la zone de
+graphique).
+Quand on pointe sur l’un d’eux, une info-bulle indique son nom.
+Un clic droit sur un élément fait apparaître le menu propre à cet élément.
+On peut notamment afficher la fenêtre concernant sa mise en forme, ou format.
+ Distinctiond’unedonnée
+Pour mettre en évidence une donnée d’un graphique, on lui applique
+une mise en forme qui la distingue des autres données.
+Procédez ainsi :
+ Sélectionnez la série en cliquant sur l’une de ses données.
+ Dans cette série, sélectionnez la donnée à mettre en évidence, en cliquant
+dessus, afin qu’elle soit la seule à être sélectionnée.
+ Clic droit sur cette donnée > Mettre en forme le point de donnée.
+ Renseignez la fenêtre « Mettre en forme le point de donnée ».
+Page 308 of 325
+=== PAGE 309 ===
+Microsoft EXCEL
+121
+ Lisser lesanglesd’unecourbe (type « Lign»)
+Pour lisser, c’est-à-dire arrondir, les angles d’une courbe, procédez ainsi :
+ Faites un clic droit sur courbe > « Mettre en forme une série de données ».
+ Dans la fenêtre « Mise en forme des séries de données », dans la
+catégorie« Style de trait », cochez la case « Lissage ».
+III- Analyse : courbes de tendance, barres et lignes
+Sous l’onglet « Disposition », on utilisera les commandes du groupe « Analyse ».
+1- Courbes de tendance
+Comme son nom l’indique, une courbe de tendance sert à révéler la tendance des
+données. Excel permet le traçage automatique d’une courbe de tendance.
+Après sélection de la série, activez le bouton « Courbe de tendance » du groupe
+Analyse. En cliquant sur « Autres options de la courbe de tendance », vous
+pouvez renseigner la fenêtre
+« Format de courbe de tendance ».
+Diverses courbes de tendance sont proposées. Plusieurs peuvent être tracées
+pour une même série.
+2- Barres haut/bas et lignes de projection
+Sur certains types de graphiques, il est possible d’ajouter des lignes de projection
+ou des barres, afin de faciliter la lecture des données.
+Après sélection de la série, activez le bouton « Lignes » ou le bouton « Barres
+haut/bas » du groupe « Analyse ».
+3- Barres d’erreur
+Sur certains types de graphiques, il est possible d’ajouter des barres d’erreur.
+Page 309 of 325
+=== PAGE 310 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+122
+Après sélection de la série, activez le bouton « Barres d’erreur » du groupe
+Analyse.
+IV- Graphiques sparkline
+Nouveauté d’Excel 2010, un sparkline (« spark » signifie étincelle) est un petit
+graphique inséré dans une cellule, en arrière-plan (on peut donc écrire dessus).
+Il permet de visualiser diverses caractéristiquesd’unesérie.
+1- Insertion d’un sparkline
+Pour insérer un sparkline :
+ Prévoyez la cellule où sera inséré le sparkline. Insérez si nécessaire une
+nouvelle colonne.
+Pour insérer une nouvelle colonne : sélectionnez la colonne à gauche de
+laquelle sera insérée la nouvelle colonne, en cliquant sur sa case d’en-tête.
+Faites un clic droit sur la sélection > Insertion.
+ Sous l’onglet Insertion, dans le groupe « Graphiques sparkline »,
+choisissez le type de sparkline souhaité : Courbe, Colonne ou
+Conclusions/Pertes.
+La fenêtre « Créer des graphiques sparkline » s’affiche.
+ Indiquez la plage de données ainsi que l’emplacement du sparkline.
+Pour l’une comme pour l’autre, il suffit de cliquer dans la zone de saisie,
+puis de sélectionner la ou les cellules concernées. Validez.
+La plage de données affiche des références relatives, tandis que la plage
+d’emplacements affiche des références absolues
+Reprenons l’exemple précédent.
+Page 310 of 325
+=== PAGE 311 ===
+Microsoft EXCEL
+123
+ Insérez une colonne avant la colonne « Janvier ».
+ Sous l’onglet « Insertion », dans le groupe « Graphiques sparkline »,
+choisissez le type « Courbe ». La fenêtre « Créer des graphiques sparkline
+» s’affiche.
+ Cliquez dans la zone « Plage de données » et sélectionnez la plage de la
+série « Par avion » E2:J2.
+ Cliquez dans la zone « Plage d’emplacements» et sélectionnez la
+cellule D2. Validez.
+2- Insertion de plusieurs sparklines
+Pour insérer plusieurs sparklines, on peut :
+ Soit utiliser la même méthode
+que précédemment.
+Dans la fenêtre « Créer des graphiques sparkline », prévoyez le
+nombre d’emplacements nécessaires à tous les sparklines à insérer (autant que
+de séries sélectionnées).
+ Soit utiliser la poignée de recopie : un sparkline ayant été créé,
+sélectionnez la cellule, et cliquez-glissez sur sa poignée pour créer d’autres
+graphiques sparklines. Voir exemple ci-dessus.
+Par défaut, les sparklines ainsi créés forment un groupe.
+Si on modifie la mise en forme de l’un d’eux, celle des autres sera pareillement
+modifiée.
+Page 311 of 325
+=== PAGE 312 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+124
+3- Modification d’un graphique sparkline
+Quand on clique sur une cellule contenant un sparkline, l’onglet « Création » des
+« Outils sparkline » est disponible. Il contient les commandes spécifiques au
+sparkline permettant de : modifier les données, le type du sparkline, son
+apparence, distinguer des points particuliers, appelés « marqueurs ».
+Dans le groupe « Groupe », l’option « Dissocier » permet de dissocier
+les sparklines constitutifs d’un groupe. Dans ce même groupe, on peut
+paramétrer un axe au sparkline… et effacer le sparkline.
+Page 312 of 325
+=== PAGE 313 ===
+Microsoft EXCEL
+125
+1- Un graphique illustre des informations chiffrées et met en
+évidence les relations entre les différents éléments
+2- Le groupe Graphiques de l’onglet Insertion offre plusieurs
+types de graphiques regroupés par catégories.
+POINTS IMPORTANTS A RETENIR
+Page 313 of 325
+=== PAGE 314 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+126
+REFERENCES BIBLIOGRAPHIQUES GENERALES
+ Stella Gardiono: Microsoft Office Excel 2013, éditions
+Logitell, 361 pages
+ Lemainque, Fabrice, Travaux Pratiques – Excel 2013, éditions
+Dunod,128 pages.
+ Moreau, Philippe, Excel 2013 Initiation, édition Eyrolles, 247
+pages
+Page 314 of 325
+=== PAGE 315 ===
+Microsoft EXCEL
+127
+EXERCICES D’ASSIMILATION
+Exercice
+Illustrez sous forme d’histogramme 2D groupé les ventes de 2010 de
+chacun des vendeurs
+Page 315 of 325
+=== PAGE 316 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+128
+Bibliographie générale
+Page 316 of 325
+=== PAGE 317 ===
+Microsoft EXCEL
+129
+Table des matières
+CHAPITRE I – INTRODUCTION _______________________________________ 6
+I- Fondamentaux Excel 2013 ___________________________________ 6
+1- Démarrage du logiciel _____________________________________ 6
+2- FENETRE PRINCIPALE ______________________________________ 8
+3- ENREGISTRER ___________________________________________ 12
+4- PROTECTION D’UN FICHIER PAR MOT DE PASSE _______________ 14
+5- IMPRESSION ____________________________________________ 14
+II- L’écran __________________________________________________ 15
+III- La Barre d’état : calculs et modes d’affichage ___________________ 21
+IV- Paramétrage du logiciel_____________________________________ 21
+CHAPITRE II – GESTION DES FEUILLES ET DES CLASSEURS ________________ 25
+I- Gestion des feuilles de calcul ________________________________ 25
+II- Affichage d’une feuille de calcul ______________________________ 28
+III- Travailler sur plusieurs classeurs ______________________________ 30
+IV- Protéger feuilles et classeurs ________________________________ 32
+CHAPITRE III – SAISIE SIMPLE DE DONNEES ___________________________ 32
+I- Sélection de cellules _______________________________________ 32
+1- Avec le clavier et la souris _________________________________ 32
+2- Avec la fenêtre «Atteindre » _______________________________ 34
+II- Saisie dans les cellules ______________________________________ 35
+1- Validation et passage à une autre cellule_____________________ 35
+2- Saisie d’une même valeur dans toutes les cellules d’une plage ___ 36
+III- Modification des données ___________________________________ 40
+1- Avant validation, si on souhaite recommencer la saisie dans la
+cellule _____________________________________________________ 40
+2- Après validation _________________________________________ 40
+3- Suppression de données __________________________________ 41
+IV- Rechercher, remplacer _____________________________________ 41
+Page 317 of 325
+=== PAGE 318 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+130
+1- Rechercher _____________________________________________ 41
+2- Remplacer _____________________________________________ 42
+V- Vérification orthographique _________________________________ 42
+VI- Insertion et suppression ____________________________________ 42
+1- Distinguer contenant et contenu ___________________________ 42
+2- Une insertion ou une suppression de contenant entraîne un
+décalage ___________________________________________________ 43
+3- Insertion ou suppression de colonnes ou de lignes _____________ 43
+CHAPITRE IV- SERIE DE DONNEES ___________________________________ 48
+I- Série numérique __________________________________________ 48
+1- Série linéaire ___________________________________________ 48
+2- Série géométrique _______________________________________ 49
+II- Série chronologique ________________________________________ 50
+III- Série alphanumérique ______________________________________ 51
+IV- Série créée à partir d’une liste personnalisée ___________________ 52
+CHAPITRE V- DEPLACER COPIER COLLER ET TRI RAPIDE _________________ 56
+I- Volet presse-papiers _______________________________________ 56
+II- Déplacer _________________________________________________ 56
+1- Déplacer les valeurs d’une plage de cellules __________________ 57
+2- Déplacer les valeurs de colonnes ou de lignes _________________ 58
+3- Déplacer une plage et l’insérer sur la même feuille ____________ 58
+III- Copier ____________________________________________________ 59
+1- Copier, puis coller la copie conforme ________________________ 59
+2- Copier une plage et l’insérer sur la même feuille du classeur ____ 59
+III- Options de collage _________________________________________ 60
+IV- Tri rapide ________________________________________________ 64
+CHAPITRE VI- FORMULE ET LES FONCTIONS ___________________________ 68
+I- LES FORMULES ____________________________________________ 68
+1- Operateurs _____________________________________________ 69
+2- Références relatives ou absolues ___________________________ 70
+Page 318 of 325
+=== PAGE 319 ===
+Microsoft EXCEL
+131
+3- Références : autre feuille, autre classeur _____________________ 72
+4- Attribution d’un nom ____________________________________ 74
+5- Date et heure ___________________________________________ 79
+6- Audit de formules, erreurs et références circulaires ____________ 80
+II- LES FONCTIONS ___________________________________________ 81
+1- Arguments _____________________________________________ 82
+2- Recherche et insertion d’une fonction _______________________ 83
+3- Saisie directe ___________________________________________ 85
+4- Exemples ______________________________________________ 85
+CHAPITRE VII - MISE EN FORME ET DIMENSION _______________________ 90
+I- Eléments de mise en forme__________________________________ 91
+1- Formats d’affichage ________________________________________ 91
+2- Nombre de décimales (chiffres après la virgule) _______________ 92
+3- Séparateur des milliers ___________________________________ 92
+4- Alignement et orientation_________________________________ 96
+5- Police, bordure, remplissage_______________________________ 98
+II- Création et application d’un style _____________________________ 100
+1- Styles prédéfinis _______________________________________ 100
+2- Création d’un style______________________________________ 101
+III- Mise en forme conditionnelle _______________________________ 101
+1- Mises en forme conditionnelles prédéfinies _________________ 103
+2- Mises en forme conditionnelles personnalisées ______________ 104
+3- Gérer les règles ________________________________________ 104
+4- Effacer les règles _______________________________________ 105
+IV- Reproduction d’une mise en forme __________________________ 105
+V- Modification du thème ____________________________________ 106
+1- Jeu de couleurs, jeu de polices et jeu d’effets ________________ 106
+2- Création d’un thème personnalisé _________________________ 108
+VI- Largeurs des colonnes et hauteurs des lignes __________________ 109
+1- Procédure _____________________________________________ 109
+2- Reproduction de la largeur d’une colonne ou d’une ligne ______ 110
+CHAPITRE VIII – GRAPHIQUE 1 ____________________________________ 113
+Page 319 of 325
+=== PAGE 320 ===
+Les manuels de l’IUA-Licence 1 Sciences Juridiques / Semestre 2
+132
+I- Création et modifications d’un graphique _____________________ 113
+1- Création et outils _______________________________________ 113
+2- Emplacement de la zone de graphique _____________________ 115
+3- Changement de type de graphique ________________________ 115
+4- Ajout d’un axe secondaire________________________________ 115
+5- Données sources _______________________________________ 116
+6- Copier un graphique en image ____________________________ 118
+II- Présentation de la zone de graphique ________________________ 118
+1- Disposition des éléments du graphique _____________________ 118
+2- Mise en forme _________________________________________ 120
+III- Analyse : courbes de tendance, barres et lignes ________________ 121
+1- Courbes de tendance ____________________________________ 121
+2- Barres haut/bas et lignes de projection _____________________ 121
+3- Barres d’erreur _________________________________________ 121
+IV- Graphiques sparkline ______________________________________ 122
+1- Insertion d’un sparkline _________________________________ 122
+2- Insertion de plusieurs sparklines __________________________ 123
+3- Modification d’un graphique sparkline _____________________ 124
+Bibliographie générale __________________________________________ 128
+Page 320 of 325
+=== PAGE 321 ===
+Page 321 of 325
+=== PAGE 322 ===
+Page 322 of 325
+=== PAGE 323 ===
+Page 323 of 325
+=== PAGE 324 ===
+Prestations à distance pour entreprises et particuliers
+Conception et impression de supports de publicité
+Edition de manuels scolaires et universitaires
+Confection de catalogues, cartes de visites…
+Mise en forme de documents de tout type
+Vente de papiers en détail et en gros
+Promotion des activités en ligne
+Conception d’affiches et flyers
+Fournitures de bureau
+Collection Monde Universitaire
+Pour La Diffusion Du Savoir
+ Ouvrages scientifiques
+ Thèses
+ Revues scientifiques
+ Manuels universitaires
+Achevé d’imprimer dans les ateliers de KMC EDITIONS/Service d’imprimerie
+Siege social : Abidjan Cocody Angré derrière le commissariat du 22ème Arr. SICOGI, App 104
+(+225) 21 38 04 64 - 07 40 27 98 - leseditionskmcafrique@gmail.com - https://kmceditons.business.site
+BP : 503 BPR 106 ABJ LWPPage 324 of 325
+=== PAGE 325 ===
+INSTITUT UNIVERSITAIRE D’ABIDJAN
+Nous formons les Leaders de demain
+MANUEL DE COURS
+2020-2021
+Collection Monde Universitaire
