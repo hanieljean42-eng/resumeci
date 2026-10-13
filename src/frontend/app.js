@@ -1530,7 +1530,7 @@ window.submitCheckoutPayment = async function() {
       primaryBtnText: '📲 Payer par Wave / Orange Money direct',
       onPrimary: () => {
         const waMsg = encodeURIComponent(`Bonjour Haniel_dev, je souhaite activer le Pass ${pTierLabel}. Mon nom: ${name}. Mon numéro: ${fullPhone}.`);
-        window.open(`https://wa.me/2250150252467?text=${waMsg}`, '_blank');
+        window.open(`https://wa.me/2250150252467?text=${waMsg}`, '_blank', 'noopener');
       },
       secondaryBtnText: 'Réessayer en ligne'
     });

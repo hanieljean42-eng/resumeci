@@ -1090,7 +1090,7 @@
               <button class="btn-result btn-result-wa" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${plan}')">
                 <i class="fab fa-whatsapp"></i> Envoyer Accès
               </button>
-              <button class="btn-result btn-result-ghost" onclick="window.open('https://wa.me/225${phone}','_blank')">
+              <button class="btn-result btn-result-ghost" onclick="window.open('https://wa.me/225${phone}','_blank','noopener')">
                 <i class="fas fa-comment"></i> Chat
               </button>
             </div>
@@ -1207,7 +1207,7 @@
       const pwdLine = pwd ? `🔑 Mot de passe : *${pwd}*\n` : `🔑 Mot de passe : celui que tu as choisi à l'inscription\n`;
       const msg = `Bonjour ${name} !\n\nTon compte ResumeCI a été activé avec succès avec le forfait : *${planName}* ! 🎓\n\nVoici tes accès personnels :\n\n📱 Identifiant (WhatsApp) : *+225 ${phone}*\n${pwdLine}\n👉 Connecte-toi ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI ! 🚀`;
       const url = `https://wa.me/225${phone}?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank');
+      window.open(url, '_blank', 'noopener');
     };
 
     // ========== GRANT MODAL ==========
