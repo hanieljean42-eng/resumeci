@@ -176,6 +176,21 @@
     .section-header h2 { font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
     .section-body { padding: 22px; }
 
+    /* Inscrits par classe */
+    .cls-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; overflow: hidden; }
+    .cls-head { display: flex; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; transition: background .15s; user-select: none; }
+    .cls-head:hover { background: var(--surface-3); }
+    .cls-body { display: none; border-top: 1px solid var(--border); }
+    .cls-body.open { display: block; }
+    .cls-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .cls-table th { text-align: left; padding: 9px 12px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .4px; color: var(--text-dim); border-bottom: 1px solid var(--border); white-space: nowrap; }
+    .cls-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .cls-table tr:last-child td { border-bottom: none; }
+    .pass-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 800; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+    .plan-chip { font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: var(--surface-3); color: var(--text-dim); white-space: nowrap; }
+    .mini-btn { width: 30px; height: 30px; border-radius: 7px; border: 1px solid var(--border); background: var(--surface-3); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: .15s; font-size: 11px; }
+    .mini-btn:hover { transform: translateY(-1px); }
+
     /* Quick Lookup */
     .lookup-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .lookup-input-wrap {
@@ -389,21 +404,21 @@
         </div>
         <div class="kpi-card" style="--kpi-accent: var(--emerald);">
           <div class="kpi-icon" style="background: var(--emerald-glow); color: var(--emerald);"><i class="fas fa-crown"></i></div>
-          <div class="kpi-label">Pass Pro Actifs</div>
+          <div class="kpi-label">Pass Actifs</div>
           <div class="kpi-value" id="kpiPro" style="color:var(--emerald);">—</div>
-          <div class="kpi-sub">Abonnements Pro (1 000 F)</div>
+          <div class="kpi-sub">Tous abonnements payants en cours</div>
         </div>
         <div class="kpi-card" style="--kpi-accent: var(--sky);">
-          <div class="kpi-icon" style="background: var(--sky-glow); color: var(--sky);"><i class="fas fa-bolt"></i></div>
-          <div class="kpi-label">Pass Starter Actifs</div>
+          <div class="kpi-icon" style="background: var(--sky-glow); color: var(--sky);"><i class="fas fa-user"></i></div>
+          <div class="kpi-label">Essai Gratuit</div>
           <div class="kpi-value" id="kpiStarter" style="color:var(--sky);">—</div>
-          <div class="kpi-sub">Packs hors-ligne (500 F)</div>
+          <div class="kpi-sub">Inscrits sans Pass actif</div>
         </div>
         <div class="kpi-card" style="--kpi-accent: var(--amber);">
-          <div class="kpi-icon" style="background: var(--amber-glow); color: var(--amber);"><i class="fas fa-gem"></i></div>
-          <div class="kpi-label">VIP & Annuel</div>
+          <div class="kpi-icon" style="background: var(--amber-glow); color: var(--amber);"><i class="fas fa-graduation-cap"></i></div>
+          <div class="kpi-label">Université</div>
           <div class="kpi-value" id="kpiVip" style="color:var(--amber);">—</div>
-          <div class="kpi-sub">Accès permanent & 365j</div>
+          <div class="kpi-sub">Étudiants Licence inscrits</div>
         </div>
       </div>
 
@@ -427,6 +442,20 @@
           <!-- Result -->
           <div class="result-panel" id="resultPanel">
             <div id="resultContent"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inscrits par classe / filière -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><i class="fas fa-layer-group" style="color:var(--indigo);"></i> Inscrits par Classe / Filière</h2>
+          <span style="font-size:12px; color:var(--text-dim);" id="classCountLabel">Chargement...</span>
+        </div>
+        <div class="section-body" id="classListBody" style="padding:14px 22px;">
+          <div style="text-align:center; padding:24px; color:var(--text-dim);">
+            <i class="fas fa-spinner fa-spin" style="font-size:22px;"></i>
+            <p style="margin-top:8px;">Chargement...</p>
           </div>
         </div>
       </div>
@@ -479,6 +508,7 @@
           <option value="6eme">6ème</option>
           <option value="5eme">5ème</option>
           <option value="4eme">4ème</option>
+          <option value="Licence_1_Droit">🎓 Licence 1 — Droit (Université)</option>
         </select>
       </div>
       <div class="field-group">
@@ -498,6 +528,18 @@
           </div>
           <div class="plan-option" data-plan="vip" onclick="selectNewPlan('vip')">
             <div><div class="po-title" style="color:var(--amber);"><i class="fas fa-gem"></i> Pass VIP ⭐</div><div class="po-desc">Accès permanent sans expiration</div></div>
+            <div class="po-check"></div>
+          </div>
+          <div class="plan-option" data-plan="uni_starter" onclick="selectNewPlan('uni_starter')">
+            <div><div class="po-title" style="color:var(--sky);"><i class="fas fa-graduation-cap"></i> Pass Étudiant (Univ)</div><div class="po-desc">Université — 1 000 F / 30 jours</div></div>
+            <div class="po-check"></div>
+          </div>
+          <div class="plan-option" data-plan="uni_pro" onclick="selectNewPlan('uni_pro')">
+            <div><div class="po-title" style="color:var(--emerald);"><i class="fas fa-crown"></i> Pass Licence Pro (Univ)</div><div class="po-desc">Université — 2 000 F / 30 jours</div></div>
+            <div class="po-check"></div>
+          </div>
+          <div class="plan-option" data-plan="uni_elite" onclick="selectNewPlan('uni_elite')">
+            <div><div class="po-title" style="color:var(--amber);"><i class="fas fa-gem"></i> Pass Excellence (Univ)</div><div class="po-desc">Université — 3 000 F / 30 jours</div></div>
             <div class="po-check"></div>
           </div>
           <div class="plan-option" data-plan="free" onclick="selectNewPlan('free')">
@@ -543,6 +585,18 @@
         </div>
         <div class="plan-option" data-plan="vip" onclick="selectGrantPlan('vip')">
           <div><div class="po-title" style="color:var(--amber);"><i class="fas fa-gem"></i> Pass VIP (Permanent)</div><div class="po-desc">Accès complet illimité</div></div>
+          <div class="po-check"></div>
+        </div>
+        <div class="plan-option" data-plan="uni_starter" onclick="selectGrantPlan('uni_starter')">
+          <div><div class="po-title" style="color:var(--sky);"><i class="fas fa-graduation-cap"></i> Pass Étudiant (30j)</div><div class="po-desc">Université — 1 000 F</div></div>
+          <div class="po-check"></div>
+        </div>
+        <div class="plan-option" data-plan="uni_pro" onclick="selectGrantPlan('uni_pro')">
+          <div><div class="po-title" style="color:var(--emerald);"><i class="fas fa-crown"></i> Pass Licence Pro (30j)</div><div class="po-desc">Université — 2 000 F</div></div>
+          <div class="po-check"></div>
+        </div>
+        <div class="plan-option" data-plan="uni_elite" onclick="selectGrantPlan('uni_elite')">
+          <div><div class="po-title" style="color:var(--amber);"><i class="fas fa-gem"></i> Pass Excellence (30j)</div><div class="po-desc">Université — 3 000 F</div></div>
           <div class="po-check"></div>
         </div>
         <div class="plan-option" data-plan="free" onclick="selectGrantPlan('free')">
@@ -747,14 +801,11 @@
         } catch(e) { console.warn("Backend API:", e.message); }
 
         fullList = Array.from(userMap.values());
-        fullList.sort((a, b) => {
-          const tA = new Date(a.createdAt || a.updatedAt || 0).getTime();
-          const tB = new Date(b.createdAt || b.updatedAt || 0).getTime();
-          return tB - tA;
-        });
+        fullList.sort((a, b) => toMillis(b.createdAt || b.updatedAt) - toMillis(a.createdAt || a.updatedAt));
 
         updateKPIs();
         renderPremiumList();
+        renderClassList();
 
       } catch(err) {
         console.error("Erreur loadData:", err);
@@ -765,25 +816,125 @@
       }
     };
 
-    function updateKPIs() {
+    // ========== PLANS ==========
+    const PLAN_META = {
+      free:        { label: 'Essai Gratuit',       color: '#94a3b8',        bg: 'rgba(148,163,184,0.14)', icon: 'fa-user' },
+      starter:     { label: 'Starter 500 F',       color: 'var(--sky)',     bg: 'rgba(56,189,248,0.14)',  icon: 'fa-bolt' },
+      pro:         { label: 'Pro 1 000 F',         color: 'var(--emerald)', bg: 'rgba(16,185,129,0.14)',  icon: 'fa-crown' },
+      vip:         { label: 'VIP ⭐',              color: 'var(--amber)',   bg: 'rgba(245,158,11,0.14)',  icon: 'fa-gem' },
+      annual:      { label: 'Annuel 10 000 F',     color: 'var(--amber)',   bg: 'rgba(245,158,11,0.14)',  icon: 'fa-gem' },
+      annuel:      { label: 'Annuel 10 000 F',     color: 'var(--amber)',   bg: 'rgba(245,158,11,0.14)',  icon: 'fa-gem' },
+      elite:       { label: 'Élite',               color: 'var(--amber)',   bg: 'rgba(245,158,11,0.14)',  icon: 'fa-gem' },
+      uni_starter: { label: 'Étudiant 1 000 F',    color: 'var(--sky)',     bg: 'rgba(56,189,248,0.14)',  icon: 'fa-graduation-cap' },
+      uni_pro:     { label: 'Licence Pro 2 000 F', color: 'var(--emerald)', bg: 'rgba(16,185,129,0.14)',  icon: 'fa-crown' },
+      uni_elite:   { label: 'Excellence 3 000 F',  color: 'var(--amber)',   bg: 'rgba(245,158,11,0.14)',  icon: 'fa-gem' }
+    };
+    function userPlanInfo(u) {
       const now = Date.now();
-      let total = fullList.length, pro = 0, starter = 0, vip = 0;
+      const exp = toMillis(u.premiumExpiresAt);
+      const active = Boolean(u.isPremium && (exp === 0 || exp > now));
+      const plan = String(u.premiumPlan || u.plan || 'free').toLowerCase();
+      const meta = PLAN_META[plan] || PLAN_META.free;
+      const daysLeft = active && exp > 0 ? Math.ceil((exp - now) / 86400000) : null;
+      return { plan, meta, active, daysLeft, expired: !active && plan !== 'free' };
+    }
+    const CLASS_ORDER = ['6eme','5eme','4eme','3eme','Seconde_A','Seconde_C','Premiere_A','Premiere_C','Premiere_D','Terminale_A','Terminale_C','Terminale_D','Licence_1_Droit'];
 
+    function updateKPIs() {
+      let total = fullList.length, paid = 0, trial = 0, univ = 0;
       fullList.forEach(u => {
-        const plan = (u.premiumPlan || u.plan || 'free').toLowerCase();
-        const exp = Number(u.premiumExpiresAt) || 0;
-        const isActive = Boolean(u.isPremium && (exp === 0 || exp > now));
-        if (isActive) {
-          if (plan === 'pro') pro++;
-          else if (plan === 'starter') starter++;
-          else if (plan === 'vip' || plan === 'annual' || plan === 'annuel' || plan === 'elite') vip++;
-        }
+        const p = userPlanInfo(u);
+        if (p.active) paid++;
+        else trial++;
+        if (String(u.selectedClass || u.classe || '').startsWith('Licence_')) univ++;
       });
-
       document.getElementById('kpiTotal').textContent = total.toLocaleString('fr-FR');
-      document.getElementById('kpiPro').textContent = pro.toLocaleString('fr-FR');
-      document.getElementById('kpiStarter').textContent = starter.toLocaleString('fr-FR');
-      document.getElementById('kpiVip').textContent = vip.toLocaleString('fr-FR');
+      document.getElementById('kpiPro').textContent = paid.toLocaleString('fr-FR');
+      document.getElementById('kpiStarter').textContent = trial.toLocaleString('fr-FR');
+      document.getElementById('kpiVip').textContent = univ.toLocaleString('fr-FR');
+    }
+
+    // ========== INSCRITS PAR CLASSE ==========
+    window.toggleClassCard = function(i) {
+      const body = document.getElementById('clsBody' + i);
+      const chevron = document.getElementById('clsChevron' + i);
+      if (!body) return;
+      body.classList.toggle('open');
+      if (chevron) chevron.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
+    };
+
+    function renderClassList() {
+      const container = document.getElementById('classListBody');
+      const label = document.getElementById('classCountLabel');
+      const groups = new Map();
+      fullList.forEach(u => {
+        const key = String(u.selectedClass || u.classe || 'Non precisé');
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(u);
+      });
+      const keys = Array.from(groups.keys()).sort((a, b) => {
+        const ia = CLASS_ORDER.indexOf(a), ib = CLASS_ORDER.indexOf(b);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+        return groups.get(b).length - groups.get(a).length;
+      });
+      label.textContent = `${keys.length} classe${keys.length > 1 ? 's' : ''} · ${fullList.length} inscrit${fullList.length > 1 ? 's' : ''}`;
+      if (!keys.length) {
+        container.innerHTML = '<div class="no-result"><i class="fas fa-users"></i><p>Aucun inscrit pour le moment.</p></div>';
+        return;
+      }
+      container.innerHTML = keys.map((cls, i) => {
+        const members = groups.get(cls).slice().sort((a, b) => toMillis(b.createdAt || b.updatedAt) - toMillis(a.createdAt || a.updatedAt));
+        const isUnivCls = cls.startsWith('Licence_');
+        const counts = {};
+        members.forEach(u => {
+          const p = userPlanInfo(u);
+          const k = p.expired ? 'Expiré' : p.meta.label;
+          counts[k] = (counts[k] || 0) + 1;
+        });
+        const chips = Object.entries(counts).map(([l, c]) => `<span class="plan-chip">${escapeHtml(l)} · ${c}</span>`).join('');
+        const rows = members.map(u => {
+          const p = userPlanInfo(u);
+          const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+          const name = u.fullName || `${u.firstName || ''} ${u.lastName || ''}`.trim() || '—';
+          const created = toJsDate(u.createdAt || u.updatedAt);
+          const dateStr = created
+            ? created.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' }) + ' à ' + created.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+            : '—';
+          const badgeTxt = p.plan === 'free' ? 'Essai' : (p.expired ? 'Expiré — ' + p.meta.label : p.meta.label);
+          const badge = `<span class="pass-badge" style="color:${p.meta.color};background:${p.meta.bg};"><i class="fas ${p.meta.icon}"></i> ${escapeHtml(badgeTxt)}</span>`;
+          const left = p.active && p.daysLeft ? `<div style="font-size:10px;color:var(--text-dim);margin-top:3px;">${p.daysLeft}j restants</div>` : '';
+          const formattedPhone = phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+          return `<tr>
+            <td><div style="font-weight:700;color:var(--text);">${escapeHtml(name)}${u.adminCreated ? ' <span style="font-size:9px;color:var(--emerald);">(admin)</span>' : ''}</div></td>
+            <td style="font-family:'JetBrains Mono',monospace;color:var(--sky);white-space:nowrap;">+225 ${formattedPhone}</td>
+            <td>${badge}${left}</td>
+            <td style="color:var(--text-dim);white-space:nowrap;"><i class="far fa-clock" style="margin-right:4px;"></i>${dateStr}</td>
+            <td style="white-space:nowrap;">
+              <button class="mini-btn" style="color:var(--amber);" onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${p.plan}', '${escapeQuotes(u.id || u.uid || '')}')" title="Gérer le Pass"><i class="fas fa-crown"></i></button>
+              <button class="mini-btn" style="color:#25d366;border-color:rgba(37,211,102,0.2);background:rgba(37,211,102,0.08);" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${p.plan}')" title="Envoyer accès WhatsApp"><i class="fab fa-whatsapp"></i></button>
+            </td>
+          </tr>`;
+        }).join('');
+        return `<div class="cls-card">
+          <div class="cls-head" onclick="toggleClassCard(${i})">
+            <div style="width:36px;height:36px;border-radius:10px;background:${isUnivCls ? 'var(--amber-glow)' : 'var(--indigo-glow)'};color:${isUnivCls ? 'var(--amber)' : 'var(--indigo)'};display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas ${isUnivCls ? 'fa-graduation-cap' : 'fa-school'}"></i></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-weight:800;font-size:14px;color:var(--text);">${escapeHtml(cls.replace(/_/g, ' '))}</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;">${chips}</div>
+            </div>
+            <span class="plan-chip" style="background:var(--indigo-glow);color:var(--indigo);font-size:12px;">${members.length} inscrit${members.length > 1 ? 's' : ''}</span>
+            <i class="fas fa-chevron-down" id="clsChevron${i}" style="color:var(--text-dim);transition:.2s;"></i>
+          </div>
+          <div class="cls-body" id="clsBody${i}">
+            <div style="overflow-x:auto;">
+              <table class="cls-table">
+                <thead><tr><th>Nom &amp; Prénoms</th><th>WhatsApp</th><th>Pass / Forfait</th><th>Inscription</th><th></th></tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
     }
 
     // ========== PREMIUM LIST (replaces old full table) ==========
@@ -812,16 +963,9 @@
         const cls = u.selectedClass || u.classe || '';
         const initial = name.charAt(0).toUpperCase();
 
-        let planLabel, planColor, planIcon, daysLeft;
-        if (plan === 'vip' || plan === 'annual' || plan === 'annuel' || plan === 'elite') {
-          planLabel = 'VIP ⭐'; planColor = 'var(--amber)'; planIcon = 'fa-gem'; daysLeft = '∞';
-        } else if (plan === 'starter') {
-          planLabel = 'Starter'; planColor = 'var(--sky)'; planIcon = 'fa-bolt';
-          daysLeft = exp > 0 ? Math.ceil((exp - now) / 86400000) + 'j' : '30j';
-        } else {
-          planLabel = 'Pro'; planColor = 'var(--emerald)'; planIcon = 'fa-crown';
-          daysLeft = exp > 0 ? Math.ceil((exp - now) / 86400000) + 'j' : '30j';
-        }
+        const pInfo = PLAN_META[plan] || PLAN_META.free;
+        const planLabel = pInfo.label, planColor = pInfo.color, planIcon = pInfo.icon;
+        const daysLeft = (plan === 'vip') ? '∞' : (exp > 0 ? Math.ceil((exp - now) / 86400000) + 'j' : '30j');
 
         const formattedPhone = phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
 
@@ -873,7 +1017,7 @@
       });
 
       if (matches.length === 0) {
-        content.innerHTML = `<div class="no-result"><i class="fas fa-user-slash"></i><p>Aucun élève trouvé pour «&nbsp;${escapeHtml(q)}&nbsp;»</p></div>`;
+        content.innerHTML = `<div class="no-result"><i class="fas fa-user-slash"></i><p>Aucun inscrit trouvé pour «&nbsp;${escapeHtml(q)}&nbsp;»</p></div>`;
         panel.classList.add('active');
         return;
       }
@@ -891,12 +1035,13 @@
 
         let statusHtml, statusColor;
         if (isActive) {
-          const pLabel = plan === 'vip' || plan === 'annual' ? 'VIP ⭐' : plan === 'starter' ? 'Starter' : 'Pro';
-          const dLeft = (plan === 'vip' || plan === 'annual') ? '∞' : (exp > 0 ? Math.ceil((exp - now) / 86400000) + 'j' : '30j');
-          statusHtml = `<span style="font-weight:800;">${pLabel}</span> — ${dLeft} restant${dLeft !== '∞' ? 's' : ''}`;
-          statusColor = plan === 'vip' || plan === 'annual' ? 'var(--amber)' : plan === 'starter' ? 'var(--sky)' : 'var(--emerald)';
+          const pMeta = PLAN_META[plan] || PLAN_META.free;
+          const pLabel = pMeta.label;
+          const dLeft = plan === 'vip' ? '∞' : (exp > 0 ? Math.ceil((exp - now) / 86400000) + 'j' : '30j');
+          statusHtml = `<span style="font-weight:800;">${escapeHtml(pLabel)}</span> — ${dLeft} restant${dLeft !== '∞' ? 's' : ''}`;
+          statusColor = pMeta.color;
         } else {
-          statusHtml = 'Gratuit (pas d\'abonnement)';
+          statusHtml = 'Essai Gratuit (pas d\'abonnement)';
           statusColor = 'var(--text-dim)';
         }
 
@@ -951,7 +1096,7 @@
     window.openCreateUserModal = function() {
       document.getElementById('newFullName').value = '';
       document.getElementById('newPhone').value = '';
-      document.getElementById('newPassword').value = '123456';
+      document.getElementById('newPassword').value = '12345678';
       document.getElementById('createFeedback').style.display = 'none';
       selectNewPlan('pro');
       document.getElementById('createUserModal').classList.add('active');
@@ -987,7 +1132,7 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Création...';
       feedback.style.display = 'none';
 
-      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650 };
+      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650, annual: 365, uni_starter: 30, uni_pro: 30, uni_elite: 30 };
       const days = daysMap[currentNewPlan] || 30;
 
       try {
@@ -1027,7 +1172,7 @@
       document.getElementById('succName').textContent = name;
       document.getElementById('succPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
       document.getElementById('succPwd').textContent = pwd;
-      const planNames = { pro: 'Pass Pro (30j)', starter: 'Pass Starter (30j)', vip: 'Pass VIP ⭐', free: 'Gratuit' };
+      const planNames = { pro: 'Pass Pro (30j)', starter: 'Pass Starter (30j)', vip: 'Pass VIP ⭐', annual: 'Pass Annuel (365j)', free: 'Essai Gratuit', uni_starter: 'Pass Étudiant (30j)', uni_pro: 'Pass Licence Pro (30j)', uni_elite: 'Pass Excellence (30j)' };
       document.getElementById('succPlan').textContent = planNames[plan] || plan.toUpperCase();
       document.getElementById('successModal').classList.add('active');
     }
@@ -1044,7 +1189,7 @@
     };
 
     window.sendCredentialsWhatsApp = function(phone, name, pwd, plan) {
-      const planName = plan === 'pro' ? 'Pass Pro (30 jours)' : (plan === 'starter' ? 'Pass Starter (30 jours)' : (plan === 'vip' ? 'Pass VIP Permanent' : 'Formule Gratuite'));
+      const planName = (PLAN_META[plan] ? PLAN_META[plan].label + ' (30 jours)' : 'Essai Gratuit');
       const pwdLine = pwd ? `🔑 Mot de passe : *${pwd}*\n` : `🔑 Mot de passe : celui que tu as choisi à l'inscription\n`;
       const msg = `Bonjour ${name} !\n\nTon compte ResumeCI a été activé avec succès avec le forfait : *${planName}* ! 🎓\n\nVoici tes accès personnels :\n\n📱 Identifiant (WhatsApp) : *+225 ${phone}*\n${pwdLine}\n👉 Connecte-toi ici : https://resumeci.me/connexion.html\n\nBonnes révisions avec ResumeCI ! 🚀`;
       const url = `https://wa.me/225${phone}?text=${encodeURIComponent(msg)}`;
@@ -1057,7 +1202,7 @@
       document.getElementById('grantStudentName').textContent = name;
       document.getElementById('grantStudentPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
       document.getElementById('grantFeedback').style.display = 'none';
-      selectGrantPlan(currentPlan === 'starter' || currentPlan === 'vip' ? currentPlan : 'pro');
+      selectGrantPlan(['starter','pro','vip','uni_starter','uni_pro','uni_elite'].includes(currentPlan) ? currentPlan : 'pro');
       document.getElementById('grantModal').classList.add('active');
     };
 
@@ -1084,7 +1229,7 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Application...';
       feedback.style.display = 'none';
 
-      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650 };
+      const daysMap = { free: 0, starter: 30, pro: 30, vip: 3650, annual: 365, uni_starter: 30, uni_pro: 30, uni_elite: 30 };
       const days = daysMap[currentGrantPlan] || 30;
       const isFree = currentGrantPlan === 'free';
       const expiresAt = isFree ? 0 : (Date.now() + days * 86400000);
@@ -1131,6 +1276,7 @@
 
         updateKPIs();
         renderPremiumList();
+        renderClassList();
 
         showFeedback(feedback, isFree ? "Abonnement arrêté." : `Pass ${currentGrantPlan.toUpperCase()} accordé !`, isFree);
         setTimeout(() => closeGrantModal(), 900);
@@ -1146,15 +1292,17 @@
     // ========== CSV EXPORT ==========
     window.exportCSV = function() {
       if (!fullList.length) { alert("Aucune donnée à exporter."); return; }
-      let csv = "Nom,Telephone,Classe,Forfait,Statut,Date\n";
+      let csv = "Nom & Prenoms,Telephone,Classe,Forfait,Statut,Date d'inscription,Heure\n";
       fullList.forEach(u => {
         const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
         const name = (u.fullName || `${u.firstName || ''} ${u.lastName || ''}`).replace(/,/g, ' ');
         const cls = (u.selectedClass || u.classe || '').replace(/,/g, ' ');
-        const plan = (u.premiumPlan || u.plan || 'free');
-        const isPrem = u.isPremium ? 'Actif' : 'Gratuit';
-        const dt = u.createdAt ? new Date(u.createdAt).toLocaleDateString('fr-FR') : '';
-        csv += `"${name}","+225 ${phone}","${cls}","${plan}","${isPrem}","${dt}"\n`;
+        const p = userPlanInfo(u);
+        const statut = p.plan === 'free' ? 'Essai' : (p.expired ? 'Expiré' : 'Actif');
+        const d = toJsDate(u.createdAt || u.updatedAt);
+        const dt = d ? d.toLocaleDateString('fr-FR') : '';
+        const hr = d ? d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '';
+        csv += `"${name}","+225 ${phone}","${cls}","${p.meta.label}","${statut}","${dt}","${hr}"\n`;
       });
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -1175,6 +1323,22 @@
 
     function escapeHtml(s) {
       return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function toJsDate(v) {
+      if (!v) return null;
+      if (v instanceof Date) return v;
+      if (typeof v.toDate === 'function') return v.toDate();
+      if (typeof v === 'object' && (v.seconds !== undefined || v._seconds !== undefined)) {
+        const s = Number(v.seconds !== undefined ? v.seconds : v._seconds);
+        return isNaN(s) ? null : new Date(s * 1000);
+      }
+      const d = new Date(v);
+      return isNaN(d.getTime()) ? null : d;
+    }
+    function toMillis(v) {
+      if (typeof v === 'number' && isFinite(v)) return v;
+      const d = toJsDate(v);
+      return d ? d.getTime() : 0;
     }
     function escapeQuotes(s) {
       return String(s || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
