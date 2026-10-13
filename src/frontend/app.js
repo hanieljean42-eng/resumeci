@@ -171,9 +171,10 @@ window.syncUserProfileFromRemote = async function() {
 
   for (const apiBase of candidates) {
     try {
-      const res = await fetch(`${apiBase}/api/user-status?phone=${encodeURIComponent(phone)}&uid=${encodeURIComponent(uid)}`, {
-        method: 'GET',
-        headers
+      const res = await fetch(`${apiBase}/api/user-status`, {
+        method: 'POST',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone, uid })
       });
       if (!res.ok) continue;
       const data = await res.json();

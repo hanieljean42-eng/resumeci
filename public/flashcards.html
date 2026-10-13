@@ -474,7 +474,7 @@
         Object.keys(obj||{}).forEach(k=>{ if(k.startsWith('fc_')) localStorage.setItem(k, obj[k]); });
         alert('Progression importée.');
         if(currentDeck) startSession();
-      }catch(err){ alert('Import invalide: '+err.message); }
+      }catch(err){ alert('Import invalide : fichier corrompu ou format incorrect.'); }
       e.target.value='';
     });
 

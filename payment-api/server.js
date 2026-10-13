@@ -876,10 +876,13 @@ app.post('/api/register', async (req, res) => {
 // --------------------------------------------------------------------------
 // ROUTE 4.6 : STATUT UTILISATEUR & SYNCHRONISATION EN DIRECT
 // --------------------------------------------------------------------------
-app.get('/api/user-status', async (req, res) => {
+const userStatusHandler = async (req, res) => {
   try {
-    const rawPhone = req.query.phone || req.query.whatsapp || req.query.contact || '';
-    const rawUid = req.query.uid || '';
+    // Paramètres acceptés en query (compatibilité anciennes versions) ou en body POST
+    // (recommandé : évite d'exposer le numéro de téléphone dans les URL et les logs).
+    const body = req.body || {};
+    const rawPhone = req.query.phone || req.query.whatsapp || req.query.contact || body.phone || body.whatsapp || body.contact || '';
+    const rawUid = req.query.uid || body.uid || '';
     const cleanPhone = String(rawPhone).replace(/\D/g, '').slice(-10);
 
     if (!cleanPhone && !rawUid) {
@@ -985,7 +988,9 @@ app.get('/api/user-status', async (req, res) => {
     console.error('[User Status] Erreur:', err);
     res.status(500).json({ error: "Erreur serveur vérification statut" });
   }
-});
+};
+app.get('/api/user-status', userStatusHandler);
+app.post('/api/user-status', userStatusHandler);
 
 // --------------------------------------------------------------------------
 // ROUTE 4.6 : FICHES SÉCURISÉES (toutes les classes)
