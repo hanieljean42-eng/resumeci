@@ -272,6 +272,7 @@
     .modal-box {
       background: var(--surface-2); border: 1px solid var(--border);
       border-radius: 22px; max-width: 500px; width: 100%; padding: 28px;
+      max-height: 90vh; overflow-y: auto;
       box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03) inset;
       animation: modalIn 0.25s ease-out;
     }
@@ -326,6 +327,8 @@
     /* Responsive */
     @media (max-width: 640px) {
       .topbar { padding: 12px 16px; }
+      .topbar-actions { flex-wrap: wrap; gap: 8px; }
+      .topbar-actions .btn-top { padding: 9px 13px; font-size: 12px; }
       .main-content { padding: 20px 14px; }
       .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .kpi-value { font-size: 28px; }
@@ -334,7 +337,16 @@
       .lookup-row { flex-direction: column; }
       .result-header { flex-direction: column; text-align: center; }
       .result-actions { flex-direction: column; }
-      .modal-box { padding: 22px 18px; }
+      .modal-overlay { padding: 8px; }
+      .modal-box { padding: 20px 16px; max-height: 94vh; border-radius: 16px; }
+      .modal-top h2 { font-size: 15px; }
+      .plan-option { padding: 11px 12px; margin-bottom: 8px; }
+      .plan-option .po-title { font-size: 12.5px; }
+      .plan-option .po-desc { font-size: 10.5px; }
+      .section-header { padding: 14px 16px; }
+      .section-body { padding: 14px 16px; }
+      .cls-head { flex-wrap: wrap; gap: 8px; padding: 12px; }
+      .cred-row { flex-direction: column; align-items: flex-start; gap: 2px; }
     }
   </style>
 </head>
@@ -912,6 +924,7 @@
             <td style="white-space:nowrap;">
               <button class="mini-btn" style="color:var(--amber);" onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${p.plan}', '${escapeQuotes(u.id || u.uid || '')}')" title="Gérer le Pass"><i class="fas fa-crown"></i></button>
               <button class="mini-btn" style="color:#25d366;border-color:rgba(37,211,102,0.2);background:rgba(37,211,102,0.08);" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${p.plan}')" title="Envoyer accès WhatsApp"><i class="fab fa-whatsapp"></i></button>
+              <button class="mini-btn" style="color:var(--rose);border-color:rgba(244,63,94,0.25);background:rgba(244,63,94,0.08);" onclick="deleteUserEntry('${phone}', '${escapeQuotes(name)}', '${escapeQuotes(u.id || u.uid || '')}')" title="Supprimer cet inscrit"><i class="fas fa-trash"></i></button>
             </td>
           </tr>`;
         }).join('');
@@ -923,6 +936,7 @@
               <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;">${chips}</div>
             </div>
             <span class="plan-chip" style="background:var(--indigo-glow);color:var(--indigo);font-size:12px;">${members.length} inscrit${members.length > 1 ? 's' : ''}</span>
+            <button class="mini-btn" style="color:var(--rose);border-color:rgba(244,63,94,0.25);background:rgba(244,63,94,0.08);flex-shrink:0;" onclick="purgeClassGroup('${escapeQuotes(cls)}', event)" title="Supprimer toute la liste de cette classe"><i class="fas fa-trash"></i></button>
             <i class="fas fa-chevron-down" id="clsChevron${i}" style="color:var(--text-dim);transition:.2s;"></i>
           </div>
           <div class="cls-body" id="clsBody${i}">
@@ -1286,6 +1300,55 @@
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i class="fas fa-check"></i> Enregistrer';
+      }
+    };
+
+    // ========== SUPPRESSIONS ==========
+    window.deleteUserEntry = async function(phone, name, docId) {
+      if (!confirm(`Supprimer définitivement « ${name} » (+225 ${phone}) ?\n\nCette action est irréversible.`)) return;
+      try {
+        const res = await adminFetch('/api/admin/delete-user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ target: phone, docId: docId || phone })
+        });
+        const j = await res.json().catch(() => ({}));
+        if (!res.ok || j.error) throw new Error(j.error || `Erreur ${res.status}`);
+        fullList = fullList.filter(u => !((docId && String(u.id || u.uid || '') === String(docId)) || (phone && String(u.whatsapp || u.contact || '') === phone)));
+        updateKPIs(); renderPremiumList(); renderClassList();
+      } catch(e) {
+        alert('Suppression impossible : ' + e.message);
+      }
+    };
+
+    window.purgeClassGroup = async function(cls, ev) {
+      if (ev) ev.stopPropagation();
+      const keyOf = u => String(u.selectedClass || u.classe || 'Non precisé');
+      const members = fullList.filter(u => keyOf(u) === cls);
+      if (!members.length) { alert('Cette liste est déjà vide.'); return; }
+      if (!confirm(`Supprimer les ${members.length} inscrit(s) de « ${cls.replace(/_/g, ' ')} » ?\n\nTous ces comptes seront définitivement effacés.`)) return;
+      if (!confirm(`Dernière confirmation : effacer définitivement ${members.length} compte(s) ?`)) return;
+      try {
+        const res = await adminFetch('/api/admin/delete-class', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ selectedClass: cls })
+        });
+        const j = await res.json().catch(() => ({}));
+        if (!res.ok || j.error) throw new Error(j.error || `Erreur ${res.status}`);
+        // La classe « Non précisé » regroupe aussi les inscrits VIP de la waitlist
+        if (/non.?pr/i.test(cls)) {
+          try {
+            await adminFetch('/api/admin/purge-waitlist', {
+              method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}'
+            });
+          } catch(e) { console.warn('Purge waitlist:', e.message); }
+        }
+        fullList = fullList.filter(u => keyOf(u) !== cls);
+        updateKPIs(); renderPremiumList(); renderClassList();
+        alert(`${j.deleted ?? members.length} inscrit(s) supprimé(s).`);
+      } catch(e) {
+        alert('Suppression impossible : ' + e.message);
       }
     };
 

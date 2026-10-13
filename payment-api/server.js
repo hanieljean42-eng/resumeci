@@ -1290,6 +1290,92 @@ app.post('/api/admin/set-plan', async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
+// ROUTE 6-C : API ADMIN - SUPPRIMER UN INSCRIT (users ou waitlist)
+// --------------------------------------------------------------------------
+app.post('/api/admin/delete-user', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: "Base de données indisponible" });
+    const { target, docId } = req.body || {};
+    const candidates = [...new Set([docId, target].filter(Boolean).map(String))];
+    if (!candidates.length) {
+      return res.status(400).json({ error: "Identifiant de l'inscrit requis." });
+    }
+
+    let deleted = null;
+    for (const id of candidates) {
+      const ref = db.collection('users').doc(id);
+      const snap = await ref.get();
+      if (snap.exists) { await ref.delete(); deleted = `users/${id}`; break; }
+    }
+    if (!deleted) {
+      for (const id of candidates) {
+        const ref = db.collection('waitlist').doc(id);
+        const snap = await ref.get();
+        if (snap.exists) { await ref.delete(); deleted = `waitlist/${id}`; break; }
+      }
+    }
+    if (!deleted) return res.status(404).json({ error: "Inscrit introuvable" });
+
+    console.log(`[Admin Delete] 🗑️ ${deleted} supprimé`);
+    res.json({ success: true, deleted });
+  } catch (err) {
+    console.error('[Admin Delete] Erreur:', err);
+    res.status(500).json({ error: "Erreur suppression inscrit" });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 6-D : API ADMIN - PURGER TOUTE LA WAITLIST (inscrits VIP)
+// --------------------------------------------------------------------------
+app.post('/api/admin/purge-waitlist', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: "Base de données indisponible" });
+    const snap = await db.collection('waitlist').get();
+    const docs = snap.docs;
+    for (let i = 0; i < docs.length; i += 400) {
+      const batch = db.batch();
+      docs.slice(i, i + 400).forEach(d => batch.delete(d.ref));
+      await batch.commit();
+    }
+    console.log(`[Admin Purge] 🗑️ ${docs.length} inscrit(s) VIP (waitlist) supprimé(s)`);
+    res.json({ success: true, deleted: docs.length });
+  } catch (err) {
+    console.error('[Admin Purge] Erreur:', err);
+    res.status(500).json({ error: "Erreur purge waitlist" });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 6-E : API ADMIN - SUPPRIMER TOUS LES INSCRITS D'UNE CLASSE / FILIÈRE
+// --------------------------------------------------------------------------
+app.post('/api/admin/delete-class', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: "Base de données indisponible" });
+    const { selectedClass } = req.body || {};
+    if (!selectedClass) {
+      return res.status(400).json({ error: "Classe à supprimer requise." });
+    }
+    const cls = String(selectedClass);
+    const toDelete = new Map();
+    for (const field of ['selectedClass', 'classe']) {
+      const snap = await db.collection('users').where(field, '==', cls).get();
+      snap.forEach(d => toDelete.set(d.id, d.ref));
+    }
+    const refs = Array.from(toDelete.values());
+    for (let i = 0; i < refs.length; i += 400) {
+      const batch = db.batch();
+      refs.slice(i, i + 400).forEach(r => batch.delete(r));
+      await batch.commit();
+    }
+    console.log(`[Admin DeleteClass] 🗑️ ${refs.length} inscrit(s) de « ${cls} » supprimé(s)`);
+    res.json({ success: true, deleted: refs.length });
+  } catch (err) {
+    console.error('[Admin DeleteClass] Erreur:', err);
+    res.status(500).json({ error: "Erreur suppression de la classe" });
+  }
+});
+
+// --------------------------------------------------------------------------
 // ROUTE 7 : API ADMIN - SUIVI DES PAIEMENTS RÉELS GENIUSPAY & WAVE EN DIRECT
 // --------------------------------------------------------------------------
 app.get('/api/admin/transactions', async (req, res) => {
