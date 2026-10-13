@@ -1132,6 +1132,89 @@ app.post('/api/login', async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
+// ROUTE 4.9 : MODIFICATION DU PROFIL (prénom + mot de passe uniquement)
+// Authentifiée par le sessionToken HMAC — seul le titulaire du compte agit.
+// --------------------------------------------------------------------------
+const profileLimiter = limiter(15 * 60 * 1000, 30);
+app.post('/api/update-profile', profileLimiter, async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'Session expirée. Reconnecte-toi puis réessaie.' });
+    }
+    if (!db) {
+      return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    }
+
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) {
+      return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    }
+
+    const update = {};
+    if (req.body.firstName !== undefined) {
+      const firstName = clampStr(req.body.firstName, 60).trim();
+      if (!firstName) {
+        return res.status(400).json({ success: false, error: 'Prénom requis (60 caractères max).' });
+      }
+      update.firstName = firstName;
+      update.fullName = `${firstName} ${user.lastName || ''}`.trim();
+    }
+
+    const pwd = String(req.body.password || '');
+    if (pwd) {
+      if (pwd.length < MIN_PASSWORD_LENGTH || pwd.length > MAX_PASSWORD_LENGTH) {
+        return res.status(400).json({ success: false, error: `Le mot de passe doit comporter entre ${MIN_PASSWORD_LENGTH} et ${MAX_PASSWORD_LENGTH} caractères.` });
+      }
+      const fv = FieldValue || admin.firestore?.FieldValue;
+      update.passwordHash = await hashPassword(pwd);
+      update.password = fv ? fv.delete() : undefined;
+    }
+
+    if (Object.keys(update).length === 0) {
+      return res.status(400).json({ success: false, error: 'Aucune modification demandée.' });
+    }
+    update.updatedAt = new Date().toISOString();
+
+    const ref = db.collection('users').doc(user._docId);
+    await ref.set(update, { merge: true });
+    const fresh = await ref.get();
+    const freshUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id, _docId: fresh.id };
+    const acctPhone = String(freshUser.whatsapp || freshUser.contact || fresh.id).replace(/\D/g, '').slice(-10) || fresh.id;
+    console.log(`[Profile] ✏️ Profil mis à jour (${maskPhone(sessionUid)})`);
+    res.json({ success: true, profile: buildProfile(freshUser, acctPhone) });
+  } catch (err) {
+    console.error('[UpdateProfile] Erreur:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur lors de la mise à jour.' });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 4.10 : SUPPRESSION RÉELLE DU COMPTE (session requise)
+// --------------------------------------------------------------------------
+app.post('/api/delete-account', profileLimiter, async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'Session expirée. Reconnecte-toi puis réessaie.' });
+    }
+    if (!db) {
+      return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    }
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) {
+      return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    }
+    await db.collection('users').doc(user._docId).delete();
+    console.log(`[DeleteAccount] 🗑️ Compte supprimé (${maskPhone(sessionUid)})`);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('[DeleteAccount] Erreur:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur lors de la suppression.' });
+  }
+});
+
+// --------------------------------------------------------------------------
 // ROUTE 5 : API ADMIN - UTILISATEURS UNIFIÉS (users + waitlist)
 // --------------------------------------------------------------------------
 app.get('/api/admin/users', async (req, res) => {

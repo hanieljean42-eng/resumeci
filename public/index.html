@@ -200,7 +200,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.4.8" defer></script>
+  <script src="/app.js?v=3.4.9" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1618,6 +1618,32 @@
         <div style="text-align: center; margin-top: 6px;">
           <a href="/privacy.html" target="_blank" style="color: #9ca3af; font-size: 10px; text-decoration: underline;">Confidentialité & Données protégées</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div class="profile-modal-overlay" id="editProfileModalOverlay">
+    <div class="profile-modal" style="text-align: center;">
+      <button class="modal-close" onclick="document.getElementById('editProfileModalOverlay').classList.remove('show')">&times;</button>
+      <div class="profile-modal-header" style="background: linear-gradient(135deg, #1d4ed8, #2563eb);">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background: #ffffff; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 8px;">✏️</div>
+        <h2 style="font-size: 19px; margin-bottom: 2px;">Modifier mon profil</h2>
+        <p style="font-size: 12px;">Seuls ton prénom et ton mot de passe peuvent être modifiés</p>
+      </div>
+      <div class="profile-modal-body" style="text-align: left;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 12px; margin-bottom: 14px; font-size: 12.5px; color: var(--text-muted);">
+          <div style="margin-bottom: 4px;"><strong>Nom :</strong> <span id="epLastName" style="color: var(--text);">—</span></div>
+          <div style="margin-bottom: 4px;"><strong>Classe / Filière :</strong> <span id="epClass" style="color: var(--text);">—</span></div>
+          <div><strong>WhatsApp :</strong> <span id="epWhatsapp" style="color: var(--text);">—</span></div>
+        </div>
+        <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;" for="epFirstName">Prénom</label>
+        <input id="epFirstName" class="pm-input" type="text" maxlength="60" placeholder="Ton prénom" autocomplete="given-name" style="margin-bottom: 12px;">
+        <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;" for="epPassword">Nouveau mot de passe <span style="font-weight: 400;">(facultatif)</span></label>
+        <input id="epPassword" class="pm-input" type="password" maxlength="128" placeholder="Laisser vide pour conserver l'actuel" autocomplete="new-password">
+        <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0 12px;">8 caractères minimum si tu veux le changer.</div>
+        <div id="epError" style="display: none; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; font-size: 12px; border-radius: 8px; padding: 8px 10px; margin-bottom: 10px;"></div>
+        <button id="epSubmitBtn" class="pm-btn" onclick="submitProfileEdit()"><i class="fas fa-check"></i>&nbsp;Enregistrer les modifications</button>
       </div>
     </div>
   </div>

@@ -810,11 +810,84 @@ window.submitProfile = async function () {
 
 window.openProfileEditModal = function() {
   document.getElementById('viewProfileModalOverlay')?.classList.remove('show');
-  window.location.href = '/inscription.html?edit=1';
+  const p = window.USER_PROFILE || {};
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v || '—'; };
+  set('epLastName', p.lastName || p.fullName || '');
+  set('epClass', (p.selectedClass || '').replace(/_/g, ' '));
+  set('epWhatsapp', p.whatsapp || '');
+  const fnInput = document.getElementById('epFirstName');
+  if (fnInput) fnInput.value = p.firstName || '';
+  const pwdInput = document.getElementById('epPassword');
+  if (pwdInput) pwdInput.value = '';
+  const errEl = document.getElementById('epError');
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+  document.getElementById('editProfileModalOverlay')?.classList.add('show');
 };
 
 window.closeProfileEditModal = function() {
-  document.getElementById('viewProfileModalOverlay')?.classList.remove('show');
+  document.getElementById('editProfileModalOverlay')?.classList.remove('show');
+};
+
+window.submitProfileEdit = async function() {
+  const btn = document.getElementById('epSubmitBtn');
+  const errEl = document.getElementById('epError');
+  const showErr = (m) => { if (errEl) { errEl.textContent = m; errEl.style.display = 'block'; } };
+  const firstName = (document.getElementById('epFirstName')?.value || '').trim();
+  const password = document.getElementById('epPassword')?.value || '';
+  if (!firstName || firstName.length > 60) return showErr('Prénom requis (60 caractères max).');
+  if (password && (password.length < 8 || password.length > 128)) return showErr('Le mot de passe doit faire entre 8 et 128 caractères.');
+  if (!window.USER_PROFILE || !window.USER_PROFILE.sessionToken) {
+    return showErr('Session expirée. Reconnecte-toi puis réessaie.');
+  }
+  if (btn) { btn.disabled = true; btn.textContent = 'Enregistrement...'; }
+  try {
+    const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
+    const res = await fetch(`${apiBase}/api/update-profile`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + window.USER_PROFILE.sessionToken },
+      body: JSON.stringify({ firstName, password: password || undefined })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) throw new Error(data.error || 'Erreur serveur');
+    const p = data.profile || {};
+    window.USER_PROFILE.firstName = p.firstName || firstName;
+    if (p.fullName) window.USER_PROFILE.fullName = p.fullName;
+    if (p.lastName) window.USER_PROFILE.lastName = p.lastName;
+    if (p.sessionToken) window.USER_PROFILE.sessionToken = p.sessionToken;
+    localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+    document.getElementById('editProfileModalOverlay')?.classList.remove('show');
+    if (typeof window.toast === 'function') toast('Profil mis à jour !', 'success');
+    if (typeof renderSidebar === 'function') renderSidebar();
+  } catch (e) {
+    showErr(e.message || "Impossible d'enregistrer. Réessaie.");
+  } finally {
+    if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-check"></i>&nbsp;Enregistrer les modifications'; }
+  }
+};
+
+window.confirmDeleteAccount = function() {
+  if (!window.USER_PROFILE) return;
+  const first = window.confirm("⚠️ Supprimer ton compte ?\n\nCette action est DÉFINITIVE : ton profil, ta progression et ton abonnement seront effacés.\n\nContinuer ?");
+  if (!first) return;
+  const second = window.confirm("Dernière confirmation : es-tu vraiment sûr(e) de vouloir supprimer ton compte ?");
+  if (!second) return;
+  window.performDeleteAccount();
+};
+
+window.performDeleteAccount = async function() {
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  try {
+    if (token) {
+      const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
+      await fetch(`${apiBase}/api/delete-account`, {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token }
+      }).catch(() => {});
+    }
+  } catch (e) {}
+  ['resumeci_profile', 'user_profile', 'resumeci_user', 'resumeci_student_user'].forEach(k => localStorage.removeItem(k));
+  window.USER_PROFILE = null;
+  window.location.href = '/';
 };
 
 window.submitLogin = async function () {
