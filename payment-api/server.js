@@ -264,13 +264,22 @@ async function findUserByAnyId(rawId) {
       if (d.exists) return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
     } catch (e) {}
   }
+  // Préférence doc réel > fantôme : un doc canonique (ID = numéro, ou avec
+  // identité) gagne toujours contre un doc technique user_*/admin_* hérité.
+  const scoreDoc = (id, u) =>
+    (/^\d{10}$/.test(id) ? 4 : 0) +
+    ((u.fullName || u.firstName || u.lastName) ? 2 : 0) +
+    ((u.passwordHash || u.password) ? 1 : 0) +
+    (u.isPremium ? 1 : 0) +
+    (/^(user_|admin_|test_)/.test(id) ? -8 : 0);
   for (const field of ['uid', 'whatsapp', 'contact', 'phone']) {
     for (const cand of candidates) {
       try {
-        const snap = await users.where(field, '==', cand).limit(1).get();
+        const snap = await users.where(field, '==', cand).limit(5).get();
         if (!snap.empty) {
-          const d = snap.docs[0];
-          return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
+          const best = snap.docs.reduce((a, b) =>
+            scoreDoc(b.id, b.data()) > scoreDoc(a.id, a.data()) ? b : a);
+          return { ...best.data(), uid: best.data().uid || best.id, _docId: best.id };
         }
       } catch (e) {}
     }
