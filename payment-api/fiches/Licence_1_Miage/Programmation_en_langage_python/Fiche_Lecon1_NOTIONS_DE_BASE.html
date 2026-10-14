@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — NOTIONS DE BASE — Programmation_en_langage_python Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Notions de base de Python — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"><meta property="og:title" content="Leçon 1 — NOTIONS DE BASE — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Notions de base de Python — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — NOTIONS DE BASE — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Notions de base de Python — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_en_langage_python","item":"https://resumeci.me/#Licence_1_Miage/Programmation_en_langage_python"},{"@type":"ListItem","position":4,"name":"Leçon 1 — NOTIONS DE BASE","item":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — NOTIONS DE BASE — Programmation_en_langage_python Licence 1_Miage | ResumeCI","description":"Leçon 1 — Notions de base de Python — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence","url":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Programmation_en_langage_python","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation en langage Python</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 1 : Notions de base</span>
+  </div>
+</div>
+
+<h2>I. Production des programmes</h2>
+<table>
+  <tr><th>Technique</th><th>Principe</th><th>Caractéristiques</th></tr>
+  <tr><td><strong>Compilation</strong></td><td>Traduction du source en langage objet : analyses lexicale, syntaxique, sémantique + production de code + <strong>édition de liens</strong></td><td>Contraignante mais <strong>grande vitesse d'exécution</strong></td></tr>
+  <tr><td><strong>Interprétation</strong></td><td>Chaque instruction est traduite et exécutée <strong>au fur et à mesure</strong> par l'interpréteur</td><td>Flexible, interactive, plus lente</td></tr>
+  <tr><td><strong>Python</strong></td><td><strong>Langage interprété</strong> : le source est compilé en <em>bytecode</em> puis interprété par la machine virtuelle</td><td>2 modes : <strong>script</strong> (fichier .py exécuté) et <strong>interpréteur interactif</strong> (boucle d'évaluation, invite &gt;&gt;&gt;)</td></tr>
+</table>
+<div class="schema"><strong>Méthodologies de construction :</strong> ① <strong>procédurale</strong> : analyse descendante (division du problème en sous-problèmes) ; ② <strong>objet</strong> : centrée sur les données, plus stable.</div>
+
+<h2>II. Identificateurs et mots réservés</h2>
+<div class="definition"><strong>Identificateur :</strong> suite non vide de caractères = lettre Unicode ou <code>_</code> (caractère de début) + lettres, chiffres, <code>_</code> (continuation). <strong>Sensible à la casse</strong> ; interdit d'employer un mot réservé.</div>
+<div class="schema"><strong>Style de nommage (PEP 8) :</strong> <code>UPPER_CASE</code> constantes · <code>TitleCase</code> classes · <code>camelCase</code> fonctions/méthodes · <code>lower_case</code> autres. Éviter les lettres seules l, O, I.<br>
+<strong>Mots réservés Python 3 :</strong> and, as, assert, break, class, continue, def, del, elif, else, except, False, finally, for, from, global, if, import, in, is, lambda, None, nonlocal, not, or, pass, raise, return, True, try, while, with, yield.</div>
+<div class="definition"><strong>Expression :</strong> portion de code que l'interpréteur peut <strong>évaluer pour obtenir une valeur</strong> (littéraux + identificateurs + opérateurs).</div>
+
+<h2>III. Les types de données simples</h2>
+<table>
+  <tr><th>Type</th><th>Description</th><th>Exemples</th></tr>
+  <tr><td><strong>int</strong></td><td>Entier limité <strong>uniquement par la mémoire</strong> (pas de dépassement). Bases : décimal, <code>0b</code> binaire, <code>0o</code> octal, <code>0x</code> hexa</td><td><code>2013</code>, <code>0b11111011101</code>, <code>0x7dd</code> ; <code>bin(179)</code>, <code>hex(179)</code></td></tr>
+  <tr><td><strong>bool</strong></td><td>Deux valeurs <code>False</code>/<code>True</code> ; comparaisons <code>== != &gt; &gt;= &lt; &lt;=</code> ; logiques <code>not and or</code></td><td><code>2 &lt;= 8 &lt; 15</code> → True</td></tr>
+  <tr><td><strong>float</strong></td><td>Flottant : point décimal (<strong>jamais de virgule</strong>) ou notation <code>e</code> ; précision finie ; module <code>math</code></td><td><code>2.718</code>, <code>6.023e23</code>, <code>-1.6e-19</code></td></tr>
+  <tr><td><strong>complex</strong></td><td>Deux flottants, partie imaginaire suffixée <code>j</code> ; module <code>cmath</code></td><td><code>(9+5j).real</code> → 9.0 ; <code>abs(3+4j)</code> → 5.0</td></tr>
+</table>
+<div class="important"><strong>Opérateurs :</strong> <code>+ − * **</code> (puissance) · <code>/</code> division <strong>flottante</strong> même entre entiers (20/3 → 6.66…) · <code>//</code> division <strong>entière</strong> (20//3 → 6) · <code>%</code> modulo · <code>abs()</code>.<br>
+<strong>Évaluation au plus court :</strong> <code>False and …</code> → False sans évaluer la suite ; <code>True or …</code> → True idem.</div>
+
+<h2>IV. Variables, références et affectation</h2>
+<div class="definition"><strong>Variable :</strong> identificateur associé à une valeur — en Python c'est une <strong>référence d'objet</strong> (l'identificateur « pointe » vers la donnée en mémoire). Quand une donnée n'est plus référencée, le <strong>ramasse-miettes</strong> (garbage collector) la supprime.</div>
+<div class="schema"><strong>Affectation <code>=</code> :</strong> le membre de droite est <strong>évalué d'abord</strong>, puis affecté au membre de gauche → <code>a = a + 1</code> (incrémentation) est valide. Dire « a <strong>reçoit</strong> 2 », pas « a égal 2 ».<br>
+<strong>Affecter ≠ comparer :</strong> <code>=</code> a un <strong>effet</strong> (modifie l'état) mais pas de valeur ; <code>==</code> a une <strong>valeur</strong> (bool) mais pas d'effet. <code>s = (c = True) and True</code> → <strong>SyntaxError</strong> !<br>
+<strong>Variantes :</strong> <code>v += 2</code> (augmentée) · <code>c = d = 8</code> (droite à gauche) · <code>e, f = 2.7, 5.1</code> (parallèle/tuple) · <code>x, y = f()</code> (retour multiple).</div>
+
+<h2>V. Les chaînes de caractères (str)</h2>
+<div class="definition"><strong>str :</strong> séquence de caractères Unicode <strong>non modifiable</strong> (toute transformation crée une nouvelle chaîne). 3 syntaxes : <code>"…"</code> ou <code>'…'</code> · <code>r"…"</code> (brute : <code>\n</code> non interprété) · <code>"""…"""</code> (multi-lignes).</div>
+<div class="schema"><strong>Opérations :</strong> <code>len(s)</code> longueur · <code>s1 + s2</code> concaténation · <code>s * 3</code> répétition.<br>
+<strong>Méthodes de test :</strong> <code>isupper() islower() istitle() isalnum() isalpha() isdigit() isspace() startswith() endswith()</code> → bool.<br>
+<strong>Méthodes de transformation :</strong> <code>lower() upper() capitalize() swapcase() center() ljust() rjust() zfill() strip() find() (−1 si absent) index() (erreur si absent) replace() split() join()</code>.<br>
+<strong>Indexation :</strong> <code>s[0]</code> 1ᵉʳ caractère, <code>s[-1]</code> dernier. <strong>Tranches :</strong> <code>s[1:4]</code> (caractères 1 à 3), <code>s[:3]</code>, <code>s[3:]</code>, <code>s[-2:]</code> — la borne droite est <strong>exclue</strong>.</div>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><code>20 / 3</code> → <strong>6.666…</strong> (flottant !) ; <code>20 // 3</code> → <strong>6</strong>. La division / donne TOUJOURS un float.</li>
+    <li><code>=</code> ≠ <code>==</code> : affecter n'est pas comparer.</li>
+    <li>Les indices commencent à <strong>0</strong> ; <code>s[-1]</code> = dernier caractère ; tranche <code>[début:fin]</code> : fin <strong>exclue</strong>.</li>
+    <li>str <strong>non modifiable</strong> : <code>s.upper()</code> ne change pas s, il <strong>retourne</strong> une nouvelle chaîne → écrire <code>s = s.upper()</code>.</li>
+    <li><code>input()</code> saisit une <strong>chaîne</strong> → convertir : <code>n = int(input(…))</code>.</li>
+    <li>Un <code>int</code> Python n'a <strong>pas de taille maximale</strong> (contrairement à C/Java).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — ANALYSE COMBINATOIRE — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Analyse combinatoire — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫 Licence"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"><meta property="og:title" content="Leçon 1 — ANALYSE COMBINATOIRE — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Analyse combinatoire — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫 Licence"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — ANALYSE COMBINATOIRE — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Analyse combinatoire — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫 Licence"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Combinatoire_et_probabilite","item":"https://resumeci.me/#Licence_1_Miage/Combinatoire_et_probabilite"},{"@type":"ListItem","position":4,"name":"Leçon 1 — ANALYSE COMBINATOIRE","item":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — ANALYSE COMBINATOIRE — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI","description":"Leçon 1 — Analyse combinatoire — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫 Licence","url":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Combinatoire_et_probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Combinatoire et Probabilités</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 1 : Analyse combinatoire</span>
+  </div>
+</div>
+
+<h2>I. Cardinal d'un ensemble fini</h2>
+<div class="definition"><strong>Ensemble fini :</strong> bijection avec {1,…,n} → Card(E) = n. <strong>Dénombrable :</strong> bijection avec ℕ (ex. ℤ, ℚ) ; sinon <strong>infini non dénombrable</strong> (ℝ).<br>
+<strong>Formules :</strong> Card(Ā) = Card(E) − Card(A) ; <strong>Card(A∪B) = Card(A) + Card(B) − Card(A∩B)</strong> ; A∩B = ∅ → somme directe ; <strong>Card(A×B) = Card(A)×Card(B)</strong>.</div>
+
+<h2>II. Les deux principes fondamentaux</h2>
+<table>
+  <tr><th>Principe</th><th>Quand</th><th>Formule</th></tr>
+  <tr><td><strong>Multiplicatif</strong></td><td>Expérience = <strong>succession</strong> de sous-expériences (« ET »)</td><td>n₁ × n₂ × … × n<sub>r</sub></td></tr>
+  <tr><td><strong>Additif</strong></td><td>Décomposition en cas <strong>mutuellement exclusifs</strong> (« OU », partition)</td><td>n₁ + n₂ + … + n<sub>r</sub></td></tr>
+</table>
+<p><strong>Ex. :</strong> 5 chemins Abidjan→Agboville puis 3 Agboville→Akoupé → 5×3 = 15 ; mais Abidjan→Agboville <em>ou</em> Adzopé → 5+3 = 8.</p>
+
+<h2>III. Permutations, arrangements, combinaisons</h2>
+<div class="schema"><strong>Question clé pour choisir la formule :</strong> l'ordre compte-t-il ? la répétition est-elle permise ?</div>
+<table>
+  <tr><th>Outil</th><th>Ordre ?</th><th>Répétition ?</th><th>Formule</th></tr>
+  <tr><td><strong>Permutation</strong> de n éléments distincts</td><td>oui</td><td>non</td><td><strong>n!</strong> (0! = 1)</td></tr>
+  <tr><td>Permutation avec répétitions (n₁+…+n<sub>r</sub> = n identiques)</td><td>oui</td><td>oui (éléments semblables)</td><td><strong>n!/(n₁!n₂!…n<sub>r</sub>!)</strong></td></tr>
+  <tr><td><strong>Arrangement</strong> de p parmi n</td><td>oui</td><td>non</td><td>A<sup>p</sup><sub>n</sub> = <strong>n!/(n−p)!</strong> = n(n−1)…(n−p+1)</td></tr>
+  <tr><td>Arrangement avec répétition</td><td>oui</td><td>oui</td><td><strong>n<sup>p</sup></strong></td></tr>
+  <tr><td><strong>Combinaison</strong> de p parmi n</td><td><strong>non</strong></td><td>non</td><td>C<sup>p</sup><sub>n</sub> = (n p) = <strong>n!/[p!(n−p)!]</strong> = A<sup>p</sup><sub>n</sub>/p!</td></tr>
+  <tr><td>Combinaison avec répétition</td><td>non</td><td>oui</td><td>K<sup>p</sup><sub>n</sub> = C<sup>n</sup><sub>n+p−1</sub></td></tr>
+</table>
+<div class="important"><strong>Propriétés des coefficients binomiaux :</strong> C⁰<sub>n</sub> = C<sup>n</sup><sub>n</sub> = 1 ; C<sup>p</sup><sub>n</sub> = C<sup>n−p</sup><sub>n</sub> ; <strong>Pascal : C<sup>p</sup><sub>n</sub> = C<sup>p−1</sup><sub>n−1</sub> + C<sup>p</sup><sub>n−1</sub></strong> ; <strong>binôme : (a+b)ⁿ = Σ C<sup>p</sup><sub>n</sub>a<sup>p</sup>b<sup>n−p</sup></strong> ; Σ<sub>p</sub> C<sup>p</sup><sub>n</sub> = 2ⁿ (nombre de parties d'un ensemble).</div>
+<div class="schema"><strong>Traductions à retenir :</strong> A<sup>p</sup><sub>n</sub> = injections {1,…,p} → ensemble à n = tirages <strong>sans remise ordonnés</strong> ; n<sup>p</sup> = toutes les applications = tirages <strong>avec remise</strong> ; C<sup>p</sup><sub>n</sub> = parties à p éléments = tirages <strong>sans remise non ordonnés</strong>.</div>
+
+<h2>IV. Répartitions de n objets dans r cases discernables</h2>
+<table>
+  <tr><th>Cas</th><th>Objets discernables</th><th>Objets indiscernables</th></tr>
+  <tr><td>Sans contrainte</td><td><strong>rⁿ</strong></td><td>C<sup>r−1</sup><sub>n+r−1</sub> = C<sup>n</sup><sub>n+r−1</sub> (méthode des « bâtons » : permuter n objets + r−1 barres)</td></tr>
+  <tr><td>Aucune case vide</td><td>A<sup>r</sup><sub>n</sub> × r<sup>n−r</sup> (0 si r &gt; n)</td><td><strong>C<sup>r−1</sup><sub>n−1</sub></strong> (r−1 séparateurs parmi n−1 espaces)</td></tr>
+  <tr><td>Case i reçoit n<sub>i</sub> objets (Σn<sub>i</sub> = n)</td><td><strong>n!/(n₁!…n<sub>r</sub>!)</strong> — coefficient <strong>multinomial</strong></td><td>1 seule répartition</td></tr>
+</table>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Arrangement vs combinaison : demandez-vous si « ABC » et « BAC » comptent pour 1 ou 2. Comité/tirage non ordonné → C ; podium/code → A.</li>
+    <li>n!/(n−p)! s'arrête à n−p+1, pas à 1 — compter les p facteurs.</li>
+    <li>Objets indiscernables sans vide : C<sup>r−1</sup><sub>n−1</sub> ; <strong>sans contrainte</strong> : C<sup>r−1</sup><sub>n+r−1</sub>. Ne pas les inverser.</li>
+    <li>Penser « ET » → multiplier ; « OU » exclusifs → additionner. Les cas qui se recoupent → inclusion-exclusion.</li>
+    <li>Permutations avec répétitions : diviser par les factorielles des <strong>répétitions</strong> (ex. mot « ANANAS » : 6!/(3!·2!·1!)).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

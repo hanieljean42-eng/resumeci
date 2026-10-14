@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION — Statistiques_descriptive Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Statistique bivariée et ajustement affine — Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques descriptives 🏫 Licence 1 MIAGE — "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"><meta property="og:title" content="Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION — Statistiques_descriptive Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Statistique bivariée et ajustement affine — Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques descriptives 🏫 Licence 1 MIAGE — "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION — Statistiques_descriptive Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Statistique bivariée et ajustement affine — Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques descriptives 🏫 Licence 1 MIAGE — "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Statistiques_descriptive","item":"https://resumeci.me/#Licence_1_Miage/Statistiques_descriptive"},{"@type":"ListItem","position":4,"name":"Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION","item":"https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION — Statistiques_descriptive Licence 1_Miage | ResumeCI","description":"Leçon 4 — Statistique bivariée et ajustement affine — Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques descriptives 🏫 Licence 1 MIAGE — ","url":"https://resumeci.me/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Statistiques_descriptive","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Statistiques descriptives</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 4 : Statistique descriptive bivariée — relation entre 2 variables</span>
+  </div>
+</div>
+
+<h2>I. Distributions marginales et conditionnelles</h2>
+<div class="definition"><strong>Série double</strong> {(X(1),Y(1)),…,(X(N),Y(N))} sur p modalités de X et q de Y.<br>
+<strong>Effectif joint nᵢⱼ</strong> : nb d'individus ayant xᵢ <strong>et</strong> yⱼ ; <strong>fréquence jointe fᵢⱼ = nᵢⱼ/N</strong>.<br>
+<strong>Marginales :</strong> nᵢ· = Σⱼ nᵢⱼ (total de la ligne i) · n·ⱼ = Σᵢ nᵢⱼ (total de la colonne j) · fᵢ· = nᵢ·/N. On a Σᵢⱼ nᵢⱼ = N, Σᵢⱼ fᵢⱼ = 1.</div>
+<div class="schema"><strong>Tableau de contingence</strong> : nᵢⱼ à l'intersection ligne i / colonne j ; derniere ligne/colonne = totaux marginaux. Se lit comme une <strong>matrice</strong> : 1ᵉʳ indice = ligne.<br>
+<strong>Distribution conditionnelle :</strong> extraire une colonne (ou ligne) = étudier un critère quand l'autre est <strong>fixé</strong> : X|Y=yⱼ.<br>
+<strong>Fréquences conditionnelles :</strong> fᵢ|Y=yⱼ = nᵢⱼ/n·ⱼ · fⱼ|X=xᵢ = nᵢⱼ/nᵢ·.<br>
+<strong>Profils :</strong> tableau des <strong>profils-colonne</strong> = distributions X|Y ; <strong>profils-ligne</strong> = distributions Y|X.<br>
+Lien jointe/conditionnelle : fᵢⱼ = fᵢ|Y=yⱼ × f·ⱼ = fⱼ|X=xᵢ × fᵢ·.</div>
+
+<h2>II. Indépendance</h2>
+<div class="definition">X et Y <strong>indépendantes</strong> ⇔ ∀(i,j) : <strong>fᵢⱼ = fᵢ· × f·ⱼ</strong> ⇔ nᵢⱼ = (nᵢ· n·ⱼ)/N ⇔ les distributions conditionnelles = les marginales (fᵢ|Y=yⱼ = fᵢ·).</div>
+<div class="schema"><strong>Chi-carré observé :</strong> χ² = N Σᵢⱼ (fᵢⱼ − fᵢ·f·ⱼ)² / (fᵢ·f·ⱼ). χ² ≥ 0 ; χ² = 0 ⇔ indépendance. ⚠️ χ² croît avec N → on renormalise :<br>
+<strong>V de Cramer :</strong> V = √[χ² / (N min(p−1, q−1))] — 0 ≤ V ≤ 1 ; V = 0 ⇔ indépendance ; proche de 1 → forte dépendance. Mesure l'<strong>écart à l'indépendance</strong> indépendamment de la taille de la population.</div>
+
+<h2>III. Nuage de points et résumés numériques</h2>
+<div class="definition"><strong>Nuage de points N(P)</strong> : représentation des N couples dans ℝ² · <strong>Barycentre G = (x̄, ȳ)</strong>.</div>
+<div class="definition"><strong>Covariance :</strong> Cov(X,Y) = moyenne des produits des écarts = <strong>(1/N) Σ (X(u)−x̄)(Y(u)−ȳ) = Σᵢⱼ fᵢⱼ(xᵢ−x̄)(yⱼ−ȳ)</strong><br>
+Formule développée : <strong>Cov(X,Y) = moyenne de XY − x̄·ȳ</strong><br>
+Symétrique : Cov(X,Y) = Cov(Y,X) · unité = produit des unités · Cov(X,X) = Var(X).<br>
+Cov &gt; 0 : varient dans le même sens · &lt; 0 : sens contraires · Indépendance ⇒ Cov = 0 <strong>mais pas la réciproque</strong> !</div>
+<div class="definition"><strong>Coefficient de corrélation :</strong> r(X,Y) = <strong>Cov(X,Y) / (σ_X σ_Y)</strong> · −1 ≤ r ≤ 1.<br>
+|r| = 1 ⇔ relation affine <strong>exacte</strong> Y = aX + b (r = 1 → a &gt; 0, r = −1 → a &lt; 0).<br>
+|r| ≥ 0,9 → liaison affine <strong>importante</strong> · r ≈ 0 → pas de liaison affine (≠ aucune liaison !).</div>
+
+<h2>IV. Ajustement affine (régression linéaire)</h2>
+<div class="schema"><strong>Principe :</strong> trouver la droite y = âx + b̂ qui approche au mieux le nuage.<br>
+<strong>Méthode des moindres carrés :</strong> minimiser l'erreur Δ = Y − (aX + b) :<br>
+<strong>â = Cov(X,Y)/Var(X) = r(X,Y)·σ_Y/σ_X</strong> · <strong>b̂ = ȳ − â·x̄</strong><br>
+✅ La droite de régression <strong>passe par le barycentre G</strong>.<br>
+<strong>Méthode de Mayer</strong> (plus simple) : classer la série par x croissant, la couper en 2 sous-séries, calculer leurs points moyens G₁(x̄₁,ȳ₁) et G₂(x̄₂,ȳ₂), tracer (G₁G₂) : a = (ȳ₁−ȳ₂)/(x̄₁−x̄₂).<br>
+<strong>Liaison indirectement affine</strong> Y = a·f(X) + b → poser Z = f(X), régresser (Z, Y) : régression après <strong>changement de variable</strong>.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Indépendance ⇒ Cov(X,Y) = 0, mais <strong>Cov = 0 n'implique PAS l'indépendance</strong> (liaison non affine possible).</li>
+    <li>r proche de 0 → pas de liaison <em>affine</em>, pas « aucune relation ».</li>
+    <li>Fréquence conditionnelle fᵢ|Y=yⱼ = nᵢⱼ/<strong>n·ⱼ</strong> (diviser par le total de la colonne, pas par N).</li>
+    <li>χ² = 0 ⇔ indépendance exacte ; utiliser <strong>V de Cramer</strong> pour comparer car χ² dépend de N.</li>
+    <li>La droite de régression de Y en X ≠ droite de X en Y ; la droite passe toujours par <strong>G = (x̄, ȳ)</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

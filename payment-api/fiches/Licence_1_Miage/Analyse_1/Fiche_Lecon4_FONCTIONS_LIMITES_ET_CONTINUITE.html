@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — FONCTIONS LIMITES ET CONTINUITE — Analyse_1 Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Fonctions : généralités, limites et continuité — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — S"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"><meta property="og:title" content="Leçon 4 — FONCTIONS LIMITES ET CONTINUITE — Analyse_1 Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Fonctions : généralités, limites et continuité — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — S"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — FONCTIONS LIMITES ET CONTINUITE — Analyse_1 Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Fonctions : généralités, limites et continuité — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — S"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_1","item":"https://resumeci.me/#Licence_1_Miage/Analyse_1"},{"@type":"ListItem","position":4,"name":"Leçon 4 — FONCTIONS LIMITES ET CONTINUITE","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — FONCTIONS LIMITES ET CONTINUITE — Analyse_1 Licence 1_Miage | ResumeCI","description":"Leçon 4 — Fonctions : généralités, limites et continuité — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — S","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_1","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse 1</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 4 : Fonctions d'une variable réelle — limites et continuité</span>
+  </div>
+</div>
+
+<h2>I. Généralités sur les fonctions</h2>
+<div class="definition"><strong>Fonction f : A → B :</strong> correspondance associant à chaque élément de A <strong>au plus un</strong> élément de B. A = ensemble de départ, B = d'arrivée, f(x) = image, x = antécédent de y. <strong>Ensemble de définition D_f</strong> : éléments de A ayant une image. Image d'une partie : f(A) = {f(x) ; x ∈ A} ; image réciproque : f⁻¹(B) = {x ∈ D_f ; f(x) ∈ B} (ne suppose pas f bijective !).</div>
+<ul>
+  <li>Pour trouver D_f : dénominateur ≠ 0 ; radicande ≥ 0 ; ln du strictement positif.</li>
+  <li><strong>Restriction/prolongement :</strong> f = g|_I si I ⊂ J et f(x) = g(x) sur I.</li>
+  <li><strong>Paire :</strong> D_f centré (symétrique/0) et f(−x) = f(x) → courbe symétrique /axe des ordonnées. <strong>Impaire :</strong> f(−x) = −f(x) → symétrie /origine. <strong>Périodique :</strong> ∃T &gt; 0 : f(x+T) = f(x).</li>
+  <li><strong>Monotonie :</strong> croissante : x ≤ y ⇒ f(x) ≤ f(y). <strong>Règle des signes</strong> pour g∘f : ↗∘↗=↗, ↗∘↘=↘, ↘∘↗=↘, ↘∘↘=↗.</li>
+  <li>f strictement monotone sur I ⇒ bijection de I sur f(I), et f⁻¹ strictement monotone de <strong>même sens</strong>. Graphes symétriques par rapport à y = x.</li>
+  <li><strong>Bornée</strong> ⇔ majorée en valeur absolue : ∃α : |f(x)| ≤ α. Combinaisons linéaires et produits de fonctions bornées sont bornés.</li>
+</ul>
+<div class="definition"><strong>Fonction k-lipschitzienne :</strong> ∃k ≥ 0 : ∀x, y ∈ I, |f(x) − f(y)| ≤ k|x − y| — l'ensemble des pentes des cordes est borné. Ex. : |x| est 1-lipschitzienne sur R ; 1/x est 1-lipschitzienne sur [1, +∞[ mais <strong>pas</strong> sur ]0, +∞[.</div>
+
+<h2>II. Limites de fonctions</h2>
+<div class="definition"><strong>Limite finie l en a ∈ R :</strong> ∀ε &gt; 0, ∃δ &gt; 0 : ∀x ∈ I, |x − a| ≤ δ ⇒ |f(x) − l| ≤ ε. En +∞ : ∀ε &gt; 0, ∃M : x ≥ M ⇒ |f(x) − l| ≤ ε. Limite +∞ en a : ∀B, ∃δ &gt; 0 : |x − a| ≤ δ ⇒ f(x) ≥ B.</div>
+<ul>
+  <li><strong>Unicité</strong> de la limite ; limite finie en a ⇒ f <strong>localement bornée</strong> au voisinage de a.</li>
+  <li><strong>Majoration :</strong> |f(x) − l| ≤ θ(x) avec θ → 0 ⇒ f(x) → l.</li>
+  <li><strong>Opérations :</strong> lim(f+g) = l₁+l₂ ; lim fg = l₁l₂ ; lim |f| = |l| ; lim 1/f = 1/l si l ≠ 0 — sauf <strong>formes indéterminées</strong> (∞−∞, 0×∞, 0/0, ∞/∞).</li>
+  <li><strong>Limites à gauche/à droite :</strong> f admet une limite en a ⇔ limite gauche l₁ = limite droite l₂.</li>
+  <li><strong>Passage à la limite :</strong> f(x) ≥ k au voisinage de a et f → l ⇒ l ≥ k (<strong>élargit</strong> les inégalités strictes).</li>
+  <li><strong>Composition :</strong> f(x) → b quand x → a et g(y) → l quand y → b ⇒ (g∘f)(x) → l.</li>
+  <li><strong>Limite séquentielle :</strong> uₙ → a et f(x) → l en a ⇒ f(uₙ) → l. Pour prouver l'<strong>absence</strong> de limite : deux suites uₙ, vₙ → a avec f(uₙ) → l₁ ≠ f(vₙ) → l₂. Ex. : sin(1/x) n'a pas de limite en 0.</li>
+</ul>
+
+<h2>III. Comparaison des fonctions</h2>
+<ul>
+  <li>f = O(g) : f = B·g avec B bornée ⇔ f/g bornée ; f = o(g) : f = ε·g avec ε → 0 ⇔ f/g → 0 ; f ∼ g : f − g = o(g) ⇔ f/g → 1.</li>
+  <li><strong>Croissances comparées :</strong> en +∞ : (ln x)ᵞ = o(xᵅ) et xᵅ = o(e^{βx}). « Exponentielle l'emporte sur puissance, puissance sur logarithme. »</li>
+  <li><strong>Équivalents en 0 :</strong> ln(1+x) ∼ x ; eˣ−1 ∼ x ; sin x ∼ x ; tan x ∼ x ; arcsin x ∼ x ; arctan x ∼ x ; cos x − 1 ∼ −x²/2 ; (1+x)ᵅ−1 ∼ αx.</li>
+  <li>Mêmes règles que pour les suites : produits/quotients/puissances OK ; <strong>jamais de somme ni de composition</strong> (log/exp d'équivalents interdits). f ∼ 0 ⇒ f nulle au voisinage (souvent une erreur).</li>
+</ul>
+
+<h2>IV. Continuité</h2>
+<div class="definition"><strong>f continue en x₀ :</strong> x₀ ∈ D_f et lim_{x→x₀} f(x) = f(x₀). Continuité à droite/à gauche : limite à droite/gauche égale à f(x₀). Continue sur un intervalle D : continue en <strong>tout point</strong> de D.</div>
+<ul>
+  <li><strong>Prolongement par continuité :</strong> si f admet une limite finie l en x₀ ∉ D_f, on pose g(x₀) = l. Ex. : sin(x)/x prolongée par 1 en 0 ; (x−9)/(√(x−5)−2) = √(x−5)+2 prolongée par 4 en 9. <strong>Attention :</strong> si limites gauche ≠ droite → <strong>pas prolongeable</strong>.</li>
+  <li><strong>Caractérisation séquentielle :</strong> f continue en a ⇔ pour toute suite xₙ → a, f(xₙ) → f(a).</li>
+</ul>
+<div class="important"><strong>Théorème des valeurs intermédiaires (TVI) :</strong> f continue sur I : pour tout m entre f(a) et f(b), l'équation f(x) = m a <strong>au moins une</strong> solution entre a et b. Si f est en plus <strong>strictement monotone</strong> → solution <strong>unique</strong>. <strong>Corollaire :</strong> f continue sur [a;b] strictement monotone avec f(a)×f(b) &lt; 0 ⇒ f(x) = 0 a une unique solution dans ]a;b[.</div>
+<ul>
+  <li>f continue strictement monotone sur I ⇒ <strong>bijection</strong> de I sur f(I), f⁻¹ continue strictement monotone de même sens.</li>
+  <li><strong>Continuité uniforme :</strong> ∀ε &gt; 0, ∃δ &gt; 0 (indépendant de x) : |x − y| &lt; δ ⇒ |f(x) − f(y)| &lt; ε. Ex. : √x est uniformément continue sur R₊.</li>
+</ul>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>f⁻¹(B) (image réciproque) ≠ fonction réciproque : elle existe pour toute fonction.</li>
+    <li>Prouver la continuité en x₀ exige la limite <strong>égale à f(x₀)</strong>, pas seulement l'existence.</li>
+    <li>Pas de prolongement possible si les limites à gauche et à droite diffèrent.</li>
+    <li>Le TVI donne l'existence ; l'<strong>unicité</strong> exige la stricte monotonie — penser à la dérivée pour la prouver.</li>
+    <li>« Sommer des équivalents » ou « composer des équivalents » = faute grave.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

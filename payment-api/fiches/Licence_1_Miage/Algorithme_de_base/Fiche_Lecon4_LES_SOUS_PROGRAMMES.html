@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — LES SOUS PROGRAMMES — Algorithme_de_base Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Les sous-programmes — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"><meta property="og:title" content="Leçon 4 — LES SOUS PROGRAMMES — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Les sous-programmes — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — LES SOUS PROGRAMMES — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Les sous-programmes — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_de_base","item":"https://resumeci.me/#Licence_1_Miage/Algorithme_de_base"},{"@type":"ListItem","position":4,"name":"Leçon 4 — LES SOUS PROGRAMMES","item":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — LES SOUS PROGRAMMES — Algorithme_de_base Licence 1_Miage | ResumeCI","description":"Leçon 4 — Les sous-programmes — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1","url":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Algorithme_de_base","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme de base</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 4 : Les sous-programmes (procédures, fonctions, récursivité)</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi des sous-programmes ?</h2>
+<div class="definition"><strong>Sous-programme :</strong> bloc de code prêt à l'emploi permettant d'éviter d'écrire plusieurs fois le même code. Deux formes : la <strong>procédure</strong> et la <strong>fonction</strong>.</div>
+<ul>
+  <li><strong>Procédure :</strong> ensemble d'instructions référencé par un nom ; l'exécution est provoquée par le simple énoncé du nom. <strong>Ne renvoie pas de valeur.</strong></li>
+  <li><strong>Fonction :</strong> sous-programme au sens mathématique : elle <strong>calcule et retourne une valeur</strong> (une image).</li>
+</ul>
+<div class="schema">
+<code>Fonction successeur(x : entier) : entier</code><br>
+<code>Début retourner(x + 1) Fin</code><br>
+Appel : <code>Afficher x, "+1 =", successeur(x)</code> — l'appel est remplacé par la valeur retournée.
+</div>
+
+<h2>II. Variables globales et locales</h2>
+<table>
+  <tr><th></th><th>Variable globale</th><th>Variable locale</th></tr>
+  <tr><td>Déclarée</td><td>Dans la partie déclarative du <strong>programme principal</strong></td><td>Dans la partie déclarative d'un <strong>sous-programme</strong></td></tr>
+  <tr><td>Portée</td><td>Valable dans <strong>tout</strong> le programme (principal + sous-programmes)</td><td>Limitée au sous-programme qui la déclare</td></tr>
+</table>
+<div class="important"><strong>Important :</strong> les variables du programme appelant <strong>ne sont pas lisibles</strong> depuis un sous-programme — il faut les communiquer par <strong>passage de paramètres</strong>.</div>
+
+<h2>III. Paramètres et passage de paramètres</h2>
+<ul>
+  <li><strong>Paramètre effectif :</strong> variable (souvent globale) dont la valeur est effectivement utilisée — c'est la valeur transmise à l'appel.</li>
+  <li><strong>Paramètre formel (muet) :</strong> paramètre écrit entre parenthèses dans la déclaration ; il <strong>reçoit</strong> son contenu du paramètre effectif.</li>
+</ul>
+<table>
+  <tr><th></th><th>Passage par valeur</th><th>Passage par adresse</th></tr>
+  <tr><td>Ce qui est transmis</td><td>La <strong>valeur</strong> du paramètre effectif (une copie)</td><td>L'<strong>adresse</strong> du paramètre effectif (la variable elle-même)</td></tr>
+  <tr><td>Déclaration</td><td><code>Procedure echange(x, y : entier)</code></td><td><code>Procedure echange(x^, y^ : entier)</code></td></tr>
+  <tr><td>Appel</td><td><code>echange(A, B)</code></td><td><code>echange(@A, @B)</code></td></tr>
+  <tr><td>Effet</td><td>Modifie des <strong>copies</strong> : A et B <strong>inchangées</strong> à la sortie</td><td>Modifie les <strong>originaux</strong> : A et B réellement échangées</td></tr>
+</table>
+<div class="important"><strong>⚠️ Piège classique :</strong> la procédure <code>echange(x, y)</code> par valeur échange les copies x et y, mais <strong>A et B restent inchangées</strong>. Pour modifier les variables d'origine → passage <strong>par adresse</strong>.</div>
+<div class="schema">Le type de la valeur retournée n'est précisé que pour les <strong>fonctions</strong>, jamais pour les procédures.</div>
+
+<h2>IV. La récursivité</h2>
+<div class="definition"><strong>Récursivité :</strong> possibilité de faire figurer dans la définition d'un objet une <strong>référence à cet objet lui-même</strong>. Une fonction/procédure récursive <strong>s'appelle elle-même</strong> et intègre une <strong>variable de contrôle</strong> permettant d'arrêter le processus.</div>
+<div class="schema">Exemple — somme des n premiers entiers :<br><code>Som(n) = n + Som(n − 1)</code>, avec le cas d'arrêt <code>Som(1) = 1</code></div>
+<ul>
+  <li>Toute fonction récursive exige un <strong>cas de base</strong> (condition d'arrêt) — sinon boucle infinie.</li>
+</ul>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Croire qu'un passage par valeur modifie la variable d'appel : non, seule une <strong>copie</strong> est modifiée.</li>
+    <li>Utiliser une variable locale en dehors de son sous-programme : elle est <strong>invisible</strong> ailleurs.</li>
+    <li>Écrire une fonction sans <code>retourner</code> : elle doit renvoyer une valeur.</li>
+    <li>Récursivité sans cas d'arrêt → boucle infinie.</li>
+    <li>Confondre paramètre <strong>formel</strong> (déclaration) et <strong>effectif</strong> (appel).</li>
+  </ul>
+</div>
+<div class="important"><strong>💡 Réflexe :</strong> besoin de modifier la variable appelante ? → passage <strong>par adresse</strong> (^ / @). Besoin seulement d'une valeur en entrée ? → passage <strong>par valeur</strong> suffit et protège les données.</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

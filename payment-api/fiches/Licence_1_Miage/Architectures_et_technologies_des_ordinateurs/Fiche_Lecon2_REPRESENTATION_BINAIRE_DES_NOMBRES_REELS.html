@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Représentation binaire des nombres réels — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies des ordinateur"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"><meta property="og:title" content="Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Représentation binaire des nombres réels — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies des ordinateur"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Représentation binaire des nombres réels — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies des ordinateur"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Architectures_et_technologies_des_ordinateurs","item":"https://resumeci.me/#Licence_1_Miage/Architectures_et_technologies_des_ordinateurs"},{"@type":"ListItem","position":4,"name":"Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS","item":"https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI","description":"Leçon 2 — Représentation binaire des nombres réels — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies des ordinateur","url":"https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Architectures_et_technologies_des_ordinateurs","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Architectures et technologies des ordinateurs</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 2 : Représentation binaire des nombres réels (flottants)</span>
+  </div>
+</div>
+
+<h2>I. Écriture binaire d'un nombre réel</h2>
+<div class="important">En décimal, les chiffres après la virgule sont des dixièmes, centièmes… En <strong>binaire</strong>, ce sont des <strong>demis, quarts, huitièmes…</strong> — puissances de 2 <strong>négatives</strong> : 2<sup>−1</sup>, 2<sup>−2</sup>, 2<sup>−3</sup>…</div>
+<p>Ex. : (1,1101)₂ = 1 + 1/2 + 1/4 + 1/16 = <strong>1,8125</strong>.</p>
+
+<h3>1. Conversion base 2 → base 10</h3>
+<div class="schema">Additionner les puissances de 2 : (101,1101)₂ = 2² + 2⁰ + 2<sup>−1</sup> + 2<sup>−2</sup> + 2<sup>−4</sup> = 4 + 1 + 0,5 + 0,25 + 0,0625 = <strong>5,8125</strong></div>
+
+<h3>2. Conversion base 10 → base 2</h3>
+<ul>
+  <li>Partie <strong>entière</strong> : divisions par 2 classiques → 5 = (101)₂.</li>
+  <li>Partie <strong>décimale</strong> : <strong>multiplications successives par 2</strong>, sans reporter la partie entière ; les parties entières (0 ou 1) lues <strong>de haut en bas</strong> donnent les chiffres binaires.</li>
+</ul>
+<div class="schema">0,8125 → 0,8125×2 = <strong>1</strong>,625 ; 0,625×2 = <strong>1</strong>,25 ; 0,25×2 = <strong>0</strong>,5 ; 0,5×2 = <strong>1</strong> → 0,8125 = (0,1101)₂ donc 5,8125 = (101,1101)₂</div>
+<div class="important"><strong>⚠️ Écritures infinies :</strong> certains réels ont un développement binaire infini périodique — 1,2 = (1,001100110011…)₂. Impossible à représenter exactement en machine.</div>
+
+<h2>II. La norme IEEE 754</h2>
+<div class="definition"><strong>Représentation en virgule flottante :</strong> les réels sont codés sous la forme <strong>s · m × 2ⁿ</strong>, inspirée de l'écriture scientifique (±m × 10ⁿ avec mantisse m ∈ [1 ; 10[).</div>
+<table>
+  <tr><th>Format</th><th>Signe</th><th>Exposant</th><th>Mantisse</th><th>Décalage</th></tr>
+  <tr><td><strong>Simple précision (binary32)</strong></td><td>1 bit</td><td>8 bits</td><td>23 bits</td><td><strong>+127</strong></td></tr>
+  <tr><td><strong>Double précision (binary64)</strong></td><td>1 bit</td><td>11 bits</td><td>52 bits</td><td><strong>+1023</strong></td></tr>
+</table>
+<ul>
+  <li><strong>Signe s :</strong> 0 pour +, 1 pour −.</li>
+  <li><strong>Mantisse :</strong> en base 2, m ∈ [1 ; 2[ donc m = 1,xxxx… — le « 1 » initial <strong>n'est pas codé</strong> (implicite) ; seuls les bits après la virgule sont stockés.</li>
+  <li><strong>Exposant :</strong> entier relatif codé <strong>sans complément à 2</strong> : on lui ajoute le <strong>décalage</strong> (127 ou 1023) pour obtenir un entier positif.</li>
+</ul>
+<div class="schema">Exemple complet — 5,8125 = (101,1101)₂ = (1,011101 × 2²)₂<br>
+→ signe = 0 · exposant = 2 + 127 = 129 = (10000001)₂ · mantisse = 01110100…0<br>
+Mot 32 bits : <strong>0 | 10000001 | 01110100000000000000000</strong></div>
+
+<h2>III. Une représentation approximative</h2>
+<div class="definition">Les nombres réels à écriture binaire infinie sont <strong>tronqués</strong> : la mantisse tient sur 23 ou 52 bits → le flottant stocké n'est qu'une <strong>approximation</strong> du réel.</div>
+<ul>
+  <li>Ex. : 1,2 → mantisse infinie (0011…) tronquée à 23 bits → le flottant « 1.2 » ≠ réel 1,2.</li>
+  <li><strong>Trous dans les flottants :</strong> en double précision, il n'existe aucun flottant entre 1.5 et 1.5000000000000002 (précision ≈ 2<sup>−52</sup> ≈ 2 × 10<sup>−16</sup>).</li>
+</ul>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ À retenir absolument :</strong>
+  <ul>
+    <li>Les flottants sont une représentation <strong>approximative</strong> des réels.</li>
+    <li>Il est <strong>impossible</strong> de représenter exactement tous les réels en machine.</li>
+    <li>Additions/soustractions de flottants peuvent donner des résultats surprenants.</li>
+    <li><strong>Ne jamais tester l'égalité entre deux flottants</strong> (utiliser une tolérance ε).</li>
+  </ul>
+</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier de <strong>normaliser</strong> la mantisse : elle doit toujours commencer par « 1, » (intervalle [1 ; 2[).</li>
+    <li>Coder l'exposant en complément à 2 : la norme utilise un <strong>décalage</strong> (+127 / +1023).</li>
+    <li>Inverser l'ordre de lecture des multiplications par 2 : les chiffres se lisent <strong>de haut en bas</strong> (première partie entière obtenue = premier chiffre après la virgule).</li>
+    <li>Confondre les tailles : simple = 1+8+23 = 32 bits ; double = 1+11+52 = 64 bits.</li>
+  </ul>
+</div>
+<div class="important"><strong>💡 Réflexe exercice :</strong> pour coder un réel → 1) signe ; 2) écrire en binaire ; 3) normaliser (1,xxx × 2ⁿ) ; 4) exposant + 127 ; 5) mantisse sans le « 1 » complétée à 23 bits par des zéros.</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

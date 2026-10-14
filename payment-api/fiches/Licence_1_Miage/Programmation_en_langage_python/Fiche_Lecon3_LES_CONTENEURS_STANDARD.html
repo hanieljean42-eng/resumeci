@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — LES CONTENEURS STANDARD — Programmation_en_langage_python Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Les conteneurs standard — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence 1"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"><meta property="og:title" content="Leçon 3 — LES CONTENEURS STANDARD — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Les conteneurs standard — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence 1"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — LES CONTENEURS STANDARD — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Les conteneurs standard — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence 1"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_en_langage_python","item":"https://resumeci.me/#Licence_1_Miage/Programmation_en_langage_python"},{"@type":"ListItem","position":4,"name":"Leçon 3 — LES CONTENEURS STANDARD","item":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — LES CONTENEURS STANDARD — Programmation_en_langage_python Licence 1_Miage | ResumeCI","description":"Leçon 3 — Les conteneurs standard — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 Licence 1","url":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Programmation_en_langage_python","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation en langage Python</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 3 : Les conteneurs standard</span>
+  </div>
+</div>
+
+<h2>I. Séquences : listes et tuples</h2>
+<div class="definition"><strong>Séquence :</strong> conteneur <strong>ordonné</strong> d'éléments indexés par des entiers (position). 3 types prédéfinis : chaînes, <strong>listes</strong>, <strong>tuples</strong>.<br>
+<strong>Liste :</strong> collection ordonnée et <strong>modifiable</strong> d'éléments éventuellement hétérogènes — <code>['trèfle', 14, 'coeur']</code> (crochets).<br>
+<strong>Tuple :</strong> collection ordonnée et <strong>non modifiable</strong> — <code>('a', 2, [1,3])</code> (parenthèses) ; parcours plus rapide ; utile pour les constantes.</div>
+<div class="schema"><strong>Initialisations :</strong> <code>[]</code> liste vide · <code>[0.0]*3</code> répétition → [0.0, 0.0, 0.0] · <code>list(range(2,9,2))</code> → [2,4,6,8] · test <code>x in liste</code>.<br>
+<strong>Méthodes de liste :</strong> <code>append(x)</code> ajoute en fin · <code>extend(l)</code> concatène · <code>insert(i,x)</code> · <code>remove(x)</code> supprime la 1ʳᵉ occurrence · <code>pop()</code> retire et retourne le dernier · <code>index(x)</code> position · <code>count(x)</code> · <code>sort()</code> · <code>reverse()</code>.<br>
+<strong>Tranches en affectation :</strong> <code>mots[1:3] = ['salade']</code> remplace · <code>mots[2:4] = []</code> efface · <code>mots[2:2] = ['miel']</code> insère.<br>
+<strong>Imbrication :</strong> <code>list3 = [list1, list2]</code> — listes de listes ; parcours par boucles for imbriquées.</div>
+
+<h2>II. Références et copies</h2>
+<div class="important">L'affectation <code>b = a</code> crée une <strong>référence</strong>, pas une copie : si l'objet est <strong>modifiable</strong>, toute modification via b est visible via a (<code>b.append(4)</code> modifie aussi a !).<br>
+<strong>Pour modifier séparément :</strong> <code>c = a[:]</code> (tranche complète = copie simple), <code>copy.copy(a)</code> (copie de surface), <code>copy.deepcopy(a)</code> (copie <strong>profonde</strong>/récursive des éléments et sous-objets).</div>
+
+<h2>III. Dictionnaires et ensembles</h2>
+<div class="definition"><strong>dict (tableau associatif) :</strong> collection de couples <code>clé : valeur</code>, accès très rapide par la clé (unique). Itérable mais <strong>non ordonné</strong> ; clé = tout type <strong>hachable</strong> (pas de liste ni de dict !) ; valeur = tout type.</div>
+<div class="schema"><strong>Créations :</strong> <code>{}</code> ou <code>dict()</code> vide · <code>{"nom":3, "taille":176}</code> · <code>{x: x**2 for x in (2,4,6)}</code> (compréhension) · <code>dict(nom=3)</code> · <code>dict([("nom",3)])</code>.<br>
+<strong>Opérations :</strong> <code>d['clé']</code> lecture/écriture · <code>del d['clé']</code> · <code>'k' in d</code> teste la présence d'une <strong>clé</strong> · <code>len(d)</code> = nombre de couples · parcours : <code>for k,v in d.items():</code>.<br>
+<strong>set :</strong> collection <strong>non ordonnée</strong> d'éléments <strong>uniques</strong> hachables — l'ensemble mathématique. <code>set</code> modifiable, <code>frozenset</code> non modifiable. Opérations : <code>X - Y</code> différence, <code>X | Y</code> union, <code>X &amp; Y</code> intersection, <code>x in X</code>.</div>
+
+<h2>IV. Les fichiers textuels</h2>
+<div class="definition">La RAM est volatile → pour conserver les données on utilise des fichiers sur mémoire permanente. Modes d'ouverture : <code>"r"</code> lecture (défaut), <code>"w"</code> écriture (écrase), <code>"a"</code> ajout ; texte par défaut, <code>"b"</code> pour binaire ; paramètre <code>encoding='utf8'</code> recommandé.</div>
+<div class="schema"><strong>Écriture séquentielle :</strong> <code>f.write(s)</code>, <code>f.writelines(l)</code>. <strong>Lecture :</strong> <code>f.read()</code> tout → chaîne · <code>f.read(n)</code> n octets · <code>f.readline()</code> ligne suivante · <code>f.readlines()</code> tout → liste de chaînes · itération directe <code>for ligne in f:</code>.<br>
+<strong>Fermeture :</strong> <code>f.close()</code> obligatoire (contenu garanti) — ou bloc <code>with open(...) as f:</code> (fermeture automatique).</div>
+
+<h2>V. Itérer et afficher</h2>
+<div class="schema"><strong>Techniques classiques :</strong> <code>for k,v in d.items():</code> clés+valeurs · <code>for i,v in enumerate(liste):</code> indice+élément · <code>for q,a in zip(seq1,seq2):</code> parcours apparié · <code>reversed(seq)</code> inversée · <code>sorted(set(liste))</code> triée sans doublons (originale inchangée).<br>
+<strong>format() :</strong> <code>"{} {}".format(a,b)</code> · positions <code>"{1} {0}"</code> · nommés <code>"{c}".format(c=x)</code> · indices <code>"{0[3]}"</code> · attributs <code>"{0.real}"</code> · numériques <code>"{:.2f}" "{:d}" "{:x}" "{:.4e}" "{:.2%}" "{:+d}" "{:,}"</code>.</div>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><code>b = a</code> sur une liste = <strong>référence partagée</strong>, pas copie → utiliser <code>a[:]</code> ou <code>copy</code>.</li>
+    <li><code>sort()</code>, <code>reverse()</code>, <code>append()</code> modifient <strong>en place</strong> et retournent <code>None</code> ; <code>sorted()</code>, <code>reversed()</code> retournent un nouvel objet.</li>
+    <li>Clés de dict : <strong>hachables</strong> uniquement (str, int, tuple) — jamais de liste.</li>
+    <li><code>remove(x)</code> supprime la <strong>valeur</strong> ; <code>pop()</code> l'<strong>élément en fin</strong> ; <code>del l[i]</code> l'élément d'indice i.</li>
+    <li>Ensemble <code>set</code> : pas d'ordre, pas de doublons — <code>set([1,1,2])</code> = {1,2}.</li>
+    <li><code>"w"</code> écrase le fichier existant ; toujours fermer (ou <code>with</code>).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

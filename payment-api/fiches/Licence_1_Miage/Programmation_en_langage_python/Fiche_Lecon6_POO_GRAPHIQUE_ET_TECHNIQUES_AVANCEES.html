@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES — Programmation_en_langage_python Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 6 — POO graphique (tkinter) et techniques avancées — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en lang"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"><meta property="og:title" content="Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 6 — POO graphique (tkinter) et techniques avancées — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en lang"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 6 — POO graphique (tkinter) et techniques avancées — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en lang"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_en_langage_python","item":"https://resumeci.me/#Licence_1_Miage/Programmation_en_langage_python"},{"@type":"ListItem","position":4,"name":"Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES","item":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES — Programmation_en_langage_python Licence 1_Miage | ResumeCI","description":"Leçon 6 — POO graphique (tkinter) et techniques avancées — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en lang","url":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Programmation_en_langage_python","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation en langage Python</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 6 : POO graphique et techniques avancées</span>
+  </div>
+</div>
+
+<h2>I. Programmation événementielle et tkinter</h2>
+<div class="definition">En programmation graphique, on remplace le déroulement <strong>séquentiel</strong> par une <strong>boucle d'événements</strong> : le programme attend et traite les interactions utilisateur (clics, saisies, redimensionnements).<br>
+<strong>tkinter :</strong> bibliothèque graphique issue de Tcl/Tk, <strong>installée de base</strong> dans toutes les distributions Python (alternatives : GTK+, wxPython, Qt). Extensions : <strong>Tix</strong> (~40 widgets), <strong>Ttk</strong> (thèmes/styles).</div>
+<div class="schema"><strong>Démarche minimale :</strong><br>
+<code>import tkinter</code><br>
+<code>widget = tkinter.Label(None, text='Bonjour monde graphique !')</code>  # création<br>
+<code>widget.pack()</code>      # positionnement<br>
+<code>widget.mainloop()</code>  # lancement de la boucle d'événements</div>
+
+<h2>II. Widgets et positionnement</h2>
+<div class="definition"><strong>Widget</strong> (window + gadget) : composant graphique de base.</div>
+<table>
+  <tr><th>Widget</th><th>Rôle</th><th>Widget</th><th>Rôle</th></tr>
+  <tr><td><code>Tk</code></td><td>Fenêtre de plus haut niveau</td><td><code>Entry</code></td><td>Zone de saisie</td></tr>
+  <tr><td><code>Frame</code></td><td>Conteneur d'autres widgets</td><td><code>Checkbutton</code></td><td>Bouton à deux états</td></tr>
+  <tr><td><code>Label</code></td><td>Zone de message</td><td><code>Radiobutton</code></td><td>Choix exclusifs par groupe</td></tr>
+  <tr><td><code>Button</code></td><td>Bouton d'action</td><td><code>Scale</code></td><td>Glissière</td></tr>
+  <tr><td><code>Message</code></td><td>Affichage multi-lignes</td><td><code>Listbox</code></td><td>Liste à sélection</td></tr>
+  <tr><td><code>Menu/Menubutton</code></td><td>Menu déroulant</td><td><code>Text</code></td><td>Édition de texte multi-lignes</td></tr>
+  <tr><td><code>Canvas</code></td><td>Zone de dessins graphiques</td><td><code>Scrollbar</code></td><td>Ascenseur</td></tr>
+</table>
+<div class="schema"><strong>3 gestionnaires de positionnement :</strong> <strong>packer</strong> (place selon l'espace requis — <code>.pack()</code>) · <strong>gridder</strong> (cellules d'un tableau — <code>.grid()</code>) · <strong>placer</strong> (position absolue, peu fréquent — <code>.place()</code>).<br>
+<strong>Callbacks :</strong> fonctions « rappelées » par la bibliothèque quand un événement survient — on les associe aux widgets (ex. <code>command=maFonction</code>).<br>
+<strong>Méthodologie :</strong> séparer l'interface graphique (classe parente) des callbacks (classe enfant) — cas de <strong>polymorphisme par dérivation</strong>. Conception papier d'abord : zones d'affichage, de liste, de boutons → des <code>Frame</code> empilées dans un <code>Tk</code>.</div>
+
+<h2>III. Techniques avancées</h2>
+<div class="definition"><strong>Introspection :</strong> obtenir des informations sur les objets manipulés — <code>help(obj)</code> (aide interactive), <code>type(obj)</code> (le type), <code>dir(obj)</code> (attributs et méthodes), <code>id(obj)</code> (adresse mémoire unique), <code>locals()</code>/<code>globals()</code> (dictionnaires des noms). Module <code>sys</code> : <code>sys.executable, sys.platform, sys.version, sys.argv, sys.path</code>. Interpréteur enrichi : <strong>IPython</strong>.</div>
+<div class="schema"><strong>Gestionnaire de contexte (<code>with</code>) :</strong> garantit les opérations avant/après un bloc — ex. fermeture automatique de fichier :<br>
+<code>with open(filename) as fh:</code> remplace <code>try: fh = open(...) … finally: fh.close()</code>.<br>
+<strong>Dictionnaire de fonctions :</strong> implémenter un menu sans cascades de if : <code>dico = {"chat": gererChat, "chien": gererChien}</code> puis <code>dico[bete]()</code> appelle la bonne fonction.<br>
+<strong>Fonctions récursives :</strong> s'appellent elles-mêmes — adaptées aux structures <strong>arborescentes</strong> (ex. parcours de répertoires : <code>listdir</code>, <code>isdir</code>, <code>join</code>) — toujours prévoir une <strong>condition terminale</strong>.</div>
+<div class="important"><strong>Compréhensions :</strong> notation compacte et performante, proche des maths ({x² | x ∈ [2,11[}) :<br>
+• Liste simple : <code>[x**2 for x in range(2,11)]</code> → [4, 9, 16, …, 100]<br>
+• Avec filtre : <code>[x+1 for x in seq if x &gt; 23]</code><br>
+• Combinaison : <code>[x+y for x in s1 for y in s2]</code><br>
+• Dictionnaire : <code>{x: x**2 for x in (2,4,6)}</code> · Ensemble : <code>{x % 3 for x in seq}</code><br>
+Équivaut à une boucle <code>for</code> + <code>append()</code>, en plus lisible et plus rapide.</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier <code>mainloop()</code> → la fenêtre s'affiche puis le programme se termine immédiatement (ou rien ne répond).</li>
+    <li>Un GUI ≠ script séquentiel : le code après <code>mainloop()</code> ne s'exécute qu'à la fermeture.</li>
+    <li>Récursivité sans condition terminale → <strong>récursion infinie</strong> (RecursionError).</li>
+    <li><code>dir(obj)</code> liste aussi les méthodes spéciales <code>__x__</code> ; <code>id()</code> donne l'<strong>adresse</strong>, pas la valeur.</li>
+    <li>Compréhension ≠ boucle : elle construit un <strong>nouveau conteneur</strong>, elle ne modifie pas l'existant.</li>
+    <li><code>with open(...)</code> : le fichier est fermé même si une exception survient dans le bloc.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

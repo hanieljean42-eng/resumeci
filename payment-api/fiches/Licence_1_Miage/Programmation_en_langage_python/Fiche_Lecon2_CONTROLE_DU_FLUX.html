@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — CONTROLE DU FLUX — Programmation_en_langage_python Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Le contrôle du flux d'instructions — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python �"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"><meta property="og:title" content="Leçon 2 — CONTROLE DU FLUX — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Le contrôle du flux d'instructions — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python �"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — CONTROLE DU FLUX — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Le contrôle du flux d'instructions — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python �"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_en_langage_python","item":"https://resumeci.me/#Licence_1_Miage/Programmation_en_langage_python"},{"@type":"ListItem","position":4,"name":"Leçon 2 — CONTROLE DU FLUX","item":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — CONTROLE DU FLUX — Programmation_en_langage_python Licence 1_Miage | ResumeCI","description":"Leçon 2 — Le contrôle du flux d'instructions — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python \ud83c","url":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Programmation_en_langage_python","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation en langage Python</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 2 : Le contrôle du flux d'instructions</span>
+  </div>
+</div>
+
+<h2>I. Instructions composées et indentation</h2>
+<div class="definition">Un script Python = suite d'instructions exécutées <strong>en séquence de haut en bas</strong>. Cette séquence est modifiée par des <strong>instructions composées</strong> qui choisissent ou répètent des portions de code.<br>
+<strong>Structure :</strong> une ligne d'en-tête terminée par <strong>deux-points « : »</strong> + un <strong>bloc indenté</strong>. Python utilise l'<strong>indentation significative</strong> : toutes les instructions au même niveau d'indentation appartiennent au même bloc. Les instructions composées peuvent s'imbriquer.</div>
+<div class="schema">Une ligne logique peut se poursuivre sur plusieurs lignes physiques avec <code>\</code> ou un caractère ouvrant <code>[({</code> non fermé. Plusieurs instructions sur une ligne : séparées par <code>;</code> (déconseillé).</div>
+
+<h2>II. Choisir : if – elif – else</h2>
+<div class="schema"><code>if condition:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;instructions</code><br>
+<code>elif autre_condition:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;instructions</code><br>
+<code>else:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;instructions</code><br><br>
+• elif et else sont <strong>optionnels</strong> ; elif répétable<br>
+• Tester directement le booléen : <code>if estPair:</code> (mieux que <code>if estPair == True:</code>)<br>
+• <strong>Opérateur ternaire</strong> (syntaxe compacte, c'est une <strong>expression</strong> qui produit une valeur) :<br>
+<code>plus_petit = x if x &lt; y else y</code></div>
+
+<h2>III. Répéter : les boucles</h2>
+<div class="definition"><strong>Conteneur :</strong> type de données stockant un ensemble d'autres données. <strong>Itérable :</strong> conteneur que l'on peut parcourir élément par élément (chaîne, liste, range…). <code>range(6)</code> → 0,1,2,3,4,5.</div>
+<table>
+  <tr><th>Boucle</th><th>Usage</th><th>Exemple</th></tr>
+  <tr><td><strong>while</strong></td><td>Répète tant qu'une expression booléenne est <strong>vraie</strong> — nombre d'itérations inconnu (saisie filtrée)</td><td><code>while not(1 &lt;= n &lt;= 10): n = int(input(…))</code></td></tr>
+  <tr><td><strong>for</strong></td><td><strong>Parcourt un itérable</strong> élément par élément</td><td><code>for lettre in "ciao":</code> · <code>for x in [2,'a',3.14]:</code> · <code>for i in range(1,11):</code></td></tr>
+</table>
+<div class="important"><strong>Ruptures de séquence :</strong><br>
+• <code>break</code> : sort <strong>immédiatement</strong> de la boucle en cours<br>
+• <code>continue</code> : passe <strong>immédiatement à l'itération suivante</strong> (retour à l'en-tête)<br>
+• <code>else</code> après while/for : clause exécutée <strong>uniquement si la boucle se termine normalement</strong> (sans break) — ex. détecter « valeur non trouvée » dans une recherche.</div>
+
+<h2>IV. Le traitement des erreurs : les exceptions</h2>
+<div class="definition"><strong>Exception :</strong> mécanisme séparant le code normal du code de traitement d'erreur → applications plus <strong>robustes</strong>. Deux phases : la <strong>levée</strong> d'exception (détection de l'erreur, création d'un objet exception) puis son <strong>traitement</strong> par le gestionnaire ad hoc.</div>
+<div class="schema"><code>try:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;… # séquence normale</code><br>
+<code>except ZeroDivisionError:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;… # traitement de cette exception</code><br>
+<code>except TypeError as e:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;…</code><br>
+<code>else:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;… # exécuté en l'absence d'erreur</code><br>
+<code>finally:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;… # toujours exécuté</code></div>
+<div class="schema"><strong>Exceptions standard :</strong> <code>ZeroDivisionError, IndexError, KeyError, AttributeError, IOError, ImportError, NameError, SyntaxError, TypeError, ValueError</code> — toutes héritent de <code>Exception</code>.<br>
+<strong><code>raise</code> :</strong> lève volontairement une exception — <code>raise ValueError("msg")</code> ; <code>raise</code> seul dans un except propage l'exception courante.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>L'<strong>indentation définit le bloc</strong> : un mélange tabulations/espaces ou un retrait oublié change le sens du programme.</li>
+    <li><code>range(a, b)</code> : a inclus, <strong>b exclu</strong> ; <code>range(n)</code> → 0 à n−1.</li>
+    <li><code>break</code> sort de la boucle <strong>la plus proche</strong> seulement ; <code>continue</code> ne sort pas, il saute.</li>
+    <li>Le <code>else</code> d'une boucle s'exécute <strong>sans break</strong> — pas « sinon » au sens if.</li>
+    <li>Dans <code>except</code>, toujours préciser le <strong>type d'exception</strong> ; <code>finally</code> s'exécute même si erreur ou return.</li>
+    <li>Tester <code>if n % 2:</code> = « si n impair » (0 = False) ; penser aux <strong>comparaisons en chaîne</strong> : <code>1 &lt;= n &lt;= 10</code>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

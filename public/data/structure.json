@@ -3598,6 +3598,509 @@
       }
     ]
   },
+  "Licence_1_Miage": {
+    "Algebre_2": [
+      {
+        "file": "Fiche_Lecon1_LES_MATRICES.html",
+        "name": "Leçon 1 — LES MATRICES",
+        "order": 1001,
+        "path": "Licence_1_Miage/Algebre_2/Fiche_Lecon1_LES_MATRICES.html",
+        "url": "/fiches/Licence_1_Miage/Algebre_2/Fiche_Lecon1_LES_MATRICES.html"
+      },
+      {
+        "file": "Fiche_Lecon2_DETERMINANTS_ET_SYSTEMES.html",
+        "name": "Leçon 2 — DETERMINANTS ET SYSTEMES",
+        "order": 1002,
+        "path": "Licence_1_Miage/Algebre_2/Fiche_Lecon2_DETERMINANTS_ET_SYSTEMES.html",
+        "url": "/fiches/Licence_1_Miage/Algebre_2/Fiche_Lecon2_DETERMINANTS_ET_SYSTEMES.html"
+      },
+      {
+        "file": "Fiche_Lecon3_ESPACES_VECTORIELS.html",
+        "name": "Leçon 3 — ESPACES VECTORIELS",
+        "order": 1003,
+        "path": "Licence_1_Miage/Algebre_2/Fiche_Lecon3_ESPACES_VECTORIELS.html",
+        "url": "/fiches/Licence_1_Miage/Algebre_2/Fiche_Lecon3_ESPACES_VECTORIELS.html"
+      },
+      {
+        "file": "Fiche_Lecon4_APPLICATIONS_LINEAIRES.html",
+        "name": "Leçon 4 — APPLICATIONS LINEAIRES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Algebre_2/Fiche_Lecon4_APPLICATIONS_LINEAIRES.html",
+        "url": "/fiches/Licence_1_Miage/Algebre_2/Fiche_Lecon4_APPLICATIONS_LINEAIRES.html"
+      }
+    ],
+    "Algorithme_de_base": [
+      {
+        "file": "Fiche_Lecon1_NOTIONS_DE_BASE.html",
+        "name": "Leçon 1 — NOTIONS DE BASE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Algorithme_de_base/Fiche_Lecon1_NOTIONS_DE_BASE.html",
+        "url": "/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon1_NOTIONS_DE_BASE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html",
+        "name": "Leçon 2 — LES STRUCTURES ALGORITHMIQUES",
+        "order": 1002,
+        "path": "Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html",
+        "url": "/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"
+      },
+      {
+        "file": "Fiche_Lecon3_LES_TABLEAUX.html",
+        "name": "Leçon 3 — LES TABLEAUX",
+        "order": 1003,
+        "path": "Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html",
+        "url": "/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"
+      },
+      {
+        "file": "Fiche_Lecon4_LES_SOUS_PROGRAMMES.html",
+        "name": "Leçon 4 — LES SOUS PROGRAMMES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html",
+        "url": "/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon4_LES_SOUS_PROGRAMMES.html"
+      },
+      {
+        "file": "Fiche_Lecon5_TYPES_STRUCTUREES_ET_FICHIERS.html",
+        "name": "Leçon 5 — TYPES STRUCTUREES ET FICHIERS",
+        "order": 1005,
+        "path": "Licence_1_Miage/Algorithme_de_base/Fiche_Lecon5_TYPES_STRUCTUREES_ET_FICHIERS.html",
+        "url": "/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon5_TYPES_STRUCTUREES_ET_FICHIERS.html"
+      }
+    ],
+    "Analyse_1": [
+      {
+        "file": "Fiche_Lecon1_LES_NOMBRES_REELS.html",
+        "name": "Leçon 1 — LES NOMBRES REELS",
+        "order": 1001,
+        "path": "Licence_1_Miage/Analyse_1/Fiche_Lecon1_LES_NOMBRES_REELS.html",
+        "url": "/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon1_LES_NOMBRES_REELS.html"
+      },
+      {
+        "file": "Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html",
+        "name": "Leçon 2 — SUITES CONVERGENCE ET THEOREMES",
+        "order": 1002,
+        "path": "Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html",
+        "url": "/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"
+      },
+      {
+        "file": "Fiche_Lecon3_SUITES_CLASSIQUES_ET_COMPARAISON.html",
+        "name": "Leçon 3 — SUITES CLASSIQUES ET COMPARAISON",
+        "order": 1003,
+        "path": "Licence_1_Miage/Analyse_1/Fiche_Lecon3_SUITES_CLASSIQUES_ET_COMPARAISON.html",
+        "url": "/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon3_SUITES_CLASSIQUES_ET_COMPARAISON.html"
+      },
+      {
+        "file": "Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html",
+        "name": "Leçon 4 — FONCTIONS LIMITES ET CONTINUITE",
+        "order": 1004,
+        "path": "Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html",
+        "url": "/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon4_FONCTIONS_LIMITES_ET_CONTINUITE.html"
+      },
+      {
+        "file": "Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html",
+        "name": "Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES",
+        "order": 1005,
+        "path": "Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html",
+        "url": "/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"
+      }
+    ],
+    "Architectures_et_technologies_des_ordinateurs": [
+      {
+        "file": "Fiche_Lecon1_GENERALITES_ARCHITECTURE_DES_ORDINATEURS.html",
+        "name": "Leçon 1 — GENERALITES ARCHITECTURE DES ORDINATEURS",
+        "order": 1001,
+        "path": "Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon1_GENERALITES_ARCHITECTURE_DES_ORDINATEURS.html",
+        "url": "/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon1_GENERALITES_ARCHITECTURE_DES_ORDINATEURS.html"
+      },
+      {
+        "file": "Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html",
+        "name": "Leçon 2 — REPRESENTATION BINAIRE DES NOMBRES REELS",
+        "order": 1002,
+        "path": "Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html",
+        "url": "/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon2_REPRESENTATION_BINAIRE_DES_NOMBRES_REELS.html"
+      },
+      {
+        "file": "Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html",
+        "name": "Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES",
+        "order": 1003,
+        "path": "Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html",
+        "url": "/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"
+      }
+    ],
+    "Combinatoire_et_probabilite": [
+      {
+        "file": "Fiche_Lecon1_ANALYSE_COMBINATOIRE.html",
+        "name": "Leçon 1 — ANALYSE COMBINATOIRE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html",
+        "url": "/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon1_ANALYSE_COMBINATOIRE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_NOTIONS_DE_PROBABILITE.html",
+        "name": "Leçon 2 — NOTIONS DE PROBABILITE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon2_NOTIONS_DE_PROBABILITE.html",
+        "url": "/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon2_NOTIONS_DE_PROBABILITE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html",
+        "name": "Leçon 3 — VARIABLES ALEATOIRES REELLES",
+        "order": 1003,
+        "path": "Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html",
+        "url": "/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"
+      },
+      {
+        "file": "Fiche_Lecon4_LOIS_USUELLES.html",
+        "name": "Leçon 4 — LOIS USUELLES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html",
+        "url": "/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"
+      },
+      {
+        "file": "Fiche_Lecon5_VECTEURS_ET_CONVERGENCES.html",
+        "name": "Leçon 5 — VECTEURS ET CONVERGENCES",
+        "order": 1005,
+        "path": "Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon5_VECTEURS_ET_CONVERGENCES.html",
+        "url": "/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon5_VECTEURS_ET_CONVERGENCES.html"
+      }
+    ],
+    "Gestion_de_projet_informatique": [
+      {
+        "file": "Fiche_Lecon1_FONDAMENTAUX_ET_CYCLE_DE_VIE.html",
+        "name": "Leçon 1 — FONDAMENTAUX ET CYCLE DE VIE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon1_FONDAMENTAUX_ET_CYCLE_DE_VIE.html",
+        "url": "/fiches/Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon1_FONDAMENTAUX_ET_CYCLE_DE_VIE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LES_ACTEURS_DU_PROJET.html",
+        "name": "Leçon 2 — LES ACTEURS DU PROJET",
+        "order": 1002,
+        "path": "Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon2_LES_ACTEURS_DU_PROJET.html",
+        "url": "/fiches/Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon2_LES_ACTEURS_DU_PROJET.html"
+      },
+      {
+        "file": "Fiche_Lecon3_PLANIFICATION_ET_PERT.html",
+        "name": "Leçon 3 — PLANIFICATION ET PERT",
+        "order": 1003,
+        "path": "Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon3_PLANIFICATION_ET_PERT.html",
+        "url": "/fiches/Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon3_PLANIFICATION_ET_PERT.html"
+      },
+      {
+        "file": "Fiche_Lecon4_COUTS_ET_RISQUES.html",
+        "name": "Leçon 4 — COUTS ET RISQUES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon4_COUTS_ET_RISQUES.html",
+        "url": "/fiches/Licence_1_Miage/Gestion_de_projet_informatique/Fiche_Lecon4_COUTS_ET_RISQUES.html"
+      }
+    ],
+    "Initiation_aux_medias_sociaux": [
+      {
+        "file": "Fiche_Lecon1_LES_MEDIAS_SOCIAUX_DEFINITIONS_USAGES_ET_IDENTITE_NUMERIQUE.html",
+        "name": "Leçon 1 — LES MEDIAS SOCIAUX DEFINITIONS USAGES ET IDENTITE NUMERIQUE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Initiation_aux_medias_sociaux/Fiche_Lecon1_LES_MEDIAS_SOCIAUX_DEFINITIONS_USAGES_ET_IDENTITE_NUMERIQUE.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_aux_medias_sociaux/Fiche_Lecon1_LES_MEDIAS_SOCIAUX_DEFINITIONS_USAGES_ET_IDENTITE_NUMERIQUE.html"
+      }
+    ],
+    "Initiation_a_la_programmation_web": [
+      {
+        "file": "Fiche_Lecon1_INTRODUCTION_AU_CSS.html",
+        "name": "Leçon 1 — INTRODUCTION AU CSS",
+        "order": 1001,
+        "path": "Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html",
+        "name": "Leçon 2 — LES SELECTEURS ET LA CASCADE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_MODELE_DE_BOITE_ET_PROPRIETES.html",
+        "name": "Leçon 3 — MODELE DE BOITE ET PROPRIETES",
+        "order": 1003,
+        "path": "Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon3_MODELE_DE_BOITE_ET_PROPRIETES.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon3_MODELE_DE_BOITE_ET_PROPRIETES.html"
+      }
+    ],
+    "Initiation_a_l_etude_du_droit": [
+      {
+        "file": "Fiche_Lecon1_NOTION_ET_FONCTIONS_DU_DROIT.html",
+        "name": "Leçon 1 — NOTION ET FONCTIONS DU DROIT",
+        "order": 1001,
+        "path": "Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon1_NOTION_ET_FONCTIONS_DU_DROIT.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon1_NOTION_ET_FONCTIONS_DU_DROIT.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LES_SOURCES_DU_DROIT.html",
+        "name": "Leçon 2 — LES SOURCES DU DROIT",
+        "order": 1002,
+        "path": "Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon2_LES_SOURCES_DU_DROIT.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon2_LES_SOURCES_DU_DROIT.html"
+      },
+      {
+        "file": "Fiche_Lecon3_BRANCHES_ET_SUJETS_DE_DROIT.html",
+        "name": "Leçon 3 — BRANCHES ET SUJETS DE DROIT",
+        "order": 1003,
+        "path": "Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon3_BRANCHES_ET_SUJETS_DE_DROIT.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon3_BRANCHES_ET_SUJETS_DE_DROIT.html"
+      },
+      {
+        "file": "Fiche_Lecon4_INSTITUTIONS_JUDICIAIRES_IVOIRIENNES.html",
+        "name": "Leçon 4 — INSTITUTIONS JUDICIAIRES IVOIRIENNES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon4_INSTITUTIONS_JUDICIAIRES_IVOIRIENNES.html",
+        "url": "/fiches/Licence_1_Miage/Initiation_a_l_etude_du_droit/Fiche_Lecon4_INSTITUTIONS_JUDICIAIRES_IVOIRIENNES.html"
+      }
+    ],
+    "Macroeconomie": [
+      {
+        "file": "Fiche_Lecon1_CIRCUIT_ECONOMIQUE_ET_AGREGATS.html",
+        "name": "Leçon 1 — CIRCUIT ECONOMIQUE ET AGREGATS",
+        "order": 1001,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon1_CIRCUIT_ECONOMIQUE_ET_AGREGATS.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon1_CIRCUIT_ECONOMIQUE_ET_AGREGATS.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LA_CONSOMMATION_KEYNESIENNE.html",
+        "name": "Leçon 2 — LA CONSOMMATION KEYNESIENNE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon2_LA_CONSOMMATION_KEYNESIENNE.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon2_LA_CONSOMMATION_KEYNESIENNE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_CONSOMMATION_ET_EPARGNE_INTERTEMPORELLES.html",
+        "name": "Leçon 3 — CONSOMMATION ET EPARGNE INTERTEMPORELLES",
+        "order": 1003,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon3_CONSOMMATION_ET_EPARGNE_INTERTEMPORELLES.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon3_CONSOMMATION_ET_EPARGNE_INTERTEMPORELLES.html"
+      },
+      {
+        "file": "Fiche_Lecon4_L_INVESTISSEMENT.html",
+        "name": "Leçon 4 — L INVESTISSEMENT",
+        "order": 1004,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon4_L_INVESTISSEMENT.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon4_L_INVESTISSEMENT.html"
+      },
+      {
+        "file": "Fiche_Lecon5_LE_MARCHE_DU_TRAVAIL.html",
+        "name": "Leçon 5 — LE MARCHE DU TRAVAIL",
+        "order": 1005,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon5_LE_MARCHE_DU_TRAVAIL.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon5_LE_MARCHE_DU_TRAVAIL.html"
+      },
+      {
+        "file": "Fiche_Lecon6_MONNAIE_ET_FINANCEMENT.html",
+        "name": "Leçon 6 — MONNAIE ET FINANCEMENT",
+        "order": 1006,
+        "path": "Licence_1_Miage/Macroeconomie/Fiche_Lecon6_MONNAIE_ET_FINANCEMENT.html",
+        "url": "/fiches/Licence_1_Miage/Macroeconomie/Fiche_Lecon6_MONNAIE_ET_FINANCEMENT.html"
+      }
+    ],
+    "Mathematiques_financiere": [
+      {
+        "file": "Fiche_Lecon1_INTERET_CAPITALISATION_ET_ACTUALISATION.html",
+        "name": "Leçon 1 — INTERET CAPITALISATION ET ACTUALISATION",
+        "order": 1001,
+        "path": "Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon1_INTERET_CAPITALISATION_ET_ACTUALISATION.html",
+        "url": "/fiches/Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon1_INTERET_CAPITALISATION_ET_ACTUALISATION.html"
+      },
+      {
+        "file": "Fiche_Lecon2_LES_ANNUITES.html",
+        "name": "Leçon 2 — LES ANNUITES",
+        "order": 1002,
+        "path": "Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon2_LES_ANNUITES.html",
+        "url": "/fiches/Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon2_LES_ANNUITES.html"
+      },
+      {
+        "file": "Fiche_Lecon3_LES_EMPRUNTS.html",
+        "name": "Leçon 3 — LES EMPRUNTS",
+        "order": 1003,
+        "path": "Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon3_LES_EMPRUNTS.html",
+        "url": "/fiches/Licence_1_Miage/Mathematiques_financiere/Fiche_Lecon3_LES_EMPRUNTS.html"
+      }
+    ],
+    "Microeconomie": [
+      {
+        "file": "Fiche_Lecon1_PREFERENCES_ET_UTILITE.html",
+        "name": "Leçon 1 — PREFERENCES ET UTILITE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Microeconomie/Fiche_Lecon1_PREFERENCES_ET_UTILITE.html",
+        "url": "/fiches/Licence_1_Miage/Microeconomie/Fiche_Lecon1_PREFERENCES_ET_UTILITE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_CONTRAINTE_BUDGETAIRE_ET_EQUILIBRE.html",
+        "name": "Leçon 2 — CONTRAINTE BUDGETAIRE ET EQUILIBRE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Microeconomie/Fiche_Lecon2_CONTRAINTE_BUDGETAIRE_ET_EQUILIBRE.html",
+        "url": "/fiches/Licence_1_Miage/Microeconomie/Fiche_Lecon2_CONTRAINTE_BUDGETAIRE_ET_EQUILIBRE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_ELASTICITES_ET_EFFETS_DE_REVENU.html",
+        "name": "Leçon 3 — ELASTICITES ET EFFETS DE REVENU",
+        "order": 1003,
+        "path": "Licence_1_Miage/Microeconomie/Fiche_Lecon3_ELASTICITES_ET_EFFETS_DE_REVENU.html",
+        "url": "/fiches/Licence_1_Miage/Microeconomie/Fiche_Lecon3_ELASTICITES_ET_EFFETS_DE_REVENU.html"
+      },
+      {
+        "file": "Fiche_Lecon4_THEORIE_DE_LA_PRODUCTION.html",
+        "name": "Leçon 4 — THEORIE DE LA PRODUCTION",
+        "order": 1004,
+        "path": "Licence_1_Miage/Microeconomie/Fiche_Lecon4_THEORIE_DE_LA_PRODUCTION.html",
+        "url": "/fiches/Licence_1_Miage/Microeconomie/Fiche_Lecon4_THEORIE_DE_LA_PRODUCTION.html"
+      },
+      {
+        "file": "Fiche_Lecon5_COUTS_ET_OFFRE.html",
+        "name": "Leçon 5 — COUTS ET OFFRE",
+        "order": 1005,
+        "path": "Licence_1_Miage/Microeconomie/Fiche_Lecon5_COUTS_ET_OFFRE.html",
+        "url": "/fiches/Licence_1_Miage/Microeconomie/Fiche_Lecon5_COUTS_ET_OFFRE.html"
+      }
+    ],
+    "Programmation_en_langage_python": [
+      {
+        "file": "Fiche_Lecon1_NOTIONS_DE_BASE.html",
+        "name": "Leçon 1 — NOTIONS DE BASE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon1_NOTIONS_DE_BASE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_CONTROLE_DU_FLUX.html",
+        "name": "Leçon 2 — CONTROLE DU FLUX",
+        "order": 1002,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon2_CONTROLE_DU_FLUX.html"
+      },
+      {
+        "file": "Fiche_Lecon3_LES_CONTENEURS_STANDARD.html",
+        "name": "Leçon 3 — LES CONTENEURS STANDARD",
+        "order": 1003,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon3_LES_CONTENEURS_STANDARD.html"
+      },
+      {
+        "file": "Fiche_Lecon4_FONCTIONS_MODULES_ET_PACKAGES.html",
+        "name": "Leçon 4 — FONCTIONS MODULES ET PACKAGES",
+        "order": 1004,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon4_FONCTIONS_MODULES_ET_PACKAGES.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon4_FONCTIONS_MODULES_ET_PACKAGES.html"
+      },
+      {
+        "file": "Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html",
+        "name": "Leçon 5 — PROGRAMMATION ORIENTEE OBJET",
+        "order": 1005,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"
+      },
+      {
+        "file": "Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html",
+        "name": "Leçon 6 — POO GRAPHIQUE ET TECHNIQUES AVANCEES",
+        "order": 1006,
+        "path": "Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html",
+        "url": "/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon6_POO_GRAPHIQUE_ET_TECHNIQUES_AVANCEES.html"
+      }
+    ],
+    "Statistiques_descriptive": [
+      {
+        "file": "Fiche_Lecon1_LES_DONNEES_STATISTIQUES.html",
+        "name": "Leçon 1 — LES DONNEES STATISTIQUES",
+        "order": 1001,
+        "path": "Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon1_LES_DONNEES_STATISTIQUES.html",
+        "url": "/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon1_LES_DONNEES_STATISTIQUES.html"
+      },
+      {
+        "file": "Fiche_Lecon2_TABLEAUX_ET_REPRESENTATIONS.html",
+        "name": "Leçon 2 — TABLEAUX ET REPRESENTATIONS",
+        "order": 1002,
+        "path": "Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon2_TABLEAUX_ET_REPRESENTATIONS.html",
+        "url": "/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon2_TABLEAUX_ET_REPRESENTATIONS.html"
+      },
+      {
+        "file": "Fiche_Lecon3_PARAMETRES_DE_POSITION_ET_DE_DISPERSION.html",
+        "name": "Leçon 3 — PARAMETRES DE POSITION ET DE DISPERSION",
+        "order": 1003,
+        "path": "Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon3_PARAMETRES_DE_POSITION_ET_DE_DISPERSION.html",
+        "url": "/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon3_PARAMETRES_DE_POSITION_ET_DE_DISPERSION.html"
+      },
+      {
+        "file": "Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html",
+        "name": "Leçon 4 — STATISTIQUE BIVARIEE ET REGRESSION",
+        "order": 1004,
+        "path": "Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html",
+        "url": "/fiches/Licence_1_Miage/Statistiques_descriptive/Fiche_Lecon4_STATISTIQUE_BIVARIEE_ET_REGRESSION.html"
+      }
+    ],
+    "Systeme_d_exploitation": [
+      {
+        "file": "Fiche_Lecon1_GENERALITES_SUR_LES_SE.html",
+        "name": "Leçon 1 — GENERALITES SUR LES SE",
+        "order": 1001,
+        "path": "Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon1_GENERALITES_SUR_LES_SE.html",
+        "url": "/fiches/Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon1_GENERALITES_SUR_LES_SE.html"
+      },
+      {
+        "file": "Fiche_Lecon2_PROCESSUS_ET_GESTION_MEMOIRE.html",
+        "name": "Leçon 2 — PROCESSUS ET GESTION MEMOIRE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon2_PROCESSUS_ET_GESTION_MEMOIRE.html",
+        "url": "/fiches/Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon2_PROCESSUS_ET_GESTION_MEMOIRE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_SYSTEMES_DE_GESTION_DE_FICHIERS.html",
+        "name": "Leçon 3 — SYSTEMES DE GESTION DE FICHIERS",
+        "order": 1003,
+        "path": "Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon3_SYSTEMES_DE_GESTION_DE_FICHIERS.html",
+        "url": "/fiches/Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon3_SYSTEMES_DE_GESTION_DE_FICHIERS.html"
+      },
+      {
+        "file": "Fiche_Lecon4_LE_BIOS_ET_MS_DOS.html",
+        "name": "Leçon 4 — LE BIOS ET MS DOS",
+        "order": 1004,
+        "path": "Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon4_LE_BIOS_ET_MS_DOS.html",
+        "url": "/fiches/Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon4_LE_BIOS_ET_MS_DOS.html"
+      },
+      {
+        "file": "Fiche_Lecon5_INITIATION_A_LINUX_UNIX.html",
+        "name": "Leçon 5 — INITIATION A LINUX UNIX",
+        "order": 1005,
+        "path": "Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon5_INITIATION_A_LINUX_UNIX.html",
+        "url": "/fiches/Licence_1_Miage/Systeme_d_exploitation/Fiche_Lecon5_INITIATION_A_LINUX_UNIX.html"
+      }
+    ],
+    "Technique_d_expression_ecrite": [
+      {
+        "file": "Fiche_Lecon1_LA_PONCTUATION.html",
+        "name": "Leçon 1 — LA PONCTUATION",
+        "order": 1001,
+        "path": "Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon1_LA_PONCTUATION.html",
+        "url": "/fiches/Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon1_LA_PONCTUATION.html"
+      },
+      {
+        "file": "Fiche_Lecon2_ACCORDS_DU_PARTICIPE_PASSE.html",
+        "name": "Leçon 2 — ACCORDS DU PARTICIPE PASSE",
+        "order": 1002,
+        "path": "Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon2_ACCORDS_DU_PARTICIPE_PASSE.html",
+        "url": "/fiches/Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon2_ACCORDS_DU_PARTICIPE_PASSE.html"
+      },
+      {
+        "file": "Fiche_Lecon3_LA_PRISE_DE_PAROLE.html",
+        "name": "Leçon 3 — LA PRISE DE PAROLE",
+        "order": 1003,
+        "path": "Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon3_LA_PRISE_DE_PAROLE.html",
+        "url": "/fiches/Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon3_LA_PRISE_DE_PAROLE.html"
+      },
+      {
+        "file": "Fiche_Lecon4_LE_CV_ET_LA_LETTRE_DE_MOTIVATION.html",
+        "name": "Leçon 4 — LE CV ET LA LETTRE DE MOTIVATION",
+        "order": 1004,
+        "path": "Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon4_LE_CV_ET_LA_LETTRE_DE_MOTIVATION.html",
+        "url": "/fiches/Licence_1_Miage/Technique_d_expression_ecrite/Fiche_Lecon4_LE_CV_ET_LA_LETTRE_DE_MOTIVATION.html"
+      }
+    ]
+  },
   "Premiere_A": {
     "Allemand": [
       {

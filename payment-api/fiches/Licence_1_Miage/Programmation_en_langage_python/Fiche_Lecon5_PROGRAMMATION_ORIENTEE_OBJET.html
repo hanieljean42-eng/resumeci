@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — PROGRAMMATION ORIENTEE OBJET — Programmation_en_langage_python Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — La Programmation Orientée Objet — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 L"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"><meta property="og:title" content="Leçon 5 — PROGRAMMATION ORIENTEE OBJET — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — La Programmation Orientée Objet — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 L"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — PROGRAMMATION ORIENTEE OBJET — Programmation_en_langage_python Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — La Programmation Orientée Objet — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 L"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_en_langage_python","item":"https://resumeci.me/#Licence_1_Miage/Programmation_en_langage_python"},{"@type":"ListItem","position":4,"name":"Leçon 5 — PROGRAMMATION ORIENTEE OBJET","item":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — PROGRAMMATION ORIENTEE OBJET — Programmation_en_langage_python Licence 1_Miage | ResumeCI","description":"Leçon 5 — La Programmation Orientée Objet — Programmation Python Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation en langage Python 🏫 L","url":"https://resumeci.me/fiches/Licence_1_Miage/Programmation_en_langage_python/Fiche_Lecon5_PROGRAMMATION_ORIENTEE_OBJET.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Programmation_en_langage_python","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation en langage Python</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 5 : La Programmation Orientée Objet</span>
+  </div>
+</div>
+
+<h2>I. Terminologie</h2>
+<div class="definition"><strong>Classe :</strong> nouveau type de données — un « moule » ou une « usine » à objets (ex. <code>list</code>, <code>str</code>).<br>
+<strong>Objet / instance :</strong> exemplaire particulier produit par une classe (<code>[3,5,1]</code> est une instance de <code>list</code>).<br>
+<strong>objet = attributs + méthodes</strong> : les données (attributs) + les fonctions applicables (méthodes). L'<strong>encapsulation</strong> embarque les propriétés dans l'objet et évite les variables globales.<br>
+<strong>UML :</strong> langage graphique de conception (diagramme de classes pour concevoir classes et relations).</div>
+
+<h2>II. Classes et instanciation</h2>
+<div class="schema"><code>class C:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"""Documentation.""";</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;x = 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# attribut de CLASSE (partagé par toutes les instances)</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;def affiche(self):&nbsp;&nbsp;# méthode — self = référence de l'objet courant</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.z = 42&nbsp;&nbsp;# attribut d'INSTANCE (propre à l'objet)</code><br><br>
+<strong>Instanciation :</strong> <code>a = C()</code> — on appelle la classe comme une fonction.<br>
+• <code>a.x</code> lit l'attribut de classe (23) ; <code>a.x = 12</code> crée un <strong>attribut d'instance qui masque</strong> celui de classe — <code>C.x</code> reste 23 !<br>
+• Langage dynamique : on peut ajouter des attributs à la volée (<code>C.z = 6</code>, <code>a.y = 44</code>)<br>
+• Attributs de classe accédés via <code>C.x</code> dans les méthodes ; d'instance via <code>self.z</code>.</div>
+<div class="schema"><strong>Espaces de noms :</strong> les classes lisent les globales mais ne les modifient pas ; les instances lisent les attributs de classe mais doivent passer par <code>C.x</code> pour les modifier. Règle LGI pour les noms non qualifiés ; un nom qualifié (<code>obj.attr</code>) est cherché dans l'objet puis dans ses classes.</div>
+
+<h2>III. Méthodes spéciales</h2>
+<div class="definition"><strong>Méthodes spéciales :</strong> noms prédéfinis entourés de <strong>doubles soulignés</strong> (<code>__init__</code>, <code>__str__</code>, <code>__add__</code>…). Elles servent à : initialiser l'objet, modifier son affichage, <strong>surcharger les opérateurs</strong>.</div>
+<div class="schema"><strong><code>__init__(self, …)</code> :</strong> initialisateur appelé <strong>automatiquement à l'instanciation</strong> — crée les attributs d'instance avec leurs valeurs initiales ; ne retourne rien.<br>
+<strong><code>__str__</code> :</strong> chaîne « utilisateur » affichée par <code>print()</code> ; <code>__repr__</code> : représentation « machine ».<br>
+<strong>Surcharge des opérateurs :</strong> <code>__add__</code> (obj1 + obj2), <code>__sub__</code> (−), <code>__mul__</code> (*), <code>__div__</code>/<code>__truediv__</code> (/), <code>__floordiv__</code> (//), <code>__neg__</code> (opposé), <code>__len__</code>, <code>__iter__</code>, <code>__call__</code>.<br>
+<strong>Ex. :</strong> <code>class Vecteur2D</code> avec <code>__add__</code> → <code>v1 + v2</code> fait l'addition vectorielle ; <code>__str__</code> → <code>print(v1)</code> affiche « Vecteur(1.2, 2.3) ».</div>
+
+<h2>IV. Héritage et polymorphisme</h2>
+<div class="definition"><strong>Héritage :</strong> créer une classe fille à partir d'une classe préexistante (super-classe) dont elle hérite <strong>tous les attributs et méthodes</strong>, avec des fonctionnalités supplémentaires ou différentes — <code>class Fille(Mere):</code>.<br>
+<strong>Polymorphisme par dérivation :</strong> des méthodes de <strong>même nom</strong> dans des classes héritées distinctes effectuent des travaux différents — l'objet s'adapte dynamiquement. Le développeur programme génériquement : l'objet « sait » quelle méthode exécuter.</div>
+<div class="schema"><strong>Ex. :</strong> <code>class QuadrupedeDebout(Quadrupede)</code> redéfinit <code>piedsAuContactDuSol()</code> — même appel, comportement adapté au type réel de l'objet.</div>
+
+<h2>V. Conception orientée objet</h2>
+<table>
+  <tr><th>Conception</th><th>Relation</th><th>Implémentation</th></tr>
+  <tr><td><strong>Association</strong></td><td>« a-un » ou « utilise-un » (une Voiture a-un Moteur) — peut être étiquetée avec des <strong>multiplicités</strong></td><td>Intégrer d'autres objets dans le constructeur de la classe conteneur (attribut de type objet)</td></tr>
+  <tr><td><strong>Dérivation (héritage)</strong></td><td>« est-un » (un Ion <strong>est-un</strong> Atome)</td><td><code>class Ion(Atome):</code> — la fille hérite et spécialise</td></tr>
+</table>
+<div class="important"><strong>Réflexe de conception :</strong> « est-un » → héritage ; « a-un » → association (attribut objet). Les deux cohabitent souvent.</div>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><code>self</code> est <strong>obligatoire</strong> en 1ᵉʳ paramètre de chaque méthode — mais on ne le passe pas à l'appel (<code>obj.m(x)</code>).</li>
+    <li><code>a.x = 12</code> ne modifie PAS l'attribut de classe : il crée un attribut d'instance qui le <strong>masque</strong>.</li>
+    <li><code>__init__</code> ≠ constructeur au sens strict : c'est un <strong>initialisateur</strong> automatique, sans valeur de retour.</li>
+    <li><code>print(obj)</code> appelle <code>__str__</code> ; sans elle, affichage <code>&lt;__main__.C object at 0x…&gt;</code>.</li>
+    <li>Héritage = « est-un » ; composition/association = « a-un » — confusion classique en examen de conception.</li>
+    <li>Attribut de classe <strong>modifiable partagé</strong> (ex. une liste) : modifié via une instance → visible partout !</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

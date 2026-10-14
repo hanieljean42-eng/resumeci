@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — LES STRUCTURES ALGORITHMIQUES — Algorithme_de_base Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Les structures algorithmiques — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"><meta property="og:title" content="Leçon 2 — LES STRUCTURES ALGORITHMIQUES — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Les structures algorithmiques — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — LES STRUCTURES ALGORITHMIQUES — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Les structures algorithmiques — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_de_base","item":"https://resumeci.me/#Licence_1_Miage/Algorithme_de_base"},{"@type":"ListItem","position":4,"name":"Leçon 2 — LES STRUCTURES ALGORITHMIQUES","item":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — LES STRUCTURES ALGORITHMIQUES — Algorithme_de_base Licence 1_Miage | ResumeCI","description":"Leçon 2 — Les structures algorithmiques — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — ","url":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon2_LES_STRUCTURES_ALGORITHMIQUES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Algorithme_de_base","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme de base</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 2 : Les structures algorithmiques</span>
+  </div>
+</div>
+
+<h2>I. Les trois catégories de structures</h2>
+<table>
+  <tr><th>Structure</th><th>Principe</th></tr>
+  <tr><td><strong>Linéaire</strong></td><td>Les actions s'exécutent <strong>les unes après les autres</strong>, en séquence</td></tr>
+  <tr><td><strong>Alternative (conditionnelle)</strong></td><td>Selon une <strong>condition</strong>, le programme exécute des opérations différentes</td></tr>
+  <tr><td><strong>Itérative (répétitive)</strong></td><td>Sous contrôle d'une condition, une séquence est exécutée <strong>répétitivement</strong></td></tr>
+</table>
+
+<h2>II. Structure linéaire</h2>
+<div class="schema">Les actions successives sont mentionnées les unes après les autres. Ex. : saisir a, saisir b, p ← a * b, afficher p.</div>
+
+<h2>III. Structures alternatives</h2>
+<h3>1. Si … Alors … FinSi</h3>
+<div class="schema">Si x &gt; 0 Alors<br>&nbsp;&nbsp;r ← racine(x) ; afficher(r)<br>FinSi</div>
+<p>La condition testée détermine si l'action est exécutée.</p>
+
+<h3>2. Si … Alors … Sinon … FinSi</h3>
+<div class="schema">Si x &lt; 0 Alors afficher('x est négatif')<br>Sinon r ← racine(x) ; afficher(r)<br>FinSi</div>
+<p>La condition choisit <strong>entre deux groupes d'actions</strong>. On peut enchaîner avec <strong>SinonSi</strong> (ex. : négatif / nul / positif).</p>
+
+<h3>3. Choix multiple — Suivant … Faire … FinSuivant</h3>
+<div class="schema">Suivant c Faire<br>&nbsp;&nbsp;'A'..'Z' : afficher('Lettre majuscule')<br>&nbsp;&nbsp;'a'..'z' : afficher('Lettre minuscule')<br>&nbsp;&nbsp;'0'..'9' : afficher('Chiffre')<br>&nbsp;&nbsp;Sinon : afficher('Ni lettre ni chiffre')<br>FinSuivant</div>
+<ul>
+  <li>Une donnée est comparée successivement à des <strong>valeurs constantes</strong> ou plages de valeurs.</li>
+  <li>La partie <code>Sinon</code> est facultative ; plusieurs valeurs peuvent être regroupées si les actions sont identiques.</li>
+</ul>
+
+<h2>IV. Structures itératives</h2>
+<h3>1. Répéter … Jusqu'à …</h3>
+<div class="important"><strong>⚠️ Point clé :</strong> la condition est testée <strong>après</strong> les actions → les actions sont exécutées <strong>au moins une fois</strong>.</div>
+<div class="schema">Répéter<br>&nbsp;&nbsp;saisir a ; saisir b ; p ← a*b ; afficher p ; saisir réponse c<br>Jusqu'à c = 'N'</div>
+
+<h3>2. Tant Que … Faire … FinFaire</h3>
+<div class="important">La condition est testée <strong>avant</strong> les actions → les actions peuvent ne <strong>jamais s'exécuter</strong> si la condition est fausse d'emblée.</div>
+<div class="schema">Tant Que Non(ToucheAppuyée) Faire<br>&nbsp;&nbsp;afficher('Attente')<br>FinFaire</div>
+
+<h3>3. Pour indice De … À … Faire … FinPour</h3>
+<ul>
+  <li>Exécute les actions un <strong>nombre déterminé de fois</strong> : l'indice parcourt les valeurs de Val1 à Val2 (<strong>bornes incluses</strong>).</li>
+  <li>Un <strong>pas</strong> d'incrémentation différent est possible (+2, −1…).</li>
+  <li>Équivalent à un TantQue : <code>i ← 1 ; TantQue i ≤ 80 Faire afficher('*') ; i ← i+1 FinFaire</code>.</li>
+</ul>
+<div class="schema">Pour i de 1 à 80 Faire<br>&nbsp;&nbsp;afficher('*')<br>FinFaire</div>
+
+<h2>V. Techniques d'exercices à maîtriser</h2>
+<ul>
+  <li><strong>Signe d'un produit sans le calculer</strong> : <code>Si (m&gt;0 ET n&gt;0) OU (m&lt;0 ET n&lt;0)</code> → positif.</li>
+  <li><strong>Loi de Morgan</strong> : Non(A OU B) = Non A ET Non B — ex. l'inverse de <code>Tutu &gt; Toto+4 OU Tata = "OK"</code> est <code>Tutu ≤ Toto+4 ET Tata ≠ "OK"</code>.</li>
+  <li><strong>Gestion du temps</strong> : incrémenter les minutes, remettre à 0 et reporter quand on atteint 60 (minutes→heures), 24 (heures→0).</li>
+  <li><strong>Tarifs par tranches</strong> : cumuler tranche par tranche (10×0,10 + 20×0,09 + (n−30)×0,08).</li>
+  <li><strong>Conditions multiples</strong> : tester de la borne la plus grande vers la plus petite (ou l'inverse) avec SinonSi ; variables booléennes intermédiaires pour simplifier.</li>
+</ul>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>Répéter…Jusqu'à</strong> (au moins 1 exécution, test après) et <strong>TantQue</strong> (0 exécution possible, test avant).</li>
+    <li>Oublier que les bornes du <strong>Pour</strong> sont <strong>incluses</strong>.</li>
+    <li>Mal inverser une condition composée : Non(A OU B) ≠ Non A OU Non B — c'est <strong>ET</strong>.</li>
+    <li>Mettre un SinonSi après un Sinon final.</li>
+  </ul>
+</div>
+<div class="important"><strong>💡 Réflexe :</strong> demande-toi d'abord si le test doit précéder ou suivre l'action — cela choisit entre TantQue et Répéter.</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

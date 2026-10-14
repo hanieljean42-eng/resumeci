@@ -284,6 +284,59 @@ async function findUserByPhone(cleanPhone) {
   return findUserByAnyId(cleanPhone);
 }
 
+// Un "doc fantôme" est un document technique sans identité (créé par un ancien
+// flux : uid user_*/admin_*/test_* posé par /api/pay, ou doc sans nom ni mot de
+// passe dont l'ID n'est pas un numéro). Il ne doit jamais masquer le vrai
+// compte identifié par le numéro de téléphone.
+function isGhostUserDoc(u) {
+  if (!u || !u._docId) return false;
+  const id = String(u._docId);
+  if (/^(user_|admin_|test_)/.test(id)) return true;
+  const hasIdentity = Boolean(u.fullName || u.firstName || u.lastName || u.passwordHash || u.password);
+  return !hasIdentity && !/^\d{10}$/.test(id);
+}
+
+// Résolution combinée uid + téléphone. Le téléphone est l'identité canonique
+// du projet (un numéro WhatsApp = un compte) : quand l'uid tombe sur un doc
+// fantôme alors que le téléphone désigne un vrai compte, le vrai compte gagne.
+// `extra` contient les autres docs résolus (ex. fantôme porteur du pendingPayment).
+async function resolveUserDocs(rawUid, rawPhone) {
+  const byUid = (rawUid !== undefined && rawUid !== null && rawUid !== '')
+    ? await findUserByAnyId(rawUid).catch(() => null) : null;
+  const cleanP = rawPhone ? String(rawPhone).replace(/\D/g, '').slice(-10) : '';
+  const byPhone = cleanP.length === 10 ? await findUserByAnyId(cleanP).catch(() => null) : null;
+  let primary = byUid || byPhone;
+  if (byUid && byPhone && byUid._docId !== byPhone._docId && isGhostUserDoc(byUid)) {
+    primary = byPhone;
+  }
+  const extra = [];
+  for (const u of [byUid, byPhone]) {
+    if (u && u._docId && u._docId !== (primary && primary._docId) && !extra.some(e => e._docId === u._docId)) extra.push(u);
+  }
+  return { primary, extra };
+}
+
+// Statut premium consolidé : un Pass accordé (par l'admin ou un paiement) sur
+// N'IMPORTE QUEL doc du même compte compte — y compris sur un doc fantôme
+// hérité. Renvoie le statut le plus favorable parmi les docs résolus.
+function mergedPremiumStatus(users) {
+  const now = Date.now();
+  let best = null;
+  for (const u of users) {
+    if (!u) continue;
+    const exp = Number(u.premiumExpiresAt) || 0;
+    if (u.isPremium && (exp === 0 || exp > now)) {
+      if (!best || exp === 0 || exp > (Number(best.premiumExpiresAt) || 0)) best = u;
+    }
+  }
+  if (!best) return { isPremium: false, premiumPlan: 'free', premiumExpiresAt: 0 };
+  return {
+    isPremium: true,
+    premiumPlan: best.premiumPlan || best.plan || 'pro',
+    premiumExpiresAt: Number(best.premiumExpiresAt) || 0
+  };
+}
+
 // Helpers mots de passe : stockage haché (bcrypt). Les anciens comptes ont un champ `password` en clair,
 // accepté une dernière fois puis migré vers `passwordHash` lors de la connexion.
 const BCRYPT_ROUNDS = 10;
@@ -373,8 +426,10 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
   const targets = new Map();
   const resolvedUid = uid ? await findUserByAnyId(uid).catch(() => null) : null;
   const cleanPhone = phone ? String(phone).replace(/\D/g, '').slice(-10) : '';
-  const resolvedPhone = (!resolvedUid && cleanPhone.length === 10)
-    ? await findUserByAnyId(phone).catch(() => null)
+  // Le téléphone est toujours résolu aussi : si l'uid désigne un doc fantôme
+  // (user_*), le vrai compte trouvé par numéro doit recevoir le premium.
+  const resolvedPhone = cleanPhone.length === 10
+    ? await findUserByAnyId(cleanPhone).catch(() => null)
     : null;
   for (const u of [resolvedUid, resolvedPhone]) {
     if (u && u._docId) targets.set(u._docId, db.collection('users').doc(u._docId));
@@ -588,9 +643,9 @@ app.post('/api/pay', async (req, res) => {
 
     // Réutilise la transaction encore en attente (double clic, retour arrière, serveur lent)
     // au lieu d'en créer une nouvelle chez GeniusPay à chaque tentative.
-    // On résout le VRAI doc du compte (doc ID ≠ uid possible sur anciens comptes)
-    // pour que pendingPayment soit déposé là où /api/user-status le retrouvera.
-    const payingUser = db ? await findUserByAnyId(safeUid).catch(() => null) : null;
+    // On résout le VRAI doc du compte : uid + téléphone du payeur (un uid hérité
+    // user_* peut désigner un doc fantôme pendant que le numéro désigne le vrai).
+    const { primary: payingUser } = db ? await resolveUserDocs(safeUid, cleanPhone) : { primary: null };
     const accountDocId = payingUser ? payingUser._docId : safeUid;
     const userRef = db ? db.collection('users').doc(accountDocId) : null;
     if (userRef) {
@@ -790,8 +845,23 @@ app.post('/api/confirm-payment', async (req, res) => {
       return res.status(402).json({ success: false, status: pay.status || 'pending', error: "Paiement non encore confirmé." });
     }
     if (pay.metadata?.uid && pay.metadata.uid !== uid) {
-      console.warn(`[ConfirmPayment] UID ${uid} ne correspond pas au paiement ${reference} (${pay.metadata.uid})`);
-      return res.status(403).json({ success: false, error: "Ce paiement est associé à un autre compte." });
+      // Tolérance anciens comptes : l'uid local (ex. user_*) peut différer de
+      // l'uid enregistré au paiement. Accepté si les deux identifiants résolvent
+      // le même doc, ou si le téléphone du compte correspond à celui du paiement.
+      const claimer = await findUserByAnyId(uid).catch(() => null);
+      const owner = await findUserByAnyId(pay.metadata.uid).catch(() => null);
+      const sameDoc = Boolean(claimer && owner && claimer._docId === owner._docId);
+      const claimerPhones = new Set(
+        [claimer && claimer.whatsapp, claimer && claimer.contact, claimer && claimer.phone, uid]
+          .filter(Boolean).map(p => String(p).replace(/\D/g, '').slice(-10))
+      );
+      const metaPhone = String(
+        (pay.customer && pay.customer.phone) || pay.metadata.customerPhone || pay.metadata.phone || ''
+      ).replace(/\D/g, '').slice(-10);
+      if (!sameDoc && !(metaPhone && claimerPhones.has(metaPhone))) {
+        console.warn(`[ConfirmPayment] UID ${uid} ne correspond pas au paiement ${reference} (${pay.metadata.uid})`);
+        return res.status(403).json({ success: false, error: "Ce paiement est associé à un autre compte." });
+      }
     }
 
     const amt = Number(pay.amount) || 0;
@@ -954,14 +1024,20 @@ const userStatusHandler = async (req, res) => {
     let foundUser = null;
     let foundRef = null;
 
+    // Résolution universelle : doc ID, champ uid, whatsapp/contact/phone
+    // dans tous les formats. uid ET téléphone sont essayés : un doc fantôme
+    // (user_* hérité) ne doit jamais masquer le vrai compte du numéro.
+    const extraRefs = [];
+    let extraUsers = [];
     if (db) {
-      // Résolution universelle : doc ID, champ uid, whatsapp/contact/phone
-      // dans tous les formats (10 chiffres, 225..., +225...) — les anciens
-      // comptes n'ont pas forcément un doc ID = numéro.
-      foundUser = (rawUid ? await findUserByAnyId(rawUid).catch(() => null) : null)
-               || (cleanPhone.length === 10 ? await findUserByAnyId(cleanPhone).catch(() => null) : null);
+      const { primary, extra } = await resolveUserDocs(rawUid, cleanPhone);
+      foundUser = primary;
+      extraUsers = extra;
       if (foundUser && foundUser._docId) {
         foundRef = db.collection('users').doc(foundUser._docId);
+      }
+      for (const u of extra) {
+        if (u.pendingPayment) extraRefs.push({ ref: db.collection('users').doc(u._docId), data: u });
       }
     }
 
@@ -969,12 +1045,17 @@ const userStatusHandler = async (req, res) => {
       return res.status(404).json({ success: false, error: "Utilisateur non trouvé" });
     }
 
-    if (foundRef && foundUser.pendingPayment) {
+    // Paiement en attente : sur le doc principal ET sur un éventuel doc
+    // fantôme qui porterait le pendingPayment (uid hérité user_*).
+    const pendingTargets = [];
+    if (foundRef && foundUser.pendingPayment) pendingTargets.push({ ref: foundRef, data: foundUser });
+    pendingTargets.push(...extraRefs);
+    for (const t of pendingTargets) {
       try {
-        const resolved = await resolvePendingPayment(foundRef, foundUser);
+        const resolved = await resolvePendingPayment(t.ref, t.data);
         if (resolved) {
           const fresh = await foundRef.get();
-          if (fresh.exists) foundUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id };
+          if (fresh.exists) foundUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id, _docId: fresh.id };
         }
       } catch (e) {
         console.warn('[User Status] Vérification paiement en attente impossible:', e.message);
@@ -982,10 +1063,12 @@ const userStatusHandler = async (req, res) => {
     }
 
     const now = Date.now();
-    const expiresAt = Number(foundUser.premiumExpiresAt) || 0;
-    const isPremium = Boolean(foundUser.isPremium && (expiresAt === 0 || expiresAt > now));
-    const premiumPlan = isPremium ? (foundUser.premiumPlan || foundUser.plan || 'pro') : 'free';
-    const effectiveExpiresAt = isPremium ? (expiresAt > now ? expiresAt : (now + THIRTY_DAYS_MS)) : 0;
+    // Premium consolidé : un Pass posé sur n'importe quel doc du compte
+    // (vrai doc OU fantôme hérité) débloque l'utilisateur.
+    const merged = mergedPremiumStatus([foundUser, ...extraUsers]);
+    const isPremium = merged.isPremium;
+    const premiumPlan = merged.premiumPlan;
+    const effectiveExpiresAt = isPremium ? (merged.premiumExpiresAt > now ? merged.premiumExpiresAt : (now + THIRTY_DAYS_MS)) : 0;
 
     // Sans jeton de session valide pour ce compte : statut d'abonnement uniquement (aucune donnée personnelle)
     const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
@@ -1061,12 +1144,20 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     const subFiches = (getSecureFichesIndex()[cls] || {})[sub] || [];
     const isTrialFiche = subFiches.length > 0 && subFiches[0] === file;
     if (!isTrialFiche) {
-      const user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
-      const expiresAt = user ? (Number(user.premiumExpiresAt) || 0) : 0;
-      const plan = String(user && (user.premiumPlan || user.plan) || '');
-      const premiumActive = Boolean(user && user.isPremium && (expiresAt === 0 || expiresAt > Date.now()));
+      let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
+      const candidates = [user];
+      // Session héritée pointant un doc fantôme ou non premium : suivre le
+      // téléphone du doc vers le vrai compte (premium accordé sur users/{numéro}).
+      if (user) {
+        const ghostPhone = String(user.whatsapp || user.contact || user.phone || '').replace(/\D/g, '').slice(-10);
+        if (ghostPhone.length === 10) {
+          const real = await findUserByAnyId(ghostPhone).catch(() => null);
+          if (real && real._docId !== user._docId) candidates.push(real);
+        }
+      }
+      const status = mergedPremiumStatus(candidates);
       // Université : Pass étudiant (uni_*) requis. École : n'importe quel Pass actif (dès 500 F).
-      const isPremium = premiumActive && (cls.startsWith('Licence_') ? plan.startsWith('uni_') : true);
+      const isPremium = status.isPremium && (cls.startsWith('Licence_') ? status.premiumPlan.startsWith('uni_') : true);
       if (!isPremium) {
         return res.status(403).json({ success: false, error: 'premium_required' });
       }

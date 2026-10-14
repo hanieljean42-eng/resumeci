@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — SUITES CONVERGENCE ET THEOREMES — Analyse_1 Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Suites réelles : convergence et grands théorèmes — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE —"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"><meta property="og:title" content="Leçon 2 — SUITES CONVERGENCE ET THEOREMES — Analyse_1 Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Suites réelles : convergence et grands théorèmes — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE —"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — SUITES CONVERGENCE ET THEOREMES — Analyse_1 Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Suites réelles : convergence et grands théorèmes — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE —"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_1","item":"https://resumeci.me/#Licence_1_Miage/Analyse_1"},{"@type":"ListItem","position":4,"name":"Leçon 2 — SUITES CONVERGENCE ET THEOREMES","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — SUITES CONVERGENCE ET THEOREMES — Analyse_1 Licence 1_Miage | ResumeCI","description":"Leçon 2 — Suites réelles : convergence et grands théorèmes — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE —","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon2_SUITES_CONVERGENCE_ET_THEOREMES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_1","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse 1</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 2 : Suites de nombres réels — convergence et théorèmes</span>
+  </div>
+</div>
+
+<h2>I. Définitions de base</h2>
+<div class="definition"><strong>Suite réelle :</strong> application u : I ⊂ N → R, notée (uₙ). Trois façons de la définir : <strong>explicite</strong> (uₙ = f(n), ex. uₙ = 5n + 2ⁿ), <strong>récurrente</strong> (uₙ₊₁ = φ(uₙ) + terme(s) initial(aux)), <strong>implicite</strong> (uₙ unique solution d'une équation).</div>
+<ul>
+  <li><strong>Croissante</strong> (à partir de nₚ) : uₙ ≤ uₙ₊₁ ; <strong>décroissante</strong> : uₙ ≥ uₙ₊₁ ; <strong>monotone</strong> : l'une ou l'autre ; <strong>stricte</strong> : inégalité stricte.</li>
+  <li><strong>Bornée</strong> : majorée et minorée. Opérations : somme, produit, multiplication par un scalaire, terme à terme.</li>
+</ul>
+
+<h2>II. Convergence et divergence</h2>
+<div class="definition"><strong>Convergence vers l :</strong> ∀ε &gt; 0, ∃N ∈ N, ∀n ≥ N : |uₙ − l| ≤ ε. Sinon la suite <strong>diverge</strong>. Divergence vers +∞ : ∀A &gt; 0, ∃N : ∀n ≥ N, uₙ ≥ A (1ʳᵉ espèce ; sinon 2ᵉ espèce).</div>
+<div class="schema">Plan de preuve ε-N : (1) Soit ε &gt; 0 ; (2) trouver N tel que |uₙ − l| ≤ ε (résolution d'inéquation) ; (3) poser N = E(...) + 1 ; (4) vérifier pour n ≥ N ; (5) conclure. Ex. : lim 1/n = 0 avec N = E(1/ε) + 1 ; lim (2n+1)/(n+2) = 2 avec |... − 2| = 3/(n+2) ≤ ε ⇔ n ≥ 3/ε − 2.</div>
+<table>
+  <tr><th>Résultat</th><th>Énoncé</th></tr>
+  <tr><td><strong>Unicité</strong></td><td>La limite, si elle existe, est unique</td></tr>
+  <tr><td><strong>Convergente ⇒ bornée</strong></td><td>Réciproque fausse : (−1)ⁿ bornée mais divergente</td></tr>
+  <tr><td>Opérations</td><td>lim(uₙ+vₙ) = l₁+l₂ ; lim uₙvₙ = l₁l₂ ; lim |uₙ| = |l₁| ; lim 1/uₙ = 1/l₁ si l₁ ≠ 0</td></tr>
+  <tr><td>Passage à la limite</td><td>uₙ ≤ k (à partir d'un rang) ⇒ l ≤ k ; uₙ ≤ vₙ ⇒ l ≤ l′. <strong>Les inégalités strictes deviennent larges</strong></td></tr>
+</table>
+<div class="important"><strong>Théorème des gendarmes :</strong> si vₙ ≤ uₙ ≤ wₙ (à partir d'un rang) et vₙ, wₙ → même limite l, alors uₙ → l. Ex. : (−1)ⁿ/n → 0 car −1/n ≤ (−1)ⁿ/n ≤ 1/n.</div>
+<div class="important"><strong>Méthode de majoration :</strong> si |uₙ − l| ≤ αₙ avec αₙ → 0, alors uₙ → l. Idem pour +∞ : si vₙ ≤ uₙ et vₙ → +∞ alors uₙ → +∞.</div>
+
+<h2>III. Suites extraites et valeurs d'adhérence</h2>
+<div class="definition"><strong>Suite extraite (sous-suite) :</strong> vₙ = uφ(n) où φ : N → N strictement croissante (ex. u₂ₙ, u₂ₙ₊₁). Lemme : φ(n) ≥ n.</div>
+<ul>
+  <li>Toute sous-suite d'une suite convergente converge <strong>vers la même limite</strong>.</li>
+  <li><strong>Critère de divergence :</strong> deux sous-suites convergent vers l₁ ≠ l₂ ⇒ (uₙ) diverge. Ex. : (−1)ⁿ : u₂ₙ → 1, u₂ₙ₊₁ → −1.</li>
+  <li><strong>Critère de convergence :</strong> si u₂ₙ → l et u₂ₙ₊₁ → l alors uₙ → l.</li>
+  <li><strong>Valeur d'adhérence :</strong> limite d'une sous-suite convergente. Une suite convergente n'a qu'une seule valeur d'adhérence : sa limite.</li>
+</ul>
+<div class="important"><strong>Bolzano-Weierstrass :</strong> de toute suite réelle <strong>bornée</strong> on peut extraire une sous-suite <strong>convergente</strong>.</div>
+
+<h2>IV. Suites monotones et adjacentes</h2>
+<div class="important"><strong>Théorème de la limite monotone :</strong> une suite <strong>croissante</strong> soit est majorée (alors elle converge vers l = sup{uₙ}) soit diverge vers +∞. Une suite <strong>décroissante minorée</strong> converge vers l = inf{uₙ}. « Toute suite croissante majorée converge. »</div>
+<ul>
+  <li>Si (uₙ) croissante converge vers l : ∀n, uₙ ≤ l (décroissante : l ≤ uₙ).</li>
+  <li><strong>Suite récurrente uₙ₊₁ = f(uₙ)</strong> : si f continue et uₙ → l, alors l est solution de <strong>f(x) = x</strong> (point fixe).</li>
+</ul>
+<div class="definition"><strong>Suites adjacentes :</strong> (uₙ) croissante, (vₙ) décroissante et lim(uₙ − vₙ) = 0. <strong>Théorème :</strong> deux suites adjacentes convergent vers la même limite l avec uₙ ≤ l ≤ vₙ.</div>
+<div class="schema">Approximation décimale : aₙ = E(10ⁿx)/10ⁿ et bₙ = (E(10ⁿx)+1)/10ⁿ sont adjacentes, bₙ − aₙ = 10⁻ⁿ, de limite commune x (aₙ = valeur approchée par défaut, bₙ par excès).</div>
+<div class="definition"><strong>Théorème des segments emboîtés :</strong> segments Iₙ = [aₙ, bₙ] avec Iₙ₊₁ ⊂ Iₙ et (bₙ − aₙ) → 0 ⇒ ∩Iₙ = {l} (un unique réel).</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>« Bornée ⇒ convergente » est <strong>FAUX</strong> (contre-ex. (−1)ⁿ). C'est « convergente ⇒ bornée ».</li>
+    <li>Le passage à la limite <strong>élargit</strong> les inégalités : uₙ &lt; 1 ∀n ne donne que l ≤ 1 (ex. uₙ = 1 − 1/n → 1).</li>
+    <li>Pour la récurrence uₙ₊₁ = f(uₙ), ne pas oublier de montrer d'abord la convergence (monotonie + bornitude) AVANT de résoudre f(x) = x.</li>
+    <li>Adjacentes : il faut les <strong>3 conditions</strong> (croissance, décroissance, différence → 0).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

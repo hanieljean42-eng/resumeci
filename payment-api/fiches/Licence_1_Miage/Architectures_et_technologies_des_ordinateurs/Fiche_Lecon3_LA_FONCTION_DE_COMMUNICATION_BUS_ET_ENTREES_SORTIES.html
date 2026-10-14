@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — La fonction de communication : bus et entrées-sorties — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies d"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"><meta property="og:title" content="Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — La fonction de communication : bus et entrées-sorties — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies d"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — La fonction de communication : bus et entrées-sorties — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies d"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Architectures_et_technologies_des_ordinateurs","item":"https://resumeci.me/#Licence_1_Miage/Architectures_et_technologies_des_ordinateurs"},{"@type":"ListItem","position":4,"name":"Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES","item":"https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — LA FONCTION DE COMMUNICATION BUS ET ENTREES SORTIES — Architectures_et_technologies_des_ordinateurs Licence 1_Miage | ResumeCI","description":"Leçon 3 — La fonction de communication : bus et entrées-sorties — ATO Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Architectures et technologies d","url":"https://resumeci.me/fiches/Licence_1_Miage/Architectures_et_technologies_des_ordinateurs/Fiche_Lecon3_LA_FONCTION_DE_COMMUNICATION_BUS_ET_ENTREES_SORTIES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Architectures_et_technologies_des_ordinateurs","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Architectures et technologies des ordinateurs</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 3 : La fonction de communication — bus, interfaces et gestion des entrées-sorties</span>
+  </div>
+</div>
+
+<h2>I. Vue d'ensemble</h2>
+<div class="definition"><strong>Fonction de communication :</strong> toutes les activités permettant les <strong>échanges d'informations</strong> entre périphériques, processeur central et mémoire centrale — c'est la <strong>gestion des entrées-sorties</strong>. Fonction complexe : si elle est mal réalisée, elle pénalise toutes les performances de l'ordinateur.</div>
+<p>Acteurs :</p>
+<ul>
+  <li><strong>Périphériques :</strong> dispositifs d'entrée/sortie (clavier, souris, imprimante, écran, modem) ou de stockage permanent (disques magnétiques), pilotés par des signaux électriques spécifiques.</li>
+  <li><strong>Contrôleur (unité d'échange) :</strong> pilote un périphérique et gère ses accès au bus ; convertit le flux de bits numériques en signaux électriques.</li>
+  <li><strong>Bus de communication :</strong> transporte les informations entre composants.</li>
+  <li><strong>Pilote (driver) :</strong> programme du <strong>système d'exploitation</strong> gérant les E/S d'un périphérique. Les applications ne parlent aux périphériques <strong>qu'à travers leur pilote</strong> — on peut changer d'imprimante sans modifier le traitement de texte.</li>
+</ul>
+<div class="schema">Appel système : un ordre d'E/S dans un programme est traduit en <strong>SVC</strong> (Supervisor Call / trappe système) → bascule vers le pilote du système d'exploitation. Mécanisme à la base des systèmes multiprogrammés.</div>
+
+<h2>II. Les bus</h2>
+<div class="definition"><strong>Bus :</strong> ensemble de « fils » reliant les composants. Indicateur clé : la <strong>bande passante = fréquence × largeur du bus</strong>.</div>
+<ul>
+  <li><strong>Bus parallèles :</strong> autant de fils que de bits — simples mais coûteux et peu fiables sur longue distance.</li>
+  <li><strong>Bus série :</strong> une seule voie, bits sérialisés — grandes distances.</li>
+  <li><strong>Architecture à bus unique :</strong> source de <strong>goulet d'étranglement</strong> (composants hétérogènes) ; les conflits d'accès sont arbitrés par l'<strong>arbitre de bus</strong>, avec priorité au contrôleur → mécanisme de <strong>vol de cycle</strong> (le processeur est privé du bus pendant le transfert).</li>
+</ul>
+<table>
+  <tr><th>Bus</th><th>Largeur</th><th>Fréquence</th><th>Bande passante</th><th>Note</th></tr>
+  <tr><td><strong>ISA</strong> (PC-AT, 1985)</td><td>16 bits</td><td>8 MHz</td><td>16 Mo/s</td><td>Synchrone, ancien standard</td></tr>
+  <tr><td><strong>EISA</strong></td><td>32 bits</td><td>8 MHz</td><td>32 Mo/s</td><td>Compatible ISA</td></tr>
+  <tr><td><strong>MCA</strong> (IBM PS/2)</td><td>32 bits</td><td>10 MHz</td><td>~40 Mo/s</td><td>Asynchrone, incompatible ISA, coûteux</td></tr>
+  <tr><td><strong>VESA (VLBus)</strong></td><td>32 bits</td><td>33 MHz</td><td>132 Mo/s</td><td>Conçu pour le 80486</td></tr>
+  <tr><td><strong>PCI</strong></td><td>32/64 bits</td><td>33/66 MHz</td><td><strong>132 à 528 Mo/s</strong></td><td>Bus local synchrone, <strong>multiplexé</strong> (adresses et données alternent), Plug And Play — brevets Intel mis dans le domaine public</td></tr>
+  <tr><td><strong>AGP</strong></td><td>—</td><td>—</td><td>très élevée</td><td>Bus dérivé du PCI dédié aux <strong>contrôleurs graphiques</strong></td></tr>
+</table>
+<div class="important"><strong>Pourquoi le PCI ?</strong> Une image 1024×768 en 16 bits/pixel × 25 images/s ≈ <strong>40 Mo/s</strong> (80 Mo/s en comptant l'aller-retour disque→mémoire→écran) — hors de portée de l'ISA. Aujourd'hui : architecture <strong>multibus</strong> organisée autour de <strong>ponts</strong> et du chipset.</div>
+
+<h2>III. Interfaces d'accès aux périphériques</h2>
+<h3>1. L'unité d'échange (contrôleur)</h3>
+<ul>
+  <li><strong>Adressage :</strong> intégrée à l'espace d'adressage du processeur — on l'adresse comme un banc mémoire.</li>
+  <li><strong>Structure :</strong> <strong>registre d'état</strong> (état du périphérique, ex. « plus de papier ») + <strong>registre de données</strong> (échanges mémoire ↔ périphérique). Chaque registre est <strong>adressable</strong>.</li>
+  <li><strong>Double nature :</strong> communique en <strong>numérique</strong> avec processeur/mémoire (registres via bus) et en <strong>signaux électriques</strong> avec le périphérique.</li>
+  <li>Exemples : UART (liaison série + modem RTC), contrôleurs de disques IDE/EIDE/ATA (cylindre, face, lecture/écriture — ATA/33 = 33 Mo/s, ATA/66 = 66 Mo/s en mode DMA), cartes graphiques (mémoire d'image <em>bitmap</em> + plans mémoire + table de couleurs + convertisseurs DAC RVB).</li>
+</ul>
+<h3>2. Bus d'extension</h3>
+<table>
+  <tr><th>Bus</th><th>Type</th><th>Caractéristiques</th></tr>
+  <tr><td><strong>USB</strong></td><td>Série</td><td>Topologie arborescente (root hub), 4 fils (2 données + alim + masse), jusqu'à <strong>127 périphériques</strong>, Plug And Play, branchement à chaud, 1,5–12 Mbits/s</td></tr>
+  <tr><td><strong>SCSI</strong></td><td>Parallèle</td><td>Performant (4 à 80 Mo/s), échanges directs entre périphériques sans CPU, coûteux → serveurs</td></tr>
+  <tr><td><strong>Firewire (IEEE 1394)</strong></td><td>Série</td><td>« SCSI série », périphériques rapides, tout numérique, ~50 Mo/s, jusqu'à 63 périphériques, transferts isochrones (vidéo)</td></tr>
+</table>
+
+<h2>IV. Les trois modèles de gestion des entrées-sorties</h2>
+<div class="important"><strong>Préalable — basculement de contexte :</strong> quand le pilote prend le relais du programme utilisateur, le <strong>contexte matériel</strong> (registres, compteur ordinal) du programme est sauvegardé en mémoire, puis restitué à la reprise.</div>
+<table>
+  <tr><th>Modèle</th><th>Principe</th><th>Processeur</th></tr>
+  <tr><td><strong>1. Liaison programmée</strong></td><td>Le pilote boucle en lisant le registre d'état tant que le périphérique est occupé (<strong>attente active</strong>), écrit chaque caractère dans le registre de données</td><td><strong>Totalement occupé</strong> pendant l'E/S — inefficace : les performances suivent le périphérique</td></tr>
+  <tr><td><strong>2. E/S pilotées par interruptions</strong></td><td>L'unité d'échange émet une <strong>interruption</strong> quand le périphérique est prêt ; entre deux interruptions le processeur retourne au programme utilisateur</td><td>Libre sauf pendant le traitement de l'interruption → « tâche de fond »</td></tr>
+  <tr><td><strong>3. E/S asynchrones — DMA</strong></td><td><strong>Direct Memory Access</strong> : composant dédié (registres d'adresse, de comptage, de commande + tampon + mini-processeur) transfère mémoire ↔ périphérique <strong>sans le CPU</strong> ; interruption seulement en fin de transfert</td><td><strong>Totalement libre</strong> pendant le transfert → rend possible la multiprogrammation</td></tr>
+</table>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Croire que le programme utilisateur pilote le périphérique : il passe par le <strong>pilote</strong> du système d'exploitation (via SVC).</li>
+    <li>Confondre <strong>vol de cycle</strong> (arbitre de bus, priorité au contrôleur) et <strong>DMA</strong> (transfert mémoire direct sans CPU).</li>
+    <li>Dire que la liaison programmée libère le processeur : c'est l'inverse — <strong>attente active</strong>.</li>
+    <li>Oublier que l'interruption arrive <strong>en fin d'opération</strong> E/S (ou à chaque caractère selon le mode).</li>
+  </ul>
+</div>
+<div class="important"><strong>💡 Réflexe :</strong> chaîne d'une impression = application → <strong>SVC</strong> → pilote → bus → <strong>contrôleur</strong> (registres) → signaux électriques → périphérique. La progression historique : attente active → interruptions → DMA.</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — LOIS USUELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Lois de probabilité usuelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"><meta property="og:title" content="Leçon 4 — LOIS USUELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Lois de probabilité usuelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — LOIS USUELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Lois de probabilité usuelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Combinatoire_et_probabilite","item":"https://resumeci.me/#Licence_1_Miage/Combinatoire_et_probabilite"},{"@type":"ListItem","position":4,"name":"Leçon 4 — LOIS USUELLES","item":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — LOIS USUELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI","description":"Leçon 4 — Lois de probabilité usuelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫","url":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon4_LOIS_USUELLES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Combinatoire_et_probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Combinatoire et Probabilités</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 4 : Lois de probabilité usuelles</span>
+  </div>
+</div>
+
+<h2>I. Lois discrètes — tableau de synthèse</h2>
+<table>
+  <tr><th>Loi / Notation</th><th>Situation modélisée</th><th>P(X = k)</th><th>E(X) / V(X)</th></tr>
+  <tr><td><strong>Bernoulli B(1,p)</strong></td><td>Épreuve à 2 issues (succès/échec), X = 1 si succès</td><td>P(1) = p, P(0) = 1−p</td><td>p / p(1−p)</td></tr>
+  <tr><td><strong>Binomiale B(n,p)</strong></td><td>n répétitions <strong>indépendantes</strong>, X = nombre de succès</td><td>C<sup>k</sup><sub>n</sub>p<sup>k</sup>(1−p)<sup>n−k</sup>, k = 0…n</td><td>np / np(1−p)</td></tr>
+  <tr><td><strong>Hypergéométrique H(N, Np, n)</strong></td><td>n tirages <strong>sans remise</strong> parmi N objets dont Np de type A</td><td>C<sup>k</sup><sub>Np</sub>·C<sup>n−k</sup><sub>Nq</sub> / C<sup>n</sup><sub>N</sub></td><td>np / npq·(N−n)/(N−1)</td></tr>
+  <tr><td><strong>Géométrique G(p)</strong></td><td>Répétitions jusqu'au <strong>1er succès</strong>, X = n° du premier succès</td><td>p(1−p)<sup>k−1</sup>, k ∈ ℕ*</td><td>1/p / (1−p)/p²</td></tr>
+  <tr><td><strong>Binomiale négative BN(r,p)</strong></td><td>Nombre d'épreuves jusqu'au <strong>r-ième</strong> succès</td><td>C<sup>r−1</sup><sub>k−1</sub>p<sup>r</sup>(1−p)<sup>k−r</sup>, k ≥ r</td><td>r/p / r(1−p)/p²</td></tr>
+  <tr><td><strong>Poisson P(λ)</strong></td><td>Événements <strong>rares</strong> : files d'attente, sinistres, absences (λ = nb moyen)</td><td>λ<sup>k</sup>e<sup>−λ</sup>/k!, k ∈ ℕ</td><td>λ / λ</td></tr>
+  <tr><td><strong>Uniforme U{1,…,n}</strong></td><td>Équiprobabilité sur n valeurs (dé équilibré)</td><td>1/n</td><td>(n+1)/2 / (n²−1)/12</td></tr>
+</table>
+<div class="important"><strong>Stabilité par somme (variables indépendantes) :</strong> ΣB(1,p) → B(n,p) ; ΣG(p) (r termes) → BN(r,p) ; ΣP(λ<sub>i</sub>) → P(Σλ<sub>i</sub>).<br>
+<strong>Sans mémoire :</strong> la loi géométrique est la <strong>seule</strong> loi discrète vérifiant P(X &gt; n+k | X &gt; n) = P(X &gt; k).</div>
+
+<h2>II. Lois continues — tableau de synthèse</h2>
+<table>
+  <tr><th>Loi / Notation</th><th>Densité f(x)</th><th>E(X) / V(X)</th><th>Usage</th></tr>
+  <tr><td><strong>Uniforme U[a,b]</strong></td><td>1/(b−a) sur [a,b]</td><td>(a+b)/2 / (b−a)²/12</td><td>Tirage au hasard dans un intervalle, simulations</td></tr>
+  <tr><td><strong>Exponentielle ξ(θ)</strong></td><td>θe<sup>−θx</sup>, x &gt; 0</td><td>1/θ / 1/θ²</td><td>Durées de vie, temps entre deux arrivées (sans mémoire, liée à Poisson)</td></tr>
+  <tr><td><strong>Gamma γ(a,ρ)</strong></td><td>ρ<sup>a</sup>/Γ(a) · e<sup>−ρx</sup>x<sup>a−1</sup>, x &gt; 0</td><td>a/ρ / a/ρ²</td><td>Durées de vie, asymétries ; γ(1,ρ) = ξ(ρ) ; somme de n γ(1,ρ) → γ(n,ρ)</td></tr>
+  <tr><td><strong>Normale N(m,σ²)</strong></td><td>(1/√(2π)σ)·e<sup>−(x−m)²/2σ²</sup></td><td>m / σ²</td><td>Erreurs, fluctuations ; apparaît dans le TCL</td></tr>
+  <tr><td><strong>Cauchy C(m,α)</strong></td><td>α/[π(α²+(x−m)²)]</td><td><strong>aucun moment</strong> !</td><td>Contre-exemple classique</td></tr>
+</table>
+<div class="definition"><strong>Fonction Gamma :</strong> Γ(a) = ∫₀<sup>∞</sup>e<sup>−x</sup>x<sup>a−1</sup>dx ; Γ(a+1) = aΓ(a) ; <strong>Γ(n+1) = n!</strong> ; Γ(1/2) = √π. Sert à calculer les moments des lois γ et ξ : E(Xᵏ) = k!/θᵏ pour ξ(θ).</div>
+
+<h2>III. La loi normale centrée réduite — méthode de la table</h2>
+<div class="schema"><strong>Standardisation :</strong> si X ~ N(m,σ²) alors <strong>T = (X−m)/σ ~ N(0,1)</strong>.<br>
+On utilise la fonction de répartition Π(t) = P(T ≤ t) (table fournie aux examens) :<br>
+• Π(−∞) = 0, Π(+∞) = 1, Π(0) = 0,5 ; <strong>Π(−t) = 1 − Π(t)</strong><br>
+• P(a ≤ X ≤ b) = Π((b−m)/σ) − Π((a−m)/σ)<br>
+• P(|T| ≤ t) = 2Π(t) − 1 ; P(|T| ≥ t) = 2(1 − Π(t))</div>
+<div class="important"><strong>Intégrales gaussiennes à retenir :</strong> ∫<sub>ℝ</sub>e<sup>−αx²</sup>dx = √(π/α) ; ∫<sub>ℝ</sub>e<sup>−αx²+βx</sup>dx = e<sup>β²/4α</sup>√(π/α).</div>
+
+<h2>IV. Comment choisir la loi ?</h2>
+<div class="schema">
+<strong>2 issues, 1 essai</strong> → Bernoulli · <strong>n essais indépendants, on compte les succès</strong> → Binomiale · <strong>tirages SANS remise</strong> → Hypergéométrique · <strong>attente du 1er succès</strong> → Géométrique · <strong>attente du r-ième</strong> → BN · <strong>événements rares / flux par unité de temps</strong> → Poisson · <strong>équiprobabilité</strong> → Uniforme · <strong>durée de vie, sans mémoire</strong> → Exponentielle · <strong>somme d'exponentielles</strong> → Gamma · <strong>bruit, erreurs, moyennes</strong> → Normale.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><strong>Avec remise → Binomiale ; sans remise → Hypergéométrique.</strong> C'est LE piège n°1 : relire l'énoncé.</li>
+    <li>Géométrique : P(X=k) = p(1−p)<sup>k−1</sup>, exposant <strong>k−1</strong> (k−1 échecs puis 1 succès), pas k.</li>
+    <li>Ne pas oublier C<sup>k</sup><sub>n</sub> dans la binomiale : p<sup>k</sup>(1−p)<sup>n−k</sup> seul = proba d'UNE séquence précise.</li>
+    <li>Poisson : E = V = λ — si l'énoncé donne « en moyenne 3 clients/heure », λ = 3.</li>
+    <li>Loi exponentielle : « sans mémoire » ⇒ P(X &gt; t+s | X &gt; t) = P(X &gt; s) — ne pas recalculer F.</li>
+    <li>Normale : <strong>toujours centrer-réduire</strong> avant d'utiliser la table ; Π(−t) = 1 − Π(t).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

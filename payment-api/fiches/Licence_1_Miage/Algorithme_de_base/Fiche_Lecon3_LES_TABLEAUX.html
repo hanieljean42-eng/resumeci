@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — LES TABLEAUX — Algorithme_de_base Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Les tableaux — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1 Leçon "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"><meta property="og:title" content="Leçon 3 — LES TABLEAUX — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Les tableaux — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1 Leçon "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — LES TABLEAUX — Algorithme_de_base Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Les tableaux — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1 Leçon "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_de_base","item":"https://resumeci.me/#Licence_1_Miage/Algorithme_de_base"},{"@type":"ListItem","position":4,"name":"Leçon 3 — LES TABLEAUX","item":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — LES TABLEAUX — Algorithme_de_base Licence 1_Miage | ResumeCI","description":"Leçon 3 — Les tableaux — Algorithme de base Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme de base 🏫 Licence 1 MIAGE — Semestre 1 Leçon ","url":"https://resumeci.me/fiches/Licence_1_Miage/Algorithme_de_base/Fiche_Lecon3_LES_TABLEAUX.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Algorithme_de_base","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme de base</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 3 : Les tableaux</span>
+  </div>
+</div>
+
+<h2>I. Définition</h2>
+<div class="definition"><strong>Tableau :</strong> regroupement de <strong>variables de même type</strong> identifié par un nom. Chaque variable du tableau (appelée <strong>élément</strong>) est repérée par un numéro : l'<strong>indice</strong>. Un élément est donc caractérisé par <strong>nom du tableau + indice</strong>.</div>
+<ul>
+  <li>Par opposition : une variable qui n'est pas un tableau est une <strong>variable scalaire</strong>.</li>
+  <li>Structure <strong>statique</strong> : après déclaration, le tableau <strong>ne peut plus être redimensionné</strong> pendant l'exécution.</li>
+  <li>Convention possible : première case numérotée <strong>1</strong> (ou 0 selon les conventions) ; le numéro de la dernière case doit être supérieur à celui de la première.</li>
+</ul>
+
+<h2>II. Déclaration et accès</h2>
+<div class="schema">
+Syntaxes équivalentes :<br>
+<code>numérique : T[4]</code> — tableau T de 4 cases numériques<br>
+<code>Tableau Notes[9] : Numérique</code><br>
+<code>v : TABLEAU[ENTIER][1,30]</code> — cases numérotées de 1 à 30<br>
+<code>v : TABLEAU[1..30] d'ENTIER</code> (style Pascal)
+</div>
+<ul>
+  <li>L'accès se fait par <code>T[i]</code> : l'élément d'indice i du tableau T.</li>
+  <li>Un tableau de 10 éléments a des indices de 1 à 10 (ou 0 à 9 selon la convention).</li>
+</ul>
+
+<h2>III. Traitements classiques (boucle Pour)</h2>
+<div class="schema">
+Initialiser à zéro :<br>
+<code>Pour i ← 0 à 6 Faire Truc[i] ← 0 FinPour</code><br><br>
+Saisie utilisateur :<br>
+<code>Pour i ← 0 à 8 Faire Ecrire "Entrez la note n°", i+1 ; Lire Notes[i] FinPour</code><br><br>
+Moyenne :<br>
+<code>s ← 0 ; Pour i ← 0 à 8 Faire s ← s + Notes[i] FinPour ; Ecrire s/9</code>
+</div>
+<p>Exemples typiques produits par les exercices :</p>
+<ul>
+  <li><code>Nb[i] ← i*i</code> → tableau des carrés : 0, 1, 4, 9, 16, 25.</li>
+  <li><code>N[k] ← N[k-1] + 2</code> avec N[0]=1 → suite arithmétique : 1, 3, 5, 7, 9, 11, 13.</li>
+  <li><code>Suite[i] ← Suite[i-1] + Suite[i-2]</code> avec 1, 1 au départ → <strong>Fibonacci</strong> : 1, 1, 2, 3, 5, 8, 13, 21.</li>
+</ul>
+
+<h2>IV. Tableaux multidimensionnels</h2>
+<div class="definition"><strong>Tableau à N dimensions :</strong> structure contenant des éléments de même type où chaque élément est repéré par <strong>N indices</strong>.</div>
+<div class="schema">
+Matrice 3 lignes × 5 colonnes :<br>
+<code>m : TABLEAU[ENTIER][1,3][1,5]</code> ou <code>m : MATRICE[ENTIER][1,3][1,5]</code><br>
+Accès : <code>m[i,j]</code> = élément de la ligne i, colonne j.<br>
+Autre ex. : <code>Note[1..30, 1..8] : Réel</code>
+</div>
+<ul>
+  <li>Une matrice = tableau de tableaux : <code>TABLEAU[1,3][1,5]</code> = 3 tableaux de 5 composantes.</li>
+  <li>On peut déclarer un tableau de matrices, une matrice de matrices…</li>
+</ul>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Déclarer un tableau sans préciser <strong>le type</strong> et <strong>le nombre de cases</strong> — les deux sont obligatoires.</li>
+    <li>Confondre l'indice de départ (0 ou 1 selon la convention) — vérifier la déclaration avant de dérouler une boucle.</li>
+    <li>Essayer de redimensionner un tableau en cours d'exécution : structure <strong>statique</strong>, interdit.</li>
+    <li>Mélanger les types : un tableau ne contient que des données <strong>homogènes</strong>.</li>
+    <li>Erreur de borne : dans <code>Pour i ← 0 à 5</code>, i prend <strong>6 valeurs</strong> (0 incluse).</li>
+  </ul>
+</div>
+<div class="important"><strong>💡 Réflexe :</strong> pour lire un algorithme à tableau, déroule les 2-3 premières itérations à la main — la loi de remplissage apparaît immédiatement (carrés, Fibonacci, suite arithmétique…).</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

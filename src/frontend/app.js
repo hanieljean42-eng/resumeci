@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -115,6 +115,7 @@ window.watchPendingPayment = function(reference, tier) {
     if (elapsed > 15 * 60 * 1000) return stop();
     timer = setTimeout(check, elapsed < 90000 ? 3000 : 10000);
   };
+  let pollCount = 0;
   const check = async () => {
     if (busy) return;
     busy = true;
@@ -131,6 +132,19 @@ window.watchPendingPayment = function(reference, tier) {
           return;
         }
         if (d && PAY_FAILED_STATUSES.includes(d.status)) { stop(); window.clearPendingPaymentRef(); return; }
+        // Toujours en attente chez l'opérateur : resynchroniser quand même le
+        // profil périodiquement — un Pass peut avoir été activé par l'admin ou
+        // par le webhook sur un autre canal pendant l'attente.
+        if (++pollCount % 4 === 0 && typeof window.syncUserProfileFromRemote === 'function') {
+          const sub = await window.syncUserProfileFromRemote().then(() =>
+            window.hasActiveSubscription ? window.hasActiveSubscription() : null
+          ).catch(() => null);
+          if (sub) {
+            stop();
+            showSubscriptionSuccessModal(sub.tier, sub.expiresAt);
+            return;
+          }
+        }
       } else if (typeof window.syncUserProfileFromRemote === 'function') {
         const before = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
         await window.syncUserProfileFromRemote();

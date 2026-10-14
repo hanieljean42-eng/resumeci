@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — INTRODUCTION AU CSS — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Introduction au langage CSS — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la programmati"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"><meta property="og:title" content="Leçon 1 — INTRODUCTION AU CSS — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Introduction au langage CSS — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la programmati"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — INTRODUCTION AU CSS — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Introduction au langage CSS — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la programmati"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Initiation_a_la_programmation_web","item":"https://resumeci.me/#Licence_1_Miage/Initiation_a_la_programmation_web"},{"@type":"ListItem","position":4,"name":"Leçon 1 — INTRODUCTION AU CSS","item":"https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — INTRODUCTION AU CSS — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI","description":"Leçon 1 — Introduction au langage CSS — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la programmati","url":"https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon1_INTRODUCTION_AU_CSS.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Initiation_a_la_programmation_web","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Initiation à la programmation web</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 1 : Introduction au langage CSS</span>
+  </div>
+</div>
+
+<h2>I. Qu'est-ce que le CSS ?</h2>
+<div class="definition"><strong>CSS (Cascading Style Sheets) :</strong> langage de <strong>feuilles de style</strong> servant à <strong>présenter</strong> les informations d'une page web : couleurs, tailles, bordures, positions des éléments HTML. Ce n'est <strong>pas un langage de programmation</strong> (comme HTML) ; il peut être étendu par des préprocesseurs (Sass, Less : variables, imbrication).</div>
+<div class="schema"><strong>Un site web = 3 couches :</strong><br>
+• <strong>Contenu structuré</strong> → HTML5 (paragraphes, tableaux, sections, articles)<br>
+• <strong>Présentation</strong> → CSS (design + layout : comment afficher et positionner les éléments)<br>
+• <strong>Comportement</strong> → JavaScript (interactions)<br>
+<strong>Principe fondateur :</strong> séparer le contenu de la présentation — un même document HTML peut être affiché avec des feuilles de style totalement différentes.</div>
+<div class="important"><strong>Repères historiques :</strong> HTML 1.0 (1989) → CSS1 : 1ʳᵉ recommandation W3C (1996) → CSS2/CSS2.1 (1998-2002) → HTML5 + CSS3 (2012 : animations, effets textuels, transformations 2D/3D). Plus de 500 propriétés recensées — le cours vise les principes essentiels, pas l'exhaustivité.</div>
+
+<h2>II. Les 3 façons d'intégrer du CSS</h2>
+<table>
+  <tr><th>Méthode</th><th>Syntaxe</th><th>Avantages / limites</th></tr>
+  <tr><td><strong>1. Inline</strong></td><td>Attribut <code>style</code> dans la balise : <code>&lt;p style="color:red"&gt;</code></td><td>⚠️ Mélange structure et présentation, ne s'applique qu'à une balise → <strong>à éviter</strong></td></tr>
+  <tr><td><strong>2. Interne</strong></td><td>Balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code> du document</td><td>Styles regroupés en un seul endroit ; mais utilisables <strong>uniquement dans ce document</strong></td></tr>
+  <tr><td><strong>3. Externe</strong> ✅</td><td>Fichier <code>.css</code> lié par <code>&lt;link rel="stylesheet" href="./css/styles.css"&gt;</code> dans le <code>&lt;head&gt;</code></td><td><strong>Vraie séparation</strong> contenu/présentation ; styles <strong>partageables</strong> entre plusieurs pages ; plusieurs feuilles combinables</td></tr>
+</table>
+<div class="schema"><strong>Attributs de &lt;link&gt; :</strong> <code>rel="stylesheet"</code> (relation), <code>href</code> (chemin — <strong>toujours relatif</strong> pour les ressources du site, ne commence jamais par « / » : <code>./css/styles.css</code>), <code>type="text/css"</code> (souvent implicite), <code>media</code> (screen, print, all…), <code>integrity</code>/<code>crossorigin</code> (ressources externes : vérification SRI + CORS).<br>
+<strong>@import :</strong> alternative dans le CSS (<code>@import url(autre.css) screen;</code>) mais <strong>chargement plus lent</strong> → préférer &lt;link&gt;.</div>
+
+<h2>III. Syntaxe d'une règle CSS</h2>
+<div class="schema"><strong>Structure générale :</strong><br>
+<code>sélecteur { propriété : valeur ; propriété : valeur ; }</code><br><br>
+• <strong>sélecteur</strong> : désigne les éléments HTML concernés par la règle<br>
+• <strong>propriété</strong> : indique au navigateur <em>quoi</em> modifier (color, font-size…)<br>
+• <strong>valeur</strong> : indique <em>comment</em> modifier (red, 14px…)<br>
+• <code>:</code> sépare propriété et valeur ; <code>;</code> termine chaque déclaration ; <code>{ }</code> encadrent le bloc de déclarations.<br>
+<strong>Ex. :</strong> <code>h1 { background-color: yellow ; color: navy ; }</code></div>
+<div class="important"><strong>Bonnes pratiques :</strong> commentaires = <code>/* texte ignoré par le navigateur */</code> ; nommer les classes selon la <strong>sémantique</strong> et non la présentation (<code>.alerte</code>, <code>.resume</code> plutôt que <code>.rougeSurJaune</code>) ; fixer margin/padding dans le CSS pour un rendu indépendant du navigateur ; un élément peut porter <strong>plusieurs classes</strong> (<code>class="alerte surligne"</code>).</div>
+<div class="definition"><strong>Unités de mesure :</strong> px (pixel), pt (point, 1/72"), em (hauteur de la police courante), ex (hauteur du « x »), % , cm, mm, in. <strong>Règles :</strong> unité <strong>collée</strong> au chiffre (<code>12px</code>), séparateur décimal = le <strong>point</strong> (<code>0.5em</code>, pas de virgule !). Valeurs relatives (em, %) calculées par rapport à l'élément parent.</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>CSS ≠ langage de programmation : c'est un langage de <strong>description de présentation</strong>.</li>
+    <li>La méthode recommandée = feuille <strong>externe</strong> via &lt;link&gt;; le style inline est à proscrire.</li>
+    <li>Chemin relatif : <code>./css/styles.css</code> — ne commence <strong>jamais</strong> par « / ».</li>
+    <li>Oublier le <code>;</code> entre deux déclarations → la règle entière peut être ignorée.</li>
+    <li>HTML fait le <strong>contenu</strong>, CSS la <strong>présentation</strong>, JS le <strong>comportement</strong> — ne pas inverser les rôles.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

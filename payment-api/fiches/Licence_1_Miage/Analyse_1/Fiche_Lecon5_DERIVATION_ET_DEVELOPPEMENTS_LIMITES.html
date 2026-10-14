@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES — Analyse_1 Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — Dérivation et développements limités — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — Semestre 1 "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"><meta property="og:title" content="Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES — Analyse_1 Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — Dérivation et développements limités — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — Semestre 1 "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES — Analyse_1 Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Dérivation et développements limités — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — Semestre 1 "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_1","item":"https://resumeci.me/#Licence_1_Miage/Analyse_1"},{"@type":"ListItem","position":4,"name":"Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — DERIVATION ET DEVELOPPEMENTS LIMITES — Analyse_1 Licence 1_Miage | ResumeCI","description":"Leçon 5 — Dérivation et développements limités — Analyse 1 Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse 1 🏫 Licence 1 MIAGE — Semestre 1 ","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_1/Fiche_Lecon5_DERIVATION_ET_DEVELOPPEMENTS_LIMITES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_1","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse 1</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 1</span>
+    <span>Leçon 5 : Fonctions dérivables et développements limités</span>
+  </div>
+</div>
+
+<h2>I. Dérivabilité</h2>
+<div class="definition"><strong>Dérivée en x₀ :</strong> f′(x₀) = lim_{x→x₀} (f(x) − f(x₀))/(x − x₀) = lim_{h→0} (f(x₀+h) − f(x₀))/h, lorsque la limite existe. Dérivées à gauche/à droite : f dérivable en x₀ ⇔ dérivée gauche = dérivée droite. <strong>Interprétation :</strong> pente de la tangente : y − f(x₀) = f′(x₀)(x − x₀). Si le taux → ±∞ : tangente verticale (pas dérivable).</div>
+<ul>
+  <li>Dérivée d'ordre n : f⁽ⁿ⁾ = (f⁽ⁿ⁻¹⁾)′. <strong>Classe Cⁿ</strong> : f⁽ⁿ⁾ existe et est continue. C∞ : indéfiniment dérivable.</li>
+  <li><strong>Dérivable ⇒ continue</strong>, mais la réciproque est <strong>fausse</strong> : |x| est continue mais non dérivable en 0 (dérivée gauche −1 ≠ droite +1).</li>
+</ul>
+<div class="schema"><strong>Opérations :</strong> (f+g)′ = f′+g′ ; (fg)′ = f′g + fg′ ; (f/g)′ = (f′g − fg′)/g² ; (g∘f)′(x₀) = g′(f(x₀))·f′(x₀). <strong>Fonction réciproque :</strong> si f continue strictement monotone, dérivable en x₀ avec f′(x₀) ≠ 0 : (f⁻¹)′(f(x₀)) = 1/f′(x₀). <strong>Leibniz :</strong> (fg)⁽ⁿ⁾ = Σₖ₌₀ⁿ (n,k)·f⁽ᵏ⁾g⁽ⁿ⁻ᵏ⁾.</div>
+
+<h2>II. Variations, extremums, grands théorèmes</h2>
+<ul>
+  <li><strong>Monotonie :</strong> f′ ≥ 0 ⇔ croissante ; f′ &gt; 0 ⇒ strictement croissante ; f′ = 0 ⇔ constante (sur un intervalle). f′ peut s'annuler en des points <strong>isolés</strong> sans perdre la stricte monotonie.</li>
+  <li><strong>Extremum local :</strong> condition <strong>nécessaire</strong> : f dérivable en x₀ et extremum en x₀ ⇒ f′(x₀) = 0. Condition <strong>suffisante</strong> : f′(x₀) = 0 et f″(x₀) ≠ 0 ⇒ extremum (max si f″ &lt; 0, min si f″ &gt; 0). Si f″ = 0, regarder les dérivées suivantes.</li>
+</ul>
+<div class="important"><strong>Théorème de Rolle :</strong> f continue sur [a,b], dérivable sur ]a,b[, f(a) = f(b) ⇒ ∃c ∈ ]a,b[ : f′(c) = 0. <strong>Égalité des accroissements finis :</strong> ∃c : f(b) − f(a) = (b−a)f′(c). <strong>Inégalité :</strong> si m ≤ f′ ≤ M alors m(b−a) ≤ f(b)−f(a) ≤ M(b−a) ; en particulier |f′| ≤ M ⇒ |f(b)−f(a)| ≤ M(b−a).</div>
+<div class="important"><strong>Règle de l'Hospital :</strong> pour les FI 0/0 ou ∞/∞, si f′/g′ a une limite l en α alors lim f/g = lim f′/g′ = l. Ex. : lim(x→1) (x−1)/(x²+x−2) = 1/3 ; lim(x→0) sin x/x = 1 ; lim(x→+∞) x²e⁻ˣ = 0 (par applications successives).</div>
+
+<h2>III. Fonctions convexes et fonctions usuelles</h2>
+<ul>
+  <li><strong>Convexe :</strong> f(λx + (1−λ)y) ≤ λf(x) + (1−λ)f(y) — graphe <strong>sous</strong> ses cordes. f concave ⇔ −f convexe. f dérivable convexe ⇔ f′ croissante ⇔ f″ ≥ 0 ; graphe <strong>au-dessus</strong> de ses tangentes. Ex. : exp convexe, ln concave.</li>
+  <li><strong>Puissances :</strong> xᵃ = exp(a ln x) sur R₊* ; (xᵃ)′ = axᵃ⁻¹ ; croissante si a &gt; 0 ; convexe si a &gt; 1 ou a &lt; 0.</li>
+  <li><strong>Circulaires réciproques :</strong> arcsin : [−1,1] → [−π/2, π/2], (arcsin)′ = 1/√(1−x²) ; arccos : [−1,1] → [0,π], (arccos)′ = −1/√(1−x²) ; arctan : R → ]−π/2, π/2[, (arctan)′ = 1/(1+x²), et arctan x + arctan(1/x) = (π/2)·signe(x).</li>
+  <li><strong>Hyperboliques :</strong> sinh x = (eˣ−e⁻ˣ)/2, cosh x = (eˣ+e⁻ˣ)/2 ; sinh′ = cosh, cosh′ = sinh ; cosh²−sinh² = 1 ; tanh′ = 1 − tanh². Réciproques : argsh′ = 1/√(1+x²), argch′ = 1/√(x²−1), argth′ = 1/(1−x²) ; expressions log : argsh x = ln(x+√(1+x²)), argth x = ½ln((1+x)/(1−x)).</li>
+</ul>
+
+<h2>IV. Formules de Taylor</h2>
+<div class="schema">Soit f de classe C^{n+1} sur I, x₀ ∈ I : <strong>f(x) = f(x₀) + (x−x₀)f′(x₀) + (x−x₀)²/2!·f″(x₀) + … + (x−x₀)ⁿ/n!·f⁽ⁿ⁾(x₀) + reste</strong>.<br>
+— <strong>Taylor-Young</strong> : reste = (x−x₀)ⁿε(x) avec ε(x) → 0 (locale, base des DL).<br>
+— <strong>Taylor-Lagrange</strong> : reste = f⁽ⁿ⁺¹⁾(c)/(n+1)!·(x−a)ⁿ⁺¹ pour un c entre a et x (borne globale).<br>
+— <strong>Taylor-Mac Laurin</strong> : x₀ = 0, reste avec θx, θ ∈ ]0,1[.</div>
+
+<h2>V. Développements limités (DL)</h2>
+<div class="definition"><strong>DL d'ordre n en x₀ :</strong> f(x) = F(x) + (x−x₀)ⁿh(x) avec h → 0, où F(x) = Σaₖ(x−x₀)ᵏ est la <strong>partie régulière</strong> et (x−x₀)ⁿh(x) = o((x−x₀)ⁿ) le <strong>reste</strong>. Le DL est <strong>unique</strong> ; se ramener à 0 par h = x − a (en ±∞ : u = 1/x). f continue en 0 avec DL d'ordre 1 ⇒ dérivable en 0. f paire ⇒ coefficients impairs nuls ; f impaire ⇒ pairs nuls.</div>
+<div class="schema"><strong>DL usuels en 0 :</strong><br>
+eˣ = 1 + x + x²/2! + … + xⁿ/n! + o(xⁿ)<br>
+sin x = x − x³/3! + x⁵/5! + … + (−1)ⁿx²ⁿ⁺¹/(2n+1)! + o(x²ⁿ⁺²)<br>
+cos x = 1 − x²/2! + x⁴/4! + … + (−1)ⁿx²ⁿ/(2n)! + o(x²ⁿ⁺¹)<br>
+ln(1+x) = x − x²/2 + x³/3 − … + (−1)ⁿ⁺¹xⁿ/n + o(xⁿ)<br>
+arctan x = x − x³/3 + x⁵/5 − … + (−1)ⁿx²ⁿ⁺¹/(2n+1) + o(x²ⁿ⁺²)<br>
+(1+x)ᵅ = 1 + αx + α(α−1)x²/2! + … + o(xⁿ)<br>
+1/(1+x) = 1 − x + x² − … + (−1)ⁿxⁿ + o(xⁿ) ; 1/(1−x) = 1 + x + x² + … + xⁿ + o(xⁿ) ; √(1+x) = 1 + x/2 − x²/8 + x³/16 + o(x³)</div>
+<ul>
+  <li><strong>Opérations :</strong> combinaison linéaire (λF + μG), produit (tronquer au degré n), composée, quotient (se ramener à un produit par 1/(1−u)), dérivation et primitivation terme à terme.</li>
+  <li><strong>Usages :</strong> recherche d'équivalents, calcul de limites, étude de dérivabilité, branches infinies, position par rapport à la tangente.</li>
+</ul>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>f′(x₀) = 0 n'est que <strong>nécessaire</strong> pour un extremum : vérifier le signe de f″ (f″(0) = 0 ne permet pas de conclure).</li>
+    <li>Dérivable ⇒ continue, mais <strong>pas</strong> l'inverse (|x| en 0).</li>
+    <li>Hospital exige une FI 0/0 ou ∞/∞ — réduire d'abord les autres formes (∞−∞, 0×∞).</li>
+    <li>Dans un produit de DL, <strong>tronquer</strong> les termes de degré &gt; n — ne pas garder x⁵ dans un DL d'ordre 4.</li>
+    <li>DL en a ≠ 0 : faire h = x − a <strong>avant</strong> d'appliquer les DL usuels.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

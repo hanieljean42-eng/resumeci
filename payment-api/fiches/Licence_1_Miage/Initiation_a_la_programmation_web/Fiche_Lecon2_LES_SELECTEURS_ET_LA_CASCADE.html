@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — LES SELECTEURS ET LA CASCADE — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Sélecteurs, héritage et cascade — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la program"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"><meta property="og:title" content="Leçon 2 — LES SELECTEURS ET LA CASCADE — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Sélecteurs, héritage et cascade — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la program"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — LES SELECTEURS ET LA CASCADE — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Sélecteurs, héritage et cascade — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la program"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Initiation_a_la_programmation_web","item":"https://resumeci.me/#Licence_1_Miage/Initiation_a_la_programmation_web"},{"@type":"ListItem","position":4,"name":"Leçon 2 — LES SELECTEURS ET LA CASCADE","item":"https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — LES SELECTEURS ET LA CASCADE — Initiation_a_la_programmation_web Licence 1_Miage | ResumeCI","description":"Leçon 2 — Sélecteurs, héritage et cascade — Initiation à la programmation web Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Initiation à la program","url":"https://resumeci.me/fiches/Licence_1_Miage/Initiation_a_la_programmation_web/Fiche_Lecon2_LES_SELECTEURS_ET_LA_CASCADE.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Initiation_a_la_programmation_web","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Initiation à la programmation web</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 2 : Les sélecteurs et la cascade</span>
+  </div>
+</div>
+
+<h2>I. Les sélecteurs simples</h2>
+<table>
+  <tr><th>Sélecteur</th><th>Syntaxe</th><th>Cible</th></tr>
+  <tr><td><strong>Balise (élément)</strong></td><td><code>p {…}</code></td><td>Tous les éléments de ce type (&lt;p&gt;, &lt;h2&gt;…)</td></tr>
+  <tr><td><strong>Classe</strong></td><td><code>.maClasse {…}</code></td><td>Tout élément portant <code>class="maClasse"</code> — réutilisable sur des balises différentes, plusieurs classes par élément</td></tr>
+  <tr><td><strong>Classe restreinte</strong></td><td><code>h3.renforce {…}</code></td><td>Uniquement les &lt;h3&gt; portant cette classe</td></tr>
+  <tr><td><strong>Identifiant</strong></td><td><code>#resume {…}</code></td><td>L'élément portant <code>id="resume"</code> — <strong>unique</strong> dans le document (sinon → classe)</td></tr>
+  <tr><td><strong>Universel</strong></td><td><code>* {…}</code></td><td>Tous les éléments de la page</td></tr>
+  <tr><td><strong>Groupement</strong></td><td><code>h1, h2, .titre {…}</code></td><td>Une même règle appliquée à plusieurs sélecteurs</td></tr>
+</table>
+
+<h2>II. L'arbre DOM et les sélecteurs combinés</h2>
+<div class="definition">La page forme un <strong>arbre DOM</strong> (Document Object Model) : nœud racine, nœuds, feuilles. Relations : <strong>enfant</strong> (x enfant de y = contenu direct), <strong>descendant</strong> (enfant, ou enfant d'un enfant…), <strong>1ᵉʳ frère suivant</strong> (adjacent), <strong>frère suivant</strong> (même parent, placé après).</div>
+<table>
+  <tr><th>Combinateur</th><th>Syntaxe</th><th>Sélectionne sélecteur2 quand…</th></tr>
+  <tr><td><strong>Espace</strong> (descendant)</td><td><code>nav a {…}</code></td><td>Il <strong>descend</strong> (à n'importe quel niveau) de sélecteur1 → ex. les liens situés dans un &lt;nav&gt;</td></tr>
+  <tr><td><strong>&gt;</strong> (enfant)</td><td><code>div &gt; p {…}</code></td><td>Son <strong>parent direct</strong> est sélecteur1</td></tr>
+  <tr><td><strong>+</strong> (adjacent)</td><td><code>h2 + p {…}</code></td><td>Il est le <strong>1ᵉʳ frère directement précédé</strong> de sélecteur1</td></tr>
+  <tr><td><strong>~</strong> (frères)</td><td><code>h2 ~ p {…}</code></td><td>Un <strong>frère précédent</strong> est sélecteur1 (pas forcément immédiat)</td></tr>
+</table>
+<div class="schema"><strong>Intérêt :</strong> cibler par la position dans l'arborescence <strong>sans ajouter de classes</strong> partout — plus léger et moins source d'erreurs. Combinaisons chaînées possibles : <code>s1 s2 … sn</code>.</div>
+
+<h2>III. Pseudo-classes, pseudo-éléments et attributs</h2>
+<div class="definition"><strong>Pseudo-classes</strong> (<code>sélecteur:pseudoClasse</code>) : sélectionnent selon l'<strong>état</strong> de l'élément.<br>
+• <strong>D'ancres</strong> : <code>:link</code> (non visité), <code>:visited</code> (visité)<br>
+• <strong>Dynamiques</strong> : <code>:hover</code> (survol), <code>:active</code> (clic enfoncé), <code>:focus</code> (focus clavier/champ)<br>
+• <strong>Structurelles</strong> : <code>:first-child</code>, <code>:last-child</code>, <code>:nth-child(n)</code>, <code>:lang(fr)</code><br>
+<strong>Ordre obligatoire pour les liens :</strong> <code>:link → :visited → :hover → :focus → :active</code></div>
+<div class="definition"><strong>Pseudo-éléments</strong> (<code>sélecteur::pseudoElt</code>) : stylent une <strong>partie</strong> de l'élément ou un contenu généré, absent du code source : <code>::first-line</code>, <code>::first-letter</code>, <code>::before</code>, <code>::after</code> (avec <code>content</code>), <code>::selection</code>.</div>
+<div class="schema"><strong>Sélecteurs d'attribut :</strong> <code>p[class]</code> (attribut présent) · <code>p[class="x"]</code> (valeur exacte) · <code>p[class~="x"]</code> (x parmi une liste séparée par des espaces) · <code>a[href^="https"]</code> (commence par) · <code>a[href$=".pdf"]</code> (finit par) · <code>a[href*="mozilla"]</code> (contient) → ex. styliser les liens selon leur destination.</div>
+
+<h2>IV. Propagation et cascade</h2>
+<div class="definition"><strong>Héritage :</strong> certaines propriétés (color, font…) se <strong>propagent d'un élément à ses descendants</strong> — mais pas toutes (ex. <strong>border</strong> ne se propage pas). La valeur <code>inherit</code> force la reprise de la valeur du parent.</div>
+<div class="important"><strong>Règles de la cascade (résolution des conflits, propriété par propriété) :</strong><br>
+① À sélecteur et propriété identiques → <strong>la dernière règle écrase</strong> les précédentes<br>
+② À spécificité égale → la dernière déclarée gagne<br>
+③ Sinon → <strong>le sélecteur le plus spécifique</strong> l'emporte<br>
+<strong>Calcul de spécificité (x1 x2 x3 x4) :</strong> x1 = 1 si style en ligne ou <code>!important</code> ; x2 = nb d'<strong>#id</strong> ; x3 = nb de <strong>classes/attributs/pseudo-classes</strong> ; x4 = nb de <strong>balises</strong>. On compare de gauche à droite.<br>
+<strong>Ordre :</strong> <code>!important</code> / inline &gt; <code>#id</code> (≈100) &gt; <code>.classe</code> (≈10) &gt; balise (≈1). <strong>Ex. :</strong> <code>.alerte.title</code> (20) &gt; <code>h1.title</code> (11) &gt; <code>.title</code> (10) &gt; <code>h1</code> (1). ⚠️ <code>!important</code> supplante tout — <strong>à éviter</strong>.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><code>div &gt; p</code> (parent <strong>direct</strong>) ≠ <code>div p</code> (descendant à tout niveau) — confusion fatale.</li>
+    <li><code>+</code> = frère <strong>immédiatement</strong> après ; <code>~</code> = tous les frères suivants.</li>
+    <li>Pseudo-classe = <strong>1 deux-points</strong> (<code>:hover</code>) ; pseudo-élément = <strong>2 deux-points</strong> (<code>::before</code>).</li>
+    <li>Ordre des pseudo-classes de liens : <strong>LoVe HA</strong> (<code>:link :visited :hover :active</code>) — sinon :hover peut être écrasé.</li>
+    <li>Un <code>id</code> doit être <strong>unique</strong> : besoin de styler plusieurs éléments → classe.</li>
+    <li>border, margin, padding <strong>ne s'héritent pas</strong> ; color et font-family oui.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

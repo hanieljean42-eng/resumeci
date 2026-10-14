@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — VARIABLES ALEATOIRES REELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Variables aléatoires réelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"><meta property="og:title" content="Leçon 3 — VARIABLES ALEATOIRES REELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Variables aléatoires réelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — VARIABLES ALEATOIRES REELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Variables aléatoires réelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Combinatoire_et_probabilite","item":"https://resumeci.me/#Licence_1_Miage/Combinatoire_et_probabilite"},{"@type":"ListItem","position":4,"name":"Leçon 3 — VARIABLES ALEATOIRES REELLES","item":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — VARIABLES ALEATOIRES REELLES — Combinatoire_et_probabilite Licence 1_Miage | ResumeCI","description":"Leçon 3 — Variables aléatoires réelles — Combinatoire et Probabilités Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Combinatoire et Probabilités 🏫","url":"https://resumeci.me/fiches/Licence_1_Miage/Combinatoire_et_probabilite/Fiche_Lecon3_VARIABLES_ALEATOIRES_REELLES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Combinatoire_et_probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Combinatoire et Probabilités</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 3 : Variables aléatoires réelles</span>
+  </div>
+</div>
+
+<h2>I. Définition et types</h2>
+<div class="definition"><strong>Variable aléatoire réelle (v.a.r) X :</strong> application Ω → ℝ qui associe à chaque issue ω un nombre réel X(ω). <strong>Support</strong> X(Ω) = S<sub>X</sub> = ensemble des valeurs possibles.<br>
+• <strong>Discrète (v.a.r.d)</strong> : support fini ou dénombrable (ex. nombre de piles sur 3 lancers : {0,1,2,3}).<br>
+• <strong>Continue (v.a.r.c)</strong> : support = intervalle (ex. abscisse d'un point tiré dans un triangle : ]0,1[).<br>
+Définition mesurable : ∀B ∈ 𝔹<sub>ℝ</sub>, X⁻¹(B) ∈ F ; en pratique il suffit que {X ≤ x} ∈ F ∀x.</div>
+<div class="definition"><strong>Loi de X :</strong> P<sub>X</sub>(B) = P(X ∈ B) = P(X⁻¹(B)). Comme l'application P<sub>X</sub> est difficile à expliciter, on la caractérise par des <strong>fonctions</strong>.</div>
+
+<h2>II. Les trois fonctions qui caractérisent une loi</h2>
+<table>
+  <tr><th>Fonction</th><th>Définition</th><th>Propriétés clés</th></tr>
+  <tr><td><strong>Fonction de répartition</strong> F<sub>X</sub></td><td>F<sub>X</sub>(x) = P(X ≤ x)</td><td>0 ≤ F ≤ 1 ; F(−∞) = 0, F(+∞) = 1 ; <strong>croissante</strong> (au sens large) ; <strong>continue à droite</strong> ; en escalier si X discrète, continue si X continue</td></tr>
+  <tr><td><strong>Fonction de masse</strong> p<sub>X</sub> (cas discret)</td><td>p<sub>X</sub>(x) = P(X = x) — = le « saut » de F en x</td><td>p<sub>X</sub> ≥ 0, Σ<sub>x∈S</sub>p<sub>X</sub>(x) = 1 ; nulle hors du support ; pour une v.a.c : P(X=x) = 0 ∀x</td></tr>
+  <tr><td><strong>Fonction de densité</strong> f<sub>X</sub> (cas continu)</td><td>P(X∈B) = ∫<sub>B</sub> f<sub>X</sub>(t)dt ; P(a≤X≤b) = ∫<sub>a</sub><sup>b</sup> f</td><td>f ≥ 0 ; continue par morceaux ; <strong>∫<sub>ℝ</sub>f = 1</strong> ; F′<sub>X</sub> = f<sub>X</sub> aux points de continuité</td></tr>
+</table>
+<div class="schema"><strong>Lecture de F :</strong> P(a &lt; X ≤ b) = F(b) − F(a) ; pour les autres combinaisons de bornes, ajuster avec les limites à gauche de F.<br>
+<strong>V.a.r.d :</strong> F en escalier avec sauts aux points x<sub>i</sub> ; on retrouve la loi : P(X = x<sub>i</sub>) = F(x<sub>i</sub>) − F(x<sub>i−1</sub>).<br>
+<strong>V.a.r.c absolument continue :</strong> F(x) = ∫<sub>−∞</sub><sup>x</sup>f(t)dt ; P(a &lt; X ≤ b) = F(b) − F(a) quelles que soient les inégalités strictes/larges (P(X=a)=0).</div>
+
+<h2>III. V.a. discrètes : loi et fonction d'une v.a.</h2>
+<div class="definition"><strong>Déterminer la loi de X discrète :</strong> ① trouver le support {x<sub>i</sub>} ; ② calculer chaque p<sub>i</sub> = P(X = x<sub>i</sub>) ; ③ vérifier Σp<sub>i</sub> = 1. Présentation en tableau pour un support fini. Les {X = x<sub>i</sub>} forment un système complet.</div>
+<div class="important"><strong>Loi de Y = φ(X) :</strong> support S<sub>Y</sub> = φ(S<sub>X</sub>) et p<sub>Y</sub>(y) = Σ<sub>{x : φ(x)=y}</sub> p<sub>X</sub>(x) — <strong>on additionne les probabilités des antécédents</strong>. Cas continu : φ strictement monotone dérivable → f<sub>Y</sub>(y) = f<sub>X</sub>(φ⁻¹(y))·|(φ⁻¹)′(y)| ; sinon passer par F<sub>Y</sub>(y) = P(φ(X) ≤ y).</div>
+
+<h2>IV. Moments : espérance et variance</h2>
+<div class="definition"><strong>Espérance E(X)</strong> = moyenne pondérée : discret → E(X) = Σ<sub>x</sub> x·P(X=x) ; continue → E(X) = ∫ x·f(x)dx (si convergence).<br>
+<strong>Théorème du transfert :</strong> E(g(X)) = Σg(x)p(x) ou ∫g(x)f(x)dx — permet de calculer E(g(X)) sans trouver la loi de g(X) et caractérise même la loi.</div>
+<div class="schema"><strong>Propriétés :</strong> <strong>E(aX+b) = aE(X)+b</strong> (linéarité) ; X ≤ Y ⇒ E(X) ≤ E(Y) ; X,Y indépendantes ⇒ E(XY) = E(X)E(Y).<br>
+<strong>Variance : V(X) = E[(X−E(X))²] = E(X²)−[E(X)]²</strong> ≥ 0 ; V(aX+b) = a²V(X) ; X,Y indépendantes ⇒ V(X+Y) = V(X)+V(Y).<br>
+<strong>Écart-type σ<sub>X</sub> = √V(X)</strong> ; moment d'ordre k : m<sub>k</sub> = E(Xᵏ) ; centré : μ<sub>k</sub> = E[(X−E(X))ᵏ].</div>
+<div class="schema"><strong>Inégalités (à citer aux partiels) :</strong> Markov (X ≥ 0) : P(X ≥ α) ≤ E(X)/α ; Bienaymé-Tchebychev : <strong>P(|X−E(X)| ≥ α) ≤ V(X)/α²</strong>.</div>
+<div class="important"><strong>Fonctions auxiliaires :</strong> caractéristique φ<sub>X</sub>(t) = E(e<sup>itX</sup>) (caractérise la loi ; moments par dérivation en 0) ; génératrice G<sub>X</sub>(s) = E(s<sup>X</sup>) pour X à valeurs dans ℕ (E(X) = G′<sub>X</sub>(1⁻)).</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Vérifier <strong>Σp<sub>i</sub> = 1</strong> ou <strong>∫f = 1</strong> avant tout calcul — c'est souvent l'objet de la question 1 (trouver k ou p).</li>
+    <li>Pour une v.a. continue, P(X = a) = 0 : inégalités strictes ou larges indifférentes ; ce n'est <strong>pas vrai</strong> pour une discrète.</li>
+    <li>V(X) = E(X²) − E(X)² : ne pas oublier le carré sur E(X) ; V(X) ≠ E(X²) en général.</li>
+    <li>F est continue <strong>à droite</strong>, pas nécessairement continue : les sauts = masses de probabilité.</li>
+    <li>Pour E(g(X)), inutile de trouver la loi de g(X) : appliquer le théorème du transfert.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>
