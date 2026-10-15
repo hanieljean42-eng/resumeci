@@ -164,6 +164,31 @@
     .kpi-value { font-size: 36px; font-weight: 900; color: #fff; margin: 4px 0 2px; letter-spacing: -1px; font-family: 'JetBrains Mono', monospace; }
     .kpi-sub { font-size: 12px; color: var(--text-dim); }
 
+    /* Notifications temps réel */
+    #toastStack {
+      position: fixed; bottom: 22px; right: 22px; z-index: 9999;
+      display: flex; flex-direction: column; gap: 10px; max-width: 340px;
+    }
+    .admin-toast {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-left: 4px solid var(--emerald); border-radius: 12px;
+      padding: 13px 16px; box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+      display: flex; gap: 11px; align-items: flex-start;
+      animation: toastIn 0.3s cubic-bezier(.2,.9,.3,1.2); cursor: pointer;
+    }
+    .admin-toast.t-warn { border-left-color: var(--amber); }
+    .admin-toast.t-info { border-left-color: var(--sky); }
+    .admin-toast .t-icon { font-size: 20px; line-height: 1; flex-shrink: 0; }
+    .admin-toast .t-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+    .admin-toast .t-msg { font-size: 12px; color: var(--text-dim); line-height: 1.45; }
+    @keyframes toastIn { from { transform: translateX(60px); opacity: 0; } to { transform: none; opacity: 1; } }
+    .admin-toast.out { transition: opacity .3s, transform .3s; opacity: 0; transform: translateX(40px); }
+
+    .pending-row { display: flex; align-items: center; gap: 13px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+    .pending-row:last-child { border-bottom: none; }
+    .pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 7px; animation: pulse 1.4s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.35); } }
+
     /* Command Center Section */
     .section-card {
       background: var(--surface-2); border: 1px solid var(--border);
@@ -394,6 +419,7 @@
         <button class="btn-top btn-top-ghost" id="btnRefresh" onclick="loadData(true)">
           <i class="fas fa-arrows-rotate"></i> Actualiser
         </button>
+        <span id="lastSyncLabel" style="font-size:11px;color:var(--text-dim);white-space:nowrap;" title="Actualisation automatique toutes les 45 s">—</span>
         <button class="btn-top btn-top-ghost" onclick="exportCSV()">
           <i class="fas fa-file-csv"></i> CSV
         </button>
@@ -432,6 +458,15 @@
           <div class="kpi-value" id="kpiVip" style="color:var(--amber);">—</div>
           <div class="kpi-sub">Étudiants Licence inscrits</div>
         </div>
+      </div>
+
+      <!-- Paiements en attente de confirmation opérateur -->
+      <div class="section-card" id="pendingPayCard" style="display:none;border-color:rgba(251,191,36,0.45);">
+        <div class="section-header">
+          <h2><span class="pulse-dot"></span><i class="fas fa-hourglass-half" style="color:var(--amber);"></i> Paiements en attente</h2>
+          <span style="font-size:12px;color:var(--amber);font-weight:700;" id="pendingPayCount">—</span>
+        </div>
+        <div class="section-body" id="pendingPayBody" style="padding:8px 22px;"></div>
       </div>
 
       <!-- Quick Lookup -->
@@ -488,6 +523,9 @@
 
     </div>
   </div>
+
+  <!-- Notifications temps réel -->
+  <div id="toastStack"></div>
 
   <!-- ========== MODAL: CRÉER UN COMPTE ========== -->
   <div class="modal-overlay" id="createUserModal">
@@ -813,11 +851,15 @@
         } catch(e) { console.warn("Backend API:", e.message); }
 
         fullList = Array.from(userMap.values());
-        fullList.sort((a, b) => toMillis(b.createdAt || b.updatedAt) - toMillis(a.createdAt || a.updatedAt));
+        fullList.sort((a, b) => toMillis(b.updatedAt || b.createdAt) - toMillis(a.updatedAt || a.createdAt));
 
+        detectNewEvents();
         updateKPIs();
+        renderPendingPayments();
         renderPremiumList();
         renderClassList();
+        lastLoadAt = Date.now();
+        updateSyncLabel();
 
       } catch(err) {
         console.error("Erreur loadData:", err);
@@ -827,6 +869,150 @@
         }
       }
     };
+
+    // ========== SYNCHRO AUTO & NOTIFICATIONS ==========
+    const AUTO_REFRESH_MS = 45000;
+    let lastLoadAt = 0;
+    let prevSnapshot = null;
+
+    function userDisplayName(u) {
+      return u.fullName || `${u.firstName || ''} ${u.lastName || ''}`.trim() || '—';
+    }
+
+    function updateSyncLabel() {
+      const el = document.getElementById('lastSyncLabel');
+      if (el && lastLoadAt) {
+        el.innerHTML = `<i class="fas fa-rotate" style="font-size:9px;margin-right:4px;"></i>${new Date(lastLoadAt).toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit',second:'2-digit'})}`;
+      }
+    }
+
+    function playNotifBeep() {
+      try {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        const ctx = playNotifBeep._ctx || (playNotifBeep._ctx = new AC());
+        if (ctx.state === 'suspended') { ctx.resume().catch(() => {}); return; }
+        const t = ctx.currentTime;
+        [880, 1174].forEach((f, i) => {
+          const o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f;
+          const t0 = t + i * 0.13;
+          g.gain.setValueAtTime(0.0001, t0);
+          g.gain.exponentialRampToValueAtTime(0.16, t0 + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.26);
+          o.connect(g).connect(ctx.destination);
+          o.start(t0); o.stop(t0 + 0.3);
+        });
+      } catch(e) {}
+    }
+
+    function adminToast(icon, title, msg, type) {
+      const stack = document.getElementById('toastStack');
+      if (!stack) return;
+      const el = document.createElement('div');
+      el.className = 'admin-toast' + (type ? ' ' + type : '');
+      el.innerHTML = `<div class="t-icon">${icon}</div><div><div class="t-title"></div><div class="t-msg"></div></div>`;
+      el.querySelector('.t-title').textContent = title;
+      el.querySelector('.t-msg').textContent = msg;
+      el.onclick = () => el.remove();
+      stack.prepend(el);
+      while (stack.children.length > 5) stack.lastChild.remove();
+      setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 350); }, 9000);
+      playNotifBeep();
+    }
+
+    // Compare le nouvel état au précédent : nouvelles inscriptions,
+    // paiements initiés (pendingPayment) et activations de Pass.
+    function detectNewEvents() {
+      const snap = new Map();
+      fullList.forEach(u => {
+        const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+        if (!phone) return;
+        const info = userPlanInfo(u);
+        snap.set(phone, {
+          premium: info.active,
+          pendingRef: (u.pendingPayment && u.pendingPayment.reference) ? String(u.pendingPayment.reference) : null,
+          u
+        });
+      });
+      if (prevSnapshot) {
+        snap.forEach((cur, phone) => {
+          const prev = prevSnapshot.get(phone);
+          const name = userDisplayName(cur.u);
+          if (!prev) {
+            const cls = String(cur.u.selectedClass || '').replace(/_/g, ' ') || 'classe non précisée';
+            adminToast('🆕', 'Nouvel inscrit', `${name} — ${cls}`, 't-info');
+          } else {
+            if (cur.pendingRef && cur.pendingRef !== prev.pendingRef) {
+              const planKey = String(cur.u.pendingPayment.tierKey || '').toLowerCase();
+              const meta = PLAN_META[planKey];
+              adminToast('💳', 'Paiement initié', `${name} — ${meta ? meta.label : planKey} · ${cur.u.pendingPayment.reference}`, 't-warn');
+            }
+            if (!prev.premium && cur.premium) {
+              const planKey = String(cur.u.premiumPlan || cur.u.plan || '').toLowerCase();
+              const meta = PLAN_META[planKey];
+              adminToast('👑', 'Pass activé', `${name} — ${meta ? meta.label : planKey}`);
+            }
+          }
+        });
+      }
+      prevSnapshot = snap;
+    }
+
+    function renderPendingPayments() {
+      const card = document.getElementById('pendingPayCard');
+      const body = document.getElementById('pendingPayBody');
+      const label = document.getElementById('pendingPayCount');
+      if (!card || !body) return;
+      const now = Date.now();
+      const pendings = fullList
+        .filter(u => u.pendingPayment && u.pendingPayment.reference)
+        .sort((a, b) => (Number(b.pendingPayment.createdAt) || toMillis(b.pendingPayment.createdAt) || 0)
+                      - (Number(a.pendingPayment.createdAt) || toMillis(a.pendingPayment.createdAt) || 0));
+      if (!pendings.length) { card.style.display = 'none'; return; }
+      card.style.display = 'block';
+      label.textContent = `${pendings.length} en attente`;
+      body.innerHTML = pendings.map(u => {
+        const phone = String(u.whatsapp || u.contact || '').replace(/\D/g, '').slice(-10);
+        const name = userDisplayName(u);
+        const pp = u.pendingPayment;
+        const planKey = String(pp.tierKey || '').toLowerCase();
+        const meta = PLAN_META[planKey] || PLAN_META.free;
+        const at = Number(pp.createdAt) || toMillis(pp.createdAt) || now;
+        const mins = Math.max(0, Math.round((now - at) / 60000));
+        const ago = mins < 1 ? "à l'instant" : mins < 60 ? `il y a ${mins} min` : `il y a ${Math.floor(mins / 60)}h${mins % 60 ? ' ' + (mins % 60) + 'min' : ''}`;
+        const info = userPlanInfo(u);
+        const statusBadge = info.active
+          ? `<span class="pass-badge" style="color:var(--emerald);background:var(--emerald-glow);"><i class="fas fa-check"></i> Déjà débloqué</span>`
+          : `<span class="pass-badge" style="color:var(--amber);background:var(--amber-glow);"><i class="fas fa-clock"></i> Attente opérateur</span>`;
+        const formattedPhone = phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
+        return `<div class="pending-row">
+          <div style="width:38px;height:38px;border-radius:11px;background:var(--amber-glow);color:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;">${escapeHtml(name.charAt(0).toUpperCase())}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:800;font-size:13.5px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(name)}</div>
+            <div style="font-size:11.5px;color:var(--text-dim);margin-top:2px;"><span style="font-family:'JetBrains Mono',monospace;">+225 ${formattedPhone}</span> · ${escapeHtml(String(u.selectedClass || '').replace(/_/g, ' '))}</div>
+            <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Réf. <span style="font-family:'JetBrains Mono',monospace;">${escapeHtml(pp.reference)}</span> · ${ago}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
+            <span class="pass-badge" style="color:${meta.color};background:${meta.bg};"><i class="fas ${meta.icon}"></i> ${escapeHtml(meta.label)}</span>
+            ${statusBadge}
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0;">
+            <button class="mini-btn" style="color:var(--amber);" onclick="openGrantModal('${phone}', '${escapeQuotes(name)}', '${escapeQuotes(planKey || 'pro')}', '${escapeQuotes(u.id || u.uid || '')}')" title="Activer le Pass maintenant"><i class="fas fa-crown"></i></button>
+            <button class="mini-btn" style="color:#25d366;border-color:rgba(37,211,102,0.2);background:rgba(37,211,102,0.08);" onclick="sendCredentialsWhatsApp('${phone}', '${escapeQuotes(name)}', '', '${escapeQuotes(planKey)}')" title="Contacter sur WhatsApp"><i class="fab fa-whatsapp"></i></button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // Actualisation automatique : toutes les 45 s quand l'onglet est visible,
+    // et dès le retour sur l'onglet si la dernière synchro date de +45 s.
+    setInterval(() => {
+      if (document.visibilityState === 'visible' && auth.currentUser) loadData();
+    }, AUTO_REFRESH_MS);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && auth.currentUser && Date.now() - lastLoadAt >= AUTO_REFRESH_MS) loadData();
+    });
 
     // ========== PLANS ==========
     const PLAN_META = {
@@ -850,7 +1036,7 @@
       const daysLeft = active && exp > 0 ? Math.ceil((exp - now) / 86400000) : null;
       return { plan, meta, active, daysLeft, expired: !active && plan !== 'free' };
     }
-    const CLASS_ORDER = ['6eme','5eme','4eme','3eme','Seconde_A','Seconde_C','Premiere_A','Premiere_C','Premiere_D','Terminale_A','Terminale_C','Terminale_D','Licence_1_Droit'];
+    const CLASS_ORDER = ['6eme','5eme','4eme','3eme','Seconde_A','Seconde_C','Premiere_A','Premiere_C','Premiere_D','Terminale_A','Terminale_C','Terminale_D','Licence_1_Droit','Licence_1_Miage'];
 
     function updateKPIs() {
       let total = fullList.length, paid = 0, trial = 0, univ = 0;
