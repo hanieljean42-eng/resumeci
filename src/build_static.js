@@ -25,7 +25,7 @@ const ALLOWED_SUBJECTS = {
   Terminale_D: ['Français', 'Mathématiques', 'SVT', 'Physique - Chimie', 'Philosophie', 'Histoire - Géographie'],
   Terminale_A: ['Français', 'Anglais', 'Allemand', 'Mathématiques', 'Philosophie', 'Histoire - Géographie'],
   Licence_1_Droit: ['Droit_Constitutionnel', 'Droit_des_Obligations', 'Introduction_Etude_Droit', 'Methodologie_Juridique', 'Techniques_Expression_Francaise', 'Histoire_Droit_Institutions', 'Droits_de_l_Homme', 'Relations_Internationales', 'Economie_Politique', 'Droit_de_la_Famille', 'Ethique_Juridique', 'Droit_Anglais', 'Microsoft_Excel'],
-  Licence_1_Miage: ['Algebre_2', 'Analyse_1', 'Algorithme_de_base', 'Architectures_et_technologies_des_ordinateurs', 'Combinatoire_et_probabilite', 'Gestion_de_projet_informatique', 'Initiation_a_l_etude_du_droit', 'Initiation_a_la_programmation_web', 'Initiation_aux_medias_sociaux', 'Macroeconomie', 'Mathematiques_financiere', 'Microeconomie', 'Programmation_en_langage_python', 'Statistiques_descriptive', 'Systeme_d_exploitation', 'Technique_d_expression_ecrite'],
+  Licence_1_Miage: ['Algebre_2', 'Analyse_1', 'Analyse_2', 'Analyse_et_modelisation_des_donnees', 'Algorithme_de_base', 'Architectures_et_technologies_des_ordinateurs', 'Combinatoire_et_probabilite', 'Developpement_personnel', 'Gestion_de_projet_informatique', 'Gestion_financiere', 'Initiation_a_l_etude_du_droit', 'Initiation_a_la_programmation_web', 'Initiation_aux_medias_sociaux', 'Langage_C', 'Macroeconomie', 'Mathematiques_financiere', 'Microeconomie', 'Programmation_en_langage_python', 'Statistiques_descriptive', 'Systeme_d_exploitation', 'Technique_d_expression_ecrite'],
 };
 
 function ensureDir(dir) {

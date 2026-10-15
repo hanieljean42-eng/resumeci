@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — TABLEAUX ET CHAINES DE CARACTERES — Langage_C Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Tableaux et chaînes de caractères — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html"><meta property="og:title" content="Leçon 4 — TABLEAUX ET CHAINES DE CARACTERES — Langage_C Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Tableaux et chaînes de caractères — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — TABLEAUX ET CHAINES DE CARACTERES — Langage_C Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Tableaux et chaînes de caractères — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Langage_C","item":"https://resumeci.me/#Licence_1_Miage/Langage_C"},{"@type":"ListItem","position":4,"name":"Leçon 4 — TABLEAUX ET CHAINES DE CARACTERES","item":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — TABLEAUX ET CHAINES DE CARACTERES — Langage_C Licence 1_Miage | ResumeCI","description":"Leçon 4 — Tableaux et chaînes de caractères — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç","url":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Langage_C","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage C</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 4 : Tableaux et chaînes de caractères</span>
+  </div>
+</div>
+
+<h2>I. Les tableaux de nombres</h2>
+<div class="definition"><strong>Tableau :</strong> équivalent des matrices en mathématiques — ensemble d'éléments de <strong>même type</strong>, caractérisé par sa <strong>taille</strong> et ses <strong>éléments</strong>. Déclaration : <code>type nom[dim];</code> → le compilateur réserve <code>dim</code> places en mémoire.</div>
+<div class="schema"><code>int compteur[10];</code> → 10 entiers (40 octets en C standard) · <code>float nombre[20];</code> → 80 octets. <code>int t[4][5];</code> → tableau 2 dimensions.</div>
+<div class="important"><strong>⚠️ Règles :</strong> <code>dim</code> est nécessairement une <strong>valeur numérique</strong> (jamais une variable). Les indices commencent à <strong>0</strong> : indice maximum = <code>dim-1</code>. Les éléments se repèrent par <code>nom[indice]</code> (lecture <code>printf("%d", t[i])</code>, saisie <code>scanf("%f", &amp;t[i])</code>). Dimensionner « au plus juste » : les tableaux consomment beaucoup de mémoire.</div>
+
+<h3>Initialisation et tableaux multidimensionnels</h3>
+<div class="schema">Initialisation à la déclaration : <code>int liste[10] = {1,2,4,8,…};</code> · <code>float nombre[4] = {2.67,5.98,-8,0.09};</code> · <code>int x[2][3] = {{1,5,7},{8,4,3}};</code> (2 lignes × 3 colonnes).</div>
+<ul>
+  <li>À plusieurs dimensions, on ajoute des indices : <code>nom[i][j]</code>, indices max <code>dim1-1</code> et <code>dim2-1</code>.</li>
+  <li>En mémoire, les éléments sont <strong>contigus</strong> (rangés ligne par ligne).</li>
+</ul>
+
+<h3>Tableaux et pointeurs</h3>
+<div class="important"><strong>Lien fondamental :</strong> déclarer un tableau définit un <strong>pointeur</strong> sur le premier élément. <code>tableau[i]</code> ≡ <code>*(tableau+i)</code> et <code>&amp;tableau[i]</code> ≡ <code>tableau+i</code>. Un tableau à plusieurs dimensions est un <strong>pointeur de pointeur</strong> : <code>t[i]</code> ≡ <code>&amp;t[i][0]</code>. Déclarer un tableau alloue la mémoire ; déclarer un pointeur seul non → <code>malloc</code>.</div>
+
+<h2>II. Les chaînes de caractères</h2>
+<div class="definition"><strong>Chaîne de caractères :</strong> tableau de <code>char</code>. Déclaration : <code>char nom[dim];</code> ou <code>char *nom; nom = (char*)malloc(dim);</code></div>
+<div class="important"><strong>⚠️ Caractère nul :</strong> le compilateur ajoute toujours le caractère <strong><code>'\0'</code></strong> (NUL) à la fin de la chaîne → il réserve <code>dim-1</code> places utiles. Une chaîne de <code>char[10]</code> contient au plus <strong>9 caractères</strong>.</div>
+<ul>
+  <li><strong>Affichage :</strong> <code>printf("%s", chaine)</code> avec le format <code>%s</code>.</li>
+  <li><strong>Saisie :</strong> <code>scanf("%s", chaine)</code> — ⚠️ <strong>pas de <code>&amp;</code></strong> : le nom du tableau est déjà une adresse.</li>
+  <li>Manipulation analogue aux tableaux à une dimension : <code>chaine[i]</code> ≡ <code>*(chaine+i)</code>.</li>
+</ul>
+
+<h2>III. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Indices de <strong>0 à dim-1</strong> : <code>t[10]</code> sur un tableau déclaré <code>t[10]</code> = débordement.</li>
+    <li>Déclarer un tableau avec une <strong>variable</strong> pour dim → interdit (valeur numérique obligatoire).</li>
+    <li>Oublier le <code>'\0'</code> final : une chaîne de N caractères utiles exige <code>char[N+1]</code>.</li>
+    <li>Écrire <code>&amp;chaine</code> dans <code>scanf("%s", …)</code> : le nom du tableau est déjà l'adresse.</li>
+    <li>Confondre déclaration de tableau (mémoire réservée) et de pointeur (rien de réservé → <code>malloc</code>).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

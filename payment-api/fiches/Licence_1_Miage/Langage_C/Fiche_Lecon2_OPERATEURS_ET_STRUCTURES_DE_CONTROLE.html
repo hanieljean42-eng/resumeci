@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — OPERATEURS ET STRUCTURES DE CONTROLE — Langage_C Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Opérateurs et structures de contrôle — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html"><meta property="og:title" content="Leçon 2 — OPERATEURS ET STRUCTURES DE CONTROLE — Langage_C Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Opérateurs et structures de contrôle — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — OPERATEURS ET STRUCTURES DE CONTROLE — Langage_C Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Opérateurs et structures de contrôle — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Langage_C","item":"https://resumeci.me/#Licence_1_Miage/Langage_C"},{"@type":"ListItem","position":4,"name":"Leçon 2 — OPERATEURS ET STRUCTURES DE CONTROLE","item":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — OPERATEURS ET STRUCTURES DE CONTROLE — Langage_C Licence 1_Miage | ResumeCI","description":"Leçon 2 — Opérateurs et structures de contrôle — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 ","url":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Langage_C","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage C</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 2 : Opérateurs et structures de contrôle</span>
+  </div>
+</div>
+
+<h2>I. Les opérateurs</h2>
+<h3>Incrémentation et affectation composée</h3>
+<div class="schema"><strong>Postfixe</strong> : <code>X = N++</code> → X reçoit la valeur <strong>avant</strong> incrémentation (N=5 → X=5, N=6). <strong>Préfixe</strong> : <code>X = ++N</code> → X reçoit la valeur <strong>après</strong> (X=6, N=6).</div>
+<ul>
+  <li><strong>Affectation composée :</strong> <code>+= -= *= /= %= &amp;= ^= |= &lt;&lt;= &gt;&gt;=</code> — <code>a += b</code> ≡ <code>a = a + b</code> ; dans <code>x(op)=y</code>, x n'est évalué qu'une fois.</li>
+  <li><strong>Relationnels</strong> (<code>== != &lt; &lt;= &gt; &gt;=</code>) : renvoient un <code>int</code> — <strong>0 = faux, 1 = vrai</strong>.</li>
+  <li><strong>Logiques</strong> (<code>&amp;&amp; || !</code>) : toute valeur ≠ 0 est vraie. ⚠️ <strong>Évaluation paresseuse</strong> : <code>&amp;&amp;</code> n'évalue l'opérande droit que si le gauche est vrai ; <code>||</code> seulement si le gauche est faux (ex. <code>(i&lt;max) &amp;&amp; (f(14)==1)</code> : f n'est appelée que si i&lt;max).</li>
+  <li><strong>Bit à bit</strong> (<code>&amp; | ^ ~ &lt;&lt; &gt;&gt;</code>) : n'opèrent que sur des entiers — <code>p = n &lt;&lt; 3</code> décale de 3 bits à gauche.</li>
+  <li><strong>Divers :</strong> <code>&amp;</code> adresse d'une variable ; <code>sizeof(type)</code> nombre d'octets (<code>sizeof(char)</code> = 1) ; <strong>cast</strong> <code>(int)r</code> conversion de type.</li>
+</ul>
+
+<h2>II. Les structures alternatives</h2>
+<h3>if / else</h3>
+<div class="schema"><code>if (expression) { bloc1 } else { bloc2 }</code> — le <code>else</code> est optionnel ; les <code>{}</code> inutiles pour une seule instruction. Écritures contractées admises : <code>if ((reponse = getchar()) == 'o')</code>.</div>
+<ul>
+  <li>Tests : <code>==</code> égalité, <code>!=</code> différence, <code>&amp;&amp;</code> ET, <code>||</code> OU, <code>!</code> NON.</li>
+</ul>
+<h3>switch</h3>
+<div class="schema"><code>switch (variable <strong>int ou char</strong>) { case v1: …; break; case v2: …; break; default: …; }</code> — choix multiples, équivalent à une cascade de if/else ; <code>default</code> optionnel et sans <code>break</code>.</div>
+<div class="important"><strong>⚠️ Piège :</strong> sans <code>break</code>, l'exécution <strong>continue dans le case suivant</strong>. Le <code>switch</code> ne fonctionne que sur <strong>entiers et caractères</strong> — jamais sur des flottants ni des chaînes. Idéal pour les « menus ».</div>
+
+<h2>III. Les structures itératives</h2>
+<table>
+  <tr><th>Boucle</th><th>Syntaxe</th><th>Particularité</th></tr>
+  <tr><td><strong>while</strong></td><td><code>while (expression) { … }</code></td><td>Test <strong>d'abord</strong> : le bloc peut ne jamais s'exécuter. <code>while(expression);</code> seul = « attendre tant que l'expression est vraie »</td></tr>
+  <tr><td><strong>for</strong></td><td><code>for (init ; condition ; modification) { … }</code></td><td>Les 3 parties peuvent porter sur des variables différentes ; une partie peut être omise <strong>mais pas les « ; »</strong>. <code>for(;;)</code> = boucle infinie</td></tr>
+  <tr><td><strong>do…while</strong></td><td><code>do { … } while (expression);</code></td><td>Test <strong>après</strong> : le bloc s'exécute <strong>au moins une fois</strong></td></tr>
+</table>
+<div class="important"><strong>Tests en C :</strong> une expression nulle (0) est <strong>fausse</strong>, non nulle <strong>vraie</strong>. <code>if (delta)</code> ≡ <code>if (delta != 0)</code> ; <code>if (!delta)</code> ≡ <code>if (delta == 0)</code>.</div>
+
+<h3>Les sauts</h3>
+<table>
+  <tr><th>Instruction</th><th>Effet</th></tr>
+  <tr><td><code>break</code></td><td>Sort de la boucle <strong>la plus interne</strong> uniquement (passe à l'instruction suivant la boucle)</td></tr>
+  <tr><td><code>continue</code></td><td>Saute à l'itération suivante (ignore la fin du bloc courant)</td></tr>
+  <tr><td><code>return [expr]</code></td><td>Sort d'une fonction, renvoie éventuellement une valeur</td></tr>
+  <tr><td><code>goto label</code></td><td>Branchement inconditionnel — <strong>à éviter</strong> (contraire à la programmation structurée)</td></tr>
+</table>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><code>N++</code> vs <code>++N</code> : postfixe = valeur <strong>avant</strong>, préfixe = valeur <strong>après</strong> incrémentation.</li>
+    <li>Oublier le <code>break</code> dans un <code>switch</code> → exécution en cascade.</li>
+    <li>while teste <strong>avant</strong> (0 exécution possible), do…while teste <strong>après</strong> (≥ 1 exécution).</li>
+    <li>Utiliser <code>==</code> au lieu de <code>=</code> : <code>if (a = b)</code> est une <strong>affectation</strong> (presque toujours vraie), pas un test.</li>
+    <li><code>break</code> ne sort que de la boucle <strong>la plus interne</strong>, pas de toutes les boucles imbriquées.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

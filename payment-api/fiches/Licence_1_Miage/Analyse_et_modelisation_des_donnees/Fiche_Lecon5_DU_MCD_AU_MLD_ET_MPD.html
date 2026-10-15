@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — DU MCD AU MLD ET MPD — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — Du MCD au MLD et au MPD — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse et modélisation des d"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html"><meta property="og:title" content="Leçon 5 — DU MCD AU MLD ET MPD — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — Du MCD au MLD et au MPD — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse et modélisation des d"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — DU MCD AU MLD ET MPD — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Du MCD au MLD et au MPD — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse et modélisation des d"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_et_modelisation_des_donnees","item":"https://resumeci.me/#Licence_1_Miage/Analyse_et_modelisation_des_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 5 — DU MCD AU MLD ET MPD","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — DU MCD AU MLD ET MPD — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI","description":"Leçon 5 — Du MCD au MLD et au MPD — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse et modélisation des d","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_et_modelisation_des_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse et modélisation des données (Merise)</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 5 : Du MCD au MLD et au MPD</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi le MLD ?</h2>
+<div class="definition"><strong>Modèle Logique des Données (MLD) :</strong> modèle qui représente le contenu d'un MCD sous le formalisme des <strong>tables logiques</strong>, adapté aux structures d'une base de données. Le MCD ne connaît pas la notion de table ; la base de données ne connaît ni classes ni cardinalités — le MLD fait le pont.</div>
+<div class="important"><strong>Différence clé :</strong> le MCD représente le SI de façon <strong>indépendante du système informatique</strong> ; le MLD tient compte de la <strong>réalisation via un SGBD</strong>. Choix techniques possibles : SGBD <strong>relationnel</strong>, <strong>Codasyl</strong>, <strong>objet</strong>, ou <strong>fichier classique</strong>.</div>
+
+<h2>II. Règles de transformation MCD → MLD</h2>
+<h3>Règle de base : les entités</h3>
+<div class="schema"><strong>Toute entité → une table.</strong> Les propriétés → attributs de la table ; l'identifiant → <strong>clé primaire</strong> (soulignée) ; les occurrences → enregistrements (lignes).<br>Ex. : <code>Entreprise (<u>NoEntreprise</u>, nom, adresse, codePostal, Localité)</code></div>
+
+<h3>Cas des associations binaires (x,1 / x,n)</h3>
+<ul>
+  <li><strong>Relation (0,1)/(1,1) ↔ (0,n)/(1,n) :</strong> l'identifiant de l'objet côté <strong>(x,n)</strong> <strong>migre</strong> comme attribut (clé étrangère) dans la table issue de l'objet côté <strong>(x,1)</strong>. Les propriétés de la relation suivent le même chemin.</li>
+</ul>
+<div class="schema">Ex. : <code>REGION(<u>nom_region</u>)</code> et <code>DEPARTEMENT(<u>num_dept</u>, nom_dept, <strong>#nom_region</strong>)</code> — la clé de REGION migre dans DEPARTEMENT (notée # = clé étrangère).</div>
+
+<h3>Cas des associations plusieurs-à-plusieurs (x,n / x,n)</h3>
+<ul>
+  <li>Chaque objet → une table (identifiant → clé primaire).</li>
+  <li><strong>La relation → une table</strong> dont la clé primaire est la <strong>concaténation des identifiants</strong> des objets participants.</li>
+</ul>
+<div class="schema">Ex. : <code>ELEVE(<u>matricule</u>, nom, prénoms)</code>, <code>MATIERE(<u>matiere</u>)</code>, <code>DEVOIR(<u>numéro, matricule, matiere</u>, note)</code>, <code>MOYENNE(<u>matricule, matiere</u>, moyenne)</code>.</div>
+
+<h3>Cas des associations un-à-un (x,1 / x,1)</h3>
+<div class="schema">Les deux objets → deux tables ; l'identifiant d'un objet <strong>migre dans l'autre</strong> comme clé étrangère, selon la contrainte de dépendance fonctionnelle.<br>Ex. : <code>PAYS(<u>Code-PAYS</u>, Nom)</code>, <code>CAPITAL_POLITI(<u>Code_cap</u>, Nom_cap, <strong>#Code-PAYS</strong>)</code>.</div>
+
+<h2>III. Le MPD (Modèle Physique des Données)</h2>
+<div class="definition"><strong>MPD :</strong> description du niveau <strong>physique</strong> des données — directement exploitable par le système de gestion de données choisi. Il n'existe pas d'approche normalisée : le MPD dépend du choix technique.</div>
+<table>
+  <tr><th>Solution</th><th>MLD associé</th><th>MPD : ce qui est géré</th></tr>
+  <tr><td><strong>SGBD Codasyl</strong></td><td>MLD Codasyl (sets)</td><td>Gestion physique des sets via <strong>pointeurs</strong> ; description des sets</td></tr>
+  <tr><td><strong>SGBD relationnel</strong></td><td>MLD relationnel (tables)</td><td>Gestion <strong>transparente</strong> prise en charge par le SGBD ; description des tables</td></tr>
+  <tr><td><strong>SGF classique</strong></td><td>MLD fichier</td><td>Gestion physique complète à la charge du <strong>réalisateur</strong> (pointeurs, clés d'accès secondaires) ; description des fichiers</td></tr>
+</table>
+<div class="schema">Chaîne complète : <strong>MCD → MLD (selon le type de SGBD) → MPD</strong> (tables, fichiers, index…). Le MPD est le modèle « le plus proche de la machine ».</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Sens de migration : c'est l'identifiant du côté <strong>(x,n)</strong> qui migre vers la table du côté <strong>(x,1)</strong> — jamais l'inverse.</li>
+    <li>Association n-n : la relation <strong>devient une table</strong> avec clé primaire <strong>composée</strong> (concaténation des identifiants).</li>
+    <li>Oublier de <strong>souligner</strong> la clé primaire et de préfixer la clé étrangère (<code>#</code>).</li>
+    <li>Confondre MLD (formalisme tables, indépendant du SGBD précis) et MPD (dépendant du choix technique).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — FONCTIONS STRUCTURES ET FICHIERS — Langage_C Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — Fonctions, structures et fichiers — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html"><meta property="og:title" content="Leçon 5 — FONCTIONS STRUCTURES ET FICHIERS — Langage_C Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — Fonctions, structures et fichiers — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — FONCTIONS STRUCTURES ET FICHIERS — Langage_C Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Fonctions, structures et fichiers — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Langage_C","item":"https://resumeci.me/#Licence_1_Miage/Langage_C"},{"@type":"ListItem","position":4,"name":"Leçon 5 — FONCTIONS STRUCTURES ET FICHIERS","item":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — FONCTIONS STRUCTURES ET FICHIERS — Langage_C Licence 1_Miage | ResumeCI","description":"Leçon 5 — Fonctions, structures et fichiers — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leç","url":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Langage_C","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage C</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 5 : Fonctions, structures et fichiers</span>
+  </div>
+</div>
+
+<h2>I. Les fonctions</h2>
+<div class="definition"><strong>Fonction :</strong> les programmes C s'écrivent comme une collection de fonctions. Les paramètres sont passés <strong>entre parenthèses</strong>, le code entre <strong>accolades</strong>. Une fonction retourne au plus <strong>une valeur</strong>, via <code>return</code>.</div>
+<div class="schema"><code>type nom(paramètre type1 nom1, …) { corps; return expression; }</code><br>Ex. : <code>int abs(int i) { if (i &lt; 0) return -i; else return i; }</code></div>
+<ul>
+  <li>Le type des paramètres est <strong>re-déclaré</strong> à chaque fois (même s'il est identique) : <code>int f(int i, int j)</code>.</li>
+  <li>Le type de retour indique quel objet sera calculé par <code>return</code>.</li>
+  <li><strong>main() :</strong> point d'entrée du programme ; <code>return 0</code> signale au système une fin sans erreur.</li>
+</ul>
+<div class="important"><strong>Passage par valeur :</strong> en C les arguments sont transmis <strong>par valeur</strong> — la fonction travaille sur des <strong>copies</strong> ; les variables d'origine ne sont pas modifiées. Pour modifier une variable de l'appelant, il faut passer <strong>son adresse</strong> (pointeur).</div>
+<div class="important"><strong>Portée :</strong> une fonction est <strong>reconnue uniquement dans le fichier où elle est définie</strong>. Si la fonction appelante se trouve ailleurs, le fichier appelant doit inclure le <strong>prototypage</strong> de la fonction (déclaration de son type et de ses arguments — fichier <code>.h</code>).</div>
+
+<h3>Les pointeurs comme arguments</h3>
+<div class="schema">Exemple <code>swap</code> :<br><code>void swap(int *px, int *py) { int tmp = *px; *px = *py; *py = tmp; }</code><br>Appel : <code>swap(&amp;a, &amp;b)</code> — les variables originales sont échangées car la fonction reçoit leurs <strong>adresses</strong>.</div>
+
+<h2>II. typedef et les structures</h2>
+<div class="definition"><strong>typedef :</strong> permet de nommer un nouveau type à partir d'un type existant. <code>typedef int entier;</code> → <code>entier</code> utilisable à la place de <code>int</code>.</div>
+<div class="definition"><strong>Structure (<code>struct</code>) :</strong> ensemble de champs de <strong>types différents</strong> regroupés sous un même nom. <code>struct article { int numero; char nom[20]; float prix; };</code> → accès aux champs par <code>.</code> : <code>a.prix = 12.5;</code> ; via pointeur : <code>p-&gt;prix</code>.</div>
+
+<h2>III. Les fichiers</h2>
+<div class="definition"><strong>Fichier :</strong> structure de données externe permettant la <strong>persistance</strong> des données. Un fichier est manipulé via un pointeur <code>FILE *</code> (stdio.h).</div>
+<table>
+  <tr><th>Fonction</th><th>Rôle</th></tr>
+  <tr><td><code>fopen("nom", "mode")</code></td><td>Ouverture : <code>"r"</code> lecture, <code>"w"</code> écriture, <code>"a"</code> ajout ; retourne <code>NULL</code> en cas d'échec</td></tr>
+  <tr><td><code>fclose(f)</code></td><td>Fermeture du fichier (obligatoire)</td></tr>
+  <tr><td><code>fgetc / fputc</code></td><td>Lecture/écriture d'un caractère</td></tr>
+  <tr><td><code>fgets / fputs</code></td><td>Lecture/écriture d'une chaîne</td></tr>
+  <tr><td><code>fscanf / fprintf</code></td><td>Lecture/écriture formatée</td></tr>
+  <tr><td><code>fread / fwrite</code></td><td>Lecture/écriture binaire de blocs</td></tr>
+  <tr><td><code>feof(f)</code></td><td>Test de fin de fichier</td></tr>
+</table>
+<div class="schema">Exemple : <code>FILE *f = fopen("donnees.txt","w"); if (f == NULL) exit(1); fprintf(f, "%d", x); fclose(f);</code></div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Croire qu'une fonction modifie ses arguments : passage <strong>par valeur</strong> → passer des <strong>pointeurs</strong> pour modifier.</li>
+    <li>Oublier le <strong>prototype</strong> quand l'appelant est dans un autre fichier.</li>
+    <li>Confondre <code>champ.valeur</code> (variable struct) et <code>pointeur-&gt;champ</code> (pointeur sur struct).</li>
+    <li>Oublier <code>fclose</code> après <code>fopen</code>, ou ne pas tester <code>NULL</code> au retour de <code>fopen</code>.</li>
+    <li>Mélanger les modes : <code>"r"</code> échoue si le fichier n'existe pas ; <code>"w"</code> <strong>écrase</strong> le contenu existant ; <code>"a"</code> ajoute en fin.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

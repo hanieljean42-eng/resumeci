@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — DEPENDANCES FONCTIONNELLES ET NORMALISATION — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Dépendances fonctionnelles et normalisation — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse e"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html"><meta property="og:title" content="Leçon 4 — DEPENDANCES FONCTIONNELLES ET NORMALISATION — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Dépendances fonctionnelles et normalisation — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse e"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — DEPENDANCES FONCTIONNELLES ET NORMALISATION — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Dépendances fonctionnelles et normalisation — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse e"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_et_modelisation_des_donnees","item":"https://resumeci.me/#Licence_1_Miage/Analyse_et_modelisation_des_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 4 — DEPENDANCES FONCTIONNELLES ET NORMALISATION","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — DEPENDANCES FONCTIONNELLES ET NORMALISATION — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI","description":"Leçon 4 — Dépendances fonctionnelles et normalisation — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse e","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_et_modelisation_des_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse et modélisation des données (Merise)</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 4 : Dépendances fonctionnelles et normalisation</span>
+  </div>
+</div>
+
+<h2>I. Dépendance fonctionnelle (DF)</h2>
+<div class="definition"><strong>DF :</strong> une propriété (ou ensemble) P2 <strong>dépend fonctionnellement</strong> de P1 si la connaissance de la valeur de P1 détermine <strong>une et une seule</strong> valeur de P2. Notée <code>P1 → P2</code> (« P2 dépend de P1 » ou « P1 détermine P2 »).</div>
+<div class="schema">Exemples : <code>numSecu → nomPers</code> (un n° de sécu détermine un seul nom) — mais un prénom ne détermine rien. DF composée : <code>numEtudiant, numModule, numSession → valeurNote</code>. Un <strong>identifiant détermine par DF toutes les autres propriétés</strong> de son objet/association.</div>
+
+<h3>Types de DF</h3>
+<ul>
+  <li><strong>DF élémentaire (DFE) :</strong> aucune partie de P1 ne détermine P2 — tout P1 est nécessaire à la détermination.</li>
+  <li><strong>DF élémentaire directe (DFED) :</strong> il n'existe pas de propriété z telle que x → z et z → y (on élimine les DF obtenues par transitivité).</li>
+</ul>
+
+<h3>Propriétés mathématiques des DF</h3>
+<table>
+  <tr><th>Règle</th><th>Formule</th><th>Exemple</th></tr>
+  <tr><td><strong>Transitivité</strong></td><td>P1→P2 et P2→P3 ⟹ P1→P3</td><td>Ref → code_tva et code_tva → taux donc Ref → taux</td></tr>
+  <tr><td><strong>Réflexivité</strong></td><td>P1→P1</td><td>Matricule → Matricule</td></tr>
+  <tr><td><strong>Projection</strong></td><td>P1→(P2+P3) ⟹ P1→P2 et P1→P3</td><td>NumProf → Nom + discipline</td></tr>
+  <tr><td><strong>Augmentation</strong></td><td>P1→P2 ⟹ P1+P3→P2</td><td>Ref → Pu donc Ref + désignation → Pu (⚠️ la DF cesse d'être élémentaire)</td></tr>
+  <tr><td><strong>Additivité</strong></td><td>P1→P2 et P1→P3 ⟹ P1→(P2+P3)</td><td>Ref → Pu + désignation</td></tr>
+</table>
+
+<h2>II. DF entre entités et CIF</h2>
+<div class="definition"><strong>DF entre entités :</strong> il existe une DF O1 → O2 entre deux objets liés par une association si chaque occurrence de O1 n'est associée qu'à <strong>au plus une</strong> occurrence de O2 — révélée par des cardinalités <strong>(0,1) ou (1,1)</strong>. O1 = objet source, O2 = objet but. La DF est <strong>forte</strong> pour (1,1) et <strong>faible</strong> pour (0,1).</div>
+<div class="important"><strong>Règles :</strong> une DF <strong>forte n'est pas porteuse de propriétés</strong> — si elle en porte, celles-ci doivent migrer sur l'objet source. Une DF révèle une relation de type « <strong>est un</strong> ». DF possible aussi entre <strong>sous-ensembles</strong> d'entités d'une association (ex. <code>Prof + Horaire → Classe</code>).</div>
+<div class="definition"><strong>Contrainte d'intégrité fonctionnelle (CIF) :</strong> un objet est <strong>totalement identifié</strong> par la connaissance d'un ou plusieurs autres objets au sein d'une même association.</div>
+
+<h2>III. Graphe des DF et couvertures</h2>
+<div class="definition"><strong>GDF (Graphe des Dépendances Fonctionnelles) :</strong> représentation de toutes les DF entre propriétés et entre entités du SI. Construction : recenser les propriétés non calculées et non concaténées → déterminer les DF → les propriétés en origine de flèches = identifiants → traiter les propriétés isolées par DF composées.</div>
+<ul>
+  <li><strong>Fermeture transitive / couverture maximale :</strong> le GDF enrichi de <strong>toutes</strong> les DF perceptibles (ex. Code_fournisseur → code_pays → pays, donc Code_fournisseur → pays).</li>
+  <li><strong>Couverture minimale / SAT (Structure d'Accès Théorique) :</strong> le GDF <strong>dénué de toute DF transitive</strong> — on ne garde que les DF directes.</li>
+</ul>
+
+<h2>IV. Normalisation des entités (formes normales)</h2>
+<table>
+  <tr><th>Forme</th><th>Condition</th></tr>
+  <tr><td><strong>1FN</strong></td><td>Possède un <strong>identifiant</strong> + aucune propriété à <strong>valeurs multiples</strong></td></tr>
+  <tr><td><strong>2FN</strong></td><td>En 1FN + toutes les DF entre propriétés sont <strong>élémentaires</strong> (sinon redondance : ex. « moyenne » dépendant d'une partie de l'identifiant → sortir dans une association MOYENNE)</td></tr>
+  <tr><td><strong>3FN</strong></td><td>En 2FN + toutes les DF sont <strong>directes</strong> (pas de DF transitive : ex. code_postal → département → nom_département → créer un objet DEPARTEMENT)</td></tr>
+  <tr><td><strong>BCFN</strong></td><td>En 3FN + les seules DFE sont celles où <strong>une clé détermine un attribut</strong> (sinon décomposer : ex. professeur → matière alors que la clé est (matière, classe))</td></tr>
+</table>
+
+<h2>V. Normalisation des associations</h2>
+<div class="important"><strong>Règle :</strong> si une propriété dépend fonctionnellement de l'identifiant <strong>d'une entité</strong>, elle doit se trouver <strong>dans cette entité</strong> — pas dans l'association. Exemple : « droit-payé » dépend de façon fonctionnelle et élémentaire de <code>code-etud</code> → rapatrier dans l'entité ETUDIANT.</div>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Sens de la DF : <code>P1 → P2</code> = P1 <strong>détermine</strong> P2 (et non l'inverse).</li>
+    <li>DF forte = cardinalité <strong>(1,1)</strong> ; une DF forte <strong>ne porte pas</strong> de propriétés.</li>
+    <li>Couverture minimale ≠ fermeture : la couverture minimale <strong>supprime les transitives</strong>.</li>
+    <li>Violation 2FN = DF <strong>non élémentaire</strong> ; violation 3FN = DF <strong>non directe</strong> ; violation BCFN = DFE dont la <strong>source n'est pas une clé</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

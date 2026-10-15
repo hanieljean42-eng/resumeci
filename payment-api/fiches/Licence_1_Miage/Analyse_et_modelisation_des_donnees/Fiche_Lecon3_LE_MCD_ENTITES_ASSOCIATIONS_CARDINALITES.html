@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — LE MCD ENTITES ASSOCIATIONS CARDINALITES — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Le MCD : entités, associations, cardinalités — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html"><meta property="og:title" content="Leçon 3 — LE MCD ENTITES ASSOCIATIONS CARDINALITES — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Le MCD : entités, associations, cardinalités — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — LE MCD ENTITES ASSOCIATIONS CARDINALITES — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Le MCD : entités, associations, cardinalités — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Analyse_et_modelisation_des_donnees","item":"https://resumeci.me/#Licence_1_Miage/Analyse_et_modelisation_des_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 3 — LE MCD ENTITES ASSOCIATIONS CARDINALITES","item":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — LE MCD ENTITES ASSOCIATIONS CARDINALITES — Analyse_et_modelisation_des_donnees Licence 1_Miage | ResumeCI","description":"Leçon 3 — Le MCD : entités, associations, cardinalités — Analyse et modélisation des données Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Analyse ","url":"https://resumeci.me/fiches/Licence_1_Miage/Analyse_et_modelisation_des_donnees/Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Analyse_et_modelisation_des_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Analyse et modélisation des données (Merise)</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 3 : Le MCD — entités, associations, cardinalités</span>
+  </div>
+</div>
+
+<h2>I. Qu'est-ce que le MCD ?</h2>
+<div class="definition"><strong>Modèle Conceptuel des Données (MCD) :</strong> représentation <strong>statique</strong> du système d'information de l'entreprise mettant en évidence sa <strong>sémantique</strong>. Son but : décrire de façon formelle les données utilisées par le SI. Le formalisme Merise est basé sur les concepts <strong>« entité-association »</strong>.</div>
+
+<h2>II. Les trois concepts de base</h2>
+<h3>a) L'objet (entité)</h3>
+<div class="definition"><strong>Objet / entité :</strong> entité ayant une <strong>existence propre</strong> — représentation d'un élément matériel ou immatériel jouant un rôle dans le système décrit. Une <strong>classe d'entité</strong> regroupe les entités de même type ; une entité est une <strong>instanciation</strong> de la classe (le classement s'appelle classification ou abstraction). Chaque entité est décrite par des <strong>propriétés</strong>.</div>
+<h3>b) L'association</h3>
+<div class="definition"><strong>Association :</strong> lien sémantique entre plusieurs entités, <strong>sans existence propre</strong>. Une classe de relation contient les relations de même type ; elle peut lier plus de deux classes d'entité.</div>
+<div class="schema"><strong>Dimension d'une association</strong> = nombre d'objets intervenants : <strong>récursive/réflexive</strong> (dim. 1, relie la même entité), <strong>binaire</strong> (2 entités), <strong>ternaire</strong> (3), <strong>n-aire</strong> (n).</div>
+<h3>c) La propriété et l'identifiant</h3>
+<div class="definition"><strong>Propriété :</strong> plus petite donnée d'information décrivant un objet ou une association. Elle est <strong>simple/atomique</strong> si chacune de ses valeurs n'est pas décomposable.</div>
+<div class="definition"><strong>Identifiant :</strong> la ou les propriétés permettant de déterminer <strong>de façon unique</strong> chaque occurrence de l'objet (noté <code>#</code> ou <code>*</code> dans le graphique). L'identifiant d'une association est la <strong>concaténation des identifiants</strong> des objets reliés.</div>
+<div class="important"><strong>Règles sur les propriétés :</strong> une propriété n'appartient qu'à <strong>un seul objet ou une seule association</strong> ; lever les ambiguïtés de <strong>polysémie</strong> (nommage précis) et de <strong>synonymie</strong> (élimination). Un objet possède <strong>au moins une</strong> propriété ; une association peut n'en avoir <strong>aucune</strong>.</div>
+
+<h3>Le dictionnaire de données</h3>
+<p>Tableau regroupant toutes les propriétés retenues après épuration. Pour chacune : codification, libellé, <strong>type</strong>, <strong>nature</strong>, longueur, observations.</p>
+<table>
+  <tr><th>Codification</th><th>Valeurs</th></tr>
+  <tr><td><strong>Types</strong></td><td>A (alphabétique), AN (alphanumérique), N (numérique)</td></tr>
+  <tr><td><strong>Structures</strong></td><td>E (élémentaire, non décomposable), CO (concaténée, décomposable), CA (calculée, déduite d'autres propriétés par une règle)</td></tr>
+  <tr><td><strong>Natures</strong></td><td>MVT (mouvement, résultat d'événements), SIG (signalétique, stable dans le temps), SIT (situation, varie selon la situation)</td></tr>
+</table>
+
+<h2>III. L'occurrence</h2>
+<div class="definition"><strong>Occurrence :</strong> une des valeurs que peut prendre une propriété ; l'occurrence d'un objet = ensemble d'occurrences de ses propriétés ; l'occurrence d'une association = une liaison entre occurrences d'objets.</div>
+<div class="important"><strong>Règle d'occurrence :</strong> toute propriété d'un objet doit avoir une occurrence. Si une propriété peut avoir <strong>plusieurs valeurs</strong> pour une occurrence : soit créer autant de propriétés que de valeurs possibles, soit créer un <strong>nouvel objet</strong> portant cette propriété, relié par une association.</div>
+
+<h2>IV. Les cardinalités</h2>
+<div class="definition"><strong>Cardinalité :</strong> nombre <strong>minimum</strong> (0 ou 1) et <strong>maximum</strong> (1 ou n) de liens entre une occurrence de l'objet et une occurrence de l'association.</div>
+<ul>
+  <li><strong>Min = 0 :</strong> au moins une occurrence de l'objet n'est pas liée à l'association.</li>
+  <li><strong>Min = 1 :</strong> toutes les occurrences de l'objet sont liées à l'association.</li>
+  <li><strong>Max = 1 :</strong> aucune occurrence n'est liée plus d'une fois.</li>
+  <li><strong>Max = n :</strong> au moins une occurrence est liée plusieurs fois.</li>
+</ul>
+<table>
+  <tr><th>Cardinalité</th><th>Signification</th></tr>
+  <tr><td><strong>(0,1)</strong></td><td>Une occurrence n'est jamais liée plus d'une fois (mais peut ne pas l'être)</td></tr>
+  <tr><td><strong>(1,1)</strong></td><td>Toujours liée une et une seule fois</td></tr>
+  <tr><td><strong>(1,n)</strong></td><td>Toujours liée au moins une fois</td></tr>
+  <tr><td><strong>(0,n)</strong></td><td>Aucune précision donnée</td></tr>
+</table>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>entité</strong> (existence propre) et <strong>association</strong> (lien sans existence propre).</li>
+    <li>Oublier que l'identifiant d'une association = <strong>concaténation</strong> des identifiants des objets reliés.</li>
+    <li>Lire (1,1) à l'envers : min 1 = <strong>obligatoire</strong>, max 1 = <strong>au plus une fois</strong>.</li>
+    <li>Laisser une propriété à valeurs multiples sur un objet (violation de la 1FN).</li>
+    <li>Dire qu'une association doit avoir des propriétés : elle <strong>peut n'en avoir aucune</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

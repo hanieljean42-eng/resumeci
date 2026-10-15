@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — NOTIONS DE BASE TYPES ET ENTREES SORTIES — Langage_C Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Notions de base : types de variables et entrées/sorties — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html"><meta property="og:title" content="Leçon 1 — NOTIONS DE BASE TYPES ET ENTREES SORTIES — Langage_C Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Notions de base : types de variables et entrées/sorties — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — NOTIONS DE BASE TYPES ET ENTREES SORTIES — Langage_C Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Notions de base : types de variables et entrées/sorties — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Langage_C","item":"https://resumeci.me/#Licence_1_Miage/Langage_C"},{"@type":"ListItem","position":4,"name":"Leçon 1 — NOTIONS DE BASE TYPES ET ENTREES SORTIES","item":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — NOTIONS DE BASE TYPES ET ENTREES SORTIES — Langage_C Licence 1_Miage | ResumeCI","description":"Leçon 1 — Notions de base : types de variables et entrées/sorties — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 ","url":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Langage_C","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage C</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 1 : Notions de base, types et entrées/sorties</span>
+  </div>
+</div>
+
+<h2>I. Présentation du langage C</h2>
+<div class="definition"><strong>Langage C :</strong> langage <strong>évolué et structuré</strong>, proche du langage machine, destiné notamment aux applications de contrôle de processus (entrées/sorties, temps réel). Ses compilateurs ont les <strong>taux d'expansion les plus faibles</strong> des langages évolués.</div>
+<ul>
+  <li>Peu d'instructions propres : le langage fait appel à des <strong>bibliothèques</strong> (<code>stdio.h</code> entrées/sorties, fonctions mathématiques…).</li>
+  <li>C est un langage <strong>compilé</strong> ; un programme C est en principe compris par un compilateur C++.</li>
+  <li>⚠️ Le C <strong>distingue majuscules et minuscules</strong> ; les mots réservés s'écrivent en <strong>minuscules</strong>.</li>
+</ul>
+
+<h3>La compilation en 4 phases</h3>
+<table>
+  <tr><th>Phase</th><th>Rôle</th><th>Fichier produit</th></tr>
+  <tr><td>1. <strong>Préprocesseur</strong></td><td>Transformations textuelles : remplacements, inclusions (<code>#include</code>), compilation conditionnelle</td><td><code>.i</code></td></tr>
+  <tr><td>2. <strong>Compilation</strong></td><td>Traduction en assembleur (mnémoniques du microprocesseur)</td><td><code>.s</code></td></tr>
+  <tr><td>3. <strong>Assemblage</strong></td><td>Code assembleur → fichier binaire (instructions processeur)</td><td>fichier objet <code>.o</code> (<code>.a</code> pour les librairies)</td></tr>
+  <tr><td>4. <strong>Édition de liens</strong></td><td>Liaison des fichiers objets entre eux et avec les librairies</td><td>exécutable (<code>a.out</code> par défaut)</td></tr>
+</table>
+<div class="definition"><strong>Prototype :</strong> les fichiers d'en-tête (<code>.h</code> : conio.h, stdio.h…) contiennent les <strong>prototypes</strong> des fonctions (nom, paramètres, valeur retournée). Grâce aux <code>#include</code>, le compilateur vérifie la syntaxe des appels.</div>
+
+<h2>II. Les types de variables</h2>
+<h3>Les entiers</h3>
+<table>
+  <tr><th>Type</th><th>Description</th><th>Taille</th></tr>
+  <tr><td><code>int</code></td><td>Entier standard signé</td><td>4 octets (−2³¹ ≤ n ≤ 2³¹−1)</td></tr>
+  <tr><td><code>unsigned int</code></td><td>Entier positif</td><td>4 octets (0 ≤ n ≤ 2³²)</td></tr>
+  <tr><td><code>short</code></td><td>Entier court signé</td><td>2 octets</td></tr>
+  <tr><td><code>char</code></td><td>Caractère signé</td><td>1 octet</td></tr>
+</table>
+<div class="important"><strong>À retenir :</strong> en C, <code>char</code> est un cas particulier d'entier — <strong>un caractère est un entier de 8 bits</strong> (code ASCII : <code>'b'</code> = 98). On peut donc faire des calculs sur les caractères (ex. <code>d = c + 'a' - 'A'</code> transforme une majuscule en minuscule). Nombres : décimal tel quel, <code>0x</code> pour l'hexadécimal.</div>
+<h3>Les réels et les constantes caractères</h3>
+<ul>
+  <li>Un réel = <strong>signe + mantisse + exposant</strong> ; <code>float</code> (4 octets) et <code>double</code> (8 octets, double précision).</li>
+  <li>Constantes caractères : <code>'\n'</code> interligne (LF), <code>'\t'</code> tabulation, <code>'\\'</code> backslash, <code>'\''</code> cote, <code>'\"'</code> guillemets.</li>
+  <li>Initialisation possible à la déclaration : <code>int i = 50;</code></li>
+</ul>
+
+<h2>III. Les entrées/sorties</h2>
+<h3>Fonctions de sortie</h3>
+<ul>
+  <li><code>printf("format", exp1, exp2, …)</code> : affichage formaté (<code>%d</code> entier, <code>%c</code> caractère, <code>%s</code> chaîne, <code>%f</code> flottant, <code>%x</code> hexadécimal, <code>%o</code> octal, <code>%p</code> adresse). Paramètres de format : <code>%10d</code> (champ de 10, cadré droite), <code>%-10d</code> (cadré gauche), <code>%.2f</code> (2 décimales), <code>%30.4s</code> (30 car. réservés, 4 imprimés). Sans précision, un flottant affiche <strong>6 décimales</strong>.</li>
+  <li><code>putchar(c)</code> : affiche un caractère ; <code>puts("texte")</code> : affiche un texte + retour à la ligne. <strong>Plus rapides</strong> que printf (non formatées).</li>
+</ul>
+<h3>Fonctions d'entrée</h3>
+<ul>
+  <li><code>getch()</code> (conio.h) : saisie d'un caractère <strong>sans écho écran</strong>, arrêt dès la frappe.</li>
+  <li><code>scanf("chaîne de contrôle", &amp;var, …)</code> (stdio.h) : saisie formatée <strong>avec écho</strong>, arrêt sur RETURN. ⚠️ le nom de la variable est précédé de <strong><code>&amp;</code></strong> (adresse) ; la chaîne de contrôle ne contient <strong>pas de <code>\n</code></strong> ; les éléments saisis après un espace/tabulation sont ignorés.</li>
+</ul>
+<div class="schema">Exemple : <code>scanf("%c%d%lf", &amp;un_caractere, &amp;un_entier, &amp;un_double);</code> — à chaque <code>%</code> correspond une variable, séparée par des virgules et précédée de <code>&amp;</code>.</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier le <strong><code>&amp;</code></strong> dans <code>scanf</code> — c'est l'adresse de la variable.</li>
+    <li>Mettre un <code>\n</code> dans la chaîne de contrôle de <code>scanf</code> — interdit.</li>
+    <li>Confondre <code>printf</code> (formatée) et <code>puts</code> (texte + retour ligne automatique, plus rapide).</li>
+    <li>Oublier que <code>char</code> est un <strong>entier</strong> : on peut l'afficher en <code>%d</code> (code ASCII) ou <code>%c</code> (caractère).</li>
+    <li>Les 4 phases de compilation : préprocesseur → compilation → assemblage → <strong>édition de liens</strong> (≠ exécution).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

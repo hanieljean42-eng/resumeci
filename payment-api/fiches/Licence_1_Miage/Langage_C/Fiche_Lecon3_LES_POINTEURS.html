@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — LES POINTEURS — Langage_C Licence 1_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Les pointeurs — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leçon 3 : Les pointeurs"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html"><meta property="og:title" content="Leçon 3 — LES POINTEURS — Langage_C Licence 1_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Les pointeurs — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leçon 3 : Les pointeurs"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — LES POINTEURS — Langage_C Licence 1_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Les pointeurs — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leçon 3 : Les pointeurs"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_Miage","item":"https://resumeci.me/#Licence_1_Miage"},{"@type":"ListItem","position":3,"name":"Langage_C","item":"https://resumeci.me/#Licence_1_Miage/Langage_C"},{"@type":"ListItem","position":4,"name":"Leçon 3 — LES POINTEURS","item":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — LES POINTEURS — Langage_C Licence 1_Miage | ResumeCI","description":"Leçon 3 — Les pointeurs — Langage C Licence 1 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage C 🏫 Licence 1 MIAGE — Semestre 2 Leçon 3 : Les pointeurs","url":"https://resumeci.me/fiches/Licence_1_Miage/Langage_C/Fiche_Lecon3_LES_POINTEURS.html","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_Miage","about":"Langage_C","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage C</span>
+    <span>🏫 Licence 1 MIAGE — Semestre 2</span>
+    <span>Leçon 3 : Les pointeurs</span>
+  </div>
+</div>
+
+<h2>I. L'opérateur adresse &amp; et la notion de Lvalue</h2>
+<div class="definition"><strong>Opérateur adresse <code>&amp;</code> :</strong> retourne l'<strong>adresse mémoire</strong> d'une variable. Ex. <code>printf("%p", &amp;i)</code> affiche l'adresse de i en hexadécimal (format <code>%p</code>).</div>
+<div class="definition"><strong>Lvalue (left value) :</strong> tout objet pouvant figurer à <strong>gauche</strong> d'une affectation. Une Lvalue est caractérisée par : son <strong>adresse</strong> (où l'objet est stocké) et sa <strong>valeur</strong> (ce qui est stocké à cette adresse).</div>
+<div class="schema"><code>int i, j; i = 3; j = i;</code> → i et j ont des <strong>adresses différentes</strong> (ex. 4831836000 et 4831836004) mais la même valeur (3). L'affectation n'opère que sur les <strong>valeurs</strong>. Un <code>int</code> occupe 4 octets → sa valeur est stockée sur 4 adresses d'octets consécutives.</div>
+<div class="important"><strong>⚠️ Point clé :</strong> une adresse est un <strong>entier</strong> quel que soit le type de l'objet (16, 32 ou 64 bits selon l'architecture). <code>&amp;i</code> n'est <strong>pas une Lvalue</strong> mais une constante — on ne peut pas lui affecter de valeur. Pour manipuler des adresses : les <strong>pointeurs</strong>.</div>
+
+<h2>II. Définition et déclaration des pointeurs</h2>
+<div class="definition"><strong>Pointeur :</strong> objet (Lvalue) dont la <strong>valeur est l'adresse d'un autre objet</strong>. On dit que le pointeur « pointe sur » cette adresse. Déclaration : <code>type *nom-du-pointeur;</code> où <code>type</code> est le type de l'objet pointé.</div>
+<div class="schema"><code>char *pc;</code> pointeur sur char · <code>int *pi;</code> pointeur sur int · <code>float *pr;</code> pointeur sur float.<br>Exemple complet : <code>int i = 3; int *p; p = &amp;i;</code> → p contient l'adresse de i (ex. 4831836000).</div>
+<div class="important"><strong>Pourquoi typer le pointeur ?</strong> Bien que la valeur d'un pointeur soit toujours un entier, son <strong>type dépend de l'objet pointé</strong> : pour un <code>char*</code>, la valeur = adresse de l'octet de l'objet ; pour un <code>int*</code>, la valeur = adresse du <strong>premier des 4 octets</strong>. Cette distinction est indispensable à l'interprétation de la valeur.</div>
+
+<h3>L'opérateur d'indirection *</h3>
+<div class="definition"><strong>Indirection <code>*</code> :</strong> accède directement à la <strong>valeur de l'objet pointé</strong>. Si <code>p</code> pointe vers <code>i</code>, alors <code>*p</code> désigne la valeur de i — c'est une Lvalue : <code>*p = 34;</code> modifie i.</div>
+<div class="schema">Double sens de <code>*</code> : à la <strong>déclaration</strong> (<code>int *p</code>) il annonce un pointeur ; à l'<strong>utilisation</strong> (<code>*p</code>) il donne le contenu de l'adresse. <code>printf("%c", *pc)</code> affiche le contenu de la case mémoire, <code>printf("%p", pc)</code> affiche l'adresse elle-même.</div>
+
+<h2>III. Pointeurs et tableau / allocation dynamique</h2>
+<ul>
+  <li>Déclarer un tableau <code>int tableau[10]</code> définit automatiquement un <strong>pointeur</strong> (l'adresse du premier élément).</li>
+  <li>⚠️ La déclaration d'un <strong>tableau réserve la mémoire</strong> ; celle d'un <strong>pointeur seul non</strong> → utiliser <code>malloc</code> : <code>tableau = (int*)malloc(sizeof(int)*10);</code></li>
+  <li>Équivalences : <code>*tableau</code> ≡ <code>tableau[0]</code> ; <code>*(tableau+i)</code> ≡ <code>tableau[i]</code> ; <code>tableau</code> ≡ <code>&amp;tableau[0]</code> ; <code>tableau+i</code> ≡ <code>&amp;tableau[i]</code>.</li>
+</ul>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <code>p</code> (l'adresse) et <code>*p</code> (le contenu de l'adresse).</li>
+    <li>Utiliser un pointeur <strong>non initialisé</strong> : <code>*p = 34;</code> sans <code>p = &amp;i;</code> ni <code>malloc</code> → comportement indéfini.</li>
+    <li>Penser que <code>&amp;i</code> est une Lvalue : c'est une <strong>constante</strong>, non affectable.</li>
+    <li>Oublier que le type du pointeur sert à interpréter l'adresse (1 octet pour char, 4 pour int).</li>
+    <li>Format d'affichage d'une adresse : <code>%p</code> dans printf, pas <code>%s</code>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>
