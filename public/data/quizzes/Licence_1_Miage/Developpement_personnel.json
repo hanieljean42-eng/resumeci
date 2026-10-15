@@ -1,0 +1,392 @@
+{
+  "Fiche_Lecon1_GENERALITES_SUR_LE_DEVELOPPEMENT_PERSONNEL": {
+    "title": "Généralités sur le développement personnel",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Au Canada, le développement personnel est appelé :",
+        "type": "qcm",
+        "options": [
+          "Formation continue",
+          "Croissance personnelle",
+          "Coaching de vie",
+          "Épanouissement collectif"
+        ],
+        "answer": 1,
+        "explanation": "« Croissance personnelle » — démarches visant l'épanouissement de la personne, aller vers ce qu'elle aspire à devenir."
+      },
+      {
+        "id": "q2",
+        "text": "« Développement » s'oppose à :",
+        "type": "qcm",
+        "options": [
+          "Apprentissage",
+          "Enveloppement",
+          "Enrichissement",
+          "Encadrement"
+        ],
+        "answer": 1,
+        "explanation": "Développement vs enveloppement : sortir de sa coquille, passer d'une contraction statique à une expansion."
+      },
+      {
+        "id": "q3",
+        "text": "Selon Edmond Marc, le développement personnel :",
+        "type": "qcm",
+        "options": [
+          "Ne concerne que les personnes névrosées",
+          "S'adresse à tous, indépendamment de l'idée de maladie",
+          "Est réservé aux managers d'entreprise",
+          "Se limite à la thérapie"
+        ],
+        "answer": 1,
+        "explanation": "Marc : le DP inclut toutes les démarches favorisant la croissance du potentiel humain — il s'adresse à TOUS, pas seulement aux névrosés."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : le point commun de toutes les démarches de DP est la volonté d'atteindre un bénéfice (qualité de vie, satisfaction d'être).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — malgré leur diversité (démarche protéiforme), toutes visent un bénéfice : plus grande qualité dans certains domaines de la vie."
+      },
+      {
+        "id": "q5",
+        "text": "Bernard Hévin et Jane Turner définissent le DP comme le développement :",
+        "type": "qcm",
+        "options": [
+          "Du seul potentiel intellectuel",
+          "Du potentiel de la personne, de son autonomie, de son équilibre et de son épanouissement",
+          "Des seules compétences professionnelles",
+          "De la richesse matérielle"
+        ],
+        "answer": 1,
+        "explanation": "Hévin & Turner : potentiel + autonomie + équilibre + épanouissement. En entreprise → DP appliqué (mieux-être + performance)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_IDENTITE_VALEURS_ET_OBJECTIFS": {
+    "title": "Identité personnelle, valeurs et objectifs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Selon Marcia, le statut d'« identité prescrite » correspond à :",
+        "type": "qcm",
+        "options": [
+          "Des engagements pris après exploration d'alternatives",
+          "Une personne en cours d'exploration",
+          "Des engagements pris sans exploration d'alternatives",
+          "L'absence totale d'engagement"
+        ],
+        "answer": 2,
+        "explanation": "Identité prescrite = engagements SANS exploration (souvent imposés par l'entourage). Réalisée = engagements après exploration ; moratoire = exploration en cours ; diffuse = aucun engagement."
+      },
+      {
+        "id": "q2",
+        "text": "Chez Erikson, la crise de l'adolescence oppose :",
+        "type": "qcm",
+        "options": [
+          "Confiance et méfiance",
+          "Fidélité et confusion des rôles",
+          "Intimité et isolement",
+          "Intégrité et désespoir"
+        ],
+        "answer": 1,
+        "explanation": "8 étapes : adolescence → fidélité/confusion. Confiance/méfiance = stade oral ; intimité/isolement = adulte jeune ; intégrité/désespoir = vieillesse."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : une valeur personnelle est identique à une norme ou une règle.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — la valeur est une croyance sur ce qui est important ; les normes et règles sont des APPLICATIONS de valeurs."
+      },
+      {
+        "id": "q4",
+        "text": "Les valeurs « centrales » sont :",
+        "type": "qcm",
+        "options": [
+          "Propres à une catégorie sociale",
+          "Suivies par toute la population — base du consentement social",
+          "Les moins importantes",
+          "Temporaires"
+        ],
+        "answer": 1,
+        "explanation": "Centrales = universelles dans la population. Spécifiques = propres à une catégorie ; structurantes = orientent la vie entière."
+      },
+      {
+        "id": "q5",
+        "text": "Un objectif SMART est :",
+        "type": "qcm",
+        "options": [
+          "Simple, Mesurable, Ambitieux, Rapide, Temporaire",
+          "Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini",
+          "Stratégique, Motivant, Accessible, Régulier, Testé",
+          "Stable, Modifiable, Adaptable, Rentable, Traçable"
+        ],
+        "answer": 1,
+        "explanation": "SMART = Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini. But ≠ objectif : le but est global, l'objectif est opérationnel."
+      }
+    ]
+  },
+  "Fiche_Lecon3_FAIRE_EMERGER_SON_POTENTIEL": {
+    "title": "Faire émerger son potentiel",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le potentiel se définit comme :",
+        "type": "qcm",
+        "options": [
+          "Ce qui est déjà accompli",
+          "Ce qui est en puissance, non encore déployé",
+          "Une compétence professionnelle acquise",
+          "Le diplôme obtenu"
+        ],
+        "answer": 1,
+        "explanation": "Potentiel = en puissance, pas en acte — immense possibilité qui attend les meilleures conditions pour se développer."
+      },
+      {
+        "id": "q2",
+        "text": "Les 4 notions pour évaluer son potentiel sont :",
+        "type": "qcm",
+        "options": [
+          "Aspiration, ambition, engagement, intégration",
+          "Travail, talent, chance, réseau",
+          "Diplôme, expérience, salaire, poste",
+          "Physique, mental, spirituel, social"
+        ],
+        "answer": 0,
+        "explanation": "Aspiration (vision, rêves) · ambition (sortir de sa zone de confort) · engagement (enthousiasme ici et maintenant) · intégration (fédérer, faire consensus)."
+      },
+      {
+        "id": "q3",
+        "text": "Dans le processus de planification, la grille SWOT sert à :",
+        "type": "qcm",
+        "options": [
+          "Définir la mission",
+          "Faire le diagnostic : Forces/Faiblesses + Opportunités/Menaces",
+          "Rédiger le chronogramme",
+          "Évaluer les résultats"
+        ],
+        "answer": 1,
+        "explanation": "SWOT = phase 3 (diagnostic) : Forces et Faiblesses (internes/personnelles) + Opportunités et Menaces (environnement)."
+      },
+      {
+        "id": "q4",
+        "text": "Selon Drucker, définir sa mission revient à se demander :",
+        "type": "qcm",
+        "options": [
+          "Combien je veux gagner ?",
+          "Qui suis-je, que fais-je, que veux-je promouvoir, pourquoi ?",
+          "Quel poste occuper ?",
+          "Où habiter ?"
+        ],
+        "answer": 1,
+        "explanation": "Phase 1 (bases) : mission = raison d'être — les 4 questions de Drucker — puis vision (image de ce qu'on veut devenir) et valeurs."
+      },
+      {
+        "id": "q5",
+        "text": "Vrai ou Faux : la phase d'évaluation transforme le processus de planification linéaire en cycle.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — l'évaluation (6e phase) permet d'adapter, réviser, mettre à jour → le processus boucle au lieu de s'arrêter."
+      }
+    ]
+  },
+  "Fiche_Lecon4_DEVELOPPER_SA_GESTION_DE_SOI": {
+    "title": "Développer sa gestion de soi",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les 3 dimensions du soi sont :",
+        "type": "qcm",
+        "options": [
+          "Corps, esprit, âme",
+          "Qui je suis (concept de soi), comment je m'évalue (estime), comment j'agis (comportemental)",
+          "Passé, présent, futur",
+          "Famille, école, travail"
+        ],
+        "answer": 1,
+        "explanation": "3 dimensions : concept de soi (cognitif — qui je suis), estime de soi (évaluatif — comment je m'évalue), comportemental (comment j'agis)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour Kant, avoir la notion du « Je » :",
+        "type": "qcm",
+        "options": [
+          "Rend l'homme égoïste",
+          "Élève l'homme au rang de personne dotée de dignité",
+          "Est un signe de faiblesse",
+          "N'a aucune importance"
+        ],
+        "answer": 1,
+        "explanation": "Kant : la conscience du « Je » élève l'homme au rang de PERSONNE, dotée de dignité — fondement de la conscience de soi."
+      },
+      {
+        "id": "q3",
+        "text": "Quel est le niveau de conscience où l'on agit par amour inconditionnel, sans attente de retour ?",
+        "type": "qcm",
+        "options": [
+          "Subconscient (croyances)",
+          "Conscient (esprit)",
+          "Super conscient (amour)",
+          "Supra conscient (âme)"
+        ],
+        "answer": 2,
+        "explanation": "Super conscient = amour inconditionnel (ex. sauver un enfant d'un incendie). Supra conscient = choisir ses états d'être et montrer l'exemple."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : selon la fiche, la méditation et la lecture suffisent à évoluer en conscience.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — « Être, c'est être en relation » : la relation est l'unique outil pour évoluer en conscience ; méditation et lecture seules ne suffisent pas."
+      },
+      {
+        "id": "q5",
+        "text": "La maîtrise de soi comprend 3 types de contrôle :",
+        "type": "qcm",
+        "options": [
+          "Contrôle des impulsions, contrôle émotionnel, contrôle des mouvements",
+          "Contrôle budgétaire, contrôle du temps, contrôle social",
+          "Contrôle alimentaire, contrôle physique, contrôle moral",
+          "Contrôle des autres, contrôle de l'environnement, contrôle du destin"
+        ],
+        "answer": 0,
+        "explanation": "3 types : impulsions (réfléchir avant d'agir), émotionnel (gérer ses émotions), mouvements (gestion du corps). Fonction exécutive clé pour atteindre ses objectifs."
+      }
+    ]
+  },
+  "Fiche_Lecon5_LEADERSHIP": {
+    "title": "Leadership",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La distinction centrale chef / leader est :",
+        "type": "qcm",
+        "options": [
+          "Le chef est élu, le leader est nommé",
+          "Le chef s'impose (autorité) ; le leader émerge (adhésion du groupe)",
+          "Le leader est toujours le plus ancien",
+          "Il n'y a aucune différence"
+        ],
+        "answer": 1,
+        "explanation": "Le chef S'IMPOSE comme représentant de l'autorité ; le leader ÉMERGE des croyances du groupe — la notion de leader inclut l'adhésion."
+      },
+      {
+        "id": "q2",
+        "text": "Selon Lewin, le style de leadership le plus efficace est :",
+        "type": "qcm",
+        "options": [
+          "Autoritaire",
+          "Participatif",
+          "Délégatif",
+          "Directif"
+        ],
+        "answer": 1,
+        "explanation": "Participatif : ouvert, collaboratif, le leader arbitre — le plus efficace selon Lewin. Piège : ne pas confondre avec autoritaire."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : le leader se désigne lui-même comme leader.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — le leader ne se choisit pas : c'est AUTRUI qui lui renvoie l'image de leader (représentation consensuelle)."
+      },
+      {
+        "id": "q4",
+        "text": "Les 3 approches théoriques du leadership sont :",
+        "type": "qcm",
+        "options": [
+          "Traits, situations, interaction",
+          "Pouvoir, argent, charisme",
+          "Commandement, obéissance, sanction",
+          "Vision, mission, valeurs"
+        ],
+        "answer": 0,
+        "explanation": "Approche des traits (qualités innées) → des situations (les situations font le leader) → de l'interaction (dualité passion/discipline)."
+      },
+      {
+        "id": "q5",
+        "text": "Le leadership « transactionnel » repose sur :",
+        "type": "qcm",
+        "options": [
+          "L'inspiration et le changement de perception",
+          "Un échange : objectifs atteints ↔ récompense (carotte et bâton)",
+          "La cohésion et l'harmonie",
+          "L'accompagnement individuel"
+        ],
+        "answer": 1,
+        "explanation": "Transactionnel = échange récompense/performance. Piège : ne pas confondre avec TRANSFORMATIONNEL (inspire, donne du sens, change les perceptions)."
+      }
+    ]
+  },
+  "Fiche_Lecon6_GESTION_DU_TEMPS_ET_DU_STRESS": {
+    "title": "Gestion du temps et du stress",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les 3 phases du syndrome général d'adaptation de Hans Selye sont, dans l'ordre :",
+        "type": "qcm",
+        "options": [
+          "Résistance → alarme → épuisement",
+          "Alarme → résistance → épuisement",
+          "Épuisement → alarme → résistance",
+          "Alarme → adaptation → guérison"
+        ],
+        "answer": 1,
+        "explanation": "Alarme (adrénaline, lutte ou fuite) → résistance (cortisol, énergie) → épuisement (si le stress persiste). Ordre à connaître par cœur."
+      },
+      {
+        "id": "q2",
+        "text": "Le cortisol est sécrété pendant la phase de :",
+        "type": "qcm",
+        "options": [
+          "Alarme",
+          "Résistance",
+          "Épuisement",
+          "Récupération"
+        ],
+        "answer": 1,
+        "explanation": "Phase de résistance : axe corticotrope → glucocorticoïdes (cortisol) → glucose sanguin pour l'énergie. Adrénaline = phase d'alarme."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : un événement positif (mariage, promotion) peut aussi être un agent stressant.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — le stress dépend de la PERCEPTION et de l'effort d'adaptation exigé, pas de la valence de l'événement."
+      },
+      {
+        "id": "q4",
+        "text": "Le stress aigu se distingue du stress chronique car il :",
+        "type": "qcm",
+        "options": [
+          "Est toujours dangereux",
+          "Est ponctuel, s'arrête avec la situation et peut être utile",
+          "Ne provoque aucune réaction hormonale",
+          "Ne concerne que les examens"
+        ],
+        "answer": 1,
+        "explanation": "Stress aigu = ponctuel, cesse avec la situation, peut être UTILE. Stress chronique = prolongé → épuise le système (effets néfastes)."
+      },
+      {
+        "id": "q5",
+        "text": "La règle d'or pour éviter la surcharge de travail est :",
+        "type": "qcm",
+        "options": [
+          "Travailler plus vite",
+          "Apprendre à dire NON",
+          "Reporter au lendemain",
+          "Déléguer tout"
+        ],
+        "answer": 1,
+        "explanation": "Apprendre à dire NON = règle d'or de la gestion du temps, avec la priorisation (distinguer urgent et important)."
+      }
+    ]
+  }
+}

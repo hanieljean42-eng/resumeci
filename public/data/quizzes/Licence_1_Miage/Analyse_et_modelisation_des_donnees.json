@@ -1,0 +1,392 @@
+{
+  "Fiche_Lecon1_LE_SYSTEME_D_INFORMATION_ET_LE_SAI": {
+    "title": "Le système d'information et le SAI",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un système est :",
+        "type": "qcm",
+        "options": [
+          "Un ordinateur puissant",
+          "Un ensemble d'éléments en interaction dynamique organisés en fonction d'un but",
+          "Un logiciel de gestion",
+          "Une base de données"
+        ],
+        "answer": 1,
+        "explanation": "Système = ensemble d'éléments en interaction dynamique, organisés en vue d'un but. Le système d'information est le système nerveux de l'entreprise."
+      },
+      {
+        "id": "q2",
+        "text": "Le système d'information (SI) de l'entreprise se compose de :",
+        "type": "qcm",
+        "options": [
+          "Uniquement des ordinateurs",
+          "Système opérant (transforme) + système de pilotage (décide) + SI qui les relie",
+          "Uniquement de logiciels",
+          "Des seuls dirigeants"
+        ],
+        "answer": 1,
+        "explanation": "3 sous-systèmes : opérant (production), pilotage (décision) et le SI qui véhicule l'information entre eux."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : toute information peut être automatisée sans condition.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — condition d'automatisation : l'information doit être stable, répétitive et formalisable. La décision créative reste humaine."
+      },
+      {
+        "id": "q4",
+        "text": "Un SAI (Système Automatisé d'Information) « intégré » signifie que :",
+        "type": "qcm",
+        "options": [
+          "Toutes les données sont saisies une seule fois et partagées",
+          "Le système est très cher",
+          "Chaque service a sa propre base de données",
+          "Le système ne peut pas évoluer"
+        ],
+        "answer": 0,
+        "explanation": "SAI intégré : unicité de la saisie, données partagées entre les fonctions — évite la redondance et les incohérences."
+      },
+      {
+        "id": "q5",
+        "text": "L'adaptabilité d'un SAI désigne sa capacité à :",
+        "type": "qcm",
+        "options": [
+          "Résister aux pannes",
+          "Évoluer avec les besoins de l'organisation (évolutivité, flexibilité)",
+          "Fonctionner sans maintenance",
+          "Remplacer les employés"
+        ],
+        "answer": 1,
+        "explanation": "Adaptabilité = capacité du système à s'adapter aux changements de l'organisation (nouvelles fonctions, volumes, réglementations)."
+      }
+    ]
+  },
+  "Fiche_Lecon2_PROJET_INFORMATIQUE_ET_METHODE_MERISE": {
+    "title": "Projet informatique et méthode Merise",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les 4 étapes d'un projet informatique sont, dans l'ordre :",
+        "type": "qcm",
+        "options": [
+          "Programmation → analyse → test → vente",
+          "Analyse → conception → réalisation → maintenance",
+          "Achat → installation → formation → suppression",
+          "Idée → financement → publicité → bilan"
+        ],
+        "answer": 1,
+        "explanation": "Analyse (comprendre le besoin) → conception (modéliser la solution) → réalisation (programmer) → maintenance (faire évoluer)."
+      },
+      {
+        "id": "q2",
+        "text": "Les éléments d'une méthode d'analyse sont :",
+        "type": "qcm",
+        "options": [
+          "La démarche, les modèles et les outils",
+          "Les ordinateurs et les programmeurs",
+          "Le budget et les délais",
+          "Les clients et les fournisseurs"
+        ],
+        "answer": 0,
+        "explanation": "Une méthode = démarche (étapes ordonnées) + modèles (représentations formelles) + outils (techniques de modélisation)."
+      },
+      {
+        "id": "q3",
+        "text": "Merise est :",
+        "type": "qcm",
+        "options": [
+          "Un langage de programmation",
+          "Une méthode d'analyse et de conception de systèmes d'information",
+          "Un système d'exploitation",
+          "Un éditeur de texte"
+        ],
+        "answer": 1,
+        "explanation": "Merise = méthode française d'analyse et de conception : sépare données (MCD→MLD→MPD) et traitements (MCT→MOT→MLT)."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : Merise sépare l'étude des données de l'étude des traitements.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — principe fondateur de Merise : les données (stables) et les traitements (évolutifs) sont modélisés séparément."
+      },
+      {
+        "id": "q5",
+        "text": "Dans Merise, les niveaux d'abstraction vont du plus conceptuel au plus physique :",
+        "type": "qcm",
+        "options": [
+          "Physique → logique → conceptuel",
+          "Conceptuel → organisationnel/logique → physique/opérationnel",
+          "Opérationnel → conceptuel → technique",
+          "Tous au même niveau"
+        ],
+        "answer": 1,
+        "explanation": "Conceptuel (QUOI faire ?) → organisationnel/logique (QUI, QUAND, COMMENT ?) → physique/opérationnel (avec quels moyens techniques ?)."
+      }
+    ]
+  },
+  "Fiche_Lecon3_LE_MCD_ENTITES_ASSOCIATIONS_CARDINALITES": {
+    "title": "Le MCD : entités, associations, cardinalités",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le MCD (Modèle Conceptuel des Données) sert à :",
+        "type": "qcm",
+        "options": [
+          "Programmer la base de données",
+          "Représenter statiquement les données du domaine étudié indépendamment de toute technique",
+          "Dessiner l'organigramme",
+          "Créer les écrans de saisie"
+        ],
+        "answer": 1,
+        "explanation": "Le MCD décrit le QUOI des données : entités, associations, propriétés — sans aucun choix technique (SGBD, langage)."
+      },
+      {
+        "id": "q2",
+        "text": "L'identifiant d'une entité est :",
+        "type": "qcm",
+        "options": [
+          "Toujours son nom",
+          "La (les) propriété(s) qui distingue(nt) de façon unique chaque occurrence",
+          "Une valeur facultative",
+          "La dernière propriété de l'entité"
+        ],
+        "answer": 1,
+        "explanation": "Identifiant (clé primaire conceptuelle) : propriété(s) permettant d'identifier UNE occurrence de façon unique et stable."
+      },
+      {
+        "id": "q3",
+        "text": "Une cardinalité (1, n) côté ÉLÈVE dans l'association « ÉLÈVE – inscrit – CLASSE » signifie :",
+        "type": "qcm",
+        "options": [
+          "Un élève appartient au minimum à 1 classe et au maximum à n classes",
+          "Une classe contient au moins 1 élève",
+          "Un élève n'a pas de classe",
+          "n élèves maximum par classe"
+        ],
+        "answer": 0,
+        "explanation": "La cardinalité se lit du côté de l'entité : (min, max) = combien de fois UNE occurrence de l'entité participe à l'association. Min 0 = facultatif ; min 1 = obligatoire ; max n = plusieurs."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : une occurrence est une instance (un cas particulier) d'une entité ou d'une association.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — occurrence = réalisation concrète : « Dupont » est une occurrence de l'entité ÉLÈVE. Règle : une occurrence d'association ne peut exister sans ses occurrences d'entités."
+      },
+      {
+        "id": "q5",
+        "text": "Règle sur les propriétés d'un MCD :",
+        "type": "qcm",
+        "options": [
+          "Une propriété peut appartenir à plusieurs entités",
+          "Une propriété appartient à une seule entité ou association ; elle est atomique et ne peut prendre qu'une valeur par occurrence",
+          "Les propriétés sont optionnelles",
+          "Une propriété peut contenir plusieurs valeurs pour une occurrence"
+        ],
+        "answer": 1,
+        "explanation": "Propriété = atomique, monovaluée, rattachée à UN seul type (entité ou association) — pas de listes ni de valeurs calculables."
+      }
+    ]
+  },
+  "Fiche_Lecon4_DEPENDANCES_FONCTIONNELLES_ET_NORMALISATION": {
+    "title": "Dépendances fonctionnelles et normalisation",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une dépendance fonctionnelle X → Y signifie :",
+        "type": "qcm",
+        "options": [
+          "X dépend mathématiquement de Y",
+          "À une valeur de X correspond au plus une valeur de Y",
+          "X et Y sont identiques",
+          "Y détermine X"
+        ],
+        "answer": 1,
+        "explanation": "X → Y : connaître X suffit à déterminer Y (au plus une valeur). Ex. n°étudiant → nom : à chaque matricule correspond UN nom."
+      },
+      {
+        "id": "q2",
+        "text": "Une DF élémentaire directe (DFED) est une DF :",
+        "type": "qcm",
+        "options": [
+          "Obtenue par transitivité",
+          "Élémentaire (X minimal) ET non transitive (directe)",
+          "Entre deux associations",
+          "Toujours fausse"
+        ],
+        "answer": 1,
+        "explanation": "DFED : source minimale (on ne peut rien retirer à gauche) et directe (pas déductible par transitivité A→B→C)."
+      },
+      {
+        "id": "q3",
+        "text": "La CIF (contrainte d'intégrité fonctionnelle) est :",
+        "type": "qcm",
+        "options": [
+          "Une clé étrangère",
+          "Une DF entre entités représentée sur le MCD qui transforme une relation n-aire en hiérarchie",
+          "Une erreur de modélisation",
+          "Un index physique"
+        ],
+        "answer": 1,
+        "explanation": "CIF : DF entre entités (ex. un employé n'appartient qu'à UN service) matérialisée par une flèche — l'association devient porteuse d'une dépendance."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : la couverture minimale (SAT) d'un graphe de DF s'obtient en supprimant les DF non élémentaires et les DF transitives.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — SAT/couverture minimale : garder uniquement les DFED du GDF — base pour vérifier la normalisation des entités."
+      },
+      {
+        "id": "q5",
+        "text": "Une entité est en 2e forme normale (2FN) si :",
+        "type": "qcm",
+        "options": [
+          "Elle est en 1FN et toute propriété non identifiante dépend de TOUT l'identifiant",
+          "Elle a deux identifiants",
+          "Elle n'a aucune propriété",
+          "Toutes ses propriétés sont des clés"
+        ],
+        "answer": 0,
+        "explanation": "2FN : 1FN (propriétés atomiques + identifiant) ET pas de dépendance à une PARTIE de l'identifiant (important pour les identifiants composés)."
+      }
+    ]
+  },
+  "Fiche_Lecon5_DU_MCD_AU_MLD_ET_MPD": {
+    "title": "Du MCD au MLD et au MPD",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La différence clé entre MCD et MLD est :",
+        "type": "qcm",
+        "options": [
+          "Le MCD décrit les données sans choix technique ; le MLD adapte le modèle à un type de SGBD (tables pour le relationnel)",
+          "Le MCD est fait après le MLD",
+          "Le MLD est plus abstrait que le MCD",
+          "Il n'y a aucune différence"
+        ],
+        "answer": 0,
+        "explanation": "MCD = conceptuel (indépendant de la technique) ; MLD = logique (adapté au type de SGBD : relationnel → tables/relation)."
+      },
+      {
+        "id": "q2",
+        "text": "Une entité du MCD devient au MLD :",
+        "type": "qcm",
+        "options": [
+          "Un attribut",
+          "Une relation (table) dont l'identifiant devient la clé primaire",
+          "Une contrainte",
+          "Un index"
+        ],
+        "answer": 1,
+        "explanation": "Entité → relation/table ; ses propriétés → attributs ; son identifiant → clé primaire (soulignée)."
+      },
+      {
+        "id": "q3",
+        "text": "Une association (x,n) — (x,1) au MCD se transforme au MLD par :",
+        "type": "qcm",
+        "options": [
+          "Une nouvelle table",
+          "La migration de l'identifiant du côté (x,1) comme clé étrangère dans la relation du côté (x,n)",
+          "La suppression de l'association",
+          "Un héritage"
+        ],
+        "answer": 1,
+        "explanation": "Règle : relation n'a une → clé étrangère. L'identifiant de l'entité côté max 1 migre dans la relation de l'entité côté n."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : une association (n,n) devient toujours une nouvelle relation dont la clé primaire est composée des identifiants des deux entités.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — association plusieurs-à-plusieurs → relation propre : clé primaire composée = identifiant entité 1 + identifiant entité 2 (+ ses propriétés éventuelles)."
+      },
+      {
+        "id": "q5",
+        "text": "Le MPD (Modèle Physique des Données) décrit :",
+        "type": "qcm",
+        "options": [
+          "Les besoins des utilisateurs",
+          "L'implémentation concrète : tables SQL, types de données, index, contraintes dans un SGBD précis",
+          "L'organigramme de l'entreprise",
+          "Les maquettes d'écran"
+        ],
+        "answer": 1,
+        "explanation": "MPD = dernier niveau : traduction dans un SGBD donné (MySQL, Oracle...) : CREATE TABLE, types, index, contraintes d'intégrité."
+      }
+    ]
+  },
+  "Fiche_Lecon6_MCT_ET_MOT_MODELISATION_DES_TRAITEMENTS": {
+    "title": "MCT et MOT : modélisation des traitements",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le MCT (Modèle Conceptuel des Traitements) décrit :",
+        "type": "qcm",
+        "options": [
+          "Le COMMENT technique",
+          "Le QUOI : les événements déclencheurs, les opérations et leurs résultats",
+          "Les postes de travail",
+          "Les horaires de l'entreprise"
+        ],
+        "answer": 1,
+        "explanation": "MCT = vision événementielle : événement déclencheur → opération (suite d'actions) → événements résultats. Pas d'organisation ni de technique."
+      },
+      {
+        "id": "q2",
+        "text": "Dans un MCT, la synchronisation représente :",
+        "type": "qcm",
+        "options": [
+          "La durée d'une opération",
+          "Les conditions logiques (ET/OU) sur les événements pour déclencher une opération",
+          "Le poste de travail",
+          "Un type de donnée"
+        ],
+        "answer": 1,
+        "explanation": "Synchronisation = expression logique combinant les événements contributeurs (ET / OU) nécessaires au déclenchement de l'opération."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : dans le MCT, une opération peut émettre un événement résultat soumis à une règle d'émission (conditionnelle).",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — règle d'émission : l'événement résultat n'est produit que si la condition associée est vérifiée."
+      },
+      {
+        "id": "q4",
+        "text": "Le MOT ajoute par rapport au MCT :",
+        "type": "qcm",
+        "options": [
+          "Les postes de travail, les phases, la période d'exécution et la nature des traitements",
+          "Uniquement des couleurs",
+          "Les tables de la base",
+          "Le langage de programmation"
+        ],
+        "answer": 0,
+        "explanation": "MOT = MCT + organisation : QUI (poste de travail), QUAND (période, phases), COMMENT (manuel/automatique/interactif)."
+      },
+      {
+        "id": "q5",
+        "text": "Dans le MOT, une « phase » regroupe :",
+        "type": "qcm",
+        "options": [
+          "Les employés d'un service",
+          "Les procédures simultanément activables pendant une même période d'exécution",
+          "Les tables du MPD",
+          "Les événements externes"
+        ],
+        "answer": 1,
+        "explanation": "Phase = ensemble de procédures exécutables pendant la même période ; le découpage en phases structure le MOT dans le temps."
+      }
+    ]
+  }
+}

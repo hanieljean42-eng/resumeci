@@ -1,0 +1,307 @@
+{
+  "Fiche_Lecon1_NOTIONS_DE_BASE_TYPES_ET_ENTREES_SORTIES": {
+    "title": "Notions de base : types et entrées/sorties",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La compilation d'un programme C se déroule en combien de phases principales ?",
+        "type": "qcm",
+        "options": [
+          "2 : écriture et exécution",
+          "4 : préprocesseur → compilation → assemblage → édition de liens",
+          "1 : exécution directe",
+          "3 : saisie → test → sauvegarde"
+        ],
+        "answer": 1,
+        "explanation": "4 phases : préprocesseur (#include, #define) → compilation (code assembleur) → assemblage (code objet) → édition de liens (exécutable)."
+      },
+      {
+        "id": "q2",
+        "text": "Pour afficher un entier avec printf, on utilise le format :",
+        "type": "qcm",
+        "options": ["%f", "%c", "%d", "%s"],
+        "answer": 2,
+        "explanation": "%d = entier (int) ; %f = flottant ; %c = caractère ; %s = chaîne de caractères."
+      },
+      {
+        "id": "q3",
+        "text": "Dans scanf(\"%d\", &x), le symbole & devant x est :",
+        "type": "qcm",
+        "options": [
+          "Une faute de frappe",
+          "L'opérateur adresse : il donne à scanf l'adresse mémoire de x",
+          "Un opérateur logique ET",
+          "Obligatoire pour tous les types"
+        ],
+        "answer": 1,
+        "explanation": "&x = adresse de x : scanf doit savoir OÙ écrire la valeur lue. Piège classique : oublier le & → comportement indéfini."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : en C, le prototype d'une fonction permet au compilateur de vérifier les types avant que la fonction soit définie.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — le prototype (déclaration en tête) annonce la signature : type de retour + types des paramètres → vérification à la compilation."
+      },
+      {
+        "id": "q5",
+        "text": "Quel type C utiliser pour stocker une valeur décimale simple précision ?",
+        "type": "qcm",
+        "options": ["int", "char", "float", "void"],
+        "answer": 2,
+        "explanation": "float = décimal simple précision ; double = double précision ; int = entier ; char = caractère."
+      }
+    ]
+  },
+  "Fiche_Lecon2_OPERATEURS_ET_STRUCTURES_DE_CONTROLE": {
+    "title": "Opérateurs et structures de contrôle",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le piège le plus classique dans un if en C est :",
+        "type": "qcm",
+        "options": [
+          "Oublier les accolades pour plusieurs instructions",
+          "Écrire if (x = 5) au lieu de if (x == 5) — affectation au lieu de comparaison",
+          "Mettre un point-virgule après la condition",
+          "Les trois erreurs sont classiques"
+        ],
+        "answer": 3,
+        "explanation": "3 pièges réels : = vs == (le = affecte et vaut toujours vrai si ≠ 0), accolades oubliées, et ; après if qui vide le corps du test."
+      },
+      {
+        "id": "q2",
+        "text": "L'opérateur % en C calcule :",
+        "type": "qcm",
+        "options": [
+          "Le pourcentage",
+          "Le reste de la division entière (modulo)",
+          "La division décimale",
+          "La puissance"
+        ],
+        "answer": 1,
+        "explanation": "% = modulo (entiers uniquement) : 17 % 5 = 2. Il ne fonctionne PAS sur les float/double."
+      },
+      {
+        "id": "q3",
+        "text": "L'expression x += 3 équivaut à :",
+        "type": "qcm",
+        "options": ["x = 3", "x = x + 3", "x == 3", "x + 3"],
+        "answer": 1,
+        "explanation": "Affectation composée : x += 3 ⇔ x = x + 3. Même logique pour −=, *=, /=, %=."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : en C, la valeur 0 est considérée comme fausse et toute valeur non nulle comme vraie.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — pas de type booléen natif en C historique : 0 = faux, tout le reste = vrai. D'où le danger de if (x = 0) → toujours faux."
+      },
+      {
+        "id": "q5",
+        "text": "Dans un switch, que se passe-t-il si on oublie le break ?",
+        "type": "qcm",
+        "options": [
+          "Le programme plante",
+          "L'exécution continue dans le cas suivant (chute en cascade)",
+          "Le default est ignoré",
+          "Rien de particulier"
+        ],
+        "answer": 1,
+        "explanation": "Sans break, l'exécution « tombe » dans les cas suivants — parfois voulu (regrouper des cas), souvent un bug."
+      }
+    ]
+  },
+  "Fiche_Lecon3_LES_POINTEURS": {
+    "title": "Les pointeurs",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Un pointeur est :",
+        "type": "qcm",
+        "options": [
+          "Une variable qui contient une valeur entière",
+          "Une variable qui contient l'adresse mémoire d'une autre variable",
+          "Un type de boucle",
+          "Une fonction de la bibliothèque standard"
+        ],
+        "answer": 1,
+        "explanation": "Pointeur = variable dont le contenu est une ADRESSE mémoire. Déclaré avec * : int *p;"
+      },
+      {
+        "id": "q2",
+        "text": "Si p est un pointeur, que désigne *p ?",
+        "type": "qcm",
+        "options": [
+          "L'adresse de p",
+          "La valeur stockée à l'adresse contenue dans p (déréférencement)",
+          "La taille de p en octets",
+          "Le nom de p"
+        ],
+        "answer": 1,
+        "explanation": "*p = déréférencement : accède au CONTENU pointé. &x donne l'adresse de x ; *p lit/modifie la valeur à cette adresse."
+      },
+      {
+        "id": "q3",
+        "text": "Une Lvalue (left value) est :",
+        "type": "qcm",
+        "options": [
+          "Une valeur constante",
+          "Une expression qui peut recevoir une affectation (à gauche du =) — elle désigne un emplacement mémoire",
+          "Une variable locale",
+          "Une valeur renvoyée par return"
+        ],
+        "answer": 1,
+        "explanation": "Lvalue = ce qui peut être à GAUCHE du = : variable, *p, tab[i]. 5 ou x+1 ne sont PAS des Lvalues."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : malloc() alloue de la mémoire dynamiquement et doit être associé à free() pour libérer la mémoire.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — malloc alloue dans le tas (heap) ; oublier free() → fuite mémoire. Toujours vérifier que malloc n'a pas retourné NULL."
+      },
+      {
+        "id": "q5",
+        "text": "Si int *p = &a; et a = 10, que vaut *p ?",
+        "type": "qcm",
+        "options": [
+          "L'adresse de a",
+          "10",
+          "L'adresse de p",
+          "Une valeur aléatoire"
+        ],
+        "answer": 1,
+        "explanation": "p contient l'adresse de a ; *p déréférence → la valeur de a, donc 10. Modifier *p modifie a directement."
+      }
+    ]
+  },
+  "Fiche_Lecon4_TABLEAUX_ET_CHAINES_DE_CARACTERES": {
+    "title": "Tableaux et chaînes de caractères",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En C, l'indexation d'un tableau de n éléments va de :",
+        "type": "qcm",
+        "options": ["1 à n", "0 à n−1", "0 à n", "1 à n−1"],
+        "answer": 1,
+        "explanation": "Indices de 0 à n−1 : int t[10] → t[0] à t[9]. Accéder à t[10] = débordement (comportement indéfini, piège classique)."
+      },
+      {
+        "id": "q2",
+        "text": "Le lien fondamental entre tableaux et pointeurs : le nom d'un tableau représente :",
+        "type": "qcm",
+        "options": [
+          "La première valeur du tableau",
+          "L'adresse de son premier élément",
+          "La taille du tableau",
+          "Un pointeur modifiable"
+        ],
+        "answer": 1,
+        "explanation": "t équivaut à &t[0] : t[i] ⇔ *(t + i). Mais attention : le nom du tableau n'est PAS une Lvalue — on ne peut pas faire t = autre chose."
+      },
+      {
+        "id": "q3",
+        "text": "Une chaîne de caractères en C se termine par :",
+        "type": "qcm",
+        "options": [
+          "Un point final",
+          "Le caractère nul '\\0'",
+          "Un espace",
+          "Un retour à la ligne"
+        ],
+        "answer": 1,
+        "explanation": "'\\0' = terminateur obligatoire. char s[6] pour \"salut\" = 5 lettres + '\\0'. L'oublier → fonctions de chaînes lisent hors limites."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : une chaîne de caractères en C est un tableau de char terminé par '\\0'.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — pas de type string natif : char s[] = \"texte\" est un tableau de char ; printf %s lit jusqu'au '\\0'."
+      },
+      {
+        "id": "q5",
+        "text": "Pour lire une chaîne saisie par l'utilisateur avec scanf, on écrit :",
+        "type": "qcm",
+        "options": [
+          "scanf(\"%s\", &s);",
+          "scanf(\"%s\", s); — sans & car s est déjà une adresse",
+          "scanf(\"%c\", s);",
+          "scanf(s);"
+        ],
+        "answer": 1,
+        "explanation": "%s lit une chaîne : le nom du tableau s est DÉJÀ une adresse → PAS de & (piège inverse de %d). Attention aux débordements : préférer %Ns."
+      }
+    ]
+  },
+  "Fiche_Lecon5_FONCTIONS_STRUCTURES_ET_FICHIERS": {
+    "title": "Fonctions, structures et fichiers",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "En C, le passage d'arguments aux fonctions se fait :",
+        "type": "qcm",
+        "options": [
+          "Par référence uniquement",
+          "Par valeur : la fonction reçoit une COPIE de l'argument",
+          "Par nom",
+          "Les deux modes sont natifs"
+        ],
+        "answer": 1,
+        "explanation": "Passage par VALEUR : modifier le paramètre ne modifie pas l'argument. Pour modifier l'appelant → passer un pointeur (&x)."
+      },
+      {
+        "id": "q2",
+        "text": "La fonction main() :",
+        "type": "qcm",
+        "options": [
+          "Est facultative",
+          "Est le point d'entrée obligatoire de tout programme C",
+          "Doit retourner void",
+          "Ne reçoit jamais d'arguments"
+        ],
+        "answer": 1,
+        "explanation": "main() = point d'entrée unique, obligatoire ; convention : return 0 = succès. Peut recevoir argc/argv (arguments en ligne de commande)."
+      },
+      {
+        "id": "q3",
+        "text": "typedef struct { ... } Point; permet :",
+        "type": "qcm",
+        "options": [
+          "De créer un type structuré Point utilisable comme un type natif",
+          "De faire des boucles",
+          "D'allouer de la mémoire",
+          "D'inclure des fichiers"
+        ],
+        "answer": 0,
+        "explanation": "struct = regrouper des champs de types différents (Point : x, y). typedef donne un nom court : Point p; au lieu de struct Point p;."
+      },
+      {
+        "id": "q4",
+        "text": "Vrai ou Faux : fopen() retourne NULL si le fichier ne peut pas être ouvert — il faut toujours tester le retour.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — FILE *f = fopen(\"data.txt\", \"r\"); if (f == NULL) → erreur. Modes : \"r\" lecture, \"w\" écriture, \"a\" ajout. fclose() obligatoire."
+      },
+      {
+        "id": "q5",
+        "text": "La portée d'une variable déclarée à l'intérieur d'une fonction est :",
+        "type": "qcm",
+        "options": [
+          "Globale au programme entier",
+          "Locale : visible uniquement dans cette fonction (ou ce bloc)",
+          "Permanente entre deux appels",
+          "Accessible depuis main()"
+        ],
+        "answer": 1,
+        "explanation": "Variable locale = visible dans son bloc seulement, détruite à la fin (sauf static). Variable globale = déclarée hors de toute fonction."
+      }
+    ]
+  }
+}

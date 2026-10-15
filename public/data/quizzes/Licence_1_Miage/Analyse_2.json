@@ -1,0 +1,197 @@
+{
+  "Fiche_Lecon1_INTEGRABILITE_ET_INTEGRALE_DE_RIEMANN": {
+    "title": "Intégrabilité et intégrale de Riemann",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une subdivision de [a, b] est :",
+        "type": "qcm",
+        "options": [
+          "Une fonction continue sur [a, b]",
+          "Une suite finie de points a = x₀ < x₁ < … < xₙ = b",
+          "Une suite infinie de points quelconques",
+          "Un découpage en intervalles égaux uniquement"
+        ],
+        "answer": 1,
+        "explanation": "Une subdivision est une suite FINIE de points ordonnés partant de a et finissant en b — les intervalles peuvent être inégaux."
+      },
+      {
+        "id": "q2",
+        "text": "Les sommes de Darboux : la fonction f est intégrable quand :",
+        "type": "qcm",
+        "options": [
+          "La somme supérieure égale la somme inférieure pour toute subdivision",
+          "La borne supérieure des sommes inférieures égale la borne inférieure des sommes supérieures",
+          "f est strictement positive",
+          "Les deux sommes divergent"
+        ],
+        "answer": 1,
+        "explanation": "Critère (CNS) : f est Riemann-intégrable ssi sup des sommes inférieures = inf des sommes supérieures = ∫f."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : toute fonction continue sur un segment [a, b] est intégrable au sens de Riemann.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — théorème fondamental : les fonctions continues sur un segment sont Riemann-intégrables (ainsi que les fonctions monotones et les fonctions en escalier)."
+      },
+      {
+        "id": "q4",
+        "text": "Le pas d'une subdivision est :",
+        "type": "qcm",
+        "options": [
+          "Le nombre de points de la subdivision",
+          "La largeur minimale des intervalles",
+          "La largeur maximale des intervalles (max des xᵢ₊₁ − xᵢ)",
+          "La longueur totale de [a, b]"
+        ],
+        "answer": 2,
+        "explanation": "Le pas = max(xᵢ₊₁ − xᵢ). Faire tendre le pas vers 0 revient à raffiner la subdivision."
+      },
+      {
+        "id": "q5",
+        "text": "Pour une subdivision régulière d'ordre n de [a, b], chaque intervalle mesure :",
+        "type": "qcm",
+        "options": [
+          "n / (b − a)",
+          "(b − a) / n",
+          "(a + b) / n",
+          "b / n"
+        ],
+        "answer": 1,
+        "explanation": "Subdivision régulière : intervalles égaux de largeur (b − a)/n — base des sommes de Riemann vues en TD."
+      }
+    ]
+  },
+  "Fiche_Lecon2_PRIMITIVES_ET_CALCUL_INTEGRAL": {
+    "title": "Primitives et calcul intégral",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Une primitive de xⁿ (n ≠ −1) est :",
+        "type": "qcm",
+        "options": [
+          "n · xⁿ⁻¹",
+          "xⁿ⁺¹ / (n + 1)",
+          "xⁿ⁻¹ / n",
+          "ln(x)ⁿ"
+        ],
+        "answer": 1,
+        "explanation": "On ajoute 1 à l'exposant et on divise par le nouvel exposant : ∫xⁿdx = xⁿ⁺¹/(n+1) + C."
+      },
+      {
+        "id": "q2",
+        "text": "La formule d'intégration par parties est :",
+        "type": "qcm",
+        "options": [
+          "∫u′v = uv − ∫uv′",
+          "∫u′v = uv + ∫uv′",
+          "∫uv = ∫u × ∫v",
+          "∫u′v′ = uv′ − ∫u′v"
+        ],
+        "answer": 0,
+        "explanation": "IPP : ∫u′v = [uv] − ∫uv′. Piège classique : oublier le signe MOINS devant la seconde intégrale."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : deux primitives d'une même fonction sur un intervalle diffèrent d'une constante.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — si F′ = G′ = f alors (F−G)′ = 0 donc F−G = constante. D'où le « +C » indispensable."
+      },
+      {
+        "id": "q4",
+        "text": "Si F est une primitive de f continue sur [a, b], alors ∫(a→b) f(x)dx =",
+        "type": "qcm",
+        "options": [
+          "F(a) − F(b)",
+          "F(b) − F(a)",
+          "f(b) − f(a)",
+          "F(b) × F(a)"
+        ],
+        "answer": 1,
+        "explanation": "Théorème fondamental : ∫f = [F(x)]ₐᵇ = F(b) − F(a) — attention au sens, c'est b moins a."
+      },
+      {
+        "id": "q5",
+        "text": "La valeur moyenne de f continue sur [a, b] est :",
+        "type": "qcm",
+        "options": [
+          "(f(a) + f(b)) / 2",
+          "∫(a→b) f(x)dx",
+          "(1/(b−a)) × ∫(a→b) f(x)dx",
+          "f((a+b)/2)"
+        ],
+        "answer": 2,
+        "explanation": "Valeur moyenne μ = (1/(b−a))∫f — la hauteur du rectangle d'aire égale à celle sous la courbe."
+      }
+    ]
+  },
+  "Fiche_Lecon3_EQUATIONS_DIFFERENTIELLES": {
+    "title": "Équations différentielles",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La solution générale de l'équation homogène y′ = ay (a constante) est :",
+        "type": "qcm",
+        "options": [
+          "y = a·eˣ + C",
+          "y = C·eᵃˣ",
+          "y = C·xᵃ",
+          "y = eᵃˣ / a"
+        ],
+        "answer": 1,
+        "explanation": "y′ = ay ⟹ y = C·eᵃˣ avec C ∈ ℝ. Vérification : y′ = aC·eᵃˣ = ay."
+      },
+      {
+        "id": "q2",
+        "text": "Un problème de Cauchy est :",
+        "type": "qcm",
+        "options": [
+          "Une équation différentielle sans solution",
+          "Une équation différentielle accompagnée d'une condition initiale",
+          "Une équation à coefficients variables",
+          "Un système de deux équations"
+        ],
+        "answer": 1,
+        "explanation": "Problème de Cauchy = EDO + condition initiale y(x₀) = y₀ → fixe la constante C → solution UNIQUE."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : la méthode de variation de la constante sert à trouver une solution particulière de l'équation avec second membre.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — on remplace C par une fonction C(x) dans y = C·eᵃˣ pour résoudre y′ = ay + b(x)."
+      },
+      {
+        "id": "q4",
+        "text": "Pour l'équation du 2nd ordre ay″ + by′ + cy = 0, l'équation caractéristique est :",
+        "type": "qcm",
+        "options": [
+          "ar + b = c",
+          "ar² + br + c = 0",
+          "a + br + cr² = y",
+          "ar² − br + c = 0"
+        ],
+        "answer": 1,
+        "explanation": "On cherche y = eʳˣ → ar²eʳˣ + breʳˣ + ceʳˣ = 0 → ar² + br + c = 0 (racines réelles, double ou complexes)."
+      },
+      {
+        "id": "q5",
+        "text": "Si l'équation caractéristique a deux racines réelles distinctes r₁ et r₂, la solution générale est :",
+        "type": "qcm",
+        "options": [
+          "y = (C₁ + C₂x)·eʳˣ",
+          "y = C₁eʳ¹ˣ + C₂eʳ²ˣ",
+          "y = C₁cos(r₁x) + C₂sin(r₂x)",
+          "y = C₁xʳ¹ + C₂xʳ²"
+        ],
+        "answer": 1,
+        "explanation": "Deux racines réelles distinctes → combinaison linéaire des deux solutions indépendantes eʳ¹ˣ et eʳ²ˣ."
+      }
+    ]
+  }
+}

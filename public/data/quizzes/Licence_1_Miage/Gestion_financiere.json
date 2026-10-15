@@ -1,0 +1,197 @@
+{
+  "Fiche_Lecon1_GENERALITES_ET_LE_BILAN": {
+    "title": "Généralités et le bilan",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Les 3 cycles fondamentaux de l'entreprise sont :",
+        "type": "qcm",
+        "options": [
+          "Production, vente, salaires",
+          "Investissement, exploitation, financement",
+          "Achat, stockage, distribution",
+          "Création, croissance, faillite"
+        ],
+        "answer": 1,
+        "explanation": "Les 3 cycles : investissement (acquisitions), exploitation (activité courante), financement (ressources)."
+      },
+      {
+        "id": "q2",
+        "text": "Le bilan comptable représente :",
+        "type": "qcm",
+        "options": [
+          "Les flux de l'entreprise sur un exercice",
+          "Le patrimoine de l'entreprise à un instant donné (actif = passif)",
+          "Uniquement les dettes de l'entreprise",
+          "Le chiffre d'affaires annuel"
+        ],
+        "answer": 1,
+        "explanation": "Le bilan est une « photo » du patrimoine à une date : ACTIF (ce que l'entreprise possède) = PASSIF (ce qu'elle doit)."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : dans un bilan, l'actif circulant regroupe les éléments durables comme les machines et les brevets.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — machines et brevets sont des immobilisations (actif immobilisé). L'actif circulant = stocks, créances clients, trésorerie."
+      },
+      {
+        "id": "q4",
+        "text": "Les fonds propres de l'entreprise comprennent :",
+        "type": "qcm",
+        "options": [
+          "Capital + réserves + résultat",
+          "Emprunts + dettes fournisseurs",
+          "Stocks + créances",
+          "Uniquement le capital social"
+        ],
+        "answer": 0,
+        "explanation": "Fonds propres = capital + réserves + résultat de l'exercice. Les emprunts sont des dettes financières (passif exigible)."
+      },
+      {
+        "id": "q5",
+        "text": "Le fonds de roulement (FR) se calcule :",
+        "type": "qcm",
+        "options": [
+          "Actif circulant − passif circulant",
+          "Capitaux permanents − actif immobilisé",
+          "Les deux formules sont équivalentes",
+          "Résultat − dividendes"
+        ],
+        "answer": 2,
+        "explanation": "FR = capitaux permanents − actif immobilisé (par le haut) = actif circulant − passif circulant (par le bas). Même résultat."
+      }
+    ]
+  },
+  "Fiche_Lecon2_COMPTE_DE_RESULTAT_SIG_ET_CAFG": {
+    "title": "Compte de résultat, SIG et CAFG",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Le compte de résultat présente :",
+        "type": "qcm",
+        "options": [
+          "Le patrimoine à un instant t",
+          "Les charges et les produits sur une période donnée",
+          "Uniquement les ventes réalisées",
+          "Les flux de trésorerie"
+        ],
+        "answer": 1,
+        "explanation": "Compte de résultat = charges vs produits sur l'exercice → dégage le RÉSULTAT (bénéfice ou perte)."
+      },
+      {
+        "id": "q2",
+        "text": "L'excédent brut d'exploitation (EBE) se calcule à partir :",
+        "type": "qcm",
+        "options": [
+          "Du résultat net + impôts",
+          "De la valeur ajoutée − charges de personnel − impôts et taxes",
+          "Du chiffre d'affaires − achats de marchandises",
+          "Des produits financiers − charges financières"
+        ],
+        "answer": 1,
+        "explanation": "EBE = valeur ajoutée − charges de personnel − impôts et taxes sur la production. Il mesure la performance de l'exploitation."
+      },
+      {
+        "id": "q3",
+        "text": "Vrai ou Faux : la capacité d'autofinancement (CAF) correspond exactement à la trésorerie disponible.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 1,
+        "explanation": "Faux — la CAF est un flux potentiel (résultat net + charges non décaissables − produits non encaissables), pas de la trésorerie réelle."
+      },
+      {
+        "id": "q4",
+        "text": "La méthode additive de calcul de la CAF part :",
+        "type": "qcm",
+        "options": [
+          "De l'EBE",
+          "Du résultat net",
+          "Du chiffre d'affaires",
+          "Des fonds propres"
+        ],
+        "answer": 1,
+        "explanation": "Méthode additive : CAF = résultat net + charges calculées (dotations) − produits calculés (reprises). La soustractive part de l'EBE."
+      },
+      {
+        "id": "q5",
+        "text": "Parmi ces soldes, lequel mesure la richesse créée par l'entreprise au-delà de la consommation de biens externes ?",
+        "type": "qcm",
+        "options": [
+          "La marge commerciale",
+          "La valeur ajoutée",
+          "Le résultat financier",
+          "Le solde de trésorerie"
+        ],
+        "answer": 1,
+        "explanation": "Valeur ajoutée = production − consommations intermédiaires : c'est la richesse réellement créée, répartie entre personnel, État, prêteurs et entreprise."
+      }
+    ]
+  },
+  "Fiche_Lecon3_DECISION_D_INVESTISSEMENT_VAN_DRCI_TRI_IP": {
+    "title": "Décision d'investissement : VAN, DRCI, TRI, IP",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "La VAN (valeur actuelle nette) d'un projet se calcule :",
+        "type": "qcm",
+        "options": [
+          "Investissement initial − somme des cash-flows",
+          "Somme des cash-flows actualisés − investissement initial",
+          "Chiffre d'affaires − charges",
+          "Somme des cash-flows non actualisés"
+        ],
+        "answer": 1,
+        "explanation": "VAN = Σ CFₜ/(1+t)ᵗ − I₀ : on actualise chaque cash-flow puis on retire l'investissement initial."
+      },
+      {
+        "id": "q2",
+        "text": "Vrai ou Faux : un projet dont la VAN est négative doit être rejeté.",
+        "type": "vrai_faux",
+        "options": ["Vrai", "Faux"],
+        "answer": 0,
+        "explanation": "Vrai — VAN < 0 : le projet rapporte moins que le taux d'actualisation exigé → il détruit de la valeur. VAN > 0 = accepté."
+      },
+      {
+        "id": "q3",
+        "text": "Le TRI (taux de rentabilité interne) est :",
+        "type": "qcm",
+        "options": [
+          "Le taux qui rend la VAN nulle",
+          "Le taux d'emprunt bancaire",
+          "Le taux d'inflation",
+          "Le taux de rentabilité minimum exigé"
+        ],
+        "answer": 0,
+        "explanation": "TRI = taux t tel que VAN(t) = 0. Projet accepté si TRI > taux de rentabilité exigé. On le trouve par interpolation."
+      },
+      {
+        "id": "q4",
+        "text": "Le DRCI (délai de récupération du capital investi) mesure :",
+        "type": "qcm",
+        "options": [
+          "Le temps de vie du projet",
+          "Le temps nécessaire pour que les cash-flows actualisés remboursent l'investissement",
+          "La durée de l'emprunt",
+          "Le délai de paiement des fournisseurs"
+        ],
+        "answer": 1,
+        "explanation": "DRCI = temps pour que Σ cash-flows actualisés ≥ I₀. Entre deux projets, on préfère le DRCI le plus court."
+      },
+      {
+        "id": "q5",
+        "text": "L'indice de profitabilité (IP) se calcule :",
+        "type": "qcm",
+        "options": [
+          "VAN / Investissement initial",
+          "Σ cash-flows actualisés / Investissement initial",
+          "Les deux formules (IP = 1 + VAN/I₀ ou ΣCF/I₀ selon la convention)",
+          "Investissement / VAN"
+        ],
+        "answer": 2,
+        "explanation": "IP = ΣCF actualisés / I₀ (projet accepté si IP > 1) — équivalent à 1 + VAN/I₀. Utile pour comparer des projets de tailles différentes."
+      }
+    ]
+  }
+}
