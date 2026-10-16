@@ -99,43 +99,38 @@
   }
   </script>
   <link rel="stylesheet" href="/main.css?v=3.3.4">
-  <link rel="stylesheet" href="/univ.css?v=1.0.0">
+  <link rel="stylesheet" href="/univ.css?v=2.1.0">
+  <link rel="stylesheet" href="/intro.css?v=1.1.0">
 </head>
 <body>
   <a href="#content" class="skip-to-content">Aller au contenu principal</a>
-  <section class="intro-screen" id="introScreen">
-    <div class="intro-card">
-      <div>
-        <div class="intro-badge"><i class="fas fa-graduation-cap"></i> Fiches de résumé — Collège, Lycée & Université</div>
-        <h1>Révise plus vite, retiens mieux, progresse chaque jour.</h1>
-        <p>Cette plateforme te donne accès à des fiches de résumé pour le Collège, le Lycée et l'Université, des statistiques de progression et un mode audio pour apprendre même avec peu de connexion.</p>
-        <div class="intro-features">
-          <div class="intro-feature"><span>📚</span> Fiches claires pour réviser les leçons importantes</div>
-          <div class="intro-feature"><span>📊</span> Statistiques et suivi détaillé de ta progression</div>
-          <div class="intro-feature"><span>🎧</span> Mode audio pour écouter ses cours n'importe où</div>
-          <div class="intro-feature"><span>📱</span> Application installable et utilisable hors-ligne</div>
-          <div class="intro-feature"><span>🛠️</span> Calculatrice, Timer Pomodoro, Bloc-notes intégrés</div>
-          <div class="intro-feature"><span>📅</span> Plan de révision personnalisé selon ta date d'examen</div>
-          <div class="intro-feature"><span>👆</span> Glisse entre les fiches et partage via WhatsApp/QR</div>
+  <section class="intro-screen intro-v2" id="introScreen">
+    <div class="iv2-bg" aria-hidden="true"><span class="iv2-orb o1"></span><span class="iv2-orb o2"></span><span class="iv2-orb o3"></span><span class="iv2-grid"></span></div>
+    <div class="iv2-wrap">
+      <div class="iv2-left">
+        <div class="iv2-badge">Collège · Lycée · Université — Côte d'Ivoire</div>
+        <h1 class="iv2-title"><span>Révise moins longtemps.</span><span class="iv2-accent">Retiens beaucoup plus.</span></h1>
+        <p class="iv2-lead">Des fiches de résumé claires, leçon par leçon, rédigées à partir des cours officiels — de la 6ᵉ à la Licence. Avec quiz, audio et suivi de progression, même avec peu de connexion.</p>
+        <div class="iv2-stats">
+          <div class="iv2-stat"><strong data-count="1214">0</strong><small>fiches</small></div>
+          <div class="iv2-stat"><strong data-count="107">0</strong><small>matières</small></div>
+          <div class="iv2-stat"><strong data-count="14">0</strong><small>classes</small></div>
         </div>
-        <div class="intro-actions">
-          <button class="intro-continue" id="continueBtn"><i class="fas fa-arrow-right"></i> Continuer</button>
-          <a class="intro-note" href="/connexion.html" style="color:#2563eb;font-weight:700;text-decoration:none">J'ai déjà un compte · Me connecter</a>
-          <span class="intro-note"><i class="fas fa-circle-info"></i> Les fiches restent séparées du nom du créateur.</span>
+        <div class="iv2-actions">
+          <button class="iv2-cta" id="continueBtn"><span>Commencer gratuitement</span><i class="fas fa-arrow-right"></i></button>
+          <a class="iv2-link" href="/connexion.html">J'ai déjà un compte</a>
         </div>
+        <p class="iv2-note"><i class="fas fa-gift"></i> La 1ʳᵉ leçon de chaque matière est offerte.</p>
       </div>
-      <div class="intro-visual">
-        <div class="intro-visual-top">
-          <div class="intro-logo">📘</div>
-          <div class="intro-pill">Campus CI</div>
-        </div>
-        <div class="intro-preview">
-          <div class="intro-preview-card"><strong>Fiches de résumé</strong><small>Des leçons organisées pour réviser rapidement avant les évaluations.</small></div>
-          <div class="intro-preview-card"><strong>Apprentissage actif</strong><small>Suivi de révision, points forts et progression personnelle.</small></div>
-          <div class="intro-preview-card"><strong>Créé par Haniel_dev</strong><small>Indication placée hors du contenu pédagogique pour éviter toute confusion.</small></div>
-        </div>
+      <div class="iv2-right">
+        <div class="iv2-card c1"><div class="iv2-ic"><i class="fas fa-book-open"></i></div><div><strong>Fiches de résumé</strong><small>L'essentiel de chaque leçon, avec les pièges d'examen signalés.</small></div></div>
+        <div class="iv2-card c2"><div class="iv2-ic"><i class="fas fa-circle-question"></i></div><div><strong>Quiz corrigés</strong><small>Teste-toi et comprends chaque erreur grâce aux explications.</small></div></div>
+        <div class="iv2-card c3"><div class="iv2-ic"><i class="fas fa-headphones"></i></div><div><strong>Mode audio</strong><small>Écoute tes fiches dans le gbaka, à la maison, partout.</small></div></div>
+        <div class="iv2-card c4"><div class="iv2-ic"><i class="fas fa-chart-line"></i></div><div><strong>Progression</strong><small>Statistiques, série de jours et plan de révision avant l'examen.</small></div></div>
+        <div class="iv2-card c5"><div class="iv2-ic"><i class="fas fa-wifi"></i></div><div><strong>Hors-ligne</strong><small>Installe l'application et révise sans connexion.</small></div></div>
       </div>
     </div>
+    <div class="iv2-foot">Créé par <strong>Haniel_dev</strong></div>
   </section>
   <div class="mobile-overlay" id="mobileOverlay"></div>
   <div class="layout is-hidden" id="appLayout">
@@ -201,7 +196,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.5.2" defer></script>
+  <script src="/app.js?v=3.5.4" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}

@@ -1,206 +1,306 @@
 /* ==========================================================================
-   ResumeCI — Thème Espace Universitaire (body.uni-mode)
-   Palette sobre indigo/ardoise, typographie resserrée, motion design fluide.
-   Toutes les animations n'utilisent que transform/opacity (GPU) et respectent
-   prefers-reduced-motion.
+   ResumeCI — Thème Motion (collège, lycée, université) — body.motion-ui
+   Palette réduite : neutres ardoise + UN seul accent indigo (vert/rouge gardés
+   uniquement pour succès/erreur). Contraste texte renforcé.
+   Animations uniquement en transform/opacity (GPU) ; prefers-reduced-motion respecté.
    ========================================================================== */
-body.uni-mode {
+body.motion-ui {
   --accent: #4f46e5;
   --accent-light: #6366f1;
   --accent-bg: #eef2ff;
-  --bg: #f6f7fb;
-  --bg-sidebar: #111827;
-  --border: #e5e7ef;
+  --orange: #4f46e5;
+  --orange-bg: #eef2ff;
+  --purple: #4f46e5;
+  --purple-bg: #eef2ff;
+  --bg: #f5f6fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f9fc;
+  --bg-sidebar: #0f1424;
+  --text: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #52607a;
+  --border: #e3e6ee;
   --radius: 16px;
   --radius-sm: 12px;
-  --shadow-sm: 0 1px 2px rgba(17, 24, 39, .05), 0 1px 1px rgba(17, 24, 39, .03);
-  --shadow: 0 8px 24px -8px rgba(17, 24, 39, .14);
-  --shadow-lg: 0 18px 40px -12px rgba(79, 70, 229, .28);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06);
+  --shadow: 0 10px 28px -10px rgba(15, 23, 42, .18);
+  --shadow-lg: 0 22px 44px -14px rgba(79, 70, 229, .32);
   --ease-out: cubic-bezier(.16, 1, .3, 1);
   --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
-  --dur-fast: .18s;
-  --dur: .32s;
-  --dur-slow: .6s;
+  --dur-fast: .2s;
+  --dur: .4s;
+  --dur-slow: .75s;
   --transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
     border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, color var(--dur-fast) ease;
   letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased;
 }
-body.uni-mode.dark-mode {
-  --bg: #0b0f1a;
-  --bg-card: #141a2a;
-  --bg-card-hover: #1b2236;
-  --bg-surface: #141a2a;
-  --border: #232b40;
+body.motion-ui.dark-mode {
+  --bg: #0a0e19;
+  --bg-card: #131929;
+  --bg-card-hover: #1a2133;
+  --bg-surface: #131929;
+  --text: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --text-dim: #9aa6bd;
+  --border: #242c42;
   --accent: #818cf8;
   --accent-bg: #1e1b4b;
+  --orange: #818cf8;
+  --purple: #818cf8;
+  --orange-bg: #1e1b4b;
+  --purple-bg: #1e1b4b;
 }
+html { scroll-behavior: smooth; }
 
-/* ---------- Transitions de vue ---------- */
-@keyframes uniViewIn {
-  from { opacity: 0; transform: translate3d(0, 14px, 0); }
-  to { opacity: 1; transform: none; }
+/* ---------- Keyframes ---------- */
+@keyframes miViewIn {
+  0% { opacity: 0; transform: translate3d(0, 28px, 0) scale(.98); filter: blur(6px); }
+  60% { filter: blur(0); }
+  100% { opacity: 1; transform: none; filter: none; }
 }
-@keyframes uniRise {
-  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.985); }
-  to { opacity: 1; transform: none; }
+@keyframes miRise {
+  0% { opacity: 0; transform: translate3d(0, 34px, 0) scale(.94); }
+  100% { opacity: 1; transform: none; }
 }
-@keyframes uniFade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes uniShimmer { to { background-position: -200% 0; } }
-@keyframes uniPop {
-  0% { transform: scale(.6); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes miPop {
+  0% { opacity: 0; transform: scale(.4) rotate(-12deg); }
+  70% { opacity: 1; transform: scale(1.08) rotate(3deg); }
+  100% { transform: none; }
 }
+@keyframes miFloat { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -7px, 0); } }
+@keyframes miShimmer { to { background-position: -200% 0; } }
+@keyframes miRipple { from { transform: scale(0); opacity: .35; } to { transform: scale(1); opacity: 0; } }
+@keyframes miSlideIn { from { opacity: 0; transform: translate3d(-18px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes miDrop { from { opacity: 0; transform: translate3d(0, -14px, 0); } to { opacity: 1; transform: none; } }
+@keyframes miPulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, .45); }
+  100% { box-shadow: 0 0 0 14px rgba(99, 102, 241, 0); }
+}
+@keyframes miSpin { to { transform: rotate(360deg); } }
 
-body.uni-mode .content.uni-enter > * { animation: uniViewIn var(--dur-slow) var(--ease-out) both; }
+/* ---------- Transition de vue ---------- */
+body.motion-ui .content.uni-enter > * { animation: miViewIn var(--dur-slow) var(--ease-out) both; }
 
-/* Apparition en cascade des cartes */
-body.uni-mode .uni-enter .stat-card,
-body.uni-mode .uni-enter .class-card,
-body.uni-mode .uni-enter .tool-card,
-body.uni-mode .uni-enter .lesson-card {
-  animation: uniRise var(--dur-slow) var(--ease-out) both;
+/* ---------- Révélation au défilement (cascade) ---------- */
+body.motion-ui .mi {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(.96);
+  transition: opacity .7s var(--ease-out), transform .8s var(--ease-out),
+    box-shadow var(--dur) var(--ease-out), border-color var(--dur-fast) ease;
+  transition-delay: var(--mi-d, 0ms), var(--mi-d, 0ms), 0s, 0s;
 }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(1) { animation-delay: .04s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(2) { animation-delay: .08s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(3) { animation-delay: .12s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(4) { animation-delay: .16s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(5) { animation-delay: .20s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(6) { animation-delay: .24s; }
-body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(n+7) { animation-delay: .28s; }
+body.motion-ui .mi.mi-in { opacity: 1; transform: none; }
+body.motion-ui .mi.mi-in:hover { transition-delay: 0s; }
+
+/* ---------- Onde au clic ---------- */
+.mi-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  pointer-events: none;
+  animation: miRipple .65s var(--ease-out, ease-out) forwards;
+  z-index: 0;
+}
 
 /* ---------- Topbar ---------- */
-body.uni-mode .topbar {
-  background: rgba(255, 255, 255, .78);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  backdrop-filter: saturate(180%) blur(14px);
-  border-bottom-color: rgba(229, 231, 239, .8);
+body.motion-ui .topbar {
+  background: rgba(255, 255, 255, .8);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom-color: rgba(227, 230, 238, .85);
   box-shadow: none;
+  animation: miDrop .6s var(--ease-out) both;
 }
-body.uni-mode.dark-mode .topbar { background: rgba(20, 26, 42, .78); border-bottom-color: var(--border); }
+body.motion-ui.dark-mode .topbar { background: rgba(19, 25, 41, .8); border-bottom-color: var(--border); }
+body.motion-ui #breadcrumb > * { animation: miSlideIn .5s var(--ease-out) both; }
+body.motion-ui #breadcrumb > *:nth-child(2) { animation-delay: .05s; }
+body.motion-ui #breadcrumb > *:nth-child(3) { animation-delay: .1s; }
+body.motion-ui #breadcrumb > *:nth-child(n+4) { animation-delay: .15s; }
 
 /* ---------- Sidebar ---------- */
-body.uni-mode .sidebar { background: linear-gradient(180deg, #111827 0%, #0f1424 100%); }
-body.uni-mode .sidebar-header .logo {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  box-shadow: 0 6px 16px -4px rgba(99, 102, 241, .6);
+body.motion-ui .sidebar { background: linear-gradient(180deg, #111729 0%, #0c1120 100%); }
+body.motion-ui .sidebar-header .logo {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 6px 18px -4px rgba(99, 102, 241, .65);
+  animation: miPop .8s var(--ease-spring) both, miFloat 4s ease-in-out 1s infinite;
 }
-body.uni-mode .nav-class-header,
-body.uni-mode .nav-subject-header,
-body.uni-mode .nav-lesson {
-  border-radius: 9px;
-  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur) var(--ease-out);
+body.motion-ui .nav-class-header,
+body.motion-ui .nav-subject-header,
+body.motion-ui .nav-lesson {
+  border-radius: 10px;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur) var(--ease-spring);
 }
-body.uni-mode .nav-subject-header:hover,
-body.uni-mode .nav-lesson:hover { transform: translateX(3px); }
-body.uni-mode .nav-class-header .badge { background: rgba(99, 102, 241, .22); color: #c7d2fe; }
-body.uni-mode .chevron { transition: transform var(--dur) var(--ease-spring) !important; }
+body.motion-ui .nav-class-header { color: #f1f5f9; }
+body.motion-ui .nav-subject-header { color: #cbd5e1; }
+body.motion-ui .nav-lesson { color: #94a3b8; }
+body.motion-ui .nav-class-header:hover,
+body.motion-ui .nav-subject-header:hover,
+body.motion-ui .nav-lesson:hover { transform: translateX(5px); background: rgba(255, 255, 255, .07); color: #fff; }
+body.motion-ui .nav-class-header .badge { background: rgba(99, 102, 241, .25); color: #c7d2fe; }
+body.motion-ui .chevron { transition: transform .45s var(--ease-spring) !important; }
 
-/* Accordéons animés (remplace le display:none instantané) */
-body.uni-mode .nav-subjects,
-body.uni-mode .nav-lessons {
+/* Accordéons animés */
+body.motion-ui .nav-subjects,
+body.motion-ui .nav-lessons {
   display: block;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transform: translate3d(0, -4px, 0);
-  transition: max-height .45s var(--ease-out), opacity var(--dur) ease, transform var(--dur) var(--ease-out);
+  transform: translate3d(0, -8px, 0);
+  transition: max-height .55s var(--ease-out), opacity .35s ease, transform .45s var(--ease-out);
 }
-body.uni-mode .nav-class.open > .nav-subjects { max-height: 4000px; opacity: 1; transform: none; }
-body.uni-mode .nav-subject.open > .nav-lessons { max-height: 1200px; opacity: 1; transform: none; }
-body.uni-mode .nav-lesson.active {
-  background: rgba(99, 102, 241, .2);
-  color: #c7d2fe;
-  box-shadow: inset 2px 0 0 #818cf8;
+body.motion-ui .nav-class.open > .nav-subjects { max-height: 5000px; opacity: 1; transform: none; }
+body.motion-ui .nav-subject.open > .nav-lessons { max-height: 1500px; opacity: 1; transform: none; }
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject,
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson { animation: miSlideIn .45s var(--ease-out) both; }
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(2),
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(2) { animation-delay: .03s; }
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(3),
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(3) { animation-delay: .06s; }
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(4),
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(4) { animation-delay: .09s; }
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(5),
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(5) { animation-delay: .12s; }
+body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(n+6),
+body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(n+6) { animation-delay: .15s; }
+body.motion-ui .nav-lesson.active {
+  background: rgba(99, 102, 241, .22);
+  color: #e0e7ff;
+  box-shadow: inset 3px 0 0 #818cf8;
 }
 
-/* ---------- Héros du tableau de bord ---------- */
-body.uni-mode .dashboard-hero { padding: 36px 0 28px; }
-body.uni-mode .dashboard-hero .hero-icon {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  border-radius: 22px;
-  box-shadow: 0 14px 30px -10px rgba(79, 70, 229, .55);
-  animation: uniPop .7s var(--ease-spring) both;
+/* ---------- Héros ---------- */
+body.motion-ui .dashboard-hero { padding: 40px 0 30px; }
+body.motion-ui .dashboard-hero .hero-icon {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  border-radius: 24px;
+  box-shadow: 0 16px 34px -10px rgba(79, 70, 229, .55);
+  animation: miPop .9s var(--ease-spring) both, miFloat 4.5s ease-in-out 1s infinite;
 }
-body.uni-mode .dashboard-hero h2 {
-  font-size: 28px;
+body.motion-ui .dashboard-hero h2 {
+  font-size: 30px;
   font-weight: 800;
-  letter-spacing: -.02em;
-  background: linear-gradient(90deg, var(--text) 0%, var(--accent) 50%, var(--text) 100%);
+  letter-spacing: -.025em;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--text) 0%, var(--text) 35%, var(--accent) 50%, var(--text) 65%, var(--text) 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: uniShimmer 6s linear infinite;
+  animation: miRise .8s var(--ease-out) .1s both, miShimmer 5s linear 1s infinite;
+}
+body.motion-ui .dashboard-hero p { color: var(--text-muted); font-weight: 500; animation: miRise .8s var(--ease-out) .2s both; }
+
+/* ---------- Pastilles de couleur : une seule teinte ---------- */
+body.motion-ui .color-blue,
+body.motion-ui .color-green,
+body.motion-ui .color-orange,
+body.motion-ui .color-purple { background: var(--accent-bg) !important; color: var(--accent) !important; }
+body.motion-ui .stat-number { color: var(--text) !important; }
+body.motion-ui .subject-tag,
+body.motion-ui .class-card .subject-list > * {
+  background: var(--bg-card-hover) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border) !important;
 }
 
 /* ---------- Cartes ---------- */
-body.uni-mode .stat-card,
-body.uni-mode .class-card,
-body.uni-mode .lesson-card,
-body.uni-mode .tool-card {
+body.motion-ui .stat-card,
+body.motion-ui .class-card,
+body.motion-ui .lesson-card,
+body.motion-ui .tool-card {
   border-radius: var(--radius);
-  border-color: var(--border);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  will-change: transform;
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
 }
-body.uni-mode .stat-card:hover,
-body.uni-mode .class-card:hover,
-body.uni-mode .tool-card:hover {
-  transform: translate3d(0, -4px, 0);
-  border-color: rgba(99, 102, 241, .45);
+body.motion-ui .stat-card:hover,
+body.motion-ui .class-card:hover,
+body.motion-ui .tool-card:hover {
+  transform: translate3d(0, -6px, 0) scale(1.015);
+  border-color: rgba(99, 102, 241, .5);
   box-shadow: var(--shadow-lg);
 }
-body.uni-mode .lesson-card { border-radius: var(--radius-sm); position: relative; overflow: hidden; }
-body.uni-mode .lesson-card::after {
+body.motion-ui :is(.lesson-card, .class-card, .tool-card)::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(99, 102, 241, .08) 50%, transparent 60%);
-  transform: translateX(-100%);
-  transition: transform .7s var(--ease-out);
+  background: linear-gradient(105deg, transparent 35%, rgba(99, 102, 241, .1) 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform .8s var(--ease-out);
   pointer-events: none;
 }
-body.uni-mode .lesson-card:hover {
-  transform: translate3d(0, -2px, 0);
-  border-color: rgba(99, 102, 241, .45);
+body.motion-ui :is(.lesson-card, .class-card, .tool-card):hover::after { transform: translateX(110%); }
+body.motion-ui .lesson-card { border-radius: var(--radius-sm); }
+body.motion-ui .lesson-card:hover {
+  transform: translate3d(0, -4px, 0);
+  border-color: rgba(99, 102, 241, .5);
   box-shadow: var(--shadow);
 }
-body.uni-mode .lesson-card:hover::after { transform: translateX(100%); }
-body.uni-mode .lesson-card .lesson-icon {
-  border-radius: 10px;
-  transition: transform var(--dur) var(--ease-spring);
-}
-body.uni-mode .lesson-card:hover .lesson-icon { transform: scale(1.08) rotate(-4deg); }
-body.uni-mode .lesson-card .lesson-name { font-weight: 600; font-size: 12.5px; }
-body.uni-mode .lesson-card:active,
-body.uni-mode .class-card:active,
-body.uni-mode .tool-card:active { transform: scale(.98); transition-duration: .1s; }
+body.motion-ui .lesson-card .lesson-icon,
+body.motion-ui .stat-card .stat-icon,
+body.motion-ui .tool-card .tool-icon { border-radius: 11px; transition: transform .5s var(--ease-spring); }
+body.motion-ui .lesson-card:hover .lesson-icon,
+body.motion-ui .stat-card:hover .stat-icon,
+body.motion-ui .tool-card:hover .tool-icon { transform: scale(1.15) rotate(-8deg); }
+body.motion-ui .lesson-card .lesson-name { font-weight: 600; font-size: 13px; color: var(--text); }
+body.motion-ui .lesson-card .lesson-meta { color: var(--text-dim); }
+body.motion-ui .class-card h3 { color: var(--text); }
+body.motion-ui :is(.lesson-card, .class-card, .tool-card, .stat-card):active { transform: scale(.97); transition-duration: .12s; }
+body.motion-ui .class-card > *, body.motion-ui .lesson-card > *, body.motion-ui .tool-card > * { position: relative; z-index: 1; }
 
 /* ---------- Boutons ---------- */
-body.uni-mode .btn {
-  border-radius: 10px;
-  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out), background-color var(--dur-fast) ease;
+body.motion-ui .btn {
+  border-radius: 11px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur) var(--ease-out), background-color var(--dur-fast) ease;
 }
-body.uni-mode .btn:hover { transform: translate3d(0, -1px, 0); box-shadow: var(--shadow); }
-body.uni-mode .btn:active { transform: scale(.97); }
+body.motion-ui .btn:hover { transform: translate3d(0, -2px, 0); box-shadow: var(--shadow); }
+body.motion-ui .btn:active { transform: scale(.95); }
+body.motion-ui .btn i { transition: transform .4s var(--ease-spring); }
+body.motion-ui .btn:hover i { transform: scale(1.18); }
+body.motion-ui .fav-btn.active { animation: miPulseRing .8s ease-out; }
 
 /* ---------- Fiche ---------- */
-body.uni-mode .fiche-view { animation: uniFade var(--dur-slow) ease both; }
+body.motion-ui .fiche-view { animation: miViewIn var(--dur-slow) var(--ease-out) both; color: var(--text); }
+body.motion-ui .fiche-view p, body.motion-ui .fiche-view li { color: var(--text-muted); line-height: 1.75; }
+
+/* ---------- Modales ---------- */
+body.motion-ui .show > :is(.modal, .pm-modal, .modal-card, [class*="modal-box"], [class*="-modal"]) {
+  animation: miPop .55s var(--ease-spring) both;
+}
 
 /* ---------- Chargement ---------- */
-body.uni-mode .loading .spinner { border-top-color: var(--accent); }
+body.motion-ui .loading { animation: miViewIn .4s ease both; color: var(--text-dim); }
+body.motion-ui .loading .spinner {
+  border-top-color: var(--accent);
+  animation: miSpin .7s cubic-bezier(.5, .1, .5, .9) infinite;
+}
+
+/* ---------- Défilement doux ---------- */
+body.motion-ui .content,
+body.motion-ui .sidebar-nav,
+body.motion-ui #sidebarNav { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 
 /* ---------- Focus clavier ---------- */
-body.uni-mode :focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 8px; }
+body.motion-ui :focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 8px; }
 
 /* ---------- Accessibilité : réduction des animations ---------- */
 @media (prefers-reduced-motion: reduce) {
-  body.uni-mode *,
-  body.uni-mode *::before,
-  body.uni-mode *::after {
+  body.motion-ui *,
+  body.motion-ui *::before,
+  body.motion-ui *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+    transition-delay: 0s !important;
   }
+  body.motion-ui .mi { opacity: 1; transform: none; }
 }
+

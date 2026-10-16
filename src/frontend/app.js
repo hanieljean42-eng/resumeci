@@ -689,19 +689,47 @@ async function loadSearchIndex() {
   window.SEARCH_INDEX = SEARCH_INDEX;
 }
 window.loadSearchIndex = loadSearchIndex;
-// Thème universitaire : classe sur <body> + transition animée à chaque changement de vue
+// Thème motion (tous les profils) : transition animée à chaque changement de vue,
+// révélation au défilement et onde au clic. Classe uni-mode conservée pour les Licences.
 function applyUniMode() {
-  const on = !!(window.isUniversityUser && window.isUniversityUser());
-  document.body.classList.toggle('uni-mode', on);
+  document.body.classList.add('motion-ui');
+  document.body.classList.toggle('uni-mode', !!(window.isUniversityUser && window.isUniversityUser()));
   const content = document.getElementById('content');
-  if (!on || !content || content._uniObserver) return;
-  content._uniObserver = new MutationObserver(() => {
-    if (!document.body.classList.contains('uni-mode')) return;
+  if (!content || content._uniObserver) return;
+  const reveal = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('mi-in'); reveal.unobserve(e.target); }
+      }), { rootMargin: '0px 0px -6% 0px', threshold: 0.06 })
+    : null;
+  const SEL = '.lesson-card,.class-card,.stat-card,.tool-card,.subject-grid h3,.fiche-view h2,.fiche-view h3,.fiche-view .definition,.fiche-view .important,.fiche-view .schema,.fiche-view table';
+  const replay = () => {
     content.classList.remove('uni-enter');
     void content.offsetWidth;
     content.classList.add('uni-enter');
-  });
+    if (!reveal) return;
+    const els = content.querySelectorAll(SEL);
+    els.forEach((el, i) => {
+      el.classList.add('mi');
+      el.style.setProperty('--mi-d', Math.min(i % 12, 11) * 45 + 'ms');
+      reveal.observe(el);
+    });
+  };
+  content._uniObserver = new MutationObserver(replay);
   content._uniObserver.observe(content, { childList: true });
+  replay();
+  document.addEventListener('pointerdown', e => {
+    const t = e.target.closest('.lesson-card,.class-card,.tool-card,.btn,.nav-lesson,.nav-subject-header,.nav-class-header,.stat-card');
+    if (!t || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const r = t.getBoundingClientRect();
+    const s = Math.max(r.width, r.height) * 2;
+    const dot = document.createElement('span');
+    dot.className = 'mi-ripple';
+    dot.style.cssText = `width:${s}px;height:${s}px;left:${e.clientX - r.left - s / 2}px;top:${e.clientY - r.top - s / 2}px`;
+    if (getComputedStyle(t).position === 'static') t.style.position = 'relative';
+    t.style.overflow = 'hidden';
+    t.appendChild(dot);
+    dot.addEventListener('animationend', () => dot.remove());
+  }, { passive: true });
 }
 
 function renderSidebar() {
@@ -1663,6 +1691,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (intro) intro.style.display = 'none';
     const appLayout = document.getElementById('appLayout');
     if (appLayout) appLayout.classList.remove('is-hidden');
+  }
+  // Accueil : compteurs animés (ease-out) + effet de profondeur au pointeur
+  const introEl = document.getElementById('introScreen');
+  if (introEl && introEl.style.display !== 'none') {
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    introEl.querySelectorAll('[data-count]').forEach((el, i) => {
+      const target = Number(el.dataset.count) || 0;
+      if (still) { el.textContent = target.toLocaleString('fr-FR'); return; }
+      const t0 = performance.now() + 500 + i * 120, dur = 1600;
+      const tick = now => {
+        const k = Math.min(Math.max((now - t0) / dur, 0), 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - k, 4))).toLocaleString('fr-FR');
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    const right = introEl.querySelector('.iv2-right');
+    if (right && !still && window.matchMedia('(pointer: fine)').matches) {
+      let raf = 0;
+      introEl.addEventListener('pointermove', e => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          const x = e.clientX / window.innerWidth - 0.5, y = e.clientY / window.innerHeight - 0.5;
+          right.style.transform = `perspective(1100px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+        });
+      });
+      introEl.addEventListener('pointerleave', () => { right.style.transform = ''; });
+    }
   }
   document.getElementById('continueBtn')?.addEventListener('click', () => {
     if (!hasAccount()) {
