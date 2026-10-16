@@ -40,7 +40,22 @@ function getOrderedClasses(structure) {
   return entries;
 }
 const subjectColors = ['color-blue', 'color-green', 'color-orange', 'color-purple'];
+// Icônes précises des matières universitaires (une icône = un sens, testées avant la liste école)
+const UNI_SUBJECT_ICONS = {
+  Analyse_et_modelisation_des_donnees: '🗂️', Analyse_1: '📈', Analyse_2: '📈', Algebre_2: '🧮',
+  Algorithme_de_base: '🧩', Langage_C: '💻', Programmation_en_langage_python: '🐍',
+  Initiation_a_la_programmation_web: '🌐', Architectures_et_technologies_des_ordinateurs: '🔌',
+  Systeme_d_exploitation: '🖥️', Combinatoire_et_probabilite: '🎲', Statistiques_descriptive: '📊',
+  Gestion_de_projet_informatique: '📋', Gestion_financiere: '💰', Mathematiques_financiere: '💹',
+  Macroeconomie: '🏦', Microeconomie: '🛒', Economie_Politique: '🏦', Developpement_personnel: '🌱',
+  Initiation_aux_medias_sociaux: '📱', Technique_d_expression_ecrite: '✍️', Techniques_Expression_Francaise: '✍️',
+  Initiation_a_l_etude_du_droit: '⚖️', Introduction_Etude_Droit: '⚖️', Droit_Constitutionnel: '🏛️',
+  Droit_des_Obligations: '📝', Droit_de_la_Famille: '👪', Droits_de_l_Homme: '🕊️', Droit_Anglais: '🇬🇧',
+  Ethique_Juridique: '🧭', Histoire_Droit_Institutions: '📜', Methodologie_Juridique: '🔎',
+  Microsoft_Excel: '📊', Relations_Internationales: '🌍'
+};
 function getIcon(n) {
+  if (UNI_SUBJECT_ICONS[n]) return UNI_SUBJECT_ICONS[n];
   for (const [k, v] of Object.entries(subjectIcons)) if (n.includes(k)) return v;
   return '📖';
 }
@@ -674,7 +689,23 @@ async function loadSearchIndex() {
   window.SEARCH_INDEX = SEARCH_INDEX;
 }
 window.loadSearchIndex = loadSearchIndex;
+// Thème universitaire : classe sur <body> + transition animée à chaque changement de vue
+function applyUniMode() {
+  const on = !!(window.isUniversityUser && window.isUniversityUser());
+  document.body.classList.toggle('uni-mode', on);
+  const content = document.getElementById('content');
+  if (!on || !content || content._uniObserver) return;
+  content._uniObserver = new MutationObserver(() => {
+    if (!document.body.classList.contains('uni-mode')) return;
+    content.classList.remove('uni-enter');
+    void content.offsetWidth;
+    content.classList.add('uni-enter');
+  });
+  content._uniObserver.observe(content, { childList: true });
+}
+
 function renderSidebar() {
+  applyUniMode();
   const nav = document.getElementById('sidebarNav');
   let h = '';
   let classesToRender = getOrderedClasses(DATA.structure);

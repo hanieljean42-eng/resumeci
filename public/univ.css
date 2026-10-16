@@ -1,0 +1,206 @@
+/* ==========================================================================
+   ResumeCI — Thème Espace Universitaire (body.uni-mode)
+   Palette sobre indigo/ardoise, typographie resserrée, motion design fluide.
+   Toutes les animations n'utilisent que transform/opacity (GPU) et respectent
+   prefers-reduced-motion.
+   ========================================================================== */
+body.uni-mode {
+  --accent: #4f46e5;
+  --accent-light: #6366f1;
+  --accent-bg: #eef2ff;
+  --bg: #f6f7fb;
+  --bg-sidebar: #111827;
+  --border: #e5e7ef;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, .05), 0 1px 1px rgba(17, 24, 39, .03);
+  --shadow: 0 8px 24px -8px rgba(17, 24, 39, .14);
+  --shadow-lg: 0 18px 40px -12px rgba(79, 70, 229, .28);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: .18s;
+  --dur: .32s;
+  --dur-slow: .6s;
+  --transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+  letter-spacing: -.005em;
+}
+body.uni-mode.dark-mode {
+  --bg: #0b0f1a;
+  --bg-card: #141a2a;
+  --bg-card-hover: #1b2236;
+  --bg-surface: #141a2a;
+  --border: #232b40;
+  --accent: #818cf8;
+  --accent-bg: #1e1b4b;
+}
+
+/* ---------- Transitions de vue ---------- */
+@keyframes uniViewIn {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes uniRise {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.985); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes uniFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes uniShimmer { to { background-position: -200% 0; } }
+@keyframes uniPop {
+  0% { transform: scale(.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+body.uni-mode .content.uni-enter > * { animation: uniViewIn var(--dur-slow) var(--ease-out) both; }
+
+/* Apparition en cascade des cartes */
+body.uni-mode .uni-enter .stat-card,
+body.uni-mode .uni-enter .class-card,
+body.uni-mode .uni-enter .tool-card,
+body.uni-mode .uni-enter .lesson-card {
+  animation: uniRise var(--dur-slow) var(--ease-out) both;
+}
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(1) { animation-delay: .04s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(2) { animation-delay: .08s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(3) { animation-delay: .12s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(4) { animation-delay: .16s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(5) { animation-delay: .20s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(6) { animation-delay: .24s; }
+body.uni-mode .uni-enter :is(.stat-card, .class-card, .tool-card, .lesson-card):nth-child(n+7) { animation-delay: .28s; }
+
+/* ---------- Topbar ---------- */
+body.uni-mode .topbar {
+  background: rgba(255, 255, 255, .78);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom-color: rgba(229, 231, 239, .8);
+  box-shadow: none;
+}
+body.uni-mode.dark-mode .topbar { background: rgba(20, 26, 42, .78); border-bottom-color: var(--border); }
+
+/* ---------- Sidebar ---------- */
+body.uni-mode .sidebar { background: linear-gradient(180deg, #111827 0%, #0f1424 100%); }
+body.uni-mode .sidebar-header .logo {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 6px 16px -4px rgba(99, 102, 241, .6);
+}
+body.uni-mode .nav-class-header,
+body.uni-mode .nav-subject-header,
+body.uni-mode .nav-lesson {
+  border-radius: 9px;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur) var(--ease-out);
+}
+body.uni-mode .nav-subject-header:hover,
+body.uni-mode .nav-lesson:hover { transform: translateX(3px); }
+body.uni-mode .nav-class-header .badge { background: rgba(99, 102, 241, .22); color: #c7d2fe; }
+body.uni-mode .chevron { transition: transform var(--dur) var(--ease-spring) !important; }
+
+/* Accordéons animés (remplace le display:none instantané) */
+body.uni-mode .nav-subjects,
+body.uni-mode .nav-lessons {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, -4px, 0);
+  transition: max-height .45s var(--ease-out), opacity var(--dur) ease, transform var(--dur) var(--ease-out);
+}
+body.uni-mode .nav-class.open > .nav-subjects { max-height: 4000px; opacity: 1; transform: none; }
+body.uni-mode .nav-subject.open > .nav-lessons { max-height: 1200px; opacity: 1; transform: none; }
+body.uni-mode .nav-lesson.active {
+  background: rgba(99, 102, 241, .2);
+  color: #c7d2fe;
+  box-shadow: inset 2px 0 0 #818cf8;
+}
+
+/* ---------- Héros du tableau de bord ---------- */
+body.uni-mode .dashboard-hero { padding: 36px 0 28px; }
+body.uni-mode .dashboard-hero .hero-icon {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 22px;
+  box-shadow: 0 14px 30px -10px rgba(79, 70, 229, .55);
+  animation: uniPop .7s var(--ease-spring) both;
+}
+body.uni-mode .dashboard-hero h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  background: linear-gradient(90deg, var(--text) 0%, var(--accent) 50%, var(--text) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: uniShimmer 6s linear infinite;
+}
+
+/* ---------- Cartes ---------- */
+body.uni-mode .stat-card,
+body.uni-mode .class-card,
+body.uni-mode .lesson-card,
+body.uni-mode .tool-card {
+  border-radius: var(--radius);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  will-change: transform;
+}
+body.uni-mode .stat-card:hover,
+body.uni-mode .class-card:hover,
+body.uni-mode .tool-card:hover {
+  transform: translate3d(0, -4px, 0);
+  border-color: rgba(99, 102, 241, .45);
+  box-shadow: var(--shadow-lg);
+}
+body.uni-mode .lesson-card { border-radius: var(--radius-sm); position: relative; overflow: hidden; }
+body.uni-mode .lesson-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(99, 102, 241, .08) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform .7s var(--ease-out);
+  pointer-events: none;
+}
+body.uni-mode .lesson-card:hover {
+  transform: translate3d(0, -2px, 0);
+  border-color: rgba(99, 102, 241, .45);
+  box-shadow: var(--shadow);
+}
+body.uni-mode .lesson-card:hover::after { transform: translateX(100%); }
+body.uni-mode .lesson-card .lesson-icon {
+  border-radius: 10px;
+  transition: transform var(--dur) var(--ease-spring);
+}
+body.uni-mode .lesson-card:hover .lesson-icon { transform: scale(1.08) rotate(-4deg); }
+body.uni-mode .lesson-card .lesson-name { font-weight: 600; font-size: 12.5px; }
+body.uni-mode .lesson-card:active,
+body.uni-mode .class-card:active,
+body.uni-mode .tool-card:active { transform: scale(.98); transition-duration: .1s; }
+
+/* ---------- Boutons ---------- */
+body.uni-mode .btn {
+  border-radius: 10px;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out), background-color var(--dur-fast) ease;
+}
+body.uni-mode .btn:hover { transform: translate3d(0, -1px, 0); box-shadow: var(--shadow); }
+body.uni-mode .btn:active { transform: scale(.97); }
+
+/* ---------- Fiche ---------- */
+body.uni-mode .fiche-view { animation: uniFade var(--dur-slow) ease both; }
+
+/* ---------- Chargement ---------- */
+body.uni-mode .loading .spinner { border-top-color: var(--accent); }
+
+/* ---------- Focus clavier ---------- */
+body.uni-mode :focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 8px; }
+
+/* ---------- Accessibilité : réduction des animations ---------- */
+@media (prefers-reduced-motion: reduce) {
+  body.uni-mode *,
+  body.uni-mode *::before,
+  body.uni-mode *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
