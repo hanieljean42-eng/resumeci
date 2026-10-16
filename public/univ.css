@@ -284,9 +284,10 @@ body.motion-ui .loading .spinner {
 }
 
 /* ---------- Défilement doux ---------- */
-body.motion-ui .content,
+/* Pas d'overscroll-behavior sur .content : sur mobile c'est la page qui défile,
+   « contain » bloquerait le défilement tactile des fiches. */
 body.motion-ui .sidebar-nav,
-body.motion-ui #sidebarNav { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+body.motion-ui #sidebarNav { -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 
 /* ---------- Focus clavier ---------- */
 body.motion-ui :focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; border-radius: 8px; }
