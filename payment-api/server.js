@@ -502,7 +502,7 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
       paymentMethod: paymentMethod || null,
       source,
       status: 'processing',
-      createdAt: admin.firestore.FieldValue.serverTimestamp()
+      createdAt: FieldValue.serverTimestamp()
     });
   } catch (e) {
     if (e.code === ALREADY_EXISTS) {
@@ -518,7 +518,7 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
       paymentMethod: paymentMethod || 'wave'
     });
     const expiresAt = result ? result.expiresAt : null;
-    await ref.set({ status: 'processed', expiresAt, processedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
+    await ref.set({ status: 'processed', expiresAt, processedAt: FieldValue.serverTimestamp() }, { merge: true });
     return { alreadyProcessed: false, tierKey, expiresAt };
   } catch (e) {
     // Échec du déblocage : libérer la référence pour permettre un nouvel essai
@@ -528,29 +528,66 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
 }
 
 // Helper: Requête de consultation d'une transaction GeniusPay
+// L'API GeniusPay met parfois 40+ secondes à répondre : timeout généreux
+// (75s) + cache de requête en vol pour éviter les appels doublons.
+const GP_QUERY_TIMEOUT_MS = 75000;
+const gpInflight = new Map(); // ref -> Promise
 function queryGeniusPayPayment(reference) {
-  return new Promise((resolve, reject) => {
-    const req = https.get(`${GENIUSPAY_API_URL}/${reference}`, {
+  const key = String(reference);
+  if (gpInflight.has(key)) return gpInflight.get(key);
+  const promise = new Promise((resolve, reject) => {
+    const req = https.get(`${GENIUSPAY_API_URL}/${key}`, {
       family: 4,
       headers: {
         'X-API-Key': GENIUSPAY_PUBLIC_KEY,
-        'X-API-Secret': GENIUSPAY_SECRET_KEY
+        'X-API-Secret': GENIUSPAY_SECRET_KEY,
+        'Accept': 'application/json'
       },
-      timeout: 20000
+      timeout: GP_QUERY_TIMEOUT_MS
     }, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         try {
-          resolve(JSON.parse(data));
+          const parsed = JSON.parse(data);
+          if (res.statusCode >= 500) {
+            const err = new Error(`GeniusPay HTTP ${res.statusCode}`);
+            err.retryable = true;
+            return reject(err);
+          }
+          resolve(parsed);
         } catch (e) {
-          reject(new Error(`Réponse GeniusPay invalide: ${data}`));
+          const err = new Error(`Réponse GeniusPay invalide (HTTP ${res.statusCode}): ${data.slice(0, 200)}`);
+          err.retryable = true;
+          reject(err);
         }
       });
     });
-    req.on('error', reject);
-    req.on('timeout', () => req.destroy(new Error('Timeout GeniusPay')));
+    req.on('error', (err) => { err.retryable = true; reject(err); });
+    req.on('timeout', () => req.destroy(Object.assign(new Error('Timeout GeniusPay'), { retryable: true })));
   });
+  gpInflight.set(key, promise);
+  promise.then(
+    () => setTimeout(() => gpInflight.delete(key), 60000), // succès : résultat servi en cache 1 min
+    () => setTimeout(() => gpInflight.delete(key), 5000)   // échec : nouvel essai possible vite
+  );
+  return promise;
+}
+
+// Attend la réponse GeniusPay sans bloquer le client plus de `waitMs`.
+// Renvoie null si GeniusPay n'a pas encore répondu (la promesse reste en cache :
+// le prochain appel la reprendra et trouvera le résultat déjà disponible).
+async function queryGeniusPayPaymentBounded(reference, waitMs = 25000) {
+  const p = queryGeniusPayPayment(reference);
+  let timer;
+  const result = await Promise.race([
+    p.then(r => ({ done: true, value: r })).catch(e => ({ done: true, error: e })),
+    new Promise(r => { timer = setTimeout(() => r({ done: false }), waitMs); })
+  ]);
+  clearTimeout(timer);
+  if (!result.done) return { slow: true };
+  if (result.error) return { error: result.error };
+  return { data: result.value };
 }
 
 const PENDING_STATUSES = new Set(['pending', 'initiated', 'created', 'processing']);
@@ -564,7 +601,7 @@ async function resolvePendingPayment(userRef, userData) {
   const pending = userData && userData.pendingPayment;
   if (!db || !pending || !pending.reference) return null;
   if (!/^[A-Za-z0-9_-]{1,100}$/.test(String(pending.reference))) return null;
-  const clear = () => userRef.update({ pendingPayment: admin.firestore.FieldValue.delete() }).catch(() => {});
+  const clear = () => userRef.update({ pendingPayment: FieldValue.delete() }).catch(() => {});
   if (Date.now() - (Number(pending.createdAt) || 0) > PENDING_MAX_AGE_MS) { await clear(); return null; }
 
   const gpRes = await queryGeniusPayPayment(pending.reference).catch(() => null);
@@ -592,9 +629,10 @@ function fetchGeniusPayPayments(page = 1, perPage = 30) {
       family: 4,
       headers: {
         'X-API-Key': GENIUSPAY_PUBLIC_KEY,
-        'X-API-Secret': GENIUSPAY_SECRET_KEY
+        'X-API-Secret': GENIUSPAY_SECRET_KEY,
+        'Accept': 'application/json'
       },
-      timeout: 20000
+      timeout: 60000
     }, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
@@ -722,7 +760,7 @@ app.post('/api/pay', async (req, res) => {
           'Content-Type': 'application/json',
           'Content-Length': Buffer.byteLength(postData)
         },
-        timeout: 45000
+        timeout: 90000
       }, (res) => {
         let data = '';
         res.on('data', chunk => data += chunk);
@@ -782,12 +820,24 @@ app.get('/api/check-payment/:ref', async (req, res) => {
     if (!ref || !/^[A-Za-z0-9_-]{1,100}$/.test(ref)) return res.status(400).json({ error: "Référence de transaction invalide." });
     if (!db) return res.status(503).json({ error: "Service temporairement indisponible." });
 
-    const gpRes = await queryGeniusPayPayment(ref);
-    if (!gpRes.success || !gpRes.data) {
+    const gpRes = await queryGeniusPayPaymentBounded(ref, 25000);
+    if (gpRes.slow) {
+      // GeniusPay est lent (parfois 40s+) : le client repasse plus tard,
+      // la promesse reste en cache et sera déjà résolue.
+      return res.json({ success: true, status: 'pending', verifying: true });
+    }
+    if (gpRes.error) {
+      const retryable = gpRes.error.retryable;
+      console.error(`[CheckPayment] ${ref}:`, gpRes.error.message);
+      if (retryable) return res.json({ success: true, status: 'pending', verifying: true });
+      return res.status(502).json({ success: false, error: "Vérification GeniusPay impossible." });
+    }
+    const gpData = gpRes.data;
+    if (!gpData.success || !gpData.data) {
       return res.status(404).json({ success: false, error: "Paiement non trouvé chez GeniusPay." });
     }
 
-    const pay = gpRes.data;
+    const pay = gpData.data;
     const isCompleted = pay.status === 'completed' || pay.status === 'success';
     const amount = Number(pay.amount) || 0;
     const meta = pay.metadata || {};
@@ -1061,7 +1111,13 @@ const userStatusHandler = async (req, res) => {
     pendingTargets.push(...extraRefs);
     for (const t of pendingTargets) {
       try {
-        const resolved = await resolvePendingPayment(t.ref, t.data);
+        // 8s max ici : si GeniusPay est lent, la vérification continue en
+        // arrière-plan (promesse mise en cache) et débloque le compte dès
+        // que la réponse arrive — l'utilisateur la verra au prochain appel.
+        const resolved = await Promise.race([
+          resolvePendingPayment(t.ref, t.data).catch(() => null),
+          new Promise(r => setTimeout(() => r(null), 8000))
+        ]);
         if (resolved) {
           const fresh = await foundRef.get();
           if (fresh.exists) foundUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id, _docId: fresh.id };
