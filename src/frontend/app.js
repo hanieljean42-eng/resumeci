@@ -85,18 +85,19 @@ window.getPaymentApiBase = function() {
 // ==================== PAIEMENT EN ATTENTE & DÉBLOCAGE IMMÉDIAT ====================
 // La référence est gardée dans localStorage (et non sessionStorage) : au retour de Wave,
 // le navigateur rouvre souvent le site dans un nouvel onglet.
-const PENDING_PAY_KEYS = ['last_payment_reference', 'last_payment_tier', 'last_payment_at'];
+const PENDING_PAY_KEYS = ['last_payment_reference', 'last_payment_tier', 'last_payment_at', 'last_payment_method'];
 const PAY_FAILED_STATUSES = ['failed', 'cancelled', 'canceled', 'expired', 'refunded', 'rejected'];
 window.getPendingPaymentRef = function() {
   const at = Number(localStorage.getItem('last_payment_at')) || 0;
   if (at && Date.now() - at > 48 * 3600 * 1000) { window.clearPendingPaymentRef(); return ''; }
   return localStorage.getItem('last_payment_reference') || sessionStorage.getItem('last_payment_reference') || '';
 };
-window.setPendingPaymentRef = function(reference, tier) {
+window.setPendingPaymentRef = function(reference, tier, method) {
   if (!reference) return;
   localStorage.setItem('last_payment_reference', reference);
   localStorage.setItem('last_payment_tier', tier || 'starter');
   localStorage.setItem('last_payment_at', String(Date.now()));
+  if (method) localStorage.setItem('last_payment_method', method);
 };
 window.clearPendingPaymentRef = function() {
   PENDING_PAY_KEYS.forEach(k => { localStorage.removeItem(k); sessionStorage.removeItem(k); });
@@ -243,6 +244,168 @@ window.syncUserProfileFromRemote = async function() {
     }
   }
   return null;
+};
+
+// ==================== REPRISE D'UN PAIEMENT ABANDONNÉ ====================
+// L'élève a initié un paiement GeniusPay sans le terminer (USSD fermé, solde
+// insuffisant, distraction). La référence reste mémorisée 48 h : on lui propose
+// de reprendre là où il s'était arrêté au lieu de repartir de zéro.
+window.getPendingPaymentInfo = function() {
+  const ref = window.getPendingPaymentRef();
+  if (!ref) return null;
+  return {
+    ref,
+    tier: localStorage.getItem('last_payment_tier') || sessionStorage.getItem('last_payment_tier') || 'starter',
+    method: localStorage.getItem('last_payment_method') || 'wave',
+    at: Number(localStorage.getItem('last_payment_at')) || 0
+  };
+};
+
+// Bannière affichée en haut du tableau de bord tant qu'un paiement est en attente
+// et que le compte n'est pas encore premium.
+window.pendingPaymentBannerHtml = function() {
+  const info = window.getPendingPaymentInfo();
+  if (!info) return '';
+  if (window.hasActiveSubscription && window.hasActiveSubscription()) return '';
+  const plan = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[info.tier]) || { name: info.tier.toUpperCase(), price: 0 };
+  const price = plan.price ? ` — ${Number(plan.price).toLocaleString('fr-FR')} FCFA` : '';
+  return `<div class="class-offline-banner pending-pay-banner" role="status">
+    <div class="cob-left">
+      <span class="cob-badge" style="background:#f59e0b">⏳ EN ATTENTE</span>
+      <div class="cob-title"><i class="fas fa-hourglass-half" style="color:#f59e0b"></i> Paiement en cours — Pass ${plan.name}${price}</div>
+      <div class="cob-desc">Tu as commencé un paiement sans le terminer. Reprends-le pour débloquer ton Pass, ou vérifie s'il vient d'être confirmé.</div>
+    </div>
+    <div class="pending-pay-actions">
+      <button class="cob-btn pending-pay-resume" onclick="event.stopPropagation();window.resumePendingPayment(this)"><i class="fas fa-play"></i> Reprendre mon paiement</button>
+      <button class="pending-pay-secondary" onclick="event.stopPropagation();window.checkPendingPaymentNow(this)"><i class="fas fa-rotate"></i> Vérifier</button>
+      <button class="pending-pay-secondary pending-pay-dismiss" onclick="event.stopPropagation();window.dismissPendingPayment()"><i class="fas fa-xmark"></i> Abandonner</button>
+    </div>
+  </div>`;
+};
+
+// Reprend le paiement : POST /api/pay réutilise la transaction GeniusPay encore
+// en attente (même formule, < 10 min) ou en crée une nouvelle, puis redirige vers
+// la page de paiement opérateur.
+window.resumePendingPayment = async function(btn) {
+  const info = window.getPendingPaymentInfo();
+  if (!info) {
+    if (window.toast) toast("Aucun paiement en attente.", 'info');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    return;
+  }
+  if (!window.USER_PROFILE) {
+    if (window.toast) toast("Connecte-toi pour reprendre ton paiement.", 'info');
+    window.location.href = '/connexion.html';
+    return;
+  }
+  const rawPhone = String(window.USER_PROFILE.whatsapp || window.USER_PROFILE.phone || '').replace(/\D/g, '').slice(-10);
+  if (rawPhone.length < 10) {
+    // Impossible de relancer sans numéro Mobile Money : on ouvre la caisse normale.
+    window.openPaymentCheckoutModal(info.tier, true);
+    return;
+  }
+  const original = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.innerHTML = '<div class="spinner" style="width:14px;height:14px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:6px"></div> Connexion...'; }
+  try {
+    const apiBase = window.getPaymentApiBase();
+    const isUniv = window.isUniversityUser && window.isUniversityUser();
+    const name = ((window.USER_PROFILE.firstName || '') + ' ' + (window.USER_PROFILE.lastName || '')).trim() || (isUniv ? 'Étudiant(e)' : 'Élève');
+    const res = await fetch(`${apiBase}/api/pay`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        uid: window.USER_PROFILE.uid || '',
+        tierKey: info.tier,
+        paymentMethod: info.method,
+        customerName: name,
+        customerPhone: '+225' + rawPhone,
+        customerEmail: isUniv ? 'etudiant@resumeci.me' : 'eleve@resumeci.me',
+        returnOrigin: window.location.origin
+      })
+    });
+    if (!res.ok) throw new Error('GATEWAY_UNAVAILABLE');
+    const data = await res.json();
+    const checkoutUrl = data.checkout_url || data.payment_url;
+    if (data.success && checkoutUrl) {
+      window.setPendingPaymentRef(data.payment_reference || data.reference || info.ref, info.tier, info.method);
+      window.location.href = checkoutUrl;
+      return;
+    }
+    throw new Error(data.error || 'Erreur de paiement');
+  } catch (err) {
+    console.error('Reprise paiement:', err);
+    if (btn) { btn.disabled = false; btn.innerHTML = original; }
+    window.showActionNotice({
+      type: 'error',
+      icon: '💳',
+      title: 'Reprise impossible pour le moment',
+      subtitle: 'Paiement en attente',
+      message: "La caisse automatique ne répond pas. Tu peux réessayer, vérifier si ton paiement est passé, ou payer directement par Wave / Orange Money puis faire activer ton compte.",
+      primaryBtnText: '📲 Payer en direct (WhatsApp)',
+      primaryBtnAction: () => {
+        const plan = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[info.tier]) || { name: info.tier };
+        const waMsg = encodeURIComponent(`Bonjour, je veux finaliser mon paiement du Pass ${plan.name}. Mon numéro : +225${rawPhone}. Référence : ${info.ref}`);
+        window.open(`https://wa.me/2250150252467?text=${waMsg}`, '_blank', 'noopener');
+      },
+      secondaryBtnText: 'Réessayer plus tard'
+    });
+  }
+};
+
+// Vérification manuelle : interroge GeniusPay maintenant (utile quand l'élève
+// revient après plus de 15 min, quand le watcher automatique s'est arrêté).
+window.checkPendingPaymentNow = async function(btn) {
+  const info = window.getPendingPaymentInfo();
+  if (!info) {
+    if (window.toast) toast("Aucun paiement en attente.", 'info');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    return;
+  }
+  const original = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.innerHTML = '<div class="spinner" style="width:14px;height:14px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:6px"></div> Vérification...'; }
+  try {
+    const apiBase = window.getPaymentApiBase();
+    const r = await fetch(`${apiBase}/api/check-payment/${encodeURIComponent(info.ref)}`, { cache: 'no-store' });
+    const d = await r.json().catch(() => null);
+    if (d && d.success && d.status === 'completed') {
+      window.clearPendingPaymentRef();
+      window.applyPremiumUnlock(d.tierKey || info.tier, d.premiumExpiresAt);
+      showSubscriptionSuccessModal(d.tierKey || info.tier, d.premiumExpiresAt);
+      return;
+    }
+    if (d && PAY_FAILED_STATUSES.includes(d.status)) {
+      window.clearPendingPaymentRef();
+      if (window.toast) toast("Ce paiement a été annulé ou a expiré. Tu peux en lancer un nouveau.", 'warn', 5000);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      return;
+    }
+    if (window.toast) toast("Paiement toujours en attente chez l'opérateur. Surveillance relancée — on te prévient dès confirmation.", 'info', 5000);
+    if (btn) { btn.disabled = false; btn.innerHTML = original; }
+    if (window.USER_PROFILE && !window._payWatch) window.watchPendingPayment(info.ref, info.tier);
+  } catch (e) {
+    if (btn) { btn.disabled = false; btn.innerHTML = original; }
+    if (window.toast) toast("Impossible de vérifier maintenant. Réessaie dans un instant.", 'error');
+  }
+};
+
+// Abandon explicite : l'élève renonce à cette tentative (confirmation demandée).
+window.dismissPendingPayment = function() {
+  const info = window.getPendingPaymentInfo();
+  if (!info) return;
+  window.showActionNotice({
+    type: 'warning',
+    icon: '🧾',
+    title: 'Abandonner ce paiement ?',
+    subtitle: 'Aucun montant ne sera débité',
+    message: "La tentative en cours sera oubliée. Tu pourras relancer un nouveau paiement quand tu veux depuis la page des Pass.",
+    primaryBtnText: 'Oui, abandonner',
+    primaryBtnAction: () => {
+      window.clearPendingPaymentRef();
+      if (window.toast) toast("Paiement abandonné.", 'info');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    },
+    secondaryBtnText: 'Garder mon paiement'
+  });
 };
 
 // ==================== GESTION DU PROFIL UTILISATEUR & PASS ====================
@@ -1436,7 +1599,7 @@ window.initiatePremiumPayment = function (btn, tierKey = 'pro') {
 let currentCheckoutTier = 'starter';
 let currentCheckoutMethod = 'wave';
 
-window.openPaymentCheckoutModal = function(tierKey = 'pro') {
+window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false) {
   // Réveille l'API Render (plan gratuit en veille) pendant que l'élève choisit sa formule
   try { fetch(`${window.getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch (e) {}
   if (!window.USER_PROFILE) {
@@ -1491,6 +1654,26 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro') {
         secondaryBtnText: 'Continuer'
       });
     }
+    return;
+  }
+
+  // Paiement déjà en cours ? On propose de le reprendre plutôt que d'en créer un
+  // deuxième (la référence en attente est réutilisée côté serveur si < 10 min).
+  const pendingInfo = !force && window.getPendingPaymentInfo ? window.getPendingPaymentInfo() : null;
+  if (pendingInfo) {
+    const pendingPlan = (window.PREMIUM_PLANS && window.PREMIUM_PLANS[pendingInfo.tier]) || { name: pendingInfo.tier.toUpperCase(), price: 0 };
+    const pendingPrice = pendingPlan.price ? ` (${Number(pendingPlan.price).toLocaleString('fr-FR')} FCFA)` : '';
+    window.showActionNotice({
+      type: 'warning',
+      icon: '⏳',
+      title: 'Paiement déjà en cours',
+      subtitle: `Pass ${pendingPlan.name}${pendingPrice}`,
+      message: "Tu as déjà un paiement initié qui n'a pas été finalisé.\n\nReprends-le pour éviter une double demande sur ton Mobile Money — ou commence une nouvelle formule si tu as changé d'avis.",
+      primaryBtnText: '▶ Reprendre mon paiement',
+      primaryBtnAction: () => { window.resumePendingPayment(); },
+      secondaryBtnText: 'Nouveau paiement',
+      secondaryBtnAction: () => { window.openPaymentCheckoutModal(tierKey, true); }
+    });
     return;
   }
 
@@ -1655,7 +1838,7 @@ window.submitCheckoutPayment = async function() {
 
     if (data.success && checkoutUrl) {
       if (data.reference || data.payment_reference) {
-        window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier);
+        window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier, currentCheckoutMethod);
       }
       window.location.href = checkoutUrl;
       return;
@@ -1989,7 +2172,7 @@ function showDashboard(push = true) {
     0
   );
   document.getElementById('content').innerHTML =
-    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
   document.querySelectorAll('.class-card').forEach(el => el.addEventListener('click', () => showClass(el.dataset.cls)));
   clearActive();
   refreshOfflineStatus();
