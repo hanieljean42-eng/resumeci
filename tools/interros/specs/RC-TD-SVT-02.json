@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-02",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Géologie externe — érosion, transport, dépôt",
+  "consignes": "Exploite le document fourni. Les réponses doivent faire appel au vocabulaire géologique précis.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — L'érosion sur un versant ivoirien",
+      "points": "6 pts",
+      "consigne": "La coupe ci-dessous schématise un versant de la région de Man (Ouest montagneux de la Côte d'Ivoire). On observe trois zones numérotées ① ② ③.",
+      "enonce": "<ol type='a'><li>Nomme les phénomènes géologiques dominants dans chacune des zones ①, ② et ③.</li><li>Cite les deux agents principaux responsables de la dégradation des roches en zone ①.</li><li>Quel rôle joue l'eau de ruissellement dans le passage de la zone ① à la zone ③ ?</li><li>En zone ③, explique pourquoi les éléments les plus grossiers se déposent en premier.</li><li>En 3 à 4 lignes : explique pourquoi la déforestation aggrave l'érosion des sols dans cette région.</li></ol>",
+      "svg": "<svg viewBox='0 0 440 250' xmlns='http://www.w3.org/2000/svg'><polygon points='30,40 200,40 240,120 400,210 30,210' fill='#f1f5f9' stroke='#334155' stroke-width='1.5'/><path d='M30 40 L200 40 L240 120 L400 210 L30 210 Z' fill='none' stroke='#334155' stroke-width='1.5'/><path d='M205 45 C 215 65, 225 95, 240 118' fill='none' stroke='#94a3b8' stroke-dasharray='5,4'/><path d='M240 120 C 280 150, 340 185, 395 208' fill='none' stroke='#94a3b8' stroke-dasharray='5,4'/><circle cx='230' cy='85' r='4' fill='#92400e'/><circle cx='248' cy='112' r='3.4' fill='#92400e'/><circle cx='290' cy='150' r='3' fill='#92400e'/><circle cx='330' cy='175' r='2.6' fill='#92400e'/><ellipse cx='95' cy='65' rx='18' ry='10' fill='#cbd5e1' stroke='#64748b'/><ellipse cx='140' cy='88' rx='14' ry='8' fill='#cbd5e1' stroke='#64748b'/><path d='M90 45 L120 30 M120 50 L160 35' stroke='#64748b' stroke-width='1.2'/><ellipse cx='290' cy='185' rx='30' ry='12' fill='#e2e8f0' stroke='#94a3b8'/><ellipse cx='355' cy='200' rx='22' ry='9' fill='#e2e8f0' stroke='#94a3b8'/><circle cx='115' cy='160' r='3' fill='#94a3b8'/><circle cx='130' cy='175' r='3' fill='#94a3b8'/><path d='M245 80 C 260 95, 275 120, 300 140' fill='none' stroke='#2563eb' stroke-width='2' stroke-dasharray='6,3' marker-end='url(#wf)'/><defs><marker id='wf' markerWidth='9' markerHeight='9' refX='7' refY='4' orient='auto'><path d='M0,0 L7,4 L0,8 z' fill='#2563eb'/></marker></defs><text x='95' y='30' font-size='14' fill='#334155' font-family='Georgia'>①</text><text x='238' y='80' font-size='14' fill='#334155' font-family='Georgia'>②</text><text x='330' y='168' font-size='14' fill='#334155' font-family='Georgia'>③</text><text x='268' y='112' font-size='11' fill='#2563eb' font-family='Georgia'>ruissellement</text></svg>",
+      "correction": "<p><strong>a)</strong> ① : <span class='reponse'>altération</span> (désagrégation de la roche sur place) et <span class='reponse'>arrachement</span>. ② : <span class='reponse'>transport</span> des débris le long de la pente. ③ : <span class='reponse'>dépôt (sédimentation)</span> au pied du versant.</p><p><strong>b)</strong> Les deux agents : <span class='reponse'>l'eau</span> (pluie, humidité → hydrolyse, ruissellement) et <span class='reponse'>la température/le vivant</span> (variations thermiques, racines, activité microbienne) — accepter : eau + température, ou eau + êtres vivants.</p><p><strong>c)</strong> L'eau de ruissellement <span class='reponse'>détache, entraîne et transporte</span> les particules depuis la zone d'altération jusqu'au pied du versant : c'est l'agent de liaison entre érosion et dépôt.</p><p><strong>d)</strong> Au pied, la <span class='reponse'>pente s'aplanit → la vitesse de l'eau diminue → son énergie chute</span> : elle ne peut plus porter les éléments lourds, qui sédimentent d'abord (tri sédimentaire : les plus fins voyagent plus loin).</p><p><strong>e)</strong> Sans arbres, plus de racines pour <span class='reponse'>retenir le sol</span> ni de couvert pour <span class='reponse'>freiner l'impact des gouttes de pluie</span> : le ruissellement accélère, décapant la couche fertile — érosion en nappes puis en ravines.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1 pt · d) 1 pt · e) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — La fertilité des sols menacée",
+      "points": "4 pts",
+      "consigne": "En zone rurale de Korhogo, un planteur remarque que ses rendements diminuent chaque année sur une parcelle en pente qu'il cultive sans discontinuer.",
+      "enonce": "<ol type='a'><li>Explique deux causes possibles de la baisse des rendements liées à l'érosion.</li><li>Propose deux techniques culturales qui permettraient de limiter l'érosion sur cette parcelle en pente.</li><li>Quel rôle joue l'humus dans la fertilité du sol ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Deux causes : <span class='reponse'>l'export de la couche fertile (humus) par le ruissellement</span> sur la parcelle en pente ; <span class='reponse'>l'appauvrissement du sol</span> par les cultures successives sans jachère ni fumure (les racines et nutriments ne sont pas renouvelés).</p><p><strong>b)</strong> Deux techniques : <span class='reponse'>cultures en courbes de niveau / en terrasses</span> (couper la pente), <span class='reponse'>paillage ou couverture végétale</span> du sol (freiner le ruissellement), <span class='reponse'>haies brise-ruissellement</span>, <span class='reponse'>jachère</span>. (2 attendues)</p><p><strong>c)</strong> L'humus, issu de la décomposition des matières organiques, <span class='reponse'>nourrit les plantes (sels minéraux), retient l'eau et structure le sol</span> : c'est lui qui fait la fertilité — sa perte par érosion stérilise la parcelle.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt"
+    }
+  ]
+}

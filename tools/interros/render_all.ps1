@@ -1,13 +1,8 @@
-$specs = @(
-  'tools/interros/specs/RC-TC-PC-01.json',
-  'tools/interros/specs/RC-TC-SVT-01.json',
-  'tools/interros/specs/RC-TA-PHILO-01.json',
-  'tools/interros/specs/RC-TA-HG-01.json',
-  'tools/interros/specs/RC-TA-MATH-01.json',
-  'tools/interros/specs/RC-TD-PC-02.json',
-  'tools/interros/specs/RC-T-FRAN-01.json'
-)
-foreach ($s in $specs) {
+param([Parameter(ValueFromRemainingArguments=$true)][string[]]$Specs)
+if (-not $Specs -or $Specs.Count -eq 0) {
+  $Specs = Get-ChildItem tools/interros/specs/*.json | ForEach-Object { $_.FullName.Replace('\','/').Replace((Get-Location).Path.Replace('\','/') + '/', '') }
+}
+foreach ($s in $Specs) {
   $ok = $false
   for ($i = 1; $i -le 8 -and -not $ok; $i++) {
     Write-Output "== $s (essai $i)"

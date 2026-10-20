@@ -78,6 +78,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-HG-01",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "La Guerre froide · La mondialisation",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-MATH-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -88,6 +101,19 @@
     "bareme": "10 points",
     "chapitre": "Dérivation · Étude de fonctions · Dénombrement",
     "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-MATH-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Suites · Probabilités · Étude de fonctions",
+    "exercices": 3,
     "corrige": true
   },
   {
@@ -113,6 +139,58 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Génétique (dihybridisme) · Immunologie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-SVT-02",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Reproduction humaine · Contrôle hormonal du cycle",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TCD-PHILO-01",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminales C & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "La technique · L'État",
+    "exercices": 1,
+    "corrige": true
+  },
+  {
+    "code": "RC-TCD-PHILO-01",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminales C & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "La technique · L'État",
+    "exercices": 1,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-HG-01",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "La construction européenne · La démographie de l'Afrique",
     "exercices": 2,
     "corrige": true
   },
@@ -217,6 +295,19 @@
     "duree": "1 heure",
     "bareme": "/ 10",
     "chapitre": "Génétique (dihybridisme) · Immunologie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-02",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Géologie externe — érosion, transport, dépôt",
     "exercices": 2,
     "corrige": true
   }

@@ -1,0 +1,36 @@
+{
+  "code": "RC-TC-MATH-02",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale C",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Suites · Probabilités · Étude de fonctions",
+  "consignes": "La calculatrice est autorisée. Les probabilités seront données sous forme de fraction puis de valeur approchée à $10^{-3}$ près. On donne $\\ln 2\\approx0{,}69$ et $\\frac{1}{\\sqrt{2}}\\approx0{,}71$.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Une suite arithmético-géométrique",
+      "points": "5 pts",
+      "consigne": "Un jeune trader d'Abidjan suit la progression de son capital. La suite $(u_n)$ est définie par $u_0=2$ et $u_{n+1}=\\frac{1}{2}u_n+3$ pour tout $n\\geq0$. On pose $v_n=u_n-6$.",
+      "enonce": "<ol type='a'><li>Montre que $(v_n)$ est une suite géométrique dont on donnera la raison et le premier terme.</li><li>Exprime $v_n$ puis $u_n$ en fonction de $n$.</li><li>Calcule $u_{10}$ à $10^{-2}$ près.</li><li>Détermine la limite de $(u_n)$. Interprète pour le capital du trader.</li></ol>",
+      "correction": "<p><strong>a)</strong> $v_{n+1}=u_{n+1}-6=\\frac{1}{2}u_n+3-6=\\frac{1}{2}u_n-3=\\frac{1}{2}(u_n-6)=\\frac{1}{2}v_n$ : géométrique de <span class='reponse'>raison $\\frac{1}{2}$</span>, premier terme <span class='reponse'>$v_0=2-6=-4$</span>.</p><p><strong>b)</strong> <span class='reponse'>$v_n=-4\\left(\\frac{1}{2}\\right)^{n}$</span> donc <span class='reponse'>$u_n=6-4\\left(\\frac{1}{2}\\right)^{n}$</span>.</p><p><strong>c)</strong> $u_{10}=6-\\frac{4}{1024}=6-0{,}00390625\\approx$ <span class='reponse'>$6{,}00$</span>.</p><p><strong>d)</strong> $\\left(\\frac{1}{2}\\right)^{n}\\to0$ donc <span class='reponse'>$\\lim u_n=6$</span> : le capital se stabilise autour de 6 unités, il ne croît pas indéfiniment.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Contrôle qualité dans une usine",
+      "points": "5 pts",
+      "consigne": "Une usine de conditionnement d'huile de palme à Sassandra produit des bidons dont 8 % présentent un défaut de bouchage. Un contrôleur prélève au hasard un lot de 10 bidons (le tirage est assimilé à un tirage avec remise).",
+      "enonce": "<ol type='a'><li>Quelle loi suit le nombre $X$ de bidons défectueux dans le lot ? Donne ses paramètres.</li><li>Calcule la probabilité qu'aucun bidon ne soit défectueux.</li><li>Calcule la probabilité qu'au moins un bidon soit défectueux.</li><li>Calcule la probabilité qu'exactement 2 bidons soient défectueux.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$X\\sim\\mathcal{B}(10\\,;0{,}08)$</span> (10 épreuves indépendantes, succès = « défectueux »).</p><p><strong>b)</strong> $P(X=0)=0{,}92^{10}\\approx$ <span class='reponse'>$0{,}434$</span>.</p><p><strong>c)</strong> $P(X\\geq1)=1-0{,}92^{10}\\approx1-0{,}434=$ <span class='reponse'>$0{,}566$</span>.</p><p><strong>d)</strong> $P(X=2)=\\binom{10}{2}(0{,}08)^{2}(0{,}92)^{8}=45\\times0{,}0064\\times0{,}5132\\approx$ <span class='reponse'>$0{,}148$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,25 pt · c) 1,25 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Étude de la fonction $f(x)=x^{2}-\\ln x$",
+      "points": "10 pts",
+      "consigne": "Soit $f$ la fonction définie sur $]0\\,;+\\infty[$ par $f(x)=x^{2}-\\ln x$.",
+      "enonce": "<ol type='a'><li>Calcule les limites de $f$ en $0^{+}$ et en $+\\infty$.</li><li>Calcule $f'(x)$, étudie son signe et dresse le tableau de variations de $f$.</li><li>Détermine le minimum $m$ de $f$ et montre que $m=\\frac{1}{2}+\\frac{1}{2}\\ln 2$.</li><li>En déduire que $f(x)>0$ pour tout $x>0$, puis que $\\ln x<x^{2}$ pour tout $x>0$.</li><li>Détermine l'équation de la tangente à la courbe au point d'abscisse $x=1$.</li></ol>",
+      "correction": "<p><strong>a)</strong> En $0^{+}$ : $x^{2}\\to0$ et $-\\ln x\\to+\\infty$ donc <span class='reponse'>$f\\to+\\infty$</span>. En $+\\infty$ : $f(x)=x^{2}\\left(1-\\frac{\\ln x}{x^{2}}\\right)\\to+\\infty$ car $\\frac{\\ln x}{x^{2}}\\to0$ : <span class='reponse'>$f\\to+\\infty$</span>.</p><p><strong>b)</strong> <span class='reponse'>$f'(x)=2x-\\frac{1}{x}=\\frac{2x^{2}-1}{x}$</span>. Sur $]0\\,;+\\infty[$, le signe est celui de $2x^{2}-1$ : négatif si $x<\\frac{1}{\\sqrt{2}}$, nul en $x=\\frac{1}{\\sqrt{2}}$, positif après. $f$ décroît puis croît.</p><p><strong>c)</strong> Minimum en $x=\\frac{1}{\\sqrt{2}}$ : $f\\left(\\frac{1}{\\sqrt{2}}\\right)=\\frac{1}{2}-\\ln\\frac{1}{\\sqrt{2}}=\\frac{1}{2}+\\frac{1}{2}\\ln 2=$ <span class='reponse'>$\\frac{1+\\ln 2}{2}\\approx0{,}85$</span>.</p><p><strong>d)</strong> Le minimum est positif, donc $f(x)>0$ partout : <span class='reponse'>$x^{2}-\\ln x>0 \\iff \\ln x<x^{2}$</span> pour tout $x>0$.</p><p><strong>e)</strong> $f(1)=1$ et $f'(1)=1$ : <span class='reponse'>$y=x$</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 2,5 pts · c) 2 pts · d) 2 pts · e) 1,5 pt"
+    }
+  ]
+}
