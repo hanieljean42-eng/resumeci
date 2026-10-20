@@ -91,9 +91,10 @@ function pageHtml(spec, corrige) {
   .consignes { background: #f1f5f9; border-left: 4px solid ${accent}; border-radius: 4px; padding: 6px 10px; font-size: 10.5pt; margin: 3mm 0 1mm; }
 
   /* ---------- Exercices ---------- */
-  .exo { margin-top: 5mm; page-break-inside: avoid; }
-  .exo.allow-break { page-break-inside: auto; }
-  .exo-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; }
+  .exo { margin-top: 5mm; }
+  .exo-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; page-break-after: avoid; }
+  .consignes, .eleve-line, .exo-schema, .consigne { page-break-inside: avoid; }
+  .exo-body li, .exo-body p { page-break-inside: avoid; orphans: 3; widows: 3; }
   .exo-title { font-size: 12.5pt; font-weight: 800; color: #0f172a; }
   .exo-pts { font-weight: 700; color: ${accent}; font-size: 11pt; }
   .exo-bareme { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; color: #059669; font-weight: 700; }
@@ -101,8 +102,8 @@ function pageHtml(spec, corrige) {
   .exo-body { margin-top: 1.5mm; }
   .exo-body ol, .exo-body ul { margin: 1mm 0; padding-left: 7mm; }
   .exo-body li { margin-bottom: 1.2mm; }
-  .exo-schema { margin: 2mm 0; text-align: center; }
-  .exo-schema svg { max-width: 100%; }
+  .exo-schema { margin: 2mm 0; text-align: center; page-break-inside: avoid; }
+  .exo-schema svg { max-width: 100%; max-height: 70mm; }
   .katex-display { margin: 1.5mm 0; }
 
   /* ---------- Corrigé ---------- */

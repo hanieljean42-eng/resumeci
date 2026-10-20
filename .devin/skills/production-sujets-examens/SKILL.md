@@ -76,6 +76,37 @@ champ `svg` avec un schéma propre, noir sur blanc, style sujet imprimé :
 - vecteurs en flèches nommées ($\vec{F}$ via `<tspan>` ou texte Unicode) ;
 - pas de remplissage criard — gris clair `#f1f5f9` / accents `#2563eb`.
 
+### ⚠️ Schéma « à compléter » = version VIDE dans l'énoncé
+
+Si une question demande à l'élève de **représenter, légender, compléter ou placer**
+quelque chose sur un schéma (vecteurs forces, légendes, point de tangente…) :
+- `ex.svg` (énoncé) = la version **NON corrigée** : la figure sans les réponses
+  (plan incliné + bloc mais PAS les vecteurs demandés ; montage numéroté ①②③
+  mais sans les noms ; courbe sans le point demandé ni les pointillés-guides).
+- Le schéma **corrigé complet** va dans `correction` (un `<svg>` peut être
+  inséré directement dans le HTML du corrigé — `md()` le laisse passer).
+- Ne jamais mettre dans l'énoncé une figure qui révèle la réponse attendue.
+
+## 📚 RÈGLE FICHES DISPONIBLES — pas de sujet sans leçon
+
+**Avant de produire un sujet pour une classe**, vérifier que le chapitre traité a
+une fiche sur la plateforme : `Fiches_Resume/{Classe}/{Matiere}/` (ou
+`data/structure.json`). Un élève doit pouvoir réviser la leçon PUIS faire l'interro.
+Si la fiche n'existe pas → **ne pas produire le sujet** (ou écrire la fiche
+d'abord avec le skill `generation-fiches-cours`).
+
+### Matrice actuelle des matières AVEC fiches (à maintenir à jour)
+
+| Classe | Matières couvertes par des fiches |
+|---|---|
+| `Terminale_D` | Français, Histoire-Géographie, Mathématiques, Philosophie, Physique-Chimie, SVT |
+| `Terminale_C` | Mathématiques, Physique-Chimie **uniquement** |
+| `Terminale_A` | Français, Histoire-Géographie, Mathématiques, Philosophie |
+
+⚠️ Une spec `classes` multi-classes ne doit cibler que des classes où la matière
+a des fiches (ex. Français commun = A + D, PAS C tant que ses fiches manquent).
+Toujours recroiser le `chapitre` de la spec avec les titres de fiches réels.
+
 ## 🚫 Zéro symbole brut — vérification OBLIGATOIRE
 
 Jamais de `$`, `\frac`, `\sqrt`, `\mathrm`… visibles dans le rendu élève.
