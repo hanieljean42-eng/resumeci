@@ -148,11 +148,12 @@ async function main() {
     try {
       browser = await puppeteer.launch({
         executablePath: exe,
+        headless: true,
         userDataDir: path.join(require('os').tmpdir(), 'rc_interro_' + Date.now()),
-        args: ['--no-sandbox', '--allow-file-access-from-files']
+        args: ['--headless=new', '--no-sandbox', '--allow-file-access-from-files']
       });
       break;
-    } catch (e) { lastErr = e; console.error(`Launch ${exe} : ${e.message}`); }
+    } catch (e) { lastErr = e; console.error(`Launch ${exe} : ${e.message.slice(0, 120)}`); }
   }
   if (!browser) throw lastErr || new Error('Aucun navigateur Chromium trouvé');
   try {

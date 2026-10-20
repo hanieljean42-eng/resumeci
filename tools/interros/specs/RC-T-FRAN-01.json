@@ -1,0 +1,34 @@
+{
+  "code": "RC-T-FRAN-01",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "Toutes les Terminales (A · C · D)",
+  "classes": ["Terminale_A", "Terminale_C", "Terminale_D"],
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Contraction de texte · Réécriture · Expression",
+  "consignes": "Lis attentivement le texte puis traite les trois parties dans l'ordre. Soigne particulièrement l'orthographe et la présentation : elles comptent dans la note finale.",
+  "exercices": [
+    {
+      "titre": "Texte support : « Le livre face aux écrans »",
+      "points": "—",
+      "enonce": "<div style='background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;padding:5mm;margin:3mm 0;font-size:11pt;line-height:1.7'><p>Dans la cour du lycée, à l'heure de la récréation, le spectacle a changé. Là où se lisaient autrefois des bandes dessinées écornées et des romans prêtés entre amis, s'alignent aujourd'hui des rangs de têtes baissées sur des téléphones. L'écran a gagné la bataille des récréations, il n'a pourtant pas encore gagné celle de l'intelligence.</p><p>Car lire un livre exige de l'esprit un effort que l'écran n'impose jamais. Le roman oblige à imaginer les visages, à construire les paysages, à patienter des pages entières avant la chute de l'histoire. La vidéo, elle, sert tout préparé : images, sons, émotions à peine mastiquées. On ne fabrique plus l'histoire, on la consomme.</p><p>Pourtant, il serait malhonnête de tout rejeter. L'écran est aussi une bibliothèque extraordinaire : en quelques clics, l'élève de Boundiali consulte des cours que son école ne possède pas. Le danger n'est donc pas l'outil, mais l'usage qu'on en fait. Apprendre à doser, choisir de lire quand il le faut, voilà le vrai défi de cette génération.</p><p style='text-align:right;font-style:italic;margin-bottom:0'>— Éditorial, Gazette du Lycée (texte original ResumeCI)</p></div>",
+      "correction": "<p><em>Le texte est un éditorial rédigé pour cette épreuve ; il peut servir de modèle de texte argumentatif court (thèse — nuance — conclusion).</em></p>",
+      "bareme_detail": "—"
+    },
+    {
+      "titre": "Partie I — Compréhension et résumé",
+      "points": "10 pts",
+      "enonce": "<ol type='a'><li><strong>(2 pts)</strong> D'après le premier paragraphe, qu'est-ce qui a changé dans les cours de récréation ?</li><li><strong>(3 pts)</strong> Explique avec tes mots : « On ne fabrique plus l'histoire, on la consomme. »</li><li><strong>(5 pts)</strong> <strong>Contraction de texte :</strong> résume ce texte en environ <strong>60 mots</strong> (un cinquième de sa taille), en respectant sa progression : le constat, l'opposition livre/écran, puis la nuance finale.</li></ol>",
+      "correction": "<p><strong>a)</strong> Les élèves ne lisent plus de livres ou de bandes dessinées : ils passent la récréation penchés sur leurs téléphones (2 pts).</p><p><strong>b)</strong> Avec la vidéo, tout est déjà construit — visages, décors, musique : l'esprit du spectateur n'a plus de travail d'imagination à fournir. Le lecteur d'un roman, lui, « fabrique » l'histoire dans sa tête ; le spectateur la reçoit toute faite (3 pts).</p><p><strong>c) Résumé modèle (≈60 mots)</strong> <em>(5 pts : 2 pts fidélité aux 3 idées, 2 pts syntaxe personnelle, 1 pt respect du volume)</em> : « Les écrans ont remplacé le livre dans les récréations. Or lire exige un effort d'imagination que la vidéo supprime en offrant tout prêt. Mais l'écran est aussi une bibliothèque précieuse : le vrai problème est l'usage, il faut apprendre à doser. »</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 5 pts"
+    },
+    {
+      "titre": "Partie II — Réécriture et expression",
+      "points": "10 pts",
+      "enonce": "<ol type='a'><li><strong>(4 pts — 1 pt par item)</strong> Réécris les phrases selon les indications :<br/>① « L'écran a gagné la bataille des récréations. » → mets à la <strong>voix passive</strong>.<br/>② « On ne fabrique plus l'histoire » : reprends la phrase à la <strong>première personne du pluriel</strong>.<br/>③ Transforme en <strong>phrase complexe avec une subordonnée relative</strong> : « Le roman oblige à imaginer les visages. Le roman fait travailler l'esprit. »<br/>④ Remplace « patienter des pages entières » par un <strong>nom de même sens</strong> (nominalisation) : « … avant la chute de l'histoire, le lecteur doit faire preuve de… »</li><li><strong>(6 pts)</strong> <strong>Expression écrite :</strong> « Selon toi, les écrans peuvent-ils remplacer totalement le livre à l'école ? » Rédige 8 à 10 lignes argumentées (une opinion claire + 2 arguments + un exemple).</li></ol>",
+      "correction": "<p><strong>a) Réécritures attendues</strong> <em>(1 pt chacune)</em> : ① « La bataille des récréations a été gagnée par l'écran. » ② « Nous ne fabriquons plus l'histoire » (verbe au pluriel : fabriquons). ③ Ex. : « Le roman, qui oblige à imaginer les visages, fait travailler l'esprit. » ④ « … faire preuve de patience. »</p><p><strong>b) Expression — grille (6 pts)</strong> : opinion claire et constante (2 pts) ; deux arguments distincts et pertinents (2 pts) ; exemple concret (1 pt) ; correction de la langue (1 pt). <em>Exemple de bonne réponse : défendre que l'écran complète sans remplacer — arguments : fatigue visuelle, mémoire moindre à l'écran — exemple : réviser sur fiches papier la veille du BAC.</em></p>",
+      "bareme_detail": "a) 4 pts · b) 6 pts (opinion 2 + arguments 2 + exemple 1 + langue 1)"
+    }
+  ]
+}

@@ -20,19 +20,22 @@ for (const f of fs.readdirSync(SPECS_DIR).filter(f => f.endsWith('.json')).sort(
     fs.mkdirSync(DEST_DIR, { recursive: true });
     fs.copyFileSync(src, path.join(DEST_DIR, `${spec.code}_${part}.pdf`));
   }
-  catalog.push({
-    code: spec.code,
-    type: spec.type,
-    typeLabel: TYPE_LABELS[spec.type] || spec.type,
-    matiere: spec.matiere,
-    classe: spec.classe_key || spec.classe.replace(/ /g, '_'),
-    classeLabel: spec.classe,
-    duree: spec.duree,
-    bareme: spec.bareme,
-    chapitre: spec.chapitre || '',
-    exercices: spec.exercices.length,
-    corrige: hasCorr
-  });
+  const classes = spec.classes || [spec.classe_key || spec.classe.replace(/ /g, '_')];
+  for (const cls of classes) {
+    catalog.push({
+      code: spec.code,
+      type: spec.type,
+      typeLabel: TYPE_LABELS[spec.type] || spec.type,
+      matiere: spec.matiere,
+      classe: cls,
+      classeLabel: spec.classe,
+      duree: spec.duree,
+      bareme: spec.bareme,
+      chapitre: spec.chapitre || '',
+      exercices: spec.exercices.length,
+      corrige: hasCorr
+    });
+  }
 }
 
 fs.mkdirSync(DEST_DIR, { recursive: true });

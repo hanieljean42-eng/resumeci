@@ -1638,7 +1638,7 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false, elite
   }
 
   // 3. Formule Élite/Excellence : réservée aux classes qui ont du contenu
-  // "Sujets & Interros" au catalogue (actuellement Terminale D uniquement).
+  // "Sujets & Interros" au catalogue (Terminales A, C, D — extensible avec le contenu).
   // Vérification catalogue côté client pour l'UX ; le serveur re-contrôle dans /api/pay.
   if ((tierKey === 'elite' || tierKey === 'uni_elite') && !eliteChecked) {
     const cls = String(window.USER_PROFILE?.selectedClass || '');
@@ -1650,14 +1650,15 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false, elite
         if (ok) {
           window.openPaymentCheckoutModal(tierKey, force, true);
         } else if (typeof window.showActionNotice === 'function') {
+          const clsList = [...new Set(((d && d.interros) || []).map(x => String(x.classe || '').replace(/_/g, ' ')))].sort();
           window.showActionNotice({
             type: 'info',
             icon: '📝',
-            title: 'Pass Élite — Terminale D uniquement',
+            title: 'Pass Élite — ' + (clsList.length === 1 ? clsList[0] + ' uniquement' : 'classes limitées'),
             subtitle: 'Sujets & Interros corrigés',
             message: window.isUniversityUser && window.isUniversityUser()
               ? "Le Pass Excellence est réservé aux filières disposant de sujets corrigés.\n\nAucune filière universitaire n'a encore de contenu publié — il arrive très bientôt !"
-              : "Le Pass Élite donne accès aux Sujets & Interros corrigés (PDF).\n\nPour l'instant il est réservé à la Terminale D — les autres classes arrivent très bientôt !",
+              : "Le Pass Élite donne accès aux Sujets & Interros corrigés (PDF).\n\nIl est actuellement disponible pour : " + clsList.join(', ') + ".\n\nLes autres classes arrivent très bientôt !",
             primaryBtnText: 'Continuer mes révisions'
           });
         }
@@ -2859,7 +2860,9 @@ function renderSujetsList() {
   if (!body) return;
   const catalog = window._sujetsCatalog || [];
   const myClass = String((window.USER_PROFILE && window.USER_PROFILE.selectedClass) || '');
-  const items = catalog.filter(d => window.sujetsFilterClass === 'all' || d.classe === myClass);
+  const seen = new Set();
+  const all = catalog.filter(d => !seen.has(d.code) && seen.add(d.code));
+  const items = window.sujetsFilterClass === 'all' ? all : catalog.filter(d => d.classe === myClass);
 
   const TYPE_STYLE = {
     interro: { icon: '📝', color: '#2563eb' },
@@ -2869,7 +2872,7 @@ function renderSujetsList() {
 
   const tabs = `<div style="display:flex;gap:8px;margin-bottom:14px">
     <button onclick="setSujetsFilter('mine')" class="pm-btn ${window.sujetsFilterClass === 'mine' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'mine' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Ma classe (${catalog.filter(d => d.classe === myClass).length})</button>
-    <button onclick="setSujetsFilter('all')" class="pm-btn ${window.sujetsFilterClass === 'all' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'all' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Toutes (${catalog.length})</button>
+    <button onclick="setSujetsFilter('all')" class="pm-btn ${window.sujetsFilterClass === 'all' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'all' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Toutes (${all.length})</button>
   </div>`;
 
   if (!items.length) {
