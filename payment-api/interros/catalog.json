@@ -91,6 +91,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-HG-04",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Croyances et valeurs du monde occidental · Mutations de la civilisation négro-africaine",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-MATH-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -143,6 +156,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-MATH-05",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Statistique à deux variables",
+    "exercices": 1,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-PHILO-01",
     "type": "devoir",
     "typeLabel": "Devoir surveillé",
@@ -178,6 +204,19 @@
     "duree": "3 heures",
     "bareme": "20 points",
     "chapitre": "Progrès et bonheur · La connaissance scientifique",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-PHILO-04",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Dieu et la religion · Langage et vérité",
     "exercices": 2,
     "corrige": true
   },
@@ -260,6 +299,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-07",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Coniques · Limites et continuité",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -309,6 +361,19 @@
     "bareme": "20 points",
     "chapitre": "Circuit RLC série et résonance · Alcools et estérification",
     "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-05",
+    "type": "bac",
+    "typeLabel": "Examen type BAC",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Champ électrique uniforme · Induction et auto-induction · Acide faible et solutions tampons",
+    "exercices": 3,
     "corrige": true
   },
   {
@@ -442,6 +507,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-08",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Équations différentielles · Statistiques à deux variables",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -491,6 +569,19 @@
     "bareme": "20 points",
     "chapitre": "Oscillations mécaniques libres · Dosage acido-basique et solutions tampons",
     "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-PC-05",
+    "type": "bac",
+    "typeLabel": "Examen type BAC",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Champ électrique uniforme · Induction et auto-induction · Amines et acides carboxyliques",
+    "exercices": 3,
     "corrige": true
   },
   {
@@ -568,6 +659,32 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Le fonctionnement du tissu nerveux · Le fonctionnement du muscle strié squelettique",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Le réflexe conditionnel · Le maintien de la constance du milieu intérieur",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-07",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Le devenir des cellules sexuelles chez les mammifères · Le fonctionnement des organes sexuels",
     "exercices": 2,
     "corrige": true
   }

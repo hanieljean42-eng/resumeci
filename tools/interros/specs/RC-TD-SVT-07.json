@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-07",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Le devenir des cellules sexuelles chez les mammifères · Le fonctionnement des organes sexuels",
+  "consignes": "Les réponses seront rédigées en phrases complètes.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le devenir des cellules sexuelles",
+      "points": "6 pts",
+      "consigne": "Le schéma ci-dessous résume, chez le mammifère mâle, l'évolution d'une cellule souche gonadique jusqu'au gamète (les étapes numérotées ne sont pas nommées).",
+      "enonce": "<ol type='a'><li>Légender le schéma en donnant le nom des cellules repérées par les numéros 1 à 4.</li><li>Indiquer, à chaque étape, le nombre de chromosomes de chaque cellule (on prendra $2n$ chromosomes pour la cellule de départ).</li><li>Préciser les divisions cellulaires qui interviennent entre les étapes 1 et 4.</li><li>Comparer le bilan de la spermatogenèse à celui de l'ovogenèse : combien de gamètes fonctionnels obtient-on à partir d'une cellule souche dans chaque cas ?</li></ol>",
+      "svg": "<svg viewBox='0 0 420 240' xmlns='http://www.w3.org/2000/svg'><defs><marker id='sp' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto'><path d='M0 0L10 5L0 10z' fill='#334155'/></marker></defs><circle cx='60' cy='60' r='24' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><text x='52' y='66' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>1</text><line x1='90' y1='60' x2='140' y2='60' stroke='#334155' stroke-width='1.8' marker-end='url(#sp)'/><circle cx='180' cy='60' r='28' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><text x='171' y='66' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>2</text><line x1='215' y1='60' x2='265' y2='60' stroke='#334155' stroke-width='1.8' marker-end='url(#sp)'/><circle cx='300' cy='60' r='22' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><circle cx='345' cy='60' r='22' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><text x='314' y='66' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>3</text><line x1='322' y1='95' x2='322' y2='135' stroke='#334155' stroke-width='1.8' marker-end='url(#sp)'/><circle cx='300' cy='170' r='15' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><circle cx='345' cy='170' r='15' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><text x='315' y='176' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>4</text><g stroke='#334155' stroke-width='1.5' fill='none'><path d='M300 185 l0 22 q0 8 10 8'/><path d='M345 185 l0 22 q0 8 -10 8'/></g><circle cx='300' cy='182' r='4' fill='#334155'/><circle cx='345' cy='182' r='4' fill='#334155'/></svg>",
+      "correction": "<p><strong>a)</strong> Légende : <span class='reponse'>1 : spermatogonie ; 2 : spermatocyte de premier ordre (spermatocyte I) ; 3 : spermatocytes de second ordre (spermatocytes II) ; 4 : spermatides</span> — qui deviennent ensuite des spermatozoïdes.</p><p><strong>b)</strong> <span class='reponse'>1 : $2n$ chromosomes ; 2 : $2n$ (ADN répliqué) ; 3 : $n$ ; 4 : $n$</span> — le gamète final est haploïde.</p><p><strong>c)</strong> <span class='reponse'>De 1 à 2 : croissance (mitose puis accroissement). De 2 à 3 : première division de méiose (réduction : 2n → n). De 3 à 4 : seconde division de méiose (équationnelle). Puis différenciation des spermatides en spermatozoïdes.</span></p><p><strong>d)</strong> <span class='reponse'>Une spermatogonie produit 4 spermatozoïdes fonctionnels ; une ovogonie ne produit qu'1 seul ovocyte (ovule) fonctionnel, les autres produits étant des globules polaires qui dégénèrent — le cytoplasme est conservé pour une seule cellule.</span></p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Le fonctionnement des organes sexuels chez l'homme",
+      "points": "4 pts",
+      "consigne": "Chez l'homme, les testicules assurent deux fonctions complémentaires.",
+      "enonce": "<ol type='a'><li>Nommer l'endroit précis du testicule où s'effectue la spermatogenèse.</li><li>Quelle hormone mâle le testicule sécrète-t-il et quelles cellules la produisent ? Citer deux rôles de cette hormone.</li><li>Quel organe annexe assure la maturation et le stockage des spermatozoïdes avant l'éjaculation ?</li><li>Pourquoi les testicules sont-ils situés dans les bourses, à l'extérieur de l'abdomen ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Les tubes séminifères des testicules.</span></p><p><strong>b)</strong> <span class='reponse'>La testostérone, sécrétée par les cellules de Leydig (cellules interstitielles). Rôles : développement et entretien des caractères sexuels secondaires (voix, pilosité, musculature) ; maintien de la spermatogenèse et de la libido ; action sur la croissance osseuse et musculaire.</span></p><p><strong>c)</strong> <span class='reponse'>L'épididyme.</span></p><p><strong>d)</strong> <span class='reponse'>La spermatogenèse exige une température inférieure d'environ 2 à 3 °C à la température interne du corps ; la position externe des testicules dans les bourses permet cette thermorégulation.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 0,5 pt · d) 1 pt"
+    }
+  ]
+}
