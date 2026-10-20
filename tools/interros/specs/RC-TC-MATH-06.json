@@ -1,0 +1,29 @@
+{
+  "code": "RC-TC-MATH-06",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale C",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Barycentre · Géométrie analytique de l'espace",
+  "consignes": "La calculatrice n'est pas autorisée. La figure est à rendre avec la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Barycentre de points pondérés",
+      "points": "5 pts",
+      "consigne": "Dans le plan, on considère le triangle $ABC$ de la figure ci-dessous.",
+      "enonce": "<ol type='a'><li>Justifier l'existence du point $G$, barycentre des points pondérés $(A\\,;\\,2)$, $(B\\,;\\,3)$ et $(C\\,;\\,-1)$.</li><li>Soit $A'$ le barycentre des points pondérés $(A\\,;\\,2)$ et $(B\\,;\\,3)$. Exprimer $\\overrightarrow{AA'}$ en fonction de $\\overrightarrow{AB}$, puis en déduire une construction de $G$ sur la figure.</li><li>Déterminer l'ensemble $(E)$ des points $M$ du plan tels que $\\left\\Vert 2\\overrightarrow{MA} + 3\\overrightarrow{MB} - \\overrightarrow{MC} \\right\\Vert = \\left\\Vert 4\\overrightarrow{MA} \\right\\Vert$.</li></ol>",
+      "svg": "<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><g stroke='#334155' stroke-width='1.8' fill='none'><line x1='90' y1='190' x2='320' y2='190'/><line x1='90' y1='190' x2='200' y2='60'/><line x1='320' y1='190' x2='200' y2='60'/></g><circle cx='90' cy='190' r='3.5' fill='#334155'/><circle cx='320' cy='190' r='3.5' fill='#334155'/><circle cx='200' cy='60' r='3.5' fill='#334155'/><text x='74' y='206' font-family='Georgia' font-size='14' fill='#334155'>A</text><text x='330' y='206' font-family='Georgia' font-size='14' fill='#334155'>B</text><text x='194' y='48' font-family='Georgia' font-size='14' fill='#334155'>C</text></svg>",
+      "correction": "<p><strong>a)</strong> La somme des coefficients est $2 + 3 - 1 = 4 \\neq 0$ : <span class='reponse'>le barycentre $G$ existe et est unique</span>.</p><p><strong>b)</strong> $A' = \\mathrm{bar}\\{(A\\,;\\,2)\\,;\\,(B\\,;\\,3)\\}$ donne $2\\overrightarrow{A'A} + 3\\overrightarrow{A'B} = \\vec{0}$, soit $5\\overrightarrow{AA'} = 3\\overrightarrow{AB}$, d'où <span class='reponse'>$\\overrightarrow{AA'} = \\dfrac{3}{5}\\overrightarrow{AB}$</span> : $A'$ est sur le segment $[AB]$, aux trois cinquièmes depuis $A$. Par associativité, $G = \\mathrm{bar}\\{(A'\\,;\\,5)\\,;\\,(C\\,;\\,-1)\\}$, donc $5\\overrightarrow{GA'} - \\overrightarrow{GC} = \\vec{0}$, soit $\\overrightarrow{A'G} = -\\dfrac{1}{4}\\overrightarrow{A'C}$ : $G$ est sur la droite $(A'C)$, du côté opposé à $C$, à un quart de $A'C$ depuis $A'$.</p><p><strong>c)</strong> $2\\overrightarrow{MA} + 3\\overrightarrow{MB} - \\overrightarrow{MC} = 4\\overrightarrow{MG}$ (propriété du barycentre). L'équation devient $4\\,MG = 4\\,MA$, soit <span class='reponse'>$MG = MA$ : $(E)$ est la médiatrice du segment $[AG]$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Géométrie analytique de l'espace",
+      "points": "5 pts",
+      "consigne": "L'espace est rapporté au repère orthonormal $(O\\,;\\,\\vec{i}\\,;\\,\\vec{j}\\,;\\,\\vec{k})$. On donne les points $A(1\\,;\\,-1\\,;\\,2)$, $B(2\\,;\\,1\\,;\\,1)$ et $C(-1\\,;\\,2\\,;\\,0)$.",
+      "enonce": "<ol type='a'><li>Calculer les coordonnées des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$. Montrer que $A$, $B$ et $C$ définissent un plan.</li><li>Déterminer un vecteur normal $\\vec{n}$ au plan $(ABC)$.</li><li>En déduire une équation cartésienne du plan $(ABC)$.</li><li>Calculer la distance du point $O$ au plan $(ABC)$. On donnera la valeur exacte.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\overrightarrow{AB}(1\\,;\\,2\\,;\\,-1)$</span> et <span class='reponse'>$\\overrightarrow{AC}(-2\\,;\\,3\\,;\\,-2)$</span>. S'il existait $k$ tel que $\\overrightarrow{AC} = k\\overrightarrow{AB}$, on aurait $k = -2$ (1re coordonnée) et $k = \\frac{3}{2}$ (2e) : absurde. Les vecteurs ne sont pas colinéaires, <span class='reponse'>donc $A$, $B$, $C$ définissent un plan</span>.</p><p><strong>b)</strong> $\\vec{n} = \\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\begin{pmatrix} 2 \\times (-2) - (-1) \\times 3 \\\\ (-1) \\times (-2) - 1 \\times (-2) \\\\ 1 \\times 3 - 2 \\times (-2) \\end{pmatrix} =$ <span class='reponse'>$\\vec{n}(-1\\,;\\,4\\,;\\,7)$</span>. Vérification : $\\overrightarrow{AB} \\cdot \\vec{n} = -1 + 8 - 7 = 0$ et $\\overrightarrow{AC} \\cdot \\vec{n} = 2 + 12 - 14 = 0$.</p><p><strong>c)</strong> Le plan a pour équation $-x + 4y + 7z + d = 0$. Avec $A(1\\,;\\,-1\\,;\\,2)$ : $-1 - 4 + 14 + d = 0$ donc $d = -9$. <span class='reponse'>$(ABC) : -x + 4y + 7z - 9 = 0$</span>.</p><p><strong>d)</strong> $d(O, (ABC)) = \\dfrac{|-0 + 0 + 0 - 9|}{\\sqrt{1 + 16 + 49}} =$ <span class='reponse'>$\\dfrac{9}{\\sqrt{66}} = \\dfrac{9\\sqrt{66}}{66} = \\dfrac{3\\sqrt{66}}{22} \\approx 1{,}11$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    }
+  ]
+}

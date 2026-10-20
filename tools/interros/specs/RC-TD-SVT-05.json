@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-05",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Le fonctionnement du tissu nerveux · Le fonctionnement du muscle strié squelettique",
+  "consignes": "Les réponses seront rédigées en phrases complètes. La légende demandée sera reportée sur la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le message nerveux et sa transmission",
+      "points": "6 pts",
+      "consigne": "Le document ci-dessous représente la zone de contact entre deux neurones. Les structures numérotées ne sont pas nommées.",
+      "enonce": "<ol type='a'><li>Quel nom donne-t-on à cette zone de contact entre deux neurones ?</li><li>Légender le schéma en donnant le nom des structures repérées par les numéros 1 à 4.</li><li>Expliquer, en trois étapes, comment le message nerveux franchit cette zone de contact.</li><li>Quel rôle joue la gaine de myéline dans la propagation du message le long du neurone ?</li></ol>",
+      "svg": "<svg viewBox='0 0 400 260' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke='#334155' stroke-width='1.8'><path d='M40 40 Q60 90 110 110 Q170 130 200 150'/><path d='M60 20 Q90 60 140 80 Q185 100 215 118'/><ellipse cx='235' cy='140' rx='60' ry='45'/></g><g fill='#f1f5f9' stroke='#334155' stroke-width='1.4'><circle cx='215' cy='125' r='7'/><circle cx='240' cy='135' r='7'/><circle cx='228' cy='152' r='7'/><circle cx='255' cy='150' r='7'/></g><rect x='150' y='195' width='180' height='14' rx='7' fill='#f1f5f9' stroke='#334155' stroke-width='1.8'/><path d='M185 155 L185 195 M295 155 L295 195' stroke='#94a3b8' stroke-width='1' stroke-dasharray='4,3'/><circle cx='215' cy='182' r='2.5' fill='#2563eb'/><circle cx='240' cy='186' r='2.5' fill='#2563eb'/><circle cx='262' cy='180' r='2.5' fill='#2563eb'/><circle cx='252' cy='192' r='2.5' fill='#2563eb'/><circle cx='228' cy='190' r='2.5' fill='#2563eb'/><text x='20' y='98' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>1</text><text x='205' y='118' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>2</text><text x='150' y='180' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>3</text><text x='345' y='208' font-family='Georgia' font-size='20' font-weight='bold' fill='#334155'>4</text><text x='300' y='50' font-family='Georgia' font-size='12' fill='#64748b'>Schéma de la zone de contact entre deux neurones</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>La synapse</span> (zone de jonction entre le neurone pré-synaptique et le neurone post-synaptique).</p><p><strong>b)</strong> Légende : <span class='reponse'>1 : fibre nerveuse (axone) du neurone pré-synaptique ; 2 : vésicules synaptiques contenant les neurotransmetteurs ; 3 : fente synaptique ; 4 : membrane (récepteurs) du neurone post-synaptique</span>. L'ensemble renflé entourant les vésicules est le bouton synaptique.</p><p><strong>c)</strong> <span class='reponse'>Étape 1 : l'arrivée de l'influx nerveux (message électrique) au bouton synaptique provoque la fusion des vésicules avec la membrane pré-synaptique et la libération des neurotransmetteurs dans la fente. Étape 2 : les neurotransmetteurs traversent la fente synaptique par diffusion et se fixent sur les récepteurs de la membrane post-synaptique. Étape 3 : cette fixation déclenche un nouveau message électrique dans le neurone post-synaptique.</span> Le message change donc de nature : électrique puis chimique puis électrique.</p><p><strong>d)</strong> <span class='reponse'>La gaine de myéline isole la fibre et accélère la conduction : le message se propage par sauts d'un étranglement de Ranvier au suivant, ce qui augmente nettement la vitesse de propagation.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — La contraction du muscle strié",
+      "points": "4 pts",
+      "consigne": "Lors d'un match de football au stade de Yamoussoukro, un joueur effectue un sprint répété plusieurs fois.",
+      "enonce": "<ol type='a'><li>Définir le sarcomère et préciser les deux types de filaments protéiques qu'il contient.</li><li>Expliquer en quoi la glissement des filaments produit le raccourcissement du muscle.</li><li>Nommer les deux éléments indispensables à l'établissement des ponts entre les filaments.</li><li>Après des efforts intenses et rapprochés, le joueur ressent des courbatures. Proposer une explication.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Le sarcomère est l'unité contractile de la myofibrille, comprise entre deux stries Z. Il contient des filaments fins d'actine et des filaments épais de myosine.</span></p><p><strong>b)</strong> <span class='reponse'>Lors de la contraction, les filaments d'actine glissent entre les filaments de myosine et se rapprochent du centre du sarcomère : les stries Z se rapprochent, le sarcomère raccourcit, et la somme des raccourcissements raccourcit la fibre puis le muscle entier — le muscle ne se contracte pas, il se raccourcit.</span></p><p><strong>c)</strong> <span class='reponse'>Les ions calcium Ca2+ (qui démasquent les sites de fixation sur l'actine) et l'ATP (qui fournit l'énergie du cycle de ponts actine-myosine).</span></p><p><strong>d)</strong> <span class='reponse'>Lors d'efforts intenses, l'apport en oxygène devient insuffisant : la fibre musculaire produit de l'ATP par fermentation lactique ; l'acide lactique accumulé et les microlésions des fibres provoquent douleurs et courbatures.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt · d) 1 pt"
+    }
+  ]
+}

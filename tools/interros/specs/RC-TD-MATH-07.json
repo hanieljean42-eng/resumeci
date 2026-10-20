@@ -1,0 +1,36 @@
+{
+  "code": "RC-TD-MATH-07",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Limites et continuité · Dérivation",
+  "consignes": "La calculatrice n'est pas autorisée. Les réponses seront rédigées et les résultats encadrés.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul de limites",
+      "points": "3 pts",
+      "consigne": "Calculer les limites suivantes en justifiant chaque résultat.",
+      "enonce": "<ol type='a'><li>$\\lim\\limits_{x \\to 1} \\dfrac{x^2 - 3x + 2}{x - 1}$</li><li>$\\lim\\limits_{x \\to +\\infty} \\dfrac{3x^2 - 5x + 1}{x^2 + 2}$</li><li>$\\lim\\limits_{x \\to +\\infty} \\dfrac{\\ln x}{x}$</li></ol>",
+      "correction": "<p><strong>a)</strong> Forme indéterminée $\\frac{0}{0}$. Comme $x^2 - 3x + 2 = (x-1)(x-2)$, on simplifie : $\\dfrac{x^2-3x+2}{x-1} = x - 2$ pour $x \\neq 1$, donc <span class='reponse'>$\\lim\\limits_{x \\to 1} \\dfrac{x^2-3x+2}{x-1} = -1$</span>.</p><p><strong>b)</strong> Aux bornes infinies, une fraction rationnelle se comporte comme le rapport des termes de plus haut degré : <span class='reponse'>$\\lim\\limits_{x \\to +\\infty} \\dfrac{3x^2 - 5x + 1}{x^2 + 2} = 3$</span>.</p><p><strong>c)</strong> Limite de référence du cours (croissance comparée : la puissance domine le logarithme) : <span class='reponse'>$\\lim\\limits_{x \\to +\\infty} \\dfrac{\\ln x}{x} = 0$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Continuité et TVI",
+      "points": "4 pts",
+      "consigne": "Soit $f$ la fonction définie sur $[0\\,;\\,1]$ par $f(x) = x^3 + x - 1$.",
+      "enonce": "<ol type='a'><li>Étudier les variations de $f$ sur $[0\\,;\\,1]$.</li><li>Montrer que l'équation $f(x) = 0$ admet une unique solution $\\alpha$ dans $[0\\,;\\,1]$.</li><li>Donner un encadrement de $\\alpha$ d'amplitude $0{,}1$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $f$ est dérivable et $f'(x) = 3x^2 + 1 > 0$ pour tout $x$ : <span class='reponse'>$f$ est strictement croissante sur $[0\\,;\\,1]$</span>.</p><p><strong>b)</strong> $f$ est continue (polynôme), strictement croissante, et $f(0) = -1 < 0 < 1 = f(1)$ : par le théorème des valeurs intermédiaires (théorème de la bijection), <span class='reponse'>$f(x) = 0$ admet une unique solution $\\alpha \\in \\,]0\\,;\\,1[$</span>.</p><p><strong>c)</strong> $f(0{,}6) = 0{,}216 + 0{,}6 - 1 = -0{,}184 < 0$ et $f(0{,}7) = 0{,}343 + 0{,}7 - 1 = 0{,}043 > 0$, donc <span class='reponse'>$0{,}6 < \\alpha < 0{,}7$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Dérivation et tangentes",
+      "points": "3 pts",
+      "consigne": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = x^2 - 4x + 5$ et $\\mathcal{C}$ sa courbe dans un repère.",
+      "enonce": "<ol type='a'><li>Calculer $f'(x)$ et déterminer l'abscisse du point où la tangente à $\\mathcal{C}$ est horizontale.</li><li>Écrire l'équation de la tangente à $\\mathcal{C}$ au point d'abscisse $x_0 = 0$.</li><li>En quel point la tangente à $\\mathcal{C}$ est-elle parallèle à la droite d'équation $y = 2x - 7$ ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $f'(x) = 2x - 4$. Tangente horizontale $\\Leftrightarrow f'(x) = 0 \\Leftrightarrow x = 2$ : <span class='reponse'>au point $(2\\,;\\,1)$, sommet de la parabole</span>.</p><p><strong>b)</strong> $f(0) = 5$, $f'(0) = -4$ : $y = f'(0)(x - 0) + f(0) =$ <span class='reponse'>$y = -4x + 5$</span>.</p><p><strong>c)</strong> Tangente parallèle à $y = 2x - 7$ $\\Leftrightarrow f'(x) = 2 \\Leftrightarrow 2x - 4 = 2 \\Leftrightarrow x = 3$ ; $f(3) = 9 - 12 + 5 = 2$ : <span class='reponse'>au point $(3\\,;\\,2)$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "code": "RC-TA-MATH-04",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale A",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Fonctions logarithme et exponentielle · Systèmes linéaires",
+  "consignes": "La calculatrice n'est pas autorisée. On pourra utiliser les valeurs approchées : $\\mathrm{e}^3 \\approx 20{,}1$ et $\\ln 4 \\approx 1{,}39$.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Équations logarithme et exponentielle",
+      "points": "4 pts",
+      "consigne": "Résoudre dans $\\mathbb{R}$ les équations suivantes.",
+      "enonce": "<ol type='a'><li>$\\ln(2x - 1) = 3$</li><li>$\\mathrm{e}^{2x} - 5\\mathrm{e}^{x} + 4 = 0$ (on pourra poser $X = \\mathrm{e}^{x}$)</li></ol>",
+      "correction": "<p><strong>a)</strong> Condition d'existence : $2x - 1 > 0 \\Leftrightarrow x > \\frac{1}{2}$. $\\ln(2x-1) = 3 \\Leftrightarrow 2x - 1 = \\mathrm{e}^3 \\Leftrightarrow x = \\dfrac{\\mathrm{e}^3 + 1}{2} \\approx \\dfrac{20{,}1 + 1}{2} \\approx 10{,}5$ : la condition est satisfaite. <span class='reponse'>$\\mathcal{S} = \\left\\{\\dfrac{\\mathrm{e}^3 + 1}{2}\\right\\} \\approx \\{10{,}5\\}$</span>.</p><p><strong>b)</strong> Avec $X = \\mathrm{e}^x$ ($X > 0$) : $X^2 - 5X + 4 = 0$. $\\Delta = 25 - 16 = 9$ ; $X = \\dfrac{5 \\pm 3}{2}$, donc $X = 1$ ou $X = 4$, toutes deux strictement positives. $X = 1 \\Leftrightarrow x = 0$ et $X = 4 \\Leftrightarrow x = \\ln 4 \\approx 1{,}39$. <span class='reponse'>$\\mathcal{S} = \\{0\\,;\\,\\ln 4\\}$</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Système linéaire et mise en équation",
+      "points": "6 pts",
+      "consigne": "Au marché de Bouaké, Aminata achète pour sa boutique $x$ sacs d'attiéké, $y$ bidons d'huile et $z$ cartons de savon. On sait que : le nombre total d'articles est $14$ ; en comptant $2$ fois le nombre de sacs, $3$ fois le nombre de bidons et $1$ fois le nombre de cartons, on obtient $28$ ; en comptant $1$ fois les sacs, $2$ fois les bidons et $2$ fois les cartons, on obtient $24$.",
+      "enonce": "<ol type='a'><li>Traduire l'énoncé par un système $(S)$ de trois équations à trois inconnues.</li><li>Résoudre le système $(S)$ par la méthode du pivot de Gauss en détaillant les opérations.</li><li>Donner le nombre de sacs d'attiéké, de bidons d'huile et de cartons de savon achetés par Aminata.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class=\"reponse\">$(S) : \\begin{cases} x + y + z = 14 \\\\ 2x + 3y + z = 28 \\\\ x + 2y + 2z = 24 \\end{cases}$</span></p><p><strong>b)</strong> $L_2 \\leftarrow L_2 - 2L_1$ : $(2x - 2x) + (3y - 2y) + (z - 2z) = 28 - 28$, soit $y - z = 0$. $L_3 \\leftarrow L_3 - L_1$ : $y + z = 10$. Puis $L_3 \\leftarrow L_3 - L_2$ : $(y + z) - (y - z) = 10 - 0$, soit $2z = 10$ d'où <span class=\"reponse\">$z = 5$</span>. On remonte : $y - z = 0$ donne $y = 5$, puis $x + 5 + 5 = 14$ donne $x = 4$. <span class=\"reponse\">$\\mathcal{S} = \\{(4\\,;\\,5\\,;\\,5)\\}$</span>.</p><p><strong>c)</strong> <span class=\"reponse\">Aminata a acheté $4$ sacs d'attiéké, $5$ bidons d'huile et $5$ cartons de savon.</span> Vérification : $4 + 5 + 5 = 14$ ; $8 + 15 + 5 = 28$ ; $4 + 10 + 10 = 24$.</p>",
+      "bareme_detail": "a) 1 pt · b) 3 pts · c) 2 pts"
+    }
+  ]
+}

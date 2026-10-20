@@ -78,6 +78,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-HG-03",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "L'ère de la bipolarisation (1947-1991) · L'Union Africaine",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-MATH-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -117,6 +130,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-MATH-04",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Fonctions logarithme et exponentielle · Systèmes linéaires",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-PHILO-01",
     "type": "devoir",
     "typeLabel": "Devoir surveillé",
@@ -140,6 +166,19 @@
     "bareme": "20 points",
     "chapitre": "La connaissance de l'homme · L'histoire et l'humanité",
     "exercices": 1,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-PHILO-03",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Progrès et bonheur · La connaissance scientifique",
+    "exercices": 2,
     "corrige": true
   },
   {
@@ -195,6 +234,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-05",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Arithmétique · Similitudes directes du plan",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-MATH-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Barycentre · Géométrie analytique de l'espace",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -234,6 +299,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-PC-04",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Circuit RLC série et résonance · Alcools et estérification",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -256,6 +334,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "L'ère de la bipolarisation · Les relations UE-ACP",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-HG-03",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "L'Organisation des Nations Unies · L'Union Africaine",
     "exercices": 2,
     "corrige": true
   },
@@ -338,6 +429,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-07",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Limites et continuité · Dérivation",
+    "exercices": 3,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -373,6 +477,19 @@
     "duree": "2 heures",
     "bareme": "20 points",
     "chapitre": "Auto-induction (circuit RL) · Acides α-aminés",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-PC-04",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Oscillations mécaniques libres · Dosage acido-basique et solutions tampons",
     "exercices": 2,
     "corrige": true
   },
@@ -438,6 +555,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Le fonctionnement du cœur · L'infection par le VIH",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-05",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Le fonctionnement du tissu nerveux · Le fonctionnement du muscle strié squelettique",
     "exercices": 2,
     "corrige": true
   }
