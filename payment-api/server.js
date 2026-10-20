@@ -1272,7 +1272,11 @@ function getInterrosCatalog() {
 // de la liste et à l'upsell auprès des comptes non-Élite.
 app.get('/api/interros/catalog', limiter(15 * 60 * 1000, 120), (req, res) => {
   res.set('Cache-Control', 'public, max-age=300');
-  res.json({ success: true, interros: getInterrosCatalog() });
+  const items = getInterrosCatalog().map(d => ({
+    ...d,
+    playable: !!d.code && fs.existsSync(path.join(INTERROS_DIR, '..', 'exams', `${d.code}.json`))
+  }));
+  res.json({ success: true, interros: items });
 });
 
 const interroLimiter = limiter(15 * 60 * 1000, 300);
@@ -1307,6 +1311,215 @@ app.get('/api/interro/:code/:part', interroLimiter, async (req, res) => {
     res.sendFile(filePath);
   } catch (e) {
     console.error('[Interro] Erreur:', e);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 4.6c : MODE EXAMEN EN LIGNE (Pass Élite uniquement)
+// L'épreuve est générée à la volée : chaque tentative pioche des valeurs
+// différentes (sujets « infinis »), les réponses et corrigés ne quittent JAMAIS
+// le serveur avant le rendu de copie. Bloc interactif (V/F, QCM, calculs)
+// corrigé automatiquement ; exercices à rédiger auto-évalués via grille.
+// --------------------------------------------------------------------------
+const EXAMS_DIR = path.join(__dirname, 'exams');
+const examSpecCache = {};
+function getExamSpec(code) {
+  if (examSpecCache[code]) return examSpecCache[code];
+  try {
+    const spec = JSON.parse(fs.readFileSync(path.join(EXAMS_DIR, `${code}.json`), 'utf8'));
+    examSpecCache[code] = spec;
+    return spec;
+  } catch (e) { return null; }
+}
+
+let katexLib = null;
+try { katexLib = require('katex'); } catch (e) {
+  try { katexLib = require(path.join(__dirname, '..', 'node_modules', 'katex')); } catch (e2) {}
+}
+// $...$ et $$...$$ -> HTML KaTeX : aucun code LaTeX brut n'arrive au client.
+function texify(html) {
+  const s = String(html || '');
+  if (!katexLib) return s;
+  return s
+    .replace(/\$\$([\s\S]+?)\$\$/g, (m, t) => { try { return katexLib.renderToString(t, { displayMode: true, throwOnError: false, strict: 'ignore' }); } catch (e) { return m; } })
+    .replace(/\$([^$]+?)\$/g, (m, t) => { try { return katexLib.renderToString(t, { displayMode: false, throwOnError: false, strict: 'ignore' }); } catch (e) { return m; } });
+}
+
+// RNG déterministe (mulberry32) : la variante d'un élève est reproductible à la correction.
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function seedFrom(str) {
+  let h = 2166136261;
+  for (const c of String(str)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function drawParams(defs, rng) {
+  const out = {};
+  for (const [k, d] of Object.entries(defs || {})) {
+    if (Array.isArray(d.choices)) out[k] = d.choices[Math.floor(rng() * d.choices.length)];
+    else if (typeof d.min === 'number') {
+      const step = Number(d.step) || 1;
+      const n = Math.floor((Number(d.max) - Number(d.min)) / step);
+      out[k] = Number(d.min) + step * Math.floor(rng() * (n + 1));
+    }
+  }
+  return out;
+}
+// Expressions des specs : contenu maison uniquement (jamais d'entrée utilisateur).
+function evalExamExpr(expr, scope) {
+  try { return Function(...Object.keys(scope), `"use strict";return (${expr});`)(...Object.values(scope)); }
+  catch (e) { return NaN; }
+}
+function fmtExamNum(x, decimals) {
+  if (typeof x !== 'number' || !isFinite(x)) return String(x);
+  let s = decimals != null ? x.toFixed(decimals) : (Math.round(x * 10000) / 10000).toString();
+  if (decimals == null) s = s.replace(/\.?0+$/, '');
+  return s.replace('.', ',');
+}
+// {{name}} brut · {{num:name}} décimale française · {{d2:}} / {{d3:}} arrondis · {{pct:name}} ×100
+function substExam(str, scope) {
+  return String(str || '').replace(/\{\{(num|d2|d3|pct)?(?::)?(\w+)\}\}/g, (m, f, k) => {
+    const v = scope[k];
+    if (v === undefined) return m;
+    if (f === 'pct') return fmtExamNum(Math.round(v * 10000) / 100, null);
+    if (f === 'd2') return fmtExamNum(v, 2);
+    if (f === 'd3') return fmtExamNum(v, 3);
+    return fmtExamNum(v, null);
+  });
+}
+function renderExamText(str, scope) { return texify(substExam(str, scope)); }
+
+// Tentatives d'examen : Firestore (prod) ou mémoire (local sans base).
+const memExamAttempts = new Map();
+function saveExamAttempt(id, data) {
+  if (db) return db.collection('examAttempts').doc(id).set(data).catch(() => {});
+  memExamAttempts.set(id, data); return Promise.resolve();
+}
+async function loadExamAttempt(id) {
+  if (!/^[A-Za-z0-9-]{8,64}$/.test(String(id || ''))) return null;
+  if (db) { const d = await db.collection('examAttempts').doc(id).get().catch(() => null); return d && d.exists ? d.data() : null; }
+  return memExamAttempts.get(id) || null;
+}
+
+// Construit la variante : tire les paramètres, calcule les dérivés, sépare
+// partie publique (énoncés) / partie secrète (réponses + corrigés).
+function buildExamVariant(spec, seed) {
+  const rng = mulberry32(seed);
+  const scope = drawParams(spec.params, rng);
+  for (const [k, expr] of Object.entries(spec.derived || {})) scope[k] = evalExamExpr(expr, scope);
+  const keys = {};
+  const blocs = (spec.blocs || []).map(b => ({
+    titre: renderExamText(b.titre, scope),
+    consigne: renderExamText(b.consigne || '', scope),
+    questions: (b.questions || []).map(q => {
+      const pub = {
+        id: q.id, type: q.type, points: q.points, chapitre: q.chapitre || '',
+        enonce: renderExamText(q.enonce, scope),
+        svg: q.svg ? substExam(q.svg, scope) : null,
+        precision: q.precision ? renderExamText(q.precision, scope) : null,
+        choix: Array.isArray(q.choix) ? q.choix.map(c => renderExamText(c, scope)) : null
+      };
+      if (q.type === 'vrai_faux') {
+        const ok = q.correctExpr !== undefined ? Boolean(evalExamExpr(q.correctExpr, scope)) : Boolean(q.correct);
+        keys[q.id] = { t: 'vf', v: ok, pts: q.points, chapitre: q.chapitre || '', enonce: pub.enonce, corrige: renderExamText(ok ? (q.corrigeVrai || q.corrige || '') : (q.corrigeFaux || q.corrige || ''), scope) };
+      } else if (q.type === 'qcm') {
+        keys[q.id] = { t: 'qcm', v: Number(q.correct), pts: q.points, chapitre: q.chapitre || '', enonce: pub.enonce, corrige: renderExamText(q.corrige || '', scope) };
+      } else if (q.type === 'numeric') {
+        keys[q.id] = { t: 'num', v: evalExamExpr(q.answer || '0', scope), tol: Number(q.tol) || 0.001, pts: q.points, chapitre: q.chapitre || '', enonce: pub.enonce, corrige: renderExamText(q.corrige || '', scope) };
+      } else if (q.type === 'papier') {
+        keys[q.id] = { t: 'papier', pts: q.points, chapitre: q.chapitre || '', enonce: pub.enonce, steps: (q.steps || []).map(s => ({ titre: renderExamText(s.titre, scope), points: s.points, texte: renderExamText(s.texte, scope) })) };
+      }
+      if (pub.choix === null) delete pub.choix;
+      return pub;
+    })
+  }));
+  return { scope, keys, blocs };
+}
+
+const examLimiter = limiter(15 * 60 * 1000, 90);
+app.post('/api/exam/:code/start', examLimiter, async (req, res) => {
+  try {
+    const code = String(req.params.code || '');
+    if (!/^[A-Z0-9-]{4,40}$/i.test(code)) return res.status(404).json({ success: false, error: 'Épreuve introuvable.' });
+    const spec = getExamSpec(code);
+    if (!spec) return res.status(404).json({ success: false, error: 'Épreuve introuvable.' });
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) return res.status(401).json({ success: false, error: 'auth_required' });
+    let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
+    const candidates = [user];
+    if (user) {
+      const ghostPhone = String(user.whatsapp || user.contact || user.phone || '').replace(/\D/g, '').slice(-10);
+      if (ghostPhone.length === 10) {
+        const real = await findUserByAnyId(ghostPhone).catch(() => null);
+        if (real && real._docId !== user._docId) candidates.push(real);
+      }
+    }
+    const status = mergedPremiumStatus(candidates);
+    if (!status.isPremium || !ELITE_PLANS.has(String(status.premiumPlan || '').toLowerCase())) {
+      return res.status(403).json({ success: false, error: 'elite_required' });
+    }
+    const attemptId = crypto.randomUUID();
+    const { keys, blocs } = buildExamVariant(spec, seedFrom(attemptId));
+    const startedAt = Date.now();
+    const endsAt = startedAt + (Number(spec.dureeMin) || 60) * 60000;
+    const autoQuestions = [];
+    const paperQuestions = [];
+    for (const b of blocs) for (const q of b.questions) (q.type === 'papier' ? paperQuestions : autoQuestions).push(q.id);
+    await saveExamAttempt(attemptId, {
+      uid: sessionUid, code, keys, paperKeys: Object.fromEntries(paperQuestions.map(id => [id, keys[id]])),
+      startedAt, endsAt, submitted: false
+    });
+    // Épreuve publique : aucune réponse ni corrigé ne quitte le serveur.
+    const publicBlocs = blocs.map(b => ({
+      titre: b.titre, consigne: b.consigne,
+      questions: b.questions.map(q => ({ id: q.id, type: q.type, points: q.points, chapitre: q.chapitre, enonce: q.enonce, svg: q.svg, precision: q.precision, choix: q.choix }))
+    }));
+    res.json({ success: true, attemptId, endsAt, exam: { titre: spec.titre, classeLabel: spec.classeLabel, matiere: spec.matiere, dureeMin: spec.dureeMin, noteSur: spec.noteSur, consignes: texify(spec.consignes), blocs: publicBlocs } });
+  } catch (e) {
+    console.error('[Exam] Erreur start:', e);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+app.post('/api/exam/submit', examLimiter, async (req, res) => {
+  try {
+    const { attemptId, answers } = req.body || {};
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) return res.status(401).json({ success: false, error: 'auth_required' });
+    const att = await loadExamAttempt(attemptId);
+    if (!att || String(att.uid) !== String(sessionUid)) return res.status(404).json({ success: false, error: 'Tentative introuvable.' });
+    if (att.submitted && att.cachedResult) return res.json({ success: true, ...att.cachedResult, alreadySubmitted: true });
+    const ans = (answers && typeof answers === 'object') ? answers : {};
+    const late = Date.now() > (Number(att.endsAt) || 0) + 10 * 60000; // 10 min de grâce
+    let autoScore = 0, autoMax = 0;
+    const detail = [];
+    for (const [qid, k] of Object.entries(att.keys || {})) {
+      if (k.t === 'papier') continue;
+      autoMax += Number(k.pts) || 0;
+      let ok = false, given = ans[qid];
+      if (k.t === 'vf') ok = given === true || given === false ? given === k.v : false;
+      else if (k.t === 'qcm') ok = given !== undefined && Number(given) === k.v;
+      else if (k.t === 'num') {
+        const num = typeof given === 'string' ? parseFloat(given.replace(',', '.').replace(/\s/g, '')) : Number(given);
+        ok = isFinite(num) && Math.abs(num - k.v) <= (k.tol || 0.001);
+      }
+      if (ok) autoScore += Number(k.pts) || 0;
+      detail.push({ id: qid, ok, points: ok ? k.pts : 0, maxPts: k.pts, chapitre: k.chapitre, enonce: k.enonce, corrige: k.corrige });
+    }
+    const paper = Object.entries(att.paperKeys || {}).map(([qid, k]) => ({ id: qid, points: k.pts, chapitre: k.chapitre, enonce: k.enonce, steps: k.steps }));
+    const result = { autoScore, autoMax, detail, paper, late };
+    att.submitted = true; att.cachedResult = result; att.finishedAt = Date.now();
+    await saveExamAttempt(attemptId, att);
+    res.json({ success: true, ...result });
+  } catch (e) {
+    console.error('[Exam] Erreur submit:', e);
     res.status(500).json({ success: false, error: 'Erreur serveur.' });
   }
 });

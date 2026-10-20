@@ -2891,7 +2891,8 @@ function renderSujetsList() {
           <div style="font-size:11px;color:#64748b">${escHtml(d.classeLabel)} · ${d.duree} · ${d.bareme} · ${d.exercices} exercice${d.exercices > 1 ? 's' : ''}</div>
         </div>
       </div>
-      <div style="display:flex;gap:8px;margin-top:10px">
+      ${d.playable ? `<button onclick="closeSujetsModal();startExamSession('${d.code}')" style="width:100%;margin-top:10px;padding:11px;border:none;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 4px 12px rgba(124,58,237,.3)"><i class="fas fa-play"></i> Mode Examen — chrono + correction auto</button>` : ''}
+      <div style="display:flex;gap:8px;margin-top:8px">
         <button onclick="openInterroDoc('${d.code}','enonce')" class="pm-btn" style="flex:1;background:#0f172a;color:#fff;padding:8px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700"><i class="fas fa-file-pdf"></i> Énoncé</button>
         ${d.corrige ? `<button onclick="openInterroDoc('${d.code}','corrige')" class="pm-btn" style="flex:1;background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:8px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700"><i class="fas fa-check-circle"></i> Corrigé</button>` : ''}
       </div>
@@ -2932,6 +2933,332 @@ window.openInterroDoc = async function(code, part) {
     window.open(url, '_blank');
   } catch (e) {
     if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+  }
+};
+
+// ==================== MODE EXAMEN EN LIGNE (Pass Élite) ====================
+// L'épreuve se déroule dans l'app : chrono, réponses saisies pour le bloc
+// interactif (corrigé automatique au rendu) et exercices à rédiger sur feuille
+// puis auto-évalués avec la grille de correction détaillée.
+window._exam = null;
+window._examBilan = null;
+
+window.startExamSession = async function(code) {
+  const hasAccess = window.userHasFeature ? window.userHasFeature('sujets') : false;
+  if (!hasAccess) {
+    if (typeof window.openElitePassModal === 'function') window.openElitePassModal('sujets');
+    return;
+  }
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  if (!token) { window.location.href = '/connexion.html'; return; }
+  if (window.toast) toast('🎓 Préparation de ton épreuve…', 'info', 2500);
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/exam/${encodeURIComponent(code)}/start`, {
+      method: 'POST', headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' }, body: '{}'
+    });
+    if (res.status === 403) { if (window.openElitePassModal) openElitePassModal('sujets'); return; }
+    if (res.status === 401) { window.location.href = '/connexion.html'; return; }
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data || !data.success) { if (window.toast) toast('Impossible de démarrer l\'épreuve.', 'warn'); return; }
+    if (window._exam && window._exam.timerId) clearInterval(window._exam.timerId);
+    window._exam = { attemptId: data.attemptId, exam: data.exam, endsAt: data.endsAt, answers: {}, timerId: null };
+    if (typeof closeSujetsModal === 'function') closeSujetsModal();
+    renderExamScreen();
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+  }
+};
+
+function examFmtTime(ms) {
+  const s = Math.max(0, Math.floor(ms / 1000));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+  return h > 0 ? `${h}h ${String(m).padStart(2, '0')}:${String(ss).padStart(2, '0')}` : `${String(m).padStart(2, '0')}:${String(ss).padStart(2, '0')}`;
+}
+
+function renderExamScreen() {
+  const ex = window._exam;
+  if (!ex) return;
+  updatePageTitle('Mode Examen — ' + ex.exam.matiere);
+  document.getElementById('breadcrumb').innerHTML =
+    `<i class="fas fa-home clickable" style="color:var(--accent)" onclick="quitExam()"></i><span>/</span><span class="current">🎓 Mode Examen</span>`;
+  document.getElementById('topbarActions').innerHTML =
+    `<button class="btn" onclick="quitExam()" style="color:#dc2626"><i class="fas fa-times"></i> Abandonner</button>`;
+
+  let autoTotal = 0, autoDone = 0;
+  const qHtml = ex.exam.blocs.map((b, bi) => {
+    const qs = b.questions.map((q, qi) => {
+      const svgHtml = q.svg ? `<div style="margin:10px 0;text-align:center">${q.svg}</div>` : '';
+      if (q.type === 'vrai_faux') {
+        autoTotal++;
+        return `<div class="exam-q" id="examq-${q.id}">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div style="font-weight:700;font-size:13.5px;color:#0f172a;flex:1">${bi + 1}.${qi + 1} — ${q.enonce}</div><span style="flex-shrink:0;font-size:10px;font-weight:800;color:#7c3aed;background:#ede9fe;padding:2px 8px;border-radius:10px">${q.points} pt${q.points > 1 ? 's' : ''}</span></div>
+          ${svgHtml}
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="exam-vf-btn" id="${q.id}-v" onclick="examAnswerVF('${q.id}',true)" style="flex:1;padding:11px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-weight:800;font-size:14px;cursor:pointer;color:#166534">✓ Vrai</button>
+            <button class="exam-vf-btn" id="${q.id}-f" onclick="examAnswerVF('${q.id}',false)" style="flex:1;padding:11px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-weight:800;font-size:14px;cursor:pointer;color:#b91c1c">✗ Faux</button>
+          </div>
+        </div>`;
+      }
+      if (q.type === 'qcm') {
+        autoTotal++;
+        return `<div class="exam-q" id="examq-${q.id}">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div style="font-weight:700;font-size:13.5px;color:#0f172a;flex:1">${bi + 1}.${qi + 1} — ${q.enonce}</div><span style="flex-shrink:0;font-size:10px;font-weight:800;color:#7c3aed;background:#ede9fe;padding:2px 8px;border-radius:10px">${q.points} pt${q.points > 1 ? 's' : ''}</span></div>
+          ${svgHtml}
+          <div style="display:flex;flex-direction:column;gap:7px;margin-top:10px">
+            ${(q.choix || []).map((c, ci) => `<button id="${q.id}-c${ci}" onclick="examAnswerQcm('${q.id}',${ci})" style="text-align:left;padding:10px 14px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-size:13.5px;cursor:pointer"><strong style="color:#7c3aed;margin-right:6px">${'abc'[ci]})</strong> ${c}</button>`).join('')}
+          </div>
+        </div>`;
+      }
+      if (q.type === 'numeric') {
+        autoTotal++;
+        return `<div class="exam-q" id="examq-${q.id}">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div style="font-weight:700;font-size:13.5px;color:#0f172a;flex:1">${bi + 1}.${qi + 1} — ${q.enonce}</div><span style="flex-shrink:0;font-size:10px;font-weight:800;color:#7c3aed;background:#ede9fe;padding:2px 8px;border-radius:10px">${q.points} pt${q.points > 1 ? 's' : ''}</span></div>
+          ${svgHtml}
+          <div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+            <input type="text" inputmode="decimal" id="${q.id}-num" oninput="examAnswerNum('${q.id}',this.value)" placeholder="Ta réponse (ex : 0,255)" style="flex:1;padding:11px 14px;border:2px solid #e2e8f0;border-radius:10px;font-size:15px;font-weight:700">
+            ${q.precision ? `<span style="font-size:10.5px;color:#64748b;max-width:110px">${q.precision}</span>` : ''}
+          </div>
+        </div>`;
+      }
+      // Exercice à rédiger sur feuille
+      return `<div class="exam-q" id="examq-${q.id}" style="border-left:4px solid #7c3aed">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div style="font-weight:800;font-size:14px;color:#4c1d95;flex:1">${q.enonce}</div><span style="flex-shrink:0;font-size:10px;font-weight:800;color:#fff;background:#7c3aed;padding:2px 8px;border-radius:10px">${q.points} pts</span></div>
+        ${svgHtml}
+        <div style="margin-top:10px;padding:9px 12px;background:#f5f3ff;border-radius:9px;font-size:12px;color:#5b21b6;display:flex;align-items:center;gap:8px"><i class="fas fa-pen-fancy"></i> Rédige ta réponse complète sur une feuille — la correction détaillée se débloquera au rendu de copie.</div>
+      </div>`;
+    }).join('');
+    return `<div class="exam-bloc" style="margin-bottom:18px">
+      <div style="font-weight:800;font-size:14.5px;color:#0f172a;padding:10px 2px 6px;border-bottom:2px solid #e2e8f0;margin-bottom:12px">${b.titre}</div>
+      ${b.consigne ? `<div style="font-size:12px;color:#64748b;margin:-6px 2px 12px">${b.consigne}</div>` : ''}
+      ${qs}
+    </div>`;
+  }).join('');
+
+  document.getElementById('content').innerHTML = `
+    <div class="exam-runner">
+      <div class="exam-topbar" id="examTopbar">
+        <div style="display:flex;align-items:center;gap:10px;min-width:0">
+          <span style="font-size:22px">🎓</span>
+          <div style="min-width:0">
+            <div style="font-weight:800;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${ex.exam.titre}</div>
+            <div style="font-size:10.5px;opacity:.85">${ex.exam.classeLabel} · ${ex.exam.noteSur} pts</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+          <div id="examProgress" style="font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:5px 10px;border-radius:20px">0/${autoTotal} rép.</div>
+          <div id="examChrono" style="font-size:16px;font-weight:800;font-variant-numeric:tabular-nums">--:--</div>
+        </div>
+      </div>
+      <div class="exam-body">
+        <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:10px 14px;font-size:12px;color:#92400e;margin-bottom:14px">⏱️ <strong>${ex.exam.dureeMin >= 60 ? Math.floor(ex.exam.dureeMin / 60) + 'h' + (ex.exam.dureeMin % 60 ? ex.exam.dureeMin % 60 : '') : ex.exam.dureeMin + ' min'} chrono</strong> — ${ex.exam.consignes || ''}</div>
+        ${qHtml}
+        <button onclick="submitExam(false)" style="width:100%;padding:16px;margin:8px 0 30px;border:none;border-radius:14px;background:linear-gradient(135deg,#059669,#10b981);color:#fff;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 6px 18px rgba(16,185,129,.35)"><i class="fas fa-flag-checkered"></i> Rendre ma copie</button>
+      </div>
+    </div>
+    <style>
+      .exam-runner{max-width:820px;margin:0 auto}
+      .exam-topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;margin:0 -8px 14px;border-radius:14px;background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;box-shadow:0 6px 16px rgba(76,29,149,.3)}
+      .exam-topbar.exam-urgent{background:linear-gradient(135deg,#991b1b,#dc2626)}
+      .exam-body{padding:0 2px}
+      .exam-q{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:14px 16px;margin-bottom:12px}
+      .exam-vf-btn.exam-selected,.exam-q button.exam-selected{border-color:#7c3aed !important;background:#ede9fe !important}
+      .exam-q input:focus{border-color:#7c3aed;outline:none}
+      .exam-step{border:1.5px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;background:#fff}
+      .exam-step-graded{border-color:#10b981 !important}
+    </style>`;
+  window.scrollTo(0, 0);
+  updateExamChrono();
+  ex.timerId = setInterval(updateExamChrono, 1000);
+}
+
+function updateExamChrono() {
+  const ex = window._exam;
+  if (!ex) return;
+  const left = ex.endsAt - Date.now();
+  const el = document.getElementById('examChrono');
+  const bar = document.getElementById('examTopbar');
+  if (el) el.textContent = '⏱ ' + examFmtTime(left);
+  if (bar) bar.classList.toggle('exam-urgent', left < 5 * 60000);
+  if (left <= 0) { clearInterval(ex.timerId); ex.timerId = null; if (window.toast) toast('⏱ Temps écoulé — rendu automatique de la copie.', 'warn', 4000); submitExam(true); }
+}
+
+function examProgressUpdate() {
+  const ex = window._exam;
+  if (!ex) return;
+  const autoIds = [];
+  ex.exam.blocs.forEach(b => b.questions.forEach(q => { if (q.type !== 'papier') autoIds.push(q.id); }));
+  const done = autoIds.filter(id => ex.answers[id] !== undefined && ex.answers[id] !== '').length;
+  const el = document.getElementById('examProgress');
+  if (el) el.textContent = `${done}/${autoIds.length} rép.`;
+}
+
+window.examAnswerVF = function(qid, v) {
+  if (!window._exam) return;
+  window._exam.answers[qid] = v;
+  const bv = document.getElementById(qid + '-v'), bf = document.getElementById(qid + '-f');
+  if (bv) bv.classList.toggle('exam-selected', v === true);
+  if (bf) bf.classList.toggle('exam-selected', v === false);
+  examProgressUpdate();
+};
+
+window.examAnswerQcm = function(qid, idx) {
+  if (!window._exam) return;
+  window._exam.answers[qid] = idx;
+  const q = window._exam.exam.blocs.flatMap(b => b.questions).find(q => q.id === qid);
+  (q && q.choix ? q.choix : []).forEach((_, ci) => {
+    const b = document.getElementById(`${qid}-c${ci}`);
+    if (b) b.classList.toggle('exam-selected', ci === idx);
+  });
+  examProgressUpdate();
+};
+
+window.examAnswerNum = function(qid, v) {
+  if (!window._exam) return;
+  window._exam.answers[qid] = v;
+  examProgressUpdate();
+};
+
+window.quitExam = function() {
+  if (window._exam && !window._examBilan && !confirm('Abandonner l\'épreuve en cours ? Tes réponses seront perdues.')) return;
+  if (window._exam && window._exam.timerId) clearInterval(window._exam.timerId);
+  window._exam = null; window._examBilan = null;
+  showDashboard(false);
+};
+
+window.submitExam = async function(auto) {
+  const ex = window._exam;
+  if (!ex) return;
+  if (!auto && !confirm('Rendre ta copie maintenant ? La correction va s\'afficher.')) return;
+  if (ex.timerId) { clearInterval(ex.timerId); ex.timerId = null; }
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/exam/submit`, {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ attemptId: ex.attemptId, answers: ex.answers })
+    });
+    const data = await res.json().catch(() => null);
+    if (!res.ok || !data || !data.success) { if (window.toast) toast('Échec de l\'envoi — réessaie.', 'warn'); ex.timerId = setInterval(updateExamChrono, 1000); return; }
+    renderExamBilan(data);
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible — réessaie.', 'warn');
+    ex.timerId = setInterval(updateExamChrono, 1000);
+  }
+};
+
+// --------- Bilan : correction Bloc A + auto-notation guidée Bloc B ---------
+function renderExamBilan(result) {
+  const ex = window._exam;
+  if (!ex) return;
+  window._examBilan = { result, selfGrades: {} };
+  const paperTotal = result.paper.reduce((s, p) => s + p.points, 0);
+  const auto = result.autoScore, autoMax = result.autoMax;
+  const noteSur = ex.exam.noteSur || 20;
+
+  const detailHtml = result.detail.map(d => `
+    <div class="exam-q" style="border-left:4px solid ${d.ok ? '#10b981' : '#ef4444'}">
+      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+        <div style="font-weight:700;font-size:13px;color:#0f172a;flex:1">${d.enonce}</div>
+        <span style="flex-shrink:0;font-size:11px;font-weight:800;color:${d.ok ? '#059669' : '#dc2626'}">${d.ok ? `+${d.points}` : '0'}/${d.maxPts} pt${d.maxPts > 1 ? 's' : ''}</span>
+      </div>
+      <div style="margin-top:6px;font-size:11px;font-weight:800;color:${d.ok ? '#059669' : '#dc2626'}">${d.ok ? '✓ Juste' : '✗ Incorrect'}</div>
+      ${d.corrige ? `<div style="margin-top:6px;font-size:12.5px;color:#334155;background:#f8fafc;border-radius:8px;padding:8px 10px">${d.corrige}</div>` : ''}
+    </div>`).join('');
+
+  const paperHtml = result.paper.map((p, pi) => `
+    <div class="exam-q" style="border-left:4px solid #7c3aed">
+      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+        <div style="font-weight:800;font-size:13.5px;color:#4c1d95;flex:1">Exercice à rédiger — ${p.chapitre || ''}</div>
+        <span style="flex-shrink:0;font-size:11px;font-weight:800;color:#7c3aed" id="papierScore-${p.id}">0/${p.points} pts</span>
+      </div>
+      <div style="margin-top:8px;font-size:13px;color:#0f172a">${p.enonce}</div>
+      <div style="margin-top:12px">
+        ${p.steps.map((s, si) => `
+          <div class="exam-step" id="step-${p.id}-${si}">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+              <div style="font-weight:800;font-size:12px;color:#0f172a">${s.titre} <span style="color:#94a3b8;font-weight:600">(${s.points} pt${s.points > 1 ? 's' : ''})</span></div>
+            </div>
+            <div style="margin-top:6px;font-size:12.5px;color:#334155">${s.texte}</div>
+            <div style="display:flex;gap:6px;margin-top:9px">
+              <button onclick="examSelfGrade('${p.id}',${si},1)" id="sg-${p.id}-${si}-1" style="flex:1;padding:7px;font-size:11px;font-weight:800;border-radius:8px;border:1.5px solid #d1fae5;background:#ecfdf5;color:#047857;cursor:pointer">✓ Réussi</button>
+              <button onclick="examSelfGrade('${p.id}',${si},0.5)" id="sg-${p.id}-${si}-0.5" style="flex:1;padding:7px;font-size:11px;font-weight:800;border-radius:8px;border:1.5px solid #fef3c7;background:#fffbeb;color:#b45309;cursor:pointer">~ À moitié</button>
+              <button onclick="examSelfGrade('${p.id}',${si},0)" id="sg-${p.id}-${si}-0" style="flex:1;padding:7px;font-size:11px;font-weight:800;border-radius:8px;border:1.5px solid #fee2e2;background:#fef2f2;color:#b91c1c;cursor:pointer">✗ Raté</button>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('content').innerHTML = `
+    <div class="exam-runner">
+      <div style="text-align:center;padding:22px 16px;margin-bottom:16px;border-radius:16px;background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;box-shadow:0 8px 22px rgba(124,58,237,.35)">
+        ${result.late ? `<div style="font-size:11px;background:rgba(220,38,38,.85);display:inline-block;padding:3px 10px;border-radius:20px;margin-bottom:8px">⏱ Copie rendue hors délai</div>` : ''}
+        <div style="font-size:13px;opacity:.9">🎓 ${ex.exam.titre} — ${ex.exam.classeLabel}</div>
+        <div id="examFinalScore" style="font-size:40px;font-weight:900;margin:6px 0">${auto} <span style="font-size:20px;opacity:.8">/ ${noteSur}</span></div>
+        <div id="examScoreHint" style="font-size:11.5px;opacity:.9">Bloc interactif : ${auto}/${autoMax} — auto-évalue tes exercices rédigés ci-dessous pour la note finale</div>
+      </div>
+      <div id="examDiagnostic" style="margin-bottom:16px"></div>
+      <div style="font-weight:800;font-size:14px;color:#0f172a;margin:14px 2px 8px">📝 Correction du bloc interactif (${auto}/${autoMax} pts)</div>
+      ${detailHtml}
+      <div style="font-weight:800;font-size:14px;color:#0f172a;margin:16px 2px 8px">✍️ Auto-correction guidée (${paperTotal} pts à valider)</div>
+      <div style="font-size:12px;color:#64748b;margin-bottom:10px">Compare ta feuille au corrigé étape par étape, puis note-toi honnêtement — c'est ce qui te prépare vraiment.</div>
+      ${paperHtml}
+      <div style="display:flex;gap:8px;margin:20px 0 40px">
+        <button onclick="quitExam()" style="flex:1;padding:14px;border:none;border-radius:12px;background:#0f172a;color:#fff;font-weight:800;font-size:14px;cursor:pointer"><i class="fas fa-home"></i> Retour à l'accueil</button>
+        <button onclick="if(typeof openSujetsModal==='function')openSujetsModal()" style="flex:1;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:800;font-size:14px;cursor:pointer"><i class="fas fa-redo"></i> Autre épreuve</button>
+      </div>
+    </div>`;
+  window.scrollTo(0, 0);
+}
+
+window.examSelfGrade = function(qid, si, ratio) {
+  const b = window._examBilan;
+  if (!b) return;
+  (b.selfGrades[qid] = b.selfGrades[qid] || {})[si] = ratio;
+  [1, 0.5, 0].forEach(r => {
+    const btn = document.getElementById(`sg-${qid}-${si}-${r}`);
+    if (btn) { btn.style.outline = r === ratio ? '2.5px solid #4c1d95' : 'none'; btn.style.transform = r === ratio ? 'scale(1.03)' : 'none'; }
+  });
+  document.getElementById(`step-${qid}-${si}`)?.classList.add('exam-step-graded');
+  // Totaux
+  const res = b.result;
+  let paperGot = 0, paperMax = 0, allGraded = true;
+  const chap = {};
+  res.detail.forEach(d => { const c = d.chapitre || 'Divers'; (chap[c] = chap[c] || { got: 0, max: 0 }); chap[c].max += d.maxPts; chap[c].got += d.ok ? d.maxPts : 0; });
+  res.paper.forEach(p => {
+    const c = p.chapitre || 'Divers';
+    (chap[c] = chap[c] || { got: 0, max: 0 });
+    let got = 0;
+    p.steps.forEach((s, si2) => {
+      paperMax += s.points; chap[c].max += s.points;
+      const r = b.selfGrades[p.id] && b.selfGrades[p.id][si2];
+      if (r === undefined) { allGraded = false; return; }
+      got += s.points * r; chap[c].got += s.points * r;
+    });
+    paperGot += got;
+    const el = document.getElementById(`papierScore-${p.id}`);
+    if (el) el.textContent = `${Math.round(got * 100) / 100}/${p.points} pts`;
+  });
+  const total = Math.round((res.autoScore + paperGot) * 100) / 100;
+  const noteSur = (window._exam && window._exam.exam.noteSur) || 20;
+  const scoreEl = document.getElementById('examFinalScore');
+  if (scoreEl) scoreEl.innerHTML = `${String(total).replace('.', ',')} <span style="font-size:20px;opacity:.8">/ ${noteSur}</span>`;
+  const hint = document.getElementById('examScoreHint');
+  if (hint) hint.textContent = allGraded
+    ? (total >= noteSur * 0.7 ? '🔥 Excellent niveau — prêt pour le vrai BAC !' : total >= noteSur * 0.5 ? '💪 Correct — encore quelques révisions ciblées.' : '📚 Renforce les chapitres signalés ci-dessous.')
+    : 'Termine de t\'auto-évaluer pour figer ta note finale';
+  const diag = document.getElementById('examDiagnostic');
+  if (diag) {
+    const rows = Object.entries(chap).map(([c, v]) => ({ c, pct: v.max ? v.got / v.max : 0, got: v.got, max: v.max })).sort((a, b2) => a.pct - b2.pct);
+    diag.innerHTML = `<div style="background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:12px 14px">
+      <div style="font-weight:800;font-size:12.5px;color:#0f172a;margin-bottom:8px">🎯 Diagnostic par chapitre</div>
+      ${rows.map(r => `<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <div style="flex:1;font-size:11.5px;color:#334155">${r.c}</div>
+        <div style="width:110px;height:7px;background:#f1f5f9;border-radius:10px;overflow:hidden"><div style="height:100%;width:${Math.round(r.pct * 100)}%;background:${r.pct >= 0.7 ? '#10b981' : r.pct >= 0.4 ? '#f59e0b' : '#ef4444'};border-radius:10px"></div></div>
+        <div style="font-size:10.5px;font-weight:800;color:${r.pct >= 0.7 ? '#059669' : r.pct >= 0.4 ? '#b45309' : '#dc2626'};width:34px;text-align:right">${Math.round(r.pct * 100)}%</div>
+      </div>`).join('')}
+    </div>`;
   }
 };
 

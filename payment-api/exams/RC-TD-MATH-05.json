@@ -1,0 +1,193 @@
+{
+  "code": "RC-TD-MATH-05",
+  "format": "exam-v2",
+  "titre": "Examen type BAC — Mathématiques",
+  "classe": "Terminale_D",
+  "classeLabel": "Terminale D",
+  "matiere": "Mathématiques",
+  "dureeMin": 240,
+  "noteSur": 20,
+  "consignes": "L'usage de la calculatrice non programmable est autorisé. Le bloc interactif est corrigé automatiquement ; pour les exercices à rédiger, écris ta solution sur une feuille puis auto-corrige-toi avec la grille à la fin de l'épreuve.",
+  "params": {
+    "pa":    { "choices": [0.5, 0.6, 0.7] },
+    "pb":    { "choices": [0.3, 0.4, 0.5] },
+    "indep": { "choices": [0, 1] },
+    "nn":    { "choices": [10, 20] },
+    "pp":    { "choices": [0.3, 0.4, 0.5] },
+    "aa":    { "choices": [1, 2, 3] },
+    "f":     { "choices": [0.5, 0.55, 0.6] },
+    "pf":    { "choices": [0.25, 0.3, 0.35] },
+    "pg":    { "choices": [0.15, 0.2, 0.25] }
+  },
+  "derived": {
+    "papb": "pa*pb",
+    "pab":  "indep === 1 ? pa*pb : pa*pb + 0.05",
+    "exn":  "nn*pp",
+    "exnm": "nn*pp - 1",
+    "aa2":  "2*aa",
+    "aa22": "2*aa*aa",
+    "ab":   "2*aa",
+    "oa1":  "2*aa*aa",
+    "oa2":  "4*aa*aa",
+    "unf":  "1-f",
+    "fp":   "f*pf",
+    "reste": "(1-f)*pg",
+    "PD":   "f*pf + (1-f)*pg",
+    "unPD": "1-PD",
+    "PFD":  "f*pf / (f*pf + (1-f)*pg)",
+    "PX1":  "3*PD*(1-PD)*(1-PD)"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Suites",
+          "enonce": "Toute suite réelle croissante et majorée est convergente.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Théorème de convergence monotone : toute suite croissante majorée converge vers un réel."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Limites",
+          "enonce": "Si $\\lim_{x\\to a}f(x)=+\\infty$ et si $g(x)\\geq f(x)$ au voisinage de $a$, alors $\\lim_{x\\to a}g(x)=+\\infty$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Théorème de comparaison : $g\\geq f$ et $f\\to+\\infty$ entraînent $g\\to+\\infty$."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Nombres complexes",
+          "enonce": "Si deux nombres complexes $z$ et $z'$ vérifient $|z|=|z'|$, alors $z=z'$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Contre-exemple : $|1|=|i|=1$ et pourtant $1\\neq i$. Le module ne caractérise pas le nombre."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Probabilités",
+          "enonce": "Deux événements $A$ et $B$ tels que $P(A)={{num:pa}}$, $P(B)={{num:pb}}$ et $P(A\\cap B)={{num:pab}}$ sont indépendants.",
+          "correctExpr": "indep === 1",
+          "corrigeVrai": "<strong>Vrai.</strong> $P(A)\\times P(B)={{num:pa}}\\times{{num:pb}}={{num:papb}}$ et $P(A\\cap B)={{num:pab}}$ : on a bien $P(A\\cap B)=P(A)\\times P(B)$, les événements sont indépendants.",
+          "corrigeFaux": "<strong>Faux.</strong> L'indépendance exigerait $P(A\\cap B)=P(A)\\times P(B)={{num:pa}}\\times{{num:pb}}={{num:papb}}$, or $P(A\\cap B)={{num:pab}}$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Questionnaire à choix multiple",
+      "consigne": "Pour chaque question, une seule réponse est exacte.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Limites",
+          "enonce": "$\\lim_{x\\to+\\infty}\\dfrac{e^{x}}{x}$ est égale à",
+          "choix": ["$0$", "$1$", "$+\\infty$"],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Croissance comparée : l'exponentielle l'emporte sur toute puissance de $x$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Intégrales",
+          "enonce": "$\\displaystyle\\int_0^{1}e^{x}\\,\\mathrm{d}x$ est égale à",
+          "choix": ["$e$", "$e-1$", "$1$"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> $\\int_0^{1}e^{x}\\mathrm{d}x=[e^{x}]_0^{1}=e-1$."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "Nombres complexes",
+          "enonce": "Un argument de $-1-i$ est",
+          "choix": ["$\\frac{\\pi}{4}$", "$-\\frac{3\\pi}{4}$", "$\\frac{3\\pi}{4}$"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> $-1-i=\\sqrt{2}\\,e^{-i\\frac{3\\pi}{4}}$ (troisième quadrant : les deux coordonnées sont négatives)."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 1, "chapitre": "Probabilités",
+          "enonce": "Si $X\\sim\\mathcal{B}({{nn}}\\,;{{num:pp}})$, alors $E(X)=$",
+          "choix": ["${{num:exn}}$", "${{num:pp}}$", "${{num:exnm}}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $E(X)=np={{nn}}\\times{{num:pp}}={{num:exn}}$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Nombres complexes",
+      "consigne": "Exercice à rédiger : écris ta solution complète sur une feuille.",
+      "questions": [
+        {
+          "id": "e3", "type": "papier", "points": 4, "chapitre": "Nombres complexes",
+          "enonce": "<p>Le plan complexe est rapporté au repère orthonormé direct $(O\\,;\\vec{u}\\,;\\vec{v})$.</p><ol type='a'><li>Résous dans $\\mathbb{C}$ l'équation : $z^{2}-{{num:aa2}}z+{{num:aa22}}=0$. On note $z_1$ la solution de partie imaginaire positive et $z_2$ l'autre solution.</li><li>Écris $z_1$ sous forme exponentielle.</li><li>Soit $A$ et $B$ les points d'affixes respectives $z_1$ et $z_2$. Démontre que le triangle $OAB$ est rectangle isocèle en $O$.</li></ol>",
+          "steps": [
+            {
+              "titre": "a) Résolution de l'équation",
+              "points": 1.5,
+              "texte": "$\\Delta={{num:aa2}}^{2}-4\\times{{num:aa22}}={{num:aa22}}-{{num:oa2}}=-{{num:aa22}}=({{num:aa2}}i)^{2}$ ; donc $z=\\dfrac{{{num:aa2}}\\pm{{num:aa2}}i}{2}$ : <span class='reponse'>$z_1={{num:aa}}+{{num:aa}}i$</span> et <span class='reponse'>$z_2={{num:aa}}-{{num:aa}}i$</span>."
+            },
+            {
+              "titre": "b) Forme exponentielle",
+              "points": 1,
+              "texte": "$|z_1|=\\sqrt{{{num:aa}}^{2}+{{num:aa}}^{2}}={{num:aa}}\\sqrt{2}$ et $\\arg z_1=\\frac{\\pi}{4}$ : <span class='reponse'>$z_1={{num:aa}}\\sqrt{2}\\,e^{i\\frac{\\pi}{4}}$</span>."
+            },
+            {
+              "titre": "c) Triangle OAB",
+              "points": 1.5,
+              "texte": "$OA=OB={{num:aa}}\\sqrt{2}$ donc $OAB$ est isocèle en $O$. De plus $AB=|z_1-z_2|=|{{num:ab}}i|={{num:ab}}$ et $OA^{2}+OB^{2}={{num:oa1}}+{{num:oa1}}={{num:oa2}}={{num:ab}}^{2}=AB^{2}$ : d'après la réciproque de Pythagore, <span class='reponse'>$OAB$ est rectangle en $O$</span>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 4 — Probabilités : l'orientation en série D",
+      "consigne": "Exercice à rédiger : écris ta solution complète sur une feuille.",
+      "questions": [
+        {
+          "id": "e4", "type": "papier", "points": 4, "chapitre": "Probabilités",
+          "enonce": "<p>Dans un lycée d'Abidjan, <strong>{{pct:f}} %</strong> des élèves de Terminale sont des filles. On sait que <strong>{{pct:pf}} %</strong> des filles et <strong>{{pct:pg}} %</strong> des garçons ont choisi la série D. On interroge un élève de Terminale au hasard et on considère les événements : $F$ « l'élève est une fille » et $D$ « l'élève est en série D ».</p><ol type='a'><li>Calcule la probabilité que l'élève interrogé soit en série D.</li><li>L'élève interrogé est en série D. Calcule la probabilité que ce soit une fille. <em>(Arrondir à $10^{-2}$.)</em></li><li>On interroge successivement 3 élèves de façon indépendante. Calcule la probabilité qu'exactement un d'entre eux soit en série D. <em>(Arrondir à $10^{-3}$.)</em></li></ol>",
+          "steps": [
+            {
+              "titre": "a) Probabilité de D",
+              "points": 1.5,
+              "texte": "Formule des probabilités totales : $P(D)=P(F)\\times P_F(D)+P(\\bar{F})\\times P_{\\bar{F}}(D)={{num:f}}\\times{{num:pf}}+{{num:unf}}\\times{{num:pg}}={{num:fp}}+{{num:reste}}=$ <span class='reponse'>${{num:PD}}$</span>."
+            },
+            {
+              "titre": "b) Probabilité conditionnelle",
+              "points": 1.5,
+              "texte": "$P_D(F)=\\dfrac{P(F\\cap D)}{P(D)}=\\dfrac{{{num:fp}}}{{{num:PD}}}\\approx$ <span class='reponse'>${{d2:PFD}}$</span>."
+            },
+            {
+              "titre": "c) Loi binomiale",
+              "points": 1,
+              "texte": "$X\\sim\\mathcal{B}(3\\,;{{num:PD}})$ : $P(X=1)=\\binom{3}{1}({{num:PD}})({{num:unPD}})^{2}\\approx$ <span class='reponse'>${{d3:PX1}}$</span>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 5 — Étude de fonction",
+      "consigne": "Exercice à rédiger : écris ta solution complète sur une feuille.",
+      "questions": [
+        {
+          "id": "e5", "type": "papier", "points": 4, "chapitre": "Fonction ln",
+          "enonce": "<p>Soit $g$ la fonction définie sur $]0\\,;+\\infty[$ par : $$g(x)=x+\\ln x$$</p><ol type='a'><li>Calcule les limites de $g$ en $0^{+}$ et en $+\\infty$.</li><li>Démontre que $g$ réalise une bijection de $]0\\,;+\\infty[$ sur $\\mathbb{R}$.</li><li>Justifie que l'équation $g(x)=0$ admet une solution unique $\\alpha$, puis donne un encadrement de $\\alpha$ à $10^{-2}$ près.</li><li>Interprète graphiquement le nombre $\\alpha$.</li></ol>",
+          "steps": [
+            {
+              "titre": "a) Limites",
+              "points": 1,
+              "texte": "En $0^{+}$ : $\\ln x\\to-\\infty$ donc $g(x)\\to$ <span class='reponse'>$-\\infty$</span>. En $+\\infty$ : <span class='reponse'>$+\\infty$</span> (somme de deux quantités qui tendent vers $+\\infty$)."
+            },
+            {
+              "titre": "b) Bijection",
+              "points": 1.5,
+              "texte": "$g'(x)=1+\\dfrac{1}{x}>0$ sur $]0\\,;+\\infty[$ : $g$ est continue et strictement croissante, avec $\\lim_{0^{+}}g=-\\infty$ et $\\lim_{+\\infty}g=+\\infty$ : c'est <span class='reponse'>une bijection de $]0\\,;+\\infty[$ sur $\\mathbb{R}$</span>."
+            },
+            {
+              "titre": "c) Encadrement de α",
+              "points": 1,
+              "texte": "$0\\in\\mathbb{R}$ a un unique antécédent $\\alpha$ par la bijection $g$. On calcule $g(0{,}56)\\approx-0{,}020<0$ et $g(0{,}57)\\approx0{,}008>0$ : <span class='reponse'>$\\alpha\\in\\,]0{,}56\\,;\\,0{,}57[$</span>."
+            },
+            {
+              "titre": "d) Interprétation graphique",
+              "points": 0.5,
+              "texte": "$\\alpha$ est <span class='reponse'>l'abscisse du point d'intersection</span> des courbes $y=\\ln x$ et $y=-x$ (on a $\\alpha\\approx0{,}567$)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
