@@ -1,0 +1,50 @@
+{
+  "code": "RC-TD-MATH-05",
+  "type": "bac",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "4 heures",
+  "bareme": "/ 20",
+  "chapitre": "Épreuve complète : analyse, complexes, probabilités",
+  "consignes": "L'usage de la calculatrice non programmable est autorisé. Le sujet comporte cinq exercices. La présentation, l'orthographe et la rigueur des démonstrations entrent pour une part importante dans la notation.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "points": "4 pts",
+      "bareme_detail": "4 × 1 pt",
+      "consigne": "Écris sur ta copie le numéro de l'affirmation suivi de « Vrai » ou de « Faux ». Une justification brève est exigée.",
+      "enonce": "<table style='width:100%;border-collapse:collapse;margin-top:2mm'><tr><td style='width:6%;border:1.5px solid #94a3b8;text-align:center;padding:4px'><strong>N°</strong></td><td style='border:1.5px solid #94a3b8;padding:4px 8px'><strong>Affirmations</strong></td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>1</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Toute suite réelle croissante et majorée est convergente.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>2</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Si $\\lim_{x\\to a}f(x)=+\\infty$ et si $g(x)\\geq f(x)$ au voisinage de $a$, alors $\\lim_{x\\to a}g(x)=+\\infty$.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>3</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Si deux nombres complexes $z$ et $z'$ vérifient $|z|=|z'|$, alors $z=z'$.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>4</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Deux événements $A$ et $B$ tels que $P(A)=0{,}7$, $P(B)=0{,}5$ et $P(A\\cap B)=0{,}4$ sont indépendants.</td></tr></table>",
+      "correction": "<ol><li><span class='reponse'>Vrai.</span> Théorème de convergence monotone : toute suite croissante majorée converge vers un réel.</li><li><span class='reponse'>Vrai.</span> Théorème de comparaison (minoration) : $g\\geq f$ et $f\\to+\\infty$ entraînent $g\\to+\\infty$.</li><li><span class='reponse'>Faux.</span> Contre-exemple : $|1|=|i|=1$ et pourtant $1\\neq i$. Le module ne caractérise pas le nombre.</li><li><span class='reponse'>Faux.</span> L'indépendance exigerait $P(A\\cap B)=P(A)\\times P(B)=0{,}7\\times0{,}5=0{,}35\\neq0{,}4$.</li></ol>"
+    },
+    {
+      "titre": "Exercice 2 — Questionnaire à choix multiple",
+      "points": "4 pts",
+      "bareme_detail": "4 × 1 pt",
+      "consigne": "Pour chaque question, une seule réponse est exacte. Écris le numéro de la question suivi de la lettre de la bonne réponse.",
+      "enonce": "<table style='width:100%;border-collapse:collapse;margin-top:2mm'><tr><td style='width:46%;border:1.5px solid #94a3b8;padding:4px 8px'><strong>Questions</strong></td><td style='width:18%;border:1.5px solid #94a3b8;text-align:center;padding:4px'><strong>a</strong></td><td style='width:18%;border:1.5px solid #94a3b8;text-align:center;padding:4px'><strong>b</strong></td><td style='width:18%;border:1.5px solid #94a3b8;text-align:center;padding:4px'><strong>c</strong></td></tr><tr><td style='border:1px solid #cbd5e1;padding:5px 8px'><strong>1.</strong> $\\lim_{x\\to+\\infty}\\dfrac{e^{x}}{x}$ est égale à</td><td style='border:1px solid #cbd5e1;text-align:center'>$0$</td><td style='border:1px solid #cbd5e1;text-align:center'>$1$</td><td style='border:1px solid #cbd5e1;text-align:center'>$+\\infty$</td></tr><tr><td style='border:1px solid #cbd5e1;padding:5px 8px'><strong>2.</strong> $\\displaystyle\\int_0^{1}e^{x}\\,\\mathrm{d}x$ est égale à</td><td style='border:1px solid #cbd5e1;text-align:center'>$e$</td><td style='border:1px solid #cbd5e1;text-align:center'>$e-1$</td><td style='border:1px solid #cbd5e1;text-align:center'>$1$</td></tr><tr><td style='border:1px solid #cbd5e1;padding:5px 8px'><strong>3.</strong> Un argument de $-1-i$ est</td><td style='border:1px solid #cbd5e1;text-align:center'>$\\frac{\\pi}{4}$</td><td style='border:1px solid #cbd5e1;text-align:center'>$-\\frac{3\\pi}{4}$</td><td style='border:1px solid #cbd5e1;text-align:center'>$\\frac{3\\pi}{4}$</td></tr><tr><td style='border:1px solid #cbd5e1;padding:5px 8px'><strong>4.</strong> Si $X\\sim\\mathcal{B}(10\\,;0{,}4)$, alors $E(X)=$</td><td style='border:1px solid #cbd5e1;text-align:center'>$4$</td><td style='border:1px solid #cbd5e1;text-align:center'>$0{,}4$</td><td style='border:1px solid #cbd5e1;text-align:center'>$2{,}4$</td></tr></table>",
+      "correction": "<ol><li><span class='reponse'>c</span> — Croissance comparée : l'exponentielle l'emporte sur toute puissance de $x$.</li><li><span class='reponse'>b</span> — $\\int_0^{1}e^{x}\\mathrm{d}x=[e^{x}]_0^{1}=e-1$.</li><li><span class='reponse'>b</span> — $-1-i=\\sqrt{2}\\,e^{-i\\frac{3\\pi}{4}}$ (troisième quadrant).</li><li><span class='reponse'>a</span> — $E(X)=np=10\\times0{,}4=4$.</li></ol>"
+    },
+    {
+      "titre": "Exercice 3 — Nombres complexes",
+      "points": "4 pts",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt",
+      "enonce": "<p>Le plan complexe est rapporté au repère orthonormé direct $(O\\,;\\vec{u}\\,;\\vec{v})$.</p><ol type='a'><li>Résous dans $\\mathbb{C}$ l'équation : $z^{2}-4z+8=0$. On note $z_1$ la solution de partie imaginaire positive et $z_2$ l'autre solution.</li><li>Écris $z_1$ sous forme exponentielle.</li><li>Soit $A$ et $B$ les points d'affixes respectives $z_1$ et $z_2$. Démontre que le triangle $OAB$ est rectangle isocèle en $O$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\Delta=16-32=-16=(4i)^{2}$ ; $z=\\dfrac{4\\pm4i}{2}$ : <span class='reponse'>$z_1=2+2i$</span>, <span class='reponse'>$z_2=2-2i$</span>.</p><p><strong>b)</strong> $|z_1|=\\sqrt{4+4}=2\\sqrt{2}$ et $\\arg z_1=\\frac{\\pi}{4}$ : <span class='reponse'>$z_1=2\\sqrt{2}\\,e^{i\\frac{\\pi}{4}}$</span>.</p><p><strong>c)</strong> $OA=OB=2\\sqrt{2}$ donc $OAB$ est isocèle en $O$. De plus $AB=|z_1-z_2|=|4i|=4$ et $OA^{2}+OB^{2}=8+8=16=AB^{2}$ : d'après la réciproque de Pythagore, <span class='reponse'>$OAB$ est rectangle en $O$</span>.</p>"
+    },
+    {
+      "titre": "Exercice 4 — Probabilités : l'orientation en série D",
+      "points": "4 pts",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt",
+      "enonce": "<p>Dans un lycée d'Abidjan, <strong>55 %</strong> des élèves de Terminale sont des filles. On sait que <strong>30 %</strong> des filles et <strong>20 %</strong> des garçons ont choisi la série D. On interroge un élève de Terminale au hasard et on considère les événements : $F$ « l'élève est une fille » et $D$ « l'élève est en série D ».</p><ol type='a'><li>Calcule la probabilité que l'élève interrogé soit en série D.</li><li>L'élève interrogé est en série D. Calcule la probabilité que ce soit une fille. <em>(Arrondir à $10^{-2}$.)</em></li><li>On interroge successivement 3 élèves de façon indépendante. Calcule la probabilité qu'exactement un d'entre eux soit en série D. <em>(Arrondir à $10^{-3}$.)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> Probabilités totales : $P(D)=P(F)\\times P_F(D)+P(\\bar{F})\\times P_{\\bar{F}}(D)=0{,}55\\times0{,}30+0{,}45\\times0{,}20=0{,}165+0{,}09=$ <span class='reponse'>$0{,}255$</span>.</p><p><strong>b)</strong> $P_D(F)=\\dfrac{P(F\\cap D)}{P(D)}=\\dfrac{0{,}165}{0{,}255}\\approx$ <span class='reponse'>$0{,}65$</span>.</p><p><strong>c)</strong> $X\\sim\\mathcal{B}(3\\,;0{,}255)$ : $P(X=1)=\\binom{3}{1}(0{,}255)(0{,}745)^{2}=3\\times0{,}255\\times0{,}5550\\approx$ <span class='reponse'>$0{,}425$</span>.</p>"
+    },
+    {
+      "titre": "Exercice 5 — Étude de fonction",
+      "points": "4 pts",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1 pt · d) 0,5 pt",
+      "enonce": "<p>Soit $g$ la fonction définie sur $]0\\,;+\\infty[$ par : $$g(x)=x+\\ln x$$</p><ol type='a'><li>Calcule les limites de $g$ en $0^{+}$ et en $+\\infty$.</li><li>Démontre que $g$ réalise une bijection de $]0\\,;+\\infty[$ sur $\\mathbb{R}$.</li><li>Justifie que l'équation $g(x)=0$ admet une solution unique $\\alpha$, puis donne un encadrement de $\\alpha$ à $10^{-2}$ près.</li><li>Interprète graphiquement le nombre $\\alpha$.</li></ol>",
+      "correction": "<p><strong>a)</strong> En $0^{+}$ : $\\ln x\\to-\\infty$ donc $g(x)\\to$ <span class='reponse'>$-\\infty$</span>. En $+\\infty$ : <span class='reponse'>$+\\infty$</span>.</p><p><strong>b)</strong> $g'(x)=1+\\dfrac{1}{x}>0$ : $g$ est continue et strictement croissante, avec $\\lim_{0^{+}}g=-\\infty$ et $\\lim_{+\\infty}g=+\\infty$ : c'est une bijection de $]0\\,;+\\infty[$ sur $\\mathbb{R}$.</p><p><strong>c)</strong> $0\\in\\mathbb{R}$ a un unique antécédent $\\alpha$ par $g$. On calcule $g(0{,}56)\\approx-0{,}020<0$ et $g(0{,}57)\\approx0{,}008>0$ : <span class='reponse'>$\\alpha\\in\\,]0{,}56\\,;\\,0{,}57[$</span>.</p><p><strong>d)</strong> $\\alpha$ est <span class='reponse'>l'abscisse du point d'intersection</span> des courbes $y=\\ln x$ et $y=-x$ (on a $\\alpha\\approx0{,}567$).</p>"
+    }
+  ]
+}

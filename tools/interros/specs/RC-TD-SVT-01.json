@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-SVT-01",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "1 heure",
+  "bareme": "/ 10",
+  "chapitre": "Génétique (dihybridisme) · Immunologie",
+  "consignes": "Le raisonnement génétique doit être présenté clairement (génotypes, gamètes, échiquier de croisement).",
+  "exercices": [
+    {
+      "titre": "Partie 1 — Génétique : le niébé de Korhogo",
+      "points": "6 pts",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1 pt · d) 1,5 pt",
+      "enonce": "<p>Chez le niébé cultivé dans la région de Korhogo, deux caractères sont étudiés. La graine <strong>lisse (L)</strong> domine la graine <strong>ridée (l)</strong> ; le tégument <strong>blanc (B)</strong> domine le tégument <strong>brun (b)</strong>. Les deux gènes sont portés par des chromosomes différents.</p><p>On croise deux plants double hétérozygotes : $L/l\\;B/b \\times L/l\\;B/b$.</p><ol type='a'><li>Détermine les génotypes des gamètes produits par chaque parent et leur proportion.</li><li>À l'aide d'un échiquier de croisement, donne la proportion de descendants à graines <strong>lisses et blanches</strong>.</li><li>Quelle est la proportion de descendants à graines <strong>lisses et brunes</strong> ?</li><li>On effectue un croisement-test du plant $L/l\\;B/b$ avec un plant double récessif $l/l\\;b/b$. Donne les proportions des quatre phénotypes obtenus.</li></ol>",
+      "correction": "<p><strong>a)</strong> Brassage interchromosomique : chaque parent produit 4 types de gamètes équiprobables : <span class='reponse'>$LB$, $Lb$, $lB$, $lb$ — chacun à 25 %</span>.</p><p><strong>b)</strong> Échiquier 4 × 4 : le phénotype [lisse, blanc] correspond au génotype $L_{-}B_{-}$ : <span class='reponse'>$\\dfrac{9}{16}$ des descendants</span>.</p><p><strong>c)</strong> Le phénotype [lisse, brun] = $L_{-}\\,b/b$ : <span class='reponse'>$\\dfrac{3}{16}$</span>.</p><p><strong>d)</strong> Croisement-test : le parent récessif ne produit que des gamètes $lb$. Les descendants reflètent les 4 gamètes du parent testé : <span class='reponse'>$\\frac{1}{4}$ [lisse, blanc] · $\\frac{1}{4}$ [lisse, brun] · $\\frac{1}{4}$ [ridé, blanc] · $\\frac{1}{4}$ [ridé, brun]</span>.</p>"
+    },
+    {
+      "titre": "Partie 2 — Immunologie : Vrai ou Faux",
+      "points": "4 pts",
+      "bareme_detail": "4 × 1 pt",
+      "consigne": "Écris le numéro de l'affirmation suivi de « Vrai » ou de « Faux », avec une justification d'une phrase.",
+      "enonce": "<table style='width:100%;border-collapse:collapse;margin-top:2mm'><tr><td style='width:6%;border:1.5px solid #94a3b8;text-align:center;padding:4px'><strong>N°</strong></td><td style='border:1.5px solid #94a3b8;padding:4px 8px'><strong>Affirmations</strong></td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>1</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Les anticorps sont produits par les lymphocytes B.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>2</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>Le VIH infecte et détruit principalement les lymphocytes T4.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>3</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>La vaccination confère une immunisation passive immédiate.</td></tr><tr><td style='border:1px solid #cbd5e1;text-align:center;padding:5px'><strong>4</strong></td><td style='border:1px solid #cbd5e1;padding:5px 8px'>La phagocytose est un mécanisme de l'immunité innée non spécifique.</td></tr></table>",
+      "correction": "<ol><li><span class='reponse'>Vrai.</span> Les LB activés (plasmocytes) sécrètent les anticorps — immunité à médiation humorale.</li><li><span class='reponse'>Vrai.</span> Le VIH cible les LT4 (CD4+), dont la destruction provoque l'immunodéficience (SIDA).</li><li><span class='reponse'>Faux.</span> Le vaccin stimule la production propre d'anticorps et de cellules mémoires : c'est une immunisation <strong>active</strong> (la sérothérapie, elle, est passive).</li><li><span class='reponse'>Vrai.</span> La phagocytose (macrophages, polynucléaires) agit contre tout corps étranger sans spécificité : c'est l'immunité innée.</li></ol>"
+    }
+  ]
+}

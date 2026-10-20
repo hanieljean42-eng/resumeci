@@ -1,0 +1,27 @@
+{
+  "code": "RC-TD-MATH-02",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "1 heure",
+  "bareme": "/ 10",
+  "chapitre": "Nombres complexes",
+  "consignes": "Le plan est muni d'un repère orthonormé direct $(O\\,;\\vec{u}\\,;\\vec{v})$ d'unité 2 cm. Toute réponse doit être justifiée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Formes trigonométrique et exponentielle",
+      "points": "4 pts",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 2 pts",
+      "enonce": "<p>On considère les nombres complexes : $$z_1=\\sqrt{3}+i \\quad\\text{et}\\quad z_2=1-i\\sqrt{3}$$</p><ol type='a'><li>Écris $z_1$ et $z_2$ sous forme exponentielle.</li><li>On pose $Z=\\dfrac{z_1^{4}}{z_2^{3}}$. Détermine la forme exponentielle de $Z$.</li><li>En déduis la forme algébrique de $Z$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $|z_1|=\\sqrt{3+1}=2$ ; $\\cos\\theta_1=\\frac{\\sqrt{3}}{2}$ et $\\sin\\theta_1=\\frac{1}{2}$ donc $\\theta_1=\\frac{\\pi}{6}$ : <span class='reponse'>$z_1=2e^{i\\frac{\\pi}{6}}$</span>. De même $|z_2|=2$ et $\\theta_2=-\\frac{\\pi}{3}$ : <span class='reponse'>$z_2=2e^{-i\\frac{\\pi}{3}}$</span>.</p><p><strong>b)</strong> $z_1^{4}=16e^{i\\frac{4\\pi}{6}}=16e^{i\\frac{2\\pi}{3}}$ et $z_2^{3}=8e^{-i\\pi}$. Donc $Z=\\dfrac{16e^{i\\frac{2\\pi}{3}}}{8e^{-i\\pi}}=2e^{i\\left(\\frac{2\\pi}{3}+\\pi\\right)}=$ <span class='reponse'>$2e^{i\\frac{5\\pi}{3}}=2e^{-i\\frac{\\pi}{3}}$</span>.</p><p><strong>c)</strong> $Z=2\\left(\\cos\\frac{\\pi}{3}-i\\sin\\frac{\\pi}{3}\\right)=2\\left(\\frac{1}{2}-i\\frac{\\sqrt{3}}{2}\\right)=$ <span class='reponse'>$1-i\\sqrt{3}$</span>.</p>"
+    },
+    {
+      "titre": "Exercice 2 — Équation et géométrie",
+      "points": "6 pts",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt",
+      "enonce": "<p>Dans le plan complexe, on considère l'équation : $$(E)\\;:\\; z^2-2\\sqrt{3}\\,z+4=0$$</p><ol type='a'><li>Résous $(E)$ dans $\\mathbb{C}$. On note $z_1$ la solution de partie imaginaire positive et $z_2$ l'autre solution.</li><li>Écris $z_1$ et $z_2$ sous forme exponentielle.</li><li>Soit $M_1$ et $M_2$ les points d'affixes $z_1$ et $z_2$. Démontre que le triangle $OM_1M_2$ est équilatéral.</li><li>Soit $A$ le point d'affixe $z_A=2$ et $r$ la rotation de centre $O$ et d'angle $\\frac{\\pi}{3}$. Détermine l'affixe du point $A'$, image de $A$ par $r$, sous forme algébrique.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\Delta=(2\\sqrt{3})^2-16=12-16=-4=(2i)^2$. Les solutions sont $z=\\dfrac{2\\sqrt{3}\\pm 2i}{2}$ : <span class='reponse'>$z_1=\\sqrt{3}+i$</span> et <span class='reponse'>$z_2=\\sqrt{3}-i$</span>.</p><p><strong>b)</strong> $|z_1|=|z_2|=2$ ; $\\arg z_1=\\frac{\\pi}{6}$ et $\\arg z_2=-\\frac{\\pi}{6}$ : <span class='reponse'>$z_1=2e^{i\\frac{\\pi}{6}}$</span>, <span class='reponse'>$z_2=2e^{-i\\frac{\\pi}{6}}$</span>.</p><p><strong>c)</strong> $OM_1=|z_1|=2$, $OM_2=|z_2|=2$ et $M_1M_2=|z_1-z_2|=|2i|=2$. Les trois côtés sont égaux : <span class='reponse'>$OM_1M_2$ est équilatéral</span>.</p><p><strong>d)</strong> $z_{A'}=e^{i\\frac{\\pi}{3}}\\times z_A=2e^{i\\frac{\\pi}{3}}=2\\left(\\frac{1}{2}+i\\frac{\\sqrt{3}}{2}\\right)=$ <span class='reponse'>$1+i\\sqrt{3}$</span>.</p>"
+    }
+  ]
+}

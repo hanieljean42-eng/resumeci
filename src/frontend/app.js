@@ -1634,28 +1634,7 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false) {
     return;
   }
 
-  // 3. Formule Élite (en finalisation)
-  if (tierKey === 'elite' || tierKey === 'uni_elite') {
-    if (typeof window.openElitePassModal === 'function') {
-      window.openElitePassModal('elite');
-    } else if (typeof window.showActionNotice === 'function') {
-      window.showActionNotice({
-        type: 'vip',
-        icon: '👑',
-        title: 'Pack Élite en finalisation',
-        subtitle: 'Professeur IA & Sujets d\'examen',
-        message: window.isUniversityUser && window.isUniversityUser()
-          ? "Le Pass Excellence (Tuteur IA & Sujets de partiels corrigés) est actuellement en cours de finalisation par nos enseignants partenaires.\n\n👉 Nous t'invitons à choisir le Pass Étudiant (1 000 FCFA/mois) ou le Pass Licence Pro (2 000 FCFA/mois) pour réviser dès aujourd'hui !"
-          : "Le Pack Élite (Professeur IA & Sujets d'examen du BAC/BEPC) est actuellement en cours de finalisation par nos professeurs partenaires.\n\n👉 Nous t'invitons à choisir le Pack Starter (500 FCFA/mois) ou le Pack Pro (1000 FCFA/mois) pour réviser dès aujourd'hui !",
-        primaryBtnText: '👑 Découvrir Starter & Pro',
-        primaryBtnAction: () => {
-          if (typeof openPremiumTeaser === 'function') openPremiumTeaser('Pass Réussite Pro');
-        },
-        secondaryBtnText: 'Continuer'
-      });
-    }
-    return;
-  }
+  // 3. Formule Élite : vendable depuis le lancement des Sujets & Interros corrigés
 
   // Paiement déjà en cours ? On propose de le reprendre plutôt que d'en créer un
   // deuxième (la référence en attente est réutilisée côté serveur si < 10 min).
@@ -2742,11 +2721,11 @@ window.openElitePassModal = function(featureName = 'elite') {
   const annalesTitle = cardAnnales?.querySelector('.elite-feat-title');
   const annalesPill = cardAnnales?.querySelector('.elite-status-pill');
   const annalesDesc = cardAnnales?.querySelector('.elite-feat-desc');
-  if (annalesTitle) annalesTitle.textContent = isUnivElite ? 'Annales & Sujets de Partiels' : 'Annales BAC & BEPC Corrigées';
-  if (annalesPill) annalesPill.textContent = isUnivElite ? '📑 Archives universitaires' : '📑 10 ans d\'archives';
+  if (annalesTitle) annalesTitle.textContent = isUnivElite ? 'Sujets de Partiels & Interros Corrigés' : 'Interros & Sujets type BAC Corrigés';
+  if (annalesPill) annalesPill.textContent = isUnivElite ? '✅ Disponible' : '✅ Disponible';
   if (annalesDesc) annalesDesc.textContent = isUnivElite
-    ? 'Les sujets d\'examens et de partiels de ta filière avec corrigés types rédigés par des enseignants.'
-    : 'Tous les vrais sujets officiels avec corrigés types rédigés par des inspecteurs et barèmes détaillés.';
+    ? 'Interrogations et sujets d\'examens de ta filière en PDF : énoncés + corrigés détaillés avec barèmes.'
+    : 'Interrogations, devoirs surveillés et examens type BAC en PDF : énoncés + corrigés détaillés avec barèmes, dans l\'esprit des vraies épreuves.';
   const iaDesc = cardIA?.querySelector('.elite-feat-desc');
   if (iaDesc) iaDesc.textContent = isUnivElite
     ? 'Pose toutes tes questions à tout moment. Il t\'explique tes cours de licence étape par étape.'
@@ -2757,8 +2736,8 @@ window.openElitePassModal = function(featureName = 'elite') {
     : 'Toutes les fiches de cours, résumés, quiz et podcasts audio sont 100% accessibles immédiatement dès 500 FCFA avec les Pass Starter & Pro.';
   const vipBtnEl = modal.querySelector('.elite-btn-vip');
   if (vipBtnEl) vipBtnEl.innerHTML = isUnivElite
-    ? '<i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Université (Dès 1 000 F)'
-    : '<i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Disponibles (Dès 500 F)';
+    ? '<i class="fas fa-crown" style="color: #fbbf24;"></i> Activer le Pass Excellence — 3 000 F'
+    : '<i class="fas fa-crown" style="color: #fbbf24;"></i> Activer le Pass Élite — 2 000 F';
 
   // Réinitialiser les surbrillances
   [cardIA, cardAnnales, cardSimulateur].forEach(card => card && card.classList.remove('active-target'));
@@ -2775,8 +2754,8 @@ window.openElitePassModal = function(featureName = 'elite') {
     }
   } else if (fLower.includes('sujet') || fLower.includes('annale') || fLower.includes('bac') || fLower.includes('bepc') || fLower.includes('partiel')) {
     if (iconEl) iconEl.textContent = '📜';
-    if (titleEl) titleEl.textContent = isUnivElite ? 'Sujets de Partiels Corrigés 🔒' : 'Sujets BAC & BEPC Corrigés 🔒';
-    if (subtitleEl) subtitleEl.textContent = isUnivElite ? 'Toutes les épreuves universitaires décortiquées avec corrigés types.' : 'Toutes les épreuves officielles décortiquées avec barèmes et corrigés types.';
+    if (titleEl) titleEl.textContent = isUnivElite ? 'Sujets de Partiels & Interros Corrigés 🔒' : 'Sujets & Interros Corrigés 🔒';
+    if (subtitleEl) subtitleEl.textContent = isUnivElite ? 'Des épreuves universitaires complètes : énoncés + corrigés PDF avec barèmes détaillés.' : 'Interros, devoirs surveillés et examens type BAC : énoncés + corrigés PDF avec barèmes détaillés.';
     if (cardAnnales) {
       cardAnnales.classList.add('active-target');
       cardAnnales.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -2794,8 +2773,8 @@ window.openElitePassModal = function(featureName = 'elite') {
     if (iconEl) iconEl.textContent = '👑';
     if (titleEl) titleEl.textContent = isUnivElite ? 'Pass Excellence : La Formule Suprême' : 'Pass Élite : La Formule Suprême';
     if (subtitleEl) subtitleEl.textContent = isUnivElite
-      ? 'L\'excellence absolue : Tuteur IA, annales de partiels et simulateurs d\'examens (3 000 FCFA/mois).'
-      : 'L\'excellence absolue : Professeur IA, annales BAC/BEPC et simulateurs d\'examens.';
+      ? 'L\'excellence absolue : Tuteur IA, sujets de partiels corrigés et simulateurs d\'examens (3 000 FCFA/mois).'
+      : 'L\'excellence absolue : Professeur IA, sujets & interros corrigés et simulateurs d\'examens (2 000 FCFA/mois).';
   }
 
   modal.classList.add('show');
@@ -2803,6 +2782,120 @@ window.openElitePassModal = function(featureName = 'elite') {
 
 window.closeElitePassModal = function() {
   document.getElementById('eliteComingSoonModal')?.classList.remove('show');
+};
+
+// --------------------------------------------------------------------------
+// SUJETS & INTERROS PDF — réservés Pass Élite (vérification serveur obligatoire)
+// --------------------------------------------------------------------------
+window.sujetsFilterClass = 'mine';
+
+window.openSujetsModal = async function() {
+  // Gate Élite côté client (le vrai contrôle est côté serveur à chaque téléchargement)
+  const hasAccess = window.userHasFeature ? window.userHasFeature('sujets') : false;
+  if (!hasAccess) {
+    if (typeof window.openElitePassModal === 'function') window.openElitePassModal('sujets');
+    return;
+  }
+  const modal = document.getElementById('sujetsModal');
+  if (!modal) return;
+  modal.classList.add('show');
+  const body = document.getElementById('sujetsListBody');
+  body.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des sujets…</div>';
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/interros/catalog`, { cache: 'no-store' });
+    const data = await res.json();
+    window._sujetsCatalog = (data && data.interros) || [];
+    renderSujetsList();
+  } catch (e) {
+    body.innerHTML = '<p style="text-align:center;color:#94a3b8;padding:20px">⚠️ Impossible de charger le catalogue. Vérifie ta connexion.</p>';
+  }
+};
+
+window.closeSujetsModal = function() {
+  document.getElementById('sujetsModal')?.classList.remove('show');
+};
+
+window.setSujetsFilter = function(f) {
+  window.sujetsFilterClass = f;
+  renderSujetsList();
+};
+
+function renderSujetsList() {
+  const body = document.getElementById('sujetsListBody');
+  if (!body) return;
+  const catalog = window._sujetsCatalog || [];
+  const myClass = String((window.USER_PROFILE && window.USER_PROFILE.selectedClass) || '');
+  const items = catalog.filter(d => window.sujetsFilterClass === 'all' || d.classe === myClass);
+
+  const TYPE_STYLE = {
+    interro: { icon: '📝', color: '#2563eb' },
+    devoir: { icon: '📋', color: '#7c3aed' },
+    bac: { icon: '🎓', color: '#dc2626' }
+  };
+
+  const tabs = `<div style="display:flex;gap:8px;margin-bottom:14px">
+    <button onclick="setSujetsFilter('mine')" class="pm-btn ${window.sujetsFilterClass === 'mine' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'mine' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Ma classe (${catalog.filter(d => d.classe === myClass).length})</button>
+    <button onclick="setSujetsFilter('all')" class="pm-btn ${window.sujetsFilterClass === 'all' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'all' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Toutes (${catalog.length})</button>
+  </div>`;
+
+  if (!items.length) {
+    body.innerHTML = tabs + `<p style="text-align:center;color:#94a3b8;padding:24px 12px">📭 Aucun sujet pour ta classe pour l'instant.<br><span style="font-size:11px">De nouveaux sujets sont ajoutés chaque semaine — regarde l'onglet « Toutes ».</span></p>`;
+    return;
+  }
+
+  body.innerHTML = tabs + items.map(d => {
+    const t = TYPE_STYLE[d.type] || TYPE_STYLE.interro;
+    return `<div style="border:1.5px solid #e2e8f0;border-left:4px solid ${t.color};border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="flex:1">
+          <div style="font-size:10px;font-weight:800;color:${t.color};text-transform:uppercase;letter-spacing:.4px">${t.icon} ${d.typeLabel}</div>
+          <div style="font-weight:800;font-size:14px;color:#0f172a;margin:2px 0">${escHtml(d.matiere)} — ${escHtml(d.chapitre || 'Épreuve complète')}</div>
+          <div style="font-size:11px;color:#64748b">${escHtml(d.classeLabel)} · ${d.duree} · ${d.bareme} · ${d.exercices} exercice${d.exercices > 1 ? 's' : ''}</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button onclick="openInterroDoc('${d.code}','enonce')" class="pm-btn" style="flex:1;background:#0f172a;color:#fff;padding:8px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700"><i class="fas fa-file-pdf"></i> Énoncé</button>
+        ${d.corrige ? `<button onclick="openInterroDoc('${d.code}','corrige')" class="pm-btn" style="flex:1;background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:8px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700"><i class="fas fa-check-circle"></i> Corrigé</button>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Ouvre un PDF via l'API sécurisée (sessionToken) puis l'affiche dans un nouvel onglet.
+window.openInterroDoc = async function(code, part) {
+  const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  if (!token) {
+    if (window.toast) toast('Connecte-toi pour ouvrir ce document.', 'info');
+    window.location.href = '/connexion.html';
+    return;
+  }
+  if (window.toast) toast('📄 Ouverture du document…', 'info', 2000);
+  try {
+    const res = await fetch(`${apiBase}/api/interro/${encodeURIComponent(code)}/${encodeURIComponent(part)}`, {
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    if (res.status === 403) {
+      if (typeof window.closeSujetsModal === 'function') closeSujetsModal();
+      if (typeof window.openElitePassModal === 'function') openElitePassModal('sujets');
+      return;
+    }
+    if (res.status === 401) {
+      if (window.toast) toast('Session expirée — reconnecte-toi.', 'warn');
+      window.location.href = '/connexion.html';
+      return;
+    }
+    if (!res.ok) {
+      if (window.toast) toast('Document introuvable.', 'warn');
+      return;
+    }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }));
+    window.open(url, '_blank');
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+  }
 };
 
 // Fermeture ergonomique au clic sur l'arrière-plan et touche Echap (iOS & Android)
@@ -2949,14 +3042,14 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
       if (upgradeTitle) upgradeTitle.textContent = 'Pass Élite : Professeur IA & Examens';
       if (upgradeDesc) {
         upgradeDesc.innerHTML = window.isUniversityUser && window.isUniversityUser()
-          ? 'La formule suprême avec tuteur IA 24h/24 et annales de partiels corrigées (3 000 FCFA/mois) arrive très bientôt.'
-          : 'La formule suprême avec tuteur IA 24h/24 et annales officielles corrigées du BAC/BEPC arrive très bientôt.';
+          ? 'Sujets de partiels & interros corrigés en PDF, tuteur IA 24h/24 et simulateurs d\'examens — <strong>3 000 FCFA/mois</strong>.'
+          : 'Interros, devoirs & sujets type BAC corrigés en PDF, professeur IA et simulateurs d\'examens — <strong>2 000 FCFA/mois</strong>.';
       }
       if (upgradeBtn) {
-        upgradeBtn.innerHTML = '👑 Découvrir les fonctionnalités Élite';
+        upgradeBtn.innerHTML = '👑 Passer au Pass Élite';
         upgradeBtn.onclick = function() {
           window.closeActiveSubscriptionModal();
-          window.openElitePassModal('elite');
+          window.openPaymentCheckoutModal(window.isUniversityUser && window.isUniversityUser() ? 'uni_elite' : 'elite');
         };
       }
     } else {
@@ -3404,7 +3497,12 @@ window.downloadClassOffline = downloadClassOffline;
 function getToolsBar() {
   const hasStats = window.userHasFeature ? window.userHasFeature('Statistiques Avancées') : false;
   const hasPlanner = window.userHasFeature ? window.userHasFeature("Planning d'Examen") : false;
+  const hasSujets = window.userHasFeature ? window.userHasFeature('sujets') : false;
   const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
+
+  const sujetsCard = hasSujets
+    ? `<a class="tool-card" href="#" onclick="openSujetsModal(); return false;"><div class="tool-icon">📝</div><h4>Sujets & Interros</h4><p>Épreuves PDF corrigées (Actif ✓)</p></a>`
+    : `<a class="tool-card" href="#" onclick="if(typeof openSujetsModal==='function')openSujetsModal(); return false;"><div class="tool-icon">📝</div><h4>Sujets & Interros 🔒</h4><p>Interros, devoirs & BAC corrigés (Pass Élite)</p></a>`;
 
   const statsCard = hasStats
     ? `<a class="tool-card" href="#" onclick="openStatistiquesModal(); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques</h4><p>Progression & Données en cache</p></a>`
@@ -3427,6 +3525,7 @@ function getToolsBar() {
     <a class="tool-card" href="#" onclick="if(typeof openPomodoro==='function')openPomodoro(); return false;"><div class="tool-icon">⏱️</div><h4>Timer Pomodoro</h4><p>25 min révision active</p></a>
     ${plannerCard}
     ${statsCard}
+    ${sujetsCard}
   </div>`;
 }
 const TTS = {

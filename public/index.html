@@ -196,7 +196,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.5.5" defer></script>
+  <script src="/app.js?v=3.5.6" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1911,7 +1911,7 @@
       <!-- En-tête VIP Suprême -->
       <div class="elite-modal-header">
         <div class="elite-badge-top">
-          <span>🥇 FORMULE SUPRÊME • BIENTÔT DISPONIBLE</span>
+          <span>🥇 FORMULE SUPRÊME • DISPONIBLE</span>
         </div>
         <div class="elite-hero-wrap">
           <div class="elite-hero-icon" id="eliteHeroIcon">🤖</div>
@@ -1941,10 +1941,10 @@
             <div class="elite-feat-icon">📜</div>
             <div class="elite-feat-content">
               <div class="elite-feat-header">
-                <h4 class="elite-feat-title">Annales BAC & BEPC Corrigées</h4>
-                <span class="elite-status-pill">📑 10 ans d'archives</span>
+                <h4 class="elite-feat-title">Interros & Sujets type BAC Corrigés</h4>
+                <span class="elite-status-pill">✅ Disponible</span>
               </div>
-              <p class="elite-feat-desc">Tous les vrais sujets officiels avec corrigés types rédigés par des inspecteurs et barèmes détaillés.</p>
+              <p class="elite-feat-desc">Interrogations, devoirs surveillés et examens type BAC en PDF : énoncés + corrigés détaillés avec barèmes, dans l'esprit des vraies épreuves.</p>
             </div>
           </div>
 
@@ -1972,8 +1972,8 @@
 
         <!-- Boutons d'action -->
         <div class="elite-actions-column">
-          <button class="pm-btn elite-btn-vip" onclick="closeElitePassModal(); if (typeof openPremiumTeaser === 'function') openPremiumTeaser('Pass Réussite Pro');">
-            <i class="fas fa-crown" style="color: #fbbf24;"></i> Découvrir les Pass Disponibles (Dès 500 F)
+          <button class="pm-btn elite-btn-vip" onclick="closeElitePassModal(); if (typeof openPaymentCheckoutModal === 'function') openPaymentCheckoutModal(window.isUniversityUser && window.isUniversityUser() ? 'uni_elite' : 'elite');">
+            <i class="fas fa-crown" style="color: #fbbf24;"></i> Activer le Pass Élite — 2 000 F
           </button>
           
           <button class="pm-btn elite-btn-secondary" onclick="closeElitePassModal();">
@@ -1981,6 +1981,19 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ══════════ MODALE SUJETS & INTERROS (Pass Élite) ══════════ -->
+  <div class="profile-modal-overlay" id="sujetsModal">
+    <div class="profile-modal" style="max-width:520px;max-height:86vh;display:flex;flex-direction:column">
+      <button class="modal-close" onclick="closeSujetsModal();">&times;</button>
+      <div class="elite-modal-header" style="padding-bottom:10px">
+        <div class="elite-badge-top"><span>🥇 PASS ÉLITE • CONTENU EXCLUSIF</span></div>
+        <h2 class="elite-modal-title" style="font-size:20px;margin-top:8px">📝 Sujets & Interros Corrigés</h2>
+        <p class="elite-modal-subtitle" style="font-size:12px">Interrogations, devoirs surveillés et examens type BAC — énoncés + corrigés PDF, par ResumeCI</p>
+      </div>
+      <div id="sujetsListBody" style="overflow-y:auto;padding:4px 18px 20px;flex:1"></div>
     </div>
   </div>
 

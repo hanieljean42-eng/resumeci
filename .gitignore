@@ -24,6 +24,9 @@ _tmp.txt
 _pending_summaries_*.json
 _resume_progress_*.json
 *.pdf
+# Sujets & Interros brandés ResumeCI : produits déployés avec l'API (Render)
+!payment-api/interros/*.pdf
+!payment-api/interros/catalog.json
 
 # Firebase & Keys
 .firebase/

@@ -190,6 +190,12 @@
       background: rgba(100, 116, 139, 0.12);
     }
 
+    .plan.selected-elite {
+      border-color: #a855f7;
+      background: rgba(168, 85, 247, 0.12);
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.2);
+    }
+
     .plan-left {
       display: flex;
       align-items: center;
@@ -588,6 +594,22 @@
             </div>
           </div>
 
+          <!-- Pass Élite -->
+          <div class="plan" id="planElite" onclick="selectPlan('elite')" role="radio" aria-checked="false" tabindex="0">
+            <span class="badge-popular" style="background:#a855f7">🥇 Formule suprême</span>
+            <div class="plan-left">
+              <div class="radio-dot"></div>
+              <div class="plan-details">
+                <h4>Pass Élite</h4>
+                <p>Tout Pro + Interros, devoirs & sujets type BAC corrigés</p>
+              </div>
+            </div>
+            <div class="plan-price">
+              <div class="amount" style="color:#a855f7">2 000 F</div>
+              <div class="period">par mois</div>
+            </div>
+          </div>
+
           <!-- Pass Starter -->
           <div class="plan" id="planStarter" onclick="selectPlan('starter')" role="radio" aria-checked="false" tabindex="0">
             <div class="plan-left">
@@ -650,9 +672,9 @@
             </div>
           </div>
 
-          <!-- Pass Excellence (en préparation) -->
-          <div class="plan" id="planUniElite" role="radio" aria-checked="false" style="display:none;opacity:0.7;cursor:default">
-            <span class="badge-popular" style="background:#a855f7">🔬 En préparation</span>
+          <!-- Pass Excellence -->
+          <div class="plan" id="planUniElite" onclick="selectPlan('uni_elite')" role="radio" aria-checked="false" tabindex="0" style="display:none">
+            <span class="badge-popular" style="background:#a855f7">🥇 Formule suprême</span>
             <div class="plan-left">
               <div class="radio-dot"></div>
               <div class="plan-details">
@@ -794,13 +816,14 @@
 
       const univMode = !!document.getElementById('planUniPro') && document.getElementById('planUniPro').style.display !== 'none';
       const planEls = {
-        pro: 'planPro', starter: 'planStarter',
+        pro: 'planPro', starter: 'planStarter', elite: 'planElite',
         uni_starter: 'planUniStarter', uni_pro: 'planUniPro', uni_elite: 'planUniElite'
       };
       // 'free' pointe sur la carte Essai Université en mode univ, sinon sur la Formule Gratuite
       planEls.free = univMode ? 'planUniFree' : 'planFree';
       const selCls = {
         pro: 'selected-pro', uni_pro: 'selected-pro',
+        elite: 'selected-elite', uni_elite: 'selected-elite',
         starter: 'selected-starter', uni_starter: 'selected-starter',
         free: 'selected-free'
       };
@@ -837,9 +860,15 @@
         btn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(16, 185, 129, 0.35)";
         if (trustSection) trustSection.style.display = '';
+      } else if (tier === 'elite') {
+        iconHtml = '<i class="fas fa-crown"></i>';
+        label = "Activer mon Pass Élite (2 000 F) 👑";
+        btn.style.background = "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)";
+        btn.style.boxShadow = "0 8px 20px rgba(168, 85, 247, 0.35)";
+        if (trustSection) trustSection.style.display = '';
       } else if (tier === 'uni_elite') {
-        iconHtml = '<i class="fas fa-bolt"></i>';
-        label = "Activer mon Pass Excellence (3 000 F) 🔬";
+        iconHtml = '<i class="fas fa-crown"></i>';
+        label = "Activer mon Pass Excellence (3 000 F) �";
         btn.style.background = "linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)";
         btn.style.boxShadow = "0 8px 20px rgba(124, 58, 237, 0.35)";
         if (trustSection) trustSection.style.display = '';
@@ -1058,7 +1087,7 @@
 
         // Formule Payante : Appel à la passerelle de paiement GeniusPay
         const tierNames = {
-          pro: 'Pro (1 000 FCFA)', starter: 'Starter (500 FCFA)',
+          pro: 'Pro (1 000 FCFA)', starter: 'Starter (500 FCFA)', elite: 'Élite (2 000 FCFA)',
           uni_starter: 'Étudiant (1 000 FCFA)', uni_pro: 'Licence Pro (2 000 FCFA)', uni_elite: 'Excellence (3 000 FCFA)'
         };
         const tierName = tierNames[selectedTier] || 'Pro (1 000 FCFA)';
@@ -1159,7 +1188,7 @@
       const clsLabel = document.querySelector('label[for="regClass"]');
       if (clsLabel) clsLabel.textContent = isUniv ? 'Filière / Niveau *' : 'Classe actuelle *';
 
-      ['planPro', 'planStarter', 'planFree'].forEach(id => {
+      ['planPro', 'planElite', 'planStarter', 'planFree'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = isUniv ? 'none' : '';
       });
@@ -1172,7 +1201,7 @@
       if (isUniv && !['uni_starter', 'uni_pro', 'uni_elite', 'free'].includes(selectedTier)) {
         selectPlan('uni_pro');
       } else if (!isUniv && selectedTier.startsWith('uni_')) {
-        selectPlan('pro');
+        selectPlan(selectedTier === 'uni_elite' ? 'elite' : 'pro');
       } else {
         selectPlan(selectedTier);
       }

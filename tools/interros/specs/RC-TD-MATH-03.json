@@ -1,0 +1,27 @@
+{
+  "code": "RC-TD-MATH-03",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "1 heure",
+  "bareme": "/ 10",
+  "chapitre": "Fonctions ln et exponentielle",
+  "consignes": "La présentation et la qualité de la rédaction seront prises en compte. Les limites doivent être justifiées par les théorèmes du cours.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calculs de limites",
+      "points": "4 pts",
+      "bareme_detail": "4 × 1 pt",
+      "enonce": "<p>Calcule chacune des limites suivantes en justifiant ta réponse :</p><ol type='a'><li>$\\displaystyle\\lim_{x\\to 0^{+}} x\\ln x$</li><li>$\\displaystyle\\lim_{x\\to 0}\\frac{e^{x}-1}{x}$</li><li>$\\displaystyle\\lim_{x\\to +\\infty}\\bigl(x-\\ln x\\bigr)$</li><li>$\\displaystyle\\lim_{x\\to 0}\\frac{\\ln(1+x)}{x}$</li></ol>",
+      "correction": "<p><strong>a)</strong> Croissance comparée : <span class='reponse'>$\\lim_{x\\to 0^{+}} x\\ln x = 0$</span>.</p><p><strong>b)</strong> Taux d'accroissement de $x\\mapsto e^{x}$ en 0 : la limite vaut $e^{0}=$ <span class='reponse'>$1$</span>.</p><p><strong>c)</strong> $x-\\ln x=x\\left(1-\\frac{\\ln x}{x}\\right)$ ; comme $\\frac{\\ln x}{x}\\to 0$, on obtient <span class='reponse'>$+\\infty$</span>.</p><p><strong>d)</strong> Taux d'accroissement de $x\\mapsto\\ln(1+x)$ en 0 : la limite vaut <span class='reponse'>$1$</span>.</p>"
+    },
+    {
+      "titre": "Exercice 2 — Étude de fonction",
+      "points": "6 pts",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 1 pt · d) 2 pts",
+      "enonce": "<p>Soit $f$ la fonction définie sur $]0\\,;+\\infty[$ par : $$f(x)=x-\\ln x$$</p><ol type='a'><li>Calcule les limites de $f$ aux bornes de son ensemble de définition.</li><li>Étudie le sens de variation de $f$ et dresse son tableau de variation.</li><li>Déduis-en que pour tout $x>0$, $\\ln x < x$.</li><li>Montre que l'équation $f(x)=2$ admet une solution unique $\\alpha$ sur $]1\\,;+\\infty[$, puis donne un encadrement de $\\alpha$ à $10^{-1}$ près.</li></ol>",
+      "correction": "<p><strong>a)</strong> En $0^{+}$ : $-\\ln x\\to+\\infty$ donc $f(x)\\to$ <span class='reponse'>$+\\infty$</span>. En $+\\infty$ : $x-\\ln x=x\\bigl(1-\\frac{\\ln x}{x}\\bigr)\\to$ <span class='reponse'>$+\\infty$</span>.</p><p><strong>b)</strong> $f'(x)=1-\\dfrac{1}{x}=\\dfrac{x-1}{x}$. $f'<0$ sur $]0\\,;1[$ et $f'>0$ sur $]1\\,;+\\infty[$ : $f$ est strictement décroissante puis strictement croissante, avec un minimum $f(1)=$ <span class='reponse'>$1$</span>.</p><p><strong>c)</strong> Le minimum de $f$ vaut $1>0$, donc $f(x)=x-\\ln x>0$, c'est-à-dire <span class='reponse'>$\\ln x < x$</span> pour tout $x>0$.</p><p><strong>d)</strong> Sur $]1\\,;+\\infty[$, $f$ est continue et strictement croissante : bijection sur $]1\\,;+\\infty[$. Comme $2$ est dans l'intervalle image, l'équation $f(x)=2$ admet une solution unique $\\alpha$. On a $f(3{,}1)\\approx1{,}969<2$ et $f(3{,}2)\\approx2{,}037>2$ : <span class='reponse'>$\\alpha\\in\\,]3{,}1\\,;\\,3{,}2[$</span>.</p>"
+    }
+  ]
+}

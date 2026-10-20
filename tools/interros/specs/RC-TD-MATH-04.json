@@ -1,0 +1,41 @@
+{
+  "code": "RC-TD-MATH-04",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "2 heures",
+  "bareme": "/ 20",
+  "chapitre": "Suites · Intégration · Probabilités · Équations",
+  "consignes": "Le sujet comporte quatre exercices indépendants. La clarté des raisonnements et la précision des calculs seront prises en compte dans la notation.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Suites : la tontine de la coopérative",
+      "points": "5 pts",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt",
+      "enonce": "<p>Une coopérative de productrices d'attiéké de Dabou organise une tontine. Le premier mois, chaque membre cotise <strong>50 000 F CFA</strong>. Chaque mois suivant, la cotisation augmente de <strong>10 %</strong> par rapport au mois précédent. On note $u_n$ la cotisation du mois $n$ ($n\\geq 1$).</p><ol type='a'><li>Justifie que $(u_n)$ est une suite géométrique dont tu préciseras la raison et le premier terme. Exprime $u_n$ en fonction de $n$.</li><li>Calcule la cotisation versée le douzième mois. <em>(Arrondir au franc près.)</em></li><li>Calcule le montant total cumulé par un membre au bout de 12 mois.</li><li>À partir de quel mois la cotisation mensuelle dépasse-t-elle 100 000 F ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $u_{n+1}=1{,}1\\,u_n$ : suite géométrique de raison $q=1{,}1$ et de premier terme $u_1=50\\,000$. Donc <span class='reponse'>$u_n=50\\,000\\times(1{,}1)^{n-1}$</span>.</p><p><strong>b)</strong> $u_{12}=50\\,000\\times(1{,}1)^{11}=50\\,000\\times2{,}8531\\approx$ <span class='reponse'>$142\\,656$ F</span>.</p><p><strong>c)</strong> $S_{12}=u_1\\times\\dfrac{q^{12}-1}{q-1}=50\\,000\\times\\dfrac{(1{,}1)^{12}-1}{0{,}1}=50\\,000\\times\\dfrac{3{,}1384-1}{0{,}1}\\approx$ <span class='reponse'>$1\\,069\\,214$ F</span>.</p><p><strong>d)</strong> $u_n>100\\,000\\iff(1{,}1)^{n-1}>2\\iff n-1>\\dfrac{\\ln 2}{\\ln 1{,}1}\\approx7{,}3$, donc $n\\geq9$. Vérification : $u_9=50\\,000\\times(1{,}1)^{8}\\approx107\\,179$ F. <span class='reponse'>À partir du 9ᵉ mois.</span></p>"
+    },
+    {
+      "titre": "Exercice 2 — Calcul intégral",
+      "points": "5 pts",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts",
+      "enonce": "<ol type='a'><li>À l'aide d'une intégration par parties, calcule : $$I=\\int_1^{e}\\ln x\\,\\mathrm{d}x$$</li><li>Calcule : $$J=\\int_0^{1} x\\,e^{x^{2}}\\,\\mathrm{d}x$$ <em>(on pourra poser $u=x^{2}$).</em></li><li>Dans un repère orthonormé d'unité 2 cm, soit $\\mathcal{C}$ la courbe de $x\\mapsto\\sqrt{x}$ et $\\mathcal{D}$ celle de $x\\mapsto x^{2}$. Calcule l'aire, en cm², du domaine délimité par $\\mathcal{C}$ et $\\mathcal{D}$ sur $[0\\,;1]$.</li></ol>",
+      "correction": "<p><strong>a)</strong> IPP avec $u=\\ln x$, $v'=1$ : $I=\\bigl[x\\ln x-x\\bigr]_1^{e}=(e-e)-(0-1)=$ <span class='reponse'>$1$</span>.</p><p><strong>b)</strong> $u=x^{2}\\Rightarrow\\mathrm{d}u=2x\\,\\mathrm{d}x$ : $J=\\dfrac{1}{2}\\displaystyle\\int_0^{1}e^{u}\\,\\mathrm{d}u=\\dfrac{1}{2}\\bigl[e^{x^{2}}\\bigr]_0^{1}=$ <span class='reponse'>$\\dfrac{e-1}{2}$</span>.</p><p><strong>c)</strong> Sur $[0\\,;1]$, $\\sqrt{x}\\geq x^{2}$ : $\\mathcal{A}=\\displaystyle\\int_0^{1}\\!\\bigl(\\sqrt{x}-x^{2}\\bigr)\\mathrm{d}x=\\left[\\frac{2}{3}x^{3/2}-\\frac{x^{3}}{3}\\right]_0^{1}=\\frac{2}{3}-\\frac{1}{3}=\\dfrac{1}{3}$ u.a. Comme l'unité du repère est 2 cm sur chaque axe, 1 u.a. $=4$ cm², d'où $\\mathcal{A}=\\dfrac{4}{3}\\approx$ <span class='reponse'>$1{,}33$ cm²</span>.</p>"
+    },
+    {
+      "titre": "Exercice 3 — Probabilités : la tombola de la kermesse",
+      "points": "5 pts",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt",
+      "enonce": "<p>À la kermesse du lycée, un sac opaque contient <strong>5 jetons</strong> indiscernables au toucher : <strong>3 jetons orange</strong> et <strong>2 jetons verts</strong>. Un élève tire successivement, <strong>sans remise</strong>, deux jetons du sac.</p><ol type='a'><li>Construis un arbre pondéré décrivant cette expérience.</li><li>Calcule la probabilité que les deux jetons tirés soient orange.</li><li>Calcule la probabilité qu'il obtienne au moins un jeton vert.</li><li>Sachant que le premier jeton tiré est orange, quelle est la probabilité que le second soit vert ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Premier tirage : $O\\,(\\frac{3}{5})$ / $V\\,(\\frac{2}{5})$ ; second tirage conditionnel selon le jeton restant.</p><p><strong>b)</strong> $P(O_1\\cap O_2)=\\dfrac{3}{5}\\times\\dfrac{2}{4}=$ <span class='reponse'>$\\dfrac{3}{10}=0{,}3$</span>.</p><p><strong>c)</strong> Événement contraire de « 2 orange » : $P(\\text{au moins un vert})=1-\\dfrac{3}{10}=$ <span class='reponse'>$\\dfrac{7}{10}=0{,}7$</span>.</p><p><strong>d)</strong> Après un premier jeton orange, il reste 4 jetons dont 2 verts : <span class='reponse'>$\\dfrac{2}{4}=\\dfrac{1}{2}$</span>.</p>"
+    },
+    {
+      "titre": "Exercice 4 — Équations et inéquations",
+      "points": "5 pts",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt",
+      "enonce": "<p>Résous dans $\\mathbb{R}$ :</p><ol type='a'><li>$e^{2x}-3e^{x}+2=0$ <em>(on pourra poser $X=e^{x}$)</em></li><li>$e^{x}\\geq e^{3x-2}$</li><li>$\\ln(3x-1)-\\ln x=\\ln 2$</li><li>$\\ln\\!\\left(x^{2}\\right)=4$</li></ol>",
+      "correction": "<p><strong>a)</strong> $X=e^{x}>0$ : $X^{2}-3X+2=0\\iff X=1$ ou $X=2$, soit <span class='reponse'>$x=0$ ou $x=\\ln 2$</span>.</p><p><strong>b)</strong> $e^{x}\\geq e^{3x-2}\\iff x\\geq3x-2\\iff x\\leq1$ : <span class='reponse'>$S=\\,]-\\infty\\,;1]$</span>.</p><p><strong>c)</strong> Domaine : $x>\\frac{1}{3}$. $\\ln\\frac{3x-1}{x}=\\ln2\\iff3x-1=2x\\iff$ <span class='reponse'>$x=1$</span> (valide).</p><p><strong>d)</strong> Domaine : $x\\neq0$. $x^{2}=e^{4}\\iff|x|=e^{2}$ : <span class='reponse'>$x=e^{2}$ ou $x=-e^{2}$</span> (attention, deux solutions !).</p>"
+    }
+  ]
+}

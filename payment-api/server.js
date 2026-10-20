@@ -200,11 +200,11 @@ const PLANS = {
   starter: { name: 'Starter (Mensuel)', price: 500, days: 30, available: true },
   pro: { name: 'Pro (Mensuel)', price: 1000, days: 30, available: true },
   annual: { name: 'Annuel (365 jours)', price: 10000, days: 365, available: true },
-  elite: { name: 'Élite', price: 2000, days: 30, available: false },
+  elite: { name: 'Élite', price: 2000, days: 30, available: true },
   // Forfaits Espace Universitaire (étudiants — minimum 1 000 F)
   uni_starter: { name: 'Pass Étudiant (Mensuel)', price: 1000, days: 30, available: true },
   uni_pro: { name: 'Pass Licence Pro (Mensuel)', price: 2000, days: 30, available: true },
-  uni_elite: { name: 'Pass Excellence (Mensuel)', price: 3000, days: 30, available: false }
+  uni_elite: { name: 'Pass Excellence (Mensuel)', price: 3000, days: 30, available: true }
 };
 
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
@@ -1231,6 +1231,69 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     res.sendFile(filePath);
   } catch (e) {
     console.error('[Fiche] Erreur:', e);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// --------------------------------------------------------------------------
+// ROUTE 4.6b : SUJETS & INTERROS PDF (réservés Pass Élite / Excellence / VIP / Annuel)
+// Les PDF vivent dans payment-api/interros/ et ne sont jamais exposés en statique :
+// chaque téléchargement exige un sessionToken valide + un plan de niveau Élite.
+// --------------------------------------------------------------------------
+const INTERROS_DIR = path.join(__dirname, 'interros');
+const INTERROS_CATALOG_PATH = path.join(INTERROS_DIR, 'catalog.json');
+const ELITE_PLANS = new Set(['elite', 'uni_elite', 'vip', 'annual', 'annuel']);
+let interrosCatalogCache = null;
+function getInterrosCatalog() {
+  if (interrosCatalogCache) return interrosCatalogCache;
+  try {
+    interrosCatalogCache = JSON.parse(fs.readFileSync(INTERROS_CATALOG_PATH, 'utf8'));
+  } catch (e) {
+    console.warn('[Interros] catalog.json introuvable : section désactivée.');
+    interrosCatalogCache = [];
+  }
+  return interrosCatalogCache;
+}
+
+// Catalogue public (métadonnées uniquement — aucun contenu) : sert à l'affichage
+// de la liste et à l'upsell auprès des comptes non-Élite.
+app.get('/api/interros/catalog', limiter(15 * 60 * 1000, 120), (req, res) => {
+  res.set('Cache-Control', 'public, max-age=300');
+  res.json({ success: true, interros: getInterrosCatalog() });
+});
+
+const interroLimiter = limiter(15 * 60 * 1000, 300);
+app.get('/api/interro/:code/:part', interroLimiter, async (req, res) => {
+  try {
+    const { code, part } = req.params;
+    if (!/^[A-Z0-9-]{4,40}$/i.test(code) || !['enonce', 'corrige'].includes(part)) {
+      return res.status(404).json({ success: false, error: 'Document introuvable.' });
+    }
+    const filePath = path.join(INTERROS_DIR, `${code}_${part}.pdf`);
+    if (!filePath.startsWith(INTERROS_DIR + path.sep) || !fs.existsSync(filePath)) {
+      return res.status(404).json({ success: false, error: 'Document introuvable.' });
+    }
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'auth_required' });
+    }
+    let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
+    const candidates = [user];
+    if (user) {
+      const ghostPhone = String(user.whatsapp || user.contact || user.phone || '').replace(/\D/g, '').slice(-10);
+      if (ghostPhone.length === 10) {
+        const real = await findUserByAnyId(ghostPhone).catch(() => null);
+        if (real && real._docId !== user._docId) candidates.push(real);
+      }
+    }
+    const status = mergedPremiumStatus(candidates);
+    if (!status.isPremium || !ELITE_PLANS.has(String(status.premiumPlan || '').toLowerCase())) {
+      return res.status(403).json({ success: false, error: 'elite_required' });
+    }
+    res.set('Cache-Control', 'private, max-age=300');
+    res.sendFile(filePath);
+  } catch (e) {
+    console.error('[Interro] Erreur:', e);
     res.status(500).json({ success: false, error: 'Erreur serveur.' });
   }
 });

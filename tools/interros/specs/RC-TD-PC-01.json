@@ -1,0 +1,27 @@
+{
+  "code": "RC-TD-PC-01",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale D",
+  "classe_key": "Terminale_D",
+  "duree": "1 heure",
+  "bareme": "/ 10",
+  "chapitre": "Acide faible · Chute libre et lancer horizontal",
+  "consignes": "On donne : $pK_a(\\mathrm{CH_3COOH/CH_3COO^-})=4{,}8$ et $g=10\\ \\mathrm{m/s^{2}}$. Les applications numériques doivent comporter l'unité.",
+  "exercices": [
+    {
+      "titre": "Partie Chimie — L'acide éthanoïque",
+      "points": "5 pts",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt",
+      "enonce": "<p>On prépare une solution aqueuse $S$ d'acide éthanoïque $\\mathrm{CH_3COOH}$ de concentration $C=1{,}0\\times10^{-2}$ mol/L. La mesure du pH donne $\\mathrm{pH}=3{,}4$.</p><ol type='a'><li>Écris l'équation de la réaction de l'acide éthanoïque avec l'eau.</li><li>Calcule la concentration en ions oxonium $\\left[\\mathrm{H_3O^{+}}\\right]$ de la solution.</li><li>L'acide éthanoïque est-il totalement dissocié dans l'eau ? Justifie et calcule son taux d'avancement final $\\tau$.</li><li>On dilue la solution $S$ dix fois. Donne, sans nouveau calcul complexe, la valeur approchée du pH de la solution diluée.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\mathrm{CH_3COOH + H_2O \\rightleftharpoons CH_3COO^{-} + H_3O^{+}}$</p><p><strong>b)</strong> $\\left[\\mathrm{H_3O^{+}}\\right]=10^{-\\mathrm{pH}}=10^{-3{,}4}\\approx$ <span class='reponse'>$4{,}0\\times10^{-4}$ mol/L</span>.</p><p><strong>c)</strong> Si l'acide était fort, $[\\mathrm{H_3O^{+}}]=C=10^{-2}$ mol/L. Or $4{,}0\\times10^{-4}<10^{-2}$ : <span class='reponse'>dissociation partielle, acide faible</span>. $\\tau=\\dfrac{4{,}0\\times10^{-4}}{10^{-2}}=0{,}04=$ <span class='reponse'>4 %</span>.</p><p><strong>d)</strong> Pour un acide faible, $\\mathrm{pH}\\approx\\frac{1}{2}\\left(pK_a-\\log C'\\right)$ avec $C'=10^{-3}$ : $\\mathrm{pH}\\approx\\frac{1}{2}(4{,}8+3)=$ <span class='reponse'>$\\approx 3{,}9$</span>.</p>"
+    },
+    {
+      "titre": "Partie Physique — Le lancer de noix de coco",
+      "points": "5 pts",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt",
+      "enonce": "<p>Du haut d'un immeuble de hauteur $h=20$ m, un ouvrier pousse horizontalement une noix de coco avec une vitesse initiale $v_0=10$ m/s. On néglige la résistance de l'air et on étudie le mouvement dans le repère $(O\\,;\\vec{i}\\,;\\vec{j})$ dont l'origine est au sol, à la verticale du point de départ.</p><ol type='a'><li>Établis les équations horaires $x(t)$ et $y(t)$ du mouvement.</li><li>Calcule la durée de la chute de la noix de coco.</li><li>Détermine la portée : la distance entre le pied de l'immeuble et le point d'impact au sol.</li><li>Calcule la valeur de la vitesse de la noix à l'instant de l'impact.</li></ol>",
+      "correction": "<p><strong>a)</strong> Chute libre avec $v_0$ horizontale : <span class='reponse'>$x(t)=10\\,t$</span> ; <span class='reponse'>$y(t)=-\\frac{1}{2}gt^{2}+h=-5t^{2}+20$</span>.</p><p><strong>b)</strong> Impact : $y(t)=0\\iff5t^{2}=20\\iff t=$ <span class='reponse'>$2$ s</span>.</p><p><strong>c)</strong> Portée : $x(2)=10\\times2=$ <span class='reponse'>$20$ m</span>.</p><p><strong>d)</strong> $v_x=10$ m/s et $v_y=-gt=-20$ m/s : $v=\\sqrt{v_x^{2}+v_y^{2}}=\\sqrt{100+400}=\\sqrt{500}=$ <span class='reponse'>$10\\sqrt{5}\\approx22{,}4$ m/s</span>.</p>"
+    }
+  ]
+}
