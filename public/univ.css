@@ -35,22 +35,6 @@ body.motion-ui {
   letter-spacing: -.005em;
   -webkit-font-smoothing: antialiased;
 }
-body.motion-ui.dark-mode {
-  --bg: #0a0e19;
-  --bg-card: #131929;
-  --bg-card-hover: #1a2133;
-  --bg-surface: #131929;
-  --text: #f1f5f9;
-  --text-muted: #cbd5e1;
-  --text-dim: #9aa6bd;
-  --border: #242c42;
-  --accent: #818cf8;
-  --accent-bg: #1e1b4b;
-  --orange: #818cf8;
-  --purple: #818cf8;
-  --orange-bg: #1e1b4b;
-  --purple-bg: #1e1b4b;
-}
 html { scroll-behavior: smooth; }
 
 /* ---------- Keyframes ---------- */
@@ -112,7 +96,6 @@ body.motion-ui .topbar {
   box-shadow: none;
   animation: miDrop .6s var(--ease-out) both;
 }
-body.motion-ui.dark-mode .topbar { background: rgba(19, 25, 41, .8); border-bottom-color: var(--border); }
 body.motion-ui #breadcrumb > * { animation: miSlideIn .5s var(--ease-out) both; }
 body.motion-ui #breadcrumb > *:nth-child(2) { animation-delay: .05s; }
 body.motion-ui #breadcrumb > *:nth-child(3) { animation-delay: .1s; }

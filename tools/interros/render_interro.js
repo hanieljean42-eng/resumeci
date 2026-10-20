@@ -10,7 +10,11 @@ const puppeteer = require('puppeteer-core');
 const ROOT = path.join(__dirname, '..', '..');
 const OUT_DIR = path.join(ROOT, '_interros');
 const KATEX_CSS = path.join(ROOT, 'node_modules', 'katex', 'dist', 'katex.min.css');
-const CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const BROWSERS = [
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+  'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+];
 
 const TYPES = {
   interro: { label: 'INTERROGATION', accent: '#2563eb', badge: '📝' },
@@ -42,13 +46,14 @@ function pageHtml(spec, corrige) {
   const T = TYPES[spec.type] || TYPES.interro;
   const accent = corrige ? '#059669' : T.accent;
   const exos = spec.exercices.map((ex, i) => {
+    const enonceHtml = `${md(ex.enonce)}${ex.svg ? `<div class="exo-schema">${ex.svg}</div>` : ''}`;
     const body = corrige && ex.correction
-      ? `<div class="exo-body">${md(ex.enonce)}</div>
+      ? `<div class="exo-body">${enonceHtml}</div>
          <div class="correction"><div class="correction-tag">✔ Corrigé</div>${md(ex.correction)}</div>`
-      : `<div class="exo-body">${md(ex.enonce)}</div>`;
+      : `<div class="exo-body">${enonceHtml}</div>`;
     return `<section class="exo">
       <div class="exo-head">
-        <div class="exo-title">${ex.titre || 'Exercice ' + (i + 1)}${ex.points ? ` <span class="exo-pts">(${ex.points})</span>` : ''}</div>
+        <div class="exo-title">${md(ex.titre || 'Exercice ' + (i + 1))}${ex.points ? ` <span class="exo-pts">(${ex.points})</span>` : ''}</div>
         ${corrige && ex.bareme_detail ? `<div class="exo-bareme">${ex.bareme_detail}</div>` : ''}
       </div>
       ${ex.consigne ? `<div class="consigne">${md(ex.consigne)}</div>` : ''}
@@ -96,6 +101,8 @@ function pageHtml(spec, corrige) {
   .exo-body { margin-top: 1.5mm; }
   .exo-body ol, .exo-body ul { margin: 1mm 0; padding-left: 7mm; }
   .exo-body li { margin-bottom: 1.2mm; }
+  .exo-schema { margin: 2mm 0; text-align: center; }
+  .exo-schema svg { max-width: 100%; }
   .katex-display { margin: 1.5mm 0; }
 
   /* ---------- Corrigé ---------- */
@@ -124,10 +131,10 @@ ${corrige ? '' : '<div class="watermark">ResumeCI</div>'}
     <div class="info-cell"><div class="info-label">Classe</div><div class="info-value">${spec.classe}</div></div>
     <div class="info-cell"><div class="info-label">Durée</div><div class="info-value">${spec.duree}</div></div>
     <div class="info-cell"><div class="info-label">Barème</div><div class="info-value">${spec.bareme}</div></div>
-    ${spec.chapitre ? `<div class="info-cell" style="flex:1.6"><div class="info-label">Chapitre(s)</div><div class="info-value" style="font-size:9.5pt">${spec.chapitre}</div></div>` : ''}
+    ${spec.chapitre ? `<div class="info-cell" style="flex:1.6"><div class="info-label">Chapitre(s)</div><div class="info-value" style="font-size:9.5pt">${md(spec.chapitre)}</div></div>` : ''}
   </div>
   ${corrige ? '' : `<div class="eleve-line"><div class="f"><strong>Nom &amp; Prénom :</strong></div><div class="f"><strong>Classe :</strong></div><div class="f"><strong>Établissement :</strong></div><div class="f" style="flex:0.7"><strong>Date :</strong></div></div>`}
-  ${spec.consignes ? `<div class="consignes"><strong>Consignes :</strong> ${spec.consignes}</div>` : ''}
+  ${spec.consignes ? `<div class="consignes"><strong>Consignes :</strong> ${md(spec.consignes)}</div>` : ''}
   <div class="content">${exos}</div>
 </div></body></html>`;
 }
@@ -136,11 +143,18 @@ async function main() {
   const specs = process.argv.slice(2);
   if (!specs.length) { console.error('Usage: node render_interro.js <spec.json> [autres...]'); process.exit(1); }
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const browser = await puppeteer.launch({
-    executablePath: CHROME,
-    userDataDir: path.join(require('os').tmpdir(), 'rc_interro_' + Date.now()),
-    args: ['--no-sandbox', '--allow-file-access-from-files']
-  });
+  let browser = null, lastErr = null;
+  for (const exe of BROWSERS.filter(fs.existsSync)) {
+    try {
+      browser = await puppeteer.launch({
+        executablePath: exe,
+        userDataDir: path.join(require('os').tmpdir(), 'rc_interro_' + Date.now()),
+        args: ['--no-sandbox', '--allow-file-access-from-files']
+      });
+      break;
+    } catch (e) { lastErr = e; console.error(`Launch ${exe} : ${e.message}`); }
+  }
+  if (!browser) throw lastErr || new Error('Aucun navigateur Chromium trouvé');
   try {
     for (const specPath of specs) {
       const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));

@@ -113,10 +113,9 @@ window.renderFlashcardOverlay = function() {
   const { cards, index } = window.FC_STATE;
   const card = cards[index];
   const progressPct = ((index + 1) / cards.length) * 100;
-  const isDark = document.body.classList.contains('dark-mode');
 
   overlay.innerHTML = `
-    <div class="fc-container${isDark ? ' fc-dark' : ''}">
+    <div class="fc-container">
       <div class="fc-header">
         <h3>🎴 Flashcards</h3>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -193,10 +192,9 @@ window.finishFlashcards = function() {
   const { session, cards } = window.FC_STATE;
   const total = session.hard + session.good + session.easy;
   const score = Math.round(((session.good + session.easy) / total) * 100);
-  const isDark = document.body.classList.contains('dark-mode');
 
   overlay.innerHTML = `
-    <div class="fc-container${isDark ? ' fc-dark' : ''}" style="text-align:center;justify-content:center;">
+    <div class="fc-container" style="text-align:center;justify-content:center;">
       <div style="font-size:48px;margin-bottom:12px;">${score >= 80 ? '🏆' : score >= 50 ? '💪' : '📚'}</div>
       <h3 style="margin-bottom:6px;">Session terminée !</h3>
       <p style="color:#64748b;margin-bottom:24px;">Tu as révisé <strong>${total}</strong> carte${total > 1 ? 's' : ''}.</p>

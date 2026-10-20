@@ -626,10 +626,10 @@ async function loadData() {
   DATA.structure = struct;
   DATA.stats = stats;
   window.DATA = DATA;
-  if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+  document.body.classList.remove('dark-mode');
+  localStorage.removeItem('theme');
   renderSidebar();
   renderFavsSidebar();
-  checkAutoNight();
   if (typeof checkStreakValidity === 'function') {
     checkStreakValidity();
   }
@@ -2078,10 +2078,6 @@ window.addEventListener('appinstalled', () => {
   document.getElementById('installPrompt')?.classList.remove('show');
   refreshInstallButton();
 });
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-}
 async function shareSite() {
   const isUnivShare = window.isUniversityUser && window.isUniversityUser();
   const title = CURRENT_FICHE ? CURRENT_FICHE.file.replace(/\.html$/, '') : (isUnivShare ? 'ResumeCI — Espace Universitaire' : 'ResumeCI — 1009 Fiches BAC & BEPC');
@@ -2147,7 +2143,7 @@ function showDashboard(push = true) {
   document.getElementById('breadcrumb').innerHTML =
     `<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
   document.getElementById('topbarActions').innerHTML =
-    `<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> Mode</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>${getTopbarStreakAndProfileHtml()}`;
+    `<button class="btn" id="topbarInstallBtn" onclick="openInstallPrompt()" style="display:none"><i class="fas fa-download"></i> Installer</button><button class="btn" onclick="shareSite()"><i class="fas fa-share-nodes"></i> Partager</button>${getTopbarStreakAndProfileHtml()}`;
   refreshInstallButton();
   let cards = '';
   let classesToRender = getOrderedClasses(structure);
@@ -5014,12 +5010,6 @@ async function startVoiceSearch() {
   } catch (err) {
     setVoiceListening(false);
     console.error('SpeechRecognition start error', err);
-  }
-}
-function checkAutoNight() {
-  const h = new Date().getHours();
-  if (h >= 21 || h < 6) {
-    if (!document.body.classList.contains('dark-mode')) toggleDarkMode();
   }
 }
 document.addEventListener('keydown', e => {
