@@ -2289,6 +2289,14 @@ async function fetchSecureFiche(cls, sub, file) {
   const apiUrl = `${apiBase}/api/fiche/${encodeURIComponent(cls)}/${encodeURIComponent(sub)}/${encodeURIComponent(file)}`;
   const headers = {};
   if (window.USER_PROFILE && window.USER_PROFILE.sessionToken) headers.Authorization = 'Bearer ' + window.USER_PROFILE.sessionToken;
+  // Hors connexion : servir le cache d'abord pour éviter l'attente du timeout réseau.
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    try {
+      const cache = await caches.open('resumeci-fiches-v3');
+      const cached = await cache.match(apiUrl);
+      if (cached) return { status: 200, html: await cached.text() };
+    } catch (e0) {}
+  }
   try {
     const resp = await fetch(apiUrl, { headers });
     if (!resp.ok) return { status: resp.status };
@@ -2306,6 +2314,34 @@ async function fetchSecureFiche(cls, sub, file) {
     } catch (e2) {}
     return { status: 0 };
   }
+}
+
+// Pas de paywall ici : cette fiche n'est simplement pas disponible hors connexion
+// (jamais téléchargée, cache effacé par le navigateur, ou erreur réseau temporaire).
+// Les fiches déjà téléchargées restent lisibles via le cache 'resumeci-fiches-v3'.
+function renderOfflineFicheNotice(cls, sub, file) {
+  const nameLocked = file.replace('Fiche_', '').replace(/\.(html|md)$/, '').replace(/_/g, ' ');
+  const clsKey = Object.keys(DATA.structure).find(k => k.toLowerCase().replace(/\s+/g, '_') === cls.toLowerCase()) || cls;
+  const bc = `<div class="breadcrumb" style="margin-bottom:14px"><a href="#" onclick="showDashboard();return false;"><i class="fas fa-home"></i></a><span class="sep">/</span><a href="#" onclick="showClass('${clsKey}');return false;">${escapeHtml(clsKey.replace(/_/g, ' '))}</a></div>`;
+  const isPremium = !!(window.hasActiveSubscription && window.hasActiveSubscription());
+  const hint = isPremium
+    ? `Ton Pass est actif : cette fiche n'est juste pas encore enregistrée sur ton téléphone. Reconnecte-toi pour la lire ou re-télécharge le <b>Pack Hors-Ligne</b> de ta classe.`
+    : `Reconnecte-toi à Internet pour lire cette fiche. Si tu as un Pass, pense à télécharger le <b>Pack Hors-Ligne</b> de ta classe pour réviser sans connexion.`;
+  const card = `
+    <div class="lesson-content" style="max-width:640px;margin:40px auto;text-align:center;padding:34px 30px 30px;background:#fff;border:2px solid #f59e0b;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.14);">
+      <div style="font-size:50px;margin-bottom:10px;">📴</div>
+      <h3 style="margin:0 0 8px;color:#92400e;font-size:20px;">Fiche non disponible hors ligne</h3>
+      <p style="margin:0 0 6px;color:#444;font-size:15px;font-weight:600;">${escapeHtml(nameLocked)}</p>
+      <p style="margin:0 0 18px;color:#666;font-size:13.5px;line-height:1.6;">${hint}</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn" onclick="showClass('${clsKey}')"><i class="fas fa-arrow-left"></i> Retour à ma classe</button>
+        <button class="btn" onclick="location.reload()" style="background:linear-gradient(135deg,#f59e0b,#d97706);border:none;color:#fff;"><i class="fas fa-rotate"></i> Réessayer</button>
+      </div>
+    </div>`;
+  const content = document.getElementById('content');
+  if (content) content.innerHTML = bc + card;
+  document.title = `${nameLocked} (hors ligne) - ResumeCI`;
+  window.scrollTo(0, 0);
 }
 
 async function showFiche(cls, sub, file, push = true) {
@@ -2337,7 +2373,12 @@ async function showFiche(cls, sub, file, push = true) {
   try {
     const res = await fetchSecureFiche(cls, sub, file);
     if (res.status !== 200) {
-      renderSecureFicheLock(cls, sub, file, res.status === 401 ? 'auth' : 'premium');
+      // 401 = session requise ; 403 = le SERVEUR refuse (non abonné) → vrai paywall.
+      // Tout le reste (0 = hors connexion, 404, 5xx) n'est PAS un refus d'abonnement :
+      // un abonné offline dont la fiche n'est pas en cache ne doit jamais voir le paywall.
+      if (res.status === 401) { renderSecureFicheLock(cls, sub, file, 'auth'); return; }
+      if (res.status === 403) { renderSecureFicheLock(cls, sub, file, 'premium'); return; }
+      renderOfflineFicheNotice(cls, sub, file);
       return;
     }
     const rawHtml = res.html;
