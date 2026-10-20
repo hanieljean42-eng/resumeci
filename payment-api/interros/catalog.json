@@ -91,6 +91,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-MATH-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Fonctions polynômes et rationnelles · Primitives et calcul intégral",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-MATH-03",
+    "type": "bac",
+    "typeLabel": "Examen type BAC",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "4 heures",
+    "bareme": "20 points",
+    "chapitre": "Étude de fonction · Suites · Probabilités · Statistiques",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-PHILO-01",
     "type": "devoir",
     "typeLabel": "Devoir surveillé",
@@ -195,6 +221,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-PC-03",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Champ magnétique et loi de Laplace · Solutions aqueuses et pH",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -204,6 +243,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Les nationalismes en Afrique · La CEDEAO",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-HG-02",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "L'ère de la bipolarisation · Les relations UE-ACP",
     "exercices": 2,
     "corrige": true
   },
@@ -312,6 +364,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-PC-03",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Auto-induction (circuit RL) · Acides α-aminés",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PHILO-01",
     "type": "devoir",
     "typeLabel": "Devoir surveillé",
@@ -360,6 +425,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "La reproduction chez les spermaphytes · La transmission d'un caractère chez l'Homme",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-04",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Le fonctionnement du cœur · L'infection par le VIH",
     "exercices": 2,
     "corrige": true
   }

@@ -1,0 +1,28 @@
+{
+  "code": "RC-TA-MATH-02",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale A",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Fonctions polynômes et rationnelles · Primitives et calcul intégral",
+  "consignes": "Les étapes de calcul sont notées. Les graphiques demandés seront propres et légendés.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Fonction rationnelle",
+      "points": "10 pts",
+      "consigne": "Soit $f$ la fonction définie par $f(x)=\\dfrac{2x-3}{x-1}$ et $(\\mathscr{C})$ sa courbe représentative.",
+      "enonce": "<ol type='a'><li>Détermine l'ensemble de définition de $f$.</li><li>Calcule les limites de $f$ aux bornes de son ensemble et déduis-en les asymptotes de $(\\mathscr{C})$.</li><li>Calcule $f'(x)$ et dresse le tableau de variations complet de $f$.</li><li>Montre que le point $\\Omega(1\\ ;\\ 2)$ est centre de symétrie de $(\\mathscr{C})$.</li><li>Donne les points d'intersection de $(\\mathscr{C})$ avec les axes, puis esquisse l'allure de la courbe.</li></ol>",
+      "correction": "<p><strong>a)</strong> $x-1\\neq0$ → <span class='reponse'>$\\mathcal{D}_f=\\mathbb{R}\\setminus\\{1\\}$</span>.</p><p><strong>b)</strong> $\\lim_{x\\to\\pm\\infty}f=2$ → <span class='reponse'>asymptote horizontale $y=2$</span> ; $\\lim_{x\\to1^{+}}f=+\\infty$, $\\lim_{x\\to1^{-}}f=-\\infty$ → <span class='reponse'>asymptote verticale $x=1$</span>.</p><p><strong>c)</strong> $f'(x)=\\frac{2(x-1)-(2x-3)}{(x-1)^{2}}=\\frac{1}{(x-1)^{2}}>0$ → <span class='reponse'>$f$ strictement croissante sur chaque intervalle</span> de $\\mathcal{D}_f$.</p><p><strong>d)</strong> $f(1+h)+f(1-h)=\\frac{2h-1}{h}+\\frac{-2h-1}{-h}=\\frac{2h-1+2h+1}{h}=4=2\\times2$ → <span class='reponse'>$\\Omega(1;2)$ centre de symétrie</span>.</p><p><strong>e)</strong> Axe $Ox$ : $f(x)=0$ ⇔ $x=\\frac{3}{2}$ ; axe $Oy$ : $f(0)=3$ → <span class='reponse'>$(\\frac{3}{2};0)$ et $(0;3)$</span>. Courbe : hyperbole croissante centrée en $\\Omega$, passant par ces points.</p>",
+      "bareme_detail": "a) 1 pt · b) 2,5 pts · c) 2,5 pts · d) 2 pts · e) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Primitives et calcul intégral",
+      "points": "10 pts",
+      "consigne": "Soit $g$ définie sur $\\mathbb{R}$ par $g(x)=2x^{3}-6x+1$ et $h$ définie sur $]0;+\\infty[$ par $h(x)=\\frac{3}{x}+\\mathrm{e}^{x}$.",
+      "enonce": "<ol type='a'><li>Détermine l'ensemble des primitives de $g$ sur $\\mathbb{R}$, puis celle $G$ vérifiant $G(0)=2$.</li><li>Calcule $\\displaystyle\\int_{0}^{2}g(x)\\,\\mathrm{d}x$ et interprète le signe du résultat.</li><li>Détermine une primitive de $h$ sur $]0;+\\infty[$.</li><li>Calcule $\\displaystyle\\int_{1}^{\\mathrm{e}}h(x)\\,\\mathrm{d}x$ à $10^{-2}$ près.</li></ol>",
+      "correction": "<p><strong>a)</strong> $G(x)=\\frac{2x^{4}}{4}-3x^{2}+x+C=\\frac{x^{4}}{2}-3x^{2}+x+C$ ; $G(0)=C=2$ → <span class='reponse'>$G(x)=\\frac{x^{4}}{2}-3x^{2}+x+2$</span>.</p><p><strong>b)</strong> $\\int_{0}^{2}g=\\left[\\frac{x^{4}}{2}-3x^{2}+x\\right]_{0}^{2}=8-12+2=-2$ : <span class='reponse'>valeur négative → l'aire comptée algébriquement est sous l'axe</span> (la courbe passe sous $Ox$ sur une partie de l'intervalle).</p><p><strong>c)</strong> <span class='reponse'>$H(x)=3\\ln x+\\mathrm{e}^{x}$</span>.</p><p><strong>d)</strong> $\\int_{1}^{\\mathrm{e}}h=3\\ln\\mathrm{e}+\\mathrm{e}^{\\mathrm{e}}-0-\\mathrm{e}=3+\\mathrm{e}^{\\mathrm{e}}-\\mathrm{e}\\approx$ <span class='reponse'>$15{,}15-2{,}72+3\\approx15{,}43$</span> (valeur approchée : $\\mathrm{e}^{\\mathrm{e}}\\approx15{,}15$, donc $3+15{,}15-2{,}72=15{,}43$).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts · c) 2 pts · d) 3 pts"
+    }
+  ]
+}

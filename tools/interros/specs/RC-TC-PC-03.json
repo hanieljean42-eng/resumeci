@@ -1,0 +1,29 @@
+{
+  "code": "RC-TC-PC-03",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale C",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Champ magnétique et loi de Laplace · Solutions aqueuses et pH",
+  "consignes": "On donne : $\\log 2\\approx0{,}3$ ; $\\log 5\\approx0{,}7$. Les unités doivent figurer dans les réponses.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Force de Laplace sur un rail",
+      "points": "5 pts",
+      "consigne": "Une tige conductrice $MN$ de longueur $\\ell=10$ cm, parcourue par un courant $I=5$ A, repose sur deux rails horizontaux placés dans un champ magnétique uniforme $B=0{,}4$ T, vertical et perpendiculaire au plan des rails (figure ci-dessous).",
+      "enonce": "<ol type='a'><li>Rappelle l'expression de la loi de Laplace (intensité de la force électromagnétique).</li><li>Calcule la valeur de la force de Laplace exercée sur la tige.</li><li>Détermine la direction et le sens de cette force à partir de la figure (règle des trois doigts de la main droite).</li><li>Que devient l'intensité de la force si on double $I$ et qu'on réduit $B$ de moitié ?</li></ol>",
+      "svg": "<svg viewBox='0 0 340 200' xmlns='http://www.w3.org/2000/svg'><defs><marker id='rl' markerWidth='9' markerHeight='9' refX='7' refY='4' orient='auto'><path d='M0,0 L7,4 L0,8 z' fill='#2563eb'/></marker></defs><rect x='30' y='30' width='280' height='140' fill='#eff6ff' stroke='#334155' stroke-width='1.5'/><g font-family='Georgia' font-size='13' fill='#2563eb'><text x='45' y='50'>×</text><text x='95' y='50'>×</text><text x='145' y='50'>×</text><text x='195' y='50'>×</text><text x='245' y='50'>×</text><text x='290' y='50'>×</text><text x='45' y='150'>×</text><text x='95' y='150'>×</text><text x='145' y='150'>×</text><text x='195' y='150'>×</text><text x='245' y='150'>×</text><text x='290' y='150'>×</text></g><text x='255' y='165' font-size='12' fill='#2563eb' font-family='Georgia'>B (entrant)</text><line x1='60' y1='100' x2='300' y2='100' stroke='#334155' stroke-width='3'/><line x1='60' y1='140' x2='300' y2='140' stroke='#334155' stroke-width='3'/><rect x='150' y='96' width='14' height='48' fill='#e2e8f0' stroke='#334155' stroke-width='2'/><text x='150' y='90' font-size='13' fill='#334155' font-family='Georgia'>M</text><text x='150' y='165' font-size='13' fill='#334155' font-family='Georgia'>N</text><line x1='85' y1='120' x2='130' y2='120' stroke='#dc2626' stroke-width='2.4' marker-end='url(#rl)'/><text x='92' y='112' font-size='13' fill='#dc2626' font-family='Georgia'>I</text><text x='170' y='190' font-size='12' fill='#475569' font-family='Georgia'>Tige MN sur rails dans le champ B</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$F=B\\,I\\,\\ell\\sin\\alpha$</span> ; ici $\\alpha=90°$ ($I\\perp B$) → $F=B\\,I\\,\\ell$.</p><p><strong>b)</strong> <span class='reponse'>$F=0{,}4\\times5\\times0{,}10=0{,}2$ N</span>.</p><p><strong>c)</strong> La force est <span class='reponse'>horizontale, dans le plan des rails, perpendiculaire à la tige</span> : elle fait <span class='reponse'>glisser la tige le long des rails</span> (direction du « pouce » de la règle des trois doigts — vers l'avant si $I$ va de $M$ vers $N$ avec $B$ entrant).</p><p><strong>d)</strong> $F'=B'I'\\ell=(B/2)(2I)\\ell=B\\,I\\,\\ell=$ <span class='reponse'>inchangée : 0,2 N</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — pH de solutions aqueuses",
+      "points": "5 pts",
+      "consigne": "On prépare une solution $S_1$ d'acide chlorhydrique de concentration $C_1=2\\times10^{-3}$ mol/L (acide fort, totalement dissocié).",
+      "enonce": "<ol type='a'><li>Écris l'équation de dissolution de $\\mathrm{HCl}$ dans l'eau et donne $[\\mathrm{H_3O^{+}}]$ dans $S_1$.</li><li>Calcule le pH de $S_1$.</li><li>On dilue $S_1$ 10 fois pour obtenir $S_2$. Quel est le pH de $S_2$ ?</li><li>Une solution $S_3$ a un pH de 11,3. Est-elle acide ou basique ? Calcule sa concentration en ions $\\mathrm{HO^{-}}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\mathrm{HCl+H_2O\\rightarrow H_3O^{+}+Cl^{-}}$ ; $[\\mathrm{H_3O^{+}}]=C_1=$ <span class='reponse'>$2\\times10^{-3}$ mol/L</span>.</p><p><strong>b)</strong> $pH=-\\log(2\\times10^{-3})=3-\\log2\\approx$ <span class='reponse'>$2{,}7$</span>.</p><p><strong>c)</strong> Dilution 10× → $[\\mathrm{H_3O^{+}}]$ divisée par 10 → <span class='reponse'>$pH=3{,}7$</span> (augmente de 1 unité).</p><p><strong>d)</strong> $pH=11{,}3>7$ → <span class='reponse'>basique</span> ; $[\\mathrm{H_3O^{+}}]=10^{-11{,}3}$ et $[\\mathrm{HO^{-}}]=\\frac{K_e}{[\\mathrm{H_3O^{+}}]}=\\frac{10^{-14}}{10^{-11{,}3}}=10^{-2{,}7}\\approx$ <span class='reponse'>$2\\times10^{-3}$ mol/L</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    }
+  ]
+}

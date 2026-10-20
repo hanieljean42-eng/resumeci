@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-04",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Le fonctionnement du cœur · L'infection par le VIH",
+  "consignes": "Les réponses s'appuient sur les documents fournis et sur les connaissances du cours.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le fonctionnement du cœur",
+      "points": "5 pts",
+      "consigne": "Le document ci-dessous représente un électrocardiogramme (ECG) normal enregistré chez un élève au repos.",
+      "enonce": "<ol type='a'><li>Rappelle les trois phases du cycle cardiaque.</li><li>À quelle phase correspond le pic principal (le « complexe QRS ») du tracé ?</li><li>Sur le tracé, un cycle dure 0,8 s : calcule la fréquence cardiaque de l'élève en battements par minute.</li><li>Cite deux facteurs qui accélèrent la fréquence cardiaque et deux qui la ralentissent.</li></ol>",
+      "svg": "<svg viewBox='0 0 400 160' xmlns='http://www.w3.org/2000/svg'><g stroke='#e2e8f0' stroke-width='0.7'><line x1='0' y1='40' x2='400' y2='40'/><line x1='0' y1='80' x2='400' y2='80'/><line x1='0' y1='120' x2='400' y2='120'/><line x1='100' y1='0' x2='100' y2='160'/><line x1='200' y1='0' x2='200' y2='160'/><line x1='300' y1='0' x2='300' y2='160'/></g><path d='M 10 90 L 40 90 Q 50 90 55 80 Q 60 70 65 90 L 78 90 L 84 105 L 90 20 L 96 105 L 102 90 L 150 90 Q 165 90 172 105 Q 180 120 190 90 L 210 90 L 240 90 Q 250 90 255 80 Q 260 70 265 90 L 278 90 L 284 105 L 290 20 L 296 105 L 302 90 L 350 90 Q 365 90 372 105 Q 380 120 390 90' fill='none' stroke='#dc2626' stroke-width='1.8'/><g font-family='Georgia' font-size='10' fill='#64748b'><text x='50' y='70'>P</text><text x='84' y='14'>QRS</text><text x='175' y='135'>T</text><text x='250' y='70'>P</text><text x='284' y='14'>QRS</text><text x='375' y='135'>T</text></g><text x='200' y='155' font-size='11' fill='#475569' font-family='Georgia' text-anchor='middle'>Tracé ECG au repos</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Systole auriculaire</span> (les oreillettes expulsent le sang), <span class='reponse'>systole ventriculaire</span> (les ventricules expulsent) et <span class='reponse'>diastole générale</span> (remplissage/relâchement).</p><p><strong>b)</strong> Le complexe QRS correspond à la <span class='reponse'>dépolarisation des ventricules → systole ventriculaire</span> (éjection du sang vers l'aorte et l'artère pulmonaire).</p><p><strong>c)</strong> <span class='reponse'>$f=\\frac{60}{0{,}8}=75$ battements/min</span>.</p><p><strong>d)</strong> Accélèrent : <span class='reponse'>effort physique, émotion/stress (adrénaline)</span> ; ralentissent : <span class='reponse'>repos/sommeil, entraînement sportif régulier</span> (cœur plus puissant).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — L'infection par le VIH",
+      "points": "5 pts",
+      "consigne": "Document : « En Côte d'Ivoire, le dépistage du VIH est gratuit et anonyme dans les centres de santé. Le virus attaque les lymphocytes T4 (CD4), cellules chef d'orchestre de la défense immunitaire : leur chute ouvre la porte aux infections opportunistes. »",
+      "enonce": "<ol type='a'><li>Donne la signification du sigle VIH et nomme les deux grandes phases de l'infection.</li><li>Quelle cellule du système immunitaire le VIH détruit-il préférentiellement, et quel en est le rôle ?</li><li>Explique le lien entre la chute des CD4 et les infections opportunistes.</li><li>Cite trois modes de transmission du VIH et la mesure de prévention associée à chacun.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Virus de l'Immunodéficience Humaine</span> ; phases : <span class='reponse'>phase asymptomatique</span> (porteur sain, sans symptômes, plusieurs années) puis <span class='reponse'>phase SIDA</span> (immunodépression déclarée).</p><p><strong>b)</strong> Les <span class='reponse'>lymphocytes T4 (CD4)</span> : ils <span class='reponse'>coordonnent la réponse immunitaire</span> — activent les lymphocytes B (anticorps) et les T8 cytotoxiques.</p><p><strong>c)</strong> Sans T4, la défense <span class='reponse'>ne se coordonne plus</span> : des microbes ordinairement bénins (champignons, pneumonies, tuberculose) deviennent <span class='reponse'>mortels — ce sont les infections opportunistes qui tuent</span>, pas le virus directement.</p><p><strong>d)</strong> <span class='reponse'>Rapports sexuels non protégés → préservatif</span> ; <span class='reponse'>sang contaminé → transfusion contrôlée, matériel stérile unique</span> ; <span class='reponse'>mère → enfant (grossesse/allaitement) → traitement préventif de la mère et substitution du lait</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}

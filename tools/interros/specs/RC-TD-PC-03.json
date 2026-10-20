@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-PC-03",
+  "type": "devoir",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale D",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Auto-induction (circuit RL) · Acides α-aminés",
+  "consignes": "On donne : $\\ln 2\\approx0{,}69$ ; $\\mathrm{e}^{-1}\\approx0{,}37$. Les unités sont exigées dans les résultats.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Établissement du courant dans une bobine",
+      "points": "10 pts",
+      "consigne": "On branche en série un générateur $E=12$ V, un résistor $R=60\\ \\Omega$ et une bobine d'inductance $L=0{,}3$ H et de résistance négligeable (circuit ci-dessous). À $t=0$, on ferme l'interrupteur $K$.",
+      "enonce": "<ol type='a'><li>Établis l'équation différentielle vérifiée par l'intensité $i(t)$ pendant l'établissement du courant.</li><li>Vérifie que $i(t)=\\frac{E}{R}\\left(1-\\mathrm{e}^{-t/\\tau}\\right)$ est solution et donne l'expression de $\\tau$.</li><li>Calcule $\\tau$ et l'intensité en régime permanent $I_0$.</li><li>À quel instant $i$ atteint-elle la moitié de $I_0$ ?</li><li>Calcule l'énergie magnétique emmagasinée par la bobine en régime permanent.</li></ol>",
+      "svg": "<svg viewBox='0 0 340 190' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='35' width='260' height='120' fill='none' stroke='#334155' stroke-width='2'/><path d='M 40 95 h 14 m 0 -16 v 32 m 26 -32 v 32 m -13 -16 h 13' fill='none' stroke='#334155' stroke-width='2'/><text x='46' y='130' font-size='14' fill='#334155' font-family='Georgia'>E</text><line x1='118' y1='35' x2='132' y2='23' stroke='#334155' stroke-width='2'/><circle cx='118' cy='35' r='2.4' fill='#334155'/><text x='112' y='18' font-size='14' fill='#334155' font-family='Georgia'>K</text><rect x='175' y='26' width='70' height='18' fill='#fff' stroke='#334155' stroke-width='2'/><text x='196' y='40' font-size='14' fill='#334155' font-family='Georgia'>R</text><path d='M 130 35 h 45 M 245 35 h 55' stroke='#334155' stroke-width='2'/><path d='M 272 155 c -8 -10 -8 -20 0 -30 c 8 10 8 20 0 30 z' fill='none' stroke='#334155' stroke-width='2'/><path d='M 272 125 c -6 -8 -6 -16 0 -24' fill='none' stroke='#334155' stroke-width='2'/><text x='285' y='120' font-size='14' fill='#334155' font-family='Georgia'>L</text><text x='130' y='180' font-size='12' fill='#475569' font-family='Georgia'>Circuit RL série (établissement du courant)</text></svg>",
+      "correction": "<p><strong>a)</strong> $E=u_R+u_L=Ri+L\\frac{\\mathrm{d}i}{\\mathrm{d}t}$ → <span class='reponse'>$L\\frac{\\mathrm{d}i}{\\mathrm{d}t}+Ri=E$</span>.</p><p><strong>b)</strong> En injectant : $L\\frac{E}{R}\\cdot\\frac{1}{\\tau}\\mathrm{e}^{-t/\\tau}+E(1-\\mathrm{e}^{-t/\\tau})=E$ ssi $\\frac{L}{R\\tau}=1$ → <span class='reponse'>$\\tau=\\frac{L}{R}$</span>.</p><p><strong>c)</strong> <span class='reponse'>$\\tau=\\frac{0{,}3}{60}=5\\times10^{-3}$ s $=5$ ms</span> ; <span class='reponse'>$I_0=\\frac{E}{R}=\\frac{12}{60}=0{,}2$ A</span>.</p><p><strong>d)</strong> $1-\\mathrm{e}^{-t/\\tau}=\\frac{1}{2}$ → $t=\\tau\\ln2\\approx5\\times0{,}69\\approx$ <span class='reponse'>$3{,}5$ ms</span>.</p><p><strong>e)</strong> <span class='reponse'>$W=\\frac{1}{2}LI_0^{2}=\\frac{1}{2}\\times0{,}3\\times0{,}04=6\\times10^{-3}$ J $=6$ mJ</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts · d) 2 pts · e) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Les acides α-aminés",
+      "points": "10 pts",
+      "consigne": "L'alanine ($\\mathrm{CH_3\\!-\\!CH(NH_2)\\!-\\!COOH}$, $M=89$ g/mol) est un acide α-aminé des protéines. On la dissout dans l'eau.",
+      "enonce": "<ol type='a'><li>Rappelle la formule générale d'un acide α-aminé et nomme ses deux fonctions caractéristiques.</li><li>Écris la formule de l'alanine sous sa forme zwitterionique (amphion) et explique le terme « amphotère ».</li><li>Écris les deux couples acide/base de l'alanine en solution.</li><li>Deux molécules d'alanine réagissent : écris l'équation de formation du dipeptide et nomme la liaison créée.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\mathrm{R\\!-\\!CH(NH_2)\\!-\\!COOH}$</span> : même carbone α porte <span class='reponse'>amine $-\\mathrm{NH_2}$ (base) et carboxyle $-\\mathrm{COOH}$ (acide)</span>.</p><p><strong>b)</strong> <span class='reponse'>$\\mathrm{CH_3\\!-\\!CH(NH_3^{+})\\!-\\!COO^{-}}$</span> : la molécule porte à la fois une charge $+$ et une charge $-$ tout en restant neutre → elle est <span class='reponse'>amphotère</span> (peut donner ou capter un proton selon le milieu).</p><p><strong>c)</strong> <span class='reponse'>$\\mathrm{NH_3^{+}/NH_2}$</span> (côté amine, acide conjugué de la base) et <span class='reponse'>$\\mathrm{COOH/COO^{-}}$</span> (côté carboxyle).</p><p><strong>d)</strong> $\\mathrm{H_2N\\!-\\!CHR\\!-\\!COOH+H_2N\\!-\\!CHR\\!-\\!COOH\\rightarrow H_2N\\!-\\!CHR\\!-\\!CO\\!-\\!NH\\!-\\!CHR\\!-\\!COOH+H_2O}$ : <span class='reponse'>liaison peptidique $\\mathrm{-CO-NH-}$</span> (condensation, élimination d'eau).</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 2 pts · d) 3 pts"
+    }
+  ]
+}

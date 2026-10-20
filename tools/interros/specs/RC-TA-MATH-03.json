@@ -1,0 +1,44 @@
+{
+  "code": "RC-TA-MATH-03",
+  "type": "bac",
+  "matiere": "Mathématiques",
+  "classe": "Terminale A",
+  "duree": "4 heures",
+  "bareme": "20 points",
+  "chapitre": "Étude de fonction · Suites · Probabilités · Statistiques",
+  "consignes": "L'épreuve comporte quatre exercices obligatoires. Le raisonnement compte autant que le résultat. Calculatrice non programmable autorisée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Étude de fonction",
+      "points": "7 pts",
+      "consigne": "Soit $f$ définie sur $]0;+\\infty[$ par $f(x)=x\\ln x-x+1$.",
+      "enonce": "<ol type='a'><li>Calcule la limite de $f$ en $+\\infty$.</li><li>Calcule $f'(x)$, étudie son signe et dresse le tableau de variations de $f$.</li><li>Montre que l'équation $f(x)=0$ admet une solution unique $\\alpha$ sur $]0;+\\infty[$ et donne sa valeur exacte.</li><li>Calcule $f(\\mathrm{e})$ et donne l'équation de la tangente à la courbe au point d'abscisse $\\mathrm{e}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $f(x)=x(\\ln x-1)+1$ → $\\lim_{+\\infty}f=+\\infty$.</p><p><strong>b)</strong> $f'(x)=\\ln x+x\\cdot\\frac{1}{x}-1=$ <span class='reponse'>$\\ln x$</span> : $f'<0$ sur $]0;1[$, $f'(1)=0$, $f'>0$ sur $]1;+\\infty[$ → minimum <span class='reponse'>$f(1)=0$</span>.</p><p><strong>c)</strong> $f(1)=0$ et $f$ strictement décroissante puis croissante avec minimum 0 : <span class='reponse'>$\\alpha=1$ est la seule solution</span>.</p><p><strong>d)</strong> $f(\\mathrm{e})=\\mathrm{e}-\\mathrm{e}+1=1$ ; $f'(\\mathrm{e})=1$ → <span class='reponse'>$y=1\\times(x-\\mathrm{e})+1=x-\\mathrm{e}+1$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Suite géométrique",
+      "points": "5 pts",
+      "consigne": "Une entreprise de Daloa vend 5 000 tonnes de café en 2024. Sa production augmente de 6 % par an. On note $u_n$ la production (en tonnes) l'année $2024+n$.",
+      "enonce": "<ol type='a'><li>Exprime $u_{n+1}$ en fonction de $u_n$ et donne la nature de la suite.</li><li>Exprime $u_n$ en fonction de $n$ puis calcule la production prévue en 2030.</li><li>En quelle année la production dépassera-t-elle 10 000 tonnes ?</li><li>Calcule la production totale cumulée de 2024 à 2030 inclus.</li></ol>",
+      "correction": "<p><strong>a)</strong> $u_{n+1}=1{,}06\\,u_n$ : <span class='reponse'>suite géométrique de raison $q=1{,}06$</span>, $u_0=5000$.</p><p><strong>b)</strong> $u_n=5000\\times1{,}06^{n}$ ; $u_6=5000\\times1{,}06^{6}\\approx5000\\times1{,}4185\\approx$ <span class='reponse'>$7\\,093$ tonnes en 2030</span>.</p><p><strong>c)</strong> $5000\\times1{,}06^{n}>10000$ ⇔ $1{,}06^{n}>2$ ⇔ $n>\\frac{\\ln 2}{\\ln 1{,}06}\\approx11{,}9$ → <span class='reponse'>$n=12$, soit en 2036</span>.</p><p><strong>d)</strong> $S=5000\\times\\frac{1{,}06^{7}-1}{0{,}06}\\approx5000\\times\\frac{0{,}5036}{0{,}06}\\approx$ <span class='reponse'>$41\\,970$ tonnes</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Probabilités",
+      "points": "5 pts",
+      "consigne": "Un sac contient 5 cahiers : 2 de maths, 2 de français et 1 d'histoire. Un élève tire deux cahiers successivement sans remise.",
+      "enonce": "<ol type='a'><li>Dessine l'arbre des possibles et donne le nombre total d'issues.</li><li>Calcule la probabilité de tirer deux cahiers de maths.</li><li>Calcule la probabilité de tirer au moins un cahier de français.</li><li>Calcule la probabilité de tirer deux cahiers de matières différentes.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$5\\times4=20$ issues</span> (arrangements de 2 parmi 5).</p><p><strong>b)</strong> <span class='reponse'>$P=\\frac{2}{5}\\times\\frac{1}{4}=\\frac{2}{20}=0{,}1$</span>.</p><p><strong>c)</strong> Complémentaire : aucun français = tirer 2 parmi les 3 autres : $\\frac{3}{5}\\times\\frac{2}{4}=\\frac{6}{20}$ → <span class='reponse'>$P=1-0{,}3=0{,}7$</span>.</p><p><strong>d)</strong> « Même matière » = 2 maths ou 2 français : $\\frac{2}{20}+\\frac{2}{20}=\\frac{4}{20}$ → <span class='reponse'>$P(\\text{différentes})=1-0{,}2=0{,}8$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Statistiques",
+      "points": "3 pts",
+      "consigne": "Les notes de 10 élèves à une interro : 7 ; 9 ; 10 ; 11 ; 12 ; 12 ; 13 ; 14 ; 15 ; 17.",
+      "enonce": "<ol type='a'><li>Calcule la moyenne et la médiane de la série.</li><li>Calcule l'écart-type arrondi à $10^{-1}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Moyenne : $\\frac{120}{10}=$ <span class='reponse'>$12$</span> ; médiane : 10 valeurs → $\\frac{12+12}{2}=$ <span class='reponse'>$12$</span>.</p><p><strong>b)</strong> $\\sigma=\\sqrt{\\frac{25+9+4+1+0+0+1+4+9+25}{10}}=\\sqrt{\\frac{78}{10}}\\approx$ <span class='reponse'>$2{,}8$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt"
+    }
+  ]
+}
