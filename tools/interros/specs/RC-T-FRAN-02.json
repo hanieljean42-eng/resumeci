@@ -1,0 +1,28 @@
+{
+  "code": "RC-T-FRAN-02",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "Terminales A & D",
+  "classes": ["Terminale_A", "Terminale_D"],
+  "duree": "3 heures",
+  "bareme": "20 points",
+  "chapitre": "Commentaire composé · Dissertation littéraire",
+  "consignes": "Traite les deux parties. Partie A : réponds aux questions de lecture. Partie B : rédige une dissertation littéraire complète (introduction, développement en trois parties, conclusion).",
+  "exercices": [
+    {
+      "titre": "Partie A — Lecture et analyse d'un extrait théâtral",
+      "points": "10 pts",
+      "consigne": "<strong>TEXTE</strong> — <em>Le Fauteuil du patriarche</em> (extrait original).<br><br>KOUASSI <em>(se levant, le doigt vers son fils)</em>. — Tu oses me parler de modernité dans ma propre case !<br>AMA. — Mon père, le monde a changé. Tes filles veulent étudier, pas se marier à seize ans.<br>KOUASSI. — Le monde change, la coutume reste !<br>AMA <em>(doucement)</em>. — La coutume n'est pas un fétiche qu'on garde pour le regarder se décomposer, père. C'est un arbre : il faut l'élaguer pour qu'il vive.<br><em>(Silence. Kouassi s'assoit lentement dans le fauteuil.)</em><br>KOUASSI. — … Et si l'arbre meurt quand on l'élague ?",
+      "enonce": "<ol type='a'><li>Quel est le registre dominant de cet extrait ? Justifie par deux procédés.</li><li>Analyse la structure du dialogue : comment l'échange traduit-il le conflit entre tradition et modernité ?</li><li>Étudie la dernière réplique de Kouassi : qu'elle révèle-t-elle du personnage et du dénouement possible ?</li><li>Quelle est la fonction des didascalies dans ce passage ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Registre <span class='reponse'>dramatique/pathétique</span> : conflit père-fille violent (impératifs : « Tu oses », exclamatives), mais aussi lyrique — la métaphore de l'arbre élagueur porte l'émotion.</p><p><strong>b)</strong> Stichomythie en trois échanges : attaque (Kouassi hausse la voix, tutoiement agressif) → contre-argument posé (Ama, ton calme « Mon père ») → apaisement (silence, fauteuil). Le mouvement passe de la <span class='reponse'>confrontation à la médiation</span> : la modernité n'est pas rejetée, elle est entendue — la question finale ouvre la conciliation.</p><p><strong>c)</strong> « Et si l'arbre meurt quand on l'élague ? » — Kouassi reprend la métaphore de sa fille : <span class='reponse'>il passe de l'autorité à l'inquiétude</span>. La question n'est plus un refus mais une crainte (perdre l'âme de la coutume en la réformant) : elle montre un patriarche qui doute et annonce un <span class='reponse'>dénouement possible de compromis</span>, non de rupture.</p><p><strong>d)</strong> Les didascalies guident le jeu : <span class='reponse'>(se levant, le doigt vers son fils)</span> = la menace physique ; <span class='reponse'>(doucement)</span> = l'intelligence émotionnelle d'Ama ; <span class='reponse'>(Silence… s'assoit lentement)</span> = la chute de l'autorité — le fauteuil, symbole du pouvoir patriarcal, le reçoit fragilisé.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 3 pts · d) 2 pts"
+    },
+    {
+      "titre": "Partie B — Dissertation littéraire",
+      "points": "10 pts",
+      "enonce": "<div style='text-align:center;margin:3mm 0'><div style='font-weight:700;font-size:12pt;border:1.5px solid #334155;padding:4mm;border-radius:4px'>SUJET : « Le théâtre est-il fait pour instruire ou pour divertir ? »</div></div><p><em>Méthode :</em> introduction (amorce, définition, problématique, annonce du plan), trois parties arguments + exemples littéraires précis, conclusion.</p>",
+      "correction": "<p><em>Définitions :</em> instruire = donner une leçon morale, sociale ou politique ; divertir = faire passer un bon moment par le rire et le plaisir. <em>Problématique :</em> la finalité du théâtre est-elle didactique ou ludique — ou les deux ?</p><p><strong>I. Thèse — Le théâtre instruit.</strong> « Castigat ridendo mores » (Molière corrige les mœurs par le rire) : <em>Tartuffe</em> dénonce l'hypocrisie religieuse, <em>Les Femmes savantes</em> le pédantisme. Le théâtre engagé (Brecht, théâtre politique) fait réfléchir sur la société ; la tragédie classique instruit sur les passions (Racine : l'amour fatal de Phèdre ; Corneille : le conflit honneur/amour du <em>Cid</em>). Les textes ivoiriens contemporains (pièces sur la coutume, la corruption) éduquent le public.</p><p><strong>II. Antithèse — Le théâtre divertit d'abord.</strong> Le théâtre est un spectacle : il se joue pour plaire — sans plaisir, la salle se vide. La farce fait rire sans morale ; le génie comique (labiche, les vaudevilles) vise le divertissement pur. Même Molière plaît avant de corriger : si Tartuffe enseigne, c'est parce qu'il fait rire. Instruire qui ne veut pas être instruit est voué à l'échec.</p><p><strong>III. Synthèse — Le grand théâtre instruit en divertissant.</strong> La formule horacienne « plaire et instruire » (utile dulci) résume l'idéal : le plaisir est le véhicule de la leçon. Le rire désamorce la résistance du spectateur, puis la réflexion s'installe. Le théâtre qui n'instruit pas sans divertir ennuie ; celui qui divertit sans instruire passe vite. <em>Ouverture :</em> le théâtre africain contemporain renouvelle-t-il cette alliance de l'utile et de l'agréable ?</p>",
+      "bareme_detail": "Intro 2 · Dév. 6 · Concl. 1 · Langue 1"
+    }
+  ]
+}

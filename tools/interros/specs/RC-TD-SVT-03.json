@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-03",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "La reproduction chez les spermaphytes · La transmission d'un caractère chez l'Homme",
+  "consignes": "Schémas propres et légendes exigées quand ils sont demandés. Justifie chaque réponse de génétique par les génotypes.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — La fleur et la double fécondation",
+      "points": "5 pts",
+      "consigne": "Le schéma ci-dessous représente la coupe schématique d'une fleur de spermaphyte.",
+      "enonce": "<ol type='a'><li>Légende le schéma (nomme les éléments ① à ⑤).</li><li>Raconte les étapes qui mènent du dépôt du pollen sur le stigmate à la formation de la graine (double fécondation).</li><li>Quel avantage la pollinisation croisée offre-t-elle par rapport à l'autopollinisation ?</li></ol>",
+      "svg": "<svg viewBox='0 0 300 260' xmlns='http://www.w3.org/2000/svg'><g stroke='#334155' stroke-width='1.6' fill='none'><ellipse cx='150' cy='70' rx='70' ry='18'/><ellipse cx='150' cy='70' rx='70' ry='18' fill='#fde68a' opacity='0.4'/><ellipse cx='150' cy='50' rx='40' ry='12'/><ellipse cx='150' cy='50' rx='40' ry='12' fill='#fbcfe8' opacity='0.4'/><line x1='150' y1='88' x2='150' y2='180'/><circle cx='150' cy='185' r='16' fill='#bbf7d0'/><line x1='120' y1='80' x2='120' y2='55'/><circle cx='120' cy='50' r='8' fill='#fdba74'/><line x1='180' y1='80' x2='180' y2='55'/><circle cx='180' cy='50' r='8' fill='#fdba74'/></g><g font-family='Georgia' font-size='14' fill='#334155'><text x='240' y='60'>①</text><text x='240' y='110'>②</text><text x='240' y='190'>③</text><text x='50' y='55'>④</text><text x='50' y='110'>⑤</text></g><g stroke='#94a3b8' stroke-width='1' stroke-dasharray='3,3'><line x1='238' y1='58' x2='190' y2='50'/><line x1='238' y1='108' x2='185' y2='75'/><line x1='238' y1='188' x2='168' y2='186'/><line x1='60' y1='55' x2='110' y2='52'/><line x1='60' y1='110' x2='110' y2='75'/></g><text x='150' y='245' font-size='12' fill='#475569' font-family='Georgia' text-anchor='middle'>Coupe schématique de la fleur</text></svg>",
+      "correction": "<p><strong>a)</strong> ① <span class='reponse'>Pétale</span> ; ② <span class='reponse'>Pistil</span> (stigmate + style + ovaire) ; ③ <span class='reponse'>Ovaire</span> (contenant les ovules) ; ④ <span class='reponse'>Anthère</span> (partie mâle : produit le pollen) ; ⑤ <span class='reponse'>Étamine</span> (anthère + filet) — l'ensemble ♀ = pistil, ♂ = étamines.</p><p><strong>b)</strong> Le pollen tombe sur le <span class='reponse'>stigmate</span> → il germe et forme un <span class='reponse'>tube pollinique</span> qui descend le style jusqu'à l'ovule. Deux noyaux mâles sortent : l'un féconde l'oosphère → <span class='reponse'>zygote (embryon)</span> ; l'autre fusionne avec les noyaux polaires → <span class='reponse'>albumen</span>. C'est la <span class='reponse'>double fécondation</span> ; l'ovule devient graine, l'ovaire devient fruit.</p><p><strong>c)</strong> La pollinisation croisée <span class='reponse'>brasse les gènes</span> entre individus → descendance <span class='reponse'>plus diversifiée et adaptée</span> (vigueur hybride) ; l'autopollinisation appauvrit et fixe les défauts génétiques.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Transmission du daltonisme",
+      "points": "5 pts",
+      "consigne": "Le daltonisme est une anomalie de la vision des couleurs portée par le chromosome $X$ (allèle $d$, récessif). Une femme de vision normale dont le père était daltonien épouse un homme de vision normale.",
+      "enonce": "<ol type='a'><li>Donne le génotype de la femme, de son père et de son mari (on notera $X^D$ l'allèle normal et $X^d$ l'allèle daltonien).</li><li>Fais l'échiquier de croisement du couple.</li><li>Quelle est la probabilité qu'un garçon du couple soit daltonien ? Et une fille ?</li><li>Explique pourquoi le daltonisme touche beaucoup plus les garçons que les filles.</li></ol>",
+      "correction": "<p><strong>a)</strong> Femme : <span class='reponse'>$X^D X^d$</span> (porteuse saine — son père lui a donné $X^d$) ; père : <span class='reponse'>$X^d Y$</span> ; mari : <span class='reponse'>$X^D Y$</span>.</p><p><strong>b)</strong> Echiquier : gamètes ♀ $X^D$ / $X^d$ × ♂ $X^D$ / $Y$ → enfants : $X^D X^D$, $X^D X^d$, $X^D Y$, $X^d Y$.</p><p><strong>c)</strong> Garçon : <span class='reponse'>50 %</span> ($X^d Y$ sur 2 garçons possibles) ; fille : <span class='reponse'>0 % daltonienne</span> (50 % peuvent être porteuses $X^D X^d$).</p><p><strong>d)</strong> Le garçon n'a qu'<span class='reponse'>un seul $X$</span> (hémizygote) : si $X$ porte $d$, il est daltonien. La fille a deux $X$ : l'allèle récessif $d$ est <span class='reponse'>masqué par $X^D$</span> ; il faut $X^d X^d$ — rare — pour qu'elle soit daltonienne.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}

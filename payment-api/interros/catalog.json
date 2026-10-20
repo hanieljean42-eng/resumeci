@@ -26,6 +26,32 @@
     "corrige": true
   },
   {
+    "code": "RC-T-FRAN-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Commentaire composé · Dissertation littéraire",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-T-FRAN-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Commentaire composé · Dissertation littéraire",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -35,6 +61,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "La décolonisation de l'Afrique · La Côte d'Ivoire dans l'économie mondiale",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-HG-02",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "L'Organisation des Nations Unies · Le développement de la Corée du Sud",
     "exercices": 2,
     "corrige": true
   },
@@ -65,6 +104,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-PHILO-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "La connaissance de l'homme · L'histoire et l'humanité",
+    "exercices": 1,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-MATH-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -91,6 +143,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-03",
+    "type": "bac",
+    "typeLabel": "Examen type BAC",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "4 heures",
+    "bareme": "20 points",
+    "chapitre": "Nombres complexes · Probabilités · Étude de fonction et intégrale",
+    "exercices": 3,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-MATH-04",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Équations différentielles · Statistique à deux variables",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -100,6 +178,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Réactions acide-base · Oscillations mécaniques",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-02",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Mouvement dans le champ de pesanteur · Fabrication d'un savon",
     "exercices": 2,
     "corrige": true
   },
@@ -182,6 +273,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-06",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Nombres complexes · Calcul intégral · Loi binomiale",
+    "exercices": 3,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -243,6 +347,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Géologie externe — érosion, transport, dépôt",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-03",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "La reproduction chez les spermaphytes · La transmission d'un caractère chez l'Homme",
     "exercices": 2,
     "corrige": true
   }

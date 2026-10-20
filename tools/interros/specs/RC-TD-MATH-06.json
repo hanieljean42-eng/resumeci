@@ -1,0 +1,37 @@
+{
+  "code": "RC-TD-MATH-06",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Nombres complexes · Calcul intégral · Loi binomiale",
+  "consignes": "Le raisonnement est pris en compte autant que le résultat. Les représentations doivent être propres et précises.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Nombres complexes",
+      "points": "7 pts",
+      "consigne": "Le plan est rapporté au repère orthonormé direct $(O;\\vec{u};\\vec{v})$ (unité : 2 cm). Soit $z_A=2\\mathrm{i}$, $z_B=-\\sqrt{3}-\\mathrm{i}$ et $z_C=\\sqrt{3}-\\mathrm{i}$.",
+      "enonce": "<ol type='a'><li>Donne la forme exponentielle de $z_A$, $z_B$ et $z_C$.</li><li>Place les points $A$, $B$, $C$ dans le repère ci-dessous et montre que le triangle $ABC$ est équilatéral.</li><li>Soit $M$ d'affixe $z$. Détermine l'ensemble des points $M$ tels que $|z-2\\mathrm{i}|=2$ et représente-le.</li><li>Calcule $z_A\\times z_C$ et donne son écriture sous forme algébrique et exponentielle.</li></ol>",
+      "svg": "<svg viewBox='0 0 300 220' xmlns='http://www.w3.org/2000/svg'><defs><marker id='m6' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6' fill='none' stroke='#334155' stroke-width='1.2'/></marker></defs><line x1='15' y1='110' x2='288' y2='110' stroke='#334155' stroke-width='1.4' marker-end='url(#m6)'/><line x1='150' y1='205' x2='150' y2='12' stroke='#334155' stroke-width='1.4' marker-end='url(#m6)'/><text x='280' y='128' font-size='13' fill='#334155' font-family='Georgia'>u</text><text x='160' y='22' font-size='13' fill='#334155' font-family='Georgia'>v</text><text x='136' y='126' font-size='12' fill='#334155' font-family='Georgia'>O</text><line x1='215' y1='105' x2='215' y2='115' stroke='#334155'/><text x='211' y='130' font-size='12' fill='#334155' font-family='Georgia'>1</text><line x1='145' y1='45' x2='155' y2='45' stroke='#334155'/><text x='130' y='49' font-size='12' fill='#334155' font-family='Georgia'>i</text><text x='150' y='218' font-size='12' fill='#475569' font-family='Georgia' text-anchor='middle'>Repère à compléter</text></svg>",
+      "correction": "<p><strong>a)</strong> $z_A=2\\mathrm{e}^{\\mathrm{i}\\pi/2}$ ; $z_B=2\\mathrm{e}^{-5\\mathrm{i}\\pi/6}$ ; $z_C=2\\mathrm{e}^{-\\mathrm{i}\\pi/6}$.</p><p><strong>b)</strong> $A(0;2)$, $B(-\\sqrt{3};-1)$, $C(\\sqrt{3};-1)$ : $AB=|{-\\sqrt{3}-3\\mathrm{i}}|=\\sqrt{3+9}=2\\sqrt{3}$, $AC=2\\sqrt{3}$, $BC=|2\\sqrt{3}|=2\\sqrt{3}$ — <span class='reponse'>$AB=AC=BC=2\\sqrt{3}$ : le triangle $ABC$ est équilatéral</span> (inscrit dans le cercle de centre $O$, rayon 2 : $|z_A|=|z_B|=|z_C|=2$).</p><p><strong>c)</strong> $|z-2\\mathrm{i}|=2$ ⇔ $MA=2$ : <span class='reponse'>cercle de centre $A$ et de rayon 2</span> (il passe par $O$ car $OA=2$).</p><p><strong>d)</strong> $z_A\\cdot z_C=2\\mathrm{e}^{\\mathrm{i}\\pi/2}\\cdot2\\mathrm{e}^{-\\mathrm{i}\\pi/6}=4\\mathrm{e}^{\\mathrm{i}\\pi/3}=4\\left(\\frac{1}{2}+\\mathrm{i}\\frac{\\sqrt{3}}{2}\\right)=$ <span class='reponse'>$2+2\\mathrm{i}\\sqrt{3}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt · d) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Calcul intégral",
+      "points": "6 pts",
+      "consigne": "Soit $I=\\displaystyle\\int_{0}^{\\pi/2}\\sin x\\,\\mathrm{d}x$ et $J=\\displaystyle\\int_{0}^{\\mathrm{e}}\\frac{1}{x+1}\\,\\mathrm{d}x$.",
+      "enonce": "<ol type='a'><li>Calcule $I$ puis interprète géométriquement le résultat.</li><li>Calcule $J$.</li><li>Calcule $K=\\displaystyle\\int_{0}^{1}x\\,\\mathrm{e}^{x^{2}}\\,\\mathrm{d}x$ (on posera $u=x^{2}$).</li><li>Soit $f(x)=\\sqrt{1-x}$. Calcule $\\displaystyle\\int_{0}^{1}f(x)\\,\\mathrm{d}x$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $I=[-\\cos x]_{0}^{\\pi/2}=-0-(-1)=$ <span class='reponse'>$1$ u.a.</span> : aire sous la sinusoïde entre 0 et $\\frac{\\pi}{2}$.</p><p><strong>b)</strong> $J=[\\ln|x+1|]_{0}^{\\mathrm{e}}=\\ln(\\mathrm{e}+1)-\\ln 1=$ <span class='reponse'>$\\ln(\\mathrm{e}+1)\\approx1{,}31$</span>.</p><p><strong>c)</strong> $u=x^{2}$, $\\mathrm{d}u=2x\\,\\mathrm{d}x$ : $K=\\frac{1}{2}\\int_{0}^{1}\\mathrm{e}^{u}\\mathrm{d}u=\\frac{1}{2}(\\mathrm{e}-1)\\approx$ <span class='reponse'>$0{,}86$</span>.</p><p><strong>d)</strong> $\\int_{0}^{1}\\sqrt{1-x}\\,\\mathrm{d}x=\\left[-\\frac{2}{3}(1-x)^{3/2}\\right]_{0}^{1}=0+\\frac{2}{3}=$ <span class='reponse'>$\\frac{2}{3}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Loi binomiale",
+      "points": "7 pts",
+      "consigne": "Une chaîne d'embouteillage à San-Pédro produit des bouteilles dont 4 % ont un défaut d'étiquetage. On prélève au hasard 20 bouteilles (tirage assimilé à un tirage avec remise). Soit $X$ le nombre de bouteilles défectueuses.",
+      "enonce": "<ol type='a'><li>Justifie que $X$ suit une loi binomiale et donne ses paramètres.</li><li>Calcule la probabilité qu'aucune bouteille ne soit défectueuse.</li><li>Calcule la probabilité qu'au moins deux bouteilles soient défectueuses.</li><li>Calcule $\\mathrm{E}(X)$ et interprète.</li></ol>",
+      "correction": "<p><strong>a)</strong> 20 épreuves identiques et indépendantes, succès « défaut » de probabilité $p=0{,}04$ : <span class='reponse'>$X\\sim\\mathcal{B}(20\\ ;\\ 0{,}04)$</span>.</p><p><strong>b)</strong> $P(X=0)=0{,}96^{20}\\approx$ <span class='reponse'>$0{,}442$</span>.</p><p><strong>c)</strong> $P(X\\geq2)=1-P(X=0)-P(X=1)=1-0{,}96^{20}-20\\times0{,}04\\times0{,}96^{19}\\approx1-0{,}442-0{,}368\\approx$ <span class='reponse'>$0{,}19$</span>.</p><p><strong>d)</strong> $\\mathrm{E}(X)=np=20\\times0{,}04=$ <span class='reponse'>$0{,}8$</span> : en moyenne, moins d'une bouteille défectueuse par lot de 20 — le taux de défaut reste faible mais non nul.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts · d) 2 pts"
+    }
+  ]
+}
