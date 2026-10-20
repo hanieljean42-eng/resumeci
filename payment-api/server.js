@@ -715,6 +715,19 @@ app.post('/api/pay', async (req, res) => {
       }
     }
 
+    // Pass Élite/Excellence : réservé aux classes ayant du contenu "Sujets &
+    // Interros" au catalogue (actuellement Terminale D uniquement). Le contrôle
+    // est basé sur le catalogue — une nouvelle classe débloque sa formule dès
+    // que ses premiers sujets sont publiés.
+    if (tierKey === 'elite' || tierKey === 'uni_elite') {
+      const cls = String((payingUser && (payingUser.selectedClass || payingUser.classe)) || '');
+      const hasContent = getInterrosCatalog().some(d => d.classe === cls);
+      if (!hasContent) {
+        console.log(`[Paiement] Refus ${tierKey} pour classe sans contenu Élite: ${cls || 'inconnue'} (${maskPhone(safeUid)})`);
+        return res.status(403).json({ success: false, error: 'elite_unavailable_for_class', classe: cls });
+      }
+    }
+
     // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
     const payload = {
       amount: plan.price,

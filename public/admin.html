@@ -572,6 +572,10 @@
             <div><div class="po-title" style="color:var(--emerald);"><i class="fas fa-crown"></i> Pass Pro</div><div class="po-desc">Accès total — 30 jours</div></div>
             <div class="po-check"><i class="fas fa-check"></i></div>
           </div>
+          <div class="plan-option" data-plan="elite" onclick="selectNewPlan('elite')">
+            <div><div class="po-title" style="color:#a855f7;"><i class="fas fa-gem"></i> Pass Élite</div><div class="po-desc">Tout Pro + Sujets & Interros corrigés — 30 jours</div></div>
+            <div class="po-check"></div>
+          </div>
           <div class="plan-option" data-plan="starter" onclick="selectNewPlan('starter')">
             <div><div class="po-title" style="color:var(--sky);"><i class="fas fa-bolt"></i> Pass Starter</div><div class="po-desc">PDF & hors-ligne — 30 jours</div></div>
             <div class="po-check"></div>
@@ -627,6 +631,10 @@
       <div id="grantPlanOptions">
         <div class="plan-option" data-plan="pro" onclick="selectGrantPlan('pro')">
           <div><div class="po-title" style="color:var(--emerald);"><i class="fas fa-crown"></i> Pass Pro (30j)</div><div class="po-desc">Accès total fiches, audios, quiz</div></div>
+          <div class="po-check"></div>
+        </div>
+        <div class="plan-option" data-plan="elite" onclick="selectGrantPlan('elite')">
+          <div><div class="po-title" style="color:#a855f7;"><i class="fas fa-gem"></i> Pass Élite (30j)</div><div class="po-desc">Tout Pro + Sujets & Interros corrigés</div></div>
           <div class="po-check"></div>
         </div>
         <div class="plan-option" data-plan="starter" onclick="selectGrantPlan('starter')">
@@ -1372,7 +1380,7 @@
       document.getElementById('succName').textContent = name;
       document.getElementById('succPhone').textContent = '+225 ' + phone.replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5');
       document.getElementById('succPwd').textContent = pwd;
-      const planNames = { pro: 'Pass Pro (30j)', starter: 'Pass Starter (30j)', vip: 'Pass VIP ⭐', annual: 'Pass Annuel (365j)', free: 'Essai Gratuit', uni_starter: 'Pass Étudiant (30j)', uni_pro: 'Pass Licence Pro (30j)', uni_elite: 'Pass Excellence (30j)' };
+      const planNames = { pro: 'Pass Pro (30j)', starter: 'Pass Starter (30j)', elite: 'Pass Élite (30j)', vip: 'Pass VIP ⭐', annual: 'Pass Annuel (365j)', free: 'Essai Gratuit', uni_starter: 'Pass Étudiant (30j)', uni_pro: 'Pass Licence Pro (30j)', uni_elite: 'Pass Excellence (30j)' };
       document.getElementById('succPlan').textContent = planNames[plan] || plan.toUpperCase();
       document.getElementById('successModal').classList.add('active');
     }

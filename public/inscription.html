@@ -1188,14 +1188,23 @@
       const clsLabel = document.querySelector('label[for="regClass"]');
       if (clsLabel) clsLabel.textContent = isUniv ? 'Filière / Niveau *' : 'Classe actuelle *';
 
+      const cls = (document.getElementById('regClass') || {}).value || '';
       ['planPro', 'planElite', 'planStarter', 'planFree'].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.style.display = isUniv ? 'none' : '';
+        if (!el) return;
+        // Pass Élite : uniquement les classes ayant des sujets publiés (Terminale D pour l'instant)
+        el.style.display = isUniv ? 'none' : (id === 'planElite' && cls !== 'Terminale_D' ? 'none' : '');
       });
       ['planUniStarter', 'planUniPro', 'planUniElite', 'planUniFree'].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.style.display = isUniv ? '' : 'none';
+        if (!el) return;
+        // Pass Excellence : masqué tant qu'aucune filière n'a de sujets publiés
+        el.style.display = (isUniv && id !== 'planUniElite') ? '' : 'none';
       });
+
+      // Retombe sur une formule visible si la classe ne permet plus la formule choisie
+      if (selectedTier === 'elite' && cls !== 'Terminale_D') selectedTier = 'pro';
+      if (selectedTier === 'uni_elite') selectedTier = 'uni_pro';
 
       // Université : Pass Licence Pro par défaut (l'Essai Gratuit reste choisissable)
       if (isUniv && !['uni_starter', 'uni_pro', 'uni_elite', 'free'].includes(selectedTier)) {

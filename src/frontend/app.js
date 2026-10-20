@@ -1599,7 +1599,7 @@ window.initiatePremiumPayment = function (btn, tierKey = 'pro') {
 let currentCheckoutTier = 'starter';
 let currentCheckoutMethod = 'wave';
 
-window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false) {
+window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false, eliteChecked = false) {
   // Réveille l'API Render (plan gratuit en veille) pendant que l'élève choisit sa formule
   try { fetch(`${window.getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch (e) {}
   if (!window.USER_PROFILE) {
@@ -1634,7 +1634,40 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false) {
     return;
   }
 
-  // 3. Formule Élite : vendable depuis le lancement des Sujets & Interros corrigés
+  // 3. Formule Élite/Excellence : réservée aux classes qui ont du contenu
+  // "Sujets & Interros" au catalogue (actuellement Terminale D uniquement).
+  // Vérification catalogue côté client pour l'UX ; le serveur re-contrôle dans /api/pay.
+  if ((tierKey === 'elite' || tierKey === 'uni_elite') && !eliteChecked) {
+    const cls = String(window.USER_PROFILE?.selectedClass || '');
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    fetch(`${apiBase}/api/interros/catalog`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(d => {
+        const ok = ((d && d.interros) || []).some(x => x.classe === cls);
+        if (ok) {
+          window.openPaymentCheckoutModal(tierKey, force, true);
+        } else if (typeof window.showActionNotice === 'function') {
+          window.showActionNotice({
+            type: 'info',
+            icon: '📝',
+            title: 'Pass Élite — Terminale D uniquement',
+            subtitle: 'Sujets & Interros corrigés',
+            message: window.isUniversityUser && window.isUniversityUser()
+              ? "Le Pass Excellence est réservé aux filières disposant de sujets corrigés.\n\nAucune filière universitaire n'a encore de contenu publié — il arrive très bientôt !"
+              : "Le Pass Élite donne accès aux Sujets & Interros corrigés (PDF).\n\nPour l'instant il est réservé à la Terminale D — les autres classes arrivent très bientôt !",
+            primaryBtnText: 'Continuer mes révisions'
+          });
+        }
+      })
+      .catch(() => {
+        if (window.showActionNotice) window.showActionNotice({
+          type: 'warning', icon: '⚠️', title: 'Vérification impossible',
+          subtitle: 'Connexion serveur', message: 'Impossible de vérifier la disponibilité du Pass Élite. Vérifie ta connexion et réessaie.',
+          primaryBtnText: 'OK'
+        });
+      });
+    return;
+  }
 
   // Paiement déjà en cours ? On propose de le reprendre plutôt que d'en créer un
   // deuxième (la référence en attente est réutilisée côté serveur si < 10 min).
