@@ -918,7 +918,10 @@ function renderSidebar() {
     }
     h += `</div></div>`;
   }
-  nav.innerHTML = h;
+  // Entrée Élite épinglée en tête de sidebar : la fonctionnalité Sujets & Interros
+  // reste visible en permanence, quelle que soit la fiche ouverte.
+  const eliteNav = `<div class="nav-class nav-elite-entry"><div class="nav-class-header" onclick="if(typeof openSujetsModal==='function')openSujetsModal()" style="background:linear-gradient(135deg,rgba(124,58,237,.16),rgba(168,85,247,.10));border:1px solid rgba(124,58,237,.4);border-radius:10px;margin:0 4px 8px;cursor:pointer"><span style="font-weight:700">📝 Sujets &amp; Interros</span><span class="badge" style="background:#7c3aed;color:#fff">ÉLITE</span></div></div>`;
+  nav.innerHTML = eliteNav + h;
   nav.querySelectorAll('.nav-lesson').forEach(el => {
     el.addEventListener('click', () => {
       const cls = el.dataset.cls,
@@ -2184,9 +2187,10 @@ function showDashboard(push = true) {
     0
   );
   document.getElementById('content').innerHTML =
-    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getEliteSpotlight()}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
   document.querySelectorAll('.class-card').forEach(el => el.addEventListener('click', () => showClass(el.dataset.cls)));
   clearActive();
+  updateEliteSpotCount();
   refreshOfflineStatus();
   if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
   if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
@@ -3526,6 +3530,56 @@ async function downloadClassOffline(cls, force = false) {
   }
 }
 window.downloadClassOffline = downloadClassOffline;
+
+// Bannière Élite pleine largeur en haut du tableau de bord : rend la fonctionnalité
+// Sujets & Interros immédiatement visible (déverrouillée pour l'Élite, vitrine sinon).
+function getEliteSpotlight() {
+  const hasSujets = window.userHasFeature ? window.userHasFeature('sujets') : false;
+  if (hasSujets) {
+    return `<div onclick="openSujetsModal()" role="button" style="cursor:pointer;display:flex;align-items:center;gap:14px;margin:0 0 14px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#4c1d95,#7c3aed 55%,#a855f7);color:#fff;box-shadow:0 8px 22px rgba(124,58,237,.35);position:relative;overflow:hidden">
+      <div style="position:absolute;right:-14px;top:-34px;font-size:110px;opacity:.12;pointer-events:none;line-height:1">📝</div>
+      <div style="font-size:32px;flex-shrink:0">📝</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-size:9.5px;font-weight:800;letter-spacing:1px;padding:3px 9px;border-radius:20px;text-transform:uppercase">👑 Inclus dans ton Pass Élite</div>
+        <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">Sujets &amp; Interros corrigés</h3>
+        <p style="margin:0;font-size:12px;opacity:.92">Énoncés + corrigés détaillés rédigés par ResumeCI · <span id="eliteSpotCount">chargement…</span></p>
+      </div>
+      <div style="flex-shrink:0;background:#fff;color:#6d28d9;font-weight:800;font-size:13px;padding:11px 16px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.18);white-space:nowrap">Ouvrir ➜</div>
+    </div>`;
+  }
+  return `<div onclick="openSujetsModal()" role="button" style="cursor:pointer;display:flex;align-items:center;gap:14px;margin:0 0 14px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#1e1b4b,#4338ca 55%,#6366f1);color:#fff;box-shadow:0 8px 22px rgba(67,56,202,.28);position:relative;overflow:hidden">
+    <div style="position:absolute;right:-14px;top:-34px;font-size:110px;opacity:.12;pointer-events:none;line-height:1">🔒</div>
+    <div style="font-size:32px;flex-shrink:0">📝</div>
+    <div style="flex:1;min-width:0">
+      <div style="display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:9.5px;font-weight:800;letter-spacing:1px;padding:3px 9px;border-radius:20px;text-transform:uppercase">🔒 Exclusivité Pass Élite</div>
+      <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">Sujets &amp; Interros corrigés</h3>
+      <p style="margin:0;font-size:12px;opacity:.92">Interros, devoirs &amp; sujets type BAC avec corrigés · <span id="eliteSpotCount">chargement…</span></p>
+    </div>
+    <div style="flex-shrink:0;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:800;font-size:13px;padding:11px 16px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.18);white-space:nowrap">Découvrir ➜</div>
+  </div>`;
+}
+
+// Remplit le compteur de la bannière Élite (catalogue public, mis en cache 5 min côté serveur).
+async function updateEliteSpotCount() {
+  const el = document.getElementById('eliteSpotCount');
+  if (!el) return;
+  try {
+    if (!window._sujetsCatalog) {
+      const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+      const res = await fetch(`${apiBase}/api/interros/catalog`, { cache: 'no-store' });
+      const data = await res.json();
+      window._sujetsCatalog = (data && data.interros) || [];
+    }
+    const myClass = String((window.USER_PROFILE && window.USER_PROFILE.selectedClass) || '');
+    const n = window._sujetsCatalog.filter(d => d.classe === myClass).length;
+    const total = window._sujetsCatalog.length;
+    el.textContent = n > 0
+      ? `${n} épreuve${n > 1 ? 's' : ''} pour ta classe`
+      : (total ? `${total} épreuves en ligne` : 'nouvelles épreuves chaque semaine');
+  } catch (e) {
+    el.textContent = 'énoncé + corrigé PDF';
+  }
+}
 
 function getToolsBar() {
   const hasStats = window.userHasFeature ? window.userHasFeature('Statistiques Avancées') : false;
