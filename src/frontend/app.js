@@ -2185,13 +2185,14 @@ function showDashboard(push = true) {
     0
   );
   document.getElementById('content').innerHTML =
-    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getEliteSpotlight()}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getEliteSpotlight()}${getReviewsBannerHtml()}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
   document.querySelectorAll('.class-card').forEach(el => el.addEventListener('click', () => showClass(el.dataset.cls)));
   clearActive();
   updateEliteSpotCount();
   refreshOfflineStatus();
   if (typeof updateSidebarPassBtn === 'function') updateSidebarPassBtn();
   if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+  if (typeof loadHomeReviews === 'function') loadHomeReviews();
 }
 function updatePageTitle(title) {
   document.title = title + ' | ResumeCI';
@@ -2979,6 +2980,63 @@ window.openInterroDoc = async function(code, part) {
 
 // ==================== AVIS DES ÉLÈVES (mur d'avis modéré) ====================
 window._reviewStars = 5;
+window._reviewsCache = null;   // null = pas encore chargé
+
+// Bandeau très visible en haut de l'accueil : note moyenne + extraits + CTA.
+// Le contenu arrive en asynchrone via loadHomeReviews().
+function getReviewsBannerHtml() {
+  return '<div id="homeReviewsBanner"></div>';
+}
+
+function fillHomeReviewsBanner() {
+  const el = document.getElementById('homeReviewsBanner');
+  if (!el) return;
+  const list = window._reviewsCache;
+  const CTA = `openReviewsModal()`;
+  if (!list || !list.length) {
+    el.innerHTML = `<div onclick="${CTA}" role="button" style="cursor:pointer;display:flex;align-items:center;gap:14px;margin:0 0 14px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,#92400e,#b45309 55%,#d97706);color:#fff;box-shadow:0 8px 22px rgba(217,119,6,.3)">
+      <div style="font-size:28px">⭐</div>
+      <div style="flex:1"><div style="font-weight:900;font-size:15px">Avis des élèves</div><div style="font-size:12px;opacity:.92">Sois le premier à partager ton expérience ResumeCI !</div></div>
+      <div style="font-size:12px;font-weight:800;background:rgba(255,255,255,.18);padding:8px 14px;border-radius:99px;white-space:nowrap">Donner mon avis →</div>
+    </div>`;
+    return;
+  }
+  const avg = list.reduce((s, r) => s + r.stars, 0) / list.length;
+  const starStr = n => '★'.repeat(n) + '☆'.repeat(5 - n);
+  const quotes = list.slice(0, 2).map(r => `
+    <div style="flex:1;min-width:180px;background:rgba(255,255,255,.12);border-radius:12px;padding:10px 12px">
+      <div style="font-size:11px;letter-spacing:1px">${starStr(r.stars)}</div>
+      <div style="font-size:12px;font-style:italic;line-height:1.4;margin:4px 0">« ${escHtml(String(r.text).slice(0, 110))}${r.text.length > 110 ? '…' : ''} »</div>
+      <div style="font-size:10.5px;font-weight:800;opacity:.9">— ${escHtml(r.firstName)} · ${escHtml(String(r.classe || '').replace(/_/g, ' '))}</div>
+    </div>`).join('');
+  el.innerHTML = `<div style="margin:0 0 14px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#78350f,#b45309 55%,#d97706);color:#fff;box-shadow:0 10px 26px rgba(217,119,6,.32);position:relative;overflow:hidden">
+    <div style="position:absolute;top:-30px;right:-20px;font-size:110px;opacity:.08;transform:rotate(12deg)">⭐</div>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative">
+      <div onclick="${CTA}" role="button" style="cursor:pointer;text-align:center;min-width:86px">
+        <div style="font-size:30px;font-weight:900;line-height:1">${avg.toFixed(1)}<span style="font-size:14px;font-weight:700;opacity:.8">/5</span></div>
+        <div style="font-size:13px;letter-spacing:1px;color:#fde68a">${'★'.repeat(Math.round(avg))}</div>
+        <div style="font-size:10px;font-weight:800;opacity:.9">${list.length} avis vérifiés</div>
+      </div>
+      ${quotes}
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:140px">
+        <button onclick="${CTA}" style="padding:9px 12px;border:none;border-radius:10px;background:#fff;color:#92400e;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap"><i class="fas fa-comments"></i> Tous les avis</button>
+        <button onclick="${CTA}" style="padding:9px 12px;border:1.5px solid rgba(255,255,255,.5);border-radius:10px;background:transparent;color:#fff;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap">✍️ Donner mon avis</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+window.loadHomeReviews = async function() {
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/reviews?limit=6`, { cache: 'no-store' });
+    const data = await res.json();
+    window._reviewsCache = (data && data.reviews) || [];
+  } catch (e) {
+    window._reviewsCache = [];
+  }
+  fillHomeReviewsBanner();
+};
 
 window.openReviewsModal = async function() {
   const modal = document.getElementById('reviewsModal');
