@@ -638,6 +638,7 @@ async function loadData() {
     document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.theme === savedTheme));
   if (typeof handleInitialRoute === 'function') handleInitialRoute();
   else showDashboard();
+  setTimeout(() => { if (window.checkReviewGate) window.checkReviewGate(); }, 2500);
   if (typeof updateTopbarStreak === 'function') {
     updateTopbarStreak();
   }
@@ -3137,6 +3138,7 @@ window.submitReview = async function() {
     });
     const data = await res.json().catch(() => ({}));
     if (res.ok && data.success) {
+      localStorage.setItem('resumeci_review_done', '1');
       if (window.toast) toast('🎉 Avis envoyé ! Il sera publié après validation.', 'success', 4000);
       document.getElementById('reviewFormZone').innerHTML = `<div style="padding:18px 8px;text-align:center">
         <div style="font-size:30px">🎉</div>
@@ -3151,6 +3153,82 @@ window.submitReview = async function() {
     if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
     if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer mon avis'; }
   }
+};
+
+// ---------- Portail avis : affiché à chaque session tant que l'élève ----------
+// ---------- n'a aucun avis enregistré (pending ou approved côté serveur) ------
+window._gateStars = 0;
+
+window.setGateStar = function(n) {
+  window._gateStars = n;
+  document.querySelectorAll('#gateStarPicker span').forEach((s, i) => { s.style.color = (i + 1) <= n ? '#f59e0b' : '#e2e8f0'; });
+};
+
+window.checkReviewGate = async function() {
+  try {
+    const p = window.USER_PROFILE;
+    if (!p || !p.sessionToken) return;                       // visiteur : pas de portail
+    if (localStorage.getItem('resumeci_review_done') === '1') return;
+    if (sessionStorage.getItem('resumeci_review_skip') === '1') return;
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/reviews/mine`, {
+      headers: { 'Authorization': 'Bearer ' + p.sessionToken },
+      cache: 'no-store'
+    });
+    if (!res.ok) return; // fail-open : jamais de blocage sur erreur réseau
+    const data = await res.json().catch(() => ({}));
+    if (data && data.submitted) { localStorage.setItem('resumeci_review_done', '1'); return; }
+    document.getElementById('reviewGateModal')?.classList.add('show');
+  } catch (e) { /* fail-open : on ne bloque jamais l'app */ }
+};
+
+window.submitGateReview = async function() {
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  if (!token) { window.location.href = '/connexion.html'; return; }
+  const text = (document.getElementById('gateReviewText')?.value || '').trim();
+  if (!window._gateStars) {
+    if (window.toast) toast('Choisis une note en étoiles.', 'warn');
+    return;
+  }
+  if (text.length < 10) {
+    if (window.toast) toast('Écris au moins 10 caractères.', 'warn');
+    return;
+  }
+  const btn = document.getElementById('gateSubmitBtn');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…'; }
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/reviews`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body: JSON.stringify({ stars: window._gateStars, text })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.success) {
+      localStorage.setItem('resumeci_review_done', '1');
+      const modal = document.getElementById('reviewGateModal');
+      if (modal) {
+        modal.querySelector('.profile-modal').innerHTML = `<div style="padding:36px 22px;text-align:center">
+          <div style="font-size:44px">🎉</div>
+          <div style="font-weight:800;font-size:17px;color:#0f172a;margin:10px 0 6px">Merci pour ton avis !</div>
+          <div style="font-size:12.5px;color:#64748b;line-height:1.6">Il sera visible par tous les élèves après validation par l'équipe.<br>Bonne révision !</div>
+        </div>`;
+        setTimeout(() => modal.classList.remove('show'), 2200);
+      }
+      if (window.toast) toast('🎉 Merci ! Avis envoyé.', 'success', 4000);
+    } else {
+      if (window.toast) toast(data.error || 'Envoi impossible.', 'warn');
+      if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Publier mon avis'; }
+    }
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+    if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Publier mon avis'; }
+  }
+};
+
+window.dismissReviewGate = function() {
+  sessionStorage.setItem('resumeci_review_skip', '1');
+  document.getElementById('reviewGateModal')?.classList.remove('show');
 };
 
 // ==================== MODE EXAMEN EN LIGNE (Pass Élite) ====================

@@ -2047,6 +2047,24 @@ app.post('/api/reviews', reviewsLimiter, async (req, res) => {
   }
 });
 
+// Statut de l'avis de l'utilisateur connecté : le front s'en sert pour
+// afficher le portail « laisse ton avis » tant qu'aucun avis n'existe
+// (pending ou approved = considéré comme rempli).
+app.get('/api/reviews/mine', async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) return res.status(401).json({ success: false, error: 'Session requise.' });
+    if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    const own = await db.collection('reviews').where('uid', '==', user._docId).limit(1).get();
+    if (own.empty) return res.json({ success: true, submitted: false });
+    res.json({ success: true, submitted: true, status: own.docs[0].data().status || REVIEW_STATUS.PENDING });
+  } catch (err) {
+    console.error('[Reviews] Erreur statut avis:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
 // --- Admin : liste complète (en attente d'abord, puis récents) ---
 app.get('/api/admin/reviews', async (req, res) => {
   try {
