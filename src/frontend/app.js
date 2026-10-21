@@ -921,7 +921,8 @@ function renderSidebar() {
   // Entrée Élite épinglée en tête de sidebar : la fonctionnalité Sujets & Interros
   // reste visible en permanence, quelle que soit la fiche ouverte.
   const eliteNav = `<div class="nav-class nav-elite-entry"><div class="nav-class-header" onclick="if(typeof openSujetsModal==='function')openSujetsModal()" style="background:linear-gradient(135deg,rgba(124,58,237,.16),rgba(168,85,247,.10));border:1px solid rgba(124,58,237,.4);border-radius:10px;margin:0 4px 8px;cursor:pointer"><span style="font-weight:700">📝 Sujets &amp; Interros</span><span class="badge" style="background:#7c3aed;color:#fff">ÉLITE</span></div></div>`;
-  nav.innerHTML = eliteNav + h;
+  const reviewsNav = `<div class="nav-class"><div class="nav-class-header" onclick="if(typeof openReviewsModal==='function')openReviewsModal()" style="background:linear-gradient(135deg,rgba(245,158,11,.14),rgba(251,191,36,.08));border:1px solid rgba(245,158,11,.4);border-radius:10px;margin:0 4px 8px;cursor:pointer"><span style="font-weight:700">⭐ Avis des élèves</span></div></div>`;
+  nav.innerHTML = eliteNav + reviewsNav + h;
   nav.querySelectorAll('.nav-lesson').forEach(el => {
     el.addEventListener('click', () => {
       const cls = el.dataset.cls,
@@ -2976,6 +2977,124 @@ window.openInterroDoc = async function(code, part) {
   }
 };
 
+// ==================== AVIS DES ÉLÈVES (mur d'avis modéré) ====================
+window._reviewStars = 5;
+
+window.openReviewsModal = async function() {
+  const modal = document.getElementById('reviewsModal');
+  if (!modal) return;
+  modal.classList.add('show');
+  renderReviewForm();
+  const body = document.getElementById('reviewsListBody');
+  body.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des avis…</div>';
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/reviews`, { cache: 'no-store' });
+    const data = await res.json();
+    renderReviewsList((data && data.reviews) || []);
+  } catch (e) {
+    body.innerHTML = '<p style="text-align:center;color:#94a3b8;padding:20px">⚠️ Impossible de charger les avis. Vérifie ta connexion.</p>';
+  }
+};
+
+window.closeReviewsModal = function() {
+  document.getElementById('reviewsModal')?.classList.remove('show');
+};
+
+function renderReviewsList(reviews) {
+  const body = document.getElementById('reviewsListBody');
+  if (!body) return;
+  if (!reviews.length) {
+    body.innerHTML = '<p style="text-align:center;color:#94a3b8;padding:24px 12px">💬 Aucun avis publié pour l\'instant.<br><span style="font-size:11px">Sois le premier à laisser ton avis ci-dessous !</span></p>';
+    return;
+  }
+  const CLASS_LABELS = { '3eme':'3ème','4eme':'4ème','5eme':'5ème','6eme':'6ème','Seconde_A':'Seconde A','Seconde_C':'Seconde C','Premiere_A':'1ère A','Premiere_C':'1ère C','Premiere_D':'1ère D','Terminale_A':'Terminale A','Terminale_C':'Terminale C','Terminale_D':'Terminale D' };
+  const clsLabel = c => CLASS_LABELS[c] || String(c || '').replace(/^Licence_/, 'Licence ').replace(/_/g, ' ') || 'Élève';
+  const avg = reviews.reduce((s, r) => s + r.stars, 0) / reviews.length;
+  const starStr = n => '★'.repeat(n) + '<span style="color:#e2e8f0">' + '★'.repeat(5 - n) + '</span>';
+  const relDate = iso => {
+    const d = new Date(iso); if (isNaN(d)) return '';
+    const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+    return days <= 0 ? "aujourd'hui" : days === 1 ? 'hier' : days < 30 ? `il y a ${days} j` : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+  };
+  body.innerHTML = `<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:12px;border-radius:12px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a">
+      <div style="font-size:26px;font-weight:900;color:#b45309">${avg.toFixed(1)}</div>
+      <div><div style="color:#f59e0b;font-size:15px;letter-spacing:1px">${'★'.repeat(Math.round(avg))}</div>
+      <div style="font-size:11px;color:#92400e;font-weight:700">${reviews.length} avis d'élèves vérifiés</div></div>
+    </div>` + reviews.map(r => `
+    <div style="border:1.5px solid #e2e8f0;border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px">${escHtml((r.firstName || 'E')[0].toUpperCase())}</div>
+          <div><div style="font-weight:800;font-size:13px;color:#0f172a">${escHtml(r.firstName)} <span style="font-weight:600;color:#64748b;font-size:11px">· ${escHtml(clsLabel(r.classe))}</span></div>
+          <div style="font-size:10px;color:#059669;font-weight:700"><i class="fas fa-check-circle"></i> Élève vérifié · ${relDate(r.createdAt)}</div></div>
+        </div>
+        <div style="color:#f59e0b;font-size:13px;letter-spacing:1px">${starStr(r.stars)}</div>
+      </div>
+      <div style="font-size:13px;color:#334155;line-height:1.5">${escHtml(r.text)}</div>
+    </div>`).join('');
+}
+
+function renderReviewForm() {
+  const zone = document.getElementById('reviewFormZone');
+  if (!zone) return;
+  const logged = !!(window.USER_PROFILE && window.USER_PROFILE.sessionToken);
+  if (!logged) {
+    zone.innerHTML = `<div style="padding-top:14px;text-align:center">
+      <p style="font-size:12.5px;color:#64748b;margin:0 0 10px">Toi aussi, partage ton expérience ResumeCI !</p>
+      <button onclick="window.location.href='/connexion.html'" style="width:100%;padding:11px;border:none;border-radius:10px;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:800;font-size:13px;cursor:pointer"><i class="fas fa-sign-in-alt"></i> Connecte-toi pour laisser ton avis</button>
+    </div>`;
+    return;
+  }
+  zone.innerHTML = `<div style="padding-top:14px">
+    <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:8px">✍️ Donne ton avis</div>
+    <div id="reviewStarPicker" style="font-size:26px;letter-spacing:6px;cursor:pointer;text-align:center;margin-bottom:8px">${[1,2,3,4,5].map(n => `<span onclick="setReviewStar(${n})" style="color:${n <= window._reviewStars ? '#f59e0b' : '#e2e8f0'}">★</span>`).join('')}</div>
+    <textarea id="reviewText" maxlength="600" rows="3" placeholder="Raconte ton expérience : fiches, quiz, hors-ligne, sujets corrigés…" style="width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:13px;resize:vertical;box-sizing:border-box"></textarea>
+    <button id="reviewSubmitBtn" onclick="submitReview()" style="width:100%;margin-top:8px;padding:11px;border:none;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:800;font-size:13px;cursor:pointer"><i class="fas fa-paper-plane"></i> Envoyer mon avis</button>
+    <p style="font-size:10.5px;color:#94a3b8;text-align:center;margin:8px 0 0">🔒 Ton avis sera visible après validation par l'équipe ResumeCI.</p>
+  </div>`;
+}
+
+window.setReviewStar = function(n) {
+  window._reviewStars = n;
+  document.querySelectorAll('#reviewStarPicker span').forEach((s, i) => { s.style.color = (i + 1) <= n ? '#f59e0b' : '#e2e8f0'; });
+};
+
+window.submitReview = async function() {
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  if (!token) { window.location.href = '/connexion.html'; return; }
+  const text = (document.getElementById('reviewText')?.value || '').trim();
+  if (text.length < 10) {
+    if (window.toast) toast('Écris au moins 10 caractères.', 'warn');
+    return;
+  }
+  const btn = document.getElementById('reviewSubmitBtn');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi…'; }
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/reviews`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body: JSON.stringify({ stars: window._reviewStars, text })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.success) {
+      if (window.toast) toast('🎉 Avis envoyé ! Il sera publié après validation.', 'success', 4000);
+      document.getElementById('reviewFormZone').innerHTML = `<div style="padding:18px 8px;text-align:center">
+        <div style="font-size:30px">🎉</div>
+        <div style="font-weight:800;font-size:14px;color:#0f172a;margin:6px 0 4px">Merci pour ton avis !</div>
+        <div style="font-size:12px;color:#64748b">Il sera visible par tous les élèves après validation par l'équipe.</div>
+      </div>`;
+    } else {
+      if (window.toast) toast(data.error || 'Envoi impossible.', 'warn');
+      if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer mon avis'; }
+    }
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+    if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer mon avis'; }
+  }
+};
+
 // ==================== MODE EXAMEN EN LIGNE (Pass Élite) ====================
 // L'épreuve se déroule dans l'app : chrono, réponses saisies pour le bloc
 // interactif (corrigé automatique au rendu) et exercices à rédiger sur feuille
@@ -3980,6 +4099,7 @@ function getToolsBar() {
     ${plannerCard}
     ${statsCard}
     ${sujetsCard}
+    <a class="tool-card" href="#" onclick="if(typeof openReviewsModal==='function')openReviewsModal(); return false;"><div class="tool-icon">⭐</div><h4>Avis des élèves</h4><p>Leur expérience + donne la tienne</p></a>
   </div>`;
 }
 const TTS = {

@@ -1963,6 +1963,147 @@ app.get('/api/admin/transactions', async (req, res) => {
   }
 });
 
+// --------------------------------------------------------------------------
+// ROUTES 8 : AVIS DES ÉLÈVES — lecture publique (approuvés), dépôt authentifié,
+// modération exclusivement par l'admin (validation + suppression).
+// --------------------------------------------------------------------------
+const REVIEW_STATUS = { PENDING: 'pending', APPROVED: 'approved' };
+const reviewsLimiter = limiter(15 * 60 * 1000, 10);
+
+function reviewPublicView(d) {
+  const r = d.data();
+  return {
+    id: d.id,
+    firstName: String(r.firstName || 'Élève').slice(0, 60),
+    classe: String(r.classe || '').slice(0, 60),
+    stars: Math.max(1, Math.min(5, parseInt(r.stars, 10) || 5)),
+    text: String(r.text || '').slice(0, 600),
+    createdAt: r.createdAt || null
+  };
+}
+
+// Lecture publique : uniquement les avis validés par l'admin.
+app.get('/api/reviews', async (req, res) => {
+  try {
+    if (!db) return res.json({ success: true, reviews: [] });
+    const lim = Math.min(Math.max(parseInt(req.query.limit, 10) || 50, 1), 100);
+    const snap = await db.collection('reviews').where('status', '==', REVIEW_STATUS.APPROVED).get();
+    const reviews = snap.docs
+      .map(reviewPublicView)
+      .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))
+      .slice(0, lim);
+    res.json({ success: true, reviews });
+  } catch (err) {
+    console.error('[Reviews] Erreur lecture:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// Dépôt d'un avis : sessionToken requis. L'avis part en « pending » — invisible
+// tant que l'admin ne l'a pas validé.
+app.post('/api/reviews', reviewsLimiter, async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'Connecte-toi pour laisser ton avis.' });
+    }
+    if (!db) {
+      return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    }
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) {
+      return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    }
+    const stars = parseInt(req.body.stars, 10);
+    const text = String(req.body.text || '').trim();
+    if (!Number.isInteger(stars) || stars < 1 || stars > 5) {
+      return res.status(400).json({ success: false, error: 'Note entre 1 et 5 étoiles requise.' });
+    }
+    if (text.length < 10 || text.length > 600) {
+      return res.status(400).json({ success: false, error: 'Ton avis doit contenir entre 10 et 600 caractères.' });
+    }
+    // Un seul avis en attente à la fois par compte (anti-spam).
+    const own = await db.collection('reviews').where('uid', '==', user._docId).get();
+    if (own.docs.some(d => d.data().status === REVIEW_STATUS.PENDING)) {
+      return res.status(409).json({ success: false, error: 'Tu as déjà un avis en attente de validation.' });
+    }
+    const fv = FieldValue || admin.firestore?.FieldValue;
+    const doc = {
+      uid: user._docId,
+      firstName: String(user.firstName || (user.fullName ? user.fullName.split(' ')[0] : 'Élève')).slice(0, 60),
+      classe: String(user.selectedClass || user.classe || '').slice(0, 60),
+      stars,
+      text,
+      status: REVIEW_STATUS.PENDING,
+      createdAt: new Date().toISOString(),
+      createdTs: fv ? fv.serverTimestamp() : null
+    };
+    const ref = await db.collection('reviews').add(doc);
+    console.log(`[Reviews] 📝 Nouvel avis en attente (${stars}★) de ${maskPhone(user._docId)} → ${ref.id}`);
+    res.json({ success: true, pending: true, message: 'Avis envoyé ! Il sera visible après validation par notre équipe.' });
+  } catch (err) {
+    console.error('[Reviews] Erreur dépôt:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : liste complète (en attente d'abord, puis récents) ---
+app.get('/api/admin/reviews', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const snap = await db.collection('reviews').limit(300).get();
+    const reviews = snap.docs.map(d => ({ ...reviewPublicView(d), status: d.data().status || 'pending', uid: d.data().uid || '' }));
+    const rank = r => (r.status === 'pending' ? 0 : 1);
+    reviews.sort((a, b) => rank(a) - rank(b) || String(b.createdAt || '').localeCompare(String(a.createdAt || '')));
+    res.json({ success: true, reviews });
+  } catch (err) {
+    console.error('[Admin Reviews] Erreur liste:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : publier un avis ---
+app.post('/api/admin/reviews/:id/approve', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const id = String(req.params.id || '');
+    if (!id || id.includes('/')) return res.status(400).json({ error: 'Identifiant invalide.' });
+    const ref = db.collection('reviews').doc(id);
+    const doc = await ref.get();
+    if (!doc.exists) return res.status(404).json({ error: 'Avis introuvable.' });
+    const fv = FieldValue || admin.firestore?.FieldValue;
+    await ref.update({
+      status: REVIEW_STATUS.APPROVED,
+      approvedAt: new Date().toISOString(),
+      approvedBy: String(req.adminUser.email || 'admin').toLowerCase(),
+      ...(fv ? { approvedTs: fv.serverTimestamp() } : {})
+    });
+    console.log(`[Admin Reviews] ✅ Avis ${id} publié par ${req.adminUser.email}`);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('[Admin Reviews] Erreur approbation:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : supprimer un avis (refus ou retrait d'un avis déjà publié) ---
+app.delete('/api/admin/reviews/:id', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const id = String(req.params.id || '');
+    if (!id || id.includes('/')) return res.status(400).json({ error: 'Identifiant invalide.' });
+    const ref = db.collection('reviews').doc(id);
+    const doc = await ref.get();
+    if (!doc.exists) return res.status(404).json({ error: 'Avis introuvable.' });
+    await ref.delete();
+    console.log(`[Admin Reviews] 🗑️ Avis ${id} supprimé par ${req.adminUser.email}`);
+    res.json({ success: true });
+  } catch (err) {
+    console.error('[Admin Reviews] Erreur suppression:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
 app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
