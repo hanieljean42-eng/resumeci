@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-09",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Transmission de deux caractères héréditaires",
+  "consignes": "Utiliser les symboles demandés. L'échiquier est à compléter et à rendre avec la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Croisement chez le maïs",
+      "points": "5 pts",
+      "consigne": "Chez le maïs, on considère deux couples d'allèles : <strong>S/s</strong> pour la forme du grain (S : sucré, dominant ; s : farineux) et <strong>N/n</strong> pour la couleur (N : normal/violet, dominant ; n : jaune). On croise deux plants doublement hétérozygotes $S s\\;N n$.",
+      "enonce": "<ol type='a'><li>Déterminer les quatre types de gamètes produits par chaque parent.</li><li>Compléter l'échiquier de croisement ci-dessous (16 cases).</li><li>Donner les proportions phénotypiques de la descendance si les deux gènes sont <strong>indépendants</strong>.</li><li>À quelles proportions s'attendrait-on si les deux gènes étaient <strong>liés</strong> (sans crossing-over) ? Expliquer la différence.</li></ol>",
+      "svg": "<svg viewBox='0 0 360 360' xmlns='http://www.w3.org/2000/svg'><g stroke='#334155' stroke-width='1.2' fill='none'><rect x='40' y='40' width='280' height='280'/><line x1='110' y1='40' x2='110' y2='320'/><line x1='180' y1='40' x2='180' y2='320'/><line x1='250' y1='40' x2='250' y2='320'/><line x1='40' y1='110' x2='320' y2='110'/><line x1='40' y1='180' x2='320' y2='180'/><line x1='40' y1='250' x2='320' y2='250'/></g><g font-family='Georgia' font-size='14' fill='#334155' text-anchor='middle'><text x='75' y='30'>SN</text><text x='145' y='30'>Sn</text><text x='215' y='30'>sN</text><text x='285' y='30'>sn</text><text x='24' y='80'>SN</text><text x='24' y='150'>Sn</text><text x='24' y='220'>sN</text><text x='24' y='290'>sn</text></g><text x='180' y='345' font-family='Georgia' font-size='12' fill='#64748b' text-anchor='middle'>Échiquier de croisement à compléter (génotype de chaque case)</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Chaque parent $S s\\;N n$ produit 4 gamètes : $SN$, $Sn$, $sN$, $sn$</span> (en proportions égales si les gènes sont indépendants).</p><p><strong>b)</strong> Échiquier complété : chaque case combine un gamète paternel et un maternel : SSNN, SSNn, SsNN, SsNn, SSnn, Ssnn, ssNN, ssNn, ssnn… (16 cases).</p><p><strong>c)</strong> <span class='reponse'>Proportions attendues : 9/16 (sucré, normal) — 3/16 (sucré, jaune) — 3/16 (farineux, normal) — 1/16 (farineux, jaune) : ratio classique 9 : 3 : 3 : 1.</span></p><p><strong>d)</strong> <span class='reponse'>Si les gènes étaient liés en trans (couplés $SN$ et $sn$), chaque parent ne produirait que 2 gamètes (SN et sn), et la descendance ne comporterait que 3 phénotypes au lieu de 4 : 3/4 (sucré normal) — 1/4 (farineux jaune). Avec liaison mais crossing-over, des gamètes recombinés apparaissent mais en proportion < 50 % : les deux phénotypes parentaux dominent. La proportion 9:3:3:1 n'est obtenue que si les gènes se recombinent librement (indépendance méiotique).</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Test-cross et interprétation",
+      "points": "5 pts",
+      "consigne": "On effectue un test-cross : un hétérozygote $S s\\;N n$ est croisé avec un individu doublement homozygote récessif $s s\\;n n$.",
+      "enonce": "<ol type='a'><li>À quoi sert un test-cross ?</li><li>Donner les proportions phénotypiques attendues si les gènes sont indépendants.</li><li>On observe en réalité : 40 % sucré-normal, 40 % farineux-jaune, 10 % sucré-jaune, 10 % farineux-normal. Conclure : les gènes sont-ils indépendants ou liés ? Justifier.</li><li>Que signifie le pourcentage des phénotypes minoritaires ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Le test-cross révèle la composition gamétique du parent testé : tous ses gamètes se manifestent dans le phénotype des descendants puisque l'autre parent n'apporte que des allèles récessifs.</span></p><p><strong>b)</strong> <span class='reponse'>Si les gènes sont indépendants, l'hétérozygote produit 4 gamètes équiprobables : 25 % sucré-normal, 25 % sucré-jaune, 25 % farineux-normal, 25 % farineux-jaune.</span></p><p><strong>c)</strong> <span class='reponse'>Les gènes sont <strong>liés</strong> : on observe 80 % de phénotypes parentaux (sucré-normal + farineux-jaune) contre seulement 20 % de recombinés, loin des 50 % attendus si les gènes étaient indépendants. Les gamètes parentaux $SN$ et $sn$ sont majoritaires.</span></p><p><strong>d)</strong> <span class='reponse'>Les phénotypes minoritaires (sucré-jaune et farineux-normal, 10 % chacun) résultent du <strong>crossing-over</strong> pendant la méiose : l'échange de segments entre chromatides homologues produit des gamètes recombinés $Sn$ et $sN$. Le taux de recombinaison (ici 20 %) reflète la distance entre les deux gènes sur le chromosome.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    }
+  ]
+}

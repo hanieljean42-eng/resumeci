@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-MATH-09",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Primitives · Calcul intégral",
+  "consignes": "Justifier toutes les réponses. La calculatrice n'est pas autorisée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Détermination de primitives",
+      "points": "5 pts",
+      "consigne": "Déterminer, pour chaque fonction, la primitive qui s'annule à la valeur indiquée.",
+      "enonce": "<ol type='a'><li>$f(x) = 2x - 3 + \\dfrac{4}{x}$ sur $]0\\,;\\,+\\infty[$ ; primitive $F$ telle que $F(1) = 0$.</li><li>$g(x) = \\dfrac{1}{x^2} + \\cos x$ ; primitive $G$ telle que $G(1) = 0$ (avec $\\cos$ en radians).</li><li>$h(x) = 3\\mathrm{e}^{2x} - \\dfrac{2}{x}$ sur $]0\\,;\\,+\\infty[$ ; primitive $H$ telle que $H(1) = \\dfrac{3}{2}$.</li><li>Soit $u(x) = \\sqrt{x} + \\dfrac{1}{\\sqrt{x}}$ sur $]0\\,;\\,+\\infty[$. Déterminer une primitive de $u$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Primitive de $2x - 3 + \\dfrac{4}{x}$ : $x^2 - 3x + 4\\ln x + C$. $F(1) = 1 - 3 + 0 + C = 0 \\Rightarrow C = 2$ : <span class='reponse'>$F(x) = x^2 - 3x + 4\\ln x + 2$</span>.</p><p><strong>b)</strong> $G(x) = -\\dfrac{1}{x} + \\sin x + C$. $G(1) = -1 + \\sin 1 + C = 0 \\Rightarrow C = 1 - \\sin 1$ : <span class='reponse'>$G(x) = -\\dfrac{1}{x} + \\sin x + 1 - \\sin 1$</span>.</p><p><strong>c)</strong> $H(x) = \\dfrac{3}{2}\\mathrm{e}^{2x} - 2\\ln x + C$. $H(1) = \\dfrac{3}{2}\\mathrm{e}^2 + C = \\dfrac{3}{2} \\Rightarrow C = \\dfrac{3}{2} - \\dfrac{3}{2}\\mathrm{e}^2$ : <span class='reponse'>$H(x) = \\dfrac{3}{2}\\mathrm{e}^{2x} - 2\\ln x + \\dfrac{3}{2} - \\dfrac{3}{2}\\mathrm{e}^2$</span>.</p><p><strong>d)</strong> $\\sqrt{x} = x^{1/2}$, $\\dfrac{1}{\\sqrt{x}} = x^{-1/2}$ : primitives $\\dfrac{2}{3}x^{3/2}$ et $2x^{1/2}$ : <span class='reponse'>$U(x) = \\dfrac{2}{3}x^{3/2} + 2\\sqrt{x} + C$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Calcul intégral et aire",
+      "points": "5 pts",
+      "consigne": "",
+      "enonce": "<ol type='a'><li>Calculer $\\displaystyle I = \\int_{1}^{\\mathrm{e}} \\dfrac{1}{x}\\,\\mathrm{d}x$.</li><li>Calculer $\\displaystyle K = \\int_{0}^{1} \\mathrm{e}^{2x}\\,\\mathrm{d}x$.</li><li>À l'aide d'une intégration par parties, calculer $\\displaystyle L = \\int_{1}^{\\mathrm{e}} \\ln x\\,\\mathrm{d}x$.</li><li>En déduire l'aire, en unités d'aire, du domaine délimité par la courbe $y = \\ln x$, l'axe des abscisses et les droites $x = 1$ et $x = \\mathrm{e}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $I = \\left[\\ln x\\right]_1^{\\mathrm{e}} = 1 - 0 =$ <span class='reponse'>$1$</span>.</p><p><strong>b)</strong> $K = \\left[\\dfrac{1}{2}\\mathrm{e}^{2x}\\right]_0^1 = \\dfrac{\\mathrm{e}^2 - 1}{2}$ : <span class='reponse'>$K = \\dfrac{\\mathrm{e}^2 - 1}{2}$</span>.</p><p><strong>c)</strong> Posons $u = \\ln x$ ($u' = \\frac{1}{x}$), $v' = 1$ ($v = x$) : $L = \\left[x\\ln x\\right]_1^{\\mathrm{e}} - \\displaystyle\\int_1^{\\mathrm{e}} 1\\,\\mathrm{d}x = \\mathrm{e} - 0 - (\\mathrm{e} - 1) =$ <span class='reponse'>$1$</span>.</p><p><strong>d)</strong> $\\ln x \\geq 0$ sur $[1\\,;\\,\\mathrm{e}]$ : l'aire est $\\mathcal{A} = \\displaystyle\\int_1^{\\mathrm{e}} \\ln x\\,\\mathrm{d}x = L =$ <span class='reponse'>$1\\ \\mathrm{u.a.}$</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 2 pts · d) 1 pt"
+    }
+  ]
+}

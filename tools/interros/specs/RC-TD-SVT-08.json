@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-SVT-08",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Gisements miniers et environnement · Conservation et protection des sols",
+  "consignes": "Réponses précises, illustrées d'exemples ivoiriens.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les gisements miniers",
+      "points": "5 pts",
+      "consigne": "La Côte d'Ivoire dispose d'un sous-sol riche : or, manganèse, bauxite, nickel, diamant.",
+      "enonce": "<ol type='a'><li>Définir les termes : <strong>minerai</strong> et <strong>gisement</strong>.</li><li>Expliquer brièvement les <strong>trois</strong> grands processus de formation des gisements miniers (magmatique, sédimentaire, métamorphique) en donnant un exemple de minerai pour chacun.</li><li>Citer <strong>deux</strong> régions de Côte d'Ivoire connues pour leur activité minière et le minerai qui y est exploité.</li><li>Identifier <strong>deux</strong> conséquences négatives de l'exploitation minière (artisanale ou industrielle) sur l'environnement et les populations.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Minerai : roche contenant une substance utile (métal) en quantité suffisante pour être exploitable. Gisement : zone du sous-sol où le minerai est concentré naturellement en quantité exploitables.</span></p><p><strong>b)</strong> <span class='reponse'>Magmatique : concentration par cristallisation ou ségrégation à partir du magma refroidissant (nickel, chromite). Sédimentaire : accumulation de minéraux par transport, tri et dépôt par l'eau ou le vent — gisements alluvionnaires (or, diamant, placers) ou précipitation chimique (bauxite par altération latéritique). Métamorphique : transformation des roches sous l'effet de la chaleur et de la pression (certains gisements de fer, de manganèse).</span></p><p><strong>c)</strong> <span class='reponse'>Exemples acceptables : l'or à Ity (ouest) et à Tongon (nord) ; le manganèse à Lauzoua/Grand-Lahou (sud) ; le nickel à Biankouma-Sipilou (ouest) ; la bauxite à Bénéné/Dabakala ; le diamant à Tortiya-Séguéla (nord).</span></p><p><strong>d)</strong> <span class='reponse'>Conséquences : déforestation et destruction des sols par les excavations ; pollution des eaux et des sols par le mercure ou le cyanure utilisés pour extraire l'or (orpaillage artisanal) ; affaissements de terrain, accidents mortels dans les puits non sécurisés ; perte de terres agricoles ; sédimentation des cours d'eau.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Érosion et conservation des sols",
+      "points": "5 pts",
+      "consigne": "L'érosion des sols est une menace majeure pour l'agriculture ivoirienne.",
+      "enonce": "<ol type='a'><li>Définir l'érosion des sols et citer ses deux grands agents.</li><li>Expliquer <strong>trois</strong> pratiques agricoles qui favorisent l'érosion.</li><li>Décrire <strong>trois</strong> techniques de conservation et de protection du sol adaptées aux régions de savane ou de forêt de Côte d'Ivoire.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Érosion : dégradation et enlèvement des particules du sol. Agents : l'eau (pluie, ruissellement — érosion hydrique) et le vent (érosion éolienne, surtout en zone de savane).</span></p><p><strong>b)</strong> <span class='reponse'>Pratiques aggravantes : la déforestation et les cultures itinérantes (abattage-brûlis) qui laissent le sol nu ; la culture le long des pentes (au lieu de suivre les courbes de niveau) ; le surpâturage qui tasse et dénude le sol ; les feux de brousse tardifs ; l'absence de couverture végétale entre les cultures.</span></p><p><strong>c)</strong> <span class='reponse'>Techniques acceptables : courbes de niveau et bandes d'arrêt (haies végétales) en zone de pente ; jachère et rotation des cultures ; couverture du sol par pâturage contrôlé, paillage ou cultures de couverture (ex. Pueraria sous cacaoyers) ; agroforesterie ; fertilisation organique et minérale raisonnée ; reboisement des zones sensibles ; diguettes et seuils contre le ruissellement ; interdiction des feux de brousse tardifs.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

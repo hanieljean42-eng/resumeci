@@ -52,6 +52,32 @@
     "corrige": true
   },
   {
+    "code": "RC-T-FRAN-03",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Commentaire composé · Dissertation littéraire",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-T-FRAN-03",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Commentaire composé · Dissertation littéraire",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -100,6 +126,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Croyances et valeurs du monde occidental · Mutations de la civilisation négro-africaine",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-HG-05",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Problèmes de développement en Côte d'Ivoire · Intégration régionale : la CEDEAO",
     "exercices": 2,
     "corrige": true
   },
@@ -221,6 +260,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-PHILO-05",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "La vie en société · La valeur de la philosophie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-MATH-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -312,6 +364,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-08",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Fonction exponentielle et fonction puissance · Isométries du plan",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-MATH-09",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Primitives et équations différentielles · Suites numériques",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -374,6 +452,19 @@
     "bareme": "20 points",
     "chapitre": "Champ électrique uniforme · Induction et auto-induction · Acide faible et solutions tampons",
     "exercices": 3,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Modèles de la lumière · Réactions nucléaires",
+    "exercices": 2,
     "corrige": true
   },
   {
@@ -520,6 +611,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-09",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Primitives · Calcul intégral",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -582,6 +686,19 @@
     "bareme": "20 points",
     "chapitre": "Champ électrique uniforme · Induction et auto-induction · Amines et acides carboxyliques",
     "exercices": 3,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-PC-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Champ magnétique · Force de Laplace",
+    "exercices": 2,
     "corrige": true
   },
   {
@@ -685,6 +802,32 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Le devenir des cellules sexuelles chez les mammifères · Le fonctionnement des organes sexuels",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-08",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Gisements miniers et environnement · Conservation et protection des sols",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-09",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Transmission de deux caractères héréditaires",
     "exercices": 2,
     "corrige": true
   }

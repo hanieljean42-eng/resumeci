@@ -1,0 +1,29 @@
+{
+  "code": "RC-T-FRAN-03",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "Terminales A & D",
+  "classes": ["Terminale_A", "Terminale_D"],
+  "duree": "3 heures",
+  "bareme": "20 points",
+  "chapitre": "Commentaire composé · Dissertation littéraire",
+  "consignes": "Traiter UN SEUL sujet au choix : soit le commentaire composé, soit la dissertation. Toute réponse doit s'appuyer sur le texte ou sur des exemples littéraires précis.",
+  "exercices": [
+    {
+      "titre": "Sujet 1 — Commentaire composé",
+      "points": "20 pts",
+      "consigne": "Lire attentivement l'extrait suivant, tiré d'un roman ivoirien original, puis composer un commentaire structuré (introduction — développement en deux ou trois parties — conclusion).",
+      "enonce": "<p style='font-family:Georgia,serif;font-style:italic;border-left:3px solid #94a3b8;padding-left:12px;margin:10px 0'>« Le camion s'arrêta dans un nuage de poussière ocre. Konan descendit, le sac en toile sur l'épaule, et resta un long moment à regarder le village de son enfance. Les cases étaient toujours là, regroupées autour du vieux kapokier, mais le silence avait changé : on n'entendait plus les pilons, ni les rires du soir. Seul le vent faisait bouger les volets décrochés de l'école. — Tu es revenu pour le deuil ? demanda une voix derrière lui. C'était son frère aîné, Amoin, les tempes grisonnantes. — Je suis revenu pour le village, répondit Konan. Si nous n'y retournons pas, qui le fera ? »</p><p><strong>Questions d'analyse</strong> (à intégrer dans un plan cohérent) : relever les procédés de description et de dialogue ; montrer comment l'auteur évoque l'exode rural et le rapport à la tradition ; analyser la dimension symbolique du kapokier, de l'école et du retour.</p>",
+      "correction": "<p class='reponse'><strong>Corrigé indicatif — Commentaire</strong></p><p><strong>Introduction.</strong> Texte original, genre narratif avec dialogue ; thématique du retour au village et de l'exode rural, sujet central de la littérature africaine contemporaine. Annonce du plan.</p><p><em>I. Une entrée en scène : l'arrivée et le constat du déclin.</em> Le récit à la 3e personne, focalisation externe puis interne sur Konan ; champ lexical de la poussière et du silence ; gradation (« plus les pilons, ni les rires ») ; images de l'école délabrée — le village meurt quand l'école meurt.</p><p><em>II. La langue et les symboles.</em> Le kapokier : arbre à palabres, racines, tradition et autorité ; les volets de l'école : décrochage des générations ; la question d'Amoin (« pour le deuil ? ») annonce un village en voie de deuil ; le sac « en toile » signe la simplicité du retour.</p><p><em>III. Le dialogue comme révélateur et le refus de la fatalité.</em> Deux répliques, deux conceptions : l'acceptation du deuil (Amoin) contre la volonté de réinvestir (Konan : « Si nous n'y retournons pas, qui le fera ? ») — le texte fait du retour un devoir de solidarité, non un simple hommage.</p><p><strong>Conclusion.</strong> L'extrait condense en quelques lignes l'enjeu de toute une génération : retourner ou laisser mourir l'espace d'origine ; ouverture possible sur le thème récurrent du « fils prodigue ».</p>",
+      "bareme_detail": "Intro 3 · Analyse organisée 12 · Conclusion 3 · Langue 2"
+    },
+    {
+      "titre": "Sujet 2 — Dissertation littéraire",
+      "points": "20 pts",
+      "consigne": "",
+      "enonce": "<p><strong>« La littérature africaine doit-elle d'abord témoigner de la réalité sociale, ou peut-elle privilégier l'imaginaire et l'invention ? »</strong></p><p>Vous discuterez cette question en vous appuyant sur des exemples précis tirés de votre culture littéraire (œuvres africaines ou universelles).</p>",
+      "correction": "<p class='reponse'><strong>Corrigé indicatif — Dissertation</strong></p><p><strong>Introduction.</strong> « Témoigner » : représenter le réel, la condition des hommes ; « imaginaire » : invention de mondes, de destins. Enjeu : la fonction de la littérature africaine après la décolonisation.</p><p><em>I. La littérature comme témoin de la réalité sociale.</em> Fonction engagée : dénonciation de la colonisation, de la misère, des injustices ; l'écrivain griot/mémoire collective ; exemples attendus : romans réalistes sur l'exode, la condition féminine, la corruption postcoloniale ; l'école littéraire de la négritude comme affirmation identitaire.</p><p><em>II. La nécessité de l'imaginaire.</em> Le réel seul peut devenir un pamphlet, pas une œuvre ; l'invention permet de dire autrement (mythes réinterprétés, merveilleux africain, conte, fantasy) ; l'imaginaire libère la langue et évite l'enfermement dans le réalisme sociologique imposé à la littérature africaine.</p><p><em>III. Synthèse : l'imaginaire au service du témoignage.</em> La grande littérature conjugue les deux : témoigner en inventant ; les formes symboliques et la réécriture des mythes permettent de dire le réel plus profondément ; l'écrivain africain n'a pas à choisir entre vérité et création.</p><p><strong>Conclusion.</strong> La littérature africaine n'a pas à se limiter au témoignage ni à s'évader dans l'imaginaire : sa force est de transformer la réalité par l'art.</p>",
+      "bareme_detail": "Intro 3 · I 5 · II 5 · III 4 · Conclusion et langue 3"
+    }
+  ]
+}

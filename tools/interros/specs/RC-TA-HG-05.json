@@ -1,0 +1,28 @@
+{
+  "code": "RC-TA-HG-05",
+  "type": "interro",
+  "matiere": "Histoire-Géographie",
+  "classe": "Terminale A",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Problèmes de développement en Côte d'Ivoire · Intégration régionale : la CEDEAO",
+  "consignes": "Réponses structurées et illustrées d'exemples précis.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les défis du développement ivoirien",
+      "points": "6 pts",
+      "consigne": "Malgré une croissance économique dynamique, la Côte d'Ivoire demeure confrontée à de nombreux obstacles.",
+      "enonce": "<ol type='a'><li>Citer <strong>trois</strong> problèmes majeurs du développement de la Côte d'Ivoire et expliquer chacun en une phrase.</li><li>Expliquer pourquoi la dépendance à l'exportation des matières premières (cacao, café, noix de cajou) fragilise l'économie ivoirienne.</li><li>Proposer <strong>deux</strong> solutions permettant à la Côte d'Ivoire de mieux valoriser ses richesses agricoles.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Trois problèmes acceptables au choix :</span> <span class='reponse'>la dépendance aux matières premières exportées sans transformation ; le chômage et le sous-emploi des jeunes malgré les diplômes ; les inégalités régionales entre Abidjan/Sud et l'intérieur/Nord ; l'urbanisation rapide non maîtrisée (bidonvilles, congestion) ; la pauvreté persistante d'une partie de la population</span>.</p><p><strong>b)</strong> <span class='reponse'>Les cours des matières premières sont fixés par les marchés mondiaux : quand le prix du cacao s'effondre, les revenus de l'État et des paysans s'effondrent avec lui. Exporter des produits bruts rapporte peu : la plus grande valeur ajoutée (transformation, marque, distribution) est captée à l'étranger. L'économie reste donc vulnérable aux chocs externes et dépend de la météo.</span></p><p><strong>c)</strong> <span class='reponse'>Solutions acceptables : transformer localement (usines de chocolat, de jus, d'huile) pour créer emplois et valeur ajoutée ; négocier collectivement les prix et stabiliser les revenus des producteurs ; diversifier l'économie (agro-industrie, services, numérique) ; contractualiser avec les producteurs et améliorer leurs rendements.</span></p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — La CEDEAO et l'intégration régionale",
+      "points": "4 pts",
+      "consigne": "La CEDEAO, créée en 1975 à Lagos, regroupe la plupart des États d'Afrique de l'Ouest.",
+      "enonce": "<ol type='a'><li>Donner la signification du sigle CEDEAO et indiquer son siège.</li><li>Expliquer l'objectif principal de cette organisation.</li><li>Citer <strong>deux</strong> réalisations concrètes de la CEDEAO en faveur des populations.</li><li>Identifier <strong>un</strong> défi majeur que rencontre l'organisation aujourd'hui.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Communauté Économique des États de l'Afrique de l'Ouest ; siège : Abuja (Nigeria)</span>.</p><p><strong>b)</strong> <span class='reponse'>Objectif : promouvoir l'intégration économique régionale — supprimer progressivement les obstacles aux échanges et à la circulation, créer un vaste marché commun et à terme une monnaie commune, afin de renforcer le développement de toute la sous-région.</span></p><p><strong>c)</strong> <span class='reponse'>Réalisations : la libre circulation des personnes et des biens dans la zone (un Ivoirien peut se rendre au Ghana sans visa) ; le tarif extérieur commun pour harmoniser les droits de douane ; la force d'interposition ECOMOG envoyée pour le maintien de la paix (Liberia, Sierra Leone) ; les programmes d'infrastructures régionales.</span></p><p><strong>d)</strong> <span class='reponse'>Défis acceptables : le retrait des États de l'Alliance des États du Sahel (Mali, Burkina Faso, Niger) qui fragilise l'unité ; la persistance des conflits et coups d'État ; la faible mise en œuvre du marché commun ; la concurrence avec l'UEMOA (zone franc) ; la dépendance financière.</span></p>",
+      "bareme_detail": "a) 0,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}
