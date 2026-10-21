@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-HG-04",
+  "type": "interro",
+  "matiere": "Histoire-Géographie",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Le monde multipolaire depuis 1991 · L'économie ivoirienne",
+  "consignes": "Réponses argumentées, illustrées d'exemples et de dates.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — De la bipolarisation au monde multipolaire",
+      "points": "5 pts",
+      "consigne": "Depuis la disparition de l'URSS en 1991, l'organisation internationale a profondément changé.",
+      "enonce": "<ol type='a'><li>Expliquer ce qui caractérise le monde unipolaire des années 1990 puis le monde multipolaire actuel.</li><li>Citer <strong>trois</strong> pôles de puissance du monde contemporain et un atout de chacun.</li><li>Nommer <strong>deux</strong> défis mondiaux transversaux qui dépassent les États.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Après 1991, les États-Unis apparaissent comme seule superpuissance (unipolarité : puissance militaire, économique et culturelle incontestée). Depuis les années 2000, la puissance se redistribue : émergence de la Chine, retour de la Russie, rôle de l'UE, de l'Inde, des puissances régionales — d'où un monde multipolaire où plusieurs centres de décision et de force coexistent et s'affrontent.</span></p><p><strong>b)</strong> <span class='reponse'>Pôles acceptables : États-Unis (armée, dollar, technologie) ; Chine (industrie, commerce, investissements — nouvelles routes de la soie) ; Union européenne (marché, normes, diplomatie) ; Russie (énergie, armement) ; Inde (démographie, technologie) ; Japon ; puissances émergentes (Brésil, Turquie, Golfe).</span></p><p><strong>c)</strong> <span class='reponse'>Défis transversaux : changement climatique, terrorisme international, cybermenaces, pandémies, migrations, sécurité alimentaire, course aux armes.</span></p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Atouts et limites de l'économie ivoirienne",
+      "points": "5 pts",
+      "consigne": "La Côte d'Ivoire est la première économie de l'UEMOA, mais son modèle montre des limites.",
+      "enonce": "<ol type='a'><li>Citer <strong>trois</strong> atouts économiques de la Côte d'Ivoire.</li><li>Expliquer ce qu'est le « miracle ivoirien » et situer sa période.</li><li>Identifier <strong>deux</strong> faiblesses structurelles de l'économie ivoirienne.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Atouts : premier producteur mondial de cacao et de noix de cajou ; café, huile de palme, hévéa ; infrastructures portuaires (Abidjan, San-Pédro) ; position de plateforme régionale pour l'Afrique de l'Ouest ; croissance élevée depuis 2012 ; ressources minières et pétrolières récentes.</span></p><p><strong>b)</strong> <span class='reponse'>Le « miracle ivoirien » désigne la forte croissance économique des deux premières décennies après l'indépendance (années 1960-1980), tirée par les exportations agricoles (cacao, café) et la stabilité politique — la Côte d'Ivoire figurait parmi les économies les plus dynamiques d'Afrique.</span></p><p><strong>c)</strong> <span class='reponse'>Faiblesses : dépendance à l'export des matières premières brutes (vulnérabilité aux cours mondiaux) ; faible transformation locale ; chômage des jeunes et précarité ; inégalités régionales ; endettement ; urbanisation non maîtrisée ; corruption et insécurité foncière.</span></p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

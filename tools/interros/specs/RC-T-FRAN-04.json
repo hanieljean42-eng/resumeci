@@ -1,0 +1,29 @@
+{
+  "code": "RC-T-FRAN-04",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "Terminales A & D",
+  "classes": ["Terminale_A", "Terminale_D"],
+  "duree": "3 heures",
+  "bareme": "20 points",
+  "chapitre": "Texte argumentatif : étude + essai · Questions de langue",
+  "consignes": "Traiter les deux exercices. Toute affirmation doit s'appuyer sur le texte.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Texte argumentatif (12 pts)",
+      "points": "12 pts",
+      "consigne": "Lire le texte suivant (article d'opinion original), puis répondre aux questions.",
+      "enonce": "<p style='font-family:Georgia,serif;font-style:italic;border-left:3px solid #94a3b8;padding-left:12px;margin:10px 0'>« On répète aux jeunes que les diplômes ouvrent toutes les portes. Pourtant, dans nos rues, des bac+5 vendent des cartes prépayées pendant que des apprentis sans certificat roulent en berline. Faut-il en conclure que l'école ne sert à rien ? Évidemment non : ce qu'il faut interroger, c'est le décalage entre les formations offertes et les besoins réels de l'économie. Un pays qui forme des bacheliers à la chaîne sans ateliers, sans filières techniques dignes de ce nom, fabrique des déçus, pas des ingénieurs. La solution n'est pas moins d'école, mais une école qui forme les mains autant que les têtes. »</p><ol type='a'><li>Dégager la thèse de l'auteur et la thèse qu'il réfute. <em>(3 pts)</em></li><li>Relever et analyser <strong>trois</strong> procédés argumentatifs du texte. <em>(4,5 pts)</em></li><li>Rédiger un paragraphe d'une quinzaine de lignes dans lequel vous discutez l'affirmation : « les diplômes ouvrent toutes les portes ». <em>(4,5 pts)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Thèse réfutée : « les diplômes ouvrent toutes les portes » / l'école garantit l'emploi. Thèse défendue : l'école reste utile mais le problème est le décalage entre formations générales et besoins économiques — il faut développer les filières techniques et professionnelles.</span></p><p><strong>b)</strong> <span class='reponse'>Procédés : l'exemple concret contrasté (bac+5 vs apprenti) qui prend le contre-pied du cliché ; la question rhétorique (« Faut-il en conclure que l'école ne sert à rien ? ») suivie d'une réponse ferme ; le paradoxe/antithèse (« des déçus, pas des ingénieurs ») ; la formule chiasmatique finale (« former les mains autant que les têtes ») ; l'impératif de vérité générale (« ce qu'il faut interroger, c'est… »).</span></p><p><strong>c)</strong> <span class='reponse'>Attendu : paragraphe argumenté avec une prise de position nuancée — les diplômes restent un passeport (seuil d'accès, légitimité), mais ne suffisent ni ne garantissent l'emploi : compétences pratiques, réseau, adéquation formation-emploi comptent autant ; exemples bienvenus.</span></p>",
+      "bareme_detail": "a) 3 · b) 4,5 · c) 4,5"
+    },
+    {
+      "titre": "Exercice 2 — Questions de langue (8 pts)",
+      "points": "8 pts",
+      "consigne": "",
+      "enonce": "<ol type='a'><li>Identifier la classe grammaticale de : « pourtant », « dignes », « la chaîne », « des déçus ». <em>(2 pts)</em></li><li>Relever dans le texte un connecteur logique d'opposition et un connecteur de cause/conséquence et analyser leur rôle. <em>(2 pts)</em></li><li>Transformer : « Un pays qui forme des bacheliers à la chaîne sans ateliers fabrique des déçus » — mettre le sujet au pluriel et accorder. <em>(2 pts)</em></li><li>Expliquer la valeur du conditionnel dans : « Il faudrait une école qui forme les mains autant que les têtes ». <em>(2 pts)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>« pourtant » : adverbe de concession/opposition (connecteur) ; « dignes » : adjectif qualificatif ; « la chaîne » : groupe nominal (nom commun + article) — complément ; « des déçus » : adjectif substantivé (participe passé nominalisé).</span></p><p><strong>b)</strong> <span class='reponse'>« Pourtant » ou « Évidemment non » : opposition/réfutation qui oppose la réalité au cliché ; « puisque » ou « sans » / « pas moins d'école, mais » : la concession qui réoriente l'argument ; « c'est pourquoi » implicite : relation cause-conséquence entre le décalage des formations et l'échec des diplômés.</span></p><p><strong>c)</strong> <span class='reponse'>« Des pays qui forment des bacheliers à la chaîne sans ateliers fabriquent des déçus ».</span></p><p><strong>d)</strong> <span class='reponse'>Le conditionnel exprime ici le souhait / la suggestion : une école idéale encore irréelle, souhaitée par l'auteur ; valeur de conseil et d'irréel du futur.</span></p>",
+      "bareme_detail": "a) 2 · b) 2 · c) 2 · d) 2"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "code": "RC-TC-PC-07",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale C",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Champ électrostatique · Condensateurs",
+  "consignes": "On donne : $e = 1{,}6 \\times 10^{-19}\\ \\mathrm{C}$ ; $g = 10\\ \\mathrm{m/s^2}$. Le schéma est à rendre avec la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Champ électrostatique uniforme",
+      "points": "5 pts",
+      "consigne": "Deux plaques métalliques parallèles A et B, distantes de $d = 10\\ \\mathrm{cm}$, sont soumises à une tension $U_{AB} = +200\\ \\mathrm{V}$ (A au potentiel le plus élevé).",
+      "enonce": "<ol type='a'><li>Donner les caractéristiques du vecteur champ électrostatique $\\vec{E}$ entre les plaques (direction, sens, norme) et le représenter.</li><li>Calculer la norme de $\\vec{E}$.</li><li>Un électron est placé entre les plaques. Donner la direction et le sens de la force électrostatique qu'il subit, et calculer sa valeur.</li><li>Comparer cette force au poids de l'électron ($m = 9{,}1 \\times 10^{-31}\\ \\mathrm{kg}$) et conclure.</li></ol>",
+      "svg": "<svg viewBox='0 0 380 210' xmlns='http://www.w3.org/2000/svg'><line x1='60' y1='30' x2='60' y2='180' stroke='#334155' stroke-width='4'/><line x1='320' y1='30' x2='320' y2='180' stroke='#334155' stroke-width='4'/><text x='48' y='24' font-family='Georgia' font-size='14' fill='#334155'>A (+)</text><text x='314' y='24' font-family='Georgia' font-size='14' fill='#334155'>B (−)</text><line x1='60' y1='195' x2='320' y2='195' stroke='#64748b' stroke-width='1' stroke-dasharray='3,3'/><text x='170' y='207' font-family='Georgia' font-size='11' fill='#64748b'>d = 10 cm</text><circle cx='190' cy='105' r='7' fill='#2563eb'/><text x='188' y='101' font-family='Georgia' font-size='11' fill='#fff'>−</text><text x='202' y='110' font-family='Georgia' font-size='12' fill='#2563eb'>électron</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\vec{E}$ est perpendiculaire aux plaques, dirigé de la plaque au potentiel le plus élevé (A) vers celle au potentiel le plus bas (B) — vers la droite sur la figure ; uniforme entre les plaques.</span></p><p><strong>b)</strong> $E = \\dfrac{U}{d} = \\dfrac{200}{0{,}10} =$ <span class='reponse'>$2000\\ \\mathrm{V/m}$</span>.</p><p><strong>c)</strong> $\\vec{F} = q\\vec{E}$ avec $q = -e < 0$ : <span class='reponse'>$\\vec{F}$ opposée à $\\vec{E}$, donc dirigée de B vers A (vers la gauche) — l'électron est attiré par la plaque positive</span>. $F = eE = 1{,}6 \\times 10^{-19} \\times 2000 =$ <span class='reponse'>$3{,}2 \\times 10^{-16}\\ \\mathrm{N}$</span>.</p><p><strong>d)</strong> $P = mg = 9{,}1 \\times 10^{-31} \\times 10 = 9{,}1 \\times 10^{-30}\\ \\mathrm{N}$. <span class='reponse'>$F/P \\approx 3{,}5 \\times 10^{13}$ : le poids est totalement négligeable devant la force électrique — d'où la déviation verticale des électrons dans l'oscilloscope.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Condensateur",
+      "points": "5 pts",
+      "consigne": "Un condensateur de capacité $C = 100\\ \\mu\\mathrm{F}$ est chargé sous une tension $U = 12\\ \\mathrm{V}$.",
+      "enonce": "<ol type='a'><li>Calculer la charge $Q$ portée par l'armature positive et l'énergie emmagasinée $W$.</li><li>On branche ce condensateur aux bornes d'une lampe : décrire ce qui se passe et nommer le phénomène.</li><li>Citer deux facteurs dont dépend la capacité d'un condensateur plan.</li><li>Un condensateur plan a pour capacité $C = 10\\ \\mathrm{nF}$ avec des armatures de surface $S = 0{,}2\\ \\mathrm{m^2}$ et $\\varepsilon = 8{,}85 \\times 10^{-11}\\ \\mathrm{F/m}$. Calculer l'épaisseur $e$ du diélectrique ($C = \\varepsilon S/e$).</li></ol>",
+      "correction": "<p><strong>a)</strong> $Q = CU = 100 \\times 10^{-6} \\times 12 =$ <span class='reponse'>$1{,}2 \\times 10^{-3}\\ \\mathrm{C}$</span> ; $W = \\dfrac{1}{2}CU^2 = \\dfrac{1}{2} \\times 10^{-4} \\times 144 =$ <span class='reponse'>$7{,}2 \\times 10^{-3}\\ \\mathrm{J}$</span>.</p><p><strong>b)</strong> <span class='reponse'>La lampe brille brièvement puis s'éteint : le condensateur se <strong>décharge</strong> en restituant l'énergie emmagasinée sous forme de courant — le flash d'appareil photo fonctionne sur ce principe.</span></p><p><strong>c)</strong> <span class='reponse'>La capacité dépend de : la surface $S$ des armatures en regard, l'épaisseur $e$ qui les sépare et la nature (permittivité $\\varepsilon$) du diélectrique : $C = \\varepsilon S/e$.</span></p><p><strong>d)</strong> $e = \\dfrac{\\varepsilon S}{C} = \\dfrac{8{,}85 \\times 10^{-11} \\times 0{,}2}{10 \\times 10^{-9}} = \\dfrac{1{,}77 \\times 10^{-11}}{10^{-8}} =$ <span class='reponse'>$1{,}77 \\times 10^{-3}\\ \\mathrm{m} \\approx 1{,}8\\ \\mathrm{mm}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}

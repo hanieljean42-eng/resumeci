@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-10",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Immunologie : réactions de défense de l'organisme",
+  "consignes": "Schéma et courbe à rendre avec la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les défenses immunitaires",
+      "points": "5 pts",
+      "consigne": "Suite à une coupure, un élève contracte une infection bactérienne. On observe son évolution.",
+      "enonce": "<ol type='a'><li>Citer les deux grandes catégories de réponses immunitaires et distinguer leur rapidité et leur spécificité.</li><li>Décrire le déroulement de la phagocytose en <strong>trois</strong> étapes.</li><li>Quels sont les deux types de réponse immunitaire adaptative ? Citer les acteurs cellulaires de chacune.</li><li>Quel est le rôle des anticorps ? Citer deux modes d'action.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Réponse innée : immédiate (heures), non spécifique — phagocytose, réaction inflammatoire, barrières physiques (peau, mucus). Réponse adaptative : plus lente (jours), spécifique d'un antigène — production d'anticorps, lymphocytes T.</span></p><p><strong>b)</strong> <span class='reponse'>1) Adhérence : le phagocyte se fixe sur le microbe ; 2) Ingestion : il l'englobe dans une vacuole (phagosome) ; 3) Digestion : fusion avec les lysosomes et destruction par les enzymes, puis rejet des résidus.</span></p><p><strong>c)</strong> <span class='reponse'>Réponse à médiation cellulaire : lymphocytes T8 (cytotoxiques) qui détruisent les cellules infectées. Réponse à médiation humorale : lymphocytes B → plasmocytes qui sécrètent des anticorps.</span></p><p><strong>d)</strong> <span class='reponse'>Les anticorps neutralisent les antigènes : agglutination des microbes (facilite la phagocytose), neutralisation des toxines, activation du complément qui lyse les cellules étrangères.</span></p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Vaccination et mémoire immunitaire",
+      "points": "5 pts",
+      "consigne": "La courbe ci-dessous représente le taux d'anticorps après une première injection de vaccin (J0) puis un rappel (J30).",
+      "enonce": "<ol type='a'><li>Décrire la différence entre la réponse primaire (J0–J30) et la réponse secondaire (après J30) : rapidité et intensité.</li><li>Expliquer ce qui se passe dans l'organisme après la première vaccination.</li><li>Définir la vaccination et citer deux vaccins utilisés en Côte d'Ivoire.</li><li>Différencier vaccination et sérothérapie. Dans quel cas utilise-t-on la sérothérapie ?</li></ol>",
+      "svg": "<svg viewBox='0 0 400 240' xmlns='http://www.w3.org/2000/svg'><defs><marker id='aax' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#334155'/></marker></defs><line x1='40' y1='200' x2='380' y2='200' stroke='#334155' stroke-width='1.6' marker-end='url(#aax)'/><line x1='40' y1='200' x2='40' y2='20' stroke='#334155' stroke-width='1.6' marker-end='url(#aax)'/><text x='330' y='220' font-family='Georgia' font-size='11' fill='#334155'>temps (jours)</text><text x='6' y='30' font-family='Georgia' font-size='11' fill='#334155'>anticorps</text><path d='M40 198 C 90 195, 130 150, 160 120 C 190 92, 210 160, 230 185 C 250 205, 260 195, 280 40 C 290 20, 340 25, 375 28' stroke='#2563eb' stroke-width='2.2' fill='none'/><line x1='160' y1='200' x2='160' y2='80' stroke='#94a3b8' stroke-width='1.2' stroke-dasharray='4,3'/><text x='145' y='216' font-family='Georgia' font-size='11' fill='#64748b'>J0</text><text x='268' y='216' font-family='Georgia' font-size='11' fill='#64748b'>J30 rappel</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Réponse primaire : lente (montée progressive en 10-15 jours), pic modéré puis retour vers le bas. Réponse secondaire (rappel) : beaucoup plus rapide, pic beaucoup plus élevé et durable — grâce aux lymphocytes mémoires produits lors du premier contact.</span></p><p><strong>b)</strong> <span class='reponse'>Le vaccin introduit un antigène inoffensif (microbe tué ou atténué, ou fragment) : les lymphocytes B s'activent, produisent des plasmocytes et des anticorps ; des cellules mémoires persistent, prêtes à réagir plus vite en cas de vraie infection.</span></p><p><strong>c)</strong> <span class='reponse'>Vaccination : injection d'un antigène atténué pour provoquer une immunisation active durable. Exemples CI : BCG (tuberculose), vaccin antipoliomyélitique, antiamaril (fièvre jaune), anti-COVID-19.</span></p><p><strong>d)</strong> <span class='reponse'>La sérothérapie injecte directement des anticorps tout prêts (immunisation passive, immédiate mais brève — pas de mémoire). On l'utilise en urgence : morsure de serpent (sérum antivenimeux), tétanos, rage.</span></p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    }
+  ]
+}

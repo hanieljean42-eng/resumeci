@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-PC-07",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Composés carbonylés · Acides carboxyliques et esters",
+  "consignes": "Écrire les formules semi-développées demandées et équilibrer les équations.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Aldéhydes et cétones",
+      "points": "5 pts",
+      "consigne": "",
+      "enonce": "<ol type='a'><li>Donner la formule générale et le nom du groupe fonctionnel des composés carbonylés, puis distinguer aldéhyde et cétone.</li><li>Nommer : $\\mathrm{CH_3{-}CHO}$ ; $\\mathrm{CH_3{-}CO{-}CH_3}$ ; $\\mathrm{HCHO}$ ; $\\mathrm{CH_3{-}CH_2{-}CO{-}CH_3}$.</li><li>Citer deux tests qui permettent de distinguer un aldéhyde d'une cétone et donner le résultat positif pour chacun.</li><li>L'oxydation ménagée du propan-1-ol donne un composé A puis un composé B. Identifier A et B (noms et formules).</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Groupe carbonyle $\\mathrm{C{=}O}$ ; formule générale $\\mathrm{R{-}CO{-}R'}$. Aldéhyde : $\\mathrm{R' = H}$ (carbonyle en bout de chaîne, $\\mathrm{R{-}CHO}$) ; cétone : $\\mathrm{R'}$ = groupe alkyle (carbonyle au milieu de la chaîne).</span></p><p><strong>b)</strong> <span class='reponse'>$\\mathrm{CH_3{-}CHO}$ : éthanal ; $\\mathrm{CH_3{-}CO{-}CH_3}$ : propanone (acétone) ; $\\mathrm{HCHO}$ : méthanal (formaldéhyde) ; $\\mathrm{CH_3{-}CH_2{-}CO{-}CH_3}$ : butanone.</span></p><p><strong>c)</strong> <span class='reponse'>Tests positifs seulement avec les aldéhydes : liqueur de Fehling → précipité rouge brique à chaud ; réactif de Schiff → coloration rose-violette ; nitrate d'argent ammoniacal (réactif de Tollens) → miroir d'argent. La DNPH jaunit avec les deux (carbonyle) mais ne les distingue pas.</span></p><p><strong>d)</strong> <span class='reponse'>A : propanal $\\mathrm{CH_3{-}CH_2{-}CHO}$ (aldéhyde, oxydation partielle) ; B : acide propanoïque $\\mathrm{CH_3{-}CH_2{-}COOH}$ (oxydation totale) — séquence typique alcool primaire → aldéhyde → acide carboxylique.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Acides carboxyliques et estérification",
+      "points": "5 pts",
+      "consigne": "On fait réagir de l'acide éthanoïque avec du propan-1-ol en présence d'acide sulfurique concentré.",
+      "enonce": "<ol type='a'><li>Écrire l'équation de la réaction en formules semi-développées et nommer l'ester formé.</li><li>Citer les trois caractéristiques de cette réaction.</li><li>Quel est le rôle de l'acide sulfurique concentré ?</li><li>Comment peut-on améliorer le rendement de la réaction ?</li><li>Écrire l'équation d'hydrolyse de l'ester en milieu basique (saponification) avec de la soude.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\mathrm{CH_3{-}COOH + CH_3{-}CH_2{-}CH_2OH \\;\\rightleftharpoons\\; CH_3{-}COO{-}CH_2{-}CH_2{-}CH_3 + H_2O}$ ; l'ester est l'**éthanoate de propyle**.</span></p><p><strong>b)</strong> <span class='reponse'>Lente, limitée (équilibre, $\\eta \\approx 2/3$ avec alcool primaire) et athermique.</span></p><p><strong>c)</strong> <span class='reponse'>$\\mathrm{H_2SO_4}$ est un catalyseur : il accélère la réaction sans modifier l'état d'équilibre.</span></p><p><strong>d)</strong> <span class='reponse'>Augmenter le rendement : mettre un réactif en excès (alcool ou acide bon marché), éliminer l'eau ou l'ester au fur et à mesure (distillation), ou utiliser un dérivé plus réactif (chlorure d'acyle, anhydride).</span></p><p><strong>e)</strong> <span class='reponse'>$\\mathrm{CH_3{-}COO{-}CH_2{-}CH_2{-}CH_3 + NaOH \\;\\rightarrow\\; CH_3{-}COO^- Na^+ + CH_3{-}CH_2{-}CH_2OH}$ : réaction totale et rapide, à la base de la fabrication des savons.</span></p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 0,5 pt · d) 1 pt · e) 1 pt"
+    }
+  ]
+}

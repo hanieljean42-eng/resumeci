@@ -78,6 +78,32 @@
     "corrige": true
   },
   {
+    "code": "RC-T-FRAN-04",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Texte argumentatif : étude + essai · Questions de langue",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-T-FRAN-04",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Texte argumentatif : étude + essai · Questions de langue",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -139,6 +165,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Problèmes de développement en Côte d'Ivoire · Intégration régionale : la CEDEAO",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-HG-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Indépendances des colonies africaines · La guerre d'Algérie",
     "exercices": 2,
     "corrige": true
   },
@@ -390,6 +429,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-10",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Nombres complexes · Probabilités conditionnelles",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -468,6 +520,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-PC-07",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Champ électrostatique · Condensateurs",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-08",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Amines · Acides $\\alpha$-aminés",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -503,6 +581,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "L'Organisation des Nations Unies · L'Union Africaine",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-HG-04",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Histoire-Géographie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Le monde multipolaire depuis 1991 · L'économie ivoirienne",
     "exercices": 2,
     "corrige": true
   },
@@ -624,6 +715,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-10",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Probabilités conditionnelles · Variable aléatoire",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -698,6 +802,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Champ magnétique · Force de Laplace",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-PC-07",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Composés carbonylés · Acides carboxyliques et esters",
     "exercices": 2,
     "corrige": true
   },
@@ -828,6 +945,32 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Transmission de deux caractères héréditaires",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-10",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Immunologie : réactions de défense de l'organisme",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-11",
+    "type": "bac",
+    "typeLabel": "Examen type BAC",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "4 heures",
+    "bareme": "20 points",
+    "chapitre": "Épreuve complète : relation nerveuse · reproduction · hérédité · immunologie",
     "exercices": 2,
     "corrige": true
   }

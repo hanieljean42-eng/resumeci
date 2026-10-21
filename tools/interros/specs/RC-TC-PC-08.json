@@ -1,0 +1,28 @@
+{
+  "code": "RC-TC-PC-08",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale C",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Amines · Acides $\\alpha$-aminés",
+  "consignes": "Formules semi-développées exigées. Nommer toutes les molécules citées.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les amines",
+      "points": "5 pts",
+      "consigne": "",
+      "enonce": "<ol type='a'><li>Définir une amine et donner sa formule générale. Distinguer amine primaire, secondaire et tertiaire.</li><li>Nommer et classer : $\\mathrm{CH_3{-}NH_2}$ ; $\\mathrm{CH_3{-}NH{-}CH_3}$ ; $\\mathrm{C_2H_5{-}NH_2}$ ; $\\mathrm{(CH_3)_3N}$.</li><li>Expliquer pourquoi les amines ont un caractère basique. Écrire l'équation de la réaction de la méthylamine avec l'eau.</li><li>Écrire l'équation de la réaction de l'éthylamine avec l'acide chlorhydrique et nommer le sel obtenu.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Une amine dérive de l'ammoniac $\\mathrm{NH_3}$ par remplacement de 1, 2 ou 3 atomes d'hydrogène par des groupes alkyles : $\\mathrm{R{-}NH_2}$ (primaire), $\\mathrm{R{-}NH{-}R'}$ (secondaire), $\\mathrm{R{-}N(R'){-}R''}$ (tertiaire).</span></p><p><strong>b)</strong> <span class='reponse'>$\\mathrm{CH_3{-}NH_2}$ : méthanamine (primaire) ; $\\mathrm{CH_3{-}NH{-}CH_3}$ : N-méthylméthanamine ou diméthylamine (secondaire) ; $\\mathrm{C_2H_5{-}NH_2}$ : éthanamine (primaire) ; $\\mathrm{(CH_3)_3N}$ : triméthylamine (tertiaire).</span></p><p><strong>c)</strong> <span class='reponse'>L'azote possède un doublet non liant qui peut capter un proton $\\mathrm{H^+}$ — comportement de base de Lewis/Brønsted :</span> $\\mathrm{CH_3{-}NH_2 + H_2O \\;\\rightleftharpoons\\; CH_3{-}NH_3^+ + HO^-}$.</p><p><strong>d)</strong> $\\mathrm{C_2H_5{-}NH_2 + HCl \\;\\rightarrow\\; C_2H_5{-}NH_3^+ + Cl^-}$ : <span class='reponse'>chlorure d'éthylammonium</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Les acides $\\alpha$-aminés",
+      "points": "5 pts",
+      "consigne": "La glycine $\\mathrm{H_2N{-}CH_2{-}COOH}$ est le plus simple des acides $\\alpha$-aminés.",
+      "enonce": "<ol type='a'><li>Définir un acide $\\alpha$-aminé et entourer les deux groupes fonctionnels de la glycine.</li><li>Expliquer pourquoi un acide $\\alpha$-aminé est ampholyte ; écrire la forme zwitterionique de la glycine.</li><li>Écrire l'équation de la formation d'un dipeptide entre deux molécules de glycine et nommer la liaison formée.</li><li>Citer le rôle biologique essentiel des acides $\\alpha$-aminés.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Acide $\\alpha$-aminé : molécule portant sur le même carbone (le carbone $\\alpha$) un groupe amine $\\mathrm{{-}NH_2}$ et un groupe carboxyle $\\mathrm{{-}COOH}$ : $\\mathrm{H_2N{-}CHR{-}COOH}$.</span></p><p><strong>b)</strong> <span class='reponse'>Ampholyte : le groupe $\\mathrm{{-}COOH}$ est acide, le groupe $\\mathrm{{-}NH_2}$ est basique — transfert interne de proton donnant le zwitterion (ion dipolaire) :</span> $\\mathrm{^+H_3N{-}CH_2{-}COO^-}$.</p><p><strong>c)</strong> $\\mathrm{H_2N{-}CH_2{-}COOH + H_2N{-}CH_2{-}COOH \\;\\rightarrow\\; H_2N{-}CH_2{-}CO{-}NH{-}CH_2{-}COOH + H_2O}$ : <span class='reponse'>liaison peptidique $\\mathrm{{-}CO{-}NH{-}}$ (condensation avec élimination d'eau)</span>.</p><p><strong>d)</strong> <span class='reponse'>Les acides $\\alpha$-aminés sont les constituants des protéines : enchaînés par liaisons peptidiques, ils forment les polypeptides et protéines (enzymes, anticorps, hémoglobine, kératine…).</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "code": "RC-TA-HG-06",
+  "type": "interro",
+  "matiere": "Histoire-Géographie",
+  "classe": "Terminale A",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Indépendances des colonies africaines · La guerre d'Algérie",
+  "consignes": "Réponses structurées avec dates et acteurs précis.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les indépendances africaines",
+      "points": "6 pts",
+      "consigne": "La frise ci-dessous situe quelques jalons de la décolonisation africaine.",
+      "enonce": "<ol type='a'><li>Expliquer <strong>deux</strong> causes qui ont rendu possible les indépendances africaines après 1945.</li><li>Préciser l'année de l'« année de l'Afrique » et expliquer pourquoi elle porte ce nom.</li><li>Décrire les deux grandes voies d'accession à l'indépendance (pacifique et armée) avec un exemple de chacune.</li></ol>",
+      "svg": "<svg viewBox='0 0 420 170' xmlns='http://www.w3.org/2000/svg'><line x1='30' y1='120' x2='400' y2='120' stroke='#334155' stroke-width='2' marker-end='url(#hg6a)'/><defs><marker id='hg6a' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' fill='#334155'/></marker></defs><g font-family='Georgia' font-size='11' fill='#334155' text-anchor='middle'><line x1='60' y1='115' x2='60' y2='125' stroke='#334155' stroke-width='1.5'/><text x='60' y='140'>1945</text><line x1='130' y1='115' x2='130' y2='125' stroke='#334155' stroke-width='1.5'/><text x='130' y='140'>1957</text><line x1='200' y1='115' x2='200' y2='125' stroke='#334155' stroke-width='1.5'/><text x='200' y='140'>1960</text><line x1='270' y1='115' x2='270' y2='125' stroke='#334155' stroke-width='1.5'/><text x='270' y='140'>1962</text><line x1='360' y1='115' x2='360' y2='125' stroke='#334155' stroke-width='1.5'/><text x='360' y='140'>1975</text></g><g font-family='Georgia' font-size='10' fill='#2563eb' text-anchor='middle'><text x='60' y='105'>ONU</text><text x='130' y='105'>Ghana</text><text x='200' y='105'>17 indép.</text><text x='270' y='105'>Algérie</text><text x='355' y='105'>colonies port.</text></g><text x='215' y='30' font-family='Georgia' font-size='12' fill='#64748b' text-anchor='middle'>Frise de la décolonisation africaine</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Causes : l'affaiblissement des puissances coloniales par la Seconde Guerre mondiale ; les principes de l'ONU et la charte de l'Atlantique (droit des peuples à disposer d'eux-mêmes) ; la pression des États-Unis et de l'URSS hostiles au colonialisme ; la maturation des élites africaines et des mouvements nationalistes ; la conférence de Bandung (1955) qui soude les pays colonisés.</span></p><p><strong>b)</strong> <span class='reponse'>1960 : 17 États africains accèdent à l'indépendance la même année (dont la Côte d'Ivoire, le Sénégal, le Nigeria, le Congo) — on parle d'« année de l'Afrique ».</span></p><p><strong>c)</strong> <span class='reponse'>Voie pacifique : négociations et accords transférant la souveraineté — Côte d'Ivoire, Sénégal, Ghana (1957). Voie armée : guerre de libération quand la métropole refuse de céder — Algérie (1954-1962), colonies portugaises (Angola, Mozambique, Guinée-Bissau, jusqu'en 1974-75).</span></p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 2 — La guerre d'Algérie (1954-1962)",
+      "points": "4 pts",
+      "consigne": "La guerre d'Algérie illustre la voie armée de la décolonisation.",
+      "enonce": "<ol type='a'><li>Dater le déclenchement de l'insurrection algérienne et nommer l'organisation qui la mène.</li><li>Expliquer pourquoi la France refusait de quitter l'Algérie.</li><li>Citer les accords qui mettent fin à la guerre et l'année de l'indépendance.</li><li>Donner <strong>une</strong> conséquence humaine de cette guerre.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>1er novembre 1954 (« Toussaint rouge ») ; le FLN (Front de libération nationale), avec le GPRA puis l'ALN comme bras armé.</span></p><p><strong>b)</strong> <span class='reponse'>L'Algérie n'était pas un protectorat mais trois départements français ; un million d'Européens (« pieds-noirs ») y vivaient ; riches terres agricoles puis pétrole du Sahara découvert ; enjeu de prestige national après l'humiliation de 1940 et la perte de l'Indochine.</span></p><p><strong>c)</strong> <span class='reponse'>Accords d'Évian (mars 1962, cessez-le-feu) ; référendum d'autodétermination ; indépendance proclamée le 5 juillet 1962.</span></p><p><strong>d)</strong> <span class='reponse'>Conséquences acceptées : lourdes pertes humaines (centaines de milliers de morts algériens, environ 25 000 soldats français tués) ; exode d'environ un million de pieds-noirs vers la France ; exécution de harkis restés en Algérie ; traumatismes durables dans les deux mémoires.</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 0,5 pt · d) 1 pt"
+    }
+  ]
+}
