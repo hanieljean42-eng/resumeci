@@ -5,17 +5,9 @@
    Animations uniquement en transform/opacity (GPU) ; prefers-reduced-motion respecté.
    ========================================================================== */
 body.motion-ui {
-  --accent: #4f46e5;
-  --accent-light: #6366f1;
-  --accent-bg: #eef2ff;
-  --orange: #4f46e5;
-  --orange-bg: #eef2ff;
-  --purple: #4f46e5;
-  --purple-bg: #eef2ff;
   --bg: #f5f6fa;
   --bg-card: #ffffff;
   --bg-card-hover: #f8f9fc;
-  --bg-sidebar: #0f1424;
   --text: #0f172a;
   --text-muted: #334155;
   --text-dim: #52607a;
@@ -102,7 +94,6 @@ body.motion-ui #breadcrumb > *:nth-child(3) { animation-delay: .1s; }
 body.motion-ui #breadcrumb > *:nth-child(n+4) { animation-delay: .15s; }
 
 /* ---------- Sidebar ---------- */
-body.motion-ui .sidebar { background: linear-gradient(180deg, #111729 0%, #0c1120 100%); }
 body.motion-ui .sidebar-header .logo {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   box-shadow: 0 6px 18px -4px rgba(99, 102, 241, .65);
@@ -114,13 +105,13 @@ body.motion-ui .nav-lesson {
   border-radius: 10px;
   transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform var(--dur) var(--ease-spring);
 }
-body.motion-ui .nav-class-header { color: #f1f5f9; }
-body.motion-ui .nav-subject-header { color: #cbd5e1; }
-body.motion-ui .nav-lesson { color: #94a3b8; }
+body.motion-ui .nav-class-header { color: var(--sidebar-text); }
+body.motion-ui .nav-subject-header { color: var(--sidebar-muted); }
+body.motion-ui .nav-lesson { color: var(--sidebar-dim); }
 body.motion-ui .nav-class-header:hover,
 body.motion-ui .nav-subject-header:hover,
-body.motion-ui .nav-lesson:hover { transform: translateX(5px); background: rgba(255, 255, 255, .07); color: #fff; }
-body.motion-ui .nav-class-header .badge { background: rgba(99, 102, 241, .25); color: #c7d2fe; }
+body.motion-ui .nav-lesson:hover { transform: translateX(5px); background: var(--sidebar-hover); color: var(--sidebar-text); }
+body.motion-ui .nav-class-header .badge { background: var(--accent-bg); color: var(--accent); }
 body.motion-ui .chevron { transition: transform .45s var(--ease-spring) !important; }
 
 /* Accordéons animés */
@@ -148,9 +139,9 @@ body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(5) { ani
 body.motion-ui .nav-subject.open > .nav-lessons > .nav-lesson:nth-child(n+6),
 body.motion-ui .nav-class.open > .nav-subjects > .nav-subject:nth-child(n+6) { animation-delay: .15s; }
 body.motion-ui .nav-lesson.active {
-  background: rgba(99, 102, 241, .22);
-  color: #e0e7ff;
-  box-shadow: inset 3px 0 0 #818cf8;
+  background: var(--accent-bg);
+  color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 /* ---------- Héros ---------- */
@@ -206,7 +197,7 @@ body.motion-ui .stat-card:hover,
 body.motion-ui .class-card:hover,
 body.motion-ui .tool-card:hover {
   transform: translate3d(0, -6px, 0) scale(1.015);
-  border-color: rgba(99, 102, 241, .5);
+  border-color: var(--accent);
   box-shadow: var(--shadow-lg);
 }
 body.motion-ui :is(.lesson-card, .class-card, .tool-card)::after {
@@ -222,7 +213,7 @@ body.motion-ui :is(.lesson-card, .class-card, .tool-card):hover::after { transfo
 body.motion-ui .lesson-card { border-radius: var(--radius-sm); }
 body.motion-ui .lesson-card:hover {
   transform: translate3d(0, -4px, 0);
-  border-color: rgba(99, 102, 241, .5);
+  border-color: var(--accent);
   box-shadow: var(--shadow);
 }
 body.motion-ui .lesson-card .lesson-icon,
