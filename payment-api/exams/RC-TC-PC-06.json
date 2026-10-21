@@ -1,0 +1,118 @@
+{
+  "code": "RC-TC-PC-06",
+  "format": "exam-v2",
+  "titre": "Interrogation — Lumière et réactions nucléaires",
+  "classe": "Terminale_C",
+  "classeLabel": "Terminale C",
+  "matiere": "Physique-Chimie",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : on donne $h=6{,}63\\times10^{-34}$ J·s, $c=3\\times10^{8}$ m/s, $1\\ \\mathrm{eV}=1{,}6\\times10^{-19}$ J. Correction automatique.",
+  "params": {
+    "lam": { "choices": [600, 650, 700] },
+    "aa": { "choices": [0.05, 0.1] },
+    "dd": { "choices": [1.5, 2] },
+    "laseuil": { "choices": [400, 500, 550] },
+    "lampe": { "choices": [400, 450] },
+    "tt": { "choices": [5570, 5730] },
+    "div": { "choices": [4, 8] }
+  },
+  "derived": {
+    "theta": "lam*1e-9/(aa*1e-3)",
+    "Lcm": "2*(lam*1e-9/(aa*1e-3))*dd*100",
+    "Eph": "6.63e-34*3e8/(lam*1e-9)/1.6e-19",
+    "W0": "6.63e-34*3e8/(laseuil*1e-9)/1.6e-19",
+    "Epe": "6.63e-34*3e8/(lampe*1e-9)/1.6e-19",
+    "Ekin": "Epe - W0",
+    "nn": "Math.log2(div)",
+    "age": "Math.log2(div)*tt"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Lumière",
+          "enonce": "La diffraction de la lumière par une fente étroite s'explique par le modèle ondulatoire.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'étalement de la tache centrale ($\\theta=\\lambda/a$) est typiquement ondulatoire ; le modèle corpusculaire ne le prévoit pas."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Photon",
+          "enonce": "L'énergie d'un photon est proportionnelle à sa longueur d'onde.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $E=h\\nu=hc/\\lambda$ : l'énergie est **inversement** proportionnelle à $\\lambda$ (les UV plus énergétiques que les IR)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Nucléaire",
+          "enonce": "La fission concerne les noyaux lourds, la fusion les noyaux légers.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Fission : casser un noyau lourd (U-235) libère de l'énergie ; fusion : assembler des noyaux légers (H) aussi — zone de stabilité de la courbe d'Aston."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Nucléaire",
+          "enonce": "La demi-vie d'un échantillon radioactif dépend de la quantité de matière.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La demi-vie est une constante du nucléide : elle ne dépend ni de la masse, ni de la température, ni du temps écoulé."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Diffraction",
+          "enonce": "L'écart angulaire de la tache centrale de diffraction vaut",
+          "choix": ["$\\theta = \\dfrac{\\lambda}{a}$", "$\\theta = \\dfrac{a}{\\lambda}$", "$\\theta = \\lambda \\times a$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $\\theta=\\lambda/a$ : plus la fente est étroite, plus la figure s'étale."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Effet photoélectrique",
+          "enonce": "Un électron est extrait du métal seulement si",
+          "choix": ["l'intensité lumineuse est forte", "$E_{photon} \\geq W_0$ (travail d'extraction)", "la lumière est rouge"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Seule compte l'énergie du photon : si $E<W_0$, aucun électron, même avec un faisceau intense — preuve du photon."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "Nucléaire",
+          "enonce": "Dans $^{238}_{92}\\mathrm{U} \\rightarrow {}^{234}_{90}\\mathrm{Th} + X$, la particule $X$ est",
+          "choix": ["un électron $\\beta^-$", "un neutron", "une particule $\\alpha$ $^{4}_{2}\\mathrm{He}$"],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Conservation : $238-234=4$ nucléons, $92-90=2$ charges → noyau d'hélium, désintégration $\\alpha$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs numériques demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 1, "chapitre": "Diffraction",
+          "enonce": "Laser $\\lambda={{num:lam}}$ nm, fente $a={{num:aa}}$ mm, écran à $D={{num:dd}}$ m : largeur $L$ de la tache centrale, en cm.",
+          "answer": "Lcm",
+          "tol": 0.15,
+          "precision": "2 décimales",
+          "corrige": "<span class='reponse'>$\\theta=\\lambda/a={{d2:theta}}$ rad × 10³ ; $L=2\\theta D={{d2:Lcm}}$ cm.</span>"
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 1, "chapitre": "Effet photoélectrique",
+          "enonce": "Métal de seuil $\\lambda_0={{num:laseuil}}$ nm éclairé par $\\lambda={{num:lampe}}$ nm : énergie cinétique max des électrons extraits, en eV (signe inclus ; mets 0 si aucune extraction).",
+          "answer": "Ekin > 0 ? Ekin : 0",
+          "tol": 0.08,
+          "precision": "2 décimales en eV",
+          "corrige": "<span class='reponse'>$E_{photon}={{d2:Epe}}$ eV, $W_0={{d2:W0}}$ eV → $E_c=E_{photon}-W_0={{d2:Ekin}}$ eV (valeur négative = aucune extraction possible).</span>"
+        },
+        {
+          "id": "e3q3", "type": "numeric", "points": 1, "chapitre": "Nucléaire",
+          "enonce": "Échantillon d'activité ${{div}}$ fois plus faible que la normale, demi-vie $T={{num:tt}}$ ans : âge en années.",
+          "answer": "age",
+          "tol": 50,
+          "corrige": "<span class='reponse'>${{div}}=2^{{nn}}$ → {{nn}} demi-vies → âge $={{nn}}\\times{{num:tt}}={{num:age}}$ ans.</span>"
+        }
+      ]
+    }
+  ]
+}

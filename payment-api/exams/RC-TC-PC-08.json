@@ -1,0 +1,94 @@
+{
+  "code": "RC-TC-PC-08",
+  "format": "exam-v2",
+  "titre": "Interrogation — Amines et acides α-aminés",
+  "classe": "Terminale_C",
+  "classeLabel": "Terminale C",
+  "matiere": "Physique-Chimie",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : réponds dans le temps imparti. Correction automatique.",
+  "params": {
+    "aa": { "choices": [1, 2, 3] }
+  },
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Amines",
+          "enonce": "Une amine secondaire porte exactement deux groupes alkyles liés à l'atome d'azote.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Primaire : 1 alkyle ($\\mathrm{R{-}NH_2}$) ; secondaire : 2 ($\\mathrm{R{-}NH{-}R'}$) ; tertiaire : 3."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Amines",
+          "enonce": "Une amine tertiaire ne peut pas capter de proton car elle n'a plus d'hydrogène sur l'azote.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est le **doublet non liant** de l'azote qui capte $\\mathrm{H^+}$, pas un H : les amines tertiaires sont aussi basiques ($\\mathrm{R_3N + H^+ \\to R_3NH^+}$)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Acides aminés",
+          "enonce": "Dans un acide $\\alpha$-aminé, les groupes $\\mathrm{{-}NH_2}$ et $\\mathrm{{-}COOH}$ sont portés par le même atome de carbone.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> « $\\alpha$ » signifie que les deux fonctions sont sur le carbone adjacent au COOH — forme $\\mathrm{H_2N{-}CHR{-}COOH}$."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Acides aminés",
+          "enonce": "La liaison peptidique est une liaison $\\mathrm{{-}CO{-}NH{-}}$ formée par élimination d'une molécule d'eau.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Condensation : le $\\mathrm{{-}COOH}$ d'un acide aminé réagit avec le $\\mathrm{{-}NH_2}$ d'un autre en libérant $\\mathrm{H_2O}$."
+        },
+        {
+          "id": "e1q5", "type": "vrai_faux", "points": 1, "chapitre": "Acides aminés",
+          "enonce": "Le zwitterion d'un acide $\\alpha$-aminé porte une charge globale nulle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $\\mathrm{^+H_3N{-}CHR{-}COO^-}$ : une charge + et une charge −, molécule globalement neutre (ion dipolaire)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Amines",
+          "enonce": "$\\mathrm{CH_3{-}NH{-}CH_3}$ est une amine",
+          "choix": ["primaire", "secondaire", "tertiaire"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Deux groupes méthyles sur l'azote → amine secondaire (N-méthylméthanamine)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Amines",
+          "enonce": "$\\mathrm{C_2H_5{-}NH_2}$ se nomme",
+          "choix": ["méthanamine", "éthanamine", "propanamine"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Deux carbones dans la chaîne → éthanamine."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "Amines",
+          "enonce": "La réaction $\\mathrm{R{-}NH_2 + HCl}$ donne",
+          "choix": ["un amide", "un chlorure d'alkylammonium", "un nitrile"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> $\\mathrm{R{-}NH_2 + HCl \\to R{-}NH_3^+ + Cl^-}$ : sel d'alkylammonium."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 1, "chapitre": "Acides aminés",
+          "enonce": "La forme zwitterionique de la glycine est",
+          "choix": ["$\\mathrm{H_2N{-}CH_2{-}COOH}$", "$\\mathrm{^+H_3N{-}CH_2{-}COO^-}$", "$\\mathrm{H_2N{-}CH_2{-}COO^-}$"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Transfert interne du proton : $\\mathrm{{-}NH_2 \\to {-}NH_3^+}$ et $\\mathrm{{-}COOH \\to {-}COO^-}$."
+        },
+        {
+          "id": "e2q5", "type": "qcm", "points": 1, "chapitre": "Acides aminés",
+          "enonce": "Les protéines sont formées d'acides $\\alpha$-aminés reliés par",
+          "choix": ["des liaisons ester", "des liaisons peptidiques", "des ponts hydrogène uniquement"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Enchaînement par liaisons peptidiques $\\mathrm{{-}CO{-}NH{-}}$ → polypeptides → protéines."
+        }
+      ]
+    }
+  ]
+}

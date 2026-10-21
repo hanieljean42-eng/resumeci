@@ -1,0 +1,97 @@
+{
+  "code": "RC-TD-MATH-09",
+  "format": "exam-v2",
+  "titre": "Interrogation — Primitives et calcul intégral",
+  "classe": "Terminale_D",
+  "classeLabel": "Terminale D",
+  "matiere": "Mathématiques",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : réponds aux questions dans le temps imparti. Le bloc est corrigé automatiquement ; pour l'exercice à rédiger, écris ta solution sur une feuille puis auto-corrige-toi avec la grille.",
+  "params": {
+    "aa": { "choices": [2, 3, 4] },
+    "bb": { "choices": [1, 2, 3] },
+    "nn": { "choices": [1, 2] }
+  },
+  "derived": {
+    "nn2": "nn*nn",
+    "int1": "aa*nn*nn/2",
+    "oubli2": "aa*nn*nn",
+    "bornes": "aa*nn"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Primitives",
+          "enonce": "Toute fonction continue sur un intervalle admet des primitives sur cet intervalle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Théorème fondamental : la continuité garantit l'existence de primitives (la fonction $x\\mapsto\\int_a^x f(t)\\,\\mathrm{d}t$ en est une)."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Primitives",
+          "enonce": "Deux primitives d'une même fonction sur un intervalle diffèrent toujours d'une constante.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Si $F'=G'=f$, alors $(F-G)'=0$ donc $F-G$ est constante sur l'intervalle."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Calcul intégral",
+          "enonce": "$\\displaystyle\\int_1^{\\mathrm{e}} \\ln x\\,\\mathrm{d}x = \\dfrac{1}{\\mathrm{e}}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\int_1^{\\mathrm{e}}\\ln x\\,\\mathrm{d}x=[x\\ln x-x]_1^{\\mathrm{e}}=(\\mathrm{e}-\\mathrm{e})-(0-1)=1$ : $\\frac{1}{x}$ est la dérivée de $\\ln x$, pas son intégrale."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Primitives",
+          "enonce": "Une primitive de $x\\mapsto\\dfrac{1}{x^2}$ sur $]0\\,;+\\infty[$ est",
+          "choix": ["$x\\mapsto \\ln x$", "$x\\mapsto -\\dfrac{1}{x}$", "$x\\mapsto -\\dfrac{2}{x^3}$"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> $\\left(-\\dfrac{1}{x}\\right)'=\\dfrac{1}{x^2}$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Calcul intégral",
+          "enonce": "$\\displaystyle\\int_0^{{nn}} {{aa}}x\\,\\mathrm{d}x$ est égale à",
+          "choix": ["${{num:int1}}$", "${{num:oubli2}}$", "${{num:bornes}}"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $\\int_0^{{nn}}{{aa}}x\\,\\mathrm{d}x={{aa}}\\left[\\dfrac{x^2}{2}\\right]_0^{{nn}}={{aa}}\\times\\dfrac{{{nn2}}}{2}={{num:int1}}$."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "IPP",
+          "enonce": "Une primitive de $\\ln x$ sur $]0\\,;+\\infty[$ est",
+          "choix": ["$x\\mapsto\\dfrac{1}{x}$", "$x\\mapsto x\\ln x$", "$x\\mapsto x\\ln x - x$"],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> $(x\\ln x - x)'=\\ln x + 1 - 1 = \\ln x$ — classique par intégration par parties."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Primitive et aire (à rédiger)",
+      "consigne": "Écris ta solution complète sur une feuille, puis auto-corrige-toi avec la grille ci-dessous à la fin.",
+      "questions": [
+        {
+          "id": "e3", "type": "papier", "points": 4, "chapitre": "Primitives · Intégrales",
+          "enonce": "<p>Soit $f$ la fonction définie sur $]0\\,;+\\infty[$ par $f(x)={{aa}}x-{{bb}}+\\dfrac{4}{x}$.</p><ol type='a'><li>Détermine la primitive $F$ de $f$ telle que $F(1)=0$.</li><li>Calcule $\\displaystyle\\int_{1}^{\\mathrm{e}}\\dfrac{4}{x}\\,\\mathrm{d}x$ et interprète géométriquement le résultat.</li></ol>",
+          "steps": [
+            {
+              "titre": "a) Recherche de la primitive",
+              "points": 2,
+              "texte": "Primitive terme à terme : $F(x)=\\dfrac{{{aa}}x^2}{2}-{{bb}}x+4\\ln x+C$. La condition $F(1)=0$ donne $\\dfrac{{{aa}}}{2}-{{bb}}+C=0$, soit $C={{bb}}-\\dfrac{{{aa}}}{2}$ : <span class='reponse'>$F(x)=\\dfrac{{{aa}}}{2}x^2-{{bb}}x+4\\ln x+{{bb}}-\\dfrac{{{aa}}}{2}$</span>."
+            },
+            {
+              "titre": "b) Intégrale et aire",
+              "points": 2,
+              "texte": "$\\displaystyle\\int_1^{\\mathrm{e}}\\dfrac{4}{x}\\,\\mathrm{d}x=4[\\ln x]_1^{\\mathrm{e}}=4(1-0)=$ <span class='reponse'>$4$</span>. C'est <span class='reponse'>l'aire, en unités d'aire, du domaine sous la courbe $y=\\frac{4}{x}$ entre $x=1$ et $x=\\mathrm{e}$</span>."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

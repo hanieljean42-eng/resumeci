@@ -1,0 +1,112 @@
+{
+  "code": "RC-TA-MATH-05",
+  "format": "exam-v2",
+  "titre": "Interrogation — Ajustement linéaire (statistiques à deux variables)",
+  "classe": "Terminale_A",
+  "classeLabel": "Terminale A",
+  "matiere": "Mathématiques",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : calculatrice autorisée. Réponds par des valeurs numériques ; correction automatique.",
+  "params": {
+    "d": { "choices": [0, 1, 2] },
+    "xa": { "choices": [9, 10, 11] }
+  },
+  "derived": {
+    "xbar": "5",
+    "ybar": "11.6 + d",
+    "cov": "4.8",
+    "varx": "4",
+    "aa": "1.2",
+    "bb": "5.6 + d",
+    "pred": "1.2*xa + 5.6 + d"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Ajustement linéaire",
+          "enonce": "La droite d'ajustement de $y$ en $x$ par les moindres carrés passe toujours par le point moyen $G(\\bar{x}\\,;\\,\\bar{y})$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Propriété fondamentale : $b=\\bar{y}-a\\bar{x}$, donc $G$ appartient à la droite de Mayer/moindres carrés."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Ajustement linéaire",
+          "enonce": "Si la covariance $\\mathrm{cov}(x,y)$ est négative, le coefficient directeur $a$ de la droite d'ajustement est négatif.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $a=\\mathrm{cov}(x,y)/V(x)$ et $V(x)>0$ : $a$ a le signe de la covariance."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Ajustement linéaire",
+          "enonce": "Le coefficient directeur de la droite de régression de $y$ en $x$ est",
+          "choix": ["$a=\\dfrac{V(x)}{\\mathrm{cov}(x,y)}$", "$a=\\dfrac{\\mathrm{cov}(x,y)}{V(x)}$", "$a=\\bar{y}-\\bar{x}$"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> $a=\\mathrm{cov}(x,y)/V(x)$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Ajustement linéaire",
+          "enonce": "Ajouter la même constante $c$ à toutes les valeurs $y_i$ modifie",
+          "choix": ["$a$ et $b$", "$b$ uniquement ($b\\to b+c$)", "$a$ uniquement"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La covariance et $V(x)$ sont inchangées → $a$ stable ; $\\bar{y}$ augmente de $c$ → $b$ augmente de $c$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs sur le nuage",
+      "consigne": "Série statistique : heures de révision $x$ : 2, 4, 5, 6, 8 — notes $y$ : 8, 10, 12, 13, 15 <em>(toutes augmentées de ${{d}}$ point(s) pour ta variante)</em>. Donne les valeurs à $10^{-2}$ près.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 1, "chapitre": "Point moyen",
+          "enonce": "Abscisse $\\bar{x}$ du point moyen $G$",
+          "answer": "xbar",
+          "tol": 0.001,
+          "corrige": "<span class='reponse'>$\\bar{x}=(2+4+5+6+8)/5=5$</span>"
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 1, "chapitre": "Point moyen",
+          "enonce": "Ordonnée $\\bar{y}$ du point moyen $G$",
+          "answer": "ybar",
+          "tol": 0.001,
+          "corrige": "<span class='reponse'>$\\bar{y}=(8+10+12+13+15)/5+{{d}}=11{,}6+{{d}}={{num:ybar}}$</span>"
+        },
+        {
+          "id": "e3q3", "type": "numeric", "points": 1, "chapitre": "Covariance",
+          "enonce": "Covariance $\\mathrm{cov}(x,y)$ de la série",
+          "answer": "cov",
+          "tol": 0.01,
+          "corrige": "<span class='reponse'>$\\mathrm{cov}(x,y)=\\frac{1}{5}\\sum(x_i-\\bar{x})(y_i-\\bar{y})=4{,}8$ (inchangée par translation des $y$).</span>"
+        },
+        {
+          "id": "e3q4", "type": "numeric", "points": 1, "chapitre": "Ajustement",
+          "enonce": "Coefficient directeur $a$ de la droite des moindres carrés",
+          "answer": "aa",
+          "tol": 0.01,
+          "corrige": "<span class='reponse'>$a=\\mathrm{cov}(x,y)/V(x)=4{,}8/4=1{,}2$</span>"
+        },
+        {
+          "id": "e3q5", "type": "numeric", "points": 1, "chapitre": "Ajustement",
+          "enonce": "Ordonnée à l'origine $b$ de la droite",
+          "answer": "bb",
+          "tol": 0.01,
+          "corrige": "<span class='reponse'>$b=\\bar{y}-a\\bar{x}={{num:ybar}}-6={{num:bb}}$</span>"
+        },
+        {
+          "id": "e3q6", "type": "numeric", "points": 1, "chapitre": "Prévision",
+          "enonce": "Note prévue par l'ajustement pour $x={{xa}}$ heures",
+          "answer": "pred",
+          "tol": 0.01,
+          "corrige": "<span class='reponse'>$y=1{,}2\\times{{xa}}+{{num:bb}}={{num:pred}}$</span>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "code": "RC-TD-SVT-10",
+  "format": "exam-v2",
+  "titre": "Interrogation — Immunologie : les défenses de l'organisme",
+  "classe": "Terminale_D",
+  "classeLabel": "Terminale D",
+  "matiere": "SVT",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : réponds dans le temps imparti. Correction automatique à la fin.",
+  "params": {
+    "tt": { "choices": [5570, 5730, 5600] },
+    "dd": { "choices": [4, 8, 16] }
+  },
+  "derived": {
+    "nn": "Math.log2(dd)",
+    "age": "Math.log2(dd) * tt"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Immunité innée",
+          "enonce": "La phagocytose est une réponse immunitaire innée : rapide et non spécifique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Innée = présente dès la naissance, immédiate (heures), identique quel que soit l'agresseur : phagocytes, barrières, inflammation."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Anticorps",
+          "enonce": "Un anticorps ne reconnaît qu'un seul type d'antigène : il est spécifique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Chaque anticorps possède un site de fixation complémentaire d'un épitope précis — principe de la vaccination ciblée."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Vaccination",
+          "enonce": "La sérothérapie, comme la vaccination, laisse une mémoire immunitaire durable.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La sérothérapie injecte des anticorps tout prêts : protection immédiate mais brève, **sans** cellules mémoires — c'est une immunisation passive."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Immunité adaptative",
+          "enonce": "Les lymphocytes T8 (cytotoxiques) détruisent directement les cellules infectées.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Réponse à médiation cellulaire : les LT cytotoxiques reconnaissent et lysent les cellules porteuses de l'antigène (cellules infectées, cancéreuses)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Immunité adaptative",
+          "enonce": "Les anticorps sont sécrétés par",
+          "choix": ["les macrophages", "les plasmocytes (lymphocytes B activés)", "les lymphocytes T4"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le lymphocyte B se transforme en plasmocyte, véritable usine à anticorps."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Vaccination",
+          "enonce": "La réponse secondaire (rappel vaccinal) est plus forte car l'organisme possède",
+          "choix": ["plus de globules rouges", "des cellules mémoires", "davantage d'antigènes"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Les lymphocytes mémoires, produits lors du premier contact, réagissent plus vite et plus intensément."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "Phagocytose",
+          "enonce": "L'ordre correct des étapes de la phagocytose est",
+          "choix": ["digestion → adhérence → ingestion", "adhérence → ingestion → digestion", "ingestion → adhérence → digestion"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le phagocyte adhère au microbe, l'englobe dans une vacuole (phagosome), puis le digère par les enzymes lysosomiales."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 1, "chapitre": "Sérothérapie",
+          "enonce": "On utilise la sérothérapie en priorité lors d'une",
+          "choix": ["vaccination de routine", "morsure de serpent (urgence)", "analyse de sang"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Urgence vitale : les anticorps prêts à l'emploi neutralisent immédiatement le venin (sérum antivenimeux), sans attendre la réponse propre."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Application numérique",
+      "consigne": "Réponds par une valeur numérique.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 1, "chapitre": "Réponse immunitaire",
+          "enonce": "La réponse primaire après vaccination met typiquement entre 10 et 15 jours avant le pic d'anticorps : cela illustre le caractère de la réponse adaptative. Combien de demi-vies correspondent à une activité divisée par {{dd}} ?",
+          "answer": "nn",
+          "tol": 0.001,
+          "corrige": "<span class='reponse'>${{dd}}=2^{{nn}}$ : {{nn}} demi-vies.</span>"
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 1, "chapitre": "Datation (transversal)",
+          "enonce": "Un tissu a une activité ${{dd}}$ fois plus faible que la normale. La demi-vie du traceur est de {{num:tt}} ans : quel est son âge en années ?",
+          "answer": "age",
+          "tol": 1,
+          "corrige": "<span class='reponse'>{{nn}} demi-vies $\\times$ {{num:tt}} = {{num:age}} ans.</span>"
+        }
+      ]
+    }
+  ]
+}

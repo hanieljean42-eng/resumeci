@@ -1,0 +1,129 @@
+{
+  "code": "RC-TC-MATH-08",
+  "format": "exam-v2",
+  "titre": "Interrogation — Exponentielle et isométries",
+  "classe": "Terminale_C",
+  "classeLabel": "Terminale C",
+  "matiere": "Mathématiques",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : réponds dans le temps imparti. La partie QCM/Vrai-Faux est corrigée automatiquement ; l'exercice à rédiger s'auto-corrige avec la grille.",
+  "params": {
+    "wx": { "choices": [2, 3, 4] },
+    "wy": { "choices": [-3, -2, -1] },
+    "ax": { "choices": [1, 2] },
+    "ay": { "choices": [2, 3, 4] },
+    "kk": { "choices": [2, 3, 5] },
+    "bb": { "choices": [2, 3, 4] }
+  },
+  "derived": {
+    "axp": "ax + wx",
+    "ayp": "ay + wy",
+    "bx": "bb",
+    "byp": "-bb",
+    "sol": "Math.log(kk)",
+    "wyabs": "-wy"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Exponentielle",
+          "enonce": "Pour tout réel $x$, $\\mathrm{e}^x > 0$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'exponentielle est strictement positive sur $\\mathbb{R}$."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Isométries",
+          "enonce": "Une réflexion (symétrie orthogonale) conserve les distances mais change l'orientation.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La réflexion est une isométrie indirecte (antidéplacement) : distances conservées, orientation inversée."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Isométries",
+          "enonce": "La composée d'une translation et d'une réflexion est toujours une isométrie directe.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Une réflexion est indirecte : composée avec une translation (directe), le résultat est une isométrie **indirecte** (symétrie glissée)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1, "chapitre": "Exponentielle",
+          "enonce": "Les solutions de $\\mathrm{e}^{2x} - 3\\mathrm{e}^{x} + 2 = 0$ sont",
+          "choix": ["$x=0$ et $x=\\ln 2$", "$x=1$ et $x=2$", "$x=\\ln 3$ uniquement"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Poser $X=\\mathrm{e}^x$ : $X^2-3X+2=0$ donne $X=1$ ou $X=2$, soit $x=0$ ou $x=\\ln 2$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1, "chapitre": "Isométries",
+          "enonce": "L'image du point $B({{bb}}\\,;\\,1)$ par la rotation de centre $O$ et d'angle $\\frac{\\pi}{2}$ a pour affixe",
+          "choix": ["$-1+{{bb}}\\mathrm{i}$", "$1-{{bb}}\\mathrm{i}$", "${{bb}}+\\mathrm{i}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Rotation $\\frac{\\pi}{2}$ : $z'=\\mathrm{i}z=\\mathrm{i}({{bb}}+\\mathrm{i})=-1+{{bb}}\\mathrm{i}$, point $(-1\\,;\\,{{bb}})$."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1, "chapitre": "Exponentielle",
+          "enonce": "Le minimum de $f(x)=x\\,\\mathrm{e}^{x}$ sur $\\mathbb{R}$ est atteint en",
+          "choix": ["$x=-1$", "$x=0$", "$x=1$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $f'(x)=\\mathrm{e}^x(x+1)$ s'annule en $x=-1$ : minimum $f(-1)=-\\frac{1}{\\mathrm{e}}$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Réponses numériques",
+      "consigne": "Donne la valeur exacte ou arrondie à $10^{-2}$. Utilise le point ou la virgule décimale.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 1, "chapitre": "Exponentielle",
+          "enonce": "Solution de $\\mathrm{e}^{x} = {{kk}}$ (donne $\\ln {{kk}}$ arrondi à $10^{-2}$)",
+          "answer": "sol",
+          "tol": 0.011,
+          "corrige": "<span class='reponse'>$x=\\ln {{kk}}\\approx{{d2:sol}}$</span>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 1, "chapitre": "Isométries",
+          "enonce": "Abscisse de l'image de $A({{ax}}\\,;\\,{{ay}})$ par la translation de vecteur $\\vec{w}({{wx}}\\,;\\,{{wy}})$",
+          "answer": "axp",
+          "tol": 0.001,
+          "corrige": "<span class='reponse'>$x_{A'}={{ax}}+({{wx}})={{axp}}$</span>."
+        },
+        {
+          "id": "e3q3", "type": "numeric", "points": 1, "chapitre": "Isométries",
+          "enonce": "Ordonnée de l'image $A'$ (même translation)",
+          "answer": "ayp",
+          "tol": 0.001,
+          "corrige": "<span class='reponse'>$y_{A'}={{ay}}+({{wy}})={{ayp}}$</span>."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 4 — Isométrie à rédiger",
+      "consigne": "Écris ta solution complète sur une feuille.",
+      "questions": [
+        {
+          "id": "e4", "type": "papier", "points": 1, "chapitre": "Isométries",
+          "enonce": "<p>Soit $t$ la translation de vecteur $\\vec{w}({{wx}}\\,;\\,{{wy}})$ et $r$ la rotation de centre $O$ et d'angle $\\frac{\\pi}{2}$.</p><ol type='a'><li>Quelle est la nature de $f=r\\circ t$ ?</li><li>Détermine l'image de $O$ par $f$.</li></ol>",
+          "steps": [
+            {
+              "titre": "a) Nature de f",
+              "points": 0.5,
+              "texte": "La composée d'une translation et d'une rotation d'angle $\\theta$ est <span class='reponse'>une rotation d'angle $\\theta=\\frac{\\pi}{2}$</span> (isométrie directe)."
+            },
+            {
+              "titre": "b) Image de O",
+              "points": 0.5,
+              "texte": "$t(O)=D({{wx}}\\,;\\,{{wy}})$ puis $r(D)$ : $z_{D'}=\\mathrm{i}({{wx}}-{{wyabs}}\\mathrm{i})={{wyabs}}+{{wx}}\\mathrm{i}$ : <span class='reponse'>$f(O)=({{wyabs}}\\,;\\,{{wx}})$</span>."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
