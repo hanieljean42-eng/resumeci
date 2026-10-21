@@ -4128,12 +4128,7 @@ async function updateEliteSpotCount() {
 function getToolsBar() {
   const hasStats = window.userHasFeature ? window.userHasFeature('Statistiques Avancées') : false;
   const hasPlanner = window.userHasFeature ? window.userHasFeature("Planning d'Examen") : false;
-  const hasSujets = window.userHasFeature ? window.userHasFeature('sujets') : false;
   const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
-
-  const sujetsCard = hasSujets
-    ? `<a class="tool-card" href="#" onclick="openSujetsModal(); return false;"><div class="tool-icon">📝</div><h4>Sujets & Interros</h4><p>Épreuves PDF corrigées (Actif ✓)</p></a>`
-    : `<a class="tool-card" href="#" onclick="if(typeof openSujetsModal==='function')openSujetsModal(); return false;"><div class="tool-icon">📝</div><h4>Sujets & Interros 🔒</h4><p>Interros, devoirs & BAC corrigés (Pass Élite)</p></a>`;
 
   const statsCard = hasStats
     ? `<a class="tool-card" href="#" onclick="openStatistiquesModal(); return false;"><div class="tool-icon">📊</div><h4>Mes Statistiques</h4><p>Progression & Données en cache</p></a>`
@@ -4156,8 +4151,6 @@ function getToolsBar() {
     <a class="tool-card" href="#" onclick="if(typeof openPomodoro==='function')openPomodoro(); return false;"><div class="tool-icon">⏱️</div><h4>Timer Pomodoro</h4><p>25 min révision active</p></a>
     ${plannerCard}
     ${statsCard}
-    ${sujetsCard}
-    <a class="tool-card" href="#" onclick="if(typeof openReviewsModal==='function')openReviewsModal(); return false;"><div class="tool-icon">⭐</div><h4>Avis des élèves</h4><p>Leur expérience + donne la tienne</p></a>
   </div>`;
 }
 const TTS = {
