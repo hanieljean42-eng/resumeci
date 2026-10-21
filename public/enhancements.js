@@ -397,39 +397,74 @@
   };
 
   // ==================== PLAN DE RÉVISION ====================
+  const PLANNER_CLASS_LABELS = { '6eme':'6ème','5eme':'5ème','4eme':'4ème','3eme':'3ème (BEPC)','Seconde_A':'Seconde A','Seconde_C':'Seconde C','Premiere_A':'Première A','Premiere_C':'Première C','Premiere_D':'Première D','Terminale_A':'Terminale A (BAC)','Terminale_C':'Terminale C (BAC)','Terminale_D':'Terminale D (BAC)','Licence_1_Droit':'Licence 1 — Droit','Licence_1_Miage':'Licence 1 — MIAGE' };
+
+  function plannerClassOptions(savedCls){
+    const keys = (window.DATA && window.DATA.structure) ? Object.keys(window.DATA.structure) : [];
+    return keys.map(k => `<option value="${k}" ${k===savedCls?'selected':''}>${PLANNER_CLASS_LABELS[k] || k.replace(/_/g,' ')}</option>`).join('');
+  }
+
+  window.plannerRenderSubjects = function(savedSubjects){
+    const cls = document.getElementById('plannerClass')?.value;
+    const box = document.getElementById('plannerSubjects');
+    if (!box) return;
+    const subs = (window.DATA && window.DATA.structure && window.DATA.structure[cls]) ? Object.keys(window.DATA.structure[cls]) : [];
+    if (!subs.length) { box.innerHTML = '<span style="font-size:11px;color:#ef4444">Aucune matière disponible pour cette classe.</span>'; return; }
+    const saved = Array.isArray(savedSubjects) ? savedSubjects : null;
+    box.innerHTML = subs.map(s => `<label style="display:inline-flex;align-items:center;gap:4px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:5px 9px;font-size:11.5px;cursor:pointer;margin:0 4px 6px 0"><input type="checkbox" class="planner-subject-cb" value="${s}" ${(!saved || saved.includes(s)) ? 'checked' : ''}> ${s}</label>`).join('');
+  };
+
   window.openActualPlanner = function(){
     const saved = JSON.parse(localStorage.getItem('rci-planner') || 'null');
     const today = new Date().toISOString().split('T')[0];
+    const defCls = (saved && saved.classe) || (window.USER_PROFILE && window.USER_PROFILE.selectedClass) || '3eme';
     let html = `
-      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen, l'heure de début, le site génère un plan de révision quotidien avec rappels.</p>
+      <p style="color:#64748b;font-size:13px;margin-bottom:14px">Saisis la date de ton examen : ResumeCI construit un plan quotidien couvrant <strong>toutes les fiches</strong> des matières choisies, avec suivi de progression et rappels.</p>
+      <label style="font-size:12px;color:#475569;font-weight:600">📝 Nom de l'examen (optionnel)</label>
+      <input type="text" id="plannerExamName" class="planner-input" placeholder="Ex : BEPC 2026, BAC blanc, Partiels S1…" value="${saved && saved.examName ? saved.examName.replace(/"/g,'&quot;') : ''}" maxlength="60">
       <label style="font-size:12px;color:#475569;font-weight:600">📆 Date d'examen</label>
       <input type="date" id="plannerDate" class="planner-input" value="${saved ? saved.date : ''}" min="${today}">
       <label style="font-size:12px;color:#475569;font-weight:600">⏰ Heure de début quotidienne</label>
       <input type="time" id="plannerTime" class="planner-input" value="${saved && saved.time ? saved.time : '17:00'}">
       <label style="font-size:12px;color:#475569;font-weight:600">🎓 ${(window.isUniversityUser && window.isUniversityUser()) ? 'Filière' : 'Classe'}</label>
-      <select id="plannerClass" class="planner-input">
-        ${(window.isUniversityUser && window.isUniversityUser()) ? `
-        <option value="Licence_1_Droit">Licence 1 Droit</option>` : `
-        <option value="6eme">6ème</option>
-        <option value="5eme">5ème</option>
-        <option value="3eme">3ème (BEPC)</option>
-        <option value="2nde_A">Seconde A</option>
-        <option value="2nde_C">Seconde C</option>
-        <option value="1ere_A">Première A</option>
-        <option value="1ere_D">Première D</option>
-        <option value="Terminale_A">Terminale A (BAC)</option>
-        <option value="Terminale_C">Terminale C (BAC)</option>
-        <option value="Terminale_D">Terminale D (BAC)</option>`}
+      <select id="plannerClass" class="planner-input" onchange="plannerRenderSubjects()">
+        ${plannerClassOptions(defCls)}
       </select>
-      <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes/jour</label>
+      <label style="font-size:12px;color:#475569;font-weight:600;margin-top:8px;display:block">📚 Matières à réviser</label>
+      <div id="plannerSubjects" style="margin-bottom:6px"></div>
+      <label style="font-size:12px;color:#475569;font-weight:600">⏱️ Minutes par jour</label>
       <input type="number" id="plannerMin" class="planner-input" value="${saved ? saved.minutes : 45}" min="15" max="240">
       <label style="font-size:12px;color:#475569;font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:8px"><input type="checkbox" id="plannerNotif" ${saved && saved.notif !== false ? 'checked' : ''}> 🔔 Activer les rappels (notifications)</label>
-      <button onclick="generatePlan()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-bottom:14px"><i class="fas fa-wand-magic-sparkles"></i> Générer mon plan</button>
-      <button onclick="testNotif()" style="width:100%;padding:8px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;cursor:pointer;margin-bottom:14px"><i class="fas fa-bell"></i> Tester une notification</button>
+      <button onclick="generatePlan()" style="width:100%;padding:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-bottom:8px"><i class="fas fa-wand-magic-sparkles"></i> ${saved && saved.plan ? 'Régénérer mon plan' : 'Générer mon plan'}</button>
+      <button onclick="testNotif()" style="width:100%;padding:8px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;cursor:pointer;margin-bottom:12px"><i class="fas fa-bell"></i> Tester une notification</button>
       <div id="plannerResult"></div>`;
     openModal('📅 Plan de révision', html, 'plannerModal');
-    if (saved && saved.plan) renderPlan(saved.plan, saved);
+    plannerRenderSubjects(saved && saved.subjects);
     if (saved && saved.classe) document.getElementById('plannerClass').value = saved.classe;
+    if (saved && saved.plan) renderPlan(saved.plan, saved);
+  };
+
+  window.deletePlan = function(){
+    if (!confirm('Supprimer ton plan de révision actuel ?')) return;
+    localStorage.removeItem('rci-planner');
+    document.getElementById('plannerResult').innerHTML = '';
+    toast('Plan supprimé', 'info');
+  };
+
+  window.togglePlanDay = function(idx){
+    const data = JSON.parse(localStorage.getItem('rci-planner') || 'null');
+    if (!data || !data.plan || !data.plan[idx]) return;
+    data.plan[idx].done = !data.plan[idx].done;
+    localStorage.setItem('rci-planner', JSON.stringify(data));
+    renderPlan(data.plan, data);
+  };
+
+  window.openPlanFiche = function(idx){
+    const data = JSON.parse(localStorage.getItem('rci-planner') || 'null');
+    const p = data && data.plan && data.plan[idx];
+    if (!p || !p.file || typeof window.showFiche !== 'function') return;
+    if (typeof window.closeModal === 'function') window.closeModal('plannerModal');
+    window.showFiche(p.cls || data.classe, p.subject, p.file);
   };
 
   window.openPlanner = function(){
@@ -450,23 +485,38 @@
     const date=document.getElementById('plannerDate').value;
     const time=document.getElementById('plannerTime').value||'17:00';
     const cls=document.getElementById('plannerClass').value;
-    const minutes=parseInt(document.getElementById('plannerMin').value)||45;
+    const examName=(document.getElementById('plannerExamName').value||'').trim().slice(0,60);
+    const minutes=Math.min(240,Math.max(15,parseInt(document.getElementById('plannerMin').value)||45));
     const notif=document.getElementById('plannerNotif').checked;
     if(!date){toast('Choisis une date d\'examen','warn');return;}
     const target=new Date(date),today=new Date();today.setHours(0,0,0,0);
-    const days=Math.max(1,Math.ceil((target-today)/(1000*60*60*24)));
+    if(target<=today){toast('La date d\'examen doit être dans le futur.','warn');return;}
+    const days=Math.min(60,Math.max(1,Math.ceil((target-today)/(1000*60*60*24))));
     const struct=window.DATA&&window.DATA.structure?window.DATA.structure[cls]:null;
     if(!struct){toast('Classe non disponible','error');return;}
-    const subjects=Object.keys(struct);
+    // Matières cochées par l'élève (toutes par défaut)
+    const checked=[...document.querySelectorAll('.planner-subject-cb')].filter(c=>c.checked).map(c=>c.value);
+    const subjects=checked.length?checked:Object.keys(struct);
+    if(!subjects.length){toast('Coche au moins une matière.','warn');return;}
+    // Distribution séquentielle : chaque jour la matière suivante prend la fiche
+    // d'après — le plan couvre le programme entier, dans l'ordre des leçons.
+    const queue=subjects.map(s=>({subject:s,fiches:(struct[s]||[]).slice()}));
     const plan=[];
-    for(let d=0;d<Math.min(days,30);d++){
+    for(let d=0;d<days;d++){
       const date2=new Date(today);date2.setDate(today.getDate()+d);
-      const subj=subjects[d%subjects.length];
-      const fiches=struct[subj]||[];
-      const f=fiches[d%fiches.length];
-      plan.push({day:d+1,dateISO:date2.toISOString().split('T')[0],date:date2.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'short'}),subject:subj,lesson:f?f.name:'Révision libre',file:f?f.file:null,minutes});
+      const iso=date2.toISOString().split('T')[0];
+      const label=date2.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'short'});
+      const slot=queue[d%queue.length];
+      let item;
+      if(slot.fiches.length){
+        const f=slot.fiches.shift();
+        item={day:d+1,dateISO:iso,date:label,cls,subject:slot.subject,lesson:f.name,file:f.file||null,minutes,done:false};
+      }else{
+        item={day:d+1,dateISO:iso,date:label,cls,subject:slot.subject,lesson:'Révision générale — quiz, flashcards & relecture',file:null,minutes,done:false};
+      }
+      plan.push(item);
     }
-    const data={date,time,classe:cls,minutes,notif,plan};
+    const data={date,time,classe:cls,examName,minutes,notif,subjects,plan};
     localStorage.setItem('rci-planner',JSON.stringify(data));
     renderPlan(plan,data);
     toast('Plan de '+days+' jours généré — début quotidien à '+time,'success');
@@ -528,13 +578,35 @@
   }
   function renderPlan(plan,data){
     const el=document.getElementById('plannerResult');
+    if(!el)return;
     const today=new Date().toISOString().split('T')[0];
-    const timeInfo=data&&data.time?` — début quotidien <strong>${data.time}</strong>`:'';
-    el.innerHTML='<h4 style="margin:8px 0 12px;font-size:14px">Tes prochains jours'+timeInfo+' :</h4>'+plan.slice(0,10).map(p=>{
+    const total=plan.length;
+    const done=plan.filter(p=>p.done).length;
+    const pct=total?Math.round(done/total*100):0;
+    const daysLeft=Math.max(0,Math.ceil((new Date(data.date)-new Date(today))/(1000*60*60*24)));
+    const examLabel=data.examName||'Examen';
+    const timeInfo=data&&data.time?` — chaque jour à <strong>${data.time}</strong>`:'';
+    const html=`<div style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1.5px solid #c7d2fe;border-radius:12px;padding:12px 14px;margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <div style="font-weight:800;font-size:14px;color:#1e293b">🎯 ${examLabel} — <span style="color:#4f46e5">J-${daysLeft}</span></div>
+        <button onclick="deletePlan()" style="background:none;border:none;color:#94a3b8;font-size:11.5px;cursor:pointer"><i class="fas fa-trash"></i> Supprimer</button>
+      </div>
+      <div style="font-size:11.5px;color:#475569;margin:4px 0 8px">${done}/${total} séances faites${timeInfo}</div>
+      <div style="height:8px;background:#e2e8f0;border-radius:99px;overflow:hidden"><div style="height:100%;width:${pct}%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:99px;transition:width .3s"></div></div>
+    </div>
+    <div style="max-height:320px;overflow-y:auto;padding-right:4px">`+plan.map((p,i)=>{
       const isToday=p.dateISO===today;
-      const todayBadge=isToday?'<span style="background:#10b981;color:#fff;font-size:10px;padding:2px 7px;border-radius:6px;font-weight:700;margin-left:6px">AUJOURD\'HUI</span>':'';
-      return `<div class="planner-day" style="${isToday?'border-left-color:#10b981;background:#ecfdf5':''}"><strong>Jour ${p.day} — ${p.date}${todayBadge}</strong><span>${p.subject} • ${p.lesson} (${p.minutes} min)</span></div>`;
-    }).join('');
+      const past=p.dateISO<today;
+      const check=p.done?'☑️':'⬜';
+      const opacity=p.done?'opacity:.55;text-decoration:line-through':'';
+      const badge=isToday?'<span style="background:#10b981;color:#fff;font-size:10px;padding:2px 7px;border-radius:6px;font-weight:700;margin-left:6px">AUJOURD\'HUI</span>':(past&&!p.done?'<span style="background:#fef3c7;color:#b45309;font-size:10px;padding:2px 7px;border-radius:6px;font-weight:700;margin-left:6px">EN RETARD</span>':'');
+      const openBtn=p.file?`<button onclick="event.stopPropagation();openPlanFiche(${i})" style="background:#0f172a;color:#fff;border:none;border-radius:7px;padding:4px 9px;font-size:10.5px;font-weight:700;cursor:pointer;white-space:nowrap"><i class="fas fa-book-open"></i> Ouvrir</button>`:'';
+      return `<div class="planner-day" style="display:flex;align-items:center;gap:10px;${isToday?'border-left-color:#10b981;background:#ecfdf5':''};${opacity}">
+        <span onclick="togglePlanDay(${i})" style="cursor:pointer;font-size:17px;user-select:none" title="Marquer comme fait">${check}</span>
+        <div style="flex:1;min-width:0"><strong style="font-size:12px">Jour ${p.day} — ${p.date}${badge}</strong><br><span style="font-size:11.5px;color:#475569">${p.subject} • ${p.lesson} (${p.minutes} min)</span></div>
+        ${openBtn}</div>`;
+    }).join('')+'</div>';
+    el.innerHTML=html;
   }
 
   // ==================== FOCUS MODE ====================
