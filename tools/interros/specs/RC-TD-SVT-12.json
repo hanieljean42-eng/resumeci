@@ -1,0 +1,29 @@
+{
+  "code": "RC-TD-SVT-12",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Géologie interne : magmatisme et tectonique · Formation des roches",
+  "consignes": "Réponses précises. Le schéma est à légender et à rendre avec la copie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Magmatisme et roches",
+      "points": "5 pts",
+      "consigne": "La figure ci-dessous représente la formation des roches magmatiques.",
+      "enonce": "<ol type='a'><li>Définir le magma et expliquer d'où il vient.</li><li>Distinguer roches <strong>intrusives</strong> et <strong>extrusives</strong> : mécanisme de formation et texture (exemples : granite, basalte).</li><li>Citer deux manifestations du volcanisme et deux produits émis par un volcan.</li><li>Compléter la légende de la figure ci-dessous (① chambre magmatique, ② intrusion, ③ lave, ④ volcan).</li></ol>",
+      "svg": "<svg viewBox='0 0 420 250' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='420' height='250' fill='#fdf6e3'/><path d='M0 140 L100 140 L160 60 L200 20 L240 60 L300 140 L420 140 L420 250 L0 250 Z' fill='#c9a86c'/><path d='M160 60 L200 20 L240 60 L220 60 L200 40 L180 60 Z' fill='#8b6914'/><path d='M200 40 L190 140 L210 140 Z' fill='#e74c3c'/><ellipse cx='140' cy='200' rx='50' ry='25' fill='#e74c3c'/><ellipse cx='310' cy='210' rx='40' ry='18' fill='#e67e22'/><path d='M200 40 Q200 10 200 8' stroke='#95a5a6' stroke-width='3' fill='none'/><circle cx='200' cy='6' r='8' fill='#bdc3c7'/><circle cx='185' cy='12' r='5' fill='#bdc3c7'/><circle cx='215' cy='10' r='6' fill='#bdc3c7'/><g font-family='Georgia' font-size='13' fill='#0f172a' font-weight='bold'><text x='210' y='35'>①</text><text x='196' y='105'>②</text><text x='150' y='190'>③</text><text x='316' y='195'>④</text></g></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Magma : roche fondue à haute température (600-1200°C), formée dans le manteau supérieur ou la croûte par fusion partielle des roches sous l'effet de la chaleur et de la décompression.</span></p><p><strong>b)</strong> <span class='reponse'>Intrusive : le magma cristallise <em>lentement</em> à l'intérieur de la croûte → gros cristaux visibles (granite : quartz, feldspath, mica). Extrusive : le magma atteint la surface (lave) et refroidit <em>vite</em> → cristaux microscopiques ou pâte vitreuse (basalte).</span></p><p><strong>c)</strong> <span class='reponse'>Manifestations : éruptions explosives ou effusives, coulées de lave, geysers, fumerolles. Produits : lave, gaz (vapeur d'eau, CO₂, SO₂), cendres et lapilli (projections solides).</span></p><p><strong>d)</strong> <span class='reponse'>① cheminée/conduit volcanique (remontée du magma) ; ② magma dans le conduit ; ③ chambre magmatique ; ④ intrusion latérale (filon) cristallisée.</span> Figure corrigée :</p><p><svg viewBox='0 0 420 250' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='420' height='250' fill='#fdf6e3'/><path d='M0 140 L100 140 L160 60 L200 20 L240 60 L300 140 L420 140 L420 250 L0 250 Z' fill='#c9a86c'/><path d='M160 60 L200 20 L240 60 L220 60 L200 40 L180 60 Z' fill='#8b6914'/><path d='M200 40 L190 140 L210 140 Z' fill='#e74c3c'/><ellipse cx='140' cy='200' rx='50' ry='25' fill='#e74c3c'/><ellipse cx='310' cy='210' rx='40' ry='18' fill='#e67e22'/><path d='M200 40 Q200 10 200 8' stroke='#95a5a6' stroke-width='3' fill='none'/><circle cx='200' cy='6' r='8' fill='#bdc3c7'/><circle cx='185' cy='12' r='5' fill='#bdc3c7'/><circle cx='215' cy='10' r='6' fill='#bdc3c7'/><g font-family='Georgia' font-size='11' fill='#0f172a'><text x='212' y='35'>conduit</text><text x='196' y='105' fill='#fff'>magma en remontée</text><text x='118' y='190' fill='#fff'>chambre magm.</text><text x='316' y='195' fill='#fff'>intrusion (filon)</text></g></svg></p>",
+      "bareme_detail": "a) 1 · b) 1,5 · c) 1,5 · d) 1"
+    },
+    {
+      "titre": "Exercice 2 — Tectonique des plaques",
+      "points": "5 pts",
+      "consigne": "La surface de la Terre est fragmentée en plaques lithosphériques en mouvement.",
+      "enonce": "<ol type='a'><li>Définir la lithosphère et l'asthénosphère.</li><li>Décrire les trois types de limites de plaques (divergente, convergente, transformante) et le phénomène associé à chacune.</li><li>Expliquer l'origine des séismes à une limite transformante ou convergente.</li><li>La Côte d'Ivoire est-elle en zone active ? Justifier par sa position sur la plaque africaine.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Lithosphère : enveloppe rigide externe (croûte + manteau supérieur rigide), fragmentée en plaques. Asthénosphère : couche du manteau sous-jacente, plastique/déformable, sur laquelle « flottent » et glissent les plaques.</span></p><p><strong>b)</strong> <span class='reponse'>Limite divergente : écartement (dorsales océaniques, rifts — expansion océanique) ; convergente : rapprochement — subduction (fosses, volcans andins) ou collision (chaînes de montagnes : Himalaya) ; transformante : coulissage horizontal (failles, séismes — San Andreas).</span></p><p><strong>c)</strong> <span class='reponse'>Aux limites convergentes/transformantes, les plaques se bloquent par frottement, accumulent des contraintes, puis rompent brutalement : la libération soudaine d'énergie produit des ondes sismiques (séisme).</span></p><p><strong>d)</strong> <span class='reponse'>La Côte d'Ivoire est en zone stable : située au centre de la plaque africaine, loin des limites actives — risque sismique faible (mais pas nul : séismes historiques d'origine ancienne ont été enregistrés à Accra et parfois ressentis en CI).</span></p>",
+      "bareme_detail": "a) 1,5 · b) 2 · c) 1 · d) 0,5"
+    }
+  ]
+}

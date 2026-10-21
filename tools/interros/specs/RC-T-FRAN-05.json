@@ -1,0 +1,29 @@
+{
+  "code": "RC-T-FRAN-05",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "Terminales A & D",
+  "classes": ["Terminale_A", "Terminale_D"],
+  "duree": "3 heures",
+  "bareme": "20 points",
+  "chapitre": "Expression écrite : lettre/éditorial + questions de langue",
+  "consignes": "Traiter les deux exercices. Soigner la présentation, l'orthographe et la ponctuation.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Expression écrite (12 pts)",
+      "points": "12 pts",
+      "consigne": "Lire la situation, puis rédiger le texte demandé.",
+      "enonce": "<p><strong>Situation :</strong> le conseil des élèves de votre lycée souhaite créer un club de lecture et d'écriture, mais manque de livres et d'encadrement.</p><p><strong>Travail à faire :</strong> rédigez une <strong>lettre au proviseur</strong> (environ 20 lignes) pour exposer le projet, en expliquer l'intérêt pour les élèves et solliciter son soutien (salle, livres, enseignant référent). Vous veillerez à la présentation de la lettre et au registre formel.</p>",
+      "correction": "<p class='reponse'><strong>Corrigé indicatif — critères d'évaluation</strong></p><p><em>Forme de la lettre (4 pts)</em> : en-tête (lieu/date, objet, appellation « Monsieur le Proviseur »), salutations formelles de début et de fin, signature.</p><p><em>Contenu (5 pts)</em> : présentation du club et des fondateurs ; objectifs (amour de la lecture, expression écrite, débat) ; intérêt pour le lycée ; demande précise (salle un soir/semaine, dotation de livres, enseignant référent) ; formule de courtoisie.</p><p><em>Langue et registre (3 pts)</em> : vouvoiement, vocabulaire soutenu, orthographe, syntaxe correcte, connecteurs (« afin de », « c'est pourquoi », « nous vous serions reconnaissants »).</p><p>Un exemple de plan : salutation → présentation → intérêt → demande → remerciement → formule de politesse → signature.</p>",
+      "bareme_detail": "Forme 4 · Contenu 5 · Langue 3"
+    },
+    {
+      "titre": "Exercice 2 — Questions de langue (8 pts)",
+      "points": "8 pts",
+      "consigne": "Répondre en phrases complètes.",
+      "enonce": "<ol type='a'><li>Accorder le participe passé : « des livres que nous avons ___ (prêter) » ; « les élèves se sont ___ (inscrire) » ; « une somme qu'ils ont ___ (dépenser) pour les livres ». <em>(3 pts)</em></li><li>Corriger : « les élève qui veule participé au club doivent s'inscrir ». <em>(2 pts)</em></li><li>Relever dans la consigne un connecteur d'opposition et expliquer son rôle. <em>(1,5 pt)</em></li><li>Construire une phrase contenant « quoique » au subjonctif. <em>(1,5 pt)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>« que nous avons <strong>prêtés</strong> » (accord avec le COD placé avant) ; « les élèves se sont <strong>inscrits</strong> » (auxiliaire être, accord avec le sujet) ; « qu'ils ont <strong>dépensée</strong> » (COD « une somme » avant).</span></p><p><strong>b)</strong> <span class='reponse'>« les élève<strong>s</strong> qui veule<strong>nt</strong> particip<strong>er</strong> au club doivent s'inscri<strong>re</strong> »</span>.</p><p><strong>c)</strong> <span class='reponse'>« mais » : opposition qui introduit l'obstacle (manque de livres) face à l'envie du club — crée le problème à résoudre.</span></p><p><strong>d)</strong> <span class='reponse'>Exemple : « Quoique le club soit jeune, il compte déjà de nombreux lecteurs. » (« quoique » + subjonctif : concession).</span></p>",
+      "bareme_detail": "a) 3 · b) 2 · c) 1,5 · d) 1,5"
+    }
+  ]
+}

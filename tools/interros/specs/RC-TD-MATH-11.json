@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-MATH-11",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Raisonnement par récurrence · Limites de suites",
+  "consignes": "Soigner les rédactions : hérédité clairement démontrée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Raisonnement par récurrence",
+      "points": "10 pts",
+      "consigne": "On considère la suite $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = \\dfrac{u_n}{u_n + 2}$ pour tout $n \\geq 0$.",
+      "enonce": "<ol type='a'><li>Calculer $u_1$, $u_2$, $u_3$.</li><li>Montrer par récurrence que pour tout $n \\geq 0$ : $u_n > 0$.</li><li>Montrer que $(u_n)$ est décroissante.</li><li>On pose $v_n = \\dfrac{1}{u_n} + 1$. Montrer que $(v_n)$ est géométrique de raison $2$ et en déduire l'expression de $u_n$ en fonction de $n$.</li><li>Déterminer la limite de $(u_n)$.</li><li>Démontrer par récurrence que pour tout $n \\in \\mathbb{N}^*$ : $1 + 3 + 5 + \\cdots + (2n-1) = n^2$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $u_1 = \\frac{1}{3}$ ; $u_2 = \\frac{1/3}{1/3+2} = \\frac{1}{7}$ ; $u_3 = \\frac{1/7}{15/7} = \\frac{1}{15}$.</p><p><strong>b)</strong> <span class='reponse'>Initialisation : $u_0 = 1 > 0$. Hérédité : si $u_n > 0$, alors $u_n + 2 > 0$ donc $u_{n+1} = \\frac{u_n}{u_n+2} > 0$. Conclusion : $u_n > 0$ pour tout $n$.</span></p><p><strong>c)</strong> $u_{n+1} - u_n = \\dfrac{u_n}{u_n+2} - u_n = \\dfrac{u_n - u_n(u_n+2)}{u_n+2} = \\dfrac{-u_n^2 - u_n}{u_n+2} = \\dfrac{-u_n(u_n+1)}{u_n+2} < 0$ car $u_n > 0$ : <span class='reponse'>la suite est strictement décroissante</span>.</p><p><strong>d)</strong> $v_{n+1} = \\dfrac{1}{u_{n+1}} + 1 = \\dfrac{u_n + 2}{u_n} + 1 = 1 + \\dfrac{2}{u_n} + 1 = 2\\left(\\dfrac{1}{u_n} + 1\\right) = 2v_n$ : <span class='reponse'>$(v_n)$ géométrique de raison 2, $v_0 = 2$</span>, donc $v_n = 2 \\times 2^n = 2^{n+1}$. Alors $\\dfrac{1}{u_n} = 2^{n+1} - 1$, soit <span class='reponse'>$u_n = \\dfrac{1}{2^{n+1} - 1}$</span>.</p><p><strong>e)</strong> <span class='reponse'>$\\lim u_n = 0$</span> ($2^{n+1} \\to +\\infty$).</p><p><strong>f)</strong> <span class='reponse'>Initialisation : $n=1$ : $1 = 1^2$ ✓. Hérédité : supposons $1+3+\\cdots+(2n-1) = n^2$. Alors $1+3+\\cdots+(2n-1)+(2n+1) = n^2 + 2n + 1 = (n+1)^2$ ✓. La propriété est donc vraie pour tout $n \\geq 1$.</span></p>",
+      "bareme_detail": "a) 1,5 · b) 2 · c) 1,5 · d) 3 · e) 0,5 · f) 1,5"
+    },
+    {
+      "titre": "Exercice 2 — Limite de suite géométrique et somme",
+      "points": "10 pts",
+      "consigne": "Une entreprise de Yamoussoukro réduit ses coûts de $5\\,\\%$ par mois. Le coût mensuel initial est $C_0 = 2\\,000\\,000$ F.",
+      "enonce": "<ol type='a'><li>Exprimer $C_n$ en fonction de $n$ et justifier le type de suite.</li><li>Calculer le coût après 6 mois (arrondir au millier).</li><li>Au bout de combien de mois le coût descend-il sous $1\\,000\\,000$ F ? (On donne $\\ln 0{,}95 \\approx -0{,}0513$ et $\\ln 0{,}5 \\approx -0{,}693$.)</li><li>Calculer le total cumulé des coûts sur 12 mois (arrondir au millier).</li></ol>",
+      "correction": "<p><strong>a)</strong> $C_{n+1} = 0{,}95\\,C_n$ : <span class='reponse'>suite géométrique de raison $q = 0{,}95$, $C_n = 2\\,000\\,000 \\times 0{,}95^n$</span>.</p><p><strong>b)</strong> $C_6 = 2\\,000\\,000 \\times 0{,}95^6 = 2\\,000\\,000 \\times 0{,}7351 \\approx$ <span class='reponse'>$1\\,470\\,000$ F</span>.</p><p><strong>c)</strong> $C_n < 10^6 \\Leftrightarrow 0{,}95^n < 0{,}5 \\Leftrightarrow n > \\dfrac{\\ln 0{,}5}{\\ln 0{,}95} \\approx \\dfrac{0{,}693}{0{,}0513} \\approx 13{,}5$ : <span class='reponse'>$n = 14$ mois</span>.</p><p><strong>d)</strong> $S_{12} = C_0\\dfrac{1 - 0{,}95^{12}}{1 - 0{,}95} = 2 \\times 10^6 \\times \\dfrac{1 - 0{,}540}{0{,}05} = 2 \\times 10^6 \\times 9{,}19 \\approx$ <span class='reponse'>$18\\,385\\,000$ F</span> environ.</p>",
+      "bareme_detail": "a) 2 · b) 2,5 · c) 3 · d) 2,5"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-MATH-12",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Fonction logarithme népérien · Bijection et réciproque",
+  "consignes": "Soigner la rédaction ; les propriétés seront citées.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Étude du logarithme",
+      "points": "5 pts",
+      "consigne": "Soit $f$ définie sur $]0\\,;+\\infty[$ par $f(x) = x\\ln x - x$.",
+      "enonce": "<ol type='a'><li>Calculer $\\lim\\limits_{x\\to 0^+} f(x)$ et $\\lim\\limits_{x\\to+\\infty} f(x)$.</li><li>Calculer $f'(x)$, étudier son signe et dresser le tableau de variations de $f$.</li><li>Démontrer que $f$ admet un minimum et préciser sa valeur.</li><li>Résoudre $f(x) = 0$.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\lim_{0^+} x\\ln x = 0$ (croissance comparée) et $-x \\to 0$ : $\\lim_{0^+} f = 0$. En $+\\infty$ : $x\\ln x$ l'emporte → $+\\infty$.</span></p><p><strong>b)</strong> $f'(x) = \\ln x + x \\cdot \\frac{1}{x} - 1 = \\ln x$ : <span class='reponse'>$f' < 0$ sur $]0;1[$, $f' > 0$ sur $]1;+\\infty[$</span> — $f$ décroît puis croît.</p><p><strong>c)</strong> <span class='reponse'>Minimum en $x = 1$ : $f(1) = -1$</span>.</p><p><strong>d)</strong> $x\\ln x - x = x(\\ln x - 1) = 0$ → $x = 0$ (exclu) ou $\\ln x = 1$ : <span class='reponse'>$x = \\mathrm{e}$</span>.</p>",
+      "bareme_detail": "a) 1,5 · b) 1,5 · c) 1 · d) 1"
+    },
+    {
+      "titre": "Exercice 2 — Réciproque et équations",
+      "points": "5 pts",
+      "consigne": "Soit $g$ définie sur $\\mathbb{R}$ par $g(x) = \\mathrm{e}^x - 1$.",
+      "enonce": "<ol type='a'><li>Montrer que $g$ réalise une bijection de $\\mathbb{R}$ sur $]-1\\,;+\\infty[$.</li><li>Déterminer l'expression de la réciproque $g^{-1}$.</li><li>Résoudre dans $\\mathbb{R}$ : $\\mathrm{e}^{2x} - 3\\mathrm{e}^x + 2 = 0$.</li><li>Résoudre : $\\ln(x+2) + \\ln(x) = \\ln 8$ (on précisera le domaine).</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$g'(x) = \\mathrm{e}^x > 0$ : $g$ strictement croissante ; $\\lim_{-\\infty}g = -1$ et $\\lim_{+\\infty}g = +\\infty$ → bijection de $\\mathbb{R}$ sur $]-1;+\\infty[$.</span></p><p><strong>b)</strong> $y = \\mathrm{e}^x - 1 \\Leftrightarrow \\mathrm{e}^x = y + 1 \\Leftrightarrow x = \\ln(y+1)$ : <span class='reponse'>$g^{-1}(y) = \\ln(y+1)$</span> sur $]-1;+\\infty[$.</p><p><strong>c)</strong> $X = \\mathrm{e}^x$ : $X^2 - 3X + 2 = 0$ → $X \\in \\{1\\,;\\,2\\}$ → <span class='reponse'>$x \\in \\{0\\,;\\,\\ln 2\\}$</span>.</p><p><strong>d)</strong> Domaine : $x > 0$. $\\ln[x(x+2)] = \\ln 8 \\Rightarrow x^2 + 2x - 8 = 0$ → $\\Delta = 36$ → $x = 2$ ou $x = -4$ ; seule <span class='reponse'>$x = 2$</span> convient.</p>",
+      "bareme_detail": "a) 1,5 · b) 1 · c) 1,5 · d) 1"
+    }
+  ]
+}

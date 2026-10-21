@@ -1,0 +1,28 @@
+{
+  "code": "RC-TD-PC-08",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale D",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Couples acide/base · Réactions acido-basiques",
+  "consignes": "On donne : $K_e = 10^{-14}$ à $25°C$. Toutes les équations seront équilibrées.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Couples acide/base",
+      "points": "5 pts",
+      "consigne": "",
+      "enonce": "<ol type='a'><li>Définir, selon Brønsted, un acide et une base.</li><li>Identifier les deux couples acide/base mis en jeu dans la réaction : $\\mathrm{CH_3COOH + H_2O \\;\\rightleftharpoons\\; CH_3COO^- + H_3O^+}$.</li><li>Pour chaque espèce, donner la base ou l'acide conjugué : $\\mathrm{NH_3}$, $\\mathrm{H_2SO_4}$, $\\mathrm{HCO_3^-}$, $\\mathrm{H_2O}$.</li><li>Classer par acidité croissante : $\\mathrm{HCl}$ ($pK_a = 0$), $\\mathrm{HF}$ ($pK_a = 3{,}2$), $\\mathrm{CH_3COOH}$ ($pK_a = 4{,}8$).</li><li>Que mesure le $pK_a$ ? Quelle relation le lie à $K_a$ ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Acide de Brønsted : espèce capable de céder un proton $\\mathrm{H^+}$ ; base : espèce capable de le capter.</span></p><p><strong>b)</strong> <span class='reponse'>Couples : $\\mathrm{CH_3COOH/CH_3COO^-}$ (l'acide éthanoïque cède un proton) et $\\mathrm{H_3O^+/H_2O}$ (l'eau capte le proton — elle est la base ici).</span></p><p><strong>c)</strong> <span class='reponse'>$\\mathrm{NH_3}$ → acide conjugué $\\mathrm{NH_4^+}$ ; $\\mathrm{H_2SO_4}$ → base $\\mathrm{HSO_4^-}$ ; $\\mathrm{HCO_3^-}$ (ampholyte) → acide $\\mathrm{H_2CO_3}$ et base $\\mathrm{CO_3^{2-}}$ ; $\\mathrm{H_2O}$ → acide $\\mathrm{H_3O^+}$ et base $\\mathrm{HO^-}$.</span></p><p><strong>d)</strong> <span class='reponse'>Plus $pK_a$ est petit, plus l'acide est fort : $\\mathrm{CH_3COOH}$ (4,8) < $\\mathrm{HF}$ (3,2) < $\\mathrm{HCl}$ (0) en acidité — HCl est le plus fort (acide fort, totalement dissocié).</span></p><p><strong>e)</strong> <span class='reponse'>$pK_a = -\\log K_a$ : il quantifie la force d'un acide (constante d'acidité de la réaction acide + eau).</span></p>",
+      "bareme_detail": "a) 1 · b) 1,5 · c) 1,5 · d) 0,5 · e) 0,5"
+    },
+    {
+      "titre": "Exercice 2 — pH et réactions acido-basiques",
+      "points": "5 pts",
+      "consigne": "Une solution d'acide chlorhydrique a pour concentration $C = 0{,}01\\ \\mathrm{mol/L}$.",
+      "enonce": "<ol type='a'><li>Écrire l'équation de dissolution de $\\mathrm{HCl}$ dans l'eau.</li><li>Calculer le pH de cette solution ($\\mathrm{HCl}$ est un acide fort).</li><li>On dilue 10 fois : que devient le pH ?</li><li>Écrire l'équation de la réaction entre cette solution et une solution d'hydroxyde de sodium $\\mathrm{NaOH}$.</li><li>On verse $V_a = 20\\ \\mathrm{mL}$ de l'acide dans un bécher. Quel volume $V_b$ de soude à $0{,}02\\ \\mathrm{mol/L}$ faut-il pour atteindre l'équivalence ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\mathrm{HCl + H_2O \\rightarrow H_3O^+ + Cl^-}$ <span class='reponse'>(dissociation totale, acide fort)</span>.</p><p><strong>b)</strong> $[\\mathrm{H_3O^+}] = C = 10^{-2}$ : <span class='reponse'>$pH = -\\log(10^{-2}) = 2$</span>.</p><p><strong>c)</strong> <span class='reponse'>$C' = 10^{-3}$ → $pH = 3$</span> (dilution ×10 → +1 unité de pH pour un acide fort).</p><p><strong>d)</strong> $\\mathrm{H_3O^+ + HO^- \\rightarrow 2\\,H_2O}$ <span class='reponse'>(réaction totale de neutralisation)</span>.</p><p><strong>e)</strong> À l'équivalence $C_aV_a = C_bV_b$ : $V_b = \\dfrac{0{,}01 \\times 20}{0{,}02} =$ <span class='reponse'>$10\\ \\mathrm{mL}$</span>.</p>",
+      "bareme_detail": "a) 1 · b) 1 · c) 1 · d) 1 · e) 1"
+    }
+  ]
+}

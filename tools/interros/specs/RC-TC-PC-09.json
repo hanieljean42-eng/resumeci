@@ -1,0 +1,28 @@
+{
+  "code": "RC-TC-PC-09",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "Terminale C",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Chute libre verticale · Conservation de l'énergie mécanique",
+  "consignes": "On prendra $g = 10\\ \\mathrm{m/s^2}$. On néglige les frottements sauf mention contraire.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Chute libre d'un fruit",
+      "points": "5 pts",
+      "consigne": "Une mangue de masse $m = 200\\ \\mathrm{g}$ se détache d'un arbre à la hauteur $h = 5\\ \\mathrm{m}$ au-dessus du sol. Elle tombe en chute libre.",
+      "enonce": "<ol type='a'><li>Donner la définition de la chute libre.</li><li>Établir l'équation horaire $z(t)$ du mouvement (axe vertical descendant, origine au point de départ) et calculer la durée de la chute.</li><li>Calculer la vitesse d'arrivée au sol.</li><li>Retrouver cette vitesse par conservation de l'énergie mécanique.</li><li>Même question si le fruit part du repos à une hauteur double : la durée double-t-elle ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Chute libre : mouvement d'un corps soumis uniquement à son poids (frottements négligés).</span></p><p><strong>b)</strong> Avec l'axe descendant depuis le départ : <span class='reponse'>$z(t) = \\dfrac{1}{2}g t^2 = 5t^2$</span>. Arrivée : $z = h$ → $t = \\sqrt{2h/g} = \\sqrt{1} =$ <span class='reponse'>$1\\ \\mathrm{s}$</span>.</p><p><strong>c)</strong> $v = gt = 10 \\times 1 =$ <span class='reponse'>$10\\ \\mathrm{m/s}$</span> (soit 36 km/h).</p><p><strong>d)</strong> Conservation : $E_c + E_p$ constante : $0 + mgh = \\frac{1}{2}mv^2 + 0$ → $v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 5} =$ <span class='reponse'>$10\\ \\mathrm{m/s}$</span>. Même résultat — l'énergie le donne directement.</p><p><strong>e)</strong> <span class='reponse'>Non : $t = \\sqrt{2h/g}$ — en $h' = 2h$, $t' = \\sqrt{2}t \\approx 1{,}41$ s (et $v' = \\sqrt{2}v \\approx 14{,}1$ m/s). Durée et vitesse varient en $\\sqrt{h}$, pas en $h$.</span></p>",
+      "bareme_detail": "a) 0,5 · b) 1,5 · c) 1 · d) 1 · e) 1"
+    },
+    {
+      "titre": "Exercice 2 — Énergie mécanique",
+      "points": "5 pts",
+      "consigne": "Un objet de masse $m = 500\\ \\mathrm{g}$ glisse sans frottement sur un plan incliné de hauteur $h = 1{,}8\\ \\mathrm{m}$.",
+      "enonce": "<ol type='a'><li>Calculer l'énergie potentielle initiale (référence : sol).</li><li>En l'absence de frottements, calculer l'énergie cinétique et la vitesse en bas du plan.</li><li>En réalité la vitesse en bas vaut $5\\ \\mathrm{m/s}$. Calculer le travail des frottements.</li><li>Justifier la valeur de l'accélération $a = g\\sin\\alpha$ où $\\alpha$ est l'angle du plan. Que vaut $\\alpha$ si $a = 6\\ \\mathrm{m/s^2}$ ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $E_p = mgh = 0{,}5 \\times 10 \\times 1{,}8 =$ <span class='reponse'>$9\\ \\mathrm{J}$</span>.</p><p><strong>b)</strong> Conservation : $E_c = 9$ J ; $v = \\sqrt{2E_c/m} = \\sqrt{2 \\times 9/0{,}5} = \\sqrt{36} =$ <span class='reponse'>$6\\ \\mathrm{m/s}$</span>.</p><p><strong>c)</strong> $E_{c,\\text{réel}} = \\frac{1}{2} \\times 0{,}5 \\times 25 = 6{,}25$ J ; énergie dissipée : $W_f = 6{,}25 - 9 =$ <span class='reponse'>$-2{,}75$ J</span> (travail résistant des frottements).</p><p><strong>d)</strong> <span class='reponse'>Sur le plan incliné sans frottement, la composante du poids selon la pente vaut $mg\\sin\\alpha$, d'où $a = g\\sin\\alpha$ (réaction normale sans frottement). $a = 6$ → $\\sin\\alpha = 0{,}6$ → $\\alpha \\approx 37°$.</span></p>",
+      "bareme_detail": "a) 1 · b) 1,5 · c) 1,5 · d) 1"
+    }
+  ]
+}

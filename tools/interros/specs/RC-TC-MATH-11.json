@@ -1,0 +1,28 @@
+{
+  "code": "RC-TC-MATH-11",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "Terminale C",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Continuité et TVI · Dérivation approfondie",
+  "consignes": "Rédaction soignée exigée. Les théorèmes utilisés seront cités avec leurs hypothèses.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Continuité, TVI et bijection",
+      "points": "10 pts",
+      "consigne": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = x^3 + x - 3$.",
+      "enonce": "<ol type='a'><li>Calculer $\\lim\\limits_{x\\to-\\infty} f(x)$ et $\\lim\\limits_{x\\to+\\infty} f(x)$.</li><li>Montrer que $f$ est strictement croissante sur $\\mathbb{R}$.</li><li>Démontrer que l'équation $f(x) = 0$ admet une solution unique $\\alpha$ dans $\\mathbb{R}$, puis que $\\alpha \\in [1\\,;\\,2]$.</li><li>Donner un encadrement de $\\alpha$ à $10^{-1}$ près par la méthode de la dichotomie (un pas suffit si l'intervalle obtenu est d'amplitude $0{,}5$).</li><li>Déduire le signe de $f(x)$ selon les valeurs de $x$.</li><li>La fonction $f$ admet-elle une réciproque ? Si oui, préciser ses ensembles de départ et d'arrivée.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$\\lim_{-\\infty} f = -\\infty$ ; $\\lim_{+\\infty} f = +\\infty$</span> (terme dominant $x^3$).</p><p><strong>b)</strong> $f'(x) = 3x^2 + 1 > 0$ pour tout réel $x$ : <span class='reponse'>$f$ est strictement croissante sur $\\mathbb{R}$</span>.</p><p><strong>c)</strong> $f$ est continue et strictement croissante, avec $\\lim_{-\\infty}f = -\\infty$ et $\\lim_{+\\infty}f = +\\infty$ : c'est une bijection de $\\mathbb{R}$ sur $\\mathbb{R}$. $0$ a un antécédent unique $\\alpha$. <span class='reponse'>$f(1) = -1 < 0$ et $f(2) = 7 > 0$</span>, donc $\\alpha \\in [1\\,;\\,2]$.</p><p><strong>d)</strong> $f(1{,}5) = 3{,}375 + 1{,}5 - 3 = 1{,}875 > 0$ : $\\alpha \\in [1\\,;\\,1{,}5]$. Puis $f(1{,}25) = 1{,}953 + 1{,}25 - 3 = 0{,}203 > 0$ : $\\alpha \\in [1\\,;\\,1{,}25]$. Avec $f(1{,}125) \\approx -0{,}45 < 0$ : <span class='reponse'>$\\alpha \\in [1{,}125\\,;\\,1{,}25]$</span> (encadrement à $10^{-1}$ près : $\\alpha \\approx 1{,}2$).</p><p><strong>e)</strong> <span class='reponse'>$f(x) < 0$ sur $]-\\infty\\,;\\,\\alpha[$, $f(\\alpha) = 0$, $f(x) > 0$ sur $]\\alpha\\,;\\,+\\infty[$.</span></p><p><strong>f)</strong> <span class='reponse'>Oui : $f$ bijective de $\\mathbb{R}$ sur $\\mathbb{R}$ admet une réciproque $f^{-1} : \\mathbb{R} \\to \\mathbb{R}$, strictement croissante.</span></p>",
+      "bareme_detail": "a) 1 · b) 2 · c) 2,5 · d) 1,5 · e) 1,5 · f) 1,5"
+    },
+    {
+      "titre": "Exercice 2 — Dérivation et tangentes",
+      "points": "10 pts",
+      "consigne": "Soit $g$ définie sur $\\mathbb{R}$ par $g(x) = \\dfrac{x^3}{3} - 2x^2 + 3x + 1$ et $\\mathcal{C}$ sa courbe.",
+      "enonce": "<ol type='a'><li>Calculer $g'(x)$ et étudier son signe.</li><li>Dresser le tableau de variations de $g$ et préciser les extremums.</li><li>Déterminer l'équation de la tangente à $\\mathcal{C}$ au point d'abscisse $x_0 = 3$.</li><li>Existe-t-il des points où la tangente est horizontale ? Parallèle à la droite $y = 3x - 7$ ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $g'(x) = x^2 - 4x + 3 = (x-1)(x-3)$ : <span class='reponse'>$g' > 0$ sur $]-\\infty;1[\\cup]3;+\\infty[$, $g' < 0$ sur $]1;3[$</span>.</p><p><strong>b)</strong> <span class='reponse'>$g$ croît puis décroît puis croît ; maximum local $g(1) = \\frac{1}{3} - 2 + 3 + 1 = \\frac{7}{3}$ ; minimum local $g(3) = 9 - 18 + 9 + 1 = 1$.</span></p><p><strong>c)</strong> $g(3) = 1$, $g'(3) = 0$ : <span class='reponse'>tangente horizontale $y = 1$ en $x = 3$</span>.</p><p><strong>d)</strong> <span class='reponse'>Tangentes horizontales : en $x = 1$ et $x = 3$ (extremums). Parallèle à $y = 3x - 7$ : pente 3 → $g'(x) = 3$ → $x^2 - 4x + 3 = 3$ → $x(x-4) = 0$ → $x = 0$ ou $x = 4$.</span></p>",
+      "bareme_detail": "a) 2,5 · b) 3 · c) 2 · d) 2,5"
+    }
+  ]
+}

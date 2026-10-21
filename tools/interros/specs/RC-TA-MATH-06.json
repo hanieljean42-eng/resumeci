@@ -1,0 +1,28 @@
+{
+  "code": "RC-TA-MATH-06",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "Terminale A",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Dénombrement · Probabilités simples",
+  "consignes": "Toute réponse sera justifiée par un raisonnement ou une formule.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Dénombrement",
+      "points": "5 pts",
+      "consigne": "Une classe de Terminale A de Bondoukou compte $30$ élèves. Le bureau comporte un président, un secrétaire et un trésorier (tous différents).",
+      "enonce": "<ol type='a'><li>De combien de façons peut-on choisir le bureau ? (arrangements)</li><li>Combien de délégations de $3$ élèves sans distinction de rôle peut-on former ?</li><li>Pour la photo de classe, on aligne les $30$ élèves : combien d'ordonnancements ? En donner l'expression factorielle.</li><li>On choisit $2$ élèves pour un exposé. Combien de couples possibles ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$A_{30}^{3} = \\dfrac{30!}{27!} = 30 \\times 29 \\times 28 = 24\\,360$</span> bureaux possibles.</p><p><strong>b)</strong> <span class='reponse'>$\\dbinom{30}{3} = \\dfrac{30 \\times 29 \\times 28}{3 \\times 2 \\times 1} = 4\\,060$</span> délégations.</p><p><strong>c)</strong> <span class='reponse'>$30!$ ordonnancements</span> (environ $2{,}6 \\times 10^{32}$).</p><p><strong>d)</strong> <span class='reponse'>$\\dbinom{30}{2} = \\dfrac{30 \\times 29}{2} = 435$</span> couples.</p>",
+      "bareme_detail": "a) 1,5 · b) 1,5 · c) 1 · d) 1"
+    },
+    {
+      "titre": "Exercice 2 — Probabilités",
+      "points": "5 pts",
+      "consigne": "Une urne contient $5$ boules rouges, $3$ bleues et $2$ vertes. On tire une boule au hasard.",
+      "enonce": "<ol type='a'><li>Calculer la probabilité de tirer une boule rouge ; une boule bleue ; une boule verte.</li><li>Calculer la probabilité de tirer une boule qui n'est pas rouge.</li><li>On tire maintenant deux boules sans remise. Calculer la probabilité d'obtenir deux boules rouges.</li><li>Même question avec remise. Comparer.</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>$P(R) = \\frac{5}{10} = \\frac{1}{2}$ ; $P(B) = \\frac{3}{10}$ ; $P(V) = \\frac{2}{10} = \\frac{1}{5}$</span>.</p><p><strong>b)</strong> <span class='reponse'>$P(\\bar{R}) = 1 - P(R) = 1 - \\frac{1}{2} = \\frac{1}{2}$</span> (ou $\\frac{3+2}{10}$).</p><p><strong>c)</strong> Sans remise : <span class='reponse'>$P(RR) = \\frac{5}{10} \\times \\frac{4}{9} = \\frac{20}{90} = \\frac{2}{9} \\approx 0{,}22$</span>.</p><p><strong>d)</strong> Avec remise : <span class='reponse'>$P(RR) = \\frac{5}{10} \\times \\frac{5}{10} = \\frac{1}{4} = 0{,}25$</span>. La probabilité est légèrement supérieure avec remise car la proportion de rouges reste identique au second tirage.</p>",
+      "bareme_detail": "a) 1,5 · b) 1 · c) 1,5 · d) 1"
+    }
+  ]
+}

@@ -104,6 +104,32 @@
     "corrige": true
   },
   {
+    "code": "RC-T-FRAN-05",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Expression écrite : lettre/éditorial + questions de langue",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-T-FRAN-05",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Français",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminales A & D",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "Expression écrite : lettre/éditorial + questions de langue",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-HG-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -247,6 +273,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TA-MATH-06",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Dénombrement · Probabilités simples",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TA-PHILO-01",
     "type": "devoir",
     "typeLabel": "Devoir surveillé",
@@ -308,6 +347,19 @@
     "duree": "3 heures",
     "bareme": "20 points",
     "chapitre": "La vie en société · La valeur de la philosophie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TA-PHILO-06",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Philosophie",
+    "classe": "Terminale_A",
+    "classeLabel": "Terminale A",
+    "duree": "3 heures",
+    "bareme": "20 points",
+    "chapitre": "La connaissance de l'homme · La vérité",
     "exercices": 2,
     "corrige": true
   },
@@ -442,6 +494,19 @@
     "corrige": true
   },
   {
+    "code": "RC-TC-MATH-11",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Continuité et TVI · Dérivation approfondie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TC-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -542,6 +607,32 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Amines · Acides $\\alpha$-aminés",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-09",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Chute libre verticale · Conservation de l'énergie mécanique",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TC-PC-10",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_C",
+    "classeLabel": "Terminale C",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Circuits dérivateur et intégrateur · Amplificateur opérationnel",
     "exercices": 2,
     "corrige": true
   },
@@ -728,6 +819,32 @@
     "corrige": true
   },
   {
+    "code": "RC-TD-MATH-11",
+    "type": "devoir",
+    "typeLabel": "Devoir surveillé",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "2 heures",
+    "bareme": "20 points",
+    "chapitre": "Raisonnement par récurrence · Limites de suites",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-MATH-12",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Mathématiques",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Fonction logarithme népérien · Bijection et réciproque",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-TD-PC-01",
     "type": "interro",
     "typeLabel": "Interrogation",
@@ -815,6 +932,19 @@
     "duree": "1 heure",
     "bareme": "10 points",
     "chapitre": "Composés carbonylés · Acides carboxyliques et esters",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-PC-08",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "Physique-Chimie",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Couples acide/base · Réactions acido-basiques",
     "exercices": 2,
     "corrige": true
   },
@@ -971,6 +1101,19 @@
     "duree": "4 heures",
     "bareme": "20 points",
     "chapitre": "Épreuve complète : relation nerveuse · reproduction · hérédité · immunologie",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-TD-SVT-12",
+    "type": "interro",
+    "typeLabel": "Interrogation",
+    "matiere": "SVT",
+    "classe": "Terminale_D",
+    "classeLabel": "Terminale D",
+    "duree": "1 heure",
+    "bareme": "10 points",
+    "chapitre": "Géologie interne : magmatisme et tectonique · Formation des roches",
     "exercices": 2,
     "corrige": true
   }
