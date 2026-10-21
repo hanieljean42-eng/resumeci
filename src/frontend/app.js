@@ -730,13 +730,13 @@ function updateSidebarPassBtn() {
   if (activeSub) {
     btn.style.background = 'linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.25))';
     btn.style.borderColor = 'rgba(16,185,129,0.5)';
-    btn.style.color = '#6ee7b7';
+    btn.style.color = '#047857';
     btn.innerHTML = `<i class="fas fa-check-circle" style="color:#10b981"></i> Mon Pass ${activeSub.tier.toUpperCase()} Actif ✓`;
     btn.onclick = () => { if (typeof showActiveSubscriptionModal === 'function') showActiveSubscriptionModal(); };
   } else {
     btn.style.background = 'linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.2))';
     btn.style.borderColor = 'rgba(245,158,11,0.4)';
-    btn.style.color = '#fde68a';
+    btn.style.color = '#b45309';
     btn.innerHTML = `<i class="fas fa-crown"></i> Activer mon Pass Réussite 🔒`;
     btn.onclick = () => { if (typeof openElitePassModal === 'function') openElitePassModal('Pass Réussite'); };
   }
@@ -5099,9 +5099,15 @@ function setTheme(theme) {
   localStorage.setItem(THEME_KEY, theme);
   document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.theme === theme));
 }
+window.setTheme = setTheme;
 (function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.theme === saved));
+  } else {
+    document.querySelector('.theme-dot[data-theme="blue"]')?.classList.add('active');
+  }
 })();
 let voiceRecognition = null;
 function setVoiceListening(on) {
