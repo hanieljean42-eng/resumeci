@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Ajouts moteur générique */
+.access { position: absolute; top: 40px; left: 0; right: 0; display: flex; justify-content: center; z-index: 3; }
+.access span { display: inline-flex; align-items: center; gap: 12px; padding: 12px 26px; border-radius: 999px; font-weight: 900; font-size: 24px; letter-spacing: .06em; color: #fff; animation: down .7s var(--spring) .2s both; }
+.access .elite { background: linear-gradient(135deg, #7c3aed, #a855f7); box-shadow: 0 14px 30px -14px rgba(124,58,237,.8); }
+.access .all { background: linear-gradient(135deg, var(--gr), var(--gr2)); box-shadow: 0 14px 30px -14px rgba(0,158,96,.8); }
+.d-head.withacc { top: 120px; }
+.phone.withacc { top: 470px; height: 1268px; }
+.phone.withacc::before { height: 1224px; }
+.cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; margin-top: 64px; }
+.card2 { background: rgba(255,255,255,.94); border-radius: 34px; padding: 36px 26px; font-size: 34px; font-weight: 800; box-shadow: 0 24px 50px -26px rgba(20,35,28,.45); animation: pop .8s var(--spring) both; text-align: center; }
+.card2 i { display: block; font-size: 64px; margin-bottom: 16px; }
+.card2:nth-child(odd) i { color: var(--or); } .card2:nth-child(even) i { color: var(--gr); }
+.stars { font-size: 110px; letter-spacing: 10px; color: #f59e0b; margin-top: 50px; }
+.stars span { display: inline-block; animation: pop .7s var(--spring) both; }
+.quote { width: 100%; margin-top: 40px; background: #fff; border-radius: 34px; padding: 34px 40px; text-align: left; box-shadow: 0 26px 54px -26px rgba(20,35,28,.45); animation: up .9s var(--ease) both; }
+.quote p { font-size: 34px; font-weight: 600; line-height: 1.4; }
+.quote small { display: block; margin-top: 14px; font-size: 26px; font-weight: 800; color: var(--mut); }
+.quote small b { color: #f59e0b; }
+.note { margin-top: 50px; font-size: 30px; font-weight: 800; color: #6d28d9; background: rgba(124,58,237,.1); border: 2px solid rgba(124,58,237,.3); border-radius: 22px; padding: 18px 28px; animation: up .9s var(--ease) both; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+// Scènes déclaratives — voir SKILL « video-motion-design ».
+const D = s => `animation-delay:${s}s`;
+const BG = `<div class="bg"><span class="orb a"></span><span class="orb b"></span><span class="orb c"></span><span class="grid"></span></div><div class="flag"></div>`;
+const BRAND = `<div class="brand"><i class="fas fa-book-open"></i>Resume<b>CI</b> · resumeci.me</div>`;
+const ACCESS = a => !a ? '' : `<div class="access"><span class="${a === 'all' ? 'all' : 'elite'}">${a === 'all'
+  ? '<i class="fas fa-users"></i> OUVERT À TOUS · TOUS LES ABONNEMENTS'
+  : '<i class="fas fa-crown"></i> ' + (a === 'elite' ? 'PASS ÉLITE · TERMINALES A, C, D' : a)}</span></div>`;
+window.COUNTERS = [];
+
+window.build = function (sc) {
+  window.COUNTERS = [];
+  let h = BG;
+  switch (sc.type) {
+    case 'intro': {
+      const word = sc.word || 'ResumeCI';
+      const letters = word.split('').map((c, i) => `<span style="${D(0.8 + i * 0.06)};${i >= word.length - 2 ? 'color:var(--or)' : ''}">${c}</span>`).join('');
+      h += `<div class="center"><div class="logo"><i class="fas ${sc.icon || 'fa-book-open'}"></i></div>
+        <div class="word">${letters}</div>
+        ${sc.pill ? `<div class="pill u" style="margin-top:40px;${D(1.4)}">${sc.pill}</div>` : ''}
+        <div class="tag">${sc.tag || ''}</div></div>`;
+      break;
+    }
+    case 'hero': // pill + gros titre + sous-titre + cartes/compteurs/étoiles/citation optionnels
+      h += ACCESS(sc.access) + `<div class="center">
+        ${sc.icon ? `<div class="crown"><i class="fas ${sc.icon}"></i></div>` : ''}
+        ${sc.pill ? `<div class="pill u" style="margin-top:${sc.icon ? 50 : 0}px;${D(0.1)}">${sc.pill}</div>` : ''}
+        <div class="sec-title u" style="margin-top:40px;${D(0.3)}">${sc.title}</div>
+        ${sc.sub ? `<div class="d-sub" style="font-size:38px;margin-top:26px;${D(0.55)}">${sc.sub}</div>` : ''}
+        ${sc.counters ? `<div class="stats">${sc.counters.map((c, i) => `<div class="stat u" style="${D(0.9 + i * 0.15)}"><strong data-c="${c[0]}" style="color:${['var(--or)', 'var(--ink)', 'var(--gr)'][i % 3]}">0</strong><small>${c[1]}</small></div>`).join('')}</div>` : ''}
+        ${sc.stars ? `<div class="stars">${[0, 1, 2, 3, 4].map(i => `<span style="${D(0.8 + i * 0.15)}">★</span>`).join('')}</div>` : ''}
+        ${sc.cards ? `<div class="cards2">${sc.cards.map((c, i) => `<div class="card2" style="${D(0.9 + i * 0.12)}"><i class="fas ${c[0]}"></i>${c[1]}</div>`).join('')}</div>` : ''}
+        ${sc.quotes ? sc.quotes.map((q, i) => `<div class="quote" style="${D(1.2 + i * 0.4)}"><p>« ${q[0]} »</p><small><b>★★★★★</b> &nbsp;${q[1]}</small></div>`).join('') : ''}
+        ${sc.note ? `<div class="note" style="${D(1.6)}">${sc.note}</div>` : ''}
+      </div>`;
+      if (sc.counters) window.COUNTERS = [{ sel: '[data-c]', start: 1.1, dur: 2 }];
+      break;
+    case 'cta':
+      h += `<div class="center">
+        <div class="logo" style="width:190px;height:190px;font-size:90px;border-radius:54px"><i class="fas fa-book-open"></i></div>
+        <div class="tag" style="${D(0.5)};font-size:44px;color:var(--ink);font-weight:800">${sc.tag || 'Rejoins ResumeCI sur'}</div>
+        <div class="url u grad" style="${D(0.7)}">resumeci.me</div>
+        <div class="btn"><i class="fas fa-rocket"></i> ${sc.button || 'Commencer gratuitement'}</div>
+        <div class="socials">
+          <div class="soc" style="${D(1.4)}"><i class="fab fa-whatsapp"></i> 01 04 91 10 10</div>
+          <div class="soc" style="${D(1.6)}"><i class="fab fa-tiktok" style="color:var(--ink)"></i> @resumeci00</div>
+        </div></div>`;
+      break;
+    default: { // demo : téléphone + enregistrement d'écran
+      const acc = sc.access ? ' withacc' : '';
+      h += ACCESS(sc.access) + `<div class="d-head${acc}"><div class="d-num">${sc.label || 'NOUVEAU'} · ${sc.n}</div>
+        <div class="d-title">${sc.title}</div><div class="d-sub">${sc.sub}</div></div>
+        <div class="phone${acc}"></div>
+        <div class="prog"><i style="animation-duration:${sc.dur}s"></i></div>`;
+    }
+  }
+  if (sc.type === 'demo' || sc.type === 'hero') h += BRAND;
+  document.getElementById('stage').innerHTML = h;
+};
+
+window.seek = function (t) {
+  document.getAnimations().forEach(a => { a.pause(); a.currentTime = t * 1000; });
+  window.COUNTERS.forEach(c => document.querySelectorAll(c.sel).forEach(el => {
+    const k = Math.min(Math.max((t - c.start) / c.dur, 0), 1);
+    el.textContent = Math.round(Number(el.dataset.c) * (1 - Math.pow(1 - k, 4))).toLocaleString('fr-FR');
+  }));
+};
+</script>
+</body>
+</html>
