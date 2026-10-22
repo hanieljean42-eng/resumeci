@@ -4,11 +4,20 @@ const fs = require('fs');
 const DUR = Number(process.argv[2]) || 150;
 const OUT = process.argv[3] || 'music.wav';
 const SR = 44100, N = Math.ceil(DUR * SR);
-const BPM = 100, BEAT = 60 / BPM, BAR = BEAT * 4;
+// Variante (3ᵉ argument, = index du décor) : tempo + grille d'accords différents.
+const VARIANTS = [
+  { bpm: 100, chords: [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]], roots: [45, 41, 48, 43] }, // Am F C G
+  { bpm: 108, chords: [[48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60]], roots: [48, 43, 45, 41] }, // C G Am F
+  { bpm: 94,  chords: [[50, 53, 57], [58, 62, 65], [53, 57, 60], [48, 52, 55]], roots: [38, 46, 41, 48] }, // Dm Bb F C
+  { bpm: 112, chords: [[55, 59, 62], [52, 55, 59], [48, 52, 55], [50, 54, 57]], roots: [43, 40, 48, 50] }, // G Em C D
+  { bpm: 104, chords: [[53, 57, 60], [48, 52, 55], [50, 53, 57], [58, 62, 65]], roots: [41, 48, 38, 46] }, // F C Dm Bb
+  { bpm: 90,  chords: [[52, 55, 59], [48, 52, 55], [55, 59, 62], [50, 54, 57]], roots: [40, 48, 43, 50] }  // Em C G D
+];
+const V = VARIANTS[(Number(process.argv[4]) || 0) % VARIANTS.length];
+const BPM = V.bpm, BEAT = 60 / BPM, BAR = BEAT * 4;
 const midi = m => 440 * Math.pow(2, (m - 69) / 12);
-// Accords (notes MIDI) : Am, F, C, G
-const CHORDS = [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]];
-const ROOTS = [45, 41, 48, 43];
+const CHORDS = V.chords;
+const ROOTS = V.roots;
 const L = new Float32Array(N), R = new Float32Array(N);
 let seed = 7;
 const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647) * 2 - 1;

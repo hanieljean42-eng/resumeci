@@ -11,7 +11,7 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
 (numéroter à la suite du plus grand `NN_` existant dans ce dossier).
 
 ## Style imposé
-- Vertical 1080x1920, charte CI (orange `#f77f00` / vert `#009e60`, fond crème, drapeau en haut), police Inter, icônes Font Awesome.
+- Vertical 1080x1920, décor tiré au hasard parmi 6 (voir « Décors »), bandeau de couleur en haut, police Inter, icônes Font Awesome.
 - **Musique seule** (synthèse originale `music.js`), **jamais de voix off**.
 - Aller à l'essentiel : 45–75 s au total. Supprimer claviers à l'écran, chargements, retours à l'accueil, défilements répétés, hésitations.
 - Extraits d'écran accélérés **x1,5 par défaut** (4ᵉ valeur du clip pour changer).
@@ -21,8 +21,25 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
   - texte libre → badge violet personnalisé
 - Aucun faux témoignage, aucun chiffre inventé : compter dans le code/catalogue avant d'afficher un compteur.
 
+## Décors (tirés au hasard)
+6 décors : `ci` (crème orange/vert), `ocean` (bleu/cyan, rayures), `violet` (violet/rose, rayures), `sunset` (orange/rouge), `menthe` (vert, points), `nuit` (fond sombre, accents or/vert).
+- Au 1ᵉʳ `render.js`, un décor est **tiré au hasard** (jamais le même que la vidéo précédente, mémorisé dans `_video/.last_theme`) puis figé dans `_video/<projet>/theme.json` → aperçus, rendu et assemblage restent cohérents.
+- Chaque décor a **sa propre musique** (tempo + grille d'accords) choisie automatiquement par `assemble.js`.
+- Ne PAS choisir le décor soi-même sauf demande explicite de l'utilisateur : écrire alors `{"theme":"nuit"}` dans `theme.json` avant le rendu. Pour re-tirer : supprimer `theme.json` puis relancer le rendu complet.
+- Annoncer le décor tiré à l'utilisateur dans le récapitulatif.
+
+## Qualité HD des captures (IMPORTANT)
+- **WhatsApp réduit les vidéos en 288x640 (~0,8 Mb/s)** : texte flou une fois agrandi. Aucun filtre ne recrée les détails perdus.
+- `assemble.js` affiche `⚠️ … 288px de large` si la source est basse définition. Dans ce cas, **le signaler à l'utilisateur** et lui demander, pour la suite :
+  1. Enregistreur d'écran du téléphone réglé en **1080p, débit élevé (≥ 12 Mb/s), 30 i/s** ;
+  2. Envoyer le fichier **en « Document »** sur WhatsApp (trombone → Document), ou via Google Drive / câble USB — jamais comme vidéo normale ;
+  3. Filmer lentement : défilements doux, pauses de 1–2 s sur chaque écran important.
+- Le moteur accepte toute résolution (recadrage relatif) : une source 1080x2400 donne un écran parfaitement net.
+- Traitement déjà appliqué automatiquement : débruitage `hqdn3d` (blocs de compression) → agrandissement lanczos précis → netteté adaptative `cas` ; images JPEG qualité 95 ; segments CRF 14 ; export final CRF 15, profil High 4.2 (marge avant la recompression TikTok/WhatsApp).
+- En cas de source basse définition, préférer des extraits où l'écran est **statique ou lent** (texte lisible) et éviter les défilements rapides.
+
 ## Étapes (dans cet ordre, sans exploration supplémentaire)
-1. **Sources** : copier chaque vidéo de l'utilisateur dans `_video/<projet>/src/` sous des noms courts (`A.mp4`, `B.mp4`…). Les enregistrements WhatsApp font 288x640.
+1. **Sources** : copier chaque vidéo de l'utilisateur dans `_video/<projet>/src/` sous des noms courts (`A.mp4`, `B.mp4`…). Vérifier la résolution : `ffprobe -v quiet -select_streams v -show_entries stream=width,height,bit_rate -of compact src/A.mp4` (voir « Qualité HD »).
 2. **Repérage sans regarder toute la vidéo** — planche-contact horodatée (une image / 3 s) :
    ```bash
    F="fontfile='C\:/Windows/Fonts/arial.ttf'"   # obligatoire, sinon drawtext plante (pas de fontconfig)
@@ -50,7 +67,7 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
    ```
    Pour re-rendre une seule scène : `render.js _video/<projet> d_x` puis relancer `assemble.js`.
 6. **Contrôle** : `ffprobe` (durée, 1080x1920, piste audio) + extraire 1–2 images (`-ss`) d'une scène démo pour vérifier l'incrustation.
-7. **Livraison** : copier le MP4 dans le dossier VIDEO RESUMECI (numéro suivant). Résumer à l'utilisateur : durée, scènes, passages coupés.
+7. **Livraison** : copier le MP4 dans le dossier VIDEO RESUMECI (numéro suivant). Résumer à l'utilisateur : durée, décor tiré, scènes, passages coupés, et l'avertissement qualité si la source était en 288x640.
 
 ## Pièges connus
 - Chrome déjà ouvert → le moteur utilise un `userDataDir` temporaire (déjà géré).

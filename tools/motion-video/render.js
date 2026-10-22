@@ -7,7 +7,7 @@ const fs = require('fs');
 const os = require('os');
 const { pathToFileURL } = require('url');
 const puppeteer = require(path.join(__dirname, '..', '..', 'node_modules', 'puppeteer-core'));
-const { sceneDur } = require('./lib');
+const { sceneDur, projectTheme } = require('./lib');
 
 const FPS = 30;
 const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(fs.existsSync);
@@ -20,6 +20,8 @@ const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Pro
   const preview = rest[0] === 'preview';
   const only = preview ? rest.slice(1) : rest;
   const list = SCENES.filter(s => !only.length || only.includes(s.id));
+  const theme = projectTheme(P);
+  console.log('décor :', theme);
   const browser = await puppeteer.launch({
     executablePath: CHROME, headless: 'new',
     userDataDir: path.join(os.tmpdir(), 'rci-motion-' + Date.now()),
@@ -35,7 +37,7 @@ const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Pro
   });
   for (const sc of list) {
     const dur = sceneDur(sc);
-    await page.evaluate(s => window.build(s), { ...sc, dur });
+    await page.evaluate(s => window.build(s), { ...sc, dur, theme });
     await page.evaluate(async () => { window.seek(30); await new Promise(r => setTimeout(r, 300)); await document.fonts.ready; });
     if (preview) {
       fs.mkdirSync(path.join(P, 'preview'), { recursive: true });
@@ -50,7 +52,7 @@ const CHROME = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Pro
     const n = Math.round(dur * FPS);
     for (let f = 0; f < n; f++) {
       await page.evaluate(t => window.seek(t), f / FPS);
-      await page.screenshot({ path: path.join(dir, String(f).padStart(5, '0') + '.jpg'), type: 'jpeg', quality: 88 });
+      await page.screenshot({ path: path.join(dir, String(f).padStart(5, '0') + '.jpg'), type: 'jpeg', quality: 95 });
     }
     console.log('frames', sc.id, n);
   }

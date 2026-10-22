@@ -4,7 +4,7 @@
 const { execFileSync, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const { clipSpeed } = require('./lib');
+const { clipSpeed, projectTheme, THEMES } = require('./lib');
 
 const FPS = 30, T = 0.45;
 const P = path.resolve(process.argv[2] || '.');
@@ -30,21 +30,32 @@ const mask = ({ W, H }) => {
   return f;
 };
 
+// Contrôle qualité des sources : WhatsApp réduit les vidéos en 288x640 (floues une fois agrandies).
+for (const src of new Set(SCENES.filter(s => s.type === 'demo').flatMap(s => s.clips.map(c => c[0])))) {
+  const w = parseInt(execSync(`ffprobe -v quiet -select_streams v -show_entries stream=width -of csv=p=0 "${p('src', src + '.mp4')}"`, { encoding: 'utf8' }), 10);
+  if (w < 600) console.warn(`⚠️  ${src}.mp4 fait ${w}px de large (compression WhatsApp) : rendu limité. Demander l'original en HD.`);
+}
+
 fs.mkdirSync(p('seg'), { recursive: true });
 const durs = [];
 for (const sc of SCENES) {
   const dur = fs.readdirSync(p('frames', sc.id)).length / FPS;
   durs.push(dur);
   const out = p('seg', sc.id + '.mp4');
-  const enc = ['-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-t', dur.toFixed(3), out];
+  const enc = ['-c:v', 'libx264', '-preset', 'slow', '-crf', '14', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-t', dur.toFixed(3), out];
   if (sc.type !== 'demo') { ff(['-framerate', String(FPS), '-i', p('frames', sc.id, '%05d.jpg'), ...enc]); }
   else {
     const S = screen(sc);
-    const srcH = Math.round(288 * S.H / S.W / 2) * 2; // même ratio que l'écran -> aucune déformation
+    // Recadrage relatif (fonctionne en 288x640 comme en 1080x2400) : même ratio que l'écran,
+    // on retire la barre d'état (cropTop exprimé en px d'une source 640 de haut).
+    const top = sc.cropTop ?? 20;
+    const crop = `crop=iw:trunc(iw*${S.H}/${S.W}/2)*2:0:trunc(ih*${top}/640/2)*2`;
+    // Netteté : débruitage des blocs de compression -> agrandissement lanczos -> accentuation adaptative.
+    const clean = `hqdn3d=1.2:1.2:4:4,scale=${S.W}:${S.H}:flags=lanczos+accurate_rnd+full_chroma_int,cas=0.55`;
     const inputs = ['-framerate', String(FPS), '-i', p('frames', sc.id, '%05d.jpg')];
     const parts = sc.clips.map((c, i) => {
       inputs.push('-ss', String(c[1]), '-t', String(c[2]), '-i', p('src', c[0] + '.mp4'));
-      return `[${i + 1}:v]crop=288:${srcH}:0:${sc.cropTop ?? 20},setpts=(PTS-STARTPTS)/${clipSpeed(c)},fps=${FPS},scale=${S.W}:${S.H}:flags=lanczos,setsar=1,unsharp=5:5:0.6[c${i}]`;
+      return `[${i + 1}:v]${crop},setpts=(PTS-STARTPTS)/${clipSpeed(c)},fps=${FPS},${clean},setsar=1[c${i}]`;
     });
     inputs.push('-loop', '1', '-i', mask(S));
     const mi = sc.clips.length + 1;
@@ -70,10 +81,13 @@ for (let i = 1; i < SCENES.length; i++) {
   prev = lbl; acc = off + durs[i];
 }
 fc.push((SCENES.length > 1 ? '[vx]' : '[0:v]') + 'format=yuv420p[v]');
-ff([...inputs, '-filter_complex', fc.join(';'), '-map', '[v]', '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-r', String(FPS), p('video_sans_son.mp4')]);
+// Export final : peu compressé + profil High (TikTok/WhatsApp recompressent ensuite, il faut de la marge).
+ff([...inputs, '-filter_complex', fc.join(';'), '-map', '[v]', '-c:v', 'libx264', '-preset', 'slow', '-crf', '15',
+  '-profile:v', 'high', '-level', '4.2', '-maxrate', '16M', '-bufsize', '32M', '-r', String(FPS), p('video_sans_son.mp4')]);
 console.log('video', acc.toFixed(2) + 's');
 
-execSync(`node "${path.join(__dirname, 'music.js')}" ${acc.toFixed(2)} "${p('music.wav')}"`, { stdio: 'inherit' });
+const variant = Math.max(0, THEMES.indexOf(projectTheme(P)));
+execSync(`node "${path.join(__dirname, 'music.js')}" ${acc.toFixed(2)} "${p('music.wav')}" ${variant}`, { stdio: 'inherit' });
 const OUT = p(NAME + '.mp4');
 ff(['-i', p('video_sans_son.mp4'), '-i', p('music.wav'), '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', OUT]);
 console.log('OK', OUT);
