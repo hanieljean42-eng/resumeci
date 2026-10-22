@@ -6,7 +6,7 @@ description: Produire les vidéos motion design ResumeCI (vertical 1080x1920, 30
 # Vidéos motion design ResumeCI
 
 Moteur committé : `tools/motion-video/` — NE PAS le relire en entier, tout est décrit ici.
-Projets (sources, images, sortie) : `_video/<projet>/` (ignoré par git).
+Projets (scenes.js, sources, sortie) : `_video/<projet>/` (ignoré par git) ; images/segments : `%LOCALAPPDATA%\rci-motion\<projet>\`.
 Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI\NN_ResumeCI_<Sujet>.mp4`
 (numéroter à la suite du plus grand `NN_` existant dans ce dossier).
 
@@ -19,6 +19,8 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
   - `'elite'` → badge « PASS ÉLITE · TERMINALES A, C, D » (Sujets & Interros, Mode Examen : actuellement Tle A/C/D uniquement)
   - `'all'` → « OUVERT À TOUS · TOUS LES ABONNEMENTS » (Avis, fonctions gratuites)
   - texte libre → badge violet personnalisé
+  - Flashcards et Quiz : `'ÉLÈVES : PASS PRO 1 000 F/MOIS · ÉTUDIANTS : 2 000 F/MOIS'` (débloqués à partir de ces formules)
+- Une capture qui montre plusieurs fonctionnalités → **une vidéo par fonctionnalité** (un projet par vidéo, même `src/`).
 - Aucun faux témoignage, aucun chiffre inventé : compter dans le code/catalogue avant d'afficher un compteur.
 
 ## Décors (tirés au hasard)
@@ -68,6 +70,14 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
    Pour re-rendre une seule scène : `render.js _video/<projet> d_x` puis relancer `assemble.js`.
 6. **Contrôle** : `ffprobe` (durée, 1080x1920, piste audio) + extraire 1–2 images (`-ss`) d'une scène démo pour vérifier l'incrustation.
 7. **Livraison** : copier le MP4 dans le dossier VIDEO RESUMECI (numéro suivant). Résumer à l'utilisateur : durée, décor tiré, scènes, passages coupés, et l'avertissement qualité si la source était en 288x640.
+
+## Vitesse de fabrication (déjà optimisée, ne pas défaire)
+- Images et segments dans `%LOCALAPPDATA%\rci-motion\<projet>\` (**hors OneDrive** : la synchro de milliers de JPEG ralentissait tout). Le projet ne garde que `scenes.js`, `theme.json`, `src/`, `sheets/`, `preview/` et le MP4.
+- Rendu : plusieurs **navigateurs** Chrome en parallèle (`MOTION_WORKERS`, défaut = cœurs − 1), lancés l'un après l'autre (sinon EPERM). Jamais plusieurs onglets d'un même Chrome (captures bloquées).
+- Décor des démos rendu 1 image sur 2 puis dupliqué ; halos en dégradé radial (pas de `filter: blur`).
+- Assemblage : segments encodés en parallèle (`MOTION_FF_PAR`), transitions légères (pas de `smooth*`), export final `veryfast` CRF 14.
+- Ordre de grandeur sur cette machine (4 cœurs) : ~35 s de vidéo = rendu ~2 min 30 + assemblage ~2 min 30.
+- Plusieurs vidéos : lancer `render` + `assemble` de chaque projet dans **une seule commande en arrière-plan** (`timeout: 0`), puis attendre avec `get_output`.
 
 ## Pièges connus
 - Chrome déjà ouvert → le moteur utilise un `userDataDir` temporaire (déjà géré).

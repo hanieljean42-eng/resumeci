@@ -10,10 +10,10 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #fffdf
 
 /* ---------- Fond commun ---------- */
 .bg { position: absolute; inset: 0; }
-.orb { position: absolute; border-radius: 50%; filter: blur(110px); }
-.orb.a { width: 900px; height: 900px; background: rgba(247,127,0,.30); top: -320px; left: -300px; animation: drA 14s ease-in-out infinite alternate; }
-.orb.b { width: 860px; height: 860px; background: rgba(0,158,96,.26); bottom: -320px; right: -300px; animation: drB 16s ease-in-out infinite alternate; }
-.orb.c { width: 520px; height: 520px; background: rgba(247,127,0,.13); top: 46%; left: 40%; animation: drC 18s ease-in-out infinite alternate; }
+.orb { position: absolute; border-radius: 50%; } /* dégradé radial : bien plus rapide que filter: blur */
+.orb.a { width: 1300px; height: 1300px; background: radial-gradient(circle, rgba(247,127,0,0.57) 0, transparent 68%); top: -520px; left: -500px; animation: drA 14s ease-in-out infinite alternate; }
+.orb.b { width: 1250px; height: 1250px; background: radial-gradient(circle, rgba(0,158,96,0.49) 0, transparent 68%); bottom: -520px; right: -500px; animation: drB 16s ease-in-out infinite alternate; }
+.orb.c { width: 800px; height: 800px; background: radial-gradient(circle, rgba(247,127,0,0.25) 0, transparent 68%); top: 38%; left: 30%; animation: drC 18s ease-in-out infinite alternate; }
 @keyframes drA { to { transform: translate(260px, 220px) scale(1.15); } }
 @keyframes drB { to { transform: translate(-240px, -260px) scale(1.1); } }
 @keyframes drC { to { transform: translate(-200px, 160px); } }

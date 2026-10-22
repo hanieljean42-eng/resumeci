@@ -25,4 +25,13 @@ function projectTheme(P) {
   return theme;
 }
 
-module.exports = { sceneDur, clipSpeed, DEFAULT_SPEED, THEMES, projectTheme };
+// Dossier de travail (images, segments) HORS OneDrive : la synchro de milliers de JPEG
+// ralentit fortement le rendu. Le projet ne garde que scenes.js, theme.json, src/ et le MP4 final.
+function workDir(P) {
+  const base = process.env.LOCALAPPDATA || require('os').tmpdir();
+  const d = path.join(base, 'rci-motion', path.basename(P));
+  fs.mkdirSync(d, { recursive: true });
+  return d;
+}
+
+module.exports = { sceneDur, clipSpeed, DEFAULT_SPEED, THEMES, projectTheme, workDir };
