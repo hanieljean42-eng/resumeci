@@ -1327,6 +1327,54 @@ function saveStreakData(data) {
   }
 }
 
+/* ---- Paliers de flamme : la couleur évolue avec la série ---- */
+const FLAME_TIERS = [
+  {
+    min: 100, key: 'rainbow', name: 'Flamme Légendaire', short: 'LÉGENDE',
+    gradient: 'linear-gradient(135deg,#e11d48,#f97316,#eab308,#16a34a,#2563eb,#7c3aed)',
+    accent: '#7c3aed', light: '#faf5ff', border: '#d8b4fe', text: '#6b21a8',
+    iconFilter: 'saturate(2.4) brightness(1.05)', rainbow: true,
+    msg: 'FLAMME ARC-EN-CIEL — une légende de ResumeCI !'
+  },
+  {
+    min: 70, key: 'pink', name: 'Flamme de Rubis', short: 'RUBIS',
+    gradient: 'linear-gradient(135deg,#e11d48,#be123c)',
+    accent: '#e11d48', light: '#fff1f2', border: '#fda4af', text: '#9f1239',
+    iconFilter: 'hue-rotate(305deg) saturate(1.9)', msg: 'Flamme de rubis — presque au sommet !'
+  },
+  {
+    min: 50, key: 'emerald', name: "Flamme d'Émeraude", short: 'ÉMERAUDE',
+    gradient: 'linear-gradient(135deg,#059669,#047857)',
+    accent: '#059669', light: '#ecfdf5', border: '#6ee7b7', text: '#065f46',
+    iconFilter: 'hue-rotate(105deg) saturate(2)', msg: "Flamme d'émeraude — titan des révisions !"
+  },
+  {
+    min: 20, key: 'violet', name: 'Flamme Violette', short: 'VIOLETTE',
+    gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)',
+    accent: '#7c3aed', light: '#f5f3ff', border: '#c4b5fd', text: '#5b21b6',
+    iconFilter: 'hue-rotate(248deg) saturate(1.9)', msg: 'Flamme violette — la discipline te porte !'
+  },
+  {
+    min: 10, key: 'blue', name: 'Flamme Bleue', short: 'BLEUE',
+    gradient: 'linear-gradient(135deg,#2563eb,#1d4ed8)',
+    accent: '#2563eb', light: '#eff6ff', border: '#93c5fd', text: '#1e40af',
+    iconFilter: 'hue-rotate(190deg) saturate(1.9)', msg: "Flamme bleue — l'assiduité devient une habitude !"
+  },
+  {
+    min: 1, key: 'orange', name: "Flamme d'Assiduité", short: 'FEU',
+    gradient: 'linear-gradient(135deg,#ea580c,#c2410c)',
+    accent: '#ea580c', light: '#fff7ed', border: '#fdba74', text: '#c2410c',
+    iconFilter: 'none', msg: 'Série en route — la constance paie !'
+  }
+];
+const FLAME_MILESTONES = [10, 20, 50, 70, 100];
+
+function getFlameTier(count) {
+  const n = Number(count) || 0;
+  return FLAME_TIERS.find(t => n >= t.min) || null;
+}
+window.getFlameTier = getFlameTier;
+
 function checkStreakValidity() {
   const today = getLocalDateStr();
   const yesterday = getYesterdayDateStr();
@@ -1416,10 +1464,14 @@ function updateStreak() {
   updateTopbarStreak();
 
   if (advanced && window.toast) {
+    const tier = getFlameTier(streak.count);
+    const hitMilestone = FLAME_MILESTONES.includes(streak.count);
     if (restarted) {
       toast(`🔥 Flamme rallumée : 1 jour ! Révise demain pour continuer ta série !`, 'success', 4500);
+    } else if (hitMilestone && tier) {
+      toast(`🎉 ${tier.name.toUpperCase()} DÉBLOQUÉE — ${streak.count} jours d'affilée ! Ta flamme change de couleur !`, 'success', 7000);
     } else if (streak.count > 1) {
-      toast(`🔥 Flamme d'assiduité : ${streak.count} jours consécutifs ! Bravo !`, 'success', 4500);
+      toast(`🔥 ${tier ? tier.name : 'Flamme'} : ${streak.count} jours consécutifs ! Bravo !`, 'success', 4500);
     } else {
       toast(`🔥 Flamme allumée : 1 jour ! Révise demain pour passer à 2 jours !`, 'success', 4500);
     }
@@ -1433,14 +1485,20 @@ function getTopbarStreakAndProfileHtml() {
   const s = getStreak();
   const isExtinguished = (s === 0);
   const streakText = `${s} j`;
+  const tier = getFlameTier(s);
   const btnClass = isExtinguished ? 'btn btn-streak extinguished' : 'btn btn-streak';
   const btnTitle = isExtinguished
     ? "Flamme éteinte (0 j) - Révise une fiche pour rallumer ta flamme !"
-    : `Flamme d'assiduité : ${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''} - Clique pour voir tes détails`;
+    : `${tier ? tier.name : "Flamme d'assiduité"} : ${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''} - Clique pour voir tes détails`;
   const name = window.USER_PROFILE?.firstName || 'Profil';
+  const btnStyle = tier && !isExtinguished
+    ? ` style="background:linear-gradient(135deg,${tier.light},#fff) !important;border-color:${tier.border} !important;color:${tier.text} !important;box-shadow:0 2px 8px ${tier.accent}55 !important"`
+    : '';
+  const iconStyle = tier && !isExtinguished && !tier.rainbow ? ` style="filter:${flameIconFilter(tier)}"` : '';
+  const iconClass = tier && tier.rainbow && !isExtinguished ? ' flame-rainbow' : '';
   return `
-    <button class="${btnClass}" id="topbarStreakBtn" onclick="openStreakInfoModal()" title="${btnTitle}">
-      <span class="flame-icon">🔥</span> <span id="topbarStreakText">${streakText}</span>
+    <button class="${btnClass}" id="topbarStreakBtn" onclick="openStreakInfoModal()" title="${btnTitle}"${btnStyle}>
+      <span class="flame-icon${iconClass}"${iconStyle}>🔥</span> <span id="topbarStreakText">${streakText}</span>
     </button>
     <button class="btn btn-profile" id="topbarProfileBtn" onclick="openProfileView()" title="Mon profil">
       <i class="fas fa-user-circle"></i> <span style="max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${name}</span>
@@ -1449,6 +1507,32 @@ function getTopbarStreakAndProfileHtml() {
 }
 window.getTopbarStreakAndProfileHtml = getTopbarStreakAndProfileHtml;
 
+// Filtre de l'icône : teinte du palier + lueur (sauf arc-en-ciel, animé en CSS)
+function flameIconFilter(tier) {
+  if (!tier || tier.rainbow) return '';
+  return (tier.iconFilter !== 'none' ? tier.iconFilter + ' ' : '') + `drop-shadow(0 0 6px ${tier.accent}bb)`;
+}
+
+// Teinte le bouton de flamme selon le palier atteint (10j → bleu, 20j → violet…)
+function applyFlameTierToButton(btn, count) {
+  const tier = getFlameTier(count);
+  const icon = btn ? btn.querySelector('.flame-icon') : null;
+  if (!btn) return;
+  if (!tier) { // flamme éteinte : styles CSS par défaut
+    btn.style.background = ''; btn.style.borderColor = ''; btn.style.color = ''; btn.style.boxShadow = '';
+    if (icon) { icon.style.filter = ''; icon.classList.remove('flame-rainbow'); }
+    return;
+  }
+  btn.style.background = `linear-gradient(135deg, ${tier.light}, #ffffff)`;
+  btn.style.borderColor = tier.border;
+  btn.style.color = tier.text;
+  btn.style.boxShadow = `0 2px 8px ${tier.accent}55`;
+  if (icon) {
+    icon.style.filter = flameIconFilter(tier);
+    icon.classList.toggle('flame-rainbow', !!tier.rainbow);
+  }
+}
+
 function updateTopbarStreak() {
   const s = getStreak();
   const isExtinguished = (s === 0);
@@ -1456,9 +1540,11 @@ function updateTopbarStreak() {
   const btn = document.getElementById('topbarStreakBtn');
   if (btn) {
     btn.classList.toggle('extinguished', isExtinguished);
+    applyFlameTierToButton(btn, s);
+    const tier = getFlameTier(s);
     btn.title = isExtinguished
       ? "Flamme éteinte (0 j) - Révise une fiche pour rallumer ta flamme !"
-      : `Flamme d'assiduité : ${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''} - Clique pour voir tes détails`;
+      : `${tier.name} : ${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''} - Clique pour voir tes détails`;
   }
   const el = document.getElementById('topbarStreakText');
   if (el) el.textContent = streakText;
@@ -1487,13 +1573,19 @@ function openStreakInfoModal() {
   if (s === 0) {
     // Flamme éteinte
     if (headerEl) headerEl.style.background = 'linear-gradient(135deg, #475569, #334155)';
-    if (iconEl) iconEl.textContent = '💨';
+    if (iconEl) {
+      iconEl.textContent = '💨';
+      iconEl.style.filter = 'none';
+      iconEl.classList.remove('flame-rainbow');
+    }
     if (countTitleEl) countTitleEl.textContent = 'Flamme éteinte : 0 jour';
     if (subtitleEl) subtitleEl.textContent = 'Aucune révision enregistrée depuis plus de 24h';
     if (statusBoxEl) {
       statusBoxEl.style.background = '#f8fafc';
       statusBoxEl.style.borderColor = '#cbd5e1';
       statusBoxEl.style.color = '#334155';
+      const h = statusBoxEl.firstElementChild;
+      if (h) h.style.color = '#334155';
     }
     if (statusTextEl) {
       statusTextEl.innerHTML = `
@@ -1511,26 +1603,33 @@ function openStreakInfoModal() {
       };
     }
   } else if (revisedToday) {
-    // Révisé aujourd'hui : flamme protégée
-    if (headerEl) headerEl.style.background = 'linear-gradient(135deg, #ea580c, #c2410c)';
-    if (iconEl) iconEl.textContent = '🔥';
-    if (countTitleEl) countTitleEl.textContent = `Ta Flamme : ${s} jour${s > 1 ? 's' : ''}`;
-    if (subtitleEl) subtitleEl.textContent = 'Série d’assiduité active & protégée aujourd’hui';
+    // Révisé aujourd'hui : flamme protégée — couleur du palier atteint
+    const tier = getFlameTier(s) || FLAME_TIERS[FLAME_TIERS.length - 1];
+    if (headerEl) headerEl.style.background = tier.gradient;
+    if (iconEl) {
+      iconEl.textContent = '🔥';
+      iconEl.style.filter = flameIconFilter(tier);
+      iconEl.classList.toggle('flame-rainbow', !!tier.rainbow);
+    }
+    if (countTitleEl) countTitleEl.textContent = `${tier.name} : ${s} jour${s > 1 ? 's' : ''}`;
+    if (subtitleEl) subtitleEl.textContent = `${tier.msg} Série protégée aujourd'hui.`;
     if (statusBoxEl) {
-      statusBoxEl.style.background = '#fff7ed';
-      statusBoxEl.style.borderColor = '#fdba74';
-      statusBoxEl.style.color = '#7c2d12';
+      statusBoxEl.style.background = tier.light;
+      statusBoxEl.style.borderColor = tier.border;
+      statusBoxEl.style.color = tier.text;
+      const h = statusBoxEl.firstElementChild;
+      if (h) h.style.color = tier.text;
     }
     if (statusTextEl) {
       statusTextEl.innerHTML = `
-        <div style="font-weight: 800; color: #9a3412; margin-bottom: 6px; font-size: 14px;">✅ Cycle du jour validé !</div>
-        Tu as révisé aujourd'hui et ta flamme brille de <strong>${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''}</strong> ! 🔥<br><br>
+        <div style="font-weight: 800; color: ${tier.text}; margin-bottom: 6px; font-size: 14px;">✅ Cycle du jour validé !</div>
+        Tu as révisé aujourd'hui et ta <strong>${tier.name.toLowerCase()}</strong> brille de <strong>${s} jour${s > 1 ? 's' : ''} consécutif${s > 1 ? 's' : ''}</strong> ! 🔥<br><br>
         ⏳ <strong>Prochain cycle :</strong> Reviens demain pour lire une nouvelle fiche et faire progresser ta flamme à <strong>${s + 1} jours</strong>.<br>
         <span style="font-size: 12px; opacity: 0.85;">Ta flamme reste sécurisée jusqu'à demain soir.</span>
       `;
     }
     if (actionBtnEl) {
-      actionBtnEl.style.background = '#ea580c';
+      actionBtnEl.style.background = tier.accent;
       actionBtnEl.innerHTML = '🔥 Continuer mes révisions';
       actionBtnEl.onclick = function() {
         document.getElementById('streakInfoModal')?.classList.remove('show');
@@ -1538,15 +1637,22 @@ function openStreakInfoModal() {
       };
     }
   } else {
-    // Série en cours mais pas encore révisé aujourd'hui (urgent !)
-    if (headerEl) headerEl.style.background = 'linear-gradient(135deg, #d97706, #b45309)';
-    if (iconEl) iconEl.textContent = '⏳';
-    if (countTitleEl) countTitleEl.textContent = `Ta Flamme : ${s} jour${s > 1 ? 's' : ''}`;
+    // Série en cours mais pas encore révisé aujourd'hui (urgent !) — palier coloré
+    const tier = getFlameTier(s) || FLAME_TIERS[FLAME_TIERS.length - 1];
+    if (headerEl) headerEl.style.background = tier.gradient;
+    if (iconEl) {
+      iconEl.textContent = '⏳';
+      iconEl.style.filter = 'none';
+      iconEl.classList.remove('flame-rainbow');
+    }
+    if (countTitleEl) countTitleEl.textContent = `${tier.name} : ${s} jour${s > 1 ? 's' : ''}`;
     if (subtitleEl) subtitleEl.textContent = `Attention : Il te reste ${hoursLeft}h ${minutesLeft}min aujourd'hui`;
     if (statusBoxEl) {
       statusBoxEl.style.background = '#fef3c7';
       statusBoxEl.style.borderColor = '#f59e0b';
       statusBoxEl.style.color = '#78350f';
+      const h = statusBoxEl.firstElementChild;
+      if (h) h.style.color = '#78350f';
     }
     if (statusTextEl) {
       statusTextEl.innerHTML = `
@@ -1566,9 +1672,246 @@ function openStreakInfoModal() {
     }
   }
 
+  // Bouton de partage de flamme (carte WhatsApp) + bordure de la modale au palier
+  const shareBtn = document.getElementById('simStreakShareBtn');
+  const modalBoxEl = document.querySelector('#streakInfoModal .profile-modal');
+  if (shareBtn) {
+    const t = getFlameTier(s);
+    shareBtn.style.display = s > 0 ? '' : 'none';
+    if (t) {
+      shareBtn.style.borderColor = t.accent;
+      shareBtn.style.color = t.accent;
+      if (modalBoxEl) modalBoxEl.style.borderColor = t.accent;
+    } else if (modalBoxEl) {
+      modalBoxEl.style.borderColor = '#cbd5e1';
+    }
+    shareBtn.onclick = function () { shareStreakCard(); };
+  }
+
   document.getElementById('streakInfoModal')?.classList.add('show');
 }
 window.openStreakInfoModal = openStreakInfoModal;
+
+/* ---- Carte de partage « Ma flamme » pour statut WhatsApp (1080×1920) ---- */
+function loadImgEl(src) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+function streakClassLabel(cls) {
+  const M = { '6eme':'6ème','5eme':'5ème','4eme':'4ème','3eme':'3ème','Seconde_A':'2nde A','Seconde_C':'2nde C','Premiere_A':'1ère A','Premiere_C':'1ère C','Premiere_D':'1ère D','Terminale_A':'Terminale A','Terminale_C':'Terminale C','Terminale_D':'Terminale D' };
+  return M[cls] || String(cls || '').replace(/^Licence_/, 'Licence ').replace(/_/g, ' ') || 'Élève';
+}
+
+function rr(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+async function drawStreakCardCanvas() {
+  const info = checkStreakValidity();
+  const s = info.count;
+  const tier = getFlameTier(s) || FLAME_TIERS[FLAME_TIERS.length - 1];
+  const profile = window.USER_PROFILE || {};
+  const fullName = [profile.firstName, profile.lastName].filter(Boolean).join(' ').trim() || 'Élève ResumeCI';
+  const classLabel = streakClassLabel(profile.selectedClass);
+  const initials = fullName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase() || 'RC';
+
+  const W = 1080, H = 1920;
+  const cv = document.createElement('canvas');
+  cv.width = W; cv.height = H;
+  const ctx = cv.getContext('2d');
+
+  // Fond clair teinté par le palier (style motion design du site)
+  const bg = ctx.createLinearGradient(0, 0, 0, H);
+  bg.addColorStop(0, '#ffffff');
+  bg.addColorStop(0.55, tier.light);
+  bg.addColorStop(1, tier.border + '66');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Cercles décoratifs (motif motion)
+  ctx.save();
+  const deco = [[W - 120, 180, 260], [-80, 700, 220], [W + 40, 1500, 300], [-60, 1700, 180]];
+  deco.forEach(([cx, cy, r], i) => {
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+    g.addColorStop(0, tier.accent + '26');
+    g.addColorStop(1, tier.accent + '00');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
+  });
+  ctx.restore();
+
+  // Filigrane « ResumeCI » en diagonale
+  ctx.save();
+  ctx.globalAlpha = 0.05;
+  ctx.fillStyle = tier.accent;
+  ctx.font = '900 74px system-ui, Arial';
+  ctx.translate(W / 2, H / 2);
+  ctx.rotate(-Math.PI / 6);
+  for (let y = -1200; y <= 1200; y += 240) {
+    for (let x = -1300; x <= 1300; x += 460) ctx.fillText('ResumeCI', x, y);
+  }
+  ctx.restore();
+
+  // Logo + wordmark
+  const logo = await loadImgEl('/icon-192.png');
+  if (logo) { rr(ctx, W / 2 - 70, 90, 140, 140, 34); ctx.save(); ctx.clip(); ctx.drawImage(logo, W / 2 - 70, 90, 140, 140); ctx.restore(); }
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#0f172a';
+  ctx.font = '900 62px system-ui, Arial';
+  ctx.fillText('ResumeCI', W / 2, 300);
+  ctx.fillStyle = tier.accent;
+  ctx.font = '700 34px system-ui, Arial';
+  ctx.fillText('Fiches de révision · Côte d\u2019Ivoire', W / 2, 352);
+
+  // Carte centrale
+  const cx = 90, cy = 430, cw = W - 180, ch = 860;
+  ctx.save();
+  ctx.shadowColor = tier.accent + '55';
+  ctx.shadowBlur = 60;
+  ctx.fillStyle = '#ffffff';
+  rr(ctx, cx, cy, cw, ch, 48);
+  ctx.fill();
+  ctx.restore();
+  ctx.strokeStyle = tier.accent;
+  ctx.lineWidth = 4;
+  rr(ctx, cx, cy, cw, ch, 48);
+  ctx.stroke();
+
+  // Badge du palier
+  const badgeTxt = tier.name.toUpperCase();
+  ctx.font = '800 38px system-ui, Arial';
+  const bw = ctx.measureText(badgeTxt).width + 80;
+  ctx.fillStyle = tier.gradient.startsWith('linear') ? tier.accent : tier.accent;
+  rr(ctx, W / 2 - bw / 2, cy + 60, bw, 78, 39);
+  ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText(badgeTxt, W / 2, cy + 113);
+
+  // Halo derrière la flamme
+  const glow = ctx.createRadialGradient(W / 2, cy + 380, 0, W / 2, cy + 380, 220);
+  glow.addColorStop(0, tier.accent + '44');
+  glow.addColorStop(1, tier.accent + '00');
+  ctx.fillStyle = glow;
+  ctx.beginPath(); ctx.arc(W / 2, cy + 380, 220, 0, 7); ctx.fill();
+
+  // Flamme vectorielle aux couleurs franches du palier (arc-en-ciel au palier max)
+  ctx.save();
+  const flameH = 310;
+  const fScale = flameH / 512;
+  ctx.translate(W / 2 - 192 * fScale, cy + 220);
+  ctx.scale(fScale, fScale);
+  const fp = new Path2D('M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z');
+  const fg = ctx.createLinearGradient(0, 0, 0, 512);
+  if (tier.rainbow) {
+    [['#e11d48', 0], ['#f97316', 0.28], ['#eab308', 0.46], ['#16a34a', 0.64], ['#2563eb', 0.82], ['#7c3aed', 1]]
+      .forEach(([c, o]) => fg.addColorStop(o, c));
+  } else if (s <= 0) {
+    fg.addColorStop(0, '#94a3b8'); fg.addColorStop(1, '#64748b');
+  } else {
+    fg.addColorStop(0, tier.accent); fg.addColorStop(1, tier.text);
+  }
+  ctx.fillStyle = fg;
+  ctx.fill(fp);
+  // Lumière interne douce pour un rendu « glossy »
+  ctx.clip(fp);
+  const hg = ctx.createRadialGradient(192, 330, 10, 192, 330, 220);
+  hg.addColorStop(0, 'rgba(255,255,255,.45)');
+  hg.addColorStop(0.55, 'rgba(255,255,255,.12)');
+  hg.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = hg;
+  ctx.fillRect(0, 0, 384, 512);
+  ctx.restore();
+
+  // Compteur de jours
+  ctx.fillStyle = tier.accent;
+  ctx.font = '900 200px system-ui, Arial';
+  ctx.fillText(String(s), W / 2, cy + 690);
+  ctx.fillStyle = '#0f172a';
+  ctx.font = '900 54px system-ui, Arial';
+  ctx.fillText(s > 1 ? 'JOURS D\u2019AFFILÉE' : 'JOUR D\u2019AFFILÉE', W / 2, cy + 762);
+  ctx.fillStyle = tier.text;
+  ctx.font = '600 34px system-ui, Arial';
+  ctx.fillText(tier.msg, W / 2, cy + 820);
+
+  // Bandeau profil
+  const py = cy + ch + 60;
+  ctx.fillStyle = '#ffffff';
+  ctx.save();
+  ctx.shadowColor = '#00000022';
+  ctx.shadowBlur = 30;
+  rr(ctx, 150, py, W - 300, 170, 85);
+  ctx.fill();
+  ctx.restore();
+  // Avatar dégradé du palier
+  const ag = ctx.createLinearGradient(210, py + 30, 330, py + 140);
+  if (tier.rainbow) { ag.addColorStop(0, '#e11d48'); ag.addColorStop(0.5, '#f97316'); ag.addColorStop(1, '#7c3aed'); }
+  else { ag.addColorStop(0, tier.accent); ag.addColorStop(1, tier.text); }
+  ctx.fillStyle = ag;
+  ctx.beginPath(); ctx.arc(255, py + 85, 55, 0, 7); ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '900 52px system-ui, Arial';
+  ctx.fillText(initials, 255, py + 103);
+  // Nom + classe
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#0f172a';
+  ctx.font = '800 44px system-ui, Arial';
+  ctx.fillText(fullName.length > 20 ? fullName.slice(0, 20) + '…' : fullName, 340, py + 75);
+  ctx.fillStyle = tier.accent;
+  ctx.font = '700 34px system-ui, Arial';
+  ctx.fillText(classLabel + ' · ResumeCI', 340, py + 125);
+  ctx.textAlign = 'center';
+
+  // Pied de carte
+  ctx.fillStyle = '#0f172a';
+  ctx.font = '800 44px system-ui, Arial';
+  ctx.fillText('resumeci.me', W / 2, H - 170);
+  ctx.fillStyle = tier.text;
+  ctx.font = '600 32px system-ui, Arial';
+  ctx.fillText('Installe l\u2019appli et allume ta flamme ! 🔥', W / 2, H - 115);
+  return cv;
+}
+window.drawStreakCardCanvas = drawStreakCardCanvas;
+
+async function shareStreakCard() {
+  const cv = await drawStreakCardCanvas();
+  const profile = window.USER_PROFILE || {};
+  const fullName = [profile.firstName, profile.lastName].filter(Boolean).join(' ').trim() || 'Élève ResumeCI';
+  const s = checkStreakValidity().count;
+
+  // Partage natif (WhatsApp → Statut) sinon téléchargement
+  cv.toBlob(async blob => {
+    if (!blob) { if (window.toast) toast('❌ Impossible de créer l\u2019image.', 'error'); return; }
+    const file = new File([blob], `flamme-resumeci-${s}j.png`, { type: 'image/png' });
+    const text = `${fullName} tient une flamme de ${s} jour${s > 1 ? 's' : ''} d'affilée sur ResumeCI ! 🔥 resumeci.me`;
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: 'Ma flamme ResumeCI', text });
+      } catch (e) { /* annulé par l'utilisateur */ }
+    } else {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      if (window.toast) toast('📸 Image enregistrée ! Partage-la en statut WhatsApp.', 'success', 5000);
+    }
+  }, 'image/png');
+}
+window.shareStreakCard = shareStreakCard;
 
 function showStreakWelcomeModal() {
   const today = getLocalDateStr();

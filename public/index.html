@@ -196,7 +196,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.6.8" defer></script>
+  <script src="/app.js?v=3.6.9" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -284,7 +284,15 @@
     }
     @keyframes flame-pulse {
       0%, 100% { transform: scale(1) rotate(-3deg); }
-      50% { transform: scale(1.22) rotate(3deg); filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.7)); }
+      50% { transform: scale(1.22) rotate(3deg); }
+    }
+    .flame-rainbow { animation: flame-pulse-rainbow 3s infinite linear !important; }
+    @keyframes flame-pulse-rainbow {
+      0% { transform: scale(1) rotate(-3deg); filter: hue-rotate(0deg) saturate(2.4) drop-shadow(0 0 8px rgba(225,29,72,.6)); }
+      25% { transform: scale(1.18) rotate(2deg); filter: hue-rotate(90deg) saturate(2.4) drop-shadow(0 0 10px rgba(22,163,74,.6)); }
+      50% { transform: scale(1.24) rotate(-2deg); filter: hue-rotate(180deg) saturate(2.4) drop-shadow(0 0 10px rgba(37,99,235,.6)); }
+      75% { transform: scale(1.18) rotate(2deg); filter: hue-rotate(270deg) saturate(2.4) drop-shadow(0 0 10px rgba(124,58,237,.6)); }
+      100% { transform: scale(1) rotate(-3deg); filter: hue-rotate(360deg) saturate(2.4) drop-shadow(0 0 8px rgba(225,29,72,.6)); }
     }
     .btn-profile {
       background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
@@ -1505,6 +1513,9 @@
         </div>
         <button class="pm-btn" style="background: #ea580c; margin-top: 0;" id="simStreakBtn" onclick="document.getElementById('streakInfoModal').classList.remove('show'); if (typeof showDashboard === 'function') showDashboard();">
           Continuer à réviser 🚀
+        </button>
+        <button class="pm-btn" id="simStreakShareBtn" style="margin-top: 10px; background: #ffffff; border: 2px solid #fdba74; color: #c2410c;">
+          📤 Partager ma flamme en statut
         </button>
       </div>
     </div>
