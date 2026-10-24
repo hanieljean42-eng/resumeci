@@ -2911,7 +2911,8 @@ function renderSujetsList() {
   const TYPE_STYLE = {
     interro: { icon: '📝', color: '#2563eb' },
     devoir: { icon: '📋', color: '#7c3aed' },
-    bac: { icon: '🎓', color: '#dc2626' }
+    bac: { icon: '🎓', color: '#dc2626' },
+    bepc: { icon: '🎓', color: '#b45309' }
   };
 
   const tabs = `<div style="display:flex;gap:8px;margin-bottom:14px">

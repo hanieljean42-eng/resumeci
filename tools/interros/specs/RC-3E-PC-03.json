@@ -1,0 +1,30 @@
+{
+  "code": "RC-3E-PC-03",
+  "type": "interro",
+  "matiere": "Physique-Chimie",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Les alcanes · Électrolyse et synthèse de l'eau",
+  "consignes": "Chaque exercice est indépendant. On donne les masses molaires atomiques : H = 1 g/mol, C = 12 g/mol, O = 16 g/mol.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les alcanes",
+      "points": "5 pts",
+      "consigne": "Le gaz contenu dans une cartouche de gaz domestique est un alcane.",
+      "enonce": "<ol type='a'><li>Rappelle la formule générale des alcanes.</li><li>Donne les formules brutes du méthane, de l'éthane, du propane et du butane.</li><li>Le butane ($C_4H_{10}$) brûle dans le dioxygène en produisant du dioxyde de carbone et de l'eau. Équilibre l'équation-bilan : $\\ldots C_4H_{10}+\\ldots O_2\\rightarrow\\ldots CO_2+\\ldots H_2O$.</li><li>Pourquoi faut-il toujours une bonne aération lorsqu'on utilise une cuisinière au gaz ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Formule générale : <span class='reponse'>$C_nH_{2n+2}$</span>.</p><p><strong>b)</strong> Méthane <span class='reponse'>$CH_4$</span>, éthane <span class='reponse'>$C_2H_6$</span>, propane <span class='reponse'>$C_3H_8$</span>, butane <span class='reponse'>$C_4H_{10}$</span>.</p><p><strong>c)</strong> <span class='reponse'>$2\\,C_4H_{10}+13\\,O_2\\rightarrow 8\\,CO_2+10\\,H_2O$</span>. Vérification : C : $2\\times4=8$ ; H : $2\\times10=20=10\\times2$ ; O : $13\\times2=26=8\\times2+10$.</p><p><strong>d)</strong> En air insuffisant, la combustion est <span class='reponse'>incomplète</span> : elle produit du <span class='reponse'>monoxyde de carbone $CO$</span>, gaz incolore, inodore et mortel. L'aération garantit une combustion complète.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt (0,25×4) · c) 2 pts · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — L'électrolyse de l'eau",
+      "points": "5 pts",
+      "consigne": "Au laboratoire, on réalise l'électrolyse de l'eau légèrement acidulée. Le schéma ci-dessous représente le montage : deux tubes remplis de gaz surmontent deux électrodes plongées dans la cuve.",
+      "enonce": "<ol type='a'><li>Légende le schéma : recopie les numéros et associe à chacun le nom de l'électrode (anode ou cathode) et le gaz recueilli :<br/><strong>① …………… ② ……………</strong></li><li>Le tube ① recueille deux fois plus de gaz que le tube ②. Justifie ce rapport de volumes.</li><li>Comment identifie-t-on expérimentalement chacun des deux gaz ?</li><li>Écris l'équation-bilan de la décomposition de l'eau : $\\ldots H_2O\\rightarrow\\ldots H_2+\\ldots O_2$.</li></ol>",
+      "svg": "<svg viewBox='0 0 360 240' xmlns='http://www.w3.org/2000/svg'><rect x='80' y='60' width='200' height='140' fill='none' stroke='#334155' stroke-width='1.6'/><line x1='80' y1='150' x2='280' y2='150' stroke='#93c5fd' stroke-width='1.2'/><rect x='105' y='20' width='50' height='130' fill='#f1f5f9' stroke='#334155' stroke-width='1.4'/><rect x='205' y='70' width='50' height='80' fill='#f1f5f9' stroke='#334155' stroke-width='1.4'/><rect x='105' y='95' width='50' height='55' fill='#e0f2fe' stroke='none'/><rect x='205' y='122' width='50' height='28' fill='#e0f2fe' stroke='none'/><line x1='130' y1='150' x2='130' y2='200' stroke='#334155' stroke-width='2'/><line x1='230' y1='150' x2='230' y2='200' stroke='#334155' stroke-width='2'/><rect x='150' y='195' width='60' height='30' rx='4' fill='#f1f5f9' stroke='#334155' stroke-width='1.4'/><line x1='130' y1='200' x2='150' y2='210' stroke='#334155' stroke-width='1.4'/><line x1='230' y1='200' x2='210' y2='210' stroke='#334155' stroke-width='1.4'/><text x='162' y='215' font-size='11' fill='#334155' font-family='Georgia'>pile</text><text x='116' y='45' font-size='16' fill='#2563eb' font-family='Georgia'>①</text><text x='216' y='95' font-size='16' fill='#2563eb' font-family='Georgia'>②</text><text x='290' y='160' font-size='11' fill='#64748b' font-family='Georgia'>eau</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>① cathode — dihydrogène $H_2$ ; ② anode — dioxygène $O_2$</span> (le dihydrogène, plus volumineux, se dégage à la cathode, reliée au pôle − de la pile).</p><p><strong>b)</strong> L'équation de décomposition produit <span class='reponse'>2 volumes de $H_2$ pour 1 volume de $O_2$</span> : c'est le rapport stœchiométrique $2H_2O\\rightarrow 2H_2+O_2$.</p><p><strong>c)</strong> $H_2$ : une <span class='reponse'>flamme (allumette) provoque une petite détonation (« aboiement »)</span> ; $O_2$ : il <span class='reponse'>rallume une bûchette (ou allumette) présentant un point incandescent</span>.</p><p><strong>d)</strong> <span class='reponse'>$2\\,H_2O\\rightarrow 2\\,H_2+\\,O_2$</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 1 pt · d) 1 pt"
+    }
+  ]
+}

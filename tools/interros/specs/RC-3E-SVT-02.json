@@ -1,0 +1,29 @@
+{
+  "code": "RC-3E-SVT-02",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "La digestion des aliments · Les sols et leur protection",
+  "consignes": "Chaque exercice est indépendant. Les réponses doivent être rédigées en phrases complètes avec le vocabulaire scientifique correct.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — La digestion des aliments",
+      "points": "5 pts",
+      "consigne": "Après un repas d'alloco au foyer du lycée, les aliments subissent des transformations dans le tube digestif.",
+      "enonce": "<ol type='a'><li>Définis la digestion.</li><li>Cite dans l'ordre quatre organes traversés par le bol alimentaire, de la bouche à l'anus.</li><li>Quel organe assure l'essentiel de la digestion chimique grâce aux enzymes du suc intestinal et du pancréas ?</li><li>Quel organe absorbe l'eau contenue dans les résidus avant leur évacuation ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La digestion est <span class='reponse'>l'ensemble des transformations mécaniques et chimiques que subissent les aliments dans le tube digestif pour devenir des nutriments assimilables</span>.</p><p><strong>b)</strong> Dans l'ordre : <span class='reponse'>bouche → œsophage → estomac → intestin grêle</span> (puis gros intestin/côlon).</p><p><strong>c)</strong> <span class='reponse'>L'intestin grêle</span> : c'est là que l'essentiel de la digestion chimique et de l'absorption des nutriments a lieu.</p><p><strong>d)</strong> <span class='reponse'>Le gros intestin (côlon)</span> absorbe l'eau des résidus et forme les fèces.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Les sols et leur protection",
+      "points": "5 pts",
+      "consigne": "Dans la région de Korhogo, les cultivateurs observent que leurs sols s'appauvrissent et sont emportés par les pluies.",
+      "enonce": "<ol type='a'><li>Cite deux types de sols rencontrés en Côte d'Ivoire.</li><li>Qu'est-ce que l'érosion des sols ? Cite deux causes.</li><li>Explique le rôle de l'humus pour la fertilité du sol.</li><li>Propose deux pratiques qui permettent de protéger ou d'améliorer les sols.</li></ol>",
+      "correction": "<p><strong>a)</strong> Au choix : <span class='reponse'>sol latéritique, sol sableux, sol argileux, sol humifère, sol ferrallitique</span>.</p><p><strong>b)</strong> L'érosion est <span class='reponse'>l'enlèvement et le transport des particules du sol par l'eau (ruissellement) ou le vent</span>. Causes : <span class='reponse'>déforestation, feux de brousse, cultures sans couverture végétale, surpâturage, pluies violentes</span>.</p><p><strong>c)</strong> L'humus est la couche supérieure riche en <span class='reponse'>matière organique décomposée</span> : il nourrit les plantes, retient l'eau et rend le sol meuble → <span class='reponse'>garant de la fertilité</span>.</p><p><strong>d)</strong> Au choix : <span class='reponse'>reboisement/agroforesterie, jachère et rotation des cultures, couverture végétale (paillage), billons perpendiculaires à la pente, apport de compost/fumure organique, interdire les feux de brousse</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt · d) 1 pt (0,5 × 2)"
+    }
+  ]
+}

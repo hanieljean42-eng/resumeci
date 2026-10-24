@@ -1,0 +1,37 @@
+{
+  "code": "RC-3E-TIC-01",
+  "type": "interro",
+  "matiere": "TIC",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Les variables · Les listes · Les lutins et leurs interactions",
+  "consignes": "Chaque exercice est indépendant. Les questions portent sur la programmation par blocs (type Scratch) vue en classe.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les variables",
+      "points": "4 pts",
+      "consigne": "Un programme de jeu utilise des variables pour mémoriser des informations.",
+      "enonce": "<ol type='a'><li>Qu'est-ce qu'une variable en programmation ?</li><li>Que contient la variable <em>score</em> après l'exécution de ces instructions : <code>mettre score à 5</code> puis <code>ajouter 3 à score</code> puis <code>ajouter -2 à score</code> ?</li><li>On veut créer une variable <em>vie</em> qui démarre à 3 et diminue de 1 quand le joueur perd. Écris les instructions correspondantes.</li></ol>",
+      "correction": "<p><strong>a)</strong> Une variable est <span class='reponse'>un espace de mémoire nommé qui permet de stocker une valeur (nombre, texte…) pouvant changer au cours du programme</span>.</p><p><strong>b)</strong> $5\\rightarrow 5+3=8\\rightarrow 8-2=$ <span class='reponse'>6</span>. La variable <em>score</em> contient 6.</p><p><strong>c)</strong> Créer la variable <em>vie</em> ; au départ : <span class='reponse'>mettre vie à 3</span> ; quand le joueur perd : <span class='reponse'>ajouter -1 à vie</span> (ou « donner à vie la valeur vie − 1 »).</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Les listes",
+      "points": "3 pts",
+      "consigne": "Pour gérer le classement d'un tournoi, on crée une liste <em>gagnants</em>.",
+      "enonce": "<ol type='a'><li>Quelle est la différence entre une variable et une liste ?</li><li>La liste <em>gagnants</em> contient : Awa, Koffi, Fatou. Qu'obtient-on avec l'instruction <code>élément 2 de gagnants</code> ?</li><li>Écris l'instruction qui ajoute « Siriki » à la liste.</li></ol>",
+      "correction": "<p><strong>a)</strong> Une variable stocke <span class='reponse'>une seule valeur</span> ; une liste stocke <span class='reponse'>plusieurs valeurs repérées par leur position (index)</span>.</p><p><strong>b)</strong> <span class='reponse'>Koffi</span> (l'élément n°2 de la liste).</p><p><strong>c)</strong> <span class='reponse'>ajouter « Siriki » à gagnants</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Lutins et interactions",
+      "points": "3 pts",
+      "consigne": "Dans un jeu, un chat (lutin) doit attraper une souris : quand le chat touche la souris, le score augmente et la souris réapparaît ailleurs.",
+      "enonce": "<ol type='a'><li>Qu'est-ce qu'un lutin (sprite) dans un logiciel de programmation par blocs ?</li><li>Quel bloc permet de détecter que le chat touche la souris ?</li><li>Décris en trois lignes le script qui réalise : toucher → +1 au score → la souris va à une position aléatoire.</li></ol>",
+      "correction": "<p><strong>a)</strong> Un lutin est <span class='reponse'>un objet (personnage ou élément graphique) auquel on associe des scripts pour l'animer sur la scène</span>.</p><p><strong>b)</strong> Le bloc <span class='reponse'>« touche (souris) ? »</span> (capteur), placé dans une boucle « répéter indéfiniment » avec un « si … alors ».</p><p><strong>c)</strong> <span class='reponse'>Quand le drapeau est cliqué → répéter indéfiniment : si « touche souris » alors ajouter 1 à score et aller à « position aléatoire ».</span></p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt"
+    }
+  ]
+}

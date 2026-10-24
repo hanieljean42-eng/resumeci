@@ -1,0 +1,45 @@
+{
+  "code": "RC-3E-PC-04",
+  "type": "devoir",
+  "matiere": "Physique-Chimie",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Travail et puissance mécaniques · Énergie mécanique",
+  "consignes": "L'usage de la calculatrice est autorisé. On prendra g = 10 N/kg. Cette épreuve comporte quatre exercices indépendants.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux et QCM",
+      "points": "4 pts",
+      "consigne": "Pour les questions 1 et 2, réponds par Vrai ou Faux. Pour les questions 3 et 4, recopie le numéro suivi de la lettre de la bonne réponse.",
+      "enonce": "<ol><li>Le travail d'une force s'exprime en watts.</li><li>L'énergie potentielle de pesanteur d'un objet augmente quand son altitude augmente.</li><li>Le travail du poids lors d'une descente est : <strong>a)</strong> résistant <strong>b)</strong> moteur <strong>c)</strong> nul.</li><li>L'énergie mécanique d'un système est : <strong>a)</strong> $E_m=E_c+E_p$ <strong>b)</strong> $E_m=E_c-E_p$ <strong>c)</strong> $E_m=E_c\\times E_p$.</li></ol>",
+      "correction": "<p><strong>1)</strong> <span class='reponse'>Faux</span> : le travail s'exprime en <strong>joules</strong> (J) ; le watt est l'unité de puissance.</p><p><strong>2)</strong> <span class='reponse'>Vrai</span> : $E_p=m\\times g\\times h$ augmente avec l'altitude $h$.</p><p><strong>3)</strong> <span class='reponse'>b — moteur</span> : en descente, le poids favorise le mouvement ($W_{AB}(P)=+mgh$).</p><p><strong>4)</strong> <span class='reponse'>a</span> : l'énergie mécanique est la <em>somme</em> de l'énergie cinétique et de l'énergie potentielle.</p>",
+      "bareme_detail": "1 pt par question"
+    },
+    {
+      "titre": "Exercice 2 — Le porteur de sacs",
+      "points": "5 pts",
+      "consigne": "Sur le quai du port de San-Pédro, un docker porte un sac de cacao de masse $m=50$ kg et monte un escalier de hauteur $h=4$ m en $t=20$ s.",
+      "enonce": "<ol type='a'><li>Calcule le poids du sac.</li><li>Calcule le travail du poids lors de la montée. Précise s'il est moteur ou résistant.</li><li>Calcule la puissance développée par le docker.</li></ol>",
+      "correction": "<p><strong>a)</strong> $P=m\\times g=50\\times10=$ <span class='reponse'>$500$ N</span>.</p><p><strong>b)</strong> Le poids s'oppose à la montée : travail <span class='reponse'>résistant</span> : $W(P)=-m\\times g\\times h=-50\\times10\\times4=$ <span class='reponse'>$-2\\,000$ J</span>.</p><p><strong>c)</strong> La force développée par le docker vaut 500 N sur 4 m : $W=2\\,000$ J en 20 s, donc $P=\\frac{W}{t}=\\frac{2000}{20}=$ <span class='reponse'>$100$ W</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — La mangue qui tombe",
+      "points": "5 pts",
+      "consigne": "Une mangue de masse $m=200$ g se détache d'un manguier à la hauteur $h=5$ m et tombe en chute libre (on néglige les frottements).",
+      "enonce": "<ol type='a'><li>Convertis la masse en kilogrammes.</li><li>Calcule l'énergie potentielle de pesanteur de la mangue avant sa chute.</li><li>Que vaut son énergie cinétique au départ ? Justifie la valeur de son énergie mécanique.</li><li>En appliquant la conservation de l'énergie mécanique, calcule sa vitesse juste avant de toucher le sol.</li></ol>",
+      "correction": "<p><strong>a)</strong> $m=200$ g $=$ <span class='reponse'>$0{,}2$ kg</span>.</p><p><strong>b)</strong> $E_p=mgh=0{,}2\\times10\\times5=$ <span class='reponse'>$10$ J</span>.</p><p><strong>c)</strong> Au départ la mangue est immobile : <span class='reponse'>$E_c=0$</span>. Donc $E_m=E_c+E_p=$ <span class='reponse'>$10$ J</span>.</p><p><strong>d)</strong> Au sol $E_p=0$, donc $E_c=E_m=10$ J : $\\frac{1}{2}mv^{2}=10\\iff v^{2}=\\frac{2\\times10}{0{,}2}=100$, d'où <span class='reponse'>$v=10$ m/s</span> (36 km/h).</p>",
+      "bareme_detail": "a) 0,5 pt · b) 1,5 pt · c) 1 pt · d) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — La grue du chantier",
+      "points": "6 pts",
+      "consigne": "Une grue soulève un container de masse $m=2$ tonnes à la hauteur $h=12$ m, à vitesse constante, en $t=30$ s.",
+      "enonce": "<ol type='a'><li>Convertis la masse en kilogrammes puis calcule le poids du container.</li><li>Calcule le travail effectué par la force de levage de la grue.</li><li>Calcule la puissance de la grue en watts puis en kilowatts.</li><li>Si la grue avait levé le même container à 6 m seulement, que deviendraient le travail et la puissance (même durée) ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $m=2$ t $=$ <span class='reponse'>$2\\,000$ kg</span> ; $P=2000\\times10=$ <span class='reponse'>$20\\,000$ N</span>.</p><p><strong>b)</strong> À vitesse constante, $F=P$ : $W=F\\times h=20000\\times12=$ <span class='reponse'>$240\\,000$ J</span>.</p><p><strong>c)</strong> $P_{uissance}=\\frac{W}{t}=\\frac{240000}{30}=$ <span class='reponse'>$8\\,000$ W $=8$ kW</span>.</p><p><strong>d)</strong> À moitié de hauteur : $W'=120\\,000$ J et $P'=\\frac{120000}{30}=$ <span class='reponse'>$4\\,000$ W</span> — travail et puissance sont <span class='reponse'>divisés par deux</span> (proportionnels à $h$).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt"
+    }
+  ]
+}

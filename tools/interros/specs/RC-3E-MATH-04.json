@@ -1,0 +1,45 @@
+{
+  "code": "RC-3E-MATH-04",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Vecteurs · Repérage · Équations de droites",
+  "consignes": "L'usage de la calculatrice est autorisé. Cette épreuve comporte quatre exercices indépendants. Le plan est rapporté au repère orthonormé $(O\\,;I\\,;J)$.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Questionnaire à choix multiple",
+      "points": "4 pts",
+      "consigne": "Pour chaque question, une seule réponse est juste. Recopie le numéro de la question suivi de la lettre de la bonne réponse.",
+      "enonce": "<table class='tab'><tr><th style='width:8%'>N°</th><th>Question</th><th style='width:16%'>a</th><th style='width:16%'>b</th><th style='width:16%'>c</th></tr><tr><td>1</td><td>Le vecteur $\\vec{AB}$ avec $A(1\\,;2)$ et $B(4\\,;6)$ a pour coordonnées</td><td>$(5\\,;8)$</td><td>$(3\\,;4)$</td><td>$(-3\\,;-4)$</td></tr><tr><td>2</td><td>La translation de vecteur $\\vec{u}$ conserve</td><td>la direction seulement</td><td>les longueurs</td><td>rien</td></tr><tr><td>3</td><td>La droite $y=3x-2$ a pour coefficient directeur</td><td>$-2$</td><td>$x$</td><td>$3$</td></tr><tr><td>4</td><td>Le point $A(2\\,;5)$ appartient à la droite $y=2x+1$</td><td>oui</td><td>non</td><td>on ne peut pas savoir</td></tr></table>",
+      "correction": "<p><span class='reponse'>1-b</span> ($\\vec{AB}\\,(4-1\\,;6-2)=(3\\,;4)$) · <span class='reponse'>2-b</span> (une translation est une isométrie : elle conserve longueurs et angles) · <span class='reponse'>3-c</span> (coefficient directeur $a=3$) · <span class='reponse'>4-a</span> ($2\\times2+1=5$ : l'égalité est vérifiée).</p>",
+      "bareme_detail": "1 pt par bonne réponse"
+    },
+    {
+      "titre": "Exercice 2 — Vecteurs et parallélogramme",
+      "points": "6 pts",
+      "consigne": "$ABCD$ est un parallélogramme de centre $O$.",
+      "enonce": "<ol type='a'><li>Recopie et complète par le point qui convient : $\\vec{AB}=\\vec{\\phantom{D}C\\phantom{}}$ ; $\\vec{AO}=\\frac{1}{2}\\vec{\\phantom{A}C\\phantom{}}$.</li><li>Justifie que $\\vec{AB}+\\vec{AD}=\\vec{AC}$.</li><li>Construis le point $E$ tel que $\\vec{AE}=\\vec{AB}+\\vec{AD}$. Que peut-on dire de $E$ ?</li><li>Démontre que $\\vec{OA}+\\vec{OC}=\\vec{0}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\vec{AB}=$ <span class='reponse'>$\\vec{DC}$</span> ; $\\vec{AO}=\\frac{1}{2}$ <span class='reponse'>$\\vec{AC}$</span>.</p><p><strong>b)</strong> $ABCD$ parallélogramme $\\Rightarrow \\vec{AD}=\\vec{BC}$, donc $\\vec{AB}+\\vec{AD}=\\vec{AB}+\\vec{BC}=$ <span class='reponse'>$\\vec{AC}$</span> (relation de Chasles — c'est la <em>règle du parallélogramme</em>).</p><p><strong>c)</strong> $\\vec{AE}=\\vec{AC}$ : le point $E$ <span class='reponse'>est confondu avec $C$</span> (la somme $\\vec{AB}+\\vec{AD}$ aboutit au quatrième sommet du parallélogramme).</p><p><strong>d)</strong> $O$ est le centre du parallélogramme, donc le <span class='reponse'>milieu de $[AC]$</span> : $\\vec{OA}$ et $\\vec{OC}$ sont opposés, d'où <span class='reponse'>$\\vec{OA}+\\vec{OC}=\\vec{0}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Repérage",
+      "points": "5 pts",
+      "consigne": "Dans le repère $(O\\,;I\\,;J)$, on donne les points $A(2\\,;3)$, $B(6\\,;1)$ et $C(4\\,;-2)$.",
+      "enonce": "<ol type='a'><li>Place les trois points dans un repère (unité : 1 cm).</li><li>Calcule les coordonnées du vecteur $\\vec{AB}$.</li><li>Calcule la distance $AB$.</li><li>Calcule les coordonnées du milieu $K$ du segment $[AC]$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Figure : $A(2\\,;3)$, $B(6\\,;1)$, $C(4\\,;-2)$ correctement placés.</p><p><strong>b)</strong> $\\vec{AB}\\,(6-2\\,;1-3)=$ <span class='reponse'>$(4\\,;-2)$</span>.</p><p><strong>c)</strong> $AB=\\sqrt{4^{2}+(-2)^{2}}=\\sqrt{16+4}=\\sqrt{20}=$ <span class='reponse'>$2\\sqrt{5}\\approx4{,}5$</span>.</p><p><strong>d)</strong> $K\\left(\\frac{2+4}{2}\\,;\\frac{3+(-2)}{2}\\right)=$ <span class='reponse'>$(3\\,;0{,}5)$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Équations de droites",
+      "points": "5 pts",
+      "consigne": "On considère les droites $(d)\\,:\\,y=2x-3$ et $(\\Delta)\\,:\\,y=-x+3$.",
+      "enonce": "<ol type='a'><li>Le point $A(1\\,;-1)$ appartient-il à $(d)$ ? Justifie.</li><li>Donne le coefficient directeur et l'ordonnée à l'origine de $(d)$.</li><li>Détermine l'équation de la droite $(d')$ parallèle à $(d)$ passant par l'origine du repère.</li><li>Calcule les coordonnées du point d'intersection de $(d)$ et $(\\Delta)$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $2\\times1-3=-1=y_A$ : <span class='reponse'>oui, $A\\in(d)$</span>.</p><p><strong>b)</strong> Coefficient directeur : <span class='reponse'>$a=2$</span> ; ordonnée à l'origine : <span class='reponse'>$b=-3$</span>.</p><p><strong>c)</strong> Parallèle $\\Rightarrow$ même coefficient directeur $a=2$ ; passant par l'origine $\\Rightarrow b=0$ : <span class='reponse'>$(d')\\,:\\,y=2x$</span>.</p><p><strong>d)</strong> $2x-3=-x+3\\iff 3x=6\\iff x=2$, puis $y=2\\times2-3=1$ : <span class='reponse'>$(2\\,;1)$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    }
+  ]
+}

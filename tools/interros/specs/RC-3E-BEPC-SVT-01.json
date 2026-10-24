@@ -1,0 +1,30 @@
+{
+  "code": "RC-3E-BEPC-SVT-01",
+  "type": "bepc",
+  "matiere": "SVT",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure 30",
+  "bareme": "20 points",
+  "chapitre": "Épreuve complète : alimentation, sang et circulation, infection VIH, sols",
+  "consignes": "Cette épreuve blanche comporte deux parties : questions de cours (8 pts) et travail sur document (12 pts). Les réponses seront rédigées en phrases complètes.",
+  "exercices": [
+    {
+      "titre": "Partie A — Questions de cours (8 pts)",
+      "points": "8 pts",
+      "consigne": "Réponds aux questions suivantes.",
+      "enonce": "<ol type='a'><li>Cite les trois grands groupes d'aliments et donne un exemple pour chacun. <em>(3 pts)</em></li><li>Quels sont les deux constituants du sang ? Quel rôle joue chacun ? <em>(2 pts)</em></li><li>Cite deux modes de transmission du VIH et deux moyens de prévention. <em>(2 pts)</em></li><li>Qu'appelle-t-on « sol vivant » ? Cite deux organismes qui y vivent. <em>(1 pt)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> Aliments <span class='reponse'>énergétiques</span> (riz, igname, huile), <span class='reponse'>bâtisseurs</span> (viande, poisson, niébé, œufs), <span class='reponse'>protecteurs</span> (fruits et légumes : banane, gombo, épinards).</p><p><strong>b)</strong> <span class='reponse'>Plasma</span> (transporte nutriments et déchets) et <span class='reponse'>éléments figurés</span> (globules rouges : transport du dioxygène ; globules blancs : défense ; plaquettes : coagulation).</p><p><strong>c)</strong> Transmission : <span class='reponse'>rapports sexuels non protégés, sang contaminé (transfusion, aiguilles), de la mère à l'enfant</span>. Prévention : <span class='reponse'>fidélité/abstinence, préservatifs, matériel médical stérile, dépistage avant transfusion</span>.</p><p><strong>d)</strong> Le sol vivant est la <span class='reponse'>couche superficielle riche en organismes</span> qui décomposent la matière organique : <span class='reponse'>vers de terre, bactéries, champignons, termites</span>.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 2 pts · d) 1 pt"
+    },
+    {
+      "titre": "Partie B — Travail sur document : la circulation sanguine (12 pts)",
+      "points": "12 pts",
+      "consigne": "Le schéma ci-dessous représente le trajet du sang dans l'organisme, de façon simplifiée.",
+      "enonce": "<ol type='a'><li>Recopie le tableau et associe chaque numéro du schéma à l'organe ou au vaisseau correspondant : cœur, poumons, organes (muscles, intestin…), artère, veine. <br/><strong>① …… ② …… ③ …… ④ …… ⑤ ……</strong> <em>(4 pts)</em></li><li>Sur le schéma, indique par des flèches de couleur le sens de circulation du sang. <em>(2 pts)</em></li><li>Distingue la petite circulation de la grande circulation. <em>(3 pts)</em></li><li>Un caillot obstrue une artère coronaire du cœur. Explique les conséquences possibles. <em>(3 pts)</em></li></ol>",
+      "svg": "<svg viewBox='0 0 420 260' xmlns='http://www.w3.org/2000/svg'><rect x='175' y='110' width='70' height='50' rx='10' fill='#f1f5f9' stroke='#334155' stroke-width='1.6'/><text x='195' y='140' font-size='13' fill='#334155' font-family='Georgia'>①</text><ellipse cx='90' cy='135' rx='45' ry='30' fill='#f1f5f9' stroke='#334155' stroke-width='1.6'/><text x='82' y='140' font-size='13' fill='#334155' font-family='Georgia'>②</text><ellipse cx='330' cy='135' rx='50' ry='30' fill='#f1f5f9' stroke='#334155' stroke-width='1.6'/><text x='322' y='140' font-size='13' fill='#334155' font-family='Georgia'>③</text><path d='M175,120 C140,100 135,100 128,118' fill='none' stroke='#334155' stroke-width='1.8'/><path d='M135,152 C145,170 160,160 175,150' fill='none' stroke='#334155' stroke-width='1.8'/><text x='130' y='95' font-size='13' fill='#2563eb' font-family='Georgia'>④</text><path d='M245,120 C280,100 290,100 290,118' fill='none' stroke='#334155' stroke-width='1.8'/><path d='M290,152 C280,170 260,160 245,150' fill='none' stroke='#334155' stroke-width='1.8'/><text x='292' y='95' font-size='13' fill='#2563eb' font-family='Georgia'>⑤</text><text x='30' y='220' font-size='11' fill='#64748b' font-family='Georgia'>Schéma simplifié du trajet du sang</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>① cœur · ② poumons · ③ organes · ④ vaisseaux cœur–poumons (artère/veine pulmonaires) · ⑤ vaisseaux cœur–organes (aorte/veines caves)</span>.</p><p><strong>b)</strong> Flèches : <span class='reponse'>cœur → poumons → cœur → organes → cœur</span>, boucle continue dans le même sens.</p><p><strong>c)</strong> <span class='reponse'>Petite circulation</span> : cœur → poumons → cœur, le sang y est <em>oxygéné</em> et débarrassé du $CO_2$ ; <span class='reponse'>grande circulation</span> : cœur → organes → cœur, le sang y <em>distribue</em> dioxygène et nutriments.</p><p><strong>d)</strong> L'artère coronaire obstruée prive le muscle cardiaque d'oxygène : <span class='reponse'>douleur thoracique (angine) puis infarctus du myocarde</span> — la partie non irriguée meurt, le cœur peut s'arrêter.</p>",
+      "bareme_detail": "a) 4 pts (0,8 × 5) · b) 2 pts · c) 3 pts · d) 3 pts"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "code": "RC-3E-BEPC-PC-01",
+  "format": "exam-v2",
+  "titre": "BEPC blanc chronométré — Physique-Chimie",
+  "classe": "3eme",
+  "classeLabel": "3ème",
+  "matiere": "Physique-Chimie",
+  "dureeMin": 120,
+  "noteSur": 20,
+  "consignes": "Mode Examen BEPC blanc : calculatrice autorisée. On prend g = 10 N/kg. Réponds avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "m": { "choices": [20, 35, 50] },
+    "h": { "choices": [4, 6, 8] },
+    "t": { "choices": [8, 10, 16, 20] },
+    "mm": { "choices": [10, 25, 50] },
+    "hh": { "choices": [4, 8, 12] },
+    "v": { "choices": [10, 20, 30] }
+  },
+  "derived": {
+    "poids": "m*10",
+    "travail": "500*h",
+    "puiss": "(500*h)/t",
+    "ep": "mm*10*hh",
+    "vo2": "v/2"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Masse et poids",
+          "enonce": "La masse d'un objet et son poids sont deux noms de la même grandeur.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La masse (kg) est invariable ; le poids (N) est une force qui dépend du lieu."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Alcanes",
+          "enonce": "Le propane a pour formule brute $C_3H_8$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $C_nH_{2n+2}$ avec $n=3$ donne $C_3H_8$."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Lentilles",
+          "enonce": "Une lentille convergente donne toujours une image droite.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Pour un objet réel placé avant le foyer, l'image est réelle et <em>renversée</em>."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Énergie",
+          "enonce": "L'énergie cinétique d'un objet double quand sa vitesse double.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $E_c=\\frac{1}{2}mv^{2}$ : la vitesse intervient au <em>carré</em> — vitesse ×2 → énergie ×4."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1.5, "chapitre": "Combustion",
+          "enonce": "Dans l'équation $C_3H_8+\\ldots O_2\\rightarrow 3CO_2+4H_2O$, le coefficient devant $O_2$ est",
+          "choix": ["$5$", "$3$", "$4$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $3\\times2+4=10$ atomes d'oxygène à droite, donc $5\\,O_2$ à gauche."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1.5, "chapitre": "Équilibre",
+          "enonce": "Un solide soumis à deux forces en équilibre vérifie",
+          "choix": ["même valeur, même droite d'action, sens opposés", "même valeur et même sens", "valeurs différentes obligatoirement"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Les trois conditions d'équilibre à deux forces."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1.5, "chapitre": "Électrolyse",
+          "enonce": "Lors de l'électrolyse de l'eau, le volume de dihydrogène est",
+          "choix": ["le double de celui de dioxygène", "égal à celui de dioxygène", "la moitié de celui de dioxygène"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $2H_2O\\rightarrow 2H_2+O_2$ : 2 volumes de $H_2$ pour 1 de $O_2$."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 1.5, "chapitre": "Unités",
+          "enonce": "Le travail mécanique s'exprime en",
+          "choix": ["joules", "watts", "newtons"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Travail et énergie : joules ; puissance : watts ; force : newtons."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Poids",
+          "enonce": "Un sac de ciment de {{num:m}} kg : calcule son poids, en newtons.",
+          "answer": "poids", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$P={{num:m}}\\times10=$ <span class='reponse'>{{num:poids}} N</span>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Travail",
+          "enonce": "Une grue exerce une force de 500 N pour soulever une charge sur {{num:h}} m. Calcule le travail, en joules.",
+          "answer": "travail", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$W=F\\times h=500\\times{{num:h}}=$ <span class='reponse'>{{num:travail}} J</span>."
+        },
+        {
+          "id": "e3q3", "type": "numeric", "points": 2, "chapitre": "Puissance",
+          "enonce": "Ce même travail de {{num:travail}} J est effectué en {{num:t}} s. Calcule la puissance, en watts.",
+          "answer": "puiss", "tol": 0.1, "precision": "valeur exacte (1 décimale admise)",
+          "corrige": "$P=\\frac{W}{t}=\\frac{{{num:travail}}}{{{num:t}}}=$ <span class='reponse'>{{d2:puiss}} W</span>."
+        },
+        {
+          "id": "e3q4", "type": "numeric", "points": 2, "chapitre": "Énergie potentielle",
+          "enonce": "Une charge de {{num:mm}} kg est hissée à {{num:hh}} m d'altitude. Calcule son énergie potentielle de pesanteur, en joules.",
+          "answer": "ep", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$E_p=mgh={{num:mm}}\\times10\\times{{num:hh}}=$ <span class='reponse'>{{num:ep}} J</span>."
+        },
+        {
+          "id": "e3q5", "type": "numeric", "points": 2, "chapitre": "Électrolyse",
+          "enonce": "L'électrolyse de l'eau produit {{num:v}} cm³ de dihydrogène. Calcule le volume de dioxygène recueilli, en cm³.",
+          "answer": "vo2", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$V(O_2)=\\frac{V(H_2)}{2}=\\frac{{{num:v}}}{2}=$ <span class='reponse'>{{num:vo2}} cm³</span>."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "code": "RC-3E-BEPC-PC-01",
+  "type": "bepc",
+  "matiere": "Physique-Chimie",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Épreuve complète : mécanique, électricité, optique (physique) · alcanes, électrolyse, oxydation (chimie)",
+  "consignes": "Cette épreuve blanche comporte une partie Physique et une partie Chimie notées chacune sur 10 points. On prendra g = 10 N/kg. L'usage de la calculatrice est autorisé.",
+  "exercices": [
+    {
+      "titre": "Partie A — Physique : forces et énergie (10 pts)",
+      "points": "10 pts",
+      "consigne": "Un sac de ciment de masse $m=50$ kg est hissé par un treuil sur un échafaudage à la hauteur $h=8$ m en $t=16$ s, à vitesse constante.",
+      "enonce": "<ol type='a'><li>Calcule le poids du sac. <em>(1 pt)</em></li><li>Le sac est immobile avant le levage : cite les deux forces qui s'exercent sur lui et précise la relation qui les lie. <em>(2 pts)</em></li><li>Calcule le travail de la force de levage pendant la montée. <em>(2 pts)</em></li><li>Calcule la puissance du treuil en watts puis en kW. <em>(2 pts)</em></li><li>Calcule l'énergie potentielle de pesanteur du sac une fois arrivé en haut. Que devient cette énergie si le sac retombe ? <em>(3 pts)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> $P=m\\times g=50\\times10=$ <span class='reponse'>$500$ N</span>.</p><p><strong>b)</strong> <span class='reponse'>Le poids $\\vec{P}$ et la tension $\\vec{F}$ du câble</span> : à l'équilibre, même droite d'action, sens opposés et <span class='reponse'>$F=P=500$ N</span>.</p><p><strong>c)</strong> À vitesse constante, $F=P=500$ N : $W=F\\times h=500\\times8=$ <span class='reponse'>$4\\,000$ J</span>.</p><p><strong>d)</strong> $P_{uiss}=\\frac{W}{t}=\\frac{4000}{16}=$ <span class='reponse'>$250$ W $=0{,}25$ kW</span>.</p><p><strong>e)</strong> $E_p=mgh=50\\times10\\times8=$ <span class='reponse'>$4\\,000$ J</span>. En chute, l'énergie potentielle se transforme en <span class='reponse'>énergie cinétique</span> (conservation de l'énergie mécanique, frottements négligés).</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts · d) 2 pts · e) 3 pts"
+    },
+    {
+      "titre": "Partie B — Chimie : alcanes et électrolyse (10 pts)",
+      "points": "10 pts",
+      "consigne": "Réponds aux questions suivantes.",
+      "enonce": "<ol type='a'><li>Rappelle la formule générale des alcanes et cite deux utilisations domestiques du butane. <em>(2 pts)</em></li><li>Équilibre l'équation de combustion complète du propane : $\\ldots C_3H_8+\\ldots O_2\\rightarrow\\ldots CO_2+\\ldots H_2O$. <em>(2 pts)</em></li><li>Lors de l'électrolyse de l'eau, on recueille 20 cm³ de dihydrogène. Quel volume de dioxygène recueille-t-on à l'autre électrode ? Justifie. <em>(2 pts)</em></li><li>Lors de la synthèse de l'eau, on fait réagir 20 cm³ de dihydrogène avec un excès de dioxygène. Écris l'équation-bilan et précise la nature du produit obtenu. <em>(2 pts)</em></li><li>Recopie et complète : « Au cours d'une oxydation, le métal …… des électrons ; l'oxydant les …… ». <em>(2 pts)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> $C_nH_{2n+2}$ ; utilisations : <span class='reponse'>gaz de cuisson, chauffage, briquets</span>.</p><p><strong>b)</strong> <span class='reponse'>$C_3H_8+5\\,O_2\\rightarrow 3\\,CO_2+4\\,H_2O$</span> (C : 3 ; H : 8 ; O : 10 des deux côtés).</p><p><strong>c)</strong> Le rapport des volumes est $2:1$ en faveur du dihydrogène : $V(O_2)=\\frac{20}{2}=$ <span class='reponse'>$10$ cm³</span>.</p><p><strong>d)</strong> <span class='reponse'>$2\\,H_2+O_2\\rightarrow 2\\,H_2O$</span> : on obtient de l'<span class='reponse'>eau</span> (détonation caractéristique du mélange).</p><p><strong>e)</strong> « … le métal <span class='reponse'>cède (perd)</span> des électrons ; l'oxydant les <span class='reponse'>capte (gagne)</span>. »</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts · d) 2 pts · e) 2 pts"
+    }
+  ]
+}

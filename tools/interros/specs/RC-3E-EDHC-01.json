@@ -1,0 +1,37 @@
+{
+  "code": "RC-3E-EDHC-01",
+  "type": "interro",
+  "matiere": "EDHC",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Devoirs des parents et épanouissement de l'enfant · L'impôt et le développement · Les organisations humanitaires",
+  "consignes": "Chaque exercice est indépendant. Réponds par des phrases complètes et argumentées.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les devoirs des parents",
+      "points": "3 pts",
+      "consigne": "Dans une famille de Cocody, les parents discutent de l'éducation de leurs enfants.",
+      "enonce": "<ol type='a'><li>Cite quatre devoirs que les parents ont envers leurs enfants.</li><li>En quoi l'accomplissement de ces devoirs favorise-t-il l'épanouissement de l'enfant ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Au choix : <span class='reponse'>nourrir, loger, habiller, soigner, éduquer, scolariser, protéger, donner l'affection et un nom à l'enfant</span>.</p><p><strong>b)</strong> Des parents qui remplissent leurs devoirs offrent à l'enfant <span class='reponse'>sécurité, santé et instruction</span> : il grandit confiant, développe ses capacités et devient un adulte équilibré et utile à la société — c'est son épanouissement.</p>",
+      "bareme_detail": "a) 2 pts (0,5 × 4) · b) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — L'impôt et le développement",
+      "points": "3 pts",
+      "consigne": "Un contribuable de Bouaké se demande à quoi servent les impôts qu'il paie.",
+      "enonce": "<ol type='a'><li>Définis l'impôt.</li><li>Cite trois réalisations de l'État financées par l'impôt.</li><li>Pourquoi le paiement de l'impôt est-il un devoir citoyen ?</li></ol>",
+      "correction": "<p><strong>a)</strong> L'impôt est <span class='reponse'>une contribution financière obligatoire que les citoyens et les entreprises versent à l'État pour financer les dépenses publiques</span>.</p><p><strong>b)</strong> Au choix : <span class='reponse'>écoles et collèges, hôpitaux et centres de santé, routes et ponts, salaires des fonctionnaires, sécurité, eau potable</span>.</p><p><strong>c)</strong> Sans impôt, l'État ne peut financer ni les services publics ni le développement : <span class='reponse'>payer ses impôts, c'est contribuer au bien-être de tous</span> — un devoir de solidarité nationale.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 0,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — L'assistance aux populations en détresse",
+      "points": "4 pts",
+      "consigne": "Après de fortes inondations dans une commune d'Abidjan, des organisations interviennent auprès des sinistrés.",
+      "enonce": "<ol type='a'><li>Qu'appelle-t-on organisation humanitaire ?</li><li>Cite deux organisations humanitaires qui interviennent en Côte d'Ivoire.</li><li>Cite trois formes d'assistance apportées aux populations en détresse.</li><li>Pourquoi dit-on que l'aide humanitaire est une œuvre de solidarité ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Une organisation humanitaire est <span class='reponse'>une institution qui vient en aide, sans but lucratif, aux populations victimes de catastrophes, conflits ou pauvreté</span>.</p><p><strong>b)</strong> Au choix : <span class='reponse'>Croix-Rouge (CICR et Croix-Rouge de Côte d'Ivoire), PAM, UNICEF, HCR, ONG nationales</span>.</p><p><strong>c)</strong> Au choix : <span class='reponse'>distribution de vivres et d'eau, abris et tentes, soins médicaux, kits d'hygiène, réunification des familles, appui psychologique</span>.</p><p><strong>d)</strong> Elle vient en aide <span class='reponse'>à des inconnus, sans contrepartie attendue, par compassion et fraternité humaine</span> : c'est l'expression concrète de la solidarité entre les hommes.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 0,5 pt"
+    }
+  ]
+}

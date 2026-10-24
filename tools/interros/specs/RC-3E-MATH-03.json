@@ -1,0 +1,29 @@
+{
+  "code": "RC-3E-MATH-03",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Statistiques · Applications affines",
+  "consignes": "L'usage de la calculatrice n'est pas autorisé. Chaque exercice est indépendant. Les résultats seront donnés sous forme exacte puis arrondis si nécessaire.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Notes d'une classe de 3ème",
+      "points": "5 pts",
+      "consigne": "Voici les notes sur 20 obtenues par les 20 élèves d'une classe de 3ème à une interrogation de mathématiques :<br/>8 – 10 – 12 – 8 – 15 – 10 – 12 – 8 – 10 – 17 – 12 – 10 – 8 – 15 – 12 – 10 – 14 – 12 – 10 – 18",
+      "enonce": "<ol type='a'><li>Présente la série dans un tableau des effectifs (note, effectif).</li><li>Calcule la moyenne de la classe à cette interrogation.</li><li>Quelle est la note la plus fréquente (le mode) ?</li><li>Combien d'élèves ont obtenu une note strictement inférieure à 12 ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Tableau : note 8 → 4 ; 10 → 6 ; 12 → 5 ; 14 → 1 ; 15 → 2 ; 17 → 1 ; 18 → 1 (total 20).</p><p><strong>b)</strong> $\\bar{x}=\\frac{8\\times4+10\\times6+12\\times5+14+15\\times2+17+18}{20}=\\frac{32+60+60+14+30+17+18}{20}=\\frac{231}{20}=$ <span class='reponse'>$11{,}55$</span>.</p><p><strong>c)</strong> Le mode est <span class='reponse'>la note 10</span> (effectif 6, le plus grand).</p><p><strong>d)</strong> Notes < 12 : $4+6=$ <span class='reponse'>10 élèves</span> (la moitié de la classe).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 0,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Application affine",
+      "points": "5 pts",
+      "consigne": "On considère les applications affines $f(x)=2x-3$ et $g(x)=-x+4$.",
+      "enonce": "<ol type='a'><li>Calcule les images de $0$ et de $5$ par $f$.</li><li>Détermine l'antécédent de $7$ par $f$.</li><li>Résous l'équation $f(x)=g(x)$.</li><li>Mariam ouvre une tontine : elle dépose 2 000 F à la souscription puis cotise 1 000 F par mois. Écris l'application affine $t(x)$ qui donne sa cagnotte après $x$ mois, puis calcule sa cagnotte au bout de 8 mois.</li></ol>",
+      "correction": "<p><strong>a)</strong> $f(0)=-3$ ; $f(5)=2\\times5-3=$ <span class='reponse'>$7$</span>.</p><p><strong>b)</strong> $2x-3=7\\iff 2x=10\\iff$ <span class='reponse'>$x=5$</span>. L'antécédent de 7 est 5.</p><p><strong>c)</strong> $2x-3=-x+4\\iff 3x=7\\iff$ <span class='reponse'>$x=\\frac{7}{3}$</span>.</p><p><strong>d)</strong> $t(x)=$ <span class='reponse'>$1000x+2000$</span> ; $t(8)=8000+2000=$ <span class='reponse'>$10\\,000$ F</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    }
+  ]
+}

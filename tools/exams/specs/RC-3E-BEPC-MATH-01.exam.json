@@ -1,0 +1,130 @@
+{
+  "code": "RC-3E-BEPC-MATH-01",
+  "format": "exam-v2",
+  "titre": "BEPC blanc chronométré — Mathématiques",
+  "classe": "3eme",
+  "classeLabel": "3ème",
+  "matiere": "Mathématiques",
+  "dureeMin": 120,
+  "noteSur": 20,
+  "consignes": "Mode Examen BEPC blanc : calculatrice autorisée. Réponds dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "n": { "choices": [49, 81, 121] },
+    "aa": { "choices": [2, 4, 6] },
+    "cc": { "choices": [8, 12, 20] },
+    "rr": { "choices": [2, 4] },
+    "kk": { "choices": [1, 2] },
+    "tt": { "choices": [7, 10, 13] }
+  },
+  "derived": {
+    "racine": "Math.sqrt(n)",
+    "soleq": "(8+aa)/2",
+    "an2": "cc/rr",
+    "l1": "5*kk",
+    "l2": "12*kk",
+    "hypp": "13*kk",
+    "ant": "(tt-1)/3"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 1, "chapitre": "Calcul littéral",
+          "enonce": "Pour tous nombres $a$ et $b$ : $(a+b)^{2}=a^{2}+b^{2}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $(a+b)^{2}=a^{2}+2ab+b^{2}$ : il manque le double produit $2ab$."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 1, "chapitre": "Trigonométrie",
+          "enonce": "Le sinus d'un angle aigu peut être supérieur à 1.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\sin$ et $\\cos$ d'un angle aigu sont toujours compris entre 0 et 1 (rapport d'un côté à l'hypoténuse)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 1, "chapitre": "Droites",
+          "enonce": "Deux droites parallèles ont le même coefficient directeur.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $(d)\\parallel(d')\\iff a=a'$ (avec $y=ax+b$)."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 1, "chapitre": "Vecteurs",
+          "enonce": "Pour trois points $A$, $B$, $C$ : $\\vec{AB}+\\vec{BC}=\\vec{CA}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Chasles : $\\vec{AB}+\\vec{BC}=\\vec{AC}$, pas $\\vec{CA}$ (le sens est inversé)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 1.5, "chapitre": "Racines carrées",
+          "enonce": "$\\sqrt{32}$ est égal à",
+          "choix": ["$4\\sqrt{2}$", "$2\\sqrt{8}$", "$16\\sqrt{2}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $\\sqrt{32}=\\sqrt{16\\times2}=4\\sqrt{2}$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 1.5, "chapitre": "Applications affines",
+          "enonce": "Si $f(x)=3x-6$, alors $f(0)$ vaut",
+          "choix": ["$-6$", "$0$", "$6$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $f(0)=3\\times0-6=-6$."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 1.5, "chapitre": "Pythagore",
+          "enonce": "Un triangle rectangle a pour côtés de l'angle droit 3 et 4. L'hypoténuse vaut",
+          "choix": ["$5$", "$7$", "$\\sqrt{7}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $h^{2}=9+16=25$, donc $h=5$."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 1.5, "chapitre": "Statistiques",
+          "enonce": "Le mode de la série 2 – 5 – 2 – 7 – 5 – 2 est",
+          "choix": ["$2$", "$5$", "$7$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> La valeur 2 apparaît 3 fois : c'est la plus fréquente."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Racines carrées",
+          "enonce": "Résous $x^{2}={{num:n}}$ et donne la solution positive.",
+          "answer": "racine", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$x=\\sqrt{{{num:n}}}=$ <span class='reponse'>{{num:racine}}</span>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Équations",
+          "enonce": "Résous l'équation $4x-8=2x+{{num:aa}}$.",
+          "answer": "soleq", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$2x=8+{{num:aa}}\\iff x=\\frac{8+{{num:aa}}}{2}=$ <span class='reponse'>{{num:soleq}}</span>."
+        },
+        {
+          "id": "e3q3", "type": "numeric", "points": 2, "chapitre": "Thalès",
+          "enonce": "$(MN)\\parallel(BC)$, $\\frac{AM}{AB}=\\frac{1}{{{num:rr}}}$ et $AC={{num:cc}}$ cm. Calcule $AN$ en cm.",
+          "answer": "an2", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$AN=\\frac{1}{{{num:rr}}}\\times{{num:cc}}=$ <span class='reponse'>{{num:an2}} cm</span>."
+        },
+        {
+          "id": "e3q4", "type": "numeric", "points": 2, "chapitre": "Pythagore",
+          "enonce": "Les côtés de l'angle droit d'un triangle rectangle mesurent {{num:l1}} et {{num:l2}}. Calcule l'hypoténuse.",
+          "answer": "hypp", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$h^{2}={{num:l1}}^{2}+{{num:l2}}^{2}$, donc $h=$ <span class='reponse'>{{num:hypp}}</span>."
+        },
+        {
+          "id": "e3q5", "type": "numeric", "points": 2, "chapitre": "Applications affines",
+          "enonce": "Soit $f(x)=3x+1$. Détermine l'antécédent de {{num:tt}} par $f$.",
+          "answer": "ant", "tol": 0.01, "precision": "valeur exacte",
+          "corrige": "$3x+1={{num:tt}}\\iff 3x={{num:tt}}-1\\iff x=\\frac{{{num:tt}}-1}{3}=$ <span class='reponse'>{{num:ant}}</span>."
+        }
+      ]
+    }
+  ]
+}

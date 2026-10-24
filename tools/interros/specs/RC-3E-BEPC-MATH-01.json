@@ -1,0 +1,46 @@
+{
+  "code": "RC-3E-BEPC-MATH-01",
+  "type": "bepc",
+  "matiere": "Mathématiques",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Épreuve complète : calcul numérique, géométrie et problème (programme de 3ème)",
+  "consignes": "Cette épreuve blanche comporte quatre exercices indépendants, numérotés comme au BEPC. L'usage de la calculatrice scientifique est autorisé. La présentation, l'orthographe et la rédaction sont prises en compte.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Questionnaire à choix multiple",
+      "points": "4 pts",
+      "consigne": "Pour chaque question, une seule réponse est juste. Recopie le numéro de la question suivi de la lettre de la bonne réponse.",
+      "enonce": "<table class='tab'><tr><th style='width:8%'>N°</th><th>Question</th><th style='width:16%'>a</th><th style='width:16%'>b</th><th style='width:16%'>c</th></tr><tr><td>1</td><td>$\\sqrt{27}$ est égal à</td><td>$3\\sqrt{3}$</td><td>$9\\sqrt{3}$</td><td>$3\\sqrt{9}$</td></tr><tr><td>2</td><td>Si $f(x)=-2x+1$, alors $f(3)$ vaut</td><td>$-5$</td><td>$7$</td><td>$-7$</td></tr><tr><td>3</td><td>Les solutions de $(x-2)(x+5)=0$ sont</td><td>$2$ et $-5$</td><td>$-2$ et $5$</td><td>$2$ et $5$</td></tr><tr><td>4</td><td>La moyenne de $10$, $14$ et $12$ est</td><td>$12$</td><td>$11$</td><td>$36$</td></tr></table>",
+      "correction": "<p><span class='reponse'>1-a</span> ($\\sqrt{27}=3\\sqrt{3}$) · <span class='reponse'>2-a</span> ($-2\\times3+1=-5$) · <span class='reponse'>3-a</span> (produit nul : $x=2$ ou $x=-5$) · <span class='reponse'>4-a</span> ($\\frac{36}{3}=12$).</p>",
+      "bareme_detail": "1 pt par bonne réponse"
+    },
+    {
+      "titre": "Exercice 2 — Calculs",
+      "points": "5 pts",
+      "consigne": "Détaille toutes les étapes.",
+      "enonce": "<ol type='a'><li>Calcule $A=2\\sqrt{27}+\\sqrt{12}-3\\sqrt{3}$ ; donne le résultat sous la forme $a\\sqrt{3}$.</li><li>Calcule $B=(3-\\sqrt{2})(3+\\sqrt{2})$.</li><li>Résous l'équation $2x-5=3(x+1)$.</li><li>Résous le système $\\begin{cases}x+y=10\\\\2x-y=2\\end{cases}$.</li><li>Résous l'inéquation $5-x<2x+2$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $A=6\\sqrt{3}+2\\sqrt{3}-3\\sqrt{3}=$ <span class='reponse'>$5\\sqrt{3}$</span>.</p><p><strong>b)</strong> $B=9-2=$ <span class='reponse'>$7$</span> (identité remarquable).</p><p><strong>c)</strong> $2x-5=3x+3\\iff -x=8\\iff$ <span class='reponse'>$x=-8$</span>.</p><p><strong>d)</strong> Addition membre à membre : $3x=12\\iff x=4$, puis $y=10-4=6$ : <span class='reponse'>$(x\\,;y)=(4\\,;6)$</span>.</p><p><strong>e)</strong> $-3x<-3\\iff$ <span class='reponse'>$x>1$</span> (changement de sens en divisant par $-3$).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1 pt · d) 1 pt · e) 0,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Géométrie dans le repère",
+      "points": "6 pts",
+      "consigne": "Le plan est muni du repère orthonormé $(O\\,;I\\,;J)$ ci-dessous (unité : 1 cm). On donne les points $A(1\\,;1)$, $B(4\\,;5)$ et $C(8\\,;2)$.",
+      "enonce": "<ol type='a'><li>Place les points $A$, $B$ et $C$ dans le repère.</li><li>Calcule les longueurs $AB$ et $BC$.</li><li>Calcule $AC^{2}$. Déduis de b) et de ce résultat la nature du triangle $ABC$.</li><li>Calcule les coordonnées de $K$, milieu de $[AC]$, et place $K$ sur la figure.</li><li>Détermine l'équation de la droite $(AB)$.</li></ol>",
+      "svg": "<svg viewBox='0 0 400 290' xmlns='http://www.w3.org/2000/svg'><g stroke='#e2e8f0' stroke-width='0.7'><line x1='20' y1='240' x2='380' y2='240'/><line x1='20' y1='202' x2='380' y2='202'/><line x1='20' y1='164' x2='380' y2='164'/><line x1='20' y1='126' x2='380' y2='126'/><line x1='20' y1='88' x2='380' y2='88'/><line x1='20' y1='50' x2='380' y2='50'/><line x1='20' y1='278' x2='380' y2='278'/><line x1='60' y1='20' x2='60' y2='278'/><line x1='100' y1='20' x2='100' y2='278'/><line x1='140' y1='20' x2='140' y2='278'/><line x1='180' y1='20' x2='180' y2='278'/><line x1='220' y1='20' x2='220' y2='278'/><line x1='260' y1='20' x2='260' y2='278'/><line x1='300' y1='20' x2='300' y2='278'/><line x1='340' y1='20' x2='340' y2='278'/></g><defs><marker id='ax2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6' fill='none' stroke='#334155' stroke-width='1.2'/></marker></defs><line x1='15' y1='240' x2='390' y2='240' stroke='#334155' stroke-width='1.4' marker-end='url(#ax2)'/><line x1='60' y1='284' x2='60' y2='14' stroke='#334155' stroke-width='1.4' marker-end='url(#ax2)'/><text x='382' y='258' font-size='12' fill='#334155' font-family='Georgia'>x</text><text x='66' y='18' font-size='12' fill='#334155' font-family='Georgia'>y</text><text x='46' y='255' font-size='11' fill='#334155' font-family='Georgia'>O</text><text x='92' y='255' font-size='10' fill='#64748b' font-family='Georgia'>1</text><text x='332' y='255' font-size='10' fill='#64748b' font-family='Georgia'>7</text><text x='68' y='206' font-size='10' fill='#64748b' font-family='Georgia'>1</text><text x='68' y='92' font-size='10' fill='#64748b' font-family='Georgia'>4</text></svg>",
+      "correction": "<p><strong>a)</strong> Placement : $A(1\\,;1)$, $B(4\\,;5)$, $C(8\\,;2)$ — vérifier les sommets sur la copie.</p><p><strong>b)</strong> $AB=\\sqrt{(4-1)^{2}+(5-1)^{2}}=\\sqrt{9+16}=$ <span class='reponse'>$5$ cm</span> ; $BC=\\sqrt{(8-4)^{2}+(2-5)^{2}}=\\sqrt{16+9}=$ <span class='reponse'>$5$ cm</span>.</p><p><strong>c)</strong> $AC^{2}=(8-1)^{2}+(2-1)^{2}=49+1=50$. Comme <span class='reponse'>$AC^{2}=AB^{2}+BC^{2}$ ($50=25+25$)</span>, d'après la réciproque de Pythagore, $ABC$ est <span class='reponse'>rectangle en $B$ — et isocèle puisque $AB=BC$ : triangle rectangle isocèle</span>.</p><p><strong>d)</strong> $K\\left(\\frac{1+8}{2}\\,;\\frac{1+2}{2}\\right)=$ <span class='reponse'>$(4{,}5\\,;1{,}5)$</span>.</p><p><strong>e)</strong> Coefficient directeur : $a=\\frac{5-1}{4-1}=\\frac{4}{3}$ ; $b=1-\\frac{4}{3}=-\\frac{1}{3}$ : <span class='reponse'>$(AB)\\,:\\,y=\\frac{4}{3}x-\\frac{1}{3}$</span>.</p>",
+      "bareme_detail": "a) 0,5 pt · b) 2 pts · c) 1,5 pt · d) 1 pt · e) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Problème : la coopérative des plants",
+      "points": "5 pts",
+      "consigne": "La coopérative d'un collège de Daloa vend des plants de cacao à 500 F l'unité pour financer son excursion. Voici les ventes réalisées sur 5 semaines : 8 – 12 – 10 – 15 – 20 plants.",
+      "enonce": "<ol type='a'><li>Exprime la recette $R(n)$ en fonction du nombre $n$ de plants vendus. De quel type d'application s'agit-il ?</li><li>Calcule le nombre moyen de plants vendus par semaine.</li><li>Calcule la recette totale encaissée au bout des 5 semaines.</li><li>L'excursion coûte 40 000 F. Combien de plants la coopérative doit-elle encore vendre pour l'atteindre ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $R(n)=$ <span class='reponse'>$500n$</span> : c'est une application <span class='reponse'>linéaire</span> (cas particulier d'application affine, $b=0$).</p><p><strong>b)</strong> $\\bar{x}=\\frac{8+12+10+15+20}{5}=\\frac{65}{5}=$ <span class='reponse'>$13$ plants par semaine</span>.</p><p><strong>c)</strong> Total : 65 plants $\\times 500=$ <span class='reponse'>$32\\,500$ F</span>.</p><p><strong>d)</strong> Plants nécessaires : $\\frac{40000}{500}=80$ ; reste à vendre : $80-65=$ <span class='reponse'>$15$ plants</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1 pt · d) 1,5 pt"
+    }
+  ]
+}

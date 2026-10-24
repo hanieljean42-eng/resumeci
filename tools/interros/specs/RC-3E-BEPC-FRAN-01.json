@@ -1,0 +1,37 @@
+{
+  "code": "RC-3E-BEPC-FRAN-01",
+  "type": "bepc",
+  "matiere": "Français",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Épreuve complète : compréhension de texte, grammaire et expression écrite",
+  "consignes": "Cette épreuve blanche comporte trois parties indépendantes : questions sur le texte (5 pts), grammaire et vocabulaire (7 pts), rédaction (8 pts). Soigne la présentation de ta copie.",
+  "exercices": [
+    {
+      "titre": "Texte et questions (5 pts)",
+      "points": "5 pts",
+      "consigne": "Lis attentivement le texte suivant, puis réponds aux questions.<br/><br/><em>« Depuis la construction du marché moderne, la vie du quartier a changé. Les vendeuses qui exposaient leurs marchandises sur le sable disposent désormais d'étals couverts et numérotés. Les acheteurs circulent dans des allées propres, et chaque boutique paie une redevance qui finance l'entretien des lieux. Certains anciens regrettent pourtant l'animation désordonnée de l'ancien marché, où l'on marchandait à pleine voix du matin au soir. »</em>",
+      "enonce": "<ol type='a'><li>De quel type de texte s'agit-il : narratif, descriptif ou argumentatif ? Justifie en une phrase. <em>(1 pt)</em></li><li>Releve deux améliorations apportées par le marché moderne. <em>(1 pt)</em></li><li>Que regrettent « certains anciens » ? <em>(1 pt)</em></li><li>Releve un connecteur d'opposition présent dans le texte et explique sa fonction. <em>(1 pt)</em></li><li>Donne un titre possible au texte. <em>(1 pt)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> Texte <span class='reponse'>descriptif (avec une pointe d'argumentation)</span> : il décrit le marché avant et après, sans raconter une histoire.</p><p><strong>b)</strong> Au choix : <span class='reponse'>étals couverts et numérotés ; allées propres ; redevance qui finance l'entretien</span>.</p><p><strong>c)</strong> Ils regrettent <span class='reponse'>l'animation désordonnée de l'ancien marché, le marchandage à pleine voix</span>.</p><p><strong>d)</strong> <span class='reponse'>« pourtant »</span> : il introduit une <span class='reponse'>opposition / nuance</span> entre la modernité du marché et la nostalgie des anciens.</p><p><strong>e)</strong> Tout titre cohérent : ex. « <span class='reponse'>Le marché, entre modernité et traditions</span> ».</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt · d) 1 pt · e) 1 pt"
+    },
+    {
+      "titre": "Grammaire et vocabulaire (7 pts)",
+      "points": "7 pts",
+      "consigne": "Réponds aux questions en t'aidant du texte.",
+      "enonce": "<ol type='a'><li>Donne la nature et la fonction de « <u>leurs marchandises</u> » dans : « Les vendeuses exposaient leurs marchandises ». <em>(1,5 pt)</em></li><li>Conjugue au passé simple : « Les vendeuses (exposer) leurs marchandises » et « chaque boutique (financer) l'entretien ». <em>(1 pt)</em></li><li>Accorde le participe passé : « Les allées que nous avons (emprunté) » ; « une décision (prendre) par le conseil ». <em>(1,5 pt)</em></li><li>Transforme : « Les allées sont propres. Les acheteurs y circulent facilement. » → une seule phrase avec une subordonnée consécutive. <em>(1,5 pt)</em></li><li>Trouve un synonyme et un antonyme de « couvert ». <em>(1,5 pt)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> « <span class='reponse'>leurs marchandises</span> » : groupe nominal (nom + adjectif possessif), <span class='reponse'>COD du verbe « exposaient »</span>.</p><p><strong>b)</strong> « Les vendeuses <span class='reponse'>exposèrent</span> leurs marchandises » ; « chaque boutique <span class='reponse'>finança</span> l'entretien ».</p><p><strong>c)</strong> « Les allées que nous avons <span class='reponse'>empruntées</span> » (COD avant le verbe) ; « une décision <span class='reponse'>prise</span> par le conseil ».</p><p><strong>d)</strong> « Les allées sont <span class='reponse'>si propres que</span> les acheteurs y circulent facilement. » (ou « tellement propres que »).</p><p><strong>e)</strong> Synonyme : <span class='reponse'>protégé / abrité / recouvert</span> ; antonyme : <span class='reponse'>découvert / exposé / nu</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1,5 pt · e) 1,5 pt"
+    },
+    {
+      "titre": "Rédaction (8 pts)",
+      "points": "8 pts",
+      "consigne": "Le proviseur de ton collège organise un débat sur la question : « Faut-il conserver les devoirs à la maison ? » Rédige un texte argumentatif de 15 à 20 lignes dans lequel tu prends clairement position, avec au moins trois arguments illustrés.",
+      "enonce": "<p>Ton texte comportera une <strong>introduction</strong> (sujet + thèse), un <strong>développement</strong> (au moins trois arguments avec exemples) et une <strong>conclusion</strong> (rappel de la position + ouverture).</p>",
+      "correction": "<p>Éléments attendus : <strong>introduction</strong> avec sujet amené et thèse explicite (1,5 pt) ; <strong>développement</strong> : trois arguments hiérarchisés avec exemples (4 pts) — pour : révision, autonomie, rythme de travail ; contre : fatigue, inégalités d'aide à la maison, surcharge ; <strong>conclusion</strong> avec rappel de position et ouverture (1,5 pt) ; <strong>langue</strong> : orthographe, syntaxe, connecteurs (1 pt).</p>",
+      "bareme_detail": "Introduction 1,5 pt · Arguments 4 pts · Conclusion 1,5 pt · Langue 1 pt"
+    }
+  ]
+}

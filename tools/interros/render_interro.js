@@ -20,6 +20,7 @@ const TYPES = {
   interro: { label: 'INTERROGATION', accent: '#2563eb', badge: '📝' },
   devoir: { label: 'DEVOIR SURVEILLÉ', accent: '#7c3aed', badge: '📋' },
   bac: { label: 'EXAMEN TYPE BAC', accent: '#dc2626', badge: '🎓' },
+  bepc: { label: 'BEPC BLANC', accent: '#b45309', badge: '🎓' },
 };
 
 // Rendu LaTeX : $$..$$ = bloc, $..$ = inline
