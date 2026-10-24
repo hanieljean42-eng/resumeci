@@ -1,0 +1,53 @@
+{
+  "code": "RC-L1M-TD-C-01",
+  "type": "td",
+  "matiere": "Langage C",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Pointeurs, tableaux, chaînes et structures",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Écris chaque programme en langage C, trace son exécution à la main, puis compare avec le corrigé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Échange par pointeurs",
+      "points": "4 pts",
+      "consigne": "On souhaite permuter le contenu de deux variables entières via une fonction.",
+      "enonce": "<ol type='a'><li>Expliquer pourquoi la fonction <code>void echange(int a, int b)</code> ne peut pas permuter les variables de l'appelant.</li><li>Écrire la fonction <code>void echanger(int *a, int *b)</code> qui permute réellement les contenus.</li><li>Écrire le <code>main</code> qui teste la fonction avec 12 et 7.</li></ol>",
+      "correction": "<p><strong>a)</strong> En C, les paramètres sont passés <strong>par valeur</strong> : la fonction reçoit des copies locales. Modifier <code>a</code> et <code>b</code> dans la fonction ne change rien chez l'appelant.</p><p><strong>b)</strong> En passant les <strong>adresses</strong>, la fonction écrit directement dans les variables :</p><pre class='code'>void echanger(int *a, int *b) {\n    int tmp = *a;\n    *a = *b;\n    *b = tmp;\n}</pre><p><strong>c)</strong></p><pre class='code'>#include &lt;stdio.h&gt;\n\nint main(void) {\n    int x = 12, y = 7;\n    echanger(&amp;x, &amp;y);\n    printf(\"x = %d, y = %d\\n\", x, y);  /* x = 7, y = 12 */\n    return 0;\n}</pre>",
+      "bareme_detail": "a) Explication passage par valeur 1 pt · b) Fonction correcte 2 pts · c) Appel avec & 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Tableau et arithmétique des pointeurs",
+      "points": "4 pts",
+      "consigne": "Soit le tableau <code>int t[6] = {4, 9, 2, 11, 7, 5};</code>.",
+      "enonce": "<ol type='a'><li>Écrire une fonction <code>int somme(int *t, int n)</code> qui retourne la somme des éléments <strong>en utilisant l'arithmétique des pointeurs</strong> (sans <code>t[i]</code>).</li><li>Que vaut l'expression <code>*(t + 3)</code> ? Justifier.</li></ol>",
+      "correction": "<p><strong>a)</strong> Le nom d'un tableau est l'adresse de son premier élément ; <code>*(t + i)</code> accède à <code>t[i]</code> :</p><pre class='code'>int somme(int *t, int n) {\n    int s = 0;\n    for (int i = 0; i &lt; n; i++)\n        s += *(t + i);        /* equivalent a t[i] */\n    return s;\n}</pre><p><strong>b)</strong> <code>*(t + 3)</code> est le 4ᵉ élément → <span class='reponse'>$11$</span> (les indices commencent à 0).</p>",
+      "bareme_detail": "a) Fonction par pointeurs 3 pts · b) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Chaînes de caractères",
+      "points": "4 pts",
+      "consigne": "Sans utiliser <code>strlen</code> ni <code>strrev</code>, on manipule une chaîne via un pointeur.",
+      "enonce": "<ol type='a'><li>Écrire <code>int longueur(char *s)</code> qui retourne le nombre de caractères avant <code>'\\0'</code>.</li><li>Écrire <code>int compter(char *s, char c)</code> qui retourne le nombre d'occurrences de <code>c</code> dans <code>s</code>.</li></ol>",
+      "correction": "<pre class='code'>int longueur(char *s) {\n    int n = 0;\n    while (*(s + n) != '\\0')\n        n++;\n    return n;\n}\n\nint compter(char *s, char c) {\n    int nb = 0;\n    while (*s != '\\0') {\n        if (*s == c) nb++;\n        s++;                 /* avance le pointeur */\n    }\n    return nb;\n}</pre><p>Pour <code>compter(\"bonjour\", 'o')</code> → <span class='reponse'>$2$</span>. Le marqueur de fin <code>'\\0'</code> est la seule borne fiable d'une chaîne C.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Structures",
+      "points": "4 pts",
+      "consigne": "On modélise un livre par la structure <code>struct Livre { char titre[50]; char auteur[40]; int annee; };</code>.",
+      "enonce": "<ol type='a'><li>Déclarer un tableau de 3 livres et le remplir par saisie utilisateur.</li><li>Afficher ensuite la bibliothèque sous la forme « titre (auteur, année) ».</li></ol>",
+      "correction": "<pre class='code'>#include &lt;stdio.h&gt;\n\nstruct Livre {\n    char titre[50];\n    char auteur[40];\n    int annee;\n};\n\nint main(void) {\n    struct Livre biblio[3];\n    for (int i = 0; i &lt; 3; i++) {\n        printf(\"Titre : \");\n        scanf(\" %49[^\\n]\", biblio[i].titre);\n        printf(\"Auteur : \");\n        scanf(\" %39[^\\n]\", biblio[i].auteur);\n        printf(\"Annee : \");\n        scanf(\"%d\", &amp;biblio[i].annee);\n    }\n    for (int i = 0; i &lt; 3; i++)\n        printf(\"%s (%s, %d)\\n\",\n               biblio[i].titre, biblio[i].auteur, biblio[i].annee);\n    return 0;\n}</pre><p>L'accès aux champs se fait par <code>biblio[i].titre</code> ; <code>%49[^\\n]</code> lit une ligne entière avec espaces en protégeant le tableau.</p>",
+      "bareme_detail": "a) Déclaration + saisie 2,5 pts · b) Affichage 1,5 pt"
+    },
+    {
+      "titre": "Exercice 5 — Extremums et positions",
+      "points": "4 pts",
+      "consigne": "Écrire un programme qui lit 8 entiers dans un tableau puis affiche la plus petite valeur, la plus grande valeur et leurs positions (indices) respectives.",
+      "enonce": "<p>En cas d'égalité, on retient la première position rencontrée.</p>",
+      "correction": "<pre class='code'>#include &lt;stdio.h&gt;\n\nint main(void) {\n    int t[8], imin = 0, imax = 0;\n    for (int i = 0; i &lt; 8; i++)\n        scanf(\"%d\", &amp;t[i]);\n    for (int i = 1; i &lt; 8; i++) {\n        if (t[i] &lt; t[imin]) imin = i;\n        if (t[i] &gt; t[imax]) imax = i;\n    }\n    printf(\"Min : %d (position %d)\\n\", t[imin], imin);\n    printf(\"Max : %d (position %d)\\n\", t[imax], imax);\n    return 0;\n}</pre><p>On mémorise les <strong>indices</strong> (<code>imin</code>, <code>imax</code>) plutôt que les valeurs : un seul parcours suffit et l'égalité conserve naturellement la première position (comparaison stricte).</p>",
+      "bareme_detail": "Saisie 1 pt · Recherche min/max 2 pts · Positions 1 pt"
+    }
+  ]
+}

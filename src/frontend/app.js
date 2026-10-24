@@ -3208,10 +3208,10 @@ window.openElitePassModal = function(featureName = 'elite') {
   const annalesTitle = cardAnnales?.querySelector('.elite-feat-title');
   const annalesPill = cardAnnales?.querySelector('.elite-status-pill');
   const annalesDesc = cardAnnales?.querySelector('.elite-feat-desc');
-  if (annalesTitle) annalesTitle.textContent = isUnivElite ? 'Sujets de Partiels & Interros Corrigés' : 'Interros & Sujets type BAC Corrigés';
+  if (annalesTitle) annalesTitle.textContent = isUnivElite ? 'TD, Devoirs & Sujets d\'Examen Corrigés' : 'Interros & Sujets type BAC Corrigés';
   if (annalesPill) annalesPill.textContent = isUnivElite ? '✅ Disponible' : '✅ Disponible';
   if (annalesDesc) annalesDesc.textContent = isUnivElite
-    ? 'Interrogations et sujets d\'examens de ta filière en PDF : énoncés + corrigés détaillés avec barèmes.'
+    ? 'Travaux dirigés, devoirs et sujets d\'examens de ta filière en PDF : énoncés + corrigés détaillés avec barèmes.'
     : 'Interrogations, devoirs surveillés et examens type BAC en PDF : énoncés + corrigés détaillés avec barèmes, dans l\'esprit des vraies épreuves.';
   const iaDesc = cardIA?.querySelector('.elite-feat-desc');
   if (iaDesc) iaDesc.textContent = isUnivElite
@@ -3241,8 +3241,8 @@ window.openElitePassModal = function(featureName = 'elite') {
     }
   } else if (fLower.includes('sujet') || fLower.includes('annale') || fLower.includes('bac') || fLower.includes('bepc') || fLower.includes('partiel')) {
     if (iconEl) iconEl.textContent = '📜';
-    if (titleEl) titleEl.textContent = isUnivElite ? 'Sujets de Partiels & Interros Corrigés 🔒' : 'Sujets & Interros Corrigés 🔒';
-    if (subtitleEl) subtitleEl.textContent = isUnivElite ? 'Des épreuves universitaires complètes : énoncés + corrigés PDF avec barèmes détaillés.' : 'Interros, devoirs surveillés et examens type BAC : énoncés + corrigés PDF avec barèmes détaillés.';
+    if (titleEl) titleEl.textContent = isUnivElite ? 'TD, Devoirs & Sujets d\'Examen Corrigés 🔒' : 'Sujets & Interros Corrigés 🔒';
+    if (subtitleEl) subtitleEl.textContent = isUnivElite ? 'Travaux dirigés, devoirs et épreuves universitaires complètes : énoncés + corrigés PDF avec barèmes détaillés.' : 'Interros, devoirs surveillés et examens type BAC : énoncés + corrigés PDF avec barèmes détaillés.';
     if (cardAnnales) {
       cardAnnales.classList.add('active-target');
       cardAnnales.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -3286,6 +3286,12 @@ window.openSujetsModal = async function() {
   const modal = document.getElementById('sujetsModal');
   if (!modal) return;
   modal.classList.add('show');
+  // Vocabulaire adapté : université = TD / Devoirs / Sujets d'examen
+  const isUniv = window.isUniversityUser && window.isUniversityUser();
+  const mt = document.getElementById('sujetsModalTitle');
+  const ms = document.getElementById('sujetsModalSubtitle');
+  if (mt) mt.textContent = isUniv ? '📚 TD, Devoirs & Sujets d\'Examen Corrigés' : '📝 Sujets & Interros Corrigés';
+  if (ms) ms.textContent = isUniv ? 'Travaux dirigés, devoirs et sujets d\'examens de licence — énoncés + corrigés PDF, par ResumeCI' : 'Interrogations, devoirs surveillés et examens type BAC — énoncés + corrigés PDF, par ResumeCI';
   const body = document.getElementById('sujetsListBody');
   body.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des sujets…</div>';
   try {
@@ -3321,7 +3327,9 @@ function renderSujetsList() {
     interro: { icon: '📝', color: '#2563eb' },
     devoir: { icon: '📋', color: '#7c3aed' },
     bac: { icon: '🎓', color: '#dc2626' },
-    bepc: { icon: '🎓', color: '#b45309' }
+    bepc: { icon: '🎓', color: '#b45309' },
+    td: { icon: '📚', color: '#0f766e' },
+    partiel: { icon: '🏛️', color: '#4f46e5' }
   };
 
   const tabs = `<div style="display:flex;gap:8px;margin-bottom:14px">
@@ -4111,7 +4119,7 @@ window.showActiveSubscriptionModal = function(subInfo, targetTier) {
       if (upgradeTitle) upgradeTitle.textContent = 'Pass Élite : Professeur IA & Examens';
       if (upgradeDesc) {
         upgradeDesc.innerHTML = window.isUniversityUser && window.isUniversityUser()
-          ? 'Sujets de partiels & interros corrigés en PDF, tuteur IA 24h/24 et simulateurs d\'examens — <strong>3 000 FCFA/mois</strong>.'
+          ? 'TD, devoirs & sujets d\'examen corrigés en PDF, tuteur IA 24h/24 et simulateurs d\'examens — <strong>3 000 FCFA/mois</strong>.'
           : 'Interros, devoirs & sujets type BAC corrigés en PDF, professeur IA et simulateurs d\'examens — <strong>2 000 FCFA/mois</strong>.';
       }
       if (upgradeBtn) {
@@ -4567,13 +4575,16 @@ window.downloadClassOffline = downloadClassOffline;
 // Sujets & Interros immédiatement visible (déverrouillée pour l'Élite, vitrine sinon).
 function getEliteSpotlight() {
   const hasSujets = window.userHasFeature ? window.userHasFeature('sujets') : false;
+  const isUniv = window.isUniversityUser && window.isUniversityUser();
+  const spotTitle = isUniv ? 'TD, Devoirs &amp; Sujets d\'examen corrigés' : 'Sujets &amp; Interros corrigés';
+  const spotDesc = isUniv ? 'TD corrigés, devoirs &amp; sujets d\'examen de ta filière' : 'Interros, devoirs &amp; sujets type BAC avec corrigés';
   if (hasSujets) {
     return `<div onclick="openSujetsModal()" role="button" style="cursor:pointer;display:flex;align-items:center;gap:14px;margin:0 0 14px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#4c1d95,#7c3aed 55%,#a855f7);color:#fff;box-shadow:0 8px 22px rgba(124,58,237,.35);position:relative;overflow:hidden">
       <div style="position:absolute;right:-14px;top:-34px;font-size:110px;opacity:.12;pointer-events:none;line-height:1">📝</div>
       <div style="font-size:32px;flex-shrink:0">📝</div>
       <div style="flex:1;min-width:0">
         <div style="display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-size:9.5px;font-weight:800;letter-spacing:1px;padding:3px 9px;border-radius:20px;text-transform:uppercase">👑 Inclus dans ton Pass Élite</div>
-        <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">Sujets &amp; Interros corrigés</h3>
+        <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">${spotTitle}</h3>
         <p style="margin:0;font-size:12px;opacity:.92">Énoncés + corrigés détaillés rédigés par ResumeCI · <span id="eliteSpotCount">chargement…</span></p>
       </div>
       <div style="flex-shrink:0;background:#fff;color:#6d28d9;font-weight:800;font-size:13px;padding:11px 16px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.18);white-space:nowrap">Ouvrir ➜</div>
@@ -4584,8 +4595,8 @@ function getEliteSpotlight() {
     <div style="font-size:32px;flex-shrink:0">📝</div>
     <div style="flex:1;min-width:0">
       <div style="display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:9.5px;font-weight:800;letter-spacing:1px;padding:3px 9px;border-radius:20px;text-transform:uppercase">🔒 Exclusivité Pass Élite</div>
-      <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">Sujets &amp; Interros corrigés</h3>
-      <p style="margin:0;font-size:12px;opacity:.92">Interros, devoirs &amp; sujets type BAC avec corrigés · <span id="eliteSpotCount">chargement…</span></p>
+      <h3 style="margin:6px 0 3px;font-size:17px;font-weight:800;color:#fff">${spotTitle}</h3>
+      <p style="margin:0;font-size:12px;opacity:.92">${spotDesc} · <span id="eliteSpotCount">chargement…</span></p>
     </div>
     <div style="flex-shrink:0;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:800;font-size:13px;padding:11px 16px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.18);white-space:nowrap">Découvrir ➜</div>
   </div>`;

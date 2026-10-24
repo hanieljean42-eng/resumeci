@@ -8,7 +8,7 @@ const SPECS_DIR = path.join(__dirname, 'specs');
 const PDF_DIR = path.join(ROOT, '_interros');
 const DEST_DIR = path.join(ROOT, 'payment-api', 'interros');
 
-const TYPE_LABELS = { interro: 'Interrogation', devoir: 'Devoir surveillé', bac: 'Examen type BAC', bepc: 'BEPC blanc' };
+const TYPE_LABELS = { interro: 'Interrogation', devoir: 'Devoir surveillé', bac: 'Examen type BAC', bepc: 'BEPC blanc', td: 'TD corrigé', partiel: "Sujet d'examen corrigé" };
 
 const catalog = [];
 for (const f of fs.readdirSync(SPECS_DIR).filter(f => f.endsWith('.json')).sort()) {

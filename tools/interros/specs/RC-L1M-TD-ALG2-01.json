@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-ALG2-01",
+  "type": "td",
+  "matiere": "Algèbre 2",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Matrices, déterminants et systèmes linéaires",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Pose les calculs soigneusement avant de consulter le corrigé détaillé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul matriciel",
+      "points": "4 pts",
+      "consigne": "On considère les matrices $A=\\begin{pmatrix}1&2\\\\ 3&0\\end{pmatrix}$ et $B=\\begin{pmatrix}-1&1\\\\ 2&4\\end{pmatrix}$.",
+      "enonce": "<ol type='a'><li>Calculer $AB$ et $BA$. Que constate-t-on ?</li><li>Calculer $A^{2}$ puis $A^{2}-A$.</li><li>Calculer $(A+B)^{2}$ et comparer avec $A^{2}+2AB+B^{2}$. Expliquer.</li></ol>",
+      "correction": "<p><strong>a)</strong> $AB=\\begin{pmatrix}1\\times(-1)+2\\times2&1\\times1+2\\times4\\\\ 3\\times(-1)+0\\times2&3\\times1+0\\times4\\end{pmatrix}=$ <span class='reponse'>$\\begin{pmatrix}3&9\\\\ -3&3\\end{pmatrix}$</span> ; $BA=\\begin{pmatrix}-1\\times1+1\\times3&-1\\times2+1\\times0\\\\ 2\\times1+4\\times3&2\\times2+4\\times0\\end{pmatrix}=$ <span class='reponse'>$\\begin{pmatrix}2&-2\\\\ 14&4\\end{pmatrix}$</span>. On constate que <strong>$AB\\neq BA$</strong> : le produit matriciel n'est pas commutatif.</p><p><strong>b)</strong> $A^{2}=\\begin{pmatrix}1+6&2+0\\\\ 3+0&6+0\\end{pmatrix}=$ <span class='reponse'>$\\begin{pmatrix}7&2\\\\ 3&6\\end{pmatrix}$</span>, donc $A^{2}-A=\\begin{pmatrix}6&0\\\\ 0&6\\end{pmatrix}=6I_{2}$.</p><p><strong>c)</strong> $(A+B)^{2}=\\begin{pmatrix}0&3\\\\ 5&4\\end{pmatrix}^{2}=$ <span class='reponse'>$\\begin{pmatrix}15&12\\\\ 20&31\\end{pmatrix}$</span> alors que $A^{2}+2AB+B^{2}=\\begin{pmatrix}7&2\\\\ 3&6\\end{pmatrix}+\\begin{pmatrix}6&18\\\\ -6&6\\end{pmatrix}+\\begin{pmatrix}3&3\\\\ 6&18\\end{pmatrix}=\\begin{pmatrix}16&23\\\\ 3&30\\end{pmatrix}$. Résultats différents : $(A+B)^{2}=A^{2}+AB+BA+B^{2}\\neq A^{2}+2AB+B^{2}$ car $AB\\neq BA$.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Déterminants",
+      "points": "4 pts",
+      "consigne": "Calculer les déterminants suivants par la méthode de ton choix.",
+      "enonce": "<ol type='a'><li>$D_{1}=\\begin{vmatrix}3&-2\\\\ 4&1\\end{vmatrix}$</li><li>$D_{2}=\\begin{vmatrix}1&2&0\\\\ 3&-1&1\\\\ 0&2&1\\end{vmatrix}$ (règle de Sarrus ou développement)</li><li>Soit $M=\\begin{pmatrix}m&1\\\\ 4&m\\end{pmatrix}$. Pour quelles valeurs de $m\\in\\mathbb{R}$ la matrice $M$ est-elle inversible ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $D_{1}=3\\times1-(-2)\\times4=3+8=$ <span class='reponse'>$11$</span>.</p><p><strong>b)</strong> Développement selon la première ligne : $D_{2}=1\\begin{vmatrix}-1&1\\\\ 2&1\\end{vmatrix}-2\\begin{vmatrix}3&1\\\\ 0&1\\end{vmatrix}+0=1\\times(-1-2)-2\\times(3-0)=$ <span class='reponse'>$-9$</span>.</p><p><strong>c)</strong> $\\det M=m^{2}-4=(m-2)(m+2)$. $M$ est inversible si et seulement si $\\det M\\neq0$, donc <span class='reponse'>$m\\neq2$ et $m\\neq-2$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Matrice inverse et système",
+      "points": "6 pts",
+      "consigne": "On considère $A=\\begin{pmatrix}2&1\\\\ 5&3\\end{pmatrix}$.",
+      "enonce": "<ol type='a'><li>Calculer $\\det A$ et justifier que $A$ est inversible.</li><li>Déterminer $A^{-1}$ par la méthode de la comatrice.</li><li>En déduire la solution du système $\\begin{cases}2x+y=4\\\\ 5x+3y=11\\end{cases}$</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\det A=2\\times3-1\\times5=6-5=1\\neq0$ → $A$ est <span class='reponse'>inversible</span>.</p><p><strong>b)</strong> Comatrice : $\\mathrm{com}(A)=\\begin{pmatrix}3&-5\\\\ -1&2\\end{pmatrix}$, transposée $\\begin{pmatrix}3&-1\\\\ -5&2\\end{pmatrix}$, donc $A^{-1}=\\dfrac{1}{\\det A}\\,{}^{t}\\mathrm{com}(A)=$ <span class='reponse'>$\\begin{pmatrix}3&-1\\\\ -5&2\\end{pmatrix}$</span>. Vérification : $AA^{-1}=I_{2}$ ✓.</p><p><strong>c)</strong> Le système s'écrit $A\\begin{pmatrix}x\\\\ y\\end{pmatrix}=\\begin{pmatrix}4\\\\ 11\\end{pmatrix}$, donc $\\begin{pmatrix}x\\\\ y\\end{pmatrix}=A^{-1}\\begin{pmatrix}4\\\\ 11\\end{pmatrix}=\\begin{pmatrix}12-11\\\\ -20+22\\end{pmatrix}=$ <span class='reponse'>$\\begin{pmatrix}1\\\\ 2\\end{pmatrix}$</span>. Solution : $x=1$, $y=2$.</p>",
+      "bareme_detail": "a) 1 pt · b) 2,5 pts · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 4 — Système 3×3 par deux méthodes",
+      "points": "6 pts",
+      "consigne": "On considère le système $(S):\\begin{cases}x+y+z=6\\\\ 2x-y+z=3\\\\ x+2y-z=2\\end{cases}$",
+      "enonce": "<ol type='a'><li>Résoudre $(S)$ par la méthode du pivot de Gauss.</li><li>Retrouver la valeur de $x$ par les formules de Cramer.</li></ol>",
+      "correction": "<p><strong>a)</strong> Pivot de Gauss : $L_{2}\\leftarrow L_{2}-2L_{1}$ et $L_{3}\\leftarrow L_{3}-L_{1}$ donnent $\\begin{cases}x+y+z=6\\\\ -3y-z=-9\\\\ y-2z=-4\\end{cases}$. De la 2ᵉ équation : $z=9-3y$. En reportant dans la 3ᵉ : $y-2(9-3y)=-4\\Rightarrow7y=14\\Rightarrow y=2$, puis $z=3$ et $x=6-2-3=1$. Solution : <span class='reponse'>$(x,y,z)=(1\\,;2\\,;3)$</span>.</p><p><strong>b)</strong> Cramer : $D=\\begin{vmatrix}1&1&1\\\\ 2&-1&1\\\\ 1&2&-1\\end{vmatrix}=1\\times(1-2)-1\\times(-2-1)+1\\times(4+1)=-1+3+5=7$ ; $D_{x}=\\begin{vmatrix}6&1&1\\\\ 3&-1&1\\\\ 2&2&-1\\end{vmatrix}=6\\times(1-2)-1\\times(-3-2)+1\\times(6+2)=-6+5+8=7$ ; $x=\\dfrac{D_{x}}{D}=$ <span class='reponse'>$1$</span> ✓ cohérent.</p>",
+      "bareme_detail": "a) 3 pts · b) 3 pts"
+    }
+  ]
+}

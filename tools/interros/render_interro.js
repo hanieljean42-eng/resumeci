@@ -21,6 +21,8 @@ const TYPES = {
   devoir: { label: 'DEVOIR SURVEILLÉ', accent: '#7c3aed', badge: '📋' },
   bac: { label: 'EXAMEN TYPE BAC', accent: '#dc2626', badge: '🎓' },
   bepc: { label: 'BEPC BLANC', accent: '#b45309', badge: '🎓' },
+  td: { label: 'TRAVAUX DIRIGÉS (TD)', accent: '#0f766e', badge: '📚' },
+  partiel: { label: "SUJET D'EXAMEN", accent: '#4f46e5', badge: '🏛️' },
 };
 
 // Rendu LaTeX : $$..$$ = bloc, $..$ = inline
@@ -111,6 +113,9 @@ function pageHtml(spec, corrige) {
   .correction { margin-top: 2.5mm; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #059669; border-radius: 6px; padding: 7px 10px; font-size: 10.5pt; }
   .correction-tag { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8pt; font-weight: 800; color: #059669; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 2mm; }
   .reponse { color: #047857; font-weight: 700; }
+  pre.code { background: #0f172a; color: #e2e8f0; border-radius: 6px; padding: 8px 10px; font-family: 'Consolas', 'Courier New', monospace; font-size: 8.5pt; line-height: 1.45; white-space: pre-wrap; margin: 2mm 0; page-break-inside: avoid; }
+  code { font-family: 'Consolas', 'Courier New', monospace; font-size: 90%; background: #f1f5f9; padding: 0 3px; border-radius: 3px; }
+  .correction code { background: #d1fae5; }
 
   /* ---------- Filigrane ---------- */
   .watermark { position: fixed; top: 48%; left: 50%; transform: translate(-50%,-50%) rotate(-28deg); font-family: 'Segoe UI', Arial, sans-serif; font-size: 54pt; font-weight: 800; color: rgba(37,99,235,0.045); white-space: nowrap; pointer-events: none; z-index: 0; }

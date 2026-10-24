@@ -1,0 +1,53 @@
+{
+  "code": "RC-L1M-TD-PY-01",
+  "type": "td",
+  "matiere": "Programmation en langage Python",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Entrées/sorties, conditions et boucles",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Écris chaque programme sur papier ou dans un éditeur, teste-le mentalement, puis compare avec le corrigé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Conditions et intervalles",
+      "points": "3 pts",
+      "consigne": "Écrire un programme Python qui lit une température saisie par l'utilisateur.",
+      "enonce": "<p>Le programme affiche : « Gel » si elle est strictement négative, « Frais » entre 0 et 14 °C, « Doux » entre 15 et 24 °C, « Chaud » entre 25 et 34 °C et « Très chaud » à partir de 35 °C.</p>",
+      "correction": "<pre class='code'>t = float(input(\"Température en °C : \"))\n\nif t &lt; 0:\n    print(\"Gel\")\nelif t &lt;= 14:\n    print(\"Frais\")\nelif t &lt;= 24:\n    print(\"Doux\")\nelif t &lt;= 34:\n    print(\"Chaud\")\nelse:\n    print(\"Très chaud\")</pre><p>Les <code>elif</code> en cascade garantissent qu'un seul message s'affiche : l'ordre des tests compte (du plus petit au plus grand seuil).</p>",
+      "bareme_detail": "Structure if/elif correcte 1,5 pt · Seuils exacts 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Signe d'un produit sans le calculer",
+      "points": "3 pts",
+      "consigne": "Écrire un programme qui lit deux nombres réels a et b.",
+      "enonce": "<p>Le programme indique si leur produit est positif, négatif ou nul — <strong>sans calculer le produit</strong> a × b.</p>",
+      "correction": "<pre class='code'>a = float(input(\"a = \"))\nb = float(input(\"b = \"))\n\nif a == 0 or b == 0:\n    print(\"Le produit est nul\")\nelif (a &gt; 0 and b &gt; 0) or (a &lt; 0 and b &lt; 0):\n    print(\"Le produit est positif\")\nelse:\n    print(\"Le produit est négatif\")</pre><p>Astuce : un produit est positif quand les deux facteurs ont le <strong>même signe</strong>, négatif quand ils ont des <strong>signes contraires</strong>, nul si l'un des deux est nul.</p>",
+      "bareme_detail": "Cas nul géré 1 pt · Règle des signes 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Facturation par tranches",
+      "points": "4 pts",
+      "consigne": "Une entreprise de transport facture ses courses ainsi : prise en charge fixe de 500 FCFA, les 5 premiers kilomètres à 300 F/km, du 6e au 15e kilomètre à 250 F/km, et au-delà de 15 km à 200 F/km.",
+      "enonce": "<p>Écrire un programme qui lit la distance parcourue (en km) et affiche le montant total de la course.</p>",
+      "correction": "<pre class='code'>d = float(input(\"Distance en km : \"))\n\nprix = 500                      # prise en charge\nif d &lt;= 5:\n    prix += d * 300\nelif d &lt;= 15:\n    prix += 5 * 300 + (d - 5) * 250\nelse:\n    prix += 5 * 300 + 10 * 250 + (d - 15) * 200\n\nprint(\"Montant de la course :\", prix, \"FCFA\")</pre><p>Exemple : pour 20 km → 500 + 1 500 + 2 500 + 1 000 = <span class='reponse'>5 500 FCFA</span>. Attention à bien découper la distance en tranches, et non appliquer un seul tarif à toute la distance.</p>",
+      "bareme_detail": "Découpage en tranches 2 pts · Calcul juste 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Boucle et statistiques",
+      "points": "5 pts",
+      "consigne": "Écrire un programme qui demande d'abord un entier N, puis lit N nombres entiers saisis un par un.",
+      "enonce": "<p>À la fin de la saisie, le programme affiche la plus grande valeur lue et le nombre de valeurs paires saisies.</p>",
+      "correction": "<pre class='code'>n = int(input(\"Combien de nombres ? \"))\n\nmaximum = None\nnb_pairs = 0\nfor i in range(n):\n    x = int(input(\"Nombre \" + str(i + 1) + \" : \"))\n    if maximum is None or x &gt; maximum:\n        maximum = x\n    if x % 2 == 0:\n        nb_pairs += 1\n\nprint(\"Maximum :\", maximum)\nprint(\"Valeurs paires :\", nb_pairs)</pre><p>On évite d'initialiser le maximum à 0 (faux si tous les nombres sont négatifs) : on le prend égal à la première valeur lue. Un nombre est pair quand <code>x % 2 == 0</code>.</p>",
+      "bareme_detail": "Boucle de saisie 1,5 pt · Maximum 2 pts · Compteur de pairs 1,5 pt"
+    },
+    {
+      "titre": "Exercice 5 — Test de divisibilité et diviseurs",
+      "points": "5 pts",
+      "consigne": "Écrire un programme qui lit un entier strictement positif n.",
+      "enonce": "<ol type='a'><li>Afficher tous ses diviseurs positifs.</li><li>Afficher ensuite « Nombre parfait » si n est égal à la somme de ses diviseurs stricts (diviseurs autres que n), sinon « Non parfait ». (Exemple : 6 = 1 + 2 + 3 est parfait.)</li></ol>",
+      "correction": "<pre class='code'>n = int(input(\"n = \"))\n\nsomme = 0\nprint(\"Diviseurs de\", n, \":\")\nfor d in range(1, n + 1):\n    if n % d == 0:\n        print(d)\n        if d &lt; n:\n            somme += d\n\nif somme == n:\n    print(\"Nombre parfait\")\nelse:\n    print(\"Non parfait\")</pre><p><strong>a)</strong> $d$ est diviseur de $n$ quand <code>n % d == 0</code>. <strong>b)</strong> On cumule les diviseurs stricts ($d&lt;n$) dans <code>somme</code>. Pour $n=6$ : diviseurs 1, 2, 3, 6 et $1+2+3=6$ → <span class='reponse'>Nombre parfait</span>. Pour $n=12$ : $1+2+3+4+6=16\\neq12$ → Non parfait.</p>",
+      "bareme_detail": "a) Diviseurs 2 pts · b) Somme stricte et test 3 pts"
+    }
+  ]
+}

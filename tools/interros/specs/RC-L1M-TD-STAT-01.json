@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-STAT-01",
+  "type": "td",
+  "matiere": "Statistiques descriptive",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Paramètres de position, de dispersion et régression linéaire",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Présente les résultats dans des tableaux soignés avant de vérifier le corrigé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Série statistique simple",
+      "points": "4 pts",
+      "consigne": "Les notes d'un devoir de 10 étudiants sont : $8\\,;12\\,;9\\,;15\\,;12\\,;7\\,;12\\,;10\\,;14\\,;11$.",
+      "enonce": "<ol type='a'><li>Ordonner la série par ordre croissant.</li><li>Calculer la moyenne $\\bar{x}$.</li><li>Déterminer la médiane $M_e$ et le mode.</li></ol>",
+      "correction": "<p><strong>a)</strong> Série ordonnée : $7\\,;8\\,;9\\,;10\\,;11\\,;12\\,;12\\,;12\\,;14\\,;15$.</p><p><strong>b)</strong> $\\bar{x}=\\dfrac{7+8+9+10+11+12+12+12+14+15}{10}=\\dfrac{110}{10}=$ <span class='reponse'>$11$</span>.</p><p><strong>c)</strong> $N=10$ pair → médiane = moyenne des 5ᵉ et 6ᵉ valeurs : $M_e=\\dfrac{11+12}{2}=$ <span class='reponse'>$11{,}5$</span>. La valeur la plus fréquente est $12$ (3 fois) → <span class='reponse'>mode $=12$</span>.</p>",
+      "bareme_detail": "a) 0,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Série groupée en classes",
+      "points": "6 pts",
+      "consigne": "Les montants des achats (en milliers de FCFA) de 100 clients d'une boutique sont répartis ainsi :",
+      "enonce": "<table style='border-collapse:collapse;margin:6px auto;font-size:11pt'><tr><td style='border:1.5px solid #94a3b8;padding:4px 14px;font-weight:700'>Classe</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>$[0\\,;10[$</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>$[10\\,;20[$</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>$[20\\,;30[$</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>$[30\\,;40]$</td></tr><tr><td style='border:1.5px solid #94a3b8;padding:4px 14px;font-weight:700'>Effectif</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>15</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>25</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>35</td><td style='border:1.5px solid #94a3b8;padding:4px 14px'>25</td></tr></table><ol type='a'><li>Déterminer le centre $x_{i}$ de chaque classe.</li><li>Calculer la moyenne $\\bar{x}$ de la série.</li><li>Calculer la variance $V$ et l'écart-type $\\sigma$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Centres : $5\\,;15\\,;25\\,;35$.</p><p><strong>b)</strong> $\\bar{x}=\\dfrac{15\\times5+25\\times15+35\\times25+25\\times35}{100}=\\dfrac{75+375+875+875}{100}=\\dfrac{2\\,200}{100}=$ <span class='reponse'>$22$</span> (milliers FCFA).</p><p><strong>c)</strong> $V=\\dfrac{1}{N}\\sum n_{i}x_{i}^{2}-\\bar{x}^{2}=\\dfrac{15\\times25+25\\times225+35\\times625+25\\times1\\,225}{100}-22^{2}=\\dfrac{375+5\\,625+21\\,875+30\\,625}{100}-484=\\dfrac{58\\,500}{100}-484=585-484=$ <span class='reponse'>$101$</span>, donc $\\sigma=\\sqrt{101}\\approx$ <span class='reponse'>$10{,}05$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 3 pts"
+    },
+    {
+      "titre": "Exercice 3 — Médiane et quartiles en classes",
+      "points": "5 pts",
+      "consigne": "On reprend la série de l'exercice 2.",
+      "enonce": "<ol type='a'><li>Construire la ligne des effectifs cumulés croissants.</li><li>Déterminer la médiane $M_e$ par interpolation linéaire.</li><li>Déterminer le premier et le troisième quartile $Q_{1}$ et $Q_{3}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Effectifs cumulés : $15\\,;40\\,;75\\,;100$.</p><p><strong>b)</strong> $\\dfrac{N}{2}=50$ → la médiane est dans $[20\\,;30[$. Interpolation : $M_e=20+10\\times\\dfrac{50-40}{75-40}=20+\\dfrac{100}{35}\\approx$ <span class='reponse'>$22{,}86$</span>.</p><p><strong>c)</strong> $Q_{1}$ : rang $\\dfrac{N}{4}=25$ → classe $[10\\,;20[$ : $Q_{1}=10+10\\times\\dfrac{25-15}{40-15}=10+4=$ <span class='reponse'>$14$</span>. $Q_{3}$ : rang $\\dfrac{3N}{4}=75$ → borne atteinte : <span class='reponse'>$Q_{3}=30$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Régression linéaire",
+      "points": "5 pts",
+      "consigne": "Une entreprise relie ses dépenses publicitaires $x_{i}$ (en millions FCFA) à son chiffre d'affaires $y_{i}$ (en dizaines de millions FCFA) sur 5 mois :",
+      "enonce": "<table style='border-collapse:collapse;margin:6px auto;font-size:11pt'><tr><td style='border:1.5px solid #94a3b8;padding:4px 12px;font-weight:700'>$x_{i}$</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>1</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>2</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>3</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>4</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>5</td></tr><tr><td style='border:1.5px solid #94a3b8;padding:4px 12px;font-weight:700'>$y_{i}$</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>10</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>14</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>16</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>20</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>25</td></tr></table><ol type='a'><li>Calculer $\\bar{x}$, $\\bar{y}$, la variance de $x$ et la covariance $\\mathrm{cov}(x,y)$.</li><li>Donner l'équation de la droite de régression $y=ax+b$.</li><li>Estimer le chiffre d'affaires pour une dépense de 6 millions FCFA.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\bar{x}=\\dfrac{15}{5}=3$ ; $\\bar{y}=\\dfrac{85}{5}=17$. $V(x)=\\dfrac{4+1+0+1+4}{5}=2$. $\\mathrm{cov}(x,y)=\\dfrac{(-2)(-7)+(-1)(-3)+0(-1)+1\\times3+2\\times8}{5}=\\dfrac{14+3+0+3+16}{5}=\\dfrac{36}{5}=7{,}2$.</p><p><strong>b)</strong> $a=\\dfrac{\\mathrm{cov}(x,y)}{V(x)}=\\dfrac{7{,}2}{2}=3{,}6$ ; $b=\\bar{y}-a\\bar{x}=17-3{,}6\\times3=6{,}2$. Droite : <span class='reponse'>$y=3{,}6x+6{,}2$</span>.</p><p><strong>c)</strong> Pour $x=6$ : $y=3{,}6\\times6+6{,}2=27{,}8$ → environ <span class='reponse'>278 millions FCFA</span> de chiffre d'affaires estimé.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    }
+  ]
+}

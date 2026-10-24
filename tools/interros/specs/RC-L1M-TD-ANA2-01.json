@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-ANA2-01",
+  "type": "td",
+  "matiere": "Analyse 2",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Sommes de Riemann, primitives et calcul intégral",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Rédige d'abord tes solutions au brouillon, puis compare-les au corrigé détaillé. Toute trace de raisonnement, même incomplète, est valorisée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Sommes de Riemann",
+      "points": "4 pts",
+      "consigne": "On considère la fonction $f(x)=x^{2}+1$ définie sur l'intervalle $[0\\,;3]$.",
+      "enonce": "<ol type='a'><li>On découpe $[0\\,;3]$ en $n$ sous-intervalles de même longueur. Donner la longueur $\\Delta x$ et les bornes de chaque sous-intervalle.</li><li>Écrire la somme de Riemann $S_{n}$ associée aux extrémités droites des sous-intervalles.</li><li>Calculer $\\lim\\limits_{n\\to+\\infty}S_{n}$ et vérifier que l'on retrouve $\\int_{0}^{3}(x^{2}+1)\\,dx$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\Delta x=\\dfrac{3-0}{n}=\\dfrac{3}{n}$. Le $k$-ième sous-intervalle est $\\left[\\dfrac{3(k-1)}{n}\\,;\\dfrac{3k}{n}\\right]$.</p><p><strong>b)</strong> En évaluant $f$ à l'extrémité droite $x_{k}=\\dfrac{3k}{n}$ : $S_{n}=\\sum_{k=1}^{n}\\dfrac{3}{n}\\left(\\dfrac{9k^{2}}{n^{2}}+1\\right)=\\dfrac{27}{n^{3}}\\sum_{k=1}^{n}k^{2}+\\dfrac{3}{n}\\times n$.</p><p><strong>c)</strong> Avec $\\sum_{k=1}^{n}k^{2}=\\dfrac{n(n+1)(2n+1)}{6}$ : $S_{n}=3+\\dfrac{27\\,n(n+1)(2n+1)}{6n^{3}}\\xrightarrow[n\\to+\\infty]{}3+\\dfrac{27\\times2}{6}=3+9=$ <span class='reponse'>$12$</span>. Vérification : $\\int_{0}^{3}(x^{2}+1)\\,dx=\\left[\\dfrac{x^{3}}{3}+x\\right]_{0}^{3}=9+3=12$ ✓.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Limites de suites par les sommes de Riemann",
+      "points": "5 pts",
+      "consigne": "Reconnaître une somme de Riemann permet de transformer une limite de suite en intégrale.",
+      "enonce": "<ol type='a'><li>Montrer que $u_{n}=\\dfrac{1}{n}\\sum_{k=1}^{n}\\left(\\dfrac{k}{n}\\right)^{2}$ converge et calculer sa limite.</li><li>Même question pour $v_{n}=\\dfrac{1}{n}\\sum_{k=1}^{n}\\dfrac{1}{1+\\left(\\frac{k}{n}\\right)^{2}}$.</li><li>Même question pour $w_{n}=\\dfrac{1}{n}\\sum_{k=1}^{n}\\ln\\left(1+\\dfrac{k}{n}\\right)$.</li></ol>",
+      "correction": "<p>Dans les trois cas, on reconnaît $u_{n}=\\dfrac{1}{n}\\sum_{k=1}^{n}f\\left(\\frac{k}{n}\\right)\\to\\int_{0}^{1}f(x)\\,dx$.</p><p><strong>a)</strong> $f(x)=x^{2}$ : $u_{n}\\to\\int_{0}^{1}x^{2}\\,dx=\\left[\\dfrac{x^{3}}{3}\\right]_{0}^{1}=$ <span class='reponse'>$\\dfrac{1}{3}$</span>.</p><p><strong>b)</strong> $f(x)=\\dfrac{1}{1+x^{2}}$ : $v_{n}\\to\\int_{0}^{1}\\dfrac{dx}{1+x^{2}}=\\left[\\arctan x\\right]_{0}^{1}=$ <span class='reponse'>$\\dfrac{\\pi}{4}$</span>.</p><p><strong>c)</strong> $f(x)=\\ln(1+x)$ : $w_{n}\\to\\int_{0}^{1}\\ln(1+x)\\,dx$. Par intégration par parties : $\\int\\ln(1+x)\\,dx=(1+x)\\ln(1+x)-(1+x)$, donc $\\left[(1+x)\\ln(1+x)-(1+x)\\right]_{0}^{1}=2\\ln2-2+1=$ <span class='reponse'>$2\\ln 2-1$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Détermination de primitives",
+      "points": "5 pts",
+      "consigne": "Déterminer une primitive de chacune des fonctions suivantes sur l'intervalle indiqué.",
+      "enonce": "<ol type='a'><li>$f(x)=x\\,e^{x^{2}}$ sur $\\mathbb{R}$</li><li>$g(x)=\\ln x$ sur $]0\\,;+\\infty[$</li><li>$h(x)=\\dfrac{x^{2}}{1+x^{3}}$ sur $]-1\\,;+\\infty[$</li><li>$i(x)=\\cos x\\,\\sqrt{\\sin x}$ sur $\\left]0\\,;\\frac{\\pi}{2}\\right[$</li></ol>",
+      "correction": "<p><strong>a)</strong> Forme $u'\\,e^{u}$ : <span class='reponse'>$F(x)=\\dfrac{1}{2}\\,e^{x^{2}}$</span>.</p><p><strong>b)</strong> Classique (intégration par parties avec $u=\\ln x$) : <span class='reponse'>$G(x)=x\\ln x-x$</span>.</p><p><strong>c)</strong> Forme $\\dfrac{u'}{u}$ avec $u=1+x^{3}$, $u'=3x^{2}$ : <span class='reponse'>$H(x)=\\dfrac{1}{3}\\ln\\left(1+x^{3}\\right)$</span> ($1+x^{3}>0$ sur l'intervalle).</p><p><strong>d)</strong> Forme $u'\\,u^{1/2}$ avec $u=\\sin x$ : <span class='reponse'>$I(x)=\\dfrac{2}{3}\\sin^{3/2}x$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Calcul d'intégrales",
+      "points": "6 pts",
+      "consigne": "Calculer les intégrales suivantes en précisant la méthode utilisée.",
+      "enonce": "<ol type='a'><li>$I_{1}=\\int_{0}^{1}x\\,e^{x}\\,dx$</li><li>$I_{2}=\\int_{1}^{e}\\ln x\\,dx$</li><li>$I_{3}=\\int_{0}^{\\pi/2}x\\sin x\\,dx$</li><li>$I_{4}=\\int_{0}^{1}x\\sqrt{x+1}\\,dx$</li></ol>",
+      "correction": "<p><strong>a)</strong> Par parties ($u=x$, $dv=e^{x}dx$) : $I_{1}=\\left[xe^{x}\\right]_{0}^{1}-\\int_{0}^{1}e^{x}\\,dx=e-(e-1)=$ <span class='reponse'>$1$</span>.</p><p><strong>b)</strong> $I_{2}=\\left[x\\ln x-x\\right]_{1}^{e}=(e-e)-(0-1)=$ <span class='reponse'>$1$</span>.</p><p><strong>c)</strong> Par parties ($u=x$, $dv=\\sin x\\,dx$) : $I_{3}=\\left[-x\\cos x\\right]_{0}^{\\pi/2}+\\int_{0}^{\\pi/2}\\cos x\\,dx=0+\\left[\\sin x\\right]_{0}^{\\pi/2}=$ <span class='reponse'>$1$</span>.</p><p><strong>d)</strong> Substitution $u=x+1$ ($du=dx$) : $I_{4}=\\int_{1}^{2}(u-1)\\sqrt{u}\\,du=\\left[\\dfrac{2}{5}u^{5/2}-\\dfrac{2}{3}u^{3/2}\\right]_{1}^{2}=\\dfrac{8\\sqrt{2}}{5}-\\dfrac{4\\sqrt{2}}{3}+\\dfrac{4}{15}=$ <span class='reponse'>$\\dfrac{4(\\sqrt{2}+1)}{15}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 2 pts"
+    }
+  ]
+}
