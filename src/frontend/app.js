@@ -1718,6 +1718,21 @@ function rr(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
+/* Étoile-scintillement à 4 branches (sparkle motion design) */
+function sparkle4(ctx, x, y, r, color, alpha) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(x, y - r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.quadraticCurveTo(x, y, x, y + r);
+  ctx.quadraticCurveTo(x, y, x - r, y);
+  ctx.quadraticCurveTo(x, y, x, y - r);
+  ctx.fill();
+  ctx.restore();
+}
+
 async function drawStreakCardCanvas() {
   const info = checkStreakValidity();
   const s = info.count;
@@ -1726,160 +1741,211 @@ async function drawStreakCardCanvas() {
   const fullName = [profile.firstName, profile.lastName].filter(Boolean).join(' ').trim() || 'Élève ResumeCI';
   const classLabel = streakClassLabel(profile.selectedClass);
   const initials = fullName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase() || 'RC';
+  const RAINBOW = [['#e11d48', 0], ['#f97316', 0.28], ['#eab308', 0.46], ['#16a34a', 0.64], ['#2563eb', 0.82], ['#7c3aed', 1]];
 
   const W = 1080, H = 1920;
   const cv = document.createElement('canvas');
   cv.width = W; cv.height = H;
   const ctx = cv.getContext('2d');
 
-  // Fond clair teinté par le palier (style motion design du site)
-  const bg = ctx.createLinearGradient(0, 0, 0, H);
-  bg.addColorStop(0, '#ffffff');
-  bg.addColorStop(0.55, tier.light);
-  bg.addColorStop(1, tier.border + '66');
-  ctx.fillStyle = bg;
+  /* ---------- FOND : blanc + halos colorés + filigrane ---------- */
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, W, H);
-
-  // Cercles décoratifs (motif motion)
-  ctx.save();
-  const deco = [[W - 120, 180, 260], [-80, 700, 220], [W + 40, 1500, 300], [-60, 1700, 180]];
-  deco.forEach(([cx, cy, r], i) => {
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    g.addColorStop(0, tier.accent + '26');
+  const blobs = [
+    [W * 0.85, 140, 420, 0.20], [W * 0.08, 640, 380, 0.14],
+    [W * 0.92, 1180, 400, 0.16], [W * 0.12, 1720, 360, 0.18]
+  ];
+  blobs.forEach(([bx, by, br, a]) => {
+    const g = ctx.createRadialGradient(bx, by, 0, bx, by, br);
+    g.addColorStop(0, tier.accent + Math.round(a * 255).toString(16).padStart(2, '0'));
     g.addColorStop(1, tier.accent + '00');
     ctx.fillStyle = g;
-    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(bx, by, br, 0, 7); ctx.fill();
   });
-  ctx.restore();
-
   // Filigrane « ResumeCI » en diagonale
   ctx.save();
-  ctx.globalAlpha = 0.05;
+  ctx.globalAlpha = 0.045;
   ctx.fillStyle = tier.accent;
-  ctx.font = '900 74px system-ui, Arial';
+  ctx.font = '900 76px system-ui, Arial';
   ctx.translate(W / 2, H / 2);
   ctx.rotate(-Math.PI / 6);
-  for (let y = -1200; y <= 1200; y += 240) {
-    for (let x = -1300; x <= 1300; x += 460) ctx.fillText('ResumeCI', x, y);
+  for (let y = -1300; y <= 1300; y += 250) {
+    for (let x = -1400; x <= 1400; x += 480) ctx.fillText('ResumeCI', x, y);
   }
   ctx.restore();
 
-  // Logo + wordmark
+  /* ---------- EN-TÊTE : logo + wordmark ---------- */
   const logo = await loadImgEl('/icon-192.png');
-  if (logo) { rr(ctx, W / 2 - 70, 90, 140, 140, 34); ctx.save(); ctx.clip(); ctx.drawImage(logo, W / 2 - 70, 90, 140, 140); ctx.restore(); }
+  if (logo) { rr(ctx, W / 2 - 62, 66, 124, 124, 30); ctx.save(); ctx.clip(); ctx.drawImage(logo, W / 2 - 62, 66, 124, 124); ctx.restore(); }
   ctx.textAlign = 'center';
   ctx.fillStyle = '#0f172a';
-  ctx.font = '900 62px system-ui, Arial';
-  ctx.fillText('ResumeCI', W / 2, 300);
+  ctx.font = '900 56px system-ui, Arial';
+  ctx.fillText('ResumeCI', W / 2, 258);
   ctx.fillStyle = tier.accent;
-  ctx.font = '700 34px system-ui, Arial';
-  ctx.fillText('Fiches de révision · Côte d\u2019Ivoire', W / 2, 352);
+  ctx.font = '700 30px system-ui, Arial';
+  ctx.fillText('Fiches de révision · Côte d\u2019Ivoire', W / 2, 302);
 
-  // Carte centrale
-  const cx = 90, cy = 430, cw = W - 180, ch = 860;
+  /* ---------- BADGE DU PALIER ---------- */
+  const badgeTxt = tier.name.toUpperCase();
+  ctx.font = '800 34px system-ui, Arial';
+  const bw = ctx.measureText(badgeTxt).width + 96;
   ctx.save();
-  ctx.shadowColor = tier.accent + '55';
-  ctx.shadowBlur = 60;
-  ctx.fillStyle = '#ffffff';
-  rr(ctx, cx, cy, cw, ch, 48);
+  ctx.shadowColor = tier.accent + '66';
+  ctx.shadowBlur = 24;
+  if (tier.rainbow) {
+    const bg2 = ctx.createLinearGradient(W / 2 - bw / 2, 0, W / 2 + bw / 2, 0);
+    RAINBOW.forEach(([c, o]) => bg2.addColorStop(o, c));
+    ctx.fillStyle = bg2;
+  } else {
+    const bg2 = ctx.createLinearGradient(W / 2 - bw / 2, 0, W / 2 + bw / 2, 0);
+    bg2.addColorStop(0, tier.accent); bg2.addColorStop(1, tier.text);
+    ctx.fillStyle = bg2;
+  }
+  rr(ctx, W / 2 - bw / 2, 356, bw, 72, 36);
   ctx.fill();
   ctx.restore();
-  ctx.strokeStyle = tier.accent;
-  ctx.lineWidth = 4;
-  rr(ctx, cx, cy, cw, ch, 48);
-  ctx.stroke();
-
-  // Badge du palier
-  const badgeTxt = tier.name.toUpperCase();
-  ctx.font = '800 38px system-ui, Arial';
-  const bw = ctx.measureText(badgeTxt).width + 80;
-  ctx.fillStyle = tier.gradient.startsWith('linear') ? tier.accent : tier.accent;
-  rr(ctx, W / 2 - bw / 2, cy + 60, bw, 78, 39);
-  ctx.fill();
   ctx.fillStyle = '#ffffff';
-  ctx.fillText(badgeTxt, W / 2, cy + 113);
+  ctx.fillText(badgeTxt, W / 2, 404);
 
-  // Halo derrière la flamme
-  const glow = ctx.createRadialGradient(W / 2, cy + 380, 0, W / 2, cy + 380, 220);
-  glow.addColorStop(0, tier.accent + '44');
-  glow.addColorStop(1, tier.accent + '00');
-  ctx.fillStyle = glow;
-  ctx.beginPath(); ctx.arc(W / 2, cy + 380, 220, 0, 7); ctx.fill();
-
-  // Flamme vectorielle aux couleurs franches du palier (arc-en-ciel au palier max)
+  /* ---------- HÉROS : anneau de progression + flamme ---------- */
+  const hcx = W / 2, hcy = 770, ringR = 265;
+  // Progression vers le prochain palier
+  const next = FLAME_TIERS.slice().reverse().find(t => t.min > s); // palier suivant (min > s le plus petit)
+  let progress = 1;
+  let nextLabel = 'PALIER MAXIMUM ATTEINT';
+  if (s <= 0) { progress = 0; nextLabel = 'ALLUME TA FLAMME EN RÉVISANT'; }
+  else if (next) {
+    progress = Math.min(1, s / next.min);
+    nextLabel = `PROCHAIN PALIER : ${next.short} À ${next.min} JOURS`;
+  }
+  // Halo doux
+  const halo = ctx.createRadialGradient(hcx, hcy, 0, hcx, hcy, ringR + 90);
+  halo.addColorStop(0, tier.accent + '30');
+  halo.addColorStop(1, tier.accent + '00');
+  ctx.fillStyle = halo;
+  ctx.beginPath(); ctx.arc(hcx, hcy, ringR + 90, 0, 7); ctx.fill();
+  // Anneau fond (piste)
+  ctx.lineCap = 'round';
+  ctx.lineWidth = 20;
+  ctx.strokeStyle = tier.border + '99';
+  ctx.beginPath(); ctx.arc(hcx, hcy, ringR, 0, 7); ctx.stroke();
+  // Anneau de progression (conique arc-en-ciel au palier max)
+  if (progress > 0) {
+    ctx.save();
+    ctx.shadowColor = tier.accent + '88';
+    ctx.shadowBlur = 18;
+    const a0 = -Math.PI / 2, a1 = a0 + progress * Math.PI * 2;
+    if (tier.rainbow && ctx.createConicGradient) {
+      const cg = ctx.createConicGradient(a0, hcx, hcy);
+      RAINBOW.forEach(([c, o]) => cg.addColorStop(o, c));
+      cg.addColorStop(0.999, '#e11d48'); cg.addColorStop(1, '#e11d48');
+      ctx.strokeStyle = cg;
+      ctx.beginPath(); ctx.arc(hcx, hcy, ringR, a0, a0 + Math.PI * 2 - 0.001); ctx.stroke();
+    } else {
+      ctx.strokeStyle = tier.accent;
+      ctx.beginPath(); ctx.arc(hcx, hcy, ringR, a0, a1); ctx.stroke();
+    }
+    ctx.restore();
+  }
+  // % de progression au centre-haut de l'anneau
+  if (s > 0 && next) {
+    ctx.fillStyle = tier.text;
+    ctx.font = '800 30px system-ui, Arial';
+    ctx.fillText(`${Math.round(progress * 100)} %`, hcx, hcy - ringR - 34);
+  }
+  // Flamme vectorielle au centre de l'anneau
   ctx.save();
-  const flameH = 310;
+  const flameH = 340;
   const fScale = flameH / 512;
-  ctx.translate(W / 2 - 192 * fScale, cy + 220);
+  ctx.translate(hcx - 192 * fScale, hcy - flameH / 2 - 10);
   ctx.scale(fScale, fScale);
   const fp = new Path2D('M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z');
   const fg = ctx.createLinearGradient(0, 0, 0, 512);
-  if (tier.rainbow) {
-    [['#e11d48', 0], ['#f97316', 0.28], ['#eab308', 0.46], ['#16a34a', 0.64], ['#2563eb', 0.82], ['#7c3aed', 1]]
-      .forEach(([c, o]) => fg.addColorStop(o, c));
-  } else if (s <= 0) {
-    fg.addColorStop(0, '#94a3b8'); fg.addColorStop(1, '#64748b');
-  } else {
-    fg.addColorStop(0, tier.accent); fg.addColorStop(1, tier.text);
-  }
+  if (tier.rainbow) RAINBOW.forEach(([c, o]) => fg.addColorStop(o, c));
+  else if (s <= 0) { fg.addColorStop(0, '#94a3b8'); fg.addColorStop(1, '#64748b'); }
+  else { fg.addColorStop(0, tier.accent); fg.addColorStop(1, tier.text); }
   ctx.fillStyle = fg;
   ctx.fill(fp);
-  // Lumière interne douce pour un rendu « glossy »
   ctx.clip(fp);
-  const hg = ctx.createRadialGradient(192, 330, 10, 192, 330, 220);
-  hg.addColorStop(0, 'rgba(255,255,255,.45)');
+  const hg = ctx.createRadialGradient(192, 330, 10, 192, 330, 230);
+  hg.addColorStop(0, 'rgba(255,255,255,.5)');
   hg.addColorStop(0.55, 'rgba(255,255,255,.12)');
   hg.addColorStop(1, 'rgba(255,255,255,0)');
   ctx.fillStyle = hg;
   ctx.fillRect(0, 0, 384, 512);
   ctx.restore();
+  // Sparkles autour de l'anneau
+  sparkle4(ctx, hcx - ringR - 55, hcy - 120, 26, tier.accent, 0.85);
+  sparkle4(ctx, hcx + ringR + 50, hcy - 60, 20, tier.accent, 0.7);
+  sparkle4(ctx, hcx - ringR - 30, hcy + 140, 16, tier.border, 0.9);
+  sparkle4(ctx, hcx + ringR + 40, hcy + 160, 24, tier.accent, 0.6);
+  sparkle4(ctx, hcx + 40, hcy - ringR - 60, 15, tier.border, 0.8);
 
-  // Compteur de jours
+  /* ---------- COMPTEUR + MESSAGE ---------- */
   ctx.fillStyle = tier.accent;
-  ctx.font = '900 200px system-ui, Arial';
-  ctx.fillText(String(s), W / 2, cy + 690);
+  ctx.font = '900 215px system-ui, Arial';
+  ctx.fillText(String(s), hcx, hcy + ringR + 205);
   ctx.fillStyle = '#0f172a';
-  ctx.font = '900 54px system-ui, Arial';
-  ctx.fillText(s > 1 ? 'JOURS D\u2019AFFILÉE' : 'JOUR D\u2019AFFILÉE', W / 2, cy + 762);
+  ctx.font = '900 52px system-ui, Arial';
+  ctx.fillText(s > 1 ? 'JOURS D\u2019AFFILÉE' : 'JOUR D\u2019AFFILÉE', hcx, hcy + ringR + 268);
   ctx.fillStyle = tier.text;
-  ctx.font = '600 34px system-ui, Arial';
-  ctx.fillText(tier.msg, W / 2, cy + 820);
+  ctx.font = '600 32px system-ui, Arial';
+  ctx.fillText(tier.msg, hcx, hcy + ringR + 322);
+  // Pilule « prochain palier »
+  ctx.font = '700 28px system-ui, Arial';
+  const nw = ctx.measureText(nextLabel).width + 64;
+  ctx.fillStyle = tier.light;
+  ctx.strokeStyle = tier.border;
+  ctx.lineWidth = 2.5;
+  rr(ctx, hcx - nw / 2, hcy + ringR + 352, nw, 62, 31);
+  ctx.fill(); ctx.stroke();
+  ctx.fillStyle = tier.text;
+  ctx.fillText(nextLabel, hcx, hcy + ringR + 394);
 
-  // Bandeau profil
-  const py = cy + ch + 60;
-  ctx.fillStyle = '#ffffff';
+  /* ---------- CARTE PROFIL ---------- */
+  const py = hcy + ringR + 440;
   ctx.save();
-  ctx.shadowColor = '#00000022';
-  ctx.shadowBlur = 30;
-  rr(ctx, 150, py, W - 300, 170, 85);
+  ctx.shadowColor = tier.accent + '33';
+  ctx.shadowBlur = 34;
+  ctx.fillStyle = '#ffffff';
+  rr(ctx, 130, py, W - 260, 168, 40);
   ctx.fill();
   ctx.restore();
-  // Avatar dégradé du palier
-  const ag = ctx.createLinearGradient(210, py + 30, 330, py + 140);
+  ctx.strokeStyle = tier.border;
+  ctx.lineWidth = 2.5;
+  rr(ctx, 130, py, W - 260, 168, 40);
+  ctx.stroke();
+  // Avatar dégradé + anneau
+  const ag = ctx.createLinearGradient(180, py + 24, 300, py + 144);
   if (tier.rainbow) { ag.addColorStop(0, '#e11d48'); ag.addColorStop(0.5, '#f97316'); ag.addColorStop(1, '#7c3aed'); }
   else { ag.addColorStop(0, tier.accent); ag.addColorStop(1, tier.text); }
+  ctx.strokeStyle = tier.border;
+  ctx.lineWidth = 5;
+  ctx.beginPath(); ctx.arc(238, py + 84, 62, 0, 7); ctx.stroke();
   ctx.fillStyle = ag;
-  ctx.beginPath(); ctx.arc(255, py + 85, 55, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.arc(238, py + 84, 54, 0, 7); ctx.fill();
   ctx.fillStyle = '#ffffff';
-  ctx.font = '900 52px system-ui, Arial';
-  ctx.fillText(initials, 255, py + 103);
-  // Nom + classe
+  ctx.font = '900 50px system-ui, Arial';
+  ctx.fillText(initials, 238, py + 101);
+  // Nom + classe + badge Élite
   ctx.textAlign = 'left';
   ctx.fillStyle = '#0f172a';
   ctx.font = '800 44px system-ui, Arial';
-  ctx.fillText(fullName.length > 20 ? fullName.slice(0, 20) + '…' : fullName, 340, py + 75);
+  ctx.fillText(fullName.length > 18 ? fullName.slice(0, 18) + '…' : fullName, 330, py + 72);
   ctx.fillStyle = tier.accent;
-  ctx.font = '700 34px system-ui, Arial';
-  ctx.fillText(classLabel + ' · ResumeCI', 340, py + 125);
+  ctx.font = '700 32px system-ui, Arial';
+  ctx.fillText(classLabel + (profile.isPremium ? ' · Pass ' + (profile.premiumPlan || 'Élite') : ''), 330, py + 122);
   ctx.textAlign = 'center';
 
-  // Pied de carte
+  /* ---------- PIED ---------- */
   ctx.fillStyle = '#0f172a';
-  ctx.font = '800 44px system-ui, Arial';
-  ctx.fillText('resumeci.me', W / 2, H - 170);
+  ctx.font = '900 46px system-ui, Arial';
+  ctx.fillText('resumeci.me', W / 2, H - 158);
   ctx.fillStyle = tier.text;
-  ctx.font = '600 32px system-ui, Arial';
-  ctx.fillText('Installe l\u2019appli et allume ta flamme ! 🔥', W / 2, H - 115);
+  ctx.font = '600 30px system-ui, Arial';
+  ctx.fillText('Installe l\u2019appli et allume ta flamme !', W / 2, H - 106);
+  sparkle4(ctx, W / 2 - 250, H - 120, 18, tier.accent, 0.8);
+  sparkle4(ctx, W / 2 + 250, H - 120, 18, tier.accent, 0.8);
   return cv;
 }
 window.drawStreakCardCanvas = drawStreakCardCanvas;
