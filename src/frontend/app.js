@@ -3296,7 +3296,11 @@ window.openSujetsModal = async function() {
   body.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des sujets…</div>';
   try {
     const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
-    const res = await fetch(`${apiBase}/api/interros/catalog`, { cache: 'no-store' });
+    const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+    const res = await fetch(`${apiBase}/api/interros/catalog`, {
+      cache: 'no-store',
+      headers: token ? { 'Authorization': 'Bearer ' + token } : {}
+    });
     const data = await res.json();
     window._sujetsCatalog = (data && data.interros) || [];
     renderSujetsList();
@@ -3320,8 +3324,9 @@ function renderSujetsList() {
   const catalog = window._sujetsCatalog || [];
   const myClass = String((window.USER_PROFILE && window.USER_PROFILE.selectedClass) || '');
   const seen = new Set();
-  const all = catalog.filter(d => !seen.has(d.code) && seen.add(d.code));
-  const items = window.sujetsFilterClass === 'all' ? all : catalog.filter(d => d.classe === myClass);
+  // Chaque élève ne voit que les sujets de SA classe (les sujets communs aux
+  // Terminales figurent déjà comme entrées de chaque classe au catalogue).
+  const items = catalog.filter(d => d.classe === myClass && !seen.has(d.code) && seen.add(d.code));
 
   const TYPE_STYLE = {
     interro: { icon: '📝', color: '#2563eb' },
@@ -3332,13 +3337,10 @@ function renderSujetsList() {
     partiel: { icon: '🏛️', color: '#4f46e5' }
   };
 
-  const tabs = `<div style="display:flex;gap:8px;margin-bottom:14px">
-    <button onclick="setSujetsFilter('mine')" class="pm-btn ${window.sujetsFilterClass === 'mine' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'mine' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Ma classe (${catalog.filter(d => d.classe === myClass).length})</button>
-    <button onclick="setSujetsFilter('all')" class="pm-btn ${window.sujetsFilterClass === 'all' ? '' : 'elite-btn-secondary'}" style="flex:1;padding:9px;font-size:12px;${window.sujetsFilterClass === 'all' ? 'background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff' : ''}">Toutes (${all.length})</button>
-  </div>`;
+  const tabs = `<div style="margin-bottom:14px;padding:9px 12px;border-radius:10px;background:#eff6ff;border:1.5px solid #bfdbfe;font-size:12px;font-weight:700;color:#1d4ed8;text-align:center">${items.length} sujet${items.length > 1 ? 's' : ''} pour ta classe</div>`;
 
   if (!items.length) {
-    body.innerHTML = tabs + `<p style="text-align:center;color:#94a3b8;padding:24px 12px">📭 Aucun sujet pour ta classe pour l'instant.<br><span style="font-size:11px">De nouveaux sujets sont ajoutés chaque semaine — regarde l'onglet « Toutes ».</span></p>`;
+    body.innerHTML = `<p style="text-align:center;color:#94a3b8;padding:24px 12px">📭 Aucun sujet pour ta classe pour l'instant.<br><span style="font-size:11px">De nouveaux sujets sont ajoutés chaque semaine — reste connecté !</span></p>`;
     return;
   }
 
@@ -3376,6 +3378,11 @@ window.openInterroDoc = async function(code, part) {
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (res.status === 403) {
+      const err = await res.json().catch(() => null);
+      if (err && err.error === 'wrong_class') {
+        if (window.toast) toast('Ce document appartient à une autre classe.', 'warn');
+        return;
+      }
       if (typeof window.closeSujetsModal === 'function') closeSujetsModal();
       if (typeof window.openElitePassModal === 'function') openElitePassModal('sujets');
       return;
@@ -3670,7 +3677,12 @@ window.startExamSession = async function(code) {
     const res = await fetch(`${apiBase}/api/exam/${encodeURIComponent(code)}/start`, {
       method: 'POST', headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' }, body: '{}'
     });
-    if (res.status === 403) { if (window.openElitePassModal) openElitePassModal('sujets'); return; }
+    if (res.status === 403) {
+      const err = await res.json().catch(() => null);
+      if (err && err.error === 'wrong_class') { if (window.toast) toast('Cette épreuve appartient à une autre classe.', 'warn'); return; }
+      if (window.openElitePassModal) openElitePassModal('sujets');
+      return;
+    }
     if (res.status === 401) { window.location.href = '/connexion.html'; return; }
     const data = await res.json().catch(() => null);
     if (!res.ok || !data || !data.success) { if (window.toast) toast('Impossible de démarrer l\'épreuve.', 'warn'); return; }

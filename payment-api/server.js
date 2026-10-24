@@ -1268,15 +1268,47 @@ function getInterrosCatalog() {
   return interrosCatalogCache;
 }
 
-// Catalogue public (métadonnées uniquement — aucun contenu) : sert à l'affichage
-// de la liste et à l'upsell auprès des comptes non-Élite.
-app.get('/api/interros/catalog', limiter(15 * 60 * 1000, 120), (req, res) => {
-  res.set('Cache-Control', 'public, max-age=300');
-  const items = getInterrosCatalog().map(d => ({
-    ...d,
-    playable: !!d.code && fs.existsSync(path.join(INTERROS_DIR, '..', 'exams', `${d.code}.json`))
-  }));
-  res.json({ success: true, interros: items });
+// Classe effective d'un compte (candidats fusionnés : le « vrai » profil peut
+// être lié via le numéro WhatsApp d'un compte fantôme).
+function firstUserClasse(candidates) {
+  for (const u of (candidates || [])) {
+    const cls = String((u && (u.selectedClass || u.classe)) || '');
+    if (cls) return cls;
+  }
+  return '';
+}
+
+// Un document n'est accessible qu'aux élèves de SA classe. Les sujets communs
+// aux Terminales (ex. RC-T-FRAN) existent comme entrées par classe au catalogue
+// → le filtrage par classe les garde visibles pour chaque classe concernée.
+function docAllowedForClasse(code, cls) {
+  if (!cls) return false;
+  return getInterrosCatalog().some(d => d.code === code && d.classe === cls);
+}
+
+// Catalogue : métadonnées uniquement. Avec session + classe → uniquement les
+// documents de SA classe (chaque élève ne voit que ses sujets). Sans session,
+// catalogue complet (upsell + vérification de disponibilité Élite).
+app.get('/api/interros/catalog', limiter(15 * 60 * 1000, 120), async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    let cls = '';
+    if (sessionUid && db) {
+      const user = await findUserByAnyId(sessionUid).catch(() => null);
+      cls = firstUserClasse([user]);
+    }
+    res.set('Cache-Control', sessionUid ? 'private, max-age=120' : 'public, max-age=300');
+    const items = getInterrosCatalog()
+      .filter(d => !cls || d.classe === cls)
+      .map(d => ({
+        ...d,
+        playable: !!d.code && fs.existsSync(path.join(INTERROS_DIR, '..', 'exams', `${d.code}.json`))
+      }));
+    res.json({ success: true, interros: items });
+  } catch (e) {
+    console.error('[Interros] Erreur catalogue:', e);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
 });
 
 const interroLimiter = limiter(15 * 60 * 1000, 300);
@@ -1306,6 +1338,10 @@ app.get('/api/interro/:code/:part', interroLimiter, async (req, res) => {
     const status = mergedPremiumStatus(candidates);
     if (!status.isPremium || !ELITE_PLANS.has(String(status.premiumPlan || '').toLowerCase())) {
       return res.status(403).json({ success: false, error: 'elite_required' });
+    }
+    const cls = firstUserClasse(candidates);
+    if (!docAllowedForClasse(code, cls)) {
+      return res.status(403).json({ success: false, error: 'wrong_class' });
     }
     res.set('Cache-Control', 'private, max-age=300');
     res.sendFile(filePath);
@@ -1464,6 +1500,10 @@ app.post('/api/exam/:code/start', examLimiter, async (req, res) => {
     const status = mergedPremiumStatus(candidates);
     if (!status.isPremium || !ELITE_PLANS.has(String(status.premiumPlan || '').toLowerCase())) {
       return res.status(403).json({ success: false, error: 'elite_required' });
+    }
+    const cls = firstUserClasse(candidates);
+    if (!docAllowedForClasse(code, cls)) {
+      return res.status(403).json({ success: false, error: 'wrong_class' });
     }
     const attemptId = crypto.randomUUID();
     const { keys, blocs } = buildExamVariant(spec, seedFrom(attemptId));
