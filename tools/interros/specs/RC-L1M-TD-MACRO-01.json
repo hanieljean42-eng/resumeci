@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-MACRO-01",
+  "type": "td",
+  "matiere": "Macroéconomie",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Agrégats, circuit économique et fonction de consommation",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Pose les formules et les unités avant de calculer.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul du PIB par les dépenses",
+      "points": "5 pts",
+      "consigne": "Dans une économie fictive, on relève en milliards de FCFA : consommation $C=800$, investissement $I=250$, dépenses publiques $G=300$, exportations $X=120$, importations $M=150$.",
+      "enonce": "<ol type='a'><li>Rappeler la formule du PIB par l'approche des dépenses.</li><li>Calculer le PIB de cette économie.</li><li>Les impôts s'élèvent à $T=200$ et les transferts aux ménages à $TR=80$. Calculer le revenu disponible brut $Y_{d}$ des ménages (on suppose $Y_{d}=PIB-T+TR$).</li></ol>",
+      "correction": "<p><strong>a)</strong> $PIB=C+I+G+(X-M)$ : somme des dépenses finales intérieures plus la balance commerciale.</p><p><strong>b)</strong> $PIB=800+250+300+(120-150)=$ <span class='reponse'>$1\\,320$ milliards FCFA</span>.</p><p><strong>c)</strong> $Y_{d}=1\\,320-200+80=$ <span class='reponse'>$1\\,200$ milliards FCFA</span> : c'est le revenu que les ménages peuvent réellement consommer ou épargner.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Circuit économique et fuites/injections",
+      "points": "5 pts",
+      "consigne": "On rappelle l'équilibre du circuit économique simplifié.",
+      "enonce": "<ol type='a'><li>Citer les trois « fuites » et les trois « injections » du circuit revenu-dépense.</li><li>À l'équilibre macroéconomique, écrire l'égalité qui les relie.</li><li>On observe $I=250$, $G=300$, $X=120$ et $S=350$, $T=200$, $M=150$. Le circuit est-il équilibré ? Justifier.</li></ol>",
+      "correction": "<p><strong>a)</strong> Fuites (retraits du circuit) : <strong>épargne</strong> $S$, <strong>impôts</strong> $T$, <strong>importations</strong> $M$. Injections : <strong>investissement</strong> $I$, <strong>dépenses publiques</strong> $G$, <strong>exportations</strong> $X$.</p><p><strong>b)</strong> Équilibre : $I+G+X=S+T+M$.</p><p><strong>c)</strong> Injections : $250+300+120=670$ ; fuites : $350+200+150=700$. $670\\neq700$ → le circuit n'est <span class='reponse'>pas équilibré</span> : les fuites excèdent les injections de 30 (pression récessive, à corriger par relance de l'investissement ou des exportations).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Fonction de consommation keynésienne",
+      "points": "6 pts",
+      "consigne": "La consommation des ménages s'écrit $C=50+0{,}75\\,Y_{d}$ (en milliards FCFA).",
+      "enonce": "<ol type='a'><li>Que représentent $50$ et $0{,}75$ ? Donner l'expression de l'épargne $S$.</li><li>Pour $Y_{d}=1\\,000$, calculer $C$ et $S$.</li><li>Calculer la propension marginale à épargner $s$ et le multiplicateur $k$.</li><li>Si l'investissement augmente de $40$, de combien augmente le revenu $Y$ ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $50$ = consommation autonome (incompressible) ; $0{,}75$ = propension marginale à consommer $c$. $S=Y_{d}-C=-50+0{,}25\\,Y_{d}$.</p><p><strong>b)</strong> $C=50+0{,}75\\times1\\,000=$ <span class='reponse'>$800$</span> ; $S=1\\,000-800=$ <span class='reponse'>$200$</span>.</p><p><strong>c)</strong> $s=1-c=0{,}25$ ; multiplicateur keynésien $k=\\dfrac{1}{1-c}=\\dfrac{1}{s}=$ <span class='reponse'>$4$</span>.</p><p><strong>d)</strong> $\\Delta Y=k\\times\\Delta I=4\\times40=$ <span class='reponse'>$+160$ milliards FCFA</span> : toute injection initiale se propage par vagues de dépenses successives.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Monnaie et agrégats",
+      "points": "4 pts",
+      "consigne": "On classe les instruments monétaires d'une économie.",
+      "enonce": "<ol type='a'><li>Rappeler les trois fonctions de la monnaie.</li><li>Parmi : billets, dépôts à vue, comptes d'épargne logement, actions en bourse — dire lesquels appartiennent à $M_{1}$, $M_{2}$, $M_{3}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Unité de compte (mesurer les valeurs), intermédiaire des échanges (payer), réserve de valeur (conserver du pouvoir d'achat).</p><p><strong>b)</strong> $M_{1}$ (monnaie stricto sensu) : <strong>billets + dépôts à vue</strong>. $M_{2}=M_{1}$ + quasi-monnaie disponible : ajoute les <strong>comptes d'épargne</strong> (épargne logement). Les <strong>actions</strong> ne sont pas monétaires : elles relèvent des placements financiers ($M_{3}$ au sens large inclut les autres placements négociables, mais pas les actions ordinaires dans les agrégats usuels).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts"
+    }
+  ]
+}

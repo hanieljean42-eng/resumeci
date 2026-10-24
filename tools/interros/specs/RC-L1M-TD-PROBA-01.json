@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-PROBA-01",
+  "type": "td",
+  "matiere": "Combinatoire et probabilité",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Dénombrement, probabilités et lois usuelles",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Justifie chaque dénombrement par la formule utilisée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Dénombrement",
+      "points": "5 pts",
+      "consigne": "Répondre en distinguant arrangement, permutation ou combinaison.",
+      "enonce": "<ol type='a'><li>Un code de badge est formé de 4 chiffres distincts : combien de codes possibles ?</li><li>Combien de podiums (1er, 2e, 3e) possibles avec 8 concurrents ?</li><li>Combien de groupes de 3 délégués peut-on former dans une promo de 10 étudiants ?</li><li>De combien de façons peut-on ranger 5 livres différents sur une étagère ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Ordre important, sans répétition : arrangement $A_{10}^{4}=10\\times9\\times8\\times7=$ <span class='reponse'>$5\\,040$</span>.</p><p><strong>b)</strong> Ordre important : $A_{8}^{3}=8\\times7\\times6=$ <span class='reponse'>$336$</span>.</p><p><strong>c)</strong> Ordre indifférent : combinaison $\\binom{10}{3}=\\dfrac{10!}{3!\\,7!}=$ <span class='reponse'>$120$</span>.</p><p><strong>d)</strong> Permutation : $5!=$ <span class='reponse'>$120$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Probabilités sur tirage",
+      "points": "5 pts",
+      "consigne": "Une urne contient 4 boules rouges et 6 boules vertes, indiscernables au toucher. On tire 2 boules successivement <strong>sans remise</strong>.",
+      "enonce": "<ol type='a'><li>Quelle est la probabilité d'obtenir 2 boules rouges ?</li><li>Quelle est la probabilité d'obtenir une boule de chaque couleur ?</li><li>Quelle est la probabilité que la deuxième boule soit verte ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $P(RR)=\\dfrac{4}{10}\\times\\dfrac{3}{9}=\\dfrac{12}{90}=$ <span class='reponse'>$\\dfrac{2}{15}$</span>.</p><p><strong>b)</strong> Deux ordres : $P(RV)+P(VR)=\\dfrac{4}{10}\\times\\dfrac{6}{9}+\\dfrac{6}{10}\\times\\dfrac{4}{9}=\\dfrac{24+24}{90}=$ <span class='reponse'>$\\dfrac{8}{15}$</span>.</p><p><strong>c)</strong> $P(V_{2})=P(RV)+P(VV)=\\dfrac{24}{90}+\\dfrac{6}{10}\\times\\dfrac{5}{9}=\\dfrac{24+30}{90}=\\dfrac{54}{90}=$ <span class='reponse'>$\\dfrac{3}{5}$</span> (cohérent : la 2ᵉ boule a la même loi marginale qu'un tirage unique).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Variable aléatoire discrète",
+      "points": "5 pts",
+      "consigne": "Un jeu rapporte $X$ FCFA selon la loi : $P(X=-200)=0{,}4$ ; $P(X=0)=0{,}3$ ; $P(X=500)=0{,}3$.",
+      "enonce": "<ol type='a'><li>Vérifier qu'il s'agit bien d'une loi de probabilité.</li><li>Calculer l'espérance $E(X)$ et interpréter.</li><li>Calculer la variance $V(X)$ et l'écart-type.</li></ol>",
+      "correction": "<p><strong>a)</strong> $0{,}4+0{,}3+0{,}3=1$ et toutes les probabilités sont dans $[0,1]$ → loi valide ✓.</p><p><strong>b)</strong> $E(X)=-200\\times0{,}4+0\\times0{,}3+500\\times0{,}3=-80+150=$ <span class='reponse'>$70$ F</span> : en moyenne, le joueur gagne 70 F par partie → jeu <strong>favorable</strong> au joueur.</p><p><strong>c)</strong> $E(X^{2})=40\\,000\\times0{,}4+0+250\\,000\\times0{,}3=16\\,000+75\\,000=91\\,000$ ; $V(X)=91\\,000-70^{2}=86\\,100$ ; $\\sigma=\\sqrt{86\\,100}\\approx$ <span class='reponse'>$293{,}4$ F</span> (forte dispersion autour du gain moyen).</p>",
+      "bareme_detail": "a) 0,5 pt · b) 2 pts · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 4 — Lois binomiale et normale",
+      "points": "5 pts",
+      "consigne": "Une app de livraison réussit une livraison à l'heure avec probabilité $p=0{,}7$. On note $X$ le nombre de livraisons réussies sur $n=5$ courses.",
+      "enonce": "<ol type='a'><li>Quelle loi suit $X$ ? Donner $E(X)$.</li><li>Calculer $P(X=4)$.</li><li>Sachant que le délai de livraison $D$ suit $\\mathcal{N}(30\\,;5^{2})$ (minutes), calculer $P(D&lt;40)$. On donne $\\Phi(2)\\approx0{,}977$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $X\\sim\\mathcal{B}(5\\,;0{,}7)$ (répétitions indépendantes à 2 issues) ; $E(X)=np=$ <span class='reponse'>$3{,}5$</span>.</p><p><strong>b)</strong> $P(X=4)=\\binom{5}{4}\\times0{,}7^{4}\\times0{,}3=5\\times0{,}2401\\times0{,}3\\approx$ <span class='reponse'>$0{,}36$</span>.</p><p><strong>c)</strong> $Z=\\dfrac{40-30}{5}=2$ → $P(D&lt;40)=\\Phi(2)\\approx$ <span class='reponse'>$0{,}977$</span> : 97,7 % des livraisons arrivent en moins de 40 minutes.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

@@ -234,6 +234,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-PART-PY-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Programmation en langage Python",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Structures de contrôle, listes, fonctions et dictionnaires",
+    "exercices": 5,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-ALG2-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -260,6 +273,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-TD-ATO-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Architecture et technologies des ordinateurs",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Représentation de l'information, bus et entrées/sorties",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-C-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -270,6 +296,58 @@
     "bareme": "/20 — auto-évaluation",
     "chapitre": "Pointeurs, tableaux, chaînes et structures",
     "exercices": 5,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-MACRO-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Macroéconomie",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Agrégats, circuit économique et fonction de consommation",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-MERISE-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Analyse et modélisation des données (Merise)",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Entités, associations, cardinalités et passage au MLD",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-MICRO-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Microéconomie",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Utilité, contrainte budgétaire, élasticités et coûts",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-PROBA-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Combinatoire et probabilité",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Dénombrement, probabilités et lois usuelles",
+    "exercices": 4,
     "corrige": true
   },
   {

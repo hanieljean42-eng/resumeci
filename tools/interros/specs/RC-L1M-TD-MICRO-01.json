@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-MICRO-01",
+  "type": "td",
+  "matiere": "Microéconomie",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Utilité, contrainte budgétaire, élasticités et coûts",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Les tableaux de calcul doivent être présentés clairement.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Utilité totale et marginale",
+      "points": "4 pts",
+      "consigne": "La consommation de parts d'alloco par un étudiant donne l'utilité totale suivante :",
+      "enonce": "<table style='border-collapse:collapse;margin:6px auto;font-size:11pt'><tr><td style='border:1.5px solid #94a3b8;padding:4px 12px;font-weight:700'>Quantité</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>0</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>1</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>2</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>3</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>4</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>5</td></tr><tr><td style='border:1.5px solid #94a3b8;padding:4px 12px;font-weight:700'>Utilité totale</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>0</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>20</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>36</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>48</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>55</td><td style='border:1.5px solid #94a3b8;padding:4px 12px'>57</td></tr></table><ol type='a'><li>Calculer l'utilité marginale de chaque unité.</li><li>Quelle loi illustre ce tableau ?</li><li>Si chaque part coûte 15 utilités, jusqu'à quelle quantité l'étudiant doit-il consommer ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $U_{m}=\\Delta U_{T}$ : $20\\,;16\\,;12\\,;7\\,;2$.</p><p><strong>b)</strong> L'utilité marginale décroît à chaque unité supplémentaire : <strong>loi de l'utilité marginale décroissante</strong> (première loi de Gossen).</p><p><strong>c)</strong> On consomme tant que $U_{m}\\geq$ coût : $U_{m}$ passe sous 15 à la 4ᵉ part ($7&lt;15$) → l'étudiant s'arrête à <span class='reponse'>3 parts</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Contrainte budgétaire",
+      "points": "5 pts",
+      "consigne": "Un consommateur dispose d'un revenu $R=1\\,000$ F qu'il consacre à deux biens : $x$ au prix $p_{x}=50$ F et $y$ au prix $p_{y}=100$ F.",
+      "enonce": "<ol type='a'><li>Écrire l'équation de la droite de budget et donner sa pente.</li><li>Quelles sont les quantités maximales de $x$ seul et de $y$ seul ?</li><li>Le prix $p_{x}$ passe à 100 F : représenter l'effet sur la droite de budget (pivot, déplacement ?).</li></ol>",
+      "correction": "<p><strong>a)</strong> $50x+100y=1\\,000$, soit $y=10-0{,}5x$. Pente $=-\\dfrac{p_{x}}{p_{y}}=$ <span class='reponse'>$-0{,}5$</span> (coût d'opportunité : 1 $y$ « coûte » 2 $x$).</p><p><strong>b)</strong> $x$ seul : $\\dfrac{1\\,000}{50}=20$ unités ; $y$ seul : $\\dfrac{1\\,000}{100}=10$ unités.</p><p><strong>c)</strong> Nouvelle pente $=-1$ ; le point $(0\\,;10)$ reste accessible → la droite <span class='reponse'>pivote vers l'intérieur</span> autour de l'ordonnée à l'origine, abscisse maximale réduite à 10 (le bien $x$ devenu plus cher réduit le pouvoir d'achat réel).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Élasticité-prix de la demande",
+      "points": "5 pts",
+      "consigne": "Quand le prix du gigabyte de données passe de 200 F à 180 F, la consommation hebdomadaire d'un quartier passe de 100 Go à 130 Go.",
+      "enonce": "<ol type='a'><li>Calculer l'élasticité-prix de la demande.</li><li>Interpréter le résultat (demande élastique ou inélastique ?).</li><li>Que devient la recette totale du fournisseur ? Commenter.</li></ol>",
+      "correction": "<p><strong>a)</strong> $e=\\dfrac{\\Delta Q/Q}{\\Delta p/p}=\\dfrac{30/100}{-20/200}=\\dfrac{0{,}30}{-0{,}10}=$ <span class='reponse'>$-3$</span>.</p><p><strong>b)</strong> $|e|=3&gt;1$ → demande <strong>élastique</strong> : la quantité réagit 3 fois plus que la variation de prix (les données mobiles sont sensibles au prix ici).</p><p><strong>c)</strong> Recette avant : $200\\times100=20\\,000$ F ; après : $180\\times130=23\\,400$ F → <span class='reponse'>la recette augmente de 3 400 F</span>. Quand $|e|&gt;1$, une baisse de prix accroît la recette totale : la stratégie de baisse est gagnante.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Coûts de production",
+      "points": "6 pts",
+      "consigne": "Une petite unité de transformation d'attiéké a des coûts fixes $CF=400$ F et un coût variable $CV(Q)=2Q^{2}+10Q$ pour une production de $Q$ sacs.",
+      "enonce": "<ol type='a'><li>Donner les expressions du coût total $CT$, du coût moyen $CM$ et du coût marginal $C_{m}$.</li><li>Calculer $CT$, $CM$ et $C_{m}$ pour $Q=5$.</li><li>Pour quel niveau de production le coût moyen est-il minimal ? (chercher le point où $C_{m}=CM$)</li></ol>",
+      "correction": "<p><strong>a)</strong> $CT=400+2Q^{2}+10Q$ ; $CM=\\dfrac{400}{Q}+2Q+10$ ; $C_{m}=CT'(Q)=4Q+10$.</p><p><strong>b)</strong> $Q=5$ : $CT=400+50+50=$ <span class='reponse'>$500$ F</span> ; $CM=\\dfrac{500}{5}=$ <span class='reponse'>$100$ F</span> ; $C_{m}=4\\times5+10=$ <span class='reponse'>$30$ F</span>.</p><p><strong>c)</strong> Minimum de $CM$ quand $C_{m}=CM$ : $4Q+10=\\dfrac{400}{Q}+2Q+10\\Rightarrow2Q=\\dfrac{400}{Q}\\Rightarrow Q^{2}=200\\Rightarrow Q=\\sqrt{200}\\approx$ <span class='reponse'>$14{,}1$</span> → environ <strong>14 sacs</strong>, le coût moyen minimal ≈ $2\\times14{,}1+10+\\dfrac{400}{14{,}1}\\approx66{,}6$ F.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 2,5 pts"
+    }
+  ]
+}

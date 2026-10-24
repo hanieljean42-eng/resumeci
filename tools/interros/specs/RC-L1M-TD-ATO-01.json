@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-ATO-01",
+  "type": "td",
+  "matiere": "Architecture et technologies des ordinateurs",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Représentation de l'information, bus et entrées/sorties",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Détaille les conversions étape par étape.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Conversions de bases",
+      "points": "5 pts",
+      "consigne": "Convertir en montrant la méthode.",
+      "enonce": "<ol type='a'><li>Convertir $(156)_{10}$ en binaire.</li><li>Convertir $(10110110)_{2}$ en décimal.</li><li>Convertir $(2F)_{16}$ en décimal puis en binaire.</li><li>Convertir $(175)_{10}$ en hexadécimal.</li></ol>",
+      "correction": "<p><strong>a)</strong> Divisions successives par 2 : $156=128+16+8+4$ → <span class='reponse'>$(10011100)_{2}$</span>.</p><p><strong>b)</strong> $1\\times128+0+1\\times32+1\\times16+0+1\\times4+1\\times2+0=128+32+16+4+2=$ <span class='reponse'>$182$</span>.</p><p><strong>c)</strong> $(2F)_{16}=2\\times16+15=$ <span class='reponse'>$47$</span> $=(0010\\,1111)_{2}$ (chaque chiffre hexa = 4 bits : 2→0010, F→1111).</p><p><strong>d)</strong> $175=11\\times16+15$ → chiffres B et F → <span class='reponse'>$(AF)_{16}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Codage des nombres négatifs",
+      "points": "5 pts",
+      "consigne": "On travaille sur 8 bits en complément à 2.",
+      "enonce": "<ol type='a'><li>Quelle est la plage de valeurs représentables sur 8 bits en complément à 2 ?</li><li>Coder $-45$ en complément à 2 sur 8 bits.</li><li>Effectuer l'addition binaire $01100010+11010011$ et vérifier en décimal.</li></ol>",
+      "correction": "<p><strong>a)</strong> Plage : <span class='reponse'>$-128\\;\\text{à}\\;+127$</span> ($2^{8}=256$ valeurs, un bit de signe).</p><p><strong>b)</strong> $45=(00101101)_{2}$ → complément à 1 : $11010010$ → +1 : <span class='reponse'>$11010011$</span>.</p><p><strong>c)</strong> $01100010=98$ ; $11010011=-45$. Somme binaire : <code>01100010 + 11010011 = 00110101</code> (retenue finale évacuée) $=53$ ✓ car $98-45=53$ : <span class='reponse'>le complément à 2 rend la soustraction par addition</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Architecture et bus",
+      "points": "5 pts",
+      "consigne": "On considère un ordinateur à architecture de Von Neumann.",
+      "enonce": "<ol type='a'><li>Citer les trois bus principaux et leur rôle.</li><li>Quelle est la capacité maximale d'adressage d'un bus d'adresses de 16 bits ?</li><li>Expliquer la différence entre mémoire RAM et ROM.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Bus de données</strong> (transporte les données, bidirectionnel), <strong>bus d'adresses</strong> (transporte l'adresse mémoire, unidirectionnel CPU→mémoire), <strong>bus de commande</strong> (signaux de contrôle : lecture, écriture…).</p><p><strong>b)</strong> $2^{16}=$ <span class='reponse'>$65\\,536$ adresses</span> soit 64 Ko adressables.</p><p><strong>c)</strong> <strong>RAM</strong> : volatile, lecture/écriture, contient programmes et données en cours (effacée à l'extinction). <strong>ROM</strong> : non volatile, lecture seule, contient le firmware de démarrage (BIOS/UEFI).</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Représentation des données",
+      "points": "5 pts",
+      "consigne": "Un fichier contient 2 048 caractères ASCII, chacun codé sur 1 octet.",
+      "enonce": "<ol type='a'><li>Quelle est la taille du fichier en octets et en Ko ?</li><li>Combien de symboles distincts le code ASCII 7 bits peut-il représenter ?</li><li>Le caractère 'A' vaut 65 en ASCII. Quelle valeur a 'D' ? Écrire 'A' en binaire sur 7 bits.</li></ol>",
+      "correction": "<p><strong>a)</strong> $2\\,048$ octets $=$ <span class='reponse'>$2$ Ko</span> (1 Ko = 1 024 octets).</p><p><strong>b)</strong> $2^{7}=$ <span class='reponse'>$128$ symboles</span> (lettres, chiffres, ponctuation, caractères de contrôle).</p><p><strong>c)</strong> Lettres consécutives : 'D' $=65+3=$ <span class='reponse'>$68$</span>. 'A' $=65=64+1=$ <span class='reponse'>$(1000001)_{2}$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 3 pts"
+    }
+  ]
+}

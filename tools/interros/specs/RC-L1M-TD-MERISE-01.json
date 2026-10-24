@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-MERISE-01",
+  "type": "td",
+  "matiere": "Analyse et modélisation des données (Merise)",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Entités, associations, cardinalités et passage au MLD",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Schématise tes MCD proprement (rectangles, ovales, losanges) avant de comparer.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Construction d'un MCD",
+      "points": "5 pts",
+      "consigne": "Une bibliothèque universitaire veut gérer ses prêts. Règles de gestion : un adhérent peut emprunter plusieurs ouvrages ; un ouvrage peut être emprunté par plusieurs adhérents (au fil du temps) ; chaque prêt possède une date d'emprunt et une date de retour prévue.",
+      "enonce": "<ol type='a'><li>Identifier les entités et leurs attributs (avec identifiant).</li><li>Décrire l'association « Emprunter » et ses cardinalités.</li><li>Dessiner le MCD complet.</li></ol>",
+      "correction": "<p><strong>a)</strong> Entité <strong>ADHERENT</strong> (<u>num_adherent</u>, nom, prenom, filiere) ; entité <strong>OUVRAGE</strong> (<u>code_ouvrage</u>, titre, auteur, annee).</p><p><strong>b)</strong> Association <strong>EMPRUNTER</strong> entre ADHERENT et OUVRAGE, avec attributs <em>date_emprunt</em> et <em>date_retour_prevue</em>. Cardinalités : côté ADHERENT <strong>(0,n)</strong> (un adhérent fait 0 à n emprunts) ; côté OUVRAGE <strong>(0,n)</strong> (un ouvrage peut n'être jamais emprunté ou emprunté plusieurs fois).</p><p><strong>c)</strong> MCD : <code>ADHERENT (0,n) —&lt; EMPRUNTER &gt;— (0,n) OUVRAGE</code>, losange EMPRUNTER portant les deux attributs de date.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Lecture de cardinalités",
+      "points": "5 pts",
+      "consigne": "On donne l'association ENSEIGNER entre PROFESSEUR et MODULE avec cardinalités (1,1) côté PROFESSEUR et (1,n) côté MODULE.",
+      "enonce": "<ol type='a'><li>Traduire en français ce que signifie chaque cardinalité.</li><li>Un module peut-il être assuré par deux professeurs ?</li><li>Un professeur peut-il n'assurer aucun module ?</li></ol>",
+      "correction": "<p><strong>a)</strong> (1,1) côté PROFESSEUR : <strong>chaque professeur enseigne exactement un module</strong> (ni 0, ni plusieurs). (1,n) côté MODULE : <strong>chaque module est enseigné par au moins 1 professeur</strong>, éventuellement plusieurs.</p><p><strong>b)</strong> Oui : la cardinalité maximale n côté MODULE autorise <span class='reponse'>plusieurs professeurs par module</span>.</p><p><strong>c)</strong> Non : cardinalité minimale 1 côté PROFESSEUR → <span class='reponse'>tout professeur assure au moins un module</span>.</p>",
+      "bareme_detail": "a) 3 pts · b) 1 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Du MCD au MLD",
+      "points": "5 pts",
+      "consigne": "On reprend le MCD de l'exercice 1 : ADHERENT (0,n) — EMPRUNTER — (0,n) OUVRAGE.",
+      "enonce": "<ol type='a'><li>Rappeler la règle de transformation d'une entité en relation.</li><li>Rappeler la règle pour une association binaire (n,n)–(n,n) porteuse de données.</li><li>Écrire le MLD (schéma relationnel) complet du cas bibliothèque.</li></ol>",
+      "correction": "<p><strong>a)</strong> Toute entité devient une <strong>relation (table)</strong> dont l'identifiant devient la <strong>clé primaire</strong>.</p><p><strong>b)</strong> Une association (n,n)–(n,n) devient une <strong>table propre</strong> dont la clé primaire est la <strong>concaténation des clés</strong> des deux entités ; ses attributs deviennent des colonnes de cette table.</p><p><strong>c)</strong> MLD :<br>• <code>ADHERENT(<u>num_adherent</u>, nom, prenom, filiere)</code><br>• <code>OUVRAGE(<u>code_ouvrage</u>, titre, auteur, annee)</code><br>• <code>EMPRUNTER(<u>#num_adherent</u>, <u>#code_ouvrage</u>, date_emprunt, date_retour_prevue)</code> — clés étrangères notées #.</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 4 — Dépendances fonctionnelles et normalisation",
+      "points": "5 pts",
+      "consigne": "On relève la table suivante dans une base non normalisée : <code>NOTE(num_etu, nom_etu, code_ue, intitule_ue, note)</code> où chaque ligne enregistre la note d'un étudiant à une UE.",
+      "enonce": "<ol type='a'><li>Quelle est la clé primaire ? Repérer les redondances.</li><li>Écrire les dépendances fonctionnelles.</li><li>Décomposer la table pour atteindre la 3ᵉ forme normale (3FN).</li></ol>",
+      "correction": "<p><strong>a)</strong> Clé primaire : <span class='reponse'>(num_etu, code_ue)</span>. Redondances : nom_etu répété pour chaque UE de l'étudiant ; intitule_ue répété pour chaque étudiant noté.</p><p><strong>b)</strong> DF : num_etu → nom_etu ; code_ue → intitule_ue ; (num_etu, code_ue) → note. Les deux premières sont des dépendances <strong>partielles</strong> (attribut non-clé dépendant d'une partie de la clé) → violation de la 2FN.</p><p><strong>c)</strong> Décomposition : <code>ETUDIANT(<u>num_etu</u>, nom_etu)</code> ; <code>UE(<u>code_ue</u>, intitule_ue)</code> ; <code>NOTE(<u>#num_etu</u>, <u>#code_ue</u>, note)</code>. Chaque attribut non-clé ne dépend plus que de sa clé → <span class='reponse'>3FN atteinte</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

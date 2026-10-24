@@ -1,0 +1,53 @@
+{
+  "code": "RC-L1M-PART-PY-01",
+  "type": "partiel",
+  "matiere": "Programmation en langage Python",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Structures de contrôle, listes, fonctions et dictionnaires",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Les réponses sont rédigées sur papier (pas de machine). Toute fonction utile doit être écrite avant son appel. Syntaxe Python 3.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Lecture de code",
+      "points": "4 pts",
+      "consigne": "On donne le programme suivant :",
+      "enonce": "<pre class='code'>s = 0\nfor i in range(1, 6):\n    if i % 2 == 0:\n        s += i * 2\n    else:\n        s += 1\nprint(s)</pre><ol type='a'><li>Écrire la trace de la variable <code>s</code> à chaque itération.</li><li>Qu'affiche le programme ?</li><li>Que calculerait <code>sum(i*2 for i in range(1,6) if i%2==0) + 3</code> ? Comparer.</li></ol>",
+      "correction": "<p><strong>a)</strong> i=1 : s=1 ; i=2 : s=1+4=5 ; i=3 : s=6 ; i=4 : s=6+8=14 ; i=5 : s=15.</p><p><strong>b)</strong> Le programme affiche <span class='reponse'>15</span>.</p><p><strong>c)</strong> La somme des <code>i*2</code> pairs = 4+8 = 12, plus 3 (les trois i impairs comptés +1 chacun) = <span class='reponse'>15</span> : identique, c'est la version « compréhension de liste » du même calcul.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Fonction : PGCD",
+      "points": "4 pts",
+      "consigne": "Le PGCD de deux entiers positifs peut se calculer par soustractions successives : tant que a ≠ b, on remplace le plus grand par la différence.",
+      "enonce": "<ol type='a'><li>Écrire une fonction <code>pgcd(a, b)</code> qui implémente cet algorithme.</li><li>Tester sur <code>pgcd(48, 36)</code> : écrire les valeurs successives de (a, b).</li><li>Réécrire la fonction avec l'algorithme d'Euclide (modulo <code>%</code>).</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>def pgcd(a, b):\n    while a != b:\n        if a > b:\n            a = a - b\n        else:\n            b = b - a\n    return a</pre><p><strong>b)</strong> (48,36) → (12,36) → (12,24) → (12,12) → PGCD = <span class='reponse'>12</span>.</p><p><strong>c)</strong> Version Euclide :</p><pre class='code'>def pgcd(a, b):\n    while b != 0:\n        a, b = b, a % b\n    return a</pre><p>Trace : (48,36) → (36,12) → (12,0) → <span class='reponse'>12</span> — plus rapide car la division remplace les soustractions répétées.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Traitement d'une liste de notes",
+      "points": "4 pts",
+      "consigne": "On dispose de la liste <code>notes = [12, 8, 15, 9, 14, 6]</code>.",
+      "enonce": "<ol type='a'><li>Sans utiliser <code>min()</code>, <code>max()</code> ni <code>sum()</code>, écrire le code qui calcule la note minimale, la note maximale et la moyenne.</li><li>Afficher la mention : « Ajourné » si moyenne &lt; 10, « Passable » si 10 ≤ moyenne &lt; 12, « Bien » sinon.</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>notes = [12, 8, 15, 9, 14, 6]\nminimum = notes[0]\nmaximum = notes[0]\nsomme = 0\nfor n in notes:\n    if n < minimum:\n        minimum = n\n    if n > maximum:\n        maximum = n\n    somme += n\nmoyenne = somme / len(notes)</pre><p>Résultats : min = <span class='reponse'>6</span>, max = <span class='reponse'>15</span>, moyenne = 64/6 ≈ <span class='reponse'>10,67</span>.</p><p><strong>b)</strong></p><pre class='code'>if moyenne < 10:\n    print(\"Ajourné\")\nelif moyenne < 12:\n    print(\"Passable\")\nelse:\n    print(\"Bien\")</pre><p>Affichage : <span class='reponse'>Passable</span>.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Fonction est_premier",
+      "points": "4 pts",
+      "consigne": "Un entier n ≥ 2 est premier s'il n'a aucun diviseur entre 2 et √n.",
+      "enonce": "<ol type='a'><li>Écrire <code>est_premier(n)</code> retournant <code>True</code> ou <code>False</code>.</li><li>Écrire le programme qui affiche tous les nombres premiers inférieurs à 30.</li><li>Combien y en a-t-il ? Les lister.</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>def est_premier(n):\n    if n < 2:\n        return False\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return True</pre><p><strong>b)</strong></p><pre class='code'>for n in range(2, 30):\n    if est_premier(n):\n        print(n)</pre><p><strong>c)</strong> <span class='reponse'>10 nombres premiers</span> : 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 5 — Problème : stock d'une boutique",
+      "points": "4 pts",
+      "consigne": "Une boutique de Yopougon gère son stock dans un dictionnaire : <code>stock = {\"savon\": 12, \"riz\": 3, \"huile\": 8}</code> (clé = produit, valeur = quantité).",
+      "enonce": "<ol type='a'><li>Écrire une fonction <code>alerte(stock, seuil)</code> qui retourne la liste des produits dont la quantité est strictement inférieure à <code>seuil</code>.</li><li>Avec les prix <code>prix = {\"savon\": 500, \"riz\": 350, \"huile\": 1200}</code>, calculer la valeur totale du stock.</li><li>Afficher chaque produit en rupture imminente (quantité &lt; 5) sous la forme « riz : 3 restants ».</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>def alerte(stock, seuil):\n    res = []\n    for produit, qte in stock.items():\n        if qte < seuil:\n            res.append(produit)\n    return res</pre><p><code>alerte(stock, 5)</code> → <span class='reponse'>[\"riz\"]</span>.</p><p><strong>b)</strong></p><pre class='code'>total = 0\nfor produit, qte in stock.items():\n    total += qte * prix[produit]</pre><p>Total = 12×500 + 3×350 + 8×1200 = 6000 + 1050 + 9600 = <span class='reponse'>16 650 F</span>.</p><p><strong>c)</strong></p><pre class='code'>for produit, qte in stock.items():\n    if qte < 5:\n        print(produit, \":\", qte, \"restants\")</pre><p>Affiche : <span class='reponse'>riz : 3 restants</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt"
+    }
+  ]
+}
