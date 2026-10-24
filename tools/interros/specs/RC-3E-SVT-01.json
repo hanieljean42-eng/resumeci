@@ -1,0 +1,38 @@
+{
+  "code": "RC-3E-SVT-01",
+  "type": "interro",
+  "matiere": "SVT",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Le sang · La transfusion sanguine · La circulation sanguine",
+  "consignes": "Chaque exercice est indépendant. Les réponses doivent être rédigées en phrases complètes et avec le vocabulaire scientifique correct.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — La composition du sang",
+      "points": "3,5 pts",
+      "consigne": "Une prise de sang est réalisée au centre de santé de Bouaké.",
+      "enonce": "<ol type='a'><li>Cite les deux grands constituants du sang.</li><li>Énumère les trois éléments figurés du sang.</li><li>Donne le rôle principal de chacun de ces trois éléments figurés.</li></ol>",
+      "correction": "<p><strong>a)</strong> Le sang est constitué du <span class='reponse'>plasma</span> (partie liquide) et des <span class='reponse'>éléments figurés</span> (cellules).</p><p><strong>b)</strong> Les trois éléments figurés : <span class='reponse'>les globules rouges (hématies), les globules blancs (leucocytes) et les plaquettes (thrombocytes)</span>.</p><p><strong>c)</strong> Globules rouges : <span class='reponse'>transport de l'oxygène</span> grâce à l'hémoglobine ; globules blancs : <span class='reponse'>défense de l'organisme</span> contre les microbes ; plaquettes : <span class='reponse'>coagulation du sang</span> en cas de blessure.</p>",
+      "bareme_detail": "a) 0,5 pt · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — La transfusion sanguine",
+      "points": "3,5 pts",
+      "consigne": "Au CHU de Treichville, un blessé de la route a besoin d'une transfusion. On donne le tableau simplifié des groupes sanguins.",
+      "enonce": "<ol type='a'><li>Comment appelle-t-on la personne qui donne son sang et celle qui le reçoit ?</li><li>Un donneur du groupe O peut transfuser son sang à tous les autres groupes : comment le nomme-t-on ?</li><li>Un receveur du groupe AB peut recevoir le sang de tous les groupes : comment le nomme-t-on ?</li><li>Pourquoi fait-on toujours un test de compatibilité avant une transfusion ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La personne qui donne est le <span class='reponse'>donneur</span>, celle qui reçoit est le <span class='reponse'>receveur</span>.</p><p><strong>b)</strong> Le groupe O est le <span class='reponse'>donneur universel</span> : ses hématies ne portent ni agglutinogène A ni B, elles ne sont donc pas agglutinées.</p><p><strong>c)</strong> Le groupe AB est le <span class='reponse'>receveur universel</span> : son plasma ne contient ni agglutinine anti-A ni anti-B.</p><p><strong>d)</strong> Sans test de compatibilité, les agglutinines du receveur provoqueraient <span class='reponse'>l'agglutination (amas) des globules rouges transfusés</span>, ce qui peut obstruer les vaisseaux et entraîner la mort.</p>",
+      "bareme_detail": "a) 0,5 pt · b) 1 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Le cœur et la circulation",
+      "points": "3 pts",
+      "consigne": "Le schéma ci-dessous représente le cœur humain en coupe. Les quatre cavités sont repérées par les numéros ①, ②, ③ et ④.",
+      "enonce": "<ol type='a'><li>Recopie le tableau suivant et légende le cœur en associant chaque numéro au nom de la cavité : oreillette gauche, oreillette droite, ventricule gauche, ventricule droit.<br/><strong>① …… ② …… ③ …… ④ ……</strong></li><li>Recopie et complète : « Le sang circule toujours dans le même sens grâce aux …… qui empêchent son retour en arrière. »</li><li>Cite les deux circulations mises en jeu dans le déplacement du sang.</li></ol>",
+      "svg": "<svg viewBox='0 0 360 260' xmlns='http://www.w3.org/2000/svg'><path d='M180,60 C120,30 60,70 60,140 C60,195 120,235 180,250 C240,235 300,195 300,140 C300,70 240,30 180,60 Z' fill='none' stroke='#334155' stroke-width='1.8'/><line x1='180' y1='68' x2='180' y2='238' stroke='#334155' stroke-width='1.4' stroke-dasharray='6,4'/><ellipse cx='125' cy='105' rx='42' ry='32' fill='#f1f5f9' stroke='#334155' stroke-width='1.2'/><ellipse cx='235' cy='105' rx='42' ry='32' fill='#f1f5f9' stroke='#334155' stroke-width='1.2'/><ellipse cx='125' cy='185' rx='46' ry='38' fill='#f1f5f9' stroke='#334155' stroke-width='1.2'/><ellipse cx='235' cy='185' rx='46' ry='38' fill='#f1f5f9' stroke='#334155' stroke-width='1.2'/><text x='115' y='110' font-size='18' fill='#2563eb' font-family='Georgia'>①</text><text x='225' y='110' font-size='18' fill='#2563eb' font-family='Georgia'>②</text><text x='115' y='192' font-size='18' fill='#2563eb' font-family='Georgia'>③</text><text x='225' y='192' font-size='18' fill='#2563eb' font-family='Georgia'>④</text><text x='20' y='115' font-size='11' fill='#64748b' font-family='Georgia'>haut</text><text x='20' y='195' font-size='11' fill='#64748b' font-family='Georgia'>bas</text></svg>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>① oreillette droite · ② oreillette gauche · ③ ventricule droit · ④ ventricule gauche</span> (sur le schéma, la droite du cœur est à gauche de l'image, comme face au patient).</p><p><strong>b)</strong> « … grâce aux <span class='reponse'>valvules</span> qui empêchent son retour en arrière. »</p><p><strong>c)</strong> La <span class='reponse'>petite circulation</span> (cœur → poumons → cœur, oxygénation du sang) et la <span class='reponse'>grande circulation</span> (cœur → organes → cœur, distribution de l'oxygène).</p>",
+      "bareme_detail": "a) 2 pts (0,5 × 4) · b) 0,5 pt · c) 0,5 pt"
+    }
+  ]
+}

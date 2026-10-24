@@ -1,0 +1,181 @@
+{
+  "code": "RC-3E-MATH-02",
+  "format": "exam-v2",
+  "titre": "Devoir chronométré — Racines carrées, Thalès, triangle rectangle",
+  "classe": "3eme",
+  "classeLabel": "3ème",
+  "matiere": "Mathématiques",
+  "dureeMin": 120,
+  "noteSur": 20,
+  "consignes": "Mode Examen : calculatrice autorisée. Réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "nn": { "choices": [48, 75, 108] },
+    "mm": { "choices": [20, 45, 80] },
+    "k": { "choices": [1, 2, 3] },
+    "ac": { "choices": [12, 18] },
+    "rr": { "choices": [2, 3] },
+    "adj": { "choices": [8, 12] },
+    "hyp": { "choices": [10, 13] }
+  },
+  "derived": {
+    "an": "Math.sqrt(nn/3)",
+    "am": "Math.sqrt(mm/5)",
+    "l1": "3*k",
+    "l2": "4*k",
+    "hypp": "5*k",
+    "an2": "ac/rr",
+    "cosv": "adj/hyp",
+    "dsq": "l1*l1+l2*l2"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Racines carrées",
+          "enonce": "$\\sqrt{16}+\\sqrt{9}=\\sqrt{25}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\sqrt{16}+\\sqrt{9}=4+3=7$, alors que $\\sqrt{25}=5$. On ne peut pas additionner sous une même racine."
+        },
+        {
+          "id": "e1q2",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Trigonométrie",
+          "enonce": "Dans un triangle rectangle, le cosinus d'un angle aigu est le rapport $\\frac{\\text{côté opposé}}{\\text{hypoténuse}}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\cos=\\frac{\\text{côté adjacent}}{\\text{hypoténuse}}$ (CAH). $\\frac{\\text{opposé}}{\\text{hypoténuse}}$ est le <em>sinus</em>."
+        },
+        {
+          "id": "e1q3",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Thalès",
+          "enonce": "Si $AM=4$ et $AB=12$ avec $(MN)\\parallel(BC)$, alors le rapport $\\frac{AM}{AB}$ vaut $\\frac{1}{3}$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $\\frac{4}{12}=\\frac{1}{3}$ : le triangle $AMN$ est une réduction de $ABC$ au tiers."
+        },
+        {
+          "id": "e1q4",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Racines carrées",
+          "enonce": "Pour tout nombre réel $a$, on a $\\sqrt{a^{2}}=a$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\sqrt{a^{2}}=|a|$ : si $a$ est négatif, le résultat est $-a$ (ex. $\\sqrt{(-3)^{2}}=3$)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "qcm",
+          "points": 1.5,
+          "chapitre": "Racines carrées",
+          "enonce": "$\\sqrt{18}$ est égal à",
+          "choix": ["$3\\sqrt{2}$", "$2\\sqrt{3}$", "$9\\sqrt{2}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $\\sqrt{18}=\\sqrt{9\\times2}=3\\sqrt{2}$."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 1.5,
+          "chapitre": "Pythagore",
+          "enonce": "Un triangle rectangle a pour côtés de l'angle droit 6 cm et 8 cm. Son hypoténuse mesure",
+          "choix": ["$10$ cm", "$14$ cm", "$\\sqrt{14}$ cm"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $h^{2}=6^{2}+8^{2}=100$, donc $h=10$ cm."
+        },
+        {
+          "id": "e2q3",
+          "type": "qcm",
+          "points": 1.5,
+          "chapitre": "Trigonométrie",
+          "enonce": "La tangente d'un angle de $45^{\\circ}$ vaut",
+          "choix": ["$1$", "$0{,}5$", "$\\sqrt{2}$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> À $45^{\\circ}$, opposé = adjacent, donc $\\tan 45^{\\circ}=1$."
+        },
+        {
+          "id": "e2q4",
+          "type": "qcm",
+          "points": 1.5,
+          "chapitre": "Thalès",
+          "enonce": "Si $\\frac{AM}{AB}=\\frac{1}{3}$ et $MN=4$ cm, alors $BC$ vaut",
+          "choix": ["$12$ cm", "$\\frac{4}{3}$ cm", "$7$ cm"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Thalès : $\\frac{MN}{BC}=\\frac{1}{3}$, donc $BC=3\\times4=12$ cm."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 2,
+          "chapitre": "Racines carrées",
+          "enonce": "Écris $\\sqrt{{{num:nn}}}$ sous la forme $a\\sqrt{3}$ et donne la valeur de $a$.",
+          "answer": "an",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$\\sqrt{{{num:nn}}}=\\sqrt{{{num:nn}}/3\\times3}=\\sqrt{{{num:nn}}/3}\\times\\sqrt{3}=$ <span class='reponse'>{{num:an}}$\\sqrt{3}$</span>, donc $a={{num:an}}$."
+        },
+        {
+          "id": "e3q2",
+          "type": "numeric",
+          "points": 2,
+          "chapitre": "Racines carrées",
+          "enonce": "Écris $\\sqrt{{{num:mm}}}$ sous la forme $a\\sqrt{5}$ et donne la valeur de $a$.",
+          "answer": "am",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$\\sqrt{{{num:mm}}}=\\sqrt{{{num:mm}}/5\\times5}=$ <span class='reponse'>{{num:am}}$\\sqrt{5}$</span>, donc $a={{num:am}}$."
+        },
+        {
+          "id": "e3q3",
+          "type": "numeric",
+          "points": 2,
+          "chapitre": "Pythagore",
+          "enonce": "Un terrain rectangulaire se fend par une diagonale. Les deux côtés de l'angle droit mesurent {{num:l1}} m et {{num:l2}} m. Calcule la longueur de la diagonale, en mètres.",
+          "answer": "hypp",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "Pythagore : $d^{2}={{num:l1}}^{2}+{{num:l2}}^{2}={{num:dsq}}$, donc $d=$ <span class='reponse'>{{num:hypp}} m</span>."
+        },
+        {
+          "id": "e3q4",
+          "type": "numeric",
+          "points": 2,
+          "chapitre": "Thalès",
+          "enonce": "Dans le triangle $ABC$, $M\\in[AB]$, $N\\in[AC]$ et $(MN)\\parallel(BC)$. On donne $\\frac{AM}{AB}=\\frac{1}{{{num:rr}}}$ et $AC={{num:ac}}$ cm. Calcule $AN$ en cm.",
+          "answer": "an2",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "Thalès : $AN=\\frac{AM}{AB}\\times AC=\\frac{1}{{{num:rr}}}\\times{{num:ac}}=$ <span class='reponse'>{{num:an2}} cm</span>."
+        },
+        {
+          "id": "e3q5",
+          "type": "numeric",
+          "points": 2,
+          "chapitre": "Trigonométrie",
+          "enonce": "Dans un triangle rectangle, l'angle aigu $\\theta$ a pour côté adjacent {{num:adj}} et l'hypoténuse mesure {{num:hyp}}. Calcule $\\cos\\theta$ (arrondis à 2 décimales).",
+          "answer": "cosv",
+          "tol": 0.02,
+          "precision": "2 décimales",
+          "corrige": "$\\cos\\theta=\\frac{{{num:adj}}}{{{num:hyp}}}=$ <span class='reponse'>{{d2:cosv}}</span>."
+        }
+      ]
+    }
+  ]
+}

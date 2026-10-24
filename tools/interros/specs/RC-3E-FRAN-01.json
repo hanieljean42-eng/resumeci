@@ -1,0 +1,29 @@
+{
+  "code": "RC-3E-FRAN-01",
+  "type": "devoir",
+  "matiere": "Français",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Grammaire : participe passé, coordination, pronominalisation · Expression écrite : le texte argumentatif",
+  "consignes": "L'épreuve comporte deux parties indépendantes : maîtrise de la langue (10 pts) et expression écrite (10 pts). Soigne la présentation et l'orthographe.",
+  "exercices": [
+    {
+      "titre": "Partie 1 — Maîtrise de la langue (10 pts)",
+      "points": "10 pts",
+      "consigne": "Lis attentivement le texte suivant, puis réponds aux questions.<br/><em>« Samedi dernier, les élèves de la coopérative scolaire ont planté des arbres dans la cour du collège. Les plants de manguier et d'iroko, apportés par le service des eaux et forêts, ont été mis en terre par les jeunes volontaires. La directrice a félicité les élèves et leur a rappelé que chacun devra arroser les jeunes pousses. »</em>",
+      "enonce": "<ol type='a'><li>Donne la nature et la fonction des mots soulignés : <u>la cour du collège</u> et <u>volontaires</u>. <em>(2 pts)</em></li><li>Accorde correctement les participes passés entre parenthèses : « Les jeunes pousses (arrosé) chaque matin ont bien (grandi). » <em>(2 pts)</em></li><li>Transforme la phrase en remplaçant la coordination par une subordination : « La directrice a félicité les élèves et leur a rappelé une consigne. » <em>(2 pts)</em></li><li>Pronominalise : « Les élèves arrosent <u>les jeunes pousses</u> et <u>les élèves</u> remercient <u>la directrice</u>. » (remplace les groupes soulignés par des pronoms adaptés) <em>(2 pts)</em></li><li>Relève dans le texte deux mots de la famille de « forêt ». <em>(2 pts)</em></li></ol>",
+      "correction": "<p><strong>a)</strong> « <span class='reponse'>la cour du collège</span> » : groupe nominal, complément du nom (ou nom + complément du nom) dans « dans la cour du collège » = <span class='reponse'>complément circonstanciel de lieu</span> ; « <span class='reponse'>volontaires</span> » : adjectif qualificatif (ou nom), épithète/attribut de « jeunes » — accepter : adjectif qualifiant « les jeunes (volontaires) ».</p><p><strong>b)</strong> « Les jeunes pousses <span class='reponse'>arrosées</span> chaque matin ont bien <span class='reponse'>grandi</span>. » (« arrosées » s'accorde avec « pousses » placé avant ; « grandi » se conjugue avec avoir → invariable).</p><p><strong>c)</strong> « La directrice a félicité les élèves <span class='reponse'>parce qu'ils avaient bien travaillé / et leur a rappelé qu'il fallait arroser les plants</span>. » — toute subordonnée correcte (conjonction + verbe conjugué) est acceptée.</p><p><strong>d)</strong> « Les élèves <span class='reponse'>les</span> arrosent et <span class='reponse'>ils</span> <span class='reponse'>la</span> remercient. » (« les jeunes pousses » COD pluriel → « les » ; « les élèves » sujet pluriel → « ils » ; « la directrice » COD → « la »).</p><p><strong>e)</strong> <span class='reponse'>« forêts »</span> (présent dans le texte) et « déforestation »/« forestier »/« reforestation » — accepter tout mot correct de la famille.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts · d) 2 pts · e) 2 pts"
+    },
+    {
+      "titre": "Partie 2 — Expression écrite : le texte argumentatif (10 pts)",
+      "points": "10 pts",
+      "consigne": "Ton collège envisage d'interdire totalement l'usage du téléphone portable dans l'enceinte de l'établissement. Certains élèves applaudissent la mesure, d'autres la jugent excessive. Dans un texte argumentatif de 15 à 20 lignes adressé au journal du collège, tu donnes clairement ton avis, soutenu par au moins trois arguments illustrés d'exemples.",
+      "enonce": "<p>Ton texte comportera : une <strong>introduction</strong> qui présente le sujet et annonce ta position (thèse), un <strong>développement</strong> avec au moins trois arguments, chacun étayé d'un exemple, et une <strong>conclusion</strong> qui reprend ta position et s'ouvre sur une proposition.</p>",
+      "correction": "<p>Éléments attendus :</p><p><strong>Introduction (1,5 pt)</strong> : sujet amené + problématique + thèse claire (pour ou contre l'interdiction).</p><p><strong>Développement (5 pts)</strong> : au moins <span class='reponse'>trois arguments hiérarchisés</span>, chacun illustré d'un exemple concret (vie scolaire, sécurité, triche, concentration, lien avec les parents, usage pédagogique…). Les articulations logiques (« d'abord », « ensuite », « enfin », « en revanche »…) doivent structurer le propos. Pour le « contre » : l'élève peut concéder puis réfuter.</p><p><strong>Conclusion (1,5 pt)</strong> : rappel de la position + ouverture (proposition : encadrer plutôt qu'interdire, sensibiliser, casiers à l'entrée…).</p><p><strong>Langue et présentation (2 pts)</strong> : orthographe, syntaxe, ponctuation, présentation soignée.</p>",
+      "bareme_detail": "Introduction 1,5 pt · Arguments et exemples 5 pts · Conclusion 1,5 pt · Langue 2 pts"
+    }
+  ]
+}

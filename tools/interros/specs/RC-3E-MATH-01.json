@@ -1,0 +1,37 @@
+{
+  "code": "RC-3E-MATH-01",
+  "type": "interro",
+  "matiere": "Mathématiques",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "1 heure",
+  "bareme": "10 points",
+  "chapitre": "Calcul littéral · Équations et inéquations dans ℝ",
+  "consignes": "L'usage de la calculatrice n'est pas autorisé. Chaque exercice est indépendant. Toute trace de recherche, même incomplète, sera prise en compte.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul littéral",
+      "points": "4 pts",
+      "consigne": "On considère les expressions littérales ci-dessous.",
+      "enonce": "<ol type='a'><li>Développe et réduis $A=(2x-3)(x+4)$.</li><li>Factorise $B=x^{2}-16$.</li><li>Factorise $C=(3x+1)^{2}-25$.</li><li>Factorise $D=(x-5)^{2}-(x-5)(2x+1)$, puis réduis le résultat.</li></ol>",
+      "correction": "<p><strong>a)</strong> $A=2x^{2}+8x-3x-12=$ <span class='reponse'>$2x^{2}+5x-12$</span>.</p><p><strong>b)</strong> $B$ est une différence de deux carrés : <span class='reponse'>$B=(x-4)(x+4)$</span>.</p><p><strong>c)</strong> $C=(3x+1)^{2}-5^{2}=[(3x+1)-5][(3x+1)+5]=$ <span class='reponse'>$(3x-4)(3x+6)$</span> (on accepte aussi $3(3x-4)(x+2)$).</p><p><strong>d)</strong> On met $(x-5)$ en facteur : $D=(x-5)\big[(x-5)-(2x+1)\big]=(x-5)(-x-6)=$ <span class='reponse'>$-(x-5)(x+6)$</span>.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Équations et inéquations",
+      "points": "4 pts",
+      "consigne": "Résous dans $\\mathbb{R}$ en rédigeant chaque étape.",
+      "enonce": "<ol type='a'><li>Résous l'équation $5(x-2)=3x+4$.</li><li>Résous l'équation produit $(x-3)(2x+6)=0$.</li><li>Résous l'inéquation $4x-5\\geq 2x+7$ et représente l'ensemble des solutions sur une droite graduée.</li><li>Un élève affirme : « $-3x>9$ équivaut à $x>-3$ ». A-t-il raison ? Justifie.</li></ol>",
+      "correction": "<p><strong>a)</strong> $5x-10=3x+4\\iff 2x=14\\iff$ <span class='reponse'>$x=7$</span>.</p><p><strong>b)</strong> Produit nul : $x-3=0$ ou $2x+6=0$, donc <span class='reponse'>$x=3$ ou $x=-3$</span>. $S=\\{-3\\,;3\\}$.</p><p><strong>c)</strong> $4x-5\\geq 2x+7\\iff 2x\\geq 12\\iff$ <span class='reponse'>$x\\geq 6$</span>. Solutions : $[6\\,;+\\infty[$ — sur la droite graduée, on hachure la partie située à <strong>droite</strong> de 6, le crochet fermé inclut 6.</p><p><strong>d)</strong> <span class='reponse'>Il a tort.</span> Quand on divise les deux membres d'une inégalité par un nombre <strong>négatif</strong>, on change le sens de l'inégalité : $-3x>9\\iff x<\\frac{9}{-3}=-3$, donc $x<-3$.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt · c) 1,5 pt · d) 0,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Problème : la vente d'attiéké",
+      "points": "2 pts",
+      "consigne": "Au marché d'Adjamé, tante Aya vend des pagnettes d'attiéké à 250 F l'unité. Elle a déjà encaissé 3 500 F le matin et veut atteindre au moins 15 000 F de recette à la fin de la journée. On note $x$ le nombre de pagnettes qu'elle vend l'après-midi.",
+      "enonce": "<ol type='a'><li>Traduis la situation par une inéquation d'inconnue $x$.</li><li>Résous cette inéquation et indique le nombre minimum de pagnettes que tante Aya doit vendre l'après-midi.</li></ol>",
+      "correction": "<p><strong>a)</strong> Recette totale : <span class='reponse'>$250x+3500\\geq 15000$</span>.</p><p><strong>b)</strong> $250x\\geq 11500\\iff x\\geq 46$. Tante Aya doit vendre <span class='reponse'>au moins 46 pagnettes</span> l'après-midi pour atteindre son objectif.</p>",
+      "bareme_detail": "a) 1 pt · b) 1 pt"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "code": "RC-3E-PC-01",
+  "format": "exam-v2",
+  "titre": "Interrogation chronométrée — Les forces et l'équilibre",
+  "classe": "3eme",
+  "classeLabel": "3ème",
+  "matiere": "Physique-Chimie",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : on prendra g = 10 N/kg sur Terre et g = 1,6 N/kg sur la Lune. Correction automatique à la fin.",
+  "params": {
+    "m": { "choices": [5, 12, 25, 40] },
+    "m2": { "choices": [2, 3, 6] },
+    "mm": { "choices": [25, 40] }
+  },
+  "derived": {
+    "poids": "m*10",
+    "tension": "m2*10",
+    "plune": "mm*1.6"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Masse et poids",
+          "enonce": "Le poids d'un objet dépend du lieu où il se trouve.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $P=m\\times g$ : l'intensité de pesanteur $g$ varie selon le lieu (10 N/kg sur Terre, 1,6 N/kg sur la Lune)."
+        },
+        {
+          "id": "e1q2",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Masse et poids",
+          "enonce": "Sur la Lune, la masse d'un objet diminue.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La masse est invariable : c'est le <em>poids</em> qui diminue sur la Lune."
+        },
+        {
+          "id": "e1q3",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Équilibre",
+          "enonce": "Deux forces qui maintiennent un solide en équilibre ont le même sens.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Elles ont la même droite d'action, la même valeur, mais des sens <em>opposés</em>."
+        },
+        {
+          "id": "e1q4",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Unités",
+          "enonce": "Le poids d'un objet s'exprime en kilogrammes.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le poids est une force : il s'exprime en <strong>newtons</strong> (N). Le kilogramme est l'unité de masse."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Poids",
+          "enonce": "La relation $P=m\\times g$ donne le poids exprimé en",
+          "choix": ["kilogrammes (kg)", "newtons (N)", "joules (J)"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le poids est une force : il se mesure en newtons."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Équilibre",
+          "enonce": "Un solide soumis à deux forces est en équilibre si ces forces ont",
+          "choix": ["même droite d'action, même valeur et sens opposés", "même direction et même sens", "seulement la même valeur"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Les trois conditions : même droite d'action, sens opposés, même valeur."
+        },
+        {
+          "id": "e2q3",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Mesures",
+          "enonce": "Un dynamomètre permet de mesurer",
+          "choix": ["une masse", "une force", "une énergie"],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le dynamomètre mesure l'intensité d'une force (en N) ; la masse se mesure avec une balance."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Poids",
+          "enonce": "Un sac de maïs a une masse de {{num:m}} kg. Calcule son poids sur Terre, en newtons.",
+          "answer": "poids",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$P=m\\times g={{num:m}}\\times10=$ <span class='reponse'>{{num:poids}} N</span>."
+        },
+        {
+          "id": "e3q2",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Équilibre",
+          "enonce": "Une lampe de {{num:m2}} kg est suspendue à un fil, immobile. Calcule la tension du fil, en newtons.",
+          "answer": "tension",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "À l'équilibre, $F=P=m\\times g={{num:m2}}\\times10=$ <span class='reponse'>{{num:tension}} N</span>."
+        },
+        {
+          "id": "e3q3",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Poids sur la Lune",
+          "enonce": "Un rocher de {{num:mm}} kg est emporté sur la Lune ($g=1{,}6$ N/kg). Calcule son poids lunaire, en newtons.",
+          "answer": "plune",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$P_{L}={{num:mm}}\\times1{,}6=$ <span class='reponse'>{{num:plune}} N</span>."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "code": "RC-3E-MATH-02",
+  "type": "devoir",
+  "matiere": "Mathématiques",
+  "classe": "3ème",
+  "classe_key": "3eme",
+  "duree": "2 heures",
+  "bareme": "20 points",
+  "chapitre": "Racines carrées · Théorème de Thalès · Triangle rectangle",
+  "consignes": "L'usage de la calculatrice scientifique est autorisé. Cette épreuve comporte quatre exercices indépendants. La qualité de la rédaction sera prise en compte dans la notation.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Questionnaire à choix multiple",
+      "points": "4 pts",
+      "consigne": "Pour chaque question, une seule réponse est juste. Recopie le numéro de la question suivi de la lettre correspondant à la bonne réponse. Exemple : 5-b.",
+      "enonce": "<table class='tab'><tr><th style='width:8%'>N°</th><th>Question</th><th style='width:14%'>a</th><th style='width:14%'>b</th><th style='width:14%'>c</th></tr><tr><td>1</td><td>$\\sqrt{50}$ est égal à</td><td>$5\\sqrt{2}$</td><td>$25\\sqrt{2}$</td><td>$2\\sqrt{5}$</td></tr><tr><td>2</td><td>$(3-\\sqrt{5})(3+\\sqrt{5})$ est égal à</td><td>$14$</td><td>$4$</td><td>$-4$</td></tr><tr><td>3</td><td>Dans un triangle rectangle, le sinus d'un angle aigu vaut</td><td>$\\frac{\\text{côté adjacent}}{\\text{hypoténuse}}$</td><td>$\\frac{\\text{côté opposé}}{\\text{hypoténuse}}$</td><td>$\\frac{\\text{côté opposé}}{\\text{côté adjacent}}$</td></tr><tr><td>4</td><td>$M\\in[AB]$ et $AM=\\frac{2}{5}AB$. Si $AB=10$ cm alors $AM$ vaut</td><td>$5$ cm</td><td>$8$ cm</td><td>$4$ cm</td></tr></table>",
+      "correction": "<p><span class='reponse'>1-a</span> ($\\sqrt{50}=\\sqrt{25\\times2}=5\\sqrt{2}$) · <span class='reponse'>2-b</span> (identité $(a-b)(a+b)=a^{2}-b^{2}=9-5=4$) · <span class='reponse'>3-b</span> (SOH : $\\sin=\\frac{\\text{opposé}}{\\text{hypoténuse}}$) · <span class='reponse'>4-c</span> ($AM=\\frac{2}{5}\\times10=4$ cm).</p>",
+      "bareme_detail": "1 pt par bonne réponse"
+    },
+    {
+      "titre": "Exercice 2 — Calculs sur les radicaux",
+      "points": "6 pts",
+      "consigne": "Détaille toutes les étapes de tes calculs.",
+      "enonce": "<ol type='a'><li>Écris sous la forme $a\\sqrt{b}$, avec $b$ le plus petit possible : $\\sqrt{72}$ et $\\sqrt{48}$.</li><li>Calcule $A=3\\sqrt{20}+\\sqrt{45}-\\sqrt{80}$ et donne le résultat sous la forme $a\\sqrt{5}$.</li><li>Développe $B=(\\sqrt{3}+2)^{2}$.</li><li>Rends rationnel le dénominateur : $\\dfrac{6}{\\sqrt{3}}$ puis $\\dfrac{4}{\\sqrt{5}-1}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\sqrt{72}=\\sqrt{36\\times2}=$ <span class='reponse'>$6\\sqrt{2}$</span> ; $\\sqrt{48}=\\sqrt{16\\times3}=$ <span class='reponse'>$4\\sqrt{3}$</span>.</p><p><strong>b)</strong> $A=3\\times2\\sqrt{5}+3\\sqrt{5}-4\\sqrt{5}=6\\sqrt{5}+3\\sqrt{5}-4\\sqrt{5}=$ <span class='reponse'>$5\\sqrt{5}$</span>.</p><p><strong>c)</strong> $B=(\\sqrt{3})^{2}+2\\times2\\sqrt{3}+2^{2}=3+4\\sqrt{3}+4=$ <span class='reponse'>$7+4\\sqrt{3}$</span>.</p><p><strong>d)</strong> $\\dfrac{6}{\\sqrt{3}}=\\dfrac{6\\sqrt{3}}{3}=$ <span class='reponse'>$2\\sqrt{3}$</span> ; $\\dfrac{4}{\\sqrt{5}-1}=\\dfrac{4(\\sqrt{5}+1)}{(\\sqrt{5}-1)(\\sqrt{5}+1)}=\\dfrac{4(\\sqrt{5}+1)}{4}=$ <span class='reponse'>$\\sqrt{5}+1$</span>.</p>",
+      "bareme_detail": "a) 2 pts (1+1) · b) 1,5 pt · c) 1 pt · d) 1,5 pt (0,75+0,75)"
+    },
+    {
+      "titre": "Exercice 3 — Théorème de Thalès",
+      "points": "5 pts",
+      "consigne": "Sur la figure ci-dessous, $ABC$ est un triangle, $M\\in[AB]$, $N\\in[AC]$ et les droites $(MN)$ et $(BC)$ sont parallèles. On donne $AM=3$ cm, $AB=12$ cm, $AC=10$ cm et $MN=2{,}5$ cm.",
+      "enonce": "<ol type='a'><li>Calcule la longueur $AN$. Justifie ta réponse en citant le théorème utilisé.</li><li>Calcule la longueur $BC$.</li><li>Un élève prétend que $NC=6$ cm. Montre qu'il se trompe et donne la valeur exacte de $NC$.</li></ol>",
+      "svg": "<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><polygon points='200,25 60,215 340,215' fill='none' stroke='#334155' stroke-width='1.6'/><line x1='130' y1='120' x2='270' y2='120' stroke='#2563eb' stroke-width='1.6'/><text x='205' y='20' font-size='14' fill='#334155' font-family='Georgia'>A</text><text x='42' y='228' font-size='14' fill='#334155' font-family='Georgia'>B</text><text x='345' y='228' font-size='14' fill='#334155' font-family='Georgia'>C</text><text x='112' y='112' font-size='13' fill='#2563eb' font-family='Georgia'>M</text><text x='278' y='112' font-size='13' fill='#2563eb' font-family='Georgia'>N</text><text x='138' y='60' font-size='11' fill='#64748b' font-family='Georgia'>3</text><text x='110' y='175' font-size='11' fill='#64748b' font-family='Georgia'>12</text><text x='292' y='72' font-size='11' fill='#64748b' font-family='Georgia'>10</text><text x='196' y='113' font-size='11' fill='#64748b' font-family='Georgia'>2,5</text></svg>",
+      "correction": "<p><strong>a)</strong> $M\\in[AB]$, $N\\in[AC]$ et $(MN)\\parallel(BC)$ : d'après le <span class='reponse'>théorème de Thalès</span>, $\\dfrac{AM}{AB}=\\dfrac{AN}{AC}=\\dfrac{MN}{BC}$. Donc $\\dfrac{3}{12}=\\dfrac{AN}{10}$, d'où $AN=\\dfrac{3\\times10}{12}=$ <span class='reponse'>$2{,}5$ cm</span>.</p><p><strong>b)</strong> $\\dfrac{MN}{BC}=\\dfrac{1}{4}$ donc $BC=4\\times MN=4\\times2{,}5=$ <span class='reponse'>$10$ cm</span>.</p><p><strong>c)</strong> $NC=AC-AN=10-2{,}5=$ <span class='reponse'>$7{,}5$ cm</span> et non $6$ cm : l'élève se trompe (il a probablement fait $10-4=6$ en confondant le rapport avec la longueur).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Problème : le hauban du poteau",
+      "points": "5 pts",
+      "consigne": "Pour sécuriser un poteau électrique de 6 m de haut à Treichville, un ouvrier tend un câble (hauban) entre le sommet du poteau et un point d'ancrage au sol situé à 4,5 m du pied du poteau. Le poteau est supposé perpendiculaire au sol.",
+      "enonce": "<ol type='a'><li>Fais une figure à main levée de la situation en reportant les données.</li><li>Calcule la longueur exacte du câble nécessaire.</li><li>Calcule la mesure de l'angle que forme le câble avec le sol (arrondis au dixième de degré).</li><li>Pour un second poteau de 8 m, l'ancrage est à 6 m du pied. Le même câble de 7,5 m convient-il ? Justifie.</li></ol>",
+      "correction": "<p><strong>a)</strong> Figure : triangle rectangle — le poteau vertical (6 m), le sol horizontal (4,5 m), le câble en hypoténuse.</p><p><strong>b)</strong> Le triangle est rectangle au pied du poteau ; d'après le <span class='reponse'>théorème de Pythagore</span> : $L^{2}=6^{2}+4{,}5^{2}=36+20{,}25=56{,}25$, donc $L=\\sqrt{56{,}25}=$ <span class='reponse'>$7{,}5$ m</span>.</p><p><strong>c)</strong> $\\tan\\theta=\\dfrac{6}{4{,}5}=\\dfrac{4}{3}$, donc <span class='reponse'>$\\theta\\approx53{,}1^{\\circ}$</span>.</p><p><strong>d)</strong> Nouvelle longueur : $L'=\\sqrt{8^{2}+6^{2}}=\\sqrt{100}=$ <span class='reponse'>$10$ m</span>. Le câble de $7{,}5$ m est trop court : <span class='reponse'>il ne convient pas</span>.</p>",
+      "bareme_detail": "a) 0,5 pt · b) 2 pts · c) 1,5 pt · d) 1 pt"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "code": "RC-3E-MATH-01",
+  "format": "exam-v2",
+  "titre": "Interrogation chronométrée — Calcul littéral et équations",
+  "classe": "3eme",
+  "classeLabel": "3ème",
+  "matiere": "Mathématiques",
+  "dureeMin": 60,
+  "noteSur": 10,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "aa": { "choices": [2, 4, 6, 8] },
+    "pp": { "choices": [4, 5] },
+    "qq": { "choices": [6, 8] },
+    "rr": { "choices": [10, 13, 16] }
+  },
+  "derived": {
+    "sol1": "(6+aa)/2",
+    "solneg": "-qq/2",
+    "seuil": "(rr+5)/3"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Calcul littéral",
+          "enonce": "Développer $(x-3)^{2}$ donne $x^{2}-9$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $(x-3)^{2}=x^{2}-6x+9$ (identité remarquable) ; $x^{2}-9$ est la <em>factorisation</em> de $(x-3)(x+3)$, pas le développement du carré."
+        },
+        {
+          "id": "e1q2",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Équations",
+          "enonce": "L'équation $2x=7$ a pour solution $x=3{,}5$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $x=\\frac{7}{2}=3{,}5$."
+        },
+        {
+          "id": "e1q3",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Inéquations",
+          "enonce": "Si $-2x>6$, alors $x>-3$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> En divisant par $-2$ (nombre négatif), le sens de l'inégalité change : $x<-3$."
+        },
+        {
+          "id": "e1q4",
+          "type": "vrai_faux",
+          "points": 1,
+          "chapitre": "Factorisation",
+          "enonce": "Factoriser $x^{2}-25$ donne $(x-5)^{2}$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $x^{2}-25=(x-5)(x+5)$, différence de deux carrés. $(x-5)^{2}=x^{2}-10x+25$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — QCM",
+      "consigne": "Une seule réponse exacte par question.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Équations",
+          "enonce": "La solution de $5x-10=0$ est",
+          "choix": ["$x=2$", "$x=-2$", "$x=5$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $5x=10\\iff x=2$."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Équation produit",
+          "enonce": "L'équation $(x+4)(x-2)=0$ a pour solutions",
+          "choix": ["$-4$ et $2$", "$4$ et $-2$", "$-4$ et $-2$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Un produit est nul si l'un des facteurs est nul : $x=-4$ ou $x=2$."
+        },
+        {
+          "id": "e2q3",
+          "type": "qcm",
+          "points": 1,
+          "chapitre": "Développement",
+          "enonce": "Le développement de $(2x+1)(x-3)$ est",
+          "choix": ["$2x^{2}-5x-3$", "$2x^{2}-7x-3$", "$2x^{2}+5x-3$"],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> $2x^{2}-6x+x-3=2x^{2}-5x-3$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Calculs",
+      "consigne": "Donne les valeurs demandées (point ou virgule décimale).",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Équations",
+          "enonce": "Résous l'équation $3(x-2)=x+{{num:aa}}$ et donne la valeur de $x$.",
+          "answer": "sol1",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$3x-6=x+{{num:aa}}\\iff 2x={{num:aa}}+6\\iff x=\\frac{{{num:aa}}+6}{2}=$ <span class='reponse'>{{num:sol1}}</span>."
+        },
+        {
+          "id": "e3q2",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Équation produit",
+          "enonce": "Résous $(x-{{num:pp}})(2x+{{num:qq}})=0$ et donne la <strong>solution négative</strong>.",
+          "answer": "solneg",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "Facteurs nuls : $x={{num:pp}}$ ou $2x=-{{num:qq}}\\iff x=-\\frac{{{num:qq}}}{2}=$ <span class='reponse'>{{num:solneg}}</span>. La solution négative est {{num:solneg}}."
+        },
+        {
+          "id": "e3q3",
+          "type": "numeric",
+          "points": 1,
+          "chapitre": "Inéquations",
+          "enonce": "Résous $3x-5\\geq {{num:rr}}$ et donne la plus petite valeur possible de $x$.",
+          "answer": "seuil",
+          "tol": 0.01,
+          "precision": "valeur exacte",
+          "corrige": "$3x\\geq {{num:rr}}+5\\iff x\\geq \\frac{{{num:rr}}+5}{3}$ : la plus petite valeur est <span class='reponse'>{{num:seuil}}</span>."
+        }
+      ]
+    }
+  ]
+}
