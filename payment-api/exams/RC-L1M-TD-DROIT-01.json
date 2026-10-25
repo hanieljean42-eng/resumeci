@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1M-TD-DROIT-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Initiation au droit",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Initiation à l'étude du droit",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Règle de droit",
+          "enonce": "La règle de droit est générale, abstraite, obligatoire et sanctionnée par la puissance publique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Les <strong>4 caractères</strong> de la règle de droit — la sanction publique la distingue de la morale et des usages."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Sources",
+          "enonce": "En droit écrit, la coutume prime sur la loi.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La <strong>loi</strong> est la source première ; la coutume est subsidiaire et ne peut jamais déroger à une loi d'ordre public."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Droits subjectifs",
+          "enonce": "Un droit subjectif est une règle impersonnelle qui s'impose à tous.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le droit subjectif est une <strong>prérogative individuelle</strong> (propriété, créance) ; la règle impersonnelle est le droit <em>objectif</em>."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Hiérarchie",
+          "enonce": "Selon la hiérarchie des normes, le règlement peut contredire la loi.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La <strong>hiérarchie</strong> oblige chaque norme inférieure à respecter la supérieure : règlement &lt; loi &lt; Constitution."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Sources",
+          "enonce": "Laquelle est une source <em>écrite</em> du droit ?",
+          "choix": ["La coutume", "La jurisprudence", "La loi", "Les usages"],
+          "correct": 2,
+          "corrige": "La <strong>loi</strong> est une source écrite (votée par le parlement) ; coutume et usages sont non écrits."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Personnes",
+          "enonce": "Une personne morale est :",
+          "choix": ["Tout être humain", "Un groupement doté de la personnalité juridique", "Un mineur", "Une coutume"],
+          "correct": 1,
+          "corrige": "La <strong>personne morale</strong> = groupement (société, association, État) que la loi dote de droits et devoirs propres."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Divisions du droit",
+          "enonce": "Le droit pénal appartient :",
+          "choix": ["Au droit privé", "Au droit public", "Au droit commercial", "Au droit civil"],
+          "correct": 1,
+          "corrige": "Le droit pénal concerne la <strong>répression par l'État</strong> : droit <strong>public</strong> — le droit privé règle les rapports entre particuliers."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Preuve",
+          "enonce": "En principe, qui doit prouver un fait en justice ?",
+          "choix": ["Le juge", "Celui qui l'invoque", "Le témoin", "L'avocat"],
+          "correct": 1,
+          "corrige": "« <em>Actori incumbit probatio</em> » : <strong>celui qui invoque un fait doit le prouver</strong> — charge de la preuve sur le demandeur."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Règle de droit",
+          "enonce": "Combien de caractères fondamentaux possède la règle de droit ?",
+          "answer": "4",
+          "corrige": "<strong>4</strong> : générale, abstraite, obligatoire, sanctionnée par la puissance publique."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Capacité",
+          "enonce": "Âge de la majorité civile (en années) ?",
+          "answer": "18",
+          "corrige": "La <strong>majorité civile est 18 ans</strong> : capacité juridique pleine (sauf majeurs protégés)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "code": "RC-L1M-TD-ALGO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Bases de l'algorithmique",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Algorithme de base",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "n": { "choices": [4, 5, 6] },
+    "dep": { "choices": [1, 2] }
+  },
+  "derived": {
+    "somme": "n*(n+1)/2",
+    "fin": "dep + 3*n"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Variables",
+          "enonce": "L'affectation <code>x ← x + 1</code> signifie que x garde sa valeur.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> <code>x ← x + 1</code> <strong>incrémente</strong> x : la nouvelle valeur est l'ancienne + 1."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Structures",
+          "enonce": "Un test SI…SINON couvre tous les cas possibles.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> SI la condition est vraie → bloc 1 ; SINON (tous les autres cas) → bloc 2 — aucune issue n'est oubliée."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Boucles",
+          "enonce": "La boucle « POUR i DE 1 À n » s'exécute n fois.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Les valeurs de i : 1, 2, …, n → <strong>n itérations</strong>."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Tableaux",
+          "enonce": "Un tableau de {{n}} cases indexées de 0 possède une case d'indice {{n}}.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Indices valides : <strong>0 à {{n}}−1</strong>. L'indice {{n}} est hors limites → erreur."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Variables",
+          "enonce": "Après <code>a ← 5 ; b ← a ; a ← 9</code>, que vaut b ?",
+          "choix": ["9", "5", "14", "Erreur"],
+          "correct": 1,
+          "corrige": "<code>b ← a</code> copie la valeur 5 avant le changement de a : <strong>b = 5</strong>."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Tests",
+          "enonce": "Pour tester si n est pair, on utilise :",
+          "choix": ["<code>n / 2 = 0</code>", "<code>n MOD 2 = 0</code>", "<code>n MOD 2 = 1</code>", "<code>n × 2 = 0</code>"],
+          "correct": 1,
+          "corrige": "<code>n MOD 2 = 0</code> : le reste de la division par 2 vaut 0 pour un nombre pair."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Boucles",
+          "enonce": "Quand choisir TANT QUE plutôt que POUR ?",
+          "choix": ["Quand on connaît le nombre d'itérations", "Quand l'arrêt dépend d'une condition à priori", "Toujours, c'est plus rapide", "Jamais"],
+          "correct": 1,
+          "corrige": "<strong>TANT QUE</strong> : on répète tant qu'une condition est vraie — nombre de tours inconnu à l'avance ; <strong>POUR</strong> : nombre connu."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Tableaux",
+          "enonce": "Rechercher le maximum d'un tableau exige :",
+          "choix": ["Deux boucles imbriquées", "Un parcours avec une variable max mise à jour", "Un tri complet", "Une pile"],
+          "correct": 1,
+          "corrige": "Un <strong>seul parcours</strong> : max ← T[0] puis pour chaque élément, si T[i] > max → max ← T[i]."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Boucles",
+          "enonce": "<code>s ← 0 ; POUR i DE 1 À {{n}} : s ← s + i</code>. Valeur finale de s ?",
+          "answer": "somme",
+          "corrige": "$s = 1+2+\\cdots+{{n}} = \\frac{{{n}}\\times({{n}}+1)}{2} = <strong>{{somme}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Trace",
+          "enonce": "<code>x ← {{dep}} ; POUR i DE 1 À {{n}} : x ← x + 3</code>. Valeur finale de x ?",
+          "answer": "fin",
+          "corrige": "On ajoute 3 à {{n}} reprises : $x = {{dep}} + 3\\times{{n}} = <strong>{{fin}}</strong>$."
+        }
+      ]
+    }
+  ]
+}

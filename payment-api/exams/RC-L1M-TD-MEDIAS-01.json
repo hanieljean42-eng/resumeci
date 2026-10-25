@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1M-TD-MEDIAS-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Médias sociaux",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Initiation aux médias sociaux",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Décimaux avec une virgule.",
+  "params": {
+    "likes": { "choices": [200, 400, 500] },
+    "com": { "choices": [50, 100] },
+    "abo": { "choices": [5000, 10000] }
+  },
+  "derived": {
+    "taux": "(likes+com)/abo*100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Plateformes",
+          "enonce": "Chaque réseau social possède le même public et les mêmes formats.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Chaque plateforme a ses <strong>codes et son public</strong> : LinkedIn = pro/B2B, TikTok = jeune/vidéo courte, Facebook = large communautaire, WhatsApp = messagerie/groupes."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Engagement",
+          "enonce": "Le taux d'engagement mesure les interactions rapportées au nombre d'abonnés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Taux = (likes + commentaires + partages) / abonnés × 100 — mesure la <strong>qualité</strong> de l'audience, pas sa taille."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Personal branding",
+          "enonce": "Le personal branding consiste à partager tout sa vie privée.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le personal branding = <strong>valoriser son expertise</strong> publiquement : cohérence, contenu utile, ligne éditoriale — la vie privée se protège."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Hygiène numérique",
+          "enonce": "La double authentification renforce la sécurité d'un compte.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La <strong>2FA</strong> ajoute une seconde preuve (code SMS/app) — un mot de passe volé ne suffit plus."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Plateformes",
+          "enonce": "Pour trouver un stage et montrer son parcours, la plateforme la plus adaptée :",
+          "choix": ["TikTok", "LinkedIn", "Snapchat", "Discord"],
+          "correct": 1,
+          "corrige": "<strong>LinkedIn</strong> : réseau professionnel — CV en ligne, offres de stage, contact avec les entreprises."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Contenu",
+          "enonce": "La règle d'or d'un bon contenu social :",
+          "choix": ["Publier le plus souvent possible", "Apporter de la valeur à l'audience ciblée", "Copier les concurrents", "Toujours vendre"],
+          "correct": 1,
+          "corrige": "La <strong>valeur</strong> avant tout (informer, divertir, aider) : l'algorithme récompense l'engagement réel, pas le volume brut."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Statistiques",
+          "enonce": "La portée (reach) d'une publication mesure :",
+          "choix": ["Le nombre de likes", "Le nombre de personnes uniques touchées", "Les ventes réalisées", "Le budget pub"],
+          "correct": 1,
+          "corrige": "<strong>Portée</strong> = personnes <em>uniques</em> exposées ; les impressions comptent les affichages totaux (répétitions incluses)."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Hygiène numérique",
+          "enonce": "Une bonne hygiène numérique comprend :",
+          "choix": ["Le même mot de passe partout", "Mots de passe uniques + 2FA + prudence sur ce qu'on publie", "Accepter tous les inconnus", "Publier sa localisation en direct"],
+          "correct": 1,
+          "corrige": "<strong>Mots de passe uniques</strong> (gestionnaire), <strong>2FA</strong>, penser avant de publier (empreinte permanente), vérifier les demandes suspectes."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Engagement",
+          "enonce": "Post : {{likes}} likes + {{com}} commentaires sur {{abo}} abonnés. Taux d'engagement (en %) ?",
+          "answer": "taux",
+          "tol": 0.01,
+          "corrige": "$\\frac{{{likes}}+{{com}}}{{{abo}}}\\times 100 = <strong>{{d2:taux}}</strong>$ %."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Statistiques",
+          "enonce": "Combien de grandes familles de médias sociaux distingue-t-on (réseaux sociaux, partage de contenu, messagerie, forums) ?",
+          "answer": "4",
+          "corrige": "<strong>4 grandes familles</strong> : réseaux sociaux (Facebook), partage de contenu (YouTube, TikTok), messagerie (WhatsApp), forums/communautés (Reddit)."
+        }
+      ]
+    }
+  ]
+}

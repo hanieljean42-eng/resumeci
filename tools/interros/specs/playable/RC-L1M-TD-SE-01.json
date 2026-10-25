@@ -1,0 +1,102 @@
+{
+  "code": "RC-L1M-TD-SE-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Systèmes d'exploitation",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Système d'exploitation",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Décimaux avec une virgule.",
+  "params": {
+    "p1": { "choices": [3, 4, 6] },
+    "p2": { "choices": [2, 5] }
+  },
+  "derived": {
+    "moy": "(p1 + (p1+p2))/2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Rôles du SE",
+          "enonce": "Le système d'exploitation est un matériel (hardware) de l'ordinateur.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le SE est un <strong>logiciel</strong> (couche entre le matériel et les applications) : il gère CPU, mémoire, fichiers, périphériques."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Processus",
+          "enonce": "Un processus est un programme en cours d'exécution.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Programme = fichier passif ; <strong>processus</strong> = son exécution active avec son contexte (registres, mémoire)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Ordonnancement",
+          "enonce": "FIFO/FCFS ordonne les processus par durée croissante.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> <strong>FIFO</strong> sert les processus <em>par ordre d'arrivée</em> ; c'est <strong>SJF</strong> qui choisit le plus court d'abord."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Mémoire",
+          "enonce": "La mémoire virtuelle permet d'exécuter des programmes plus gros que la RAM.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La <strong>mémoire virtuelle</strong> déplace sur disque (swap) les pages inactives → espace adressable supérieur à la RAM physique."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Rôles du SE",
+          "enonce": "Lequel n'est PAS un rôle du système d'exploitation ?",
+          "choix": ["Gestion des processus", "Gestion de la mémoire", "Compilation du code source", "Gestion des fichiers"],
+          "correct": 2,
+          "corrige": "La <strong>compilation</strong> est le rôle du compilateur ; le SE gère processus, mémoire, fichiers, périphériques, utilisateurs."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Ordonnancement",
+          "enonce": "SJF (Shortest Job First) minimise en moyenne :",
+          "choix": ["L'utilisation du disque", "Le temps d'attente moyen", "La mémoire utilisée", "Le nombre de processus"],
+          "correct": 1,
+          "corrige": "Servir d'abord le plus court minimise le <strong>temps d'attente moyen</strong> — optimal théoriquement mais risque de famine."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Mémoire",
+          "enonce": "La pagination divise la mémoire en :",
+          "choix": ["Fichiers", "Cadres/pages de taille fixe", "Secteurs", "Registres"],
+          "correct": 1,
+          "corrige": "La mémoire virtuelle est découpée en <strong>pages</strong> (processus) mappées sur des <strong>cadres</strong> (RAM) de même taille fixe."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Fichiers",
+          "enonce": "Le système de fichiers sert à :",
+          "choix": ["Accélérer le processeur", "Organiser et sécuriser les données sur disque", "Afficher les fenêtres", "Compiler les programmes"],
+          "correct": 1,
+          "corrige": "Le système de fichiers <strong>organise</strong> répertoires, fichiers, droits d'accès sur les supports de stockage."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre (virgule pour les décimaux).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Ordonnancement",
+          "enonce": "FIFO : deux processus de durées {{p1}} et {{p2}} arrivent dans cet ordre. Temps de séjour moyen ?",
+          "answer": "moy",
+          "corrige": "P1 finit à {{p1}}, P2 à {{p1}}+{{p2}} : moyenne = $\\frac{{{p1}}+{{p1}}+{{p2}}}{2} = <strong>{{num:moy}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Processus",
+          "enonce": "Combien d'états possède le modèle classique d'un processus (prêt, élu, bloqué) ?",
+          "answer": "3",
+          "corrige": "<strong>3 états</strong> : prêt (attend le CPU), élu (exécute), bloqué (attend une E/S)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1M-TD-C-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Langage C",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Langage C",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "n": { "choices": [4, 5, 6] },
+    "x": { "choices": [7, 10] }
+  },
+  "derived": {
+    "somme": "n*(n+1)/2",
+    "x2": "x*2",
+    "xplus1": "x+1"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Pointeurs",
+          "enonce": "En C, un pointeur stocke une adresse mémoire.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>int *p</code> contient l'<strong>adresse</strong> d'un entier ; <code>*p</code> accède à la valeur pointée, <code>&amp;x</code> donne l'adresse de x."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Fonctions",
+          "enonce": "En C, les arguments sont passés par référence par défaut.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le passage se fait <strong>par valeur</strong> : la fonction reçoit une copie — pour modifier l'original, on passe un <strong>pointeur</strong>."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Tableaux",
+          "enonce": "En C, le nom d'un tableau est équivalent à un pointeur vers son premier élément.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>tab</code> ≡ <code>&amp;tab[0]</code> → <code>*(tab+i)</code> ≡ <code>tab[i]</code> : arithmétique des pointeurs."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Types",
+          "enonce": "Le type <code>char</code> stocke un caractère encodé sur un octet.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>char</code> = 1 octet signé (−128 à 127) stockant un code ASCII — <code>'A'</code> vaut 65."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Pointeurs",
+          "enonce": "<code>int x = 5; int *p = &amp;x; *p = 8;</code> — que vaut x ?",
+          "choix": ["5", "8", "Adresse de x", "Erreur"],
+          "correct": 1,
+          "corrige": "<code>*p = 8</code> écrit 8 <strong>à l'adresse de x</strong> → <strong>x = 8</strong> : c'est l'échange par pointeur."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Chaînes",
+          "enonce": "En C, une chaîne de caractères se termine par :",
+          "choix": ["Le caractère '\\n'", "Le caractère nul '\\0'", "Un point-virgule", "EOF"],
+          "correct": 1,
+          "corrige": "Le terminateur <strong><code>'\\0'</code></strong> marque la fin de la chaîne — <code>strlen</code> s'arrête devant lui."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Structures",
+          "enonce": "Pour accéder au champ <code>age</code> d'une structure via un pointeur <code>p</code> :",
+          "choix": ["<code>p.age</code>", "<code>p-&gt;age</code>", "<code>*p.age</code>", "<code>p::age</code>"],
+          "correct": 1,
+          "corrige": "<code>p-&gt;age</code> ≡ <code>(*p).age</code> : l'opérateur <code>-&gt;</code> déréférence puis accède au champ."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Boucles",
+          "enonce": "Laquelle est une boucle garantissant au moins une exécution ?",
+          "choix": ["<code>for</code>", "<code>while</code>", "<code>do…while</code>", "Aucune"],
+          "correct": 2,
+          "corrige": "<strong><code>do…while</code></strong> teste la condition <em>après</em> le bloc → au moins une itération."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Trace",
+          "enonce": "<pre>int s=0; for(int i=1;i&lt;={{n}};i++) s+=i;</pre>Valeur finale de s ?",
+          "answer": "somme",
+          "corrige": "$s = 1+2+\\cdots+{{n}} = <strong>{{somme}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Pointeurs",
+          "enonce": "<pre>int x={{x}}; int *p=&amp;x; (*p)++;</pre>Valeur finale de x ?",
+          "answer": "xplus1",
+          "corrige": "<code>(*p)++</code> incrémente la valeur pointée : x = {{x}} + 1 = <strong>{{xplus1}}</strong>."
+        }
+      ]
+    }
+  ]
+}

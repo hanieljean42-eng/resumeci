@@ -1,0 +1,106 @@
+{
+  "code": "RC-L1M-TD-WEB-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — HTML, CSS et JavaScript",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Initiation à la programmation web",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "n": { "choices": [3, 4, 5] }
+  },
+  "derived": {
+    "somme": "n*(n+1)/2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "HTML",
+          "enonce": "<code>&lt;br&gt;</code> est une balise orpheline qui ne se ferme pas.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code> sont <strong>orphelines</strong> (auto-fermantes) : pas de contenu entre balises."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "CSS",
+          "enonce": "Un sélecteur <code>.classe</code> cible un élément par son id.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le point <code>.classe</code> cible une <strong>classe</strong> (réutilisable) ; l'id s'écrit <code>#id</code> et est unique."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "CSS",
+          "enonce": "La déclaration <code>!important</code> donne la priorité maximale à une règle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>!important</code> passe devant la spécificité — à utiliser avec parcimonie car il casse la cascade."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "JavaScript",
+          "enonce": "<code>let</code> déclare une variable modifiable, <code>const</code> une constante.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>let</code> : réassignable ; <code>const</code> : référence fixe — le bon réflexe : const par défaut, let si la valeur change."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "HTML",
+          "enonce": "Quelle balise crée un lien hypertexte ?",
+          "choix": ["<code>&lt;link&gt;</code>", "<code>&lt;a&gt;</code>", "<code>&lt;href&gt;</code>", "<code>&lt;url&gt;</code>"],
+          "correct": 1,
+          "corrige": "<code>&lt;a href=\"…\"&gt;</code> crée le lien ; <code>&lt;link&gt;</code> sert aux ressources externes (CSS)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "CSS",
+          "enonce": "Ordre de spécificité croissante :",
+          "choix": ["id &lt; classe &lt; balise", "classe &lt; balise &lt; id", "balise &lt; classe &lt; id", "balise &lt; id &lt; classe"],
+          "correct": 2,
+          "corrige": "Spécificité : <strong>balise (1) &lt; classe (10) &lt; id (100)</strong> — l'id l'emporte sur la classe, la classe sur la balise."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "JavaScript",
+          "enonce": "<code>\"5\" + 3</code> en JavaScript donne :",
+          "choix": ["8", "\"53\"", "Erreur", "NaN"],
+          "correct": 1,
+          "corrige": "L'opérateur <code>+</code> avec une chaîne <strong>concatène</strong> : <code>\"5\" + 3 → \"53\"</code> (conversion implicite de 3 en chaîne)."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Formulaires",
+          "enonce": "Pour lire la valeur d'un champ <code>&lt;input id=\"nom\"&gt;</code> :",
+          "choix": [
+            "<code>document.getElementById(\"nom\").value</code>",
+            "<code>document.id(\"nom\")</code>",
+            "<code>input.nom.value</code>",
+            "<code>getElement(\"nom\")</code>"
+          ],
+          "correct": 0,
+          "corrige": "<code>document.getElementById(\"nom\").value</code> — on récupère l'élément par son id puis sa propriété <code>.value</code>."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "JavaScript",
+          "enonce": "<code>for(let i=0; i&lt;{{n}}; i++)</code> : combien d'itérations ?",
+          "answer": "n",
+          "corrige": "i prend les valeurs 0 à {{n}}−1 → <strong>{{n}} itérations</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "JavaScript",
+          "enonce": "<code>let s=0; for(let i=1;i&lt;={{n}};i++){s+=i}</code> : valeur finale de s ?",
+          "answer": "n*(n+1)/2",
+          "corrige": "$1+2+\\cdots+{{n}} = \\frac{{{n}}({{n}}+1)}{2} = <strong>{{num:somme}}</strong>$."
+        }
+      ]
+    }
+  ]
+}

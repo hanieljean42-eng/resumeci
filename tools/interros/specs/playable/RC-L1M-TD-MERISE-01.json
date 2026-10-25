@@ -1,0 +1,99 @@
+{
+  "code": "RC-L1M-TD-MERISE-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Merise : MCD et MLD",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Analyse et modélisation des données (Merise)",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "ent": { "choices": [3, 4, 5] }
+  },
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "MCD",
+          "enonce": "Dans un MCD, une entité représente un objet du monde réel avec des propriétés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'<strong>entité</strong> (CLIENT, LIVRE) regroupe des occurrences partageant les mêmes propriétés — identifiée par un identifiant."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Cardinalités",
+          "enonce": "Une cardinalité (1,n) signifie : occurrence liée à une seule occurrence de l'autre côté.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> (1,n) = <strong>au moins 1, au plus n</strong> — la cardinalité se lit : min,max. Une seule occurrence = (1,1)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "MLD",
+          "enonce": "Au MLD, une association 1-n devient une clé étrangère dans la table du côté « n ».",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Règle de passage MCD→MLD : la clé de l'entité « 1 » migre comme <strong>clé étrangère</strong> dans la table du côté « n »."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Normalisation",
+          "enonce": "Une relation en 3NF peut contenir des dépendances transitives.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La <strong>3NF</strong> élimine justement les dépendances <strong>transitives</strong> : tout attribut non-clé dépend de la clé, pas d'un autre attribut non-clé."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "MCD",
+          "enonce": "Un MCD (Modèle Conceptuel de Données) sert à :",
+          "choix": ["Écrire le SQL", "Modéliser les données indépendamment de la technique", "Dessiner l'interface", "Programmer"],
+          "correct": 1,
+          "corrige": "Le <strong>MCD</strong> décrit les données et leurs liens <em>conceptuellement</em> — avant tout choix de SGBD ou de tables."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Cardinalités",
+          "enonce": "Un client passe plusieurs commandes : côté CLIENT→commande, la cardinalité est :",
+          "choix": ["(0,1)", "(1,1)", "(0,n)", "(n,n)"],
+          "correct": 2,
+          "corrige": "Un client peut passer <strong>0 ou plusieurs</strong> commandes → <strong>(0,n)</strong> côté commandes."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "MLD",
+          "enonce": "Une association n-n (plusieurs à plusieurs) devient au MLD :",
+          "choix": ["Une clé étrangère simple", "Une table de jointure propre", "Un champ multiple", "Rien"],
+          "correct": 1,
+          "corrige": "n-n → <strong>table de jointure</strong> contenant les deux clés étrangères (ex. COMMANDE_PRODUIT avec ses propres attributs)."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Normalisation",
+          "enonce": "La 1NF exige :",
+          "choix": ["Pas de clé étrangère", "Des attributs atomiques (pas de listes)", "Plusieurs clés", "Pas de tables"],
+          "correct": 1,
+          "corrige": "<strong>1NF</strong> : chaque attribut est <strong>atomique</strong> — une valeur unique, pas de liste ni de groupe répétitif."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "MLD",
+          "enonce": "Un MCD de {{ent}} entités + 1 association n-n : combien de tables au MLD ?",
+          "answer": "ent+1",
+          "corrige": "Chaque entité → 1 table ; l'association n-n → +1 table de jointure : <strong>{{ent}}+1</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Modélisation",
+          "enonce": "Combien de niveaux principaux compte la méthode Merise (conceptuel, logique/organisationnel, physique) ?",
+          "answer": "3",
+          "corrige": "<strong>3 niveaux</strong> : conceptuel (MCD), logique/organisationnel (MLD), physique (MPD)."
+        }
+      ]
+    }
+  ]
+}

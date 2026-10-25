@@ -1,0 +1,107 @@
+{
+  "code": "RC-L1M-TD-GESTFIN-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Gestion financière",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Gestion financière",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Décimaux avec une virgule.",
+  "params": {
+    "ca": { "choices": [100000, 200000, 300000] },
+    "charges": { "choices": [60000, 140000] },
+    "stock": { "choices": [20000, 40000] },
+    "clients": { "choices": [30000, 50000] },
+    "fourn": { "choices": [25000, 60000] }
+  },
+  "derived": {
+    "resnet": "ca-charges",
+    "bfr": "stock+clients-fourn",
+    "roe": "(ca-charges)/ca*100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Bilan",
+          "enonce": "Le bilan comptable présente les revenus et dépenses de l'exercice.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le <strong>bilan</strong> est une photographie du <em>patrimoine</em> (actif/passif) à une date ; revenus/dépenses = <strong>compte de résultat</strong>."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Bilan",
+          "enonce": "Au bilan, l'actif doit toujours égaler le passif.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Équation fondamentale : <strong>Actif = Passif</strong> — les ressources financent les emplois."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "BFR",
+          "enonce": "Un BFR positif signifie que l'entreprise finance son cycle d'exploitation avec sa trésorerie.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> BFR &gt; 0 : stocks + créances clients &gt; dettes fournisseurs → besoin de financement du cycle — à couvrir par le fonds de roulement."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Rentabilité",
+          "enonce": "Le ROE mesure le rendement des capitaux propres.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> ROE = résultat net / capitaux propres : rentabilité <strong>des actionnaires</strong> (Return On Equity)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Compte de résultat",
+          "enonce": "Le compte de résultat mesure :",
+          "choix": ["Le patrimoine", "La performance de l'exercice (produits − charges)", "La trésorerie", "Les dettes"],
+          "correct": 1,
+          "corrige": "Le <strong>compte de résultat</strong> = produits − charges sur l'exercice → <strong>bénéfice ou perte</strong>."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "BFR",
+          "enonce": "Le BFR se calcule :",
+          "choix": ["Actif − passif", "Stocks + créances − dettes court terme", "CA − charges", "Capitaux propres − dettes"],
+          "correct": 1,
+          "corrige": "BFR = <strong>stocks + créances clients − dettes fournisseurs</strong> (et autres décalages d'exploitation)."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Ratios",
+          "enonce": "La marge nette s'obtient par :",
+          "choix": ["Résultat net ÷ chiffre d'affaires", "CA ÷ actif", "Dettes ÷ capitaux propres", "Stocks ÷ clients"],
+          "correct": 0,
+          "corrige": "<strong>Marge nette = résultat net / CA</strong> : part du CA qui reste en bénéfice."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Trésorerie",
+          "enonce": "Trésorerie nette = :",
+          "choix": ["Fonds de roulement − BFR", "BFR − fonds de roulement", "Actif − dettes", "CA − charges"],
+          "correct": 0,
+          "corrige": "<strong>TN = FR − BFR</strong> : le fonds de roulement (ressources stables − actifs immobilisés) finance le BFR, le reste = trésorerie."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Résultat",
+          "enonce": "CA = {{ca}} F, charges = {{charges}} F : résultat net (en F) ?",
+          "answer": "resnet",
+          "corrige": "Résultat = CA − charges = {{ca}} − {{charges}} = <strong>{{num:resnet}}</strong> F."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "BFR",
+          "enonce": "Stocks {{stock}} F + créances clients {{clients}} F − dettes fournisseurs {{fourn}} F : BFR (en F) ?",
+          "answer": "bfr",
+          "corrige": "BFR = {{stock}} + {{clients}} − {{fourn}} = <strong>{{num:bfr}}</strong> F."
+        }
+      ]
+    }
+  ]
+}

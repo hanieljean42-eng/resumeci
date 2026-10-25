@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1M-TD-MATHFIN-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Intérêts et annuités",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Mathématiques financière",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Écris les décimaux avec une virgule.",
+  "params": {
+    "cap": { "choices": [100000, 200000, 500000] },
+    "taux": { "choices": [5, 8, 10] },
+    "ans": { "choices": [2, 3] }
+  },
+  "derived": {
+    "isimple": "cap*taux*ans/100",
+    "vfsimple": "cap+cap*taux*ans/100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Intérêts simples",
+          "enonce": "En intérêt simple, l'intérêt de chaque période est calculé sur le capital initial uniquement.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $I = C\\times t\\times n$ : l'intérêt reste <strong>constant</strong> chaque période — pas de capitalisation."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Intérêts composés",
+          "enonce": "À capital égale, l'intérêt composé produit toujours moins que l'intérêt simple sur plusieurs périodes.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est l'inverse : les intérêts s'ajoutent au capital et produisent des intérêts → le composé <strong>dépasse</strong> le simple dès la 2ᵉ période."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Taux",
+          "enonce": "Un taux annuel de 12 % équivaut à un taux mensuel proportionnel de 1 %.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Taux proportionnel : $12\\%/12 = 1\\%$ par mois (attention : le taux <em>équivalent</em> est légèrement différent)."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Annuités",
+          "enonce": "Une annuité constante signifie que la part d'intérêt reste constante dans chaque versement.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> L'annuité constante = <strong>même total versé</strong>, mais la part d'intérêt diminue et celle du capital augmente au fil du temps."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Formules",
+          "enonce": "La valeur acquise par un capital C à intérêt composé au taux i pendant n périodes :",
+          "choix": ["$C(1+i)^n$", "$C(1+ni)$", "$Ci^n$", "$C+n\\cdot i$"],
+          "correct": 0,
+          "corrige": "$V_n = <strong>C(1+i)^n</strong> : chaque période multiplie le capital par $(1+i)$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Actualisation",
+          "enonce": "Actualiser une somme future signifie :",
+          "choix": ["Calculer sa valeur dans le futur", "Ramener sa valeur au présent", "Convertir en devise", "Calculer ses intérêts"],
+          "correct": 1,
+          "corrige": "L'actualisation <strong>ramène une valeur future au présent</strong> : $V_0 = \\frac{V_n}{(1+i)^n}$ — l'inverse de la capitalisation."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Annuités",
+          "enonce": "Pour rembourser un emprunt par annuités constantes :",
+          "choix": ["Le capital remboursé est identique chaque année", "L'intérêt augmente chaque année", "Le versement total est identique, sa composition varie", "L'emprunt n'est jamais soldé"],
+          "correct": 2,
+          "corrige": "Annuité <strong>constante en total</strong> : la part d'intérêt ↓ et celle du capital ↑ au fil des ans — l'emprunt se solde à terme."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Taux",
+          "enonce": "Entre taux proportionnel et taux équivalent au même nominal :",
+          "choix": ["Ils sont identiques", "L'équivalent est toujours supérieur", "L'équivalent est toujours inférieur au proportionnel", "Aucun rapport"],
+          "correct": 2,
+          "corrige": "Le taux <strong>équivalent</strong> intègre la capitalisation intra-annuelle → il est <strong>inférieur</strong> au proportionnel pour un même rendement."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Intérêt simple",
+          "enonce": "Capital de {{cap}} F placé à {{taux}} % l'an en intérêt simple pendant {{ans}} ans : intérêt total (en F) ?",
+          "answer": "isimple",
+          "corrige": "$I = {{cap}}\\times\\frac{{{taux}}}{100}\\times{{ans}} = <strong>{{num:isimple}}</strong>$ F."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Intérêt simple",
+          "enonce": "Valeur acquise par ce même placement après {{ans}} ans (capital + intérêts, en F) ?",
+          "answer": "vfsimple",
+          "corrige": "$V = {{cap}} + {{num:isimple}} = <strong>{{num:vfsimple}}</strong>$ F."
+        }
+      ]
+    }
+  ]
+}

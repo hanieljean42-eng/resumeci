@@ -1,0 +1,106 @@
+{
+  "code": "RC-L1M-TD-ANA1-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Limites et dérivées",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Analyse 1",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Écris les décimaux avec une virgule (ex : 2,5).",
+  "params": {
+    "a": { "choices": [2, 3, 4] },
+    "c": { "choices": [1, 3, 5] },
+    "x0": { "choices": [1, 2] }
+  },
+  "derived": {
+    "a2": "a*a",
+    "lim1": "a*2",
+    "der": "2*a*x0+c",
+    "liminf": "a"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Limites",
+          "enonce": "Si $\\lim_{x\\to a} f(x) = f(a)$, alors $f$ est continue en $a$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> C'est la définition même de la <strong>continuité en un point</strong> : la limite existe et égale la valeur."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Dérivées",
+          "enonce": "Toute fonction continue est dérivable.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La dérivabilité implique la continuité, pas l'inverse : $f(x)=|x|$ est continue en 0 mais non dérivable (point anguleux)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Dérivées",
+          "enonce": "La dérivée de $x^{{{a}}}$ est ${{a}}x^{{{a}}-1}$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $(x^n)' = n\\,x^{n-1}$ : ici $n={{a}}$, donc ${{a}}x^{{{a}}-1}$."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Extremums",
+          "enonce": "Si $f'(c)=0$, alors $f$ admet toujours un extremum en $c$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $f'(c)=0$ est nécessaire mais pas suffisant : $f(x)=x^3$ vérifie $f'(0)=0$ sans extremum (point d'inflexion)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Prolongement",
+          "enonce": "La fonction $f(x)=\\frac{x^{2}-1}{x-1}$ admet en $x=1$ :",
+          "choix": ["Une limite infinie", "Une discontinuité de seconde espèce", "Un prolongement par continuité (valeur 2)", "Aucune limite"],
+          "correct": 2,
+          "corrige": "$\\frac{x^{2}-1}{x-1} = x+1$ pour $x\\neq 1$ → limite $2$ : <strong>prolongement par continuité</strong>."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Dérivation",
+          "enonce": "La dérivée de $f\\cdot g$ est :",
+          "choix": ["$f'\\cdot g'$", "$f'\\cdot g + f\\cdot g'$", "$f'\\cdot g - f\\cdot g'$", "$(f+g)'$"],
+          "correct": 1,
+          "corrige": "Règle du produit : $(fg)' = <strong>f'g + fg'</strong>."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Composée",
+          "enonce": "La dérivée de $\\sin({{a}}x)$ est :",
+          "choix": ["$\\cos({{a}}x)$", "${{a}}\\cos({{a}}x)$", "$-\\cos({{a}}x)$", "${{a}}\\sin({{a}}x)$"],
+          "correct": 1,
+          "corrige": "Dérivée de composée : $(u\\circ v)' = v'\\cdot(u'\\circ v)$ → ${{a}}\\cos({{a}}x)$."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Étude de fonction",
+          "enonce": "Un point où $f'$ change de signe $+$ vers $-$ correspond à :",
+          "choix": ["Un minimum local", "Un maximum local", "Un point d'inflexion", "Une asymptote"],
+          "correct": 1,
+          "corrige": "Croissante puis décroissante : la fonction atteint un <strong>maximum local</strong>."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre (virgule pour les décimaux).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Limites",
+          "enonce": "Calcule $\\lim_{x\\to {{a}}} 2x$.",
+          "answer": "lim1",
+          "corrige": "Par continuité : $2\\times {{a}} = <strong>{{lim1}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Dérivées",
+          "enonce": "$f(x)={{a}}x^{2}+{{c}}x$. Calcule $f'({{x0}})$.",
+          "answer": "der",
+          "corrige": "$f'(x)=2\\cdot{{a}}x+{{c}}$ → $f'({{x0}})=2\\times{{a}}\\times{{x0}}+{{c}} = <strong>{{der}}</strong>$."
+        }
+      ]
+    }
+  ]
+}

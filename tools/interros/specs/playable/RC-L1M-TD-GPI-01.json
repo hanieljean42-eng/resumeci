@@ -1,0 +1,103 @@
+{
+  "code": "RC-L1M-TD-GPI-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Gestion de projet informatique",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Gestion de projet informatique",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "t1": { "choices": [3, 4, 5] },
+    "t2": { "choices": [6, 8] },
+    "t3": { "choices": [2, 3] }
+  },
+  "derived": {
+    "critique": "t1+t2+t3"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Cycle de vie",
+          "enonce": "Le cycle de vie d'un projet va de l'idée/initiation jusqu'à la clôture.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Phases classiques : <strong>initiation → planification → exécution → suivi/contrôle → clôture</strong>."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Méthodes",
+          "enonce": "La méthode en cascade autorise de revenir librement à une phase précédente.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La <strong>cascade</strong> est séquentielle : chaque phase se termine avant la suivante — revenir en arrière est coûteux, d'où l'agile."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Agile",
+          "enonce": "Scrum organise le travail en itérations courtes appelées sprints.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <strong>Sprints</strong> de 1 à 4 semaines : à chaque fin, un incrément potentiellement livrable + revue avec le client."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Chemin critique",
+          "enonce": "Le chemin critique est le chemin le plus court du projet.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est le chemin le <strong>plus long</strong> : il détermine la durée minimale du projet — tout retard dessus retarde tout."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Triangle d'or",
+          "enonce": "Le « triangle d'or » de la gestion de projet relie :",
+          "choix": ["Qualité, équipe, budget", "Coût, délai, qualité/périmètre", "Client, fournisseur, équipe", "Risque, temps, profit"],
+          "correct": 1,
+          "corrige": "<strong>Coût – Délai – Périmètre/Qualité</strong> : modifier l'un impacte les deux autres — l'équilibre à gérer."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Agile",
+          "enonce": "Dans Scrum, le Product Owner est responsable :",
+          "choix": ["Du code", "Du backlog et de la valeur produit", "Du serveur", "Des tests uniquement"],
+          "correct": 1,
+          "corrige": "Le <strong>Product Owner</strong> priorise le <strong>backlog</strong> et maximise la valeur livrée — vision produit."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Planification",
+          "enonce": "Le diagramme de Gantt représente :",
+          "choix": ["Le budget", "Les tâches dans le temps (barres horizontales)", "L'organigramme", "Les risques"],
+          "correct": 1,
+          "corrige": "Le <strong>Gantt</strong> affiche chaque tâche comme une barre sur l'axe du temps — visualisation des durées et du chevauchement."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Risques",
+          "enonce": "La première étape de gestion des risques :",
+          "choix": ["Les ignorer", "Les identifier", "Les payer", "Les reporter"],
+          "correct": 1,
+          "corrige": "On commence par <strong>identifier</strong> les risques, puis évaluer (probabilité × impact), répondre (éviter, transférer, réduire, accepter) et suivre."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Chemin critique",
+          "enonce": "Trois tâches en série durent {{t1}}, {{t2}} et {{t3}} jours : durée totale du chemin ?",
+          "answer": "critique",
+          "corrige": "En série, les durées s'additionnent : {{t1}} + {{t2}} + {{t3}} = <strong>{{critique}} jours</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Scrum",
+          "enonce": "Combien de phases compte le cycle de vie classique d'un projet (initiation, planification, exécution, suivi/contrôle, clôture) ?",
+          "answer": "5",
+          "corrige": "<strong>5 phases</strong> : initiation → planification → exécution → suivi et contrôle → clôture."
+        }
+      ]
+    }
+  ]
+}

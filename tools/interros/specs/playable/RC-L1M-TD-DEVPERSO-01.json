@@ -1,0 +1,102 @@
+{
+  "code": "RC-L1M-TD-DEVPERSO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Développement personnel",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Développement personnel",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Objectifs SMART",
+          "enonce": "« Je veux réussir » est un objectif SMART.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> SMART = <strong>S</strong>pécifique, <strong>M</strong>esurable, <strong>A</strong>tteignable, <strong>R</strong>éaliste, <strong>T</strong>emporellement défini — « réussir » n'est ni mesurable ni daté."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Eisenhower",
+          "enonce": "Dans la matrice d'Eisenhower, les tâches urgentes ET importantes se planifient pour plus tard.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Urgent + important = <strong>à faire immédiatement</strong> ; c'est « important non urgent » qui se <em>planifie</em>."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Assertivité",
+          "enonce": "L'assertivité consiste à imposer son point de vue aux autres.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Imposer = <strong>agressivité</strong> ; l'<strong>assertivité</strong> exprime ses besoins clairement <em>en respectant</em> ceux d'autrui (win-win)."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Gestion du temps",
+          "enonce": "La règle des 80/20 (Pareto) dit que 80 % des résultats viennent souvent de 20 % des efforts.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le principe de <strong>Pareto</strong> : identifier les 20 % d'actions à fort impact et les prioriser."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Objectifs SMART",
+          "enonce": "Lequel est un objectif SMART ?",
+          "choix": [
+            "« Travailler plus »",
+            "« Obtenir 14/20 au partiel d'algèbre le 15 juin »",
+            "« Devenir riche un jour »",
+            "« Être meilleur »"
+          ],
+          "correct": 1,
+          "corrige": "SMART : <strong>précis</strong> (14/20, algèbre), <strong>mesurable</strong> (note), <strong>daté</strong> (15 juin) — les autres sont vagues."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Eisenhower",
+          "enonce": "Une tâche importante mais NON urgente doit être :",
+          "choix": ["Supprimée", "Planifiée", "Déléguée", "Faite immédiatement"],
+          "correct": 1,
+          "corrige": "Important + non urgent = <strong>planifier</strong> (cadran 2) : c'est là que se construit la vraie progression (révisions régulières, projets)."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Communication",
+          "enonce": "La communication assertive se caractérise par :",
+          "choix": ["L'agressivité", "La passivité", "Le respect mutuel et l'expression claire de ses besoins", "La manipulation"],
+          "correct": 2,
+          "corrige": "L'assertivité = équilibre : <strong>s'exprimer clairement sans écraser ni s'écraser</strong> — messages en « je », écoute active."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Procrastination",
+          "enonce": "La meilleure stratégie anti-procrastination :",
+          "choix": ["Attendre la motivation", "Découper en petites actions et démarrer par la plus simple", "Tout faire la veille", "Éviter les tâches difficiles"],
+          "correct": 1,
+          "corrige": "La procrastination se vainc par l'<strong>action</strong> : découpage en micro-tâches, démarrage par le plus facile, minutage (Pomodoro)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "SMART",
+          "enonce": "Combien de critères compte un objectif SMART ?",
+          "answer": "5",
+          "corrige": "<strong>5</strong> : Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Eisenhower",
+          "enonce": "Combien de quadrants compte la matrice d'Eisenhower ?",
+          "answer": "4",
+          "corrige": "<strong>4 quadrants</strong> : faire, planifier, déléguer, éliminer — selon urgent/important."
+        }
+      ]
+    }
+  ]
+}

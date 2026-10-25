@@ -1,0 +1,101 @@
+{
+  "code": "RC-L1M-TD-TEE-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Technique d'expression écrite",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Technique d'expression écrite",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "mots": { "choices": [400, 600, 800] }
+  },
+  "derived": {
+    "resume": "mots/4"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Résumé",
+          "enonce": "Le résumé doit contenir tous les exemples du texte original.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> On supprime exemples, citations et répétitions : seule la <strong>charpente argumentative</strong> (thèse + arguments) est conservée."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Correspondance",
+          "enonce": "Une lettre administrative commence par la formule de politesse de clôture.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> L'ordre : en-tête → destinataire → <strong>objet</strong> → formule d'appel → corps → formule de <strong>clôture</strong> (à la fin)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Dissertation",
+          "enonce": "La problématique doit découler de l'analyse du sujet.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La problématique <strong>définit le vrai enjeu</strong> du sujet — elle naît de la définition des termes et de la tension qu'ils révèlent."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Style",
+          "enonce": "Un bon écrit universitaire privilégie les phrases longues et les verbes vagues.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Au contraire : phrases <strong>claires</strong>, verbes <strong>précis</strong> (« conclure un contrat », « prononcer un jugement ») — la clarté est la marque du pro."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Résumé",
+          "enonce": "Quelle part du texte original le résumé doit-il occuper ?",
+          "choix": ["La moitié", "Le quart", "Le tiers", "Les trois quarts"],
+          "correct": 1,
+          "corrige": "<strong>Le quart</strong> (±10 %) : assez court pour être un résumé, assez long pour l'essentiel."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Correspondance",
+          "enonce": "À une autorité académique, la formule d'appel correcte est :",
+          "choix": ["« Salut monsieur »", "« Cher ami »", "« Monsieur le Doyen »", "« À qui de droit »"],
+          "correct": 2,
+          "corrige": "On s'adresse à la <strong>fonction</strong> : « Monsieur le Doyen », « Madame la Directrice » — jamais de familiarité ni de formule vague."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Dissertation",
+          "enonce": "Le plan universitaire classique compte :",
+          "choix": ["Une partie", "Deux parties", "Trois parties", "Cinq parties"],
+          "correct": 1,
+          "corrige": "Le <strong>plan binaire</strong> (2 parties) reflète la dialectique : thèse/antithèse ou deux angles complémentaires."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Style",
+          "enonce": "Remplacer « faire un contrat » par :",
+          "choix": ["« Réaliser un contrat »", "« Conclure un contrat »", "« Fabriquer un contrat »", "« Faire aboutir un contrat »"],
+          "correct": 1,
+          "corrige": "« <strong>Conclure</strong> » est le verbe technique de la formation du contrat — « faire » est faible."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Résumé",
+          "enonce": "Un texte de {{mots}} mots doit être résumé au quart. Nombre de mots visé ?",
+          "answer": "resume",
+          "corrige": "{{mots}} ÷ 4 = <strong>{{resume}} mots</strong> (±10 %)."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Introduction",
+          "enonce": "Combien d'étapes compte l'introduction universitaire (amorce, définitions, problématique, annonce du plan) ?",
+          "answer": "4",
+          "corrige": "<strong>4 étapes</strong> : amorce → présentation/définitions → problématique → annonce du plan."
+        }
+      ]
+    }
+  ]
+}
