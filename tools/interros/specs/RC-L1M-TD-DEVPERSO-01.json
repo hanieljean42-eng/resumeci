@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-DEVPERSO-01",
+  "type": "td",
+  "matiere": "Développement personnel",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Objectifs SMART, gestion du temps et communication",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Applique les cadres de cours à ta propre situation avant de comparer.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Objectifs SMART",
+      "points": "5 pts",
+      "consigne": "Un étudiant déclare : « Je veux réussir mes études ».",
+      "enonce": "<ol type='a'><li>Rappeler ce que signifie chaque lettre de l'acronyme SMART.</li><li>Reformuler cet objectif flou en un objectif SMART complet.</li><li>« Lire plus » est-il un objectif SMART ? Corriger.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>S</strong>pécifique (précis), <strong>M</strong>esurable (quantifiable), <strong>A</strong>tteignable (réaliste), <strong>R</strong>elevant (pertinent pour le projet), <strong>T</strong>emporel (daté, deadline).</p><p><strong>b)</strong> Exemple : « Obtenir ma Licence 1 avec au moins la mention Passable (10/20) en juin, en révisant 2 h par soirée à partir du lundi prochain » — S (mention claire), M (note mesurable), A (réaliste), R (cohérent avec ses études), T (échéance juin + rythme hebdo).</p><p><strong>c)</strong> Non : rien de mesurable ni de daté → « Lire un chapitre de cours chaque soir de 20 h à 20 h 45 pendant 30 jours ».</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Gestion du temps : matrice d'Eisenhower",
+      "points": "5 pts",
+      "consigne": "Tâches de la semaine : ① réviser l'examen d'Analyse dans 2 jours, ② scroller TikTok, ③ rendre un TD non noté dans 3 semaines, ④ répondre à un message WhatsApp non urgent, ⑤ planifier le semestre.",
+      "enonce": "<ol type='a'><li>Rappeler les 4 cases de la matrice d'Eisenhower.</li><li>Classer chaque tâche dans la bonne case et justifier brièvement.</li><li>Dans quelle case doit-on passer le plus de temps selon la méthode ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Urgent+Important (faire tout de suite) · Important+Non urgent (planifier) · Urgent+Non important (déléguer/limiter) · Ni urgent ni important (éliminer).</p><p><strong>b)</strong> ① <span class='reponse'>U+I</span> : examen dans 2 jours → faire maintenant. ⑤ <span class='reponse'>I non-U</span> : planification → programmer. ③ I non-U : TD dans 3 semaines → planifier dans l'agenda. ④ U non-I : message → répondre vite ou repousser (limite). ② <span class='reponse'>Ni U ni I</span> : scroll → éliminer/limiter.</p><p><strong>c)</strong> La case <span class='reponse'>Important + Non urgent</span> : c'est là qu'on anticipe — réviser tôt évite les urgences permanentes.</p>",
+      "bareme_detail": "a) 1 pt · b) 3 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Confiance et estime de soi",
+      "points": "5 pts",
+      "consigne": "Un étudiant angoisse avant de présenter son exposé devant 80 personnes.",
+      "enonce": "<ol type='a'><li>Distinguer confiance en soi et estime de soi.</li><li>Citer trois techniques concrètes pour gérer le stress de la prise de parole.</li><li>Pourquoi la préparation renforce-t-elle la confiance ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Confiance en soi</strong> : croire en sa capacité à <em>faire</em> (compétence sur une tâche) ; <strong>estime de soi</strong> : valeur qu'on s'accorde en tant que <em>personne</em>. On peut être compétent (confiance) avec une faible estime de soi.</p><p><strong>b)</strong> Respiration abdominale (cohérence cardiaque : inspirer 4 s, expirer 6 s) ; répétition à voix haute/simulation ; recadrage des pensées négatives (« je vais échouer » → « je suis préparé ») ; ancrage postural (posture ouverte avant d'entrer).</p><p><strong>c)</strong> L'incertitude alimente le stress : connaître son sujet réduit l'inconnu, le cerveau interprète moins la situation comme menaçante.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Communication et assertivité",
+      "points": "5 pts",
+      "consigne": "Trois styles de réponse à un ami qui demande votre fiche la veille de l'examen alors que vous en avez besoin.",
+      "enonce": "<ol type='a'><li>Définir les trois styles : passif, agressif, assertif.</li><li>Écrire la réponse assertive dans cette situation.</li><li>Pourquoi l'assertivité est-elle la plus efficace à long terme ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Passif</strong> : céder en reniant ses besoins (« tiens, tant pis pour moi ») ; <strong>agressif</strong> : imposer au mépris de l'autre (« débrouille-toi ! ») ; <strong>assertif</strong> : affirmer son droit tout en respectant l'autre.</p><p><strong>b)</strong> « J'ai besoin de ma fiche pour réviser ce soir. Je peux te la passer demain matin à 8 h, ou je t'explique le chapitre au téléphone ce soir 10 minutes. »</p><p><strong>c)</strong> Elle préserve la relation (respect mutuel) ET ses propres intérêts : pas de frustration accumulée (passif) ni de conflit qui détruit la relation (agressif).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

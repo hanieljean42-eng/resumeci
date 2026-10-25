@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-GESTFIN-01",
+  "type": "td",
+  "matiere": "Gestion financière",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Bilan, compte de résultat et indicateurs financiers",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Présente les calculs sous forme de tableaux clairs, montants en FCFA.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le bilan simplifié",
+      "points": "5 pts",
+      "consigne": "Une boutique détient : caisse 80 000 F, stock 150 000 F, matériel 300 000 F, créances clients 70 000 F ; capital 400 000 F, dettes fournisseurs 120 000 F, emprunt bancaire 80 000 F.",
+      "enonce": "<ol type='a'><li>Rappeler la structure du bilan (actif / passif) et l'équation fondamentale.</li><li>Construire le bilan et vérifier l'équilibre.</li><li>Calculer le total du bilan.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Actif</strong> = ce que l'entreprise possède (immobilisations, stocks, créances, trésorerie) ; <strong>passif</strong> = ce qu'elle doit (capitaux propres + dettes). Équation : <span class='reponse'>Actif = Passif</span>.</p><p><strong>b)</strong> Actif : matériel 300 000 + stock 150 000 + créances 70 000 + caisse 80 000 = <span class='reponse'>600 000 F</span>. Passif : capital 400 000 + emprunt 80 000 + dettes fournisseurs 120 000 = <span class='reponse'>600 000 F</span>. Équilibre ✓.</p><p><strong>c)</strong> Total du bilan : <span class='reponse'>600 000 F</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Compte de résultat",
+      "points": "5 pts",
+      "consigne": "Sur l'année : ventes 900 000 F, achats de marchandises 400 000 F, loyer 120 000 F, salaires 150 000 F, impôts 30 000 F.",
+      "enonce": "<ol type='a'><li>Distinguer produits et charges. Calculer le résultat net.</li><li>La boutique est-elle bénéficiaire ?</li><li>Calculer la marge brute (ventes − coût des marchandises vendues).</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Produits</strong> = ce qui enrichit (ventes 900 000) ; <strong>charges</strong> = ce qui appauvrit (400 000 + 120 000 + 150 000 + 30 000 = 700 000). Résultat = 900 000 − 700 000 = <span class='reponse'>+200 000 F</span>.</p><p><strong>b)</strong> Oui : <span class='reponse'>bénéfice de 200 000 F</span>.</p><p><strong>c)</strong> Marge brute = 900 000 − 400 000 = <span class='reponse'>500 000 F</span> (55,6 % des ventes — marge confortable avant charges fixes).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — BFR et trésorerie",
+      "points": "5 pts",
+      "consigne": "La boutique : stock 150 000 F, créances clients 70 000 F, dettes fournisseurs 120 000 F, trésorerie nette 80 000 F.",
+      "enonce": "<ol type='a'><li>Calculer le BFR (Besoin en Fonds de Roulement) = stocks + créances − dettes d'exploitation.</li><li>Interpréter le signe du BFR.</li><li>Proposer deux actions pour améliorer la trésorerie.</li></ol>",
+      "correction": "<p><strong>a)</strong> $BFR=150\\,000+70\\,000-120\\,000=$ <span class='reponse'>$100\\,000$ F</span>.</p><p><strong>b)</strong> BFR &gt; 0 : l'entreprise <strong>finance</strong> les décalages d'encaissement (elle paie ses fournisseurs et stocke avant d'être payée par les clients) — besoin permanent à couvrir par le fonds de roulement ou un crédit court terme.</p><p><strong>c)</strong> Réduire les délais clients (remise pour paiement comptant), négocier des délais fournisseurs plus longs, optimiser les stocks (achats juste à temps), augmenter le capital.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Ratios de rentabilité",
+      "points": "5 pts",
+      "consigne": "Résultat net 200 000 F, chiffre d'affaires 900 000 F, capitaux propres 400 000 F.",
+      "enonce": "<ol type='a'><li>Calculer la marge nette (résultat/CA) et la rentabilité des capitaux propres — ROE (résultat/capitaux).</li><li>Interpréter le ROE : est-il intéressant vs un placement bancaire à 6 % ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Marge nette $=\\frac{200\\,000}{900\\,000}\\approx$ <span class='reponse'>$22{,}2\\%$</span> ; ROE $=\\frac{200\\,000}{400\\,000}=$ <span class='reponse'>$50\\%$</span>.</p><p><strong>b)</strong> ROE 50 % ≫ 6 % : chaque franc investi dans la boutique « rapporte » 0,50 F par an — bien plus rentable qu'un placement bancaire (avec, certes, le risque de l'activité).</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    }
+  ]
+}

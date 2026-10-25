@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-PART-ANA2-01",
+  "type": "partiel",
+  "matiere": "Analyse 2",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Suites, intégration et sommes de Riemann",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Rédige clairement les justifications : le raisonnement est noté autant que le résultat.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Suites et séries (6 pts)",
+      "points": "6 pts",
+      "consigne": "On considère la suite $u_{n}=\\frac{2n-1}{n+3}$ pour $n\\geq0$.",
+      "enonce": "<ol type='a'><li>Calculer $u_{0}$, $u_{1}$, $u_{5}$.</li><li>Montrer que la suite est croissante.</li><li>Déterminer $\\lim_{n\\to+\\infty}u_{n}$.</li><li>La suite est-elle majorée ? Justifier.</li></ol>",
+      "correction": "<p><strong>a)</strong> $u_{0}=-\\frac{1}{3}$ ; $u_{1}=\\frac{1}{4}$ ; $u_{5}=\\frac{9}{8}$.</p><p><strong>b)</strong> $u_{n+1}-u_{n}=\\frac{2n+1}{n+4}-\\frac{2n-1}{n+3}=\\frac{(2n+1)(n+3)-(2n-1)(n+4)}{(n+4)(n+3)}=\\frac{7}{(n+4)(n+3)} > 0$ → suite <span class='reponse'>strictement croissante</span>.</p><p><strong>c)</strong> $u_{n}=\\frac{2-1/n}{1+3/n}\\to$ <span class='reponse'>$2$</span>.</p><p><strong>d)</strong> Oui : croissante et de limite 2 → majorée par 2 (et même $u_{n}&lt;2\\;\\forall n$).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Calcul d'intégrales (7 pts)",
+      "points": "7 pts",
+      "consigne": "Calculer les intégrales suivantes en détaillant la méthode.",
+      "enonce": "<ol type='a'><li>$I=\\displaystyle\\int_{0}^{2}(3x^{2}-4x+1)\\,dx$</li><li>$J=\\displaystyle\\int_{1}^{e}\\frac{1}{x}\\,dx$</li><li>$K=\\displaystyle\\int_{0}^{1}x\\,e^{x^{2}}dx$ (indication : substitution $u=x^{2}$)</li><li>$L=\\displaystyle\\int_{0}^{1}x\\,e^{x}dx$ (intégration par parties)</li></ol>",
+      "correction": "<p><strong>a)</strong> $I=\\left[x^{3}-2x^{2}+x\\right]_{0}^{2}=8-8+2=$ <span class='reponse'>$2$</span>.</p><p><strong>b)</strong> $J=[\\ln x]_{1}^{e}=1-0=$ <span class='reponse'>$1$</span>.</p><p><strong>c)</strong> $u=x^{2}\\Rightarrow du=2x\\,dx$ → $K=\\frac{1}{2}\\int_{0}^{1}e^{u}du=\\frac{1}{2}(e-1)=$ <span class='reponse'>$\\frac{e-1}{2}$</span>.</p><p><strong>d)</strong> IPP : $u=x$, $dv=e^{x}dx$ → $L=[xe^{x}]_{0}^{1}-\\int_{0}^{1}e^{x}dx=e-(e-1)=$ <span class='reponse'>$1$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts · d) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Sommes de Riemann (4 pts)",
+      "points": "4 pts",
+      "consigne": "On pose $S_{n}=\\frac{1}{n}\\sum_{k=1}^{n}\\frac{1}{1+\\frac{k}{n}}$.",
+      "enonce": "<ol type='a'><li>Reconnaître en $S_{n}$ une somme de Riemann : donner la fonction et l'intervalle.</li><li>En déduire $\\lim_{n\\to+\\infty}S_{n}$.</li></ol>",
+      "correction": "<p><strong>a)</strong> $S_{n}=\\frac{1}{n}\\sum f\\left(\\frac{k}{n}\\right)$ avec $f(x)=\\frac{1}{1+x}$ sur $[0,1]$.</p><p><strong>b)</strong> $\\lim S_{n}=\\int_{0}^{1}\\frac{dx}{1+x}=[\\ln(1+x)]_{0}^{1}=$ <span class='reponse'>$\\ln 2$</span> ≈ 0,693.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Problème (3 pts)",
+      "points": "3 pts",
+      "consigne": "Une entreprise estime son taux de production par $v(t)=50+5t$ unités/heure au temps $t$ (en heures).",
+      "enonce": "<ol type='a'><li>Calculer la production totale sur un intervalle de 8 heures.</li><li>Vérifier que le résultat est cohérent avec la moyenne de $v$.</li></ol>",
+      "correction": "<p><strong>a)</strong> Production $=\\int_{0}^{8}(50+5t)dt=[50t+\\frac{5}{2}t^{2}]_{0}^{8}=400+160=$ <span class='reponse'>$560$ unités</span>.</p><p><strong>b)</strong> Valeur moyenne $\\frac{1}{8}\\times560=70$ ; $v$ varie de 50 à 90 → moyenne attendue $\\frac{50+90}{2}=70$ ✓ cohérent.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt"
+    }
+  ]
+}

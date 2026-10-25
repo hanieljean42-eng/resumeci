@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-PART-C-01",
+  "type": "partiel",
+  "matiere": "Langage C",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Pointeurs, tableaux, chaînes et structures",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Écrire du C propre : types déclarés, pointeurs justifiés, affichages prévus.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Lecture de programme (4 pts)",
+      "points": "4 pts",
+      "consigne": "On donne le programme :",
+      "enonce": "<pre class='code'>#include &lt;stdio.h&gt;\nint main(void) {\n    int a = 5, b = 2, s = 0;\n    for (int i = 0; i &lt; a; i++) {\n        if (i % 2 == 0) s += b;\n    }\n    printf(\"%d\\n\", s);\n    return 0;\n}</pre><ol type='a'><li>Tracer les valeurs de s à chaque itération.</li><li>Qu'affiche le programme ?</li><li>Que se passe-t-il si on remplace <code>i &lt; a</code> par <code>i &lt;= a</code> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> i=0 (pair) → s=2 ; i=1 → s=2 ; i=2 → s=4 ; i=3 → s=4 ; i=4 → s=6.</p><p><strong>b)</strong> Affiche <span class='reponse'>6</span>.</p><p><strong>c)</strong> La boucle inclut i=5 (impair → s inchangé) : toujours 6 itérations dont 3 paires → affiche toujours <span class='reponse'>6</span> (piège : le changement ne modifie rien ici car a=5 est impair).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Pointeurs et échange (5 pts)",
+      "points": "5 pts",
+      "consigne": "On veut écrire une fonction qui échange deux entiers.",
+      "enonce": "<ol type='a'><li>Pourquoi la version <code>void echange(int a, int b)</code> ne fonctionne-t-elle pas ?</li><li>Écrire la version correcte avec pointeurs.</li><li>Montrer l'appel dans un main et les valeurs avant/après.</li></ol>",
+      "correction": "<p><strong>a)</strong> En C, les arguments sont passés <strong>par valeur</strong> : la fonction reçoit des <em>copies</em> — échanger les copies ne modifie pas les variables du main.</p><p><strong>b)</strong></p><pre class='code'>void echange(int *pa, int *pb) {\n    int tmp = *pa;\n    *pa = *pb;\n    *pb = tmp;\n}</pre><p><strong>c)</strong></p><pre class='code'>int x = 3, y = 7;\nprintf(\"avant: %d %d\\n\", x, y);   /* avant: 3 7 */\nechange(&amp;x, &amp;y);\nprintf(\"apres: %d %d\\n\", x, y);  /* apres: 7 3 */</pre><p>On passe les <em>adresses</em> : la fonction écrit directement dans les variables.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Tableaux et boucles (5 pts)",
+      "points": "5 pts",
+      "consigne": "Soit le tableau <code>int t[6] = {12, 8, 15, 9, 14, 6};</code>.",
+      "enonce": "<ol type='a'><li>Écrire le code qui calcule la somme des éléments.</li><li>Écrire le code qui trouve l'indice du minimum.</li><li>En C, <code>t[i]</code> est équivalent à quelle expression de pointeur ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>int somme = 0;\nfor (int i = 0; i &lt; 6; i++) somme += t[i];\n/* somme = 64 */</pre><p><strong>b)</strong></p><pre class='code'>int imin = 0;\nfor (int i = 1; i &lt; 6; i++)\n    if (t[i] &lt; t[imin]) imin = i;\n/* imin = 5 (valeur 6) */</pre><p><strong>c)</strong> <code>t[i]</code> ≡ <code>*(t + i)</code> : un nom de tableau « décroit » en pointeur vers son premier élément ; l'indexation est de l'arithmétique de pointeurs.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Chaînes et structures (6 pts)",
+      "points": "6 pts",
+      "consigne": "Deux questions indépendantes.",
+      "enonce": "<ol type='a'><li>Écrire <code>int longueur(const char *s)</code> qui compte les caractères jusqu'au '\\0' (sans strlen).</li><li>Déclarer une <code>struct Etudiant</code> (nom, matricule, note), initialiser une variable et afficher ses champs.</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>int longueur(const char *s) {\n    int n = 0;\n    while (s[n] != '\\0') n++;\n    return n;\n}</pre><p>Le terminateur '\\0' marque la fin — la fonction s'arrête dessus sans le compter.</p><p><strong>b)</strong></p><pre class='code'>struct Etudiant {\n    char nom[50];\n    int matricule;\n    float note;\n};\n\nstruct Etudiant e = {\"Koffi Amina\", 20241, 14.5};\nprintf(\"%s (%d) : %.1f\\n\", e.nom, e.matricule, e.note);</pre>",
+      "bareme_detail": "a) 3 pts · b) 3 pts"
+    }
+  ]
+}

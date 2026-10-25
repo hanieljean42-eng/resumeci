@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-PART-MERISE-01",
+  "type": "partiel",
+  "matiere": "Analyse et modélisation des données (Merise)",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "MCD, cardinalités, normalisation et passage au MLD",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Schémas MCD propres : rectangles pour les entités, losanges pour les associations, cardinalités entre parenthèses.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Cas étudié : une bibliothèque universitaire (8 pts)",
+      "points": "8 pts",
+      "consigne": "Règles de gestion : un <strong>étudiant</strong> (num_etudiant, nom, filiere) peut emprunter plusieurs <strong>ouvrages</strong> (code_ouvrage, titre, auteur, annee) ; chaque emprunt a une date_début et une date_retour. Un ouvrage appartient à une seule <strong>catégorie</strong> (code_cat, libelle) ; une catégorie regroupe plusieurs ouvrages.",
+      "enonce": "<ol type='a'><li>Construire le MCD complet (entités, associations, attributs, identifiants, cardinalités).</li><li>Traduire le MCD en MLD relationnel (tables avec clés primaires et étrangères).</li></ol>",
+      "correction": "<p><strong>a)</strong> MCD :<br>• <strong>ETUDIANT</strong>(<u>num_etudiant</u>, nom, filiere)<br>• <strong>OUVRAGE</strong>(<u>code_ouvrage</u>, titre, auteur, annee)<br>• <strong>CATEGORIE</strong>(<u>code_cat</u>, libelle)<br>• Association <strong>EMPRUNTER</strong> ETUDIANT(0,n)—(0,n)OUVRAGE avec attributs <em>date_debut, date_retour</em><br>• Association <strong>APPARTENIR</strong> OUVRAGE(1,1)—(0,n)CATEGORIE (chaque ouvrage → exactement 1 catégorie ; une catégorie → 0 à n ouvrages).</p><p><strong>b)</strong> MLD :<br>• <code>ETUDIANT(<u>num_etudiant</u>, nom, filiere)</code><br>• <code>CATEGORIE(<u>code_cat</u>, libelle)</code><br>• <code>OUVRAGE(<u>code_ouvrage</u>, titre, auteur, annee, <u>#code_cat</u>)</code> — l'association (1,1) devient clé étrangère<br>• <code>EMPRUNTER(<u>#num_etudiant</u>, <u>#code_ouvrage</u>, <u>date_debut</u>, date_retour)</code> — table de l'association (n,n), clé composée incluant la date de début si un même ouvrage peut être ré-emprunté.</p>",
+      "bareme_detail": "a) 4 pts · b) 4 pts"
+    },
+    {
+      "titre": "Exercice 2 — Lecture de cardinalités (4 pts)",
+      "points": "4 pts",
+      "consigne": "Dans le MCD : MEDECIN(1,n) — CONSULTER — (1,1)PATIENT.",
+      "enonce": "<ol type='a'><li>Traduire chaque cardinalité en une règle de gestion.</li><li>Un patient peut-il consulter deux médecins ? Un médecin peut-il n'avoir aucun patient ?</li></ol>",
+      "correction": "<p><strong>a)</strong> (1,n) côté MEDECIN : <strong>chaque médecin a au moins une consultation</strong>, possiblement plusieurs. (1,1) côté PATIENT : <strong>chaque patient a exactement une consultation</strong> dans ce modèle — ni zéro ni plusieurs.</p><p><strong>b)</strong> Non : max 1 côté PATIENT → <span class='reponse'>1 seule consultation par patient</span>. Non plus : min 1 côté MEDECIN → <span class='reponse'>tout médecin a au moins 1 patient</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Normalisation (5 pts)",
+      "points": "5 pts",
+      "consigne": "Table brute : COMMANDE(num_cmd, date_cmd, num_client, nom_client, tel_client, code_prod, libelle_prod, qte).",
+      "enonce": "<ol type='a'><li>Identifier les dépendances fonctionnelles et la clé candidate.</li><li>Expliquer pourquoi la table n'est pas en 2FN.</li><li>Décomposer en 3FN.</li></ol>",
+      "correction": "<p><strong>a)</strong> Clé : <span class='reponse'>(num_cmd, code_prod)</span>. DF : num_cmd → date_cmd, num_client ; num_client → nom_client, tel_client ; code_prod → libelle_prod ; (num_cmd, code_prod) → qte.</p><p><strong>b)</strong> Des attributs non-clés dépendent d'une <em>partie</em> de la clé (num_cmd seul ou code_prod seul) → dépendances partielles → pas 2FN ; en plus num_client → nom_client est une dépendance <strong>transitive</strong> → pas 3FN.</p><p><strong>c)</strong> <code>CLIENT(<u>num_client</u>, nom_client, tel_client)</code> ; <code>PRODUIT(<u>code_prod</u>, libelle_prod)</code> ; <code>COMMANDE(<u>num_cmd</u>, date_cmd, <u>#num_client</u>)</code> ; <code>LIGNE_CMD(<u>#num_cmd</u>, <u>#code_prod</u>, qte)</code> — 3FN : tout attribut non-clé dépend de sa clé, toute la clé, rien que la clé.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Méthode Merise (3 pts)",
+      "points": "3 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Citer les trois niveaux de modélisation Merise des données.</li><li>Quelle différence entre entité et occurrence d'entité ?</li></ol>",
+      "correction": "<p><strong>a)</strong> MCD (conceptuel — quoi ?), MLD (logique — tables), MPD (physique — SGBD, index).</p><p><strong>b)</strong> L'<strong>entité</strong> est le <em>type</em> (modèle : ETUDIANT avec ses attributs) ; l'<strong>occurrence</strong> est une <em>instance</em> (étudiant n°20241, Koffi Amina, MIAGE).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt"
+    }
+  ]
+}

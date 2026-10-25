@@ -234,6 +234,58 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-PART-ALG2-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Algèbre 2",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Matrices, déterminants, systèmes et applications linéaires",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-PART-ANA2-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Analyse 2",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Suites, intégration et sommes de Riemann",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-PART-C-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Langage C",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Pointeurs, tableaux, chaînes et structures",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-PART-MERISE-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Analyse et modélisation des données (Merise)",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "MCD, cardinalités, normalisation et passage au MLD",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-PART-PY-01",
     "type": "partiel",
     "typeLabel": "Sujet d'examen corrigé",
@@ -325,6 +377,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-TD-DEVPERSO-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Développement personnel",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Objectifs SMART, gestion du temps et communication",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-DROIT-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -334,6 +399,19 @@
     "duree": "1 h 30",
     "bareme": "/20 — auto-évaluation",
     "chapitre": "Notions de base : droit, règle de droit et sources",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-GESTFIN-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Gestion financière",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Bilan, compte de résultat et indicateurs financiers",
     "exercices": 4,
     "corrige": true
   },
@@ -373,6 +451,19 @@
     "duree": "1 h 30",
     "bareme": "/20 — auto-évaluation",
     "chapitre": "Intérêts simples et composés, annuités",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-MEDIAS-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Initiation aux médias sociaux",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Plateformes, usages professionnels et hygiène numérique",
     "exercices": 4,
     "corrige": true
   },

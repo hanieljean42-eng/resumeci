@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-PART-ALG2-01",
+  "type": "partiel",
+  "matiere": "Algèbre 2",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Matrices, déterminants, systèmes et applications linéaires",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Toute étape de calcul doit figurer sur la copie : un résultat sans justification ne rapporte qu'une fraction des points.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul matriciel (5 pts)",
+      "points": "5 pts",
+      "consigne": "Soit $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ et $B=\\begin{pmatrix}1&-1\\\\2&0\\end{pmatrix}$.",
+      "enonce": "<ol type='a'><li>Calculer $AB$ et $BA$. Sont-ils égaux ?</li><li>Calculer $A^{2}$ puis $A^{2}-5A+6I$ et interpréter le résultat.</li><li>En déduire $A^{-1}$ sans calculer la comatrice.</li></ol>",
+      "correction": "<p><strong>a)</strong> $AB=\\begin{pmatrix}4&-2\\\\6&0\\end{pmatrix}$ ; $BA=\\begin{pmatrix}2&-2\\\\4&2\\end{pmatrix}$ — <span class='reponse'>différents</span> (produit non commutatif).</p><p><strong>b)</strong> $A^{2}=\\begin{pmatrix}4&5\\\\0&9\\end{pmatrix}$ ; $A^{2}-5A+6I=\\begin{pmatrix}4&5\\\\0&9\\end{pmatrix}-\\begin{pmatrix}10&5\\\\0&15\\end{pmatrix}+\\begin{pmatrix}6&0\\\\0&6\\end{pmatrix}=\\begin{pmatrix}0&0\\\\0&0\\end{pmatrix}$ → <span class='reponse'>$A$ annule son polynôme caractéristique $X^{2}-5X+6$</span> (Cayley-Hamilton).</p><p><strong>c)</strong> $A^{2}-5A+6I=0\\Rightarrow A(5I-A)=6I\\Rightarrow A^{-1}=\\frac{5I-A}{6}=\\frac{1}{6}\\begin{pmatrix}3&-1\\\\0&2\\end{pmatrix}=$ <span class='reponse'>$\\begin{pmatrix}1/2&-1/6\\\\0&1/3\\end{pmatrix}$</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Déterminants (5 pts)",
+      "points": "5 pts",
+      "consigne": "Soit $M=\\begin{pmatrix}1&2&3\\\\0&1&4\\\\5&6&0\\end{pmatrix}$.",
+      "enonce": "<ol type='a'><li>Calculer $\\det(M)$ par la règle de Sarrus.</li><li>La matrice $M$ est-elle inversible ?</li><li>Calculer $\\det(2M)$ pour une matrice $3\\times3$ sans tout refaire.</li></ol>",
+      "correction": "<p><strong>a)</strong> Positifs : $1\\times1\\times0+2\\times4\\times5+3\\times0\\times6=0+40+0=40$ ; négatifs : $3\\times1\\times5+2\\times0\\times0+1\\times4\\times6=15+0+24=39$ → $\\det(M)=40-39=$ <span class='reponse'>$1$</span>.</p><p><strong>b)</strong> $\\det(M)=1\\neq0$ → <span class='reponse'>$M$ est inversible</span>.</p><p><strong>c)</strong> $\\det(kM)=k^{n}\\det(M)$ pour $n=3$ → $\\det(2M)=2^{3}\\times1=$ <span class='reponse'>$8$</span>.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Système linéaire (5 pts)",
+      "points": "5 pts",
+      "consigne": "Résoudre par le pivot de Gauss : $\\begin{cases}x+y+z=6\\\\2x-y+z=3\\\\x+2y-z=2\\end{cases}$",
+      "enonce": "<ol type='a'><li>Écrire la matrice augmentée et appliquer le pivot de Gauss.</li><li>Donner l'unique solution.</li><li>Vérifier en substituant dans la première équation.</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\begin{pmatrix}1&1&1&|&6\\\\2&-1&1&|&3\\\\1&2&-1&|&2\\end{pmatrix}$ ; $L_{2}\\leftarrow L_{2}-2L_{1}$ : $(0,-3,-1,-9)$ → $3y+z=9$ ; $L_{3}\\leftarrow L_{3}-L_{1}$ : $(0,1,-2,-4)$ → $y-2z=-4$.</p><p><strong>b)</strong> $y=2z-4$ ; substitution : $3(2z-4)+z=9\\Rightarrow7z=21\\Rightarrow z=3$, $y=2$, $x=6-2-3=1$ → <span class='reponse'>$(x,y,z)=(1,2,3)$</span>.</p><p><strong>c)</strong> Vérif : $1+2+3=6$ ✓ ; $2-2+3=3$ ✓ ; $1+4-3=2$ ✓.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Applications linéaires (5 pts)",
+      "points": "5 pts",
+      "consigne": "Soit $f:\\mathbb{R}^{2}\\to\\mathbb{R}^{2}$ définie par $f(x,y)=(2x+y\\,,\\,x-y)$.",
+      "enonce": "<ol type='a'><li>Vérifier que $f$ est linéaire.</li><li>Donner la matrice de $f$ dans la base canonique.</li><li>$f$ est-elle injective ? surjective ? Justifier par le déterminant.</li></ol>",
+      "correction": "<p><strong>a)</strong> $f(u+v)=f(u)+f(v)$ et $f(\\lambda u)=\\lambda f(u)$ : les deux coordonnées sont des formes linéaires → $f$ <span class='reponse'>linéaire</span>.</p><p><strong>b)</strong> $f(e_{1})=(2,1)$, $f(e_{2})=(1,-1)$ → $M_{f}=\\begin{pmatrix}2&1\\\\1&-1\\end{pmatrix}$ (colonnes = images des vecteurs de base).</p><p><strong>c)</strong> $\\det(M_{f})=2\\times(-1)-1\\times1=-3\\neq0$ → $f$ <span class='reponse'>bijective</span> : injective (noyau trivial) et surjective (image de rang 2 = tout $\\mathbb{R}^{2}$).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}
