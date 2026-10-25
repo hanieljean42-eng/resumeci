@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-ANA1-01",
+  "type": "td",
+  "matiere": "Analyse 1",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Limites, continuité et dérivées",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Justifie chaque limite par la méthode utilisée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Calcul de limites",
+      "points": "6 pts",
+      "consigne": "Calculer les limites suivantes en détaillant la méthode.",
+      "enonce": "<ol type='a'><li>$\\displaystyle\\lim_{x\\to 2} \\frac{x^{2}-4}{x-2}$</li><li>$\\displaystyle\\lim_{x\\to+\\infty} \\frac{3x^{2}+x}{x^{2}-5}$</li><li>$\\displaystyle\\lim_{x\\to 0} \\frac{\\sin x}{x}$</li><li>$\\displaystyle\\lim_{x\\to+\\infty} (x-\\sqrt{x^{2}+x})$</li></ol>",
+      "correction": "<p><strong>a)</strong> Forme $0/0$ → factoriser : $\\frac{(x-2)(x+2)}{x-2}=x+2\\to$ <span class='reponse'>$4$</span>.</p><p><strong>b)</strong> Termes dominants : $\\frac{3x^{2}}{x^{2}}\\to$ <span class='reponse'>$3$</span>.</p><p><strong>c)</strong> Limite classique : <span class='reponse'>$1$</span>.</p><p><strong>d)</strong> Quantité conjuguée : $x-\\sqrt{x^{2}+x}=\\frac{-x}{x+\\sqrt{x^{2}+x}}=\\frac{-1}{1+\\sqrt{1+1/x}}\\to$ <span class='reponse'>$-\\frac{1}{2}$</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Continuité",
+      "points": "4 pts",
+      "consigne": "On considère la fonction définie par $f(x)=\\frac{x^{2}-9}{x-3}$ si $x\\neq3$ et $f(3)=\\alpha$.",
+      "enonce": "<ol type='a'><li>Pour quelle valeur de $\\alpha$ la fonction $f$ est-elle continue en $x=3$ ?</li><li>Tracer mentalement l'allure de $f$ : que représente ce prolongement ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $\\lim_{x\\to3}f(x)=\\lim_{x\\to3}(x+3)=6$ → $f$ continue en 3 ssi <span class='reponse'>$\\alpha=6$</span> (prolongement par continuité).</p><p><strong>b)</strong> $f$ est la droite $y=x+3$ « trouée » en $x=3$ ; poser $f(3)=6$ <strong>comble le trou</strong> : c'est la définition du prolongement par continuité.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Dérivées",
+      "points": "6 pts",
+      "consigne": "Dériver les fonctions suivantes.",
+      "enonce": "<ol type='a'><li>$f(x)=x^{3}-5x^{2}+2x-7$</li><li>$g(x)=x\\,\\ln x$</li><li>$h(x)=\\frac{x^{2}}{x+1}$</li><li>$u(x)=\\sqrt{3x+2}$</li></ol>",
+      "correction": "<p><strong>a)</strong> $f'(x)=$ <span class='reponse'>$3x^{2}-10x+2$</span>.</p><p><strong>b)</strong> Produit : $g'(x)=\\ln x + x\\times\\frac{1}{x}=$ <span class='reponse'>$\\ln x + 1$</span>.</p><p><strong>c)</strong> Quotient : $h'(x)=\\frac{2x(x+1)-x^{2}}{(x+1)^{2}}=$ <span class='reponse'>$\\frac{x^{2}+2x}{(x+1)^{2}}$</span>.</p><p><strong>d)</strong> Composée : $u'(x)=\\frac{3}{2\\sqrt{3x+2}}$.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts · d) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Étude de fonction (extrémum)",
+      "points": "4 pts",
+      "consigne": "Soit $f(x)=x^{3}-3x+1$ sur $\\mathbb{R}$.",
+      "enonce": "<ol type='a'><li>Calculer $f'(x)$ et trouver ses points d'annulation.</li><li>En déduire les variations de $f$ et ses extremums locaux.</li></ol>",
+      "correction": "<p><strong>a)</strong> $f'(x)=3x^{2}-3=3(x^{2}-1)=3(x-1)(x+1)$ → s'annule en <span class='reponse'>$x=-1$ et $x=1$</span>.</p><p><strong>b)</strong> $f'&gt;0$ pour $|x|&gt;1$, $f'&lt;0$ pour $|x|&lt;1$ → $f$ croît sur $]-\\infty,-1]$, décroît sur $[-1,1]$, croît sur $[1,+\\infty[$. <strong>Maximum local</strong> en $x=-1$ : $f(-1)=-1+3+1=$ <span class='reponse'>$3$</span> ; <strong>minimum local</strong> en $x=1$ : $f(1)=1-3+1=$ <span class='reponse'>$-1$</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-ALGO-01",
+  "type": "td",
+  "matiere": "Algorithme de base",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Variables, structures conditionnelles, boucles et tableaux",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Écris les algorithmes en pseudo-code clair (variables déclarées, indentations propres).",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Variables et affectations",
+      "points": "4 pts",
+      "consigne": "On considère la suite d'instructions :",
+      "enonce": "<pre class='code'>a ← 5\nb ← a + 2\na ← a * b\nb ← a - b\na ← a - b</pre><ol type='a'><li>Donner les valeurs finales de a et b.</li><li>Qu'a-t-on réalisé sur les deux variables ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Trace : a=5 ; b=7 ; a=5×7=<strong>35</strong> ; b=35−7=<strong>28</strong> ; a=35−28=<strong>7</strong>. Finalement <span class='reponse'>a=7 et b=28</span>.</p><p><strong>b)</strong> Pas un échange : a devient l'ancienne valeur de b (7), mais b vaut a−b=28. C'est une transformation particulière, <strong>pas</strong> la permutation classique (qui exigerait une 3ᵉ variable ou a←b ; b←a−b).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Structure conditionnelle",
+      "points": "5 pts",
+      "consigne": "Une librairie applique une remise selon le montant : −5 % si montant ≥ 20 000 F ; −10 % si ≥ 50 000 F ; sinon aucun.",
+      "enonce": "<ol type='a'><li>Écrire l'algorithme <code>MONTANT_FINAL(m)</code> qui retourne le prix après remise.</li><li>Tester avec m = 60 000, m = 30 000 et m = 10 000.</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>FONCTION MontantFinal(m : réel) : réel\n    SI m >= 50000 ALORS\n        RETOURNER m * 0.90\n    SINON SI m >= 20000 ALORS\n        RETOURNER m * 0.95\n    SINON\n        RETOURNER m\n    FINSI\nFIN</pre><p><strong>b)</strong> 60 000 → <span class='reponse'>54 000 F</span> (−10 %) ; 30 000 → <span class='reponse'>28 500 F</span> (−5 %) ; 10 000 → <span class='reponse'>10 000 F</span> (aucune).</p><p>⚠️ Ordre important : tester d'abord le seuil le plus élevé — sinon 60 000 serait capturé par le premier test (−5 %).</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Boucles",
+      "points": "6 pts",
+      "consigne": "Répondre aux deux questions indépendantes.",
+      "enonce": "<ol type='a'><li>Écrire l'algorithme qui affiche la table de multiplication de 7 (de 7×1 à 7×10).</li><li>Écrire l'algorithme <code>SOMME_N(n)</code> qui calcule $1+2+\\ldots+n$ avec une boucle (pas la formule directe), puis vérifier avec n = 100.</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>POUR i ALLANT DE 1 A 10 FAIRE\n    AFFICHER \"7 x \" , i , \" = \" , 7*i\nFINPOUR</pre><p><strong>b)</strong></p><pre class='code'>FONCTION SommeN(n : entier) : entier\n    s ← 0\n    POUR i ALLANT DE 1 A n FAIRE\n        s ← s + i\n    FINPOUR\n    RETOURNER s\nFIN</pre><p>n = 100 : s = <span class='reponse'>5 050</span> — vérification par la formule $\\frac{n(n+1)}{2}=\\frac{100\\times101}{2}=5\\,050$ ✓.</p>",
+      "bareme_detail": "a) 2 pts · b) 4 pts"
+    },
+    {
+      "titre": "Exercice 4 — Tableaux",
+      "points": "5 pts",
+      "consigne": "On dispose d'un tableau T de n entiers.",
+      "enonce": "<ol type='a'><li>Écrire l'algorithme <code>MAX(T, n)</code> qui retourne le plus grand élément.</li><li>Modifier pour retourner aussi l'<em>indice</em> du maximum (premier en cas d'égalité).</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>FONCTION Max(T : tableau, n : entier) : entier\n    m ← T[0]\n    POUR i ALLANT DE 1 A n-1 FAIRE\n        SI T[i] > m ALORS\n            m ← T[i]\n        FINSI\n    FINPOUR\n    RETOURNER m\nFIN</pre><p><strong>b)</strong> Ajouter <code>imax</code> : initialisé à 0, mis à jour (<code>imax ← i</code>) dans le même <code>SI</code> que m. Comparaison stricte <code>&gt;</code> → conserve le <strong>premier</strong> indice en cas d'égalité. Retourner le couple (m, imax).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    }
+  ]
+}

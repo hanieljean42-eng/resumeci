@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-DROIT-01",
+  "type": "td",
+  "matiere": "Initiation à l'étude du droit",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Notions de base : droit, règle de droit et sources",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Réponds par des définitions précises puis des exemples.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Définitions fondamentales",
+      "points": "5 pts",
+      "consigne": "Définir et distinguer.",
+      "enonce": "<ol type='a'><li>Définir le droit objectif et le droit subjectif. Donner un exemple de chaque.</li><li>Quelle différence entre droit public et droit privé ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Droit objectif</strong> : ensemble des règles qui gouvernent la vie en société (ex. le Code civil). <strong>Droit subjectif</strong> : prérogative reconnue à un individu par le droit objectif (ex. mon droit de propriété sur mon téléphone).</p><p><strong>b)</strong> <strong>Droit public</strong> : régit l'organisation de l'État et ses rapports avec les particuliers (droit constitutionnel, administratif). <strong>Droit privé</strong> : régit les relations entre personnes privées (droit civil, commercial).</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Caractères de la règle de droit",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Citer les quatre caractères de la règle de droit et expliquer chacun en une phrase.</li><li>En quoi la règle de droit se distingue-t-elle de la règle morale ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La règle de droit est : <strong>générale</strong> (s'applique à tous, pas à un cas unique), <strong>abstraite</strong> (vise des situations types), <strong>obligatoire</strong> (s'impose), <strong>sanctionnée par la puissance publique</strong> (le juge/la police peuvent l'imposer par la contrainte).</p><p><strong>b)</strong> La règle morale vise la conscience individuelle (bien/mal) et sa sanction est sociale ou intérieure ; la règle de droit organise la société et sa sanction est <em>institutionnelle</em> (amende, prison, annulation).</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Hiérarchie des normes",
+      "points": "5 pts",
+      "consigne": "Classer selon la pyramide de Kelsen.",
+      "enonce": "<ol type='a'><li>Ordonner : loi, Constitution, décret, traité international.</li><li>Un décret contraire à une loi peut-il être appliqué ? Justifier.</li><li>Un employeur vous impose une clause contraire au Code du travail : que dire ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Constitution &gt; traités internationaux &gt; lois &gt; décrets (règlements) &gt; actes administratifs.</p><p><strong>b)</strong> Non : le décret est <strong>inférieur</strong> à la loi dans la hiérarchie ; il peut être annulé pour illégalité par le juge administratif.</p><p><strong>c)</strong> La clause est <strong>inopposable</strong> : un contrat ne peut déroger à une loi d'ordre public ; la loi prime le contrat (hiérarchie des normes).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Cas pratique : personnes et responsabilité",
+      "points": "5 pts",
+      "consigne": "Un étudiant de 17 ans casse la vitrine d'un magasin.",
+      "enonce": "<ol type='a'><li>A-t-il la capacité juridique d'agir seul en justice ?</li><li>Qui répond du dommage causé ? Distinguer responsabilité civile et pénale.</li><li>Qu'est-ce que la majorité civile en Côte d'Ivoire ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Non : mineur, il est <strong>incapable d'exercer</strong> — il agit par ses représentants légaux (parents).</p><p><strong>b)</strong> <strong>Responsabilité civile</strong> : réparer le dommage — les parents répondent de leur enfant mineur (réparation de la vitrine). <strong>Responsabilité pénale</strong> : sanctionner l'infraction — un mineur peut en répondre selon des règles atténuées (justice des mineurs).</p><p><strong>c)</strong> La majorité civile est fixée à <span class='reponse'>21 ans</span> en Côte d'Ivoire (à vérifier selon le cours — l'émancipation peut intervenir avant par mariage ou décision).</p>",
+      "bareme_detail": "a) 1 pt · b) 2,5 pts · c) 1,5 pt"
+    }
+  ]
+}

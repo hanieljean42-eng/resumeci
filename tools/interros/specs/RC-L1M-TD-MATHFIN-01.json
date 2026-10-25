@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-MATHFIN-01",
+  "type": "td",
+  "matiere": "Mathématiques financière",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Intérêts simples et composés, annuités",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Pose la formule avant d'appliquer ; arrondis au franc le plus proche.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Intérêt simple",
+      "points": "5 pts",
+      "consigne": "Un commerçant place 500 000 F au taux annuel simple de 8 %.",
+      "enonce": "<ol type='a'><li>Rappeler la formule de l'intérêt simple.</li><li>Calculer l'intérêt produit en 3 ans.</li><li>Au bout de combien d'années le capital aura-t-il produit 100 000 F d'intérêts ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $I=C\\times t\\times n$ (C : capital, t : taux annuel, n : durée en années).</p><p><strong>b)</strong> $I=500\\,000\\times0{,}08\\times3=$ <span class='reponse'>$120\\,000$ F</span>.</p><p><strong>c)</strong> $n=\\frac{I}{C\\times t}=\\frac{100\\,000}{500\\,000\\times0{,}08}=\\frac{100\\,000}{40\\,000}=$ <span class='reponse'>$2{,}5$ ans</span> (2 ans et demi).</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Intérêt composé",
+      "points": "5 pts",
+      "consigne": "Un épargnant place 200 000 F au taux annuel composé de 10 %.",
+      "enonce": "<ol type='a'><li>Rappeler la formule de la valeur acquise $V_{n}$.</li><li>Calculer $V_{3}$.</li><li>Comparer avec le placement à intérêt simple : quelle différence après 3 ans ?</li></ol>",
+      "correction": "<p><strong>a)</strong> $V_{n}=C(1+t)^{n}$.</p><p><strong>b)</strong> $V_{3}=200\\,000\\times1{,}1^{3}=200\\,000\\times1{,}331=$ <span class='reponse'>$266\\,200$ F</span>.</p><p><strong>c)</strong> Intérêt simple : $200\\,000+200\\,000\\times0{,}10\\times3=260\\,000$ F → le composé rapporte <span class='reponse'>$6\\,200$ F de plus</span> (les intérêts produisent eux-mêmes des intérêts).</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Taux proportionnel et équivalence",
+      "points": "4 pts",
+      "consigne": "Une banque affiche un taux annuel de 12 %.",
+      "enonce": "<ol type='a'><li>Quel est le taux mensuel proportionnel ?</li><li>Un placement de 100 000 F pendant 6 mois à intérêt simple, taux mensuel de l'a) : quel intérêt ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Taux proportionnel mensuel $=\\frac{12\\%}{12}=$ <span class='reponse'>$1\\%$ par mois</span>.</p><p><strong>b)</strong> $I=100\\,000\\times0{,}01\\times6=$ <span class='reponse'>$6\\,000$ F</span>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 4 — Annuités",
+      "points": "6 pts",
+      "consigne": "Pour acheter un ordinateur, un étudiant verse 50 000 F à la fin de chaque année sur un compte rémunéré à 6 % l'an, pendant 3 ans (premier versement dans 1 an).",
+      "enonce": "<ol type='a'><li>Rappeler la formule de la valeur acquise par une suite d'annuités constantes $a$ : $V=a\\times\\frac{(1+t)^{n}-1}{t}$.</li><li>Calculer la valeur acquise après le 3ᵉ versement.</li><li>L'ordinateur coûte 160 000 F : l'épargne suffit-elle ?</li></ol>",
+      "correction": "<p><strong>b)</strong> $V=50\\,000\\times\\frac{1{,}06^{3}-1}{0{,}06}=50\\,000\\times\\frac{1{,}191016-1}{0{,}06}=50\\,000\\times3{,}1836\\approx$ <span class='reponse'>$159\\,180$ F</span>. Détail : 50 000×1,1236 + 50 000×1,06 + 50 000 = 56 180 + 53 000 + 50 000.</p><p><strong>c)</strong> $159\\,180 \\lt 160\\,000$ → <span class='reponse'>il manque environ 820 F</span> : l'épargne ne suffit pas tout à fait.</p>",
+      "bareme_detail": "a) 1 pt · b) 3 pts · c) 2 pts"
+    }
+  ]
+}

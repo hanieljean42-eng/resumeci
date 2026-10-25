@@ -260,6 +260,32 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-TD-ALGO-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Algorithme de base",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Variables, structures conditionnelles, boucles et tableaux",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-ANA1-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Analyse 1",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Limites, continuité et dérivées",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-ANA2-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -299,6 +325,32 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-TD-DROIT-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Initiation à l'étude du droit",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Notions de base : droit, règle de droit et sources",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-GPI-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Gestion de projet informatique",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Cycle de vie, planning et modèles de développement",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-MACRO-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -308,6 +360,19 @@
     "duree": "1 h 30",
     "bareme": "/20 — auto-évaluation",
     "chapitre": "Agrégats, circuit économique et fonction de consommation",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-MATHFIN-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Mathématiques financière",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Intérêts simples et composés, annuités",
     "exercices": 4,
     "corrige": true
   },
@@ -364,6 +429,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1M-TD-SE-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Système d'exploitation",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Rôles du SE, processus et gestion mémoire",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
     "code": "RC-L1M-TD-STAT-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -373,6 +451,32 @@
     "duree": "1 h 30",
     "bareme": "/20 — auto-évaluation",
     "chapitre": "Paramètres de position, de dispersion et régression linéaire",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-TEE-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Technique d'expression écrite",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Résumé, correspondance et dissertation",
+    "exercices": 4,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1M-TD-WEB-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Initiation à la programmation web",
+    "classe": "Licence_1_Miage",
+    "classeLabel": "Licence 1 MIAGE",
+    "duree": "1 h 30",
+    "bareme": "/20 — auto-évaluation",
+    "chapitre": "Structure HTML, styles CSS et bases de JavaScript",
     "exercices": 4,
     "corrige": true
   },

@@ -3787,6 +3787,9 @@ function renderExamScreen() {
       .exam-topbar.exam-urgent{background:linear-gradient(135deg,#991b1b,#dc2626)}
       .exam-body{padding:0 2px}
       .exam-q{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:14px 16px;margin-bottom:12px}
+      .exam-q pre{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:13px;line-height:1.5;overflow-x:auto;font-family:'Consolas','Courier New',monospace}
+      .exam-q code{background:#f1f5f9;color:#0f172a;border-radius:5px;padding:1px 6px;font-family:'Consolas','Courier New',monospace;font-size:12.5px}
+      .exam-q pre code{background:transparent;color:inherit;padding:0}
       .exam-vf-btn.exam-selected,.exam-q button.exam-selected{border-color:#7c3aed !important;background:#ede9fe !important}
       .exam-q input:focus{border-color:#7c3aed;outline:none}
       .exam-step{border:1.5px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:10px;background:#fff}

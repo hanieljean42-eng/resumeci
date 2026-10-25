@@ -1,0 +1,131 @@
+{
+  "code": "RC-L1M-TD-ANA2-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Intégration et sommes de Riemann",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Analyse 2",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin. Écris les décimaux avec une virgule (ex : 2,5).",
+  "params": {
+    "bb": { "choices": [2, 3, 4] },
+    "aa": { "choices": [2, 3] },
+    "kk": { "choices": [1, 2, 3] },
+    "nn": { "choices": [2, 3, 4] }
+  },
+  "derived": {
+    "b2": "bb*bb",
+    "i1": "aa*aa*aa/3",
+    "i2": "nn*nn + kk*nn"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Intégrales",
+          "enonce": "$\\int_0^{1} x\\,dx = 1$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\int_0^{1} x\\,dx = \\left[\\frac{x^{2}}{2}\\right]_0^{1} = \\frac{1}{2}$."
+        },
+        {
+          "id": "e1q2",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Intégrales",
+          "enonce": "$\\int_0^{{bb}} x\\,dx = \\frac{{b2}}{2}$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $\\int_0^{{bb}} x\\,dx = \\frac{{bb}^{2}}{2} = \\frac{{b2}}{2}$."
+        },
+        {
+          "id": "e1q3",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Primitives",
+          "enonce": "Une primitive de $f(x)=\\frac{1}{x}$ sur $]0,+\\infty[$ est $F(x)=\\ln x$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $(\\ln x)' = \\frac{1}{x}$ pour $x>0$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Calculs d'intégrales",
+      "consigne": "Calcule et entre ta réponse numérique.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Intégrales",
+          "enonce": "Calcule $\\displaystyle\\int_0^{{aa}} x^{2}\\,dx$.",
+          "precision": "Réponse sous forme de fraction ou décimal.",
+          "answer": "aa*aa*aa/3",
+          "tol": 0.001,
+          "corrige": "$\\int_0^{{aa}} x^{2}dx = \\left[\\frac{x^{3}}{3}\\right]_0^{{aa}} = \\frac{{aa}^{3}}{3}$ ≈ {{num:i1}}."
+        },
+        {
+          "id": "e2q2",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Primitives",
+          "enonce": "Calcule $\\displaystyle\\int_0^{{nn}} (2x+{{kk}})\\,dx$.",
+          "answer": "nn*nn + kk*nn",
+          "tol": 0.001,
+          "corrige": "$\\int_0^{{nn}}(2x+{{kk}})dx = \\left[x^{2}+{{kk}}x\\right]_0^{{nn}} = {{nn}}^{2}+{{kk}}\\times{{nn}} = {{num:i2}}$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Sommes de Riemann et QCM",
+      "consigne": "Choisis la bonne réponse ou entre le résultat.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Sommes de Riemann",
+          "enonce": "Calcule $\\displaystyle\\lim_{n\\to+\\infty} \\frac{1}{n}\\sum_{k=1}^{n} \\left(\\frac{k}{n}\\right)^{2}$.",
+          "precision": "Écris la valeur exacte (fraction ou décimal).",
+          "answer": "1/3",
+          "tol": 0.001,
+          "corrige": "C'est la somme de Riemann de $f(x)=x^{2}$ sur $[0,1]$ → $\\int_0^{1}x^{2}dx = \\frac{1}{3}$ ≈ 0,333."
+        },
+        {
+          "id": "e3q2",
+          "type": "qcm",
+          "points": 2,
+          "chapitre": "Intégration par parties",
+          "enonce": "Pour calculer $\\int x\\,e^{x}\\,dx$ par parties, on pose le plus souvent :",
+          "choix": [
+            "$u=x$ et $dv=e^{x}dx$",
+            "$u=e^{x}$ et $dv=x\\,dx$",
+            "$u=xe^{x}$ et $dv=dx$",
+            "On ne peut pas intégrer par parties"
+          ],
+          "correct": 0,
+          "corrige": "On dérive $u=x$ (devient 1, plus simple) et on intègre $dv=e^{x}dx$ (reste $e^{x}$) → $\\int xe^{x}dx = xe^{x}-e^{x}+C$."
+        },
+        {
+          "id": "e3q3",
+          "type": "qcm",
+          "points": 2,
+          "chapitre": "Suites",
+          "enonce": "La suite $u_{n}=\\frac{n}{n+{kk}}$ a pour limite :",
+          "choix": [
+            "$+\\infty$",
+            "$0$",
+            "$1$",
+            "{{kk}}"
+          ],
+          "correct": 2,
+          "corrige": "$u_{n}=\\frac{1}{1+{{kk}}/n} \\to 1$ quand $n\\to+\\infty$."
+        }
+      ]
+    }
+  ]
+}

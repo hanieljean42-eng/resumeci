@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-SE-01",
+  "type": "td",
+  "matiere": "Système d'exploitation",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Rôles du SE, processus et gestion mémoire",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Réponds avec tes mots puis compare : l'essentiel est l'exactitude des notions.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Rôles du système d'exploitation",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Citer quatre rôles principaux d'un système d'exploitation.</li><li>Pourquoi dit-on que le SE est un « intermédiaire » entre l'utilisateur et le matériel ?</li><li>Citer deux exemples de SE pour ordinateur et deux pour téléphone.</li></ol>",
+      "correction": "<p><strong>a)</strong> Gestion des <strong>processus</strong>, de la <strong>mémoire</strong>, des <strong>fichiers</strong> et des <strong>périphériques</strong> (pilotes) — + interface utilisateur.</p><p><strong>b)</strong> Les applications ne parlent jamais directement au matériel : elles demandent au SE (appels système), qui arbitre et protège les ressources.</p><p><strong>c)</strong> PC : Windows, GNU/Linux (Ubuntu…), macOS. Téléphone : Android, iOS.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Processus",
+      "points": "5 pts",
+      "consigne": "Un système exécute les processus P1 (8 ms), P2 (4 ms) et P3 (2 ms) arrivés en même temps.",
+      "enonce": "<ol type='a'><li>Qu'est-ce qu'un processus ? Le distinguer d'un programme.</li><li>Ordonnancement <strong>plus court d'abord (SJF)</strong> : dans quel ordre s'exécutent-ils ? Temps d'attente moyen ?</li><li>Même question avec FIFO dans l'ordre P1, P2, P3.</li></ol>",
+      "correction": "<p><strong>a)</strong> Un programme est un fichier exécutable (statique) ; un processus est un programme <strong>en cours d'exécution</strong> avec son contexte (mémoire, registres, état).</p><p><strong>b)</strong> SJF : <span class='reponse'>P3 → P2 → P1</span>. Attentes : P3=0, P2=2, P1=6 → moyenne $\\frac{0+2+6}{3}\\approx$ <span class='reponse'>$2{,}7$ ms</span>.</p><p><strong>c)</strong> FIFO : P1 → P2 → P3. Attentes : P1=0, P2=8, P3=12 → moyenne $\\frac{20}{3}\\approx$ <span class='reponse'>$6{,}7$ ms</span> — SJF est ici plus efficace.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Gestion de la mémoire",
+      "points": "5 pts",
+      "consigne": "Un ordinateur possède 4 Go de RAM et lance des applications totalisant 6 Go.",
+      "enonce": "<ol type='a'><li>Comment le SE permet-il de faire fonctionner ces applications malgré le dépassement ?</li><li>Qu'est-ce qu'un « défaut de page » ?</li><li>Quel phénomène ralentit le système quand les échanges disque deviennent trop fréquents ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La <strong>mémoire virtuelle</strong> : les pages inactives sont déplacées sur le disque (swap/fichier d'échange) ; seules les pages utiles restent en RAM.</p><p><strong>b)</strong> Défaut de page : le processus accède à une page absente de la RAM → le SE la recharge depuis le disque (interruption coûteuse).</p><p><strong>c)</strong> Le <span class='reponse'><strong>thrashing</strong> (écroulement)</span> : le système passe plus de temps à échanger des pages qu'à exécuter les programmes.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Système de fichiers",
+      "points": "5 pts",
+      "consigne": "On considère le chemin /home/amina/cours/python/td1.py.",
+      "enonce": "<ol type='a'><li>Différence entre chemin absolu et chemin relatif ? Donner un exemple de chacun.</li><li>Qu'est-ce qu'une extension de fichier ? À quoi sert-elle ?</li><li>Sous Linux, que signifient les droits « rwx » sur un fichier ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Absolu</strong> : depuis la racine (ex. <code>/home/amina/cours/td1.py</code>) ; <strong>relatif</strong> : depuis le dossier courant (ex. <code>cours/td1.py</code> si on est dans <code>/home/amina</code>).</p><p><strong>b)</strong> Suffixe après le point (<code>.py</code>, <code>.pdf</code>) indiquant le type du fichier — aide le SE à choisir l'application d'ouverture.</p><p><strong>c)</strong> <strong>r</strong>ead (lire), <strong>w</strong>rite (écrire/modifier), e<strong>x</strong>ecute (exécuter) — définis pour le propriétaire, le groupe et les autres.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 2 pts"
+    }
+  ]
+}

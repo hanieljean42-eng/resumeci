@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-TEE-01",
+  "type": "td",
+  "matiere": "Technique d'expression écrite",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Résumé, correspondance et dissertation",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Rédige d'abord seul, puis compare au corrigé : la méthode compte autant que le fond.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le résumé",
+      "points": "5 pts",
+      "consigne": "On donne le texte : « La déforestation ivoirienne a réduit le couvert forestier de 16 millions d'hectares en 1900 à moins de 3 millions aujourd'hui. Cette disparition s'explique d'abord par l'extension des cultures de rente — café et cacao — qui fournissent l'essentiel des devises du pays. S'y ajoutent l'exploitation forestière, les feux de brousse et la pression démographique qui pousse les paysans à défricher toujours plus loin. Les conséquences sont graves : perte de biodiversité, érosion des sols et dérèglement du climat local, avec des pluies devenues irrégulières qui menacent justement les cultures. »",
+      "enonce": "<ol type='a'><li>Rappeler les trois règles d'or du résumé.</li><li>Résumer ce texte en 2 phrases maximum.</li></ol>",
+      "correction": "<p><strong>a)</strong> ① Fidélité : ne rien ajouter au sens de l'auteur. ② Brièveté : 1/4 du texte environ. ③ Clarté : phrases autonomes et enchaînement logique.</p><p><strong>b)</strong> Résumé modèle : « La forêt ivoirienne a perdu plus de 80 % de sa surface depuis 1900, sous l'effet conjugué des cultures de rente, de l'exploitation du bois et de la pression démographique. Cette disparition entraîne perte de biodiversité, érosion et dérèglements climatiques qui menacent l'agriculture elle-même. »</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts"
+    },
+    {
+      "titre": "Exercice 2 — La lettre administrative",
+      "points": "5 pts",
+      "consigne": "Un étudiant demande une attestation de scolarité au secrétariat de son université.",
+      "enonce": "<ol type='a'><li>Citer les éléments obligatoires d'une lettre administrative (expéditeur, destinataire, objet…).</li><li>Écrire la formule d'appel et la formule de politesse adaptées.</li></ol>",
+      "correction": "<p><strong>a)</strong> Coordonnées de l'expéditeur (en haut à gauche), lieu et date (en haut à droite), destinataire, <strong>objet</strong> précis, formule d'appel, corps clair et courtois, formule de politesse, signature.</p><p><strong>b)</strong> Appel : « Monsieur le Chef du service de scolarité » / « Madame, Monsieur ». Politesse : « Je vous prie d'agréer, Monsieur le Chef du service de scolarité, l'expression de mes salutations distinguées. »</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — La dissertation : introduction",
+      "points": "5 pts",
+      "consigne": "Sujet : « L'internet a-t-il tué la lecture des livres chez les étudiants ? »",
+      "enonce": "<ol type='a'><li>Rappeler les 4 étapes d'une introduction au cartésien.</li><li>Rédiger l'amorce et la problématique de ce sujet.</li></ol>",
+      "correction": "<p><strong>a)</strong> Amorce (accroche) → définition des termes du sujet → problématique → annonce du plan.</p><p><strong>b)</strong> Amorce possible : « En dix ans, le smartphone est devenu la première bibliothèque des étudiants africains. » Problématique : « L'internet, source d'information immédiate et souvent fragmentée, détourne-t-il durablement les étudiants de la lecture longue des livres, ou peut-il au contraire la renouveler ? »</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts"
+    },
+    {
+      "titre": "Exercice 4 — Connecteurs et cohérence",
+      "points": "5 pts",
+      "consigne": "Compléter par le connecteur logique adapté.",
+      "enonce": "<ol type='a'><li>« Le téléphone facilite l'accès aux cours, ____ il multiplie les distractions. » (opposition)</li><li>« Il a relu sa fiche, ____ il a réussi l'examen. » (conséquence)</li><li>Citer deux connecteurs d'addition et deux d'illustration.</li></ol>",
+      "correction": "<p><strong>a)</strong> « mais / cependant / pourtant » — opposition.</p><p><strong>b)</strong> « donc / ainsi / c'est pourquoi » — conséquence.</p><p><strong>c)</strong> Addition : « d'abord », « de plus », « ensuite », « en outre ». Illustration : « par exemple », « ainsi », « notamment », « c'est le cas de ».</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "code": "RC-L1M-TD-MICRO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Utilité, élasticité et coûts",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Microéconomie",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Écris les décimaux avec une virgule.",
+  "params": {
+    "p1": { "choices": [200, 250] },
+    "p2": { "choices": [180, 200] },
+    "q1": { "choices": [100, 80] },
+    "q2": { "choices": [130, 120] },
+    "rr": { "choices": [1000, 1200] },
+    "px": { "choices": [50, 40] },
+    "cf": { "choices": [400, 500] }
+  },
+  "derived": {
+    "elast": "((q2-q1)/q1)/((p2-p1)/p1)",
+    "qmax": "rr/px",
+    "rta": "p1*q1",
+    "rtb": "p2*q2",
+    "cm10": "(cf+600)/10"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Élasticité-prix",
+      "consigne": "Quand le prix passe de {{p1}} F à {{p2}} F, la quantité demandée passe de {{q1}} à {{q2}}.",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Élasticité",
+          "enonce": "Calcule l'élasticité-prix de la demande $e=\\frac{\\Delta Q/Q}{\\Delta p/p}$.",
+          "precision": "Arrondis au centième (nombre négatif attendu).",
+          "answer": "((q2-q1)/q1)/((p2-p1)/p1)",
+          "tol": 0.05,
+          "corrige": "$e=\\frac{({{q2}}-{{q1}})/{{q1}}}{({{p2}}-{{p1}})/{{p1}}}$ ≈ {{d2:elast}} — demande élastique car $|e|>1$."
+        },
+        {
+          "id": "e1q2",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Recette",
+          "enonce": "Calcule la recette totale du vendeur APRÈS la baisse de prix (prix {{p2}} F × {{q2}} unités).",
+          "answer": "p2*q2",
+          "tol": 0.5,
+          "corrige": "Recette après : ${{p2}}\\times{{q2}}={{num:rtb}}$ F (avant : ${{num:rta}}$ F → la baisse a augmenté la recette)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Contrainte budgétaire",
+      "consigne": "Revenu $R={{rr}}$ F, bien $x$ au prix {{px}} F.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Budget",
+          "enonce": "Si le consommateur n'achète que le bien $x$, quelle quantité maximale peut-il obtenir ?",
+          "answer": "rr/px",
+          "tol": 0.01,
+          "corrige": "$x_{max}=\\frac{R}{p_{x}}=\\frac{ {{rr}} }{ {{px}} }={{num:qmax}}$ unités."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Utilité",
+          "enonce": "La loi de l'utilité marginale décroissante affirme que :",
+          "choix": [
+            "l'utilité totale diminue toujours",
+            "chaque unité supplémentaire apporte moins de satisfaction que la précédente",
+            "le prix diminue avec la quantité",
+            "le revenu diminue avec la consommation"
+          ],
+          "correct": 1,
+          "corrige": "L'utilité <em>marginale</em> diminue à chaque unité, même si l'utilité <em>totale</em> continue de croître."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Coûts",
+      "consigne": "Coûts fixes $CF={{cf}}$ F.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "vrai_faux",
+          "points": 3,
+          "chapitre": "Coûts",
+          "enonce": "Le coût marginal est le coût de production d'une unité supplémentaire.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $C_{m}=CT'(Q)$ : coût de la dernière unité produite."
+        },
+        {
+          "id": "e3q2",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Coût moyen",
+          "enonce": "Le coût total pour 10 unités est ${{cf}}+600$ F. Calcule le coût moyen par unité.",
+          "answer": "(cf+600)/10",
+          "tol": 0.01,
+          "corrige": "$CM=\\frac{CT}{Q}=\\frac{ {{cf}}+600 }{10}={{num:cm10}}$ F par unité."
+        }
+      ]
+    }
+  ]
+}

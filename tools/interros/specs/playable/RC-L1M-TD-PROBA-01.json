@@ -1,0 +1,112 @@
+{
+  "code": "RC-L1M-TD-PROBA-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Dénombrement et lois de probabilité",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Combinatoire et probabilité",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Écris les décimaux avec une virgule (ex : 0,36).",
+  "params": {
+    "n": { "choices": [8, 10, 12] },
+    "k": { "choices": [2, 3] },
+    "p": { "choices": [0.3, 0.5, 0.7] },
+    "nr": { "choices": [4, 5] },
+    "nv": { "choices": [6, 5] }
+  },
+  "derived": {
+    "comb": "k===2 ? n*(n-1)/2 : n*(n-1)*(n-2)/6",
+    "arr": "k===2 ? n*(n-1) : n*(n-1)*(n-2)",
+    "binom": "6*Math.pow(p,2)*Math.pow(1-p,2)",
+    "tot": "nr+nv",
+    "pv": "nv/(nr+nv)",
+    "q1": "1-p"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Dénombrement",
+      "consigne": "Combinaisons, arrangements, permutations : calcule les valeurs.",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Combinaisons",
+          "enonce": "Dans une promo de {{n}} étudiants, combien de groupes de {{k}} délégués peut-on former ?",
+          "answer": "k===2 ? n*(n-1)/2 : n*(n-1)*(n-2)/6",
+          "tol": 0.5,
+          "corrige": "$\\binom{ {{n}} }{ {{k}} } = \\frac{ {{n}}! }{ {{k}}!\\,( {{n}}-{{k}} )! } = {{num:comb}}$ (ordre indifférent)."
+        },
+        {
+          "id": "e1q2",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Arrangements",
+          "enonce": "Combien de classements ordonnés de {{k}} lauréats parmi {{n}} candidats ?",
+          "answer": "k===2 ? n*(n-1) : n*(n-1)*(n-2)",
+          "tol": 0.5,
+          "corrige": "$A_{ {{n}} }^{ {{k}} } = \\frac{ {{n}}! }{ ({{n}}-{{k}})! } = {{num:arr}}$ (l'ordre compte)."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Probabilités élémentaires",
+      "consigne": "Une urne contient {{nr}} boules rouges et {{nv}} boules vertes. On tire une boule au hasard.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Probabilités",
+          "enonce": "Quelle est la probabilité de tirer une boule verte ?",
+          "precision": "Décimal ou fraction.",
+          "answer": "nv/(nr+nv)",
+          "tol": 0.001,
+          "corrige": "$P(V)=\\frac{ {{nv}} }{ {{nr}}+{{nv}} } = \\frac{ {{nv}} }{ {{tot}} }$ ≈ {{d3:pv}}."
+        },
+        {
+          "id": "e2q2",
+          "type": "vrai_faux",
+          "points": 3,
+          "chapitre": "Propriétés",
+          "enonce": "Pour deux événements $A$ et $B$ quelconques : $P(A\\cup B)=P(A)+P(B)$.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La formule générale est $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$ ; l'égalité simple n'est vraie que si $A$ et $B$ sont incompatibles."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Loi binomiale",
+      "consigne": "$X$ suit la loi binomiale $\\mathcal{B}(4\\,;\\,{p})$.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Loi binomiale",
+          "enonce": "Calcule $P(X=2)$ pour $X\\sim\\mathcal{B}(4\\,;\\,{{d2:p}})$.",
+          "precision": "Arrondis au millième.",
+          "answer": "6*Math.pow(p,2)*Math.pow(1-p,2)",
+          "tol": 0.01,
+          "corrige": "$P(X=2)=\\binom{4}{2}p^{2}(1-p)^{2}=6\\times {{d2:p}}^{2}\\times {{d2:q1}}^{2}$ ≈ {{d3:binom}}."
+        },
+        {
+          "id": "e3q2",
+          "type": "qcm",
+          "points": 4,
+          "chapitre": "Espérance",
+          "enonce": "L'espérance de $X\\sim\\mathcal{B}(n,p)$ est :",
+          "choix": [
+            "$E(X)=np$",
+            "$E(X)=np(1-p)$",
+            "$E(X)=\\frac{n}{p}$",
+            "$E(X)=n^{2}p$"
+          ],
+          "correct": 0,
+          "corrige": "$E(X)=np$ et $V(X)=np(1-p)$ : à ne pas confondre — la variance contient le facteur $(1-p)$."
+        }
+      ]
+    }
+  ]
+}

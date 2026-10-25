@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-WEB-01",
+  "type": "td",
+  "matiere": "Initiation à la programmation web",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Structure HTML, styles CSS et bases de JavaScript",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Teste chaque extrait mentalement avant de comparer au corrigé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Structure HTML",
+      "points": "5 pts",
+      "consigne": "On veut créer une page « Ma fiche de révision ».",
+      "enonce": "<ol type='a'><li>Écrire le squelette HTML5 minimal (doctype, html, head avec titre, body).</li><li>Dans le body : un titre principal « Révisions », une liste à puces de 3 matières, et un lien vers resumeci.me.</li><li>Quelle balise rend le texte le plus important : <code>&lt;b&gt;</code> ou <code>&lt;strong&gt;</code> ? Pourquoi ?</li></ol>",
+      "correction": "<p><strong>a-b)</strong></p><pre class='code'>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;title&gt;Ma fiche de révision&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Révisions&lt;/h1&gt;\n    &lt;ul&gt;\n        &lt;li&gt;Python&lt;/li&gt;\n        &lt;li&gt;Analyse&lt;/li&gt;\n        &lt;li&gt;Merise&lt;/li&gt;\n    &lt;/ul&gt;\n    &lt;a href=\"https://resumeci.me\"&gt;ResumeCI&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;</pre><p><strong>c)</strong> <code>&lt;strong&gt;</code> : sens <strong>sémantique</strong> (importance du contenu, lu différemment par les lecteurs d'écran). <code>&lt;b&gt;</code> n'est que visuel.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — CSS",
+      "points": "5 pts",
+      "consigne": "On veut styliser la page précédente.",
+      "enonce": "<ol type='a'><li>Écrire la règle CSS qui rend tous les <code>h1</code> bleu foncé (<code>#0f172a</code>) centrés.</li><li>Quelle différence entre un sélecteur <code>#id</code> et un sélecteur <code>.classe</code> ?</li><li>Ordre de priorité si un élément a <em>style inline</em>, une <em>classe</em> et une <em>balise ciblée</em> : lequel gagne ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>h1 {\n    color: #0f172a;\n    text-align: center;\n}</pre><p><strong>b)</strong> <code>#id</code> : unique dans la page, plus spécifique ; <code>.classe</code> : réutilisable sur plusieurs éléments.</p><p><strong>c)</strong> <span class='reponse'>Style inline gagne</span> (spécificité : inline &gt; id &gt; classe &gt; balise).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — JavaScript de base",
+      "points": "5 pts",
+      "consigne": "On écrit un petit script pour la page.",
+      "enonce": "<ol type='a'><li>Écrire le code JS qui affiche « Bonjour » dans la console.</li><li>Qu'affiche ce code ?<pre class='code'>let total = 0;\nfor (let i = 1; i <= 4; i++) {\n    total += i * 2;\n}\nconsole.log(total);</pre></li><li>Quelle différence entre <code>let</code>, <code>const</code> et <code>var</code> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>console.log(\"Bonjour\");</code></p><p><strong>b)</strong> total = 2+4+6+8 = <span class='reponse'>20</span>.</p><p><strong>c)</strong> <code>const</code> : non réassignable (référence fixe) ; <code>let</code> : réassignable, portée de bloc ; <code>var</code> : portée fonction, à éviter (hoisting piégeux).</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Formulaire HTML",
+      "points": "5 pts",
+      "consigne": "On veut un formulaire d'inscription : nom, email et bouton Envoyer.",
+      "enonce": "<ol type='a'><li>Écrire le formulaire avec labels associés (attribut <code>for</code>) et champs requis.</li><li>À quoi servent <code>required</code> et <code>type=\"email\"</code> ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>&lt;form action=\"/inscription\" method=\"post\"&gt;\n    &lt;label for=\"nom\"&gt;Nom :&lt;/label&gt;\n    &lt;input type=\"text\" id=\"nom\" name=\"nom\" required&gt;\n\n    &lt;label for=\"mail\"&gt;Email :&lt;/label&gt;\n    &lt;input type=\"email\" id=\"mail\" name=\"mail\" required&gt;\n\n    &lt;button type=\"submit\"&gt;Envoyer&lt;/button&gt;\n&lt;/form&gt;</pre><p><strong>b)</strong> <code>required</code> : bloque l'envoi si le champ est vide ; <code>type=\"email\"</code> : validation du format email par le navigateur + clavier adapté sur mobile.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    }
+  ]
+}

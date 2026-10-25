@@ -1,0 +1,128 @@
+{
+  "code": "RC-L1M-PART-PY-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Python : structures et fonctions",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Programmation en langage Python",
+  "dureeMin": 90,
+  "noteSur": 20,
+  "consignes": "Mode Examen : lis chaque code attentivement et réponds dans l'application avant la fin du chrono. Correction automatique.",
+  "params": {
+    "nb": { "choices": [5, 6, 7] },
+    "debut": { "choices": [1, 2, 3] },
+    "seuil": { "choices": [10, 12] }
+  },
+  "derived": {
+    "fact": "debut*(nb===5?120:(nb===6?720:5040))",
+    "s1": "nb*(nb-1)/2",
+    "s2": "nb*(nb+1)/2",
+    "nbm1": "nb-1",
+    "nbit": "Math.floor(Math.log2(nb))"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Lecture de code",
+      "consigne": "Prévois ce qu'affichent les programmes.",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Boucles",
+          "enonce": "Qu'affiche ce code ?<pre class='code'>s = 0\nfor i in range(1, {{nb}}):\n    s += i\nprint(s)</pre>",
+          "choix": [
+            "{{num:s1}}",
+            "{{num:s2}}",
+            "{{nb}}",
+            "Rien, erreur de syntaxe"
+          ],
+          "correct": 0,
+          "corrige": "<code>range(1,{{nb}})</code> parcourt $1$ à ${{nb}}-1$ : somme $=1+2+\\ldots+{{nbm1}}={{num:s1}}$."
+        },
+        {
+          "id": "e1q2",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Fonctions",
+          "enonce": "Qu'affiche ce code ?<pre class='code'>def f(n):\n    r = {{debut}}\n    for i in range(1, n + 1):\n        r *= i\n    return r\n\nprint(f({{nb}}))</pre>",
+          "precision": "Le programme calcule {{debut}} × factorielle de {{nb}}.",
+          "answer": "debut*(nb===5?120:(nb===6?720:5040))",
+          "tol": 0.5,
+          "corrige": "$f({{nb}})={{debut}}\\times {{nb}}!= {{num:fact}}$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Conditions et listes",
+      "consigne": "Conditions, listes et dictionnaires.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Opérateurs",
+          "enonce": "En Python, <code>17 % 5</code> vaut <code>2</code>.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>%</code> = reste de la division : $17=3\\times5+2$."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Listes",
+          "enonce": "Qu'affiche ce code ?<pre class='code'>notes = [12, 8, 15, 9, {{seuil}}]\nprint(max(notes) - min(notes))</pre>",
+          "choix": [
+            "7",
+            "24",
+            "23",
+            "Erreur : max() n'existe pas"
+          ],
+          "correct": 0,
+          "corrige": "max = 15, min = 8 → écart $=15-8=7$."
+        },
+        {
+          "id": "e2q3",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Dictionnaires",
+          "enonce": "Soit <code>stock = {\"riz\": 3, \"huile\": 8}</code>. Que vaut <code>stock.get(\"savon\", 0)</code> ?",
+          "choix": [
+            "Erreur KeyError",
+            "0",
+            "None",
+            "\"savon\""
+          ],
+          "correct": 1,
+          "corrige": "<code>.get(clé, défaut)</code> retourne le défaut <code>0</code> si la clé est absente — pas d'erreur."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Algorithmes",
+      "consigne": "Raisonnement algorithmique.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "While",
+          "enonce": "Combien de fois la boucle <code>while</code> s'exécute-t-elle ?<pre class='code'>n = {{nb}}\ncompteur = 0\nwhile n > 1:\n    n = n // 2\n    compteur += 1</pre>",
+          "precision": "Entre le nombre d'itérations.",
+          "answer": "Math.floor(Math.log2(nb))",
+          "tol": 0.001,
+          "corrige": "$n$ est divisé par 2 (division entière) jusqu'à ≤ 1 : {{nb}} → nombre d'étapes = {{num:nbit}}."
+        },
+        {
+          "id": "e3q2",
+          "type": "vrai_faux",
+          "points": 3,
+          "chapitre": "Chaînes",
+          "enonce": "<code>\"ab\" * 3</code> produit <code>\"ababab\"</code>.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La multiplication répète la chaîne : <code>\"ab\"*3 = \"ababab\"</code>."
+        }
+      ]
+    }
+  ]
+}

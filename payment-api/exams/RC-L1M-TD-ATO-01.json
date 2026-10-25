@@ -1,0 +1,110 @@
+{
+  "code": "RC-L1M-TD-ATO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Codage et architecture",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Architecture et technologies des ordinateurs",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Réponds en décimal quand on demande une conversion.",
+  "params": {
+    "bin": { "choices": ["1010", "1101", "10011", "11100"] },
+    "hex": { "choices": ["2F", "1A", "3C", "4B"] },
+    "bits": { "choices": [12, 14, 16] }
+  },
+  "derived": {
+    "ddec": "parseInt(bin,2)",
+    "hdec": "parseInt(hex,16)",
+    "adr": "Math.pow(2,bits)"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Conversions",
+      "consigne": "Convertis les nombres demandés en décimal.",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Binaire",
+          "enonce": "Convertis $({{bin}})_{2}$ en décimal.",
+          "answer": "parseInt(bin,2)",
+          "tol": 0.001,
+          "corrige": "En additionnant les puissances de 2 aux positions des 1 : $({{bin}})_{2}={{num:ddec}}$."
+        },
+        {
+          "id": "e1q2",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Hexadécimal",
+          "enonce": "Convertis $({{hex}})_{16}$ en décimal.",
+          "answer": "parseInt(hex,16)",
+          "tol": 0.001,
+          "corrige": "$({{hex}})_{16}={{num:hdec}}$ — chaque chiffre hexa vaut 4 bits."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Mémoire et bus",
+      "consigne": "Architecture de Von Neumann.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Adressage",
+          "enonce": "Combien d'adresses mémoire peut adresser un bus d'adresses de {{bits}} bits ?",
+          "answer": "Math.pow(2,bits)",
+          "tol": 0.5,
+          "corrige": "$2^{ {{bits}} }={{num:adr}}$ adresses."
+        },
+        {
+          "id": "e2q2",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Mémoires",
+          "enonce": "La différence principale entre RAM et ROM :",
+          "choix": [
+            "la RAM est plus rapide que le processeur",
+            "la RAM est volatile et effaçable, la ROM garde son contenu sans alimentation",
+            "la ROM stocke les programmes en cours d'exécution",
+            "il n'y a aucune différence"
+          ],
+          "correct": 1,
+          "corrige": "RAM = volatile, lecture/écriture, programmes en cours. ROM = non volatile, lecture seule, firmware de démarrage."
+        },
+        {
+          "id": "e2q3",
+          "type": "vrai_faux",
+          "points": 3,
+          "chapitre": "Bus",
+          "enonce": "Le bus d'adresses est bidirectionnel : la mémoire peut envoyer des adresses au processeur.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le bus d'adresses est <em>unidirectionnel</em> : seul le CPU désigne l'adresse. Seul le bus de données est bidirectionnel."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Complément à 2",
+      "consigne": "Codage des entiers signés.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Complément à 2",
+          "enonce": "Sur 8 bits en complément à 2, la plage représentable est :",
+          "choix": [
+            "$0$ à $255$",
+            "$-127$ à $+128$",
+            "$-128$ à $+127$",
+            "$-255$ à $+255$"
+          ],
+          "correct": 2,
+          "corrige": "Sur $n$ bits : $-2^{n-1}$ à $2^{n-1}-1$ → ici $-128$ à $+127$ (256 valeurs)."
+        }
+      ]
+    }
+  ]
+}

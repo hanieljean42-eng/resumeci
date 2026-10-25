@@ -1,0 +1,114 @@
+{
+  "code": "RC-L1M-TD-MACRO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Agrégats et multiplicateur",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Macroéconomie",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Montants en milliards FCFA.",
+  "params": {
+    "c0": { "choices": [800, 900, 700] },
+    "i0": { "choices": [250, 300] },
+    "g0": { "choices": [300, 350] },
+    "x0": { "choices": [120, 150] },
+    "m0": { "choices": [150, 200] },
+    "cpr": { "choices": [0.75, 0.8] },
+    "di": { "choices": [40, 50, 60] }
+  },
+  "derived": {
+    "pib": "c0+i0+g0+x0-m0",
+    "km": "1/(1-cpr)",
+    "dy": "di/(1-cpr)"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Calcul du PIB",
+      "consigne": "Approche par les dépenses : $C={{c0}}$, $I={{i0}}$, $G={{g0}}$, $X={{x0}}$, $M={{m0}}$ (mds FCFA).",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "PIB",
+          "enonce": "Calcule le PIB par l'approche des dépenses.",
+          "answer": "c0+i0+g0+x0-m0",
+          "tol": 0.5,
+          "corrige": "$PIB=C+I+G+(X-M)={{c0}}+{{i0}}+{{g0}}+({{x0}}-{{m0}})={{num:pib}}$ mds FCFA."
+        },
+        {
+          "id": "e1q2",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Circuit économique",
+          "enonce": "Lesquelles sont des « fuites » du circuit économique ?",
+          "choix": [
+            "Investissement et exportations",
+            "Épargne, impôts et importations",
+            "Consommation et dépenses publiques",
+            "Salaires et profits"
+          ],
+          "correct": 1,
+          "corrige": "Fuites = retraits du circuit : épargne $S$, impôts $T$, importations $M$. Injections = $I$, $G$, $X$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Multiplicateur keynésien",
+      "consigne": "La propension marginale à consommer est $c={{d2:cpr}}$.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Multiplicateur",
+          "enonce": "Calcule le multiplicateur $k=\\frac{1}{1-c}$.",
+          "answer": "1/(1-cpr)",
+          "tol": 0.01,
+          "corrige": "$k=\\frac{1}{1-{{d2:cpr}}}={{num:km}}$."
+        },
+        {
+          "id": "e2q2",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Effet multiplicateur",
+          "enonce": "Si l'investissement augmente de {{di}} mds, de combien augmente le revenu $\\Delta Y$ ?",
+          "answer": "di/(1-cpr)",
+          "tol": 0.5,
+          "corrige": "$\\Delta Y=k\\times\\Delta I={{num:km}}\\times{{di}}={{num:dy}}$ mds FCFA."
+        },
+        {
+          "id": "e2q3",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "PIB",
+          "enonce": "Le PIB mesure le niveau de vie moyen de la population.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le PIB mesure la production totale ; c'est le <strong>PIB par habitant</strong> ($PIB/population$) qui approche le niveau de vie moyen — et encore, sans tenir compte des inégalités."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Monnaie",
+      "consigne": "Fonctions et agrégats monétaires.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Monnaie",
+          "enonce": "Quel agrégat regroupe les billets et les dépôts à vue ?",
+          "choix": [
+            "$M_{1}$",
+            "$M_{2}$",
+            "$M_{3}$",
+            "Le PIB"
+          ],
+          "correct": 0,
+          "corrige": "$M_{1}$ = monnaie stricto sensu : billets + pièces + dépôts à vue. $M_{2}$ y ajoute la quasi-monnaie (comptes d'épargne)."
+        }
+      ]
+    }
+  ]
+}

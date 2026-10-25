@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1M-TD-GPI-01",
+  "type": "td",
+  "matiere": "Gestion de projet informatique",
+  "classe": "Licence 1 MIAGE",
+  "classe_key": "Licence_1_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Cycle de vie, planning et modèles de développement",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Justifie tes choix comme si tu devais convaincre un chef de projet.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Cycle de vie d'un projet",
+      "points": "5 pts",
+      "consigne": "Une startup veut créer une application mobile de livraison de repas à Abidjan.",
+      "enonce": "<ol type='a'><li>Citer les grandes phases du cycle de vie d'un projet informatique.</li><li>Pour chaque phase, donner un exemple concret tiré du cas « app de livraison ».</li></ol>",
+      "correction": "<p><strong>a-b)</strong> ① <strong>Étude/analyse des besoins</strong> : interroger restaurants et clients, rédiger le cahier des charges. ② <strong>Conception</strong> : maquettes des écrans, choix de l'architecture (base de données des commandes). ③ <strong>Réalisation/développement</strong> : coder l'app Android/iOS et le serveur. ④ <strong>Tests</strong> : vérifier commande, paiement et géolocalisation sur vrais appareils. ⑤ <strong>Déploiement</strong> : publication Play Store. ⑥ <strong>Maintenance</strong> : corrections de bugs, nouvelles fonctionnalités.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts"
+    },
+    {
+      "titre": "Exercice 2 — Planning : chemin critique",
+      "points": "5 pts",
+      "consigne": "Le projet se décompose : A) Maquette (2 sem), B) Backend (4 sem, après A), C) App mobile (3 sem, après A), D) Tests (2 sem, après B et C), E) Publication (1 sem, après D).",
+      "enonce": "<ol type='a'><li>Dessiner mentalement le graphe des tâches et calculer la durée minimale du projet.</li><li>Quelle est la tâche critique ? Que se passe-t-il si l'app mobile (C) prend 1 semaine de retard ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Chemins : A→B→D→E = 2+4+2+1 = <span class='reponse'>9 semaines</span> ; A→C→D→E = 2+3+2+1 = 8 semaines. Durée minimale = <strong>9 semaines</strong>.</p><p><strong>b)</strong> Chemin critique : <span class='reponse'>A → B → D → E</span> (le plus long). Le retard d'1 semaine sur C porte son chemin à 9 semaines = égal au critique → <strong>aucun retard global</strong> (C avait 1 semaine de marge). ⚠️ Au-delà d'1 semaine de retard, C deviendrait critique.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Modèles de développement",
+      "points": "5 pts",
+      "consigne": "Comparer les approches.",
+      "enonce": "<ol type='a'><li>Décrire le modèle en cascade (waterfall) et son principal défaut.</li><li>Qu'apporte le modèle agile (itérations/sprints) ?</li><li>Pour l'app de livraison avec des besoins qui évoluent vite, quel modèle recommander et pourquoi ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Cascade : phases strictement séquentielles (besoins → conception → code → tests), chaque phase validée avant la suivante. Défaut : un besoin mal compris n'est découvert qu'à la fin (tests), retour en arrière très coûteux ; aucune livraison intermédiaire.</p><p><strong>b)</strong> Agile : cycles courts (sprints de 2-4 semaines) livrant chaque fois une version utilisable → retours clients précoces, adaptation continue, priorisation des fonctionnalités.</p><p><strong>c)</strong> <span class='reponse'><strong>Agile</strong></span> : les usages de la livraison évoluent vite, on peut lancer un premier lot (commande + paiement) puis ajouter suivi en temps réel, promo… selon les retours.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Acteurs et risques",
+      "points": "5 pts",
+      "consigne": "Gestion humaine et risques du projet.",
+      "enonce": "<ol type='a'><li>Citer trois acteurs clés d'un projet informatique et leur rôle.</li><li>Identifier trois risques typiques du projet « app de livraison » et une parade pour chacun.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Maîtrise d'ouvrage (MOA)</strong> : exprime les besoins (le client) ; <strong>Maîtrise d'œuvre (MOE)</strong> : réalise la solution (développeurs, chef de projet) ; <strong>utilisateurs</strong> : valident l'ergonomie ; le <strong>chef de projet</strong> coordonne délais, budget et équipe.</p><p><strong>b)</strong> Risques : retard de développement → découper en sprints avec jalons ; connexion instable des livreurs → mode hors-ligne de l'app ; faible adoption par les restaurants → implication dès la conception (MOA) et phase pilote sur un quartier.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    }
+  ]
+}

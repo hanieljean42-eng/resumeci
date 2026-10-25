@@ -1,0 +1,120 @@
+{
+  "code": "RC-L1M-TD-ALG2-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Matrices et déterminants",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Algèbre 2",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Écris les décimaux avec une virgule.",
+  "params": {
+    "a": { "choices": [2, 3, 4] },
+    "b": { "choices": [1, 2, 5] },
+    "c": { "choices": [3, 1, 2] },
+    "d": { "choices": [4, 5, 1] },
+    "p": { "choices": [1, 2] },
+    "q": { "choices": [3, 4] },
+    "r": { "choices": [2, 5] },
+    "s": { "choices": [1, 6] }
+  },
+  "derived": {
+    "det1": "a*d - b*c",
+    "prod12": "a*q + b*s",
+    "xcr": "(p+r)/3"
+  },
+  "blocs": [
+    {
+      "titre": "Exercice 1 — Déterminants",
+      "consigne": "Calcule les déterminants demandés.",
+      "questions": [
+        {
+          "id": "e1q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Déterminant 2×2",
+          "enonce": "Calcule $\\det\\begin{pmatrix} {{a}} & {{b}} \\\\ {{c}} & {{d}} \\end{pmatrix}$.",
+          "answer": "a*d - b*c",
+          "tol": 0.001,
+          "corrige": "$\\det = {{a}}\\times{{d}} - {{b}}\\times{{c}} = {{num:det1}}$."
+        },
+        {
+          "id": "e1q2",
+          "type": "numeric",
+          "points": 4,
+          "chapitre": "Règle de Sarrus",
+          "enonce": "Calcule par la règle de Sarrus : $\\det\\begin{pmatrix} 1 & 2 & 0 \\\\ 3 & 1 & 2 \\\\ 0 & 1 & 1 \\end{pmatrix}$.",
+          "answer": "-7",
+          "tol": 0.001,
+          "corrige": "Sarrus : $(1\\times1\\times1 + 2\\times2\\times0 + 0\\times3\\times1) - (0\\times1\\times0 + 2\\times3\\times1 + 1\\times2\\times1) = 1 - 8 = -7$."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 2 — Produit de matrices et propriétés",
+      "consigne": "Produit matriciel et propriétés des déterminants.",
+      "questions": [
+        {
+          "id": "e2q1",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Produit matriciel",
+          "enonce": "Soient $A=\\begin{pmatrix} {{a}} & {{b}} \\\\ {{c}} & {{d}} \\end{pmatrix}$ et $B=\\begin{pmatrix} {{p}} & {{q}} \\\\ {{r}} & {{s}} \\end{pmatrix}$. Quelle est la valeur du coefficient $(AB)_{1,2}$ ?",
+          "precision": "Coefficient ligne 1, colonne 2 du produit.",
+          "answer": "a*q + b*s",
+          "tol": 0.001,
+          "corrige": "$(AB)_{1,2} = {{a}}\\times{{q}} + {{b}}\\times{{s}} = {{num:prod12}}$."
+        },
+        {
+          "id": "e2q2",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Propriétés",
+          "enonce": "Pour toutes matrices carrées $A$ et $B$ de même taille : $\\det(AB)=\\det(A)\\times\\det(B)$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le déterminant est multiplicatif : propriété fondamentale."
+        },
+        {
+          "id": "e2q3",
+          "type": "vrai_faux",
+          "points": 2,
+          "chapitre": "Propriétés",
+          "enonce": "Le produit de matrices est commutatif : $AB=BA$ pour toutes matrices.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> En général $AB\\neq BA$ : le produit matriciel n'est pas commutatif."
+        }
+      ]
+    },
+    {
+      "titre": "Exercice 3 — Systèmes et inversibilité",
+      "consigne": "Méthode de Cramer et condition d'inversibilité.",
+      "questions": [
+        {
+          "id": "e3q1",
+          "type": "qcm",
+          "points": 3,
+          "chapitre": "Inversibilité",
+          "enonce": "Une matrice carrée $M$ est inversible si et seulement si :",
+          "choix": [
+            "tous ses coefficients sont non nuls",
+            "$\\det(M)\\neq 0$",
+            "$\\det(M)=0$",
+            "elle est symétrique"
+          ],
+          "correct": 1,
+          "corrige": "$M$ inversible $\\iff \\det(M)\\neq0$ ; alors $M^{-1}=\\frac{1}{\\det M}\\,{}^{t}\\mathrm{com}(M)$."
+        },
+        {
+          "id": "e3q2",
+          "type": "numeric",
+          "points": 3,
+          "chapitre": "Système de Cramer",
+          "enonce": "Résous le système $\\begin{cases} x + y = {{p}} \\\\ 2x - y = {{r}} \\end{cases}$ — donne la valeur de $x$.",
+          "answer": "(p+r)/3",
+          "tol": 0.001,
+          "corrige": "En ajoutant les deux équations : $3x={{p}}+{{r}}$ → $x={{num:xcr}}$."
+        }
+      ]
+    }
+  ]
+}
