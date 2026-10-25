@@ -234,6 +234,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1D-PART-ANGL-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Droit anglais (English Legal System)",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Common law, precedent and the court system",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-L1D-PART-CONST-01",
     "type": "partiel",
     "typeLabel": "Sujet d'examen corrigé",
@@ -243,6 +256,58 @@
     "duree": "2 h",
     "bareme": "/20",
     "chapitre": "Constitution, séparation des pouvoirs et régime présidentiel",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-DH-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Droits de l'Homme",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Droits de l'Homme : fondements et mécanismes de protection",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-ECO-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Économie politique",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Agents, circuits et mécanismes de marché",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-ETH-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Éthique et déontologie juridique",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "1 h 30",
+    "bareme": "/20",
+    "chapitre": "Dilemmes professionnels du juriste",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-EXCEL-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Microsoft Excel",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "1 h 30",
+    "bareme": "/20",
+    "chapitre": "Formules, fonctions et tableaux de suivi",
     "exercices": 2,
     "corrige": true
   },
@@ -286,6 +351,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1D-PART-METH-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Méthodologie juridique",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Cas pratique et commentaire d'arrêt",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
     "code": "RC-L1D-PART-OBLIG-01",
     "type": "partiel",
     "typeLabel": "Sujet d'examen corrigé",
@@ -296,6 +374,32 @@
     "bareme": "/20",
     "chapitre": "Sources d'obligations, formation et inexécution du contrat",
     "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-RI-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Relations internationales",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Acteurs, organisations et enjeux contemporains",
+    "exercices": 2,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1D-PART-TEF-01",
+    "type": "partiel",
+    "typeLabel": "Sujet d'examen corrigé",
+    "matiere": "Techniques d'expression française",
+    "classe": "Licence_1_Droit",
+    "classeLabel": "Licence 1 Droit",
+    "duree": "2 h",
+    "bareme": "/20",
+    "chapitre": "Écrit universitaire : résumé, lettre et dissertation",
+    "exercices": 3,
     "corrige": true
   },
   {

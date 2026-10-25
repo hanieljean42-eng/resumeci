@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1D-TD-ETH-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Déontologie du juriste",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Éthique et déontologie juridique",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Secret professionnel",
+          "enonce": "L'avocat peut révéler à la police un délit ancien que son client lui a avoué.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le secret couvre <em>tout</em> ce qui est appris dans l'exercice — même un délit passé. Il ne cède que devant les <strong>crimes en cours ou futurs</strong> et la participation de l'avocat."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Conflit d'intérêts",
+          "enonce": "Un avocat peut défendre les deux parties adverses d'un même litige si elles consentent.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le <strong>conflit d'intérêts est interdit</strong> même avec consentement : impossible d'être loyal envers deux intérêts opposés — il faut se désister."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Déontologie",
+          "enonce": "La déontologie est un ensemble de règles écrites sanctionnées par l'ordre professionnel.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La déontologie = règles <strong>écrites</strong> de la profession (devoirs + interdits), sanctionnées disciplinairement par l'ordre — différente de l'éthique, réflexion morale personnelle."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Sanctions",
+          "enonce": "La violation de la déontologie expose à des sanctions disciplinaires, civiles et pénales cumulatives.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Une même faute peut entraîner <strong>radiation</strong> (disciplinaire), <strong>dommages-intérêts</strong> (civil) et <strong>peines pénales</strong> si elle constitue un délit."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Dilemmes",
+          "enonce": "Un client exige que son avocat fabrique un faux document. La bonne réponse :",
+          "choix": ["Accepter à condition d'un supplément d'honoraires", "Refuser et, s'il insiste, se désister du dossier", "Accepter mais prévenir le juge", "Confier la tâche à un collaborateur"],
+          "correct": 1,
+          "corrige": "Fabriquer un faux = <strong>délit</strong> : refus ferme, et désistement si le client persiste — le secret ne protège pas le projet criminel."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Impartialité",
+          "enonce": "Un magistrat doit juger l'entreprise de son beau-frère. Il doit :",
+          "choix": ["Juger normalement", "Se déporter (récusation)", "Demander l'avis du beau-frère", "Transférer le dossier à un ami"],
+          "correct": 1,
+          "corrige": "L'impartialité impose au juge de <strong>se déporter</strong> ; les parties peuvent aussi solliciter la récusation."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Secret professionnel",
+          "enonce": "Le secret professionnel protège :",
+          "choix": ["L'avocat lui-même", "Le client et la confiance dans la défense", "Le tribunal", "Les honoraires"],
+          "correct": 1,
+          "corrige": "Le secret appartient <strong>fonctionnellement au client</strong> : il garantit une défense libre — le client peut le lever, l'avocat non."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Ordres professionnels",
+          "enonce": "Qui juge les violations déontologiques d'un avocat ?",
+          "choix": ["Le procureur", "Le conseil de l'ordre des avocats", "Le ministre de la Justice", "L'assemblée des clients"],
+          "correct": 1,
+          "corrige": "Le <strong>conseil de l'ordre</strong> est la juridiction disciplinaire interne de la profession — indépendante des tribunaux."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Secret professionnel",
+          "enonce": "Combien de limites classiques au secret professionnel sont citées dans le cours (crimes en cours/futurs ; participation de l'avocat) ?",
+          "answer": "2",
+          "corrige": "<strong>2 limites</strong> : les projets criminels en cours ou futurs, et la participation de l'avocat au délit."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Devoirs",
+          "enonce": "Combien de devoirs déontologiques majeurs sont listés (secret, honnêteté, indépendance, dignité, loyauté, compétence) ?",
+          "answer": "6",
+          "corrige": "<strong>6 devoirs majeurs</strong> : secret professionnel, honnêteté/probité, indépendance, dignité, loyauté envers le client, compétence et diligence."
+        }
+      ]
+    }
+  ]
+}

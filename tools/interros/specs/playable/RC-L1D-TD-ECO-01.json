@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1D-TD-ECO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Agents et mécanismes du marché",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Économie politique",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "p0": { "choices": [500, 750, 1000] },
+    "hausse": { "choices": [10, 20, 25] },
+    "budget": { "choices": [80000, 120000] }
+  },
+  "derived": {
+    "p1": "p0+p0*hausse/100",
+    "q": "budget/p0"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Rareté",
+          "enonce": "Le problème central de l'économie est l'abondance des ressources.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le problème central est la <strong>rareté</strong> : les ressources sont limitées face à des besoins illimités — tout choix implique un coût d'opportunité."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Micro/Macro",
+          "enonce": "Étudier le prix du cacao sur le marché de San-Pédro relève de la microéconomie.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le prix d'un bien sur <em>un</em> marché relève de la <strong>microéconomie</strong> ; le PIB national relèverait de la macro."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Offre et demande",
+          "enonce": "Quand le prix d'un bien augmente, sa demande augmente en général.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est l'inverse : prix ↑ → demande ↓ (loi de la demande) ; c'est <em>l'offre</em> qui augmente avec le prix."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Circuit économique",
+          "enonce": "L'épargne des ménages constitue une fuite du circuit revenu-dépense.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Épargne, impôts et importations sont des <strong>fuites</strong> ; investissement, dépenses publiques et exportations sont des injections."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Agents",
+          "enonce": "Quel agent produit la majeure partie des biens et services marchands ?",
+          "choix": ["Les ménages", "Les entreprises", "Les administrations", "Le reste du monde"],
+          "correct": 1,
+          "corrige": "<strong>Les entreprises</strong> combinent travail et capital pour produire biens et services marchands."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Prix",
+          "enonce": "Un prix plafond fixé sous l'équilibre provoque :",
+          "choix": ["Un excès d'offre", "Une pénurie et un marché parallèle", "Une baisse de la demande", "Une hausse de la qualité"],
+          "correct": 1,
+          "corrige": "Prix plafond &lt; équilibre → demande &gt; offre → <strong>pénurie, files d'attente, marché noir</strong> au prix réel."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Coût d'opportunité",
+          "enonce": "Le coût d'opportunité d'une soirée de révision est :",
+          "choix": ["Le prix du manuel", "La meilleure alternative sacrifiée", "Le temps de transport", "Le coût de l'électricité"],
+          "correct": 1,
+          "corrige": "Le coût d'opportunité = <strong>la meilleure alternative à laquelle on renonce</strong> — pas une dépense monétaire."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Rôle de l'État",
+          "enonce": "La TVA prélevée par l'État dans le circuit économique constitue :",
+          "choix": ["Une injection", "Une fuite (prélèvement)", "Un revenu des ménages", "Une exportation"],
+          "correct": 1,
+          "corrige": "L'impôt est une <strong>fuite</strong> du circuit — que l'État compense par ses dépenses (injections)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Prix",
+          "enonce": "Un bien coûte {{p0}} F ; son prix augmente de {{hausse}} %. Nouveau prix (en F) ?",
+          "answer": "p1",
+          "corrige": "{{p0}} × (1 + {{hausse}}/100) = <strong>{{p1}} F</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Budget",
+          "enonce": "Avec un budget de {{budget}} F, combien d'unités d'un bien à {{p0}} F peut-on acheter ?",
+          "answer": "q",
+          "corrige": "{{budget}} ÷ {{p0}} = <strong>{{q}} unités</strong>."
+        }
+      ]
+    }
+  ]
+}

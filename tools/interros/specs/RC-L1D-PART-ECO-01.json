@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-ECO-01",
+  "type": "partiel",
+  "matiere": "Économie politique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Agents, circuits et mécanismes de marché",
+  "consignes": "Partiel blanc original ResumeCI — raisonnements économiques rigoureux, exemples ivoiriens attendus.",
+  "exercices": [
+    {
+      "titre": "Première partie — Questions appliquées",
+      "points": "10 pts",
+      "consigne": "Répondez en justifiant chaque mécanisme.",
+      "enonce": "<ol type='a'><li>Un fabricant de jus de mangue à Korhogo embauche 30 saisonniers : à quels agents économiques appartiennent l'entreprise et les saisonniers, et quels flux échangent-ils ? (3 pts)</li><li>Le prix de l'anacarde augmente de 20 % à l'export : effet attendu sur l'offre des planteurs ? Et sur la demande des usines ? (3 pts)</li><li>L'État prélève la TVA sur le jus vendu : quel rôle économique joue-t-il dans le circuit ? (2 pts)</li><li>Si les ménages épargnent davantage, que devient la demande adressée aux entreprises ? (2 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> Entreprise = <strong>société non financière</strong> (production) ; saisonniers = <strong>ménages</strong> (offre de travail). Flux réels : travail → jus ; flux monétaires : salaires → consommation → recettes.</p><p><strong>b)</strong> Prix ↑ → <strong>offre ↑</strong> (planteurs incités à produire/exporter plus — loi de l'offre) ; <strong>demande ↓</strong> des usines transformatrices (coût matière ↑ → achats moindres ou répercutés).</p><p><strong>c)</strong> L'État opère une <strong>fuite</strong> (prélèvement TVA) puis une <strong>injection</strong> (dépenses publiques : salaires, infrastructures, transferts) — redistribution et services publics.</p><p><strong>d)</strong> Épargne ↑ → consommation ↓ → <strong>demande ↓</strong> : fuite du circuit court terme (mais l'épargne placée peut financer l'investissement — arbitrage temporel).</p>",
+      "bareme_detail": "a) 3 pts · b) 3 pts · c) 2 pts · d) 2 pts"
+    },
+    {
+      "titre": "Deuxième partie — Réflexion guidée",
+      "points": "10 pts",
+      "consigne": "« Faut-il laisser les prix seuls réguler le marché ? »",
+      "enonce": "<p>Traitez le sujet en deux temps : mécanismes efficaces du prix, puis limites et interventions légitimes.</p>",
+      "correction": "<p><strong>I. Le prix, signal et régulateur.</strong> A. Rareté et utilité se condensent dans le prix : il oriente la production (les planteurs réagissent aux cours) et la consommation sans intervention centrale. B. L'équilibre offre/demande évite en principe pénuries et surproductions — efficacité allocative du marché libre.</p><p><strong>II. Les limites du laisser-faire.</strong> A. Marchés imparfaits : monopoles, informations asymétriques, externalités (pollution) — le prix « réel » ne reflète pas le coût social. B. Équité : les prix peuvent exclure les plus pauvres → interventions légitimes : prix plafonds temporaires sur produits de première nécessité, subventions, lutte anti-cartel — mais vigilance : le prix plafond durable crée pénurie et marché noir.</p><p><strong>Conclusion :</strong> le prix régule efficacement l'essentiel des marchés, mais l'État corrige défaillances et injustices — régulation ≠ suppression du mécanisme.</p>",
+      "bareme_detail": "I. 5 pts · II. 5 pts"
+    }
+  ]
+}

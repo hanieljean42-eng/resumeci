@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1D-TD-ANGL-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — English Legal System",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Droit anglais",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Common law",
+          "enonce": "En common law, les précédents judiciaires constituent une source de droit contraignante.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La doctrine du <strong>precedent (stare decisis)</strong> : les tribunaux sont liés par les décisions des cours supérieures dans les cas semblables."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Constitution",
+          "enonce": "Le Royaume-Uni possède une constitution écrite rassemblée en un texte unique.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La constitution britannique est <strong>non codifiée</strong> : lois (Magna Carta, Bill of Rights), conventions, common law et ouvrages de référence."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Precedent",
+          "enonce": "Un <em>obiter dictum</em> lie les tribunaux autant qu'une <em>ratio decidendi</em>.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Seule la <strong>ratio decidendi</strong> (la raison juridique de la décision) lie ; l'obiter dictum est une remarque incidente, simplement persuasive."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Equity",
+          "enonce": "L'« equity » est née pour corriger la rigidité du common law.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Développée par le Lord Chancellor, l'<strong>equity</strong> offre des remèdes fondés sur l'équité (injunction, specific performance, trust) quand le common law était trop rigide."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Courts",
+          "enonce": "Quelle est la juridiction suprême du Royaume-Uni depuis 2009 ?",
+          "choix": ["La House of Lords", "La Supreme Court", "Le Privy Council", "La High Court"],
+          "correct": 1,
+          "corrige": "La <strong>Supreme Court of the United Kingdom</strong> (créée en 2009) a remplacé le comité d'appel de la House of Lords."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Courts",
+          "enonce": "Quelle juridiction juge les crimes graves avec jury ?",
+          "choix": ["La Magistrates' Court", "La Crown Court", "La County Court", "Le Tribunal"],
+          "correct": 1,
+          "corrige": "La <strong>Crown Court</strong> juge les <em>indictable offences</em> avec un jury de 12 citoyens qui décident de la culpabilité."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Common law vs civil law",
+          "enonce": "Par rapport au droit civil, la common law se caractérise par :",
+          "choix": ["Un code civil unique", "Le precedent judiciaire comme source première", "L'absence de tribunaux", "L'écrit comme seule source"],
+          "correct": 1,
+          "corrige": "La source première de la common law est la <strong>jurisprudence</strong> — le droit civil place le code/la loi au premier plan."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Terminologie",
+          "enonce": "« Tort » signifie :",
+          "choix": ["Un contrat", "Un délit civil (dommage hors contrat)", "Une peine de prison", "Un bien meuble"],
+          "correct": 1,
+          "corrige": "<strong>Tort</strong> = délit civil : un dommage causé hors contrat (négligence, diffamation) réparé par <em>damages</em>."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Courts",
+          "enonce": "Combien de jurés composent le jury de la Crown Court ?",
+          "answer": "12",
+          "corrige": "Le jury de la Crown Court compte <strong>12 jurés</strong> tirés au sort parmi les citoyens."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Constitution",
+          "enonce": "En quelle année la Supreme Court du Royaume-Uni a-t-elle été créée ?",
+          "answer": "2009",
+          "corrige": "<strong>2009</strong> : la Supreme Court succède au comité d'appel de la House of Lords."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1D-TD-TEF-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Techniques d'expression",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Techniques d'expression française",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Résumé",
+          "enonce": "Dans un résumé, il faut recopier les phrases clés du texte pour rester fidèle.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La reformulation est <strong>obligatoire</strong> : recopier = plagiat et preuve de non-compréhension — on garde les idées, pas les mots."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Résumé",
+          "enonce": "Un résumé doit exprimer l'opinion personnelle du résumant sur le sujet.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le résumé est <strong>objectif</strong> : il restitue la pensée de l'auteur, jamais celle du résumant."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Correspondance",
+          "enonce": "« Veuillez agréer, Monsieur le Doyen, mes salutations distinguées » convient pour clore une lettre à une autorité.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Formule de politesse <strong>déférente</strong> adaptée à une autorité académique — on évite « cordialement » ou « best regards »."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Style juridique",
+          "enonce": "« L'avocat il a dit que son client il est innocent » est une phrase correcte en français juridique.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Double sujet (« l'avocat il ») + verbe faible (« a dit ») : « <em>L'avocat a affirmé que son client était innocent</em> » — précision et économie."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Résumé",
+          "enonce": "La règle classique du résumé impose d'écrire environ :",
+          "choix": ["La moitié du texte", "Le quart du texte", "Le tiers du texte", "Sans limite"],
+          "correct": 1,
+          "corrige": "<strong>Le quart</strong> du texte (±10 %) : la charpente argumentative sans les exemples ni les développements."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Correspondance",
+          "enonce": "Dans une lettre administrative, « l'objet » doit :",
+          "choix": ["Développer la demande en 2 phrases", "Résumer la demande en quelques mots", "Saluer le destinataire", "Citer les pièces jointes"],
+          "correct": 1,
+          "corrige": "L'objet est une <strong>formule brève</strong> (≤ 8 mots) : « Demande d'attestation d'inscription » — le corps développe."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Introduction de dissertation",
+          "enonce": "Quel élément doit figurer juste avant l'annonce du plan ?",
+          "choix": ["L'amorce", "La définition", "La problématique", "La conclusion"],
+          "correct": 2,
+          "corrige": "L'ordre : amorce → définitions → <strong>problématique</strong> → annonce du plan — le plan répond à la question posée."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Vocabulaire juridique",
+          "enonce": "Le meilleur remplacement de « faire un contrat » :",
+          "choix": ["Réaliser un contrat", "Conclure un contrat", "Fabriquer un contrat", "Produire un contrat"],
+          "correct": 1,
+          "corrige": "« <strong>Conclure</strong> un contrat » : verbe technique juridique — « faire » est trop vague."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Introduction",
+          "enonce": "Combien d'étapes compte l'introduction type (amorce, définition, problématique, annonce du plan) ?",
+          "answer": "4",
+          "corrige": "<strong>4 étapes</strong> — aucune ne peut être supprimée."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Résumé",
+          "enonce": "Un texte fait 800 mots. Combien de mots doit faire le résumé (quart) ?",
+          "answer": "200",
+          "corrige": "800 ÷ 4 = <strong>200 mots</strong> (±10 %)."
+        }
+      ]
+    }
+  ]
+}

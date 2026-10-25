@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-EXCEL-01",
+  "type": "partiel",
+  "matiere": "Microsoft Excel",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20",
+  "chapitre": "Formules, fonctions et tableaux de suivi",
+  "consignes": "Partiel blanc original ResumeCI — écrivez les formules comme dans Excel (avec <code>=</code> et les références exactes).",
+  "exercices": [
+    {
+      "titre": "Première partie — Formules sur énoncé",
+      "points": "12 pts",
+      "consigne": "Un cabinet suit ses avocats : colonne A = nom, B = dossiers, C = honoraires prévus, D = honoraires encaissés, E = domaine (civil/pénal/social). 30 avocats en lignes 2 à 31.",
+      "enonce": "<ol type='a'><li>Écrire la formule du total des honoraires encaissés. (2 pts)</li><li>Formule du taux d'encaissement global (encaissé ÷ prévu) en %. (2 pts)</li><li>Formule du nombre d'avocats du domaine « social ». (2 pts)</li><li>Formule des honoraires encaissés du seul domaine « pénal ». (3 pts)</li><li>Formule affichant « En règle » si un avocat a encaissé au moins 80 % de son prévu en ligne 2, sinon « Relance ». (3 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> <code class='reponse'>=SOMME(D2:D31)</code></p><p><strong>b)</strong> <code class='reponse'>=SOMME(D2:D31)/SOMME(C2:C31)</code> formatée en pourcentage — ou <code>=SOMME(D2:D31)/SOMME(C2:C31)*100</code>.</p><p><strong>c)</strong> <code class='reponse'>=NB.SI(E2:E31;\"social\")</code></p><p><strong>d)</strong> <code class='reponse'>=SOMME.SI(E2:E31;\"pénal\";D2:D31)</code> — somme de D quand E = « pénal ».</p><p><strong>e)</strong> <code class='reponse'>=SI(D2/C2&gt;=0,8;\"En règle\";\"Relance\")</code></p>",
+      "bareme_detail": "2+2+2+3+3 pts"
+    },
+    {
+      "titre": "Deuxième partie — Analyse et TCD",
+      "points": "8 pts",
+      "consigne": "Mêmes données. Questions méthodologiques.",
+      "enonce": "<ol type='a'><li>Quelle référence utiliser pour recopier la formule e) vers le bas sans casser les plages fixes ? (2 pts)</li><li>Décrire le tableau croisé dynamique qui donne, par domaine : total prévu, total encaissé, nombre d'avocats. (3 pts)</li><li>Comment repérer visuellement les avocats à moins de 50 % d'encaissement sans formule supplémentaire ? (3 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> Les plages de recherche en <strong>références absolues</strong> (<code>&#36;E&#36;2:&#36;E&#36;31</code>), les cellules de la ligne en relatives (<code>D2/C2</code> sans &#36;) — recopier avec la poignée de remplissage.</p><p><strong>b)</strong> Sélection de la base → <strong>Insertion → Tableau croisé dynamique</strong> → champ <em>Domaine</em> en <strong>Lignes</strong> ; champs <em>Honoraires prévus</em> et <em>encaissés</em> en <strong>Valeurs (Somme)</strong> ; champ <em>Nom</em> en <strong>Valeurs (Nombre)</strong>.</p><p><strong>c)</strong> <strong>Mise en forme conditionnelle</strong> : colonne ratio ou D/C calculée → règle « inférieur à 0,5 » → remplissage rouge ; ou tri croissant de la colonne ratio — repérage immédiat des cas critiques.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 3 pts"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "code": "RC-L1D-PART-TEF-01",
+  "type": "partiel",
+  "matiere": "Techniques d'expression française",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Écrit universitaire : résumé, lettre et dissertation",
+  "consignes": "Partiel blanc original ResumeCI — la qualité de la langue compte : orthographe, syntaxe, vocabulaire précis. Traitez les trois parties.",
+  "exercices": [
+    {
+      "titre": "Première partie — La lettre administrative",
+      "points": "7 pts",
+      "consigne": "Rédigez une lettre au Directeur des affaires académiques demandant la rectification d'une erreur de nom sur votre relevé de notes.",
+      "enonce": "<p>Exigences : mentions obligatoires complètes, objet clair, corps structuré (situation → demande → pièce jointe), formules correctes.</p>",
+      "correction": "<p><strong>Structure attendue :</strong></p><p>En-tête expéditeur (NOM Prénom, L1 Droit, n° étudiant, adresse) → Lieu et date → <em>« Monsieur le Directeur des Affaires Académiques »</em> + adresse → <strong>Objet :</strong> « Demande de rectification d'état civil sur relevé de notes » → formule d'appel : « Monsieur le Directeur » → corps : identification de l'erreur (orthographe du nom), pièce justificative jointe (acte de naissance/carte), demande de nouveau relevé → formule de politesse : <em>« Veuillez agréer, Monsieur le Directeur, l'expression de ma haute considération »</em> → signature.</p><p><strong>Critères :</strong> pas de faute, ton respectueux et direct, aucune tournure familière, objet ≤ 8 mots.</p>",
+      "bareme_detail": "Mentions 2 pts · Corps 3 pts · Langue 2 pts"
+    },
+    {
+      "titre": "Deuxième partie — Le résumé",
+      "points": "7 pts",
+      "consigne": "Résumez en un quart le paragraphe suivant : « L'université ivoirienne connaît une expansion rapide : de quelques centaines d'étudiants en 1960, elle accueille aujourd'hui plus de 200 000 inscrits dans les seules universités publiques. Cette massification, gage de démocratisation de l'accès au savoir, pose cependant de lourds défis : amphithéâtres surchargés, encadrement insuffisant, équipements vieillissants, insertion professionnelle incertaine. L'État y répond par la construction de nouveaux campus — Yamoussoukro, San-Pédro, Bondoukou — et par l'ouverture encadrée de l'enseignement supérieur privé, qui absorbe désormais une part croissante de la demande. »",
+      "enonce": "<p>Réduisez à ~55 mots en conservant la charpente (expansion → défis → réponses).</p>",
+      "correction": "<p><strong>Résumé type (~50 mots) :</strong> <span class='reponse'>« La massification des universités ivoiriennes, de quelques centaines à plus de 200 000 étudiants, démocratise le savoir mais engendre des défis matériels (surpopulation, équipements, insertion) auxquels l'État répond par de nouveaux campus et l'ouverture du privé. »</span></p><p><strong>Points clés conservés :</strong> croissance (donnée chiffrée réduite), démocratisation, trois défis groupés, deux réponses (campus + privé). Supprimés : noms des villes, détails, répétitions.</p>",
+      "bareme_detail": "Fidélité 3 pts · Reformulation 2 pts · Langue 2 pts"
+    },
+    {
+      "titre": "Troisième partie — Introduction de dissertation",
+      "points": "6 pts",
+      "consigne": "Rédigez l'introduction complète du sujet : « L'écrit est-il supérieur à la parole pour prouver ? »",
+      "enonce": "<p>Exigences : amorce → présentation/définitions → problématique → annonce du plan (2 parties).</p>",
+      "correction": "<p><strong>Introduction type :</strong></p><p><em>« Dans un litige, tout se joue sur la preuve : qui prouve, et comment ? (amorce) La <strong>preuve</strong> désigne la démonstration de la réalité d'un fait ou d'un acte juridique ; elle s'opère par écrit ou par témoignage, deux modes que le droit hiérarchise différemment. (définitions) L'écrit, dit-on, « vaut ce que vaut un homme » — faut-il alors admettre la supériorité absolue de la preuve littérale sur la parole ? (problématique) Nous verrons d'abord que l'écrit est juridiquement privilégié par le principe de la preuve littérale, avant de montrer que la parole garde des domaines irréductibles où elle reste souveraine. (annonce) »</em></p>",
+      "bareme_detail": "Amorce 1 pt · Définitions 2 pts · Problématique 1,5 pt · Annonce 1,5 pt"
+    }
+  ]
+}

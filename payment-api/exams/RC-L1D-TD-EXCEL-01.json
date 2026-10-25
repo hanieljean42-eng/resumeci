@@ -1,0 +1,113 @@
+{
+  "code": "RC-L1D-TD-EXCEL-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Excel : formules et fonctions",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Microsoft Excel",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "nb": { "choices": [10, 15, 20] },
+    "notes": { "choices": [12, 14] }
+  },
+  "derived": {
+    "rep_si": "notes>=10?1:0",
+    "total_cellules": "nb*4"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Références",
+          "enonce": "La référence <code>&#36;A&#36;1</code> change quand on recopie la formule vers le bas.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> <code>&#36;A&#36;1</code> est une <strong>référence absolue</strong> : les &#36; figent colonne et ligne — elle ne bouge jamais à la recopie."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Fonctions",
+          "enonce": "<code>NB.SI</code> compte les cellules d'une plage remplissant un critère.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>=NB.SI(plage;critère)</code> : ex. <code>NB.SI(D:D;\"&gt;=10\")</code> compte les notes ≥ 10."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "RECHERCHEV",
+          "enonce": "Le 4e argument FAUX de RECHERCHEV demande une recherche approximative.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> <code>FAUX</code> = recherche <strong>exacte</strong> ; <code>VRAI</code> = approximative sur plage triée."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "TCD",
+          "enonce": "Un tableau croisé dynamique exige d'écrire des formules pour croiser les données.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le TCD croise et résume <strong>sans aucune formule</strong> : on glisse les champs en Lignes / Colonnes / Valeurs."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Références",
+          "enonce": "<code>A1:B3</code> désigne :",
+          "choix": ["Deux cellules", "La plage rectangulaire de 2 colonnes × 3 lignes", "Une feuille", "Une formule"],
+          "correct": 1,
+          "corrige": "<code>A1:B3</code> = le <strong>rectangle</strong> de A1 à B3 : 6 cellules (colonnes A-B, lignes 1-3)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "SI",
+          "enonce": "La syntaxe correcte pour afficher « Admis » si D2 ≥ 10 sinon « Ajourné » :",
+          "choix": [
+            "<code>=SI(D2&gt;=10;\"Admis\";\"Ajourné\")</code>",
+            "<code>=SI(\"Admis\";D2&gt;=10;\"Ajourné\")</code>",
+            "<code>=SI D2&gt;=10 ALORS \"Admis\"</code>",
+            "<code>=MOYENNE(D2&gt;=10)</code>"
+          ],
+          "correct": 0,
+          "corrige": "<code>=SI(condition;valeur_si_vrai;valeur_si_faux)</code> — séparateur <code>;</code> en français, texte entre guillemets."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Fonctions",
+          "enonce": "Quelle formule donne la moyenne de la colonne D ?",
+          "choix": ["<code>=MOYENNE(D)</code>", "<code>=MOYENNE(D:D)</code>", "<code>=MOYENNE D:D</code>", "<code>=MOY(D1;D100)</code>"],
+          "correct": 1,
+          "corrige": "<code>=MOYENNE(D:D)</code> — la plage entre parenthèses ; <code>D:D</code> = toute la colonne D."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "SOMME.SI",
+          "enonce": "Objectif : somme des honoraires (col. D) des dossiers « Divorce » (col. B) :",
+          "choix": [
+            "<code>=SOMME.SI(D:D;\"Divorce\";B:B)</code>",
+            "<code>=SOMME.SI(B:B;\"Divorce\";D:D)</code>",
+            "<code>=SOMME(\"Divorce\";D:D)</code>",
+            "<code>=SI(B:B=\"Divorce\";SOMME(D:D))</code>"
+          ],
+          "correct": 1,
+          "corrige": "<code>=SOMME.SI(plage_critère;critère;plage_somme)</code> — le critère « Divorce » s'applique à B, la somme porte sur D."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Plages",
+          "enonce": "La plage A1:D{{nb}} contient combien de cellules ?",
+          "answer": "nb*4",
+          "corrige": "4 colonnes (A→D) × {{nb}} lignes = <strong>{{total_cellules}} cellules</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "SI",
+          "enonce": "Avec la formule <code>=SI(E2&gt;=10;1;0)</code> et E2 = {{notes}}, que renvoie la cellule ?",
+          "answer": "rep_si",
+          "corrige": "E2 = {{notes}} ≥ 10 → la condition est respectée → la cellule affiche <strong>{{rep_si}}</strong>."
+        }
+      ]
+    }
+  ]
+}

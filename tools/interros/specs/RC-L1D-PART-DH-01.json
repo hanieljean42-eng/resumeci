@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-DH-01",
+  "type": "partiel",
+  "matiere": "Droits de l'Homme",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Droits de l'Homme : fondements et mécanismes de protection",
+  "consignes": "Partiel blanc original ResumeCI — traite les deux parties. Instruments cités par leur nom exact (DUDH, PIDCP, PIDESC, Charte africaine).",
+  "exercices": [
+    {
+      "titre": "Première partie — Cas pratique",
+      "points": "10 pts",
+      "consigne": "« Une journaliste est emprisonnée six mois sans jugement après un article critiquant un ministre ; les recours internes ont été épuisés. Sa famille veut saisir les mécanismes internationaux. »",
+      "enonce": "<p>Résolvez : 1) droits violés et instruments protecteurs ; 2) voies de recours internes épuisées ; 3) mécanismes internationaux accessibles.</p>",
+      "correction": "<p><strong>1) Droits violés :</strong> <strong>liberté d'expression</strong> (DUDH art. 19, PIDCP art. 19, Charte africaine art. 9) et <strong>droit à un procès équitable / interdiction de la détention arbitraire</strong> (PIDCP art. 9 et 14) — la détention sans jugement est une privation de liberté arbitraire.</p><p><strong>2) Recours internes :</strong> tribunal correctionnel → cour d'appel → Cour suprême ; saisine éventuelle du <strong>Conseil constitutionnel</strong> si la loi de presse pénale est inconstitutionnelle ; la <strong>CNDH</strong> peut être saisie en recommandation.</p><p><strong>3) Mécanismes internationaux :</strong> à épuisement des voies internes : <strong>Comité des droits de l'homme de l'ONU</strong> (si la CI a ratifié le Protocole au PIDCP — communication individuelle), <strong>Cour africaine des droits de l'homme et des peuples</strong> si la déclaration d'acceptation existe ; la <strong>Commission africaine</strong> reste ouverte sans condition. Sanctions obtenues : constat de violation, recommandations, indemnisation, parfois libération.</p>",
+      "bareme_detail": "3+3+4 pts"
+    },
+    {
+      "titre": "Deuxième partie — Dissertation",
+      "points": "10 pts",
+      "consigne": "Sujet : « Les droits de l'homme : acquis définitif ou combat permanent ? »",
+      "enonce": "<p>Dissertation complète : introduction en 4 temps, deux parties, conclusion.</p>",
+      "correction": "<p><strong>Introduction :</strong> amorce sur 1948 et l'héritage des totalitarismes → définition (droits attachés à la dignité humaine) → problématique : <em>les progrès accomplis dispensent-ils de la vigilance ?</em></p><p><strong>I. Un acquis juridique considérable.</strong> A. Consécration universelle : DUDH, pactes, chartes régionales — un corpus normatif complet et contraignant. B. Mécanismes de protection institués : juges internes, CNDH, comités ONU, Cour africaine — le droit n'est plus seulement proclamé, il est garanti.</p><p><strong>II. Un combat permanent et inachevé.</strong> A. Violations persistantes : détentions arbitraires, discriminations, restrictions des libertés numériques et de la presse — l'écart entre le texte et la pratique demeure. B. Nouveaux fronts : environnement, données personnelles, droits des peuples — la 3ᵉ génération exige toujours sa concrétisation.</p><p><strong>Conclusion :</strong> les droits de l'homme sont à la fois acquis (corpus universel) et combattus (violations quotidiennes) — la vigilance est le prix de la liberté.</p>",
+      "bareme_detail": "Introduction 2 pts · I. 4 pts · II. 4 pts"
+    }
+  ]
+}

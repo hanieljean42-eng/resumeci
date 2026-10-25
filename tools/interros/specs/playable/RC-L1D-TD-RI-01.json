@@ -1,0 +1,99 @@
+{
+  "code": "RC-L1D-TD-RI-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Acteurs et organisations internationales",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Relations internationales",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "membres": { "choices": [15, 55, 193] }
+  },
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "ONU",
+          "enonce": "Les décisions du Conseil de sécurité de l'ONU peuvent être contraignantes pour tous les États membres.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> À la différence de l'Assemblée générale (recommandations), le <strong>Conseil de sécurité</strong> adopte des décisions obligatoires (sanctions, autorisations de la force)."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Soft law",
+          "enonce": "Le « soft law » désigne des normes internationales juridiquement contraignantes.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le soft law = normes <strong>non contraignantes</strong> (déclarations, lignes directrices) qui orientent les comportements et préparent souvent le droit dur."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "CEDEAO",
+          "enonce": "La CEDEAO regroupe les États d'Afrique centrale.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La CEDEAO est la communauté des États d'<strong>Afrique de l'Ouest</strong> (15 membres) — intégration économique et sécurité régionale."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Acteurs",
+          "enonce": "Une ONG internationale est un organe créé par un traité entre États.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Une ONG est <strong>non gouvernementale et indépendante des États</strong> — les organisations créées par traité sont des OIG (ONU, UA, CEDEAO)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "ONU",
+          "enonce": "Quel privilège possèdent les 5 membres permanents du Conseil de sécurité ?",
+          "choix": ["Siège à vie au Secrétariat", "Le droit de veto", "L'immunité totale", "Un double vote à l'Assemblée"],
+          "correct": 1,
+          "corrige": "Les 5 permanents (Chine, USA, France, Royaume-Uni, Russie) disposent du <strong>veto</strong> : un seul « non » bloque toute décision."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "CIJ",
+          "enonce": "Qui peut être partie à un contentieux devant la Cour internationale de Justice ?",
+          "choix": ["Les ONG", "Les individus", "Les États", "Les multinationales"],
+          "correct": 2,
+          "corrige": "Seuls les <strong>États</strong> plaident devant la CIJ — les individus passent par d'autres mécanismes (comités ONU, cours régionales)."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Intégration",
+          "enonce": "La ZLECAF désigne :",
+          "choix": ["Une armée africaine commune", "La zone de libre-échange continentale africaine", "Un traité de défense", "Une cour pénale africaine"],
+          "correct": 1,
+          "corrige": "La <strong>ZLECAF</strong> = marché unique continental africain pour biens et services — pilier de l'intégration économique de l'UA."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Droit international",
+          "enonce": "Parmi ces sources, laquelle est contraignante une fois ratifiée ?",
+          "choix": ["Une déclaration de l'Assemblée générale", "Un traité ratifié", "Un code de conduite ONG", "Un rapport d'experts"],
+          "correct": 1,
+          "corrige": "Le <strong>traité ratifié</strong> lie l'État — il s'incorpore à l'ordre interne et s'impose à lui (sauf réserve)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "ONU",
+          "enonce": "Combien de membres permanents le Conseil de sécurité compte-t-il ?",
+          "answer": "5",
+          "corrige": "<strong>5 membres permanents</strong> (+ 10 élus pour 2 ans)."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Union africaine",
+          "enonce": "Combien d'États membres l'Union africaine compte-t-elle ?",
+          "answer": "55",
+          "corrige": "<strong>55 États</strong> — tous les pays africains reconnus."
+        }
+      ]
+    }
+  ]
+}

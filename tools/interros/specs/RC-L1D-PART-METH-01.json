@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-METH-01",
+  "type": "partiel",
+  "matiere": "Méthodologie juridique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Cas pratique et commentaire d'arrêt",
+  "consignes": "Partiel blanc original ResumeCI — la méthode fait la note : plan binaire pour le commentaire, syllogisme pour le cas pratique.",
+  "exercices": [
+    {
+      "titre": "Première partie — Commentaire d'arrêt (extrait)",
+      "points": "10 pts",
+      "consigne": "« Cour suprême, 2ᵉ chambre civile, 15 mars 2023 : Attendu que la vente d'un bien n'appartenant pas au vendeur est nulle ; que M. A a vendu à M. B un terrain appartenant à l'État ; que le tribunal a confirmé la vente ; qu'en statuant ainsi, le tribunal a violé la loi ; Par ces motifs, casse et annule. »",
+      "enonce": "<p>Rédigez : 1) l'introduction complète (juridiction, faits, procédure, problème, plan) ; 2) l'annonce des deux parties.</p>",
+      "correction": "<p><strong>Introduction :</strong> La <strong>Cour suprême, 2ᵉ chambre civile</strong>, a rendu le 15 mars 2023 un arrêt de cassation relatif à la vente d'un bien d'autrui. En l'espèce, M. A avait vendu à M. B un terrain appartenant à l'État ; les juges du fond avaient <em>confirmé</em> la vente malgré la propriété étatique du bien. La Cour casse : elle pose qu'une vente portant sur un bien n'appartenant pas au vendeur est <strong>nulle</strong>. <strong>Problème de droit :</strong> <em>la vente de la chose d'autrui est-elle nulle, et quel est le destin de l'acheteur de bonne foi ?</em></p><p><strong>Annonce de plan :</strong> Nous verrons que la nullité protège la propriété du vrai propriétaire (I), avant d'examiner les protections accordées à l'acheteur de bonne foi (II).</p>",
+      "bareme_detail": "Jurid+faits+proc. 4 pts · Problème 3 pts · Plan 3 pts"
+    },
+    {
+      "titre": "Deuxième partie — Cas pratique complet",
+      "points": "10 pts",
+      "consigne": "« Une association culturelle loue une salle à la mairie pour un concert. Le contrat prévoit 200 000 F. Deux jours avant le concert, le maire dénonce le contrat pour cause de 'travaux urgents'. Aucun travaux n'auront lieu : la salle est en réalité louée à un parti politique. »",
+      "enonce": "<p>Résolvez entièrement : 1) faits pertinents ; 2) qualification ; 3) règles applicables ; 4) conclusion motivée.</p>",
+      "correction": "<p><strong>1) Faits :</strong> contrat de location valable (prix, salle, durée déterminés) ; <strong>dénonciation unilatérale</strong> par la commune 2 jours avant ; motif invoqué fallacieux (travaux fictifs) ; détournement vers un tiers.</p><p><strong>2) Qualification :</strong> <strong>inexécution contractuelle</strong> — rupture unilatérale de mauvaise foi sans clause résolutoire ni force majeure → responsabilité contractuelle de la commune.</p><p><strong>3) Règles :</strong> <strong>force obligatoire du contrat</strong> (« les conventions légalement formées tiennent lieu de loi ») : aucune partie ne peut résilier unilatéralement hors clauses ; <strong>bonne foi</strong> : motif mensonger = faute aggravée ; recours : exécution forcée impossible (délai passé) → <strong>résolution + dommages-intérêts</strong> (perte de recette du concert, frais engagés, préjudice d'image).</p><p><strong>4) Conclusion :</strong> <span class='reponse'>la commune engage sa responsabilité contractuelle</span> : l'association obtient la résolution du contrat et l'allocation de dommages-intérêts réparant tout le préjudice prouvé — la mauvaise foi renforce la condamnation ; la collectivité territoriale ne peut échapper à ses engagements par un motif prétextuel.</p>",
+      "bareme_detail": "Faits 2 pts · Qualif. 2 pts · Règles 3 pts · Solution 3 pts"
+    }
+  ]
+}

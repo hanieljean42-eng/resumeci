@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-ETH-01",
+  "type": "partiel",
+  "matiere": "Éthique et déontologie juridique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20",
+  "chapitre": "Dilemmes professionnels du juriste",
+  "consignes": "Partiel blanc original ResumeCI — pour chaque dilemme : règle déontologique → conduite imposée → justification.",
+  "exercices": [
+    {
+      "titre": "Première partie — Études de dilemmes",
+      "points": "12 pts",
+      "consigne": "Trois situations : analysez chacune.",
+      "enonce": "<ol type='a'><li><strong>Dossier 1 :</strong> Un avocat découvre dans le dossier adverse des pièces confidentielles transmises par erreur par le cabinet d'en face. Peut-il s'en servir au profit de son client ? (4 pts)</li><li><strong>Dossier 2 :</strong> Le client d'un avocat exige qu'il soudoie un greffier pour accélérer son dossier. Que doit faire l'avocat ? (4 pts)</li><li><strong>Dossier 3 :</strong> Un magistrat doit juger un litige impliquant l'entreprise de son beau-frère. Que prévoit la déontologie ? (4 pts)</li></ol>",
+      "correction": "<p><strong>Dossier 1 :</strong> <span class='reponse'>Non.</span> La <strong>loyauté</strong> du procès interdit d'exploiter une erreur adverse : l'avocat doit restituer les pièces et informer le cabinet — utiliser un document confidentiel obtenu par mégarde viole la probité et peut entraîner nullité de la procédure + sanction disciplinaire.</p><p><strong>Dossier 2 :</strong> <span class='reponse'>Refus ferme.</span> La corruption est un délit (agent public soudoyé) : l'avocat doit refuser, dissuader le client et, si celui-ci insiste, <strong>se désister du dossier</strong> — participer = corruption passive/active + radiation ; le secret protège la confiance, jamais le projet criminel.</p><p><strong>Dossier 3 :</strong> <strong>Récusation.</strong> L'impartialité du juge (exigence du procès équitable) impose au magistrat de <strong>se déporter</strong> ; les parties peuvent aussi solliciter sa récusation — juger un litige de parent proche détruit la confiance et fait encourir l'annulation du jugement.</p>",
+      "bareme_detail": "4 pts par dossier"
+    },
+    {
+      "titre": "Deuxième partie — Réflexion",
+      "points": "8 pts",
+      "consigne": "« Le secret professionnel : droit de l'avocat ou droit du client ? »",
+      "enonce": "<p>Traitez en deux parties argumentées.</p>",
+      "correction": "<p><strong>I. Un devoir absolu de l'avocat.</strong> A. Obligation <em>d'ordre public</em> : l'avocat ne peut s'en libérer, même pour se défendre (sauf exceptions légales) — le violer engage sa responsabilité disciplinaire et pénale. B. Il protège la profession elle-même : sans secret, plus de confiance, plus de défense libre.</p><p><strong>II. Un droit au service du client.</strong> A. Le secret appartient <em>fonctionnellement</em> au client : il garantit sa défense — le client peut le lever (autoriser son avocat à parler) mais l'avocat ne le peut pas. B. Portée : couvre tout ce qui est appris dans l'exercice — conseils, aveux, pièces — mais s'arrête devant les projets criminels en cours et la participation de l'avocat au délit.</p><p><strong>Conclusion :</strong> le secret est un <em>devoir de l'avocat corrélatif à un droit du client</em> — sa force tient à cette double nature.</p>",
+      "bareme_detail": "I. 4 pts · II. 4 pts"
+    }
+  ]
+}

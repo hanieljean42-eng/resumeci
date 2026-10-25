@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-ANGL-01",
+  "type": "partiel",
+  "matiere": "Droit anglais (English Legal System)",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Common law, precedent and the court system",
+  "consignes": "Partiel blanc original ResumeCI — réponses rédigées (français accepté, termes anglais exigés). Montrez que vous maîtrisez la différence des traditions.",
+  "exercices": [
+    {
+      "titre": "Première partie — Commentaire guidé",
+      "points": "10 pts",
+      "consigne": "Commentez : « In the English system, the judge does not only apply the law : he makes it. »",
+      "enonce": "<p>Dégager la thèse, expliquer le mécanisme, puis nuancer par comparaison avec le droit civil.</p>",
+      "correction": "<p><strong>Thèse :</strong> en common law, le juge <em>crée</em> le droit par ses décisions — contrairement au juge civiliste qui applique la loi écrite.</p><p><strong>Mécanisme :</strong> la <strong>doctrine du precedent</strong> (<em>stare decisis</em>) : la <em>ratio decidendi</em> d'une décision d'une cour supérieure lie les cours inférieures dans les cas semblables → chaque arrêt produit une règle générale. Les juges ont ainsi bâti des branches entières (contract, tort, equity) sans code.</p><p><strong>Nuance :</strong> le juge anglais ne légifère pas librement — il est lié par le precedent et doit respecter les <em>Acts of Parliament</em> (suprématie parlementaire) ; a contrario, le juge civiliste « fait » aussi du droit par l'interprétation et les principes généraux — la frontière est moins nette qu'on ne le dit : common law = droit <em>principalement</em> prétorien, droit civil = droit <em>principalement</em> légiféré.</p>",
+      "bareme_detail": "Thèse 2 pts · Mécanisme 4 pts · Nuance 4 pts"
+    },
+    {
+      "titre": "Deuxième partie — Questions appliquées",
+      "points": "10 pts",
+      "consigne": "Réponses précises avec vocabulaire anglais.",
+      "enonce": "<ol type='a'><li>Un étudiant ivoirien signe un contrat régi par le <em>« governing law : England »</em> : quelles conséquences pratiques ? (3 pts)</li><li>Décrire le cheminement d'un litige commercial de 500 000 £ devant les cours anglaises. (4 pts)</li><li>Pourquoi le precedent garantit-il la prévisibilité ? Sa rigidité a-t-elle un remède ? (3 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> Le contrat sera <strong>interprété et jugé selon le droit anglais</strong> : règles de common law du contrat (consideration, freedom of contract), jurisprudence anglaise applicable, rédaction anglaise — l'étudiant doit anticiper des notions absentes du droit civil ivoirien (pas de « bonne foi » générale, par exemple).</p><p><strong>b)</strong> <strong>County Court</strong> ou <strong>High Court</strong> (Queen's Bench / Commercial Court selon valeur) → <strong>Court of Appeal (Civil Division)</strong> → <strong>Supreme Court</strong> en dernier ressort (sur autorisation, point de droit d'importance générale). La procédure est <em>adversariale</em> : les parties mènent la preuve (disclosure, cross-examination), le juge arbitre.</p><p><strong>c)</strong> Le precedent assure <strong>certainty</strong> : un avocat peut prédire l'issue d'un litige en lisant la jurisprudence → sécurité juridique recherchée par les affaires. Remède à la rigidité : <em>distinguishing</em> (le juge distingue le cas d'espèce du précédent) et <em>overruling</em> (une cour supérieure renverse son propre précédent — rare) ; equity corrige historiquement les duretés du common law.</p>",
+      "bareme_detail": "a) 3 pts · b) 4 pts · c) 3 pts"
+    }
+  ]
+}
