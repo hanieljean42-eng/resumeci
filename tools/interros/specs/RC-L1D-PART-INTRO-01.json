@@ -1,0 +1,37 @@
+{
+  "code": "RC-L1D-PART-INTRO-01",
+  "type": "partiel",
+  "matiere": "Introduction à l'étude du droit",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Règle de droit, sources et catégories",
+  "consignes": "Partiel blanc original ResumeCI — traite les trois parties dans l'ordre. Réponses rédigées, termes juridiques précis exigés.",
+  "exercices": [
+    {
+      "titre": "Première partie — Questions de cours",
+      "points": "6 pts",
+      "consigne": "Répondez brièvement et précisément.",
+      "enonce": "<ol type='a'><li>Énumérez les caractères de la règle de droit. (2 pts)</li><li>Citez quatre sources du droit en les hiérarchisant. (2 pts)</li><li>Définissez la personnalité juridique et précisez quand elle commence. (2 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> Générale · abstraite · obligatoire · <strong>sanctionnée par la puissance publique</strong> — le dernier caractère distingue le droit de la morale et des usages.</p><p><strong>b)</strong> Traités internationaux → lois → règlements (décrets, arrêtés) → jurisprudence/coutume (sources subsidiaires). La hiérarchie oblige chaque norme inférieure à respecter la supérieure.</p><p><strong>c)</strong> Aptitude à être titulaire de droits et de devoirs ; pour la personne physique, de la <strong>naissance vivante et viable</strong> (infant conceptus sous condition) jusqu'à la <strong>mort</strong> ; pour la personne morale, de son immatriculation à sa dissolution.</p>",
+      "bareme_detail": "2 pts par question"
+    },
+    {
+      "titre": "Deuxième partie — Commentaire de texte",
+      "points": "6 pts",
+      "consigne": "Commentez : « Le droit n'est pas seulement un ensemble de règles, c'est le langage par lequel une société organise la justice. »",
+      "enonce": "<p>Vous dégagerez l'idée générale du texte, puis vous montrerez son intérêt et ses limites.</p>",
+      "correction": "<p><strong>Idée générale :</strong> le droit dépasse sa dimension normative (règles) — il est un <strong>langage social</strong> : catégories, procédures et valeurs à travers lesquels la société pense et réalise la justice.</p><p><strong>Intérêt :</strong> éclaire le rôle structurant du droit (organiser la vie commune, pacifier les conflits par un vocabulaire commun — contrat, responsabilité, propriété) ; rappelle que connaître le droit, c'est savoir <em>parler</em> justice.</p><p><strong>Limites :</strong> le droit est aussi <em>contrainte</em> (sanction, force publique) — réduire le droit à un langage sous-estime sa coercition ; de plus, plusieurs langages de justice coexistent (droit coutumier vs droit écrit en CI).</p><p><strong>Conclusion :</strong> formule juste mais incomplète : le droit est langage <em>et</em> norme contraignante.</p>",
+      "bareme_detail": "Idée 1,5 pt · Intérêt 2 pts · Limites 2 pts · Conclusion 0,5 pt"
+    },
+    {
+      "titre": "Troisième partie — Cas pratique",
+      "points": "8 pts",
+      "consigne": "« Madame K, 17 ans, achète sans l'accord de ses parents un ordinateur à 450 000 F pour ses études. Le vendeur, déçu par la fiabilité de l'engagement, réclame la nullité de la vente. »",
+      "enonce": "<p>Résolvez : 1) faits pertinents ; 2) qualification ; 3) règle applicable ; 4) solution.</p>",
+      "correction": "<p><strong>1) Faits :</strong> acheteuse mineure (17 ans) ; achat important (450 000 F) <em>sans consentement</em> des représentants légaux ; vendeur réclame la nullité.</p><p><strong>2) Qualification :</strong> contrat conclu par un <strong>incapable d'exercice</strong> → vice de la capacité → nullité relative (protection du mineur) éventuellement actes de la vie courante.</p><p><strong>3) Règle :</strong> le mineur ne peut contracter seul que pour les <em>actes usuels de la vie courante</em> ; un achat de 450 000 F excède ce cadre → le contrat est <strong>annulable</strong> à la demande du mineur ou de ses représentants — mais <em>le vendeur majeur ne peut pas lui-même invoquer l'incapacité de l'autre</em>.</p><p><strong>4) Solution :</strong> <span class='reponse'>la demande du vendeur devrait échouer</span> : la nullité pour incapacité protège <em>le mineur</em>, pas le cocontractant capable — seuls Mme K ou ses parents peuvent demander l'annulation ; le vendeur garde le risque de ne pas avoir vérifié l'âge/accord.</p>",
+      "bareme_detail": "2 pts par étape"
+    }
+  ]
+}

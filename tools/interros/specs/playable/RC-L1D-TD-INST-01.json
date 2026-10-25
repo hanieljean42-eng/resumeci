@@ -1,0 +1,107 @@
+{
+  "code": "RC-L1D-TD-INST-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Histoire du droit et institutions",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Histoire du droit et des institutions",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Codification",
+          "enonce": "Le Code civil de Napoléon date de 1804.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Promulgué le 21 mars 1804, le Code civil a consolidé la Révolution : égalité devant la loi, liberté contractuelle, propriété."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Droit coutumier",
+          "enonce": "Le droit coutumier africain traditionnel était principalement un droit écrit.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le droit coutumier africain était <strong>oral</strong> : transmis par les anciens, les palabres et la pratique communautaire."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Droit romain",
+          "enonce": "Le droit romain a fourni les catégories fondamentales du droit civil moderne (personnes, biens, obligations).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le <em>Corpus Iuris Civilis</em> de Justinien (VIᵉ s.) reste la matrice des concepts du droit civil : technique juridique, classifications, rigueur."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Institutions ivoiriennes",
+          "enonce": "La Côte d'Ivoire n'a connu qu'une seule République depuis son indépendance.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La Côte d'Ivoire en est à sa <strong>IIIᵉ République</strong> : 1960 (Ière), 2000 (IIᵉ), 2016 (IIIᵉ)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Sources historiques",
+          "enonce": "Quel est l'ordre chronologique correct ?",
+          "choix": [
+            "Code civil → droit romain → droit canon",
+            "Droit romain → droit canon médiéval → Code civil",
+            "Droit canon → droit romain → Code civil",
+            "Code civil → droit canon → droit romain"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Droit romain</strong> (Antiquité) → <strong>droit canon</strong> (Moyen Âge) → <strong>Code civil</strong> (1804)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "État moderne",
+          "enonce": "Quel traité de 1648 a fondé le principe de souveraineté territoriale des États ?",
+          "choix": ["Traité de Versailles", "Traité de Westphalie", "Traité de Rome", "Traité de Vienne"],
+          "correct": 1,
+          "corrige": "La <strong>paix de Westphalie</strong> (1648) : chaque État devient souverain sur son territoire — naissance de l'État moderne et du droit international."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Institutions ivoiriennes",
+          "enonce": "En quelle année le multipartisme a-t-il été rétabli en Côte d'Ivoire ?",
+          "choix": ["1960", "1980", "1990", "2000"],
+          "correct": 2,
+          "corrige": "<strong>1990</strong> : fin du parti unique (PDCI) et retour au multipartisme sous la pression sociale."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Dualité juridique",
+          "enonce": "Comment la colonisation a-t-elle transformé les institutions africaines ?",
+          "choix": [
+            "Elle a supprimé tout droit local dès 1885",
+            "Elle a superposé le droit écrit colonial aux coutumes locales",
+            "Elle a renforcé exclusivement les chefferies",
+            "Elle n'a eu aucun effet juridique"
+          ],
+          "correct": 1,
+          "corrige": "La colonisation a <strong>superposé</strong> administration coloniale et droit écrit aux chefferies et coutumes — dualité juridique héritée à l'indépendance."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement l'année.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Institutions ivoiriennes",
+          "enonce": "En quelle année la Côte d'Ivoire a-t-elle accédé à l'indépendance ?",
+          "answer": "1960",
+          "corrige": "<strong>1960</strong> (7 août) : indépendance de la Côte d'Ivoire, Ière République."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Institutions ivoiriennes",
+          "enonce": "En quelle année la Constitution de la IIIᵉ République ivoirienne a-t-elle été adoptée ?",
+          "answer": "2016",
+          "corrige": "<strong>2016</strong> : référendum constitutionnel instaurant la IIIᵉ République (Sénat, Cour suprême, Conseil constitutionnel renforcé)."
+        }
+      ]
+    }
+  ]
+}

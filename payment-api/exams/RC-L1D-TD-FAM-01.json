@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1D-TD-FAM-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Mariage et filiation",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Droit de la famille",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Mariage",
+          "enonce": "En droit ivoirien, seul le mariage civil produit des effets juridiques.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Mariages coutumier et religieux ont une valeur sociale ; seul le <strong>mariage civil</strong> devant l'officier d'état civil engage juridiquement les époux."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Mariage",
+          "enonce": "Le mariage coutumier est interdit par la loi ivoirienne.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Il n'est pas interdit : il est <strong>toléré socialement</strong> mais sans effet civil tant qu'il n'est pas suivi d'un mariage civil."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Filiation",
+          "enonce": "En Côte d'Ivoire, l'enfant naturel a moins de droits successoraux que l'enfant légitime.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Les réformes ivoiriennes ont établi <strong>l'égalité des filiations</strong> : l'enfant naturel a les mêmes droits, y compris successoraux, que l'enfant légitime."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Autorité parentale",
+          "enonce": "Le juge peut retirer l'autorité parentale en cas de maltraitance de l'enfant.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Abus, abandon ou mise en danger → <strong>retrait total ou partiel</strong> de l'autorité parentale par le juge des enfants (la pension reste due)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Mariage",
+          "enonce": "Le mariage civil doit être célébré devant :",
+          "choix": ["Un notaire", "L'officier de l'état civil", "Le chef de village", "Un juge aux affaires familiales"],
+          "correct": 1,
+          "corrige": "Le mariage civil se célèbre <strong>publiquement devant l'officier de l'état civil</strong>, après publication des bans."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Autorité parentale",
+          "enonce": "Quel magistrat peut retirer l'autorité parentale ?",
+          "choix": ["Le procureur", "Le juge des enfants", "Le maire", "Le préfet"],
+          "correct": 1,
+          "corrige": "Le <strong>juge des enfants</strong> est compétent pour retirer totalement ou partiellement l'autorité parentale."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Régimes matrimoniaux",
+          "enonce": "Un couple marié sans contrat écrit relève par défaut :",
+          "choix": ["De la séparation de biens", "De la communauté universelle", "De la communauté réduite aux acquêts", "Du régime dotal"],
+          "correct": 2,
+          "corrige": "Sans contrat de mariage, c'est la <strong>communauté réduite aux acquêts</strong> : biens propres avant mariage + biens communs acquis pendant."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Filiation",
+          "enonce": "Dans une action en recherche de paternité, le juge peut ordonner :",
+          "choix": ["Une amende au prétendu père", "Un test ADN", "L'adoption automatique", "Le mariage forcé"],
+          "correct": 1,
+          "corrige": "Le juge peut ordonner un <strong>test ADN</strong> et, si la paternité est établie, conférer la filiation au profit de l'enfant."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Mariage",
+          "enonce": "Quel âge minimum (en années) est requis pour se marier en droit ivoirien ?",
+          "answer": "18",
+          "corrige": "Le mariage exige <strong>18 ans révolus</strong> — tout mariage d'un mineur est frappé d'incapacité."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Filiation",
+          "enonce": "Combien de voies principales permettent d'établir la paternité (mariage, reconnaissance, possession d'état, jugement) ?",
+          "answer": "4",
+          "corrige": "<strong>4 voies</strong> : présomption du mari, reconnaissance volontaire, possession d'état, et jugement (action en paternité avec test ADN)."
+        }
+      ]
+    }
+  ]
+}

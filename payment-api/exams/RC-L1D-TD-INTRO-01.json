@@ -1,0 +1,100 @@
+{
+  "code": "RC-L1D-TD-INTRO-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Règle de droit et sources",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Introduction à l'étude du droit",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "n": { "choices": [3, 4] },
+    "dette": { "choices": [50000, 80000, 120000] }
+  },
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Règle de droit",
+          "enonce": "« Il faut être poli envers les personnes âgées » est une règle de droit.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La politesse relève des <strong>usages et de la morale</strong> : pas de sanction par la puissance publique. La règle de droit est obligatoire ET sanctionnée publiquement."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Sources du droit",
+          "enonce": "Un usage commercial peut s'imposer contre une loi d'ordre public.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> L'usage ne peut jamais déroger à une loi <strong>d'ordre public</strong> ; il ne fait que compléter les lois <em>supplétives</em> (« à côté de la loi »)."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Sources du droit",
+          "enonce": "La jurisprudence est une source de droit.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Les décisions de justice, en interprétant la loi, constituent la <strong>jurisprudence</strong> — source de droit complémentaire qui guide les juges futurs."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Personnes",
+          "enonce": "L'enfant simplement conçu ne peut jamais recevoir de droits.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La règle <em>infant conceptus</em> : l'enfant conçu peut recevoir des droits (succession, donation) <strong>sous condition de naître vivant et viable</strong>."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Règle de droit",
+          "enonce": "Quel caractère distingue la règle de droit de la règle morale ?",
+          "choix": ["Elle est écrite", "Elle est sanctionnée par la puissance publique", "Elle est ancienne", "Elle est universelle"],
+          "correct": 1,
+          "corrige": "La règle de droit est <strong>sanctionnée par la puissance publique</strong> (juge, police) — une règle morale repose seulement sur la conscience."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Personnes",
+          "enonce": "Laquelle de ces entités est une personne morale ?",
+          "choix": ["Un commerçant", "Une SARL", "Un avocat", "Un étudiant majeur"],
+          "correct": 1,
+          "corrige": "La <strong>SARL</strong> est une <em>personne morale</em> : un groupement auquel la loi confère une personnalité juridique propre. Les autres sont des personnes physiques."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Sources du droit",
+          "enonce": "Quelle est la source première du droit dans un système de droit écrit ?",
+          "choix": ["La coutume", "La doctrine", "La loi", "L'usage"],
+          "correct": 2,
+          "corrige": "En droit écrit, <strong>la loi</strong> (adoptée par le parlement) est la source première ; coutume, doctrine et jurisprudence sont des sources secondaires."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Droit objectif / subjectif",
+          "enonce": "Le droit de propriété sur un terrain est :",
+          "choix": ["Une règle de droit objectif", "Un droit subjectif", "Une coutume", "Un délit"],
+          "correct": 1,
+          "corrige": "Le droit de propriété est un <strong>droit subjectif</strong> : une prérogative individuelle que la règle de droit objectif reconnaît et protège."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Capacité",
+          "enonce": "À partir de quel âge (en années) un individu est-il majeur et pleinement capable juridiquement ?",
+          "answer": "18",
+          "corrige": "La <strong>majorité civile est fixée à 18 ans</strong> : le mineur est incapable d'exercice et agit par représentant."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Règle de droit",
+          "enonce": "Combien de caractères fondamentaux possède la règle de droit (générale, abstraite, obligatoire, sanctionnée) ?",
+          "answer": "4",
+          "corrige": "<strong>4 caractères</strong> : générale, abstraite, obligatoire et sanctionnée par la puissance publique."
+        }
+      ]
+    }
+  ]
+}

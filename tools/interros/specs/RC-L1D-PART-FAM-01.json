@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-FAM-01",
+  "type": "partiel",
+  "matiere": "Droit de la famille",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Mariage, filiation et autorité parentale",
+  "consignes": "Partiel blanc original ResumeCI — respectez la méthode du cas pratique et rédigez soigneusement.",
+  "exercices": [
+    {
+      "titre": "Première partie — Cas pratique",
+      "points": "12 pts",
+      "consigne": "« Afi, 16 ans, a été unie à un notable de 45 ans selon le rite coutumier, avec une dot versée par l'époux. Trois ans plus tard, devenue majeure et mère d'un enfant, elle souhaite faire reconnaître son union par l'état civil et obtenir des droits pour son enfant, dont le père conteste la paternité. »",
+      "enonce": "<p>Résolvez : 1) validité du mariage coutumier contracté à 16 ans ; 2) régularisation possible ; 3) droits de l'enfant et voies d'établissement de la paternité.</p>",
+      "correction": "<p><strong>1) Validité :</strong> l'union coutumière à 16 ans <span class='reponse'>ne produit pas d'effet civil</span> : la loi exige la célébration devant l'officier d'état civil et <strong>18 ans révolus</strong> ; l'âge insuffisant rendait même toute célébration civile impossible — seule la tradition la valide socialement.</p><p><strong>2) Régularisation :</strong> devenue majeure, Afi peut contracter un <strong>mariage civil</strong> (consentement libre, bans, célébration publique) — la dot versée ne fait pas obstacle ; le mariage civil produit alors tous ses effets.</p><p><strong>3) Droits de l'enfant :</strong> l'enfant est de <strong>filiation naturelle</strong> (né hors mariage civil) ; en droit ivoirien, il jouit des <strong>mêmes droits</strong> qu'un enfant légitime une fois la filiation établie. Voies : reconnaissance volontaire du père ; possession d'état ; <strong>action en recherche de paternité</strong> devant le juge — qui peut ordonner un <strong>test ADN</strong> et établir la filiation, ouvrant droit au nom, à l'autorité parentale, à l'aliment et à la succession.</p>",
+      "bareme_detail": "4 pts par question"
+    },
+    {
+      "titre": "Deuxième partie — Dissertation courte",
+      "points": "8 pts",
+      "consigne": "Sujet : « L'autorité parentale : puissance des parents ou devoir envers l'enfant ? »",
+      "enonce": "<p>Traitez le sujet en introduction + deux parties équilibrées.</p>",
+      "correction": "<p><strong>Introduction :</strong> l'autorité parentale désigne l'ensemble des droits et devoirs des parents sur l'enfant mineur — problématique : <em>est-elle un pouvoir des parents ou un service rendu à l'enfant ?</em></p><p><strong>I. Des prérogatives réelles au profit des parents.</strong> A. Pouvoirs : décider de la résidence, de l'éducation, représenter l'enfant, administrer ses biens, consentir aux actes — le mineur ne peut agir seul. B. Un droit protégé : le retrait est exceptionnel, l'État respecte les choix éducatifs.</p><p><strong>II. Une fonction au service de l'intérêt de l'enfant.</strong> A. L'autorité est <em>inaliénable et révocable</em> : abus, abandon ou maltraitance → retrait par le juge des enfants ; l'exercice doit tendre à l'autonomie. B. L'enfant au centre : pensions alimentaires dues même après retrait, choix de résidence guidés par l'intérêt de l'enfant après divorce.</p><p><strong>Conclusion :</strong> l'autorité parentale moderne est moins une « puissance » qu'une <em>mission</em> de protection et d'éducation — le pouvoir n'existe qu'au service de l'enfant.</p>",
+      "bareme_detail": "Introduction 2 pts · I. 3 pts · II. 3 pts"
+    }
+  ]
+}

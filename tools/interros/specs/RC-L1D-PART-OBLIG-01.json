@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-OBLIG-01",
+  "type": "partiel",
+  "matiere": "Droit des obligations",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Sources d'obligations, formation et inexécution du contrat",
+  "consignes": "Partiel blanc original ResumeCI — le cas pratique exige le raisonnement complet (qualification → règle → application → conclusion).",
+  "exercices": [
+    {
+      "titre": "Première partie — Cas pratique principal",
+      "points": "12 pts",
+      "consigne": "« Monsieur D commande à un menuisier 20 tables pour son restaurant, livraison promise le 1er juin contre 1 800 000 F. Le menuisier livre le 20 juin, et 4 tables présentent des défauts de fabrication. Monsieur D refuse tout paiement et réclame en plus 300 000 F pour la perte de clientèle pendant le retard. »",
+      "enonce": "<p>Résolvez : 1) faits et qualifications ; 2) obligations du menuisier et faute commise ; 3) droits de M. D face au retard et aux défauts ; 4) sort du litige (solution motivée).</p>",
+      "correction": "<p><strong>1) Faits et qualification :</strong> contrat d'entreprise (commande de tables) valable : consentement, capacité, objet et prix déterminés ; inexécution partielle : <em>retard</em> de livraison + <em>défauts</em> de fabrication → responsabilité contractuelle.</p><p><strong>2) Obligations du menuisier :</strong> obligation de <em>délivrance</em> (bonne date), obligation de <em>conformité</em> (tables sans défaut), obligation de <em>résultat</em> — le retard et les vices constituent des <strong>fautes contractuelles</strong>.</p><p><strong>3) Droits de M. D :</strong> après mise en demeure, il peut demander l'<strong>exécution forcée</strong> (réparation/remplacement des tables), une <strong>réduction du prix</strong> proportionnelle aux défauts, la <strong>résolution</strong> du contrat si l'inexécution est grave, plus des <strong>dommages-intérêts</strong> couvrant le préjudice prouvé (perte de clientèle si chiffrée et certaine).</p><p><strong>4) Solution :</strong> <span class='reponse'>refus total de paiement excessif</span> : 16 tables conformes doivent être payées ; pour les 4 défectueuses, réparation ou réduction du prix ; les 300 000 F de dommages sont dus si le préjudice est établi et direct — le menuisier répond pleinement de sa faute contractuelle.</p>",
+      "bareme_detail": "3 pts par étape"
+    },
+    {
+      "titre": "Deuxième partie — Questions de cours",
+      "points": "8 pts",
+      "consigne": "Réponses rédigées et précises.",
+      "enonce": "<ol type='a'><li>Distinguez obligation contractuelle et délictuelle. (2 pts)</li><li>Quels sont les trois vices du consentement ? Définissez chacun. (3 pts)</li><li>Quelles conditions doit réunir la force majeure pour exonérer le débiteur ? (3 pts)</li></ol>",
+      "correction": "<p><strong>a)</strong> Contractuelle : inexécution d'une obligation née d'un <strong>contrat</strong> entre les parties ; délictuelle : réparation d'un <strong>dommage causé hors de tout lien contractuel</strong> (faute, quasi-délit) — différents régimes de preuve et d'étendue.</p><p><strong>b)</strong> <strong>Erreur</strong> : fausse représentation sur une qualité essentielle ; <strong>dol</strong> : erreur provoquée par manœuvres dolosives de l'autre partie ; <strong>violence</strong> : consentement extorqué par pression/menace illégitime.</p><p><strong>c)</strong> Événement <strong>imprévisible</strong> (au moment du contrat), <strong>irrésistible</strong> (impossible à surmonter) et <strong>extérieur</strong> (indépendant du débiteur) — les trois cumulés exonèrent le débiteur.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 3 pts"
+    }
+  ]
+}

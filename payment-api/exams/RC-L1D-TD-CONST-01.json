@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1D-TD-CONST-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Constitution et pouvoirs",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Droit Constitutionnel",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "v": { "choices": [42, 48, 55, 62] },
+    "t": { "choices": [100] }
+  },
+  "derived": {
+    "maj": "t/2+1",
+    "manque": "t/2+1-v"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Régimes politiques",
+          "enonce": "La Côte d'Ivoire connaît un régime parlementaire depuis 1960.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La Côte d'Ivoire connaît un régime de type <strong>présidentiel</strong> : exécutif fort, président élu au suffrage universel direct, séparation stricte des pouvoirs."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Constitution",
+          "enonce": "Une constitution rigide se révise comme une loi ordinaire.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Une constitution <strong>rigide</strong> exige une procédure spéciale (majorité qualifiée ou référendum) ; c'est la constitution <em>souple</em> qui se révise comme une loi."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Vote et majorités",
+          "enonce": "Un texte recueillant {{v}} voix pour sur {{t}} votants atteint la majorité absolue.",
+          "correctExpr": "v*2>t",
+          "corrigeVrai": "<strong>Vrai.</strong> La majorité absolue exige plus de la moitié des suffrages : ici {{maj}} voix minimum, et {{v}} ≥ {{maj}}.",
+          "corrigeFaux": "<strong>Faux.</strong> Il faut plus de la moitié de {{t}} votants, soit {{maj}} voix ; {{v}} voix sont insuffisantes (il en manque {{manque}})."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Institutions ivoiriennes",
+          "enonce": "Le Sénat ivoirien a été créé par la Constitution de 2016.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le Sénat est une innovation majeure de la <strong>IIIᵉ République</strong> (Constitution de 2016)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Élection présidentielle",
+          "enonce": "Comment le président ivoirien est-il élu ?",
+          "choix": ["Suffrage universel indirect", "Suffrage universel direct à un tour", "Suffrage universel direct à deux tours", "Par l'Assemblée nationale"],
+          "correct": 2,
+          "corrige": "Le président de la République est élu au <strong>suffrage universel direct à deux tours</strong> : majorité absolue au 1er tour, sinon ballottage."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Contrôle de constitutionnalité",
+          "enonce": "Quel organe contrôle la constitutionnalité des lois en Côte d'Ivoire ?",
+          "choix": ["La Cour suprême", "Le Conseil constitutionnel", "Le Conseil d'État", "L'Assemblée nationale"],
+          "correct": 1,
+          "corrige": "Le <strong>Conseil constitutionnel</strong> juge la conformité des lois à la Constitution — avant promulgation et, depuis 2016, par voie d'exception."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Hiérarchie des normes",
+          "enonce": "Quelle norme occupe le sommet de la hiérarchie ?",
+          "choix": ["Le décret", "La loi", "Le règlement", "La Constitution"],
+          "correct": 3,
+          "corrige": "La <strong>Constitution</strong> est la norme suprême : toutes les lois et règlements doivent lui être conformes."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Séparation des pouvoirs",
+          "enonce": "Quel auteur a théorisé la séparation des pouvoirs dans « De l'esprit des lois » ?",
+          "choix": ["Rousseau", "Montesquieu", "Hans Kelsen", "Jean Bodin"],
+          "correct": 1,
+          "corrige": "<strong>Montesquieu</strong> (1748) : « le pouvoir arrête le pouvoir » — législatif, exécutif et judiciaire doivent se contrôler mutuellement."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Vote et majorités",
+          "enonce": "Sur {{t}} votants, combien de voix au minimum pour atteindre la majorité absolue ?",
+          "answer": "t/2+1",
+          "corrige": "Majorité absolue = plus de la moitié : {{t}}/2 + 1 = <strong>{{maj}} voix</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Élection présidentielle",
+          "enonce": "Quel âge minimum (en années) faut-il avoir pour être candidat à la présidence en Côte d'Ivoire ?",
+          "answer": "35",
+          "corrige": "Il faut avoir <strong>35 ans révolus</strong> pour être candidat à l'élection présidentielle ivoirienne."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-INST-01",
+  "type": "partiel",
+  "matiere": "Histoire du droit et des institutions",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Sources historiques du droit et évolution institutionnelle ivoirienne",
+  "consignes": "Partiel blanc original ResumeCI — traitez les deux parties ; exigences : chronologie exacte, vocabulaire historique précis.",
+  "exercices": [
+    {
+      "titre": "Première partie — Dissertation",
+      "points": "10 pts",
+      "consigne": "Sujet : « Le droit ivoirien actuel : héritage ou rupture avec le passé colonial ? »",
+      "enonce": "<p>Dissertation juridique complète : introduction en 4 temps, deux parties équilibrées, conclusion.</p>",
+      "correction": "<p><strong>Introduction :</strong> amorce sur 60 ans d'indépendance → définition du « droit hérité » (normes coloniales conservées par les lois de reprise) → problématique : <em>le droit ivoirien est-il la continuation du droit colonial ou sa reconstruction ?</em></p><p><strong>I. Un héritage colonial structurant.</strong> A. Reprise massive à l'indépendance : Code civil français (famille, successions, contrats), structure judiciaire, droit administratif — continuité nécessaire pour l'État naissant. B. Persistances actuelles : dualisme juridictionnel, procédure civile, conception de la propriété individuelle héritée du droit romano-civiliste.</p><p><strong>II. Une reconstruction souveraine progressive.</strong> A. Adaptations propres : lois foncières et coutumières, code de la famille ivoirien (abolition des inégalités de filiation), institutions des III Républiques (multipartisme 1990, Sénat 2016). B. Construction propre : droit OHADA harmonisé africain, intégration CEDEAO — le droit ivoirien dialogue avec le droit français mais décide désormais selon ses besoins.</p><p><strong>Conclusion :</strong> le droit ivoirien est un <em>système hybride</em> : socle colonial repris, mais rénové par la souveraineté — héritage assumé, pas subi.</p>",
+      "bareme_detail": "Introduction 2 pts · I. 4 pts · II. 4 pts"
+    },
+    {
+      "titre": "Deuxième partie — Chronologie commentée",
+      "points": "10 pts",
+      "consigne": "Ordonnez et commentez les cinq jalons suivants en une page : droit romain, coutume africaine, droit canon, Code civil 1804, constitutions ivoiriennes.",
+      "enonce": "<p>Pour chaque jalon : époque, apport, héritage dans le droit ivoirien actuel.</p>",
+      "correction": "<p><strong>1. Droit romain (Antiquité) :</strong> Corpus Iuris Civilis — technique juridique, catégories (personnes, biens, obligations) ; héritage : structure conceptuelle de tout le droit privé ivoirien.</p><p><strong>2. Coutume africaine (tradition millénaire) :</strong> droit oral, lignager, communautaire ; héritage : subsiste dans les statuts personnels, la terre, le mariage coutumier — coexistence avec le droit écrit.</p><p><strong>3. Droit canon (Moyen Âge) :</strong> droit de l'Église, procédure inquisitoire, droit du mariage chrétien ; héritage : influence sur le mariage civil monogamique et la procédure.</p><p><strong>4. Code civil 1804 :</strong> codification révolutionnaire française (égalité, propriété, liberté contractuelle) ; héritage : colonisation → reprise 1960 → fonds du droit civil ivoirien.</p><p><strong>5. Constitutions ivoiriennes (1960, 2000, 2016) :</strong> souveraineté retrouvée, trois Républiques ; héritage : droit ivoirien autonome, soumis à sa propre Constitution.</p><p><strong>Synthèse :</strong> stratification — chaque couche historique a laissé une strate dans le droit actuel ; comprendre le présent suppose de lire cette chronologie.</p>",
+      "bareme_detail": "2 pts par jalon"
+    }
+  ]
+}

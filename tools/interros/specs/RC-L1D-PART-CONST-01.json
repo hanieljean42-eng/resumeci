@@ -1,0 +1,29 @@
+{
+  "code": "RC-L1D-PART-CONST-01",
+  "type": "partiel",
+  "matiere": "Droit Constitutionnel",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Constitution, séparation des pouvoirs et régime présidentiel",
+  "consignes": "Partiel blanc original ResumeCI — traite les deux parties. Soigne la méthode : introduction en 4 temps, plan en 2 parties pour la dissertation, syllogisme pour le cas pratique.",
+  "exercices": [
+    {
+      "titre": "Première partie — Dissertation juridique",
+      "points": "10 pts",
+      "consigne": "Sujet : « La séparation des pouvoirs, garantie des libertés ou fiction ? »",
+      "enonce": "<p>Vous traiterez le sujet sous forme de dissertation juridique complète : introduction (amorce, définitions, problématique, annonce du plan), développement en deux parties équilibrées, conclusion.</p>",
+      "correction": "<p><strong>Introduction attendue :</strong> amorce sur l'héritage de Montesquieu (« De l'esprit des lois », 1748) → définition de la séparation des pouvoirs (spécialisation des fonctions législative, exécutive, judiciaire entre organes distincts) → problématique : <em>dans quelle mesure la séparation des pouvoirs garantit-elle réellement les libertés face aux dérives contemporaines ?</em> → annonce.</p><p><strong>Plan type :</strong></p><p><strong>I. La séparation des pouvoirs, condition indispensable de la liberté.</strong> A. « Le pouvoir arrête le pouvoir » : le contrôle mutuel empêche la concentration tyrannique (contrôle parlementaire, juge indépendant, veto). B. Application concrète : justice indépendante protège le citoyen, parlement censure le gouvernement, Conseil constitutionnel censure les lois.</p><p><strong>II. Une séparation nuancée par les pratiques modernes.</strong> A. Jamais absolue : régimes parlementaires mêlent les pouvoirs ; même le régime présidentiel connaît des contre-pouvoirs croisés (promulgation, dissolution, référendum). B. Menaces contemporaines : exécutif dominant, états d'exception prolongés, pressions sur la justice — d'où la vigilance nécessaire (société civile, presse, droits fondamentaux).</p><p><strong>Conclusion :</strong> la séparation n'est pas une fiction mais un <em>équilibre dynamique</em> : sa garantie dépend de la pratique réelle et de la culture démocratique autant que du texte.</p>",
+      "bareme_detail": "Introduction 2 pts · I. 4 pts · II. 4 pts"
+    },
+    {
+      "titre": "Deuxième partie — Cas pratique",
+      "points": "10 pts",
+      "consigne": "« Le parlement d'un État fictif vote une loi interdisant toute manifestation sans autorisation préalable du ministre de l'Intérieur. Une association conteste cette loi devant le juge constitutionnel. » Résolvez le cas en suivant la méthode.",
+      "enonce": "<p>On demande : 1) les faits juridiquement pertinents ; 2) la qualification ; 3) la règle applicable ; 4) la solution motivée.</p>",
+      "correction": "<p><strong>1) Faits pertinents :</strong> loi parlementaire soumettant la manifestation à <em>autorisation préalable</em> (régime restrictif) ; association contestataire saisit le juge constitutionnel.</p><p><strong>2) Qualification :</strong> contestation de <strong>constitutionnalité</strong> — la loi porte atteinte à une liberté fondamentale (liberté de réunion et de manifestation) protégée par le bloc de constitutionnalité.</p><p><strong>3) Règle :</strong> la liberté de manifestation est un droit fondamental ; le législateur peut la <em>réglementer</em> (déclaration préalable admise) mais ne peut la <em>soumettre à autorisation</em> arbitraire ni la supprimer — proportionnalité des restrictions.</p><p><strong>4) Solution :</strong> le juge constitutionnel devrait <span class='reponse'>censurer la loi</span> : l'autorisation préalable donne à l'exécutif un pouvoir discrétionnaire d'interdiction, disproportionné ; une obligation de <em>déclaration</em> aurait suffi à protéger l'ordre public. Annulation totale ou réserves d'interprétation.</p>",
+      "bareme_detail": "Faits 2 pts · Qualification 2 pts · Règle 3 pts · Solution 3 pts"
+    }
+  ]
+}

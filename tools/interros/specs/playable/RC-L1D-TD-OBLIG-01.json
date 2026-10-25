@@ -1,0 +1,102 @@
+{
+  "code": "RC-L1D-TD-OBLIG-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Obligations et responsabilité",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Droit des obligations",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {
+    "prix": { "choices": [150000, 250000, 400000] },
+    "rep": { "choices": [30, 50] }
+  },
+  "derived": {
+    "reste": "prix - prix*rep/100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Quasi-contrats",
+          "enonce": "Rendre une somme reçue par erreur est une obligation née d'un quasi-contrat.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le <strong>paiement de l'indu</strong> est un quasi-contrat : fait volontaire licite auquel la loi attache une obligation de restitution."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Vices du consentement",
+          "enonce": "L'erreur sur une qualité de la chose rend le contrat nul de plein droit.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> L'erreur rend le contrat <strong>annulable</strong>, pas nul de plein droit : il faut une action en nullité devant le juge."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Force majeure",
+          "enonce": "Un événement prévisible peut constituer une force majeure.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La force majeure exige un événement <strong>imprévisible, irrésistible et extérieur</strong> — le prévisible n'exonère pas."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Vices du consentement",
+          "enonce": "Le dol ouvre droit, en plus de la nullité, à des dommages-intérêts.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le <strong>dol</strong> (manœuvres pour tromper) est un vice du consentement sanctionné par la nullité <em>et</em> des dommages-intérêts."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Sources d'obligations",
+          "enonce": "Un piéton renversé par un livreur fautif : l'obligation de réparer naît d'un :",
+          "choix": ["Contrat", "Quasi-contrat", "Délit civil", "Décret"],
+          "correct": 2,
+          "corrige": "Dommage causé par <strong>faute involontaire</strong> hors de tout contrat → <strong>quasi-délit</strong> (délit civil), source de responsabilité délictuelle."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Formation du contrat",
+          "enonce": "Laquelle n'est PAS une condition de validité du contrat ?",
+          "choix": ["Le consentement", "La capacité", "L'écrit", "La cause licite"],
+          "correct": 2,
+          "corrige": "L'<strong>écrit n'est exigé que pour certains contrats</strong> (ad solemnitatem) ; en principe, consentement + capacité + objet + cause suffisent (consensualisme)."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Inexécution",
+          "enonce": "L'acheteur d'un bien jamais livré peut demander :",
+          "choix": ["Seulement le remboursement", "L'exécution forcée, la résolution ou des dommages-intérêts", "La prison du vendeur", "Rien sans clause pénale"],
+          "correct": 1,
+          "corrige": "Face à l'inexécution : mise en demeure puis <strong>exécution forcée, résolution du contrat ou dommages-intérêts</strong> — le juge civil ne prononce pas de prison."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Responsabilité",
+          "enonce": "L'employeur répond du dommage causé par son préposé :",
+          "choix": ["Jamais, seul le salarié répond", "Toujours, même hors travail", "Lorsque la faute survient dans l'exercice des fonctions", "Seulement si le salarié est insolvable"],
+          "correct": 2,
+          "corrige": "Responsabilité du <strong>commettant</strong> : l'employeur répond du fait de ses préposés <em>dans l'exercice de leurs fonctions</em>."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Capacité",
+          "enonce": "À partir de quel âge (en années) peut-on conclure seul un contrat ?",
+          "answer": "18",
+          "corrige": "La capacité d'exercice s'acquiert à la <strong>majorité : 18 ans</strong> (sauf émancipation)."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Inexécution",
+          "enonce": "Un commerçant a payé {{rep}} % d'un achat de {{prix}} F. Combien reste-t-il à payer (en F) ?",
+          "answer": "reste",
+          "corrige": "Payé : {{rep}} % de {{prix}} = {{prix}}×{{rep}}/100 F. Reste : {{prix}} − {{prix}}×{{rep}}/100 = <strong>{{reste}} F</strong>."
+        }
+      ]
+    }
+  ]
+}

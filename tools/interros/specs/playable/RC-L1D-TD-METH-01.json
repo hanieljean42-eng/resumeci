@@ -1,0 +1,102 @@
+{
+  "code": "RC-L1D-TD-METH-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Méthodologie juridique",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Méthodologie juridique",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Dissertation",
+          "enonce": "En droit, le plan standard d'une dissertation comporte trois parties.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La dissertation juridique exige un <strong>plan en deux parties</strong> (thèse/antithèse) : la dialectique est au cœur de la démarche juridique."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Syllogisme",
+          "enonce": "Dans le syllogisme juridique, la majeure énonce les faits de l'espèce.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La <strong>majeure énonce la règle de droit abstraite</strong> ; c'est la <em>mineure</em> qui constate que les faits remplissent ses conditions."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Introduction",
+          "enonce": "La problématique justifie l'annonce du plan qui suit.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le plan doit <strong>découler de la problématique</strong> : on annonce deux parties qui répondent à la question posée."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Résumé",
+          "enonce": "Reformuler les idées avec ses propres mots dans un résumé constitue du plagiat.",
+          "correct": false,
+          "corrige": "<strong>Faux — c'est l'inverse.</strong> Copier les phrases du texte = plagiat ; <strong>reformuler prouve la compréhension</strong> et est exigé par la méthode."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Syllogisme",
+          "enonce": "Quel est l'ordre correct du raisonnement juridique ?",
+          "choix": ["Mineure → majeure → conclusion", "Conclusion → majeure → mineure", "Majeure → mineure → conclusion", "Faits → conclusion → règle"],
+          "correct": 2,
+          "corrige": "<strong>Majeure</strong> (règle de droit) → <strong>mineure</strong> (application aux faits) → <strong>conclusion</strong> (solution juridique)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Cas pratique",
+          "enonce": "« Qualifier » les faits signifie :",
+          "choix": ["Les résumer en une phrase", "Les rattacher à une catégorie juridique", "Les juger moralement", "Les énumérer chronologiquement"],
+          "correct": 1,
+          "corrige": "Qualifier = <strong>rattacher chaque fait à sa catégorie juridique</strong> (contrat, délit, personne morale…) pour savoir quelle règle s'applique."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Commentaire d'arrêt",
+          "enonce": "L'introduction d'un commentaire d'arrêt présente dans l'ordre :",
+          "choix": [
+            "Plan → faits → problème → juridiction",
+            "Juridiction → faits/procédure → problème de droit → plan",
+            "Problème → juridiction → plan → faits",
+            "Faits → plan → juridiction → problème"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Juridiction → faits et procédure → problème de droit → annonce du plan</strong> : toujours du général vers le particulier."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Résumé",
+          "enonce": "Un résumé correct doit représenter environ :",
+          "choix": ["La moitié du texte", "Le quart du texte", "Les trois quarts du texte", "La longueur libre"],
+          "correct": 1,
+          "corrige": "La règle classique : <strong>le quart (±10 %)</strong> du texte original — assez long pour l'essentiel, assez court pour rester un résumé."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Introduction",
+          "enonce": "Combien d'étapes comporte l'introduction type en droit (amorce, définition, problématique, annonce du plan) ?",
+          "answer": "4",
+          "corrige": "<strong>4 étapes</strong> : amorce → présentation/définition du sujet → problématique → annonce du plan."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Cas pratique",
+          "enonce": "Combien de temps de réflexion méthodique un cas pratique exige-t-il (faits pertinents, qualification, règle, application) ?",
+          "answer": "4",
+          "corrige": "<strong>4 temps</strong> : dégager les faits pertinents → qualifier juridiquement → énoncer la règle → appliquer (syllogisme)."
+        }
+      ]
+    }
+  ]
+}

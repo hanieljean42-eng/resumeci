@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1D-TD-DH-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Droits de l'Homme",
+  "classe": "Licence_1_Droit",
+  "classeLabel": "Licence 1 Droit",
+  "matiere": "Droits de l'Homme",
+  "dureeMin": 45,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction automatique à la fin.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "DUDH",
+          "enonce": "La Déclaration universelle des droits de l'homme de 1948 est un traité juridiquement contraignant.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La DUDH est une <strong>déclaration</strong> : pas de force obligatoire au sens strict — mais valeur morale immense, devenue coutumière sur nombre de points, et matrice des pactes contraignants (PIDCP, PIDESC)."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Caractères",
+          "enonce": "Les droits de l'homme sont indivisibles : droits civils et droits sociaux ont la même valeur.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <strong>Indivisibilité</strong> : aucune catégorie de droits n'est supérieure — civils, politiques, économiques, sociaux et culturels se complètent."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Charte africaine",
+          "enonce": "La Charte africaine protège uniquement les droits des individus, pas ceux des peuples.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La Charte africaine (1981) est originale : elle protège les droits individuels <em>et</em> <strong>les droits des peuples</strong>, et énonce même des devoirs de l'individu."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Protection internationale",
+          "enonce": "Une ONG peut saisir directement la Cour internationale de Justice pour un cas individuel.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Seuls les <strong>États</strong> peuvent être parties devant la CIJ. Les victimes individuelles passent par les tribunaux internes, puis comités ONU ou Cour africaine si l'État a accepté la compétence."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Générations de droits",
+          "enonce": "La liberté d'expression et le droit de vote appartiennent à :",
+          "choix": ["La 1ʳᵉ génération (droits civils et politiques)", "La 2ᵉ génération (droits économiques et sociaux)", "La 3ᵉ génération (droits de solidarité)", "Aucune génération"],
+          "correct": 0,
+          "corrige": "Les droits <strong>civils et politiques</strong> = 1ʳᵉ génération : libertés « contre » l'État (expression, vote, sûreté, propriété)."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Générations de droits",
+          "enonce": "Le droit à un environnement sain relève de :",
+          "choix": ["La 1ʳᵉ génération", "La 2ᵉ génération", "La 3ᵉ génération", "Du droit privé uniquement"],
+          "correct": 2,
+          "corrige": "L'environnement = <strong>3ᵉ génération</strong> (droits de solidarité) : paix, développement, environnement — exigent la coopération de tous."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Protection régionale",
+          "enonce": "Quel organe juge les violations des droits de l'homme au niveau africain ?",
+          "choix": ["La CPI", "La Cour africaine des droits de l'homme et des peuples", "Le Conseil de sécurité", "La CCJA"],
+          "correct": 1,
+          "corrige": "La <strong>Cour africaine des droits de l'homme et des peuples</strong> (avec la Commission africaine) juge les violations de la Charte africaine."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Application",
+          "enonce": "Les droits de l'homme ne s'appliquent que contre l'État (effet vertical) :",
+          "choix": ["Vrai en toutes circonstances", "Faux : l'État doit aussi protéger contre les abus des acteurs privés", "Vrai seulement pour la liberté de presse", "Faux : ils ne s'appliquent jamais contre l'État"],
+          "correct": 1,
+          "corrige": "Les droits ont un <strong>effet horizontal</strong> : l'État a le devoir de protéger les citoyens aussi contre les violations commises par des acteurs privés (employeurs, entreprises)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "DUDH",
+          "enonce": "En quelle année la Déclaration universelle des droits de l'homme a-t-elle été proclamée ?",
+          "answer": "1948",
+          "corrige": "<strong>1948</strong> (10 décembre) : adoption de la DUDH par l'Assemblée générale de l'ONU à Paris."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Générations",
+          "enonce": "Combien de « générations » de droits de l'homme distingue-t-on classiquement ?",
+          "answer": "3",
+          "corrige": "<strong>3 générations</strong> : civils et politiques (1ʳᵉ), économiques-sociaux-culturels (2ᵉ), solidarité (3ᵉ)."
+        }
+      ]
+    }
+  ]
+}
