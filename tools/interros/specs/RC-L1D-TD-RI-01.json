@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-RI-01",
+  "type": "td",
+  "matiere": "Relations internationales",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Acteurs, organisations et enjeux des relations internationales",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Situe chaque acteur par son type (État, OIG, ONG, transnational) avant d'analyser son rôle.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les acteurs des relations internationales",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Citer les quatre catégories d'acteurs des relations internationales avec un exemple chacune.</li><li>L'État reste-t-il l'acteur central ? Nuancer.</li><li>Qu'est-ce qu'une ONG internationale ? Donner deux exemples.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>États</strong> (Côte d'Ivoire, France) · <strong>Organisations intergouvernementales</strong> (ONU, Union africaine, CEDEAO) · <strong>ONG</strong> (Amnesty, Croix-Rouge) · <strong>acteurs transnationaux</strong> (firmes multinationales, médias globaux, réseaux).</p><p><strong>b)</strong> L'État demeure <em>central</em> (souveraineté, traités, guerre/paix), mais son monopole est <em>concurrencé</em> : OIG encadrent, ONG influencent l'agenda, multinationales pèsent économiquement — monde multipolaire et multi-acteurs.</p><p><strong>c)</strong> Organisation sans but lucratif indépendante des États, agissant transnationalement : ex. <strong>Amnesty International</strong>, <strong>Croix-Rouge/CICR</strong>, <strong>Médecins sans frontières</strong>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Organisations internationales",
+      "points": "5 pts",
+      "consigne": "L'ONU et les organisations régionales.",
+      "enonce": "<ol type='a'><li>Quels sont les organes principaux de l'ONU ? Quel est le rôle du Conseil de sécurité ?</li><li>Qu'est-ce que la CEDEAO et son but ?</li><li>Différence entre organisation à vocation universelle et régionale.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Assemblée générale</strong> (tous les États, délibératif), <strong>Conseil de sécurité</strong> (5 permanents + 10 élus — maintien de la paix, sanctions, autorisations de force avec veto des 5), <strong>Secrétariat</strong> (administration, Secrétaire général), <strong>CIJ</strong> (contentieux entre États), <strong>CES</strong> (économique et social).</p><p><strong>b)</strong> <strong>Communauté économique des États de l'Afrique de l'Ouest</strong> : intégration économique (marché commun, monnaie unique ECO en projet), maintien de la paix et sécurité régionale.</p><p><strong>c)</strong> Universelle (ONU, OMC) : membres de toutes les régions, compétences générales ; régionale (CEDEAO, UA, UE) : membres d'une aire géographique, intégration et coopération de proximité.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Le droit international",
+      "points": "5 pts",
+      "consigne": "Sources et application du droit international.",
+      "enonce": "<ol type='a'><li>Citer les sources du droit international public (art. 38 CIJ).</li><li>Un traité ratifié par la Côte d'Ivoire s'impose-t-il au droit interne ?</li><li>Qu'est-ce que le « soft law » ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Traités</strong> (conventions) · <strong>coutume internationale</strong> (pratique + opinio juris) · <strong>principes généraux</strong> de droit · jurisprudence et doctrine (sources subsidiaires).</p><p><strong>b)</strong> Oui : en monisme/modéré, une fois ratifié et publié, le traité s'incorpore à l'ordre interne — les États doivent rendre leur droit conforme (sauf réserve ou clause d'incompatibilité).</p><p><strong>c)</strong> Normes <em>non contraignantes</em> (déclarations, principes, lignes directrices) : elles orientent les comportements et préparent souvent le « hard law » — ex. la DUDH avant les pactes.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Enjeux contemporains",
+      "points": "5 pts",
+      "consigne": "Les grands dossiers des relations internationales africaines.",
+      "enonce": "<ol type='a'><li>Citer trois enjeux majeurs des relations internationales africaines actuelles.</li><li>Pourquoi l'intégration régionale est-elle stratégique pour la Côte d'Ivoire ?</li><li>Quel rôle la diplomatie ivoirienne joue-t-elle dans la sous-région ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Sécurité</strong> (terrorisme au Sahel, piraterie) · <strong>intégration économique</strong> (marché unique ZLECAF) · <strong>souveraineté</strong> et nouveaux partenariats (redéfinition des liens avec les anciennes puissances, montée de partenaires non-occidentaux).</p><p><strong>b)</strong> Hub économique de la CEDEAO (port d'Abidjan, siège de la BAD) : l'intégration élargit ses marchés, renforce son poids diplomatique et sécurise son environnement régional.</p><p><strong>c)</strong> Acteur de la médiation et de la coopération ouest-africaine, membre actif de la CEDEAO et de l'UA, siège d'organisations internationales — diplomatie d'influence économique et de stabilité.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

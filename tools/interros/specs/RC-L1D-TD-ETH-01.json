@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-ETH-01",
+  "type": "td",
+  "matiere": "Éthique et déontologie juridique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Devoirs du juriste et responsabilité professionnelle",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Pour chaque dilemme : identifie la règle déontologique, puis le choix qu'elle impose.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Éthique et déontologie",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Distinguer éthique et déontologie.</li><li>Citer trois devoirs déontologiques communs aux professions juridiques.</li><li>Pourquoi la déontologie est-elle indispensable à la confiance dans la justice ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Éthique</strong> : réflexion morale personnelle sur le bien et le juste ; <strong>déontologie</strong> : ensemble de règles écrites encadrant une profession (devoirs positifs + interdits), sanctionnées par l'ordre.</p><p><strong>b)</strong> Secret professionnel, honnêteté/probité, indépendance, dignité, loyauté envers le client, compétence et diligence.</p><p><strong>c)</strong> Sans elle, les clients ne confieraient ni leurs secrets ni leurs intérêts : la justice ne peut fonctionner que si les citoyens font <em>confiance</em> aux avocats, magistrats et notaires qui la servent.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Le secret professionnel",
+      "points": "5 pts",
+      "consigne": "Un avocat apprend par son client qu'il a commis un délit ancien, non poursuivi.",
+      "enonce": "<ol type='a'><li>L'avocat peut-il le révéler à la police ? Justifier.</li><li>Quelle est la limite au secret professionnel ?</li><li>Un client demande à son avocat de fabriquer un faux document : quelle doit être sa réponse ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Non</span> : le secret couvre <em>tout</em> ce que l'avocat apprend dans l'exercice de sa profession — même un fait délictueux passé. Le violer est une faute déontologique ET pénale.</p><p><strong>b)</strong> Le secret <strong>ne protège pas les projets criminels en cours ou futurs</strong> (blanchiment, terrorisme) ni l'avocat lui-même s'il participe au délit — il peut être levé pour prévenir des crimes graves.</p><p><strong>c)</strong> Refus ferme : fabriquer un faux est un délit de <strong>faux et usage de faux</strong> ; l'avocat perdrait sa probité, sa licence — et le secret ne couvrirait pas cette participation au crime.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Conflit d'intérêts et indépendance",
+      "points": "5 pts",
+      "consigne": "Un cabinet d'avocats défend deux clients adverses dans le même litige sans le leur dire.",
+      "enonce": "<ol type='a'><li>Qu'est-ce qu'un conflit d'intérêts ? Pourquoi est-il interdit ?</li><li>Que doit faire l'avocat en pareil cas ?</li><li>Citer un autre exemple d'atteinte à l'indépendance du juriste.</li></ol>",
+      "correction": "<p><strong>a)</strong> Situation où l'avocat sert <em>simultanément</em> des intérêts opposés : il ne peut être loyal envers les deux → violation de la <strong>loyauté</strong> et risque de trahir l'un au profit de l'autre.</p><p><strong>b)</strong> <span class='reponse'>Se désister de l'un des deux dossiers</span> (voire des deux) après information des clients ; le secret l'empêche de tout révéler, mais il ne peut pas rester les deux maîtres.</p><p><strong>c)</strong> Accepter des honoraires d'une partie adverse, avoir un intérêt financier dans l'issue du litige, subir des pressions de sa famille ou de sa hiérarchie, conseiller en même temps un client et son adversaire.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Responsabilité et sanctions",
+      "points": "5 pts",
+      "consigne": "Un avocat divulgue le dossier d'un client pour se vanter dans un dîner.",
+      "enonce": "<ol type='a'><li>Quelles sanctions risque-t-il ? Classer discipline, civile et pénale.</li><li>Qu'est-ce que la responsabilité déontologique ? Par qui est-elle jugée ?</li><li>Comment la victime peut-elle obtenir réparation ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Disciplinaire</strong> : avertissement, blâme, suspension, radiation par l'ordre des avocats ; <strong>civile</strong> : dommages-intérêts au client lésé ; <strong>pénale</strong> : violation du secret professionnel (amende/prison).</p><p><strong>b)</strong> Violation des règles déontologiques → procédure devant le <strong>conseil de l'ordre</strong> (juridiction disciplinaire interne de la profession), indépendante des tribunaux.</p><p><strong>c)</strong> Action en justice civile contre l'avocat pour faute professionnelle → réparation du préjudice subi par la divulgation.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    }
+  ]
+}

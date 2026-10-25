@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-FAM-01",
+  "type": "td",
+  "matiere": "Droit de la famille",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Mariage, filiation et autorité parentale",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Le droit de la famille ivoirien mêle droit moderne et réalités coutumières : distingue toujours les deux logiques.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le mariage",
+      "points": "5 pts",
+      "consigne": "Deux jeunes veulent se marier à Abidjan.",
+      "enonce": "<ol type='a'><li>Citer les conditions de fond et de forme du mariage civil.</li><li>Quelle différence entre mariage civil, religieux et coutumier en droit ivoirien ?</li><li>Un mariage célébré sans consentement d'un époux est-il valable ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Fond</strong> : consentement libre et éclairé des époux, âge minimum (18 ans), absence de lien de parenté prohibé, monogamie. <strong>Forme</strong> : célébration publique devant l'officier d'état civil + publication des bans.</p><p><strong>b)</strong> Seul le <strong>mariage civil</strong> produit des effets juridiques ; le mariage coutumier (dot, rites) et le religieux ont valeur sociale/culturelle mais pas d'effet civil sans enregistrement.</p><p><strong>c)</strong> Non : le <strong>consentement</strong> est une condition de fond — mariage contracté par violence, erreur ou dol est <strong>annulable</strong>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — La filiation",
+      "points": "5 pts",
+      "consigne": "Questions sur les liens parent-enfant.",
+      "enonce": "<ol type='a'><li>Quels sont les modes d'établissement de la filiation ?</li><li>Différence entre filiation légitime et naturelle ? Le droit ivoirien fait-il une différence de droits ?</li><li>Qu'est-ce que l'action en recherche de paternité ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Par la <strong>filiation maternelle</strong> (évidente à l'accouchement), la <strong>filiation paternelle</strong> (mariage, reconnaissance, possession d'état, jugement), l'<strong>adoption</strong> (jugement), la <strong>filiation médicalement assistée</strong>.</p><p><strong>b)</strong> <strong>Légitime</strong> : enfant né dans le mariage ; <strong>naturelle</strong> : hors mariage. En CI, les enfants naturels ont quasiment les mêmes droits que les légitimes depuis les réformes (égalité de la filiation) — l'inégalité successorale a été abolie.</p><p><strong>c)</strong> Action par laquelle la mère (ou l'enfant) demande au juge d'établir la paternité d'un homme — le juge peut ordonner un test ADN et conférer la filiation au profit de l'enfant.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — L'autorité parentale",
+      "points": "5 pts",
+      "consigne": "Parents divorcés et enfant de 12 ans.",
+      "enonce": "<ol type='a'><li>Quels droits et devoirs composent l'autorité parentale ?</li><li>Après un divorce, comment l'autorité parentale s'exerce-t-elle ?</li><li>Dans quels cas le juge peut-il retirer l'autorité parentale ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Protéger l'enfant (sécurité, santé, moralité), le nourrir, l'entretenir, l'éduquer, le représenter en justice et administrer ses biens — au profit de l'enfant, jamais contre lui.</p><p><strong>b)</strong> En principe <strong>conjuguée</strong> (les deux parents continuent de décider ensemble pour les questions importantes), la résidence fixée chez l'un avec droit de visite de l'autre ; le juge peut attribuer l'exercice exclusif au meilleur intérêt de l'enfant.</p><p><strong>c)</strong> Abus, abandon, maltraitance, mises en danger grave : retrait <strong>total ou partiel</strong> par le juge des enfants — la pension alimentaire reste due.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Régimes matrimoniaux et succession",
+      "points": "5 pts",
+      "consigne": "Un couple se marie sans contrat de mariage écrit.",
+      "enonce": "<ol type='a'><li>Quel régime s'applique par défaut en droit ivoirien ?</li><li>Qu'est-ce que la communauté de biens ? Ses avantages/risques ?</li><li>Au décès d'un époux, que deviennent les biens ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La <strong>communauté réduite aux acquêts</strong> : biens propres (avant mariage + héritages/dons) vs biens communs (achetés pendant le mariage).</p><p><strong>b)</strong> En communauté, les biens acquis ensemble appartiennent aux deux → protection du conjoint non-travailleur ; risque : dettes communes, indivision à gérer au divorce.</p><p><strong>c)</strong> Dissolution de la communauté (partage moitié/moitié entre époux survivant et héritiers du défunt) puis <strong>succession</strong> : le conjoint et les enfants héritent selon les règles du Code civil ivoirien.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

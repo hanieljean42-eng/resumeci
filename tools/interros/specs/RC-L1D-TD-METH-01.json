@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-METH-01",
+  "type": "td",
+  "matiere": "Méthodologie juridique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Commentaire d'arrêt, cas pratique et dissertation juridique",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. La méthode est 60 % de la note : structure avant style.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le cas pratique : méthode générale",
+      "points": "5 pts",
+      "consigne": "On demande de résoudre le cas suivant : « Monsieur A vend une moto à Monsieur B. Avant la livraison, la moto brûle dans le garage de A par la faute de son fils de 10 ans. B réclame la moto ou son prix. »",
+      "enonce": "<ol type='a'><li>Citer les étapes de la résolution d'un cas pratique.</li><li>Identifier les faits juridiquement pertinents.</li><li>Qualifier : quel problème de droit se pose ?</li></ol>",
+      "correction": "<p><strong>a)</strong> ① Lire et dégager les <strong>faits pertinents</strong> ; ② <strong>qualifier</strong> juridiquement (de quel type de litige s'agit-il ?) ; ③ énoncer la <strong>règle de droit</strong> applicable ; ④ <strong>appliquer</strong> la règle aux faits (majeure → mineure → conclusion).</p><p><strong>b)</strong> Vente conclue (prix + chose) ; moto détruite <em>avant</em> livraison ; destruction due au fils mineur du vendeur.</p><p><strong>c)</strong> <span class='reponse'>Problème : qui supporte le risque de la perte de la chose vendue — vendeur ou acheteur ?</span> (Règle « res perit domino » : le risque pèse en principe sur l'acheteur dès la vente parfaite, sauf faute du vendeur — ici la faute est celle du fils, pas du vendeur directement.)</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Le commentaire d'arrêt",
+      "points": "5 pts",
+      "consigne": "Préparer le commentaire d'un arrêt de la Cour suprême.",
+      "enonce": "<ol type='a'><li>Citer les quatre parties de l'introduction au commentaire.</li><li>Quelle différence entre commentaire d'arrêt et commentaire de texte ?</li><li>Que doit contenir le « fil conducteur » de l'introduction ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Présentation de la <strong>juridiction</strong> → faits et <strong>procédure</strong> → <strong>problème de droit</strong> posé → <strong>annonce du plan</strong>.</p><p><strong>b)</strong> Commentaire d'arrêt : analyse une <em>décision de justice</em> (faits + procédure + solution) ; commentaire de texte : analyse un <em>texte normatif</em> (loi, article, traité) — la méthode diffère sur la présentation des faits.</p><p><strong>c)</strong> La <strong>problématique</strong> : la vraie question juridique que la décision tranche — elle justifie tout le développement qui suit (ex. « La vente parfaite transfère-t-elle le risque malgré l'absence de livraison ? »).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — La dissertation juridique",
+      "points": "5 pts",
+      "consigne": "Sujet : « L'effet obligatoire du contrat ».",
+      "enonce": "<ol type='a'><li>Construire l'introduction en 4 étapes.</li><li>Proposer un plan en 2 parties pour ce sujet.</li><li>Pourquoi le plan en 2 parties est-il obligatoire en droit ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Amorce</strong> (phrase d'accroche) → <strong>définition du sujet</strong> → <strong>problématique</strong> → <strong>annonce du plan</strong>.</p><p><strong>b)</strong> I. « Les conventions légalement formées tiennent lieu de loi à ceux qui les ont faites » — la force sacrée du contrat (A. principe : le contrat comme loi des parties ; B. conséquences : inexécution = faute). II. Les limites contemporaines à la force obligatoire (A. pouvoir du juge d'adapter/réviser ; B. protections des parties faibles — consommateur, salarié).</p><p><strong>c)</strong> La dialectique est au cœur de la démarche juridique : le droit est un <em>équilibre</em> entre principes opposés — le plan binaire reflète cette opposition (thèse/antithèse) et montre que le candidat sait <em>discuter</em>, pas seulement réciter.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Raisonnement juridique : syllogisme",
+      "points": "5 pts",
+      "consigne": "Appliquer la méthode du syllogisme juridique.",
+      "enonce": "<ol type='a'><li>Décrire les trois temps du raisonnement par syllogisme.</li><li>Appliquer au cas : « Un vendeur refuse de livrer un produit payé par carte bancaire en prétendant que le paiement n'est pas valable. »</li><li>Quel piège fréquent faut-il éviter dans la minoration ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Majeure</strong> : énoncer la règle de droit abstraite ; <strong>mineure</strong> : constater que les faits remplissent ses conditions ; <strong>conclusion</strong> : en déduire la solution juridique.</p><p><strong>b)</strong> Majeure : le paiement par carte est validé par l'acceptation de la banque au moment de la transaction — l'obligation de payer est éteinte, le vendeur doit livrer. Mineure : l'acheteur a payé par carte acceptée → obligation éteinte. Conclusion : le vendeur doit livrer, son refus constitue une inexécution.</p><p><strong>c)</strong> Éviter la <strong>conclusion prématurée</strong> (sauter à la solution sans vérifier les conditions de la majeure) et le <strong>raisonnement circulaire</strong> (reformuler les faits au lieu de les qualifier juridiquement — « le vendeur n'a pas livré » n'est pas une qualification).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

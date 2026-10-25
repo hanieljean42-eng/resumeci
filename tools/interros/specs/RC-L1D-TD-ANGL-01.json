@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-ANGL-01",
+  "type": "td",
+  "matiere": "Droit anglais (English Legal System)",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Common law, sources and courts of the English legal system",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Les réponses peuvent être en français : l'objectif est de maîtriser le vocabulaire juridique anglais.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — The Common Law",
+      "points": "5 pts",
+      "consigne": "Fundamentals of the English legal tradition.",
+      "enonce": "<ol type='a'><li>Define « common law » and contrast it with civil law.</li><li>What is the doctrine of <em>precedent</em> (<em>stare decisis</em>) ?</li><li>What does « equity » mean in English law ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Common law</strong> = judge-made law built on judicial precedents, applied uniformly (« common ») throughout the realm ; <strong>civil law</strong> = codified rules (Code civil) where statutes, not cases, are the primary source.</p><p><strong>b)</strong> <em>Stare decisis</em> (« let the decision stand ») : courts must follow the legal rules established by higher courts in earlier similar cases → certainty and consistency.</p><p><strong>c)</strong> <strong>Equity</strong> = body of rules developed by the Lord Chancellor to mitigate the rigidity of common law — remedies unavailable at common law (injunction, specific performance, trust) based on fairness (« conscience »).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Sources of English law",
+      "points": "5 pts",
+      "consigne": "Identify and rank the sources.",
+      "enonce": "<ol type='a'><li>List the sources of English law with one example each.</li><li>What is the difference between <em>ratio decidendi</em> and <em>obiter dictum</em> ?</li><li>Why is there no written constitution in the UK ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Legislation</strong> (Acts of Parliament — Human Rights Act 1998) · <strong>Case law / precedent</strong> (judgments of senior courts) · <strong>EU-derived law</strong> (retained after Brexit) · <strong>Custom</strong> and <strong>legal writing</strong> (minor sources) · <strong>constitutional conventions</strong> (unwritten rules).</p><p><strong>b)</strong> <em>Ratio decidendi</em> = the legal reason for the decision — binding part of the precedent ; <em>obiter dictum</em> = remarks « by the way », persuasive but not binding.</p><p><strong>c)</strong> The UK constitution is <strong>uncodified</strong> : it draws from statutes (Magna Carta 1215, Bill of Rights 1689), conventions, common law and works of authority — flexible and evolutionary rather than fixed in one document.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — The court system",
+      "points": "5 pts",
+      "consigne": "Civil and criminal courts hierarchy.",
+      "enonce": "<ol type='a'><li>Outline the main courts of England and Wales and their jurisdiction.</li><li>What is the highest court and since when does it exist ?</li><li>What is the role of the <em>Crown Court</em> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Magistrates' Court</strong> (minor criminal, no jury) → <strong>Crown Court</strong> (serious criminal, jury) → <strong>High Court</strong> (major civil) → <strong>Court of Appeal</strong> → <strong>Supreme Court</strong>.</p><p><strong>b)</strong> The <strong>Supreme Court of the United Kingdom</strong>, created in <em>2009</em> — replacing the Appellate Committee of the House of Lords — final court of appeal for all UK civil cases.</p><p><strong>c)</strong> Tries <em>indictable offences</em> (serious crimes) with a <strong>jury of 12</strong> deciding guilt; the judge rules on law and passes sentence.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Common law vs droit civil : comparaison",
+      "points": "5 pts",
+      "consigne": "Comparer les deux traditions pour un étudiant ivoirien.",
+      "enonce": "<ol type='a'><li>Deux différences majeures entre common law et droit civil quant à la place du juge.</li><li>Pourquoi le droit anglais influence-t-il le droit des affaires international ?</li><li>Terminologie : traduire « contract », « tort », « trust », « damages ».</li></ol>",
+      "correction": "<p><strong>a)</strong> En <strong>common law</strong> : le juge <em>crée</em> le droit par ses décisions (precedent), rôle quasi créateur ; en <strong>droit civil</strong> : le juge <em>applique</em> la loi écrite du législateur — le code est la source première, la jurisprudence n'est que persuasive.</p><p><strong>b)</strong> La City de Londres centre financière mondiale, les contrats internationaux rédigés en anglais sous common law (predictabilité du precedent, liberté contractuelle forte) — d'où le « governing law » anglais dans nombre de contrats africains.</p><p><strong>c)</strong> Contract = <strong>contrat</strong> ; tort = <strong>délit civil</strong> (dommage hors contrat) ; trust = <strong>fiducie</strong> ; damages = <strong>dommages-intérêts</strong>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    }
+  ]
+}

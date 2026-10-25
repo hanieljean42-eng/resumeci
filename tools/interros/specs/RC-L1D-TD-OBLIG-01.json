@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-OBLIG-01",
+  "type": "td",
+  "matiere": "Droit des obligations",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Sources d'obligations, contrat et responsabilité",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Pour chaque cas pratique : qualifie d'abord la source de l'obligation avant de conclure.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les sources d'obligations",
+      "points": "5 pts",
+      "consigne": "Questions de cours et application.",
+      "enonce": "<ol type='a'><li>Citer les sources d'obligations et définir une obligation.</li><li>Classer : payer le prix d'un achat, réparer un dommage causé par négligence, rendre une somme reçue par erreur.</li><li>Qu'est-ce qui distingue obligation contractuelle et quasi-contractuelle ?</li></ol>",
+      "correction": "<p><strong>a)</strong> L'obligation = lien juridique par lequel une personne (débiteur) est tenue de faire, donner ou ne pas faire au profit d'une autre (créancier). Sources : <strong>contrats, quasi-contrats, délits, quasi-délits</strong> (et la loi elle-même).</p><p><strong>b)</strong> Payer le prix → <strong>contrat</strong> (accord volontaire) ; réparer un dommage par négligence → <strong>quasi-délit</strong> (faute involontaire) ; rendre une somme reçue par erreur → <strong>quasi-contrat</strong> (enrichissement sans cause — gestion d'affaires/paiement de l'indu).</p><p><strong>c)</strong> Contractuelle = naît d'un <em>accord de volontés</em> ; quasi-contractuelle = naît d'un <em>fait volontaire licite</em> (je paie par erreur, je gère l'affaire d'autrui) sans accord préalable — la loi attache l'obligation au fait.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Formation du contrat",
+      "points": "5 pts",
+      "consigne": "Un acheteur promet 400 000 F pour un téléphone ; le vendeur accepte.",
+      "enonce": "<ol type='a'><li>Citer les conditions de validité d'un contrat.</li><li>Le consentement est-il valable si le téléphone est en fait volé ?</li><li>Distinguer erreur sur la substance et dol dans la validité du consentement.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Consentement</strong> des parties (offre + acceptation sans vice), <strong>capacité</strong> de contracter, <strong>objet</strong> certain et licite, <strong>cause</strong> licite (et forme si requise).</p><p><strong>b)</strong> Le consentement peut être valable, mais l'objet est <strong>illicite</strong> (vente d'un bien volé) → contrat <strong>nul</strong> pour objet illicite, indépendamment du consentement.</p><p><strong>c)</strong> <strong>Erreur</strong> : le consentant se trompe sur une qualité essentielle (acheter du plaqué or en croyant de l'or) → annulable ; <strong>dol</strong> : l'autre partie a <em>provoqué</em> l'erreur par manœuvres (falsifier le certificat) → annulable + dommages-intérêts.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Exécution et inexécution",
+      "points": "5 pts",
+      "consigne": "Un artisan promet de livrer des meubles le 15 mars ; il ne livre rien.",
+      "enonce": "<ol type='a'><li>Quels sont les principes de l'exécution des contrats (bonne foi, force obligatoire) ?</li><li>Quels recours le client a-t-il face à l'inexécution ?</li><li>La force majeure pourrait-elle exonérer l'artisan ? Quelles conditions ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Force obligatoire</strong> : le contrat fait loi entre les parties — on ne peut s'en dégager unilatéralement ; <strong>bonne foi</strong> : les parties doivent coopérer loyalement dans l'exécution.</p><p><strong>b)</strong> Mise en demeure, puis <strong>exécution forcée</strong> (faire faire par un autre aux frais du débiteur), <strong>résolution</strong> du contrat avec <strong>dommages-intérêts</strong>, ou réduction du prix.</p><p><strong>c)</strong> Oui si événement <strong>imprévisible, irrésistible et extérieur</strong> (incendie de l'atelier, catastrophe) ; un simple manque de bois ou de personnel n'y suffit pas.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Responsabilité civile",
+      "points": "5 pts",
+      "consigne": "Un livreur à moto renverse un piéton en grillant un feu.",
+      "enonce": "<ol type='a'><li>Éléments constitutifs de la responsabilité délictuelle.</li><li>Qui répond : le livreur, son employeur, les deux ?</li><li>Différence entre responsabilité contractuelle et délictuelle.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Faute</strong> (violation d'une règle de conduite — griller un feu), <strong>dommage</strong> (blessure du piéton), <strong>lien de causalité</strong> entre les deux.</p><p><strong>b)</strong> Le livreur répond de sa faute personnelle ; l'<strong>employeur répond du fait de son préposé</strong> si l'accident survient dans l'exercice des fonctions → les deux peuvent être poursuivis (responsabilité du commettant).</p><p><strong>c)</strong> Contractuelle : inexécution d'une obligation <em>née d'un contrat</em> — nécessite un lien contractuel préexistant ; délictuelle : réparation d'un dommage causé <em>hors tout contrat</em> — s'applique entre inconnus.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

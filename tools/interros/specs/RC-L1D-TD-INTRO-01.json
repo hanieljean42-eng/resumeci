@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-INTRO-01",
+  "type": "td",
+  "matiere": "Introduction à l'étude du droit",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Règle de droit, sources et personnes",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Définis avant d'appliquer : le juriste raisonne par les définitions.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Caractères de la règle de droit",
+      "points": "5 pts",
+      "consigne": "Distinguer la règle de droit des autres règles sociales.",
+      "enonce": "<ol type='a'><li>Énumérer et expliquer les quatre caractères de la règle de droit.</li><li>Parmi : « il faut être poli », « il est interdit de voler », « il faut aimer ses parents » — lesquelles sont des règles de droit ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Générale</strong> (s'applique à tous dans une situation donnée) · <strong>abstraite</strong> (vise des catégories de situations) · <strong>obligatoire</strong> (s'impose, acceptée ou non) · <strong>sanctionnée par la puissance publique</strong> (la société peut forcer son respect : juge, police).</p><p><strong>b)</strong> Seule « il est interdit de voler » est une règle de droit : générale, abstraite, obligatoire et sanctionnée par la loi pénale. La politesse relève des usages, l'amour filial de la morale — pas de sanction publique.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Sources du droit",
+      "points": "5 pts",
+      "consigne": "Identifier les sources des règles juridiques.",
+      "enonce": "<ol type='a'><li>Citer quatre sources du droit et classer-les selon leur valeur contraignante.</li><li>Qu'est-ce qu'un « texte d'application » ? Donner un exemple.</li><li>Un usage commercial contraire à une loi peut-il s'imposer devant le juge ?</li></ol>",
+      "correction": "<p><strong>a)</strong> La <strong>loi</strong> (parlement), les <strong>règlements</strong> (décrets, arrêtés de l'exécutif), les <strong>traités</strong> (conventions internationales ratifiées), la <strong>jurisprudence</strong> (décisions de justice interprétant la loi), la <strong>coutume/doctrine</strong> (sources secondaires). Valeur : traités et lois > règlements > autres (hiérarchie).</p><p><strong>b)</strong> Texte réglementaire qui précise comment appliquer une loi — ex. un décret fixant le contenu du casier judiciaire.</p><p><strong>c)</strong> Non : un usage ne peut <strong>pas</strong> déroger à une loi d'ordre public ; il ne peut compléter que les lois supplétives (usage « contre la loi » = invalide, « à côté de la loi » = possible).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Personnalité juridique",
+      "points": "5 pts",
+      "consigne": "Questions sur les personnes en droit.",
+      "enonce": "<ol type='a'><li>Différence entre personne physique et personne morale ? Deux exemples de chaque.</li><li>Quand la personnalité juridique de l'être humain commence-t-elle et finit-elle ?</li><li>Qu'est-ce que la capacité juridique ? Qui en est privé ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Physique</strong> : l'être humain (étudiant, commerçant) ; <strong>morale</strong> : groupement doté de la personnalité par la loi (SARL, association, l'État, une université).</p><p><strong>b)</strong> De la <strong>naissance vivante et viable</strong> à la <strong>mort</strong> — c'est la règle de l'infant conceptus (l'enfant conçu peut déjà recevoir des droits sous condition de naître vivant).</p><p><strong>c)</strong> Aptitude à exercer soi-même ses droits et obligations. Sont incapables d'exercice : <strong>les mineurs</strong> et les majeurs protégés (tutelle/curatelle) — ils agissent par représentant.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Cas pratique : droit objectif vs droit subjectif",
+      "points": "5 pts",
+      "consigne": "Un commerçant vend un téléphone défectueux à un client.",
+      "enonce": "<ol type='a'><li>Quelle règle de droit objectif s'applique ?</li><li>Quel droit subjectif le client peut-il invoquer ?</li><li>Distinguer sanction civile et pénale dans ce cas.</li></ol>",
+      "correction": "<p><strong>a)</strong> Les règles du droit de la consommation et de la vente (obligation de délivrance conforme, garantie des vices cachés) — droit objectif.</p><p><strong>b)</strong> Le droit subjectif à un produit conforme : le client peut exiger <strong>remplacement, réparation ou remboursement</strong>.</p><p><strong>c)</strong> Sanction <strong>civile</strong> : réparer le dommage (rembourser, remplacer) — but compensatoire ; sanction <strong>pénale</strong> seulement s'il y a tromperie qualifiée (amende, prison) — but punir l'infraction.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

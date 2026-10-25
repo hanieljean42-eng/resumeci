@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-CONST-01",
+  "type": "td",
+  "matiere": "Droit Constitutionnel",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Constitution, pouvoirs et État de droit",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Réponds avec tes mots puis compare : en droit, la précision des termes compte autant que l'idée.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — La Constitution",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Définir la Constitution et citer ses deux fonctions principales.</li><li>Quelle différence entre constitution rigide et constitution souple ?</li><li>Où se situe la Constitution dans la hiérarchie des normes ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Texte fondamental qui organise les pouvoirs publics et garantit les droits des citoyens. Fonctions : <strong>organiser</strong> les institutions (qui exerce quel pouvoir) et <strong>protéger</strong> les libertés (droits fondamentaux).</p><p><strong>b)</strong> <strong>Rigide</strong> : révisable seulement par une procédure spéciale (majorité qualifiée, référendum — ex. Côte d'Ivoire, France) ; <strong>souple</strong> : modifiable comme une loi ordinaire (ex. coutume constitutionnelle britannique).</p><p><strong>c)</strong> Au <span class='reponse'>sommet de la hiérarchie des normes</span> : toutes les lois doivent lui être conformes (contrôle de constitutionnalité).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Séparation des pouvoirs",
+      "points": "5 pts",
+      "consigne": "Montesquieu défend la séparation des pouvoirs dans « De l'esprit des lois ».",
+      "enonce": "<ol type='a'><li>Citer les trois pouvoirs et l'organe qui les exerce en Côte d'Ivoire.</li><li>Pourquoi la séparation protège-t-elle les libertés ?</li><li>La séparation est-elle absolue dans les régimes modernes ? Donner un contre-exemple.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Législatif</strong> : Assemblée nationale (fait les lois) ; <strong>exécutif</strong> : Président de la République et Gouvernement (applique les lois, conduit la politique) ; <strong>judiciaire</strong> : juridictions (CCJA, tribunaux, Cour suprême → jugent les litiges).</p><p><strong>b)</strong> « Le pouvoir arrête le pouvoir » : chaque organe contrôle les autres — un juge indépendant peut censurer l'exécutif, le parlement peut sanctionner le gouvernement.</p><p><strong>c)</strong> Non : le régime parlementaire mélange législatif et exécutif (le gouvernement issu du parlement et renversable par lui). Même en régime présidentiel, les contre-pouvoirs créent des liens (veto, dissolution).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Le régime présidentiel ivoirien",
+      "points": "5 pts",
+      "consigne": "La Côte d'Ivoire connaît un régime de type présidentiel depuis 1960.",
+      "enonce": "<ol type='a'><li>Quelles sont les caractéristiques d'un régime présidentiel ?</li><li>Comment le président ivoirien est-il élu (mode de scrutin) ?</li><li>Citer deux pouvoirs propres du président en Côte d'Ivoire.</li></ol>",
+      "correction": "<p><strong>a)</strong> Séparation <em>stricte</em> des pouvoirs : exécutif et législatif élus séparément, irresponsabilité de l'exécutif devant le parlement (pas de motion de censure), pas de dissolution.</p><p><strong>b)</strong> Élection au <span class='reponse'>suffrage universel direct à deux tours</span> : majorité absolue au 1er tour, sinon ballottage entre les deux premiers.</p><p><strong>c)</strong> Le président ivoirien : nomme le Premier ministre et les membres du gouvernement, préside le Conseil des ministres, promulgue les lois, est chef des armées, peut recourir au référendum et aux pouvoirs exceptionnels (états de crise).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — État de droit et contrôle de constitutionnalité",
+      "points": "5 pts",
+      "consigne": "L'État de droit signifie que la loi s'impose à tous, y compris aux gouvernants.",
+      "enonce": "<ol type='a'><li>Définir l'État de droit en une phrase.</li><li>Qu'est-ce que le contrôle de constitutionnalité ? Qui l'exerce en Côte d'Ivoire ?</li><li>Cas pratique : une loi restreignant la liberté de la presse est votée. Comment un citoyen peut-il la contester ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Régime où tous — gouvernants compris — sont soumis au droit, et où la hiérarchie des normes est effectivement respectée.</p><p><strong>b)</strong> Vérification qu'une loi est conforme à la Constitution ; en Côte d'Ivoire, exercée par le <span class='reponse'>Conseil constitutionnel</span> (saisine par les autorités et, depuis 2016, par voie d'exception devant les juridictions).</p><p><strong>c)</strong> Saisine du Conseil constitutionnel par les autorités compétentes avant promulgation, ou question prioritaire d'exception de constitutionnalité si la loi est invoquée contre le citoyen dans un procès — le juge peut alors renvoyer au Conseil constitutionnel.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

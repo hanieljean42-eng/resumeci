@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-EXCEL-01",
+  "type": "td",
+  "matiere": "Microsoft Excel",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Formules, fonctions et analyse de données juridiques",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Ouvre Excel et reproduis chaque formule : la maîtrise vient de la pratique.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Bases et références",
+      "points": "5 pts",
+      "consigne": "Sur une feuille Excel avec les honoraires de 4 avocats en A1:D5.",
+      "enonce": "<ol type='a'><li>Différence entre référence relative, absolue et mixte ? Quand utiliser <code>&#36;</code> ?</li><li>Que signifient <code>A1</code>, <code>A:A</code>, <code>1:1</code>, <code>A1:B3</code> ?</li><li>Écrire la formule qui additionne les cellules A1 à A10.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Relative</strong> (A1) : change quand on copie la formule ; <strong>absolue</strong> ($A$1) : fixe — sert pour une constante (taux de TVA) ; <strong>mixte</strong> ($A1 ou A$1) : bloque colonne OU ligne.</p><p><strong>b)</strong> <code>A1</code> : une cellule · <code>A:A</code> : toute la colonne A · <code>1:1</code> : toute la ligne 1 · <code>A1:B3</code> : le rectangle de 3 lignes × 2 colonnes.</p><p><strong>c)</strong> <code class='reponse'>=SOMME(A1:A10)</code> ou <code>=SUM(A1:A10)</code> en version anglaise.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Fonctions statistiques",
+      "points": "5 pts",
+      "consigne": "Une table de 20 étudiants avec notes en colonne D.",
+      "enonce": "<ol type='a'><li>Écrire les formules pour : moyenne, note la plus haute, note la plus basse, nombre d'étudiants.</li><li>Que fait <code>NB.SI(D:D;\"&gt;=10\")</code> ? Et <code>NB.SI(D:D;\"&lt;10\")</code> ?</li><li>Formule qui affiche « Admis » si D2 ≥ 10, sinon « Échec ».</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>=MOYENNE(D:D)</code> · <code>=MAX(D:D)</code> · <code>=MIN(D:D)</code> · <code>=NBVAL(D:D)</code> (ou <code>=NB(D:D)</code> pour les numériques).</p><p><strong>b)</strong> <code>NB.SI</code> compte les cellules remplissant le critère : <code class='reponse'>=NB.SI(D:D;\"&gt;=10\")</code> → nombre d'admis ; <code class='reponse'>=NB.SI(D:D;\"&lt;10\")</code> → nombre d'échecs.</p><p><strong>c)</strong> <code class='reponse'>=SI(D2&gt;=10;\"Admis\";\"Échec\")</code> — si la condition est vraie → 1er résultat, sinon 2e.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — RECHERCHEV et tableaux",
+      "points": "5 pts",
+      "consigne": "Base de clients : colonne A = nom, B = type d'affaire, C = honoraires.",
+      "enonce": "<ol type='a'><li>Écrire la formule qui trouve les honoraires du client « Konan ».</li><li>Pourquoi ajouter <code>FAUX</code> en 4e argument ?</li><li>Qu'est-ce qu'un tableau croisé dynamique (TCD) ? À quoi sert-il ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code class='reponse'>=RECHERCHEV(\"Konan\";A:C;3;FAUX)</code> — cherche « Konan » dans la colonne A, retourne la valeur de la 3e colonne (C).</p><p><strong>b)</strong> <code>FAUX</code> = <strong>recherche exacte</strong> : Excel n'accepte que la correspondance parfaite ; <code>VRAI</code> = approximative sur une plage triée.</p><p><strong>c)</strong> Outil qui <strong>croise et résume</strong> automatiquement des données (ex. total des honoraires par type d'affaire, nombre de dossiers par avocat) sans formules — idéal pour explorer une grosse base.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Application juridique : suivi des dossiers",
+      "points": "5 pts",
+      "consigne": "Cabinet avec colonnes : A=Client, B=Type, C=Date, D=Honoraires, E=Payé (OUI/NON).",
+      "enonce": "<ol type='a'><li>Formule du total des honoraires impayés.</li><li>Formule du nombre de dossiers de type « Divorce ».</li><li>Comment trier les dossiers par date décroissante ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code class='reponse'>=SOMME.SI(E:E;\"NON\";D:D)</code> — somme des honoraires des lignes « NON ».</p><p><strong>b)</strong> <code class='reponse'>=NB.SI(B:B;\"Divorce\")</code>.</p><p><strong>c)</strong> Onglet <strong>Données → Trier</strong> → colonne C → ordre <strong>décroissant</strong> (du plus récent au plus ancien) ; ou clic droit sur la colonne → Trier.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    }
+  ]
+}

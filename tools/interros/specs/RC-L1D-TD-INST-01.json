@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-INST-01",
+  "type": "td",
+  "matiere": "Histoire du droit et des institutions",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Sources historiques du droit et évolutions institutionnelles",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Replace chaque institution dans son époque : l'histoire du droit est une chronologie.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Les grandes sources historiques",
+      "points": "5 pts",
+      "consigne": "Classer chronologiquement et expliquer.",
+      "enonce": "<ol type='a'><li>Ordonner : droit romain, droit coutumier africain, Code civil napoléonien, droit canon médiéval.</li><li>Quel apport majeur le droit romain a-t-il légué au droit moderne ?</li><li>En quoi le droit coutumier africain diffère-t-il du droit écrit occidental ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Droit romain (Antiquité, jusqu'au VIᵉ s. ap. J.-C.) → droit coutumier africain (tradition continue, pré-colonial) → droit canon médiéval (Moyen Âge) → Code civil (1804).</p><p><strong>b)</strong> La <strong>technique juridique</strong> : catégories (personnes, biens, obligations, contrats), rigueur des définitions, distinction public/privé — le Corpus Iuris Civilis de Justinien reste la matrice du droit civil moderne.</p><p><strong>c)</strong> Oral, transmis par les anciens et la pratique, adapté aux lignages et solidarités communautaires ; le droit écrit occidental est individualiste, abstrait et codifié — deux logiques différentes du droit.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — L'État et ses formes historiques",
+      "points": "5 pts",
+      "consigne": "De la cité antique à l'État moderne.",
+      "enonce": "<ol type='a'><li>Citer trois formes historiques d'organisation politique et les distinguer.</li><li>Qu'est-ce qui caractérise l'État moderne (Westphalie, 1648) ?</li><li>En quoi la colonisation a-t-elle transformé les institutions africaines ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Cité-État</strong> (Athènes, Rome : territoire restreint, participation directe) · <strong>Empire</strong> (vaste, multi-peuples, pouvoir central fort) · <strong>Royaume/chefferie</strong> (souveraineté héréditaire) · <strong>État-nation</strong> (territoire + peuple + souveraineté).</p><p><strong>b)</strong> Souveraineté territoriale exclusive : chaque État est maître chez lui, reconnaît les frontières des autres → naissance du droit international moderne.</p><p><strong>c)</strong> Imposition d'institutions étrangères (administration coloniale, droit écrit) superposées aux chefferies locales — dualité juridique que les indépendances ont héritée puis transformée.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Le Code civil de 1804",
+      "points": "5 pts",
+      "consigne": "Le Code Napoléon a influencé le droit ivoirien et bien d'autres.",
+      "enonce": "<ol type='a'><li>Qu'est-ce qu'un « code » ? Pourquoi codifier ?</li><li>Citer deux principes novateurs du Code civil de 1804.</li><li>En quoi le Code civil français influence-t-il encore le droit ivoirien ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Recueil systématique et exhaustif des règles d'une branche : codifier = rassembler le droit dispersé en un texte clair, accessible et stable.</p><p><strong>b)</strong> Égalité des citoyens devant la loi (fin des privilèges), laïcisation du droit civil, liberté contractuelle et droit de propriété sacralisés.</p><p><strong>c)</strong> La colonisation a introduit le droit français en Côte d'Ivoire ; à l'indépendance, une grande partie a été conservée (contrats, famille, succession) puis adaptée par les lois ivoiriennes.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Évolution des institutions ivoiriennes",
+      "points": "5 pts",
+      "consigne": "De la colonie à la IIIᵉ République.",
+      "enonce": "<ol type='a'><li>Tracer les grandes étapes institutionnelles de la Côte d'Ivoire depuis 1960.</li><li>Quelles innovations la Constitution de 2016 a-t-elle apportées ?</li><li>Pourquoi connaître l'histoire des institutions aide-t-il à comprendre le droit actuel ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Indépendance 1960 (régime présidentiel, parti unique PDCI) → multipartisme 1990 → Constitution de 2000 → transition post-crise 2010-2011 → <strong>IIIᵉ République 2016</strong>.</p><p><strong>b)</strong> Création du Sénat, renforcement du Conseil constitutionnel (saisine par voie d'exception), institution de la Cour suprême, intégration des droits de l'homme dans le préambule.</p><p><strong>c)</strong> Le droit actuel est stratifié : chaque institution porte la marque des crises et réformes passées — comprendre le présent exige de connaître les choix historiques qui l'ont façonné.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    }
+  ]
+}

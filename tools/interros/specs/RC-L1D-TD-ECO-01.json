@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-ECO-01",
+  "type": "td",
+  "matiere": "Économie politique",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Objet de l'économie, agents et circuits",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Illustre chaque notion par un exemple ivoirien concret.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Objet de la science économique",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Définir l'économie politique et le problème central qu'elle traite.</li><li>Différence entre microéconomie et macroéconomie avec un exemple chacune.</li><li>Qu'est-ce que le coût d'opportunité ? Donner un exemple étudiant.</li></ol>",
+      "correction": "<p><strong>a)</strong> Science qui étudie comment les sociétés <strong>allouent des ressources rares</strong> pour satisfaire des besoins illimités — le problème central est la <strong>rareté</strong> : tout choix implique un renoncement.</p><p><strong>b)</strong> <strong>Micro</strong> : comportement des agents individuels (prix du cacao sur le marché d'Abidjan, décision d'une entreprise) ; <strong>macro</strong> : agrégats nationaux (PIB ivoirien, inflation, chômage).</p><p><strong>c)</strong> Ce à quoi on renonce en choisissant : passer la soirée à réviser plutôt qu'à un match a pour coût d'opportunité le match manqué — pas seulement le prix, mais la meilleure alternative sacrifiée.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Agents économiques",
+      "points": "5 pts",
+      "consigne": "Identifier les agents et leurs fonctions.",
+      "enonce": "<ol type='a'><li>Citer les quatre agents économiques et leur fonction principale.</li><li>Le tontineur du quartier est-il un agent économique ? Justifier.</li><li>Quel agent produit la majeure partie des biens marchands ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Ménages</strong> (consomment, offrent leur travail) · <strong>Entreprises</strong> (produisent, investissent) · <strong>Administrations</strong> (services publics, redistribution) · <strong>Extérieur</strong> (import/export, capitaux étrangers).</p><p><strong>b)</strong> Oui : il offre un <strong>service d'épargne et de crédit rotatif</strong> — agent financier informel réel (la tontine mobilise l'épargne des ménages en dehors des circuits bancaires).</p><p><strong>c)</strong> <span class='reponse'>Les entreprises</span> (sociétés non financières principalement) : elles combinent travail et capital pour produire biens et services marchands.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Circuit économique",
+      "points": "5 pts",
+      "consigne": "Représenter le circuit revenu-dépense.",
+      "enonce": "<ol type='a'><li>Décrire le circuit économique simplifié entre ménages et entreprises.</li><li>Où interviennent l'État et l'extérieur ?</li><li>Un pays qui importe plus qu'il n'exporte : que se passe-t-il dans le circuit ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Ménages → vendent <em>travail</em> aux entreprises → reçoivent <em>salaires/revenus</em> → achètent <em>biens et services</em> aux entreprises → revenus des entreprises. Circuit : flux réels (travail, biens) ↔ flux monétaires (revenus, dépenses).</p><p><strong>b)</strong> L'État prélève impôts (fuites) et redistribue par services publics et transferts (injections) ; l'extérieur introduit exportations (injections) et importations (fuites).</p><p><strong>c)</strong> Fuites > injections sur l'extérieur : la demande adressée à l'étranger excède celle reçue → déficit commercial, pression sur la monnaie et l'emploi intérieur.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Offre, demande et prix",
+      "points": "5 pts",
+      "consigne": "Sur le marché du riz à Bouaké.",
+      "enonce": "<ol type='a'><li>Expliquer la loi de l'offre et de la demande.</li><li>Une pénurie de riz suite à une mauvaise saison : quel effet sur le prix ?</li><li>Le gouvernement fixe un prix maximum : effets attendus et risques ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Demande ↓ quand le prix ↑ ; offre ↑ quand le prix ↑ ; le marché converge vers le <strong>prix d'équilibre</strong> où offre = demande.</p><p><strong>b)</strong> Offre ↓ → pénurie relative à la demande → <span class='reponse'>prix ↑</span> jusqu'à nouvel équilibre.</p><p><strong>c)</strong> Un <em>prix plafond</em> sous l'équilibre : demande excède l'offre → <span class='reponse'>pénurie, files d'attente, marché parallèle (vente au noir à prix réel)</span> — mesure socialement utile à court terme mais risque de rationnement durable.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    }
+  ]
+}

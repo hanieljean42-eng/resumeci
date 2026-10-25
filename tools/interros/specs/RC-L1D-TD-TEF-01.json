@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-TEF-01",
+  "type": "td",
+  "matiere": "Techniques d'expression française",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Résumé, correspondance administrative et dissertation",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Un bon juriste écrit clair, concis et correct.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Le résumé",
+      "points": "5 pts",
+      "consigne": "Réduire un texte à son quart sans le déformer.",
+      "enonce": "<ol type='a'><li>Citer les règles d'or du résumé de texte.</li><li>Que faut-il supprimer en priorité dans un résumé ?</li><li>Pourquoi la « reformulation » est-elle obligatoire ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Respecter le <strong>quart</strong> imposé (±10 %) · garder les <strong>idées essentielles</strong> · reformuler avec <em>ses propres mots</em> · rester <strong>objectif</strong> (pas d'avis personnel) · soigner l'orthographe et la clarté.</p><p><strong>b)</strong> Exemples, citations, répétitions, détails secondaires, connecteurs superflus — ne garder que la <strong>charpente argumentative</strong> (thèse + arguments).</p><p><strong>c)</strong> Recopier des phrases entières = plagiat et non-maîtrise : reformuler prouve qu'on a <em>compris</em> le texte — l'essentiel du résumé est mental, pas mécanique.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — La correspondance administrative",
+      "points": "5 pts",
+      "consigne": "Rédiger la structure d'une lettre au Doyen de la Faculté.",
+      "enonce": "<ol type='a'><li>Énumérer les mentions obligatoires d'une lettre administrative.</li><li>Quelles formules de politesse d'appel et de clôture utiliser vers une autorité ?</li><li>Rédiger l'objet et la 1ʳᵉ phrase d'une lettre demandant une attestation.</li></ol>",
+      "correction": "<p><strong>a)</strong> En-tête expéditeur (nom, adresse) → lieu/date → destinataire (titre + adresse) → <strong>objet</strong> → formule d'appel → corps → formule de politesse → signature.</p><p><strong>b)</strong> Appel : « Monsieur le Doyen » / « Madame la Directrice » ; clôture : « Veuillez agréer, Monsieur le Doyen, l'expression de ma haute considération » / « mes salutations distinguées ».</p><p><strong>c)</strong> Objet : <em>« Demande d'attestation d'inscription »</em> — « J'ai l'honneur de solliciter de votre bienveillance la délivrance d'une attestation d'inscription en Licence 1 Droit, requise dans le cadre de ma demande de bourse. »</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — La dissertation : introduction",
+      "points": "5 pts",
+      "consigne": "Sujet : « Peut-on tout dire au nom de la liberté d'expression ? ».",
+      "enonce": "<ol type='a'><li>Construire les 4 étapes de l'introduction.</li><li>Rédiger la problématique.</li><li>Proposer un plan en 2 parties.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Amorce</strong> (fait ou citation d'actualité) → <strong>présentation du sujet</strong> (définir la liberté d'expression) → <strong>problématique</strong> → <strong>annonce du plan</strong>.</p><p><strong>b)</strong> <em>« La liberté d'expression, pilier démocratique, connaît-elle des limites légitimes ou doit-elle demeurer absolue ? »</em></p><p><strong>c)</strong> I. La liberté d'expression, droit fondamental (A. fondement démocratique ; B. droit protégé par les textes) — II. Ses limites nécessaires (A. abus : diffamation, incitation à la haine ; B. protection de l'ordre public et des autres droits).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Style et langue juridique",
+      "points": "5 pts",
+      "consigne": "Corriger et améliorer l'expression écrite.",
+      "enonce": "<ol type='a'><li>Corriger : « L'avocat il a dit que son client il est innocent. »</li><li>Remplacer les mots faibles : « faire » par des verbes précis (ex. « faire un contrat »).</li><li>Pourquoi le vocabulaire technique est-il indispensable en droit ?</li></ol>",
+      "correction": "<p><strong>a)</strong> « L'avocat a affirmé que son client était innocent » — supprimer la répétition du sujet (« il ») et utiliser un verbe précis (<em>affirmer, soutenir, déclarer</em>).</p><p><strong>b)</strong> « conclure un contrat » · « engager une procédure » · « prononcer un jugement » · « exercer un droit » · « invoquer une règle » — la précision du verbe fait l'élégance juridique.</p><p><strong>c)</strong> Chaque terme juridique a un <strong>sens précis</strong> fixé par la loi ou la doctrine : « domicile », « obligation », « responsabilité » ne sont pas synonymes — la confusion terminologique = erreur juridique.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    }
+  ]
+}

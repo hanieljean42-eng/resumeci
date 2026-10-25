@@ -1,0 +1,45 @@
+{
+  "code": "RC-L1D-TD-DH-01",
+  "type": "td",
+  "matiere": "Droits de l'Homme",
+  "classe": "Licence 1 Droit",
+  "classe_key": "Licence_1_Droit",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Fondements, générations et mécanismes de protection",
+  "consignes": "Séance de travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD de Licence 1. Cite les instruments par leur nom exact (DUDH, PIDCP, Charte africaine…) : la précision fait le juriste.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Fondements des droits de l'homme",
+      "points": "5 pts",
+      "consigne": "Questions de cours.",
+      "enonce": "<ol type='a'><li>Définir les droits de l'homme et citer leurs caractères (universalité, indivisibilité…).</li><li>La Déclaration universelle de 1948 a-t-elle valeur contraignante ?</li><li>Distinguer droits de l'homme et libertés publiques.</li></ol>",
+      "correction": "<p><strong>a)</strong> Droits attachés à la <strong>dignité humaine</strong>, reconnus à tout être humain indépendamment de sa nationalité : <strong>universels</strong> (valables pour tous), <strong>inaliénables</strong> (on ne peut y renoncer), <strong>indivisibles</strong> (civils, politiques, économiques, sociaux, culturels — même valeur), <strong>imprescriptibles</strong>.</p><p><strong>b)</strong> La DUDH est une <strong>déclaration</strong> : pas de force contraignante au sens strict, mais valeur morale immense — elle a inspiré les pactes contraignants (PIDCP, PIDESC) et est devenue coutume internationale sur nombre de points.</p><p><strong>c)</strong> Libertés publiques = droits de l'homme <em>inscrits dans le droit interne</em> (constitution, lois) ; droits de l'homme = catégorie plus large, universelle, incluant les droits internationaux.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Les générations de droits",
+      "points": "5 pts",
+      "consigne": "Classification historique des droits.",
+      "enonce": "<ol type='a'><li>Décrire les trois générations de droits de l'homme avec deux exemples chacune.</li><li>Où placer le droit au développement et le droit à un environnement sain ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>1ʳᵉ génération</strong> (droits civils et politiques — « bleu ») : liberté d'expression, droit de vote, sûreté, propriété. <strong>2ᵉ génération</strong> (économiques, sociaux, culturels — « rouge ») : travail, éducation, santé, sécurité sociale. <strong>3ᵉ génération</strong> (droits de solidarité) : paix, développement, environnement.</p><p><strong>b)</strong> <span class='reponse'>3ᵉ génération</span> : droits collectifs exigeant la coopération des États et des peuples.</p>",
+      "bareme_detail": "a) 4 pts · b) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Mécanismes de protection",
+      "points": "5 pts",
+      "consigne": "Comment les droits sont-ils garantis concrètement ?",
+      "enonce": "<ol type='a'><li>Citer les trois niveaux de protection (interne, régional, international) avec un organe pour chacun.</li><li>Qu'est-ce que la Charte africaine des droits de l'homme et des peuples ?</li><li>Par quel mécanisme un citoyen ivoirien peut-il saisir la justice en cas de violation ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Interne</strong> : juges nationaux + Conseil constitutionnel + CNDH (Commission nationale des droits de l'homme) ; <strong>régional</strong> : Cour africaine des droits de l'homme et des peuples ; <strong>international</strong> : Comité des droits de l'homme ONU, Conseil des droits de l'homme.</p><p><strong>b)</strong> Traité de l'Union africaine (1981) protégeant droits individuels <em>et</em> droits des peuples, avec la Commission africaine et la Cour africaine — originalité : devoirs de l'individu aussi.</p><p><strong>c)</strong> Voie interne d'abord (tribunaux → Conseil constitutionnel si loi attentatoire → Cour suprême) ; à épuisement des recours internes, saisine éventuelle du Comité ONU ou de la Cour africaine si l'État a reconnu la compétence.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Cas pratique",
+      "points": "5 pts",
+      "consigne": "Une entreprise licencie une employée parce qu'elle est enceinte.",
+      "enonce": "<ol type='a'><li>Quels droits sont atteints ? Citer les instruments protecteurs.</li><li>Le caractère « privé » de l'employeur change-t-il quelque chose ?</li><li>Quels recours s'offrent à l'employée ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Non-discrimination</strong> (sexisme), <strong>droit au travail</strong>, protection de la <strong>maternité</strong> — DUDH art. 23-25, PIDESC, conventions OIT, Code du travail ivoirien.</p><p><strong>b)</strong> Non : les droits s'appliquent aussi dans les relations privées via le droit du travail — l'État a le <em>devoir de protéger</em> les citoyens contre les abus des acteurs privés (effet horizontal).</p><p><strong>c)</strong> Inspection du travail → tribunal du travail (réintégration/dommages) → saisine CNDH ou recours régionaux si l'État ne protège pas efficacement.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    }
+  ]
+}
