@@ -1,0 +1,104 @@
+{
+  "code": "RC-L1M-PART-ALG2-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Partiel blanc Algèbre 2",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Algèbre 2",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "d": { "choices": [2, 3, 4] },
+    "m": { "choices": [1, 2, 3] }
+  },
+  "derived": {
+    "d2": "d*d",
+    "det": "d*d-1",
+    "tr": "d+m"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Déterminants",
+          "enonce": "Si $\\det(A) = 0$, la matrice A est inversible.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> $\\det(A) \\neq 0$ est la <strong>condition d'inversibilité</strong> : un déterminant nul signifie matrice singulière."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Produit matriciel",
+          "enonce": "Le produit de matrices est commutatif : AB = BA.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le produit matriciel n'est <strong>pas commutatif</strong> en général : $AB \\neq BA$ — c'est une différence majeure avec les nombres."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Cayley-Hamilton",
+          "enonce": "Le théorème de Cayley-Hamilton dit que toute matrice annule son polynôme caractéristique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $P(A) = 0$ où $P(\\lambda) = \\det(A - \\lambda I)$ : outil clé pour calculer $A^{-1}$ ou $A^n$."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Applications linéaires",
+          "enonce": "Une application linéaire vérifie $f(u+v) = f(u)+f(v)$ et $f(\\lambda u) = \\lambda f(u)$.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> C'est la définition de la <strong>linéarité</strong> : elle préserve l'addition et la multiplication par scalaire."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Déterminants 2×2",
+          "enonce": "$\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ vaut :",
+          "choix": ["$ad + bc$", "$ad - bc$", "$a + d$", "$ac - bd$"],
+          "correct": 1,
+          "corrige": "$\\det = <strong>ad - bc</strong> : produit de la diagonale moins l'anti-diagonale."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Pivot de Gauss",
+          "enonce": "Le pivot de Gauss sert à :",
+          "choix": ["Calculer le déterminant", "Échelonner un système pour le résoudre", "Inverser la diagonale", "Transposer"],
+          "correct": 1,
+          "corrige": "Le <strong>pivot de Gauss</strong> élimine les inconnues par combinaisons de lignes → système <strong>triangulaire</strong> solvable par remontée."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Noyau et image",
+          "enonce": "Le noyau de $f$ est :",
+          "choix": ["L'ensemble des images", "L'ensemble des vecteurs envoyés sur 0", "La diagonale", "Le rang"],
+          "correct": 1,
+          "corrige": "$\\ker f = \\{u : f(u) = 0\\}$ : le <strong>noyau</strong> mesure l'échec de l'injectivité."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Sarrus",
+          "enonce": "La règle de Sarrus calcule le déterminant d'une matrice :",
+          "choix": ["2×2", "3×3", "n×n", "Triangulaire"],
+          "correct": 1,
+          "corrige": "<strong>Sarrus</strong> : méthode des diagonales pour les matrices <strong>3×3</strong> uniquement."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Déterminants",
+          "enonce": "Calcule $\\det\\begin{pmatrix} {{d}} & 1 \\\\ 1 & {{d}} \\end{pmatrix}$.",
+          "answer": "det",
+          "corrige": "$\\det = {{d}}\\times{{d}} - 1\\times 1 = {{d2}} - 1 = <strong>{{det}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Trace",
+          "enonce": "La trace d'une matrice diag(${{d}}, {{m}}$) vaut :",
+          "answer": "tr",
+          "corrige": "Trace = somme de la diagonale : {{d}} + {{m}} = <strong>{{tr}}</strong>."
+        }
+      ]
+    }
+  ]
+}

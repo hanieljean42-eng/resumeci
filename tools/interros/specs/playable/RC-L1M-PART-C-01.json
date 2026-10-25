@@ -1,0 +1,108 @@
+{
+  "code": "RC-L1M-PART-C-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Partiel blanc Langage C",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Langage C",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {
+    "v": { "choices": [3, 5, 8] },
+    "k": { "choices": [2, 4] }
+  },
+  "derived": {
+    "res": "v*k+1",
+    "fact": "v*(v-1)/2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Pointeurs",
+          "enonce": "<code>int *p = NULL;</code> déclare un pointeur qui ne pointe vers rien.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <code>NULL</code> = adresse nulle : le pointeur est <strong>initialisé</strong> mais invalide — toujours tester avant de déréférencer."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Fonctions",
+          "enonce": "Pour qu'une fonction modifie une variable de l'appelant, on lui passe l'adresse de la variable.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Passage par <strong>adresse</strong> (pointeur) : <code>void ech(int *a, int *b)</code> — le passage par valeur ne modifie que la copie."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Allocation",
+          "enonce": "Toute zone allouée par <code>malloc</code> doit être libérée par <code>free</code>.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Sans <code>free</code> → <strong>fuite mémoire</strong> : la pile programme gonfle jusqu'à épuisement."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Opérateurs",
+          "enonce": "<code>x++</code> et <code>++x</code> ont toujours le même effet sur x.",
+          "correct": false,
+          "corrige": "<strong>Presque vrai mais Faux.</strong> Dans une expression, <code>x++</code> renvoie l'<em>ancienne</em> valeur puis incrémente ; <code>++x</code> incrémente puis renvoie. Effet sur x identique (x+1), valeur de l'expression différente."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Types",
+          "enonce": "Quel format <code>printf</code> pour un <code>double</code> ?",
+          "choix": ["<code>%d</code>", "<code>%f</code>", "<code>%c</code>", "<code>%s</code>"],
+          "correct": 1,
+          "corrige": "<code>%f</code> pour float/double ; <code>%d</code> = int, <code>%c</code> = char, <code>%s</code> = chaîne."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "Chaînes",
+          "enonce": "Pour copier la chaîne src dans dest :",
+          "choix": ["<code>dest = src;</code>", "<code>strcpy(dest, src);</code>", "<code>dest += src;</code>", "<code>copy(dest, src);</code>"],
+          "correct": 1,
+          "corrige": "<code>strcpy(dest, src)</code> (bibliothèque <code>string.h</code>) — un tableau ne s'affecte pas par <code>=</code>."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Structures",
+          "enonce": "Laquelle déclare correctement une structure ?",
+          "choix": [
+            "<code>struct Point { int x; int y; };</code>",
+            "<code>Point struct { int x, y };</code>",
+            "<code>struct = Point int x, y;</code>",
+            "<code>new struct Point int x, y;</code>"
+          ],
+          "correct": 0,
+          "corrige": "<code>struct Nom { champs; };</code> — le point-virgule final est obligatoire."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Opérateurs",
+          "enonce": "<code>5 / 2</code> en C (types int) donne :",
+          "choix": ["2,5", "2", "3", "Erreur"],
+          "correct": 1,
+          "corrige": "Division <strong>entière</strong> : <code>5/2 = 2</code> (troncature) ; <code>5.0/2</code> donnerait 2,5."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Trace",
+          "enonce": "<pre>int r={{v}}; r = r*{{k}}+1;</pre>Valeur de r ?",
+          "answer": "res",
+          "corrige": "r = {{v}} × {{k}} + 1 = <strong>{{res}}</strong>."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Boucles",
+          "enonce": "<pre>int s=0; for(int i=1;i&lt;{{v}};i++) s+=i;</pre>Valeur de s (somme de 1 à {{v}}−1) ?",
+          "answer": "fact",
+          "corrige": "$1+2+\\cdots+({{v}}-1) = \\frac{{{v}}({{v}}-1)}{2} = <strong>{{fact}}</strong>$."
+        }
+      ]
+    }
+  ]
+}

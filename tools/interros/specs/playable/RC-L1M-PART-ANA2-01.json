@@ -1,0 +1,103 @@
+{
+  "code": "RC-L1M-PART-ANA2-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Partiel blanc Analyse 2",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Analyse 2",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Décimaux avec une virgule.",
+  "params": {
+    "a": { "choices": [1, 2, 3] },
+    "b": { "choices": [2, 4] }
+  },
+  "derived": {
+    "int1": "b*b*b/3",
+    "int2": "a*a/2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "Intégrales",
+          "enonce": "$\\int_a^a f(x)\\,dx = 0$ pour toute fonction continue.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Bornes identiques → aire nulle : $\\int_a^a f = F(a)-F(a) = 0$."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "IPP",
+          "enonce": "L'intégration par parties sert à intégrer un produit de deux fonctions.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $\\int u\\,dv = uv - \\int v\\,du$ : on transforme le produit en un terme évalué + une intégrale plus simple."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "Riemann",
+          "enonce": "La somme de Riemann approche l'intégrale par des rectangles dont la largeur tend vers 0.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> $\\lim_{n\\to\\infty}\\frac{1}{n}\\sum f(k/n) = \\int_0^1 f(x)\\,dx$ : les rectangles épousent l'aire sous la courbe."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Primitives",
+          "enonce": "Deux primitives d'une même fonction diffèrent toujours d'une constante.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Si $F' = G' = f$ alors $(F-G)' = 0$ → $F - G = C$ : d'où le « + C » dans toute primitive."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "Primitives",
+          "enonce": "Une primitive de $x^{{{a}}}$ est :",
+          "choix": ["${{a}}x^{{{a}}-1}$", "$\\frac{x^{{{a}}+1}}{{{a}}+1}$", "$x^{{{a}}}+1$", "$\\frac{{{a}}}{x}$"],
+          "correct": 1,
+          "corrige": "$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ : ici $\\frac{x^{{{a}}+1}}{{{a}}+1}$."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "IPP",
+          "enonce": "Pour intégrer $x\\,e^{x}$, on pose classiquement :",
+          "choix": ["$u = e^{x}$, $dv = x\\,dx$", "$u = x$, $dv = e^{x}dx$", "$u = x\\,e^{x}$", "On factorise"],
+          "correct": 1,
+          "corrige": "$u = x$ (dérivée simplifie → 1), $dv = e^{x}dx$ (primitive facile) → $\\int x e^{x}dx = xe^{x} - e^{x} + C$."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Substitution",
+          "enonce": "Pour $\\int \\frac{2x}{x^{2}+1}dx$, la substitution naturelle est :",
+          "choix": ["$u = 2x$", "$u = x^{2}+1$", "$u = \\frac{1}{x}$", "$u = x^{2}-1$"],
+          "correct": 1,
+          "corrige": "$u = x^{2}+1$ → $du = 2x\\,dx$ : l'intégrale devient $\\int \\frac{du}{u} = \\ln|u| + C = \\ln(x^{2}+1) + C$."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Valeur moyenne",
+          "enonce": "La valeur moyenne de $f$ sur $[a,b]$ vaut :",
+          "choix": ["$f(b)-f(a)$", "$\\frac{1}{b-a}\\int_a^b f(x)dx$", "$\\int_a^b f(x)dx$", "$f\\left(\\frac{a+b}{2}\\right)$"],
+          "correct": 1,
+          "corrige": "Valeur moyenne $= \\frac{1}{b-a}\\int_a^b f$ : la hauteur du rectangle de même aire que l'aire sous la courbe."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre (virgule pour les décimaux).",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Intégrales",
+          "enonce": "Calcule $\\int_0^{{b}} x^{2}\\,dx$.",
+          "answer": "int1",
+          "corrige": "$\\left[\\frac{x^{3}}{3}\\right]_0^{{b}} = \\frac{{{b}}^{3}}{3} = <strong>{{num:int1}}</strong>$."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Intégrales",
+          "enonce": "Calcule $\\int_0^{{a}} x\\,dx$.",
+          "answer": "int2",
+          "corrige": "$\\left[\\frac{x^{2}}{2}\\right]_0^{{a}} = \\frac{{{a}}^{2}}{2} = <strong>{{num:int2}}</strong>$."
+        }
+      ]
+    }
+  ]
+}

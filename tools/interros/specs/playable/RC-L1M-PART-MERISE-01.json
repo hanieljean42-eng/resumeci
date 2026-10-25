@@ -1,0 +1,97 @@
+{
+  "code": "RC-L1M-PART-MERISE-01",
+  "format": "exam-v2",
+  "titre": "Examen chronométré — Partiel blanc Merise",
+  "classe": "Licence_1_Miage",
+  "classeLabel": "Licence 1 MIAGE",
+  "matiere": "Analyse et modélisation des données (Merise)",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono.",
+  "params": {},
+  "derived": {},
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "e1q1", "type": "vrai_faux", "points": 2, "chapitre": "MCD",
+          "enonce": "L'identifiant d'une entité doit être unique et stable pour chaque occurrence.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'<strong>identifiant</strong> (clé primaire au MLD) distingue sans ambiguïté chaque occurrence — il ne change jamais."
+        },
+        {
+          "id": "e1q2", "type": "vrai_faux", "points": 2, "chapitre": "Cardinalités",
+          "enonce": "La cardinalité (1,1) côté B dans A—(1,1)—B signifie : chaque A est liée à exactement un B.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> <strong>(1,1) = exactement un</strong> : lien obligatoire et unique — chaque A a un et un seul B."
+        },
+        {
+          "id": "e1q3", "type": "vrai_faux", "points": 2, "chapitre": "MLD",
+          "enonce": "Au MLD, une clé étrangère doit référencer la clé primaire d'une autre table.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La <strong>clé étrangère</strong> (FK) pointe vers la clé primaire (PK) de la table référencée — c'est l'intégrité référentielle."
+        },
+        {
+          "id": "e1q4", "type": "vrai_faux", "points": 2, "chapitre": "Normalisation",
+          "enonce": "Normaliser un schéma réduit les redondances et les anomalies de mise à jour.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Les formes normales (1NF→3NF) éliminent les <strong>redondances</strong> : pas d'anomalie d'insertion, suppression ou modification."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "e2q1", "type": "qcm", "points": 2, "chapitre": "MCD",
+          "enonce": "Dans un MCD « ÉTUDIANT—(0,n)—inscrit—(1,1)—COURS » :",
+          "choix": ["Un étudiant suit 1 cours max", "Un étudiant suit 0 à n cours, chaque inscription lie 1 cours", "Un cours a 1 étudiant", "Aucun lien"],
+          "correct": 1,
+          "corrige": "Lecture : un ÉTUDIANT est inscrit à <strong>0 à n COURS</strong> ; chaque inscription concerne <strong>exactement 1 COURS</strong> — lien n-1."
+        },
+        {
+          "id": "e2q2", "type": "qcm", "points": 2, "chapitre": "MLD",
+          "enonce": "Le passage MCD → MLD transforme les entités en :",
+          "choix": ["Vues", "Tables", "Formulaires", "Index"],
+          "correct": 1,
+          "corrige": "Chaque <strong>entité devient une table</strong> ; les propriétés → colonnes ; l'identifiant → clé primaire."
+        },
+        {
+          "id": "e2q3", "type": "qcm", "points": 2, "chapitre": "Normalisation",
+          "enonce": "La 2NF exige, outre la 1NF :",
+          "choix": ["Aucune clé étrangère", "Tout attribut non-clé dépend de toute la clé (pas d'une partie)", "Des clés composites", "Des tables uniques"],
+          "correct": 1,
+          "corrige": "<strong>2NF</strong> : pas de <strong>dépendance partielle</strong> — un attribut non-clé ne doit pas dépendre d'une <em>partie</em> seulement d'une clé composite."
+        },
+        {
+          "id": "e2q4", "type": "qcm", "points": 2, "chapitre": "Merise",
+          "enonce": "L'ordre correct des niveaux Merise est :",
+          "choix": ["Physique → logique → conceptuel", "Conceptuel → logique → physique", "Logique → conceptuel → physique", "Conceptuel → physique → logique"],
+          "correct": 1,
+          "corrige": "<strong>MCD → MLD → MPD</strong> : conceptuel (abstrait) → logique (relationnel) → physique (SGBD concret)."
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques",
+      "consigne": "Entre uniquement le nombre.",
+      "questions": [
+        {
+          "id": "e3q1", "type": "numeric", "points": 2, "chapitre": "Cardinalités",
+          "enonce": "Combien de valeurs possibles prend une cardinalité (min, max) :",
+          "answer": "2",
+          "corrige": "<strong>2 valeurs</strong> : le <em>minimum</em> (0 ou 1) et le <em>maximum</em> (1 ou n)."
+        },
+        {
+          "id": "e3q2", "type": "numeric", "points": 2, "chapitre": "Normalisation",
+          "enonce": "Combien de formes normales classiques cite-t-on (1NF, 2NF, 3NF) ?",
+          "answer": "3",
+          "corrige": "<strong>3 formes</strong> : 1NF (atomique), 2NF (pas de dépendance partielle), 3NF (pas de dépendance transitive)."
+        }
+      ]
+    }
+  ]
+}
