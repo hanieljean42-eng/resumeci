@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v106';
+const CACHE_SHELL = 'resumeci-shell-v107';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -27,8 +27,9 @@ const SHELL_FILES = [
   '/content-protection.js?v=3.3.5',
   '/quiz.css?v=3.4.0',
   '/quiz.js?v=3.3.4',
-  '/flashcards.js?v=3.4.0',
-  '/app.js?v=3.6.13'
+  '/vendor/ts-fsrs.min.js',
+  '/flashcards.js?v=3.5.0',
+  '/app.js?v=3.6.14'
 ];
 
 // Install: cache shell files and skip waiting immediately

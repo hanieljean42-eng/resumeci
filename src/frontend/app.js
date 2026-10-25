@@ -4681,8 +4681,27 @@ const TTS = {
   currentUtter: null,
   panel: null,
   highlightEl: null,
+  // Voix neurale Edge (serveur /api/tts) : audio MP3 HD + fonctionne offline
+  // via le cache 'resumeci-audio-v1'. Fallback automatique sur la voix du
+  // navigateur si le service est injoignable.
+  audioEl: null,
+  blobUrls: new Map(),
+  neuralFailed: false,
 };
+const TTS_NEURAL_VOICES = [
+  { id: 'fr-FR-DeniseNeural', label: '🎙️ Denise — voix neurale HD (F)' },
+  { id: 'fr-FR-EloiseNeural', label: '🎙️ Éloise — voix neurale HD (F)' },
+  { id: 'fr-FR-HenriNeural', label: '🎙️ Henri — voix neurale HD (M)' },
+  { id: 'fr-FR-VivienneMultilingualNeural', label: '🎙️ Vivienne — neurale multi (F)' },
+  { id: 'fr-FR-RemyMultilingualNeural', label: '🎙️ Rémy — neurale multi (M)' },
+  { id: 'fr-CA-SylvieNeural', label: '🎙️ Sylvie — neurale QC (F)' }
+];
+function ttsNeuralSelected() {
+  const name = TTS.voiceName || localStorage.getItem('tts-voice') || 'edge:fr-FR-DeniseNeural';
+  return name.startsWith('edge:') ? name.slice(5) : null;
+}
 function ttsGetVoices() {
+  if (!('speechSynthesis' in window)) return [];
   return speechSynthesis.getVoices().filter(v => v.lang && v.lang.toLowerCase().startsWith('fr'));
 }
 function ttsGetVoice() {
@@ -4726,12 +4745,86 @@ function ttsHighlight(node) {
     TTS.highlightEl = node;
   } else TTS.highlightEl = null;
 }
-function ttsSpeakNext() {
-  if (!TTS.active || TTS.index >= TTS.chunks.length) {
-    ttsStop();
+// Récupère (ou génère via l'API) le MP3 neural d'un segment de texte.
+// Cache navigateur 'resumeci-audio-v1' : un passage déjà écouté se relit hors-ligne.
+async function ttsFetchNeuralAudio(text) {
+  const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+  const voice = ttsNeuralSelected() || 'fr-FR-DeniseNeural';
+  const q = `${apiBase}/api/tts?v=${encodeURIComponent(voice)}&text=${encodeURIComponent(text)}`;
+  const headers = {};
+  if (window.USER_PROFILE && window.USER_PROFILE.sessionToken) {
+    headers.Authorization = 'Bearer ' + window.USER_PROFILE.sessionToken;
+  }
+  let resp = null;
+  try {
+    const cache = await caches.open('resumeci-audio-v1');
+    resp = await cache.match(q);
+    if (!resp) {
+      resp = await fetch(q, { headers });
+      if (resp && resp.ok) await cache.put(q, resp.clone());
+    }
+  } catch (e) {
+    resp = await fetch(q, { headers }).catch(() => null);
+  }
+  if (!resp || !resp.ok) throw new Error('tts_http_' + (resp && resp.status));
+  return resp.blob();
+}
+
+// Pré-charge le segment suivant pour des transitions sans blanc
+function ttsPrefetchNeural() {
+  const next = TTS.chunks[TTS.index + 1];
+  if (!next || !TTS.active || TTS.paused) return;
+  if (TTS.blobUrls.has(TTS.index + 1)) return;
+  ttsFetchNeuralAudio(next.text).then(async blob => {
+    if (!TTS.active) return;
+    TTS.blobUrls.set(TTS.index + 1, URL.createObjectURL(blob));
+    if (TTS.blobUrls.size > 80) {
+      const k = TTS.blobUrls.keys().next().value;
+      URL.revokeObjectURL(TTS.blobUrls.get(k));
+      TTS.blobUrls.delete(k);
+    }
+  }).catch(() => {});
+}
+
+async function ttsSpeakNeural(c) {
+  try {
+    let url = TTS.blobUrls.get(TTS.index);
+    if (!url) {
+      const blob = await ttsFetchNeuralAudio(c.text);
+      if (!TTS.active || TTS.paused === undefined) return;
+      url = URL.createObjectURL(blob);
+      TTS.blobUrls.set(TTS.index, url);
+    }
+    const audio = new Audio(url);
+    audio.playbackRate = TTS.rate;
+    TTS.audioEl = audio;
+    audio.onplay = () => { ttsHighlight(c.node); ttsUpdatePanel(); };
+    audio.onended = () => {
+      TTS.index++;
+      ttsUpdatePanel();
+      if (TTS.active && !TTS.paused) setTimeout(ttsSpeakNext, 80);
+    };
+    audio.onerror = () => {
+      TTS.neuralFailed = true;
+      if (window.toast) toast('Voix neurale indisponible — voix du navigateur utilisée', 'info', 2500);
+      if (TTS.active && !TTS.paused) ttsSpeakBrowser(c);
+    };
+    await audio.play();
+    setTimeout(ttsPrefetchNeural, 400);
+  } catch (e) {
+    TTS.neuralFailed = true;
+    if (window.toast) toast('Voix neurale indisponible — voix du navigateur utilisée', 'info', 2500);
+    ttsSpeakBrowser(c);
+  }
+}
+
+function ttsSpeakBrowser(c) {
+  if (!('speechSynthesis' in window)) {
+    TTS.index++;
+    ttsUpdatePanel();
+    if (TTS.active && !TTS.paused) setTimeout(ttsSpeakNext, 150);
     return;
   }
-  const c = TTS.chunks[TTS.index];
   const u = new SpeechSynthesisUtterance(c.text);
   const voice = ttsGetVoice();
   u.lang = 'fr-FR';
@@ -4753,6 +4846,18 @@ function ttsSpeakNext() {
   };
   TTS.currentUtter = u;
   speechSynthesis.speak(u);
+}
+function ttsSpeakNext() {
+  if (!TTS.active || TTS.index >= TTS.chunks.length) {
+    ttsStop();
+    return;
+  }
+  const c = TTS.chunks[TTS.index];
+  if (ttsNeuralSelected() && !TTS.neuralFailed) {
+    ttsSpeakNeural(c);
+    return;
+  }
+  ttsSpeakBrowser(c);
 }
 function ttsStart() {
   if (window.userHasFeature && window.userHasFeature('Audio (Podcast)')) {
@@ -4777,7 +4882,7 @@ window.executeTtsStart = function () {
     return;
   }
 
-  if (!('speechSynthesis' in window)) {
+  if (!('speechSynthesis' in window) && !ttsNeuralSelected()) {
     if (window.toast) toast('Audio non supporté sur ce navigateur', 'error');
     return;
   }
@@ -4786,6 +4891,7 @@ window.executeTtsStart = function () {
     if (window.toast) toast("Ouvre une fiche d'abord", 'warn');
     return;
   }
+  TTS.neuralFailed = false;
   TTS.chunks = ttsBuildChunks();
   if (!TTS.chunks.length) {
     if (window.toast) toast('Aucun texte lisible', 'warn');
@@ -4808,6 +4914,10 @@ window.executeTtsStart = function () {
 };
 function ttsStop() {
   speechSynthesis.cancel();
+  if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch (e) {} TTS.audioEl = null; }
+  TTS.blobUrls.forEach(u => URL.revokeObjectURL(u));
+  TTS.blobUrls.clear();
+  TTS.neuralFailed = false;
   TTS.active = false;
   TTS.paused = false;
   TTS.index = 0;
@@ -4840,12 +4950,14 @@ function ttsToggleMini() {
 function ttsPause() {
   if (!TTS.active || TTS.paused) return;
   TTS.paused = true;
+  if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch (e) {} }
   speechSynthesis.pause();
   ttsUpdatePanel();
 }
 function ttsResume() {
   if (!TTS.active || !TTS.paused) return;
   TTS.paused = false;
+  if (TTS.audioEl) { TTS.audioEl.play().catch(() => {}); }
   speechSynthesis.resume();
   ttsUpdatePanel();
 }
@@ -4855,6 +4967,7 @@ function ttsTogglePause() {
 function ttsSkip(delta) {
   if (!TTS.active) return;
   speechSynthesis.cancel();
+  if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch (e) {} TTS.audioEl = null; }
   TTS.index = Math.max(0, Math.min(TTS.chunks.length - 1, TTS.index + delta));
   if (!TTS.paused) setTimeout(ttsSpeakNext, 80);
   ttsUpdatePanel();
@@ -4862,7 +4975,10 @@ function ttsSkip(delta) {
 function ttsSetRate(r) {
   TTS.rate = r;
   localStorage.setItem('tts-rate', r);
-  if (TTS.active) {
+  if (TTS.audioEl) {
+    // Lecture MP3 : la vitesse s'applique à chaud, sans redémarrer le segment
+    TTS.audioEl.playbackRate = r;
+  } else if (TTS.active) {
     speechSynthesis.cancel();
     setTimeout(ttsSpeakNext, 80);
   }
@@ -4879,6 +4995,8 @@ function ttsSetPitch(p) {
 function ttsSetVoice(name) {
   TTS.voiceName = name;
   localStorage.setItem('tts-voice', name);
+  TTS.neuralFailed = false;
+  if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch (e) {} TTS.audioEl = null; }
   if (TTS.active) {
     speechSynthesis.cancel();
     setTimeout(ttsSpeakNext, 80);
@@ -4924,6 +5042,7 @@ function ttsBuildPanel() {
     const pct = (e.clientX - r.left) / r.width;
     if (TTS.chunks.length) {
       speechSynthesis.cancel();
+      if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch(e) {} TTS.audioEl = null; }
       TTS.index = Math.floor(pct * TTS.chunks.length);
       if (!TTS.paused) setTimeout(ttsSpeakNext, 80);
     }
@@ -4938,6 +5057,7 @@ function ttsBuildPanel() {
     const pct = (e.clientX - r.left) / r.width;
     if (TTS.chunks.length) {
       speechSynthesis.cancel();
+      if (TTS.audioEl) { try { TTS.audioEl.pause(); } catch(e) {} TTS.audioEl = null; }
       TTS.index = Math.floor(pct * TTS.chunks.length);
       if (!TTS.paused) setTimeout(ttsSpeakNext, 80);
     }
@@ -4957,14 +5077,15 @@ function ttsPopulateVoices() {
   const sel = TTS.panel.querySelector('#apVoice');
   if (!sel) return;
   const list = ttsGetVoices();
-  sel.innerHTML = list.length
-    ? list
-        .map(
-          v =>
-            `<option value="${v.name}" ${v.name === TTS.voiceName ? 'selected' : ''}>${v.name.replace(/\s*\(.*\)\s*/, '')} (${v.lang})</option>`
-        )
-        .join('')
-    : '<option>Aucune voix française</option>';
+  const current = TTS.voiceName || 'edge:fr-FR-DeniseNeural';
+  const neuralOpts = TTS_NEURAL_VOICES
+    .map(v => `<option value="edge:${v.id}" ${('edge:' + v.id) === current ? 'selected' : ''}>${v.label}</option>`)
+    .join('');
+  const browserOpts = list
+    .map(v => `<option value="${v.name}" ${v.name === current ? 'selected' : ''}>📱 ${v.name.replace(/\s*\(.*\)\s*/, '')} (${v.lang})</option>`)
+    .join('');
+  sel.innerHTML = `<optgroup label="Voix neurales HD">${neuralOpts}</optgroup>` +
+    (browserOpts ? `<optgroup label="Voix du navigateur (hors-ligne)">${browserOpts}</optgroup>` : '');
   sel.onchange = e => ttsSetVoice(e.target.value);
 }
 function ttsShowPanel() {

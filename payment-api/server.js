@@ -1249,6 +1249,98 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
 });
 
 // --------------------------------------------------------------------------
+// ROUTE 4.6c : SYNTHÈSE VOCALE NEURALE (Audio Podcast — Pass requis)
+// Texte court → MP3 via les voix neurales Microsoft Edge (msedge-tts).
+// Cache disque par sha1(voix|texte) : chaque segment n'est synthétisé qu'une
+// fois. GET pour permettre le cache navigateur/SW (hors-ligne).
+// --------------------------------------------------------------------------
+const TTS_VOICES = new Set([
+  'fr-FR-DeniseNeural', 'fr-FR-EloiseNeural', 'fr-FR-HenriNeural',
+  'fr-FR-VivienneMultilingualNeural', 'fr-FR-RemyMultilingualNeural',
+  'fr-CA-SylvieNeural', 'fr-CA-ThierryNeural', 'fr-CA-AntoineNeural',
+  'fr-BE-CharlineNeural', 'fr-BE-GerardNeural',
+  'fr-CH-ArianeNeural', 'fr-CH-FabriceNeural'
+]);
+const TTS_CACHE_DIR = path.join(__dirname, 'data', 'tts-cache');
+try { fs.mkdirSync(TTS_CACHE_DIR, { recursive: true }); } catch (e) {}
+let MsEdgeTTSClass = null;
+let TTS_AUDIO_FORMAT = null;
+try {
+  const m = require('msedge-tts');
+  MsEdgeTTSClass = m.MsEdgeTTS;
+  TTS_AUDIO_FORMAT = m.OUTPUT_FORMAT && m.OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3;
+} catch (e) {
+  console.warn('[TTS] msedge-tts indisponible :', e.message);
+}
+// Déduplique les synthèses concurrentes du même segment
+const ttsInflight = new Map();
+const ttsLimiter = limiter(15 * 60 * 1000, 800);
+app.get('/api/tts', ttsLimiter, async (req, res) => {
+  try {
+    const text = String(req.query.text || '').replace(/\s+/g, ' ').trim();
+    const voice = TTS_VOICES.has(String(req.query.v)) ? String(req.query.v) : 'fr-FR-DeniseNeural';
+    if (!text || text.length > 400) {
+      return res.status(400).json({ success: false, error: 'text_invalid' });
+    }
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'auth_required' });
+    }
+    if (db) {
+      const user = await findUserByAnyId(sessionUid).catch(() => null);
+      if (!mergedPremiumStatus([user]).isPremium) {
+        return res.status(403).json({ success: false, error: 'premium_required' });
+      }
+    }
+    const key = crypto.createHash('sha1').update(voice + '|' + text).digest('hex');
+    const file = path.join(TTS_CACHE_DIR, key + '.mp3');
+    res.set('Content-Type', 'audio/mpeg');
+    res.set('Cache-Control', 'private, max-age=31536000, immutable');
+    if (fs.existsSync(file) && fs.statSync(file).size > 500) {
+      return res.sendFile(file);
+    }
+    if (!MsEdgeTTSClass || !TTS_AUDIO_FORMAT) {
+      return res.status(503).json({ success: false, error: 'tts_unavailable' });
+    }
+    if (ttsInflight.has(key)) {
+      try { await ttsInflight.get(key); } catch (e) {}
+      if (fs.existsSync(file) && fs.statSync(file).size > 500) return res.sendFile(file);
+      return res.status(502).json({ success: false, error: 'tts_failed' });
+    }
+    const job = (async () => {
+      const tts = new MsEdgeTTSClass();
+      const tmp = file + '.tmp-' + process.pid + '-' + Date.now();
+      try {
+        await tts.setMetadata(voice, TTS_AUDIO_FORMAT);
+        const { audioStream } = tts.toStream(text);
+        await new Promise((resolve, reject) => {
+          const w = fs.createWriteStream(tmp);
+          audioStream.pipe(w);
+          audioStream.on('error', reject);
+          w.on('error', reject);
+          w.on('finish', resolve);
+          setTimeout(() => reject(new Error('tts_timeout')), 25000).unref();
+        });
+        if (fs.statSync(tmp).size < 500) throw new Error('tts_empty');
+        fs.renameSync(tmp, file);
+      } finally {
+        try { fs.existsSync(tmp) && fs.unlinkSync(tmp); } catch (e) {}
+        try { tts.close(); } catch (e) {}
+      }
+    })();
+    ttsInflight.set(key, job);
+    try { await job; } finally { ttsInflight.delete(key); }
+    if (!fs.existsSync(file) || fs.statSync(file).size < 500) {
+      return res.status(502).json({ success: false, error: 'tts_failed' });
+    }
+    res.sendFile(file);
+  } catch (e) {
+    console.error('[TTS] Erreur:', e.message);
+    res.status(502).json({ success: false, error: 'tts_failed' });
+  }
+});
+
+// --------------------------------------------------------------------------
 // ROUTE 4.6b : SUJETS & INTERROS PDF (réservés Pass Élite / Excellence / VIP / Annuel)
 // Les PDF vivent dans payment-api/interros/ et ne sont jamais exposés en statique :
 // chaque téléchargement exige un sessionToken valide + un plan de niveau Élite.
