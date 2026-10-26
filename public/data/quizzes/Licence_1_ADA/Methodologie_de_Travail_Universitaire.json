@@ -1,0 +1,52 @@
+{
+ "Fiche_Lecon1_MOTIVATION_ET_PROJET_D_ETUDES": {
+  "title": "Motivation et projet d'études",
+  "questions": [
+   {"id":"q1","text":"Le passage du lycée à l'université exige principalement :","type":"qcm","options":["Plus de cours magistraux","Une plus grande autonomie dans l'organisation du travail personnel","Moins de devoirs","Des professeurs plus présents"],"answer":1,"explanation":"À l'université, l'étudiant pilote lui-même son travail : planification, prise d'initiatives, régularité."},
+   {"id":"q2","text":"Le projet d'études consiste à :","type":"qcm","options":["Choisir une filière au hasard","Définir un cap (filière, débouchés) aligné sur ses forces et objectifs professionnels","Passer les examens","Changer de pays"],"answer":1,"explanation":"Projet réfléchi : connaissance de soi + connaissance des formations et métiers → choix cohérents."},
+   {"id":"q3","text":"La motivation intrinsèque est :","type":"qcm","options":["Celle des notes","Celle qui vient de l'intérêt et du plaisir d'apprendre pour soi-même","Celle des parents","Celle des récompenses"],"answer":1,"explanation":"Intrinsèque = plaisir/sens (durable) ; extrinsèque = récompenses externes (diplôme, argent) — les deux se combinent."},
+   {"id":"q4","text":"Pour rester motivé durablement, il est utile de :","type":"qcm","options":["Travailler sans pause","Fixer des objectifs intermédiaires concrets et mesurer ses progrès","Éviter toute difficulté","Copier les autres"],"answer":1,"explanation":"Découper l'objectif lointain en étapes atteignables entretient le sentiment de progression (autoefficacité)."},
+   {"id":"q5","text":"Vrai ou Faux : l'échec fait partie de l'apprentissage — il doit être analysé (causes) plutôt que vécu comme une fatalité.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — posture réflexive : identifier les causes (méthode, régularité, compréhension) pour ajuster la stratégie."}
+  ]
+ },
+ "Fiche_Lecon2_TECHNIQUE_DE_PRISE_DE_NOTES": {
+  "title": "La technique de prise de notes",
+  "questions": [
+   {"id":"q1","text":"Une bonne prise de notes consiste à :","type":"qcm","options":["Écrire mot à mot","Sélectionner, reformuler et structurer l'essentiel en temps réel","Dessiner","Enregistrer sans écouter"],"answer":1,"explanation":"Écoute active → filtrage de l'essentiel (idées, mots-clés, schémas) : on note pour comprendre, pas tout transcrire."},
+   {"id":"q2","text":"La méthode Cornell organise la page en :","type":"qcm","options":["Une seule colonne","Une zone de notes, une marge de repères/questions et un résumé en bas","Deux pages","Un tableau"],"answer":1,"explanation":"Mise en page : notes à droite, indices/questions à gauche, synthèse en pied — facilite la révision active."},
+   {"id":"q3","text":"Les signes, abréviations et symboles en prise de notes servent à :","type":"qcm","options":["Décorer","Gagner du temps sans perdre le sens (→, =, ∴, &, etc.)","Remplacer l'écoute","Faire joli"],"answer":1,"explanation":"Rapidité : un code personnel libère l'attention pour suivre le raisonnement du cours."},
+   {"id":"q4","text":"Après le cours, il est recommandé de :","type":"qcm","options":["Ranger ses notes","Relire, compléter et restructurer rapidement ses notes (encore fraîches)","Attendre l'examen","Jeter les brouillons"],"answer":1,"explanation":"Relecture dans les 24 h : consolidation de la mémoire et détection des points à éclaircir."},
+   {"id":"q5","text":"Vrai ou Faux : souligner tout le texte est une prise de notes efficace.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — tout surligner = rien ne ressort ; l'efficacité vient de la sélection hiérarchisée (titres, mots-clés)."}
+  ]
+ },
+ "Fiche_Lecon3_GESTION_DU_TEMPS": {
+  "title": "La gestion du temps",
+  "questions": [
+   {"id":"q1","text":"La matrice d'Eisenhower classe les tâches selon :","type":"qcm","options":["Leur prix","Leur urgence et leur importance","Leur durée","Leur difficulté"],"answer":1,"explanation":"4 quadrants : urgent+important (faire), important non urgent (planifier), urgent non important (déléguer), ni l'un ni l'autre (éliminer)."},
+   {"id":"q2","text":"La procrastination est :","type":"qcm","options":["Un gain de temps","Le fait de remettre au lendemain les tâches importantes","Un trouble du sommeil","Une méthode de travail"],"answer":1,"explanation":"Antidote : découper la tâche en micro-pas, commencer par 5 minutes (effet Zeigarnik), échéances intermédiaires."},
+   {"id":"q3","text":"La technique Pomodoro consiste à :","type":"qcm","options":["Étudier la nuit","Alterner 25 min de travail concentré et 5 min de pause, avec pause longue toutes les 4 cycles","Lire vite","Travailler en groupe"],"answer":1,"explanation":"Sprints de concentration chronométrés — lutte contre la dispersion mentale et la fatigue."},
+   {"id":"q4","text":"Un emploi du temps efficace doit :","type":"qcm","options":["Être rempli à 100 %","Allouer les tâches importantes aux moments de meilleure concentration et garder des marges","Supprimer les loisirs","Être le même chaque jour"],"answer":1,"explanation":"Planification réaliste : horaires de pointe cognitifs pour l'exigeant, marges pour les imprévus, loisirs inclus."},
+   {"id":"q5","text":"Vrai ou Faux : la loi de Parkinson dit que le travail s'étend pour remplir tout le temps disponible.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — fixer des échéances serrées mais réalistes combat l'étirement inutile des tâches."}
+  ]
+ },
+ "Fiche_Lecon4_LA_FICHE_DE_LECTURE": {
+  "title": "La fiche de lecture",
+  "questions": [
+   {"id":"q1","text":"La fiche de lecture sert à :","type":"qcm","options":["Recopier un livre","Capter l'essentiel d'un texte (références, thèse, plan, idées-clés) pour s'en souvenir et le réutiliser","Remplacer la lecture","Classer les livres"],"answer":1,"explanation":"Outil de travail universitaire : elle documente une source et rend l'information réutilisable (exposé, dissertation)."},
+   {"id":"q2","text":"Une fiche de lecture complète contient :","type":"qcm","options":["Uniquement des citations","Références bibliographiques, problématique, structure, résumé, citations-clés, appréciation","La date seulement","Le prix du livre"],"answer":1,"explanation":"Traçabilité (références normalisées) + contenu (plan, thèse, arguments) + regard critique personnel."},
+   {"id":"q3","text":"La problématique d'un document est :","type":"qcm","options":["Son résumé","La question centrale à laquelle l'auteur répond","Son prix","Son nombre de pages"],"answer":1,"explanation":"Identifier la problématique = comprendre l'enjeu du texte — elle guide la lecture et l'organisation de la fiche."},
+   {"id":"q4","text":"Citer ses sources dans un travail universitaire permet de :","type":"qcm","options":["Allonger le texte","Éviter le plagiat et créditer les auteurs (honnêteté intellectuelle)","Afficher sa culture","Respecter la pagination"],"answer":1,"explanation":"Citation + bibliographie = exigence d'intégrité académique ; le plagiat est une faute sanctionnée."},
+   {"id":"q5","text":"Vrai ou Faux : une citation doit être exacte, entre guillemets, et référencée (auteur, ouvrage, page).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — fidélité au texte et traçabilité précise ; la paraphrase, même sans guillemets, se référence aussi."}
+  ]
+ },
+ "Fiche_Lecon5_TECHNIQUES_D_APPRENTISSAGE_EFFICACES": {
+  "title": "Techniques d'apprentissage efficaces",
+  "questions": [
+   {"id":"q1","text":"La répétition espacée consiste à :","type":"qcm","options":["Réviser la veille de l'examen","Étaler les révisions dans le temps selon des intervalles croissants","Apprendre par cœur","Relire sans pause"],"answer":1,"explanation":"J+1, J+3, J+7, J+15… : lutter contre la courbe de l'oubli (Ebbinghaus) — ancrage long terme supérieur au bourrage."},
+   {"id":"q2","text":"Le rappel actif (active recall) est :","type":"qcm","options":["Relire ses notes","Se tester en essayant de restituer l'information de mémoire avant de vérifier","Écouter un podcast","Recopier"],"answer":1,"explanation":"S'auto-interroger (cartes, questions) renforce la trace mnésique bien plus que la simple relecture."},
+   {"id":"q3","text":"La méthode de Feynman pour comprendre un concept consiste à :","type":"qcm","options":["L'apprendre par cœur","L'expliquer simplement comme à un enfant — les difficultés révèlent les zones mal comprises","Le dessiner","Le traduire"],"answer":1,"explanation":"Expliquer avec ses mots force la compréhension réelle ; simplifier = vérifier que l'on a compris."},
+   {"id":"q4","text":"Une carte mentale (mind map) est utile pour :","type":"qcm","options":["Mémoriser des dates","Organiser visuellement les idées autour d'un centre avec branches et mots-clés","Faire des calculs","Rédiger"],"answer":1,"explanation":"Radiant thinking : image globale + liens — aide la mémorisation et la génération d'idées (dissertation)."},
+   {"id":"q5","text":"Vrai ou Faux : le sommeil joue un rôle actif dans la consolidation des apprentissages.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — pendant le sommeil, le cerveau trie et consolide les traces mnésiques ; réviser puis dormir est optimal."}
+  ]
+ }
+}

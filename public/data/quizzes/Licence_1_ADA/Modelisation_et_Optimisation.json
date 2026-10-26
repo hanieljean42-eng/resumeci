@@ -1,0 +1,52 @@
+{
+ "Fiche_Chapitre1_MODELISATION_ET_CADRE_GENERAL": {
+  "title": "Modélisation et cadre général",
+  "questions": [
+   {"id":"q1","text":"Un modèle mathématique est :","type":"qcm","options":["Une copie exacte de la réalité","Une représentation simplifiée de la réalité permettant d'analyser et de prévoir","Une formule magique","Un dessin"],"answer":1,"explanation":"Simplification utile : on retient les variables essentielles pour étudier un phénomène et tester des décisions."},
+   {"id":"q2","text":"Les étapes de la modélisation sont typiquement :","type":"qcm","options":["Calcul puis validation","Formulation du problème → construction du modèle → résolution → validation/interprétation","Dessin puis calcul","Observation seule"],"answer":1,"explanation":"Démarche : identifier variables et objectif → traduction mathématique → résoudre → confronter au réel, itérer."},
+   {"id":"q3","text":"Dans un problème d'optimisation, la fonction objectif est :","type":"qcm","options":["Toujours un coût","L'expression à maximiser ou minimiser (profit, coût, distance…)","Une contrainte","Une variable"],"answer":1,"explanation":"Objectif = critère à optimiser ; les contraintes délimitent les solutions réalisables."},
+   {"id":"q4","text":"Une contrainte dans un modèle représente :","type":"qcm","options":["L'objectif","Une limitation des ressources ou des exigences (budget, capacité, temps) que la solution doit respecter","Une variable libre","Un paramètre fixe"],"answer":1,"explanation":"Contraintes = domaine des solutions admissibles : inéquations (≤, ≥) ou égalités sur les variables."},
+   {"id":"q5","text":"Vrai ou Faux : une solution admissible est une solution qui vérifie toutes les contraintes du modèle.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — l'optimum se cherche parmi les solutions admissibles (région faisable), pas dans tout l'espace."}
+  ]
+ },
+ "Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE": {
+  "title": "Résolution par optimisation linéaire",
+  "questions": [
+   {"id":"q1","text":"Un programme linéaire se caractérise par :","type":"qcm","options":["Une fonction objectif quadratique","Objectif et contraintes tous linéaires (degré 1) dans les variables","Des variables binaires","L'absence de contraintes"],"answer":1,"explanation":"PL : max/min c₁x₁+…+cₙxₙ s.c. inéquations linéaires — ex. maximiser un profit sous contraintes de ressources."},
+   {"id":"q2","text":"La résolution graphique d'un PL à 2 variables montre que l'optimum :","type":"qcm","options":["Est toujours au centre","Se trouve à un sommet du polyèdre des contraintes","N'existe pas","Est aléatoire"],"answer":1,"explanation":"Théorème fondamental : si le PL a un optimum fini, il est atteint à un sommet (extrême point) de la région faisable."},
+   {"id":"q3","text":"La méthode du simplexe consiste à :","type":"qcm","options":["Tester tous les points","Se déplacer de sommet en sommet en améliorant l'objectif jusqu'à l'optimum","Intégrer","Dériver"],"answer":1,"explanation":"Algorithme itératif : il saute d'un sommet admissible à un sommet voisin meilleur — nombre fini de sommets."},
+   {"id":"q4","text":"La région faisable d'un PL est :","type":"qcm","options":["Un point","L'ensemble (polyèdre convexe) des points vérifiant toutes les contraintes","La droite d'objectif","L'origine"],"answer":1,"explanation":"Intersection des demi-plans définis par les contraintes : convexe ; vide si contraintes incompatibles."},
+   {"id":"q5","text":"Vrai ou Faux : si la région faisable est vide, le programme linéaire n'a pas de solution.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — contraintes contradictoires → aucun point admissible → problème infaisable."}
+  ]
+ },
+ "Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE": {
+  "title": "Optimisation non linéaire",
+  "questions": [
+   {"id":"q1","text":"Un problème d'optimisation est non linéaire quand :","type":"qcm","options":["Il n'a pas de solution","L'objectif ou au moins une contrainte est non linéaire (courbes, produits, puissances)","Il a 2 variables","Le domaine est borné"],"answer":1,"explanation":"Dès qu'un terme n'est pas affine (x², xy, 1/x, exp…), on quitte le cadre du simplexe."},
+   {"id":"q2","text":"Pour une fonction d'une variable, un extremum vérifie :","type":"qcm","options":["f'(x) = 0 (condition du premier ordre)","f(x) = 0","f''(x) = 0","f(x) maximal"],"answer":0,"explanation":"Point critique : f'(x*) = 0 ; la nature (min/max) se lit au second ordre : f'' > 0 → minimum local."},
+   {"id":"q3","text":"Pour une fonction convexe sur un domaine convexe :","type":"qcm","options":["Tout minimum local est global","Il y a plusieurs optima","Pas de minimum","Le gradient est nul partout"],"answer":0,"explanation":"Convexité = propriété clé : minimum local = minimum global — très recherchée en optimisation."},
+   {"id":"q4","text":"La méthode du Lagrangien sert à :","type":"qcm","options":["Résoudre les PL","Optimiser sous contraintes d'égalité en introduisant des multiplicateurs λ","Intégrer numériquement","Éliminer les variables"],"answer":1,"explanation":"L(x,λ) = f(x) + λ·g(x) : conditions du 1er ordre ∇L = 0 → optimum contraint ; λ = coût d'opportunité."},
+   {"id":"q5","text":"Vrai ou Faux : le gradient d'une fonction indique la direction de plus forte croissance — on s'y oppose pour descendre vers un minimum.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — descente de gradient : x ← x − α∇f(x) : pas le long de la plus forte pente descendante."}
+  ]
+ },
+ "Fiche_Chapitre4_COMPARAISON_DES_METHODES": {
+  "title": "Comparaison des méthodes",
+  "questions": [
+   {"id":"q1","text":"Face à un problème d'optimisation, le choix de la méthode dépend de :","type":"qcm","options":["Du hasard","De la nature de l'objectif et des contraintes (linéaire/non, continu/discret), de la taille","Du langage utilisé","De l'heure"],"answer":1,"explanation":"Linéaire → simplexe/graphique ; non linéaire convexe → gradient/Lagrange ; discret → énumération/heuristiques."},
+   {"id":"q2","text":"L'avantage de la programmation linéaire est :","type":"qcm","options":["Elle modélise tout","Sa simplicité, sa rapidité et l'existence d'un optimum global garanti si faisable","Elle n'a pas de contraintes","Elle est gratuite"],"answer":1,"explanation":"PL : polyèdre convexe → optimum global en un sommet ; solvers efficaces même en grande dimension."},
+   {"id":"q3","text":"Une heuristique est utilisée quand :","type":"qcm","options":["Le problème est trivial","Le problème est trop complexe pour une méthode exacte (combinatoire, temps) — solution approchée","Le modèle est linéaire","Il n'y a pas de contraintes"],"answer":1,"explanation":"Heuristiques (glouton, recuit, génétiques) : bonnes solutions rapides sans garantie d'optimalité."},
+   {"id":"q4","text":"La sensibilité d'une solution optimale mesure :","type":"qcm","options":["Sa précision","Comment l'optimum varie quand les paramètres (prix, capacités) changent","Sa rapidité","Sa taille"],"answer":1,"explanation":"Analyse post-optimale : stabilité de la solution, valeurs marginales (prix d'ombre) des ressources rares."},
+   {"id":"q5","text":"Vrai ou Faux : le prix d'ombre d'une contrainte = variation de l'objectif si on relâche la contrainte d'une unité.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — c'est le multiplicateur de Lagrange / dual : valeur marginale d'une ressource supplémentaire."}
+  ]
+ },
+ "Fiche_Chapitre5_SYNTHESE_ET_APPLICATIONS_EN_GESTION": {
+  "title": "Synthèse et applications en gestion",
+  "questions": [
+   {"id":"q1","text":"En gestion, l'optimisation sert typiquement à :","type":"qcm","options":["Remplacer les managers","Décider de l'allocation optimale des ressources rares (production, budget, stocks, transport)","Faire de la publicité","Embaucher"],"answer":1,"explanation":"Applications : plan de production max profit, mix produit, tournées, logistique, planification financière."},
+   {"id":"q2","text":"Un problème de mix de production consiste à :","type":"qcm","options":["Choisir les prix","Déterminer les quantités de chaque produit maximisant le profit sous contraintes de capacité","Vendre tout","Réduire les coûts fixes"],"answer":1,"explanation":"Cas classique de PL : produits × contraintes (heures machine, matière) → combinaison optimale de production."},
+   {"id":"q3","text":"Le modèle de transport cherche à :","type":"qcm","options":["Acheter des véhicules","Minimiser le coût total d'acheminement entre origines et destinations sous contraintes d'offre/demande","Fixer les prix","Charger les camions"],"answer":1,"explanation":"PL spécialisé : flux xᵢⱼ des usines vers les clients — équilibrer offres et demandes au moindre coût."},
+   {"id":"q4","text":"La limite principale d'un modèle d'optimisation en gestion est :","type":"qcm","options":["Le temps de calcul","Que la qualité des résultats dépend de la fidélité du modèle et des données à la réalité","Le nombre de variables","Le logiciel"],"answer":1,"explanation":"« Garbage in, garbage out » : un modèle trop simplifié ou des données fausses donnent un optimum trompeur."},
+   {"id":"q5","text":"Vrai ou Faux : l'aide à la décision par modèle ne remplace pas le jugement du décideur — elle l'éclaire.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — le modèle quantifie et compare des scénarios ; le manager arbitre sur des critères parfois non modélisables."}
+  ]
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "Fiche_Chapitre1_LES_DOCUMENTS_DE_SYNTHESE": {
+  "title": "Les documents de synthèse",
+  "questions": [
+   {"id":"q1","text":"Le bilan comptable présente :","type":"qcm","options":["Les ventes de l'année","La photographie du patrimoine : actif (ce que l'entreprise possède) et passif (ce qu'elle doit)","Les profits","Les salaires"],"answer":1,"explanation":"Bilan = stock à une date : actif (emplois des ressources) = passif (ressources) — équilibre fondamental."},
+   {"id":"q2","text":"Le compte de résultat mesure :","type":"qcm","options":["Le patrimoine","Les produits et charges de l'exercice → le résultat (bénéfice ou perte)","La trésorerie","Les dettes"],"answer":1,"explanation":"Compte de résultat = flux de l'exercice : produits − charges = résultat net — « film » vs « photo » du bilan."},
+   {"id":"q3","text":"Les capitaux propres figurent :","type":"qcm","options":["À l'actif","Au passif : ressources appartenant aux associés (capital + réserves + résultat)","En charges","Hors bilan"],"answer":1,"explanation":"Passif = capitaux propres (internes) + dettes (externes) : les deux financent l'actif."},
+   {"id":"q4","text":"L'actif immobilisé regroupe :","type":"qcm","options":["Les stocks","Les biens durables : incorporels (fonds de commerce), corporels (machines), financiers","Le cash","Les créances clients"],"answer":1,"explanation":"Immobilisé = long terme ; actif circulant = stocks, créances, trésorerie (cycle court d'exploitation)."},
+   {"id":"q5","text":"Vrai ou Faux : le tableau des flux de trésorerie explique la variation de trésorerie entre deux bilans (exploitation, investissement, financement).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — 3 flux : opérationnel, investissement, financement : d'où vient et où va le cash."}
+  ]
+ },
+ "Fiche_Chapitre2_CADRE_ELABORATION_COMPTES_ANNUELS": {
+  "title": "Cadre d'élaboration des comptes annuels",
+  "questions": [
+   {"id":"q1","text":"Le principe de l'indépendance des exercices impose :","type":"qcm","options":["De tout compter en cash","De rattacher charges et produits à l'exercice auquel ils se rapportent (cut-off)","De faire un bilan par mois","D'équilibrer les comptes"],"answer":1,"explanation":"Exercice = période comptable (12 mois) ; on rattache les flux à leur période, pas à leur paiement."},
+   {"id":"q2","text":"Le principe de prudence consiste à :","type":"qcm","options":["Gonfler les bénéfices","Comptabiliser les pertes probables mais ne pas anticiper les profits incertains","Ne rien enregistrer","Déprécier tout"],"answer":1,"explanation":"Asymétrie : constater les risques de perte (provisions, dépréciations) ; pas de gain non certain."},
+   {"id":"q3","text":"Le principe du coût historique signifie :","type":"qcm","options":["Évaluer au prix du marché","Enregistrer les biens à leur coût d'acquisition/entrée, corrigé éventuellement d'amortissements","Revaloriser chaque année","Évaluer au futur"],"answer":1,"explanation":"Base d'évaluation par défaut : objectif et vérifiable — dérogations limitées (juste valeur)."},
+   {"id":"q4","text":"Le principe de permanence des méthodes exige :","type":"qcm","options":["Changer de méthode chaque année","La continuité des méthodes comptables d'un exercice à l'autre pour la comparabilité","Une méthode unique mondiale","L'arrêt des amortissements"],"answer":1,"explanation":"Mêmes méthodes (amortissement, stocks) → comptes comparables dans le temps ; changement = justifié et signalé."},
+   {"id":"q5","text":"Vrai ou Faux : les amortissements étalent le coût d'une immobilisation sur sa durée d'utilisation prévue.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — amortissement = constatation de la dépréciation irréversible d'un actif : charge annuelle."}
+  ]
+ },
+ "Fiche_Chapitre3_ANALYSE_DE_L_ACTIVITE_SIG": {
+  "title": "L'analyse de l'activité : les SIG",
+  "questions": [
+   {"id":"q1","text":"Les SIG (soldes intermédiaires de gestion) décomposent :","type":"qcm","options":["Le bilan","La formation du résultat en cascade de soldes significatifs","La trésorerie","Les dettes"],"answer":1,"explanation":"Cascade : marge commerciale → VA → EBE → résultat d'exploitation → résultat courant → résultat net."},
+   {"id":"q2","text":"La marge commerciale concerne :","type":"qcm","options":["Toutes les entreprises","Les entreprises de négoce : ventes de marchandises − coût d'achat des marchandises vendues","Les services","Les banques"],"answer":1,"explanation":"Marge = ventes − coût d'achat (achats + variation de stock) : activité d'achat-revente sans transformation."},
+   {"id":"q3","text":"La valeur ajoutée (VA) mesure :","type":"qcm","options":["Le chiffre d'affaires","La richesse créée par l'entreprise : production − consommations intermédiaires","Les profits","Les salaires"],"answer":1,"explanation":"VA = contribution propre de l'entreprise — elle se répartit entre salaires, impôts, intérêts, État et entreprise."},
+   {"id":"q4","text":"L'EBE (excédent brut d'exploitation) est :","type":"qcm","options":["Le résultat net","La VA − rémunérations − impôts : ressource brute d'exploitation indépendante du financement et des amortissements","Le cash","La dette"],"answer":1,"explanation":"EBE ≈ cash-flow d'exploitation potentiel : il finance investissements, remboursements et rémunération du capital."},
+   {"id":"q5","text":"Vrai ou Faux : la capacité d'autofinancement (CAF) = ressources dégagées par l'activité après charges décaissables = résultat net + charges non décaissées (amortissements, provisions).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — CAF : résultat net + dotations (non-décaissées) − reprises : capacité interne de financement."}
+  ]
+ },
+ "Fiche_Chapitre4_ANALYSE_DU_RISQUE_DE_DEFAILLANCE": {
+  "title": "L'analyse du risque de défaillance",
+  "questions": [
+   {"id":"q1","text":"Le FRNG (fonds de roulement net global) vaut :","type":"qcm","options":["Actif circulant − passif circulant","Ressources stables − emplois stables (capitaux permanents − actif immobilisé)","Trésorerie − dettes","Bénéfice − dividendes"],"answer":1,"explanation":"FRNG = marge de sécurité : part des ressources longues finançant le cycle d'exploitation."},
+   {"id":"q2","text":"Le BFG (besoin en fonds de roulement) exprime :","type":"qcm","options":["Un profit","Le besoin de financement du cycle d'exploitation : stocks + créances − dettes fournisseurs","Les investissements","Le cash"],"answer":1,"explanation":"Décalages d'encaissement/paiement créent un besoin : l'activité consomme du cash avant d'en produire."},
+   {"id":"q3","text":"La trésorerie nette se calcule :","type":"qcm","options":["FRNG − BFG","BFG − FRNG","Actif − passif","Ventes − achats"],"answer":0,"explanation":"TN = FRNG − BFG : si FRNG > BFG → trésorerie positive ; si TN négative → recours au financement court terme."},
+   {"id":"q4","text":"Une entreprise en cessation de paiements est :","type":"qcm","options":["En bénéfice","Incapable de faire face à son passif exigible avec son actif disponible","En croissance","En liquidation volontaire"],"answer":1,"explanation":"Critère juridique de la défaillance : impossibilité de payer les dettes échues — ouvre la procédure collective."},
+   {"id":"q5","text":"Vrai ou Faux : un FRNG positif ne garantit pas une trésorerie positive si le BFG est encore plus élevé.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — TN = FRNG − BFG : croissance rapide → BFG↑ peut absorber tout le FRNG (danger de la croissance non financée)."}
+  ]
+ }
+}

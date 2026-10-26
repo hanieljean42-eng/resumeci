@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre5 SERIES STATISTIQUES A DEUX DIMENSIONS — Statistiques Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 5 — Les séries statistiques à deux dimensions — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques 🏫 Licence 1 ADA — Semestre 2 Chapitre 5"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html"><meta property="og:title" content="Chapitre5 SERIES STATISTIQUES A DEUX DIMENSIONS — Statistiques Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 5 — Les séries statistiques à deux dimensions — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques 🏫 Licence 1 ADA — Semestre 2 Chapitre 5"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre5 SERIES STATISTIQUES A DEUX DIMENSIONS — Statistiques Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 5 — Les séries statistiques à deux dimensions — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques 🏫 Licence 1 ADA — Semestre 2 Chapitre 5"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Statistiques","item":"https://resumeci.me/#Licence_1_ADA/Statistiques"},{"@type":"ListItem","position":4,"name":"Chapitre5 SERIES STATISTIQUES A DEUX DIMENSIONS","item":"https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre5 SERIES STATISTIQUES A DEUX DIMENSIONS — Statistiques Licence 1_ADA | ResumeCI","description":"Chapitre 5 — Les séries statistiques à deux dimensions — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Statistiques 🏫 Licence 1 ADA — Semestre 2 Chapitre 5","url":"https://resumeci.me/fiches/Licence_1_ADA/Statistiques/Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Statistiques","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Statistiques</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Chapitre 5 : Les séries statistiques à deux dimensions</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi deux dimensions ?</h2>
+<div class="definition"><strong>Objectif :</strong> étudier <strong>simultanément</strong> deux caractères sur les mêmes individus pour mettre en évidence les <strong>relations</strong> entre deux séries d'observations — les variables peuvent être qualitatives ou quantitatives.<br>Données : série de N couples (xᵢ, yᵢ) — ex. sexe × situation matrimoniale, âge × salaire.</div>
+
+<h2>II. Le tableau croisé (distribution conjointe)</h2>
+<div class="schema"><strong>Structure :</strong> les modalités xᵢ de X en lignes croisent les modalités yⱼ de Y en colonnes ; chaque cellule contient <strong>Nᵢⱼ</strong> = effectif des individus portant à la fois xᵢ et yⱼ.<br>• <strong>Distribution conjointe</strong> : les Nᵢⱼ (ou fréquences fᵢⱼ = Nᵢⱼ/N) ;<br>• <strong>Distributions marginales</strong> : totaux par ligne Nᵢ· (de X) et par colonne N·ⱼ (de Y) — en « marge » du tableau ;<br>• <strong>Distributions conditionnelles</strong> : fréquence de yⱼ <strong>sachant</strong> xᵢ : fⱼ/ᵢ = Nᵢⱼ/Nᵢ·.</div>
+
+<h2>III. L'indépendance de deux variables</h2>
+<div class="definition"><strong>X et Y indépendantes</strong> ⟺ le résultat de X n'influence en rien celui de Y.<br>Critère sur le tableau : pour tous i, j — <strong>fᵢⱼ = fᵢ· × f·ⱼ</strong> (la fréquence conditionnelle égale la marginale).<br><strong>Fréquences/effectifs théoriques</strong> : ce qu'aurait la distribution conjointe <strong>si X et Y étaient indépendantes</strong> : f*ᵢⱼ = fᵢ·f·ⱼ et N*ᵢⱼ = Nᵢ·N·ⱼ/N.</div>
+
+<h2>IV. Mesurer la liaison</h2>
+<h3>1. La covariance</h3>
+<div class="schema"><strong>Cov(X,Y) = (1/N) Σ (xᵢ − x̄)(yᵢ − ȳ) = (Σ xᵢyᵢ/N) − x̄·ȳ</strong><br>• X et Y indépendantes ⟹ Cov = 0 ;<br>• Cov ≠ 0 ⟹ il existe une dépendance entre X et Y.<br>⚠️ <strong>La réciproque est fausse</strong> : Cov = 0 n'implique <strong>pas</strong> l'indépendance (ex. relation Y = |X| parfaitement dépendante avec Cov = 0) — la covariance ne détecte que les liaisons du type <strong>affine y = ax + b</strong> ; sa valeur dépend des <strong>unités</strong>.</div>
+<h3>2. Le coefficient de corrélation linéaire</h3>
+<div class="schema"><strong>r = Cov(X,Y) / [σ(X)·σ(Y)]</strong> — nombre compris entre <strong>−1 et +1</strong>, sans unité :<br>• r ≈ +1 : relation forte croissante (y = ax+b, a&gt;0) ;<br>• r ≈ −1 : relation forte décroissante (a&lt;0) ;<br>• 0 &lt; r &lt; 1 : nuage allongé selon une droite <strong>croissante</strong> ;<br>• −1 &lt; r &lt; 0 : nuage allongé selon une droite <strong>décroissante</strong> ;<br>• r ≈ 0 : pas de forme allongée (pas de liaison linéaire).</div>
+<h3>3. La distance du khi-deux</h3>
+<div class="schema"><strong>d² = Σᵢ Σⱼ (fᵢⱼ − f*ᵢⱼ)² / f*ᵢⱼ</strong> = Σᵢ Σⱼ (Nᵢⱼ − N*ᵢⱼ)² / N*ᵢⱼ<br>Mesure l'<strong>écart</strong> entre la distribution observée et la distribution théorique d'indépendance :<br>• d² = 0 ⟺ indépendance parfaite ;<br>• d² maximal ⟺ dépendance systématique.<br>⚠️ Regrouper les modalités dont l'effectif théorique est <strong>&lt; 5</strong>.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Conclure à l'indépendance parce que <strong>Cov = 0</strong> — elle ne détecte que la liaison <strong>linéaire</strong>.</li>
+    <li>Confondre <strong>corrélation</strong> (−1 ≤ r ≤ +1) et <strong>causalité</strong> — une corrélation forte ne prouve pas que X cause Y.</li>
+    <li>Inverser lignes et colonnes dans le tableau croisé.</li>
+    <li>Oublier de regrouper les modalités à effectif théorique <strong>&lt; 5</strong> pour le khi-deux.</li>
+    <li>Interpréter r sans regarder le <strong>nuage de points</strong> — une relation curviligne forte peut donner r faible.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

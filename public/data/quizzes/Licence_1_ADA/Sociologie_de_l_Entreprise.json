@@ -1,0 +1,102 @@
+{
+ "Fiche_Lecon1_INTRODUCTION_GENERALE": {
+  "title": "Introduction générale à la sociologie de l'entreprise",
+  "questions": [
+   {"id":"q1","text":"La sociologie de l'entreprise étudie :","type":"qcm","options":["Les comptes de l'entreprise","L'entreprise comme organisation sociale : acteurs, relations, pouvoirs, culture","La production technique","Le marketing"],"answer":1,"explanation":"L'entreprise est un phénomène social : interactions, groupes, rapports de pouvoir, identités — pas seulement économique."},
+   {"id":"q2","text":"L'entreprise comme institution sociale se caractérise par :","type":"qcm","options":["Son chiffre d'affaires","Des règles, rôles et normes structurant durablement les comportements collectifs","Ses machines","Son logo"],"answer":1,"explanation":"Institution = cadre stable de coopération : hiérarchie, rôles, procédures, valeurs partagées."},
+   {"id":"q3","text":"Un acteur organisationnel est :","type":"qcm","options":["Un simple exécutant","Un individu doté de ressources et de marges de manœuvre dans l'organisation","Un actionnaire","Un client"],"answer":1,"explanation":"Crozier : l'acteur n'est jamais passif — il détient une zone d'incertitude (expertise, information) source de pouvoir."},
+   {"id":"q4","text":"La sociologie de l'entreprise se distingue de l'économie en ce qu'elle :","type":"qcm","options":["Ignore les prix","Analyse les relations sociales concrètes, informelles et le vécu des acteurs","Ne parle que de profit","Étudie les marchés"],"answer":1,"explanation":"Complément de la vision managériale : réalité informelle, conflits, coopérations, non-dits de l'organisation."},
+   {"id":"q5","text":"Vrai ou Faux : l'organisation formelle (organigramme) coexiste toujours avec une organisation informelle (réseaux, pratiques réelles).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — l'organigramme prescrit, mais le travail réel passe par des arrangements et réseaux informels indispensables."}
+  ]
+ },
+ "Fiche_Lecon2_FONDEMENTS_CLASSIQUES_TAYLOR_WEBER_MARX": {
+  "title": "Fondements classiques : Taylor, Weber, Marx",
+  "questions": [
+   {"id":"q1","text":"Le taylorisme repose sur :","type":"qcm","options":["La participation des ouvriers","La séparation conception/exécution et la décomposition des tâches (OST) pour la productivité","La motivation","Le travail en équipe"],"answer":1,"explanation":"Taylor : organisation scientifique du travail — chronométrage, gestes prescrits, salaire au rendement."},
+   {"id":"q2","text":"Selon Weber, la bureaucratie est caractérisée par :","type":"qcm","options":["Le favoritisme","Une domination rationnelle-légale : règles écrites, hiérarchie, compétences, impersonnalité","Le charisme","L'absence de règles"],"answer":1,"explanation":"Type idéal bureaucratique : autorité fondée sur des règles et qualifications — efficace mais potentiellement rigide."},
+   {"id":"q3","text":"Pour Marx, le rapport capital/travail est fondé sur :","type":"qcm","options":["L'harmonie","L'exploitation : la plus-value extorquée au travail ouvrier dans la lutte des classes","Le dialogue social","La coopération"],"answer":1,"explanation":"Analyse critique : le profit capitaliste vient de la différence entre valeur produite par l'ouvrier et salaire versé."},
+   {"id":"q4","text":"Les trois types de domination légitime chez Weber sont :","type":"qcm","options":["Économique, politique, social","Traditionnelle, charismatique, rationnelle-légale","Directe, indirecte, mixte","Forte, moyenne, faible"],"answer":1,"explanation":"Tradition (coutumes), charisme (leader exceptionnel), légal-rationnel (règles impersonnelles — base de la bureaucratie)."},
+   {"id":"q5","text":"Vrai ou Faux : le fordisme combine taylorisme, travail à la chaîne et salaires élevés pour créer des ouvriers-consommateurs.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — Ford : « 5 dollars par jour » + production de masse → consommation de masse : compromis fordiste."}
+  ]
+ },
+ "Fiche_Lecon3_COURANTS_MODERNES_ET_CRITIQUES": {
+  "title": "Courants modernes et critiques",
+  "questions": [
+   {"id":"q1","text":"L'école des relations humaines (expérience Hawthorne, Mayo) a montré :","type":"qcm","options":["Que seul le salaire motive","L'importance du groupe, de la reconnaissance et des facteurs psychosociaux sur la productivité","L'inutilité des pauses","La supériorité de la chaîne"],"answer":1,"explanation":"Découverte : performance liée au sentiment d'appartenance et à l'attention portée — naissance du management humain."},
+   {"id":"q2","text":"La pyramide de Maslow ordonne les besoins :","type":"qcm","options":["Au hasard","Physiologiques → sécurité → appartenance → estime → accomplissement de soi","Salaire → bonus → promotion","Pouvoir → richesse"],"answer":1,"explanation":"Hiérarchie progressive : un besoin supérieur devient motivant quand l'inférieur est satisfait."},
+   {"id":"q3","text":"L'approche socio-technique (Tavistock) prône :","type":"qcm","options":["La technique seule","L'optimisation conjointe du système technique ET du système social","Plus de machines","La suppression des équipes"],"answer":1,"explanation":"Ni technique seule ni humain seul : concevoir conjointement tâches et organisation (équipes semi-autonomes)."},
+   {"id":"q4","text":"Goffman et la sociologie interactionniste analysent :","type":"qcm","options":["La production","Les interactions quotidiennes : rôles, « scène » et « coulisses » de la vie sociale","Les prix","Les profits"],"answer":1,"explanation":"Métaphore dramaturgique : chacun joue un rôle social, gère les impressions — l'entreprise comme théâtre."},
+   {"id":"q5","text":"Vrai ou Faux : les courants critiques dénoncent le management comme instrument de contrôle et d'aliénation du travailleur.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — tradition marxiste/sociologie critique : le management masque des rapports de domination."}
+  ]
+ },
+ "Fiche_Lecon4_POUVOIR_AUTORITE_LEADERSHIP": {
+  "title": "Pouvoir, autorité et leadership",
+  "questions": [
+   {"id":"q1","text":"Le pouvoir dans l'organisation se définit comme :","type":"qcm","options":["Le salaire","La capacité d'influencer le comportement d'autrui malgré les résistances","Le diplôme","L'ancienneté"],"answer":1,"explanation":"Pouvoir = relation asymétrique fondée sur des ressources : autorité formelle, expertise, réseau, information."},
+   {"id":"q2","text":"Chez Crozier, les sources de pouvoir sont les :","type":"qcm","options":["Titres hiérarchiques","Zones d'incertitude : expertise, information, relations, règles","Les primes","La taille du bureau"],"answer":1,"explanation":"Qui contrôle une zone d'incertitude critique pour l'organisation détient un pouvoir — même sans statut élevé."},
+   {"id":"q3","text":"L'autorité légitime se distingue du pouvoir par :","type":"qcm","options":["La force","La reconnaissance par les subordonnés d'un droit de commander (légitimité)","La violence","L'argent"],"answer":1,"explanation":"Autorité = pouvoir accepté comme légitime ; le pouvoir brut peut s'exercer sans consentement."},
+   {"id":"q4","text":"Les styles de leadership classiques sont :","type":"qcm","options":["Bon et mauvais","Autoritaire, démocratique/participatif, laisser-faire","Riche et pauvre","Jeune et vieux"],"answer":1,"explanation":"Lewin : autoritaire (décision seul), démocratique (consultation — motivation), laisser-faire (autonomie — risque de flottement)."},
+   {"id":"q5","text":"Vrai ou Faux : le leadership transactionnel repose sur l'échange (récompense/performance) ; le transformationnel sur l'inspiration et la vision.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — Burns/Bass : transactionnel = contrat ; transformationnel = charisme, vision mobilisatrice, dépassement."}
+  ]
+ },
+ "Fiche_Lecon5_COMMUNICATION_INTERNE_CULTURE_ENTREPRISE": {
+  "title": "Communication interne et culture d'entreprise",
+  "questions": [
+   {"id":"q1","text":"La communication descendante est :","type":"qcm","options":["Celle des employés vers la direction","Celle de la direction vers les subordonnés (consignes, informations)","Entre collègues","Vers l'extérieur"],"answer":1,"explanation":"Flux hiérarchique descendant (ordres) ; ascendante = remontées des équipes ; transversale = entre pairs/services."},
+   {"id":"q2","text":"La culture d'entreprise est :","type":"qcm","options":["Le logo","L'ensemble des valeurs, normes, rites et croyances partagés qui orientent les comportements","Le code vestimentaire","L'organigramme"],"answer":1,"explanation":"« La manière dont on fait les choses ici » : identité collective invisible mais puissante — Schein : artefacts, valeurs, suppositions."},
+   {"id":"q3","text":"Les rites organisationnels (réunions, cérémonies) servent à :","type":"qcm","options":["Perdre du temps","Renforcer l'appartenance, transmettre les valeurs et marquer les statuts","Décorer","Remplacer le travail"],"answer":1,"explanation":"Rites = pratiques symboliques régulières qui cimentent la culture : intégration, récompense, passage."},
+   {"id":"q4","text":"Une culture forte a pour effet :","type":"qcm","options":["Plus de conflits","Une cohésion élevée mais possible rigidité face au changement","La disparition des valeurs","L'absence de règles"],"answer":1,"explanation":"Double tranchant : engagement et cohésion vs résistance au changement — homogénéité excessive."},
+   {"id":"q5","text":"Vrai ou Faux : la communication informelle (rumeurs, couloirs) est inévitable et peut parfois être plus rapide que les canaux officiels.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — la « machine à café » : incompressible ; le management doit la connaître plutôt que la nier."}
+  ]
+ },
+ "Fiche_Lecon6_MOTIVATION_IMPLICATION_CONDITIONS_TRAVAIL": {
+  "title": "Motivation, implication et conditions de travail",
+  "questions": [
+   {"id":"q1","text":"La motivation intrinsèque au travail vient :","type":"qcm","options":["Du salaire","De l'intérêt du travail lui-même : autonomie, sens, progression","Des sanctions","Des avantages"],"answer":1,"explanation":"Intrinsèque (tâche, contenu) vs extrinsèque (salaire, primes, conditions) — l'intrinsèque est plus durable."},
+   {"id":"q2","text":"La théorie bifactorielle de Herzberg distingue :","type":"qcm","options":["Travail et repos","Facteurs d'hygiène (évitent l'insatisfaction) et facteurs de motivation (suscitent l'engagement)","Cadres et ouvriers","Anciens et nouveaux"],"answer":1,"explanation":"Hygiène : salaire, sécurité, conditions — nécessaires mais pas motivants ; motivants : réalisation, responsabilité, reconnaissance."},
+   {"id":"q3","text":"La théorie X de McGregor suppose que :","type":"qcm","options":["L'humain aime travailler","Le salarié est paresseux et doit être contrôlé — vision pessimiste","Tout le monde est leader","Le travail est un jeu"],"answer":1,"explanation":"X = homme passif à contraindre (management autoritaire) ; Y = homme actif cherchant responsabilité (participatif)."},
+   {"id":"q4","text":"Les conditions de travail comprennent :","type":"qcm","options":["Le salaire seul","L'environnement physique, la charge, les horaires, l'ergonomie, la sécurité","Le lieu de vacances","La cantine"],"answer":1,"explanation":"Santé/sécurité au travail : cadre physique ET psychosocial (stress, harcèlement) — enjeu légal et performance."},
+   {"id":"q5","text":"Vrai ou Faux : l'implication organisationnelle (engagement) combine identification aux valeurs et volonté de rester et s'investir.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — engagement affectif (attachement), continu (coût du départ) et normatif (devoir) — dimensions mesurées par Meyer & Allen."}
+  ]
+ },
+ "Fiche_Lecon7_GROUPES_EQUIPES_DYNAMIQUE_COLLECTIVE": {
+  "title": "Groupes, équipes et dynamique collective",
+  "questions": [
+   {"id":"q1","text":"Un groupe de travail devient une équipe quand :","type":"qcm","options":["Il est nombreux","Il partage un objectif commun, des rôles interdépendants et une responsabilité collective","Il se réunit","Il a un chef"],"answer":1,"explanation":"Équipe ≠ simple agrégat : interdépendance, complémentarité et résultat collectif mesurable."},
+   {"id":"q2","text":"Les phases de développement d'une équipe selon Tuckman sont :","type":"qcm","options":["Naissance et mort","Forming, storming, norming, performing","Recrutement et formation","Début et fin"],"answer":1,"explanation":"Formation → conflits (storming) → normes → performance : les tensions initiales sont une étape normale."},
+   {"id":"q3","text":"La cohésion d'un groupe dépend de :","type":"qcm","options":["La taille seule","L'attraction des membres, les objectifs partagés, la réussite et la menace extérieure","Le salaire","Les heures"],"answer":1,"explanation":"Groupe cohésif : fidélité, entraide — mais excès possible (conformisme, pensée de groupe)."},
+   {"id":"q4","text":"La pensée de groupe (groupthink) est :","type":"qcm","options":["Une intelligence collective","La pression du conformisme qui étouffe la critique dans les groupes très cohésifs","Un brainstorming","Un vote"],"answer":1,"explanation":"Janis : cohésion excessive → autocensure des dissidents → mauvaises décisions collectives."},
+   {"id":"q5","text":"Vrai ou Faux : les rôles informels (meneur, bouc émissaire, clown) existent dans tout groupe indépendamment de l'organigramme.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — rôles informels spontanés structurant la dynamique : à repérer et gérer par le manager."}
+  ]
+ },
+ "Fiche_Lecon8_CHANGEMENTS_ORGANISATIONNELS_INNOVATIONS": {
+  "title": "Changements organisationnels et innovations",
+  "questions": [
+   {"id":"q1","text":"La résistance au changement s'explique notamment par :","type":"qcm","options":["La paresse","La peur de l'inconnu, la perte d'avantages acquis, les habitudes et l'incompréhension","La joie","Le salaire"],"answer":1,"explanation":"Résistances naturelles : incertitude, intérêts menacés, attachement aux routines — à anticiper, pas réprimer."},
+   {"id":"q2","text":"Le modèle de Lewin du changement comporte :","type":"qcm","options":["Analyse puis décision","Dégel (unfreezing) → changement → regel (refreezing)","Diagnostic seul","Formation"],"answer":1,"explanation":"Déstabiliser les habitudes → mouvement vers le nouveau → stabiliser : le regel évite le retour en arrière."},
+   {"id":"q3","text":"Un changement réussi nécessite typiquement :","type":"qcm","options":["Une annonce surprise","Communication, participation des acteurs, formation et accompagnement","Des licenciements","Un seul décret"],"answer":1,"explanation":"Impliquer les concernés réduit les résistances : co-construction, ambassadeurs du changement, petits pas."},
+   {"id":"q4","text":"L'innovation organisationnelle porte sur :","type":"qcm","options":["Uniquement les produits","Les nouvelles pratiques de travail : structures, processus, management (télétravail, agilité)","Les machines","Le marketing"],"answer":1,"explanation":"Au-delà de la technologie : nouveaux modes d'organisation — holacratie, équipes agiles, plateformes."},
+   {"id":"q5","text":"Vrai ou Faux : les indicateurs de conduite du changement incluent l'adhésion des acteurs, pas seulement les délais et coûts.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — succès = adoption réelle par les utilisateurs ; un changement imposé sans adhésion échoue souvent."}
+  ]
+ },
+ "Fiche_Lecon9_ENJEUX_CONTEMPORAINS_ENTREPRISE": {
+  "title": "Enjeux contemporains de l'entreprise",
+  "questions": [
+   {"id":"q1","text":"Les RPS (risques psychosociaux) recouvrent :","type":"qcm","options":["Les accidents machines","Stress, burn-out, harcèlement, violence interne liés au travail","Les incendies","Les chutes"],"answer":1,"explanation":"Stress chronique, épuisement, harcèlement : enjeu de santé au travail reconnu — prévention obligatoire."},
+   {"id":"q2","text":"Le télétravail pose des défis de :","type":"qcm","options":["Connexion internet seulement","Isolement, frontière vie pro/perso, management à distance, droit à la déconnexion","Salaire","Transport"],"answer":1,"explanation":"Nouvelles problématiques : confiance, autonomie, risque de déconnexion impossible, cohésion d'équipe."},
+   {"id":"q3","text":"La diversité et l'inclusion en entreprise concernent :","type":"qcm","options":["Les nationalités seules","Genre, âge, handicap, origines — lutter contre les discriminations et valoriser la complémentarité","Les diplômes","Les langues"],"answer":1,"explanation":"Au-delà de la légalité : la diversité bien managée améliore créativité et performance collective."},
+   {"id":"q4","text":"La QVT (qualité de vie au travail) englobe :","type":"qcm","options":["Le salaire","Conditions de travail, équilibre vie pro/perso, contenu du travail, reconnaissance","Le bureau","Les primes"],"answer":1,"explanation":"QVT : démarche globale de bien-être et performance — ANACT : facteurs physiques ET organisationnels."},
+   {"id":"q5","text":"Vrai ou Faux : le management par objectifs évalue les salariés sur la réalisation de résultats convenus plutôt que sur la présence.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — MBO : objectifs négociés, autonomie sur les moyens, évaluation sur les résultats."}
+  ]
+ },
+ "Fiche_Lecon10_SYNTHESE_ET_PERSPECTIVES": {
+  "title": "Synthèse et perspectives",
+  "questions": [
+   {"id":"q1","text":"La sociologie de l'entreprise apporte au manager :","type":"qcm","options":["Des recettes toutes faites","Une lecture critique et contextualisée des comportements et des organisations","Des lois universelles","Des profits"],"answer":1,"explanation":"Pas de solution unique : comprendre les logiques d'acteurs, pouvoirs et cultures pour agir lucidement."},
+   {"id":"q2","text":"L'approche contingente postule :","type":"qcm","options":["Une organisation idéale unique","Que la meilleure structure dépend du contexte : taille, technologie, environnement, stratégie","La bureaucratie","Le hasard"],"answer":1,"explanation":"« It depends » : pas de one best way — adapter l'organisation aux circonstances (Lawrence & Lorsch)."},
+   {"id":"q3","text":"L'entreprise apprenante se caractérise par :","type":"qcm","options":["Sa mémoire écrite","Sa capacité à apprendre collectivement, capitaliser les savoirs et s'adapter","Sa taille","Son âge"],"answer":1,"explanation":"Apprentissage organisationnel : partage des connaissances, droit à l'erreur, remise en question des routines."},
+   {"id":"q4","text":"Les évolutions récentes des organisations tendent vers :","type":"qcm","options":["Plus de hiérarchie","L'horizontalisation : projets transverses, réseaux, subsidiarité, agilité","Le taylorisme","La centralisation"],"answer":1,"explanation":"Tendances : organigrammes plats, équipes autonomes, processus transverses, écosystèmes — vs pyramide classique."},
+   {"id":"q5","text":"Vrai ou Faux : l'acteur organisationnel dispose toujours d'une marge d'autonomie, même minimale, dans l'exécution de son rôle.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — Crozier : aucune règle ne tout prévoit ; les zones d'incertitude rendent l'acteur actif, pas simple exécutant."}
+  ]
+ }
+}

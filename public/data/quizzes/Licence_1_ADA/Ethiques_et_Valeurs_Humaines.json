@@ -1,0 +1,52 @@
+{
+ "Fiche_Chapitre1_ETHIQUE_MORALE_ET_DILEMMES": {
+  "title": "Éthique, morale et dilemmes",
+  "questions": [
+   {"id":"q1","text":"La morale désigne :","type":"qcm","options":["Le droit positif","L'ensemble des règles de conduite (bien/mal) héritées d'une société ou tradition","Une loi naturelle","Un contrat social"],"answer":1,"explanation":"Morale = système normatif donné (interdictions/obligations) ; l'éthique = réflexion critique sur ces règles."},
+   {"id":"q2","text":"L'éthique se distingue de la morale en ce qu'elle est :","type":"qcm","options":["Plus ancienne","Une démarche réflexive et personnelle d'interrogation sur le bien","Un catalogue d'interdictions","Réservée aux philosophes"],"answer":1,"explanation":"Éthique = questionnement rationnel (pourquoi cette règle ?) ; la morale prescrit, l'éthique interroge."},
+   {"id":"q3","text":"Un dilemme éthique se produit quand :","type":"qcm","options":["Deux valeurs légitimes entrent en conflit et tout choix a un coût moral","On ne connaît pas la loi","Les conséquences sont incertaines","Deux personnes se disputent"],"answer":0,"explanation":"Dilemme : obligations morales incompatibles — toute option viole une valeur ; exige un arbitrage raisonné."},
+   {"id":"q4","text":"La différence éthique / droit est que :","type":"qcm","options":["Ils sont identiques","Le droit est sanctionné par l'État ; l'éthique relève de la conscience et peut aller au-delà de la loi","Le droit est moral","L'éthique est illégale"],"answer":1,"explanation":"Légal ≠ moral : une loi peut être injuste ; l'éthique invite à juger et parfois dépasser le minimum légal."},
+   {"id":"q5","text":"Vrai ou Faux : la conscience morale est la capacité de se juger soi-même face à ses actes.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — instance intérieure d'évaluation ; elle s'éduque et se confronte aux règles sociales."}
+  ]
+ },
+ "Fiche_Chapitre2_LES_THEORIES_ETHIQUES": {
+  "title": "Les grandes théories éthiques",
+  "questions": [
+   {"id":"q1","text":"L'utilitarisme (Bentham, Mill) juge une action selon :","type":"qcm","options":["Son intention","Ses conséquences : le plus grand bonheur du plus grand nombre","Les règles absolues","La tradition"],"answer":1,"explanation":"Conséquentialisme : bien = maximisation de l'utilité collective ; on calcule les effets, pas les intentions."},
+   {"id":"q2","text":"Le devoir kantien (déontologie) exige d'agir selon :","type":"qcm","options":["Les résultats","Des maximes universalisables : agis comme si ta règle devait devenir loi universelle","Le plaisir","L'intérêt personnel"],"answer":1,"explanation":"Kant : impératif catégorique — devoir indépendant des conséquences ; l'humain est une fin, jamais un moyen."},
+   {"id":"q3","text":"L'éthique de la vertu (Aristote) se concentre sur :","type":"qcm","options":["Les règles","Le caractère : devenir une personne vertueuse par l'habitude","Les conséquences","Les contrats"],"answer":1,"explanation":"Question non « que dois-je faire ? » mais « qui dois-je être ? » — juste milieu, prudence, eudaimonia."},
+   {"id":"q4","text":"Une action égoïste est éthiquement critiquable car :","type":"qcm","options":["L'égoïsme est toujours efficace","Elle ignore le bien d'autrui et rompt l'universalité exigée par la morale","Elle est illégale","Elle est irrationnelle"],"answer":1,"explanation":"L'égoïsme éthique (maximiser son intérêt) échoue au test de l'universalisation et néglige la dimension intersubjective."},
+   {"id":"q5","text":"Vrai ou Faux : déontologie = juger l'action en elle-même (moyens) ; conséquentialisme = juger par les résultats (fins).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — opposition classique : « la fin ne justifie pas les moyens » (déontologue) vs « le meilleur bilan » (conséquentialiste)."}
+  ]
+ },
+ "Fiche_Chapitre3_VALEURS_JUSTICE_ET_CADRE_SOCIAL": {
+  "title": "Valeurs, justice et cadre social",
+  "questions": [
+   {"id":"q1","text":"La justice distributive concerne :","type":"qcm","options":["Les peines","La répartition équitable des biens, droits et charges dans la société","Le commerce","Les contrats"],"answer":1,"explanation":"Qui reçoit quoi ? — richesses, opportunités, charges : critères de mérite, besoin, égalité."},
+   {"id":"q2","text":"La théorie de la justice de Rawls repose sur :","type":"qcm","options":["L'utilitarisme","Le voile d'ignorance : des principes choisis sans connaître sa place sociale","La loi du plus fort","Le marché"],"answer":1,"explanation":"Derrière le voile, on choisit des principes équitables : libertés égales + différence (aider les moins favorisés)."},
+   {"id":"q3","text":"La justice corrective (ou commutative) vise à :","type":"qcm","options":["Répartir les richesses","Réparer les torts et rétablir l'égalité rompue (dommages, restitution)","Instituer les lois","Punir les crimes"],"answer":1,"explanation":"Corriger les injustices transactionnelles : restitution, indemnisation — distincte de la distributive."},
+   {"id":"q4","text":"L'éthique de la discussion (Habermas) fonde la norme sur :","type":"qcm","options":["La force","Un consensus rationnel où tous les concernés peuvent argumenter librement","La majorité simple","La tradition"],"answer":1,"explanation":"Une norme est valide si tous les affectés y consentent dans une discussion égalitaire — règles de la communication."},
+   {"id":"q5","text":"Vrai ou Faux : la dignité humaine est une valeur absolue — tout humain mérite respect indépendamment de son utilité ou statut.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — fondement des droits humains : la dignité est inconditionnelle (Kant : dignité vs prix)."}
+  ]
+ },
+ "Fiche_Chapitre4_ETHIQUE_APPLIQUEE_ET_GOUVERNANCE": {
+  "title": "Éthique appliquée et gouvernance",
+  "questions": [
+   {"id":"q1","text":"La RSE (responsabilité sociétale des entreprises) signifie :","type":"qcm","options":["Uniquement la philanthropie","L'intégration volontaire des enjeux sociaux et environnementaux dans les activités","Une obligation fiscale","Un label marketing"],"answer":1,"explanation":"RSE : au-delà de la loi — parties prenantes, triple bilan (économique-social-environnemental)."},
+   {"id":"q2","text":"Un conflit d'intérêts survient quand :","type":"qcm","options":["Deux collègues se disputent","L'intérêt personnel risque de biaiser un jugement professionnel objectif","On refuse une promotion","Deux entreprises se concurrencent"],"answer":1,"explanation":"Situation où un gain personnel compromet le devoir d'impartialité — doit être déclaré et géré."},
+   {"id":"q3","text":"La gouvernance d'entreprise désigne :","type":"qcm","options":["La gestion quotidienne","Les mécanismes de direction, contrôle et répartition des pouvoirs (transparence, comptes)","Le marketing","La production"],"answer":1,"explanation":"Bonne gouvernance : séparation des pouvoirs, audit, transparence — protège actionnaires et parties prenantes."},
+   {"id":"q4","text":"L'éthique des affaires applique la réflexion morale à :","type":"qcm","options":["Uniquement la finance","La vie économique : travail, consommation, finance, environnement, publicité","Le droit commercial","Les taxes"],"answer":1,"explanation":"Domaines : conditions de travail, écologie, corruption, communication honnête, loyauté commerciale."},
+   {"id":"q5","text":"Vrai ou Faux : la corruption est un échange de faveurs (pot-de-vin, népotisme) qui pervertit la décision et la concurrence.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — corruption active (donner) / passive (recevoir) : détruit la confiance, la concurrence loyale et le développement."}
+  ]
+ },
+ "Fiche_Chapitre5_NOUVEAUX_DEFIS_RESPONSABILITE_CONTEMPORAINE": {
+  "title": "Nouveaux défis et responsabilité contemporaine",
+  "questions": [
+   {"id":"q1","text":"Le principe responsabilité de Hans Jonas impose :","type":"qcm","options":["L'obéissance aux lois","Une responsabilité élargie : anticiper les effets lointains de la technique sur les générations futures","L'innovation","La liberté de marché"],"answer":1,"explanation":"Jonas : la technique moderne rend nos actes puissants à longue échéance → impératif de ne pas compromettre l'humanité future."},
+   {"id":"q2","text":"L'éthique environnementale s'interroge sur :","type":"qcm","options":["Le PIB","Nos devoirs envers la nature, les écosystèmes et les non-humains","Le tourisme","L'agriculture"],"answer":1,"explanation":"Questions : la nature a-t-elle une valeur intrinsèque ? devoirs envers les espèces, le climat, la biodiversité."},
+   {"id":"q3","text":"Les enjeux éthiques de l'intelligence artificielle portent notamment sur :","type":"qcm","options":["La vitesse des ordinateurs","Les biais algorithmiques, la transparence, la responsabilité des décisions automatisées","Le coût des machines","L'électricité"],"answer":1,"explanation":"Questions clés : discrimination par les données, explicabilité, qui est responsable d'une erreur d'IA ?"},
+   {"id":"q4","text":"Le Big Data pose un problème éthique majeur :","type":"qcm","options":["Le stockage","La protection de la vie privée et le consentement éclairé sur l'usage des données","La bande passante","Le graphisme"],"answer":1,"explanation":"Collecte massive → surveillance, profilage, perte d'autonomie — exige règles de consentement et de protection."},
+   {"id":"q5","text":"Vrai ou Faux : « agis de sorte que les effets de ton action soient compatibles avec la permanence d'une vie humaine authentique » est la maxime de Jonas.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — reformulation écologique de l'impératif catégorique appliquée à la civilisation technique."}
+  ]
+ }
+}

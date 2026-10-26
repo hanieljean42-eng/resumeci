@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — INVERSION D UNE MATRICE GAUSS JORDAN — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI</title><meta name="description" content="Leçon 4 — Inversion d'une matrice (méthode de Gauss-Jordan) — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html"><meta property="og:title" content="Leçon 4 — INVERSION D UNE MATRICE GAUSS JORDAN — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta property="og:description" content="Leçon 4 — Inversion d'une matrice (méthode de Gauss-Jordan) — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — INVERSION D UNE MATRICE GAUSS JORDAN — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Inversion d'une matrice (méthode de Gauss-Jordan) — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Algebre_Vectoriel_et_Lineaire","item":"https://resumeci.me/#Licence_1_ADA/Algebre_Vectoriel_et_Lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 4 — INVERSION D UNE MATRICE GAUSS JORDAN","item":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — INVERSION D UNE MATRICE GAUSS JORDAN — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI","description":"Leçon 4 — Inversion d'une matrice (méthode de Gauss-Jordan) — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec","url":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Algebre_Vectoriel_et_Lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algèbre Vectoriel et Linéaire</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Leçon 4 : Inversion d'une matrice (Gauss-Jordan)</span>
+  </div>
+</div>
+
+<h2>I. Matrice inversible : la définition</h2>
+<div class="definition"><strong>Inversible :</strong> une matrice <strong>carrée</strong> A d'ordre n est inversible s'il existe une matrice A⁻¹ telle que <strong>A × A⁻¹ = A⁻¹ × A = I<sub>n</sub></strong> où I<sub>n</sub> est la matrice identité d'ordre n. A⁻¹ est <strong>l'inverse</strong> de A.</div>
+<div class="important"><strong>Critère pratique :</strong> A est inversible ⇔ <strong>rg(A) = n</strong> (rang plein — aucune ligne/colonne dépendante). Une matrice de rang &lt; n n'a <strong>pas</strong> d'inverse.</div>
+
+<h2>II. La méthode de Gauss-Jordan</h2>
+<div class="schema"><strong>Principe :</strong> on construit la <strong>matrice augmentée (A | I<sub>n</sub</strong>) — A à gauche, l'identité à droite. Par des <strong>opérations élémentaires sur les lignes</strong>, on transforme la partie gauche en identité. La partie droite devient alors <strong>A⁻¹</strong> : (A | I) → (I | A⁻¹).</div>
+<ul>
+  <li><strong>Opérations élémentaires autorisées :</strong> L<sub>i</sub> ← L<sub>i</sub> + λL<sub>j</sub> ; L<sub>i</sub> ← λL<sub>i</sub> (λ ≠ 0) ; L<sub>i</sub> ↔ L<sub>j</sub>. Appliquées <strong>simultanément aux deux blocs</strong>.</li>
+</ul>
+
+<h2>III. Exemple complet (matrice 3×3)</h2>
+<p><strong>Départ :</strong> A = (1 1 0 ; 0 1 1 ; 1 0 1). Matrice augmentée (A | I₃) :</p>
+<table>
+  <tr><th>Ligne</th><th>Opération</th><th>Résultat (gauche | droite)</th></tr>
+  <tr><td>Départ</td><td>—</td><td>(1 1 0 | 1 0 0) ; (0 1 1 | 0 1 0) ; (1 0 1 | 0 0 1)</td></tr>
+  <tr><td>Étape 1</td><td>L₃ ← L₃ − L₁</td><td>(1 1 0 | 1 0 0) ; (0 1 1 | 0 1 0) ; (0 −1 1 | −1 0 1)</td></tr>
+  <tr><td>Étape 2</td><td>L₃ ← L₃ + L₂</td><td>(1 1 0 | 1 0 0) ; (0 1 1 | 0 1 0) ; (0 0 2 | −1 1 1)</td></tr>
+  <tr><td>Étape 3</td><td>L₃ ← (1/2)L₃</td><td>(1 1 0 | 1 0 0) ; (0 1 1 | 0 1 0) ; (0 0 1 | −1/2 1/2 1/2)</td></tr>
+  <tr><td>Étape 4</td><td>L₂ ← L₂ − L₃</td><td>(1 1 0 | 1 0 0) ; (0 1 0 | 1/2 1/2 −1/2) ; (0 0 1 | −1/2 1/2 1/2)</td></tr>
+  <tr><td>Étape 5</td><td>L₁ ← L₁ − L₂</td><td>(1 0 0 | 1/2 −1/2 1/2) ; (0 1 0 | 1/2 1/2 −1/2) ; (0 0 1 | −1/2 1/2 1/2)</td></tr>
+</table>
+<div class="important"><strong>Résultat :</strong> A⁻¹ = (1/2)·(1 −1 1 ; 1 1 −1 ; −1 1 1). <strong>Vérification :</strong> recalcule A × A⁻¹ — tu dois retrouver I₃. C'est <strong>le réflexe de contrôle en examen</strong>.</div>
+<div class="schema"><strong>Logique de la méthode :</strong> on annule d'abord les coefficients <strong>sous les pivots</strong> (montée en triangulaire), on normalise chaque pivot à 1, puis on annule les coefficients <strong>au-dessus</strong> (descente vers l'identité).</div>
+
+<h2>IV. Propriétés de l'inverse</h2>
+<ul>
+  <li><strong>(A⁻¹)⁻¹ = A</strong></li>
+  <li><strong>(AB)⁻¹ = B⁻¹A⁻¹</strong> — l'ordre s'inverse !</li>
+  <li><strong>(A<sup>T</sup>)⁻¹ = (A⁻¹)<sup>T</sup></strong></li>
+  <li><strong>A inversible ⇔ rg(A) = n</strong></li>
+</ul>
+<div class="important"><strong>Utilité :</strong> méthode systématique et fiable pour les matrices 3×3 et plus — indispensable en algèbre linéaire, en économie (modèles entrées-sorties) et en gestion.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Appliquer l'opération sur la ligne <strong>à gauche seulement</strong> : les deux blocs bougent ensemble.</li>
+    <li>Utiliser L<sub>i</sub> ← λL<sub>i</sub> avec λ = 0 : <strong>interdit</strong>, on perd de l'information.</li>
+    <li>Inverser une matrice de rang &lt; n : elle <strong>n'a pas d'inverse</strong> — vérifier le rang d'abord.</li>
+    <li>Écrire (AB)⁻¹ = A⁻¹B⁻¹ : c'est <strong>B⁻¹A⁻¹</strong>.</li>
+    <li>Ne pas vérifier A × A⁻¹ = I à la fin : c'est le <strong>contrôle gratuit</strong> qui sauve des points.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

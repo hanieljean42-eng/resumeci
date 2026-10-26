@@ -1,0 +1,32 @@
+{
+ "Fiche_Lecon1_DEFINIR_UN_PROJET_DE_L_IDEE_AU_PROJET": {
+  "title": "Définir un projet : de l'idée au projet",
+  "questions": [
+   {"id":"q1","text":"Un projet se caractérise par :","type":"qcm","options":["Une activité répétitive","Un ensemble d'activités temporaires visant un objectif précis dans des contraintes données","Une tâche permanente","Une routine"],"answer":1,"explanation":"Projet = temporaire, unique, orienté résultat — vs processus (opérations récurrentes)."},
+   {"id":"q2","text":"La différence entre une idée et un projet est :","type":"qcm","options":["Il n'y en a pas","L'idée devient projet quand elle est formalisée en objectifs, ressources et plan d'action","Le projet est plus vague","L'idée coûte plus cher"],"answer":1,"explanation":"Le projet transforme une intention en démarche structurée : finalité, délais, budget, responsables."},
+   {"id":"q3","text":"Le triptyque classique des contraintes de projet est :","type":"qcm","options":["Hommes, machines, méthodes","Coût — délai — qualité (périmètre)","Risque, profit, image","Court, moyen, long terme"],"answer":1,"explanation":"Triangle de la gestion de projet : optimiser l'un des trois compromet les deux autres."},
+   {"id":"q4","text":"Les parties prenantes d'un projet sont :","type":"qcm","options":["Seulement l'équipe","Toutes les personnes ou entités affectées par ou influant sur le projet","Les concurrents","Les clients seuls"],"answer":1,"explanation":"Porteur, commanditaire, équipe, bénéficiaires, adversaires… — leur analyse est une étape préalable clé."},
+   {"id":"q5","text":"Vrai ou Faux : un objectif SMART est Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — la formalisation d'objectifs SMART évite les projets flous et non évaluables."}
+  ]
+ },
+ "Fiche_Lecon2_PARAMETRES_ET_DEFINITION_GESTION_DE_PROJET": {
+  "title": "Paramètres et définition de la gestion de projet",
+  "questions": [
+   {"id":"q1","text":"La gestion de projet consiste à :","type":"qcm","options":["Gérer une entreprise","Planifier, organiser, diriger et contrôler des ressources pour atteindre un objectif unique","Superviser la production","Faire du marketing"],"answer":1,"explanation":"Démarche managériale appliquée à un ensemble temporaire : planification → exécution → suivi → clôture."},
+   {"id":"q2","text":"Le chef de projet a pour rôle principal :","type":"qcm","options":["Tout faire seul","Coordonner l'équipe, arbitrer, suivre les échéances et rendre compte","La comptabilité","Le recrutement"],"answer":1,"explanation":"Chef d'orchestre : il manage sans nécessairement avoir l'autorité hiérarchique — influence et coordination."},
+   {"id":"q3","text":"Le cahier des charges définit :","type":"qcm","options":["Le salaire des employés","Le besoin, les exigences, les contraintes et les critères d'acceptation du projet","La publicité","Le nom du projet"],"answer":1,"explanation":"Document de référence contractuel entre commanditaire et réalisateur — base du suivi et de la recette."},
+   {"id":"q4","text":"La planification d'un projet passe notamment par :","type":"qcm","options":["Le recrutement","Le découpage du travail (WBS), l'ordonnancement (Gantt, PERT) et l'affectation des ressources","La communication","La clôture"],"answer":1,"explanation":"WBS = découper en lots/tâches ; Gantt = calendrier ; PERT = chemin critique des durées."},
+   {"id":"q5","text":"Vrai ou Faux : le chemin critique d'un projet est la séquence de tâches qui détermine sa durée minimale — tout retard s'y reporte.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — les tâches du chemin critique ont une marge nulle : retarder l'une retarde tout le projet."}
+  ]
+ },
+ "Fiche_Lecon3_CYCLE_DE_VIE_ET_CYCLE_DE_PROJET": {
+  "title": "Cycle de vie et cycle de projet",
+  "questions": [
+   {"id":"q1","text":"Le cycle de vie d'un projet comprend typiquement :","type":"qcm","options":["Vente et achat","Identification, formulation/préparation, exécution, évaluation/clôture","Marketing et production","Recrutement et licenciement"],"answer":1,"explanation":"Phases : idée → études/faisabilité → mise en œuvre → suivi → clôture + évaluation ex-post."},
+   {"id":"q2","text":"L'étude de faisabilité sert à :","type":"qcm","options":["Lancer la production","Vérifier que le projet est viable technique, économique, financière et organisationnelle avant d'investir","Recruter l'équipe","Vendre le produit"],"answer":1,"explanation":"Décision go/no-go : on évalue les risques et la rentabilité AVANT l'engagement des ressources."},
+   {"id":"q3","text":"Le suivi-contrôle d'un projet consiste à :","type":"qcm","options":["Attendre la fin","Comparer l'avancement réel au plan (délais, coûts, qualité) et corriger les écarts","Rédiger le rapport","Changer d'équipe"],"answer":1,"explanation":"Tableaux de bord + jalons : écarts → actions correctives — c'est le pilotage du projet."},
+   {"id":"q4","text":"L'évaluation ex-post (après clôture) mesure :","type":"qcm","options":["La satisfaction du chef de projet","Les résultats, impacts et leçons apprises par rapport aux objectifs initiaux","Le chiffre d'affaires","Les salaires"],"answer":1,"explanation":"Pertinence, efficacité, efficience, impact, durabilité — capitaliser pour les projets futurs."},
+   {"id":"q5","text":"Vrai ou Faux : un jalon (milestone) est un point de passage décisif sans durée marquant l'avancement.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — jalons = événements datés (validation, livraison) qui structurent le contrôle du projet."}
+  ]
+ }
+}

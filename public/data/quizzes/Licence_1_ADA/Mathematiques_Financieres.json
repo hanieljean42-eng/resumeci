@@ -1,0 +1,62 @@
+{
+ "Fiche_Chapitre0_GENERALITES_ET_BOITE_A_OUTILS": {
+  "title": "Généralités et boîte à outils",
+  "questions": [
+   {"id":"q1","text":"Les mathématiques financières étudient :","type":"qcm","options":["La comptabilité","Les calculs liés à l'argent dans le temps : intérêts, emprunts, placements","Les statistiques","La bourse"],"answer":1,"explanation":"Cœur : la valeur temps de l'argent — 1 F aujourd'hui ≠ 1 F demain à cause de l'intérêt."},
+   {"id":"q2","text":"Un taux de 8 % l'an signifie :","type":"qcm","options":["8 F par an","8 F d'intérêt par période de 100 F placés","8 % de bénéfice","8 F par mois"],"answer":1,"explanation":"Le taux exprime la rémunération du capital prêté/investi — rapport à un montant de référence (100)."},
+   {"id":"q3","text":"La capitalisation consiste à :","type":"qcm","options":["Retirer des intérêts","Réintégrer les intérêts au capital pour qu'ils produisent à leur tour des intérêts","Emprunter","Payer des dettes"],"answer":1,"explanation":"Capitaliser = intérêts joints au capital → effet « intérêts des intérêts » propre au régime composé."},
+   {"id":"q4","text":"L'actualisation permet de :","type":"qcm","options":["Projeter une valeur dans le futur","Ramener une somme future à sa valeur présente (aujourd'hui)","Augmenter les taux","Calculer les amortissements"],"answer":1,"explanation":"Opération inverse de la capitalisation : V₀ = Vₙ/(1+i)ⁿ — comparer des flux à dates différentes."},
+   {"id":"q5","text":"Vrai ou Faux : en finance, la durée est exprimée dans la même unité que la période du taux (années si taux annuel).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — cohérence impérative : taux annuel ↔ durée en années ; taux mensuel ↔ mois, sinon calcul faux."}
+  ]
+ },
+ "Fiche_Chapitre1_LES_INTERETS_SIMPLES": {
+  "title": "Les intérêts simples",
+  "questions": [
+   {"id":"q1","text":"La formule des intérêts simples est :","type":"qcm","options":["I = C×t×n","I = C(1+t)ⁿ","I = C×t/n","I = C+t+n"],"answer":0,"explanation":"I = C·t·n : capital × taux × durée — les intérêts sont proportionnels aux trois paramètres."},
+   {"id":"q2","text":"Les intérêts simples sont calculés :","type":"qcm","options":["Sur le capital + intérêts","Uniquement sur le capital initial, sans capitalisation","Sur les bénéfices","Sur les annuités"],"answer":1,"explanation":"Chaque période produit le même intérêt (sur C seul) — usage typique : prêts courts (< 1 an)."},
+   {"id":"q3","text":"La valeur acquise par un capital C à intérêts simples après n périodes est :","type":"qcm","options":["C(1+t)ⁿ","C + C·t·n = C(1+tn)","C·t·n","C(1−tn)"],"answer":1,"explanation":"V = C + I = C(1 + t·n) — croissance linéaire, vs exponentielle en intérêts composés."},
+   {"id":"q4","text":"Un capital de 10 000 F placé à 5 % pendant 3 ans rapporte en intérêts simples :","type":"qcm","options":["1 500 F","15 000 F","1 576 F","500 F"],"answer":0,"explanation":"I = 10 000 × 0,05 × 3 = 1 500 F — chaque année produit 500 F."},
+   {"id":"q5","text":"Vrai ou Faux : à intérêts simples, les intérêts de chaque période sont identiques.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — base constante C → intérêt périodique C·t constant ; contrairement au composé où la base croît."}
+  ]
+ },
+ "Fiche_Chapitre2_LESCOMPTE": {
+  "title": "L'escompte",
+  "questions": [
+   {"id":"q1","text":"L'escompte bancaire consiste à :","type":"qcm","options":["Prêter de l'argent gratuitement","Verser immédiatement le nominal d'un effet moins les intérêts prélevés à l'avance","Ouvrir un compte","Vendre des actions"],"answer":1,"explanation":"La banque avance la valeur d'un effet (traite, lettre de change) avant échéance, en retenant l'escompte e."},
+   {"id":"q2","text":"L'escompte commercial e se calcule :","type":"qcm","options":["e = V×t×n (sur le nominal V)","e = V/(1+tn)","e = V×t","e = V×n"],"answer":0,"explanation":"e = V·t·n avec V = valeur nominale de l'effet — retenue « dedans » : on perçoit V − e."},
+   {"id":"q3","text":"La valeur actuelle commerciale a d'un effet vaut :","type":"qcm","options":["a = V","a = V − e = V(1 − tn)","a = V + e","a = e"],"answer":1,"explanation":"On touche nominal moins escompte : a = V − V·t·n = V(1 − t·n)."},
+   {"id":"q4","text":"L'équivalence d'effets permet de :","type":"qcm","options":["Annuler une dette","Remplacer un ou plusieurs effets par un autre de valeur et d'échéance différentes","Convertir des devises","Escompter deux fois"],"answer":1,"explanation":"Deux effets équivalents ont même valeur actuelle à une date donnée — base du renouvellement et du regroupement."},
+   {"id":"q5","text":"Vrai ou Faux : escompter un effet revient à le vendre à la banque avant son échéance moyennant une retenue.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — le porteur mobilise sa créance immédiatement au prix de l'escompte retenu par le banquier."}
+  ]
+ },
+ "Fiche_Chapitre3_LES_INTERETS_COMPOSES": {
+  "title": "Les intérêts composés",
+  "questions": [
+   {"id":"q1","text":"La valeur acquise à intérêts composés s'écrit :","type":"qcm","options":["C(1+tn)","Cₙ = C₀(1+i)ⁿ","C×i×n","C(1−i)ⁿ"],"answer":1,"explanation":"Cₙ = C₀(1+i)ⁿ : chaque fin de période, les intérêts rejoignent le capital — croissance exponentielle."},
+   {"id":"q2","text":"La valeur actuelle (actualisée) à intérêts composés est :","type":"qcm","options":["V₀ = Vₙ(1+i)ⁿ","V₀ = Vₙ/(1+i)ⁿ = Vₙ(1+i)⁻ⁿ","Vₙ − Vₙ·i·n","Vₙ×i"],"answer":1,"explanation":"Actualiser = « défalquer » : V₀ = Vₙ(1+i)⁻ⁿ — valeur aujourd'hui d'un flux futur."},
+   {"id":"q3","text":"Pour une même durée, les intérêts composés rapportent :","type":"qcm","options":["Moins que les simples","Plus que les simples (sauf toute première période où égalité)","Autant que les simples","Rien"],"answer":1,"explanation":"Base croissante (capital + intérêts) → accélération : écart croissant avec la durée."},
+   {"id":"q4","text":"Des capitaux sont équivalents à intérêts composés si :","type":"qcm","options":["Ils ont le même nominal","Ils ont même valeur actuelle ou acquise à une même date","Ils sont à la même banque","Ils sont à même échéance"],"answer":1,"explanation":"Équivalence à une date de comparaison — permet de regrouper/remplacer des engagements."},
+   {"id":"q5","text":"Vrai ou Faux : à taux égal, plus les périodes de capitalisation sont courtes (mensuel vs annuel), plus la valeur acquise est grande.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — capitalisation plus fréquente = intérêts produisant des intérêts plus souvent (taux effectif plus élevé)."}
+  ]
+ },
+ "Fiche_Chapitre4_LES_ANNUITES": {
+  "title": "Les annuités",
+  "questions": [
+   {"id":"q1","text":"Une annuité est :","type":"qcm","options":["Un versement unique","Une suite de versements effectués à intervalles réguliers","Un impôt","Un dépôt bancaire"],"answer":1,"explanation":"Annuités = flux périodiques constants ou variables — épargne régulière, remboursement d'emprunt, retraite."},
+   {"id":"q2","text":"La valeur acquise par n annuités constantes a au taux i vaut :","type":"qcm","options":["a×n","Vₙ = a·[((1+i)ⁿ − 1)/i]","a·(1+i)ⁿ","a/i"],"answer":1,"explanation":"Somme géométrique : chaque annuité capitalise sur sa durée restante — Vₙ = a((1+i)ⁿ−1)/i."},
+   {"id":"q3","text":"La valeur actuelle d'annuités constantes est :","type":"qcm","options":["V₀ = a·[(1−(1+i)⁻ⁿ)/i]","a×n","a(1+i)ⁿ","a·i·n"],"answer":0,"explanation":"V₀ = a·(1−(1+i)⁻ⁿ)/i : somme des annuités actualisées — base du calcul d'emprunt."},
+   {"id":"q4","text":"Des annuités de début de période rapportent, par rapport à celles de fin de période :","type":"qcm","options":["Autant","Une capitalisation de plus : valeur acquise multipliée par (1+i)","Moins","Rien"],"answer":1,"explanation":"Versées un an plus tôt → chacune produit une année d'intérêts supplémentaire → facteur (1+i)."},
+   {"id":"q5","text":"Vrai ou Faux : un placement retraite par versements mensuels réguliers relève du calcul des annuités.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — mensualités d'épargne : valeur acquise Vₙ = a((1+i)ⁿ−1)/i avec i = taux mensuel."}
+  ]
+ },
+ "Fiche_Chapitre5_LEMPRUNT_INDIVIS_ET_OBLIGATAIRE": {
+  "title": "L'emprunt indivis et obligataire",
+  "questions": [
+   {"id":"q1","text":"Un emprunt indivis est :","type":"qcm","options":["Un emprunt auprès de plusieurs prêteurs","Un emprunt contracté auprès d'un seul prêteur","Une obligation","Une action"],"answer":1,"explanation":"Indivis = un seul créancier (ex. prêt bancaire classique) vs obligataire = fractionné en obligations auprès de nombreux prêteurs."},
+   {"id":"q2","text":"Le remboursement par annuités constantes signifie :","type":"qcm","options":["Même capital remboursé chaque année","Même versement total chaque année, dont la part d'intérêts décroît","Même intérêts","Un seul paiement"],"answer":1,"explanation":"a = V₀·i/(1−(1+i)⁻ⁿ) : constante ; au fil du temps intérêts ↓ et amortissement du capital ↑."},
+   {"id":"q3","text":"L'amortissement est :","type":"qcm","options":["L'intérêt payé","La partie de l'annuité qui rembourse le capital","Le montant de l'emprunt","La durée"],"answer":1,"explanation":"Annuité = intérêts (sur capital restant dû) + amortissement — le capital diminue progressivement."},
+   {"id":"q4","text":"Dans un emprunt obligataire, l'émetteur :","type":"qcm","options":["Emprunte auprès d'une banque","Émet des obligations (titres de créance) souscrites par de nombreux prêteurs","Vend des actions","Reçoit un don"],"answer":1,"explanation":"Obligation = titre négociable porteur d'intérêts (coupon) remboursable à échéance — emprunt sur le marché."},
+   {"id":"q5","text":"Vrai ou Faux : le tableau d'amortissement présente, pour chaque période, annuité, intérêts, amortissement et capital restant dû.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — outil de suivi : à chaque ligne, intérêt = taux × capital restant dû précédent."}
+  ]
+ }
+}

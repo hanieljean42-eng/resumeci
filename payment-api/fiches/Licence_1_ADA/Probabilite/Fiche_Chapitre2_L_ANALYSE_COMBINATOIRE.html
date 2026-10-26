@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre2 L ANALYSE COMBINATOIRE — Probabilite Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 2 — L'analyse combinatoire (dénombrement) — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestr"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html"><meta property="og:title" content="Chapitre2 L ANALYSE COMBINATOIRE — Probabilite Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 2 — L'analyse combinatoire (dénombrement) — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestr"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre2 L ANALYSE COMBINATOIRE — Probabilite Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 2 — L'analyse combinatoire (dénombrement) — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestr"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Probabilite","item":"https://resumeci.me/#Licence_1_ADA/Probabilite"},{"@type":"ListItem","position":4,"name":"Chapitre2 L ANALYSE COMBINATOIRE","item":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre2 L ANALYSE COMBINATOIRE — Probabilite Licence 1_ADA | ResumeCI","description":"Chapitre 2 — L'analyse combinatoire (dénombrement) — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestr","url":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Probabilité</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 2 : L'analyse combinatoire</span>
+  </div>
+</div>
+
+<h2>I. Définitions préliminaires</h2>
+<div class="definition"><strong>Dénombrement :</strong> branche des mathématiques qui <strong>compte des groupes d'éléments</strong> issus d'un ensemble fini. Repose sur 2 principes : la <strong>répétition</strong> (un élément peut apparaître plusieurs fois) et l'<strong>ordre</strong> (la place de l'élément compte ou non).</div>
+<div class="definition"><strong>Expérience aléatoire :</strong> on ne peut pas <strong>prévoir avec certitude</strong> le résultat, mais on peut <strong>décrire tous les résultats possibles</strong> avant l'expérience.<br><strong>Ensemble fondamental E (ou Ω) :</strong> ensemble de tous les résultats possibles — décrit de façon <strong>explicite</strong> (énumération : {PPP, PPF, PFP, …}) ou <strong>implicite</strong> (formalisme : E = {(x₁,x₂,x₃) / xᵢ ∈ {P,F}}).<br><strong>Événement :</strong> tout <strong>sous-ensemble</strong> de l'ensemble fondamental.</div>
+<table>
+  <tr><th></th><th>Tirage AVEC remise</th><th>Tirage SANS remise</th></tr>
+  <tr><td><strong>Définition</strong></td><td>Card(E) <strong>reste constant</strong> à chaque tirage</td><td>Card(E) <strong>diminue</strong> à chaque tirage</td></tr>
+  <tr><td><strong>Exemple</strong></td><td>Lancer un dé : E = {1,…,6} à chaque lancer</td><td>Tirer des boules d'une urne sans les remettre</td></tr>
+</table>
+<div class="important"><strong>Disposition ordonnée vs non-ordonnée :</strong><br>• <strong>Ordonnée :</strong> l'ordre d'obtention compte (ex. podium, code PIN, bureau de comité).<br>• <strong>Non-ordonnée :</strong> l'ordre ne compte pas (ex. numéros du loto, membres d'une équipe sans rôle).</div>
+
+<h2>II. Les 4 structures de dénombrement</h2>
+<table>
+  <tr><th>Structure</th><th>Ordre ?</th><th>Répétition ?</th><th>Formule</th><th>Exemple</th></tr>
+  <tr><td><strong>p-liste</strong> (p-uplet)</td><td>Oui</td><td>Oui</td><td><strong>nᵖ</strong></td><td>Code PIN à 4 chiffres : 10⁴ = 10 000 ; 3 lancers pile/face : 2³ = 8</td></tr>
+  <tr><td><strong>Arrangement</strong> A(n,p)</td><td>Oui</td><td>Non</td><td><strong>n! / (n−p)!</strong></td><td>Podium de 3 parmi 8 coureurs ; tirer 3 boules sans remise parmi 5 : 5×4×3 = 60</td></tr>
+  <tr><td><strong>Permutation</strong> P(n)</td><td>Oui</td><td>Non (tous les éléments)</td><td><strong>n!</strong> (cas p = n)</td><td>5 enfants sur 5 sièges : 5! = 120</td></tr>
+  <tr><td><strong>Combinaison</strong> C(n,p)</td><td>Non</td><td>Non</td><td><strong>n! / [p!(n−p)!]</strong></td><td>Comité de 3 parmi 10 : C(10,3) = 120</td></tr>
+</table>
+<div class="schema"><strong>Comment choisir la bonne formule ?</strong><br>1. <strong>L'ordre compte-t-il ?</strong> Non → combinaison.<br>2. Ordre + <strong>répétition possible</strong> → p-liste (nᵖ).<br>3. Ordre + <strong>sans répétition</strong> + tous les éléments → permutation (n!) ; sinon arrangement A(n,p).</div>
+<div class="important"><strong>Exemple résolu — comité exécutif :</strong> 18 filles + 13 garçons ; comité de 4 (président, vice-président, secrétaire, trésorier → postes <strong>distincts = ordre</strong>).<br>a) Sans contrainte : A(31,4) = 31 × 30 × 29 × 28 = <strong>755 160</strong>.<br>b) Président et secrétaire = filles, vice-président et trésorier = garçons : 18 × 17 (filles ordonnées sur 2 postes) × 13 × 12 (garçons ordonnés) = <strong>47 736</strong>.</div>
+
+<h2>III. Permutations avec répétition et combinaisons</h2>
+<div class="definition"><strong>Permutation avec répétition :</strong> objets <strong>identiques par catégories</strong> (p éléments dont p₁ d'un type, p₂ d'un autre…, p₁ + p₂ + … = p) :<br><strong>p! / (p₁! × p₂! × …)</strong><br><strong>Méthode :</strong> compter comme si tout était distinct (p!), puis <strong>diviser par les permutations internes</strong> des objets identiques.</div>
+<div class="schema"><strong>Exemples :</strong><br>• 5 boules blanches + 3 noires + 2 rouges (indiscernables par couleur) : 10! / (5! × 3! × 2!) = <strong>2 520</strong> rangements.<br>• Mot « CELLULE » (7 lettres : C,E,L×3,U,E) : 7! / (3! × 2!) = <strong>420</strong> mots.<br>• « MATHÉMATIQUE » (12 lettres : M×2, A×2, T×2, H, É, I, Q, U, E) : 12! / (2! × 2! × 2!) = <strong>59 875 200</strong>.</div>
+<div class="important"><strong>Exemple résolu — Anne et Pierre :</strong> 5 enfants sur 5 sièges.<br>a) Sans contrainte : 5! = <strong>120</strong>.<br>b) Anne et Pierre côte à côte : le bloc {A,P} = 4 positions × 2! (ordre interne) × 3! (autres enfants) = 4 × 2 × 6 = <strong>48</strong>.<br>c) Pas côte à côte : 120 − 48 = <strong>72</strong> (passer par le <strong>complément</strong>).</div>
+<div class="definition"><strong>Combinaison avec répétition :</strong> disposition <strong>non-ordonnée</strong> de p éléments choisis parmi n <strong>avec remise</strong>. Nombre : <strong>C(n+p−1, p)</strong>.</div>
+<div class="schema"><strong>Propriétés des coefficients binomiaux C(n,p) :</strong><br>• C(n,p) = C(n, n−p) <em>(complémentaire)</em><br>• C(n,p) = C(n−1, p−1) + C(n−1, p) <em>(triangle de Pascal)</em><br>• C(n,0) = C(n,n) = 1 ; C(n,1) = n<br><strong>Binôme de Newton :</strong> (a + b)ⁿ = Σₖ₌₀ⁿ C(n,k) aⁿ⁻ᵏ bᵏ</div>
+<div class="important"><strong>Exemple résolu — comité mixte :</strong> 5 économistes + 6 sociologues ; comité de 3 économistes ET 3 sociologues (rôles non précisés → <strong>combinaisons</strong>).<br>a) Tous éligibles : C(5,3) × C(6,3) = 10 × 20 = <strong>200</strong>.<br>b) Un économiste exclu : C(4,3) × C(6,3) = 4 × 20 = <strong>80</strong>.<br>c) Deux sociologues imposés : C(5,3) × C(4,1) = 10 × 4 = <strong>40</strong>.</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Utiliser une combinaison pour des <strong>postes distincts</strong> (président ≠ trésorier → c'est un arrangement !).</li>
+    <li>Utiliser A(n,p) quand la <strong>remise</strong> est possible → c'est nᵖ.</li>
+    <li>Oublier de diviser par les permutations internes des objets <strong>identiques</strong>.</li>
+    <li>Compter directement « pas côte à côte » → passer par le <strong>complément</strong> (total − côte à côte).</li>
+    <li>Confondre C(n,p) et A(n,p) : A(n,p) = C(n,p) × p!.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -36,3 +36,7 @@
 - Routes `/api/admin/*` : jeton Firebase ID (`Authorization: Bearer`) + email dans `ADMIN_EMAILS`.
 - Session élève : `buildProfile` ajoute un `sessionToken` signé (HMAC, `SESSION_SECRET` ou `WEBHOOK_SECRET`) stocké dans `resumeci_profile` ; `syncUserProfileFromRemote` l'envoie en `Authorization: Bearer`. Sans jeton, `/api/user-status` ne renvoie que le statut premium.
 - Accueil : `public/index.html` affiche `#introScreen` aux visiteurs sans profil ; « Continuer » mène à `/inscription.html` (plus de redirection automatique dans le `<head>`).
+
+## Vidéos TikTok
+- MoneyPrinterTurbo installé hors repo : `C:\MPT\MoneyPrinterTurbo` (venv `C:\mpt-venv`, LLM Ollama local sans clé). Voir `.devin/skills/videos-tiktok-resumeci/SKILL.md`.
+- Toute vidéo générée doit être copiée dans `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI` (nommage `NN_ResumeCI_Titre.mp4`).

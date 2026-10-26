@@ -1,0 +1,52 @@
+{
+ "Fiche_Chapitre1_ELEMENTS_DE_LA_COMPTABILITE_NATIONALE": {
+  "title": "Éléments de la comptabilité nationale",
+  "questions": [
+   {"id":"q1","text":"La comptabilité nationale sert à :","type":"qcm","options":["Tenir les comptes des entreprises","Mesurer l'activité économique d'un pays de façon synthétique (PIB, comptes)","Gérer le budget de l'État","Contrôler les banques"],"answer":1,"explanation":"Cadre normalisé (SCN) mesurant production, revenus, dépenses — base de l'analyse macroéconomique."},
+   {"id":"q2","text":"Les trois approches du calcul du PIB sont :","type":"qcm","options":["Production, revenu, dépense","Offre, demande, prix","Public, privé, étranger","Court, moyen, long terme"],"answer":0,"explanation":"Trois optiques équivalentes : somme des VA (production), somme des revenus (salaires + EBE), somme des dépenses (C+I+G+X−M)."},
+   {"id":"q3","text":"L'EBE (excédent brut d'exploitation) correspond à :","type":"qcm","options":["Les salaires versés","Le revenu disponible des ménages","Le surplus de la valeur ajoutée après rémunération du travail et impôts sur la production","Les exportations"],"answer":2,"explanation":"EBE = VA − rémunérations − impôts liés à la production : ce qui revient au capital et à l'épargne brute."},
+   {"id":"q4","text":"Le tableau économique d'ensemble (TEE) présente :","type":"qcm","options":["Uniquement le PIB","Les équilibres entre emplois et ressources de l'économie","Le budget de l'État","La balance commerciale seule"],"answer":1,"explanation":"TEE : synthèse ressources = emplois pour biens et services — PIB + M = C + FBCF + X + stocks."},
+   {"id":"q5","text":"Vrai ou Faux : la FBCF (formation brute de capital fixe) mesure l'investissement en biens durables de production.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — FBCF = acquisitions de biens de production durables (machines, bâtiments) + variation de stocks à part."}
+  ]
+ },
+ "Fiche_Chapitre2_OUTILS_DE_L_ANALYSE_ECONOMIQUE": {
+  "title": "Outils de l'analyse économique",
+  "questions": [
+   {"id":"q1","text":"L'IPC (indice des prix à la consommation) mesure :","type":"qcm","options":["La croissance du PIB","L'évolution du niveau général des prix des biens consommés","Le taux de chômage","Les salaires"],"answer":1,"explanation":"IPC = indice pondéré d'un panier de biens — sert à mesurer l'inflation : taux d'inflation = variation % de l'IPC."},
+   {"id":"q2","text":"Le taux de chômage est calculé comme :","type":"qcm","options":["Chômeurs / population totale","Chômeurs / population active × 100","Inactifs / emplois","Emplois / population"],"answer":1,"explanation":"Taux de chômage = chômeurs BIT (sans emploi, en recherche, disponibles) / actifs (emplois + chômeurs)."},
+   {"id":"q3","text":"Le déflateur du PIB permet de passer :","type":"qcm","options":["Du PIB réel au PIB nominal","Du PIB nominal au PIB réel (éliminer l'effet prix)","Du PIB au PNB","De l'IPC au PIB"],"answer":1,"explanation":"PIB réel = PIB nominal / déflateur × 100 — on retire l'inflation pour mesurer les volumes."},
+   {"id":"q4","text":"La population active regroupe :","type":"qcm","options":["Toute la population","Les personnes en âge de travailler occupées ou en recherche d'emploi","Les retraités","Les étudiants"],"answer":1,"explanation":"Actifs = occupés + chômeurs ; les inactifs (étudiants, retraités, foyer) en sont exclus."},
+   {"id":"q5","text":"Vrai ou Faux : le PIB nominal peut augmenter sans croissance réelle, uniquement par l'inflation.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — hausse des prix → PIB nominal ↑ à volumes constants ; seul le PIB réel mesure la croissance."}
+  ]
+ },
+ "Fiche_Chapitre3_EMERGENCE_DES_ECONOMIES_AFRICAINES": {
+  "title": "L'émergence des économies africaines",
+  "questions": [
+   {"id":"q1","text":"Un pays émergent se caractérise par :","type":"qcm","options":["Un PIB faible et stagnant","Une croissance rapide et une industrialisation en cours rattrapant les pays développés","L'absence d'État","Une économie purement agricole"],"answer":1,"explanation":"Émergence = rattrapage : forte croissance, diversification, intégration au commerce mondial, classe moyenne."},
+   {"id":"q2","text":"Les principaux facteurs de croissance africaine récents sont :","type":"qcm","options":["L'aide humanitaire seule","Matières premières, consommation intérieure, démographie, réformes","Les subventions occidentales","La décolonisation"],"answer":1,"explanation":"Ressources naturelles + urbanisation + dividende démographique + amélioration de la gouvernance."},
+   {"id":"q3","text":"Le « dividende démographique » désigne :","type":"qcm","options":["Le vieillissement de la population","La fenêtre où la population active croît plus vite que les dépendants","L'émigration","La fécondité"],"answer":1,"explanation":"Quand les actifs deviennent majoritaires (fécondité en baisse), potentiel de croissance par habitant accru."},
+   {"id":"q4","text":"La diversification économique est essentielle car :","type":"qcm","options":["Elle augmente les impôts","La dépendance aux matières premières expose aux chocs de prix mondiaux","Elle réduit la population","Elle attire les touristes"],"answer":1,"explanation":"Les économies mono-exportatrices sont vulnérables — transformer localement crée plus de VA et d'emplois."},
+   {"id":"q5","text":"Vrai ou Faux : la croissance ne suffit pas — pour être inclusive, elle doit créer des emplois et réduire les inégalités.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — croissance « sans emplois » (jobless growth) est un défi africain majeur malgré les taux élevés."}
+  ]
+ },
+ "Fiche_Chapitre4_SOURCES_DE_LA_CROISSANCE_ECONOMIQUE": {
+  "title": "Les sources de la croissance économique",
+  "questions": [
+   {"id":"q1","text":"Les facteurs fondamentaux de la croissance sont :","type":"qcm","options":["Prix et salaires","Capital (K), travail (L), progrès technique (A)","Impôts et subventions","Exportations"],"answer":1,"explanation":"Comptabilité de la croissance : ΔY/Y = ΔA/A + α·ΔK/K + (1−α)·ΔL/L — le PGF capte l'efficacité."},
+   {"id":"q2","text":"La PGF (productivité globale des facteurs) mesure :","type":"qcm","options":["La productivité du travail","La part de la croissance non expliquée par K et L (progrès technique, efficacité)","La part du capital","Le taux d'épargne"],"answer":1,"explanation":"PGF = résidu de Solow : ce qui reste de la croissance après déduction des contributions de K et L."},
+   {"id":"q3","text":"L'accumulation du capital comprend :","type":"qcm","options":["Uniquement les machines","Capital physique, humain (éducation) et institutions","La monnaie","La dette"],"answer":1,"explanation":"Capital au sens large : physique (équipements), humain (compétences, santé) et institutions stables."},
+   {"id":"q4","text":"La convergence prédit que :","type":"qcm","options":["Les pays riches croissent plus vite","Les pays pauvres rattrapent les riches (croissance plus forte au départ)","Tous les pays stagnent","La croissance est aléatoire"],"answer":1,"explanation":"Rendements décroissants du K : un capital rare a une productivité marginale élevée → rattrapage possible."},
+   {"id":"q5","text":"Vrai ou Faux : à long terme, seule la hausse de la PGF (progrès technique) soutient la croissance par tête.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — dans Solow, l'accumulation du capital seule bute sur les rendements décroissants ; A est le moteur durable."}
+  ]
+ },
+ "Fiche_Chapitre5_LES_ACTEURS_DE_LA_VIE_ECONOMIQUE": {
+  "title": "Les acteurs de la vie économique",
+  "questions": [
+   {"id":"q1","text":"Les ménages jouent dans l'économie le rôle de :","type":"qcm","options":["Producteurs de biens","Consommateurs finaux et offreurs de travail et d'épargne","Prêteurs aux entreprises seulement","Régulateurs"],"answer":1,"explanation":"Ménages : consomment (C), offrent le travail (revenus) et épargnent (financement de l'investissement)."},
+   {"id":"q2","text":"Les entreprises (sociétés non financières) ont pour fonction principale :","type":"qcm","options":["Redistribuer les revenus","Produire des biens et services marchands","Lever les impôts","Émettre la monnaie"],"answer":1,"explanation":"SNF : production marchande non financière — elles combinent K et L, investissent, versent salaires et profits."},
+   {"id":"q3","text":"Les administrations publiques produisent :","type":"qcm","options":["Des biens marchands","Des services non marchands financés par prélèvements obligatoires","Des actions","Du crédit"],"answer":1,"explanation":"APU : éducation publique, sécurité… évalués par les coûts de production (pas de prix de vente)."},
+   {"id":"q4","text":"« Le reste du monde » dans la comptabilité nationale désigne :","type":"qcm","options":["Les autres pays","L'ensemble des agents non-résidents en relation avec les résidents","Les entreprises étrangères","L'économie informelle"],"answer":1,"explanation":"RdM : compte des échanges (X, M, revenus, transferts) entre résidents et non-résidents."},
+   {"id":"q5","text":"Vrai ou Faux : les ISBLSM (institutions sans but lucratif au service des ménages) produisent des services non marchands financés par des dons ou cotisations.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — ONG, syndicats, associations : 5e secteur institutionnel avec APU, SNF, ménages, institutions financières."}
+  ]
+ }
+}

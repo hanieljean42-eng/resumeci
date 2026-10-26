@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — APPLICATIONS LINEAIRES RANG TRANSPOSEE TRACE — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI</title><meta name="description" content="Leçon 3 — Applications linéaires, rang, transposée et trace — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html"><meta property="og:title" content="Leçon 3 — APPLICATIONS LINEAIRES RANG TRANSPOSEE TRACE — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta property="og:description" content="Leçon 3 — Applications linéaires, rang, transposée et trace — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — APPLICATIONS LINEAIRES RANG TRANSPOSEE TRACE — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Applications linéaires, rang, transposée et trace — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Algebre_Vectoriel_et_Lineaire","item":"https://resumeci.me/#Licence_1_ADA/Algebre_Vectoriel_et_Lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 3 — APPLICATIONS LINEAIRES RANG TRANSPOSEE TRACE","item":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — APPLICATIONS LINEAIRES RANG TRANSPOSEE TRACE — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI","description":"Leçon 3 — Applications linéaires, rang, transposée et trace — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vec","url":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Algebre_Vectoriel_et_Lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algèbre Vectoriel et Linéaire</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Leçon 3 : Applications linéaires, rang, transposée et trace</span>
+  </div>
+</div>
+
+<h2>I. L'application linéaire</h2>
+<div class="definition"><strong>Application linéaire :</strong> une application f : ℝⁿ → ℝᵐ est linéaire si, pour tous vecteurs u, v de ℝⁿ et tout réel λ : <strong>f(u + v) = f(u) + f(v)</strong> et <strong>f(λu) = λf(u)</strong>.</div>
+<ul>
+  <li><strong>ℝⁿ (départ) :</strong> vecteurs à n composantes = n <em>variables d'entrée</em> (ex. ℝ³ : capital, travail, matière première).</li>
+  <li><strong>ℝᵐ (arrivée) :</strong> vecteurs à m composantes = m <em>résultats de sortie</em> (ex. ℝ² : coût, production).</li>
+</ul>
+<div class="definition"><strong>Base canonique de ℝⁿ :</strong> ensemble des n vecteurs e₁ = (1;0;…;0), e₂ = (0;1;…;0), …, e<sub>n</sub> = (0;0;…;1). <strong>Principe fondamental :</strong> une application linéaire est entièrement déterminée par les images f(e₁), f(e₂), …, f(e<sub>n</sub>).</div>
+
+<h2>II. Écriture matricielle d'une application linéaire</h2>
+<div class="schema"><strong>Construction de la matrice associée A :</strong> on place <strong>f(e₁) en 1ʳᵉ colonne, f(e₂) en 2ᵉ colonne, …, f(e<sub>n</sub>) en n-ième colonne</strong>. La matrice A est de taille <strong>m × n</strong> : le nombre de <strong>lignes = dimension de l'espace d'arrivée</strong> ℝᵐ, le nombre de <strong>colonnes = dimension de l'espace de départ</strong> ℝⁿ. On a alors <strong>f(X) = A·X</strong>.</div>
+<div class="important"><strong>Exemple :</strong> 3 facteurs de production (entrées ℝ³), 2 types de produits (sorties ℝ²). Si X ∈ ℝ³ et A ∈ M₂,₃, alors AX ∈ ℝ² : chaque ligne de A combine les 3 facteurs pour donner un résultat.</div>
+
+<h2>III. Le rang d'une matrice</h2>
+<div class="definition"><strong>Rang rg(A) :</strong> nombre <strong>maximal</strong> de lignes (ou de colonnes) <strong>linéairement indépendantes</strong> — c'est aussi la dimension de l'image de l'application linéaire associée. Toujours <strong>rg(A) ≤ min(m, n)</strong>.</div>
+<div class="schema"><strong>Méthode :</strong> une ligne (ou colonne) est <strong>dépendante</strong> si elle s'écrit comme combinaison linéaire des autres (ex. L₂ = 2L₁). On compte seulement les lignes/colonnes <strong>indépendantes</strong>. Rang par les lignes = rang par les colonnes.</div>
+<div class="important"><strong>Exemples :</strong><br>
+• A = (1 2 3 ; 0 1 4 ; 2 0 1) : aucune ligne n'est combinaison des autres → <strong>rg(A) = 3</strong> (matrice « pleine », aucune information redondante).<br>
+• B = (1 2 3 ; 2 4 6 ; 1 0 1) : L₂ = 2×L₁ → L₂ dépendante ; L₁ et L₃ indépendantes → <strong>rg(B) = 2</strong>.</div>
+
+<h2>IV. La transposée</h2>
+<div class="definition"><strong>Transposée A<sup>T</sup> :</strong> obtenue en <strong>échangeant les lignes et les colonnes</strong> de A. Si A est m × n, alors A<sup>T</sup> est <strong>n × m</strong>.</div>
+<div class="schema"><strong>Propriétés :</strong> (A<sup>T</sup>)<sup>T</sup> = A ; (A + B)<sup>T</sup> = A<sup>T</sup> + B<sup>T</sup> ; (λA)<sup>T</sup> = λA<sup>T</sup> ; <strong>(AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></strong> (ordre inversé !) ; rg(A) = rg(A<sup>T</sup>).</div>
+
+<h2>V. La trace</h2>
+<div class="definition"><strong>Trace tr(A) :</strong> somme des éléments de la <strong>diagonale principale</strong> : tr(A) = a₁₁ + a₂₂ + … + a<sub>nn</sub>. ⚠️ Définie <strong>uniquement pour les matrices carrées</strong>.</div>
+<div class="schema"><strong>Propriétés :</strong> tr(A + B) = tr(A) + tr(B) ; tr(λA) = λ·tr(A) ; tr(A<sup>T</sup>) = tr(A) ; <strong>tr(AB) = tr(BA)</strong> (quand les produits existent).</div>
+<div class="important"><strong>Exemple :</strong> M = (2 10 −1 ; 3 4 5 ; 0 1 2) → tr(M) = 2 + 4 + 2 = <strong>8</strong> (on ne prend que la diagonale).</div>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Mettre les f(e<sub>i</sub>) en <strong>lignes</strong> : c'est en <strong>colonnes</strong>.</li>
+    <li>Inverser m et n : les <strong>lignes = espace d'arrivée</strong> ℝᵐ, les <strong>colonnes = départ</strong> ℝⁿ.</li>
+    <li>Compter toutes les lignes pour le rang : il faut éliminer les <strong>lignes dépendantes</strong> (proportionnelles, combinaisons).</li>
+    <li>Écrire (AB)<sup>T</sup> = A<sup>T</sup>B<sup>T</sup> : c'est <strong>B<sup>T</sup>A<sup>T</sup></strong>.</li>
+    <li>Calculer la trace d'une matrice non carrée : <strong>impossible</strong>.</li>
+    <li>Croire que rg(A) peut dépasser min(m, n) : <strong>jamais</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

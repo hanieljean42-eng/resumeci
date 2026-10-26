@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre6 VARIABLES ALEATOIRES CONTINUES — Probabilite Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 6 — Variables aléatoires continues — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html"><meta property="og:title" content="Chapitre6 VARIABLES ALEATOIRES CONTINUES — Probabilite Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 6 — Variables aléatoires continues — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre6 VARIABLES ALEATOIRES CONTINUES — Probabilite Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 6 — Variables aléatoires continues — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Probabilite","item":"https://resumeci.me/#Licence_1_ADA/Probabilite"},{"@type":"ListItem","position":4,"name":"Chapitre6 VARIABLES ALEATOIRES CONTINUES","item":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre6 VARIABLES ALEATOIRES CONTINUES — Probabilite Licence 1_ADA | ResumeCI","description":"Chapitre 6 — Variables aléatoires continues — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha","url":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Probabilité</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 6 : Variables aléatoires continues</span>
+  </div>
+</div>
+
+<h2>I. Du discret au continu : ce qui change</h2>
+<div class="definition"><strong>Variable aléatoire continue :</strong> v.a. qui peut prendre <strong>toutes les valeurs d'un intervalle</strong> (borné ou non) — en général, toute variable issue d'une <strong>mesure</strong> (temps, taille, prix, durée de vie).<br><strong>Conséquence fondamentale : P(X = x) = 0</strong> pour toute valeur exacte x — l'infini des valeurs possibles rend chaque cas isolé de probabilité nulle. On ne peut plus définir la loi par une liste de pᵢ : on passe par la <strong>densité</strong> et les <strong>intégrales</strong>.</div>
+<div class="important"><strong>Fonction de répartition :</strong> F(t) = P(X ≤ t), comme dans le cas discret — mais ici F est <strong>continue et croissante</strong> (pas en escalier), de ℝ vers [0, 1].<br><strong>P(a ≤ X ≤ b) = F(b) − F(a)</strong> — et comme P(X=a) = 0, les inégalités strictes ou larges donnent le même résultat.</div>
+
+<h2>II. La densité de probabilité</h2>
+<div class="definition"><strong>Densité de probabilité f :</strong> fonction définie sur ℝ qui remplace la « liste des pᵢ ». Pour être une densité sur un intervalle I :<br>1. f est <strong>continue</strong> sur I (par morceaux) ;<br>2. f est <strong>positive</strong> : f(x) ≥ 0 ;<br>3. L'intégrale totale vaut 1 : <strong>∫ f(x)dx = 1</strong> (aire sous la courbe = 1).</div>
+<div class="schema"><strong>Les deux formules à connaître :</strong><br>• <strong>P(a ≤ X ≤ b) = ∫<sub>a</sub><sup>b</sup> f(x)dx</strong> — une probabilité = une <strong>aire</strong> sous la densité.<br>• <strong>F(t) = ∫<sub>−∞</sub><sup>t</sup> f(x)dx</strong> et réciproquement <strong>F′(x) = f(x)</strong> : la densité est la dérivée de la répartition.</div>
+<div class="definition"><strong>Espérance et variance (versions continues) :</strong><br>E[X] = ∫ x·f(x)dx ; E[X²] = ∫ x²·f(x)dx ; Var[X] = E[X²] − (E[X])² ; σ = √Var.<br><em>Même logique que le discret : la somme Σ devient une intégrale ∫.</em></div>
+
+<h2>III. Les lois continues usuelles</h2>
+<div class="definition"><strong>1. Loi uniforme U([a ; b]) :</strong> toutes les valeurs de [a, b] <strong>équiprobables</strong> — la densité est <strong>constante</strong> :<br><strong>f(x) = 1/(b − a)</strong> si x ∈ [a, b], et 0 sinon.<br>On note X ~ U([a ; b]). Typique d'un temps d'attente aléatoire dans une fenêtre donnée.</div>
+<div class="schema"><strong>Propriétés de l'uniforme :</strong> densité = rectangle de hauteur 1/(b−a).<br>E[X] = (a + b)/2 (le milieu) ; Var[X] = (b − a)²/12.<br>P(c ≤ X ≤ d) = (d − c)/(b − a) pour [c,d] ⊆ [a,b] — <strong>simple rapport de longueurs</strong>.</div>
+<div class="definition"><strong>2. Loi exponentielle ℰ(λ) :</strong> variable positive modélisant une <strong>durée de vie / temps d'attente sans mémoire</strong>.<br>Densité : <strong>f(x) = λ·e^(−λx)</strong> pour x ≥ 0 (0 sinon), λ > 0. On note X ~ ℰ(λ).<br>E[X] = 1/λ ; Var[X] = 1/λ².</div>
+<div class="important"><strong>Propriété « sans mémoire » :</strong> P(X &gt; s + t | X &gt; s) = P(X &gt; t) — le fait d'avoir déjà attendu ne change pas la probabilité d'attendre encore. C'est l'<strong>analogue continu de la loi géométrique</strong>.<br><strong>Applications :</strong> durée de vie d'un composant, temps entre deux pannes, temps d'attente à un guichet (lié au processus de Poisson : si les arrivées suivent 𝒫(λ), l'intervalle entre deux arrivées ~ ℰ(λ)).</div>
+<div class="definition"><strong>3. Loi normale (Laplace-Gauss) N(m, σ) :</strong> la loi la plus célèbre — courbe <strong>en cloche</strong>, symétrique autour de la moyenne m.<br>Densité : f(x) = (1/σ√(2π)) × e^(−(x−m)²/(2σ²))<br>m = moyenne (E[X] = m) ; σ = écart-type (Var[X] = σ²). On note X ~ N(m, σ²).</div>
+<div class="important"><strong>Centrage et réduction — la clé de tous les calculs :</strong><br>Si X ~ N(m, σ²), alors <strong>Z = (X − m)/σ ~ N(0, 1)</strong> (loi normale centrée réduite, notée Φ).<br>On lit P(Z ≤ z) dans la <strong>table de la loi normale</strong>, puis on revient à X.<br><strong>Repères :</strong> environ 68 % des valeurs dans [m−σ ; m+σ], 95 % dans [m−2σ ; m+2σ], 99,7 % dans [m−3σ ; m+3σ].</div>
+
+<h2>IV. Discret vs continu — récapitulatif et pièges d'examen</h2>
+<table>
+  <tr><th></th><th>Discret</th><th>Continu</th></tr>
+  <tr><td><strong>Valeurs</strong></td><td>Liste finie/dénombrable</td><td>Tout un intervalle</td></tr>
+  <tr><td><strong>Loi</strong></td><td>P(X = xᵢ) = pᵢ, Σpᵢ = 1</td><td>Densité f, ∫f = 1</td></tr>
+  <tr><td><strong>P(X = x)</strong></td><td>Peut être &gt; 0</td><td><strong>Toujours 0</strong></td></tr>
+  <tr><td><strong>Répartition F</strong></td><td>En escalier</td><td>Continue</td></tr>
+  <tr><td><strong>E[X]</strong></td><td>Σ xᵢ·pᵢ</td><td>∫ x·f(x)dx</td></tr>
+</table>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Écrire « P(X = 5) » pour une variable <strong>continue</strong> — la réponse est toujours 0 ; on calcule des P(a ≤ X ≤ b).</li>
+    <li>Oublier de vérifier ∫f = 1 quand on <strong>construit</strong> une densité (constante de normalisation).</li>
+    <li>Confondre densité f(x) (peut dépasser 1 !) et probabilité (toujours ≤ 1).</li>
+    <li>Loi uniforme : calculer des probabilités par <strong>intégrale</strong> alors qu'un rapport de longueurs suffit.</li>
+    <li>Loi normale : lire directement X dans la table au lieu de <strong>centrer-réduire</strong> d'abord (Z = (X−m)/σ).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

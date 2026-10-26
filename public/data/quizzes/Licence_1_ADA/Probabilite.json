@@ -1,0 +1,52 @@
+{
+ "Fiche_Chapitre1_GENERALITES_SUR_LES_ENSEMBLES": {
+  "title": "Généralités sur les ensembles",
+  "questions": [
+   {"id":"q1","text":"Un ensemble est :","type":"qcm","options":["Une liste ordonnée","Une collection d'objets distincts appelés éléments","Un nombre","Une fonction"],"answer":1,"explanation":"Notion fondatrice : on écrit x ∈ E (appartient) ; l'ordre et les répétitions ne comptent pas."},
+   {"id":"q2","text":"L'union A ∪ B regroupe :","type":"qcm","options":["Les éléments communs","Les éléments qui sont dans A OU dans B (ou les deux)","Les éléments de A seuls","L'ensemble vide"],"answer":1,"explanation":"Union = « OU » : tous les éléments de A et de B ; ∩ = « ET » : seulement les communs."},
+   {"id":"q3","text":"Le complémentaire de A dans Ω noté Ā contient :","type":"qcm","options":["Les éléments de A","Tous les éléments de Ω qui ne sont pas dans A","L'ensemble vide","A lui-même"],"answer":1,"explanation":"Ā = Ω∖A : A ∪ Ā = Ω et A ∩ Ā = ∅ — propriétés utilisées en probabilités (événement contraire)."},
+   {"id":"q4","text":"A ⊂ B signifie :","type":"qcm","options":["A et B sont égaux","Tout élément de A est aussi dans B (A est un sous-ensemble de B)","B est vide","A est plus grand que B"],"answer":1,"explanation":"Inclusion : A ⊆ B si x ∈ A ⟹ x ∈ B — égalité si les deux inclusions réciproques tiennent."},
+   {"id":"q5","text":"Vrai ou Faux : le produit cartésien A×B = {(a,b) : a∈A, b∈B} — des couples ordonnés.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — contrairement à l'ensemble, l'ordre du couple compte : (a,b) ≠ (b,a) en général."}
+  ]
+ },
+ "Fiche_Chapitre2_L_ANALYSE_COMBINATOIRE": {
+  "title": "L'analyse combinatoire",
+  "questions": [
+   {"id":"q1","text":"Le nombre de façons d'ordonner n objets distincts (permutations) est :","type":"qcm","options":["2ⁿ","n!","n²","C(n,2)"],"answer":1,"explanation":"n! = n×(n−1)×…×1 : 3 objets → 6 ordres ; 0! = 1 par convention."},
+   {"id":"q2","text":"Un arrangement A(n,p) compte :","type":"qcm","options":["Les sous-ensembles sans ordre","Les tirages ordonnés de p éléments parmi n sans répétition","Les tirages avec remise","Les partitions"],"answer":1,"explanation":"A(n,p) = n!/(n−p)! : ordre important, sans répétition — ex. podium de 3 parmi 8 coureurs."},
+   {"id":"q3","text":"Une combinaison C(n,p) diffère de l'arrangement par :","type":"qcm","options":["Elle tient compte de l'ordre","Elle ne tient PAS compte de l'ordre : C(n,p) = n!/(p!(n−p)!)","Elle autorise la répétition","Elle est toujours plus grande"],"answer":1,"explanation":"Combinaison = sous-ensemble : on divise l'arrangement par les p! ordres du même tirage."},
+   {"id":"q4","text":"Le principe multiplicatif dit :","type":"qcm","options":["On additionne les choix","Si une expérience se déroule en k étapes à n₁,…,n_k issues, le total est n₁×…×n_k","Les cas sont exclusifs","On divise"],"answer":1,"explanation":"Choix successifs → produit ; cas disjoints alternatifs → somme (principe additif)."},
+   {"id":"q5","text":"Le nombre de parties (sous-ensembles) d'un ensemble à n éléments est :","type":"qcm","options":["n!","2ⁿ","n²","C(n,n)"], "answer":1,"explanation":"Card P(E) = 2ⁿ : chaque élément est pris ou non — aussi = Σₚ C(n,p) (binôme)."}
+  ]
+ },
+ "Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES": {
+  "title": "Variables aléatoires discrètes",
+  "questions": [
+   {"id":"q1","text":"Une variable aléatoire discrète X est :","type":"qcm","options":["Un nombre fixe","Une application de Ω dans un ensemble dénombrable de valeurs (x₁, x₂,…) avec des probabilités","Un intervalle","Un ensemble"],"answer":1,"explanation":"X associe à chaque issue une valeur ; sa loi = {(xᵢ, pᵢ)} avec pᵢ = P(X = xᵢ) et Σpᵢ = 1."},
+   {"id":"q2","text":"L'espérance E(X) d'une v.a. discrète vaut :","type":"qcm","options":["La plus grande valeur","Σ xᵢ·pᵢ : moyenne pondérée par les probabilités","max(xᵢ)","1/n"],"answer":1,"explanation":"E(X) = Σ xᵢpᵢ : valeur moyenne à long terme ; linéaire : E(aX+b) = aE(X)+b."},
+   {"id":"q3","text":"La variance V(X) mesure :","type":"qcm","options":["La moyenne","La dispersion autour de l'espérance : E[(X−E(X))²]","La somme des écarts","Le maximum"],"answer":1,"explanation":"V(X) = E(X²) − [E(X)]² (König-Huygens) ; écart-type σ = √V."},
+   {"id":"q4","text":"La covariance de deux v.a. X et Y est :","type":"qcm","options":["Toujours nulle","Cov(X,Y) = E(XY) − E(X)E(Y) : mesure leur variation conjointe","E(X)+E(Y)","V(X)·V(Y)"],"answer":1,"explanation":"Cov > 0 : varient dans le même sens ; X, Y indépendantes ⟹ Cov = 0 (réciproque fausse)."},
+   {"id":"q5","text":"Vrai ou Faux : Var(X+Y) = Var(X) + Var(Y) + 2·Cov(X,Y) — et Var(X+Y) = Var(X)+Var(Y) si X et Y sont indépendantes.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — la variance n'est PAS additive en général ; l'indépendance annule la covariance."}
+  ]
+ },
+ "Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES": {
+  "title": "Lois de probabilité discrètes usuelles",
+  "questions": [
+   {"id":"q1","text":"La loi de Bernoulli B(p) modélise :","type":"qcm","options":["Un tirage continu","Une épreuve à deux issues : succès (prob. p) ou échec (1−p)","Plusieurs résultats","Un temps d'attente"],"answer":1,"explanation":"Épreuve unique binaire : X ∈ {0,1} ; E(X) = p, V(X) = p(1−p)."},
+   {"id":"q2","text":"La loi binomiale B(n,p) compte :","type":"qcm","options":["Un seul essai","Le nombre de succès sur n épreuves de Bernoulli indépendantes identiques","Les échecs","La somme des probabilités"],"answer":1,"explanation":"P(X=k) = C(n,k)pᵏ(1−p)ⁿ⁻ᵏ ; E = np, V = np(1−p) — ex. nombre de « pile » en n lancers."},
+   {"id":"q3","text":"La loi de Poisson P(λ) sert à :","type":"qcm","options":["Compter les succès","Modéliser le nombre d'événements rares dans un intervalle (appels, pannes) avec paramètre λ","Ordonner","Mesurer le temps"],"answer":1,"explanation":"P(X=k) = e⁻ᵏλᵏ/k! ; E(X) = V(X) = λ — approximation de la binomiale (n grand, p petit, np=λ)."},
+   {"id":"q4","text":"La loi géométrique mesure :","type":"qcm","options":["La surface","Le rang du premier succès dans des épreuves de Bernoulli indépendantes","Le nombre total d'épreuves","La moyenne"],"answer":1,"explanation":"P(X=k) = (1−p)ᵏ⁻¹p : probabilité du premier succès au kᵉ essai ; sans mémoire."},
+   {"id":"q5","text":"Vrai ou Faux : pour une binomiale B(n,p), E(X) = np et Var(X) = np(1−p).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — somme de n Bernoulli indépendantes : espérance et variance additives."}
+  ]
+ },
+ "Fiche_Chapitre6_VARIABLES_ALEATOIRES_CONTINUES": {
+  "title": "Variables aléatoires continues",
+  "questions": [
+   {"id":"q1","text":"Une variable aléatoire continue X prend :","type":"qcm","options":["Des valeurs entières","Ses valeurs dans un intervalle — sa loi est décrite par une densité f(x)","Un nombre fini de valeurs","Des noms"],"answer":1,"explanation":"f(x) ≥ 0 et ∫f = 1 ; P(a ≤ X ≤ b) = ∫ₐᵇ f(x)dx : la probabilité = AIRE sous la courbe."},
+   {"id":"q2","text":"Pour une v.a. continue, P(X = a) vaut :","type":"qcm","options":["1","f(a)","0 — l'aire d'un point est nulle","0,5"],"answer":2,"explanation":"Seules les probabilités d'intervalles sont positives ; on utilise la fonction de répartition F(x) = P(X ≤ x)."},
+   {"id":"q3","text":"La loi uniforme sur [a,b] a pour densité :","type":"qcm","options":["f(x) = 1","f(x) = 1/(b−a) constante sur [a,b]","f(x) = e⁻ˣ","f(x) = x"],"answer":1,"explanation":"Densité plate : probabilité proportionnelle à la longueur ; E(X) = (a+b)/2."},
+   {"id":"q4","text":"La loi exponentielle de paramètre λ modélise :","type":"qcm","options":["Des comptages","Des durées d'attente sans mémoire (durée de vie, temps entre événements)","Des succès","Des uniformes"],"answer":1,"explanation":"f(x) = λe⁻ˡˣ ; sans mémoire : P(X>s+t|X>s) = P(X>t) ; E(X) = 1/λ."},
+   {"id":"q5","text":"Vrai ou Faux : la loi normale N(μ,σ²) est la loi en cloche symétrique — environ 68 % des valeurs à ±σ de μ, 95 % à ±2σ.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — théorème central limite : somme de nombreuses v.a. indépendantes → loi normale centrée réduite N(0,1)."}
+  ]
+ }
+}

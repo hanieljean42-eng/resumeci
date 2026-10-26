@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre5 LOIS DE PROBABILITE DISCRETES USUELLES — Probabilite Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 5 — Lois de probabilité discrètes usuelles — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semest"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html"><meta property="og:title" content="Chapitre5 LOIS DE PROBABILITE DISCRETES USUELLES — Probabilite Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 5 — Lois de probabilité discrètes usuelles — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semest"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre5 LOIS DE PROBABILITE DISCRETES USUELLES — Probabilite Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 5 — Lois de probabilité discrètes usuelles — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semest"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Probabilite","item":"https://resumeci.me/#Licence_1_ADA/Probabilite"},{"@type":"ListItem","position":4,"name":"Chapitre5 LOIS DE PROBABILITE DISCRETES USUELLES","item":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre5 LOIS DE PROBABILITE DISCRETES USUELLES — Probabilite Licence 1_ADA | ResumeCI","description":"Chapitre 5 — Lois de probabilité discrètes usuelles — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semest","url":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre5_LOIS_DE_PROBABILITE_DISCRETES_USUELLES.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Probabilité</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 5 : Lois de probabilité discrètes usuelles</span>
+  </div>
+</div>
+
+<h2>I. L'épreuve de Bernoulli et la loi de Bernoulli</h2>
+<div class="definition"><strong>Épreuve de Bernoulli :</strong> phénomène aléatoire à <strong>2 issues seulement</strong> : succès (S) de probabilité <strong>p</strong>, échec (E) de probabilité <strong>q = 1 − p</strong>. On pose Ω = {S, E} et X(S) = 1, X(E) = 0 → X(Ω) = {0, 1}.</div>
+<div class="schema"><strong>Loi de Bernoulli B(p) :</strong> P(X=1) = p ; P(X=0) = 1 − p.<br><strong>E[X] = p</strong> ; <strong>Var[X] = p(1 − p)</strong>.</div>
+<div class="important"><strong>Exemples :</strong><br>• Boîte de 80 stylos (35 bleus, 20 rouges, 25 verts), événement « stylo rouge » : X ~ B(20/80) = B(1/4).<br>• 10 chaînes de fabrication, une défaillante testée au hasard : X ~ B(1/10).<br>• Dé équilibré, événement « obtenir 2 » : X ~ B(1/6).</div>
+
+<h2>II. La loi binomiale B(n, p)</h2>
+<div class="definition"><strong>X = nombre de succès</strong> après <strong>n répétitions indépendantes</strong> d'une même épreuve de Bernoulli (≡ <strong>n tirages AVEC remise</strong>).<br>X(Ω) = {0, 1, …, n} ; <strong>P(X = k) = C(n,k) × pᵏ × (1−p)ⁿ⁻ᵏ</strong>. On note X ~ B(n, p).</div>
+<div class="schema"><strong>Propriétés :</strong> E[X] = <strong>np</strong> ; Var[X] = <strong>np(1−p)</strong>.<br>Si X₁ ~ B(n₁,p) et X₂ ~ B(n₂,p) indépendantes → X₁ + X₂ ~ B(n₁+n₂, p).<br>Cas particulier : B(p) = B(1, p).</div>
+<div class="important"><strong>Exemples :</strong><br>• 12 tirages avec remise dans la boîte de stylos, « nombre de rouges » : X ~ B(12, 1/4) → E[X] = 3.<br>• 10 lancers de dé, probabilité d'obtenir <strong>4 fois</strong> le chiffre 5 : P(X=4) = C(10,4) × (1/6)⁴ × (5/6)⁶.</div>
+
+<h2>III. La loi hypergéométrique H(N, n, p)</h2>
+<div class="definition"><strong>Tirage SANS remise</strong> : population de <strong>N</strong> individus dont <strong>K</strong> possèdent le caractère étudié (p = K/N) ; on prélève un échantillon de <strong>n</strong> individus.<br>X = nombre de fois que le caractère apparaît : <strong>P(X = k) = C(K,k) × C(N−K, n−k) / C(N, n)</strong>.</div>
+<div class="schema"><strong>Propriétés :</strong> E[X] = <strong>np</strong> (comme la binomiale !) ; Var[X] = np(1−p) × (N−n)/(N−1).<br><strong>Binomiale = tirage AVEC remise (indépendant) ; Hypergéométrique = SANS remise (dépendant).</strong><br><strong>Approximation :</strong> si N → ∞ (grande population), H(N,n,p) ≈ B(n,p) — sans remise ≈ avec remise.</div>
+<div class="important"><strong>Exemples :</strong><br>• 15 employés dont 6 de niveau master ; on en choisit 5 pour un contrôle : X ~ H(15, 5, 6/15) → E[X] = 5 × 6/15 = <strong>2</strong>.<br>• Examen de 20 sujets, le candidat en a révisé 12 et en tire 2 : P(X ≥ 1) = 1 − P(X=0) = 1 − C(8,2)/C(20,2).</div>
+
+<h2>IV. Loi géométrique et loi de Pascal</h2>
+<div class="definition"><strong>Loi géométrique G(p) :</strong> X = <strong>nombre de répétitions pour obtenir le 1ᵉʳ succès</strong>.<br>X(Ω) = ℕ* ; <strong>P(X = k) = p × (1−p)ᵏ⁻¹</strong>.<br><strong>E[X] = 1/p</strong> ; Var[X] = (1−p)/p².</div>
+<div class="important"><strong>Exemple :</strong> machine avec probabilité de panne 0,01 à chaque utilisation ; X = nombre d'utilisations avant la 1ʳᵉ panne : X ~ G(0,01) → P(X=k) = 0,01 × 0,99ᵏ⁻¹ ; E[X] = 1/0,01 = <strong>100</strong> utilisations.</div>
+<div class="definition"><strong>Loi de Pascal Pasc(n, p) :</strong> X = <strong>nombre de répétitions pour obtenir les n premiers succès</strong> (généralisation de la géométrique : n = 1).<br>X(Ω) = {n, n+1, n+2, …} ; <strong>P(X = k) = C(k−1, n−1) × pⁿ × (1−p)ᵏ⁻ⁿ</strong>.<br><strong>E[X] = n/p</strong> ; Var[X] = n(1−p)/p².</div>
+<div class="important"><strong>Exemple :</strong> même machine, X = nombre d'utilisations pour <strong>10 pannes</strong> : X ~ Pasc(10 ; 0,01) → E[X] = 10/0,01 = <strong>1 000</strong>.</div>
+
+<h2>V. La loi de Poisson 𝒫(λ)</h2>
+<div class="definition"><strong>Processus de Poisson :</strong> événements <strong>indépendants</strong>, se produisant <strong>un à la fois</strong>, à rythme <strong>constant</strong> sur une période fixe.<br><strong>Loi des événements rares :</strong> X(Ω) = ℕ ; <strong>P(X = k) = e⁻λ × λᵏ / k!</strong> avec λ > 0. On note X ~ 𝒫(λ).<br><strong>E[X] = λ et Var[X] = λ</strong> (le paramètre = moyenne ET variance).</div>
+<div class="schema"><strong>Approximation binomiale → Poisson :</strong> si n → ∞, p → 0 avec np → λ, alors B(n,p) ≈ 𝒫(λ).<br><strong>Concrètement :</strong> événement <strong>rare</strong> (p faible) répété un <strong>grand nombre</strong> de fois (n grand) → Poisson avec λ = np.<br>Si le rythme est λ par unité de temps : P(k événements en temps t) = e^(−λt) × (λt)ᵏ / k!.</div>
+<div class="important"><strong>Exemple résolu :</strong> atterrissages dans un petit aéroport ~ 𝒫(2) par semaine (moyenne 2). Probabilité de <strong>6 atterrissages en 1 mois</strong> ?<br>1 mois = 4 semaines → λt = 2 × 4 = 8 → P(X = 6) = e⁻⁸ × 8⁶ / 6! ≈ <strong>0,122</strong>.</div>
+
+<h2>VI. Tableau récapitulatif et pièges d'examen</h2>
+<table>
+  <tr><th>Loi</th><th>Situation</th><th>E[X]</th><th>Var[X]</th></tr>
+  <tr><td>Bernoulli B(p)</td><td>1 épreuve, 2 issues</td><td>p</td><td>p(1−p)</td></tr>
+  <tr><td>Binomiale B(n,p)</td><td>n succès, tirages <strong>avec</strong> remise</td><td>np</td><td>np(1−p)</td></tr>
+  <tr><td>Hypergéométrique H(N,n,p)</td><td>Tirages <strong>sans</strong> remise</td><td>np</td><td>np(1−p)·(N−n)/(N−1)</td></tr>
+  <tr><td>Géométrique G(p)</td><td>Attente du 1ᵉʳ succès</td><td>1/p</td><td>(1−p)/p²</td></tr>
+  <tr><td>Pascal Pasc(n,p)</td><td>Attente des n premiers succès</td><td>n/p</td><td>n(1−p)/p²</td></tr>
+  <tr><td>Poisson 𝒫(λ)</td><td>Événements rares, rythme λ</td><td>λ</td><td>λ</td></tr>
+</table>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li><strong>Confondre binomiale et hypergéométrique</strong> : la question « avec ou sans remise ? » décide de tout.</li>
+    <li>Oublier le coefficient C(n,k) dans P(X=k) de la binomiale.</li>
+    <li>Loi géométrique : le <strong>dernier</strong> essai est le succès → exposant (k−1) sur l'échec.</li>
+    <li>Poisson : adapter λ à la <strong>période demandée</strong> (λ par semaine ≠ λ par mois).</li>
+    <li>Croire que « rare » = « impossible » : Poisson donne P(X=k) &gt; 0 pour tout k.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

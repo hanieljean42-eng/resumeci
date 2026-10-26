@@ -1,0 +1,72 @@
+{
+ "Fiche_Chapitre1_CONCEPTS_DE_BASE": {
+  "title": "Concepts de base de la statistique",
+  "questions": [
+   {"id":"q1","text":"La statistique descriptive a pour objet :","type":"qcm","options":["Prédire l'avenir","Décrire, résumer et présenter des données (effectifs, tableaux, graphiques, indicateurs)","Gagner de l'argent","Tester des hypothèses"],"answer":1,"explanation":"Décrire = organiser et synthétiser les données observées ; l'inférence (échantillon→population) est une autre branche."},
+   {"id":"q2","text":"Le caractère statistique étudié peut être :","type":"qcm","options":["Toujours numérique","Qualitatif (modalités : sexe, couleur) ou quantitatif (discret ou continu)","Seulement des dates","Nominal"],"answer":1,"explanation":"Qualitatif : catégories ; quantitatif discret : valeurs isolées (nombre d'enfants) ; continu : intervalles (taille)."},
+   {"id":"q3","text":"La population statistique est :","type":"qcm","options":["Toujours des personnes","L'ensemble des unités sur lesquelles porte l'étude","Un échantillon","Une ville"],"answer":1,"explanation":"Population = ensemble de référence (individus, entreprises…) ; chaque unité = individu statistique."},
+   {"id":"q4","text":"L'effectif nᵢ d'une modalité est :","type":"qcm","options":["Un pourcentage","Le nombre d'individus présentant cette modalité","La fréquence","La moyenne"],"answer":1,"explanation":"Effectif = comptage absolu ; fréquence fᵢ = nᵢ/N (proportion) ; fréquence cumulée = somme progressive."},
+   {"id":"q5","text":"Vrai ou Faux : une variable quantitative continue nécessite un regroupement en classes d'amplitude pour être présentée.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — valeurs trop nombreuses → classes [a,b[ ; on calcule alors le centre de classe comme valeur représentative."}
+  ]
+ },
+ "Fiche_Chapitre2_PRESENTATION_DES_DONNEES": {
+  "title": "Présentation des données",
+  "questions": [
+   {"id":"q1","text":"Un tableau statistique présente :","type":"qcm","options":["Des images","Les modalités/valeurs du caractère avec leurs effectifs ou fréquences","Uniquement des moyennes","Des citations"],"answer":1,"explanation":"Double entrée possible ; en ligne : caractère xᵢ, en colonnes : nᵢ, fᵢ — base de toute analyse."},
+   {"id":"q2","text":"Le diagramme en bâtons convient à :","type":"qcm","options":["Une variable continue","Une variable discrète : hauteur de chaque bâton = effectif de la valeur","Des classes","Des proportions"],"answer":1,"explanation":"Bâtons = valeurs discrètes espacées ; l'histogramme (rectangles juxtaposés) sert pour les classes continues."},
+   {"id":"q3","text":"Le diagramme circulaire (camembert) représente :","type":"qcm","options":["Des séries chronologiques","Des parts : angles proportionnels aux fréquences d'un tout","Des évolutions","Des moyennes"],"answer":1,"explanation":"Secteur = fᵢ × 360° ; visualise la répartition en parts d'un ensemble (marché, budget)."},
+   {"id":"q4","text":"L'histogramme représente une variable continue par :","type":"qcm","options":["Des points","Des rectangles dont l'AIRE est proportionnelle à l'effectif de chaque classe","Des lignes","Des angles"],"answer":1,"explanation":"Attention : si classes d'amplitudes inégales, hauteur = effectif/amplitude (densité), pas effectif brut."},
+   {"id":"q5","text":"Vrai ou Faux : la courbe des effectifs cumulés croissants est croissante et permet de lire la médiane.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — cumul croissant : nombre d'individus ≤ x ; la médiane est à l'abscisse où le cumul atteint 50 %."}
+  ]
+ },
+ "Fiche_Chapitre3_CARACTERISTIQUES_DE_TENDANCE_CENTRALE": {
+  "title": "Caractéristiques de tendance centrale",
+  "questions": [
+   {"id":"q1","text":"La moyenne arithmétique est :","type":"qcm","options":["La valeur la plus fréquente","Σ(nᵢxᵢ)/N : somme pondérée des valeurs divisée par l'effectif total","La valeur médiane","L'écart"],"answer":1,"explanation":"x̄ = (1/N)Σnᵢxᵢ — sensible aux valeurs extrêmes ; pour classes : xᵢ = centre de classe."},
+   {"id":"q2","text":"La médiane est :","type":"qcm","options":["La moyenne","La valeur qui partage la série ordonnée en deux effectifs égaux (50 % de part et d'autre)","La plus grande valeur","La valeur modale"],"answer":1,"explanation":"Médiane = valeur centrale après tri ; robuste aux valeurs extrêmes (contrairement à la moyenne)."},
+   {"id":"q3","text":"Le mode (valeur dominante) est :","type":"qcm","options":["La moyenne","La valeur ou classe ayant l'effectif (ou la densité) le plus élevé","La médiane","Le minimum"],"answer":1,"explanation":"Mode = maximum de fréquence — seul indicateur utilisable pour un caractère qualitatif."},
+   {"id":"q4","text":"La moyenne géométrique G est adaptée pour :","type":"qcm","options":["Des sommes","Des taux et rapports : G = ⁿ√(x₁·x₂·…·xₙ)","Des noms","Des médianes"],"answer":1,"explanation":"Taux de croissance moyen : G−1 ; harmonique H = n/Σ(1/xᵢ) pour des moyennes de vitesses ou de rendements."},
+   {"id":"q5","text":"Vrai ou Faux : dans une distribution symétrique, moyenne = médiane = mode.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — symétrie parfaite aligne les trois ; asymétrie droite : mode < médiane < moyenne (queue à droite)."}
+  ]
+ },
+ "Fiche_Chapitre4_CARACTERISTIQUES_DE_DISPERSION": {
+  "title": "Caractéristiques de dispersion",
+  "questions": [
+   {"id":"q1","text":"L'étendue d'une série est :","type":"qcm","options":["La moyenne","La différence entre la plus grande et la plus petite valeur","L'écart-type","La médiane"],"answer":1,"explanation":"Étendue = x_max − x_min : mesure simple mais sensible aux extrêmes."},
+   {"id":"q2","text":"La variance V mesure :","type":"qcm","options":["La moyenne","La moyenne des carrés des écarts à la moyenne : Σnᵢ(xᵢ−x̄)²/N","L'écart-type","L'étendue"],"answer":1,"explanation":"Dispersion autour de x̄ ; formule pratique : V = E(X²) − x̄² ; unité = celle des données au carré."},
+   {"id":"q3","text":"L'écart-type σ est :","type":"qcm","options":["La variance","La racine carrée de la variance : √V — même unité que les données","La moyenne","L'écart absolu"],"answer":1,"explanation":"σ = √V : indicateur de dispersion le plus utilisé ; grande σ = données dispersées."},
+   {"id":"q4","text":"Le coefficient de variation CV vaut :","type":"qcm","options":["σ×x̄","σ/x̄ (×100 %) — dispersion relative permettant de comparer des séries d'unités différentes","V/x̄","x̄/σ"],"answer":1,"explanation":"CV = σ/x̄ : sans unité → comparer dispersions de séries à moyennes/unités différentes."},
+   {"id":"q5","text":"Vrai ou Faux : deux séries peuvent avoir même moyenne mais des dispersions très différentes — la moyenne seule ne suffit pas.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — ex. notes 10-10-10 vs 5-10-15 : mêmes x̄=10, dispersions opposées ; d'où l'intérêt de σ."}
+  ]
+ },
+ "Fiche_Chapitre5_SERIES_STATISTIQUES_A_DEUX_DIMENSIONS": {
+  "title": "Séries statistiques à deux dimensions",
+  "questions": [
+   {"id":"q1","text":"Une série statistique à deux caractères étudie :","type":"qcm","options":["Une seule variable","L'association entre deux caractères (X,Y) observés sur les mêmes individus","Deux populations","Des moyennes"],"answer":1,"explanation":"Tableau à double entrée : effectifs conjoints nᵢⱼ — question : X et Y sont-ils liés ?"},
+   {"id":"q2","text":"La covariance de X et Y vaut :","type":"qcm","options":["Σxy","Cov(X,Y) = (1/N)Σnᵢⱼ(xᵢ−x̄)(yⱼ−ȳ) = E(XY) − x̄·ȳ","V(X)+V(Y)","x̄×ȳ"],"answer":1,"explanation":"Cov > 0 : varient de concert ; < 0 : en sens inverse ; = 0 : pas de relation linéaire."},
+   {"id":"q3","text":"Le coefficient de corrélation linéaire r vérifie :","type":"qcm","options":["r > 1 toujours","−1 ≤ r ≤ +1 : r = Cov(X,Y)/(σx·σy)","r = 0 signifie indépendance totale","r est sans signe"],"answer":1,"explanation":"r proche de ±1 : forte liaison linéaire ; r≈0 : pas de lien LINÉAIRE (une relation non linéaire peut exister)."},
+   {"id":"q4","text":"La droite d'ajustement des moindres carrés y = ax + b a pour pente :","type":"qcm","options":["a = Cov(X,Y)/V(X)","a = V(X)/Cov","a = r","a = x̄/ȳ"],"answer":0,"explanation":"a = Cov(X,Y)/σx² et b = ȳ − a·x̄ : la droite passe par le point moyen (x̄, ȳ)."},
+   {"id":"q5","text":"Vrai ou Faux : une forte corrélation n'implique pas une causalité — deux variables liées peuvent dépendre d'une troisième.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — corrélation ≠ causalité : classique ex. glaces et noyades liés à la chaleur (variable cachée)."}
+  ]
+ },
+ "Fiche_Chapitre6_INDICES_STATISTIQUES": {
+  "title": "Les indices statistiques",
+  "questions": [
+   {"id":"q1","text":"Un indice simple mesure :","type":"qcm","options":["Une moyenne","L'évolution d'une grandeur entre deux dates : I₁/₀ = V₁/V₀ × 100","Une proportion","Un taux"],"answer":1,"explanation":"Base 100 : I = 125 signifie +25 % par rapport à la date de référence."},
+   {"id":"q2","text":"L'indice de Laspeyres des prix utilise :","type":"qcm","options":["Les quantités de la période courante","Les quantités de la période de BASE comme pondérations fixes","Les prix seuls","La moyenne des périodes"],"answer":1,"explanation":"L = Σp₁q₀/Σp₀q₀ : mesure l'évolution des prix à structure de consommation de base — tend à surestimer."},
+   {"id":"q3","text":"L'indice de Paasche diffère de Laspeyres en utilisant :","type":"qcm","options":["Les quantités de base","Les quantités de la période COURANTE comme pondérations","Aucune pondération","Les moyennes"],"answer":1,"explanation":"P = Σp₁q₁/Σp₀q₁ : reflete la consommation actuelle — tend à sous-estimer l'inflation."},
+   {"id":"q4","text":"L'indice de Fisher est :","type":"qcm","options":["La somme des deux","La moyenne géométrique de Laspeyres et Paasche : √(L×P)","La moyenne arithmétique","Un indice des quantités"],"answer":1,"explanation":"Fisher = compromis symétrique entre les biais opposés de L et P — indice « idéal » de Irving Fisher."},
+   {"id":"q5","text":"Vrai ou Faux : un indice de 80 signifie une baisse de 20 % par rapport à la base 100.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — I < 100 : diminution de (100−I) % ; I = 80 → −20 % par rapport à la période de référence."}
+  ]
+ },
+ "Fiche_Chapitre7_SERIES_CHRONOLOGIQUES": {
+  "title": "Les séries chronologiques",
+  "questions": [
+   {"id":"q1","text":"Une série chronologique est :","type":"qcm","options":["Un tableau","Une suite d'observations d'une variable relevées à intervalles réguliers dans le temps","Un nuage de points","Un histogramme"],"answer":1,"explanation":"Série temporelle y(t) : PIB trimestriel, ventes mensuelles — base de l'analyse de tendance et prévision."},
+   {"id":"q2","text":"Les composantes d'une série chronologique sont :","type":"qcm","options":["Prix et quantités","Tendance (trend), variations saisonnières, cycles et mouvement irrégulier","Moyenne et variance","Croissance et décroissance"],"answer":1,"explanation":"Décomposition : y = tendance long terme + saisonnalité (périodique) + cycle (pluriannuel) + aléatoire."},
+   {"id":"q3","text":"La tendance générale (trend) représente :","type":"qcm","options":["Les saisons","Le mouvement de longue période de la série (croissance ou déclin de fond)","Le bruit","Les accidents"],"answer":1,"explanation":"Trend = direction durable — estimée par moyennes mobiles ou ajustement linéaire y = at+b."},
+   {"id":"q4","text":"Les moyennes mobiles servent à :","type":"qcm","options":["Calculer la moyenne","Lisser la série pour éliminer les fluctuations saisonnières et révéler la tendance","Prédire les prix","Cumuler les effectifs"],"answer":1,"explanation":"MM = moyenne glissante sur p périodes centrées : élimine les oscillations courtes — révèle le trend."},
+   {"id":"q5","text":"Vrai ou Faux : les variations saisonnières sont des fluctuations régulières et prévisibles liées au calendrier (saison, fêtes).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — périodicité annuelle/trimestrielle : glaces en été, jouets à Noël ; mesurées par coefficients saisonniers."}
+  ]
+ }
+}

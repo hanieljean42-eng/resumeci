@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre3 OPTIMISATION NON LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 3 — Optimisation non linéaire — Modélisation L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html"><meta property="og:title" content="Chapitre3 OPTIMISATION NON LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 3 — Optimisation non linéaire — Modélisation L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre3 OPTIMISATION NON LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 3 — Optimisation non linéaire — Modélisation L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Modelisation_et_Optimisation","item":"https://resumeci.me/#Licence_1_ADA/Modelisation_et_Optimisation"},{"@type":"ListItem","position":4,"name":"Chapitre3 OPTIMISATION NON LINEAIRE","item":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre3 OPTIMISATION NON LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI","description":"Chapitre 3 — Optimisation non linéaire — Modélisation L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre","url":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre3_OPTIMISATION_NON_LINEAIRE.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Modelisation_et_Optimisation","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Modélisation et Optimisation</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Chapitre 3 : Optimisation non linéaire</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi le non linéaire ?</h2>
+<div class="important"><strong>Dans la réalité, les relations ne sont pas proportionnelles :</strong> coûts marginaux croissants, utilité concave, rendements décroissants, effets de saturation → modèles <strong>non linéaires</strong>.<br>La recherche de l'optimum repose ici sur le <strong>calcul différentiel</strong> et les <strong>conditions marginales</strong> — pas sur les sommets.</div>
+<div class="definition"><strong>Problème type :</strong> maximiser ou minimiser une fonction <strong>f(x)</strong> non linéaire (profit quadratique, coût total, fonction de production non proportionnelle).</div>
+
+<h2>II. Optimisation d'une fonction d'une variable</h2>
+<div class="schema"><strong>Étape 1 — Condition du premier ordre :</strong> calculer <strong>f′(x) = 0</strong> → <strong>points critiques</strong> (candidats). La pente est nulle — en économie, c'est l'égalité <strong>recette marginale = coût marginal</strong>.<br><strong>Étape 2 — Condition du second ordre :</strong> calculer f″(x*) :<br>• f″(x*) &lt; 0 → <strong>maximum</strong> ;<br>• f″(x*) &gt; 0 → <strong>minimum</strong> ;<br>• f″(x*) = 0 → <strong>impossible à conclure</strong>.</div>
+<div class="important"><strong>Exemple 1 — maximum de profit :</strong> P(x) = −2x² + 24x − 40.<br>P′(x) = −4x + 24 = 0 → <strong>x* = 6</strong> ; P″(x) = −4 &lt; 0 → maximum ✓ ; P(6) = <strong>32</strong>.</div>
+<div class="important"><strong>Exemple 2 — minimum de coût :</strong> C(x) = x² − 8x + 20.<br>C′(x) = 2x − 8 = 0 → <strong>x* = 4</strong> ; C″(x) = 2 &gt; 0 → minimum ✓ ; C(4) = 16 − 32 + 20 = <strong>4</strong>.</div>
+
+<h2>III. Optimisation de plusieurs variables</h2>
+<div class="definition"><strong>Problème :</strong> optimiser f(x₁…xₙ) sans contrainte → résoudre le <strong>gradient</strong> nul.<br><strong>∇f = 0</strong> : ∂f/∂x₁ = 0, ∂f/∂x₂ = 0, … — autant d'équations que d'inconnues → <strong>point critique</strong>.</div>
+<div class="schema"><strong>Étape 2 — la hessienne</strong> H = matrice des dérivées secondes partielles. Au point critique :<br>• H <strong>définie négative</strong> → maximum ;<br>• H <strong>définie positive</strong> → minimum ;<br>• H <strong>indéfinie</strong> → point selle.</div>
+<div class="definition"><strong>Avec contrainte d'égalité</strong> g(x,y) = c : construire le <strong>lagrangien</strong><br><strong>L = f(x,y) − λ·(g(x,y) − c)</strong><br>puis annuler les dérivées : ∂L/∂x = 0, ∂L/∂y = 0, ∂L/∂λ = 0.<br>λ = <strong>multiplicateur de Lagrange</strong> : valeur marginale du relâchement de la contrainte (prix « ombre » de la ressource).</div>
+<div class="important"><strong>Exemple :</strong> max U(x,y) = 10√(xy) s.c. x + y = 30.<br>L = 10√(xy) − λ(x+y−30).<br>∂L/∂x = 5√(y/x) − λ = 0 ; ∂L/∂y = 5√(x/y) − λ = 0 → x = y ; la contrainte donne <strong>x* = y* = 15</strong>, U* = 150.</div>
+
+<h2>IV. Tableau récapitulatif</h2>
+<table>
+  <tr><th>Type de problème</th><th>Condition 1er ordre</th><th>Condition 2ᵉ ordre</th></tr>
+  <tr><td>1 variable</td><td>f′(x) = 0</td><td>f″(x) &lt; 0 max ; &gt; 0 min ; = 0 échec</td></tr>
+  <tr><td>Plusieurs variables, sans contrainte</td><td>∇f = 0</td><td>Hessienne : définie négative → max, positive → min, indéfinie → selle</td></tr>
+  <tr><td>Contrainte d'égalité</td><td>Lagrangien : ∂L = 0 (toutes variables + λ)</td><td>Hessienne bordée / hessienne du lagrangien</td></tr>
+</table>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Résoudre f′(x)=0 et <strong>oublier</strong> de vérifier f″ — un point critique n'est pas forcément un maximum.</li>
+    <li>Inverser les signes : f″ &lt; 0 = <strong>max</strong>, f″ &gt; 0 = <strong>min</strong> — ne pas confondre.</li>
+    <li>Oublier λ dans le système du lagrangien — il y a <strong>n+1 équations</strong>.</li>
+    <li>Appliquer le raisonnement « sommet » à un problème non linéaire.</li>
+    <li>Croire que la solution « point critique » respecte automatiquement les contraintes — le lagrangien est là pour ça.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

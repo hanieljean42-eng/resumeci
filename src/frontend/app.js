@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -52,7 +52,13 @@ const UNI_SUBJECT_ICONS = {
   Initiation_a_l_etude_du_droit: '⚖️', Introduction_Etude_Droit: '⚖️', Droit_Constitutionnel: '🏛️',
   Droit_des_Obligations: '📝', Droit_de_la_Famille: '👪', Droits_de_l_Homme: '🕊️', Droit_Anglais: '🇬🇧',
   Ethique_Juridique: '🧭', Histoire_Droit_Institutions: '📜', Methodologie_Juridique: '🔎',
-  Microsoft_Excel: '📊', Relations_Internationales: '🌍'
+  Microsoft_Excel: '📊', Relations_Internationales: '🌍',
+  Le_Monde_des_Affaires: '💼', Elements_d_Analyse_Economique: '🌍', Probabilite: '🎲',
+  Methodologie_de_Travail_Universitaire: '🧠', Ethiques_et_Valeurs_Humaines: '🕊️',
+  Gestion_de_projet: '📋', Sociologie_de_l_Entreprise: '👥', Analyse_Microeconomique: '🛒',
+  Analyse_Macroeconomique: '🏦', Algebre_Vectoriel_et_Lineaire: '🧮',
+  Modelisation_et_Optimisation: '⚙️', Mathematiques_Financieres: '💹', Statistiques: '📊',
+  Utilisation_de_l_Information_Comptable: '🧾'
 };
 function getIcon(n) {
   if (UNI_SUBJECT_ICONS[n]) return UNI_SUBJECT_ICONS[n];

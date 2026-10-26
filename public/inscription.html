@@ -742,6 +742,7 @@
               <optgroup label="🎓 Université">
                 <option value="Licence_1_Droit">Licence 1 Droit</option>
                 <option value="Licence_1_Miage">Licence 1 MIAGE</option>
+                <option value="Licence_1_ADA">Licence 1 ADA</option>
               </optgroup>
             </select>
             <i class="fas fa-school ic"></i>
@@ -1173,6 +1174,26 @@
       }
     }
 
+    // Catalogue Élite : classes disposant de sujets corrigés (Pass Élite/Excellence).
+    // Récupéré une fois depuis l'API publique, puis applyEnvMode est rejoué.
+    let _eliteClasses = null;
+    let _eliteLoading = false;
+    function classHasEliteContent(cls) {
+      return !!(_eliteClasses && _eliteClasses.has(cls));
+    }
+    function loadEliteCatalog() {
+      if (_eliteClasses || _eliteLoading) return;
+      _eliteLoading = true;
+      fetch(`${getPaymentApiBase()}/api/interros/catalog`, { cache: 'no-store' })
+        .then(r => r.json())
+        .then(d => {
+          _eliteClasses = new Set(((d && d.interros) || []).map(x => String(x.classe || '')));
+          const rc = document.getElementById('regClass');
+          if (rc) applyEnvMode(rc.value.startsWith('Licence_'));
+        })
+        .catch(() => { _eliteClasses = new Set(); });
+    }
+
     // Bascule toute la page entre l'environnement Collège/Lycée et Université
     function applyEnvMode(isUniv) {
       const flag = document.querySelector('.header-flag');
@@ -1189,22 +1210,24 @@
       if (clsLabel) clsLabel.textContent = isUniv ? 'Filière / Niveau *' : 'Classe actuelle *';
 
       const cls = (document.getElementById('regClass') || {}).value || '';
+      loadEliteCatalog();
       ['planPro', 'planElite', 'planStarter', 'planFree'].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
-        // Pass Élite : uniquement les classes ayant des sujets publiés (Terminale D pour l'instant)
-        el.style.display = isUniv ? 'none' : (id === 'planElite' && cls !== 'Terminale_D' ? 'none' : '');
+        // Pass Élite : uniquement les classes ayant des sujets publiés au catalogue Élite
+        el.style.display = isUniv ? 'none' : (id === 'planElite' && !classHasEliteContent(cls) ? 'none' : '');
       });
       ['planUniStarter', 'planUniPro', 'planUniElite', 'planUniFree'].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
-        // Pass Excellence : masqué tant qu'aucune filière n'a de sujets publiés
-        el.style.display = (isUniv && id !== 'planUniElite') ? '' : 'none';
+        // Pass Excellence : affiché uniquement si la filière a des sujets publiés au catalogue Élite
+        const eliteOk = id !== 'planUniElite' || classHasEliteContent(cls);
+        el.style.display = (isUniv && eliteOk) ? '' : 'none';
       });
 
       // Retombe sur une formule visible si la classe ne permet plus la formule choisie
-      if (selectedTier === 'elite' && cls !== 'Terminale_D') selectedTier = 'pro';
-      if (selectedTier === 'uni_elite') selectedTier = 'uni_pro';
+      if (selectedTier === 'elite' && !classHasEliteContent(cls)) selectedTier = 'pro';
+      if (selectedTier === 'uni_elite' && !classHasEliteContent(cls)) selectedTier = 'uni_pro';
 
       // Université : Pass Licence Pro par défaut (l'Essai Gratuit reste choisissable)
       if (isUniv && !['uni_starter', 'uni_pro', 'uni_elite', 'free'].includes(selectedTier)) {

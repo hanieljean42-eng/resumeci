@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — VECTEURS ET CALCUL VECTORIEL — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI</title><meta name="description" content="Leçon 1 — Vecteurs et calcul vectoriel — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéaire 🏫"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html"><meta property="og:title" content="Leçon 1 — VECTEURS ET CALCUL VECTORIEL — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta property="og:description" content="Leçon 1 — Vecteurs et calcul vectoriel — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéaire 🏫"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — VECTEURS ET CALCUL VECTORIEL — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Vecteurs et calcul vectoriel — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéaire 🏫"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Algebre_Vectoriel_et_Lineaire","item":"https://resumeci.me/#Licence_1_ADA/Algebre_Vectoriel_et_Lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 1 — VECTEURS ET CALCUL VECTORIEL","item":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — VECTEURS ET CALCUL VECTORIEL — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI","description":"Leçon 1 — Vecteurs et calcul vectoriel — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéaire 🏫","url":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Algebre_Vectoriel_et_Lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algèbre Vectoriel et Linéaire</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Leçon 1 : Vecteurs et calcul vectoriel</span>
+  </div>
+</div>
+
+<h2>I. La notion de vecteur</h2>
+<div class="definition"><strong>Vecteur :</strong> objet mathématique caractérisé par trois éléments : une <strong>direction</strong>, un <strong>sens</strong> et une <strong>norme</strong> (sa longueur). On le note u⃗, v⃗… ou simplement x, y en écriture coordonnée : x = (x, y) dans le plan, x = (x, y, z) dans l'espace.</div>
+<ul>
+  <li><strong>En physique :</strong> un déplacement, une force (direction + sens + intensité).</li>
+  <li><strong>En économie :</strong> un panier de biens — la liste des quantités de différents biens consommés par un agent.</li>
+  <li><strong>En gestion :</strong> une liste de données chiffrées (productions, coûts, ventes).</li>
+</ul>
+<div class="important"><strong>Pourquoi un panier de biens est-il un vecteur ?</strong> Un panier de 3 biens (riz, huile, sucre) s'écrit x = (x₁, x₂, x₃) où x<sub>i</sub> = quantité du bien i. Cette écriture est <strong>exactement</strong> celle d'un vecteur de ℝ³.</div>
+
+<h2>II. Les vecteurs dans ℝⁿ</h2>
+<div class="definition"><strong>Vecteur de ℝⁿ :</strong> un n-uplet de nombres réels x = (x₁, x₂, …, x<sub>n</sub>) avec x<sub>i</sub> ∈ ℝ. <strong>ℝⁿ</strong> est l'ensemble de tous les vecteurs ayant n composantes réelles.</div>
+<table>
+  <tr><th>Ensemble</th><th>Interprétation</th></tr>
+  <tr><td>ℝ²</td><td>Un point ou un déplacement dans le <strong>plan</strong></td></tr>
+  <tr><td>ℝ³</td><td>Un point ou un vecteur dans l'<strong>espace</strong></td></tr>
+  <tr><td>ℝⁿ (n &gt; 3)</td><td>Un objet <strong>algébrique</strong> — en gestion : un ensemble d'informations chiffrées liées à une même activité</td></tr>
+</table>
+
+<h2>III. Opérations sur les vecteurs</h2>
+<div class="definition"><strong>Addition :</strong> (x₁, …, x<sub>n</sub>) + (y₁, …, y<sub>n</sub>) = (x₁ + y₁, …, x<sub>n</sub> + y<sub>n</sub>) — on additionne <strong>composante par composante</strong> (même nombre de composantes obligatoire).</div>
+<div class="definition"><strong>Multiplication par un scalaire :</strong> pour λ ∈ ℝ, λ·x = (λx₁, …, λx<sub>n</sub>) — chaque composante est multipliée par λ.</div>
+<div class="definition"><strong>Vecteur nul :</strong> 0⃗ = (0, 0, …, 0). Il représente l'absence totale de quantité ou de variation.</div>
+<div class="schema"><strong>Produit scalaire dans ℝⁿ :</strong> x · y = x₁y₁ + x₂y₂ + … + x<sub>n</sub>y<sub>n</sub>. Le résultat est un <strong>nombre</strong> (un scalaire), pas un vecteur. C'est l'outil de base pour calculer des <strong>totaux</strong> en économie et en gestion.</div>
+
+<h2>IV. Application à la gestion</h2>
+<ul>
+  <li>q = (q₁, …, q<sub>n</sub>) : <strong>vecteur des quantités produites</strong></li>
+  <li>p = (p₁, …, p<sub>n</sub>) : <strong>vecteur des prix unitaires</strong></li>
+  <li>c = (c₁, …, c<sub>n</sub>) : <strong>vecteur des coûts unitaires</strong></li>
+</ul>
+<div class="schema"><strong>Les 3 formules clés :</strong><br>
+<strong>Chiffre d'affaires :</strong> CA = p · q<br>
+<strong>Coût total :</strong> CT = c · q<br>
+<strong>Profit :</strong> Profit = CA − CT</div>
+<div class="important"><strong>Exemple résolu :</strong> une entreprise fabrique 3 produits A, B, C avec q = (100, 50, 20), p = (10, 20, 50) et c = (6, 12, 30) en milliers de FCFA.<br>
+CA = 10×100 + 20×50 + 50×20 = <strong>3 000</strong><br>
+CT = 6×100 + 12×50 + 30×20 = <strong>1 800</strong><br>
+Profit = 3 000 − 1 800 = <strong>1 200</strong> → profit positif : l'entreprise est <strong>rentable</strong>.</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Additionner deux vecteurs de tailles différentes : <strong>impossible</strong> — il faut le même nombre de composantes.</li>
+    <li>Croire que le produit scalaire donne un vecteur : il donne un <strong>réel</strong> (ex. le CA est un montant, pas une liste).</li>
+    <li>Oublier les unités : si p et c sont en <em>milliers</em> de FCFA, CA, CT et Profit le sont aussi.</li>
+    <li>Calculer le profit par CT − CA : c'est <strong>CA − CT</strong> ; un résultat négatif signifie une <strong>perte</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

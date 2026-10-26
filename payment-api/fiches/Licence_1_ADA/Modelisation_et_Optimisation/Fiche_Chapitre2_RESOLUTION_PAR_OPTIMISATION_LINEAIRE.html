@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre2 RESOLUTION PAR OPTIMISATION LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 2 — Résolution par optimisation linéaire — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre 2"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html"><meta property="og:title" content="Chapitre2 RESOLUTION PAR OPTIMISATION LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 2 — Résolution par optimisation linéaire — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre 2"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre2 RESOLUTION PAR OPTIMISATION LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 2 — Résolution par optimisation linéaire — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre 2"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Modelisation_et_Optimisation","item":"https://resumeci.me/#Licence_1_ADA/Modelisation_et_Optimisation"},{"@type":"ListItem","position":4,"name":"Chapitre2 RESOLUTION PAR OPTIMISATION LINEAIRE","item":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre2 RESOLUTION PAR OPTIMISATION LINEAIRE — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI","description":"Chapitre 2 — Résolution par optimisation linéaire — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Licence 1 ADA — Semestre 2","url":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre2_RESOLUTION_PAR_OPTIMISATION_LINEAIRE.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Modelisation_et_Optimisation","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Modélisation et Optimisation</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Chapitre 2 : Résolution par optimisation linéaire</span>
+  </div>
+</div>
+
+<h2>I. Le problème de programmation linéaire</h2>
+<div class="definition"><strong>Forme canonique :</strong> <strong>max Z = cᵀx</strong> sous contraintes <strong>Ax ≤ b, x ≥ 0</strong>.<br>Fonction objectif et contraintes <strong>linéaires</strong> → l'ensemble réalisable est un <strong>polyèdre convexe</strong> et l'optimum, s'il existe, se trouve à un <strong>sommet</strong>.</div>
+<div class="important"><strong>Problème type (suivi dans tout le chapitre) :</strong><br><strong>max Z = 30A + 50B</strong><br>s.c. { 2A + 4B ≤ 120 (machine) ; 3A + 2B ≤ 90 (travail) ; A, B ≥ 0 }.</div>
+
+<h2>II. Résolution graphique (2 variables)</h2>
+<div class="schema"><strong>Les 4 étapes :</strong><br><strong>1. Tracer les droites limites</strong> — pour ax + by ≤ c, tracer ax + by = c avec 2 points : (x=0 → y=c/b) et (y=0 → x=c/a).<br><strong>2. Choisir le bon demi-plan</strong> — pour ≤, garder le côté <strong>vers l'origine</strong>.<br><strong>3. Déterminer la zone admissible</strong> — intersection de tous les demi-plans + x ≥ 0, y ≥ 0.<br><strong>4. Faire glisser la droite objectif</strong> Z = cte jusqu'au dernier point de contact avec la zone → ce <strong>sommet</strong> est l'optimum.</div>
+<div class="important"><strong>Application :</strong><br>Machine : A + 2B = 60 → (60,0) et (0,30).<br>Travail : 3A + 2B = 90 → (30,0) et (0,45).<br>La zone admissible a pour sommets : (0,0), (30,0), (0,30) et l'intersection des deux droites.</div>
+
+<h2>III. Méthode des sommets (sans dessin)</h2>
+<div class="schema"><strong>Version calculatoire de la méthode graphique :</strong><br>1. <strong>Lister les candidats</strong> : x=0 ou y=0 avec chaque contrainte + <strong>intersections</strong> des contraintes (systèmes 2×2) ;<br>2. <strong>Garder</strong> ceux qui respectent toutes les contraintes ;<br>3. <strong>Calculer Z</strong> en chaque sommet et comparer.</div>
+<div class="important"><strong>Application complète :</strong><br>• S1 = (0,0) → Z = 0<br>• S2 = (30,0) → Z = 30×30 = <strong>900</strong><br>• S3 = (0,30) → Z = 50×30 = <strong>1 500</strong><br>• Intersection : {A + 2B = 60 ; 3A + 2B = 90} → soustraire : 2A = 30 → <strong>A = 15, B = 22,5</strong> → Z = 450 + 1 125 = <strong>1 575</strong><br><strong>⟹ Optimum : A* = 15, B* = 22,5 ; Z* = 1 575.</strong><br><em>Vérification : 2(15)+4(22,5) = 120 ✓ ; 3(15)+2(22,5) = 90 ✓ — les 2 contraintes sont <strong>saturées</strong>.</em></div>
+
+<h2>IV. Le simplexe et Excel Solveur</h2>
+<table>
+  <tr><th></th><th>Simplexe</th><th>Excel Solveur</th></tr>
+  <tr><td><strong>Nature</strong></td><td>Méthode <strong>mathématique</strong> (algorithme de tableaux successifs)</td><td>Outil <strong>informatique</strong> intégré à Excel</td></tr>
+  <tr><td><strong>Rôle</strong></td><td>Comprendre la théorie ; spécifique à la programmation linéaire</td><td>Calcul automatique ; gère aussi le non-linéaire (GRG), les variables entières</td></tr>
+  <tr><td><strong>Relation</strong></td><td colspan="2"><strong>Le Solveur est l'outil pratique ; le simplexe est le moteur mathématique derrière</strong> (option « Simplex LP »)</td></tr>
+</table>
+<div class="schema"><strong>Principe du simplexe :</strong> partir d'un sommet réalisable et <strong>sauter de sommet en sommet adjacent</strong> en améliorant l'objectif jusqu'à ce qu'aucune amélioration ne soit possible → optimum.<br><strong>Solver en pratique :</strong> Fichier → Options → Compléments → cocher « Solver Add-in » → Données → Analyse → Solveur → définir cellule objectif, variables, contraintes → « Simplex LP ».</div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Tester les sommets <strong>sans vérifier les contraintes</strong> — un point peut être une intersection mais hors zone.</li>
+    <li>Prendre le mauvais demi-plan (pour ≤ : vers l'origine).</li>
+    <li>Oublier une intersection de contraintes — elle donne souvent l'optimum.</li>
+    <li>Appliquer la méthode graphique à <strong>3 variables</strong> — limitée à 2.</li>
+    <li>Confondre « sommet de la zone » et « point d'intersection » : seuls les sommets <strong>réalisables</strong> comptent.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -1,0 +1,42 @@
+{
+ "Fiche_Chapitre1_L_ENTREPRISE_ET_SON_MILIEU": {
+  "title": "L'entreprise et son milieu",
+  "questions": [
+   {"id":"q1","text":"L'entreprise est définie comme :","type":"qcm","options":["Un bâtiment","Une unité économique et sociale combinant des facteurs pour produire des biens/services destinés à un marché","Une administration","Une banque"],"answer":1,"explanation":"Triple dimension : économique (production marchande), sociale (personnes), juridique (personnalité)."},
+   {"id":"q2","text":"L'approche systémique de l'entreprise la décrit comme :","type":"qcm","options":["Un ensemble fermé","Un système ouvert transformant des inputs (ressources) en outputs (biens/services) en interaction avec l'environnement","Une machine","Un marché"],"answer":1,"explanation":"Entrées → transformation → sorties, avec boucles de rétroaction — l'environnement (micro/macro) influe."},
+   {"id":"q3","text":"Le microenvironnement de l'entreprise comprend :","type":"qcm","options":["La démographie mondiale","Les acteurs proches : clients, fournisseurs, concurrents, intermédiaires","Les technologies lointaines","Le climat"],"answer":1,"explanation":"Acteurs en contact direct — vs macroenvironnement (PESTEL : politique, économie, société, techno, éco, légal)."},
+   {"id":"q4","text":"Les décisions dans l'entreprise se classent en :","type":"qcm","options":["Bonnes et mauvaises","Stratégiques (long terme, direction), tactiques (moyen terme), opérationnelles (quotidien)","Financières et sociales","Individuelles"],"answer":1,"explanation":"Hiérarchie temporelle : stratégique (cap) → tactique (moyens) → opérationnel (exécution)."},
+   {"id":"q5","text":"Vrai ou Faux : l'école systémique considère l'entreprise comme un tout dont les parties interagissent — le tout dépasse la somme des parties.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — synergie : un changement sur un sous-système affecte les autres (vision holiste vs analytique)."}
+  ]
+ },
+ "Fiche_Chapitre2_LA_TYPOLOGIE_DE_L_ENTREPRISE": {
+  "title": "La typologie de l'entreprise",
+  "questions": [
+   {"id":"q1","text":"Les critères de classification des entreprises sont notamment :","type":"qcm","options":["La couleur du logo","Taille, statut juridique, secteur d'activité, objet économique","Le nombre de clients","Le pays d'origine"],"answer":1,"explanation":"Typologie multi-critères : effectifs/CA, forme juridique, secteur (primaire/secondaire/tertiaire), but lucratif ou non."},
+   {"id":"q2","text":"Une PME se distingue essentiellement par :","type":"qcm","options":["Son produit","Sa taille : effectif et chiffre d'affaires sous des seuils définis","Son secteur","Son âge"],"answer":1,"explanation":"Seuils de taille (ex. UE : <250 salariés, CA ≤ 50 M€) — souplesse mais accès limité aux capitaux."},
+   {"id":"q3","text":"Les trois secteurs d'activité classiques sont :","type":"qcm","options":["Public, privé, mixte","Primaire (extraction/agriculture), secondaire (transformation/industrie), tertiaire (services)","Commerce, banque, éducation","Local, national, international"],"answer":1,"explanation":"Classification par nature de la production — tendance historique : tertiarisation des économies."},
+   {"id":"q4","text":"Une entreprise multinationale se caractérise par :","type":"qcm","options":["De nombreux employés","Des implantations productives dans plusieurs pays pilotées depuis une maison-mère","L'exportation","Une grande taille"],"answer":1,"explanation":"FMN : délocalisation de production, filiales à l'étranger — vs entreprise exportatrice simple."},
+   {"id":"q5","text":"Vrai ou Faux : l'entreprise publique appartient en majorité à l'État ; la privée à des personnes privées.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — critère capitalistique : contrôle du capital public ou privé ; il existe aussi des formes mixtes."}
+  ]
+ },
+ "Fiche_Chapitre7_ASPECTS_MATERIELS_ET_TECHNOLOGIQUES_LOGISTIQUE": {
+  "title": "Aspects matériels et technologiques : la logistique",
+  "questions": [
+   {"id":"q1","text":"La logistique d'entreprise couvre :","type":"qcm","options":["La comptabilité","L'ensemble des flux physiques : approvisionnement, production, stockage, distribution","Le marketing","La publicité"],"answer":1,"explanation":"Piloter le flux des matières et produits de l'amont (fournisseurs) à l'aval (clients) au moindre coût."},
+   {"id":"q2","text":"La gestion des stocks vise à :","type":"qcm","options":["Stocker un maximum","Trouver l'équilibre entre coût de stockage, rupture et service client","Éliminer les stocks","Acheter plus"],"answer":1,"explanation":"Stock optimal : ni surstockage (coût, immobilisation) ni rupture (ventes perdues) — modèles type Wilson."},
+   {"id":"q3","text":"Le « juste-à-temps » (JIT) consiste à :","type":"qcm","options":["Commander en avance","Produire/livrer au dernier moment pour réduire les stocks au strict nécessaire","Stocker plus","Augmenter les délais"],"answer":1,"explanation":"Flux tendus (Toyota) : zéro stock idéal — exige fiabilité fournisseurs et flexibilité de production."},
+   {"id":"q4","text":"La chaîne logistique (supply chain) intègre :","type":"qcm","options":["Seulement le transport","Tous les maillons coordonnés : achats → production → distribution → client","Les ventes","Les salaires"],"answer":1,"explanation":"Vision intégrée amont-aval — la performance globale dépend de la coordination entre maillons."},
+   {"id":"q5","text":"Vrai ou Faux : un stock de sécurité sert à parer les aléas (retards fournisseurs, variations de la demande).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — tampon contre l'incertitude ; son dimensionnement arbitre entre risque de rupture et coût de détention."}
+  ]
+ },
+ "Fiche_Chapitre8_LES_HOMMES_DANS_L_ENTREPRISE_GRH": {
+  "title": "Les hommes dans l'entreprise : la GRH",
+  "questions": [
+   {"id":"q1","text":"La GRH (gestion des ressources humaines) recouvre :","type":"qcm","options":["La paie seule","L'ensemble des pratiques visant à mobiliser les compétences : recrutement, formation, évaluation, rémunération","Le recrutement seul","La discipline"],"answer":1,"explanation":"Fonction stratégique : attirer, développer, fidéliser les compétences au service des objectifs."},
+   {"id":"q2","text":"La GPEC (gestion prévisionnelle des emplois et compétences) consiste à :","type":"qcm","options":["Licencier les vieux salariés","Anticiper les besoins futurs en compétences pour adapter les ressources aux évolutions","Payer les heures sup","Former au hasard"],"answer":1,"explanation":"Démarche prospective : analyser les écarts entre compétences actuelles et requises → plan de formation/mobilité."},
+   {"id":"q3","text":"La motivation au travail peut être stimulée par :","type":"qcm","options":["La seule augmentation de salaire","Des leviers variés : reconnaissance, responsabilisation, évolution, conditions, rémunération","La surveillance","Les sanctions"],"answer":1,"explanation":"Théories (Maslow, Herzberg, McGregor) : facteurs intrinsèques (sens, autonomie) + extrinsèques (salaire, cadre)."},
+   {"id":"q4","text":"L'entretien annuel d'évaluation sert à :","type":"qcm","options":["Sanctionner","Faire le point sur les résultats, fixer des objectifs et identifier les besoins de formation","Calculer les primes","Recruter"],"answer":1,"explanation":"Outil de dialogue et de pilotage individuel — non une simple note, mais un contrat de progrès."},
+   {"id":"q5","text":"Vrai ou Faux : selon Herzberg, les facteurs d'hygiène (salaire, conditions) évitent l'insatisfaction mais ne motivent pas durablement — les motivants sont le contenu du travail.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — théorie bifactorielle : hygiène = prévention de l'insatisfaction ; motivation = enrichissement du poste."}
+  ]
+ }
+}

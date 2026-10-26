@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre4 COMPARAISON DES METHODES — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 4 — Comparaison des méthodes d'optimisation et choix du modèle — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Lice"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html"><meta property="og:title" content="Chapitre4 COMPARAISON DES METHODES — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 4 — Comparaison des méthodes d'optimisation et choix du modèle — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Lice"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre4 COMPARAISON DES METHODES — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 4 — Comparaison des méthodes d'optimisation et choix du modèle — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Lice"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Modelisation_et_Optimisation","item":"https://resumeci.me/#Licence_1_ADA/Modelisation_et_Optimisation"},{"@type":"ListItem","position":4,"name":"Chapitre4 COMPARAISON DES METHODES","item":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre4 COMPARAISON DES METHODES — Modelisation_et_Optimisation Licence 1_ADA | ResumeCI","description":"Chapitre 4 — Comparaison des méthodes d'optimisation et choix du modèle — L1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Modélisation et Optimisation 🏫 Lice","url":"https://resumeci.me/fiches/Licence_1_ADA/Modelisation_et_Optimisation/Fiche_Chapitre4_COMPARAISON_DES_METHODES.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Modelisation_et_Optimisation","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Modélisation et Optimisation</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Chapitre 4 : Comparaison des méthodes et choix du modèle</span>
+  </div>
+</div>
+
+<h2>I. Linéaire vs non linéaire : le grand tableau</h2>
+<table>
+  <tr><th>Critère</th><th>Optimisation linéaire</th><th>Optimisation non linéaire</th></tr>
+  <tr><td><strong>Relations</strong></td><td>Proportionnelles, additives</td><td>Courbes : carrés, racines, produits de variables</td></tr>
+  <tr><td><strong>Ensemble réalisable</strong></td><td><strong>Polyèdre convexe</strong> (zone polygonale)</td><td>Région aux <strong>bords courbes</strong></td></tr>
+  <tr><td><strong>Où est l'optimum ?</strong></td><td>Toujours à un <strong>sommet</strong> (point extrême)</td><td>Là où les marges s'équilibrent (<strong>dérivée nulle</strong>)</td></tr>
+  <tr><td><strong>Méthodes</strong></td><td>Graphique (2 var.), sommets, <strong>simplexe</strong></td><td>Dérivées, gradient + hessienne, <strong>lagrangien</strong></td></tr>
+  <tr><td><strong>Solveur Excel</strong></td><td>Moteur « <strong>Simplex LP</strong> »</td><td>Moteur « <strong>GRG Nonlinear</strong> »</td></tr>
+  <tr><td><strong>Optimum trouvé</strong></td><td><strong>Global</strong> garanti (convexité)</td><td>Souvent <strong>local</strong> — dépend du point de départ</td></tr>
+</table>
+<div class="important"><strong>Idée directrice :</strong> en linéaire on « saute de sommet en sommet » ; en non linéaire on « suit la pente jusqu'au sommet de la colline » (ou au creux de la vallée). Deux logiques, un même objectif : la meilleure décision.</div>
+
+<h2>II. Récapitulatif par type de problème</h2>
+<table>
+  <tr><th>Type de problème</th><th>Outil principal</th><th>Condition de résolution</th></tr>
+  <tr><td>Linéaire, 2 variables</td><td>Graphique ou méthode des sommets</td><td>Évaluer Z aux sommets réalisables</td></tr>
+  <tr><td>Linéaire, n variables</td><td><strong>Simplexe</strong> / Solveur Simplex LP</td><td>Passage de sommet en sommet jusqu'à optimalité</td></tr>
+  <tr><td>Non linéaire, 1 variable</td><td>Calcul différentiel</td><td>f′(x)=0 puis signe de f″(x)</td></tr>
+  <tr><td>Non linéaire, n variables</td><td>Gradient + hessienne</td><td>∇f = 0 puis nature de la hessienne</td></tr>
+  <tr><td>Non linéaire, contrainte d'égalité</td><td><strong>Lagrangien</strong></td><td>∂L/∂xᵢ = 0 et ∂L/∂λ = 0</td></tr>
+  <tr><td>Non linéaire, convexe/concave</td><td>Mêmes conditions</td><td>Concave + max → optimum global ; convexe + min → optimum global</td></tr>
+</table>
+
+<h2>III. Comment choisir le bon modèle ?</h2>
+<div class="schema"><strong>Démarche de choix :</strong><br>1. <strong>Observer les relations économiques</strong> : proportionnelles (linéaire) ou courbes (non linéaire) ?<br>2. <strong>Identifier les contraintes</strong> : inégalités (simplexe) ou égalités (lagrangien) ?<br>3. <strong>Évaluer les données</strong> : coûts/prix unitaires constants → PL ; marges variables → non linéaire.<br>4. <strong>Choisir l'outil</strong> : crayon/graphique, tableaux du simplexe, dérivées, ou Solveur (Simplex LP / GRG).</div>
+<div class="important"><strong>Limite des outils numériques :</strong> le Solveur <strong>calcule</strong> mais ne <strong>modélise pas</strong>. C'est le gestionnaire qui choisit les variables, fixe l'objectif et traduit les contraintes — un mauvais modèle, même résolu parfaitement, donne une mauvaise décision.</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Croire que l'optimum non linéaire est toujours <strong>global</strong> — il peut être local.</li>
+    <li>Appliquer les « sommets » à un problème non linéaire, ou les dérivées à une PL.</li>
+    <li>Confondre contrainte d'<strong>inégalité</strong> (simplexe) et d'<strong>égalité</strong> (lagrangien).</li>
+    <li>Faire confiance aveuglément au Solveur sans vérifier la formulation.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

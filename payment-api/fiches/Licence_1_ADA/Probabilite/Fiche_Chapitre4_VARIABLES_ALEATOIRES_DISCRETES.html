@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapitre4 VARIABLES ALEATOIRES DISCRETES — Probabilite Licence 1_ADA | ResumeCI</title><meta name="description" content="Chapitre 4 — Variables aléatoires discrètes — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html"><meta property="og:title" content="Chapitre4 VARIABLES ALEATOIRES DISCRETES — Probabilite Licence 1_ADA | ResumeCI"><meta property="og:description" content="Chapitre 4 — Variables aléatoires discrètes — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapitre4 VARIABLES ALEATOIRES DISCRETES — Probabilite Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Chapitre 4 — Variables aléatoires discrètes — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Probabilite","item":"https://resumeci.me/#Licence_1_ADA/Probabilite"},{"@type":"ListItem","position":4,"name":"Chapitre4 VARIABLES ALEATOIRES DISCRETES","item":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chapitre4 VARIABLES ALEATOIRES DISCRETES — Probabilite Licence 1_ADA | ResumeCI","description":"Chapitre 4 — Variables aléatoires discrètes — Probabilité Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Probabilité 🏫 Licence 1 ADA — Semestre 1 Cha","url":"https://resumeci.me/fiches/Licence_1_ADA/Probabilite/Fiche_Chapitre4_VARIABLES_ALEATOIRES_DISCRETES.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Probabilite","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Probabilité</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 4 : Variables aléatoires discrètes</span>
+  </div>
+</div>
+
+<h2>I. Notion de variable aléatoire</h2>
+<div class="definition"><strong>Variable aléatoire (v.a.) :</strong> fonction <strong>X : Ω → ℝ</strong> qui associe une <strong>valeur numérique</strong> à chaque résultat ω d'une expérience aléatoire : ω ↦ X(ω). Elle fait le lien entre l'espace échantillonnal et les nombres réels.<br><strong>Discrète :</strong> quand X(Ω) (ensemble des valeurs possibles) est <strong>fini</strong> ou <strong>dénombrable</strong>.</div>
+<div class="schema"><strong>Notations des événements :</strong><br>• {X = a} = {ω ∈ Ω / X(ω) = a}<br>• {X ≤ a} = {ω ∈ Ω / X(ω) ≤ a} ; {X ≥ a} idem<br>• {a ≤ X ≤ b} = {ω ∈ Ω / a ≤ X(ω) ≤ b}</div>
+<div class="important"><strong>Exemples :</strong><br><strong>1.</strong> Dé à 6 faces, événement « obtenir 6 » : Ω = {1,…,6}, X(ω) = 1 si ω = 6, sinon 0 → X(Ω) = {0, 1}.<br><strong>2.</strong> 3 lancers de pièce, X = nombre de PILE : plusieurs ω donnent la même valeur (PPF, PFP, FPP → X = 2) → X(Ω) = {0, 1, 2, 3}.</div>
+<div class="definition"><strong>Propriété :</strong> si X et Y sont des v.a. discrètes, λ ∈ ℝ et f une application, alors <strong>X + Y, λX, X·Y et f(X)</strong> sont aussi des v.a. discrètes.</div>
+
+<h2>II. Loi de probabilité et fonction de répartition</h2>
+<div class="definition"><strong>Loi de probabilité de X :</strong> liste de toutes les valeurs différentes xᵢ de X(Ω) avec les probabilités associées <strong>P(X = xᵢ) = pᵢ</strong>.<br><strong>Condition obligatoire : Σ pᵢ = 1</strong> (somme de toutes les probabilités).</div>
+<div class="schema"><strong>Exemples :</strong><br>• Dé, événement « 6 » : P(X=0) = 5/6, P(X=1) = 1/6.<br>• 3 lancers (X = nb de PILE) : P(X=0) = 1/8, P(X=1) = 3/8, P(X=2) = 3/8, P(X=3) = 1/8 → total = 1 ✓</div>
+<div class="important"><strong>Fonction de répartition :</strong> F : ℝ → [0,1] définie par <strong>F(t) = P(X ≤ t)</strong> — on <strong>cumule</strong> les probabilités jusqu'à t (d'où « fonction cumulative »).<br>• F est croissante, en escalier pour une v.a. discrète.<br>• <strong>P(a &lt; X ≤ b) = F(b) − F(a)</strong> ; on peut retrouver la loi de X à partir de F.</div>
+
+<h2>III. Espérance, variance, écart-type</h2>
+<div class="schema"><strong>Espérance (moyenne théorique) :</strong> E[X] = Σ xᵢ × P(X = xᵢ)<br>Joue le même rôle que la moyenne en statistique descriptive : la valeur « espérée ».<br><strong>Variance (dispersion) :</strong> Var[X] = E[X²] − (E[X])² où E[X²] = Σ xᵢ² × pᵢ<br><strong>Écart-type :</strong> σ(X) = √Var[X]</div>
+<div class="important"><strong>Exemple résolu — 3 lancers (X = nb de PILE) :</strong><br>E[X] = 0×⅛ + 1×⅜ + 2×⅜ + 3×⅛ = <strong>3/2</strong><br>E[X²] = 0×⅛ + 1×⅜ + 4×⅜ + 9×⅛ = 3 → Var[X] = 3 − (3/2)² = <strong>3/4</strong> ; σ = √3/2 ≈ <strong>0,87</strong></div>
+<div class="definition"><strong>Variable centrée-réduite :</strong> Y = (X − E[X]) / σ(X).<br><strong>Propriété :</strong> E[Y] = 0 et σ(Y) = 1 — permet de <strong>comparer</strong> des variables sur une même échelle.</div>
+
+<h2>IV. Couple de variables aléatoires discrètes</h2>
+<div class="definition"><strong>Loi jointe de (X,Y) :</strong> ensemble des P(X = xᵢ, Y = yⱼ).<br><strong>Lois marginales :</strong> P(X = xᵢ) = Σⱼ P(X = xᵢ, Y = yⱼ) (somme en ligne) ; P(Y = yⱼ) = Σᵢ P(X = xᵢ, Y = yⱼ) (somme en colonne).<br><strong>⚠️ La loi jointe donne les marginales, mais la réciproque est FAUSSE.</strong></div>
+<div class="important"><strong>Exemple résolu :</strong> une poche contient 1 pièce de 5 F, 2 pièces de 10 F et 1 pièce de 25 F ; on tire 2 pièces successivement. X = valeur de la 1ʳᵉ pièce, Y = somme des deux.<br>X(Ω) = {5, 10, 25} ; Y(Ω) = {15, 20, 30, 35}. On construit le <strong>tableau à double entrée</strong> (lignes = X, colonnes = Y) : les totaux de lignes/colonnes donnent les lois marginales.</div>
+<div class="definition"><strong>Fonction de répartition du couple :</strong> F(s, t) = P(X ≤ s, Y ≤ t) → les répartitions marginales s'en déduisent.<br><strong>Loi conditionnelle de X sachant Y = yⱼ :</strong> P(X = xᵢ | Y = yⱼ) = P(X = xᵢ, Y = yⱼ) / P(Y = yⱼ).</div>
+<div class="schema"><strong>Indépendance stochastique :</strong> X et Y indépendantes ⟺ P(X = xᵢ, Y = yⱼ) = P(X = xᵢ) × P(Y = yⱼ) <strong>pour tout couple</strong> (i, j).</div>
+<div class="important"><strong>Covariance :</strong> Cov(X,Y) = E[XY] − E[X]·E[Y] où E[XY] = Σᵢ Σⱼ xᵢyⱼ P(X=xᵢ, Y=yⱼ).<br><strong>Coefficient de corrélation :</strong> ρ(X,Y) = Cov(X,Y) / [σ(X)·σ(Y)] ∈ [−1, 1].<br><strong>Var(X + Y) = Var[X] + Var[Y] + 2·Cov(X,Y)</strong><br>Si X et Y indépendantes : E[XY] = E[X]·E[Y], Cov = 0, Var(X+Y) = Var(X) + Var(Y). <em>(Indépendance ⟹ Cov = 0, réciproque fausse !)</em></div>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier de vérifier <strong>Σ pᵢ = 1</strong> — une « loi » dont la somme ≠ 1 est fausse.</li>
+    <li>Confondre E[X²] et (E[X])² — la variance c'est la <strong>différence</strong> des deux.</li>
+    <li>Croire que les lois marginales suffisent à reconstruire la loi jointe.</li>
+    <li>Conclure à l'indépendance parce que Cov = 0 (réciproque fausse).</li>
+    <li>Oublier le terme 2·Cov(X,Y) dans Var(X + Y) quand les variables sont <strong>dépendantes</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

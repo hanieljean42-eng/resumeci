@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — LE DETERMINANT ET SES APPLICATIONS — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI</title><meta name="description" content="Leçon 5 — Le déterminant et ses applications — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéa"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html"><meta property="og:title" content="Leçon 5 — LE DETERMINANT ET SES APPLICATIONS — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta property="og:description" content="Leçon 5 — Le déterminant et ses applications — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéa"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — LE DETERMINANT ET SES APPLICATIONS — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Le déterminant et ses applications — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéa"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 1_ADA","item":"https://resumeci.me/#Licence_1_ADA"},{"@type":"ListItem","position":3,"name":"Algebre_Vectoriel_et_Lineaire","item":"https://resumeci.me/#Licence_1_ADA/Algebre_Vectoriel_et_Lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 5 — LE DETERMINANT ET SES APPLICATIONS","item":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — LE DETERMINANT ET SES APPLICATIONS — Algebre_Vectoriel_et_Lineaire Licence 1_ADA | ResumeCI","description":"Leçon 5 — Le déterminant et ses applications — Algèbre Vectoriel et Linéaire Licence 1 ADA | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algèbre Vectoriel et Linéa","url":"https://resumeci.me/fiches/Licence_1_ADA/Algebre_Vectoriel_et_Lineaire/Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS.html","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 1_ADA","about":"Algebre_Vectoriel_et_Lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algèbre Vectoriel et Linéaire</span>
+    <span>🏫 Licence 1 ADA — Semestre 2</span>
+    <span>Leçon 5 : Le déterminant et ses applications</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi le déterminant ? Sens en gestion</h2>
+<div class="definition"><strong>Déterminant det(A) :</strong> nombre réel associé <strong>uniquement aux matrices carrées</strong>. Il est <strong>nul si et seulement si les lignes (ou colonnes) sont linéairement dépendantes</strong>.</div>
+<div class="important"><strong>Interprétation économique :</strong> en regroupant prix et quantités de deux produits dans une matrice, <strong>det = 0</strong> → les variables sont <strong>proportionnelles</strong> : les produits évoluent de la même façon → pas de diversification, risque concentré. <strong>det ≠ 0</strong> → variations <strong>indépendantes</strong> : chaque produit joue un rôle propre → chiffre d'affaires diversifié. Le déterminant est un <strong>indicateur synthétique de dépendance économique</strong>.</div>
+
+<h2>II. Calcul du déterminant</h2>
+<h3>1. Matrice 2×2</h3>
+<div class="schema">Si A = (a b ; c d), alors <strong>det(A) = a·d − b·c</strong>. On écrit aussi |A|.<br>
+<strong>Exemple :</strong> A = (3 1 ; 2 4) → det(A) = 3×4 − 1×2 = 12 − 2 = <strong>10</strong>.</div>
+<h3>2. Matrice 3×3 : règle de Sarrus</h3>
+<div class="schema">On recopie les <strong>deux premières colonnes à droite</strong> de la matrice, puis :<br>
+<strong>det(A) = aei + bfg + cdh − (ceg + afh + bdi)</strong><br>
+⚠️ Méthode valable <strong>uniquement pour les matrices 3×3</strong>.</div>
+<h3>3. Méthode des cofacteurs (générale, toute taille)</h3>
+<div class="definition">On développe selon une ligne ou une colonne : <strong>det(A) = Σ a<sub>ij</sub>·C<sub>ij</sub></strong> où le <strong>cofacteur</strong> C<sub>ij</sub> = (−1)<sup>i+j</sup> × det(A<sub>ij</sub>), A<sub>ij</sub> étant la sous-matrice obtenue en supprimant la ligne i et la colonne j.</div>
+<div class="important"><strong>Exemple :</strong> A = (1 2 3 ; 4 5 6 ; 7 8 10), développement par la ligne 1 :<br>
+C₁₁ = +|5 6 ; 8 10| = 50 − 48 = <strong>2</strong> ; C₁₂ = −|4 6 ; 7 10| = −(40 − 42) = <strong>2</strong> ; C₁₃ = +|4 5 ; 7 8| = 32 − 35 = <strong>−3</strong><br>
+det(A) = 1×2 + 2×2 + 3×(−3) = 2 + 4 − 9 = <strong>−3</strong>. Toute ligne ou colonne donne le même résultat.</div>
+
+<h2>III. À quoi sert le déterminant ?</h2>
+<div class="schema"><strong>Le déterminant permet de savoir :</strong> si une matrice est <strong>inversible</strong> (det ≠ 0 ⟺ A inversible) ; si un <strong>système linéaire</strong> a une solution unique ; gérer les <strong>changements de base</strong> ; étudier la <strong>diagonalisation</strong> et les matrices semblables.</div>
+<h3>1. Inverse d'une matrice carrée</h3>
+<div class="definition"><strong>det(A) ≠ 0 ⟺ A inversible</strong>, et alors <strong>A⁻¹ = (1/det(A)) × com(A)<sup>T</sup></strong> (transposée de la matrice des cofacteurs, dite <em>adjugée</em>).</div>
+<h3>2. Matrices semblables et changement de base</h3>
+<div class="definition"><strong>Semblables :</strong> A et B sont semblables s'il existe P inversible telle que <strong>B = P⁻¹·A·P</strong>. P = matrice de passage. A et B représentent <strong>la même application linéaire dans deux bases différentes</strong> — comme décrire la même situation économique en euros ou en dollars.</div>
+<h3>3. Valeurs propres et vecteurs propres</h3>
+<div class="definition"><strong>Valeur propre λ :</strong> réel tel qu'il existe un vecteur <strong>v ≠ 0</strong> avec <strong>Av = λv</strong>. λ mesure l'effet d'<strong>étirement ou de compression</strong> sur v. Le <strong>vecteur propre v</strong> garde sa direction : il est seulement étiré ou contracté.</div>
+<div class="schema"><strong>En pratique :</strong> ① résoudre le <strong>polynôme caractéristique</strong> det(A − λI) = 0 → les λ ; ② pour chaque λ, résoudre (A − λI)v = 0 → les vecteurs propres.</div>
+<div class="important"><strong>Exemple complet :</strong> A = (2 1 ; 0 3).<br>
+① det(A − λI) = (2 − λ)(3 − λ) = 0 → <strong>λ₁ = 2, λ₂ = 3</strong>.<br>
+② λ = 2 : (A − 2I)v = (0 1 ; 0 1)v = 0 → y = 0 → <strong>v₁ = (1 ; 0)</strong>. λ = 3 : (A − 3I)v = (−1 1 ; 0 0)v = 0 → x = y → <strong>v₂ = (1 ; 1)</strong>.<br>
+③ v₁ et v₂ sont indépendants → on peut diagonaliser.</div>
+<h3>4. La diagonalisation (cas particulier de matrices semblables)</h3>
+<div class="definition">On forme <strong>P = (v₁, v₂)</strong> avec les vecteurs propres en colonnes. Alors <strong>B = P⁻¹AP est diagonale</strong> : les valeurs propres de A apparaissent sur la diagonale. Ici P = (1 1 ; 0 1) → B = (2 0 ; 0 3).</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Appliquer Sarrus à une matrice 4×4 : <strong>réservé au 3×3</strong> — au-delà, cofacteurs obligatoires.</li>
+    <li>Oublier les signes du damier (−1)<sup>i+j</sup> : les cofacteurs alternent <strong>+ − + −</strong>.</li>
+    <li>Inverser une matrice avec det = 0 : <strong>impossible</strong>, vérifier det avant toute inversion.</li>
+    <li>Confondre « semblables » et « égales » : B = P⁻¹AP ≠ A en général (même application, autre base).</li>
+    <li>Prendre v = 0 comme vecteur propre : un vecteur propre est <strong>forcément non nul</strong>.</li>
+    <li>Conclure det &lt; 0 → non inversible : seul <strong>det = 0</strong> bloque l'inversion (det négatif = inversible).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

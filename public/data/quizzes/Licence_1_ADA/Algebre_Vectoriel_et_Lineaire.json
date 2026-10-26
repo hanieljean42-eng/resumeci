@@ -1,0 +1,62 @@
+{
+ "Fiche_Lecon1_VECTEURS_ET_CALCUL_VECTORIEL": {
+  "title": "Vecteurs et calcul vectoriel",
+  "questions": [
+   {"id":"q1","text":"Un vecteur de ℝⁿ est :","type":"qcm","options":["Un nombre réel","Un n-uplet ordonné de nombres réels","Une matrice carrée","Une fonction"],"answer":1,"explanation":"Un vecteur = n-uplet (x₁,…,xₙ) ; en gestion il représente une grandeur multi-composée (prix, quantités)."},
+   {"id":"q2","text":"La somme de u=(2,1) et v=(3,4) est :","type":"qcm","options":["(5,5)","(6,4)","(5,4)","(1,5)"],"answer":0,"explanation":"Addition composante par composante : (2+3, 1+4) = (5,5)."},
+   {"id":"q3","text":"Le produit scalaire u·v de u=(3,2) et v=(4,1) vaut :","type":"qcm","options":["(12,2)","14","10","7"],"answer":1,"explanation":"u·v = 3×4 + 2×1 = 14 : c'est un SCALAIRE, pas un vecteur."},
+   {"id":"q4","text":"Vrai ou Faux : si p = vecteur prix et q = vecteur quantités, le chiffre d'affaires vaut p·q.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"CA = Σ pᵢqᵢ = produit scalaire p·q. De même coût total = c·q et profit = CA − CT."},
+   {"id":"q5","text":"λu avec λ=2 et u=(1,3) donne :","type":"qcm","options":["(1,6)","(2,6)","(3,5)","(2,3)"],"answer":1,"explanation":"λu = (λx₁, λx₂) = (2,6) : chaque composante est multipliée par λ."}
+  ]
+ },
+ "Fiche_Lecon2_LES_MATRICES_ET_LEURS_OPERATIONS": {
+  "title": "Les matrices et leurs opérations",
+  "questions": [
+   {"id":"q1","text":"Une matrice A de type (m×n) possède :","type":"qcm","options":["n lignes et m colonnes","m lignes et n colonnes","m+n éléments","Toujours un déterminant"],"answer":1,"explanation":"Convention : m lignes × n colonnes. Le déterminant n'existe que pour les matrices carrées."},
+   {"id":"q2","text":"La somme A+B de deux matrices exige :","type":"qcm","options":["Que A et B soient carrées","Que A et B aient les mêmes dimensions","Que A soit inversible","Rien de particulier"],"answer":1,"explanation":"On additionne terme à terme → mêmes dimensions obligatoires."},
+   {"id":"q3","text":"Le produit A (2×3) × B (3×2) donne une matrice de type :","type":"qcm","options":["(2×3)","(3×3)","(2×2)","(3×2)"],"answer":2,"explanation":"(m×n)·(n×p) = (m×p) → (2×3)(3×2) = (2×2). Le nombre de colonnes de A doit égaler les lignes de B."},
+   {"id":"q4","text":"Vrai ou Faux : la multiplication de matrices est commutative (A×B = B×A).","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — en général A×B ≠ B×A : l'ordre du produit compte."},
+   {"id":"q5","text":"La matrice identité I est :","type":"qcm","options":["Une matrice de 1 partout","Une matrice diagonale de 1 et de 0 ailleurs","Une matrice nulle","Une matrice triangulaire"],"answer":1,"explanation":"I = diag(1,…,1) : élément neutre, A×I = I×A = A."}
+  ]
+ },
+ "Fiche_Lecon3_APPLICATIONS_LINEAIRES_RANG_TRANSPOSEE_TRACE": {
+  "title": "Applications linéaires, rang, transposée, trace",
+  "questions": [
+   {"id":"q1","text":"Une application f est linéaire si :","type":"qcm","options":["f(x+y) = f(x)×f(y)","f(x+y)=f(x)+f(y) et f(λx)=λf(x)","f(x) est une droite","f(0)=0 seulement"],"answer":1,"explanation":"Linéarité = additivité + homogénéité. Toute application linéaire ℝⁿ→ℝᵐ s'écrit f(x)=Ax."},
+   {"id":"q2","text":"Le rang d'une matrice est :","type":"qcm","options":["Le nombre de lignes","Le nombre maximum de colonnes (ou lignes) linéairement indépendantes","Sa diagonale","Son déterminant"],"answer":1,"explanation":"rang(A) = dimension de l'espace engendré par les colonnes = nombre de pivots après échelonnement."},
+   {"id":"q3","text":"La transposée Aᵀ d'une matrice (2×3) est de type :","type":"qcm","options":["(2×3)","(3×2)","(2×2)","(3×3)"],"answer":1,"explanation":"La transposée échange lignes et colonnes : (Aᵀ)ᵢⱼ = Aⱼᵢ."},
+   {"id":"q4","text":"La trace d'une matrice carrée est :","type":"qcm","options":["La somme de tous ses éléments","La somme des éléments de la diagonale principale","Son déterminant","Son rang"],"answer":1,"explanation":"tr(A) = a₁₁+…+aₙₙ ; tr(A+B)=tr(A)+tr(B), tr(AB)=tr(BA)."},
+   {"id":"q5","text":"Vrai ou Faux : (A×B)ᵀ = Aᵀ×Bᵀ.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — (A×B)ᵀ = Bᵀ×Aᵀ : la transposition inverse l'ordre du produit."}
+  ]
+ },
+ "Fiche_Lecon4_INVERSION_D_UNE_MATRICE_GAUSS_JORDAN": {
+  "title": "Inversion d'une matrice (Gauss-Jordan)",
+  "questions": [
+   {"id":"q1","text":"Une matrice A est inversible si :","type":"qcm","options":["det(A) = 0","det(A) ≠ 0","Elle est triangulaire","Elle a plus de lignes que de colonnes"],"answer":1,"explanation":"Inversible ⟺ carrée et det(A) ≠ 0. det = 0 → singulière, pas d'inverse."},
+   {"id":"q2","text":"L'inverse A⁻¹ vérifie :","type":"qcm","options":["A×A⁻¹ = 0","A×A⁻¹ = I (identité)","A+A⁻¹ = I","A⁻¹ = Aᵀ"],"answer":1,"explanation":"A·A⁻¹ = A⁻¹·A = I. L'inverse sert à résoudre AX=B → X=A⁻¹B."},
+   {"id":"q3","text":"La méthode de Gauss-Jordan pour inverser A consiste à :","type":"qcm","options":["Calculer le déterminant","Transformer [A | I] en [I | A⁻¹] par opérations sur les lignes","Transposer A","Échelonner uniquement"],"answer":1,"explanation":"On jouxte A avec I ; opérations élémentaires jusqu'à obtenir I à gauche → A⁻¹ à droite."},
+   {"id":"q4","text":"Pour A = [[a,b],[c,d]], A⁻¹ = :","type":"qcm","options":["(1/det)·[[d,−b],[−c,a]]","[[d,−b],[−c,a]]","(1/det)·[[a,c],[b,d]]","[[−d,b],[c,−a]]"],"answer":0,"explanation":"A⁻¹ = (1/(ad−bc))·[[d,−b],[−c,a]] : échange de a et d, signe de b et c, division par det."},
+   {"id":"q5","text":"Vrai ou Faux : (A×B)⁻¹ = A⁻¹×B⁻¹.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — (AB)⁻¹ = B⁻¹A⁻¹ : l'inversion inverse l'ordre."}
+  ]
+ },
+ "Fiche_Lecon5_LE_DETERMINANT_ET_SES_APPLICATIONS": {
+  "title": "Le déterminant et ses applications",
+  "questions": [
+   {"id":"q1","text":"Le déterminant de [[a,b],[c,d]] vaut :","type":"qcm","options":["ad+bc","ad−bc","ac−bd","a+d"],"answer":1,"explanation":"det = ad − bc : produit diagonal moins produit anti-diagonal."},
+   {"id":"q2","text":"det(A) = 0 signifie que A :","type":"qcm","options":["Est inversible","Est singulière (non inversible)","Est l'identité","Est nulle"],"answer":1,"explanation":"det = 0 → colonnes dépendantes → pas d'inverse ; système non résoluble de façon unique."},
+   {"id":"q3","text":"Une valeur propre λ de A vérifie :","type":"qcm","options":["Av = λv pour un v ≠ 0","Av = 0","det(A) = λ","tr(A) = λ"],"answer":0,"explanation":"Av = λv : direction de v conservée. λ = racine de det(A − λI) = 0 (polynôme caractéristique)."},
+   {"id":"q4","text":"det(A×B) est égal à :","type":"qcm","options":["det(A)+det(B)","det(A)×det(B)","det(A)−det(B)","det(A)/det(B)"],"answer":1,"explanation":"det(AB) = det(A)·det(B) ; det(A⁻¹) = 1/det(A)."},
+   {"id":"q5","text":"Vrai ou Faux : échanger deux lignes d'une matrice ne change pas son déterminant.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — échanger deux lignes change le SIGNE du déterminant ; multiplier une ligne par k multiplie det par k."}
+  ]
+ },
+ "Fiche_Lecon6_SYSTEMES_D_EQUATIONS_LINEAIRES": {
+  "title": "Systèmes d'équations linéaires",
+  "questions": [
+   {"id":"q1","text":"Un système AX = B se résout par X = :","type":"qcm","options":["B×A","A⁻¹×B","B⁻¹×A","A×B"],"answer":1,"explanation":"Si A inversible : X = A⁻¹B — solution unique si det(A) ≠ 0."},
+   {"id":"q2","text":"Le pivot de Gauss consiste à :","type":"qcm","options":["Inverser la matrice","Éliminer les inconnues sous les pivots par opérations sur les lignes","Calculer le rang","Transposer le système"],"answer":1,"explanation":"Échelonnement : Lᵢ ← Lᵢ − (aᵢ₁/a₁₁)L₁ élimine x₁ des lignes suivantes, puis remontée."},
+   {"id":"q3","text":"Un système compatible possède :","type":"qcm","options":["Aucune solution","Une infinité de solutions seulement","Au moins une solution","Toujours une solution unique"],"answer":2,"explanation":"Compatible = au moins une solution (unique si rang = n, infinité si rang < n)."},
+   {"id":"q4","text":"La règle de Cramer pour un système 2×2 donne x = :","type":"qcm","options":["det(A)/det(B)","det(Ax)/det(A)","det(A)/det(Ax)","B/A"],"answer":1,"explanation":"xᵢ = det(Aᵢ)/det(A), Aᵢ = A avec colonne i remplacée par B — exige det(A) ≠ 0."},
+   {"id":"q5","text":"Vrai ou Faux : un système avec plus d'équations que d'inconnues n'a jamais de solution.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — possible si les équations sont compatibles (redondantes)."}
+  ]
+ }
+}

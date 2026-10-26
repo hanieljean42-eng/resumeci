@@ -1,0 +1,62 @@
+{
+ "Fiche_Chapitre1_PRODUIT_ET_COMPTABILITE_NATIONALE": {
+  "title": "Produit et comptabilité nationale",
+  "questions": [
+   {"id":"q1","text":"Le PIB mesure :","type":"qcm","options":["La richesse totale d'un pays","La valeur des biens et services finals produits sur le territoire en une période","Les revenus des nationaux à l'étranger","Le stock de capital"],"answer":1,"explanation":"PIB = valeur ajoutée des biens et services FINAUX produits sur le territoire — critère territorial, flux (pas stock)."},
+   {"id":"q2","text":"La différence PIB / PNB porte sur :","type":"qcm","options":["L'inflation","Le critère territorial vs national (revenus des facteurs de l'étranger)","Les importations","Les investissements"],"answer":1,"explanation":"PIB = production sur le territoire ; PNB = revenu des résidents nationaux (y compris à l'étranger)."},
+   {"id":"q3","text":"Dans l'approche par les dépenses : PIB = C + I + G + (X − M). X−M représente :","type":"qcm","options":["Les exportations seules","La balance commerciale (exportations nettes)","Les transferts","La TVA"],"answer":1,"explanation":"X−M = exportations nettes : on ajoute les ventes à l'étranger, on retire les achats à l'étranger déjà comptés en C, I, G."},
+   {"id":"q4","text":"La valeur ajoutée d'une entreprise vaut :","type":"qcm","options":["Son chiffre d'affaires","Production vendue − consommations intermédiaires","Son bénéfice","Sa masse salariale"],"answer":1,"explanation":"VA = production − consommations intermédiaires : elle évite le double comptage. PIB = somme des VA + TVA + droits de douane."},
+   {"id":"q5","text":"Vrai ou Faux : les biens intermédiaires (farine du boulanger) sont comptés directement dans le PIB.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"FAUX — seuls les biens FINAUX comptent, sinon double comptage ; la valeur intermédiaire est déjà incluse via la VA."}
+  ]
+ },
+ "Fiche_Chapitre2_FONCTION_DE_PRODUCTION_MACRO": {
+  "title": "La fonction de production macroéconomique",
+  "questions": [
+   {"id":"q1","text":"La fonction de production Y = f(K, L) relie :","type":"qcm","options":["Le revenu aux prix","La production aux facteurs capital (K) et travail (L)","L'épargne à l'investissement","L'offre de monnaie à l'inflation"],"answer":1,"explanation":"Y dépend du stock de capital K, du travail L et du progrès technique A : Y = A·f(K,L) (Cobb-Douglas : Y=AKᵅL¹⁻ᵅ)."},
+   {"id":"q2","text":"Dans Cobb-Douglas Y = A·Kᵅ·L¹⁻ᵅ, le paramètre α mesure :","type":"qcm","options":["Le taux de croissance","La part du capital dans le produit","Le taux d'épargne","La productivité du travail"],"answer":1,"explanation":"α = élasticité du produit au capital ≈ part du capital dans les revenus (souvent ≈ 1/3) ; 1−α pour le travail."},
+   {"id":"q3","text":"Les rendements d'échelle constants signifient :","type":"qcm","options":["Doubler K et L double Y","La production est fixe","Le rendement diminue toujours","K et L sont substituables parfaitement"],"answer":0,"explanation":"Rendements constants : f(λK,λL) = λY — propriété clé de Cobb-Douglas quand α + (1−α) = 1."},
+   {"id":"q4","text":"La productivité marginale du capital (PmK) est :","type":"qcm","options":["La production totale / K","L'augmentation de Y quand K augmente d'une unité (à L fixe)","K/L","Le taux d'intérêt"],"answer":1,"explanation":"PmK = ∂Y/∂K : décroissante (rendements marginaux décroissants à l'autre facteur fixe)."},
+   {"id":"q5","text":"Vrai ou Faux : le progrès technique (A) déplace la fonction de production vers le haut, à K et L inchangés.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — A (productivité globale des facteurs) permet de produire plus avec les mêmes K et L : moteur de la croissance longue."}
+  ]
+ },
+ "Fiche_Chapitre3_LA_CROISSANCE_ECONOMIQUE": {
+  "title": "La croissance économique",
+  "questions": [
+   {"id":"q1","text":"La croissance économique est :","type":"qcm","options":["Toute hausse des prix","L'augmentation soutenue de la production (PIB réel) sur le long terme","Une hausse des salaires","Une baisse du chômage"],"answer":1,"explanation":"Croissance = hausse durable du PIB RÉEL — à distinguer du développement (progrès social, IDH)."},
+   {"id":"q2","text":"Le taux de croissance du PIB réel s'écrit :","type":"qcm","options":["PIB/Population","(PIBt − PIBt₋₁)/PIBt₋₁ × 100","PIB nominal / déflateur","ΔPIB × 100"],"answer":1,"explanation":"Taux de croissance = variation relative du PIB réel entre deux périodes, en %."},
+   {"id":"q3","text":"Dans le modèle de Solow, l'état stationnaire est atteint quand :","type":"qcm","options":["L'épargne est nulle","L'investissement compense exactement la dépréciation du capital par tête","La population cesse de croître","Le capital est maximal"],"answer":1,"explanation":"État stationnaire : investissement effectif = (d+n)k → capital par tête stable ; la croissance longue vient du progrès technique."},
+   {"id":"q4","text":"Le PIB par tête (PIB/habitant) mesure :","type":"qcm","options":["La croissance totale","Le niveau de vie moyen","L'inflation","La productivité horaire"],"answer":1,"explanation":"PIB/habitant = indicateur de niveau de vie — utile pour comparer des pays de tailles différentes."},
+   {"id":"q5","text":"Vrai ou Faux : croissance extensive = hausse de la quantité de facteurs ; intensive = hausse de la productivité.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — extensive : +K, +L ; intensive : même K et L mais meilleure efficacité (progrès technique)."}
+  ]
+ },
+ "Fiche_Chapitre4_REVENU_ET_DEMANDE_MACRO": {
+  "title": "Revenu et demande macroéconomique",
+  "questions": [
+   {"id":"q1","text":"La fonction de consommation keynésienne s'écrit :","type":"qcm","options":["C = c·Y uniquement","C = C₀ + c·Yd (C₀ autonome, c = propension marginale)","C = Y − I","C = G + X"],"answer":1,"explanation":"C = C₀ + c·Yd avec 0 < c < 1 : consommation autonome + fraction du revenu disponible consommée."},
+   {"id":"q2","text":"La propension marginale à consommer (c) et à épargner (s) vérifient :","type":"qcm","options":["c + s = 1","c × s = 1","c − s = 0","c = s"],"answer":0,"explanation":"Tout franc de revenu supplémentaire est consommé ou épargné : c + s = 1."},
+   {"id":"q3","text":"Le multiplicateur keynésien vaut :","type":"qcm","options":["1/c","1/(1−c)","c/(1−c)","1+s"],"answer":1,"explanation":"k = 1/(1−c) = 1/s : une dépense autonome supplémentaire accroît le revenu d'un montant multiplié."},
+   {"id":"q4","text":"L'équilibre du marché des biens est atteint quand :","type":"qcm","options":["C = S","Y = demande globale (C + I + G)","I = 0","X = M"],"answer":1,"explanation":"Équilibre : la production Y égale la demande prévue — sinon les stocks s'ajustent et Y varie."},
+   {"id":"q5","text":"Vrai ou Faux : si c = 0,8, une hausse de l'investissement de 100 accroît le revenu de 500.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — k = 1/(1−0,8) = 5 ; ΔY = 5 × 100 = 500."}
+  ]
+ },
+ "Fiche_Chapitre5_MARCHES_ET_EQUILIBRE_MACRO": {
+  "title": "Marchés et équilibre macroéconomique",
+  "questions": [
+   {"id":"q1","text":"La courbe IS (investissement-épargne) relie :","type":"qcm","options":["Prix et production","Les couples (taux d'intérêt, revenu) qui équilibrent le marché des biens","Offre et demande de monnaie","Emploi et salaires"],"answer":1,"explanation":"IS : équilibre du marché des biens — i↑ → I↓ → Y↓ : pente négative."},
+   {"id":"q2","text":"La courbe LM (liquidité-monnaie) représente :","type":"qcm","options":["L'équilibre du marché des biens","L'équilibre du marché monétaire (offre = demande de monnaie)","Le marché du travail","La balance des paiements"],"answer":1,"explanation":"LM : L(Y,i) = M/P — Y↑ → demande de monnaie↑ → i↑ : pente positive."},
+   {"id":"q3","text":"L'intersection IS-LM détermine :","type":"qcm","options":["Le niveau des prix","Le couple (i*, Y*) d'équilibre conjoint des biens et de la monnaie","Le taux de change","Le salaire réel"],"answer":1,"explanation":"Le point IS∩LM = équilibre macroéconomique simultané — base de l'analyse des politiques budgétaire/monétaire."},
+   {"id":"q4","text":"Une politique monétaire expansive (M↑) déplace :","type":"qcm","options":["IS à gauche","LM à droite (i↓, Y↑)","IS à droite","LM à gauche"],"answer":1,"explanation":"Plus de monnaie → taux plus bas → investissement et revenu plus élevés : LM vers la droite."},
+   {"id":"q5","text":"Vrai ou Faux : une politique budgétaire expansive (G↑ ou T↓) déplace la courbe IS vers la droite.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — demande globale↑ → Y↑ à tout i : IS à droite (avec effet d'éviction partiel via la hausse de i)."}
+  ]
+ },
+ "Fiche_Chapitre6_INTERVENTION_ETAT_ET_CROISSANCE_DURABLE": {
+  "title": "Intervention de l'État et croissance durable",
+  "questions": [
+   {"id":"q1","text":"L'État intervient dans l'économie principalement par :","type":"qcm","options":["La fixation de tous les prix","Les politiques budgétaire et monétaire","L'achat des entreprises","La suppression des marchés"],"answer":1,"explanation":"Budget (G, impôts) via IS ; monnaie (M, taux) via LM — objectifs : croissance, emploi, stabilité des prix."},
+   {"id":"q2","text":"Un déficit budgétaire se creuse quand :","type":"qcm","options":["G > T (dépenses publiques > recettes fiscales)","T > G","Les exportations dépassent les importations","La monnaie augmente"],"answer":0,"explanation":"Déficit = solde budgétaire négatif — financé par l'emprunt, il accroît la dette publique."},
+   {"id":"q3","text":"L'effet d'éviction désigne :","type":"qcm","options":["La hausse des exportations","Le fait que G↑ fait monter i, ce qui réduit l'investissement privé","La fuite des capitaux","La hausse des impôts"],"answer":1,"explanation":"G↑ → demande de monnaie↑ → i↑ → I privé↓ : le public « évince » partiellement le privé."},
+   {"id":"q4","text":"La croissance durable intègre :","type":"qcm","options":["Seulement le PIB","Les dimensions économique, sociale et environnementale","La dette publique","La croissance démographique"],"answer":1,"explanation":"Durabilité = croissance compatible avec les équilibres sociaux et écologiques à long terme."},
+   {"id":"q5","text":"Vrai ou Faux : l'impôt (T) est une variable budgétaire qui agit sur le revenu disponible et donc sur la consommation.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Exact — T↓ → Yd↑ → C↑ (via la propension c) : levier de relance budgétaire."}
+  ]
+ }
+}
