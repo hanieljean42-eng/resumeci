@@ -645,6 +645,7 @@ async function loadData() {
   if (typeof handleInitialRoute === 'function') handleInitialRoute();
   else showDashboard();
   setTimeout(() => { if (window.checkReviewGate) window.checkReviewGate(); }, 2500);
+  if (window.loadNotifications) { window.loadNotifications(); setInterval(window.loadNotifications, 90000); }
   if (typeof updateTopbarStreak === 'function') {
     updateTopbarStreak();
   }
@@ -3522,9 +3523,15 @@ function renderReviewsList(reviews) {
         <div style="color:#f59e0b;font-size:13px;letter-spacing:1px">${starStr(r.stars)}</div>
       </div>
       <div style="font-size:13px;color:#334155;line-height:1.5">${escHtml(r.text)}</div>
-      ${r.reply ? `<div style="margin-top:9px;padding:9px 11px;border-radius:10px;background:#f0fdf4;border-left:3px solid #059669">
-        <div style="font-size:10.5px;font-weight:800;color:#059669;margin-bottom:3px"><i class="fas fa-reply"></i> Réponse de l'équipe ResumeCI</div>
-        <div style="font-size:12.5px;color:#166534;line-height:1.5">${escHtml(r.reply)}</div>
+      ${r.reply ? `<div style="margin-top:10px;padding:10px 12px;border-radius:12px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #bfdbfe;border-left:4px solid #2563eb">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:6px">
+          <img src="/icon.svg" alt="ResumeCI" style="width:28px;height:28px;border-radius:8px;box-shadow:0 2px 6px rgba(37,99,235,.35);flex-shrink:0">
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-weight:800;font-size:12.5px;color:#1d4ed8">ResumeCI</span><i class="fas fa-circle-check" style="color:#2563eb;font-size:12px" title="Compte officiel vérifié"></i></div>
+            <div style="font-size:9px;color:#059669;font-weight:800;text-transform:uppercase;letter-spacing:.5px">Réponse officielle de l'équipe</div>
+          </div>
+        </div>
+        <div style="font-size:12.5px;color:#1e3a8a;line-height:1.55">${escHtml(r.reply)}</div>
       </div>` : ''}
     </div>`).join('');
 }
@@ -3589,6 +3596,75 @@ window.submitReview = async function() {
     if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer mon avis'; }
   }
 };
+
+// ==================== NOTIFICATIONS IN-APP (cloche + centre) ====================
+window._notifCache = [];
+
+window.loadNotifications = async function() {
+  const bell = document.getElementById('notifBellBtn');
+  if (!bell) return;
+  const p = window.USER_PROFILE;
+  if (!p || !p.sessionToken) { bell.style.display = 'none'; window._notifCache = []; return; }
+  bell.style.display = '';
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/notifications`, { headers: { 'Authorization': 'Bearer ' + p.sessionToken }, cache: 'no-store' });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && Array.isArray(data.notifications)) window._notifCache = data.notifications;
+  } catch (e) { /* réseau KO : on conserve le cache actuel */ }
+  updateNotifBadge();
+};
+
+function updateNotifBadge() {
+  const lastSeen = +(localStorage.getItem('resumeci_notif_seen') || 0);
+  const unread = (window._notifCache || []).filter(n => Date.parse(n.createdAt || '') > lastSeen).length;
+  const badge = document.getElementById('notifBadge');
+  if (badge) {
+    badge.textContent = unread > 9 ? '9+' : String(unread);
+    badge.style.display = unread ? 'inline-flex' : 'none';
+  }
+}
+
+window.openNotifModal = function() {
+  renderNotifList();
+  document.getElementById('notifModal')?.classList.add('show');
+  localStorage.setItem('resumeci_notif_seen', String(Date.now()));
+  updateNotifBadge();
+};
+
+window.closeNotifModal = function() {
+  document.getElementById('notifModal')?.classList.remove('show');
+};
+
+function renderNotifList() {
+  const body = document.getElementById('notifListBody');
+  if (!body) return;
+  const list = window._notifCache || [];
+  if (!list.length) {
+    body.innerHTML = '<p style="text-align:center;color:#94a3b8;padding:26px 12px">🔕 Aucune notification pour le moment.<br><span style="font-size:11px">Les annonces et réponses officielles de l\'équipe apparaîtront ici.</span></p>';
+    return;
+  }
+  const relDate = iso => {
+    const d = new Date(iso); if (isNaN(d)) return '';
+    const mins = Math.floor((Date.now() - d.getTime()) / 60000);
+    if (mins < 1) return "à l'instant"; if (mins < 60) return `il y a ${mins} min`;
+    const hours = Math.floor(mins / 60); if (hours < 24) return `il y a ${hours} h`;
+    const days = Math.floor(hours / 24); if (days === 1) return 'hier'; if (days < 30) return `il y a ${days} j`;
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+  };
+  body.innerHTML = list.map(n => `
+    <div style="display:flex;gap:10px;padding:11px 12px;margin-bottom:8px;border-radius:12px;border:1.5px solid ${n.personal ? '#bfdbfe' : '#e2e8f0'};background:${n.personal ? 'linear-gradient(135deg,#eff6ff,#f5f3ff)' : '#fff'}">
+      <div style="width:34px;height:34px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px"><i class="fas ${escHtml(n.icon || 'fa-bell')}"></i></div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+          <div style="font-weight:800;font-size:12.5px;color:#0f172a">${escHtml(n.title)}</div>
+          <div style="font-size:9.5px;color:#94a3b8;white-space:nowrap;flex-shrink:0">${relDate(n.createdAt)}</div>
+        </div>
+        ${n.body ? `<div style="font-size:12px;color:#475569;line-height:1.45;margin-top:2px">${escHtml(n.body)}</div>` : ''}
+        ${n.personal ? '<div style="font-size:9.5px;font-weight:800;color:#2563eb;margin-top:4px"><i class="fas fa-user-check"></i> Pour toi</div>' : ''}
+      </div>
+    </div>`).join('');
+}
 
 // ---------- Portail avis : affiché à chaque session tant que l'élève ----------
 // ---------- n'a aucun avis enregistré (pending ou approved côté serveur) ------

@@ -179,6 +179,10 @@
         </div>
         <div class="topbar-actions" id="topbarActions">
         </div>
+        <button class="btn" id="notifBellBtn" onclick="openNotifModal()" title="Notifications" aria-label="Notifications" style="position:relative;display:none">
+          <i class="fas fa-bell"></i>
+          <span id="notifBadge" style="display:none;position:absolute;top:-5px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:99px;background:#dc2626;color:#fff;font-size:9.5px;font-weight:800;align-items:center;justify-content:center;border:2px solid #fff;box-sizing:border-box;line-height:1">0</span>
+        </button>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
       <footer class="main-footer"><span class="creator-mark"><i class="fas fa-code"></i> Créé par <strong>Haniel_dev</strong></span><div style="margin-top:6px;font-size:11px;color:var(--text-dim)">© 2026 ResumeCI — Tous droits réservés. Toute reproduction, copie ou redistribution du contenu est strictement interdite sans autorisation écrite.</div><div class="footer-links"><a href="/about.html">À propos</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a><a href="/cgu.html">CGU / CGV</a><a href="/privacy.html">Confidentialité</a><a href="/mentions-legales.html">Mentions légales</a></div></footer>
@@ -197,7 +201,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.6.16" defer></script>
+  <script src="/app.js?v=3.6.17" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1834,6 +1838,19 @@
       </div>
       <div id="reviewsListBody" style="overflow-y:auto;padding:4px 18px 14px;flex:1"></div>
       <div id="reviewFormZone" style="padding:0 18px 18px;border-top:1px solid #e2e8f0"></div>
+    </div>
+  </div>
+
+  <!-- Notifications Modal (centre de notifications élève) -->
+  <div class="profile-modal-overlay" id="notifModal">
+    <div class="profile-modal" style="max-width:440px;max-height:80vh;display:flex;flex-direction:column">
+      <button class="modal-close" onclick="closeNotifModal();">&times;</button>
+      <div class="elite-modal-header" style="padding-bottom:10px">
+        <div class="elite-badge-top" style="background:linear-gradient(135deg,#2563eb,#7c3aed)"><span>🔔 NOTIFICATIONS</span></div>
+        <h2 class="elite-modal-title" style="font-size:20px;margin-top:8px">Ton centre de notifications</h2>
+        <p class="elite-modal-subtitle" style="font-size:12px">Annonces officielles et réponses de l'équipe ResumeCI</p>
+      </div>
+      <div id="notifListBody" style="overflow-y:auto;padding:6px 18px 16px;flex:1"></div>
     </div>
   </div>
 

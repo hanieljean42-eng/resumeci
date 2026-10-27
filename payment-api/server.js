@@ -2102,6 +2102,51 @@ app.get('/api/admin/transactions', async (req, res) => {
 const REVIEW_STATUS = { PENDING: 'pending', APPROVED: 'approved' };
 const reviewsLimiter = limiter(15 * 60 * 1000, 10);
 
+// Centre de notifications in-app : target = 'all' (tous les élèves) ou un uid.
+async function createNotification(n) {
+  if (!db) return;
+  try {
+    const fv = FieldValue || admin.firestore?.FieldValue;
+    await db.collection('notifications').add({
+      target: String(n.target || 'all').slice(0, 80),
+      icon: String(n.icon || 'fa-bell').slice(0, 40),
+      title: String(n.title || '').slice(0, 120),
+      body: String(n.body || '').slice(0, 300),
+      createdAt: new Date().toISOString(),
+      createdTs: fv ? fv.serverTimestamp() : null
+    });
+  } catch (err) {
+    console.error('[Notifs] Erreur création:', err.message || err);
+  }
+}
+
+// Lecture élève : notifications globales + celles qui le ciblent personnellement.
+app.get('/api/notifications', async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) return res.status(401).json({ success: false, error: 'Session requise.' });
+    if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    const snap = await db.collection('notifications').where('target', 'in', ['all', user._docId]).limit(80).get();
+    const notifications = snap.docs.map(d => {
+      const n = d.data();
+      return {
+        id: d.id,
+        icon: String(n.icon || 'fa-bell').slice(0, 40),
+        title: String(n.title || '').slice(0, 120),
+        body: String(n.body || '').slice(0, 300),
+        personal: n.target === user._docId,
+        createdAt: n.createdAt || null
+      };
+    }).sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || ''))).slice(0, 30);
+    res.json({ success: true, notifications });
+  } catch (err) {
+    console.error('[Notifs] Erreur lecture:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
 function reviewPublicView(d) {
   const r = d.data();
   return {
@@ -2239,6 +2284,19 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
       ...(fv ? { approvedTs: fv.serverTimestamp() } : {})
     });
     console.log(`[Admin Reviews] ✅ Avis ${id} publié par ${req.adminUser.email}`);
+    const rd = doc.data();
+    if (rd.uid) {
+      await createNotification({
+        target: rd.uid, icon: 'fa-star',
+        title: '⭐ Ton avis est publié !',
+        body: `Ton avis (${rd.stars || 5}/5 ★) est maintenant visible par tous les élèves de ResumeCI.`
+      });
+    }
+    await createNotification({
+      target: 'all', icon: 'fa-star',
+      title: '⭐ Nouvel avis publié',
+      body: `${rd.firstName || 'Un élève'}${rd.classe ? ' (' + rd.classe + ')' : ''} a donné ${rd.stars || 5}/5 ★ à ResumeCI.`
+    });
     res.json({ success: true });
   } catch (err) {
     console.error('[Admin Reviews] Erreur approbation:', err);
@@ -2269,6 +2327,21 @@ app.post('/api/admin/reviews/:id/reply', async (req, res) => {
         ...(fv ? { repliedTs: fv.serverTimestamp() } : {})
       });
       console.log(`[Admin Reviews] 💬 Réponse à l'avis ${id} (${doc.data().status}) par ${req.adminUser.email}`);
+      const rd = doc.data();
+      if (rd.uid) {
+        await createNotification({
+          target: rd.uid, icon: 'fa-reply',
+          title: '💬 ResumeCI a répondu à ton avis',
+          body: reply.slice(0, 200)
+        });
+      }
+      if (rd.status === REVIEW_STATUS.APPROVED) {
+        await createNotification({
+          target: 'all', icon: 'fa-reply',
+          title: '💬 ResumeCI a répondu à un avis',
+          body: `Réponse officielle à l'avis de ${rd.firstName || 'un élève'} : « ${reply.slice(0, 80)} »`
+        });
+      }
     }
     res.json({ success: true });
   } catch (err) {

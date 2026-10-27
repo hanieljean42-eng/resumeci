@@ -932,7 +932,12 @@
               <div style="color:var(--amber);font-size:13px;letter-spacing:1px;margin:2px 0">${stars(r.stars)}</div>
               <div style="font-size:12.5px;line-height:1.5;color:var(--text);">${escapeHtml(r.text)}</div>
               <div style="font-size:10.5px;color:var(--text-dim);margin-top:4px">${r.createdAt ? new Date(r.createdAt).toLocaleString('fr-FR') : ''}</div>
-              ${r.reply ? `<div style="margin-top:8px;padding:8px 10px;border-radius:8px;background:rgba(5,150,105,.08);border-left:3px solid var(--emerald);font-size:12px;color:var(--text)"><span style="font-weight:800;color:var(--emerald)"><i class="fas fa-reply"></i> Réponse ResumeCI :</span> ${escapeHtml(r.reply)}${r.repliedAt ? ` <span style="font-size:10px;color:var(--text-dim)">· ${new Date(r.repliedAt).toLocaleString('fr-FR')}</span>` : ''}</div>` : ''}
+              ${r.reply ? `<div style="margin-top:8px;padding:8px 10px;border-radius:8px;background:rgba(37,99,235,.07);border-left:3px solid var(--indigo);font-size:12px;color:var(--text)">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <img src="/icon.svg" alt="" style="width:18px;height:18px;border-radius:5px;box-shadow:0 1px 3px rgba(37,99,235,.3)">
+                  <span style="font-weight:800;color:var(--indigo);font-size:11px">ResumeCI</span><i class="fas fa-circle-check" style="color:var(--indigo);font-size:10px"></i>
+                  <span style="font-size:9.5px;color:var(--text-dim)">· réponse officielle${r.repliedAt ? ' · ' + new Date(r.repliedAt).toLocaleString('fr-FR') : ''}</span>
+                </div>${escapeHtml(r.reply)}</div>` : ''}
               <div id="replyBox-${r.id}" style="display:none;margin-top:8px">
                 <textarea id="replyText-${r.id}" maxlength="600" rows="2" placeholder="Réponse officielle de l'équipe ResumeCI…" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:12px;resize:vertical;box-sizing:border-box;background:var(--bg);color:var(--text)">${escapeHtml(r.reply || '')}</textarea>
                 <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
