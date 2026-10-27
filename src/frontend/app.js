@@ -58,6 +58,7 @@ const UNI_SUBJECT_ICONS = {
   Gestion_de_projet: '📋', Sociologie_de_l_Entreprise: '👥', Analyse_Microeconomique: '🛒',
   Analyse_Macroeconomique: '🏦', Algebre_Vectoriel_et_Lineaire: '🧮',
   Modelisation_et_Optimisation: '⚙️', Mathematiques_Financieres: '💹', Statistiques: '📊',
+  Presentation_de_l_Information_Comptable: '📋',
   Utilisation_de_l_Information_Comptable: '🧾'
 };
 function getIcon(n) {

@@ -1,0 +1,387 @@
+{
+ "Fiche_Chapitre1_CONNAISSANCES_GENERALES_DE_L_ENTITE": {
+  "title": "Connaissances générales de l'entité",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Une entreprise se distingue de l'entité parce que :",
+    "type": "qcm",
+    "options": [
+     "Elle n'a pas de patrimoine",
+     "Elle est une entité économique organisée autour de moyens de production ou de distribution dans un but lucratif",
+     "Elle n'est jamais soumise à l'obligation de tenir des comptes",
+     "Elle ne produit que des services"
+    ],
+    "answer": 1,
+    "explanation": "Entité = notion plus vaste (ONG, coopératives, État…) ; entreprise = entité avec organisation préétablie + but lucratif."
+   },
+   {
+    "id": "q2",
+    "text": "Les valeurs immobilisées (actifs immobilisés) sont :",
+    "type": "qcm",
+    "options": [
+     "Les stocks de matières premières",
+     "Les biens durables (+ d'un an) : terrains, usines, machines, bureaux",
+     "Les sommes dues aux fournisseurs",
+     "Les bénéfices réinvestis"
+    ],
+    "answer": 1,
+    "explanation": "Éléments matériels durables > 1 an = valeurs immobilisées ; les éléments fongibles se transforment (stocks)."
+   },
+   {
+    "id": "q3",
+    "text": "Une entreprise commerciale se caractérise par :",
+    "type": "qcm",
+    "options": [
+     "Transformer les matières premières en produits finis",
+     "Acheter et revendre des marchandises en l'état, sans transformation",
+     "Exploiter l'élément naturel",
+     "Vendre des prestations de services"
+    ],
+    "answer": 1,
+    "explanation": "Commerciale = secteur tertiaire, revente sans transformation (sauf emballage). Industrielle = transformation."
+   },
+   {
+    "id": "q4",
+    "text": "Les matières premières (MP) se distinguent des matières consommables (MC) car :",
+    "type": "qcm",
+    "options": [
+     "Les MP se retrouvent toujours dans le produit fini, pas les MC",
+     "Les MC sont plus chères que les MP",
+     "Les MP ne servent qu'aux entreprises commerciales",
+     "Il n'y a aucune différence"
+    ],
+    "answer": 0,
+    "explanation": "Bois dans la chaise, orge dans la bière = MP ; la scie ou l'électricité facilitent sans s'y retrouver = MC."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : plus le cycle d'exploitation est long, plus l'entreprise fait face à des problèmes de trésorerie.",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 0,
+    "explanation": "Cycle long = stockage prolongé → immobilisation de fonds → tensions de trésorerie."
+   }
+  ]
+ },
+ "Fiche_Chapitre2_ANALYSE_DES_FLUX_ECONOMIQUES": {
+  "title": "Analyse des flux économiques",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Un flux économique est :",
+    "type": "qcm",
+    "options": [
+     "Uniquement un mouvement d'argent",
+     "Une opération, un mouvement ou une mutation d'éléments de l'entreprise d'un pôle à un autre",
+     "Un document comptable obligatoire",
+     "Une perte de l'entreprise"
+    ],
+    "answer": 1,
+    "explanation": "Le flux recouvre biens, services et monnaie — l'entreprise est un carrefour d'opérations."
+   },
+   {
+    "id": "q2",
+    "text": "Un virement de la caisse à la banque est un flux :",
+    "type": "qcm",
+    "options": ["Externe", "Interne", "Sortant vers un tiers", "Réel"],
+    "answer": 1,
+    "explanation": "Flux interne : le mouvement s'opère à l'intérieur de l'entreprise, sans tiers."
+   },
+   {
+    "id": "q3",
+    "text": "Dans l'analyse comptable, la RESSOURCE correspond :",
+    "type": "qcm",
+    "options": [
+     "À la destination des fonds",
+     "À l'origine des fonds (départ du flux)",
+     "Au bénéfice uniquement",
+     "À l'achat de marchandises"
+    ],
+    "answer": 1,
+    "explanation": "Départ = Ressource (origine) ; Arrivée = Emploi (destination). R = E toujours."
+   },
+   {
+    "id": "q4",
+    "text": "Vente de marchandises pour 950.000 F achetées 800.000 F — la ressource est :",
+    "type": "qcm",
+    "options": [
+     "La caisse 950.000 F",
+     "Le stock 800.000 F + le bénéfice 150.000 F",
+     "Le fournisseur",
+     "La dette client"
+    ],
+    "answer": 1,
+    "explanation": "R : sortie du stock (800.000) + bénéfice créé (150.000) ; E : entrée caisse (950.000). R = E."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : le résultat dégagé par une opération achat-vente est un flux externe.",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 1,
+    "explanation": "Faux — le résultat se constitue au sein de l'entreprise : c'est un flux interne."
+   }
+  ]
+ },
+ "Fiche_Chapitre3_LE_CONCEPT_DU_BILAN": {
+  "title": "Le concept du bilan",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Le patrimoine de l'entreprise est :",
+    "type": "qcm",
+    "options": [
+     "Uniquement l'ensemble des biens",
+     "L'ensemble des biens et des dettes, lié à la personnalité juridique",
+     "Le capital de départ",
+     "La liste des clients"
+    ],
+    "answer": 1,
+    "explanation": "Patrimoine = droits patrimoniaux (biens) + obligations patrimoniales (dettes) — personne morale distincte de l'entrepreneur."
+   },
+   {
+    "id": "q2",
+    "text": "Les postes de l'actif du bilan sont classés par :",
+    "type": "qcm",
+    "options": [
+     "Ordre alphabétique",
+     "Ordre d'exigibilité croissante",
+     "Ordre de liquidité croissante",
+     "Ordre d'importance décroissante"
+    ],
+    "answer": 2,
+    "explanation": "Actif = liquidité croissante (immobilisé → circulant → trésorerie) ; passif = exigibilité croissante."
+   },
+   {
+    "id": "q3",
+    "text": "Les ressources stables (capitaux permanents) = ",
+    "type": "qcm",
+    "options": [
+     "Capital + réserves",
+     "CPɑRA + DFɑRA",
+     "Dettes financières + trésorerie-passif",
+     "Total du passif"
+    ],
+    "answer": 1,
+    "explanation": "Capitaux propres & ressources assimilées + Dettes financières & ressources assimilées = financement durable."
+   },
+   {
+    "id": "q4",
+    "text": "Une perte nette de l'exercice se présente au bilan :",
+    "type": "qcm",
+    "options": [
+     "À l'actif en signe négatif",
+     "Au passif dans les capitaux propres, précédée du signe (−)",
+     "Elle ne figure jamais au bilan",
+     "Dans la trésorerie-passif"
+    ],
+    "answer": 1,
+    "explanation": "Perte au passif en négatif ; si placée à l'actif, c'est en positif comme non-valeur (actif fictif)."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : le principe d'intangibilité du capital signifie que le capital reste fixe dès la création de l'entreprise.",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 0,
+    "explanation": "Le capital (fonds de départ) existe dès la création et reste fixe — dette vis-à-vis de l'exploitant ou des associés."
+   }
+  ]
+ },
+ "Fiche_Chapitre4_LE_CADRE_COMPTABLE_OHADA_REVISE": {
+  "title": "Le cadre comptable OHADA révisé",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Le traité OHADA a été signé :",
+    "type": "qcm",
+    "options": [
+     "Le 17 octobre 1993 à Port Louis",
+     "Le 1er janvier 2018",
+     "En 2008 à Abidjan",
+     "Le 18 septembre 2000"
+    ],
+    "answer": 0,
+    "explanation": "Port Louis 17/10/1993 → vigueur 18/09/1995 ; révisé à Québec le 17/10/2008 ; 17 États membres."
+   },
+   {
+    "id": "q2",
+    "text": "Le système minimal de trésorerie (SMT) s'applique aux entités dont les recettes sont inférieures à :",
+    "type": "qcm",
+    "options": [
+     "100 M pour tous",
+     "60 M (négoce), 40 M (artisanal), 30 M (services)",
+     "1 milliard FCFA",
+     "10 M FCFA"
+    ],
+    "answer": 1,
+    "explanation": "SMT = régime transitoire dérogatoire pour très petites entités ; états : bilan + compte de résultat + variation de l'avoir net."
+   },
+   {
+    "id": "q3",
+    "text": "Selon le postulat de la spécialisation des exercices :",
+    "type": "qcm",
+    "options": [
+     "On enregistre au moment des encaissements",
+     "On impute à chaque exercice uniquement ce qui s'y rattache",
+     "Les exercices durent 2 ans",
+     "On change de méthode chaque année"
+    ],
+    "answer": 1,
+    "explanation": "Art. 59 : rattacher charges et produits au seul exercice concerné (régularisations en fin d'année)."
+   },
+   {
+    "id": "q4",
+    "text": "Dans la codification à 4 chiffres du compte 2441, le premier chiffre « 2 » représente :",
+    "type": "qcm",
+    "options": [
+     "Le sous-compte",
+     "Le compte divisionnaire",
+     "La classe (comptes d'actif immobilisé)",
+     "Le compte principal"
+    ],
+    "answer": 2,
+    "explanation": "2 = classe immobilisations ; 24 = compte principal ; 244 = divisionnaire ; 2441 = sous-compte Matériel de bureau."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : dans le SYSCOHADA révisé, les comptes de la classe 8 impaire enregistrent les produits hors activité ordinaire (PHAO).",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 1,
+    "explanation": "Faux — classe 8 impaire = CHAO (charges HAO) ; classe 8 paire = PHAO (produits HAO)."
+   }
+  ]
+ },
+ "Fiche_Chapitre5_LE_COMPTE_ET_LE_JEU_DES_COMPTES": {
+  "title": "Le compte et le jeu des comptes",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Le solde d'un compte est :",
+    "type": "qcm",
+    "options": [
+     "Toujours positif",
+     "La différence Total DÉBIT − Total CRÉDIT : SD si D > C, SC si C > D",
+     "Le total des deux côtés",
+     "Un document comptable"
+    ],
+    "answer": 1,
+    "explanation": "Solde = D − C ; il s'inscrit du côté le plus faible pour équilibrer (arrêter le compte)."
+   },
+   {
+    "id": "q2",
+    "text": "Le principe de la partie double exige :",
+    "type": "qcm",
+    "options": [
+     "Deux journaux différents",
+     "Qu'à tout débit d'un ou plusieurs comptes corresponde un crédit d'autres comptes de même valeur",
+     "Deux entreprises",
+     "Un solde nul en permanence"
+    ],
+    "answer": 1,
+    "explanation": "Chaque écriture a une contrepartie symétrique → pour tout ensemble d'opérations, ΣD = ΣC."
+   },
+   {
+    "id": "q3",
+    "text": "Pour soustraire une somme z du débit d'un compte sans signe négatif, on :",
+    "type": "qcm",
+    "options": [
+     "La retire du débit",
+     "L'ajoute au crédit : (D − z) − C = D − (C + z)",
+     "Crée un nouveau compte",
+     "Solde le compte"
+    ],
+    "answer": 1,
+    "explanation": "Technique du virement comptable : ajouter du côté opposé préserve le solde sans signe (−)."
+   },
+   {
+    "id": "q4",
+    "text": "Deux comptes sont réciproques lorsque :",
+    "type": "qcm",
+    "options": [
+     "Ils ont le même numéro",
+     "Dans deux comptabilités différentes, l'un est débité quand l'autre est crédité du même montant",
+     "Ils sont soldés",
+     "Ils appartiennent à la même entreprise"
+    ],
+    "answer": 1,
+    "explanation": "Ex. « Client » chez le vendeur ↔ « Fournisseur » chez l'acheteur — le rapprochement est un moyen de contrôle."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : en inventaire intermittent, les comptes de stocks sont mouvementés à chaque entrée et sortie.",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 1,
+    "explanation": "Faux — c'est l'inventaire permanent qui suit en temps réel ; en intermittent, les stocks ne bougent qu'en fin d'exercice (annulation SI, constatation SF)."
+   }
+  ]
+ },
+ "Fiche_Chapitre6_ORGANISATION_DES_SYSTEMES_COMPTABLES": {
+  "title": "L'organisation des systèmes comptables",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Le système classique repose sur :",
+    "type": "qcm",
+    "options": [
+     "Plusieurs journaux auxiliaires",
+     "Un journal unique : pièces → journal → grand-livre → balance → états financiers",
+     "Uniquement la balance",
+     "Les relevés nominatifs"
+    ],
+    "answer": 1,
+    "explanation": "Journal unique classique, 5 étapes : pièces justificatives → journal → grand-livre → balance de contrôle → tableaux de synthèse."
+   },
+   {
+    "id": "q2",
+    "text": "Dans le système centralisateur, le travail quotidien consiste à :",
+    "type": "qcm",
+    "options": [
+     "Établir les états financiers",
+     "Enregistrer chronologiquement les documents de même nature dans les journaux auxiliaires (JA)",
+     "Tirer les soldes",
+     "Remplir le grand-livre"
+    ],
+    "answer": 1,
+    "explanation": "1er degré quotidien : JA par nature de documents ; travail périodique : regroupement dans le journal centralisateur."
+   },
+   {
+    "id": "q3",
+    "text": "Le grand-livre auxiliaire (GLA) est :",
+    "type": "qcm",
+    "options": [
+     "La liste collective des clients",
+     "La liste individuelle des comptes clients et fournisseurs",
+     "Le journal des opérations diverses",
+     "La balance générale"
+    ],
+    "answer": 1,
+    "explanation": "GLA = compte individuel par client/fournisseur ; le relevé nominatif = liste collective."
+   },
+   {
+    "id": "q4",
+    "text": "Les comptes 585 et 588 servent à :",
+    "type": "qcm",
+    "options": [
+     "Enregistrer les ventes",
+     "Virements internes entre deux journaux auxiliaires — évitent le double enregistrement",
+     "Calculer la TVA",
+     "Clôturer l'exercice"
+    ],
+    "answer": 1,
+    "explanation": "585 = virements de fonds ; 588 = autres virements internes — comptes de liaison entre JA."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : en cas de vente au comptant, on peut enregistrer directement en trésorerie sans passer par le compte client.",
+    "type": "vrai_faux",
+    "options": ["Vrai", "Faux"],
+    "answer": 1,
+    "explanation": "Faux — il faut toujours transiter par les comptes de tiers (411 clients / 401 fournisseurs), même au comptant."
+   }
+  ]
+ }
+}
