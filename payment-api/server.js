@@ -2294,8 +2294,8 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
     }
     await createNotification({
       target: 'all', icon: 'fa-star',
-      title: '⭐ Nouvel avis publié',
-      body: `${rd.firstName || 'Un élève'}${rd.classe ? ' (' + rd.classe + ')' : ''} a donné ${rd.stars || 5}/5 ★ à ResumeCI.`
+      title: '⭐ Nouvel avis publié — à ton tour !',
+      body: `${rd.firstName || 'Un élève'}${rd.classe ? ' (' + rd.classe + ')' : ''} a donné ${rd.stars || 5}/5 ★ à ResumeCI. Sois le prochain : laisse aussi ton avis !`
     });
     res.json({ success: true });
   } catch (err) {
