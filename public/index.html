@@ -179,9 +179,9 @@
         </div>
         <div class="topbar-actions" id="topbarActions">
         </div>
-        <button class="btn" id="notifBellBtn" onclick="openNotifModal()" title="Notifications" aria-label="Notifications" style="position:relative;display:none">
+        <button class="btn" id="notifBellBtn" onclick="openNotifModal()" title="Notifications" aria-label="Notifications" style="position:relative;display:none;padding:7px 10px;overflow:visible">
           <i class="fas fa-bell"></i>
-          <span id="notifBadge" style="display:none;position:absolute;top:-5px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:99px;background:#dc2626;color:#fff;font-size:9.5px;font-weight:800;align-items:center;justify-content:center;border:2px solid #fff;box-sizing:border-box;line-height:1">0</span>
+          <span id="notifBadge" style="display:none;position:absolute;top:-8px;right:-8px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:#dc2626;color:#fff;font-size:10.5px;font-weight:800;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 7px rgba(220,38,38,.5);box-sizing:border-box;line-height:1;z-index:2">0</span>
         </button>
       </div>
       <div class="content" id="content"><div class="loading"><div class="spinner"></div>Chargement...</div></div>
@@ -201,7 +201,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.6.17" defer></script>
+  <script src="/app.js?v=3.6.18" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}

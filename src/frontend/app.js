@@ -3436,6 +3436,7 @@ function fillHomeReviewsBanner() {
   }
   const avg = list.reduce((s, r) => s + r.stars, 0) / list.length;
   const starStr = n => '★'.repeat(n) + '☆'.repeat(5 - n);
+  const latestReply = list.filter(r => r.reply).sort((a, b) => String(b.repliedAt || '').localeCompare(String(a.repliedAt || '')))[0] || null;
   const quotes = list.slice(0, 2).map(r => `
     <div style="flex:1;min-width:180px;background:rgba(255,255,255,.12);border-radius:12px;padding:10px 12px">
       <div style="font-size:11px;letter-spacing:1px">${starStr(r.stars)}</div>
@@ -3456,6 +3457,18 @@ function fillHomeReviewsBanner() {
         <button onclick="${CTA}" style="padding:9px 12px;border:1.5px solid rgba(255,255,255,.5);border-radius:10px;background:transparent;color:#fff;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap">✍️ Donner mon avis</button>
       </div>
     </div>
+    ${latestReply ? `
+    <div onclick="${CTA}" role="button" style="cursor:pointer;position:relative;margin-top:12px;background:#fff;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;box-shadow:0 4px 14px rgba(0,0,0,.18)">
+      <img src="/icon.svg" alt="ResumeCI" style="width:26px;height:26px;border-radius:7px;flex-shrink:0;box-shadow:0 2px 6px rgba(37,99,235,.35)">
+      <div style="min-width:0;flex:1">
+        <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap">
+          <span style="font-size:11.5px;font-weight:900;color:#1d4ed8">ResumeCI</span>
+          <i class="fas fa-circle-check" style="color:#2563eb;font-size:10.5px"></i>
+          <span style="font-size:9px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.4px">· réponse officielle à ${escHtml(latestReply.firstName)}</span>
+        </div>
+        <div style="font-size:12px;color:#334155;line-height:1.45;margin-top:2px">${escHtml(String(latestReply.reply).slice(0, 140))}${String(latestReply.reply).length > 140 ? '…' : ''}</div>
+      </div>
+    </div>` : ''}
   </div>`;
 }
 
