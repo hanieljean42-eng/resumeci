@@ -3522,6 +3522,10 @@ function renderReviewsList(reviews) {
         <div style="color:#f59e0b;font-size:13px;letter-spacing:1px">${starStr(r.stars)}</div>
       </div>
       <div style="font-size:13px;color:#334155;line-height:1.5">${escHtml(r.text)}</div>
+      ${r.reply ? `<div style="margin-top:9px;padding:9px 11px;border-radius:10px;background:#f0fdf4;border-left:3px solid #059669">
+        <div style="font-size:10.5px;font-weight:800;color:#059669;margin-bottom:3px"><i class="fas fa-reply"></i> Réponse de l'équipe ResumeCI</div>
+        <div style="font-size:12.5px;color:#166534;line-height:1.5">${escHtml(r.reply)}</div>
+      </div>` : ''}
     </div>`).join('');
 }
 

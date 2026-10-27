@@ -2110,6 +2110,8 @@ function reviewPublicView(d) {
     classe: String(r.classe || '').slice(0, 60),
     stars: Math.max(1, Math.min(5, parseInt(r.stars, 10) || 5)),
     text: String(r.text || '').slice(0, 600),
+    reply: String(r.reply || '').slice(0, 600),
+    repliedAt: r.repliedAt || null,
     createdAt: r.createdAt || null
   };
 }
@@ -2191,7 +2193,15 @@ app.get('/api/reviews/mine', async (req, res) => {
     if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
     const own = await db.collection('reviews').where('uid', '==', user._docId).limit(1).get();
     if (own.empty) return res.json({ success: true, submitted: false });
-    res.json({ success: true, submitted: true, status: own.docs[0].data().status || REVIEW_STATUS.PENDING });
+    const rv = own.docs[0].data();
+    res.json({
+      success: true,
+      submitted: true,
+      status: rv.status || REVIEW_STATUS.PENDING,
+      stars: Math.max(1, Math.min(5, parseInt(rv.stars, 10) || 5)),
+      text: String(rv.text || '').slice(0, 600),
+      reply: String(rv.reply || '').slice(0, 600)
+    });
   } catch (err) {
     console.error('[Reviews] Erreur statut avis:', err);
     res.status(500).json({ success: false, error: 'Erreur serveur.' });
@@ -2232,6 +2242,37 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
     res.json({ success: true });
   } catch (err) {
     console.error('[Admin Reviews] Erreur approbation:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : répondre à un avis (possible avant ou après publication) ---
+app.post('/api/admin/reviews/:id/reply', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const id = String(req.params.id || '');
+    if (!id || id.includes('/')) return res.status(400).json({ error: 'Identifiant invalide.' });
+    const reply = String(req.body.reply || '').trim().slice(0, 600);
+    const ref = db.collection('reviews').doc(id);
+    const doc = await ref.get();
+    if (!doc.exists) return res.status(404).json({ error: 'Avis introuvable.' });
+    const fv = FieldValue || admin.firestore?.FieldValue;
+    if (!reply) {
+      // Réponse vide = retirer la réponse existante.
+      await ref.update({ reply: '', repliedAt: '', repliedBy: '' });
+      console.log(`[Admin Reviews] 💬 Réponse retirée sur l'avis ${id} par ${req.adminUser.email}`);
+    } else {
+      await ref.update({
+        reply,
+        repliedAt: new Date().toISOString(),
+        repliedBy: String(req.adminUser.email || 'admin').toLowerCase(),
+        ...(fv ? { repliedTs: fv.serverTimestamp() } : {})
+      });
+      console.log(`[Admin Reviews] 💬 Réponse à l'avis ${id} (${doc.data().status}) par ${req.adminUser.email}`);
+    }
+    res.json({ success: true });
+  } catch (err) {
+    console.error('[Admin Reviews] Erreur réponse:', err);
     res.status(500).json({ error: 'Erreur serveur.' });
   }
 });
