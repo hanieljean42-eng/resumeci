@@ -1,0 +1,616 @@
+{
+  "code": "RC-L1A-TD-PROBA-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Probabilité",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Probabilité",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "nb": {
+      "choices": [
+        8,
+        9,
+        10,
+        12
+      ]
+    },
+    "nf": {
+      "choices": [
+        4,
+        5,
+        6
+      ]
+    },
+    "na": {
+      "choices": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "nl": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "pl": {
+      "choices": [
+        3,
+        4
+      ]
+    },
+    "bn": {
+      "choices": [
+        10,
+        20
+      ]
+    },
+    "bp": {
+      "choices": [
+        0.2,
+        0.3,
+        0.5
+      ]
+    },
+    "ua": {
+      "choices": [
+        0,
+        2
+      ]
+    },
+    "ub": {
+      "choices": [
+        6,
+        8,
+        10
+      ]
+    },
+    "lb": {
+      "choices": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "lp": {
+      "choices": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "derived": {
+    "cb2": "nb*(nb-1)/2",
+    "cb3": "nb*(nb-1)*(nb-2)/6",
+    "fac": "nf*(nf-1)*(nf-2)*(nf-3)",
+    "arr": "na*(na-1)",
+    "pli": "Math.pow(nl,pl)",
+    "ben": "bn*bp",
+    "uesp": "(ua+ub)/2",
+    "eesp": "1/lb",
+    "pz": "Math.exp(-lp)"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (9 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Généralités sur les ensembles",
+          "enonce": "Le produit cartésien A×B = {(a,b) : a∈A, b∈B} — des couples ordonnés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — contrairement à l'ensemble, l'ordre du couple compte : (a,b) ≠ (b,a) en général.",
+          "points": 0.5
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "Var(X+Y) = Var(X) + Var(Y) + 2·Cov(X,Y) — et Var(X+Y) = Var(X)+Var(Y) si X et Y sont indépendantes.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — la variance n'est PAS additive en général ; l'indépendance annule la covariance.",
+          "points": 0.5
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "Pour une binomiale B(n,p), E(X) = np et Var(X) = np(1−p).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — somme de n Bernoulli indépendantes : espérance et variance additives.",
+          "points": 0.5
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "La loi normale N(μ,σ²) est la loi en cloche symétrique — environ 68 % des valeurs à ±σ de μ, 95 % à ±2σ.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — théorème central limite : somme de nombreuses v.a. indépendantes → loi normale centrée réduite N(0,1).",
+          "points": 0.5
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Dans un tirage SANS remise, le cardinal de l'ensemble fondamental diminue à chaque tirage.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Avec remise : Card(E) constant ; sans remise : il diminue.",
+          "points": 0.5
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Une combinaison tient compte de l'ordre des éléments tirés.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Combinaison = pas d'ordre ; l'ordre distingue l'arrangement et la p-liste.",
+          "points": 0.5
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "La permutation P(n) = n! est le cas particulier p = n de l'arrangement.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Ordonner tous les éléments : n! façons.",
+          "points": 0.5
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "La loi exponentielle est « sans mémoire » : P(X > s+t | X > s) = P(X > t).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La durée déjà écoulée n'influence pas la probabilité d'attente restante.",
+          "points": 0.5
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "Pour une variable continue, une probabilité se lit comme une aire sous la courbe de densité.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> P(a ≤ X ≤ b) = ∫ₐᵇ f(x)dx avec f ≥ 0 et ∫f = 1.",
+          "points": 0.5
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (21 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q10",
+          "type": "qcm",
+          "chapitre": "Généralités sur les ensembles",
+          "enonce": "Un ensemble est :",
+          "choix": [
+            "Une liste ordonnée",
+            "Une collection d'objets distincts appelés éléments",
+            "Un nombre",
+            "Une fonction"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Notion fondatrice : on écrit x ∈ E (appartient) ; l'ordre et les répétitions ne comptent pas.",
+          "points": 0.5
+        },
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Généralités sur les ensembles",
+          "enonce": "L'union A ∪ B regroupe :",
+          "choix": [
+            "Les éléments communs",
+            "Les éléments qui sont dans A OU dans B (ou les deux)",
+            "Les éléments de A seuls",
+            "L'ensemble vide"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Union = « OU » : tous les éléments de A et de B ; ∩ = « ET » : seulement les communs.",
+          "points": 0.5
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Généralités sur les ensembles",
+          "enonce": "Le complémentaire de A dans Ω noté Ā contient :",
+          "choix": [
+            "Les éléments de A",
+            "Tous les éléments de Ω qui ne sont pas dans A",
+            "L'ensemble vide",
+            "A lui-même"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Ā = Ω∖A : A ∪ Ā = Ω et A ∩ Ā = ∅ — propriétés utilisées en probabilités (événement contraire).",
+          "points": 0.5
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Généralités sur les ensembles",
+          "enonce": "A ⊂ B signifie :",
+          "choix": [
+            "A et B sont égaux",
+            "Tout élément de A est aussi dans B (A est un sous-ensemble de B)",
+            "B est vide",
+            "A est plus grand que B"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Inclusion : A ⊆ B si x ∈ A ⟹ x ∈ B — égalité si les deux inclusions réciproques tiennent.",
+          "points": 0.5
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Le nombre de façons d'ordonner n objets distincts (permutations) est :",
+          "choix": [
+            "2ⁿ",
+            "n!",
+            "n²",
+            "C(n,2)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> n! = n×(n−1)×…×1 : 3 objets → 6 ordres ; 0! = 1 par convention.",
+          "points": 0.5
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Un arrangement A(n,p) compte :",
+          "choix": [
+            "Les sous-ensembles sans ordre",
+            "Les tirages ordonnés de p éléments parmi n sans répétition",
+            "Les tirages avec remise",
+            "Les partitions"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> A(n,p) = n!/(n−p)! : ordre important, sans répétition — ex. podium de 3 parmi 8 coureurs.",
+          "points": 0.5
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Une combinaison C(n,p) diffère de l'arrangement par :",
+          "choix": [
+            "Elle tient compte de l'ordre",
+            "Elle ne tient PAS compte de l'ordre : C(n,p) = n!/(p!(n−p)!)",
+            "Elle autorise la répétition",
+            "Elle est toujours plus grande"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Combinaison = sous-ensemble : on divise l'arrangement par les p! ordres du même tirage.",
+          "points": 0.5
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Le principe multiplicatif dit :",
+          "choix": [
+            "On additionne les choix",
+            "Si une expérience se déroule en k étapes à n₁,…,n_k issues, le total est n₁×…×n_k",
+            "Les cas sont exclusifs",
+            "On divise"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Choix successifs → produit ; cas disjoints alternatifs → somme (principe additif).",
+          "points": 0.5
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Le nombre de parties (sous-ensembles) d'un ensemble à n éléments est :",
+          "choix": [
+            "n!",
+            "2ⁿ",
+            "n²",
+            "C(n,n)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Card P(E) = 2ⁿ : chaque élément est pris ou non — aussi = Σₚ C(n,p) (binôme).",
+          "points": 0.5
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "Une variable aléatoire discrète X est :",
+          "choix": [
+            "Un nombre fixe",
+            "Une application de Ω dans un ensemble dénombrable de valeurs (x₁, x₂,…) avec des probabilités",
+            "Un intervalle",
+            "Un ensemble"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> X associe à chaque issue une valeur ; sa loi = {(xᵢ, pᵢ)} avec pᵢ = P(X = xᵢ) et Σpᵢ = 1.",
+          "points": 0.5
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "L'espérance E(X) d'une v.a. discrète vaut :",
+          "choix": [
+            "La plus grande valeur",
+            "Σ xᵢ·pᵢ : moyenne pondérée par les probabilités",
+            "max(xᵢ)",
+            "1/n"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> E(X) = Σ xᵢpᵢ : valeur moyenne à long terme ; linéaire : E(aX+b) = aE(X)+b.",
+          "points": 0.5
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "La variance V(X) mesure :",
+          "choix": [
+            "La moyenne",
+            "La dispersion autour de l'espérance : E[(X−E(X))²]",
+            "La somme des écarts",
+            "Le maximum"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> V(X) = E(X²) − [E(X)]² (König-Huygens) ; écart-type σ = √V.",
+          "points": 0.5
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "La covariance de deux v.a. X et Y est :",
+          "choix": [
+            "Toujours nulle",
+            "Cov(X,Y) = E(XY) − E(X)E(Y) : mesure leur variation conjointe",
+            "E(X)+E(Y)",
+            "V(X)·V(Y)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cov &gt; 0 : varient dans le même sens ; X, Y indépendantes ⟹ Cov = 0 (réciproque fausse).",
+          "points": 0.5
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "La loi de Bernoulli B(p) modélise :",
+          "choix": [
+            "Un tirage continu",
+            "Une épreuve à deux issues : succès (prob. p) ou échec (1−p)",
+            "Plusieurs résultats",
+            "Un temps d'attente"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Épreuve unique binaire : X ∈ {0,1} ; E(X) = p, V(X) = p(1−p).",
+          "points": 0.5
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "La loi binomiale B(n,p) compte :",
+          "choix": [
+            "Un seul essai",
+            "Le nombre de succès sur n épreuves de Bernoulli indépendantes identiques",
+            "Les échecs",
+            "La somme des probabilités"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> P(X=k) = C(n,k)pᵏ(1−p)ⁿ⁻ᵏ ; E = np, V = np(1−p) — ex. nombre de « pile » en n lancers.",
+          "points": 0.5
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "La loi de Poisson P(λ) sert à :",
+          "choix": [
+            "Compter les succès",
+            "Modéliser le nombre d'événements rares dans un intervalle (appels, pannes) avec paramètre λ",
+            "Ordonner",
+            "Mesurer le temps"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> P(X=k) = e⁻ᵏλᵏ/k! ; E(X) = V(X) = λ — approximation de la binomiale (n grand, p petit, np=λ).",
+          "points": 0.5
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "La loi géométrique mesure :",
+          "choix": [
+            "La surface",
+            "Le rang du premier succès dans des épreuves de Bernoulli indépendantes",
+            "Le nombre total d'épreuves",
+            "La moyenne"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> P(X=k) = (1−p)ᵏ⁻¹p : probabilité du premier succès au kᵉ essai ; sans mémoire.",
+          "points": 0.5
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "Une variable aléatoire continue X prend :",
+          "choix": [
+            "Des valeurs entières",
+            "Ses valeurs dans un intervalle — sa loi est décrite par une densité f(x)",
+            "Un nombre fini de valeurs",
+            "Des noms"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> f(x) ≥ 0 et ∫f = 1 ; P(a ≤ X ≤ b) = ∫ₐᵇ f(x)dx : la probabilité = AIRE sous la courbe.",
+          "points": 0.5
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "Pour une v.a. continue, P(X = a) vaut :",
+          "choix": [
+            "1",
+            "f(a)",
+            "0 — l'aire d'un point est nulle",
+            "0,5"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Seules les probabilités d'intervalles sont positives ; on utilise la fonction de répartition F(x) = P(X ≤ x).",
+          "points": 0.5
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "La loi uniforme sur [a,b] a pour densité :",
+          "choix": [
+            "f(x) = 1",
+            "f(x) = 1/(b−a) constante sur [a,b]",
+            "f(x) = e⁻ˣ",
+            "f(x) = x"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Densité plate : probabilité proportionnelle à la longueur ; E(X) = (a+b)/2.",
+          "points": 0.5
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "La loi exponentielle de paramètre λ modélise :",
+          "choix": [
+            "Des comptages",
+            "Des durées d'attente sans mémoire (durée de vie, temps entre événements)",
+            "Des succès",
+            "Des uniformes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> f(x) = λe⁻ˡˣ ; sans mémoire : P(X&gt;s+t|X&gt;s) = P(X&gt;t) ; E(X) = 1/λ.",
+          "points": 0.5
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (10 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q31",
+          "type": "numeric",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Un tournoi réunit {{nb}} équipes ; chaque paire d'équipes s'affronte une seule fois. Combien de matchs seront joués ?",
+          "answer": "cb2",
+          "tol": 0.5,
+          "corrige": "Nombre de paires = C( {{nb}} ; 2 ) = {{nb}}×({{nb}}−1)/2 = {{num:cb2}} matchs — combinaison : l'ordre ne compte pas.",
+          "points": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Un comité doit choisir un jury de 3 projets parmi {{nb}} candidats (ordre indifférent). Combien de jurys différents peut-on former ?",
+          "answer": "cb3",
+          "tol": 0.5,
+          "corrige": "C( {{nb}} ; 3 ) = {{nb}}×({{nb}}−1)×({{nb}}−2)/6 = {{num:cb3}} jurys possibles.",
+          "points": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "numeric",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "{{nf}} coureurs franchissent la ligne d'arrivée d'une course. Combien d'ordres d'arrivée différents sont possibles ?",
+          "answer": "fac",
+          "tol": 0.5,
+          "corrige": "Permutations = {{nf}}! = {{num:fac}} ordres possibles.",
+          "points": 0.5
+        },
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "{{na}} finalistes se disputent l'or puis l'argent (podium ordonné). Combien de podiums différents peut-on obtenir ?",
+          "answer": "arr",
+          "tol": 0.5,
+          "corrige": "A( {{na}} ; 2 ) = {{na}}×({{na}}−1) = {{num:arr}} podiums — arrangement : l'ordre compte.",
+          "points": 0.5
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "L'analyse combinatoire",
+          "enonce": "Un code PIN est formé de {{pl}} symboles choisis dans un alphabet de {{nl}} caractères (répétition autorisée). Combien de codes différents peut-on composer ?",
+          "answer": "pli",
+          "tol": 0.5,
+          "corrige": "p-listes = {{nl}}^{{pl}} = {{num:pli}} codes — ordre + répétition possible.",
+          "points": 0.5
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "Une machine produit {{bn}} pièces ; chaque pièce a une probabilité {{num:bp}} d'être défectueuse (loi binomiale). Calcule le nombre moyen de pièces défectueuses.",
+          "answer": "ben",
+          "tol": 0.01,
+          "corrige": "E(X) = n·p = {{bn}} × {{num:bp}} = {{num:ben}} pièces défectueuses en moyenne.",
+          "points": 0.5
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "Un bus arrive avec un retard uniforme compris entre {{ua}} et {{ub}} minutes. Calcule l'espérance du temps d'attente (en min).",
+          "answer": "uesp",
+          "tol": 0.01,
+          "corrige": "E(X) = (a+b)/2 = ({{ua}}+{{ub}})/2 = {{num:uesp}} min — loi uniforme sur [ {{ua}} ; {{ub}} ].",
+          "points": 0.5
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Variables aléatoires continues",
+          "enonce": "La durée de vie d'un composant suit une loi exponentielle de paramètre λ = {{num:lb}}. Calcule sa durée de vie moyenne E(X).",
+          "answer": "eesp",
+          "tol": 0.01,
+          "corrige": "E(X) = 1/λ = 1/{{num:lb}} = {{num:eesp}} — la loi exponentielle est « sans mémoire ».",
+          "points": 0.5
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Lois de probabilité discrètes usuelles",
+          "enonce": "Un centre d'appels reçoit en moyenne λ = {{lp}} appels par heure (loi de Poisson). Calcule P(X = 0), la probabilité de n'avoir aucun appel en une heure.",
+          "answer": "pz",
+          "tol": 0.001,
+          "precision": "arrondi à 10⁻³",
+          "corrige": "P(X=0) = e^(−λ)λ⁰/0! = e^(−{{lp}}) ≈ {{d3:pz}}.",
+          "points": 0.5
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Variables aléatoires discrètes",
+          "enonce": "Un jeu rapporte 0 F (probabilité 0,2), 1 F (0,5) ou 2 F (0,3). Calcule le gain moyen E(X).",
+          "answer": "0*0.2 + 1*0.5 + 2*0.3",
+          "tol": 0.01,
+          "corrige": "E(X) = Σ xᵢpᵢ = 0×0,2 + 1×0,5 + 2×0,3 = 1,1 F.",
+          "points": 0.5
+        }
+      ]
+    }
+  ]
+}

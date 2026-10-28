@@ -1,0 +1,479 @@
+{
+  "code": "RC-L1A-TD-GPI-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Gestion de projet",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Gestion de projet",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "t1": {
+      "choices": [
+        3,
+        4,
+        5
+      ]
+    },
+    "t2": {
+      "choices": [
+        5,
+        7,
+        10
+      ]
+    },
+    "t3": {
+      "choices": [
+        6,
+        8
+      ]
+    },
+    "t4": {
+      "choices": [
+        2,
+        4
+      ]
+    },
+    "bg": {
+      "choices": [
+        12000,
+        20000
+      ]
+    },
+    "p1": {
+      "choices": [
+        10,
+        15
+      ]
+    },
+    "p2": {
+      "choices": [
+        60,
+        70
+      ]
+    },
+    "h": {
+      "choices": [
+        3,
+        4
+      ]
+    }
+  },
+  "derived": {
+    "dtot": "t1 + t2 + t3 + t4",
+    "avant": "t1 + t2",
+    "mexe": "bg*p2/100",
+    "reste": "bg*(100 - p1 - p2)/100",
+    "htot": "h*t2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (11 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Définir un projet : de l'idée au projet",
+          "enonce": "Un objectif SMART est Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — la formalisation d'objectifs SMART évite les projets flous et non évaluables.",
+          "points": 0.63
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Paramètres et définition de la gestion de projet",
+          "enonce": "Le chemin critique d'un projet est la séquence de tâches qui détermine sa durée minimale — tout retard s'y reporte.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — les tâches du chemin critique ont une marge nulle : retarder l'une retarde tout le projet.",
+          "points": 0.63
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Un jalon (milestone) est un point de passage décisif sans durée marquant l'avancement.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — jalons = événements datés (validation, livraison) qui structurent le contrôle du projet.",
+          "points": 0.63
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "La phase de suivi-contrôle se déroule en parallèle de l'exécution.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Elle contrôle le triangle d'or : indicateurs d'avancement, écarts, risques.",
+          "points": 0.63
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "La charte de projet (Project Charter) est le livrable clé de la phase d'initiation.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'initiation confirme que le projet mérite d'être lancé → charte.",
+          "points": 0.63
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Un projet est clôturé quand tous les livrables sont réalisés, validés et acceptés par le client ou la direction.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Et qu'il n'y a plus d'activité dans son périmètre.",
+          "points": 0.63
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "Réduire le délai d'un projet ne modifie ni son coût ni sa qualité.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Les 3 contraintes sont liées : réduire le délai augmente le coût ou réduit la qualité.",
+          "points": 0.63
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Définir un projet",
+          "enonce": "Un projet se distingue des activités routinières par son caractère temporaire et unique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Les 3 définitions convergent : temporaire, unique, orienté objectif, sous contraintes.",
+          "points": 0.63
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Définir un projet",
+          "enonce": "Selon l'IPMA, le projet organise des ressources humaines, financières et matérielles de façon originale.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Définition IPMA (1999) : ressources organisées pour un changement bénéfique.",
+          "points": 0.63
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Le REX (retour d'expérience) et les leçons apprises appartiennent à la phase de clôture.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Clôture : acceptation des livrables, bilan, libération des ressources, REX.",
+          "points": 0.63
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "Le périmètre (scope) définit ce qui est inclus et ce qui ne l'est pas dans le projet.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Question clé du périmètre : « Qu'est-ce qui est inclus et qu'est-ce qui ne l'est pas ? ».",
+          "points": 0.63
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (16 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Définir un projet : de l'idée au projet",
+          "enonce": "Un projet se caractérise par :",
+          "choix": [
+            "Une activité répétitive",
+            "Un ensemble d'activités temporaires visant un objectif précis dans des contraintes données",
+            "Une tâche permanente",
+            "Une routine"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Projet = temporaire, unique, orienté résultat — vs processus (opérations récurrentes).",
+          "points": 0.63
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Définir un projet : de l'idée au projet",
+          "enonce": "La différence entre une idée et un projet est :",
+          "choix": [
+            "Il n'y en a pas",
+            "L'idée devient projet quand elle est formalisée en objectifs, ressources et plan d'action",
+            "Le projet est plus vague",
+            "L'idée coûte plus cher"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le projet transforme une intention en démarche structurée : finalité, délais, budget, responsables.",
+          "points": 0.63
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Définir un projet : de l'idée au projet",
+          "enonce": "Le triptyque classique des contraintes de projet est :",
+          "choix": [
+            "Hommes, machines, méthodes",
+            "Coût — délai — qualité (périmètre)",
+            "Risque, profit, image",
+            "Court, moyen, long terme"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Triangle de la gestion de projet : optimiser l'un des trois compromet les deux autres.",
+          "points": 0.63
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Définir un projet : de l'idée au projet",
+          "enonce": "Les parties prenantes d'un projet sont :",
+          "choix": [
+            "Seulement l'équipe",
+            "Toutes les personnes ou entités affectées par ou influant sur le projet",
+            "Les concurrents",
+            "Les clients seuls"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Porteur, commanditaire, équipe, bénéficiaires, adversaires… — leur analyse est une étape préalable clé.",
+          "points": 0.63
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Paramètres et définition de la gestion de projet",
+          "enonce": "La gestion de projet consiste à :",
+          "choix": [
+            "Gérer une entreprise",
+            "Planifier, organiser, diriger et contrôler des ressources pour atteindre un objectif unique",
+            "Superviser la production",
+            "Faire du marketing"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Démarche managériale appliquée à un ensemble temporaire : planification → exécution → suivi → clôture.",
+          "points": 0.63
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Paramètres et définition de la gestion de projet",
+          "enonce": "Le chef de projet a pour rôle principal :",
+          "choix": [
+            "Tout faire seul",
+            "Coordonner l'équipe, arbitrer, suivre les échéances et rendre compte",
+            "La comptabilité",
+            "Le recrutement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Chef d'orchestre : il manage sans nécessairement avoir l'autorité hiérarchique — influence et coordination.",
+          "points": 0.63
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Paramètres et définition de la gestion de projet",
+          "enonce": "Le cahier des charges définit :",
+          "choix": [
+            "Le salaire des employés",
+            "Le besoin, les exigences, les contraintes et les critères d'acceptation du projet",
+            "La publicité",
+            "Le nom du projet"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Document de référence contractuel entre commanditaire et réalisateur — base du suivi et de la recette.",
+          "points": 0.63
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Paramètres et définition de la gestion de projet",
+          "enonce": "La planification d'un projet passe notamment par :",
+          "choix": [
+            "Le recrutement",
+            "Le découpage du travail (WBS), l'ordonnancement (Gantt, PERT) et l'affectation des ressources",
+            "La communication",
+            "La clôture"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> WBS = découper en lots/tâches ; Gantt = calendrier ; PERT = chemin critique des durées.",
+          "points": 0.63
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Le cycle de vie d'un projet comprend typiquement :",
+          "choix": [
+            "Vente et achat",
+            "Identification, formulation/préparation, exécution, évaluation/clôture",
+            "Marketing et production",
+            "Recrutement et licenciement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Phases : idée → études/faisabilité → mise en œuvre → suivi → clôture + évaluation ex-post.",
+          "points": 0.63
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "L'étude de faisabilité sert à :",
+          "choix": [
+            "Lancer la production",
+            "Vérifier que le projet est viable technique, économique, financière et organisationnelle avant d'investir",
+            "Recruter l'équipe",
+            "Vendre le produit"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Décision go/no-go : on évalue les risques et la rentabilité AVANT l'engagement des ressources.",
+          "points": 0.63
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Le suivi-contrôle d'un projet consiste à :",
+          "choix": [
+            "Attendre la fin",
+            "Comparer l'avancement réel au plan (délais, coûts, qualité) et corriger les écarts",
+            "Rédiger le rapport",
+            "Changer d'équipe"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Tableaux de bord + jalons : écarts → actions correctives — c'est le pilotage du projet.",
+          "points": 0.63
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "L'évaluation ex-post (après clôture) mesure :",
+          "choix": [
+            "La satisfaction du chef de projet",
+            "Les résultats, impacts et leçons apprises par rapport aux objectifs initiaux",
+            "Le chiffre d'affaires",
+            "Les salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Pertinence, efficacité, efficience, impact, durabilité — capitaliser pour les projets futurs.",
+          "points": 0.63
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Quel est l'ordre correct des phases du cycle de vie ?",
+          "choix": [
+            "Planification → Initiation → Exécution → Clôture",
+            "Initiation → Planification → Exécution → Suivi-Contrôle → Clôture",
+            "Initiation → Exécution → Planification → Clôture",
+            "Exécution → Planification → Initiation → Clôture"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Initiation → Planification → Exécution → Suivi-Contrôle → Clôture.",
+          "points": 0.63
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "Laquelle de ces variables NE fait PAS partie des six variables à contrôler (PRINCE2/PMI) ?",
+          "choix": [
+            "Les coûts",
+            "Le périmètre",
+            "La hiérarchie",
+            "Les risques"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Les six variables : coûts, échéancier, périmètre, qualité, risques, bénéfices.",
+          "points": 0.63
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Quel livrable est associé à la phase de planification ?",
+          "choix": [
+            "La charte de projet",
+            "Le plan de management et le planning détaillé",
+            "Le rapport de clôture",
+            "L'étude de marché"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Planification : périmètre, Gantt, budget, risques → plan de management + planning détaillé.",
+          "points": 0.63
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Définir un projet",
+          "enonce": "Selon l'ISO 10006, un projet est un processus unique consistant en :",
+          "choix": [
+            "Des activités permanentes et répétitives",
+            "Un ensemble d'activités coordonnées et maîtrisées avec des dates de début et de fin",
+            "Une simple intention de changement",
+            "Un budget sans échéance"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Activités coordonnées, dates de début/fin, objectif conforme à des exigences.",
+          "points": 0.63
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (5 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q28",
+          "type": "numeric",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "En phase d'exécution, quatre tâches enchaînées (sur le chemin critique) durent {{t1}}, {{t2}}, {{t3}} et {{t4}} jours. Calcule la durée totale du chemin (en jours).",
+          "answer": "dtot",
+          "tol": 0.001,
+          "corrige": "Durée = {{t1}} + {{t2}} + {{t3}} + {{t4}} = {{num:dtot}} jours — c'est le minimum absolu du projet (chemin critique).",
+          "points": 0.63
+        },
+        {
+          "id": "q29",
+          "type": "numeric",
+          "chapitre": "Cycle de vie et cycle de projet",
+          "enonce": "Un projet prévoit {{t1}} jours d'initiation puis {{t2}} jours de planification avant de lancer l'exécution. Combien de jours s'écoulent avant le début de l'exécution ?",
+          "answer": "avant",
+          "tol": 0.001,
+          "corrige": "Initiation + planification = {{t1}} + {{t2}} = {{num:avant}} jours avant l'exécution.",
+          "points": 0.63
+        },
+        {
+          "id": "q30",
+          "type": "numeric",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "Le budget d'un projet est de {{bg}} kF. La phase d'exécution absorbe {{p2}} % de ce budget. Calcule le montant consacré à l'exécution (en kF).",
+          "answer": "mexe",
+          "tol": 1,
+          "corrige": "Exécution = {{p2}} % × {{bg}} = {{num:mexe}} kF.",
+          "points": 0.63
+        },
+        {
+          "id": "q31",
+          "type": "numeric",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "Sur un budget de {{bg}} kF, la planification consomme {{p1}} % et l'exécution {{p2}} %. Calcule le montant restant pour les autres phases (en kF).",
+          "answer": "reste",
+          "tol": 1,
+          "corrige": "Reste = {{bg}} × (100 − {{p1}} − {{p2}})/100 = {{num:reste}} kF — pilotage de la variable « coûts » du triangle d'or.",
+          "points": 0.63
+        },
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "Paramètres de la gestion de projet",
+          "enonce": "L'équipe consacre {{h}} h par jour au projet pendant {{t2}} jours ouvrés. Calcule le total d'heures de travail planifié (en heures).",
+          "answer": "htot",
+          "tol": 0.001,
+          "corrige": "Charge = {{h}} × {{t2}} = {{num:htot}} h — ressource à inscrire dans le planning (échéancier).",
+          "points": 0.47
+        }
+      ]
+    }
+  ]
+}

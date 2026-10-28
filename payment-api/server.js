@@ -1508,7 +1508,9 @@ function evalExamExpr(expr, scope) {
 function fmtExamNum(x, decimals) {
   if (typeof x !== 'number' || !isFinite(x)) return String(x);
   let s = decimals != null ? x.toFixed(decimals) : (Math.round(x * 10000) / 10000).toString();
-  if (decimals == null) s = s.replace(/\.?0+$/, '');
+  // Ne supprimer les zéros finaux qu'APRÈS la virgule (4.50 → 4.5) — jamais
+  // dans un entier (20 → « 2 » cassait l'énoncé affiché vs la clé serveur).
+  if (decimals == null && s.includes('.')) s = s.replace(/0+$/, '').replace(/\.$/, '');
   return s.replace('.', ',');
 }
 // {{name}} brut · {{num:name}} décimale française · {{d2:}} / {{d3:}} arrondis · {{pct:name}} ×100

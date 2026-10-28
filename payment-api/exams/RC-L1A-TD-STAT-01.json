@@ -1,0 +1,709 @@
+{
+  "code": "RC-L1A-TD-STAT-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Statistiques",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Statistiques",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "a1": {
+      "choices": [
+        2,
+        4
+      ]
+    },
+    "a2": {
+      "choices": [
+        6,
+        8
+      ]
+    },
+    "a3": {
+      "choices": [
+        10,
+        12
+      ]
+    },
+    "x1": {
+      "choices": [
+        10,
+        12
+      ]
+    },
+    "n1": {
+      "choices": [
+        3,
+        5
+      ]
+    },
+    "x2": {
+      "choices": [
+        14,
+        16
+      ]
+    },
+    "n2": {
+      "choices": [
+        5,
+        7
+      ]
+    },
+    "mn": {
+      "choices": [
+        50,
+        80
+      ]
+    },
+    "mx": {
+      "choices": [
+        210,
+        250
+      ]
+    },
+    "i0": {
+      "choices": [
+        200,
+        250
+      ]
+    },
+    "i1": {
+      "choices": [
+        240,
+        260,
+        300
+      ]
+    },
+    "fe": {
+      "choices": [
+        15,
+        25
+      ]
+    },
+    "ft": {
+      "choices": [
+        100,
+        125
+      ]
+    }
+  },
+  "derived": {
+    "moy": "(a1+a2+a3)/3",
+    "pond": "(x1*n1 + x2*n2)/(n1+n2)",
+    "etd": "mx - mn",
+    "inds": "i1/i0*100",
+    "frq": "fe/ft"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (10 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Concepts de base de la statistique",
+          "enonce": "Une variable quantitative continue nécessite un regroupement en classes d'amplitude pour être présentée.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — valeurs trop nombreuses → classes [a,b[ ; on calcule alors le centre de classe comme valeur représentative.",
+          "points": 0.43
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Présentation des données",
+          "enonce": "La courbe des effectifs cumulés croissants est croissante et permet de lire la médiane.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — cumul croissant : nombre d'individus ≤ x ; la médiane est à l'abscisse où le cumul atteint 50 %.",
+          "points": 0.43
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Dans une distribution symétrique, moyenne = médiane = mode.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — symétrie parfaite aligne les trois ; asymétrie droite : mode &lt; médiane &lt; moyenne (queue à droite).",
+          "points": 0.43
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "Deux séries peuvent avoir même moyenne mais des dispersions très différentes — la moyenne seule ne suffit pas.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — ex. notes 10-10-10 vs 5-10-15 : mêmes x̄=10, dispersions opposées ; d'où l'intérêt de σ.",
+          "points": 0.43
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Séries statistiques à deux dimensions",
+          "enonce": "Une forte corrélation n'implique pas une causalité — deux variables liées peuvent dépendre d'une troisième.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — corrélation ≠ causalité : classique ex. glaces et noyades liés à la chaleur (variable cachée).",
+          "points": 0.43
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Les indices statistiques",
+          "enonce": "Un indice de 80 signifie une baisse de 20 % par rapport à la base 100.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — I &lt; 100 : diminution de (100−I) % ; I = 80 → −20 % par rapport à la période de référence.",
+          "points": 0.43
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Les séries chronologiques",
+          "enonce": "Les variations saisonnières sont des fluctuations régulières et prévisibles liées au calendrier (saison, fêtes).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — périodicité annuelle/trimestrielle : glaces en été, jouets à Noël ; mesurées par coefficients saisonniers.",
+          "points": 0.43
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "La médiane est insensible aux valeurs extrêmes (atypiques) de la série.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Elle partage la série ordonnée en deux et minimise la somme des écarts absolus.",
+          "points": 0.43
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Le mode peut ne pas exister — ou être multiple.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Ex. [1;7;2;4;5;3] sans mode ; [2;1;2;2;3;1;5;4;4;5;4] a deux modes (2 et 4).",
+          "points": 0.43
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "L'étendue est peu sensible aux valeurs extrêmes.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Elle ne dépend QUE des deux valeurs extrêmes → très sensible aux valeurs aberrantes.",
+          "points": 0.43
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (28 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Concepts de base de la statistique",
+          "enonce": "La statistique descriptive a pour objet :",
+          "choix": [
+            "Prédire l'avenir",
+            "Décrire, résumer et présenter des données (effectifs, tableaux, graphiques, indicateurs)",
+            "Gagner de l'argent",
+            "Tester des hypothèses"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Décrire = organiser et synthétiser les données observées ; l'inférence (échantillon→population) est une autre branche.",
+          "points": 0.43
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Concepts de base de la statistique",
+          "enonce": "Le caractère statistique étudié peut être :",
+          "choix": [
+            "Toujours numérique",
+            "Qualitatif (modalités : sexe, couleur) ou quantitatif (discret ou continu)",
+            "Seulement des dates",
+            "Nominal"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Qualitatif : catégories ; quantitatif discret : valeurs isolées (nombre d'enfants) ; continu : intervalles (taille).",
+          "points": 0.43
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Concepts de base de la statistique",
+          "enonce": "La population statistique est :",
+          "choix": [
+            "Toujours des personnes",
+            "L'ensemble des unités sur lesquelles porte l'étude",
+            "Un échantillon",
+            "Une ville"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Population = ensemble de référence (individus, entreprises…) ; chaque unité = individu statistique.",
+          "points": 0.43
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Concepts de base de la statistique",
+          "enonce": "L'effectif nᵢ d'une modalité est :",
+          "choix": [
+            "Un pourcentage",
+            "Le nombre d'individus présentant cette modalité",
+            "La fréquence",
+            "La moyenne"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Effectif = comptage absolu ; fréquence fᵢ = nᵢ/N (proportion) ; fréquence cumulée = somme progressive.",
+          "points": 0.43
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Présentation des données",
+          "enonce": "Un tableau statistique présente :",
+          "choix": [
+            "Des images",
+            "Les modalités/valeurs du caractère avec leurs effectifs ou fréquences",
+            "Uniquement des moyennes",
+            "Des citations"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Double entrée possible ; en ligne : caractère xᵢ, en colonnes : nᵢ, fᵢ — base de toute analyse.",
+          "points": 0.43
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Présentation des données",
+          "enonce": "Le diagramme en bâtons convient à :",
+          "choix": [
+            "Une variable continue",
+            "Une variable discrète : hauteur de chaque bâton = effectif de la valeur",
+            "Des classes",
+            "Des proportions"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Bâtons = valeurs discrètes espacées ; l'histogramme (rectangles juxtaposés) sert pour les classes continues.",
+          "points": 0.43
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Présentation des données",
+          "enonce": "Le diagramme circulaire (camembert) représente :",
+          "choix": [
+            "Des séries chronologiques",
+            "Des parts : angles proportionnels aux fréquences d'un tout",
+            "Des évolutions",
+            "Des moyennes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Secteur = fᵢ × 360° ; visualise la répartition en parts d'un ensemble (marché, budget).",
+          "points": 0.43
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Présentation des données",
+          "enonce": "L'histogramme représente une variable continue par :",
+          "choix": [
+            "Des points",
+            "Des rectangles dont l'AIRE est proportionnelle à l'effectif de chaque classe",
+            "Des lignes",
+            "Des angles"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Attention : si classes d'amplitudes inégales, hauteur = effectif/amplitude (densité), pas effectif brut.",
+          "points": 0.43
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "La moyenne arithmétique est :",
+          "choix": [
+            "La valeur la plus fréquente",
+            "Σ(nᵢxᵢ)/N : somme pondérée des valeurs divisée par l'effectif total",
+            "La valeur médiane",
+            "L'écart"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> x̄ = (1/N)Σnᵢxᵢ — sensible aux valeurs extrêmes ; pour classes : xᵢ = centre de classe.",
+          "points": 0.43
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "La médiane est :",
+          "choix": [
+            "La moyenne",
+            "La valeur qui partage la série ordonnée en deux effectifs égaux (50 % de part et d'autre)",
+            "La plus grande valeur",
+            "La valeur modale"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Médiane = valeur centrale après tri ; robuste aux valeurs extrêmes (contrairement à la moyenne).",
+          "points": 0.43
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Le mode (valeur dominante) est :",
+          "choix": [
+            "La moyenne",
+            "La valeur ou classe ayant l'effectif (ou la densité) le plus élevé",
+            "La médiane",
+            "Le minimum"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Mode = maximum de fréquence — seul indicateur utilisable pour un caractère qualitatif.",
+          "points": 0.43
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "La moyenne géométrique G est adaptée pour :",
+          "choix": [
+            "Des sommes",
+            "Des taux et rapports : G = ⁿ√(x₁·x₂·…·xₙ)",
+            "Des noms",
+            "Des médianes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Taux de croissance moyen : G−1 ; harmonique H = n/Σ(1/xᵢ) pour des moyennes de vitesses ou de rendements.",
+          "points": 0.43
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "L'étendue d'une série est :",
+          "choix": [
+            "La moyenne",
+            "La différence entre la plus grande et la plus petite valeur",
+            "L'écart-type",
+            "La médiane"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Étendue = x_max − x_min : mesure simple mais sensible aux extrêmes.",
+          "points": 0.43
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "La variance V mesure :",
+          "choix": [
+            "La moyenne",
+            "La moyenne des carrés des écarts à la moyenne : Σnᵢ(xᵢ−x̄)²/N",
+            "L'écart-type",
+            "L'étendue"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Dispersion autour de x̄ ; formule pratique : V = E(X²) − x̄² ; unité = celle des données au carré.",
+          "points": 0.43
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "L'écart-type σ est :",
+          "choix": [
+            "La variance",
+            "La racine carrée de la variance : √V — même unité que les données",
+            "La moyenne",
+            "L'écart absolu"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> σ = √V : indicateur de dispersion le plus utilisé ; grande σ = données dispersées.",
+          "points": 0.43
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "Le coefficient de variation CV vaut :",
+          "choix": [
+            "σ×x̄",
+            "σ/x̄ (×100 %) — dispersion relative permettant de comparer des séries d'unités différentes",
+            "V/x̄",
+            "x̄/σ"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> CV = σ/x̄ : sans unité → comparer dispersions de séries à moyennes/unités différentes.",
+          "points": 0.43
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Séries statistiques à deux dimensions",
+          "enonce": "Une série statistique à deux caractères étudie :",
+          "choix": [
+            "Une seule variable",
+            "L'association entre deux caractères (X,Y) observés sur les mêmes individus",
+            "Deux populations",
+            "Des moyennes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Tableau à double entrée : effectifs conjoints nᵢⱼ — question : X et Y sont-ils liés ?",
+          "points": 0.43
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Séries statistiques à deux dimensions",
+          "enonce": "La covariance de X et Y vaut :",
+          "choix": [
+            "Σxy",
+            "Cov(X,Y) = (1/N)Σnᵢⱼ(xᵢ−x̄)(yⱼ−ȳ) = E(XY) − x̄·ȳ",
+            "V(X)+V(Y)",
+            "x̄×ȳ"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cov &gt; 0 : varient de concert ; &lt; 0 : en sens inverse ; = 0 : pas de relation linéaire.",
+          "points": 0.43
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Séries statistiques à deux dimensions",
+          "enonce": "Le coefficient de corrélation linéaire r vérifie :",
+          "choix": [
+            "r &gt; 1 toujours",
+            "−1 ≤ r ≤ +1 : r = Cov(X,Y)/(σx·σy)",
+            "r = 0 signifie indépendance totale",
+            "r est sans signe"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> r proche de ±1 : forte liaison linéaire ; r≈0 : pas de lien LINÉAIRE (une relation non linéaire peut exister).",
+          "points": 0.43
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Séries statistiques à deux dimensions",
+          "enonce": "La droite d'ajustement des moindres carrés y = ax + b a pour pente :",
+          "choix": [
+            "a = Cov(X,Y)/V(X)",
+            "a = V(X)/Cov",
+            "a = r",
+            "a = x̄/ȳ"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> a = Cov(X,Y)/σx² et b = ȳ − a·x̄ : la droite passe par le point moyen (x̄, ȳ).",
+          "points": 0.43
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Les indices statistiques",
+          "enonce": "Un indice simple mesure :",
+          "choix": [
+            "Une moyenne",
+            "L'évolution d'une grandeur entre deux dates : I₁/₀ = V₁/V₀ × 100",
+            "Une proportion",
+            "Un taux"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Base 100 : I = 125 signifie +25 % par rapport à la date de référence.",
+          "points": 0.43
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Les indices statistiques",
+          "enonce": "L'indice de Laspeyres des prix utilise :",
+          "choix": [
+            "Les quantités de la période courante",
+            "Les quantités de la période de BASE comme pondérations fixes",
+            "Les prix seuls",
+            "La moyenne des périodes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> L = Σp₁q₀/Σp₀q₀ : mesure l'évolution des prix à structure de consommation de base — tend à surestimer.",
+          "points": 0.43
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Les indices statistiques",
+          "enonce": "L'indice de Paasche diffère de Laspeyres en utilisant :",
+          "choix": [
+            "Les quantités de base",
+            "Les quantités de la période COURANTE comme pondérations",
+            "Aucune pondération",
+            "Les moyennes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> P = Σp₁q₁/Σp₀q₁ : reflete la consommation actuelle — tend à sous-estimer l'inflation.",
+          "points": 0.43
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Les indices statistiques",
+          "enonce": "L'indice de Fisher est :",
+          "choix": [
+            "La somme des deux",
+            "La moyenne géométrique de Laspeyres et Paasche : √(L×P)",
+            "La moyenne arithmétique",
+            "Un indice des quantités"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Fisher = compromis symétrique entre les biais opposés de L et P — indice « idéal » de Irving Fisher.",
+          "points": 0.43
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "Les séries chronologiques",
+          "enonce": "Une série chronologique est :",
+          "choix": [
+            "Un tableau",
+            "Une suite d'observations d'une variable relevées à intervalles réguliers dans le temps",
+            "Un nuage de points",
+            "Un histogramme"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Série temporelle y(t) : PIB trimestriel, ventes mensuelles — base de l'analyse de tendance et prévision.",
+          "points": 0.43
+        },
+        {
+          "id": "q36",
+          "type": "qcm",
+          "chapitre": "Les séries chronologiques",
+          "enonce": "Les composantes d'une série chronologique sont :",
+          "choix": [
+            "Prix et quantités",
+            "Tendance (trend), variations saisonnières, cycles et mouvement irrégulier",
+            "Moyenne et variance",
+            "Croissance et décroissance"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Décomposition : y = tendance long terme + saisonnalité (périodique) + cycle (pluriannuel) + aléatoire.",
+          "points": 0.43
+        },
+        {
+          "id": "q37",
+          "type": "qcm",
+          "chapitre": "Les séries chronologiques",
+          "enonce": "La tendance générale (trend) représente :",
+          "choix": [
+            "Les saisons",
+            "Le mouvement de longue période de la série (croissance ou déclin de fond)",
+            "Le bruit",
+            "Les accidents"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Trend = direction durable — estimée par moyennes mobiles ou ajustement linéaire y = at+b.",
+          "points": 0.43
+        },
+        {
+          "id": "q38",
+          "type": "qcm",
+          "chapitre": "Les séries chronologiques",
+          "enonce": "Les moyennes mobiles servent à :",
+          "choix": [
+            "Calculer la moyenne",
+            "Lisser la série pour éliminer les fluctuations saisonnières et révéler la tendance",
+            "Prédire les prix",
+            "Cumuler les effectifs"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> MM = moyenne glissante sur p périodes centrées : élimine les oscillations courtes — révèle le trend.",
+          "points": 0.43
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (8 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Calcule la moyenne de la série { {{a1}} ; {{a2}} ; {{a3}} }.",
+          "answer": "moy",
+          "tol": 0.01,
+          "corrige": "x̄ = ({{a1}} + {{a2}} + {{a3}})/3 = {{num:moy}}.",
+          "points": 0.43
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Une note de {{x1}} coefficient {{n1}} et une note de {{x2}} coefficient {{n2}} : calcule la moyenne pondérée.",
+          "answer": "pond",
+          "tol": 0.01,
+          "corrige": "x̄ = ({{x1}}×{{n1}} + {{x2}}×{{n2}}) / ({{n1}}+{{n2}}) = {{num:pond}}.",
+          "points": 0.43
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Les notes rangées d'un étudiant forment la série ordonnée [ 2 ; 4 ; 7 ; 9 ; 12 ]. Calcule la médiane.",
+          "answer": "7",
+          "tol": 0.001,
+          "corrige": "N = 5 impair → Me = valeur de rang (N+1)/2 = 3ᵉ valeur = 7.",
+          "points": 0.43
+        },
+        {
+          "id": "q42",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de tendance centrale",
+          "enonce": "Quatre salariés gagnent en milliers de F : [ 1 ; 3 ; 5 ; 7 ] (série ordonnée). Calcule le salaire médian.",
+          "answer": "4",
+          "tol": 0.001,
+          "corrige": "N = 4 pair → Me = moyenne des rangs N/2 et N/2+1 = (3+5)/2 = 4.",
+          "points": 0.43
+        },
+        {
+          "id": "q43",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "Dans une série de salaires, le minimum est {{mn}} 000 F et le maximum {{mx}} 000 F. Calcule l'étendue (en milliers de F).",
+          "answer": "etd",
+          "tol": 0.5,
+          "corrige": "Étendue = max − min = {{mx}} − {{mn}} = {{num:etd}} 000 F.",
+          "points": 0.43
+        },
+        {
+          "id": "q44",
+          "type": "numeric",
+          "chapitre": "Indices statistiques",
+          "enonce": "Un prix passe de {{i0}} à {{i1}}. Calcule l'indice simple (base 100).",
+          "answer": "inds",
+          "tol": 0.1,
+          "corrige": "Indice = ({{i1}}/{{i0}}) × 100 = {{num:inds}}.",
+          "points": 0.43
+        },
+        {
+          "id": "q45",
+          "type": "numeric",
+          "chapitre": "Concepts de base",
+          "enonce": "Un caractère observé {{fe}} fois dans une population de {{ft}} individus : calcule sa fréquence (nombre décimal).",
+          "answer": "frq",
+          "tol": 0.01,
+          "corrige": "Fréquence = effectif / effectif total = {{fe}}/{{ft}} = {{num:frq}}.",
+          "points": 0.43
+        },
+        {
+          "id": "q46",
+          "type": "numeric",
+          "chapitre": "Caractéristiques de dispersion",
+          "enonce": "Une série a une variance de 9. Calcule son écart-type.",
+          "answer": "3",
+          "tol": 0.001,
+          "corrige": "σ = √V = √9 = 3 — l'écart-type est la racine carrée de la variance.",
+          "points": 0.65
+        }
+      ]
+    }
+  ]
+}

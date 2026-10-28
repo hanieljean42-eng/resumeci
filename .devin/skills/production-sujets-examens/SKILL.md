@@ -102,6 +102,7 @@ d'abord avec le skill `generation-fiches-cours`).
 | `Terminale_D` | Français, Histoire-Géographie, Mathématiques, Philosophie, Physique-Chimie, SVT |
 | `Terminale_C` | Mathématiques, Physique-Chimie **uniquement** |
 | `Terminale_A` | Français, Histoire-Géographie, Mathématiques, Philosophie |
+| `Licence_1_ADA` | 15 matières (algèbre, proba, stats, maths fin., micro/macro, éco, compta ×2, modélisation, socio, éthique, méthodo, monde des affaires, gestion de projet) |
 
 ⚠️ Une spec `classes` multi-classes ne doit cibler que des classes où la matière
 a des fiches (ex. Français commun = A + D, PAS C tant que ses fiches manquent).

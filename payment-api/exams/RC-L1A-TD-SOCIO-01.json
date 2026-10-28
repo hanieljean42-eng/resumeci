@@ -1,0 +1,858 @@
+{
+  "code": "RC-L1A-TD-SOCIO-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Sociologie de l'entreprise",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Sociologie de l'entreprise",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "va": {
+      "choices": [
+        0.6,
+        0.8
+      ]
+    },
+    "vi2": {
+      "choices": [
+        0.5,
+        0.7
+      ]
+    },
+    "vv": {
+      "choices": [
+        0.8,
+        0.9
+      ]
+    },
+    "emp": {
+      "choices": [
+        50,
+        80
+      ]
+    },
+    "abs": {
+      "choices": [
+        5,
+        8,
+        10
+      ]
+    },
+    "dep": {
+      "choices": [
+        6,
+        12
+      ]
+    },
+    "emp2": {
+      "choices": [
+        60,
+        120
+      ]
+    },
+    "pp": {
+      "choices": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "derived": {
+    "mot": "va*vi2*vv",
+    "tabs": "abs/emp*100",
+    "trot": "dep/emp2*100",
+    "p0": "[100,150,200][pp]",
+    "p1": "[112,165,230][pp]",
+    "prog": "(p1-p0)/p0*100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (14 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Introduction générale à la sociologie de l'entreprise",
+          "enonce": "L'organisation formelle (organigramme) coexiste toujours avec une organisation informelle (réseaux, pratiques réelles).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — l'organigramme prescrit, mais le travail réel passe par des arrangements et réseaux informels indispensables.",
+          "points": 0.34
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Fondements classiques : Taylor, Weber, Marx",
+          "enonce": "Le fordisme combine taylorisme, travail à la chaîne et salaires élevés pour créer des ouvriers-consommateurs.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — Ford : « 5 dollars par jour » + production de masse → consommation de masse : compromis fordiste.",
+          "points": 0.34
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "Les courants critiques dénoncent le management comme instrument de contrôle et d'aliénation du travailleur.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — tradition marxiste/sociologie critique : le management masque des rapports de domination.",
+          "points": 0.34
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Pouvoir, autorité et leadership",
+          "enonce": "Le leadership transactionnel repose sur l'échange (récompense/performance) ; le transformationnel sur l'inspiration et la vision.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — Burns/Bass : transactionnel = contrat ; transformationnel = charisme, vision mobilisatrice, dépassement.",
+          "points": 0.34
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Communication interne et culture d'entreprise",
+          "enonce": "La communication informelle (rumeurs, couloirs) est inévitable et peut parfois être plus rapide que les canaux officiels.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — la « machine à café » : incompressible ; le management doit la connaître plutôt que la nier.",
+          "points": 0.34
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Motivation, implication et conditions de travail",
+          "enonce": "L'implication organisationnelle (engagement) combine identification aux valeurs et volonté de rester et s'investir.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — engagement affectif (attachement), continu (coût du départ) et normatif (devoir) — dimensions mesurées par Meyer &amp; Allen.",
+          "points": 0.34
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Groupes, équipes et dynamique collective",
+          "enonce": "Les rôles informels (meneur, bouc émissaire, clown) existent dans tout groupe indépendamment de l'organigramme.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — rôles informels spontanés structurant la dynamique : à repérer et gérer par le manager.",
+          "points": 0.34
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Changements organisationnels et innovations",
+          "enonce": "Les indicateurs de conduite du changement incluent l'adhésion des acteurs, pas seulement les délais et coûts.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — succès = adoption réelle par les utilisateurs ; un changement imposé sans adhésion échoue souvent.",
+          "points": 0.34
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Enjeux contemporains de l'entreprise",
+          "enonce": "Le management par objectifs évalue les salariés sur la réalisation de résultats convenus plutôt que sur la présence.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — MBO : objectifs négociés, autonomie sur les moyens, évaluation sur les résultats.",
+          "points": 0.34
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Synthèse et perspectives",
+          "enonce": "L'acteur organisationnel dispose toujours d'une marge d'autonomie, même minimale, dans l'exécution de son rôle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — Crozier : aucune règle ne tout prévoit ; les zones d'incertitude rendent l'acteur actif, pas simple exécutant.",
+          "points": 0.34
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Fondements classiques",
+          "enonce": "Selon Taylor, « il existe une seule meilleure façon de faire chaque travail ».",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Citation clé de l'OST : standardiser le « one best way ».",
+          "points": 0.34
+        },
+        {
+          "id": "q12",
+          "type": "vrai_faux",
+          "chapitre": "Fondements classiques",
+          "enonce": "Chez Weber, la bureaucratie repose sur des règles impersonnelles, une hiérarchie claire et le recrutement au mérite.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Avec : séparation personne/fonction et actes consignés par écrit.",
+          "points": 0.34
+        },
+        {
+          "id": "q13",
+          "type": "vrai_faux",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "L'effet Hawthorne montre que la productivité augmente quand les travailleurs se sentent considérés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Expériences d'Elton Mayo (Western Electric) : l'attention compte plus que les conditions matérielles.",
+          "points": 0.34
+        },
+        {
+          "id": "q14",
+          "type": "vrai_faux",
+          "chapitre": "Motivation et conditions de travail",
+          "enonce": "Chez Vroom, si l'une des trois composantes (attente, instrumentalité, valence) est nulle, la motivation tombe à zéro.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Motivation = A × I × V : produit, pas somme.",
+          "points": 0.34
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (40 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la sociologie de l'entreprise",
+          "enonce": "La sociologie de l'entreprise étudie :",
+          "choix": [
+            "Les comptes de l'entreprise",
+            "L'entreprise comme organisation sociale : acteurs, relations, pouvoirs, culture",
+            "La production technique",
+            "Le marketing"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> L'entreprise est un phénomène social : interactions, groupes, rapports de pouvoir, identités — pas seulement économique.",
+          "points": 0.34
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la sociologie de l'entreprise",
+          "enonce": "L'entreprise comme institution sociale se caractérise par :",
+          "choix": [
+            "Son chiffre d'affaires",
+            "Des règles, rôles et normes structurant durablement les comportements collectifs",
+            "Ses machines",
+            "Son logo"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Institution = cadre stable de coopération : hiérarchie, rôles, procédures, valeurs partagées.",
+          "points": 0.34
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la sociologie de l'entreprise",
+          "enonce": "Un acteur organisationnel est :",
+          "choix": [
+            "Un simple exécutant",
+            "Un individu doté de ressources et de marges de manœuvre dans l'organisation",
+            "Un actionnaire",
+            "Un client"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Crozier : l'acteur n'est jamais passif — il détient une zone d'incertitude (expertise, information) source de pouvoir.",
+          "points": 0.34
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la sociologie de l'entreprise",
+          "enonce": "La sociologie de l'entreprise se distingue de l'économie en ce qu'elle :",
+          "choix": [
+            "Ignore les prix",
+            "Analyse les relations sociales concrètes, informelles et le vécu des acteurs",
+            "Ne parle que de profit",
+            "Étudie les marchés"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Complément de la vision managériale : réalité informelle, conflits, coopérations, non-dits de l'organisation.",
+          "points": 0.34
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Fondements classiques : Taylor, Weber, Marx",
+          "enonce": "Le taylorisme repose sur :",
+          "choix": [
+            "La participation des ouvriers",
+            "La séparation conception/exécution et la décomposition des tâches (OST) pour la productivité",
+            "La motivation",
+            "Le travail en équipe"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Taylor : organisation scientifique du travail — chronométrage, gestes prescrits, salaire au rendement.",
+          "points": 0.34
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Fondements classiques : Taylor, Weber, Marx",
+          "enonce": "Selon Weber, la bureaucratie est caractérisée par :",
+          "choix": [
+            "Le favoritisme",
+            "Une domination rationnelle-légale : règles écrites, hiérarchie, compétences, impersonnalité",
+            "Le charisme",
+            "L'absence de règles"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Type idéal bureaucratique : autorité fondée sur des règles et qualifications — efficace mais potentiellement rigide.",
+          "points": 0.34
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Fondements classiques : Taylor, Weber, Marx",
+          "enonce": "Pour Marx, le rapport capital/travail est fondé sur :",
+          "choix": [
+            "L'harmonie",
+            "L'exploitation : la plus-value extorquée au travail ouvrier dans la lutte des classes",
+            "Le dialogue social",
+            "La coopération"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Analyse critique : le profit capitaliste vient de la différence entre valeur produite par l'ouvrier et salaire versé.",
+          "points": 0.34
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Fondements classiques : Taylor, Weber, Marx",
+          "enonce": "Les trois types de domination légitime chez Weber sont :",
+          "choix": [
+            "Économique, politique, social",
+            "Traditionnelle, charismatique, rationnelle-légale",
+            "Directe, indirecte, mixte",
+            "Forte, moyenne, faible"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Tradition (coutumes), charisme (leader exceptionnel), légal-rationnel (règles impersonnelles — base de la bureaucratie).",
+          "points": 0.34
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "L'école des relations humaines (expérience Hawthorne, Mayo) a montré :",
+          "choix": [
+            "Que seul le salaire motive",
+            "L'importance du groupe, de la reconnaissance et des facteurs psychosociaux sur la productivité",
+            "L'inutilité des pauses",
+            "La supériorité de la chaîne"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Découverte : performance liée au sentiment d'appartenance et à l'attention portée — naissance du management humain.",
+          "points": 0.34
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "La pyramide de Maslow ordonne les besoins :",
+          "choix": [
+            "Au hasard",
+            "Physiologiques → sécurité → appartenance → estime → accomplissement de soi",
+            "Salaire → bonus → promotion",
+            "Pouvoir → richesse"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Hiérarchie progressive : un besoin supérieur devient motivant quand l'inférieur est satisfait.",
+          "points": 0.34
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "L'approche socio-technique (Tavistock) prône :",
+          "choix": [
+            "La technique seule",
+            "L'optimisation conjointe du système technique ET du système social",
+            "Plus de machines",
+            "La suppression des équipes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Ni technique seule ni humain seul : concevoir conjointement tâches et organisation (équipes semi-autonomes).",
+          "points": 0.34
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "Goffman et la sociologie interactionniste analysent :",
+          "choix": [
+            "La production",
+            "Les interactions quotidiennes : rôles, « scène » et « coulisses » de la vie sociale",
+            "Les prix",
+            "Les profits"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Métaphore dramaturgique : chacun joue un rôle social, gère les impressions — l'entreprise comme théâtre.",
+          "points": 0.34
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Pouvoir, autorité et leadership",
+          "enonce": "Le pouvoir dans l'organisation se définit comme :",
+          "choix": [
+            "Le salaire",
+            "La capacité d'influencer le comportement d'autrui malgré les résistances",
+            "Le diplôme",
+            "L'ancienneté"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Pouvoir = relation asymétrique fondée sur des ressources : autorité formelle, expertise, réseau, information.",
+          "points": 0.34
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Pouvoir, autorité et leadership",
+          "enonce": "Chez Crozier, les sources de pouvoir sont les :",
+          "choix": [
+            "Titres hiérarchiques",
+            "Zones d'incertitude : expertise, information, relations, règles",
+            "Les primes",
+            "La taille du bureau"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Qui contrôle une zone d'incertitude critique pour l'organisation détient un pouvoir — même sans statut élevé.",
+          "points": 0.34
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Pouvoir, autorité et leadership",
+          "enonce": "L'autorité légitime se distingue du pouvoir par :",
+          "choix": [
+            "La force",
+            "La reconnaissance par les subordonnés d'un droit de commander (légitimité)",
+            "La violence",
+            "L'argent"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Autorité = pouvoir accepté comme légitime ; le pouvoir brut peut s'exercer sans consentement.",
+          "points": 0.34
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Pouvoir, autorité et leadership",
+          "enonce": "Les styles de leadership classiques sont :",
+          "choix": [
+            "Bon et mauvais",
+            "Autoritaire, démocratique/participatif, laisser-faire",
+            "Riche et pauvre",
+            "Jeune et vieux"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Lewin : autoritaire (décision seul), démocratique (consultation — motivation), laisser-faire (autonomie — risque de flottement).",
+          "points": 0.34
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Communication interne et culture d'entreprise",
+          "enonce": "La communication descendante est :",
+          "choix": [
+            "Celle des employés vers la direction",
+            "Celle de la direction vers les subordonnés (consignes, informations)",
+            "Entre collègues",
+            "Vers l'extérieur"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Flux hiérarchique descendant (ordres) ; ascendante = remontées des équipes ; transversale = entre pairs/services.",
+          "points": 0.34
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Communication interne et culture d'entreprise",
+          "enonce": "La culture d'entreprise est :",
+          "choix": [
+            "Le logo",
+            "L'ensemble des valeurs, normes, rites et croyances partagés qui orientent les comportements",
+            "Le code vestimentaire",
+            "L'organigramme"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> « La manière dont on fait les choses ici » : identité collective invisible mais puissante — Schein : artefacts, valeurs, suppositions.",
+          "points": 0.34
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Communication interne et culture d'entreprise",
+          "enonce": "Les rites organisationnels (réunions, cérémonies) servent à :",
+          "choix": [
+            "Perdre du temps",
+            "Renforcer l'appartenance, transmettre les valeurs et marquer les statuts",
+            "Décorer",
+            "Remplacer le travail"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Rites = pratiques symboliques régulières qui cimentent la culture : intégration, récompense, passage.",
+          "points": 0.34
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Communication interne et culture d'entreprise",
+          "enonce": "Une culture forte a pour effet :",
+          "choix": [
+            "Plus de conflits",
+            "Une cohésion élevée mais possible rigidité face au changement",
+            "La disparition des valeurs",
+            "L'absence de règles"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Double tranchant : engagement et cohésion vs résistance au changement — homogénéité excessive.",
+          "points": 0.34
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "Motivation, implication et conditions de travail",
+          "enonce": "La motivation intrinsèque au travail vient :",
+          "choix": [
+            "Du salaire",
+            "De l'intérêt du travail lui-même : autonomie, sens, progression",
+            "Des sanctions",
+            "Des avantages"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Intrinsèque (tâche, contenu) vs extrinsèque (salaire, primes, conditions) — l'intrinsèque est plus durable.",
+          "points": 0.34
+        },
+        {
+          "id": "q36",
+          "type": "qcm",
+          "chapitre": "Motivation, implication et conditions de travail",
+          "enonce": "La théorie bifactorielle de Herzberg distingue :",
+          "choix": [
+            "Travail et repos",
+            "Facteurs d'hygiène (évitent l'insatisfaction) et facteurs de motivation (suscitent l'engagement)",
+            "Cadres et ouvriers",
+            "Anciens et nouveaux"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Hygiène : salaire, sécurité, conditions — nécessaires mais pas motivants ; motivants : réalisation, responsabilité, reconnaissance.",
+          "points": 0.34
+        },
+        {
+          "id": "q37",
+          "type": "qcm",
+          "chapitre": "Motivation, implication et conditions de travail",
+          "enonce": "La théorie X de McGregor suppose que :",
+          "choix": [
+            "L'humain aime travailler",
+            "Le salarié est paresseux et doit être contrôlé — vision pessimiste",
+            "Tout le monde est leader",
+            "Le travail est un jeu"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> X = homme passif à contraindre (management autoritaire) ; Y = homme actif cherchant responsabilité (participatif).",
+          "points": 0.34
+        },
+        {
+          "id": "q38",
+          "type": "qcm",
+          "chapitre": "Motivation, implication et conditions de travail",
+          "enonce": "Les conditions de travail comprennent :",
+          "choix": [
+            "Le salaire seul",
+            "L'environnement physique, la charge, les horaires, l'ergonomie, la sécurité",
+            "Le lieu de vacances",
+            "La cantine"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Santé/sécurité au travail : cadre physique ET psychosocial (stress, harcèlement) — enjeu légal et performance.",
+          "points": 0.34
+        },
+        {
+          "id": "q39",
+          "type": "qcm",
+          "chapitre": "Groupes, équipes et dynamique collective",
+          "enonce": "Un groupe de travail devient une équipe quand :",
+          "choix": [
+            "Il est nombreux",
+            "Il partage un objectif commun, des rôles interdépendants et une responsabilité collective",
+            "Il se réunit",
+            "Il a un chef"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Équipe ≠ simple agrégat : interdépendance, complémentarité et résultat collectif mesurable.",
+          "points": 0.34
+        },
+        {
+          "id": "q40",
+          "type": "qcm",
+          "chapitre": "Groupes, équipes et dynamique collective",
+          "enonce": "Les phases de développement d'une équipe selon Tuckman sont :",
+          "choix": [
+            "Naissance et mort",
+            "Forming, storming, norming, performing",
+            "Recrutement et formation",
+            "Début et fin"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Formation → conflits (storming) → normes → performance : les tensions initiales sont une étape normale.",
+          "points": 0.34
+        },
+        {
+          "id": "q41",
+          "type": "qcm",
+          "chapitre": "Groupes, équipes et dynamique collective",
+          "enonce": "La cohésion d'un groupe dépend de :",
+          "choix": [
+            "La taille seule",
+            "L'attraction des membres, les objectifs partagés, la réussite et la menace extérieure",
+            "Le salaire",
+            "Les heures"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Groupe cohésif : fidélité, entraide — mais excès possible (conformisme, pensée de groupe).",
+          "points": 0.34
+        },
+        {
+          "id": "q42",
+          "type": "qcm",
+          "chapitre": "Groupes, équipes et dynamique collective",
+          "enonce": "La pensée de groupe (groupthink) est :",
+          "choix": [
+            "Une intelligence collective",
+            "La pression du conformisme qui étouffe la critique dans les groupes très cohésifs",
+            "Un brainstorming",
+            "Un vote"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Janis : cohésion excessive → autocensure des dissidents → mauvaises décisions collectives.",
+          "points": 0.34
+        },
+        {
+          "id": "q43",
+          "type": "qcm",
+          "chapitre": "Changements organisationnels et innovations",
+          "enonce": "La résistance au changement s'explique notamment par :",
+          "choix": [
+            "La paresse",
+            "La peur de l'inconnu, la perte d'avantages acquis, les habitudes et l'incompréhension",
+            "La joie",
+            "Le salaire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Résistances naturelles : incertitude, intérêts menacés, attachement aux routines — à anticiper, pas réprimer.",
+          "points": 0.34
+        },
+        {
+          "id": "q44",
+          "type": "qcm",
+          "chapitre": "Changements organisationnels et innovations",
+          "enonce": "Le modèle de Lewin du changement comporte :",
+          "choix": [
+            "Analyse puis décision",
+            "Dégel (unfreezing) → changement → regel (refreezing)",
+            "Diagnostic seul",
+            "Formation"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Déstabiliser les habitudes → mouvement vers le nouveau → stabiliser : le regel évite le retour en arrière.",
+          "points": 0.34
+        },
+        {
+          "id": "q45",
+          "type": "qcm",
+          "chapitre": "Changements organisationnels et innovations",
+          "enonce": "Un changement réussi nécessite typiquement :",
+          "choix": [
+            "Une annonce surprise",
+            "Communication, participation des acteurs, formation et accompagnement",
+            "Des licenciements",
+            "Un seul décret"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Impliquer les concernés réduit les résistances : co-construction, ambassadeurs du changement, petits pas.",
+          "points": 0.34
+        },
+        {
+          "id": "q46",
+          "type": "qcm",
+          "chapitre": "Changements organisationnels et innovations",
+          "enonce": "L'innovation organisationnelle porte sur :",
+          "choix": [
+            "Uniquement les produits",
+            "Les nouvelles pratiques de travail : structures, processus, management (télétravail, agilité)",
+            "Les machines",
+            "Le marketing"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Au-delà de la technologie : nouveaux modes d'organisation — holacratie, équipes agiles, plateformes.",
+          "points": 0.34
+        },
+        {
+          "id": "q47",
+          "type": "qcm",
+          "chapitre": "Enjeux contemporains de l'entreprise",
+          "enonce": "Les RPS (risques psychosociaux) recouvrent :",
+          "choix": [
+            "Les accidents machines",
+            "Stress, burn-out, harcèlement, violence interne liés au travail",
+            "Les incendies",
+            "Les chutes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Stress chronique, épuisement, harcèlement : enjeu de santé au travail reconnu — prévention obligatoire.",
+          "points": 0.34
+        },
+        {
+          "id": "q48",
+          "type": "qcm",
+          "chapitre": "Enjeux contemporains de l'entreprise",
+          "enonce": "Le télétravail pose des défis de :",
+          "choix": [
+            "Connexion internet seulement",
+            "Isolement, frontière vie pro/perso, management à distance, droit à la déconnexion",
+            "Salaire",
+            "Transport"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Nouvelles problématiques : confiance, autonomie, risque de déconnexion impossible, cohésion d'équipe.",
+          "points": 0.34
+        },
+        {
+          "id": "q49",
+          "type": "qcm",
+          "chapitre": "Enjeux contemporains de l'entreprise",
+          "enonce": "La diversité et l'inclusion en entreprise concernent :",
+          "choix": [
+            "Les nationalités seules",
+            "Genre, âge, handicap, origines — lutter contre les discriminations et valoriser la complémentarité",
+            "Les diplômes",
+            "Les langues"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Au-delà de la légalité : la diversité bien managée améliore créativité et performance collective.",
+          "points": 0.34
+        },
+        {
+          "id": "q50",
+          "type": "qcm",
+          "chapitre": "Enjeux contemporains de l'entreprise",
+          "enonce": "La QVT (qualité de vie au travail) englobe :",
+          "choix": [
+            "Le salaire",
+            "Conditions de travail, équilibre vie pro/perso, contenu du travail, reconnaissance",
+            "Le bureau",
+            "Les primes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> QVT : démarche globale de bien-être et performance — ANACT : facteurs physiques ET organisationnels.",
+          "points": 0.34
+        },
+        {
+          "id": "q51",
+          "type": "qcm",
+          "chapitre": "Synthèse et perspectives",
+          "enonce": "La sociologie de l'entreprise apporte au manager :",
+          "choix": [
+            "Des recettes toutes faites",
+            "Une lecture critique et contextualisée des comportements et des organisations",
+            "Des lois universelles",
+            "Des profits"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Pas de solution unique : comprendre les logiques d'acteurs, pouvoirs et cultures pour agir lucidement.",
+          "points": 0.34
+        },
+        {
+          "id": "q52",
+          "type": "qcm",
+          "chapitre": "Synthèse et perspectives",
+          "enonce": "L'approche contingente postule :",
+          "choix": [
+            "Une organisation idéale unique",
+            "Que la meilleure structure dépend du contexte : taille, technologie, environnement, stratégie",
+            "La bureaucratie",
+            "Le hasard"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> « It depends » : pas de one best way — adapter l'organisation aux circonstances (Lawrence &amp; Lorsch).",
+          "points": 0.34
+        },
+        {
+          "id": "q53",
+          "type": "qcm",
+          "chapitre": "Synthèse et perspectives",
+          "enonce": "L'entreprise apprenante se caractérise par :",
+          "choix": [
+            "Sa mémoire écrite",
+            "Sa capacité à apprendre collectivement, capitaliser les savoirs et s'adapter",
+            "Sa taille",
+            "Son âge"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Apprentissage organisationnel : partage des connaissances, droit à l'erreur, remise en question des routines.",
+          "points": 0.34
+        },
+        {
+          "id": "q54",
+          "type": "qcm",
+          "chapitre": "Synthèse et perspectives",
+          "enonce": "Les évolutions récentes des organisations tendent vers :",
+          "choix": [
+            "Plus de hiérarchie",
+            "L'horizontalisation : projets transverses, réseaux, subsidiarité, agilité",
+            "Le taylorisme",
+            "La centralisation"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Tendances : organigrammes plats, équipes autonomes, processus transverses, écosystèmes — vs pyramide classique.",
+          "points": 0.34
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (4 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q55",
+          "type": "numeric",
+          "chapitre": "Motivation et conditions de travail",
+          "enonce": "Théorie de Vroom : un salarié évalue Attente = {{num:va}}, Instrumentalité = {{num:vi2}} et Valence = {{num:vv}}. Calcule sa motivation M = A × I × V.",
+          "answer": "mot",
+          "tol": 0.001,
+          "precision": "arrondi à 0,001",
+          "corrige": "M = {{num:va}} × {{num:vi2}} × {{num:vv}} = {{d3:mot}} — si l'une des trois est nulle, M = 0.",
+          "points": 0.34
+        },
+        {
+          "id": "q56",
+          "type": "numeric",
+          "chapitre": "Motivation et conditions de travail",
+          "enonce": "Sur {{emp}} employés d'une usine, {{abs}} sont absents un jour donné. Calcule le taux d'absentéisme (en %).",
+          "answer": "tabs",
+          "tol": 0.1,
+          "corrige": "Taux = {{abs}}/{{emp}} × 100 = {{num:tabs}} % — indicateur des conditions de travail.",
+          "points": 0.34
+        },
+        {
+          "id": "q57",
+          "type": "numeric",
+          "chapitre": "Motivation et conditions de travail",
+          "enonce": "Une entreprise de {{emp2}} employés enregistre {{dep}} départs dans l'année. Calcule le taux de rotation du personnel (en %).",
+          "answer": "trot",
+          "tol": 0.1,
+          "corrige": "Rotation = {{dep}}/{{emp2}} × 100 = {{num:trot}} % — un turnover élevé signale un problème de motivation.",
+          "points": 0.34
+        },
+        {
+          "id": "q58",
+          "type": "numeric",
+          "chapitre": "Courants modernes et critiques",
+          "enonce": "Après l'amélioration de l'ambiance et de l'attention portée aux ouvriers (effet Hawthorne), la production passe de {{p0}} à {{p1}} unités. Calcule la progression (en %).",
+          "answer": "prog",
+          "tol": 0.1,
+          "corrige": "Progression = ({{p1}} − {{p0}})/{{p0}} × 100 = {{num:prog}} % — se sentir considéré augmente la productivité.",
+          "points": 0.62
+        }
+      ]
+    }
+  ]
+}

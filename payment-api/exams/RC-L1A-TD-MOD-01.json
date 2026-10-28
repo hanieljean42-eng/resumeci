@@ -1,0 +1,521 @@
+{
+  "code": "RC-L1A-TD-MOD-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Modélisation et optimisation",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Modélisation et optimisation",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "ca": {
+      "choices": [
+        20,
+        30,
+        40
+      ]
+    },
+    "cb2": {
+      "choices": [
+        40,
+        50,
+        60
+      ]
+    },
+    "pa": {
+      "choices": [
+        10,
+        15
+      ]
+    },
+    "pb": {
+      "choices": [
+        10,
+        20
+      ]
+    }
+  },
+  "derived": {
+    "zv": "ca*pa + cb2*pb"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (11 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Modélisation et cadre général",
+          "enonce": "Une solution admissible est une solution qui vérifie toutes les contraintes du modèle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — l'optimum se cherche parmi les solutions admissibles (région faisable), pas dans tout l'espace.",
+          "points": 0.54
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Si la région faisable est vide, le programme linéaire n'a pas de solution.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — contraintes contradictoires → aucun point admissible → problème infaisable.",
+          "points": 0.54
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Optimisation non linéaire",
+          "enonce": "Le gradient d'une fonction indique la direction de plus forte croissance — on s'y oppose pour descendre vers un minimum.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — descente de gradient : x ← x − α∇f(x) : pas le long de la plus forte pente descendante.",
+          "points": 0.54
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Comparaison des méthodes",
+          "enonce": "Le prix d'ombre d'une contrainte = variation de l'objectif si on relâche la contrainte d'une unité.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — c'est le multiplicateur de Lagrange / dual : valeur marginale d'une ressource supplémentaire.",
+          "points": 0.54
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Synthèse et applications en gestion",
+          "enonce": "L'aide à la décision par modèle ne remplace pas le jugement du décideur — elle l'éclaire.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — le modèle quantifie et compare des scénarios ; le manager arbitre sur des critères parfois non modélisables.",
+          "points": 0.54
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "En optimisation linéaire, l'ensemble réalisable est un polyèdre convexe et l'optimum, s'il existe, se trouve à un sommet.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> C'est le fondement de la résolution graphique et du simplexe.",
+          "points": 0.54
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Pour une contrainte ax + by ≤ c, le demi-plan admissible est celui qui contient l'origine.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Règle de tracé : pour ≤, garder le côté vers l'origine.",
+          "points": 0.54
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "La méthode des sommets est la version calculatoire de la résolution graphique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> On liste les candidats, on filtre les admissibles, on compare les valeurs de Z.",
+          "points": 0.54
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "La forme canonique du cours est : max Z = cᵀx sous les contraintes Ax ≤ b et x ≥ 0.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Fonction objectif et contraintes linéaires.",
+          "points": 0.54
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "À l'optimum du problème type du cours, une seule des deux contraintes est saturée.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Les deux sont saturées : 2(15)+4(22,5) = 120 et 3(15)+2(22,5) = 90.",
+          "points": 0.54
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Pour tracer ax + by = c, deux points suffisent : (0 ; c/b) et (c/a ; 0).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Première étape de la résolution graphique.",
+          "points": 0.54
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (20 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Modélisation et cadre général",
+          "enonce": "Un modèle mathématique est :",
+          "choix": [
+            "Une copie exacte de la réalité",
+            "Une représentation simplifiée de la réalité permettant d'analyser et de prévoir",
+            "Une formule magique",
+            "Un dessin"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Simplification utile : on retient les variables essentielles pour étudier un phénomène et tester des décisions.",
+          "points": 0.54
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Modélisation et cadre général",
+          "enonce": "Les étapes de la modélisation sont typiquement :",
+          "choix": [
+            "Calcul puis validation",
+            "Formulation du problème → construction du modèle → résolution → validation/interprétation",
+            "Dessin puis calcul",
+            "Observation seule"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Démarche : identifier variables et objectif → traduction mathématique → résoudre → confronter au réel, itérer.",
+          "points": 0.54
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Modélisation et cadre général",
+          "enonce": "Dans un problème d'optimisation, la fonction objectif est :",
+          "choix": [
+            "Toujours un coût",
+            "L'expression à maximiser ou minimiser (profit, coût, distance…)",
+            "Une contrainte",
+            "Une variable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Objectif = critère à optimiser ; les contraintes délimitent les solutions réalisables.",
+          "points": 0.54
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Modélisation et cadre général",
+          "enonce": "Une contrainte dans un modèle représente :",
+          "choix": [
+            "L'objectif",
+            "Une limitation des ressources ou des exigences (budget, capacité, temps) que la solution doit respecter",
+            "Une variable libre",
+            "Un paramètre fixe"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Contraintes = domaine des solutions admissibles : inéquations (≤, ≥) ou égalités sur les variables.",
+          "points": 0.54
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Un programme linéaire se caractérise par :",
+          "choix": [
+            "Une fonction objectif quadratique",
+            "Objectif et contraintes tous linéaires (degré 1) dans les variables",
+            "Des variables binaires",
+            "L'absence de contraintes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PL : max/min c₁x₁+…+cₙxₙ s.c. inéquations linéaires — ex. maximiser un profit sous contraintes de ressources.",
+          "points": 0.54
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "La résolution graphique d'un PL à 2 variables montre que l'optimum :",
+          "choix": [
+            "Est toujours au centre",
+            "Se trouve à un sommet du polyèdre des contraintes",
+            "N'existe pas",
+            "Est aléatoire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Théorème fondamental : si le PL a un optimum fini, il est atteint à un sommet (extrême point) de la région faisable.",
+          "points": 0.54
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "La méthode du simplexe consiste à :",
+          "choix": [
+            "Tester tous les points",
+            "Se déplacer de sommet en sommet en améliorant l'objectif jusqu'à l'optimum",
+            "Intégrer",
+            "Dériver"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Algorithme itératif : il saute d'un sommet admissible à un sommet voisin meilleur — nombre fini de sommets.",
+          "points": 0.54
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "La région faisable d'un PL est :",
+          "choix": [
+            "Un point",
+            "L'ensemble (polyèdre convexe) des points vérifiant toutes les contraintes",
+            "La droite d'objectif",
+            "L'origine"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Intersection des demi-plans définis par les contraintes : convexe ; vide si contraintes incompatibles.",
+          "points": 0.54
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Optimisation non linéaire",
+          "enonce": "Un problème d'optimisation est non linéaire quand :",
+          "choix": [
+            "Il n'a pas de solution",
+            "L'objectif ou au moins une contrainte est non linéaire (courbes, produits, puissances)",
+            "Il a 2 variables",
+            "Le domaine est borné"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Dès qu'un terme n'est pas affine (x², xy, 1/x, exp…), on quitte le cadre du simplexe.",
+          "points": 0.54
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Optimisation non linéaire",
+          "enonce": "Pour une fonction d'une variable, un extremum vérifie :",
+          "choix": [
+            "f'(x) = 0 (condition du premier ordre)",
+            "f(x) = 0",
+            "f''(x) = 0",
+            "f(x) maximal"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Point critique : f'(x*) = 0 ; la nature (min/max) se lit au second ordre : f'' &gt; 0 → minimum local.",
+          "points": 0.54
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Optimisation non linéaire",
+          "enonce": "Pour une fonction convexe sur un domaine convexe :",
+          "choix": [
+            "Tout minimum local est global",
+            "Il y a plusieurs optima",
+            "Pas de minimum",
+            "Le gradient est nul partout"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Convexité = propriété clé : minimum local = minimum global — très recherchée en optimisation.",
+          "points": 0.54
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Optimisation non linéaire",
+          "enonce": "La méthode du Lagrangien sert à :",
+          "choix": [
+            "Résoudre les PL",
+            "Optimiser sous contraintes d'égalité en introduisant des multiplicateurs λ",
+            "Intégrer numériquement",
+            "Éliminer les variables"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> L(x,λ) = f(x) + λ·g(x) : conditions du 1er ordre ∇L = 0 → optimum contraint ; λ = coût d'opportunité.",
+          "points": 0.54
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Comparaison des méthodes",
+          "enonce": "Face à un problème d'optimisation, le choix de la méthode dépend de :",
+          "choix": [
+            "Du hasard",
+            "De la nature de l'objectif et des contraintes (linéaire/non, continu/discret), de la taille",
+            "Du langage utilisé",
+            "De l'heure"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Linéaire → simplexe/graphique ; non linéaire convexe → gradient/Lagrange ; discret → énumération/heuristiques.",
+          "points": 0.54
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Comparaison des méthodes",
+          "enonce": "L'avantage de la programmation linéaire est :",
+          "choix": [
+            "Elle modélise tout",
+            "Sa simplicité, sa rapidité et l'existence d'un optimum global garanti si faisable",
+            "Elle n'a pas de contraintes",
+            "Elle est gratuite"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PL : polyèdre convexe → optimum global en un sommet ; solvers efficaces même en grande dimension.",
+          "points": 0.54
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Comparaison des méthodes",
+          "enonce": "Une heuristique est utilisée quand :",
+          "choix": [
+            "Le problème est trivial",
+            "Le problème est trop complexe pour une méthode exacte (combinatoire, temps) — solution approchée",
+            "Le modèle est linéaire",
+            "Il n'y a pas de contraintes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Heuristiques (glouton, recuit, génétiques) : bonnes solutions rapides sans garantie d'optimalité.",
+          "points": 0.54
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Comparaison des méthodes",
+          "enonce": "La sensibilité d'une solution optimale mesure :",
+          "choix": [
+            "Sa précision",
+            "Comment l'optimum varie quand les paramètres (prix, capacités) changent",
+            "Sa rapidité",
+            "Sa taille"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Analyse post-optimale : stabilité de la solution, valeurs marginales (prix d'ombre) des ressources rares.",
+          "points": 0.54
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Synthèse et applications en gestion",
+          "enonce": "En gestion, l'optimisation sert typiquement à :",
+          "choix": [
+            "Remplacer les managers",
+            "Décider de l'allocation optimale des ressources rares (production, budget, stocks, transport)",
+            "Faire de la publicité",
+            "Embaucher"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Applications : plan de production max profit, mix produit, tournées, logistique, planification financière.",
+          "points": 0.54
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Synthèse et applications en gestion",
+          "enonce": "Un problème de mix de production consiste à :",
+          "choix": [
+            "Choisir les prix",
+            "Déterminer les quantités de chaque produit maximisant le profit sous contraintes de capacité",
+            "Vendre tout",
+            "Réduire les coûts fixes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cas classique de PL : produits × contraintes (heures machine, matière) → combinaison optimale de production.",
+          "points": 0.54
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Synthèse et applications en gestion",
+          "enonce": "Le modèle de transport cherche à :",
+          "choix": [
+            "Acheter des véhicules",
+            "Minimiser le coût total d'acheminement entre origines et destinations sous contraintes d'offre/demande",
+            "Fixer les prix",
+            "Charger les camions"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PL spécialisé : flux xᵢⱼ des usines vers les clients — équilibrer offres et demandes au moindre coût.",
+          "points": 0.54
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Synthèse et applications en gestion",
+          "enonce": "La limite principale d'un modèle d'optimisation en gestion est :",
+          "choix": [
+            "Le temps de calcul",
+            "Que la qualité des résultats dépend de la fidélité du modèle et des données à la réalité",
+            "Le nombre de variables",
+            "Le logiciel"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> « Garbage in, garbage out » : un modèle trop simplifié ou des données fausses donnent un optimum trompeur.",
+          "points": 0.54
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (6 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Dans le problème type du cours, l'optimum est à l'intersection des droites A + 2B = 60 et 3A + 2B = 90. Calcule l'abscisse A de ce sommet.",
+          "answer": "15",
+          "tol": 0.001,
+          "corrige": "Soustraire : (3A + 2B) − (A + 2B) = 90 − 60 → 2A = 30 → A = 15.",
+          "points": 0.54
+        },
+        {
+          "id": "q33",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Toujours dans le problème type du cours, calcule la valeur de Z = 30A + 50B à l'optimum A* = 15, B* = 22,5.",
+          "answer": "1575",
+          "tol": 0.5,
+          "corrige": "Z* = 30×15 + 50×22,5 = 450 + 1 125 = 1 575.",
+          "points": 0.54
+        },
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Pour la fonction objectif Z = {{ca}}A + {{cb2}}B, calcule Z au point ( {{pa}} ; {{pb}} ).",
+          "answer": "zv",
+          "tol": 0.5,
+          "corrige": "Z = {{ca}}×{{pa}} + {{cb2}}×{{pb}} = {{num:zv}}.",
+          "points": 0.54
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Dans le problème type, la contrainte machine 2A + 4B ≤ 120 est-elle saturée à l'optimum (15 ; 22,5) ? Donne la valeur du membre de gauche.",
+          "answer": "120",
+          "tol": 0.5,
+          "corrige": "2×15 + 4×22,5 = 30 + 90 = 120 — contrainte saturée (= le second membre).",
+          "points": 0.54
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "Dans le problème type, la contrainte travail 3A + 2B ≤ 90 évaluée à l'optimum (15 ; 22,5) vaut :",
+          "answer": "90",
+          "tol": 0.5,
+          "corrige": "3×15 + 2×22,5 = 45 + 45 = 90 — les deux contraintes sont saturées à l'optimum.",
+          "points": 0.54
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Résolution par optimisation linéaire",
+          "enonce": "L'intersection des droites A + 2B = 60 et 3A + 2B = 90 donne A = 15. Calcule B.",
+          "answer": "22.5",
+          "tol": 0.01,
+          "corrige": "3A + 2B = 90 → soustraire A + 2B = 60 : 2A = 30 → A = 15, puis 15 + 2B = 60 → B = 22,5.",
+          "points": 0.56
+        }
+      ]
+    }
+  ]
+}

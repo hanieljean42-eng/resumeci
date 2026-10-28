@@ -20,6 +20,15 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const { Agent } = require('undici');
+
+// ecole-ci.org résout d'abord en IPv6 NAT64 qui blackhole les connexions :
+// on force IPv4 au niveau socket et on allonge les timeouts (le site met ~13 s/réponse).
+const NET_AGENT = new Agent({
+  connect: { family: 4, timeout: 60000 },
+  headersTimeout: 120000,
+  bodyTimeout: 120000,
+});
 
 const DEFAULT_PHONE = '0594889379';
 const PORTAL = 'https://ecole-ci.org';
@@ -99,6 +108,7 @@ class Session {
         const res = await fetch(current, {
           ...opts,
           redirect: 'manual',
+          dispatcher: NET_AGENT,
           signal: AbortSignal.timeout(90000),
           headers: { 'User-Agent': UA, Cookie: this.cookieHeader(current), ...headers, ...(opts.body && typeof opts.body === 'string' ? { 'Content-Type': 'application/x-www-form-urlencoded' } : {}) },
         });

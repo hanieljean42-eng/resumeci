@@ -1,0 +1,655 @@
+{
+  "code": "RC-L1A-TD-MACRO-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Analyse macroéconomique",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Analyse macroéconomique",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "vi": {
+      "choices": [
+        20000,
+        24000
+      ]
+    },
+    "vf": {
+      "choices": [
+        32000,
+        36000
+      ]
+    },
+    "an": {
+      "choices": [
+        9,
+        10
+      ]
+    },
+    "gk": {
+      "choices": [
+        4,
+        5,
+        6
+      ]
+    },
+    "gl": {
+      "choices": [
+        1,
+        2
+      ]
+    },
+    "gt": {
+      "choices": [
+        1.2,
+        1.3,
+        1.5
+      ]
+    },
+    "c0": {
+      "choices": [
+        400000,
+        500000,
+        600000
+      ]
+    },
+    "ry": {
+      "choices": [
+        4000000,
+        5000000
+      ]
+    },
+    "pmc": {
+      "choices": [
+        0.75,
+        0.8,
+        0.9
+      ]
+    },
+    "ak": {
+      "choices": [
+        1.2,
+        1.5,
+        2
+      ]
+    },
+    "dy": {
+      "choices": [
+        4,
+        5,
+        6
+      ]
+    },
+    "van": {
+      "choices": [
+        30000,
+        40000
+      ]
+    },
+    "psl": {
+      "choices": [
+        55,
+        60
+      ]
+    }
+  },
+  "derived": {
+    "tcam": "(Math.pow(vf/vi, 1/an) - 1) * 100",
+    "grow": "gk + gl + gt",
+    "cons": "c0 + pmc*ry",
+    "pms": "1 - pmc",
+    "inv": "ak*dy",
+    "sal": "van*psl/100"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (11 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Produit et comptabilité nationale",
+          "enonce": "Les biens intermédiaires (farine du boulanger) sont comptés directement dans le PIB.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — seuls les biens FINAUX comptent, sinon double comptage ; la valeur intermédiaire est déjà incluse via la VA.",
+          "points": 0.48
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "La fonction de production macroéconomique",
+          "enonce": "Le progrès technique (A) déplace la fonction de production vers le haut, à K et L inchangés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — A (productivité globale des facteurs) permet de produire plus avec les mêmes K et L : moteur de la croissance longue.",
+          "points": 0.48
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "La croissance économique",
+          "enonce": "Croissance extensive = hausse de la quantité de facteurs ; intensive = hausse de la productivité.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — extensive : +K, +L ; intensive : même K et L mais meilleure efficacité (progrès technique).",
+          "points": 0.48
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Si c = 0,8, une hausse de l'investissement de 100 accroît le revenu de 500.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — k = 1/(1−0,8) = 5 ; ΔY = 5 × 100 = 500.",
+          "points": 0.48
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Marchés et équilibre macroéconomique",
+          "enonce": "Une politique budgétaire expansive (G↑ ou T↓) déplace la courbe IS vers la droite.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — demande globale↑ → Y↑ à tout i : IS à droite (avec effet d'éviction partiel via la hausse de i).",
+          "points": 0.48
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Intervention de l'État et croissance durable",
+          "enonce": "L'impôt (T) est une variable budgétaire qui agit sur le revenu disponible et donc sur la consommation.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — T↓ → Yd↑ → C↑ (via la propension c) : levier de relance budgétaire.",
+          "points": 0.48
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Selon la loi psychologique fondamentale de Keynes, quand le revenu augmente, la consommation augmente dans une moindre proportion.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La propension moyenne à consommer diminue avec le revenu.",
+          "points": 0.48
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "La croissance économique",
+          "enonce": "Une croissance tirée par la TFP (productivité) est dite « intensive » et plus durable.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Extensive = tirée par K et L ; intensive = tirée par la TFP (progrès technique).",
+          "points": 0.48
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "La croissance économique",
+          "enonce": "Dans le modèle de Solow, la croissance de long terme vient du progrès technologique exogène.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Y = F(K,L) à rendements décroissants : seule la TFP exogène soutient la croissance.",
+          "points": 0.48
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Quand le q de Tobin est supérieur à 1, l'entreprise a intérêt à investir.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> q = valeur marchande / coût de remplacement ; q > 1 → investir, q < 1 → s'abstenir.",
+          "points": 0.48
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "La croissance économique",
+          "enonce": "Dans le modèle de Solow, les rendements décroissants expliquent la convergence des pays pauvres vers le niveau des riches.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> À épargne et technologie identiques, les pays pauvres croissent plus vite et convergent.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (24 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Produit et comptabilité nationale",
+          "enonce": "Le PIB mesure :",
+          "choix": [
+            "La richesse totale d'un pays",
+            "La valeur des biens et services finals produits sur le territoire en une période",
+            "Les revenus des nationaux à l'étranger",
+            "Le stock de capital"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PIB = valeur ajoutée des biens et services FINAUX produits sur le territoire — critère territorial, flux (pas stock).",
+          "points": 0.48
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Produit et comptabilité nationale",
+          "enonce": "La différence PIB / PNB porte sur :",
+          "choix": [
+            "L'inflation",
+            "Le critère territorial vs national (revenus des facteurs de l'étranger)",
+            "Les importations",
+            "Les investissements"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PIB = production sur le territoire ; PNB = revenu des résidents nationaux (y compris à l'étranger).",
+          "points": 0.48
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Produit et comptabilité nationale",
+          "enonce": "Dans l'approche par les dépenses : PIB = C + I + G + (X − M). X−M représente :",
+          "choix": [
+            "Les exportations seules",
+            "La balance commerciale (exportations nettes)",
+            "Les transferts",
+            "La TVA"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> X−M = exportations nettes : on ajoute les ventes à l'étranger, on retire les achats à l'étranger déjà comptés en C, I, G.",
+          "points": 0.48
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Produit et comptabilité nationale",
+          "enonce": "La valeur ajoutée d'une entreprise vaut :",
+          "choix": [
+            "Son chiffre d'affaires",
+            "Production vendue − consommations intermédiaires",
+            "Son bénéfice",
+            "Sa masse salariale"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> VA = production − consommations intermédiaires : elle évite le double comptage. PIB = somme des VA + TVA + droits de douane.",
+          "points": 0.48
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "La fonction de production macroéconomique",
+          "enonce": "La fonction de production Y = f(K, L) relie :",
+          "choix": [
+            "Le revenu aux prix",
+            "La production aux facteurs capital (K) et travail (L)",
+            "L'épargne à l'investissement",
+            "L'offre de monnaie à l'inflation"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Y dépend du stock de capital K, du travail L et du progrès technique A : Y = A·f(K,L) (Cobb-Douglas : Y=AKᵅL¹⁻ᵅ).",
+          "points": 0.48
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "La fonction de production macroéconomique",
+          "enonce": "Dans Cobb-Douglas Y = A·Kᵅ·L¹⁻ᵅ, le paramètre α mesure :",
+          "choix": [
+            "Le taux de croissance",
+            "La part du capital dans le produit",
+            "Le taux d'épargne",
+            "La productivité du travail"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> α = élasticité du produit au capital ≈ part du capital dans les revenus (souvent ≈ 1/3) ; 1−α pour le travail.",
+          "points": 0.48
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "La fonction de production macroéconomique",
+          "enonce": "Les rendements d'échelle constants signifient :",
+          "choix": [
+            "Doubler K et L double Y",
+            "La production est fixe",
+            "Le rendement diminue toujours",
+            "K et L sont substituables parfaitement"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Rendements constants : f(λK,λL) = λY — propriété clé de Cobb-Douglas quand α + (1−α) = 1.",
+          "points": 0.48
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "La fonction de production macroéconomique",
+          "enonce": "La productivité marginale du capital (PmK) est :",
+          "choix": [
+            "La production totale / K",
+            "L'augmentation de Y quand K augmente d'une unité (à L fixe)",
+            "K/L",
+            "Le taux d'intérêt"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PmK = ∂Y/∂K : décroissante (rendements marginaux décroissants à l'autre facteur fixe).",
+          "points": 0.48
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "La croissance économique",
+          "enonce": "La croissance économique est :",
+          "choix": [
+            "Toute hausse des prix",
+            "L'augmentation soutenue de la production (PIB réel) sur le long terme",
+            "Une hausse des salaires",
+            "Une baisse du chômage"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Croissance = hausse durable du PIB RÉEL — à distinguer du développement (progrès social, IDH).",
+          "points": 0.48
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "La croissance économique",
+          "enonce": "Le taux de croissance du PIB réel s'écrit :",
+          "choix": [
+            "PIB/Population",
+            "(PIBt − PIBt₋₁)/PIBt₋₁ × 100",
+            "PIB nominal / déflateur",
+            "ΔPIB × 100"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Taux de croissance = variation relative du PIB réel entre deux périodes, en %.",
+          "points": 0.48
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "La croissance économique",
+          "enonce": "Dans le modèle de Solow, l'état stationnaire est atteint quand :",
+          "choix": [
+            "L'épargne est nulle",
+            "L'investissement compense exactement la dépréciation du capital par tête",
+            "La population cesse de croître",
+            "Le capital est maximal"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> État stationnaire : investissement effectif = (d+n)k → capital par tête stable ; la croissance longue vient du progrès technique.",
+          "points": 0.48
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "La croissance économique",
+          "enonce": "Le PIB par tête (PIB/habitant) mesure :",
+          "choix": [
+            "La croissance totale",
+            "Le niveau de vie moyen",
+            "L'inflation",
+            "La productivité horaire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PIB/habitant = indicateur de niveau de vie — utile pour comparer des pays de tailles différentes.",
+          "points": 0.48
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "La fonction de consommation keynésienne s'écrit :",
+          "choix": [
+            "C = c·Y uniquement",
+            "C = C₀ + c·Yd (C₀ autonome, c = propension marginale)",
+            "C = Y − I",
+            "C = G + X"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> C = C₀ + c·Yd avec 0 &lt; c &lt; 1 : consommation autonome + fraction du revenu disponible consommée.",
+          "points": 0.48
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "La propension marginale à consommer (c) et à épargner (s) vérifient :",
+          "choix": [
+            "c + s = 1",
+            "c × s = 1",
+            "c − s = 0",
+            "c = s"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Tout franc de revenu supplémentaire est consommé ou épargné : c + s = 1.",
+          "points": 0.48
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Le multiplicateur keynésien vaut :",
+          "choix": [
+            "1/c",
+            "1/(1−c)",
+            "c/(1−c)",
+            "1+s"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> k = 1/(1−c) = 1/s : une dépense autonome supplémentaire accroît le revenu d'un montant multiplié.",
+          "points": 0.48
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "L'équilibre du marché des biens est atteint quand :",
+          "choix": [
+            "C = S",
+            "Y = demande globale (C + I + G)",
+            "I = 0",
+            "X = M"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Équilibre : la production Y égale la demande prévue — sinon les stocks s'ajustent et Y varie.",
+          "points": 0.48
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Marchés et équilibre macroéconomique",
+          "enonce": "La courbe IS (investissement-épargne) relie :",
+          "choix": [
+            "Prix et production",
+            "Les couples (taux d'intérêt, revenu) qui équilibrent le marché des biens",
+            "Offre et demande de monnaie",
+            "Emploi et salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> IS : équilibre du marché des biens — i↑ → I↓ → Y↓ : pente négative.",
+          "points": 0.48
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Marchés et équilibre macroéconomique",
+          "enonce": "La courbe LM (liquidité-monnaie) représente :",
+          "choix": [
+            "L'équilibre du marché des biens",
+            "L'équilibre du marché monétaire (offre = demande de monnaie)",
+            "Le marché du travail",
+            "La balance des paiements"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> LM : L(Y,i) = M/P — Y↑ → demande de monnaie↑ → i↑ : pente positive.",
+          "points": 0.48
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Marchés et équilibre macroéconomique",
+          "enonce": "L'intersection IS-LM détermine :",
+          "choix": [
+            "Le niveau des prix",
+            "Le couple (i*, Y*) d'équilibre conjoint des biens et de la monnaie",
+            "Le taux de change",
+            "Le salaire réel"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le point IS∩LM = équilibre macroéconomique simultané — base de l'analyse des politiques budgétaire/monétaire.",
+          "points": 0.48
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Marchés et équilibre macroéconomique",
+          "enonce": "Une politique monétaire expansive (M↑) déplace :",
+          "choix": [
+            "IS à gauche",
+            "LM à droite (i↓, Y↑)",
+            "IS à droite",
+            "LM à gauche"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Plus de monnaie → taux plus bas → investissement et revenu plus élevés : LM vers la droite.",
+          "points": 0.48
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Intervention de l'État et croissance durable",
+          "enonce": "L'État intervient dans l'économie principalement par :",
+          "choix": [
+            "La fixation de tous les prix",
+            "Les politiques budgétaire et monétaire",
+            "L'achat des entreprises",
+            "La suppression des marchés"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Budget (G, impôts) via IS ; monnaie (M, taux) via LM — objectifs : croissance, emploi, stabilité des prix.",
+          "points": 0.48
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Intervention de l'État et croissance durable",
+          "enonce": "Un déficit budgétaire se creuse quand :",
+          "choix": [
+            "G &gt; T (dépenses publiques &gt; recettes fiscales)",
+            "T &gt; G",
+            "Les exportations dépassent les importations",
+            "La monnaie augmente"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Déficit = solde budgétaire négatif — financé par l'emprunt, il accroît la dette publique.",
+          "points": 0.48
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Intervention de l'État et croissance durable",
+          "enonce": "L'effet d'éviction désigne :",
+          "choix": [
+            "La hausse des exportations",
+            "Le fait que G↑ fait monter i, ce qui réduit l'investissement privé",
+            "La fuite des capitaux",
+            "La hausse des impôts"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> G↑ → demande de monnaie↑ → i↑ → I privé↓ : le public « évince » partiellement le privé.",
+          "points": 0.48
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "Intervention de l'État et croissance durable",
+          "enonce": "La croissance durable intègre :",
+          "choix": [
+            "Seulement le PIB",
+            "Les dimensions économique, sociale et environnementale",
+            "La dette publique",
+            "La croissance démographique"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Durabilité = croissance compatible avec les équilibres sociaux et écologiques à long terme.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (7 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "La croissance économique",
+          "enonce": "Le PIB réel passe de {{vi}} à {{vf}} milliards en {{an}} ans. Calcule le TCAM (taux de croissance annuel moyen) en %.",
+          "answer": "tcam",
+          "tol": 0.05,
+          "precision": "arrondi à 0,01 près",
+          "corrige": "TCAM = [({{vf}}/{{vi}})^(1/{{an}}) − 1] × 100 ≈ {{d2:tcam}} % par an.",
+          "points": 0.48
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "La croissance économique",
+          "enonce": "La croissance du capital est de {{num:gk}} %, celle du travail de {{num:gl}} % et la TFP progresse de {{num:gt}} % (α = β = 1). Calcule la croissance totale en %.",
+          "answer": "grow",
+          "tol": 0.01,
+          "corrige": "ΔY/Y = ΔK/K + ΔL/L + ΔTFP/TFP = {{num:gk}} + {{num:gl}} + {{num:gt}} = {{num:grow}} %.",
+          "points": 0.48
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Fonction de consommation C = c₀ + c·Y avec c₀ = {{c0}} F, c = {{num:pmc}} et Y = {{ry}} F. Calcule C (en F).",
+          "answer": "cons",
+          "tol": 1,
+          "corrige": "C = {{c0}} + {{num:pmc}} × {{ry}} = {{num:cons}} F.",
+          "points": 0.48
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Si la propension marginale à consommer vaut PMC = {{num:pmc}}, que vaut la propension marginale à épargner PMS ?",
+          "answer": "pms",
+          "tol": 0.001,
+          "corrige": "PMS = 1 − PMC = 1 − {{num:pmc}} = {{num:pms}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Effet accélérateur : I = k·ΔY avec k = {{num:ak}} et une croissance anticipée de la demande de {{num:dy}} %. De combien (en %) l'investissement augmente-t-il ?",
+          "answer": "inv",
+          "tol": 0.01,
+          "corrige": "I = {{num:ak}} × {{num:dy}} % = {{num:inv}} %.",
+          "points": 0.48
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "Une valeur ajoutée de {{van}} milliards se répartit ainsi : {{psl}} % de salaires, le reste entre profits et impôts. Calcule la masse salariale (en milliards).",
+          "answer": "sal",
+          "tol": 0.5,
+          "corrige": "Salaires = {{num:psl}} % × {{van}} = {{num:sal}} milliards.",
+          "points": 0.48
+        },
+        {
+          "id": "q42",
+          "type": "numeric",
+          "chapitre": "Revenu et demande macroéconomique",
+          "enonce": "La consommation autonome est c₀ = {{c0}} F. Que vaut la consommation quand le revenu Y = 0 ?",
+          "answer": "c0",
+          "tol": 1,
+          "corrige": "C = c₀ + c×0 = {{c0}} F — la consommation autonome est incompressible même à revenu nul.",
+          "points": 0.32
+        }
+      ]
+    }
+  ]
+}

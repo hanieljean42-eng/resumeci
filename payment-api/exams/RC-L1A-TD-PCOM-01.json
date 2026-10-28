@@ -1,0 +1,647 @@
+{
+  "code": "RC-L1A-TD-PCOM-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Présentation de l'information comptable",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Présentation de l'information comptable",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "sd": {
+      "choices": [
+        150000,
+        200000
+      ]
+    },
+    "sc": {
+      "choices": [
+        110000,
+        120000
+      ]
+    },
+    "si": {
+      "choices": [
+        20000,
+        30000
+      ]
+    },
+    "ach": {
+      "choices": [
+        80000,
+        100000
+      ]
+    },
+    "sf": {
+      "choices": [
+        25000,
+        35000
+      ]
+    },
+    "ai": {
+      "choices": [
+        400000,
+        500000
+      ]
+    },
+    "ac": {
+      "choices": [
+        150000,
+        200000
+      ]
+    },
+    "tz": {
+      "choices": [
+        50000,
+        80000
+      ]
+    },
+    "cpv": {
+      "choices": [
+        300000,
+        400000
+      ]
+    },
+    "dtv": {
+      "choices": [
+        150000,
+        200000
+      ]
+    },
+    "tpv": {
+      "choices": [
+        30000,
+        60000
+      ]
+    },
+    "fn": {
+      "choices": [
+        120000,
+        150000
+      ]
+    },
+    "fd": {
+      "choices": [
+        40000,
+        80000
+      ]
+    }
+  },
+  "derived": {
+    "sol": "sd - sc",
+    "solc": "sd - sc",
+    "camv": "si + ach - sf",
+    "actif": "ai + ac + tz",
+    "pass": "cpv + dtv + tpv",
+    "netf": "fn - fd"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (12 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Connaissances générales de l'entité",
+          "enonce": "Plus le cycle d'exploitation est long, plus l'entreprise fait face à des problèmes de trésorerie.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Cycle long = stockage prolongé → immobilisation de fonds → tensions de trésorerie.",
+          "points": 0.48
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Le résultat dégagé par une opération achat-vente est un flux externe.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Faux — le résultat se constitue au sein de l'entreprise : c'est un flux interne.",
+          "points": 0.48
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Le principe d'intangibilité du capital signifie que le capital reste fixe dès la création de l'entreprise.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le capital (fonds de départ) existe dès la création et reste fixe — dette vis-à-vis de l'exploitant ou des associés.",
+          "points": 0.48
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "Dans le SYSCOHADA révisé, les comptes de la classe 8 impaire enregistrent les produits hors activité ordinaire (PHAO).",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Faux — classe 8 impaire = CHAO (charges HAO) ; classe 8 paire = PHAO (produits HAO).",
+          "points": 0.48
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "En inventaire intermittent, les comptes de stocks sont mouvementés à chaque entrée et sortie.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Faux — c'est l'inventaire permanent qui suit en temps réel ; en intermittent, les stocks ne bougent qu'en fin d'exercice (annulation SI, constatation SF).",
+          "points": 0.48
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "L'organisation des systèmes comptables",
+          "enonce": "En cas de vente au comptant, on peut enregistrer directement en trésorerie sans passer par le compte client.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Faux — il faut toujours transiter par les comptes de tiers (411 clients / 401 fournisseurs), même au comptant.",
+          "points": 0.48
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "L'OHADA a été créée pour sécuriser l'environnement juridique et judiciaire des affaires en Afrique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Remédier à l'insécurité juridique et judiciaire — référentiel comptable commun.",
+          "points": 0.48
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Dans la présentation du cours, le côté gauche du compte enregistre le crédit (ressources) et le côté droit le débit (emplois).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Convention du cours : gauche = CRÉDIT (R), droite = DÉBIT (E).",
+          "points": 0.48
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Le solde s'inscrit du côté le plus faible pour équilibrer le compte (ΣD = ΣC).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> « Arrêter » un compte = équilibrer par le solde débiteur ou créditeur.",
+          "points": 0.48
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Un compte d'actif augmente au débit et a normalement un solde débiteur.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Actif → débit/SD ; passif → crédit/SC ; charges → débit ; produits → crédit.",
+          "points": 0.48
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Un compte « soldé » (apuré) a un solde nul.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Solder = rendre le solde nul.",
+          "points": 0.48
+        },
+        {
+          "id": "q12",
+          "type": "vrai_faux",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Toute opération comptable est un flux : un emploi (débit) financé par une ressource (crédit).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Chaque flux a une origine (ressource) et une destination (emploi) — base de la partie double.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (24 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Connaissances générales de l'entité",
+          "enonce": "Une entreprise se distingue de l'entité parce que :",
+          "choix": [
+            "Elle n'a pas de patrimoine",
+            "Elle est une entité économique organisée autour de moyens de production ou de distribution dans un but lucratif",
+            "Elle n'est jamais soumise à l'obligation de tenir des comptes",
+            "Elle ne produit que des services"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Entité = notion plus vaste (ONG, coopératives, État…) ; entreprise = entité avec organisation préétablie + but lucratif.",
+          "points": 0.48
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Connaissances générales de l'entité",
+          "enonce": "Les valeurs immobilisées (actifs immobilisés) sont :",
+          "choix": [
+            "Les stocks de matières premières",
+            "Les biens durables (+ d'un an) : terrains, usines, machines, bureaux",
+            "Les sommes dues aux fournisseurs",
+            "Les bénéfices réinvestis"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Éléments matériels durables &gt; 1 an = valeurs immobilisées ; les éléments fongibles se transforment (stocks).",
+          "points": 0.48
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Connaissances générales de l'entité",
+          "enonce": "Une entreprise commerciale se caractérise par :",
+          "choix": [
+            "Transformer les matières premières en produits finis",
+            "Acheter et revendre des marchandises en l'état, sans transformation",
+            "Exploiter l'élément naturel",
+            "Vendre des prestations de services"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Commerciale = secteur tertiaire, revente sans transformation (sauf emballage). Industrielle = transformation.",
+          "points": 0.48
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Connaissances générales de l'entité",
+          "enonce": "Les matières premières (MP) se distinguent des matières consommables (MC) car :",
+          "choix": [
+            "Les MP se retrouvent toujours dans le produit fini, pas les MC",
+            "Les MC sont plus chères que les MP",
+            "Les MP ne servent qu'aux entreprises commerciales",
+            "Il n'y a aucune différence"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Bois dans la chaise, orge dans la bière = MP ; la scie ou l'électricité facilitent sans s'y retrouver = MC.",
+          "points": 0.48
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Un flux économique est :",
+          "choix": [
+            "Uniquement un mouvement d'argent",
+            "Une opération, un mouvement ou une mutation d'éléments de l'entreprise d'un pôle à un autre",
+            "Un document comptable obligatoire",
+            "Une perte de l'entreprise"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le flux recouvre biens, services et monnaie — l'entreprise est un carrefour d'opérations.",
+          "points": 0.48
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Un virement de la caisse à la banque est un flux :",
+          "choix": [
+            "Externe",
+            "Interne",
+            "Sortant vers un tiers",
+            "Réel"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Flux interne : le mouvement s'opère à l'intérieur de l'entreprise, sans tiers.",
+          "points": 0.48
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Dans l'analyse comptable, la RESSOURCE correspond :",
+          "choix": [
+            "À la destination des fonds",
+            "À l'origine des fonds (départ du flux)",
+            "Au bénéfice uniquement",
+            "À l'achat de marchandises"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Départ = Ressource (origine) ; Arrivée = Emploi (destination). R = E toujours.",
+          "points": 0.48
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Vente de marchandises pour 950.000 F achetées 800.000 F — la ressource est :",
+          "choix": [
+            "La caisse 950.000 F",
+            "Le stock 800.000 F + le bénéfice 150.000 F",
+            "Le fournisseur",
+            "La dette client"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> R : sortie du stock (800.000) + bénéfice créé (150.000) ; E : entrée caisse (950.000). R = E.",
+          "points": 0.48
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Le patrimoine de l'entreprise est :",
+          "choix": [
+            "Uniquement l'ensemble des biens",
+            "L'ensemble des biens et des dettes, lié à la personnalité juridique",
+            "Le capital de départ",
+            "La liste des clients"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Patrimoine = droits patrimoniaux (biens) + obligations patrimoniales (dettes) — personne morale distincte de l'entrepreneur.",
+          "points": 0.48
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Les postes de l'actif du bilan sont classés par :",
+          "choix": [
+            "Ordre alphabétique",
+            "Ordre d'exigibilité croissante",
+            "Ordre de liquidité croissante",
+            "Ordre d'importance décroissante"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Actif = liquidité croissante (immobilisé → circulant → trésorerie) ; passif = exigibilité croissante.",
+          "points": 0.48
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Les ressources stables (capitaux permanents) = ",
+          "choix": [
+            "Capital + réserves",
+            "CPɑRA + DFɑRA",
+            "Dettes financières + trésorerie-passif",
+            "Total du passif"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Capitaux propres &amp; ressources assimilées + Dettes financières &amp; ressources assimilées = financement durable.",
+          "points": 0.48
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Une perte nette de l'exercice se présente au bilan :",
+          "choix": [
+            "À l'actif en signe négatif",
+            "Au passif dans les capitaux propres, précédée du signe (−)",
+            "Elle ne figure jamais au bilan",
+            "Dans la trésorerie-passif"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Perte au passif en négatif ; si placée à l'actif, c'est en positif comme non-valeur (actif fictif).",
+          "points": 0.48
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "Le traité OHADA a été signé :",
+          "choix": [
+            "Le 17 octobre 1993 à Port Louis",
+            "Le 1er janvier 2018",
+            "En 2008 à Abidjan",
+            "Le 18 septembre 2000"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Port Louis 17/10/1993 → vigueur 18/09/1995 ; révisé à Québec le 17/10/2008 ; 17 États membres.",
+          "points": 0.48
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "Le système minimal de trésorerie (SMT) s'applique aux entités dont les recettes sont inférieures à :",
+          "choix": [
+            "100 M pour tous",
+            "60 M (négoce), 40 M (artisanal), 30 M (services)",
+            "1 milliard FCFA",
+            "10 M FCFA"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> SMT = régime transitoire dérogatoire pour très petites entités ; états : bilan + compte de résultat + variation de l'avoir net.",
+          "points": 0.48
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "Selon le postulat de la spécialisation des exercices :",
+          "choix": [
+            "On enregistre au moment des encaissements",
+            "On impute à chaque exercice uniquement ce qui s'y rattache",
+            "Les exercices durent 2 ans",
+            "On change de méthode chaque année"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Art. 59 : rattacher charges et produits au seul exercice concerné (régularisations en fin d'année).",
+          "points": 0.48
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Le cadre comptable OHADA révisé",
+          "enonce": "Dans la codification à 4 chiffres du compte 2441, le premier chiffre « 2 » représente :",
+          "choix": [
+            "Le sous-compte",
+            "Le compte divisionnaire",
+            "La classe (comptes d'actif immobilisé)",
+            "Le compte principal"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> 2 = classe immobilisations ; 24 = compte principal ; 244 = divisionnaire ; 2441 = sous-compte Matériel de bureau.",
+          "points": 0.48
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Le solde d'un compte est :",
+          "choix": [
+            "Toujours positif",
+            "La différence Total DÉBIT − Total CRÉDIT : SD si D &gt; C, SC si C &gt; D",
+            "Le total des deux côtés",
+            "Un document comptable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Solde = D − C ; il s'inscrit du côté le plus faible pour équilibrer (arrêter le compte).",
+          "points": 0.48
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Le principe de la partie double exige :",
+          "choix": [
+            "Deux journaux différents",
+            "Qu'à tout débit d'un ou plusieurs comptes corresponde un crédit d'autres comptes de même valeur",
+            "Deux entreprises",
+            "Un solde nul en permanence"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Chaque écriture a une contrepartie symétrique → pour tout ensemble d'opérations, ΣD = ΣC.",
+          "points": 0.48
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Pour soustraire une somme z du débit d'un compte sans signe négatif, on :",
+          "choix": [
+            "La retire du débit",
+            "L'ajoute au crédit : (D − z) − C = D − (C + z)",
+            "Crée un nouveau compte",
+            "Solde le compte"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Technique du virement comptable : ajouter du côté opposé préserve le solde sans signe (−).",
+          "points": 0.48
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Deux comptes sont réciproques lorsque :",
+          "choix": [
+            "Ils ont le même numéro",
+            "Dans deux comptabilités différentes, l'un est débité quand l'autre est crédité du même montant",
+            "Ils sont soldés",
+            "Ils appartiennent à la même entreprise"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Ex. « Client » chez le vendeur ↔ « Fournisseur » chez l'acheteur — le rapprochement est un moyen de contrôle.",
+          "points": 0.48
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "L'organisation des systèmes comptables",
+          "enonce": "Le système classique repose sur :",
+          "choix": [
+            "Plusieurs journaux auxiliaires",
+            "Un journal unique : pièces → journal → grand-livre → balance → états financiers",
+            "Uniquement la balance",
+            "Les relevés nominatifs"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Journal unique classique, 5 étapes : pièces justificatives → journal → grand-livre → balance de contrôle → tableaux de synthèse.",
+          "points": 0.48
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "L'organisation des systèmes comptables",
+          "enonce": "Dans le système centralisateur, le travail quotidien consiste à :",
+          "choix": [
+            "Établir les états financiers",
+            "Enregistrer chronologiquement les documents de même nature dans les journaux auxiliaires (JA)",
+            "Tirer les soldes",
+            "Remplir le grand-livre"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> 1er degré quotidien : JA par nature de documents ; travail périodique : regroupement dans le journal centralisateur.",
+          "points": 0.48
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "L'organisation des systèmes comptables",
+          "enonce": "Le grand-livre auxiliaire (GLA) est :",
+          "choix": [
+            "La liste collective des clients",
+            "La liste individuelle des comptes clients et fournisseurs",
+            "Le journal des opérations diverses",
+            "La balance générale"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> GLA = compte individuel par client/fournisseur ; le relevé nominatif = liste collective.",
+          "points": 0.48
+        },
+        {
+          "id": "q36",
+          "type": "qcm",
+          "chapitre": "L'organisation des systèmes comptables",
+          "enonce": "Les comptes 585 et 588 servent à :",
+          "choix": [
+            "Enregistrer les ventes",
+            "Virements internes entre deux journaux auxiliaires — évitent le double enregistrement",
+            "Calculer la TVA",
+            "Clôturer l'exercice"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> 585 = virements de fonds ; 588 = autres virements internes — comptes de liaison entre JA.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (6 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Un compte enregistre {{sd}} F au débit et {{sc}} F au crédit. Calcule son solde (en F, positif si débiteur).",
+          "answer": "sol",
+          "tol": 1,
+          "corrige": "Solde = Total débit − Total crédit = {{sd}} − {{sc}} = {{num:sol}} F → solde débiteur (D > C).",
+          "points": 0.48
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Le compte fournisseur de l'entreprise enregistre {{sc}} F au débit et {{sd}} F au crédit. Calcule son solde (en F, positif si créditeur).",
+          "answer": "solc",
+          "tol": 1,
+          "corrige": "Solde = Total crédit − Total débit = {{sd}} − {{sc}} = {{num:solc}} F → solde créditeur (C > D).",
+          "points": 0.48
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Le compte et le jeu des comptes",
+          "enonce": "Stock initial {{si}} F, achats {{ach}} F, stock final {{sf}} F. Calcule le coût d'achat des marchandises vendues (CAMV, en F).",
+          "answer": "camv",
+          "tol": 1,
+          "corrige": "CAMV = SI + Achats − SF = {{si}} + {{ach}} − {{sf}} = {{num:camv}} F.",
+          "points": 0.48
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Le concept du bilan",
+          "enonce": "L'actif immobilisé vaut {{ai}} F, l'actif circulant {{ac}} F et la trésorerie-actif {{tz}} F. Calcule le total de l'actif (en F).",
+          "answer": "actif",
+          "tol": 1,
+          "corrige": "Total actif = {{ai}} + {{ac}} + {{tz}} = {{num:actif}} F — égal au total du passif.",
+          "points": 0.48
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "Le concept du bilan",
+          "enonce": "Le passif affiche {{cpv}} F de capitaux propres, {{dtv}} F de dettes financières et {{tpv}} F de trésorerie-passif. Calcule le total du passif (en F).",
+          "answer": "pass",
+          "tol": 1,
+          "corrige": "Total passif = {{cpv}} + {{dtv}} + {{tpv}} = {{num:pass}} F — toujours égal au total de l'actif.",
+          "points": 0.48
+        },
+        {
+          "id": "q42",
+          "type": "numeric",
+          "chapitre": "Analyse des flux économiques",
+          "enonce": "Un client doit {{fn}} F à l'entreprise (créance) ; l'entreprise lui doit {{fd}} F (dettes diverses). Calcule la créance nette sur ce client (en F).",
+          "answer": "netf",
+          "tol": 1,
+          "corrige": "Créance nette = {{fn}} − {{fd}} = {{num:netf}} F — chaque flux a une origine (ressource) et une destination (emploi).",
+          "points": 0.32
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,681 @@
+{
+  "code": "RC-L1A-TD-MFIN-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Mathématiques financières",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Mathématiques financières",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "cap": {
+      "choices": [
+        100000,
+        200000,
+        500000
+      ]
+    },
+    "tx": {
+      "choices": [
+        5,
+        6,
+        8,
+        10
+      ]
+    },
+    "dur": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "cap2": {
+      "choices": [
+        100000,
+        250000
+      ]
+    },
+    "jrs": {
+      "choices": [
+        45,
+        60,
+        90,
+        120
+      ]
+    },
+    "cap3": {
+      "choices": [
+        100000,
+        200000
+      ]
+    },
+    "txd": {
+      "choices": [
+        0.04,
+        0.05,
+        0.1
+      ]
+    },
+    "np": {
+      "choices": [
+        2,
+        3,
+        4
+      ]
+    },
+    "cn": {
+      "choices": [
+        121000,
+        146410
+      ]
+    },
+    "tan": {
+      "choices": [
+        6,
+        9,
+        12
+      ]
+    },
+    "vn": {
+      "choices": [
+        50000,
+        80000,
+        120000
+      ]
+    },
+    "txe": {
+      "choices": [
+        8,
+        10,
+        12
+      ]
+    },
+    "je": {
+      "choices": [
+        45,
+        60,
+        90
+      ]
+    },
+    "ag": {
+      "choices": [
+        3000,
+        4500
+      ]
+    }
+  },
+  "derived": {
+    "is1": "cap*tx*dur/100",
+    "is2": "cap2*tx*jrs/36000",
+    "icn": "cap3*Math.pow(1+txd,np)",
+    "ic0": "cn*Math.pow(1+txd,-np)",
+    "tpm": "tan/12",
+    "esc": "vn*txe*je/36000",
+    "vnet": "vn-ag",
+    "annv": "cap*(Math.pow(1+txd,np)-1)/txd"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (10 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Généralités et boîte à outils",
+          "enonce": "En finance, la durée est exprimée dans la même unité que la période du taux (années si taux annuel).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — cohérence impérative : taux annuel ↔ durée en années ; taux mensuel ↔ mois, sinon calcul faux.",
+          "points": 0.47
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Les intérêts simples",
+          "enonce": "À intérêts simples, les intérêts de chaque période sont identiques.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — base constante C → intérêt périodique C·t constant ; contrairement au composé où la base croît.",
+          "points": 0.47
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "L'escompte",
+          "enonce": "Escompter un effet revient à le vendre à la banque avant son échéance moyennant une retenue.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — le porteur mobilise sa créance immédiatement au prix de l'escompte retenu par le banquier.",
+          "points": 0.47
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Les intérêts composés",
+          "enonce": "À taux égal, plus les périodes de capitalisation sont courtes (mensuel vs annuel), plus la valeur acquise est grande.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — capitalisation plus fréquente = intérêts produisant des intérêts plus souvent (taux effectif plus élevé).",
+          "points": 0.47
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Les annuités",
+          "enonce": "Un placement retraite par versements mensuels réguliers relève du calcul des annuités.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — mensualités d'épargne : valeur acquise Vₙ = a((1+i)ⁿ−1)/i avec i = taux mensuel.",
+          "points": 0.47
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "L'emprunt indivis et obligataire",
+          "enonce": "Le tableau d'amortissement présente, pour chaque période, annuité, intérêts, amortissement et capital restant dû.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — outil de suivi : à chaque ligne, intérêt = taux × capital restant dû précédent.",
+          "points": 0.47
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Les intérêts composés",
+          "enonce": "À durée et taux égaux, l'intérêt composé rapporte plus que l'intérêt simple, et l'écart croît avec le temps.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> « Les intérêts portent intérêt » — la capitalisation s'applique au-delà d'un an.",
+          "points": 0.47
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Les intérêts simples",
+          "enonce": "En pratique bancaire, l'intérêt en jours se calcule sur une année commerciale de 360 jours.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Formule I = C × T × j / 36 000.",
+          "points": 0.47
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "L'escompte",
+          "enonce": "L'agio regroupe l'escompte, les commissions et la TVA sur les commissions.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Valeur nette reçue = V − agio.",
+          "points": 0.47
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "L'escompte",
+          "enonce": "La valeur nette reçue par le porteur d'un effet escompté vaut V − E (sans tenir compte des commissions).",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Valeur nette = V − agio, et l'agio inclut les commissions + TVA — pas seulement E.",
+          "points": 0.47
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (24 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Généralités et boîte à outils",
+          "enonce": "Les mathématiques financières étudient :",
+          "choix": [
+            "La comptabilité",
+            "Les calculs liés à l'argent dans le temps : intérêts, emprunts, placements",
+            "Les statistiques",
+            "La bourse"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cœur : la valeur temps de l'argent — 1 F aujourd'hui ≠ 1 F demain à cause de l'intérêt.",
+          "points": 0.47
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Généralités et boîte à outils",
+          "enonce": "Un taux de 8 % l'an signifie :",
+          "choix": [
+            "8 F par an",
+            "8 F d'intérêt par période de 100 F placés",
+            "8 % de bénéfice",
+            "8 F par mois"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le taux exprime la rémunération du capital prêté/investi — rapport à un montant de référence (100).",
+          "points": 0.47
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Généralités et boîte à outils",
+          "enonce": "La capitalisation consiste à :",
+          "choix": [
+            "Retirer des intérêts",
+            "Réintégrer les intérêts au capital pour qu'ils produisent à leur tour des intérêts",
+            "Emprunter",
+            "Payer des dettes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Capitaliser = intérêts joints au capital → effet « intérêts des intérêts » propre au régime composé.",
+          "points": 0.47
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Généralités et boîte à outils",
+          "enonce": "L'actualisation permet de :",
+          "choix": [
+            "Projeter une valeur dans le futur",
+            "Ramener une somme future à sa valeur présente (aujourd'hui)",
+            "Augmenter les taux",
+            "Calculer les amortissements"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Opération inverse de la capitalisation : V₀ = Vₙ/(1+i)ⁿ — comparer des flux à dates différentes.",
+          "points": 0.47
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Les intérêts simples",
+          "enonce": "La formule des intérêts simples est :",
+          "choix": [
+            "I = C×t×n",
+            "I = C(1+t)ⁿ",
+            "I = C×t/n",
+            "I = C+t+n"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> I = C·t·n : capital × taux × durée — les intérêts sont proportionnels aux trois paramètres.",
+          "points": 0.47
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Les intérêts simples",
+          "enonce": "Les intérêts simples sont calculés :",
+          "choix": [
+            "Sur le capital + intérêts",
+            "Uniquement sur le capital initial, sans capitalisation",
+            "Sur les bénéfices",
+            "Sur les annuités"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Chaque période produit le même intérêt (sur C seul) — usage typique : prêts courts (&lt; 1 an).",
+          "points": 0.47
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Les intérêts simples",
+          "enonce": "La valeur acquise par un capital C à intérêts simples après n périodes est :",
+          "choix": [
+            "C(1+t)ⁿ",
+            "C + C·t·n = C(1+tn)",
+            "C·t·n",
+            "C(1−tn)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> V = C + I = C(1 + t·n) — croissance linéaire, vs exponentielle en intérêts composés.",
+          "points": 0.47
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Les intérêts simples",
+          "enonce": "Un capital de 10 000 F placé à 5 % pendant 3 ans rapporte en intérêts simples :",
+          "choix": [
+            "1 500 F",
+            "15 000 F",
+            "1 576 F",
+            "500 F"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> I = 10 000 × 0,05 × 3 = 1 500 F — chaque année produit 500 F.",
+          "points": 0.47
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "L'escompte",
+          "enonce": "L'escompte bancaire consiste à :",
+          "choix": [
+            "Prêter de l'argent gratuitement",
+            "Verser immédiatement le nominal d'un effet moins les intérêts prélevés à l'avance",
+            "Ouvrir un compte",
+            "Vendre des actions"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La banque avance la valeur d'un effet (traite, lettre de change) avant échéance, en retenant l'escompte e.",
+          "points": 0.47
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "L'escompte",
+          "enonce": "L'escompte commercial e se calcule :",
+          "choix": [
+            "e = V×t×n (sur le nominal V)",
+            "e = V/(1+tn)",
+            "e = V×t",
+            "e = V×n"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> e = V·t·n avec V = valeur nominale de l'effet — retenue « dedans » : on perçoit V − e.",
+          "points": 0.47
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "L'escompte",
+          "enonce": "La valeur actuelle commerciale a d'un effet vaut :",
+          "choix": [
+            "a = V",
+            "a = V − e = V(1 − tn)",
+            "a = V + e",
+            "a = e"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> On touche nominal moins escompte : a = V − V·t·n = V(1 − t·n).",
+          "points": 0.47
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "L'escompte",
+          "enonce": "L'équivalence d'effets permet de :",
+          "choix": [
+            "Annuler une dette",
+            "Remplacer un ou plusieurs effets par un autre de valeur et d'échéance différentes",
+            "Convertir des devises",
+            "Escompter deux fois"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Deux effets équivalents ont même valeur actuelle à une date donnée — base du renouvellement et du regroupement.",
+          "points": 0.47
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Les intérêts composés",
+          "enonce": "La valeur acquise à intérêts composés s'écrit :",
+          "choix": [
+            "C(1+tn)",
+            "Cₙ = C₀(1+i)ⁿ",
+            "C×i×n",
+            "C(1−i)ⁿ"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cₙ = C₀(1+i)ⁿ : chaque fin de période, les intérêts rejoignent le capital — croissance exponentielle.",
+          "points": 0.47
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Les intérêts composés",
+          "enonce": "La valeur actuelle (actualisée) à intérêts composés est :",
+          "choix": [
+            "V₀ = Vₙ(1+i)ⁿ",
+            "V₀ = Vₙ/(1+i)ⁿ = Vₙ(1+i)⁻ⁿ",
+            "Vₙ − Vₙ·i·n",
+            "Vₙ×i"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Actualiser = « défalquer » : V₀ = Vₙ(1+i)⁻ⁿ — valeur aujourd'hui d'un flux futur.",
+          "points": 0.47
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Les intérêts composés",
+          "enonce": "Pour une même durée, les intérêts composés rapportent :",
+          "choix": [
+            "Moins que les simples",
+            "Plus que les simples (sauf toute première période où égalité)",
+            "Autant que les simples",
+            "Rien"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Base croissante (capital + intérêts) → accélération : écart croissant avec la durée.",
+          "points": 0.47
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Les intérêts composés",
+          "enonce": "Des capitaux sont équivalents à intérêts composés si :",
+          "choix": [
+            "Ils ont le même nominal",
+            "Ils ont même valeur actuelle ou acquise à une même date",
+            "Ils sont à la même banque",
+            "Ils sont à même échéance"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Équivalence à une date de comparaison — permet de regrouper/remplacer des engagements.",
+          "points": 0.47
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Les annuités",
+          "enonce": "Une annuité est :",
+          "choix": [
+            "Un versement unique",
+            "Une suite de versements effectués à intervalles réguliers",
+            "Un impôt",
+            "Un dépôt bancaire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Annuités = flux périodiques constants ou variables — épargne régulière, remboursement d'emprunt, retraite.",
+          "points": 0.47
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Les annuités",
+          "enonce": "La valeur acquise par n annuités constantes a au taux i vaut :",
+          "choix": [
+            "a×n",
+            "Vₙ = a·[((1+i)ⁿ − 1)/i]",
+            "a·(1+i)ⁿ",
+            "a/i"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Somme géométrique : chaque annuité capitalise sur sa durée restante — Vₙ = a((1+i)ⁿ−1)/i.",
+          "points": 0.47
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Les annuités",
+          "enonce": "La valeur actuelle d'annuités constantes est :",
+          "choix": [
+            "V₀ = a·[(1−(1+i)⁻ⁿ)/i]",
+            "a×n",
+            "a(1+i)ⁿ",
+            "a·i·n"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> V₀ = a·(1−(1+i)⁻ⁿ)/i : somme des annuités actualisées — base du calcul d'emprunt.",
+          "points": 0.47
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Les annuités",
+          "enonce": "Des annuités de début de période rapportent, par rapport à celles de fin de période :",
+          "choix": [
+            "Autant",
+            "Une capitalisation de plus : valeur acquise multipliée par (1+i)",
+            "Moins",
+            "Rien"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Versées un an plus tôt → chacune produit une année d'intérêts supplémentaire → facteur (1+i).",
+          "points": 0.47
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "L'emprunt indivis et obligataire",
+          "enonce": "Un emprunt indivis est :",
+          "choix": [
+            "Un emprunt auprès de plusieurs prêteurs",
+            "Un emprunt contracté auprès d'un seul prêteur",
+            "Une obligation",
+            "Une action"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Indivis = un seul créancier (ex. prêt bancaire classique) vs obligataire = fractionné en obligations auprès de nombreux prêteurs.",
+          "points": 0.47
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "L'emprunt indivis et obligataire",
+          "enonce": "Le remboursement par annuités constantes signifie :",
+          "choix": [
+            "Même capital remboursé chaque année",
+            "Même versement total chaque année, dont la part d'intérêts décroît",
+            "Même intérêts",
+            "Un seul paiement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> a = V₀·i/(1−(1+i)⁻ⁿ) : constante ; au fil du temps intérêts ↓ et amortissement du capital ↑.",
+          "points": 0.47
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "L'emprunt indivis et obligataire",
+          "enonce": "L'amortissement est :",
+          "choix": [
+            "L'intérêt payé",
+            "La partie de l'annuité qui rembourse le capital",
+            "Le montant de l'emprunt",
+            "La durée"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Annuité = intérêts (sur capital restant dû) + amortissement — le capital diminue progressivement.",
+          "points": 0.47
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "L'emprunt indivis et obligataire",
+          "enonce": "Dans un emprunt obligataire, l'émetteur :",
+          "choix": [
+            "Emprunte auprès d'une banque",
+            "Émet des obligations (titres de créance) souscrites par de nombreux prêteurs",
+            "Vend des actions",
+            "Reçoit un don"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Obligation = titre négociable porteur d'intérêts (coupon) remboursable à échéance — emprunt sur le marché.",
+          "points": 0.47
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (9 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Les intérêts simples",
+          "enonce": "Un capital de {{cap}} F est prêté au taux annuel de {{tx}} % pendant {{dur}} ans. Calcule l'intérêt simple produit (en F).",
+          "answer": "is1",
+          "tol": 1,
+          "corrige": "I = C × t × n = {{cap}} × {{tx}} % × {{dur}} = {{num:is1}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Les intérêts simples",
+          "enonce": "Un capital de {{cap2}} F est placé {{jrs}} jours au taux annuel de {{tx}} % (année de 360 jours). Calcule l'intérêt (en F).",
+          "answer": "is2",
+          "tol": 1,
+          "corrige": "I = C × T × j / 36 000 = {{cap2}} × {{tx}} × {{jrs}} / 36 000 = {{num:is2}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Les intérêts composés",
+          "enonce": "Un capital de {{cap3}} F est placé à intérêts composés au taux de {{pct:txd}} % pendant {{np}} ans. Calcule la valeur acquise (en F).",
+          "answer": "icn",
+          "tol": 1,
+          "precision": "arrondi au F près",
+          "corrige": "Cₙ = C₀(1+i)ⁿ = {{cap3}} × (1 + {{num:txd}})^{{np}} ≈ {{num:icn}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Les intérêts composés",
+          "enonce": "Quel capital faut-il placer aujourd'hui à {{pct:txd}} % (intérêts composés) pour obtenir {{cn}} F dans {{np}} ans ? (en F)",
+          "answer": "ic0",
+          "tol": 1,
+          "precision": "arrondi au F près",
+          "corrige": "C₀ = Cₙ(1+i)^(−n) = {{cn}} × (1 + {{num:txd}})^(−{{np}}) = {{num:ic0}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Les intérêts composés",
+          "enonce": "Le taux annuel est de {{tan}} %. Calcule le taux proportionnel mensuel (en %).",
+          "answer": "tpm",
+          "tol": 0.01,
+          "corrige": "Taux proportionnel mensuel = taux annuel / 12 = {{tan}} / 12 = {{num:tpm}} %.",
+          "points": 0.47
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "L'escompte",
+          "enonce": "Un effet de commerce de valeur nominale {{vn}} F est escompté {{je}} jours avant l'échéance au taux de {{txe}} % (année 360 j). Calcule l'escompte commercial E (en F).",
+          "answer": "esc",
+          "tol": 1,
+          "corrige": "E = V × T × j / 36 000 = {{vn}} × {{txe}} × {{je}} / 36 000 = {{num:esc}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "L'escompte",
+          "enonce": "Un effet de {{vn}} F est remis à la banque ; l'agio total s'élève à {{ag}} F. Quelle valeur nette le porteur reçoit-il (en F) ?",
+          "answer": "vnet",
+          "tol": 1,
+          "corrige": "Valeur nette = V − agio = {{vn}} − {{ag}} = {{num:vnet}} F.",
+          "points": 0.47
+        },
+        {
+          "id": "q42",
+          "type": "numeric",
+          "chapitre": "Les intérêts composés",
+          "enonce": "1 000 F placés 3 ans à 5 % : l'intérêt composé rapporte 157,63 F et le simple 150 F. Calcule l'écart entre les deux (en F).",
+          "answer": "7.63",
+          "tol": 0.01,
+          "corrige": "Écart = 157,63 − 150 = 7,63 F — il vient des intérêts produits par les intérêts.",
+          "points": 0.47
+        },
+        {
+          "id": "q43",
+          "type": "numeric",
+          "chapitre": "Les annuités",
+          "enonce": "Une suite d'annuités constantes de {{cap}} F versées {{np}} fois au taux de {{pct:txd}} % a pour valeur acquise Vₙ = a·[(1+i)ⁿ − 1]/i. Calcule Vₙ (en F).",
+          "answer": "annv",
+          "tol": 1,
+          "precision": "arrondi au F près",
+          "corrige": "Vₙ = {{cap}} × [(1 + {{num:txd}})^{{np}} − 1] / {{num:txd}} ≈ {{num:annv}} F.",
+          "points": 0.26
+        }
+      ]
+    }
+  ]
+}

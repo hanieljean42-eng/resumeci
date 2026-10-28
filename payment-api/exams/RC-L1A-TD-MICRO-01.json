@@ -1,0 +1,632 @@
+{
+  "code": "RC-L1A-TD-MICRO-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Analyse microéconomique",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Analyse microéconomique",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "dq": {
+      "choices": [
+        5,
+        10,
+        20
+      ]
+    },
+    "dp": {
+      "choices": [
+        -5,
+        -10
+      ]
+    },
+    "drx": {
+      "choices": [
+        10,
+        15,
+        20
+      ]
+    },
+    "drr": {
+      "choices": [
+        10,
+        20
+      ]
+    },
+    "ct": {
+      "choices": [
+        120000,
+        200000,
+        500000
+      ]
+    },
+    "qq": {
+      "choices": [
+        100,
+        200,
+        400
+      ]
+    },
+    "dct": {
+      "choices": [
+        8000,
+        15000,
+        30000
+      ]
+    },
+    "dq2": {
+      "choices": [
+        50,
+        100
+      ]
+    },
+    "du": {
+      "choices": [
+        4,
+        6,
+        10
+      ]
+    },
+    "dq3": {
+      "choices": [
+        1,
+        2
+      ]
+    },
+    "rt": {
+      "choices": [
+        150000,
+        250000
+      ]
+    }
+  },
+  "derived": {
+    "ep": "dq/dp",
+    "er": "drx/drr",
+    "cm": "ct/qq",
+    "cmg": "dct/dq2",
+    "umg": "du/dq3",
+    "prof": "rt - ct"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (11 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Introduction générale à la microéconomie",
+          "enonce": "L'équilibre partiel analyse un seul marché, toutes choses égales par ailleurs (ceteris paribus).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — équilibre partiel = un marché isolé ; équilibre général = tous les marchés simultanément.",
+          "points": 0.49
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "Deux courbes d'indifférence peuvent se couper.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — par transitivité, deux courbes d'indifférence ne se coupent jamais (sinon contradiction de préférences).",
+          "points": 0.49
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Choix optimal et dualité",
+          "enonce": "La fonction de dépense e(px,py,U) donne la dépense minimale pour atteindre U aux prix donnés.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — e(·) = min de la dépense s.c. utilité ≥ U ; c'est le pendant dual de V(·).",
+          "points": 0.49
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix optimal et demande",
+          "enonce": "Un bien normal voit sa demande augmenter quand le revenu augmente.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — bien normal : effet revenu positif ; bien inférieur : demande ↓ quand revenu ↑.",
+          "points": 0.49
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Ensemble et fonction de production",
+          "enonce": "À l'optimum technique, TMST = w/r (rapport du salaire au coût du capital).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — tangence isoquante/isocoût : PmL/PmK = w/r, analogue du TMS = px/py chez le consommateur.",
+          "points": 0.49
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Les coûts de production",
+          "enonce": "Les économies d'échelle correspondent à une baisse du coût moyen quand la production augmente.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — économies d'échelle = CM décroissant en q (rendements d'échelle croissants côté technique).",
+          "points": 0.49
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "Une élasticité-revenu négative caractérise un bien inférieur.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> e_R < 0 : la demande diminue quand le revenu augmente → bien inférieur.",
+          "points": 0.49
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "Une élasticité-prix directe positive (e_p > 0) signale un bien de Giffen.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Cas atypique : la demande augmente avec le prix → bien de Giffen.",
+          "points": 0.49
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "La courbe d'Engel relie le revenu du consommateur à la quantité demandée d'un bien.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Sa pente a le même signe que l'élasticité-revenu.",
+          "points": 0.49
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "Une élasticité-prix croisée positive entre deux biens signale qu'ils sont substituables.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> e > 0 → substituables ; e < 0 → complémentaires.",
+          "points": 0.49
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "Quand e_p < −1, la demande est dite élastique : elle réagit plus que proportionnellement au prix.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> −1 < e_p < 0 : inélastique ; e_p = −1 : unitaire ; e_p < −1 : élastique.",
+          "points": 0.49
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (24 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la microéconomie",
+          "enonce": "La microéconomie étudie :",
+          "choix": [
+            "Les agrégats nationaux",
+            "Le comportement des agents individuels (consommateurs, firmes) et les marchés",
+            "La monnaie et l'inflation",
+            "Le commerce international"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Micro = agents individuels et leurs interactions sur les marchés — par opposition à la macro (agrégats).",
+          "points": 0.49
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la microéconomie",
+          "enonce": "Le problème économique fondamental est :",
+          "choix": [
+            "L'inflation",
+            "La rareté : besoins illimités, ressources limitées",
+            "Le chômage",
+            "La concurrence"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La rareté impose des choix : tout choix a un coût d'opportunité (ce à quoi on renonce).",
+          "points": 0.49
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la microéconomie",
+          "enonce": "Le coût d'opportunité d'un choix est :",
+          "choix": [
+            "Son prix monétaire",
+            "La valeur de la meilleure alternative sacrifiée",
+            "Le temps perdu",
+            "Son coût comptable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Notion centrale : le vrai coût d'un choix = la meilleure option abandonnée, pas seulement l'argent dépensé.",
+          "points": 0.49
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Introduction générale à la microéconomie",
+          "enonce": "Un raisonnement « à la marge » consiste à comparer :",
+          "choix": [
+            "Les coûts totaux aux recettes totales",
+            "L'utilité (ou recette) de la dernière unité à son coût",
+            "Les moyennes",
+            "Les prix"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Décision optimale quand utilité marginale = coût marginal — logique de toute l'analyse micro.",
+          "points": 0.49
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "Une préférence est complète si :",
+          "choix": [
+            "Le consommateur peut toujours comparer deux paniers",
+            "Le panier est infini",
+            "Tous les paniers sont équivalents",
+            "Le revenu est connu"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Axiomes : complétude (comparaison toujours possible), transitivité, non-satiation (plus est préféré).",
+          "points": 0.49
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "Une courbe d'indifférence relie :",
+          "choix": [
+            "Les paniers de même prix",
+            "Les combinaisons de biens procurant le même niveau de satisfaction",
+            "Les biens gratuits",
+            "Les budgets"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Tous les paniers d'une même courbe procurent la même utilité — le consommateur est indifférent entre eux.",
+          "points": 0.49
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "Le TMS (taux marginal de substitution) de x à y mesure :",
+          "choix": [
+            "Le rapport des prix px/py",
+            "La quantité de y à céder pour une unité de x en gardant la même utilité",
+            "Le revenu marginal",
+            "L'élasticité"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> TMS = −dy/dx = Umx/Umy : pente de la courbe d'indifférence — décroissante si préférences convexes.",
+          "points": 0.49
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "La contrainte budgétaire du consommateur s'écrit :",
+          "choix": [
+            "px·x + py·y = R",
+            "x + y = R",
+            "px = py",
+            "U(x,y) = R"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> px·x + py·y ≤ R : la dépense totale ne peut excéder le revenu ; droite de budget de pente −px/py.",
+          "points": 0.49
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Choix optimal et dualité",
+          "enonce": "L'optimum du consommateur est atteint quand :",
+          "choix": [
+            "Tout le revenu est dépensé en x",
+            "TMS = px/py (tangence courbe d'indifférence / droite de budget)",
+            "px = py",
+            "U est maximale sans contrainte"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Optimum intérieur : TMS = rapport des prix ⟺ Umx/px = Umy/py (égalité des utilités marginales pondérées).",
+          "points": 0.49
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Choix optimal et dualité",
+          "enonce": "La condition Umx/px = Umy/py signifie :",
+          "choix": [
+            "Les prix sont égaux",
+            "La dernière unité monétaire procure la même satisfaction dans chaque bien",
+            "Les quantités sont égales",
+            "L'utilité est nulle"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Principe de Gossen : répartir le budget pour égaliser l'utilité de la dernière unité monétaire par bien.",
+          "points": 0.49
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Choix optimal et dualité",
+          "enonce": "Le programme dual du consommateur consiste à :",
+          "choix": [
+            "Maximiser le revenu",
+            "Minimiser la dépense pour un niveau d'utilité donné",
+            "Maximiser les profits",
+            "Choisir les prix"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Dual : min px·x+py·y s.c. U(x,y)=U* → demandes hicksiennes (compensées), vs marshallienne du problème primal.",
+          "points": 0.49
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Choix optimal et dualité",
+          "enonce": "La fonction d'utilité indirecte V(px, py, R) donne :",
+          "choix": [
+            "Le revenu maximal",
+            "L'utilité maximale atteignable étant donnés prix et revenu",
+            "La dépense minimale",
+            "La demande"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> V = U(x*, y*) : utilité au point optimum — elle décroît en prix, croît en revenu.",
+          "points": 0.49
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Modification du choix optimal et demande",
+          "enonce": "La courbe de demande d'un bien relie :",
+          "choix": [
+            "Le revenu aux quantités",
+            "Le prix du bien aux quantités demandées (ceteris paribus)",
+            "Les prix des autres biens",
+            "L'utilité aux prix"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Demande = quantités optimales à chaque prix — obtenue en faisant varier px le long des optima successifs.",
+          "points": 0.49
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Modification du choix optimal et demande",
+          "enonce": "L'effet d'une baisse de prix se décompose en :",
+          "choix": [
+            "Effet revenu et effet prix",
+            "Effet de substitution + effet revenu",
+            "Effet de volume et effet de richesse",
+            "Effet marginal et effet moyen"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Substitution (on achète le bien devenu moins cher relatif) + revenu (pouvoir d'achat accru) = effet total.",
+          "points": 0.49
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Modification du choix optimal et demande",
+          "enonce": "Un bien de Giffen est :",
+          "choix": [
+            "Un bien normal",
+            "Un bien inférieur dont la demande augmente quand son prix augmente",
+            "Un bien de luxe",
+            "Un bien substituable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Giffen = cas extrême : effet revenu négatif si fort qu'il domine la substitution → demande croissante en prix.",
+          "points": 0.49
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Modification du choix optimal et demande",
+          "enonce": "L'élasticité-prix de la demande mesure :",
+          "choix": [
+            "La pente de la courbe",
+            "La variation % de la quantité pour 1 % de variation du prix",
+            "Le rapport des prix",
+            "L'effet revenu"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> ε = (dq/q)/(dp/p) ; |ε|&gt;1 : demande élastique ; &lt;1 : rigide ; =0 : parfaitement inélastique.",
+          "points": 0.49
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Ensemble et fonction de production",
+          "enonce": "La fonction de production d'une firme relie :",
+          "choix": [
+            "Les coûts aux prix",
+            "Les quantités de facteurs à la quantité maximale produisible",
+            "Les profits au capital",
+            "La demande aux prix"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> q = f(K, L) : rendement technique maximal pour chaque combinaison d'inputs — elle décrit la technologie.",
+          "points": 0.49
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Ensemble et fonction de production",
+          "enonce": "Le TMST (taux marginal de substitution technique) mesure :",
+          "choix": [
+            "Le rapport des prix des facteurs",
+            "La quantité de K cédée pour une unité de L à production constante",
+            "La productivité moyenne",
+            "Le coût marginal"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> TMST = PmL/PmK : pente de l'isoquante — quantité de capital remplaçable par le travail à q constant.",
+          "points": 0.49
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Ensemble et fonction de production",
+          "enonce": "Une isoquante relie :",
+          "choix": [
+            "Les combinaisons de facteurs donnant le même niveau de production",
+            "Les coûts constants",
+            "Les prix",
+            "Les profits"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Isoquante = analogue producteur de la courbe d'indifférence : toutes les (K,L) pour un même q.",
+          "points": 0.49
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Ensemble et fonction de production",
+          "enonce": "Les rendements d'échelle croissants signifient :",
+          "choix": [
+            "f(λK,λL) &gt; λf(K,L)",
+            "f(λK,λL) = λf(K,L)",
+            "La production diminue",
+            "Le coût est nul"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Croissants : doubler les inputs plus que double l'output ; constants : doublement exact ; décroissants : moins.",
+          "points": 0.49
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Les coûts de production",
+          "enonce": "Le coût total de court terme se décompose en :",
+          "choix": [
+            "Coût fixe + coût variable",
+            "Coût moyen + coût marginal",
+            "Salaires + loyers",
+            "Coût privé + coût social"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> CT = CF + CV : le fixe existe même à q=0 ; le variable croît avec q — à long terme tout est variable.",
+          "points": 0.49
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Les coûts de production",
+          "enonce": "Le coût marginal (Cm) est :",
+          "choix": [
+            "CT/q",
+            "Le coût de la dernière unité produite (∂CT/∂q)",
+            "CF/q",
+            "Le prix de vente"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cm = dérivée du coût total : il croise le coût moyen à son minimum.",
+          "points": 0.49
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Les coûts de production",
+          "enonce": "Le coût moyen CM est minimal quand :",
+          "choix": [
+            "CM = 0",
+            "Cm = CM (le marginal croise le moyen à son minimum)",
+            "q = 0",
+            "CT est maximal"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Propriété : tant que Cm &lt; CM, CM ↓ ; quand Cm &gt; CM, CM ↑ → égalité au minimum de CM.",
+          "points": 0.49
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "Les coûts de production",
+          "enonce": "À long terme, par rapport au court terme :",
+          "choix": [
+            "Les coûts sont plus élevés",
+            "Tous les facteurs sont variables (plus de coût fixe)",
+            "La production est impossible",
+            "Le coût marginal disparaît"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> LT : K aussi est ajustable → enveloppe des CT de court terme ; seules économies/déséconomies d'échelle.",
+          "points": 0.49
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (6 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "La quantité demandée varie de {{num:dq}} % quand le prix varie de {{num:dp}} %. Calcule l'élasticité-prix directe.",
+          "answer": "ep",
+          "tol": 0.01,
+          "corrige": "e_p = (ΔQ/Q)/(ΔP/P) = {{num:dq}} / {{num:dp}} = {{num:ep}}.",
+          "points": 0.49
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Modification du choix et demande",
+          "enonce": "La demande d'un bien augmente de {{num:drx}} % quand le revenu augmente de {{num:drr}} %. Calcule l'élasticité-revenu.",
+          "answer": "er",
+          "tol": 0.01,
+          "corrige": "e_R = (Δx/x)/(ΔR/R) = {{num:drx}} / {{num:drr}} = {{num:er}}.",
+          "points": 0.49
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Les coûts de production",
+          "enonce": "Le coût total de production est CT = {{ct}} F pour q = {{qq}} unités. Calcule le coût moyen CM (en F/unité).",
+          "answer": "cm",
+          "tol": 0.5,
+          "corrige": "CM = CT/q = {{ct}} / {{qq}} = {{num:cm}} F par unité.",
+          "points": 0.49
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Les coûts de production",
+          "enonce": "Produire {{dq2}} unités de plus augmente le coût total de {{dct}} F. Calcule le coût marginal (en F/unité).",
+          "answer": "cmg",
+          "tol": 0.5,
+          "corrige": "Cm = ΔCT/Δq = {{dct}} / {{dq2}} = {{num:cmg}} F par unité.",
+          "points": 0.49
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Fondements de la théorie du consommateur",
+          "enonce": "Consommer {{dq3}} unité(s) de plus augmente l'utilité totale de {{num:du}}. Calcule l'utilité marginale.",
+          "answer": "umg",
+          "tol": 0.01,
+          "corrige": "Um = ΔU/Δq = {{num:du}} / {{dq3}} = {{num:umg}}.",
+          "points": 0.49
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "Les coûts de production",
+          "enonce": "La recette totale est RT = {{rt}} F et le coût total CT = {{ct}} F. Calcule le profit (en F).",
+          "answer": "prof",
+          "tol": 1,
+          "corrige": "Profit = RT − CT = {{rt}} − {{ct}} = {{num:prof}} F.",
+          "points": 0.4
+        }
+      ]
+    }
+  ]
+}

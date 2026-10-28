@@ -1,0 +1,542 @@
+{
+  "code": "RC-L1A-TD-ETH-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Éthique et valeurs humaines",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Éthique et valeurs humaines",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "u1": {
+      "choices": [
+        3,
+        4,
+        5
+      ]
+    },
+    "n1": {
+      "choices": [
+        6,
+        8,
+        10
+      ]
+    },
+    "u2": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "n2": {
+      "choices": [
+        4,
+        5
+      ]
+    }
+  },
+  "derived": {
+    "bag": "u1*n1 - u2*n2",
+    "uagg": "u2*n1",
+    "moyd": "(u1*n1 + u2*n2)/(n1 + n2)"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (13 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Éthique, morale et dilemmes",
+          "enonce": "La conscience morale est la capacité de se juger soi-même face à ses actes.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — instance intérieure d'évaluation ; elle s'éduque et se confronte aux règles sociales.",
+          "points": 0.53
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Les grandes théories éthiques",
+          "enonce": "Déontologie = juger l'action en elle-même (moyens) ; conséquentialisme = juger par les résultats (fins).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — opposition classique : « la fin ne justifie pas les moyens » (déontologue) vs « le meilleur bilan » (conséquentialiste).",
+          "points": 0.53
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Valeurs, justice et cadre social",
+          "enonce": "La dignité humaine est une valeur absolue — tout humain mérite respect indépendamment de son utilité ou statut.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — fondement des droits humains : la dignité est inconditionnelle (Kant : dignité vs prix).",
+          "points": 0.53
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Éthique appliquée et gouvernance",
+          "enonce": "La corruption est un échange de faveurs (pot-de-vin, népotisme) qui pervertit la décision et la concurrence.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — corruption active (donner) / passive (recevoir) : détruit la confiance, la concurrence loyale et le développement.",
+          "points": 0.53
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Nouveaux défis et responsabilité contemporaine",
+          "enonce": "« agis de sorte que les effets de ton action soient compatibles avec la permanence d'une vie humaine authentique » est la maxime de Jonas.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — reformulation écologique de l'impératif catégorique appliquée à la civilisation technique.",
+          "points": 0.53
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Selon Kant, c'est l'intention qui fait la moralité de l'acte, indépendamment des conséquences.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La déontologie juge l'acte et l'intention qui le motive — le devoir.",
+          "points": 0.53
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "L'impératif catégorique autorise d'instrumentaliser autrui si la fin poursuivie est bonne.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La formule « humanité » interdit de traiter autrui « simplement comme un moyen ».",
+          "points": 0.53
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Le principe d'utilité veut produire le plus grand bien pour le plus grand nombre de personnes concernées.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> C'est le cœur de l'utilitarisme (Mill) : maximiser le solde de bonheur agrégé.",
+          "points": 0.53
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "L'éthique du care place la relation entre les personnes au centre de la moralité.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Acte → déontologie ; conséquences → utilitarisme ; agent → vertu ; relation → care.",
+          "points": 0.53
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "L'éthique de la vertu s'intéresse à l'agent qui agit — son caractère — plutôt qu'à l'acte lui-même.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La vertu (Aristote) centre la moralité sur celui qui agit.",
+          "points": 0.53
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "« Déontologie » vient du grec deon, qui signifie le devoir.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Déontologie = l'éthique du devoir (Kant).",
+          "points": 0.53
+        },
+        {
+          "id": "q12",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Le calcul coûts/bénéfices est l'outil privilégié de la démarche conséquentialiste.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Éthique du calcul : maximiser le solde positif pour le plus grand nombre.",
+          "points": 0.53
+        },
+        {
+          "id": "q13",
+          "type": "vrai_faux",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Dans la déontologie, une action faite par intérêt personnel reste morale si le résultat est bon.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Pour Kant, l'action n'est juste que si elle est faite par respect de la loi morale — pas par intérêt.",
+          "points": 0.53
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (22 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Éthique, morale et dilemmes",
+          "enonce": "La morale désigne :",
+          "choix": [
+            "Le droit positif",
+            "L'ensemble des règles de conduite (bien/mal) héritées d'une société ou tradition",
+            "Une loi naturelle",
+            "Un contrat social"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Morale = système normatif donné (interdictions/obligations) ; l'éthique = réflexion critique sur ces règles.",
+          "points": 0.53
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Éthique, morale et dilemmes",
+          "enonce": "L'éthique se distingue de la morale en ce qu'elle est :",
+          "choix": [
+            "Plus ancienne",
+            "Une démarche réflexive et personnelle d'interrogation sur le bien",
+            "Un catalogue d'interdictions",
+            "Réservée aux philosophes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Éthique = questionnement rationnel (pourquoi cette règle ?) ; la morale prescrit, l'éthique interroge.",
+          "points": 0.53
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Éthique, morale et dilemmes",
+          "enonce": "Un dilemme éthique se produit quand :",
+          "choix": [
+            "Deux valeurs légitimes entrent en conflit et tout choix a un coût moral",
+            "On ne connaît pas la loi",
+            "Les conséquences sont incertaines",
+            "Deux personnes se disputent"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Dilemme : obligations morales incompatibles — toute option viole une valeur ; exige un arbitrage raisonné.",
+          "points": 0.53
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Éthique, morale et dilemmes",
+          "enonce": "La différence éthique / droit est que :",
+          "choix": [
+            "Ils sont identiques",
+            "Le droit est sanctionné par l'État ; l'éthique relève de la conscience et peut aller au-delà de la loi",
+            "Le droit est moral",
+            "L'éthique est illégale"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Légal ≠ moral : une loi peut être injuste ; l'éthique invite à juger et parfois dépasser le minimum légal.",
+          "points": 0.53
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Les grandes théories éthiques",
+          "enonce": "L'utilitarisme (Bentham, Mill) juge une action selon :",
+          "choix": [
+            "Son intention",
+            "Ses conséquences : le plus grand bonheur du plus grand nombre",
+            "Les règles absolues",
+            "La tradition"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Conséquentialisme : bien = maximisation de l'utilité collective ; on calcule les effets, pas les intentions.",
+          "points": 0.53
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Les grandes théories éthiques",
+          "enonce": "Le devoir kantien (déontologie) exige d'agir selon :",
+          "choix": [
+            "Les résultats",
+            "Des maximes universalisables : agis comme si ta règle devait devenir loi universelle",
+            "Le plaisir",
+            "L'intérêt personnel"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Kant : impératif catégorique — devoir indépendant des conséquences ; l'humain est une fin, jamais un moyen.",
+          "points": 0.53
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Les grandes théories éthiques",
+          "enonce": "L'éthique de la vertu (Aristote) se concentre sur :",
+          "choix": [
+            "Les règles",
+            "Le caractère : devenir une personne vertueuse par l'habitude",
+            "Les conséquences",
+            "Les contrats"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Question non « que dois-je faire ? » mais « qui dois-je être ? » — juste milieu, prudence, eudaimonia.",
+          "points": 0.53
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Les grandes théories éthiques",
+          "enonce": "Une action égoïste est éthiquement critiquable car :",
+          "choix": [
+            "L'égoïsme est toujours efficace",
+            "Elle ignore le bien d'autrui et rompt l'universalité exigée par la morale",
+            "Elle est illégale",
+            "Elle est irrationnelle"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> L'égoïsme éthique (maximiser son intérêt) échoue au test de l'universalisation et néglige la dimension intersubjective.",
+          "points": 0.53
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Valeurs, justice et cadre social",
+          "enonce": "La justice distributive concerne :",
+          "choix": [
+            "Les peines",
+            "La répartition équitable des biens, droits et charges dans la société",
+            "Le commerce",
+            "Les contrats"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Qui reçoit quoi ? — richesses, opportunités, charges : critères de mérite, besoin, égalité.",
+          "points": 0.53
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Valeurs, justice et cadre social",
+          "enonce": "La théorie de la justice de Rawls repose sur :",
+          "choix": [
+            "L'utilitarisme",
+            "Le voile d'ignorance : des principes choisis sans connaître sa place sociale",
+            "La loi du plus fort",
+            "Le marché"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Derrière le voile, on choisit des principes équitables : libertés égales + différence (aider les moins favorisés).",
+          "points": 0.53
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Valeurs, justice et cadre social",
+          "enonce": "La justice corrective (ou commutative) vise à :",
+          "choix": [
+            "Répartir les richesses",
+            "Réparer les torts et rétablir l'égalité rompue (dommages, restitution)",
+            "Instituer les lois",
+            "Punir les crimes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Corriger les injustices transactionnelles : restitution, indemnisation — distincte de la distributive.",
+          "points": 0.53
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Valeurs, justice et cadre social",
+          "enonce": "L'éthique de la discussion (Habermas) fonde la norme sur :",
+          "choix": [
+            "La force",
+            "Un consensus rationnel où tous les concernés peuvent argumenter librement",
+            "La majorité simple",
+            "La tradition"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Une norme est valide si tous les affectés y consentent dans une discussion égalitaire — règles de la communication.",
+          "points": 0.53
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Éthique appliquée et gouvernance",
+          "enonce": "La RSE (responsabilité sociétale des entreprises) signifie :",
+          "choix": [
+            "Uniquement la philanthropie",
+            "L'intégration volontaire des enjeux sociaux et environnementaux dans les activités",
+            "Une obligation fiscale",
+            "Un label marketing"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> RSE : au-delà de la loi — parties prenantes, triple bilan (économique-social-environnemental).",
+          "points": 0.53
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Éthique appliquée et gouvernance",
+          "enonce": "Un conflit d'intérêts survient quand :",
+          "choix": [
+            "Deux collègues se disputent",
+            "L'intérêt personnel risque de biaiser un jugement professionnel objectif",
+            "On refuse une promotion",
+            "Deux entreprises se concurrencent"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Situation où un gain personnel compromet le devoir d'impartialité — doit être déclaré et géré.",
+          "points": 0.53
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Éthique appliquée et gouvernance",
+          "enonce": "La gouvernance d'entreprise désigne :",
+          "choix": [
+            "La gestion quotidienne",
+            "Les mécanismes de direction, contrôle et répartition des pouvoirs (transparence, comptes)",
+            "Le marketing",
+            "La production"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Bonne gouvernance : séparation des pouvoirs, audit, transparence — protège actionnaires et parties prenantes.",
+          "points": 0.53
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Éthique appliquée et gouvernance",
+          "enonce": "L'éthique des affaires applique la réflexion morale à :",
+          "choix": [
+            "Uniquement la finance",
+            "La vie économique : travail, consommation, finance, environnement, publicité",
+            "Le droit commercial",
+            "Les taxes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Domaines : conditions de travail, écologie, corruption, communication honnête, loyauté commerciale.",
+          "points": 0.53
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Nouveaux défis et responsabilité contemporaine",
+          "enonce": "Le principe responsabilité de Hans Jonas impose :",
+          "choix": [
+            "L'obéissance aux lois",
+            "Une responsabilité élargie : anticiper les effets lointains de la technique sur les générations futures",
+            "L'innovation",
+            "La liberté de marché"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Jonas : la technique moderne rend nos actes puissants à longue échéance → impératif de ne pas compromettre l'humanité future.",
+          "points": 0.53
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Nouveaux défis et responsabilité contemporaine",
+          "enonce": "L'éthique environnementale s'interroge sur :",
+          "choix": [
+            "Le PIB",
+            "Nos devoirs envers la nature, les écosystèmes et les non-humains",
+            "Le tourisme",
+            "L'agriculture"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Questions : la nature a-t-elle une valeur intrinsèque ? devoirs envers les espèces, le climat, la biodiversité.",
+          "points": 0.53
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Nouveaux défis et responsabilité contemporaine",
+          "enonce": "Les enjeux éthiques de l'intelligence artificielle portent notamment sur :",
+          "choix": [
+            "La vitesse des ordinateurs",
+            "Les biais algorithmiques, la transparence, la responsabilité des décisions automatisées",
+            "Le coût des machines",
+            "L'électricité"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Questions clés : discrimination par les données, explicabilité, qui est responsable d'une erreur d'IA ?",
+          "points": 0.53
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Nouveaux défis et responsabilité contemporaine",
+          "enonce": "Le Big Data pose un problème éthique majeur :",
+          "choix": [
+            "Le stockage",
+            "La protection de la vie privée et le consentement éclairé sur l'usage des données",
+            "La bande passante",
+            "Le graphisme"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Collecte massive → surveillance, profilage, perte d'autonomie — exige règles de consentement et de protection.",
+          "points": 0.53
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Les théories éthiques",
+          "enonce": "« Traite l'humanité, en ta personne et en toute autre, toujours comme une fin, jamais simplement comme un moyen » est la formule :",
+          "choix": [
+            "De l'universalité de la maxime",
+            "De l'humanité comme fin",
+            "Du principe d'utilité",
+            "De la vertu"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> C'est la seconde formule de l'impératif catégorique — interdiction d'instrumentaliser la personne.",
+          "points": 0.53
+        },
+        {
+          "id": "q35",
+          "type": "qcm",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Associer « les conséquences de l'acte » à sa théorie revient à citer :",
+          "choix": [
+            "La déontologie",
+            "L'éthique de la vertu",
+            "Le conséquentialisme",
+            "L'éthique du care"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Le conséquentialisme (utilitarisme, Mill) juge uniquement par les conséquences.",
+          "points": 0.53
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (3 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Calcul utilitariste : une réforme apporte +{{u1}} unités de satisfaction à {{n1}} personnes mais −{{u2}} unités à {{n2}} autres. Calcule le bilan agrégé (en unités).",
+          "answer": "bag",
+          "tol": 0.01,
+          "corrige": "Bilan = {{u1}}×{{n1}} − {{u2}}×{{n2}} = {{num:bag}} unités — le conséquentialisme compare ce solde entre options.",
+          "points": 0.53
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Selon le calcul coûts/bénéfices, une option procure {{u2}} unités de satisfaction à {{n1}} personnes. Calcule le total de satisfaction produite (en unités).",
+          "answer": "uagg",
+          "tol": 0.01,
+          "corrige": "Total = {{u2}} × {{n1}} = {{num:uagg}} unités — « le plus grand bien pour le plus grand nombre ».",
+          "points": 0.53
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Les théories éthiques",
+          "enonce": "Un comité évalue une décision : {{n1}} membres lui donnent {{u1}} points et {{n2}} membres {{u2}} points. Calcule la note moyenne (en points).",
+          "answer": "moyd",
+          "tol": 0.01,
+          "precision": "arrondi à 0,01",
+          "corrige": "Moyenne = ({{u1}}×{{n1}} + {{u2}}×{{n2}}) / ({{n1}}+{{n2}}) = {{num:moyd}} points.",
+          "points": 0.39
+        }
+      ]
+    }
+  ]
+}

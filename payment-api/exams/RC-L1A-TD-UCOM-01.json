@@ -1,0 +1,589 @@
+{
+  "code": "RC-L1A-TD-UCOM-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Utilisation de l'information comptable",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Utilisation de l'information comptable",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "rd": {
+      "choices": [
+        300000,
+        400000
+      ]
+    },
+    "aim": {
+      "choices": [
+        180000,
+        250000
+      ]
+    },
+    "fr2": {
+      "choices": [
+        120000,
+        150000
+      ]
+    },
+    "bf": {
+      "choices": [
+        90000,
+        130000
+      ]
+    },
+    "vt": {
+      "choices": [
+        500000,
+        600000
+      ]
+    },
+    "cam": {
+      "choices": [
+        320000,
+        400000
+      ]
+    },
+    "va2": {
+      "choices": [
+        200000,
+        250000
+      ]
+    },
+    "cp": {
+      "choices": [
+        120000,
+        150000
+      ]
+    },
+    "are": {
+      "choices": [
+        600000,
+        800000
+      ]
+    },
+    "dtt": {
+      "choices": [
+        450000,
+        500000
+      ]
+    },
+    "an2": {
+      "choices": [
+        150000,
+        180000
+      ]
+    },
+    "at2": {
+      "choices": [
+        500000,
+        600000
+      ]
+    },
+    "stk": {
+      "choices": [
+        120000,
+        150000
+      ]
+    },
+    "cre": {
+      "choices": [
+        80000,
+        100000
+      ]
+    },
+    "dcl": {
+      "choices": [
+        90000,
+        140000
+      ]
+    }
+  },
+  "derived": {
+    "frng": "rd - aim",
+    "tn": "fr2 - bf",
+    "mc": "vt - cam",
+    "ebe": "va2 - cp",
+    "anet": "are - dtt",
+    "solv": "an2/at2*100",
+    "bfr": "stk + cre - dcl"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (13 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "Le tableau des flux de trésorerie explique la variation de trésorerie entre deux bilans (exploitation, investissement, financement).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — 3 flux : opérationnel, investissement, financement : d'où vient et où va le cash.",
+          "points": 0.53
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Les amortissements étalent le coût d'une immobilisation sur sa durée d'utilisation prévue.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — amortissement = constatation de la dépréciation irréversible d'un actif : charge annuelle.",
+          "points": 0.53
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "L'analyse de l'activité : les SIG",
+          "enonce": "La capacité d'autofinancement (CAF) = ressources dégagées par l'activité après charges décaissables = résultat net + charges non décaissées (amortissements, provisions).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — CAF : résultat net + dotations (non-décaissées) − reprises : capacité interne de financement.",
+          "points": 0.53
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "L'analyse du risque de défaillance",
+          "enonce": "Un FRNG positif ne garantit pas une trésorerie positive si le BFG est encore plus élevé.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — TN = FRNG − BFG : croissance rapide → BFG↑ peut absorber tout le FRNG (danger de la croissance non financée).",
+          "points": 0.53
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "Les ressources durables (stables) = capitaux propres + dettes financières.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Elles financent l'actif immobilisé → FRNG.",
+          "points": 0.53
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Le bilan financier classe l'actif par liquidité croissante et le passif par exigibilité croissante.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Optique de liquidation : évaluer solvabilité et liquidité.",
+          "points": 0.53
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "L'actif fictif regroupe des « non-valeurs » — des postes sans valeur de revente.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Actif net = capitaux propres − actif fictif.",
+          "points": 0.53
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Un « stock outil » (stock minimum permanent) est retraité de l'actif circulant vers l'actif immobilisé.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Il reste en permanence dans l'entreprise → assimilé à une immobilisation.",
+          "points": 0.53
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le SYSCOHADA révisé s'applique dans l'Union depuis le 1ᵉʳ janvier 2018.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Référentiel commun aux États de l'espace OHADA (UEMOA + CEMAC).",
+          "points": 0.53
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Analyse de l'activité (SIG)",
+          "enonce": "Le résultat HAO est lié aux éléments extraordinaires non répétitifs (cessions d'immobilisations).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> 4 niveaux : exploitation, financier, HAO, global.",
+          "points": 0.53
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "Analyse de l'activité (SIG)",
+          "enonce": "L'EBE = valeur ajoutée − charges de personnel.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Maillon de la cascade des SIG après la valeur ajoutée.",
+          "points": 0.53
+        },
+        {
+          "id": "q12",
+          "type": "vrai_faux",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "La trésorerie-passif regroupe les concours bancaires à bref délai : découverts, escomptes, soldes créditeurs de banque.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Quatrième masse du passif.",
+          "points": 0.53
+        },
+        {
+          "id": "q13",
+          "type": "vrai_faux",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Une entreprise est solvable si son actif net est négatif.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Critères : actif net > 0 et actif net / actif total > 20 %.",
+          "points": 0.53
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (18 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "Le bilan comptable présente :",
+          "choix": [
+            "Les ventes de l'année",
+            "La photographie du patrimoine : actif (ce que l'entreprise possède) et passif (ce qu'elle doit)",
+            "Les profits",
+            "Les salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Bilan = stock à une date : actif (emplois des ressources) = passif (ressources) — équilibre fondamental.",
+          "points": 0.53
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "Le compte de résultat mesure :",
+          "choix": [
+            "Le patrimoine",
+            "Les produits et charges de l'exercice → le résultat (bénéfice ou perte)",
+            "La trésorerie",
+            "Les dettes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Compte de résultat = flux de l'exercice : produits − charges = résultat net — « film » vs « photo » du bilan.",
+          "points": 0.53
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "Les capitaux propres figurent :",
+          "choix": [
+            "À l'actif",
+            "Au passif : ressources appartenant aux associés (capital + réserves + résultat)",
+            "En charges",
+            "Hors bilan"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Passif = capitaux propres (internes) + dettes (externes) : les deux financent l'actif.",
+          "points": 0.53
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Les documents de synthèse",
+          "enonce": "L'actif immobilisé regroupe :",
+          "choix": [
+            "Les stocks",
+            "Les biens durables : incorporels (fonds de commerce), corporels (machines), financiers",
+            "Le cash",
+            "Les créances clients"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Immobilisé = long terme ; actif circulant = stocks, créances, trésorerie (cycle court d'exploitation).",
+          "points": 0.53
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le principe de l'indépendance des exercices impose :",
+          "choix": [
+            "De tout compter en cash",
+            "De rattacher charges et produits à l'exercice auquel ils se rapportent (cut-off)",
+            "De faire un bilan par mois",
+            "D'équilibrer les comptes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Exercice = période comptable (12 mois) ; on rattache les flux à leur période, pas à leur paiement.",
+          "points": 0.53
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le principe de prudence consiste à :",
+          "choix": [
+            "Gonfler les bénéfices",
+            "Comptabiliser les pertes probables mais ne pas anticiper les profits incertains",
+            "Ne rien enregistrer",
+            "Déprécier tout"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Asymétrie : constater les risques de perte (provisions, dépréciations) ; pas de gain non certain.",
+          "points": 0.53
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le principe du coût historique signifie :",
+          "choix": [
+            "Évaluer au prix du marché",
+            "Enregistrer les biens à leur coût d'acquisition/entrée, corrigé éventuellement d'amortissements",
+            "Revaloriser chaque année",
+            "Évaluer au futur"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Base d'évaluation par défaut : objectif et vérifiable — dérogations limitées (juste valeur).",
+          "points": 0.53
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le principe de permanence des méthodes exige :",
+          "choix": [
+            "Changer de méthode chaque année",
+            "La continuité des méthodes comptables d'un exercice à l'autre pour la comparabilité",
+            "Une méthode unique mondiale",
+            "L'arrêt des amortissements"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Mêmes méthodes (amortissement, stocks) → comptes comparables dans le temps ; changement = justifié et signalé.",
+          "points": 0.53
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "L'analyse de l'activité : les SIG",
+          "enonce": "Les SIG (soldes intermédiaires de gestion) décomposent :",
+          "choix": [
+            "Le bilan",
+            "La formation du résultat en cascade de soldes significatifs",
+            "La trésorerie",
+            "Les dettes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cascade : marge commerciale → VA → EBE → résultat d'exploitation → résultat courant → résultat net.",
+          "points": 0.53
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "L'analyse de l'activité : les SIG",
+          "enonce": "La marge commerciale concerne :",
+          "choix": [
+            "Toutes les entreprises",
+            "Les entreprises de négoce : ventes de marchandises − coût d'achat des marchandises vendues",
+            "Les services",
+            "Les banques"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Marge = ventes − coût d'achat (achats + variation de stock) : activité d'achat-revente sans transformation.",
+          "points": 0.53
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "L'analyse de l'activité : les SIG",
+          "enonce": "La valeur ajoutée (VA) mesure :",
+          "choix": [
+            "Le chiffre d'affaires",
+            "La richesse créée par l'entreprise : production − consommations intermédiaires",
+            "Les profits",
+            "Les salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> VA = contribution propre de l'entreprise — elle se répartit entre salaires, impôts, intérêts, État et entreprise.",
+          "points": 0.53
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "L'analyse de l'activité : les SIG",
+          "enonce": "L'EBE (excédent brut d'exploitation) est :",
+          "choix": [
+            "Le résultat net",
+            "La VA − rémunérations − impôts : ressource brute d'exploitation indépendante du financement et des amortissements",
+            "Le cash",
+            "La dette"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> EBE ≈ cash-flow d'exploitation potentiel : il finance investissements, remboursements et rémunération du capital.",
+          "points": 0.53
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "L'analyse du risque de défaillance",
+          "enonce": "Le FRNG (fonds de roulement net global) vaut :",
+          "choix": [
+            "Actif circulant − passif circulant",
+            "Ressources stables − emplois stables (capitaux permanents − actif immobilisé)",
+            "Trésorerie − dettes",
+            "Bénéfice − dividendes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> FRNG = marge de sécurité : part des ressources longues finançant le cycle d'exploitation.",
+          "points": 0.53
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "L'analyse du risque de défaillance",
+          "enonce": "Le BFG (besoin en fonds de roulement) exprime :",
+          "choix": [
+            "Un profit",
+            "Le besoin de financement du cycle d'exploitation : stocks + créances − dettes fournisseurs",
+            "Les investissements",
+            "Le cash"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Décalages d'encaissement/paiement créent un besoin : l'activité consomme du cash avant d'en produire.",
+          "points": 0.53
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "L'analyse du risque de défaillance",
+          "enonce": "La trésorerie nette se calcule :",
+          "choix": [
+            "FRNG − BFG",
+            "BFG − FRNG",
+            "Actif − passif",
+            "Ventes − achats"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> TN = FRNG − BFG : si FRNG &gt; BFG → trésorerie positive ; si TN négative → recours au financement court terme.",
+          "points": 0.53
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "L'analyse du risque de défaillance",
+          "enonce": "Une entreprise en cessation de paiements est :",
+          "choix": [
+            "En bénéfice",
+            "Incapable de faire face à son passif exigible avec son actif disponible",
+            "En croissance",
+            "En liquidation volontaire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Critère juridique de la défaillance : impossibilité de payer les dettes échues — ouvre la procédure collective.",
+          "points": 0.53
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "L'actif net se calcule par :",
+          "choix": [
+            "Actif réel + dettes",
+            "Actif réel − dettes (= capitaux propres − actif fictif)",
+            "Capitaux propres + actif fictif",
+            "Dettes − actif réel"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Actif net = actif réel − dettes = capitaux propres − actif fictif.",
+          "points": 0.53
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Cadre d'élaboration des comptes annuels",
+          "enonce": "Le contrôle externe LÉGAL des comptes est assuré par :",
+          "choix": [
+            "Le propriétaire",
+            "L'auditeur interne",
+            "Le commissaire aux comptes",
+            "Le chef comptable"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Contrôle externe : professionnel indépendant — commissaire aux comptes (légal) ou expert-comptable (contractuel).",
+          "points": 0.53
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (7 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Une entreprise a un actif net de {{an2}} F pour un actif total de {{at2}} F. Calcule le ratio actif net / actif total (en %, critère de solvabilité du cours : > 20 %).",
+          "answer": "solv",
+          "tol": 0.1,
+          "corrige": "Ratio = {{an2}}/{{at2}} × 100 = {{num:solv}} % — supérieur à 20 % → l'entreprise est solvable.",
+          "points": 0.53
+        },
+        {
+          "id": "q33",
+          "type": "numeric",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Stocks {{stk}} F, créances clients {{cre}} F, dettes à court terme {{dcl}} F. Calcule le besoin en fonds de roulement (BFR, en F).",
+          "answer": "bfr",
+          "tol": 1,
+          "corrige": "BFR = stocks + créances − dettes CT = {{stk}} + {{cre}} − {{dcl}} = {{num:bfr}} F.",
+          "points": 0.53
+        },
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Ressources durables = {{rd}} F, actif immobilisé = {{aim}} F. Calcule le FRNG (en F).",
+          "answer": "frng",
+          "tol": 1,
+          "corrige": "FRNG = ressources durables − actif immobilisé = {{rd}} − {{aim}} = {{num:frng}} F.",
+          "points": 0.53
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "FR = {{fr2}} F et BFG = {{bf}} F. Calcule la trésorerie nette (en F).",
+          "answer": "tn",
+          "tol": 1,
+          "corrige": "Trésorerie nette = FR − BFG = {{fr2}} − {{bf}} = {{num:tn}} F.",
+          "points": 0.53
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Analyse de l'activité (SIG)",
+          "enonce": "Ventes de marchandises = {{vt}} F, coût d'achat des marchandises vendues = {{cam}} F. Calcule la marge commerciale (en F).",
+          "answer": "mc",
+          "tol": 1,
+          "corrige": "Marge commerciale = ventes − CAMV = {{vt}} − {{cam}} = {{num:mc}} F.",
+          "points": 0.53
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Analyse de l'activité (SIG)",
+          "enonce": "Valeur ajoutée = {{va2}} F, charges de personnel = {{cp}} F. Calcule l'EBE (en F).",
+          "answer": "ebe",
+          "tol": 1,
+          "corrige": "EBE = valeur ajoutée − charges de personnel = {{va2}} − {{cp}} = {{num:ebe}} F.",
+          "points": 0.53
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Analyse du risque de défaillance",
+          "enonce": "Actif réel = {{are}} F, dettes = {{dtt}} F. Calcule l'actif net (en F).",
+          "answer": "anet",
+          "tol": 1,
+          "corrige": "Actif net = actif réel − dettes = {{are}} − {{dtt}} = {{num:anet}} F — aussi = capitaux propres − actif fictif.",
+          "points": 0.39
+        }
+      ]
+    }
+  ]
+}

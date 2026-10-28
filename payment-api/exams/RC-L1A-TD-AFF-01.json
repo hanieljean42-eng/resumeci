@@ -1,0 +1,574 @@
+{
+  "code": "RC-L1A-TD-AFF-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Le monde des affaires",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Le monde des affaires",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "na2": {
+      "choices": [
+        4,
+        5,
+        10
+      ]
+    },
+    "ap": {
+      "choices": [
+        200,
+        250,
+        500
+      ]
+    },
+    "cap": {
+      "choices": [
+        1000,
+        5000
+      ]
+    },
+    "pv": {
+      "choices": [
+        50,
+        100
+      ]
+    },
+    "vt2": {
+      "choices": [
+        400,
+        600
+      ]
+    },
+    "ci4": {
+      "choices": [
+        250,
+        350
+      ]
+    },
+    "w": {
+      "choices": [
+        5,
+        8
+      ]
+    },
+    "u": {
+      "choices": [
+        20,
+        40
+      ]
+    },
+    "va3": {
+      "choices": [
+        200,
+        300
+      ]
+    },
+    "ps": {
+      "choices": [
+        55,
+        60
+      ]
+    }
+  },
+  "derived": {
+    "capsoc": "na2*ap",
+    "nparts": "cap/pv",
+    "vadd": "vt2 - ci4",
+    "out": "w*u",
+    "mas": "va3*ps/100",
+    "restcap": "cap - ap"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (14 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "L'école systémique considère l'entreprise comme un tout dont les parties interagissent — le tout dépasse la somme des parties.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — synergie : un changement sur un sous-système affecte les autres (vision holiste vs analytique).",
+          "points": 0.51
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "L'entreprise publique appartient en majorité à l'État ; la privée à des personnes privées.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — critère capitalistique : contrôle du capital public ou privé ; il existe aussi des formes mixtes.",
+          "points": 0.51
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Aspects matériels et technologiques : la logistique",
+          "enonce": "Un stock de sécurité sert à parer les aléas (retards fournisseurs, variations de la demande).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — tampon contre l'incertitude ; son dimensionnement arbitre entre risque de rupture et coût de détention.",
+          "points": 0.51
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Les hommes dans l'entreprise : la GRH",
+          "enonce": "Selon Herzberg, les facteurs d'hygiène (salaire, conditions) évitent l'insatisfaction mais ne motivent pas durablement — les motivants sont le contenu du travail.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — théorie bifactorielle : hygiène = prévention de l'insatisfaction ; motivation = enrichissement du poste.",
+          "points": 0.51
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "Une firme est une entreprise internationale implantée dans plusieurs pays.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Firme = entreprise internationale ; l'établissement est l'unité technique locale.",
+          "points": 0.51
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "La valeur ajoutée mesure la contribution réelle de l'entreprise à la richesse nationale (PIB).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La transformation inputs → outputs crée la richesse = valeur ajoutée.",
+          "points": 0.51
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Dans une SNC, les associés répondent des dettes sociales de façon indéfinie et solidaire.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> SNC = société de personnes : responsabilité totale (indéfinie et solidaire).",
+          "points": 0.51
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Dans une SCA, les commanditaires engagent une responsabilité supérieure à leurs apports.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Les commanditaires sont des bailleurs de fonds : responsabilité limitée aux apports — ce sont les commandités qui répondent indéfiniment.",
+          "points": 0.51
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "L'EURL sépare le patrimoine personnel de celui de l'entreprise.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Responsabilité limitée au patrimoine de l'entreprise — contrairement à l'entreprise individuelle.",
+          "points": 0.51
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "La logistique",
+          "enonce": "Le terme « logistique » est emprunté au vocabulaire militaire (transport et ravitaillement des armées).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Transposé à l'entreprise dans les années 70-80 = gestion des flux.",
+          "points": 0.51
+        },
+        {
+          "id": "q11",
+          "type": "vrai_faux",
+          "chapitre": "La logistique",
+          "enonce": "La logistique de soutien couvre l'après-vente et la maintenance, à partir de la vente.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Logistique du produit = cycle de production ; logistique de soutien = après-vente.",
+          "points": 0.51
+        },
+        {
+          "id": "q12",
+          "type": "vrai_faux",
+          "chapitre": "La logistique",
+          "enonce": "La logistique gère à la fois les flux physiques et les flux d'informations, en interne et en externe.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Vision contemporaine : gestion de l'ensemble des flux de l'organisation.",
+          "points": 0.51
+        },
+        {
+          "id": "q13",
+          "type": "vrai_faux",
+          "chapitre": "Les hommes dans l'entreprise (GRH)",
+          "enonce": "La GRH poursuit à la fois des objectifs productifs (efficacité, rentabilité) et sociaux (intégration, éviter les conflits).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Elle concilie les aspirations du personnel et les objectifs de l'entreprise.",
+          "points": 0.51
+        },
+        {
+          "id": "q14",
+          "type": "vrai_faux",
+          "chapitre": "Les hommes dans l'entreprise (GRH)",
+          "enonce": "Pour Taylor, l'homme est un auxiliaire de la production évalué sur son rendement physique.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'optique moderne insiste au contraire sur les capacités créatives et relationnelles.",
+          "points": 0.51
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (19 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "L'entreprise est définie comme :",
+          "choix": [
+            "Un bâtiment",
+            "Une unité économique et sociale combinant des facteurs pour produire des biens/services destinés à un marché",
+            "Une administration",
+            "Une banque"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Triple dimension : économique (production marchande), sociale (personnes), juridique (personnalité).",
+          "points": 0.51
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "L'approche systémique de l'entreprise la décrit comme :",
+          "choix": [
+            "Un ensemble fermé",
+            "Un système ouvert transformant des inputs (ressources) en outputs (biens/services) en interaction avec l'environnement",
+            "Une machine",
+            "Un marché"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Entrées → transformation → sorties, avec boucles de rétroaction — l'environnement (micro/macro) influe.",
+          "points": 0.51
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "Le microenvironnement de l'entreprise comprend :",
+          "choix": [
+            "La démographie mondiale",
+            "Les acteurs proches : clients, fournisseurs, concurrents, intermédiaires",
+            "Les technologies lointaines",
+            "Le climat"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Acteurs en contact direct — vs macroenvironnement (PESTEL : politique, économie, société, techno, éco, légal).",
+          "points": 0.51
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "Les décisions dans l'entreprise se classent en :",
+          "choix": [
+            "Bonnes et mauvaises",
+            "Stratégiques (long terme, direction), tactiques (moyen terme), opérationnelles (quotidien)",
+            "Financières et sociales",
+            "Individuelles"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Hiérarchie temporelle : stratégique (cap) → tactique (moyens) → opérationnel (exécution).",
+          "points": 0.51
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Les critères de classification des entreprises sont notamment :",
+          "choix": [
+            "La couleur du logo",
+            "Taille, statut juridique, secteur d'activité, objet économique",
+            "Le nombre de clients",
+            "Le pays d'origine"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Typologie multi-critères : effectifs/CA, forme juridique, secteur (primaire/secondaire/tertiaire), but lucratif ou non.",
+          "points": 0.51
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Une PME se distingue essentiellement par :",
+          "choix": [
+            "Son produit",
+            "Sa taille : effectif et chiffre d'affaires sous des seuils définis",
+            "Son secteur",
+            "Son âge"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Seuils de taille (ex. UE : &lt;250 salariés, CA ≤ 50 M€) — souplesse mais accès limité aux capitaux.",
+          "points": 0.51
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Les trois secteurs d'activité classiques sont :",
+          "choix": [
+            "Public, privé, mixte",
+            "Primaire (extraction/agriculture), secondaire (transformation/industrie), tertiaire (services)",
+            "Commerce, banque, éducation",
+            "Local, national, international"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Classification par nature de la production — tendance historique : tertiarisation des économies.",
+          "points": 0.51
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Une entreprise multinationale se caractérise par :",
+          "choix": [
+            "De nombreux employés",
+            "Des implantations productives dans plusieurs pays pilotées depuis une maison-mère",
+            "L'exportation",
+            "Une grande taille"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> FMN : délocalisation de production, filiales à l'étranger — vs entreprise exportatrice simple.",
+          "points": 0.51
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Aspects matériels et technologiques : la logistique",
+          "enonce": "La logistique d'entreprise couvre :",
+          "choix": [
+            "La comptabilité",
+            "L'ensemble des flux physiques : approvisionnement, production, stockage, distribution",
+            "Le marketing",
+            "La publicité"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Piloter le flux des matières et produits de l'amont (fournisseurs) à l'aval (clients) au moindre coût.",
+          "points": 0.51
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Aspects matériels et technologiques : la logistique",
+          "enonce": "La gestion des stocks vise à :",
+          "choix": [
+            "Stocker un maximum",
+            "Trouver l'équilibre entre coût de stockage, rupture et service client",
+            "Éliminer les stocks",
+            "Acheter plus"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Stock optimal : ni surstockage (coût, immobilisation) ni rupture (ventes perdues) — modèles type Wilson.",
+          "points": 0.51
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Aspects matériels et technologiques : la logistique",
+          "enonce": "Le « juste-à-temps » (JIT) consiste à :",
+          "choix": [
+            "Commander en avance",
+            "Produire/livrer au dernier moment pour réduire les stocks au strict nécessaire",
+            "Stocker plus",
+            "Augmenter les délais"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Flux tendus (Toyota) : zéro stock idéal — exige fiabilité fournisseurs et flexibilité de production.",
+          "points": 0.51
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Aspects matériels et technologiques : la logistique",
+          "enonce": "La chaîne logistique (supply chain) intègre :",
+          "choix": [
+            "Seulement le transport",
+            "Tous les maillons coordonnés : achats → production → distribution → client",
+            "Les ventes",
+            "Les salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Vision intégrée amont-aval — la performance globale dépend de la coordination entre maillons.",
+          "points": 0.51
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Les hommes dans l'entreprise : la GRH",
+          "enonce": "La GRH (gestion des ressources humaines) recouvre :",
+          "choix": [
+            "La paie seule",
+            "L'ensemble des pratiques visant à mobiliser les compétences : recrutement, formation, évaluation, rémunération",
+            "Le recrutement seul",
+            "La discipline"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Fonction stratégique : attirer, développer, fidéliser les compétences au service des objectifs.",
+          "points": 0.51
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Les hommes dans l'entreprise : la GRH",
+          "enonce": "La GPEC (gestion prévisionnelle des emplois et compétences) consiste à :",
+          "choix": [
+            "Licencier les vieux salariés",
+            "Anticiper les besoins futurs en compétences pour adapter les ressources aux évolutions",
+            "Payer les heures sup",
+            "Former au hasard"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Démarche prospective : analyser les écarts entre compétences actuelles et requises → plan de formation/mobilité.",
+          "points": 0.51
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Les hommes dans l'entreprise : la GRH",
+          "enonce": "La motivation au travail peut être stimulée par :",
+          "choix": [
+            "La seule augmentation de salaire",
+            "Des leviers variés : reconnaissance, responsabilisation, évolution, conditions, rémunération",
+            "La surveillance",
+            "Les sanctions"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Théories (Maslow, Herzberg, McGregor) : facteurs intrinsèques (sens, autonomie) + extrinsèques (salaire, cadre).",
+          "points": 0.51
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Les hommes dans l'entreprise : la GRH",
+          "enonce": "L'entretien annuel d'évaluation sert à :",
+          "choix": [
+            "Sanctionner",
+            "Faire le point sur les résultats, fixer des objectifs et identifier les besoins de formation",
+            "Calculer les primes",
+            "Recruter"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Outil de dialogue et de pilotage individuel — non une simple note, mais un contrat de progrès.",
+          "points": 0.51
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Quelle forme est une « société de personnes » où les associés répondent indéfiniment et solidairement ?",
+          "choix": [
+            "La SA",
+            "La SARL",
+            "La SNC",
+            "L'EURL"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> SNC : société de personnes, min. 2 associés, responsabilité totale.",
+          "points": 0.51
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Quelles formes offrent une responsabilité limitée aux apports ?",
+          "choix": [
+            "SNC et entreprise individuelle",
+            "SARL et SA",
+            "Commandités et SNC",
+            "Coopératives uniquement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> SARL (2 à 50 associés) et SA (min. 1) : responsabilité limitée aux apports.",
+          "points": 0.51
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "La logistique",
+          "enonce": "La logistique intégrée consiste à :",
+          "choix": [
+            "Externaliser tout le transport",
+            "Concevoir une logique unique entre les sous-systèmes de l'entreprise",
+            "Supprimer les stocks",
+            "Vendre uniquement en ligne"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Une logique unique entre approvisionnement, production et distribution évite les dysfonctionnements.",
+          "points": 0.51
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (6 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "{{na2}} associés créent une SARL et apportent chacun {{ap}} kF. Calcule le capital social (en kF).",
+          "answer": "capsoc",
+          "tol": 0.5,
+          "corrige": "Capital = {{na2}} × {{ap}} = {{num:capsoc}} kF — responsabilité limitée aux apports.",
+          "points": 0.51
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Une SARL au capital de {{cap}} kF le divise en parts sociales de {{pv}} kF chacune. Combien de parts sont émises ?",
+          "answer": "nparts",
+          "tol": 0.001,
+          "corrige": "Parts = {{cap}} / {{pv}} = {{num:nparts}} parts sociales.",
+          "points": 0.51
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "Une entreprise vend sa production {{vt2}} millions F et a consommé {{ci4}} millions F d'inputs (matières, services). Calcule sa valeur ajoutée (en millions F).",
+          "answer": "vadd",
+          "tol": 0.5,
+          "corrige": "VA = ventes − inputs consommés = {{vt2}} − {{ci4}} = {{num:vadd}} millions — sa contribution à la richesse nationale.",
+          "points": 0.51
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "L'entreprise et son milieu",
+          "enonce": "Dans le processus de production, {{w}} travailleurs produisent chacun {{u}} unités d'output. Calcule l'output total (en unités).",
+          "answer": "out",
+          "tol": 0.001,
+          "corrige": "Output = {{w}} × {{u}} = {{num:out}} unités — le travail (input) transformé en produits (output).",
+          "points": 0.51
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Les hommes dans l'entreprise (GRH)",
+          "enonce": "La valeur ajoutée d'une PME est de {{va3}} millions F ; {{ps}} % sont versés en salaires au personnel. Calcule la masse salariale (en millions F).",
+          "answer": "mas",
+          "tol": 0.5,
+          "corrige": "Masse salariale = {{ps}} % × {{va3}} = {{num:mas}} millions — rémunération du facteur travail.",
+          "points": 0.51
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "La typologie de l'entreprise",
+          "enonce": "Trois associés visent un capital de {{cap}} kF ; ils ont déjà apporté {{ap}} kF. Combien reste-t-il à apporter (en kF) ?",
+          "answer": "restcap",
+          "tol": 0.5,
+          "corrige": "Reste à apporter = {{cap}} − {{ap}} = {{num:restcap}} kF.",
+          "points": 0.62
+        }
+      ]
+    }
+  ]
+}

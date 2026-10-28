@@ -1,0 +1,593 @@
+{
+  "code": "RC-L1A-TD-EAE-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Éléments d'analyse économique",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Éléments d'analyse économique",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "cc": {
+      "choices": [
+        600,
+        800
+      ]
+    },
+    "ci": {
+      "choices": [
+        150,
+        200
+      ]
+    },
+    "cg": {
+      "choices": [
+        100,
+        180
+      ]
+    },
+    "cx": {
+      "choices": [
+        90,
+        120
+      ]
+    },
+    "cm2": {
+      "choices": [
+        70,
+        110
+      ]
+    },
+    "v0": {
+      "choices": [
+        200,
+        250
+      ]
+    },
+    "v1": {
+      "choices": [
+        240,
+        300,
+        275
+      ]
+    },
+    "cho": {
+      "choices": [
+        12,
+        15
+      ]
+    },
+    "act": {
+      "choices": [
+        100,
+        120
+      ]
+    },
+    "xv": {
+      "choices": [
+        500,
+        700
+      ]
+    },
+    "mv": {
+      "choices": [
+        600,
+        450
+      ]
+    },
+    "prod": {
+      "choices": [
+        800,
+        950
+      ]
+    },
+    "ci3": {
+      "choices": [
+        300,
+        350
+      ]
+    },
+    "pibv": {
+      "choices": [
+        1500,
+        1800
+      ]
+    },
+    "pop": {
+      "choices": [
+        25,
+        30
+      ]
+    }
+  },
+  "derived": {
+    "pib": "cc + ci + cg + cx - cm2",
+    "ind": "v1/v0*100",
+    "txc": "(v1-v0)/v0*100",
+    "tch": "cho/act*100",
+    "sold": "xv - mv",
+    "vap": "prod - ci3",
+    "pibh": "pibv/pop"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (10 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "La FBCF (formation brute de capital fixe) mesure l'investissement en biens durables de production.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — FBCF = acquisitions de biens de production durables (machines, bâtiments) + variation de stocks à part.",
+          "points": 0.54
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Le PIB nominal peut augmenter sans croissance réelle, uniquement par l'inflation.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — hausse des prix → PIB nominal ↑ à volumes constants ; seul le PIB réel mesure la croissance.",
+          "points": 0.54
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "L'émergence des économies africaines",
+          "enonce": "La croissance ne suffit pas — pour être inclusive, elle doit créer des emplois et réduire les inégalités.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — croissance « sans emplois » (jobless growth) est un défi africain majeur malgré les taux élevés.",
+          "points": 0.54
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Les sources de la croissance économique",
+          "enonce": "À long terme, seule la hausse de la PGF (progrès technique) soutient la croissance par tête.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — dans Solow, l'accumulation du capital seule bute sur les rendements décroissants ; A est le moteur durable.",
+          "points": 0.54
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Les acteurs de la vie économique",
+          "enonce": "Les ISBLSM (institutions sans but lucratif au service des ménages) produisent des services non marchands financés par des dons ou cotisations.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Exact — ONG, syndicats, associations : 5e secteur institutionnel avec APU, SNF, ménages, institutions financières.",
+          "points": 0.54
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "L'IPC synthétise le prix de tous les biens et services, chaque bien étant pondéré par la quantité achetée.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> L'IPC mesure le niveau général des prix (le coût de la vie).",
+          "points": 0.54
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Sans monnaie, le troc exige une double coïncidence des besoins.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> La monnaie (numéraire) résout ce problème d'échange.",
+          "points": 0.54
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Le tableau économique d'ensemble (TES) permet d'analyser l'appareil productif et la structure de financement d'un pays.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> C'est l'un des trois objets de la comptabilité nationale : l'analyse des structures.",
+          "points": 0.54
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Le PNB mesure le revenu gagné par les ressortissants d'une nation, y compris à l'étranger.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le PNB inclut les revenus des ressortissants à l'étranger et exclut ceux des étrangers sur le territoire.",
+          "points": 0.54
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "La comptabilité nationale remplit trois fonctions : la synthèse, l'analyse économique et la prévision.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Simplifier la réalité (synthèse), interpréter les structures (analyse) et prévoir.",
+          "points": 0.54
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (20 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "La comptabilité nationale sert à :",
+          "choix": [
+            "Tenir les comptes des entreprises",
+            "Mesurer l'activité économique d'un pays de façon synthétique (PIB, comptes)",
+            "Gérer le budget de l'État",
+            "Contrôler les banques"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Cadre normalisé (SCN) mesurant production, revenus, dépenses — base de l'analyse macroéconomique.",
+          "points": 0.54
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Les trois approches du calcul du PIB sont :",
+          "choix": [
+            "Production, revenu, dépense",
+            "Offre, demande, prix",
+            "Public, privé, étranger",
+            "Court, moyen, long terme"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Trois optiques équivalentes : somme des VA (production), somme des revenus (salaires + EBE), somme des dépenses (C+I+G+X−M).",
+          "points": 0.54
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "L'EBE (excédent brut d'exploitation) correspond à :",
+          "choix": [
+            "Les salaires versés",
+            "Le revenu disponible des ménages",
+            "Le surplus de la valeur ajoutée après rémunération du travail et impôts sur la production",
+            "Les exportations"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> EBE = VA − rémunérations − impôts liés à la production : ce qui revient au capital et à l'épargne brute.",
+          "points": 0.54
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Le tableau économique d'ensemble (TEE) présente :",
+          "choix": [
+            "Uniquement le PIB",
+            "Les équilibres entre emplois et ressources de l'économie",
+            "Le budget de l'État",
+            "La balance commerciale seule"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> TEE : synthèse ressources = emplois pour biens et services — PIB + M = C + FBCF + X + stocks.",
+          "points": 0.54
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "L'IPC (indice des prix à la consommation) mesure :",
+          "choix": [
+            "La croissance du PIB",
+            "L'évolution du niveau général des prix des biens consommés",
+            "Le taux de chômage",
+            "Les salaires"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> IPC = indice pondéré d'un panier de biens — sert à mesurer l'inflation : taux d'inflation = variation % de l'IPC.",
+          "points": 0.54
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Le taux de chômage est calculé comme :",
+          "choix": [
+            "Chômeurs / population totale",
+            "Chômeurs / population active × 100",
+            "Inactifs / emplois",
+            "Emplois / population"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Taux de chômage = chômeurs BIT (sans emploi, en recherche, disponibles) / actifs (emplois + chômeurs).",
+          "points": 0.54
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Le déflateur du PIB permet de passer :",
+          "choix": [
+            "Du PIB réel au PIB nominal",
+            "Du PIB nominal au PIB réel (éliminer l'effet prix)",
+            "Du PIB au PNB",
+            "De l'IPC au PIB"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PIB réel = PIB nominal / déflateur × 100 — on retire l'inflation pour mesurer les volumes.",
+          "points": 0.54
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "La population active regroupe :",
+          "choix": [
+            "Toute la population",
+            "Les personnes en âge de travailler occupées ou en recherche d'emploi",
+            "Les retraités",
+            "Les étudiants"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Actifs = occupés + chômeurs ; les inactifs (étudiants, retraités, foyer) en sont exclus.",
+          "points": 0.54
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "L'émergence des économies africaines",
+          "enonce": "Un pays émergent se caractérise par :",
+          "choix": [
+            "Un PIB faible et stagnant",
+            "Une croissance rapide et une industrialisation en cours rattrapant les pays développés",
+            "L'absence d'État",
+            "Une économie purement agricole"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Émergence = rattrapage : forte croissance, diversification, intégration au commerce mondial, classe moyenne.",
+          "points": 0.54
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "L'émergence des économies africaines",
+          "enonce": "Les principaux facteurs de croissance africaine récents sont :",
+          "choix": [
+            "L'aide humanitaire seule",
+            "Matières premières, consommation intérieure, démographie, réformes",
+            "Les subventions occidentales",
+            "La décolonisation"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Ressources naturelles + urbanisation + dividende démographique + amélioration de la gouvernance.",
+          "points": 0.54
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "L'émergence des économies africaines",
+          "enonce": "Le « dividende démographique » désigne :",
+          "choix": [
+            "Le vieillissement de la population",
+            "La fenêtre où la population active croît plus vite que les dépendants",
+            "L'émigration",
+            "La fécondité"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Quand les actifs deviennent majoritaires (fécondité en baisse), potentiel de croissance par habitant accru.",
+          "points": 0.54
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "L'émergence des économies africaines",
+          "enonce": "La diversification économique est essentielle car :",
+          "choix": [
+            "Elle augmente les impôts",
+            "La dépendance aux matières premières expose aux chocs de prix mondiaux",
+            "Elle réduit la population",
+            "Elle attire les touristes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Les économies mono-exportatrices sont vulnérables — transformer localement crée plus de VA et d'emplois.",
+          "points": 0.54
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Les sources de la croissance économique",
+          "enonce": "Les facteurs fondamentaux de la croissance sont :",
+          "choix": [
+            "Prix et salaires",
+            "Capital (K), travail (L), progrès technique (A)",
+            "Impôts et subventions",
+            "Exportations"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Comptabilité de la croissance : ΔY/Y = ΔA/A + α·ΔK/K + (1−α)·ΔL/L — le PGF capte l'efficacité.",
+          "points": 0.54
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Les sources de la croissance économique",
+          "enonce": "La PGF (productivité globale des facteurs) mesure :",
+          "choix": [
+            "La productivité du travail",
+            "La part de la croissance non expliquée par K et L (progrès technique, efficacité)",
+            "La part du capital",
+            "Le taux d'épargne"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> PGF = résidu de Solow : ce qui reste de la croissance après déduction des contributions de K et L.",
+          "points": 0.54
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Les sources de la croissance économique",
+          "enonce": "L'accumulation du capital comprend :",
+          "choix": [
+            "Uniquement les machines",
+            "Capital physique, humain (éducation) et institutions",
+            "La monnaie",
+            "La dette"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Capital au sens large : physique (équipements), humain (compétences, santé) et institutions stables.",
+          "points": 0.54
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Les sources de la croissance économique",
+          "enonce": "La convergence prédit que :",
+          "choix": [
+            "Les pays riches croissent plus vite",
+            "Les pays pauvres rattrapent les riches (croissance plus forte au départ)",
+            "Tous les pays stagnent",
+            "La croissance est aléatoire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Rendements décroissants du K : un capital rare a une productivité marginale élevée → rattrapage possible.",
+          "points": 0.54
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Les acteurs de la vie économique",
+          "enonce": "Les ménages jouent dans l'économie le rôle de :",
+          "choix": [
+            "Producteurs de biens",
+            "Consommateurs finaux et offreurs de travail et d'épargne",
+            "Prêteurs aux entreprises seulement",
+            "Régulateurs"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Ménages : consomment (C), offrent le travail (revenus) et épargnent (financement de l'investissement).",
+          "points": 0.54
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Les acteurs de la vie économique",
+          "enonce": "Les entreprises (sociétés non financières) ont pour fonction principale :",
+          "choix": [
+            "Redistribuer les revenus",
+            "Produire des biens et services marchands",
+            "Lever les impôts",
+            "Émettre la monnaie"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> SNF : production marchande non financière — elles combinent K et L, investissent, versent salaires et profits.",
+          "points": 0.54
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Les acteurs de la vie économique",
+          "enonce": "Les administrations publiques produisent :",
+          "choix": [
+            "Des biens marchands",
+            "Des services non marchands financés par prélèvements obligatoires",
+            "Des actions",
+            "Du crédit"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> APU : éducation publique, sécurité… évalués par les coûts de production (pas de prix de vente).",
+          "points": 0.54
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Les acteurs de la vie économique",
+          "enonce": "« Le reste du monde » dans la comptabilité nationale désigne :",
+          "choix": [
+            "Les autres pays",
+            "L'ensemble des agents non-résidents en relation avec les résidents",
+            "Les entreprises étrangères",
+            "L'économie informelle"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> RdM : compte des échanges (X, M, revenus, transferts) entre résidents et non-résidents.",
+          "points": 0.54
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (7 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q31",
+          "type": "numeric",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Avec C = {{cc}}, I = {{ci}}, G = {{cg}}, X = {{cx}} et M = {{cm2}} (en milliards), calcule le PIB par l'approche demande.",
+          "answer": "pib",
+          "tol": 0.5,
+          "corrige": "PIB = C + I + G + (X − M) = {{cc}} + {{ci}} + {{cg}} + {{cx}} − {{cm2}} = {{num:pib}} milliards.",
+          "points": 0.54
+        },
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Un agrégat passe de {{v0}} à {{v1}}. Calcule l'indice simple (base 100 en période 0).",
+          "answer": "ind",
+          "tol": 0.1,
+          "corrige": "Indice = (V₁/V₀) × 100 = {{v1}}/{{v0}} × 100 = {{num:ind}}.",
+          "points": 0.54
+        },
+        {
+          "id": "q33",
+          "type": "numeric",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Un agrégat passe de {{v0}} à {{v1}}. Calcule son taux de croissance en %.",
+          "answer": "txc",
+          "tol": 0.1,
+          "corrige": "Taux = (V₁ − V₀)/V₀ × 100 = ({{v1}} − {{v0}})/{{v0}} × 100 = {{num:txc}} %.",
+          "points": 0.54
+        },
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Une population active compte {{act}} millions de personnes dont {{cho}} millions de chômeurs. Calcule le taux de chômage en %.",
+          "answer": "tch",
+          "tol": 0.1,
+          "corrige": "Taux de chômage = chômeurs / population active × 100 = {{cho}}/{{act}} × 100 = {{num:tch}} %.",
+          "points": 0.54
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "Les exportations valent {{xv}} milliards et les importations {{mv}} milliards. Calcule le solde commercial (en milliards).",
+          "answer": "sold",
+          "tol": 0.5,
+          "corrige": "Solde commercial = X − M = {{xv}} − {{mv}} = {{num:sold}} milliards.",
+          "points": 0.54
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Éléments de la comptabilité nationale",
+          "enonce": "L'appareil productif d'un pays réalise {{prod}} milliards de production et consomme {{ci3}} milliards de consommations intermédiaires. Calcule la valeur ajoutée (en milliards).",
+          "answer": "vap",
+          "tol": 0.5,
+          "corrige": "VA = production − consommations intermédiaires = {{prod}} − {{ci3}} = {{num:vap}} milliards (approche production du PIB).",
+          "points": 0.54
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Outils de l'analyse économique",
+          "enonce": "Un pays de {{pop}} millions d'habitants affiche un PIB de {{pibv}} milliards F. Calcule le PIB par habitant (en milliers de F).",
+          "answer": "pibh",
+          "tol": 0.5,
+          "corrige": "PIB/habitant = {{pibv}} milliards / {{pop}} millions = {{num:pibh}} milliers de F par habitant.",
+          "points": 0.56
+        }
+      ]
+    }
+  ]
+}

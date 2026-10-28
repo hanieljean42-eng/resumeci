@@ -1,0 +1,676 @@
+{
+  "code": "RC-L1A-TD-ALVL-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Algèbre vectoriel et linéaire",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Algèbre vectoriel et linéaire",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "da": {
+      "choices": [
+        2,
+        3,
+        4
+      ]
+    },
+    "db": {
+      "choices": [
+        1,
+        2
+      ]
+    },
+    "dc": {
+      "choices": [
+        1,
+        3
+      ]
+    },
+    "dd": {
+      "choices": [
+        3,
+        4,
+        5
+      ]
+    },
+    "ta": {
+      "choices": [
+        2,
+        4,
+        5
+      ]
+    },
+    "td": {
+      "choices": [
+        3,
+        6,
+        7
+      ]
+    },
+    "k": {
+      "choices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "sa": {
+      "choices": [
+        6,
+        8,
+        10
+      ]
+    },
+    "st": {
+      "choices": [
+        2,
+        4
+      ]
+    },
+    "d1": {
+      "choices": [
+        1,
+        2
+      ]
+    },
+    "d2": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "d3": {
+      "choices": [
+        3,
+        4
+      ]
+    },
+    "x1": {
+      "choices": [
+        1,
+        2
+      ]
+    },
+    "y1": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "x2": {
+      "choices": [
+        3,
+        4
+      ]
+    },
+    "y2": {
+      "choices": [
+        1,
+        2
+      ]
+    }
+  },
+  "derived": {
+    "det2": "da*dd - db*dc",
+    "tr2": "ta + td",
+    "ux": "[3,6,5,8][k]",
+    "uy": "[4,8,12,15][k]",
+    "unorm": "Math.sqrt(ux*ux + uy*uy)",
+    "sx": "(sa + st)/2",
+    "det3d": "d1*d2*d3",
+    "scal": "x1*x2 + y1*y2"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (10 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "Si p = vecteur prix et q = vecteur quantités, le chiffre d'affaires vaut p·q.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> CA = Σ pᵢqᵢ = produit scalaire p·q. De même coût total = c·q et profit = CA − CT.",
+          "points": 0.48
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Les matrices et leurs opérations",
+          "enonce": "La multiplication de matrices est commutative (A×B = B×A).",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — en général A×B ≠ B×A : l'ordre du produit compte.",
+          "points": 0.48
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Applications linéaires, rang, transposée, trace",
+          "enonce": "(A×B)ᵀ = Aᵀ×Bᵀ.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — (A×B)ᵀ = Bᵀ×Aᵀ : la transposition inverse l'ordre du produit.",
+          "points": 0.48
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Inversion d'une matrice (Gauss-Jordan)",
+          "enonce": "(A×B)⁻¹ = A⁻¹×B⁻¹.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — (AB)⁻¹ = B⁻¹A⁻¹ : l'inversion inverse l'ordre.",
+          "points": 0.48
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Échanger deux lignes d'une matrice ne change pas son déterminant.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — échanger deux lignes change le SIGNE du déterminant ; multiplier une ligne par k multiplie det par k.",
+          "points": 0.48
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "Un système avec plus d'équations que d'inconnues n'a jamais de solution.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> FAUX — possible si les équations sont compatibles (redondantes).",
+          "points": 0.48
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Une matrice carrée A est inversible si et seulement si det(A) ≠ 0.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> det(A) ≠ 0 ⟺ A inversible — c'est un usage direct du déterminant.",
+          "points": 0.48
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Le déterminant d'une matrice est nul si et seulement si ses lignes (ou colonnes) sont linéairement dépendantes.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> det = 0 ⟺ dépendance linéaire — interprétation : les variables évoluent de la même façon.",
+          "points": 0.48
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "La règle de Sarrus permet de calculer le déterminant de n'importe quelle matrice carrée.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Sarrus n'est valable QUE pour les matrices 3×3 ; au-delà on utilise les cofacteurs.",
+          "points": 0.48
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Dans le développement par cofacteurs, le cofacteur Cᵢⱼ vaut (−1)^(i+j) × det(Aᵢⱼ).",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Cᵢⱼ = (−1)^(i+j) × det(Aᵢⱼ), où Aᵢⱼ est la sous-matrice privée de la ligne i et de la colonne j.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (24 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "Un vecteur de ℝⁿ est :",
+          "choix": [
+            "Un nombre réel",
+            "Un n-uplet ordonné de nombres réels",
+            "Une matrice carrée",
+            "Une fonction"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Un vecteur = n-uplet (x₁,…,xₙ) ; en gestion il représente une grandeur multi-composée (prix, quantités).",
+          "points": 0.48
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "La somme de u=(2,1) et v=(3,4) est :",
+          "choix": [
+            "(5,5)",
+            "(6,4)",
+            "(5,4)",
+            "(1,5)"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Addition composante par composante : (2+3, 1+4) = (5,5).",
+          "points": 0.48
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "Le produit scalaire u·v de u=(3,2) et v=(4,1) vaut :",
+          "choix": [
+            "(12,2)",
+            "14",
+            "10",
+            "7"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> u·v = 3×4 + 2×1 = 14 : c'est un SCALAIRE, pas un vecteur.",
+          "points": 0.48
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "λu avec λ=2 et u=(1,3) donne :",
+          "choix": [
+            "(1,6)",
+            "(2,6)",
+            "(3,5)",
+            "(2,3)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> λu = (λx₁, λx₂) = (2,6) : chaque composante est multipliée par λ.",
+          "points": 0.48
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Les matrices et leurs opérations",
+          "enonce": "Une matrice A de type (m×n) possède :",
+          "choix": [
+            "n lignes et m colonnes",
+            "m lignes et n colonnes",
+            "m+n éléments",
+            "Toujours un déterminant"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Convention : m lignes × n colonnes. Le déterminant n'existe que pour les matrices carrées.",
+          "points": 0.48
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Les matrices et leurs opérations",
+          "enonce": "La somme A+B de deux matrices exige :",
+          "choix": [
+            "Que A et B soient carrées",
+            "Que A et B aient les mêmes dimensions",
+            "Que A soit inversible",
+            "Rien de particulier"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> On additionne terme à terme → mêmes dimensions obligatoires.",
+          "points": 0.48
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Les matrices et leurs opérations",
+          "enonce": "Le produit A (2×3) × B (3×2) donne une matrice de type :",
+          "choix": [
+            "(2×3)",
+            "(3×3)",
+            "(2×2)",
+            "(3×2)"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> (m×n)·(n×p) = (m×p) → (2×3)(3×2) = (2×2). Le nombre de colonnes de A doit égaler les lignes de B.",
+          "points": 0.48
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Les matrices et leurs opérations",
+          "enonce": "La matrice identité I est :",
+          "choix": [
+            "Une matrice de 1 partout",
+            "Une matrice diagonale de 1 et de 0 ailleurs",
+            "Une matrice nulle",
+            "Une matrice triangulaire"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> I = diag(1,…,1) : élément neutre, A×I = I×A = A.",
+          "points": 0.48
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Applications linéaires, rang, transposée, trace",
+          "enonce": "Une application f est linéaire si :",
+          "choix": [
+            "f(x+y) = f(x)×f(y)",
+            "f(x+y)=f(x)+f(y) et f(λx)=λf(x)",
+            "f(x) est une droite",
+            "f(0)=0 seulement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Linéarité = additivité + homogénéité. Toute application linéaire ℝⁿ→ℝᵐ s'écrit f(x)=Ax.",
+          "points": 0.48
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Applications linéaires, rang, transposée, trace",
+          "enonce": "Le rang d'une matrice est :",
+          "choix": [
+            "Le nombre de lignes",
+            "Le nombre maximum de colonnes (ou lignes) linéairement indépendantes",
+            "Sa diagonale",
+            "Son déterminant"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> rang(A) = dimension de l'espace engendré par les colonnes = nombre de pivots après échelonnement.",
+          "points": 0.48
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Applications linéaires, rang, transposée, trace",
+          "enonce": "La transposée Aᵀ d'une matrice (2×3) est de type :",
+          "choix": [
+            "(2×3)",
+            "(3×2)",
+            "(2×2)",
+            "(3×3)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La transposée échange lignes et colonnes : (Aᵀ)ᵢⱼ = Aⱼᵢ.",
+          "points": 0.48
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Applications linéaires, rang, transposée, trace",
+          "enonce": "La trace d'une matrice carrée est :",
+          "choix": [
+            "La somme de tous ses éléments",
+            "La somme des éléments de la diagonale principale",
+            "Son déterminant",
+            "Son rang"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> tr(A) = a₁₁+…+aₙₙ ; tr(A+B)=tr(A)+tr(B), tr(AB)=tr(BA).",
+          "points": 0.48
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Inversion d'une matrice (Gauss-Jordan)",
+          "enonce": "Une matrice A est inversible si :",
+          "choix": [
+            "det(A) = 0",
+            "det(A) ≠ 0",
+            "Elle est triangulaire",
+            "Elle a plus de lignes que de colonnes"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Inversible ⟺ carrée et det(A) ≠ 0. det = 0 → singulière, pas d'inverse.",
+          "points": 0.48
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Inversion d'une matrice (Gauss-Jordan)",
+          "enonce": "L'inverse A⁻¹ vérifie :",
+          "choix": [
+            "A×A⁻¹ = 0",
+            "A×A⁻¹ = I (identité)",
+            "A+A⁻¹ = I",
+            "A⁻¹ = Aᵀ"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> A·A⁻¹ = A⁻¹·A = I. L'inverse sert à résoudre AX=B → X=A⁻¹B.",
+          "points": 0.48
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Inversion d'une matrice (Gauss-Jordan)",
+          "enonce": "La méthode de Gauss-Jordan pour inverser A consiste à :",
+          "choix": [
+            "Calculer le déterminant",
+            "Transformer [A | I] en [I | A⁻¹] par opérations sur les lignes",
+            "Transposer A",
+            "Échelonner uniquement"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> On jouxte A avec I ; opérations élémentaires jusqu'à obtenir I à gauche → A⁻¹ à droite.",
+          "points": 0.48
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Inversion d'une matrice (Gauss-Jordan)",
+          "enonce": "Pour A = [[a,b],[c,d]], A⁻¹ = :",
+          "choix": [
+            "(1/det)·[[d,−b],[−c,a]]",
+            "[[d,−b],[−c,a]]",
+            "(1/det)·[[a,c],[b,d]]",
+            "[[−d,b],[c,−a]]"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> A⁻¹ = (1/(ad−bc))·[[d,−b],[−c,a]] : échange de a et d, signe de b et c, division par det.",
+          "points": 0.48
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Le déterminant de [[a,b],[c,d]] vaut :",
+          "choix": [
+            "ad+bc",
+            "ad−bc",
+            "ac−bd",
+            "a+d"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> det = ad − bc : produit diagonal moins produit anti-diagonal.",
+          "points": 0.48
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "det(A) = 0 signifie que A :",
+          "choix": [
+            "Est inversible",
+            "Est singulière (non inversible)",
+            "Est l'identité",
+            "Est nulle"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> det = 0 → colonnes dépendantes → pas d'inverse ; système non résoluble de façon unique.",
+          "points": 0.48
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Une valeur propre λ de A vérifie :",
+          "choix": [
+            "Av = λv pour un v ≠ 0",
+            "Av = 0",
+            "det(A) = λ",
+            "tr(A) = λ"
+          ],
+          "correct": 0,
+          "corrige": "<strong>Réponse a.</strong> Av = λv : direction de v conservée. λ = racine de det(A − λI) = 0 (polynôme caractéristique).",
+          "points": 0.48
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "det(A×B) est égal à :",
+          "choix": [
+            "det(A)+det(B)",
+            "det(A)×det(B)",
+            "det(A)−det(B)",
+            "det(A)/det(B)"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> det(AB) = det(A)·det(B) ; det(A⁻¹) = 1/det(A).",
+          "points": 0.48
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "Un système AX = B se résout par X = :",
+          "choix": [
+            "B×A",
+            "A⁻¹×B",
+            "B⁻¹×A",
+            "A×B"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Si A inversible : X = A⁻¹B — solution unique si det(A) ≠ 0.",
+          "points": 0.48
+        },
+        {
+          "id": "q32",
+          "type": "qcm",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "Le pivot de Gauss consiste à :",
+          "choix": [
+            "Inverser la matrice",
+            "Éliminer les inconnues sous les pivots par opérations sur les lignes",
+            "Calculer le rang",
+            "Transposer le système"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Échelonnement : Lᵢ ← Lᵢ − (aᵢ₁/a₁₁)L₁ élimine x₁ des lignes suivantes, puis remontée.",
+          "points": 0.48
+        },
+        {
+          "id": "q33",
+          "type": "qcm",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "Un système compatible possède :",
+          "choix": [
+            "Aucune solution",
+            "Une infinité de solutions seulement",
+            "Au moins une solution",
+            "Toujours une solution unique"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Compatible = au moins une solution (unique si rang = n, infinité si rang &lt; n).",
+          "points": 0.48
+        },
+        {
+          "id": "q34",
+          "type": "qcm",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "La règle de Cramer pour un système 2×2 donne x = :",
+          "choix": [
+            "det(A)/det(B)",
+            "det(Ax)/det(A)",
+            "det(A)/det(Ax)",
+            "B/A"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> xᵢ = det(Aᵢ)/det(A), Aᵢ = A avec colonne i remplacée par B — exige det(A) ≠ 0.",
+          "points": 0.48
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (8 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Une entreprise traduit deux processus par la matrice A = ( {{da}}  {{db}} ; {{dc}}  {{dd}} ). Calcule det(A).",
+          "answer": "det2",
+          "tol": 0.001,
+          "corrige": "det(A) = a·d − b·c = {{da}}×{{dd}} − {{db}}×{{dc}} = {{num:det2}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Applications linéaires — trace",
+          "enonce": "L'application linéaire f est représentée par A = ( {{ta}}  1 ; 0  {{td}} ). Calcule la trace de A.",
+          "answer": "tr2",
+          "tol": 0.001,
+          "corrige": "tr(A) = somme des éléments diagonaux = {{ta}} + {{td}} = {{num:tr2}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q37",
+          "type": "numeric",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "Un flux logistique est modélisé par le vecteur u = ( {{ux}} ; {{uy}} ). Calcule sa norme ||u||.",
+          "answer": "unorm",
+          "tol": 0.001,
+          "corrige": "||u|| = √( {{ux}}² + {{uy}}² ) = √{{num:ux}}²+{{num:uy}}² = {{num:unorm}} — c'est un triplet pythagoricien.",
+          "points": 0.48
+        },
+        {
+          "id": "q38",
+          "type": "numeric",
+          "chapitre": "Systèmes d'équations linéaires",
+          "enonce": "Deux contraintes de production forment le système { x + y = {{sa}} ; x − y = {{st}} }. Résous et donne la valeur de x.",
+          "answer": "sx",
+          "tol": 0.001,
+          "corrige": "En additionnant les deux équations : 2x = {{sa}} + {{st}} → x = {{num:sx}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q39",
+          "type": "numeric",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "La matrice des coûts unitaires D = diag( {{d1}} ; {{d2}} ; {{d3}} ) est diagonale. Calcule det(D).",
+          "answer": "det3d",
+          "tol": 0.001,
+          "corrige": "Le déterminant d'une matrice diagonale = produit des termes diagonaux = {{d1}}×{{d2}}×{{d3}} = {{num:det3d}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q40",
+          "type": "numeric",
+          "chapitre": "Vecteurs et calcul vectoriel",
+          "enonce": "Deux flux sont modélisés par u = ( {{x1}} ; {{y1}} ) et v = ( {{x2}} ; {{y2}} ). Calcule le produit scalaire u·v.",
+          "answer": "scal",
+          "tol": 0.001,
+          "corrige": "u·v = x₁x₂ + y₁y₂ = {{x1}}×{{x2}} + {{y1}}×{{y2}} = {{num:scal}}.",
+          "points": 0.48
+        },
+        {
+          "id": "q41",
+          "type": "numeric",
+          "chapitre": "Applications linéaires — rang",
+          "enonce": "Une entreprise modélise deux flux de production par la matrice A = ( 2  4 ; 6  12 ), dont la 2ᵉ ligne est le triple de la 1ʳᵉ. Quel est le rang de A ?",
+          "answer": "1",
+          "tol": 0.001,
+          "corrige": "Lignes proportionnelles → dépendance linéaire : le rang vaut 1 (une seule ligne indépendante).",
+          "points": 0.48
+        },
+        {
+          "id": "q42",
+          "type": "numeric",
+          "chapitre": "Le déterminant et ses applications",
+          "enonce": "Trois variables économiques liées sont représentées par une matrice 3×3 de déterminant 0. Quel est le rang maximal possible de cette matrice ?",
+          "answer": "2",
+          "tol": 0.001,
+          "corrige": "det = 0 ⟺ colonnes liées → rang < 3 : au plus 2 colonnes indépendantes, donc rang maximal = 2.",
+          "points": 0.32
+        }
+      ]
+    }
+  ]
+}
