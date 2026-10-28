@@ -2371,6 +2371,118 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
 app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
+// --------------------------------------------------------------------------
+// OUTILS DE TEST LOCAL — actifs uniquement si DEV_MODE=1 et hors production.
+// Permet de créer un compte de test avec n'importe quel forfait, sans paiement.
+// Outil : http://127.0.0.1:3000/dev
+// --------------------------------------------------------------------------
+const DEV_MODE = process.env.DEV_MODE === '1' && !IS_PRODUCTION;
+if (DEV_MODE) {
+  const DEV_CLASSES = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
+  const DEV_PLANS = ['free', 'starter', 'pro', 'vip', 'annual', 'elite', 'uni_starter', 'uni_pro', 'uni_elite'];
+
+  app.get('/dev', (req, res) => {
+    res.send(`<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>ResumeCI — Outils de test</title>
+<style>body{font-family:sans-serif;max-width:560px;margin:40px auto;padding:0 16px;color:#1e293b}h1{font-size:20px;color:#2563eb}h2{font-size:15px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid #e2e8f0}label{display:block;font-size:13px;font-weight:600;margin:14px 0 4px}input,select{width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:8px;font-size:14px;box-sizing:border-box}button{margin-top:18px;width:100%;padding:12px;background:#2563eb;color:#fff;border:0;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.grid button{margin:0;padding:9px 4px;font-size:12px;background:#f1f5f9;color:#1e293b;border:1px solid #cbd5e1}.grid button:hover{background:#dbeafe;border-color:#2563eb}#out{margin-top:16px;padding:12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:13px;white-space:pre-wrap;display:none}.warn{background:#fef3c7;border:1px solid #fde68a;padding:10px;border-radius:8px;font-size:12px;margin-top:18px}</style></head><body>
+<h1>🧪 ResumeCI — Outils de test local</h1>
+<p style="font-size:13px;color:#64748b">Après chaque action : reconnecte-toi sur <a href="http://localhost:8080/connexion.html" target="_blank">localhost:8080/connexion.html</a> pour recharger classe/forfait.</p>
+
+<h2>🔄 Changement rapide de classe (forfait conservé)</h2>
+<label>Numéro du compte de test</label><input id="phone" value="0700000001" maxlength="10">
+<div class="grid">${DEV_CLASSES.map(c => `<button onclick="switchCls('${c}')">${c.replace(/_/g, ' ')}</button>`).join('')}</div>
+
+<h2>👤 Compte complet (créer ou forfait)</h2>
+<label>Nom complet</label><input id="name" value="Testeur ResumeCI">
+<label>Classe</label><select id="cls">${DEV_CLASSES.map(c => `<option>${c}</option>`).join('')}</select>
+<label>Forfait</label><select id="plan"><option value="keep">— forfait inchangé —</option>${DEV_PLANS.map(p => `<option>${p}</option>`).join('')}</select>
+<label>Mot de passe (min 8 car., optionnel — défaut : test1234)</label><input id="pwd" placeholder="test1234">
+<label>Durée en jours (optionnel)</label><input id="days" placeholder="365">
+<button onclick="go()">Appliquer</button>
+<div id="out"></div>
+<div class="warn">⚠️ Outil de test local uniquement (DEV_MODE=1). Écrit dans la vraie base — utilise des numéros de test (07000000xx).</div>
+<script>
+async function call(body){
+  const r = await fetch('/api/dev/test-account', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const j = await r.json(); out.style.display='block';
+  out.textContent = j.error ? ('❌ ' + j.error) : ('✅ ' + j.message + '\\n\\nTél : ' + body.phone + (j.password ? '\\nMot de passe : ' + j.password : '') + '\\n\\n→ Reconnecte-toi sur http://localhost:8080/connexion.html');
+}
+function switchCls(c){ call({phone:phone.value, selectedClass:c, plan:'keep'}); }
+function go(){ call({phone:phone.value, fullName:name.value, selectedClass:cls.value, plan:plan.value, password:pwd.value, days:days.value}); }
+</script></body></html>`);
+  });
+
+  app.post('/api/dev/test-account', async (req, res) => {
+    try {
+      if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+      const { phone, fullName, selectedClass, plan, days, password } = req.body || {};
+      const cleanPhone = String(phone || '').replace(/\D/g, '').slice(-10);
+      if (cleanPhone.length < 10) return res.status(400).json({ error: 'Numéro à 10 chiffres requis.' });
+      const existing = await findUserByPhone(cleanPhone);
+      const docId = existing ? existing._docId : cleanPhone;
+      const keepPlan = !plan || plan === 'keep';
+      const chosenPlan = (keepPlan && existing)
+        ? (existing.premiumPlan || existing.plan || 'pro')
+        : (KNOWN_PLANS.has(String(plan || '')) ? plan : 'pro');
+      const isFree = chosenPlan === 'free';
+      const keepExpiry = keepPlan && existing && Number(existing.premiumExpiresAt) > Date.now();
+      const durationDays = Math.min(Math.max(Number(days) || 0, 0), 3650) || (chosenPlan === 'annual' ? 365 : (chosenPlan === 'vip' ? 3650 : 30));
+      const pwd = String(password || '').trim();
+      if (pwd && pwd.length < MIN_PASSWORD_LENGTH) return res.status(400).json({ error: `Mot de passe : ${MIN_PASSWORD_LENGTH} caractères min.` });
+      const generatedPwd = pwd || 'test1234';
+      const full = clampStr(fullName || 'Testeur ResumeCI', 120);
+      const userData = {
+        uid: existing ? (existing.uid || docId) : cleanPhone,
+        fullName: full,
+        firstName: clampStr(full.split(' ')[0] || 'Test', 60),
+        lastName: clampStr(full.split(' ').slice(1).join(' '), 60),
+        whatsapp: cleanPhone,
+        contact: cleanPhone,
+        selectedClass: CLASS_KEY_RE.test(String(selectedClass || '')) ? selectedClass : 'Terminale_D',
+        plan: chosenPlan,
+        premiumPlan: chosenPlan,
+        isPremium: !isFree,
+        premiumExpiresAt: isFree ? 0 : (keepExpiry ? Number(existing.premiumExpiresAt) : (Date.now() + durationDays * 24 * 60 * 60 * 1000)),
+        subscriptionType: durationDays >= 300 ? 'yearly' : 'monthly',
+        status: 'active',
+        adminCreated: true,
+        adminGrantReason: 'Compte de test local (DEV_MODE)',
+        devTestAccount: true,
+        createdAt: existing ? (existing.createdAt || new Date().toISOString()) : new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+      if (pwd || !existing) userData.passwordHash = await hashPassword(generatedPwd);
+      await db.collection('users').doc(docId).set(userData, { merge: true });
+      console.log(`[DEV] Compte test ${existing ? 'mis à jour' : 'créé'} : ${cleanPhone} → ${chosenPlan}`);
+      res.json({
+        success: true,
+        password: (pwd || !existing) ? generatedPwd : undefined,
+        profile: {
+          uid: userData.uid,
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          fullName: userData.fullName,
+          selectedClass: userData.selectedClass,
+          whatsapp: cleanPhone,
+          phone: cleanPhone,
+          isPremium: userData.isPremium,
+          premiumPlan: chosenPlan,
+          premiumExpiresAt: userData.premiumExpiresAt,
+          subscriptionType: userData.subscriptionType,
+          createdAt: userData.createdAt,
+          sessionToken: signSession(userData.uid)
+        },
+        message: (keepPlan && existing)
+          ? `Classe → ${userData.selectedClass.replace(/_/g, ' ')} (forfait ${chosenPlan} conservé)`
+          : `Compte ${existing ? 'mis à jour' : 'créé'} — forfait ${chosenPlan} (${isFree ? 'gratuit' : durationDays + ' jours'})`
+      });
+    } catch (err) {
+      console.error('[DEV] Erreur:', err);
+      res.status(500).json({ error: 'Erreur dev' });
+    }
+  });
+  console.log('🧪 DEV_MODE actif — outils de test sur /dev');
+}
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Serveur ResumeCI actif sur http://0.0.0.0:${PORT}`);

@@ -6179,3 +6179,94 @@ document.addEventListener('click', (e) => {
     }
   } catch(e) {}
 })();
+
+// ==========================================================================
+// OUTIL DEV LOCAL — uniquement sur localhost/127.0.0.1 (jamais en production).
+// Bouton flottant « 🧪 » : change la classe et/ou le forfait du compte connecté
+// en 1 clic via l'API DEV (DEV_MODE=1), puis recharge le profil sans reconnexion.
+// ==========================================================================
+(function initDevSwitcher() {
+  if (!['localhost', '127.0.0.1'].includes(location.hostname)) return;
+  const DEV_API = (typeof window.getPaymentApiCandidates === 'function'
+    ? window.getPaymentApiCandidates()[0]
+    : 'http://127.0.0.1:3000');
+  const DEV_CLASSES = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C',
+    'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D',
+    'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
+  const DEV_PLANS = ['keep', 'free', 'starter', 'pro', 'vip', 'annual', 'elite',
+    'uni_starter', 'uni_pro', 'uni_elite'];
+
+  function buildDevUI() {
+    if (document.getElementById('devSwitchBtn')) return;
+    const st = document.createElement('style');
+    st.textContent = `
+      #devSwitchBtn{position:fixed;left:12px;bottom:12px;z-index:99999;width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:#0f172a;color:#fff;font-size:19px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+      #devSwitchPanel{position:fixed;left:12px;bottom:62px;z-index:99999;width:290px;background:#fff;border-radius:14px;box-shadow:0 10px 34px rgba(0,0,0,.28);padding:14px;display:none;font-size:12px;color:#1e293b}
+      #devSwitchPanel h4{margin:0 0 6px;font-size:13px;color:#2563eb}
+      #devSwitchPanel .cur{font-size:11px;color:#64748b;margin-bottom:8px}
+      #devSwitchPanel .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+      #devSwitchPanel .cgrid button{padding:6px 2px;font-size:10.5px;border:1px solid #cbd5e1;border-radius:7px;background:#f1f5f9;cursor:pointer}
+      #devSwitchPanel .cgrid button:hover{background:#dbeafe;border-color:#2563eb}
+      #devSwitchPanel .cgrid button.on{background:#2563eb;color:#fff;border-color:#2563eb}
+      #devSwitchPanel select{width:100%;margin-top:8px;padding:6px;font-size:12px;border:1px solid #cbd5e1;border-radius:7px}
+      #devSwitchPanel .dev-msg{margin-top:8px;font-size:11px;min-height:14px}
+      #devSwitchPanel .dev-apply{margin-top:8px;width:100%;padding:8px;background:#16a34a;color:#fff;border:0;border-radius:8px;font-weight:700;cursor:pointer}`;
+    document.head.appendChild(st);
+
+    const btn = document.createElement('button');
+    btn.id = 'devSwitchBtn';
+    btn.textContent = '🧪';
+    btn.title = 'Outil de test local — changer de classe/forfait';
+    document.body.appendChild(btn);
+
+    const panel = document.createElement('div');
+    panel.id = 'devSwitchPanel';
+    panel.innerHTML = `<h4>🧪 Test local</h4><div class="cur"></div>
+      <div class="cgrid">${DEV_CLASSES.map(c => `<button data-c="${c}">${c.replace(/_/g, ' ')}</button>`).join('')}</div>
+      <select id="devPlanSel">${DEV_PLANS.map(p => `<option value="${p}">${p === 'keep' ? 'Forfait : inchangé' : 'Forfait : ' + p}</option>`).join('')}</select>
+      <button class="dev-apply">Appliquer</button><div class="dev-msg"></div>`;
+    document.body.appendChild(panel);
+
+    let chosenCls = null;
+    const cur = panel.querySelector('.cur');
+    const msg = panel.querySelector('.dev-msg');
+    const showCur = () => {
+      cur.textContent = `Actuel : ${(window.USER_PROFILE.selectedClass || '?').replace(/_/g, ' ')} — forfait ${window.USER_PROFILE.premiumPlan || window.USER_PROFILE.plan || '?'}`;
+    };
+    btn.onclick = () => {
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+      showCur();
+      panel.querySelectorAll('.cgrid button').forEach(b => b.classList.toggle('on', b.dataset.c === window.USER_PROFILE.selectedClass));
+    };
+    panel.querySelectorAll('.cgrid button').forEach(b => b.onclick = () => {
+      chosenCls = b.dataset.c;
+      panel.querySelectorAll('.cgrid button').forEach(x => x.classList.toggle('on', x === b));
+    });
+    panel.querySelector('.dev-apply').onclick = async () => {
+      const phone = String(window.USER_PROFILE.whatsapp || window.USER_PROFILE.contact || window.USER_PROFILE.phone || '').replace(/\D/g, '').slice(-10);
+      if (!phone) { msg.textContent = '❌ Connecte-toi d\'abord'; return; }
+      const cls = chosenCls || window.USER_PROFILE.selectedClass;
+      msg.textContent = '⏳ Application…';
+      try {
+        const r = await fetch(`${DEV_API}/api/dev/test-account`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone, selectedClass: cls, plan: document.getElementById('devPlanSel').value })
+        });
+        const j = await r.json();
+        if (!j.success || !j.profile) { msg.textContent = '❌ ' + (j.error || 'Erreur API dev'); return; }
+        window.USER_PROFILE = { ...window.USER_PROFILE, ...j.profile };
+        localStorage.setItem('resumeci_profile', JSON.stringify(window.USER_PROFILE));
+        msg.textContent = '✅ ' + cls.replace(/_/g, ' ') + ' — rechargement…';
+        setTimeout(() => location.reload(), 500);
+      } catch (e) {
+        msg.textContent = '❌ API locale absente (lance : cd payment-api && node server.js)';
+      }
+    };
+  }
+
+  let tries = 0;
+  const waitProfile = setInterval(() => {
+    if (window.USER_PROFILE) { clearInterval(waitProfile); buildDevUI(); }
+    else if (++tries > 20) clearInterval(waitProfile);
+  }, 1500);
+})();
