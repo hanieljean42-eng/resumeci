@@ -1,1362 +1,1904 @@
 {
-  "Fiche_LECON 1_ Cinématique du point": {
-    "title": "LECON 1  Cinématique du point",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Quelle est la définition du vecteur vitesse instantanée ?",
-        "type": "qcm",
-        "options": [
-          "La dérivée du vecteur position par rapport au temps",
-          "L'intégrale du vecteur position",
-          "La distance divisée par le temps",
-          "La dérivée du vecteur accélération"
-        ],
-        "answer": 0,
-        "explanation": "v = d(OM)/dt."
-      },
-      {
-        "id": "q2",
-        "text": "Si le vecteur accélération est nul (a = 0), quel est la nature du mouvement ?",
-        "type": "qcm",
-        "options": [
-          "Mouvement rectiligne uniforme",
-          "Mouvement uniformément varié",
-          "Mouvement circulaire uniforme",
-          "Mouvement de chute libre"
-        ],
-        "answer": 0,
-        "explanation": "Si a = 0, la vitesse est constante en norme et en direction, donc le mouvement est rectiligne uniforme."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Dans la base de Frénet, l'accélération normale est donnée par a_n = v²/R.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Elle est dirigée vers le centre de courbure de la trajectoire."
-      },
-      {
-        "id": "q4",
-        "text": "Comment s'écrit l'équation horaire d'un Mouvement Rectiligne Uniformément Varié (MRUV) ?",
-        "type": "qcm",
-        "options": [
-          "x(t) = (1/2) a t² + v0 t + x0",
-          "x(t) = v t + x0",
-          "x(t) = a t",
-          "x(t) = R cos(wt)"
-        ],
-        "answer": 0,
-        "explanation": "En intégrant deux fois l'accélération constante a, on obtient cette équation du second degré."
-      },
-      {
-        "id": "q5",
-        "text": "Que peut-on dire si le produit scalaire v.a > 0 ?",
-        "type": "qcm",
-        "options": [
-          "Le mouvement est accéléré",
-          "Le mouvement est retardé",
-          "Le mouvement est uniforme",
-          "Le mobile est à l'arrêt"
-        ],
-        "answer": 0,
-        "explanation": "Si v et a ont le même sens (produit scalaire positif), la norme de la vitesse augmente."
-      }
-    ]
-  },
-  "Fiche_LECON 2_ Mouvement du centre d'inertie d'un solide": {
-    "title": "LECON 2  Mouvement du centre d'inertie d'un solide",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Quel est l'énoncé de la deuxième loi de Newton (Théorème du centre d'inertie) ?",
-        "type": "qcm",
-        "options": [
-          "La somme des forces extérieures est égale à m.a",
-          "La somme des forces est nulle",
-          "L'action est égale à la réaction",
-          "L'énergie mécanique est conservée"
-        ],
-        "answer": 0,
-        "explanation": "Dans un référentiel galiléen, Σ F_ext = m.a_G."
-      },
-      {
-        "id": "q2",
-        "text": "Dans une chute libre (sans frottements), à quoi est égale l'accélération du centre d'inertie ?",
-        "type": "qcm",
-        "options": [
-          "Au vecteur champ de pesanteur g",
-          "À zéro",
-          "À la vitesse",
-          "À l'énergie potentielle"
-        ],
-        "answer": 0,
-        "explanation": "La seule force appliquée est le poids P = mg. D'après la 2ème loi de Newton, mg = ma, donc a = g."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Un solide soumis à deux forces qui s'annulent a nécessairement un mouvement rectiligne uniforme ou est au repos.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. C'est le principe d'inertie (première loi de Newton)."
-      },
-      {
-        "id": "q4",
-        "text": "Quelle est la définition du théorème de l'énergie cinétique ?",
-        "type": "qcm",
-        "options": [
-          "ΔEc = Somme des travaux des forces extérieures",
-          "Ec = mv² / 2",
-          "ΔEc = 0",
-          "ΔEp = mgz"
-        ],
-        "answer": 0,
-        "explanation": "La variation d'énergie cinétique entre deux positions est égale à la somme algébrique des travaux des forces appliquées sur ce trajet."
-      },
-      {
-        "id": "q5",
-        "text": "Sur un plan incliné sans frottement, quelle composante du poids fait descendre le solide ?",
-        "type": "qcm",
-        "options": [
-          "P * sin(alpha)",
-          "P * cos(alpha)",
-          "La réaction normale R",
-          "La force de Laplace"
-        ],
-        "answer": 0,
-        "explanation": "La composante parallèle à la pente (Px) vaut mg.sin(alpha)."
-      }
-    ]
-  },
-  "Fiche_LECON 4_ Mouvement dans les champs G et E uniformes": {
-    "title": "LECON 4  Mouvement dans les champs G et E uniformes",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LECON 4  Mouvement dans les champs G et E uniformes\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_LECON 5_ Oscillations mécaniques libres": {
-    "title": "LECON 5  Oscillations mécaniques libres",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LECON 5  Oscillations mécaniques libres\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_LEÇON 10_ Auto induction": {
-    "title": "LEÇON 10  Auto induction",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 10  Auto induction\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 10_ Réactions acidobasiques. Solutions tampons": {
-    "title": "Leçon 10  Réactions acidobasiques. Solutions tampons",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 10  Réactions acidobasiques. Solutions tampons\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 11_ Dosage Acido-Basique (2)": {
-    "title": "Leçon 11  Dosage Acido-Basique (2)",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 11  Dosage Acido-Basique (2)\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 12_ Acides alpha aminés": {
-    "title": "Leçon 12  Acides alpha aminés",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 12  Acides alpha aminés\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 1_ Les alcools": {
-    "title": "Leçon 1  Les alcools",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Quel groupe caractéristique permet d'identifier un alcool ?",
-        "type": "qcm",
-        "options": [
-          "Le groupe hydroxyle (-OH)",
-          "Le groupe carboxyle (-COOH)",
-          "Le groupe carbonyle (C=O)",
-          "Le groupe amine (-NH2)"
-        ],
-        "answer": 0,
-        "explanation": "Le groupe -OH lié à un atome de carbone tétraédrique définit les alcools."
-      },
-      {
-        "id": "q2",
-        "text": "Que donne l'oxydation ménagée d'un alcool primaire par un défaut d'oxydant ?",
-        "type": "qcm",
-        "options": [
-          "Un aldéhyde",
-          "Une cétone",
-          "Un acide carboxylique",
-          "Un alcène"
-        ],
-        "answer": 0,
-        "explanation": "L'alcool primaire s'oxyde d'abord en aldéhyde, puis, avec un excès d'oxydant, en acide carboxylique."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : L'oxydation ménagée d'un alcool tertiaire produit une cétone.",
-        "type": "vrai_faux",
-        "options": [
-          "Faux",
-          "Vrai"
-        ],
-        "answer": 0,
-        "explanation": "Faux. Un alcool tertiaire ne subit pas d'oxydation ménagée car le carbone fonctionnel ne porte pas d'hydrogène."
-      },
-      {
-        "id": "q4",
-        "text": "Quel réactif permet de caractériser spécifiquement un aldéhyde (qui ne réagit pas avec une cétone) ?",
-        "type": "qcm",
-        "options": [
-          "La liqueur de Fehling ou le réactif de Tollens",
-          "La DNPH",
-          "L'eau de brome",
-          "Le BBT"
-        ],
-        "answer": 0,
-        "explanation": "La liqueur de Fehling donne un précipité rouge brique uniquement avec les aldéhydes."
-      },
-      {
-        "id": "q5",
-        "text": "Que se passe-t-il lors de la déshydratation intramoléculaire d'un alcool (chauffage avec acide sulfurique) ?",
-        "type": "qcm",
-        "options": [
-          "Il y a formation d'un alcène et libération d'eau",
-          "Il y a formation d'un ester",
-          "Il y a formation d'un ion carboxylate",
-          "Rien ne se passe"
-        ],
-        "answer": 0,
-        "explanation": "C'est une réaction d'élimination : C-C(OH) -> C=C + H2O."
-      }
-    ]
-  },
-  "Fiche_Leçon 2_ Composés carbonylés_ aldéhydes et cétones": {
-    "title": "Leçon 2  Composés carbonylés  aldéhydes et cétones",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 2  Composés carbonylés  aldéhydes et cétones\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 3_ Les amines": {
-    "title": "Leçon 3  Les amines",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 3  Les amines\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 4_ Acides carboxyliques et dérivés": {
-    "title": "Leçon 4  Acides carboxyliques et dérivés",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 4  Acides carboxyliques et dérivés\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 5_ Fabrication d'un savon": {
-    "title": "Leçon 5  Fabrication d'un savon",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 5  Fabrication d'un savon\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_LEÇON 6_ Champ magnétique": {
-    "title": "LEÇON 6  Champ magnétique",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Quelle est l'unité du champ magnétique dans le Système International ?",
-        "type": "qcm",
-        "options": [
-          "Le Tesla (T)",
-          "Le Weber (Wb)",
-          "Le Henry (H)",
-          "Le Newton (N)"
-        ],
-        "answer": 0,
-        "explanation": "Le Tesla honore le physicien Nikola Tesla."
-      },
-      {
-        "id": "q2",
-        "text": "Où se situe le pôle Nord géographique de la Terre par rapport au champ magnétique terrestre ?",
-        "type": "qcm",
-        "options": [
-          "Près du pôle Sud magnétique",
-          "Au pôle Nord magnétique",
-          "À l'équateur",
-          "Au pôle Est"
-        ],
-        "answer": 0,
-        "explanation": "L'aiguille d'une boussole pointe vers le Nord géographique car elle est attirée par le pôle Sud magnétique terrestre."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les lignes de champ magnétique sortent par le pôle Sud d'un aimant.",
-        "type": "vrai_faux",
-        "options": [
-          "Faux",
-          "Vrai"
-        ],
-        "answer": 0,
-        "explanation": "Faux. Les lignes de champ sortent par le pôle Nord et entrent par le pôle Sud."
-      },
-      {
-        "id": "q4",
-        "text": "Comment détermine-t-on le sens du champ magnétique créé par un fil rectiligne parcouru par un courant ?",
-        "type": "qcm",
-        "options": [
-          "Avec la règle de la main droite ou du bonhomme d'Ampère",
-          "Avec la deuxième loi de Newton",
-          "Avec la loi d'Ohm",
-          "Avec un thermomètre"
-        ],
-        "answer": 0,
-        "explanation": "La règle de la main droite (pouce dans le sens de I) donne le sens des lignes de champ circulaires."
-      },
-      {
-        "id": "q5",
-        "text": "Dans un solénoïde infiniment long, comment est le champ magnétique à l'intérieur ?",
-        "type": "qcm",
-        "options": [
-          "Uniforme, parallèle à l'axe",
-          "Nul",
-          "Circulaire",
-          "Perpendiculaire à l'axe"
-        ],
-        "answer": 0,
-        "explanation": "À l'intérieur d'un solénoïde long, le champ est constant B = µ0.N.I/L."
-      }
-    ]
-  },
-  "Fiche_Leçon 6_ Solutions aqueuses-Notion de pH": {
-    "title": "Leçon 6  Solutions aqueuses-Notion de pH",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Quelle est la définition mathématique du pH pour des solutions diluées ?",
-        "type": "qcm",
-        "options": [
-          "pH = -log([H3O+])",
-          "pH = log([H3O+])",
-          "pH = -log([OH-])",
-          "pH = 10^(-[H3O+])"
-        ],
-        "answer": 0,
-        "explanation": "Le pH mesure l'acidité en prenant l'opposé du logarithme décimal de la concentration en ions oxonium."
-      },
-      {
-        "id": "q2",
-        "text": "Que vaut le produit ionique de l'eau (Ke) à 25°C ?",
-        "type": "qcm",
-        "options": [
-          "10^-14",
-          "10^-7",
-          "7",
-          "14"
-        ],
-        "answer": 0,
-        "explanation": "Ke = [H3O+] × [OH-] = 1,0.10^-14 à 25°C."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : À 25°C, une solution de pH = 8 est acide.",
-        "type": "vrai_faux",
-        "options": [
-          "Faux",
-          "Vrai"
-        ],
-        "answer": 0,
-        "explanation": "Faux. À 25°C, le pH neutre est 7. Un pH de 8 est basique."
-      },
-      {
-        "id": "q4",
-        "text": "Que se passe-t-il pour le pH lorsqu'on dilue 10 fois une solution d'acide fort ?",
-        "type": "qcm",
-        "options": [
-          "Le pH augmente de 1 unité",
-          "Le pH diminue de 1 unité",
-          "Le pH ne change pas",
-          "Le pH devient basique"
-        ],
-        "answer": 0,
-        "explanation": "Si on divise [H3O+] par 10, -log([H3O+]/10) = -log([H3O+]) + 1, donc le pH augmente de 1."
-      },
-      {
-        "id": "q5",
-        "text": "Comment définit-on un acide selon Brønsted ?",
-        "type": "qcm",
-        "options": [
-          "Une espèce chimique capable de céder au moins un proton H+",
-          "Une espèce capable de capter un proton H+",
-          "Un composé qui donne une couleur bleue au BBT",
-          "Un alcool primaire"
-        ],
-        "answer": 0,
-        "explanation": "Brønsted : acide = donneur de H+, base = accepteur de H+."
-      }
-    ]
-  },
-  "Fiche_Leçon 7_ Acide fort-Base forte": {
-    "title": "Leçon 7  Acide fort-Base forte",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 7  Acide fort-Base forte\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_LEÇON 8_ Loi de Laplace": {
-    "title": "LEÇON 8  Loi de Laplace",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 8  Loi de Laplace\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon 9_ Couple acide_base. Classification": {
-    "title": "Leçon 9  Couple acide base. Classification",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 9  Couple acide base. Classification\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_LEÇON 9_ Induction électromagnétique": {
-    "title": "LEÇON 9  Induction électromagnétique",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 9  Induction électromagnétique\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  },
-  "Fiche_Leçon8_ Acide faible base faible": {
-    "title": "Leçon8  Acide faible base faible",
-    "questions": [
-      {
-        "id": "q1",
-        "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon8  Acide faible base faible\" ?",
-        "type": "qcm",
-        "options": [
-          "Les enjeux majeurs du programme du Baccalauréat",
-          "Un rappel de la classe de 6ème",
-          "Des notions hors programme",
-          "Des définitions élémentaires"
-        ],
-        "answer": 0,
-        "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
-      },
-      {
-        "id": "q2",
-        "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
-        "type": "qcm",
-        "options": [
-          "Apprendre par cœur sans comprendre le sens",
-          "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
-          "Deviner les réponses",
-          "Recopier simplement la fiche"
-        ],
-        "answer": 1,
-        "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
-      },
-      {
-        "id": "q3",
-        "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
-        "type": "vrai_faux",
-        "options": [
-          "Vrai",
-          "Faux"
-        ],
-        "answer": 0,
-        "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
-      },
-      {
-        "id": "q4",
-        "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
-        "type": "qcm",
-        "options": [
-          "Gérer son temps et structurer correctement son argumentation / son raisonnement",
-          "Écrire proprement",
-          "Oublier d'écrire son nom",
-          "Lire l'énoncé trop vite"
-        ],
-        "answer": 0,
-        "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
-      },
-      {
-        "id": "q5",
-        "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
-        "type": "qcm",
-        "options": [
-          "Ne faire aucun exercice",
-          "Traiter d'anciens sujets de type Bac (annales) en temps limité",
-          "Poser la question à ses parents",
-          "Regarder un résumé de 2 minutes sur internet"
-        ],
-        "answer": 1,
-        "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
-      }
-    ]
-  }
+ "Fiche_LECON 1_ Cinématique du point": {
+  "title": "LECON 1  Cinématique du point",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Quelle est la définition du vecteur vitesse instantanée ?",
+    "type": "qcm",
+    "options": [
+     "La dérivée du vecteur position par rapport au temps",
+     "L'intégrale du vecteur position",
+     "La distance divisée par le temps",
+     "La dérivée du vecteur accélération"
+    ],
+    "answer": 0,
+    "explanation": "v = d(OM)/dt."
+   },
+   {
+    "id": "q2",
+    "text": "Si le vecteur accélération est nul (a = 0), quel est la nature du mouvement ?",
+    "type": "qcm",
+    "options": [
+     "Mouvement rectiligne uniforme",
+     "Mouvement uniformément varié",
+     "Mouvement circulaire uniforme",
+     "Mouvement de chute libre"
+    ],
+    "answer": 0,
+    "explanation": "Si a = 0, la vitesse est constante en norme et en direction, donc le mouvement est rectiligne uniforme."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Dans la base de Frénet, l'accélération normale est donnée par a_n = v²/R.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Elle est dirigée vers le centre de courbure de la trajectoire."
+   },
+   {
+    "id": "q4",
+    "text": "Comment s'écrit l'équation horaire d'un Mouvement Rectiligne Uniformément Varié (MRUV) ?",
+    "type": "qcm",
+    "options": [
+     "x(t) = (1/2) a t² + v0 t + x0",
+     "x(t) = v t + x0",
+     "x(t) = a t",
+     "x(t) = R cos(wt)"
+    ],
+    "answer": 0,
+    "explanation": "En intégrant deux fois l'accélération constante a, on obtient cette équation du second degré."
+   },
+   {
+    "id": "q5",
+    "text": "Que peut-on dire si le produit scalaire v.a > 0 ?",
+    "type": "qcm",
+    "options": [
+     "Le mouvement est accéléré",
+     "Le mouvement est retardé",
+     "Le mouvement est uniforme",
+     "Le mobile est à l'arrêt"
+    ],
+    "answer": 0,
+    "explanation": "Si v et a ont le même sens (produit scalaire positif), la norme de la vitesse augmente."
+   }
+  ]
+ },
+ "Fiche_LECON 2_ Mouvement du centre d'inertie d'un solide": {
+  "title": "LECON 2  Mouvement du centre d'inertie d'un solide",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Quel est l'énoncé de la deuxième loi de Newton (Théorème du centre d'inertie) ?",
+    "type": "qcm",
+    "options": [
+     "La somme des forces extérieures est égale à m.a",
+     "La somme des forces est nulle",
+     "L'action est égale à la réaction",
+     "L'énergie mécanique est conservée"
+    ],
+    "answer": 0,
+    "explanation": "Dans un référentiel galiléen, Σ F_ext = m.a_G."
+   },
+   {
+    "id": "q2",
+    "text": "Dans une chute libre (sans frottements), à quoi est égale l'accélération du centre d'inertie ?",
+    "type": "qcm",
+    "options": [
+     "Au vecteur champ de pesanteur g",
+     "À zéro",
+     "À la vitesse",
+     "À l'énergie potentielle"
+    ],
+    "answer": 0,
+    "explanation": "La seule force appliquée est le poids P = mg. D'après la 2ème loi de Newton, mg = ma, donc a = g."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Un solide soumis à deux forces qui s'annulent a nécessairement un mouvement rectiligne uniforme ou est au repos.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. C'est le principe d'inertie (première loi de Newton)."
+   },
+   {
+    "id": "q4",
+    "text": "Quelle est la définition du théorème de l'énergie cinétique ?",
+    "type": "qcm",
+    "options": [
+     "ΔEc = Somme des travaux des forces extérieures",
+     "Ec = mv² / 2",
+     "ΔEc = 0",
+     "ΔEp = mgz"
+    ],
+    "answer": 0,
+    "explanation": "La variation d'énergie cinétique entre deux positions est égale à la somme algébrique des travaux des forces appliquées sur ce trajet."
+   },
+   {
+    "id": "q5",
+    "text": "Sur un plan incliné sans frottement, quelle composante du poids fait descendre le solide ?",
+    "type": "qcm",
+    "options": [
+     "P * sin(alpha)",
+     "P * cos(alpha)",
+     "La réaction normale R",
+     "La force de Laplace"
+    ],
+    "answer": 0,
+    "explanation": "La composante parallèle à la pente (Px) vaut mg.sin(alpha)."
+   }
+  ]
+ },
+ "Fiche_LECON 4_ Mouvement dans les champs G et E uniformes": {
+  "title": "LECON 4  Mouvement dans les champs G et E uniformes",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LECON 4  Mouvement dans les champs G et E uniformes\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LECON 5_ Oscillations mécaniques libres": {
+  "title": "LECON 5  Oscillations mécaniques libres",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LECON 5  Oscillations mécaniques libres\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LEÇON 10_ Auto induction": {
+  "title": "LEÇON 10  Auto induction",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 10  Auto induction\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 10_ Réactions acidobasiques. Solutions tampons": {
+  "title": "Leçon 10  Réactions acidobasiques. Solutions tampons",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 10  Réactions acidobasiques. Solutions tampons\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 11_ Dosage Acido-Basique (2)": {
+  "title": "Leçon 11  Dosage Acido-Basique (2)",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 11  Dosage Acido-Basique (2)\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 12_ Acides alpha aminés": {
+  "title": "Leçon 12  Acides alpha aminés",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 12  Acides alpha aminés\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 1_ Les alcools": {
+  "title": "Leçon 1  Les alcools",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Quel groupe caractéristique permet d'identifier un alcool ?",
+    "type": "qcm",
+    "options": [
+     "Le groupe hydroxyle (-OH)",
+     "Le groupe carboxyle (-COOH)",
+     "Le groupe carbonyle (C=O)",
+     "Le groupe amine (-NH2)"
+    ],
+    "answer": 0,
+    "explanation": "Le groupe -OH lié à un atome de carbone tétraédrique définit les alcools."
+   },
+   {
+    "id": "q2",
+    "text": "Que donne l'oxydation ménagée d'un alcool primaire par un défaut d'oxydant ?",
+    "type": "qcm",
+    "options": [
+     "Un aldéhyde",
+     "Une cétone",
+     "Un acide carboxylique",
+     "Un alcène"
+    ],
+    "answer": 0,
+    "explanation": "L'alcool primaire s'oxyde d'abord en aldéhyde, puis, avec un excès d'oxydant, en acide carboxylique."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : L'oxydation ménagée d'un alcool tertiaire produit une cétone.",
+    "type": "vrai_faux",
+    "options": [
+     "Faux",
+     "Vrai"
+    ],
+    "answer": 0,
+    "explanation": "Faux. Un alcool tertiaire ne subit pas d'oxydation ménagée car le carbone fonctionnel ne porte pas d'hydrogène."
+   },
+   {
+    "id": "q4",
+    "text": "Quel réactif permet de caractériser spécifiquement un aldéhyde (qui ne réagit pas avec une cétone) ?",
+    "type": "qcm",
+    "options": [
+     "La liqueur de Fehling ou le réactif de Tollens",
+     "La DNPH",
+     "L'eau de brome",
+     "Le BBT"
+    ],
+    "answer": 0,
+    "explanation": "La liqueur de Fehling donne un précipité rouge brique uniquement avec les aldéhydes."
+   },
+   {
+    "id": "q5",
+    "text": "Que se passe-t-il lors de la déshydratation intramoléculaire d'un alcool (chauffage avec acide sulfurique) ?",
+    "type": "qcm",
+    "options": [
+     "Il y a formation d'un alcène et libération d'eau",
+     "Il y a formation d'un ester",
+     "Il y a formation d'un ion carboxylate",
+     "Rien ne se passe"
+    ],
+    "answer": 0,
+    "explanation": "C'est une réaction d'élimination : C-C(OH) -> C=C + H2O."
+   }
+  ]
+ },
+ "Fiche_Leçon 2_ Composés carbonylés_ aldéhydes et cétones": {
+  "title": "Leçon 2  Composés carbonylés  aldéhydes et cétones",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 2  Composés carbonylés  aldéhydes et cétones\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 3_ Les amines": {
+  "title": "Leçon 3  Les amines",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 3  Les amines\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 4_ Acides carboxyliques et dérivés": {
+  "title": "Leçon 4  Acides carboxyliques et dérivés",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 4  Acides carboxyliques et dérivés\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 5_ Fabrication d'un savon": {
+  "title": "Leçon 5  Fabrication d'un savon",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 5  Fabrication d'un savon\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LEÇON 6_ Champ magnétique": {
+  "title": "LEÇON 6  Champ magnétique",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Quelle est l'unité du champ magnétique dans le Système International ?",
+    "type": "qcm",
+    "options": [
+     "Le Tesla (T)",
+     "Le Weber (Wb)",
+     "Le Henry (H)",
+     "Le Newton (N)"
+    ],
+    "answer": 0,
+    "explanation": "Le Tesla honore le physicien Nikola Tesla."
+   },
+   {
+    "id": "q2",
+    "text": "Où se situe le pôle Nord géographique de la Terre par rapport au champ magnétique terrestre ?",
+    "type": "qcm",
+    "options": [
+     "Près du pôle Sud magnétique",
+     "Au pôle Nord magnétique",
+     "À l'équateur",
+     "Au pôle Est"
+    ],
+    "answer": 0,
+    "explanation": "L'aiguille d'une boussole pointe vers le Nord géographique car elle est attirée par le pôle Sud magnétique terrestre."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les lignes de champ magnétique sortent par le pôle Sud d'un aimant.",
+    "type": "vrai_faux",
+    "options": [
+     "Faux",
+     "Vrai"
+    ],
+    "answer": 0,
+    "explanation": "Faux. Les lignes de champ sortent par le pôle Nord et entrent par le pôle Sud."
+   },
+   {
+    "id": "q4",
+    "text": "Comment détermine-t-on le sens du champ magnétique créé par un fil rectiligne parcouru par un courant ?",
+    "type": "qcm",
+    "options": [
+     "Avec la règle de la main droite ou du bonhomme d'Ampère",
+     "Avec la deuxième loi de Newton",
+     "Avec la loi d'Ohm",
+     "Avec un thermomètre"
+    ],
+    "answer": 0,
+    "explanation": "La règle de la main droite (pouce dans le sens de I) donne le sens des lignes de champ circulaires."
+   },
+   {
+    "id": "q5",
+    "text": "Dans un solénoïde infiniment long, comment est le champ magnétique à l'intérieur ?",
+    "type": "qcm",
+    "options": [
+     "Uniforme, parallèle à l'axe",
+     "Nul",
+     "Circulaire",
+     "Perpendiculaire à l'axe"
+    ],
+    "answer": 0,
+    "explanation": "À l'intérieur d'un solénoïde long, le champ est constant B = µ0.N.I/L."
+   }
+  ]
+ },
+ "Fiche_Leçon 6_ Solutions aqueuses-Notion de pH": {
+  "title": "Leçon 6  Solutions aqueuses-Notion de pH",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Quelle est la définition mathématique du pH pour des solutions diluées ?",
+    "type": "qcm",
+    "options": [
+     "pH = -log([H3O+])",
+     "pH = log([H3O+])",
+     "pH = -log([OH-])",
+     "pH = 10^(-[H3O+])"
+    ],
+    "answer": 0,
+    "explanation": "Le pH mesure l'acidité en prenant l'opposé du logarithme décimal de la concentration en ions oxonium."
+   },
+   {
+    "id": "q2",
+    "text": "Que vaut le produit ionique de l'eau (Ke) à 25°C ?",
+    "type": "qcm",
+    "options": [
+     "10^-14",
+     "10^-7",
+     "7",
+     "14"
+    ],
+    "answer": 0,
+    "explanation": "Ke = [H3O+] × [OH-] = 1,0.10^-14 à 25°C."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : À 25°C, une solution de pH = 8 est acide.",
+    "type": "vrai_faux",
+    "options": [
+     "Faux",
+     "Vrai"
+    ],
+    "answer": 0,
+    "explanation": "Faux. À 25°C, le pH neutre est 7. Un pH de 8 est basique."
+   },
+   {
+    "id": "q4",
+    "text": "Que se passe-t-il pour le pH lorsqu'on dilue 10 fois une solution d'acide fort ?",
+    "type": "qcm",
+    "options": [
+     "Le pH augmente de 1 unité",
+     "Le pH diminue de 1 unité",
+     "Le pH ne change pas",
+     "Le pH devient basique"
+    ],
+    "answer": 0,
+    "explanation": "Si on divise [H3O+] par 10, -log([H3O+]/10) = -log([H3O+]) + 1, donc le pH augmente de 1."
+   },
+   {
+    "id": "q5",
+    "text": "Comment définit-on un acide selon Brønsted ?",
+    "type": "qcm",
+    "options": [
+     "Une espèce chimique capable de céder au moins un proton H+",
+     "Une espèce capable de capter un proton H+",
+     "Un composé qui donne une couleur bleue au BBT",
+     "Un alcool primaire"
+    ],
+    "answer": 0,
+    "explanation": "Brønsted : acide = donneur de H+, base = accepteur de H+."
+   }
+  ]
+ },
+ "Fiche_Leçon 7_ Acide fort-Base forte": {
+  "title": "Leçon 7  Acide fort-Base forte",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 7  Acide fort-Base forte\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LEÇON 8_ Loi de Laplace": {
+  "title": "LEÇON 8  Loi de Laplace",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 8  Loi de Laplace\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon 9_ Couple acide_base. Classification": {
+  "title": "Leçon 9  Couple acide base. Classification",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon 9  Couple acide base. Classification\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LEÇON 9_ Induction électromagnétique": {
+  "title": "LEÇON 9  Induction électromagnétique",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"LEÇON 9  Induction électromagnétique\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_Leçon8_ Acide faible base faible": {
+  "title": "Leçon8  Acide faible base faible",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Sur quel thème fondamental de la classe de Terminale porte la leçon : \"Leçon8  Acide faible base faible\" ?",
+    "type": "qcm",
+    "options": [
+     "Les enjeux majeurs du programme du Baccalauréat",
+     "Un rappel de la classe de 6ème",
+     "Des notions hors programme",
+     "Des définitions élémentaires"
+    ],
+    "answer": 0,
+    "explanation": "En classe de Terminale, chaque leçon est orientée vers les exigences spécifiques de l'examen final du Bac."
+   },
+   {
+    "id": "q2",
+    "text": "Pour réussir l'évaluation de cette leçon, quelle méthode est indispensable ?",
+    "type": "qcm",
+    "options": [
+     "Apprendre par cœur sans comprendre le sens",
+     "Associer la mémorisation du cours à une analyse critique et méthodologique rigoureuse",
+     "Deviner les réponses",
+     "Recopier simplement la fiche"
+    ],
+    "answer": 1,
+    "explanation": "La restitution organisée de connaissances et la résolution de problèmes exigent de la rigueur et de l'analyse."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les notions abordées dans ce chapitre seront souvent croisées avec d'autres chapitres lors des sujets du Bac.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les sujets d'examen (synthèse, problème global, dissertation) nécessitent de mobiliser les acquis de plusieurs leçons."
+   },
+   {
+    "id": "q4",
+    "text": "Concernant la discipline \"Physique - Chimie\", quelle difficulté les élèves rencontrent-ils le plus souvent ?",
+    "type": "qcm",
+    "options": [
+     "Gérer son temps et structurer correctement son argumentation / son raisonnement",
+     "Écrire proprement",
+     "Oublier d'écrire son nom",
+     "Lire l'énoncé trop vite"
+    ],
+    "answer": 0,
+    "explanation": "La gestion du temps et le respect scrupuleux de la méthodologie de l'épreuve sont cruciaux."
+   },
+   {
+    "id": "q5",
+    "text": "Quel est le meilleur moyen de vérifier ses acquis sur ce chapitre ?",
+    "type": "qcm",
+    "options": [
+     "Ne faire aucun exercice",
+     "Traiter d'anciens sujets de type Bac (annales) en temps limité",
+     "Poser la question à ses parents",
+     "Regarder un résumé de 2 minutes sur internet"
+    ],
+    "answer": 1,
+    "explanation": "L'entraînement sur des épreuves de type examen est la clé de la réussite en Terminale."
+   }
+  ]
+ },
+ "Fiche_LEÇON 11_ Montages dérivateur et intégrateur": {
+  "title": "LEÇON 11_ Montages dérivateur et intégrateur",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Dans un montage dérivateur à amplificateur opérationnel, quel composant est placé à l'entrée inverseuse ?",
+    "type": "qcm",
+    "options": [
+     "La résistance R",
+     "Le condensateur C",
+     "La bobine L",
+     "Le GBF"
+    ],
+    "answer": 1,
+    "explanation": "Le dérivateur a C en entrée et R dans la boucle de réaction."
+   },
+   {
+    "id": "q2",
+    "text": "La tension de sortie d'un montage dérivateur est :",
+    "type": "qcm",
+    "options": [
+     "u_S = -RC · (du_e/dt)",
+     "u_S = RC · (du_e/dt)",
+     "u_S = -(1/RC) ∫u_e dt",
+     "u_S = u_e · R/(R+C)"
+    ],
+    "answer": 0,
+    "explanation": "u_S = -RC · du_e/dt : la sortie est proportionnelle à la dérivée de l'entrée."
+   },
+   {
+    "id": "q3",
+    "text": "Dans le montage intégrateur, quel composant se trouve dans la boucle de réaction ?",
+    "type": "qcm",
+    "options": [
+     "La résistance R",
+     "Le condensateur C",
+     "Une diode",
+     "La bobine L"
+    ],
+    "answer": 1,
+    "explanation": "Intégrateur : R en entrée, C dans la boucle de réaction."
+   },
+   {
+    "id": "q4",
+    "text": "Vrai ou Faux : Pour le montage dérivateur, une tension d'entrée triangulaire produit une tension de sortie carrée.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. La dérivée d'un signal triangulaire (pentes constantes alternées) donne un signal carré."
+   },
+   {
+    "id": "q5",
+    "text": "Que se passe-t-il si l'on intervertit R et C dans le montage dérivateur ?",
+    "type": "qcm",
+    "options": [
+     "On obtient un filtre passe-bas",
+     "Le montage devient intégrateur",
+     "Le signal s'annule",
+     "L'AOP sature"
+    ],
+    "answer": 1,
+    "explanation": "L'interversion de R et C transforme le dérivateur en intégrateur."
+   }
+  ]
+ },
+ "Fiche_LEÇON 13_ Circuit RLC en régime sinusoïdal forcé": {
+  "title": "LEÇON 13_ Circuit RLC en régime sinusoïdal forcé",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "L'impédance d'un circuit série RLC vaut :",
+    "type": "qcm",
+    "options": [
+     "Z = R + Lω + 1/(Cω)",
+     "Z = √(R² + (Lω - 1/(Cω))²)",
+     "Z = R × L × C",
+     "Z = Lω/R"
+    ],
+    "answer": 1,
+    "explanation": "Z = √(R² + (Lω - 1/(Cω))²) : R en quadrature avec la réactance totale."
+   },
+   {
+    "id": "q2",
+    "text": "Dans le circuit série RLC, la bobine :",
+    "type": "qcm",
+    "options": [
+     "avance le courant sur la tension",
+     "retarde le courant sur la tension",
+     "ne modifie pas la phase",
+     "supprime le courant"
+    ],
+    "answer": 1,
+    "explanation": "La bobine retarde l'intensité par rapport à la tension."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Le condensateur avance le courant sur la tension.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Dans un condensateur, l'intensité est en avance de phase sur la tension."
+   },
+   {
+    "id": "q4",
+    "text": "La représentation de Fresnel sert à :",
+    "type": "qcm",
+    "options": [
+     "mesurer la résistance",
+     "représenter les tensions déphasées par des vecteurs",
+     "calculer la puissance thermique",
+     "tracer la trajectoire des électrons"
+    ],
+    "answer": 1,
+    "explanation": "Fresnel associe à chaque grandeur sinusoïdale un vecteur tournant d'angle égal au déphasage."
+   },
+   {
+    "id": "q5",
+    "text": "La loi d'Ohm généralisée au régime sinusoïdal s'écrit :",
+    "type": "qcm",
+    "options": [
+     "U = Z · I",
+     "U = R · I seulement",
+     "U = Lω · I",
+     "U = I/(Cω)"
+    ],
+    "answer": 0,
+    "explanation": "U = Z·I avec Z l'impédance totale du circuit."
+   }
+  ]
+ },
+ "Fiche_LEÇON 14_ Résonance d_intensité d_un circuit RLC série": {
+  "title": "LEÇON 14_ Résonance d_intensité d_un circuit RLC série",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "La pulsation de résonance du circuit RLC série est :",
+    "type": "qcm",
+    "options": [
+     "ω₀ = 1/(LC)",
+     "ω₀ = 1/√(LC)",
+     "ω₀ = LC",
+     "ω₀ = R/(2L)"
+    ],
+    "answer": 1,
+    "explanation": "ω₀ = 1/√(LC) : à la résonance Lω₀ = 1/(Cω₀)."
+   },
+   {
+    "id": "q2",
+    "text": "Vrai ou Faux : À la résonance, l'intensité dans le circuit RLC série est maximale.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Z est minimale (Z = R) donc I = U/Z est maximale."
+   },
+   {
+    "id": "q3",
+    "text": "Sur la courbe de résonance I = f(N), une résistance faible donne :",
+    "type": "qcm",
+    "options": [
+     "un pic large et aplati",
+     "un pic aigu et élevé",
+     "aucune résonance",
+     "un courant nul"
+    ],
+    "answer": 1,
+    "explanation": "Plus R est faible, plus la résonance est aiguë (surintensité importante)."
+   },
+   {
+    "id": "q4",
+    "text": "Le facteur de qualité Q du circuit série s'exprime par :",
+    "type": "qcm",
+    "options": [
+     "Q = Lω₀/R",
+     "Q = R/(Lω₀)",
+     "Q = R × C",
+     "Q = ω₀/(2π)"
+    ],
+    "answer": 0,
+    "explanation": "Q = Lω₀/R = 1/(RCω₀) : il mesure l'acuité de la résonance."
+   },
+   {
+    "id": "q5",
+    "text": "Vrai ou Faux : À la résonance, le circuit RLC série se comporte comme un résistor pur.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les effets de L et C se compensent : Z = R, tension et courant en phase."
+   }
+  ]
+ },
+ "Fiche_LEÇON 15_ Puissance en régime sinusoïdal": {
+  "title": "LEÇON 15_ Puissance en régime sinusoïdal",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "La puissance active consommée en régime sinusoïdal est :",
+    "type": "qcm",
+    "options": [
+     "P = U·I",
+     "P = U·I·cos φ",
+     "P = U·I·sin φ",
+     "P = Z·I² /R"
+    ],
+    "answer": 1,
+    "explanation": "P = U·I·cos φ (en watts) : seule la composante active produit du travail."
+   },
+   {
+    "id": "q2",
+    "text": "La puissance réactive s'exprime en :",
+    "type": "qcm",
+    "options": [
+     "watts (W)",
+     "volt-ampères (VA)",
+     "var",
+     "joules"
+    ],
+    "answer": 2,
+    "explanation": "Q = U·I·sin φ s'exprime en var (volt-ampères réactifs)."
+   },
+   {
+    "id": "q3",
+    "text": "La puissance apparente S = U·I s'exprime en :",
+    "type": "qcm",
+    "options": [
+     "watts",
+     "var",
+     "volt-ampères (VA)",
+     "kilowatts-heures"
+    ],
+    "answer": 2,
+    "explanation": "S = U·I en volt-ampères (VA) ; cos φ = P/S."
+   },
+   {
+    "id": "q4",
+    "text": "Vrai ou Faux : Transporter l'énergie électrique sous haute tension réduit les pertes par effet Joule.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. À puissance transmise égale, une tension élevée réduit l'intensité, donc les pertes RI²."
+   },
+   {
+    "id": "q5",
+    "text": "Pour améliorer le facteur de puissance cos φ d'une installation, on ajoute :",
+    "type": "qcm",
+    "options": [
+     "une résistance en série",
+     "un condensateur en parallèle",
+     "une bobine en série",
+     "un fusible"
+    ],
+    "answer": 1,
+    "explanation": "Le condensateur fournit la puissance réactive et relève cos φ."
+   }
+  ]
+ },
+ "Fiche_LEÇON 16_ Modèle ondulatoire de la lumière": {
+  "title": "LEÇON 16_ Modèle ondulatoire de la lumière",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "Dans l'expérience de diffraction par une fente de largeur a, le demi-angle vaut :",
+    "type": "qcm",
+    "options": [
+     "θ ≈ λ/a",
+     "θ ≈ a/λ",
+     "θ = λ·a",
+     "θ ≈ λ·a/D"
+    ],
+    "answer": 0,
+    "explanation": "θ ≈ λ/a : plus la fente est étroite, plus la tache centrale est étalée."
+   },
+   {
+    "id": "q2",
+    "text": "Vrai ou Faux : La lumière blanche est dispersée en spectre par un prisme.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Le prisme dévie différemment chaque radiation : c'est la dispersion."
+   },
+   {
+    "id": "q3",
+    "text": "Deux sources lumineuses produisent des interférences stables si elles sont :",
+    "type": "qcm",
+    "options": [
+     "de couleurs différentes",
+     "cohérentes (même fréquence, déphasage constant)",
+     "très puissantes",
+     "très éloignées"
+    ],
+    "answer": 1,
+    "explanation": "Seules des sources cohérentes donnent une figure d'interférences stable."
+   },
+   {
+    "id": "q4",
+    "text": "Le spectre visible s'étend approximativement de :",
+    "type": "qcm",
+    "options": [
+     "100 à 400 nm",
+     "400 nm (violet) à environ 780 nm (rouge)",
+     "1 à 100 nm",
+     "800 à 1200 nm"
+    ],
+    "answer": 1,
+    "explanation": "L'œil perçoit environ 400 nm (violet) à ~780 nm (rouge)."
+   },
+   {
+    "id": "q5",
+    "text": "Les interférences sont constructives lorsque la différence de marche δ vaut :",
+    "type": "qcm",
+    "options": [
+     "δ = kλ (k entier)",
+     "δ = (k+½)λ",
+     "δ = λ/4",
+     "δ = 0 toujours"
+    ],
+    "answer": 0,
+    "explanation": "Franges brillantes si δ = kλ ; sombres si δ = (k+½)λ."
+   }
+  ]
+ },
+ "Fiche_LEÇON 17_ Modèle corpusculaire de la lumière": {
+  "title": "LEÇON 17_ Modèle corpusculaire de la lumière",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "L'énergie d'un photon de fréquence ν vaut :",
+    "type": "qcm",
+    "options": [
+     "E = h/ν",
+     "E = h·ν",
+     "E = m·c²",
+     "E = ν/c"
+    ],
+    "answer": 1,
+    "explanation": "E = h·ν avec h = 6,63·10⁻³⁴ J·s (constante de Planck)."
+   },
+   {
+    "id": "q2",
+    "text": "L'effet photoélectrique se produit si :",
+    "type": "qcm",
+    "options": [
+     "la lumière est rouge",
+     "h·ν ≥ travail d'extraction W",
+     "le métal est chaud",
+     "l'intensité lumineuse est faible"
+    ],
+    "answer": 1,
+    "explanation": "L'électron n'est extrait que si le photon apporte au moins le travail d'extraction."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : Les niveaux d'énergie d'un atome sont quantifiés : l'atome ne peut occuper que des valeurs discrètes.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. C'est le fondement des spectres de raies."
+   },
+   {
+    "id": "q4",
+    "text": "Pour l'atome d'hydrogène, l'énergie du niveau n vaut :",
+    "type": "qcm",
+    "options": [
+     "E_n = -13,6/n² eV",
+     "E_n = +13,6·n² eV",
+     "E_n = -13,6·n eV",
+     "E_n = n²/13,6 eV"
+    ],
+    "answer": 0,
+    "explanation": "E_n = -13,6/n² eV : le niveau fondamental (n=1) vaut -13,6 eV."
+   },
+   {
+    "id": "q5",
+    "text": "L'émission d'un photon correspond à :",
+    "type": "qcm",
+    "options": [
+     "une transition vers un niveau supérieur",
+     "une transition d'un niveau élevé vers un niveau plus bas",
+     "la capture d'un électron",
+     "une fission"
+    ],
+    "answer": 1,
+    "explanation": "L'atome émet un photon en redescendant vers un niveau d'énergie inférieur."
+   }
+  ]
+ },
+ "Fiche_LEÇON 18_ Réactions nucléaires spontanées": {
+  "title": "LEÇON 18_ Réactions nucléaires spontanées",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "La loi de décroissance radioactive s'écrit :",
+    "type": "qcm",
+    "options": [
+     "N(t) = N₀·e^(λt)",
+     "N(t) = N₀·e^(-λt)",
+     "N(t) = N₀ - λt",
+     "N(t) = N₀/2"
+    ],
+    "answer": 1,
+    "explanation": "N(t) = N₀·e^(-λt) : décroissance exponentielle."
+   },
+   {
+    "id": "q2",
+    "text": "La période radioactive T est reliée à λ par :",
+    "type": "qcm",
+    "options": [
+     "T = λ/ln2",
+     "T = ln2/λ",
+     "T = 1/λ",
+     "T = 2λ"
+    ],
+    "answer": 1,
+    "explanation": "T = ln2/λ : au bout de T, la moitié des noyaux s'est désintégrée."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : La radioactivité est un phénomène spontané et aléatoire.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. On ne peut prévoir ni déclencher la désintégration d'un noyau."
+   },
+   {
+    "id": "q4",
+    "text": "La particule émise dans la radioactivité α est :",
+    "type": "qcm",
+    "options": [
+     "un électron",
+     "un positron",
+     "un noyau d'hélium ⁴He",
+     "un photon"
+    ],
+    "answer": 2,
+    "explanation": "α = noyau ⁴₂He ; β⁻ = électron ; β⁺ = positron ; γ = photon."
+   },
+   {
+    "id": "q5",
+    "text": "L'activité A d'un échantillon s'exprime en :",
+    "type": "qcm",
+    "options": [
+     "grays (Gy)",
+     "becquerels (Bq)",
+     "joules",
+     "curies/mol"
+    ],
+    "answer": 1,
+    "explanation": "A = λN en becquerels : 1 Bq = 1 désintégration par seconde."
+   }
+  ]
+ },
+ "Fiche_LEÇON 19_ Réactions nucléaires provoquées": {
+  "title": "LEÇON 19_ Réactions nucléaires provoquées",
+  "questions": [
+   {
+    "id": "q1",
+    "text": "La fission nucléaire consiste en :",
+    "type": "qcm",
+    "options": [
+     "la réunion de deux noyaux légers",
+     "la cassure d'un noyau lourd bombardé par un neutron",
+     "l'émission d'un photon",
+     "la désintégration naturelle"
+    ],
+    "answer": 1,
+    "explanation": "Un neutron fragmente un noyau lourd (²³⁵U, ²³⁹Pu) en noyaux plus légers + neutrons + énergie."
+   },
+   {
+    "id": "q2",
+    "text": "La fusion de l'étoile/de la bombe H est illustrée par :",
+    "type": "qcm",
+    "options": [
+     "²³⁵U + n → fragments",
+     "²H + ³H → ⁴He + n",
+     "¹⁴C → ¹⁴N + e⁻",
+     "²³⁸U → ²³⁴Th + α"
+    ],
+    "answer": 1,
+    "explanation": "²H + ³H → ⁴He + n : fusion deutérium-tritium libérant un neutron et de l'énergie."
+   },
+   {
+    "id": "q3",
+    "text": "Vrai ou Faux : La fusion nucléaire exige des températures très élevées pour vaincre la répulsion électrostatique des noyaux.",
+    "type": "vrai_faux",
+    "options": [
+     "Vrai",
+     "Faux"
+    ],
+    "answer": 0,
+    "explanation": "Vrai. Les noyaux chargés positivement doivent se rapprocher malgré la répulsion coulombienne."
+   },
+   {
+    "id": "q4",
+    "text": "L'énergie libérée en réaction nucléaire provient :",
+    "type": "qcm",
+    "options": [
+     "de la chaleur ambiante",
+     "du défaut de masse (E = Δm·c²)",
+     "des électrons de valence",
+     "du champ magnétique"
+    ],
+    "answer": 1,
+    "explanation": "La masse des produits est inférieure : le défaut de masse devient énergie (E = mc²)."
+   },
+   {
+    "id": "q5",
+    "text": "Les centrales nucléaires actuelles exploitent :",
+    "type": "qcm",
+    "options": [
+     "la fusion",
+     "la fission en chaîne contrôlée",
+     "la radioactivité γ",
+     "la radioactivité naturelle"
+    ],
+    "answer": 1,
+    "explanation": "Les réacteurs contrôlent la réaction en chaîne de la fission de l'uranium."
+   }
+  ]
+ }
 }
