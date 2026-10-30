@@ -59,15 +59,19 @@ async function mask({ W: mw, H: mh }) {
     else {
       const S = screen(sc);
       // Recadrage relatif (288x640 comme 1080x2400) au ratio de l'écran ; cropTop = px d'une source 640 de haut.
-      const top = sc.cropTop ?? 20;
-      const crop = `crop=iw:trunc(iw*${S.H}/${S.W}/2)*2:0:trunc(ih*${top}/640/2)*2`;
+      // Hauteur bornée par la source, largeur au ratio, centrée : jamais de débordement ni d'écran décalé.
+      const R = S.H / S.W;
+      const crop = top => {
+        const T = `trunc(ih*${top}/640/2)*2`;
+        return `crop=w='trunc(min(iw\\,(ih-${T})/${R})/2)*2':h='trunc(min(ih-${T}\\,iw*${R})/2)*2':x='trunc((iw-ow)/4)*2':y='${T}'`;
+      };
       // Source HD : réduction lanczos + légère netteté. Basse déf. : débruitage avant agrandissement.
       const scale = `scale=${S.W}:${S.H}:flags=lanczos+accurate_rnd+full_chroma_int`;
       const clean = src => (SRCW[src] >= 600 ? `${scale},cas=0.3` : `hqdn3d=1.2:1.2:4:4,${scale},cas=0.55`);
       const inputs = ['-framerate', String(FPS), '-i', w('frames', sc.id, '%05d.jpg')];
       const parts = sc.clips.map((c, i) => {
         inputs.push('-ss', String(c[1]), '-t', String(c[2]), '-i', p('src', c[0] + '.mp4'));
-        return `[${i + 1}:v]${crop},setpts=(PTS-STARTPTS)/${clipSpeed(c)},fps=${FPS},${clean(c[0])},setsar=1[c${i}]`;
+        return `[${i + 1}:v]${crop(c[4] ?? sc.cropTop ?? 20)},setpts=(PTS-STARTPTS)/${clipSpeed(c)},fps=${FPS},${clean(c[0])},setsar=1[c${i}]`;
       });
       inputs.push('-loop', '1', '-i', await mask(S));
       const mi = sc.clips.length + 1;

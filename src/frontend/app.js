@@ -3831,7 +3831,7 @@ function renderExamScreen() {
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div style="font-weight:700;font-size:13.5px;color:#0f172a;flex:1">${bi + 1}.${qi + 1} — ${q.enonce}</div><span style="flex-shrink:0;font-size:10px;font-weight:800;color:#7c3aed;background:#ede9fe;padding:2px 8px;border-radius:10px">${q.points} pt${q.points > 1 ? 's' : ''}</span></div>
           ${svgHtml}
           <div style="display:flex;flex-direction:column;gap:7px;margin-top:10px">
-            ${(q.choix || []).map((c, ci) => `<button id="${q.id}-c${ci}" onclick="examAnswerQcm('${q.id}',${ci})" style="text-align:left;padding:10px 14px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-size:13.5px;cursor:pointer"><strong style="color:#7c3aed;margin-right:6px">${'abc'[ci]})</strong> ${c}</button>`).join('')}
+            ${(q.choix || []).map((c, ci) => `<button id="${q.id}-c${ci}" onclick="examAnswerQcm('${q.id}',${ci})" style="text-align:left;padding:10px 14px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-size:13.5px;cursor:pointer"><strong style="color:#7c3aed;margin-right:6px">${String.fromCharCode(97 + ci)})</strong> ${c}</button>`).join('')}
           </div>
         </div>`;
       }
@@ -3982,14 +3982,15 @@ function renderExamBilan(result) {
   if (!ex) return;
   window._examBilan = { result, selfGrades: {} };
   const paperTotal = result.paper.reduce((s, p) => s + p.points, 0);
-  const auto = result.autoScore, autoMax = result.autoMax;
+  const r2 = n => String(Math.round(n * 100) / 100).replace('.', ',');
+  const auto = r2(result.autoScore), autoMax = r2(result.autoMax);
   const noteSur = ex.exam.noteSur || 20;
 
   const detailHtml = result.detail.map(d => `
     <div class="exam-q" style="border-left:4px solid ${d.ok ? '#10b981' : '#ef4444'}">
       <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
         <div style="font-weight:700;font-size:13px;color:#0f172a;flex:1">${d.enonce}</div>
-        <span style="flex-shrink:0;font-size:11px;font-weight:800;color:${d.ok ? '#059669' : '#dc2626'}">${d.ok ? `+${d.points}` : '0'}/${d.maxPts} pt${d.maxPts > 1 ? 's' : ''}</span>
+        <span style="flex-shrink:0;font-size:11px;font-weight:800;color:${d.ok ? '#059669' : '#dc2626'}">${d.ok ? `+${r2(d.points)}` : '0'}/${r2(d.maxPts)} pt${d.maxPts > 1 ? 's' : ''}</span>
       </div>
       <div style="margin-top:6px;font-size:11px;font-weight:800;color:${d.ok ? '#059669' : '#dc2626'}">${d.ok ? '✓ Juste' : '✗ Incorrect'}</div>
       ${d.corrige ? `<div style="margin-top:6px;font-size:12.5px;color:#334155;background:#f8fafc;border-radius:8px;padding:8px 10px">${d.corrige}</div>` : ''}
@@ -4066,7 +4067,7 @@ window.examSelfGrade = function(qid, si, ratio) {
     });
     paperGot += got;
     const el = document.getElementById(`papierScore-${p.id}`);
-    if (el) el.textContent = `${Math.round(got * 100) / 100}/${p.points} pts`;
+    if (el) el.textContent = `${String(Math.round(got * 100) / 100).replace('.', ',')}/${p.points} pts`;
   });
   const total = Math.round((res.autoScore + paperGot) * 100) / 100;
   const noteSur = (window._exam && window._exam.exam.noteSur) || 20;
