@@ -312,6 +312,19 @@
     "corrige": true
   },
   {
+    "code": "RC-L1A-TD-MAPP-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Mathématiques d'appoint",
+    "classe": "Licence_1_ADA",
+    "classeLabel": "Licence 1 ADA",
+    "duree": "1 h",
+    "bareme": "/20 — 29 questions auto-corrigées",
+    "chapitre": "Révision des concepts de base · Limites, continuité et applications",
+    "exercices": 3,
+    "corrige": true
+  },
+  {
     "code": "RC-L1A-TD-METH-01",
     "type": "td",
     "typeLabel": "TD corrigé",
@@ -360,6 +373,19 @@
     "duree": "1 h",
     "bareme": "/20 — 37 questions auto-corrigées",
     "chapitre": "Modélisation et cadre général · Résolution par optimisation linéaire · Optimisation non linéaire · Comparaison des méthodes · Synthèse et applications en gestion",
+    "exercices": 3,
+    "corrige": true
+  },
+  {
+    "code": "RC-L1A-TD-ODP-01",
+    "type": "td",
+    "typeLabel": "TD corrigé",
+    "matiere": "Outils de développement personnel",
+    "classe": "Licence_1_ADA",
+    "classeLabel": "Licence 1 ADA",
+    "duree": "1 h",
+    "bareme": "/20 — 36 questions auto-corrigées",
+    "chapitre": "Du souhait à l'objectif — méthode SMART · Motivation, discipline et responsabilité · Leadership personnel · Maîtrise de soi et intelligence émotionnelle · Du souhait à l'objectif : méthode SMART",
     "exercices": 3,
     "corrige": true
   },

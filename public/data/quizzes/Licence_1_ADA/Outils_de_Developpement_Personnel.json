@@ -1,0 +1,42 @@
+{
+  "Fiche_Chapitre1_DU_SOUHAIT_A_L_OBJECTIF_METHODE_SMART": {
+    "title": "Du souhait à l'objectif : méthode SMART",
+    "questions": [
+      {"id": "q1", "text": "« Je veux réussir un test d'anglais B1 dans 6 mois. » Cette phrase est :", "type": "qcm", "options": ["Un souhait", "Une intention", "Un objectif", "Une action"], "answer": 2, "explanation": "Résultat précis (test B1) + délai déterminé (6 mois) : c'est un objectif, pas un simple souhait ni une intention."},
+      {"id": "q2", "text": "L'intention se situe entre :", "type": "qcm", "options": ["L'objectif et le plan d'action", "Le souhait et l'objectif", "Le plan d'action et le résultat", "Le souhait et la rêverie"], "answer": 1, "explanation": "L'échelle est : souhait (j'aimerais) → intention (j'envisage de faire) → objectif (résultat précis) → plan d'action."},
+      {"id": "q3", "text": "« Je veux être plus compétent en informatique » n'est pas un bon objectif SMART parce qu'il manque surtout :", "type": "qcm", "options": ["Le critère Spécifique", "Le critère Mesurable", "Le critère Temporel", "Tous ces critères à la fois"], "answer": 3, "explanation": "Ni spécifique (quelle compétence ?), ni mesurable (quel niveau ?), ni daté (pour quand ?) : la phrase reste un souhait."},
+      {"id": "q4", "text": "Dans SMART, « R — Pertinent » signifie que l'objectif :", "type": "qcm", "options": ["Doit être facile à atteindre", "Correspond à mes besoins, priorités ou projets", "Doit avoir une date limite", "Doit être mesuré en pourcentage"], "answer": 1, "explanation": "Pertinent = une véritable utilité pour moi (ex. formation qui augmente mes chances d'emploi), pas un caprice sans lien avec mes priorités."},
+      {"id": "q5", "text": "Un objectif de long terme (devenir responsable en 5 ans) se réalise en général en le découpant en :", "type": "vf", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : objectifs de moyen terme (formation de 6 mois), eux-mêmes divisés en objectifs de court terme (devoir de la semaine)."}
+    ]
+  },
+  "Fiche_Chapitre2_MOTIVATION_DISCIPLINE_ET_RESPONSABILITE": {
+    "title": "Motivation, discipline et responsabilité",
+    "questions": [
+      {"id": "q1", "text": "La motivation est :", "type": "qcm", "options": ["Une récompense financière", "L'ensemble des raisons et des forces qui poussent à commencer une action, fournir des efforts et atteindre un résultat", "Une qualité réservée aux leaders", "Un comportement qui ne change jamais"], "answer": 1, "explanation": "Définition du support : les raisons et les forces qui font démarrer, faire des efforts et viser un résultat."},
+      {"id": "q2", "text": "Une étudiante révise parce qu'elle aime réellement la matière. Sa motivation est :", "type": "qcm", "options": ["Extrinsèque", "Intrinsèque", "Externe", "Absente"], "answer": 1, "explanation": "Intrinsèque : elle agit pour le plaisir et l'intérêt de l'activité elle-même, sans récompense externe."},
+      {"id": "q3", "text": "Travailler pour obtenir une bourse ou éviter un redoublement relève de la motivation :", "type": "vf", "options": ["Vrai : c'est de la motivation extrinsèque", "Faux : ce n'est pas de la motivation"], "answer": 0, "explanation": "Vrai : l'activité vise un résultat distinct de l'activité elle-même (récompense, avantage ou éviter une conséquence) = extrinsèque."},
+      {"id": "q4", "text": "La différence entre motivation et discipline :", "type": "qcm", "options": ["La motivation fait continuer, la discipline fait démarrer", "La motivation fait démarrer, la discipline fait continuer régulièrement", "Ce sont deux synonymes", "La discipline n'existe que dans l'armée"], "answer": 1, "explanation": "La motivation (envie, variable selon les jours) déclenche ; la discipline (organisation, régularité, maîtrise des comportements) fait tenir dans la durée."},
+      {"id": "q5", "text": "« J'ai raté le devoir parce que je m'y suis pris tard ; je vais organiser mes révisions différemment. » C'est :", "type": "qcm", "options": ["Une excuse", "Une explication", "Un mensonge", "Une croyance limitante"], "answer": 1, "explanation": "Explication : description objective + la personne assume sa part de responsabilité. L'excuse rejetterait la faute sur les autres."}
+    ]
+  },
+  "Fiche_Chapitre3_LEADERSHIP_PERSONNEL": {
+    "title": "Leadership personnel",
+    "questions": [
+      {"id": "q1", "text": "Le leadership personnel, c'est d'abord :", "type": "qcm", "options": ["Commander une équipe", "Prendre sa propre vie en main : objectifs, ressources, choix et actions", "Obtenir un titre officiel", "Influencer les autres sans effort"], "answer": 1, "explanation": "Avant de guider les autres, le leadership personnel est la capacité à orienter sa propre vie vers les résultats souhaités."},
+      {"id": "q2", "text": "La différence essentielle entre un chef et un leader :", "type": "qcm", "options": ["Le chef a plus d'expérience", "Le chef exerce une autorité officielle ; le leader influence et mobilise sans forcément un titre", "Le leader est forcément le chef", "Il n'y a aucune différence"], "answer": 1, "explanation": "Le chef tient son pouvoir de la fonction/titre ; le leader tient le sien de l'influence, de l'exemple et de la confiance inspirée."},
+      {"id": "q3", "text": "Parmi les qualités d'un bon leader, on ne trouve PAS :", "type": "qcm", "options": ["L'exemplarité", "L'esprit d'équipe", "L'arrogance", "La prise de décision"], "answer": 2, "explanation": "L'arrogance (se croire supérieur, mépriser les avis) est l'inverse de la confiance en soi saine et des qualités du leader."},
+      {"id": "q4", "text": "« Avoir peur de prendre la parole mais le faire quand même » montre :", "type": "qcm", "options": ["Un manque de confiance", "La confiance en soi : agir malgré la peur", "De l'arrogance", "Une faiblesse"], "answer": 1, "explanation": "La confiance n'est pas l'absence de peur : c'est la capacité d'avancer malgré la peur."},
+      {"id": "q5", "text": "Croire en ses capacités tout en acceptant de se tromper est de la confiance en soi, pas de l'arrogance :", "type": "vf", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : l'arrogance, c'est se croire supérieur aux autres et avoir toujours raison ; la confiance accepte l'erreur et l'écoute."}
+    ]
+  },
+  "Fiche_Chapitre4_MAITRISE_DE_SOI_ET_INTELLIGENCE_EMOTIONNELLE": {
+    "title": "Maîtrise de soi et intelligence émotionnelle",
+    "questions": [
+      {"id": "q1", "text": "« Je connais mes points forts, mes limites, mes valeurs et mes réactions. » C'est :", "type": "qcm", "options": ["L'estime de soi", "La connaissance de soi", "La confiance en soi", "La compétence"], "answer": 1, "explanation": "La connaissance de soi = se comprendre (qui je suis). L'estime de soi = s'apprécier (la valeur que je me donne)."},
+      {"id": "q2", "text": "« Je sais préparer et présenter un exposé devant un public. » Cette phrase relève de :", "type": "qcm", "options": ["L'estime de soi", "La confiance en soi", "La compétence", "La connaissance de soi"], "answer": 2, "explanation": "Compétence = savoir-faire concret acquis par la pratique (« je sais faire »). La confiance serait « je me sens capable de le faire »."},
+      {"id": "q3", "text": "Dans le cycle de la confiance, l'ordre correct est :", "type": "qcm", "options": ["Confiance → Action → Compétence → Expérience", "Action → Expérience → Compétence → Confiance", "Compétence → Confiance → Action → Expérience", "Expérience → Confiance → Compétence → Action"], "answer": 1, "explanation": "On commence par agir ; l'expérience construit la compétence ; les réussites répétées donnent la confiance, qui fait oser encore plus."},
+      {"id": "q4", "text": "« Je ne suis pas fait pour les mathématiques » est :", "type": "qcm", "options": ["Une pensée utile", "Une croyance limitante", "Un objectif SMART", "Une compétence"], "answer": 1, "explanation": "Croyance limitante : idée qu'on croit vraie mais qui freine et n'est pas fondée dans la réalité — à remplacer par « comment puis-je progresser ? »."},
+      {"id": "q5", "text": "Parmi les sources de l'estime de soi, on ne trouve PAS :", "type": "qcm", "options": ["La famille et l'enfance", "Les expériences de vie", "Les croyances et messages reçus", "Le hasard pur"], "answer": 3, "explanation": "Les 6 sources : famille, expériences de vie, relations avec les autres, comparaisons sociales, messages reçus, ses propres pensées — pas le hasard."}
+    ]
+  }
+}

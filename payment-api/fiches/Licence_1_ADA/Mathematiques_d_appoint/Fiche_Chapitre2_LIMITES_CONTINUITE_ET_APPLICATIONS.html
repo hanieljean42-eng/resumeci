@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 2 — Limites, continuité et applications — Mathématiques d'appoint Licence 1 ADA | ResumeCI</title>
+<meta name="description" content="Fiche résumé - Limites de fonctions, asymptotes, formes indéterminées, continuité, suites arithmétiques et géométriques, intérêt composé en continu, exponentielle et logarithme népérien - Licence 1 ADA | ResumeCI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Mathematiques_d_appoint/Fiche_Chapitre2_LIMITES_CONTINUITE_ET_APPLICATIONS.html">
+<link rel="stylesheet" href="/fiche-standalone.css?v=1">
+<script src="/fiche-standalone.js?v=1"></script>
+</head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Mathématiques d'appoint — Dr Kouamé Yao Simplice</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 2 : Limites, continuité et applications</span>
+  </div>
+</div>
+
+<h2>I. La notion de limite</h2>
+<div class="definition">Soit f définie autour d'un point a (sauf peut-être en a). On dit que f(x) tend vers un nombre L quand x tend vers a, et on note <strong>lim<sub>x→a</sub> f(x) = L</strong>, lorsque f(x) devient <strong>aussi proche que l'on veut de L</strong> dès que x est assez proche de a.</div>
+<ul>
+<li><strong>Limite à gauche :</strong> lim<sub>x→a⁻</sub> f(x) = L — x s'approche de a par des valeurs <strong>inférieures</strong> ;</li>
+<li><strong>Limite à droite :</strong> lim<sub>x→a⁺</sub> f(x) = L — par des valeurs <strong>supérieures</strong> ;</li>
+<li><strong>Théorème :</strong> lim<sub>x→a</sub> f(x) = L ⇔ lim<sub>x→a⁻</sub> f(x) = lim<sub>x→a⁺</sub> f(x) = L.</li>
+</ul>
+<div class="schema"><strong>Exemples :</strong> f(x) = 2 − 1/x → 2 quand x → ±∞ ; f(x) = 1/x² → +∞ quand x → 0 ; f(x) = 1/x n'a pas de limite en 0 (−∞ à gauche, +∞ à droite).</div>
+
+<h2>II. Opérations sur les limites</h2>
+<div class="schema">Si lim f = L et lim g = M (L, M finis) :<br>
+• lim (f + g) = L + M · <strong>lim (f × g) = L × M</strong> · lim (f/g) = L/M <strong>si M ≠ 0</strong> · lim fⁿ = Lⁿ · lim k·f = k·L</div>
+<div class="important"><strong>Théorème des gendarmes (encadrement) :</strong> si f(x) ≤ g(x) ≤ h(x) près de a et lim f = lim h = L, alors <strong>lim g = L</strong>.<br>
+<strong>Corollaire :</strong> le produit d'une fonction <strong>bornée</strong> par une fonction qui tend vers 0 tend vers 0 — ex. lim<sub>x→0</sub> x·sin(1/x) = 0.</div>
+
+<h2>III. Limites usuelles et asymptotes</h2>
+<table><tr><th>Fonction</th><th>Limite</th><th>Lecture graphique</th></tr>
+<tr><td>xⁿ (n ≥ 1)</td><td>→ +∞ quand x → +∞</td><td>Croissance non bornée</td></tr>
+<tr><td>1/xⁿ</td><td>→ 0 quand x → ±∞</td><td><strong>Asymptote horizontale</strong> y = 0</td></tr>
+<tr><td>√x</td><td>→ +∞ quand x → +∞</td><td>Croissance lente</td></tr>
+<tr><td>1/x</td><td>→ ±∞ quand x → 0⁺/0⁻</td><td><strong>Asymptote verticale</strong> x = 0</td></tr></table>
+<ul>
+<li><strong>Asymptote verticale x = a :</strong> lim<sub>x→a</sub> f(x) = ±∞ (souvent un zéro du dénominateur) ;</li>
+<li><strong>Asymptote horizontale y = L :</strong> lim<sub>x→±∞</sub> f(x) = L fini.</li>
+</ul>
+
+<h2>IV. Les formes indéterminées</h2>
+<div class="schema"><strong>7 formes indéterminées :</strong> 0/0 · ∞/∞ · 0 × ∞ · ∞ − ∞ · 1^∞ · 0⁰ · ∞⁰ — la réponse ne se déduit <strong>pas</strong> de la règle des opérations : il faut <strong>lever l'indétermination</strong>.</div>
+<h3>Techniques de levée</h3>
+<ol>
+<li><strong>Factorisation :</strong> factoriser par la plus grande puissance (polynômes) ou par (x − a) — ex. lim<sub>x→1</sub> (x² − 1)/(x − 1) = lim (x + 1) = <strong>2</strong> ;</li>
+<li><strong>Multiplication par l'expression conjuguée :</strong> pour les racines — ex. lim<sub>x→1</sub> (1 − √x)/(x − 1) = lim −1/(1 + √x) = <strong>−1/2</strong> ;</li>
+<li><strong>Changement de variable :</strong> poser t = 1/x ou t = x − a pour revenir à une limite en 0 ;</li>
+<li><strong>Fonction continue :</strong> si f continue en a, <strong>on substitue directement</strong> — pas d'indétermination.</li>
+</ol>
+
+<h2>V. La continuité</h2>
+<div class="definition">f est <strong>continue en a</strong> si <strong>lim<sub>x→a</sub> f(x) = f(a)</strong> — la limite existe et égale la valeur prise. Continue <strong>à gauche</strong> (ou <strong>à droite</strong>) si seule la limite latérale correspondante vaut f(a). f continue sur un intervalle si elle est continue en chaque point.</div>
+<ul>
+<li><strong>Fonctions usuelles continues</strong> sur leur domaine : polynômes, x², x³, |x|, √x (x ≥ 0), 1/x (x ≠ 0), fonctions usuelles en général ;</li>
+<li>Somme, produit et quotient (dénominateur ≠ 0) de fonctions continues sont <strong>continus</strong> ;</li>
+<li><strong>Fonction définie par morceaux :</strong> on vérifie la continuité au point de raccord en comparant lim à gauche, lim à droite et f(a) ;</li>
+<li><strong>Prolongement par continuité :</strong> une fonction non définie en a mais dont la limite en a existe peut être « complétée » en posant f(a) = lim.</li>
+</ul>
+<div class="important"><strong>Lecture graphique :</strong> une fonction continue se trace <strong>sans lever le crayon</strong> ; une discontinuité correspond à un « saut » ou à un « trou ». Sur un segment fermé, une fonction continue <strong>prend toutes les valeurs intermédiaires</strong> entre ses bornes.</div>
+
+<h2>VI. Les suites</h2>
+<div class="definition">Une <strong>suite</strong> (uₙ) est une liste ordonnée de nombres indexée par les entiers : u₀, u₁, u₂, … On la définit par <strong>terme général</strong> uₙ = f(n) ou par <strong>relation de récurrence</strong> (uₙ₊₁ en fonction de uₙ).</div>
+<table><tr><th>Type</th><th>Relation</th><th>Terme général</th></tr>
+<tr><td><strong>Arithmétique</strong> (raison r)</td><td>uₙ₊₁ = uₙ + r</td><td>uₙ = u₀ + n·r</td></tr>
+<tr><td><strong>Géométrique</strong> (raison q)</td><td>uₙ₊₁ = q·uₙ</td><td>uₙ = u₀·qⁿ</td></tr>
+<tr><td><strong>Arithmético-géométrique</strong></td><td>uₙ₊₁ = a·uₙ + b</td><td>se ramène à une suite géométrique</td></tr></table>
+<div class="schema"><strong>Somme d'une suite géométrique :</strong> S = u₀ + u₀q + … + u₀qⁿ⁻¹ = u₀·(1 − qⁿ)/(1 − q) pour q ≠ 1 ; si |q| &lt; 1 et n → ∞ : <strong>S → u₀/(1 − q)</strong> (série géométrique convergente).</div>
+
+<h2>VII. Application économique : intérêt et composition continue</h2>
+<div class="definition"><strong>Intérêt composé :</strong> un capital C₀ placé au taux r, capitalisé n fois par période pendant t périodes, vaut <strong>C(t) = C₀(1 + r/n)ⁿᵗ</strong>.</div>
+<div class="schema"><strong>Composition continue :</strong> quand la fréquence de capitalisation tend vers l'infini, C(t) = C₀·lim<sub>n→∞</sub>(1 + r/n)ⁿᵗ = <strong>C₀·e<sup>rt</sup></strong>.<br>
+<strong>Exemple :</strong> 10 000 F placés à 10 % en continu → après t années : C(t) = 10 000·e<sup>0,10t</sup>.<br>
+<strong>Temps de doublement :</strong> t* = ln 2 / r (à 10 %, environ 6,9 ans).</div>
+
+<h2>VIII. Fonction exponentielle et logarithme népérien</h2>
+<div class="definition"><strong>Le nombre e :</strong> e = lim<sub>n→∞</sub>(1 + 1/n)ⁿ ≈ 2,718. La <strong>fonction exponentielle</strong> x ↦ eˣ et le <strong>logarithme népérien</strong> x ↦ ln x (x &gt; 0) sont <strong>réciproques</strong> : e<sup>ln x</sup> = x et ln(eˣ) = x.</div>
+<table><tr><th>Propriétés de eˣ</th><th>Propriétés de ln x</th></tr>
+<tr><td>e⁰ = 1 ; eˣ &gt; 0 pour tout x</td><td>ln 1 = 0 ; ln e = 1</td></tr>
+<tr><td>e<sup>a+b</sup> = eᵃ·eᵇ ; e<sup>ab</sup> = (eᵃ)ᵇ</td><td>ln(a·b) = ln a + ln b ; ln(a/b) = ln a − ln b</td></tr>
+<tr><td>e<sup>−a</sup> = 1/eᵃ</td><td>ln aʳ = r·ln a ; ln(1/a) = −ln a</td></tr>
+<tr><td>eˣ → +∞ quand x → +∞ ; eˣ → 0 quand x → −∞</td><td>ln x → +∞ quand x → +∞ ; ln x → −∞ quand x → 0⁺</td></tr></table>
+<div class="important"><strong>Usage en économie :</strong> la croissance continue est <strong>exponentielle</strong> (capital à intérêts composés en continu, population) ; le logarithme sert à <strong>résoudre en t ou en r</strong> (ex. C₀e<sup>rt</sup> = 2C₀ ⇔ rt = ln 2 ⇔ t = ln 2/r).</div>
+
+<h2>IX. ⚠️ Pièges d'examen</h2>
+<ul>
+<li>Appliquer « lim(f/g) = lim f / lim g » quand le dénominateur tend vers 0 : c'est une <strong>forme indéterminée</strong> à lever, pas un calcul direct.</li>
+<li>Dire « f(a) n'existe pas, donc pas de limite » : la limite en a ne dépend <strong>pas</strong> de f(a) (ex. (x² − 1)/(x − 1) en 1).</li>
+<li>Oublier de vérifier les <strong>deux côtés</strong> : limite en a exige gauche = droite.</li>
+<li>Confondre <strong>suite arithmétique</strong> (on ajoute r) et <strong>géométrique</strong> (on multiplie par q).</li>
+<li>Écrire ln(a + b) = ln a + ln b : <strong>faux</strong> — seul le produit se sépare (ln(a·b) = ln a + ln b).</li>
+<li>Continuité : une fonction « par morceaux » peut ne pas être continue au raccord — il faut vérifier lim⁻ = lim⁺ = f(a).</li>
+</ul>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

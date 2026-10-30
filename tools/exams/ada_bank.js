@@ -1076,6 +1076,221 @@ const UCOM = {
   ]
 };
 
+// ---------------------------------------------------------------------------
+// Outils de Développement Personnel — supports : « Objectifs/SMART/motivation/
+// leadership » (52 p.) + « Module 2 : Maîtrise de soi et intelligence
+// émotionnelle » (16 p.). Fiches Ch.1 à Ch.4.
+// ---------------------------------------------------------------------------
+const ODP = {
+  params: {
+    seq: { choices: [3, 4] }, min: { choices: [30, 45] }, sem: { choices: [6, 8] },
+    tot: { choices: [20, 25] }, seuil: { choices: [16, 20] },
+    obj: { choices: [3, 4, 5] }, nsem: { choices: [4, 5] }
+  },
+  derived: {
+    htot: "seq*min*sem/60",
+    pctok: "seuil*100/tot",
+    nseances: "obj*nsem"
+  },
+  numeric: [
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "Plan d'action : {{seq}} séances de {{min}} minutes par semaine pendant {{sem}} semaines. Calcule le temps de travail total (en heures).",
+      answer: "htot", tol: 0.1,
+      corrige: "Total = {{seq}} × {{min}} × {{sem}} = {{num:seq}}×{{num:min}}×{{num:sem}} minutes = {{num:htot}} h — l'étape « contrôler les résultats » exige ce genre d'indicateur." },
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "Un étudiant vise {{seuil}} bonnes réponses sur un test de {{tot}} exercices. Calcule le pourcentage de réussite visé (en %).",
+      answer: "pctok", tol: 0.1, precision: "arrondi à 0,1",
+      corrige: "{{seuil}}/{{tot}} = {{num:pctok}} % — le critère M — Mesurable de SMART." },
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "Combien de critères comporte la méthode SMART (S, M, A, R, T) ?",
+      answer: "5", tol: 0.001,
+      corrige: "5 critères : Spécifique, Mesurable, Atteignable, Pertinent, Temporel." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle",
+      enonce: "Combien de sources alimentent l'estime de soi selon le cours (famille, expériences, relations, comparaisons, messages reçus, propres pensées) ?",
+      answer: "6", tol: 0.001,
+      corrige: "6 sources : famille, expériences de vie, relations avec les autres, comparaisons sociales, croyances et messages reçus, propres pensées." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle",
+      enonce: "Le cycle de la confiance ACTION → EXPÉRIENCE → COMPÉTENCE → CONFIANCE comporte combien d'étapes ?",
+      answer: "4", tol: 0.001,
+      corrige: "4 étapes : l'action nourrit l'expérience, l'expérience développe la compétence, la compétence construit la confiance." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle",
+      enonce: "Le cours liste un programme de renforcement de l'estime et de la confiance : combien d'actions quotidiennes recommande-t-il ?",
+      answer: "10", tol: 0.001,
+      corrige: "10 actions : se connaître, objectifs réalistes, sortir de sa zone de confort, apprendre de ses erreurs, s'entourer, prendre soin de soi, se parler positivement, célébrer ses progrès, se former, aider les autres." },
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "Un étudiant découpe son objectif long terme en {{obj}} objectifs de moyen terme, chacun en {{nsem}} objectifs de court terme. Combien d'objectifs de court terme obtient-il ?",
+      answer: "nseances", tol: 0.001,
+      corrige: "{{obj}} × {{nsem}} = {{num:nseances}} objectifs de court terme — le long terme se découpe en moyen puis en court terme." }
+  ],
+  extraVf: [
+    { chapitre: "Du souhait à l'objectif — méthode SMART", correct: false,
+      enonce: "« Je vais commencer à apprendre l'anglais » est un objectif.",
+      corrige: "<strong>Faux.</strong> C'est une intention : le résultat n'est pas encore défini précisément ni daté (contrairement à « réussir le test B1 dans 6 mois »)." },
+    { chapitre: "Du souhait à l'objectif — méthode SMART", correct: false,
+      enonce: "Un objectif sans date limite reste un objectif SMART complet.",
+      corrige: "<strong>Faux.</strong> Sans critère T — temporel, l'objectif reste proche du souhait : l'échéance organise les efforts." },
+    { chapitre: "Motivation, discipline et responsabilité", correct: false,
+      enonce: "La motivation intrinsèque vient d'une récompense extérieure comme une bourse ou un diplôme.",
+      corrige: "<strong>Faux.</strong> Intrinsèque = plaisir et intérêt de l'activité elle-même ; la récompense externe relève de la motivation extrinsèque." },
+    { chapitre: "Motivation, discipline et responsabilité", correct: false,
+      enonce: "Une explication sert à rejeter la faute sur les circonstances pour éviter sa responsabilité.",
+      corrige: "<strong>Faux.</strong> C'est l'excuse qui évite la responsabilité ; l'explication décrit objectivement les faits en assumant sa part." },
+    { chapitre: "Leadership personnel", correct: true,
+      enonce: "Un leader peut mobiliser les autres sans occuper de fonction officielle.",
+      corrige: "<strong>Vrai.</strong> Le leadership repose sur l'influence et l'exemple ; le chef tire son autorité d'un titre ou d'une fonction." },
+    { chapitre: "Leadership personnel", correct: false,
+      enonce: "L'arrogance est une forme élevée de confiance en soi.",
+      corrige: "<strong>Faux.</strong> Arrogance = se croire supérieur aux autres et avoir toujours raison ; la confiance accepte l'erreur et l'écoute." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle", correct: false,
+      enonce: "Avoir peur avant un exposé prouve qu'on manque de confiance en soi.",
+      corrige: "<strong>Faux.</strong> On peut avoir peur et avoir confiance : la confiance, c'est agir malgré la peur — la peur est normale." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle", correct: true,
+      enonce: "On peut bien se connaître et avoir pourtant une faible estime de soi.",
+      corrige: "<strong>Vrai.</strong> Connaissance de soi = se comprendre ; estime de soi = s'apprécier. Ce sont deux choses distinctes." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle", correct: false,
+      enonce: "Une croyance limitante est une pensée fondée sur la réalité.",
+      corrige: "<strong>Faux.</strong> La croyance limitante est une idée qu'on croit vraie mais qui freine et n'est pas fondée — elle doit être remplacée par une pensée utile." },
+    { chapitre: "Maîtrise de soi et intelligence émotionnelle", correct: true,
+      enonce: "La confiance en soi se construit par l'action, pas par l'attente de se sentir prêt.",
+      corrige: "<strong>Vrai.</strong> Cycle ACTION → EXPÉRIENCE → COMPÉTENCE → CONFIANCE : l'action est le premier pas." }
+  ],
+  extraQcm: [
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "« Je veux être riche » correspond à :",
+      choix: ["Un objectif", "Une intention", "Un souhait", "Un plan d'action"],
+      correct: 2,
+      corrige: "<strong>Réponse c.</strong> Un souhait : ce que l'on aimerait obtenir, sans engagement ni précision." },
+    { chapitre: "Du souhait à l'objectif — méthode SMART",
+      enonce: "« Passer de 10/20 à 15/20 au test de bureautique en 8 semaines » illustre surtout le critère :",
+      choix: ["Spécifique", "Mesurable", "Pertinent", "Atteignable"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> Le résultat se vérifie par une note chiffrée — c'est le cœur du M — Mesurable." },
+    { chapitre: "Motivation, discipline et responsabilité",
+      enonce: "Faire ses révisions chaque jour même les jours sans envie relève de :",
+      choix: ["La motivation intrinsèque", "La discipline", "La chance", "L'estime de soi"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> La motivation fait démarrer ; la discipline (organisation, régularité) fait continuer." },
+    { chapitre: "Leadership personnel",
+      enonce: "« Je suis capable de réussir cet examen » exprime :",
+      choix: ["L'estime de soi", "La compétence", "La confiance en soi", "L'arrogance"],
+      correct: 2,
+      corrige: "<strong>Réponse c.</strong> Confiance = « je suis capable de faire » ; estime = « je suis quelqu'un de valeur » ; compétence = « je sais faire »." }
+  ]
+};
+
+// ---------------------------------------------------------------------------
+// Mathématiques d'appoint — support du Dr Kouamé Yao Simplice (55 p.) :
+// Ch.1 Révision des concepts de base, Ch.2 Limites, continuité, applications
+// (suites, intérêt composé continu, exponentielle et logarithme).
+// ---------------------------------------------------------------------------
+const MAPP = {
+  params: {
+    a1: { choices: [1, 2, 3] }, s2: { choices: [5, 7] }, p2: { choices: [6, 10] },
+    pr: { choices: [100, 200, 500] }, tx: { choices: [10, 20] },
+    u0: { choices: [2, 3] }, qq: { choices: [2, 3] }, nn: { choices: [4, 5] },
+    c0: { choices: [10000, 50000] }, rt: { choices: [0.05, 0.1] }, tt: { choices: [2, 3] },
+    b5: { choices: [3, 4] }
+  },
+  derived: {
+    delta: "s2*s2 - 4*p2",
+    asq: "a1*a1",
+    coefd: "1 - tx/100",
+    nm1: "nn - 1",
+    prixf: "pr*(1+tx/100)*(1-tx/100)",
+    baisse: "tx*tx/100",
+    limfac: "2*a1",
+    sgeo: "u0*(1 - Math.pow(qq,nn))/(1 - qq)",
+    capc: "c0*Math.exp(rt*tt)",
+    tdbl: "Math.log(2)/rt"
+  },
+  numeric: [
+    { chapitre: "Révision des concepts de base",
+      enonce: "Soit f(x) = 1/√(x − {{a1}}). Quelle valeur de x est exclue du domaine de définition (et l'intervalle de définition est ]valeur ; +∞[) ?",
+      answer: "a1", tol: 0.001,
+      corrige: "Il faut x − {{a1}} > 0 strictement (racine au dénominateur) → x > {{a1}} : la valeur exclue est {{a1}}." },
+    { chapitre: "Révision des concepts de base",
+      enonce: "Soit P(x) = x² − {{s2}}x + {{p2}}. Calcule le discriminant Δ.",
+      answer: "delta", tol: 0.001,
+      corrige: "Δ = b² − 4ac = {{s2}}² − 4×{{p2}} = {{num:delta}} > 0 → deux racines réelles." },
+    { chapitre: "Révision des concepts de base",
+      enonce: "Un prix de {{pr}} F augmente de {{tx}} % puis diminue de {{tx}} %. Calcule le prix final (en F).",
+      answer: "prixf", tol: 0.5,
+      corrige: "Prix final = {{pr}} × (1 + {{tx}}/100) × {{d2:coefd}} = {{num:prixf}} F — une baisse nette de {{num:baisse}} % (et non un retour au prix initial)." },
+    { chapitre: "Révision des concepts de base",
+      enonce: "Soit la fonction irrationnelle f(x) = √(x − {{b5}}). Quelle est la plus petite valeur entière du domaine de définition ?",
+      answer: "b5", tol: 0.001,
+      corrige: "x − {{b5}} ≥ 0 → x ≥ {{b5}} : la plus petite valeur entière du domaine est {{b5}}." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Calcule lim(x→{{a1}}) (x² − {{asq}})/(x − {{a1}}) en levant la forme indéterminée.",
+      answer: "limfac", tol: 0.001,
+      corrige: "x² − {{asq}} = (x − {{a1}})(x + {{a1}}) → on simplifie : lim (x + {{a1}}) = {{num:limfac}}." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Calcule lim(x→1) (1 − √x)/(x − 1) en multipliant par l'expression conjuguée.",
+      answer: "-0.5", tol: 0.001,
+      corrige: "(1 − √x)/(x − 1) = (1 − √x)(1 + √x)/[(x − 1)(1 + √x)] = (1 − x)/[(x − 1)(1 + √x)] = −1/(1 + √x) → −1/2." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Une entreprise modélise sa croissance par la suite géométrique u₀ = {{u0}}, raison q = {{qq}}. Calcule la somme des {{nn}} premiers termes S = u₀ + u₁ + … + u{{num:nm1}}.",
+      answer: "sgeo", tol: 0.01,
+      corrige: "S = u₀·(1 − qⁿ)/(1 − q) = {{u0}}·(1 − {{qq}}^{{nn}})/(1 − {{qq}}) = {{num:sgeo}}." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Un capital de {{c0}} F est placé en intérêts composés en continu au taux r = {{pct:rt}} %. Calcule sa valeur après {{tt}} ans (en F, arrondi à 0,01).",
+      answer: "capc", tol: 5, precision: "arrondi à 0,01",
+      corrige: "C(t) = C₀·e^(rt) = {{c0}}·e^({{num:rt}}×{{tt}}) = {{num:capc}} F." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "En composition continue, le temps de doublement d'un capital est t* = ln 2 / r. Calcule t* pour r = {{pct:rt}} % (en années, arrondi à 0,01).",
+      answer: "tdbl", tol: 0.05, precision: "arrondi à 0,01",
+      corrige: "t* = ln 2 / {{num:rt}} = 0,693 / {{num:rt}} = {{num:tdbl}} ans." }
+  ],
+  extraVf: [
+    { chapitre: "Révision des concepts de base", correct: false,
+      enonce: "√2 appartient à ℚ, l'ensemble des nombres rationnels.",
+      corrige: "<strong>Faux.</strong> √2 est irrationnel : il appartient à ℝ mais pas à ℚ (ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ)." },
+    { chapitre: "Révision des concepts de base", correct: false,
+      enonce: "Augmenter de 20 % puis diminuer de 20 % ramène exactement au prix initial.",
+      corrige: "<strong>Faux.</strong> ×1,2 × 0,8 = ×0,96 : une baisse nette de 4 % — les pourcentages ne se compensent pas." },
+    { chapitre: "Révision des concepts de base", correct: false,
+      enonce: "Une fonction peut associer deux images différentes à la même valeur de x.",
+      corrige: "<strong>Faux.</strong> Une fonction associe à chaque élément du domaine au plus une image." },
+    { chapitre: "Limites, continuité et applications", correct: true,
+      enonce: "lim(x→0) x·sin(1/x) = 0, car sin(1/x) reste bornée tandis que x tend vers 0.",
+      corrige: "<strong>Vrai.</strong> Produit d'une fonction bornée par une fonction qui tend vers 0 : la limite vaut 0 (corollaire des gendarmes)." },
+    { chapitre: "Limites, continuité et applications", correct: false,
+      enonce: "0/0 permet de conclure directement que la limite n'existe pas.",
+      corrige: "<strong>Faux.</strong> 0/0 est une forme indéterminée : il faut lever l'indétermination (factorisation, conjugué, changement de variable)." },
+    { chapitre: "Limites, continuité et applications", correct: false,
+      enonce: "Si f(a) n'est pas définie, alors f n'a pas de limite en a.",
+      corrige: "<strong>Faux.</strong> La limite en a ne dépend pas de f(a) : (x² − 1)/(x − 1) tend vers 2 en 1 sans y être définie." },
+    { chapitre: "Limites, continuité et applications", correct: false,
+      enonce: "ln(a + b) = ln a + ln b.",
+      corrige: "<strong>Faux.</strong> Le logarithme transforme le produit en somme : ln(a·b) = ln a + ln b — pas la somme a + b." },
+    { chapitre: "Limites, continuité et applications", correct: true,
+      enonce: "Les fonctions exponentielle x ↦ eˣ et logarithme népérien x ↦ ln x sont réciproques.",
+      corrige: "<strong>Vrai.</strong> e^(ln x) = x pour x > 0 et ln(eˣ) = x pour tout x réel." }
+  ],
+  extraQcm: [
+    { chapitre: "Révision des concepts de base",
+      enonce: "Soit P(x) = x² − 5x + 6. Sa factorisation est :",
+      choix: ["(x + 2)(x + 3)", "(x − 2)(x − 3)", "(x − 1)(x − 6)", "Non factorisable"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> Δ = 25 − 24 = 1, racines 2 et 3 → (x − 2)(x − 3)." },
+    { chapitre: "Révision des concepts de base",
+      enonce: "La fonction valeur absolue f(x) = |x| est :",
+      choix: ["Impaire", "Paire", "Ni paire ni impaire", "Croissante sur ℝ"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> |−x| = |x| : fonction paire (symétrie par rapport à l'axe des y), décroissante sur ]−∞ ; 0] puis croissante." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Une asymptote verticale x = a apparaît quand :",
+      choix: ["lim(x→a) f(x) est finie", "lim(x→a) f(x) = ±∞", "lim(x→∞) f(x) = a", "f(a) = 0"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> Asymptote verticale : la fonction tend vers ±∞ en a (souvent un zéro du dénominateur) ; l'asymptote horizontale y = L correspond à une limite finie en ±∞." },
+    { chapitre: "Limites, continuité et applications",
+      enonce: "Une suite définie par uₙ₊₁ = uₙ + r est :",
+      choix: ["Géométrique", "Arithmétique", "Arithmético-géométrique", "Constante"],
+      correct: 1,
+      corrige: "<strong>Réponse b.</strong> On ajoute la raison r : suite arithmétique (uₙ = u₀ + n·r). La géométrique multiplie par q ; l'arithmético-géométrique fait les deux." }
+  ]
+};
+
 module.exports = {
   // code suffixe, intitulé matière, fichier quiz, banque
   list: [
@@ -1093,6 +1308,8 @@ module.exports = {
     { code: 'PROBA', matiere: 'Probabilité',                                quiz: 'Probabilite',                                bank: PROBA },
     { code: 'SOCIO', matiere: "Sociologie de l'entreprise",                 quiz: 'Sociologie_de_l_Entreprise',                 bank: SOCIO },
     { code: 'STAT',  matiere: 'Statistiques',                               quiz: 'Statistiques',                               bank: STAT },
-    { code: 'UCOM',  matiere: "Utilisation de l'information comptable",     quiz: 'Utilisation_de_l_Information_Comptable',     bank: UCOM }
+    { code: 'UCOM',  matiere: "Utilisation de l'information comptable",     quiz: 'Utilisation_de_l_Information_Comptable',     bank: UCOM },
+    { code: 'ODP',   matiere: 'Outils de développement personnel',          quiz: 'Outils_de_Developpement_Personnel',          bank: ODP },
+    { code: 'MAPP',  matiere: "Mathématiques d'appoint",                    quiz: 'Mathematiques_d_appoint',                    bank: MAPP }
   ]
 };

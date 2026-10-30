@@ -40,6 +40,17 @@ Sortie livrée : `C:\Users\DJEBLE\OneDrive\Desktop\VIDEO RESUMECI\VIDEO RESUMECI
 - Traitement déjà appliqué automatiquement : débruitage `hqdn3d` (blocs de compression) → agrandissement lanczos précis → netteté adaptative `cas` ; images JPEG qualité 95 ; segments CRF 14 ; export final CRF 15, profil High 4.2 (marge avant la recompression TikTok/WhatsApp).
 - En cas de source basse définition, préférer des extraits où l'écran est **statique ou lent** (texte lisible) et éviter les défilements rapides.
 
+## Référence validée par l'utilisateur : `_video/ada2/` (19_ResumeCI_Filiere_ADA_Demo)
+Reproduire ce niveau pour chaque nouvelle capture :
+- **Cadrage droit** : clip = `[src, début, durée, vitesse, cropTop]`. Détecter la barre d'URL Chrome seconde par seconde
+  (`fps=1,crop=700:60:150:200,signalstats` → YAVG < 70 = barre visible) : `cropTop 72` si barre d'URL, `27` sinon (barre d'état seule).
+  Le recadrage est centré et borné (assemble.js) : jamais d'écran décalé ni penché.
+- **Analyse à fond** : planche 1 image/3 s puis planche fine 1 image/s, vérifier les images clés en pleine résolution.
+- **Garder** : menus, fiches qui défilent, flashcards, quiz, modes de révision, examen, correction, stats/outils.
+- **Couper** : chargements, retours répétés au menu, mauvais scores (ex. 1/5), autres classes que le sujet, sélecteur d'applis,
+  claviers, écrans flous, **et tout bug visible** (le signaler + le corriger dans le code, jamais le montrer).
+- Structure : intro → hero compteurs réels → démos numérotées (01, 02…) → hero offre/TD → hero outils → hero prix → CTA.
+
 ## Étapes (dans cet ordre, sans exploration supplémentaire)
 1. **Sources** : copier chaque vidéo de l'utilisateur dans `_video/<projet>/src/` sous des noms courts (`A.mp4`, `B.mp4`…). Vérifier la résolution : `ffprobe -v quiet -select_streams v -show_entries stream=width,height,bit_rate -of compact src/A.mp4` (voir « Qualité HD »).
 2. **Repérage sans regarder toute la vidéo** — planche-contact horodatée (une image / 3 s) :

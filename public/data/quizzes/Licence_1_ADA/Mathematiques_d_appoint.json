@@ -1,0 +1,22 @@
+{
+  "Fiche_Chapitre1_REVISION_DES_CONCEPTS_DE_BASE": {
+    "title": "Révision des concepts de base",
+    "questions": [
+      {"id": "q1", "text": "Le domaine de définition de f(x) = 1/√(x − 1) est :", "type": "qcm", "options": ["ℝ", "[1 ; +∞[", "]1 ; +∞[", "ℝ*"], "answer": 2, "explanation": "Il faut x − 1 > 0 (strict : racine au dénominateur), donc x > 1, soit ]1 ; +∞[."},
+      {"id": "q2", "text": "Augmenter un prix de 20 % puis le diminuer de 20 % donne :", "type": "qcm", "options": ["Le prix initial", "Une hausse de 4 %", "Une baisse de 4 %", "Une hausse de 0,4 %"], "answer": 2, "explanation": "×1,2 puis ×0,8 = ×0,96 → une baisse de 4 % par rapport au prix initial."},
+      {"id": "q3", "text": "La factorisation de x² − 5x + 6 est :", "type": "qcm", "options": ["(x + 2)(x + 3)", "(x − 2)(x − 3)", "(x − 1)(x − 6)", "x(x − 5) + 6"], "answer": 1, "explanation": "Δ = 25 − 24 = 1, racines 2 et 3, donc x² − 5x + 6 = (x − 2)(x − 3)."},
+      {"id": "q4", "text": "Une fonction f associe à chaque élément de son ensemble de départ :", "type": "qcm", "options": ["Au moins une image", "Exactement deux images", "Au plus une image", "Une infinité d'images"], "answer": 2, "explanation": "Définition : chaque élément du domaine a au plus une image. Si deux images existaient pour le même x, ce ne serait pas une fonction."},
+      {"id": "q5", "text": "Un taxi prend 1 000 F de prise en charge + 450 F/km. Le prix de la course se modélise par A(x) = 1 000 + 450x :", "type": "vf", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : c'est une fonction affine — constante (prise en charge) + tarif kilométrique × nombre de km."}
+    ]
+  },
+  "Fiche_Chapitre2_LIMITES_CONTINUITE_ET_APPLICATIONS": {
+    "title": "Limites, continuité et applications",
+    "questions": [
+      {"id": "q1", "text": "lim(x→1) (x² − 1)/(x − 1) vaut :", "type": "qcm", "options": ["0", "1", "2", "+∞"], "answer": 2, "explanation": "Forme 0/0 : on factorise (x² − 1) = (x − 1)(x + 1), on simplifie → lim (x + 1) = 2."},
+      {"id": "q2", "text": "f est continue en a si et seulement si :", "type": "qcm", "options": ["f(a) existe", "lim(x→a) f(x) = f(a)", "f est dérivable en a", "lim(x→a) f(x) = +∞"], "answer": 1, "explanation": "Continuité en a : la limite quand x → a existe ET vaut exactement f(a) — les deux limites latérales coïncident."},
+      {"id": "q3", "text": "Si limx→a⁻ f(x) = 3 et limx→a⁺ f(x) = 5, alors :", "type": "qcm", "options": ["lim(x→a) f(x) = 4", "f est continue en a", "lim(x→a) f(x) n'existe pas", "f(a) = 5"], "answer": 2, "explanation": "La limite en a existe ⇔ les deux limites latérales sont égales. Ici 3 ≠ 5 → pas de limite (et f est discontinue en a)."},
+      {"id": "q4", "text": "Un capital placé à intérêts composés en continu au taux r vaut au bout de t périodes :", "type": "qcm", "options": ["C₀(1 + r·t)", "C₀·e^(rt)", "C₀·rt", "C₀ + r·t"], "answer": 1, "explanation": "Composition continue : C(t) = C₀·e^(rt) — limite de C₀(1 + r/n)nt quand n → ∞. Temps de doublement : t* = ln 2/r."},
+      {"id": "q5", "text": "ln(a·b) = ln a + ln b :", "type": "vf", "options": ["Vrai", "Faux"], "answer": 0, "explanation": "Vrai : le logarithme transforme le produit en somme. Attention : ln(a + b) ≠ ln a + ln b."}
+    ]
+  }
+}

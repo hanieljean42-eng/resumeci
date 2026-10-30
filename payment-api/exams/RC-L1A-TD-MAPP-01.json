@@ -1,0 +1,463 @@
+{
+  "code": "RC-L1A-TD-MAPP-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Mathématiques d'appoint",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Mathématiques d'appoint",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "a1": {
+      "choices": [
+        1,
+        2,
+        3
+      ]
+    },
+    "s2": {
+      "choices": [
+        5,
+        7
+      ]
+    },
+    "p2": {
+      "choices": [
+        6,
+        10
+      ]
+    },
+    "pr": {
+      "choices": [
+        100,
+        200,
+        500
+      ]
+    },
+    "tx": {
+      "choices": [
+        10,
+        20
+      ]
+    },
+    "u0": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "qq": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "nn": {
+      "choices": [
+        4,
+        5
+      ]
+    },
+    "c0": {
+      "choices": [
+        10000,
+        50000
+      ]
+    },
+    "rt": {
+      "choices": [
+        0.05,
+        0.1
+      ]
+    },
+    "tt": {
+      "choices": [
+        2,
+        3
+      ]
+    },
+    "b5": {
+      "choices": [
+        3,
+        4
+      ]
+    }
+  },
+  "derived": {
+    "delta": "s2*s2 - 4*p2",
+    "asq": "a1*a1",
+    "coefd": "1 - tx/100",
+    "nm1": "nn - 1",
+    "prixf": "pr*(1+tx/100)*(1-tx/100)",
+    "baisse": "tx*tx/100",
+    "limfac": "2*a1",
+    "sgeo": "u0*(1 - Math.pow(qq,nn))/(1 - qq)",
+    "capc": "c0*Math.exp(rt*tt)",
+    "tdbl": "Math.log(2)/rt"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (8 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "√2 appartient à ℚ, l'ensemble des nombres rationnels.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> √2 est irrationnel : il appartient à ℝ mais pas à ℚ (ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ).",
+          "points": 0.69
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Augmenter de 20 % puis diminuer de 20 % ramène exactement au prix initial.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> ×1,2 × 0,8 = ×0,96 : une baisse nette de 4 % — les pourcentages ne se compensent pas.",
+          "points": 0.69
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Une fonction peut associer deux images différentes à la même valeur de x.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Une fonction associe à chaque élément du domaine au plus une image.",
+          "points": 0.69
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "lim(x→0) x·sin(1/x) = 0, car sin(1/x) reste bornée tandis que x tend vers 0.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Produit d'une fonction bornée par une fonction qui tend vers 0 : la limite vaut 0 (corollaire des gendarmes).",
+          "points": 0.69
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "0/0 permet de conclure directement que la limite n'existe pas.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> 0/0 est une forme indéterminée : il faut lever l'indétermination (factorisation, conjugué, changement de variable).",
+          "points": 0.69
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Si f(a) n'est pas définie, alors f n'a pas de limite en a.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La limite en a ne dépend pas de f(a) : (x² − 1)/(x − 1) tend vers 2 en 1 sans y être définie.",
+          "points": 0.69
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "ln(a + b) = ln a + ln b.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Le logarithme transforme le produit en somme : ln(a·b) = ln a + ln b — pas la somme a + b.",
+          "points": 0.69
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Les fonctions exponentielle x ↦ eˣ et logarithme népérien x ↦ ln x sont réciproques.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> e^(ln x) = x pour x > 0 et ln(eˣ) = x pour tout x réel.",
+          "points": 0.69
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (12 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q9",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Le domaine de définition de f(x) = 1/√(x − 1) est :",
+          "choix": [
+            "ℝ",
+            "[1 ; +∞[",
+            "]1 ; +∞[",
+            "ℝ*"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Il faut x − 1 &gt; 0 (strict : racine au dénominateur), donc x &gt; 1, soit ]1 ; +∞[.",
+          "points": 0.69
+        },
+        {
+          "id": "q10",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Augmenter un prix de 20 % puis le diminuer de 20 % donne :",
+          "choix": [
+            "Le prix initial",
+            "Une hausse de 4 %",
+            "Une baisse de 4 %",
+            "Une hausse de 0,4 %"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> ×1,2 puis ×0,8 = ×0,96 → une baisse de 4 % par rapport au prix initial.",
+          "points": 0.69
+        },
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "La factorisation de x² − 5x + 6 est :",
+          "choix": [
+            "(x + 2)(x + 3)",
+            "(x − 2)(x − 3)",
+            "(x − 1)(x − 6)",
+            "x(x − 5) + 6"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Δ = 25 − 24 = 1, racines 2 et 3, donc x² − 5x + 6 = (x − 2)(x − 3).",
+          "points": 0.69
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Une fonction f associe à chaque élément de son ensemble de départ :",
+          "choix": [
+            "Au moins une image",
+            "Exactement deux images",
+            "Au plus une image",
+            "Une infinité d'images"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Définition : chaque élément du domaine a au plus une image. Si deux images existaient pour le même x, ce ne serait pas une fonction.",
+          "points": 0.69
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "lim(x→1) (x² − 1)/(x − 1) vaut :",
+          "choix": [
+            "0",
+            "1",
+            "2",
+            "+∞"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Forme 0/0 : on factorise (x² − 1) = (x − 1)(x + 1), on simplifie → lim (x + 1) = 2.",
+          "points": 0.69
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "f est continue en a si et seulement si :",
+          "choix": [
+            "f(a) existe",
+            "lim(x→a) f(x) = f(a)",
+            "f est dérivable en a",
+            "lim(x→a) f(x) = +∞"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Continuité en a : la limite quand x → a existe ET vaut exactement f(a) — les deux limites latérales coïncident.",
+          "points": 0.69
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Si limx→a⁻ f(x) = 3 et limx→a⁺ f(x) = 5, alors :",
+          "choix": [
+            "lim(x→a) f(x) = 4",
+            "f est continue en a",
+            "lim(x→a) f(x) n'existe pas",
+            "f(a) = 5"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> La limite en a existe ⇔ les deux limites latérales sont égales. Ici 3 ≠ 5 → pas de limite (et f est discontinue en a).",
+          "points": 0.69
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Un capital placé à intérêts composés en continu au taux r vaut au bout de t périodes :",
+          "choix": [
+            "C₀(1 + r·t)",
+            "C₀·e^(rt)",
+            "C₀·rt",
+            "C₀ + r·t"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Composition continue : C(t) = C₀·e^(rt) — limite de C₀(1 + r/n)nt quand n → ∞. Temps de doublement : t* = ln 2/r.",
+          "points": 0.69
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Soit P(x) = x² − 5x + 6. Sa factorisation est :",
+          "choix": [
+            "(x + 2)(x + 3)",
+            "(x − 2)(x − 3)",
+            "(x − 1)(x − 6)",
+            "Non factorisable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Δ = 25 − 24 = 1, racines 2 et 3 → (x − 2)(x − 3).",
+          "points": 0.69
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "La fonction valeur absolue f(x) = |x| est :",
+          "choix": [
+            "Impaire",
+            "Paire",
+            "Ni paire ni impaire",
+            "Croissante sur ℝ"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> |−x| = |x| : fonction paire (symétrie par rapport à l'axe des y), décroissante sur ]−∞ ; 0] puis croissante.",
+          "points": 0.69
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Une asymptote verticale x = a apparaît quand :",
+          "choix": [
+            "lim(x→a) f(x) est finie",
+            "lim(x→a) f(x) = ±∞",
+            "lim(x→∞) f(x) = a",
+            "f(a) = 0"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Asymptote verticale : la fonction tend vers ±∞ en a (souvent un zéro du dénominateur) ; l'asymptote horizontale y = L correspond à une limite finie en ±∞.",
+          "points": 0.69
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Une suite définie par uₙ₊₁ = uₙ + r est :",
+          "choix": [
+            "Géométrique",
+            "Arithmétique",
+            "Arithmético-géométrique",
+            "Constante"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> On ajoute la raison r : suite arithmétique (uₙ = u₀ + n·r). La géométrique multiplie par q ; l'arithmético-géométrique fait les deux.",
+          "points": 0.69
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (9 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q21",
+          "type": "numeric",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Soit f(x) = 1/√(x − {{a1}}). Quelle valeur de x est exclue du domaine de définition (et l'intervalle de définition est ]valeur ; +∞[) ?",
+          "answer": "a1",
+          "tol": 0.001,
+          "corrige": "Il faut x − {{a1}} > 0 strictement (racine au dénominateur) → x > {{a1}} : la valeur exclue est {{a1}}.",
+          "points": 0.69
+        },
+        {
+          "id": "q22",
+          "type": "numeric",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Soit P(x) = x² − {{s2}}x + {{p2}}. Calcule le discriminant Δ.",
+          "answer": "delta",
+          "tol": 0.001,
+          "corrige": "Δ = b² − 4ac = {{s2}}² − 4×{{p2}} = {{num:delta}} > 0 → deux racines réelles.",
+          "points": 0.69
+        },
+        {
+          "id": "q23",
+          "type": "numeric",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Un prix de {{pr}} F augmente de {{tx}} % puis diminue de {{tx}} %. Calcule le prix final (en F).",
+          "answer": "prixf",
+          "tol": 0.5,
+          "corrige": "Prix final = {{pr}} × (1 + {{tx}}/100) × {{d2:coefd}} = {{num:prixf}} F — une baisse nette de {{num:baisse}} % (et non un retour au prix initial).",
+          "points": 0.69
+        },
+        {
+          "id": "q24",
+          "type": "numeric",
+          "chapitre": "Révision des concepts de base",
+          "enonce": "Soit la fonction irrationnelle f(x) = √(x − {{b5}}). Quelle est la plus petite valeur entière du domaine de définition ?",
+          "answer": "b5",
+          "tol": 0.001,
+          "corrige": "x − {{b5}} ≥ 0 → x ≥ {{b5}} : la plus petite valeur entière du domaine est {{b5}}.",
+          "points": 0.69
+        },
+        {
+          "id": "q25",
+          "type": "numeric",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Calcule lim(x→{{a1}}) (x² − {{asq}})/(x − {{a1}}) en levant la forme indéterminée.",
+          "answer": "limfac",
+          "tol": 0.001,
+          "corrige": "x² − {{asq}} = (x − {{a1}})(x + {{a1}}) → on simplifie : lim (x + {{a1}}) = {{num:limfac}}.",
+          "points": 0.69
+        },
+        {
+          "id": "q26",
+          "type": "numeric",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Calcule lim(x→1) (1 − √x)/(x − 1) en multipliant par l'expression conjuguée.",
+          "answer": "-0.5",
+          "tol": 0.001,
+          "corrige": "(1 − √x)/(x − 1) = (1 − √x)(1 + √x)/[(x − 1)(1 + √x)] = (1 − x)/[(x − 1)(1 + √x)] = −1/(1 + √x) → −1/2.",
+          "points": 0.69
+        },
+        {
+          "id": "q27",
+          "type": "numeric",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Une entreprise modélise sa croissance par la suite géométrique u₀ = {{u0}}, raison q = {{qq}}. Calcule la somme des {{nn}} premiers termes S = u₀ + u₁ + … + u{{num:nm1}}.",
+          "answer": "sgeo",
+          "tol": 0.01,
+          "corrige": "S = u₀·(1 − qⁿ)/(1 − q) = {{u0}}·(1 − {{qq}}^{{nn}})/(1 − {{qq}}) = {{num:sgeo}}.",
+          "points": 0.69
+        },
+        {
+          "id": "q28",
+          "type": "numeric",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "Un capital de {{c0}} F est placé en intérêts composés en continu au taux r = {{pct:rt}} %. Calcule sa valeur après {{tt}} ans (en F, arrondi à 0,01).",
+          "answer": "capc",
+          "tol": 5,
+          "precision": "arrondi à 0,01",
+          "corrige": "C(t) = C₀·e^(rt) = {{c0}}·e^({{num:rt}}×{{tt}}) = {{num:capc}} F.",
+          "points": 0.69
+        },
+        {
+          "id": "q29",
+          "type": "numeric",
+          "chapitre": "Limites, continuité et applications",
+          "enonce": "En composition continue, le temps de doublement d'un capital est t* = ln 2 / r. Calcule t* pour r = {{pct:rt}} % (en années, arrondi à 0,01).",
+          "answer": "tdbl",
+          "tol": 0.05,
+          "precision": "arrondi à 0,01",
+          "corrige": "t* = ln 2 / {{num:rt}} = 0,693 / {{num:rt}} = {{num:tdbl}} ans.",
+          "points": 0.68
+        }
+      ]
+    }
+  ]
+}

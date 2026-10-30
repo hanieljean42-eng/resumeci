@@ -1,0 +1,537 @@
+{
+  "code": "RC-L1A-TD-ODP-01",
+  "format": "exam-v2",
+  "titre": "TD chronométré — Outils de développement personnel",
+  "classe": "Licence_1_ADA",
+  "classeLabel": "Licence 1 ADA",
+  "matiere": "Outils de développement personnel",
+  "dureeMin": 60,
+  "noteSur": 20,
+  "consignes": "Mode Examen : réponds directement dans l'application avant la fin du chrono. Correction 100 % automatique — vrai/faux, choix multiples et réponses numériques.",
+  "params": {
+    "seq": {
+      "choices": [
+        3,
+        4
+      ]
+    },
+    "min": {
+      "choices": [
+        30,
+        45
+      ]
+    },
+    "sem": {
+      "choices": [
+        6,
+        8
+      ]
+    },
+    "tot": {
+      "choices": [
+        20,
+        25
+      ]
+    },
+    "seuil": {
+      "choices": [
+        16,
+        20
+      ]
+    },
+    "obj": {
+      "choices": [
+        3,
+        4,
+        5
+      ]
+    },
+    "nsem": {
+      "choices": [
+        4,
+        5
+      ]
+    }
+  },
+  "derived": {
+    "htot": "seq*min*sem/60",
+    "pctok": "seuil*100/tot",
+    "nseances": "obj*nsem"
+  },
+  "blocs": [
+    {
+      "titre": "Partie 1 — Vrai ou Faux (10 affirmations)",
+      "consigne": "Pour chaque affirmation, appuie sur « Vrai » ou « Faux ».",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "vrai_faux",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "« Je vais commencer à apprendre l'anglais » est un objectif.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est une intention : le résultat n'est pas encore défini précisément ni daté (contrairement à « réussir le test B1 dans 6 mois »).",
+          "points": 0.56
+        },
+        {
+          "id": "q2",
+          "type": "vrai_faux",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "Un objectif sans date limite reste un objectif SMART complet.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Sans critère T — temporel, l'objectif reste proche du souhait : l'échéance organise les efforts.",
+          "points": 0.56
+        },
+        {
+          "id": "q3",
+          "type": "vrai_faux",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "La motivation intrinsèque vient d'une récompense extérieure comme une bourse ou un diplôme.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Intrinsèque = plaisir et intérêt de l'activité elle-même ; la récompense externe relève de la motivation extrinsèque.",
+          "points": 0.56
+        },
+        {
+          "id": "q4",
+          "type": "vrai_faux",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "Une explication sert à rejeter la faute sur les circonstances pour éviter sa responsabilité.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> C'est l'excuse qui évite la responsabilité ; l'explication décrit objectivement les faits en assumant sa part.",
+          "points": 0.56
+        },
+        {
+          "id": "q5",
+          "type": "vrai_faux",
+          "chapitre": "Leadership personnel",
+          "enonce": "Un leader peut mobiliser les autres sans occuper de fonction officielle.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Le leadership repose sur l'influence et l'exemple ; le chef tire son autorité d'un titre ou d'une fonction.",
+          "points": 0.56
+        },
+        {
+          "id": "q6",
+          "type": "vrai_faux",
+          "chapitre": "Leadership personnel",
+          "enonce": "L'arrogance est une forme élevée de confiance en soi.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> Arrogance = se croire supérieur aux autres et avoir toujours raison ; la confiance accepte l'erreur et l'écoute.",
+          "points": 0.56
+        },
+        {
+          "id": "q7",
+          "type": "vrai_faux",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Avoir peur avant un exposé prouve qu'on manque de confiance en soi.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> On peut avoir peur et avoir confiance : la confiance, c'est agir malgré la peur — la peur est normale.",
+          "points": 0.56
+        },
+        {
+          "id": "q8",
+          "type": "vrai_faux",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "On peut bien se connaître et avoir pourtant une faible estime de soi.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Connaissance de soi = se comprendre ; estime de soi = s'apprécier. Ce sont deux choses distinctes.",
+          "points": 0.56
+        },
+        {
+          "id": "q9",
+          "type": "vrai_faux",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Une croyance limitante est une pensée fondée sur la réalité.",
+          "correct": false,
+          "corrige": "<strong>Faux.</strong> La croyance limitante est une idée qu'on croit vraie mais qui freine et n'est pas fondée — elle doit être remplacée par une pensée utile.",
+          "points": 0.56
+        },
+        {
+          "id": "q10",
+          "type": "vrai_faux",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "La confiance en soi se construit par l'action, pas par l'attente de se sentir prêt.",
+          "correct": true,
+          "corrige": "<strong>Vrai.</strong> Cycle ACTION → EXPÉRIENCE → COMPÉTENCE → CONFIANCE : l'action est le premier pas.",
+          "points": 0.56
+        }
+      ]
+    },
+    {
+      "titre": "Partie 2 — Questions à choix multiples (21 questions)",
+      "consigne": "Une seule bonne réponse par question.",
+      "questions": [
+        {
+          "id": "q11",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif : méthode SMART",
+          "enonce": "« Je veux réussir un test d'anglais B1 dans 6 mois. » Cette phrase est :",
+          "choix": [
+            "Un souhait",
+            "Une intention",
+            "Un objectif",
+            "Une action"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Résultat précis (test B1) + délai déterminé (6 mois) : c'est un objectif, pas un simple souhait ni une intention.",
+          "points": 0.56
+        },
+        {
+          "id": "q12",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif : méthode SMART",
+          "enonce": "L'intention se situe entre :",
+          "choix": [
+            "L'objectif et le plan d'action",
+            "Le souhait et l'objectif",
+            "Le plan d'action et le résultat",
+            "Le souhait et la rêverie"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> L'échelle est : souhait (j'aimerais) → intention (j'envisage de faire) → objectif (résultat précis) → plan d'action.",
+          "points": 0.56
+        },
+        {
+          "id": "q13",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif : méthode SMART",
+          "enonce": "« Je veux être plus compétent en informatique » n'est pas un bon objectif SMART parce qu'il manque surtout :",
+          "choix": [
+            "Le critère Spécifique",
+            "Le critère Mesurable",
+            "Le critère Temporel",
+            "Tous ces critères à la fois"
+          ],
+          "correct": 3,
+          "corrige": "<strong>Réponse d.</strong> Ni spécifique (quelle compétence ?), ni mesurable (quel niveau ?), ni daté (pour quand ?) : la phrase reste un souhait.",
+          "points": 0.56
+        },
+        {
+          "id": "q14",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif : méthode SMART",
+          "enonce": "Dans SMART, « R — Pertinent » signifie que l'objectif :",
+          "choix": [
+            "Doit être facile à atteindre",
+            "Correspond à mes besoins, priorités ou projets",
+            "Doit avoir une date limite",
+            "Doit être mesuré en pourcentage"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Pertinent = une véritable utilité pour moi (ex. formation qui augmente mes chances d'emploi), pas un caprice sans lien avec mes priorités.",
+          "points": 0.56
+        },
+        {
+          "id": "q15",
+          "type": "qcm",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "La motivation est :",
+          "choix": [
+            "Une récompense financière",
+            "L'ensemble des raisons et des forces qui poussent à commencer une action, fournir des efforts et atteindre un résultat",
+            "Une qualité réservée aux leaders",
+            "Un comportement qui ne change jamais"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Définition du support : les raisons et les forces qui font démarrer, faire des efforts et viser un résultat.",
+          "points": 0.56
+        },
+        {
+          "id": "q16",
+          "type": "qcm",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "Une étudiante révise parce qu'elle aime réellement la matière. Sa motivation est :",
+          "choix": [
+            "Extrinsèque",
+            "Intrinsèque",
+            "Externe",
+            "Absente"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Intrinsèque : elle agit pour le plaisir et l'intérêt de l'activité elle-même, sans récompense externe.",
+          "points": 0.56
+        },
+        {
+          "id": "q17",
+          "type": "qcm",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "La différence entre motivation et discipline :",
+          "choix": [
+            "La motivation fait continuer, la discipline fait démarrer",
+            "La motivation fait démarrer, la discipline fait continuer régulièrement",
+            "Ce sont deux synonymes",
+            "La discipline n'existe que dans l'armée"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La motivation (envie, variable selon les jours) déclenche ; la discipline (organisation, régularité, maîtrise des comportements) fait tenir dans la durée.",
+          "points": 0.56
+        },
+        {
+          "id": "q18",
+          "type": "qcm",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "« J'ai raté le devoir parce que je m'y suis pris tard ; je vais organiser mes révisions différemment. » C'est :",
+          "choix": [
+            "Une excuse",
+            "Une explication",
+            "Un mensonge",
+            "Une croyance limitante"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Explication : description objective + la personne assume sa part de responsabilité. L'excuse rejetterait la faute sur les autres.",
+          "points": 0.56
+        },
+        {
+          "id": "q19",
+          "type": "qcm",
+          "chapitre": "Leadership personnel",
+          "enonce": "Le leadership personnel, c'est d'abord :",
+          "choix": [
+            "Commander une équipe",
+            "Prendre sa propre vie en main : objectifs, ressources, choix et actions",
+            "Obtenir un titre officiel",
+            "Influencer les autres sans effort"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Avant de guider les autres, le leadership personnel est la capacité à orienter sa propre vie vers les résultats souhaités.",
+          "points": 0.56
+        },
+        {
+          "id": "q20",
+          "type": "qcm",
+          "chapitre": "Leadership personnel",
+          "enonce": "La différence essentielle entre un chef et un leader :",
+          "choix": [
+            "Le chef a plus d'expérience",
+            "Le chef exerce une autorité officielle ; le leader influence et mobilise sans forcément un titre",
+            "Le leader est forcément le chef",
+            "Il n'y a aucune différence"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le chef tient son pouvoir de la fonction/titre ; le leader tient le sien de l'influence, de l'exemple et de la confiance inspirée.",
+          "points": 0.56
+        },
+        {
+          "id": "q21",
+          "type": "qcm",
+          "chapitre": "Leadership personnel",
+          "enonce": "Parmi les qualités d'un bon leader, on ne trouve PAS :",
+          "choix": [
+            "L'exemplarité",
+            "L'esprit d'équipe",
+            "L'arrogance",
+            "La prise de décision"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> L'arrogance (se croire supérieur, mépriser les avis) est l'inverse de la confiance en soi saine et des qualités du leader.",
+          "points": 0.56
+        },
+        {
+          "id": "q22",
+          "type": "qcm",
+          "chapitre": "Leadership personnel",
+          "enonce": "« Avoir peur de prendre la parole mais le faire quand même » montre :",
+          "choix": [
+            "Un manque de confiance",
+            "La confiance en soi : agir malgré la peur",
+            "De l'arrogance",
+            "Une faiblesse"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La confiance n'est pas l'absence de peur : c'est la capacité d'avancer malgré la peur.",
+          "points": 0.56
+        },
+        {
+          "id": "q23",
+          "type": "qcm",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "« Je connais mes points forts, mes limites, mes valeurs et mes réactions. » C'est :",
+          "choix": [
+            "L'estime de soi",
+            "La connaissance de soi",
+            "La confiance en soi",
+            "La compétence"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La connaissance de soi = se comprendre (qui je suis). L'estime de soi = s'apprécier (la valeur que je me donne).",
+          "points": 0.56
+        },
+        {
+          "id": "q24",
+          "type": "qcm",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "« Je sais préparer et présenter un exposé devant un public. » Cette phrase relève de :",
+          "choix": [
+            "L'estime de soi",
+            "La confiance en soi",
+            "La compétence",
+            "La connaissance de soi"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Compétence = savoir-faire concret acquis par la pratique (« je sais faire »). La confiance serait « je me sens capable de le faire ».",
+          "points": 0.56
+        },
+        {
+          "id": "q25",
+          "type": "qcm",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Dans le cycle de la confiance, l'ordre correct est :",
+          "choix": [
+            "Confiance → Action → Compétence → Expérience",
+            "Action → Expérience → Compétence → Confiance",
+            "Compétence → Confiance → Action → Expérience",
+            "Expérience → Confiance → Compétence → Action"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> On commence par agir ; l'expérience construit la compétence ; les réussites répétées donnent la confiance, qui fait oser encore plus.",
+          "points": 0.56
+        },
+        {
+          "id": "q26",
+          "type": "qcm",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "« Je ne suis pas fait pour les mathématiques » est :",
+          "choix": [
+            "Une pensée utile",
+            "Une croyance limitante",
+            "Un objectif SMART",
+            "Une compétence"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Croyance limitante : idée qu'on croit vraie mais qui freine et n'est pas fondée dans la réalité — à remplacer par « comment puis-je progresser ? ».",
+          "points": 0.56
+        },
+        {
+          "id": "q27",
+          "type": "qcm",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Parmi les sources de l'estime de soi, on ne trouve PAS :",
+          "choix": [
+            "La famille et l'enfance",
+            "Les expériences de vie",
+            "Les croyances et messages reçus",
+            "Le hasard pur"
+          ],
+          "correct": 3,
+          "corrige": "<strong>Réponse d.</strong> Les 6 sources : famille, expériences de vie, relations avec les autres, comparaisons sociales, messages reçus, ses propres pensées — pas le hasard.",
+          "points": 0.56
+        },
+        {
+          "id": "q28",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "« Je veux être riche » correspond à :",
+          "choix": [
+            "Un objectif",
+            "Une intention",
+            "Un souhait",
+            "Un plan d'action"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Un souhait : ce que l'on aimerait obtenir, sans engagement ni précision.",
+          "points": 0.56
+        },
+        {
+          "id": "q29",
+          "type": "qcm",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "« Passer de 10/20 à 15/20 au test de bureautique en 8 semaines » illustre surtout le critère :",
+          "choix": [
+            "Spécifique",
+            "Mesurable",
+            "Pertinent",
+            "Atteignable"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> Le résultat se vérifie par une note chiffrée — c'est le cœur du M — Mesurable.",
+          "points": 0.56
+        },
+        {
+          "id": "q30",
+          "type": "qcm",
+          "chapitre": "Motivation, discipline et responsabilité",
+          "enonce": "Faire ses révisions chaque jour même les jours sans envie relève de :",
+          "choix": [
+            "La motivation intrinsèque",
+            "La discipline",
+            "La chance",
+            "L'estime de soi"
+          ],
+          "correct": 1,
+          "corrige": "<strong>Réponse b.</strong> La motivation fait démarrer ; la discipline (organisation, régularité) fait continuer.",
+          "points": 0.56
+        },
+        {
+          "id": "q31",
+          "type": "qcm",
+          "chapitre": "Leadership personnel",
+          "enonce": "« Je suis capable de réussir cet examen » exprime :",
+          "choix": [
+            "L'estime de soi",
+            "La compétence",
+            "La confiance en soi",
+            "L'arrogance"
+          ],
+          "correct": 2,
+          "corrige": "<strong>Réponse c.</strong> Confiance = « je suis capable de faire » ; estime = « je suis quelqu'un de valeur » ; compétence = « je sais faire ».",
+          "points": 0.56
+        }
+      ]
+    },
+    {
+      "titre": "Partie 3 — Réponses numériques (5 calculs)",
+      "consigne": "Entre la valeur numérique exacte (la virgule est acceptée : 0,25 ou 0.25).",
+      "questions": [
+        {
+          "id": "q32",
+          "type": "numeric",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "Plan d'action : {{seq}} séances de {{min}} minutes par semaine pendant {{sem}} semaines. Calcule le temps de travail total (en heures).",
+          "answer": "htot",
+          "tol": 0.1,
+          "corrige": "Total = {{seq}} × {{min}} × {{sem}} = {{num:seq}}×{{num:min}}×{{num:sem}} minutes = {{num:htot}} h — l'étape « contrôler les résultats » exige ce genre d'indicateur.",
+          "points": 0.56
+        },
+        {
+          "id": "q33",
+          "type": "numeric",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "Un étudiant vise {{seuil}} bonnes réponses sur un test de {{tot}} exercices. Calcule le pourcentage de réussite visé (en %).",
+          "answer": "pctok",
+          "tol": 0.1,
+          "precision": "arrondi à 0,1",
+          "corrige": "{{seuil}}/{{tot}} = {{num:pctok}} % — le critère M — Mesurable de SMART.",
+          "points": 0.56
+        },
+        {
+          "id": "q34",
+          "type": "numeric",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Le cycle de la confiance ACTION → EXPÉRIENCE → COMPÉTENCE → CONFIANCE comporte combien d'étapes ?",
+          "answer": "4",
+          "tol": 0.001,
+          "corrige": "4 étapes : l'action nourrit l'expérience, l'expérience développe la compétence, la compétence construit la confiance.",
+          "points": 0.56
+        },
+        {
+          "id": "q35",
+          "type": "numeric",
+          "chapitre": "Maîtrise de soi et intelligence émotionnelle",
+          "enonce": "Le cours liste un programme de renforcement de l'estime et de la confiance : combien d'actions quotidiennes recommande-t-il ?",
+          "answer": "10",
+          "tol": 0.001,
+          "corrige": "10 actions : se connaître, objectifs réalistes, sortir de sa zone de confort, apprendre de ses erreurs, s'entourer, prendre soin de soi, se parler positivement, célébrer ses progrès, se former, aider les autres.",
+          "points": 0.56
+        },
+        {
+          "id": "q36",
+          "type": "numeric",
+          "chapitre": "Du souhait à l'objectif — méthode SMART",
+          "enonce": "Un étudiant découpe son objectif long terme en {{obj}} objectifs de moyen terme, chacun en {{nsem}} objectifs de court terme. Combien d'objectifs de court terme obtient-il ?",
+          "answer": "nseances",
+          "tol": 0.001,
+          "corrige": "{{obj}} × {{nsem}} = {{num:nseances}} objectifs de court terme — le long terme se découpe en moyen puis en court terme.",
+          "points": 0.4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 1 — Révision des concepts de base — Mathématiques d'appoint Licence 1 ADA | ResumeCI</title>
+<meta name="description" content="Fiche résumé - Notations, intervalles et ensembles de nombres, pourcentages, équations et inéquations, polynômes, fonctions : domaine de définition, image, graphe, fonctions élémentaires et modélisation - Licence 1 ADA | ResumeCI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://resumeci.me/fiches/Licence_1_ADA/Mathematiques_d_appoint/Fiche_Chapitre1_REVISION_DES_CONCEPTS_DE_BASE.html">
+<link rel="stylesheet" href="/fiche-standalone.css?v=1">
+<script src="/fiche-standalone.js?v=1"></script>
+</head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Mathématiques d'appoint — Dr Kouamé Yao Simplice</span>
+    <span>🏫 Licence 1 ADA — Semestre 1</span>
+    <span>Chapitre 1 : Révision des concepts de base</span>
+  </div>
+</div>
+
+<h2>I. Notations : intervalles et ensembles de nombres</h2>
+<h3>Les intervalles</h3>
+<div class="definition">Un <strong>intervalle</strong> est un ensemble de nombres compris entre deux valeurs (ou borné d'un seul côté). Pour a &lt; b :</div>
+<ul>
+<li><strong>[a ; b]</strong> : intervalle <strong>fermé</strong> — a et b sont inclus ;</li>
+<li><strong>]a ; b]</strong> ou <strong>[a ; b[</strong> : intervalle <strong>semi-ouvert</strong> ;</li>
+<li><strong>]a ; +∞[</strong> , <strong>]-∞ ; b[</strong> : bornés d'un seul côté.</li>
+</ul>
+<div class="schema"><strong>Propriété :</strong> si a &lt; b alors a &lt; (a + b)/2 &lt; b — le milieu de deux réels distincts est toujours strictement compris entre eux.</div>
+<h3>Les ensembles de nombres</h3>
+<div class="schema"><strong>ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</strong> — entiers naturels ⊂ entiers relatifs ⊂ décimaux ⊂ rationnels ⊂ réels.<br>
+<strong>Exemples :</strong> 2/3 ∉ ℤ (mais ∈ ℚ) ; √2 ∉ ℚ (irrationnel, mais ∈ ℝ).</div>
+
+<h2>II. La fonction inverse</h2>
+<div class="definition">La <strong>fonction inverse</strong> associe à tout réel non nul son inverse : <strong>f(x) = 1/x</strong>, définie sur ℝ* = ]-∞ ; 0[ ∪ ]0 ; +∞[.</div>
+<div class="schema"><strong>Propriétés :</strong> 1/(a × b) = (1/a) × (1/b) ; 1/(a/b) = b/a (a, b ≠ 0).<br>
+<strong>Exemple de calcul :</strong> f(4) + f(1/2) = 1/4 + 2 = 9/4.</div>
+
+<h2>III. Calcul de pourcentages</h2>
+<ul>
+<li><strong>x % de a :</strong> (x × a)/100 — ex. 15 % de 200 = 30 ;</li>
+<li><strong>Augmenter de x % :</strong> multiplier par <strong>(1 + x/100)</strong> ;</li>
+<li><strong>Diminuer de x % :</strong> multiplier par <strong>(1 − x/100)</strong>.</li>
+</ul>
+<div class="important"><strong>Attention :</strong> augmenter de 20 % puis diminuer de 20 % ne ramène <strong>pas</strong> au prix initial : ×1,2 × 0,8 = ×0,96 (baisse de 4 %).</div>
+
+<h2>IV. Équations et inéquations</h2>
+<div class="definition">Résoudre <strong>f(x) = 0</strong> (ou f(x) &lt; 0, f(x) ≥ 0…) : trouver les valeurs de x <strong>du domaine de définition</strong> qui vérifient la condition.</div>
+<ul>
+<li>x² − 4 = 0 ⇔ (x − 2)(x + 2) = 0 ⇔ x ∈ {−2 ; 2} ;</li>
+<li>1/x − 1 &lt; 0 : domaine x ≠ 0, puis étude de signe sur ℝ* ;</li>
+<li>Quotient : P(x)/Q(x) défini seulement si Q(x) ≠ 0.</li>
+</ul>
+
+<h2>V. Les polynômes</h2>
+<div class="definition"><strong>Polynôme :</strong> expression de la forme P(x) = a₀ + a₁x + a₂x² + … + aₙxⁿ (coefficients réels). Le <strong>degré</strong> est la plus grande puissance de x de coefficient non nul.</div>
+<h3>Le trinôme du second degré : ax² + bx + c</h3>
+<div class="schema"><strong>Discriminant :</strong> Δ = b² − 4ac<br>
+• Δ &gt; 0 : deux racines x₁ = (−b − √Δ)/(2a) et x₂ = (−b + √Δ)/(2a) ; P(x) = a(x − x₁)(x − x₂)<br>
+• Δ = 0 : racine double x₀ = −b/(2a) ; P(x) = a(x − x₀)²<br>
+• Δ &lt; 0 : pas de racine réelle — signe constant (celui de a).</div>
+<div class="important"><strong>Exemple :</strong> x² − 5x + 6 → Δ = 25 − 24 = 1 → racines 2 et 3 → x² − 5x + 6 = (x − 2)(x − 3).</div>
+
+<h2>VI. Fonctions rationnelles et irrationnelles</h2>
+<ul>
+<li><strong>Fonction rationnelle :</strong> f(x) = P(x)/Q(x) avec P, Q polynômes — définie là où <strong>Q(x) ≠ 0</strong>.</li>
+<li><strong>Fonction irrationnelle :</strong> contient des radicaux (√x) — définie là où la quantité sous la racine est <strong>≥ 0</strong>.</li>
+</ul>
+
+<h2>VII. La notion de fonction</h2>
+<div class="definition">Une <strong>fonction</strong> f d'un ensemble A vers un ensemble B est un processus qui associe à <strong>chaque élément de A au plus un élément</strong> de B, noté f(x).</div>
+<ul>
+<li><strong>Variable indépendante :</strong> x (l'entrée) ; <strong>variable dépendante :</strong> y = f(x) (le résultat) ;</li>
+<li><strong>Domaine de définition :</strong> ensemble des valeurs de x pour lesquelles f(x) existe ;</li>
+<li><strong>Image :</strong> l'ensemble des valeurs f(x) atteintes ;</li>
+<li><strong>Graphe G_f :</strong> ensemble des points (x ; f(x)).</li>
+</ul>
+<div class="schema"><strong>Domaines types :</strong> f(x) = x − 3 → ℝ ; f(x) = √x → [0 ; +∞[ ; f(x) = 1/√(x − 1) → x − 1 &gt; 0 donc ]1 ; +∞[.</div>
+<div class="important"><strong>Modélisation :</strong> une fonction traduit un phénomène réel en langage mathématique. Ex. taxi : prise en charge 1000 F + 450 F/km → <strong>A(x) = 1000 + 450x</strong> (fonction affine).</div>
+
+<h2>VIII. Opérations et fonctions élémentaires</h2>
+<h3>Opérations sur les fonctions</h3>
+<ul>
+<li><strong>Somme/différence :</strong> (f + g)(x) = f(x) + g(x) — domaine commun ;</li>
+<li><strong>Produit :</strong> (f × g)(x) = f(x) × g(x) ;</li>
+<li><strong>Quotient :</strong> (f/g)(x) = f(x)/g(x) — seulement là où g(x) ≠ 0 ;</li>
+<li><strong>Comparer :</strong> f ≤ g sur un intervalle signifie f(x) ≤ g(x) pour tout x de cet intervalle (utilisé pour les <strong>encadrements</strong>).</li>
+</ul>
+<h3>Les fonctions usuelles à connaître</h3>
+<table><tr><th>Fonction</th><th>Expression</th><th>Propriété remarquable</th></tr>
+<tr><td>Linéaire/affine</td><td>f(x) = ax + b</td><td>Croissante si a &gt; 0, décroissante si a &lt; 0</td></tr>
+<tr><td>Carré</td><td>f(x) = x²</td><td>Paire, décroissante sur ]-∞ ; 0], croissante sur [0 ; +∞[</td></tr>
+<tr><td>Inverse</td><td>f(x) = 1/x</td><td>Impaire, non définie en 0</td></tr>
+<tr><td>Racine</td><td>f(x) = √x</td><td>Définie et croissante sur [0 ; +∞[</td></tr>
+<tr><td>Cubique</td><td>f(x) = x³</td><td>Impaire, croissante sur ℝ</td></tr>
+<tr><td>Valeur absolue</td><td>f(x) = |x|</td><td>|x| = x si x ≥ 0, −x sinon — paire</td></tr>
+<tr><td>Partie entière</td><td>f(x) = E(x)</td><td>Plus grand entier ≤ x — fonction « en escalier »</td></tr></table>
+<div class="important"><strong>Parité :</strong> f paire si f(−x) = f(x) (graphe symétrique par rapport à l'axe des y : x², ax², |x|) ; f impaire si f(−x) = −f(x) (symétrie par rapport à l'origine : x³, 1/x).</div>
+
+<h2>IX. ⚠️ Pièges d'examen</h2>
+<ul>
+<li>Oublier de préciser le <strong>domaine</strong> avant de résoudre : 1/√(x − 1) exige x &gt; 1 (strict).</li>
+<li>Croire que x² = 4 a une seule solution : il y en a deux (±2).</li>
+<li>Multiplieur de pourcentage : <strong>diminuer de x %</strong> = ×(1 − x/100), pas ×(x/100).</li>
+<li>Confondre image et domaine : le <strong>domaine</strong> = les x possibles ; l'<strong>image</strong> = les f(x) obtenus.</li>
+<li>Dire qu'une fonction « passe » par toutes les valeurs : une fonction associe <strong>au plus une image</strong> à chaque x.</li>
+</ul>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>
