@@ -808,12 +808,23 @@
 
   // ==================== SWIPE NAVIGATION (mobile) ====================
   function initSwipeNav(){
-    let startX=0,startY=0;
-    document.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY;},{passive:true});
+    let startX=0,startY=0,startEl=null;
+    document.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY;startEl=e.target;},{passive:true});
     document.addEventListener('touchend',e=>{
       if(!window.CURRENT_FICHE)return;
       const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;
       if(Math.abs(dx)<80||Math.abs(dy)>50)return;
+      // Geste capturé par une zone scrollable horizontalement (tableaux larges,
+      // formules…) : si elle peut encore défiler dans le sens du geste, on ne
+      // change pas de fiche. À l'extrémité, la navigation reste possible.
+      for(let el=(startEl&&startEl.nodeType===1)?startEl:(startEl&&startEl.parentElement);el&&el!==document.body;el=el.parentElement){
+        if(el.scrollWidth-el.clientWidth<=8)continue;
+        const sx=getComputedStyle(el).overflowX;
+        if(sx!=='auto'&&sx!=='scroll')continue;
+        const maxS=el.scrollWidth-el.clientWidth;
+        if((dx<0&&el.scrollLeft<maxS-4)||(dx>0&&el.scrollLeft>4))return;
+        break;
+      }
       const{cls,sub,file}=window.CURRENT_FICHE;
       const fiches=window.DATA?.structure?.[cls]?.[sub];if(!fiches)return;
       const idx=fiches.findIndex(f=>f.file===file);if(idx===-1)return;

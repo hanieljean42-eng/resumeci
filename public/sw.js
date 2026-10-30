@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v118';
+const CACHE_SHELL = 'resumeci-shell-v119';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -22,7 +22,7 @@ const SHELL_FILES = [
   '/univ.css?v=2.3.0',
   '/intro.css?v=1.1.0',
   '/enhancements.css?v=3.4.0',
-  '/enhancements.js?v=3.3.7',
+  '/enhancements.js?v=3.3.8',
   '/firebase-config.js?v=3.3.5',
   '/content-protection.js?v=3.3.5',
   '/quiz.css?v=3.4.0',
