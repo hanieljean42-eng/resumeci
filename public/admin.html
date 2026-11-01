@@ -535,6 +535,44 @@
         </div>
       </div>
 
+      <!-- Tirage au sort hebdomadaire -->
+      <div class="section-card" id="drawCard">
+        <div class="section-header">
+          <h2><i class="fas fa-trophy" style="color:var(--amber);"></i> Tirage au sort de la semaine</h2>
+          <span style="font-size:12px; color:var(--text-dim);" id="drawCountLabel">—</span>
+        </div>
+        <div class="section-body" id="drawBody" style="padding:14px 22px;">
+          <div style="text-align:center; padding:24px; color:var(--text-dim);">
+            <i class="fas fa-spinner fa-spin" style="font-size:22px;"></i>
+            <p style="margin-top:8px;">Chargement...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Codes cadeaux -->
+      <div class="section-card" id="giftsCard">
+        <div class="section-header">
+          <h2><i class="fas fa-gift" style="color:var(--indigo);"></i> Codes cadeaux</h2>
+          <span style="font-size:12px; color:var(--text-dim);" id="giftsCountLabel">—</span>
+        </div>
+        <div class="section-body" style="padding:14px 22px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+            <select id="giftPlan" style="padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+              <option value="pro">Pass Pro (élève)</option>
+              <option value="elite">Pass Élite (lycée)</option>
+              <option value="uni_starter">Pass Étudiant (univ.)</option>
+              <option value="uni_pro">Pass Licence Pro (univ.)</option>
+              <option value="uni_elite">Pass Excellence (univ.)</option>
+            </select>
+            <input id="giftDays" type="number" value="30" min="1" max="365" placeholder="Jours" style="width:70px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+            <input id="giftUses" type="number" value="1" min="1" max="500" placeholder="Usages" style="width:74px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+            <input id="giftNote" type="text" maxlength="120" placeholder="Note (concours, parrainage…)" style="flex:1;min-width:140px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+            <button class="btn-top btn-top-primary" style="padding:8px 14px;font-size:12px" onclick="genGift()"><i class="fas fa-plus"></i> Générer</button>
+          </div>
+          <div id="giftsListBody"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -883,6 +921,8 @@
         renderPremiumList();
         renderClassList();
         loadReviews();
+        loadDraw();
+        loadGifts();
         lastLoadAt = Date.now();
         updateSyncLabel();
 
@@ -1013,6 +1053,135 @@
         if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || `HTTP ${res.status}`);
         adminToast('🗑️', 'Avis supprimé', '', 'success');
         loadReviews();
+      } catch(e) {
+        adminToast('⚠️', 'Erreur', e.message, 'error');
+      }
+    };
+
+    // ========== TIRAGE AU SORT + CODES CADEAUX ==========
+    window.loadDraw = async function() {
+      const body = document.getElementById('drawBody');
+      const label = document.getElementById('drawCountLabel');
+      try {
+        const res = await adminFetch('/api/admin/draw');
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        renderDraw(data.draw, data.past || []);
+      } catch(e) {
+        if (body) body.innerHTML = `<div style="text-align:center;padding:20px;color:var(--rose);"><i class="fas fa-triangle-exclamation"></i> ${escapeHtml(e.message)}</div>`;
+      }
+    };
+
+    function renderDraw(draw, past) {
+      const body = document.getElementById('drawBody');
+      const label = document.getElementById('drawCountLabel');
+      if (!body || !draw) return;
+      const entries = draw.entries || [];
+      const end = draw.endAt ? new Date(draw.endAt) : null;
+      const left = end ? Math.max(0, end.getTime() - Date.now()) : 0;
+      const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000);
+      const open = draw.status === 'open';
+      if (label) label.textContent = `${draw.weekId} · ${entries.length} participant(s) · ${open ? 'ouvert' : 'tiré'}`;
+
+      let html = `<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <div>
+          <div style="font-weight:800;font-size:14px">Semaine ${escapeHtml(draw.weekId)} — ${open ? '⏳ ' + (dj > 0 ? dj + 'j ' : '') + dh + 'h avant la clôture' : '🏁 tirage effectué'}</div>
+          <div style="font-size:11.5px;color:var(--text-dim)">Clôture dimanche 20h · 1 avis publié = 1 ticket · « vedette » compte ×3</div>
+        </div>
+        ${open && draw.winner ? '' : ''}
+        ${open
+          ? `<button class="btn-top btn-top-primary" style="padding:9px 16px;font-size:12.5px;background:var(--amber)" onclick="pickDraw()" ${entries.length ? '' : 'disabled'}><i class="fas fa-dice"></i> 🎲 Lancer le tirage (${entries.length})</button>`
+          : draw.winner ? `<div style="font-size:12px;padding:8px 12px;border-radius:8px;background:rgba(16,185,129,.1);border:1px solid var(--emerald);color:var(--emerald);font-weight:800">🏆 ${escapeHtml(draw.winner.firstName)} (${escapeHtml(draw.winner.classe || '—')}) → ${escapeHtml(draw.winner.prizeLabel || '')} · code <code style="background:var(--bg);padding:1px 6px;border-radius:4px">${escapeHtml(draw.winner.code || '')}</code></div>` : ''}
+      </div>`;
+
+      if (entries.length) {
+        html += '<div style="max-height:280px;overflow-y:auto">' + entries.map(e => `
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--border);border-radius:9px;margin-bottom:6px">
+            <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--amber));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px">${escapeHtml((e.firstName || 'E')[0].toUpperCase())}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:700;font-size:12.5px">${escapeHtml(e.firstName)} <span style="font-weight:600;color:var(--text-dim);font-size:11px">· ${escapeHtml(e.classe || '—')} · ${'★'.repeat(e.stars || 5)}</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:10.5px;font-weight:800;color:${(e.weight || 1) > 1 ? 'var(--amber)' : 'var(--text-dim)'}">×${e.weight || 1}</span>
+              <button class="btn-top" style="padding:4px 9px;font-size:10.5px;background:rgba(251,191,36,.15);color:var(--amber)" onclick="boostEntry('${e.reviewId}', ${((e.weight || 1) >= 3) ? 1 : 3})">${(e.weight || 1) >= 3 ? 'Vedette ✓' : '⭐ Vedette ×3'}</button>
+            </div>
+          </div>`).join('') + '</div>';
+      } else {
+        html += '<div style="text-align:center;padding:16px;color:var(--text-dim);font-size:12.5px"><i class="fas fa-users-slash"></i> Aucun participant — les avis publiés cette semaine entrent automatiquement au tirage.</div>';
+      }
+
+      if (past && past.length) {
+        html += `<div style="border-top:1px dashed var(--border);margin-top:12px;padding-top:10px">
+          <div style="font-weight:800;font-size:12px;margin-bottom:8px;color:var(--text-dim)">🏆 Anciens gagnants</div>` +
+          past.filter(p => p.winner).map(p => `<div style="font-size:11.5px;padding:4px 0;color:var(--text-dim)">• <b>${escapeHtml(p.weekId)}</b> : ${escapeHtml(p.winner.firstName)} (${escapeHtml(p.winner.classe || '—')}) — ${escapeHtml(p.winner.prizeLabel || '')} <code style="background:var(--bg);padding:0 5px;border-radius:4px;font-size:10px">${escapeHtml(p.winner.code || '')}</code></div>`).join('') + '</div>';
+      }
+      body.innerHTML = html;
+    }
+
+    window.pickDraw = async function() {
+      if (!confirm('Lancer le tirage au sort de cette semaine ?\nLe gagnant recevra son code cadeau par notification.')) return;
+      try {
+        const res = await adminFetch('/api/admin/draw/pick', { method: 'POST' });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        const w = data.winner;
+        adminToast('🏆', 'Gagnant : ' + w.firstName, `${w.classe || ''} → ${w.prizeLabel} · code ${w.code}`, 'success');
+        alert(`🏆 GAGNANT DU TIRAGE\n\n${w.firstName} — ${w.classe || 'classe inconnue'}\nPrix : ${w.prizeLabel}\nCode : ${w.code}\n\nLe gagnant a été notifié dans l'appli.`);
+        loadDraw();
+      } catch(e) {
+        adminToast('⚠️', 'Erreur tirage', e.message, 'error');
+      }
+    };
+
+    window.boostEntry = async function(reviewId, weight) {
+      try {
+        const res = await adminFetch('/api/admin/draw/entry/weight', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewId, weight }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        loadDraw();
+      } catch(e) {
+        adminToast('⚠️', 'Erreur', e.message, 'error');
+      }
+    };
+
+    window.loadGifts = async function() {
+      const body = document.getElementById('giftsListBody');
+      const label = document.getElementById('giftsCountLabel');
+      try {
+        const res = await adminFetch('/api/admin/gifts');
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        const gifts = data.gifts || [];
+        if (label) label.textContent = `${gifts.length} code(s)`;
+        if (!gifts.length) {
+          body.innerHTML = '<div style="text-align:center;padding:12px;color:var(--text-dim);font-size:12px">Aucun code généré.</div>';
+          return;
+        }
+        body.innerHTML = '<div style="max-height:220px;overflow-y:auto">' + gifts.map(g => {
+          const left = g.maxUses - g.used;
+          const expired = g.expiresAt && Date.parse(g.expiresAt) < Date.now();
+          return `<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--border);border-radius:9px;margin-bottom:6px;${expired ? 'opacity:.5' : ''}">
+            <code style="font-weight:900;font-size:13px;letter-spacing:1px;color:var(--indigo)">${escapeHtml(g.code)}</code>
+            <div style="flex:1;font-size:11px;color:var(--text-dim)">${escapeHtml(g.plan)} · ${g.days}j · ${expired ? 'expiré' : left + ' usage(s) restants'}${g.note ? ' · ' + escapeHtml(g.note) : ''}</div>
+            <button class="btn-top" style="padding:4px 8px;font-size:10.5px" onclick="navigator.clipboard.writeText('${g.code}');adminToast('📋','Copié','${g.code}','success')"><i class="fas fa-copy"></i></button>
+          </div>`;
+        }).join('') + '</div>';
+      } catch(e) {
+        if (body) body.innerHTML = `<div style="text-align:center;padding:12px;color:var(--rose);font-size:12px">${escapeHtml(e.message)}</div>`;
+      }
+    };
+
+    window.genGift = async function() {
+      const plan = document.getElementById('giftPlan').value;
+      const days = parseInt(document.getElementById('giftDays').value, 10) || 30;
+      const maxUses = parseInt(document.getElementById('giftUses').value, 10) || 1;
+      const note = document.getElementById('giftNote').value.trim();
+      try {
+        const res = await adminFetch('/api/admin/gifts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ plan, days, maxUses, note }) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        adminToast('🎁', 'Code créé', data.gift.code, 'success');
+        loadGifts();
       } catch(e) {
         adminToast('⚠️', 'Erreur', e.message, 'error');
       }

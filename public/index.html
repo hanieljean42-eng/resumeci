@@ -201,7 +201,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.6.21" defer></script>
+  <script src="/app.js?v=3.6.22" defer></script>
   <style>
     /* Poppins font loaded via <link> in <head> for better performance */
     #announceOverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;animation:annIn .3s ease}
@@ -1423,6 +1423,15 @@
           </div>
         </div>
 
+        <div style="background: linear-gradient(135deg, #fdf4ff, #fae8ff); border: 1.5px solid #e9d5ff; border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; text-align: left;">
+          <div style="font-weight: 800; color: #7c3aed; font-size: 13px; margin-bottom: 6px;">🎁 J'ai un code cadeau</div>
+          <div style="display: flex; gap: 8px;">
+            <input id="vpGiftCode" type="text" placeholder="RC-XXXXXXXX" maxlength="30" style="flex:1; padding: 9px 10px; border: 1.5px solid #e2e8f0; border-radius: 9px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-sizing: border-box;">
+            <button id="vpGiftBtn" onclick="redeemGift()" style="padding: 9px 14px; border: none; border-radius: 9px; background: linear-gradient(135deg,#7c3aed,#a855f7); color: #fff; font-weight: 800; font-size: 12px; cursor: pointer; white-space: nowrap;">Activer</button>
+          </div>
+          <div style="font-size: 10px; color: #a78bfa; margin-top: 5px;">Reçu au tirage, d'un ami ou d'une promo — active-le pour prolonger ton Pass.</div>
+        </div>
+
         <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 10px 12px; border-radius: 10px; color: #92400e; font-weight: 600; font-size: 12px; margin-bottom: 14px; line-height: 1.4;" id="vpMessage">
         </div>
 
@@ -1836,6 +1845,7 @@
         <h2 class="elite-modal-title" style="font-size:20px;margin-top:8px">Ce qu'ils pensent de ResumeCI</h2>
         <p class="elite-modal-subtitle" style="font-size:12px">Avis réels d'élèves et d'étudiants — toutes classes confondues, validés par l'équipe</p>
       </div>
+      <div id="drawBannerZone" style="padding:10px 18px 0"></div>
       <div id="reviewsListBody" style="overflow-y:auto;padding:4px 18px 14px;flex:1"></div>
       <div id="reviewFormZone" style="padding:0 18px 18px;border-top:1px solid #e2e8f0"></div>
     </div>

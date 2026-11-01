@@ -3490,6 +3490,7 @@ window.openReviewsModal = async function() {
   if (!modal) return;
   modal.classList.add('show');
   renderReviewForm();
+  loadDrawStatus();
   const body = document.getElementById('reviewsListBody');
   body.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des avis…</div>';
   try {
@@ -3502,8 +3503,91 @@ window.openReviewsModal = async function() {
   }
 };
 
+// ---------- Tirage au sort hebdo : statut + bandeau dans le modal avis ----------
+window._drawCache = null;
+window.loadDrawStatus = async function() {
+  const zone = document.getElementById('drawBannerZone');
+  if (!zone) return;
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+    const res = await fetch(`${apiBase}/api/draw`, {
+      cache: 'no-store',
+      headers: token ? { 'Authorization': 'Bearer ' + token } : {}
+    });
+    const data = await res.json();
+    window._drawCache = (data && data.success) ? data : null;
+  } catch (e) {
+    window._drawCache = null;
+  }
+  renderDrawBanner();
+};
+
+function renderDrawBanner() {
+  const zone = document.getElementById('drawBannerZone');
+  if (!zone) return;
+  const d = window._drawCache;
+  const last = d && d.lastWinner;
+  const lastChip = last ? `<div style="margin-top:6px;font-size:10.5px;opacity:.95">🏆 ${escHtml(last.firstName)}${last.classe ? ' · ' + escHtml(String(last.classe).replace(/_/g, ' ')) : ''} a gagné <b>${escHtml(last.prizeLabel)}</b> la semaine dernière</div>` : '';
+  if (!d || !d.open) {
+    zone.innerHTML = lastChip
+      ? `<div style="margin-bottom:12px;padding:10px 12px;border-radius:12px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #f59e0b;font-size:11.5px;color:#92400e">${lastChip}</div>`
+      : '';
+    return;
+  }
+  const end = d.endAt ? new Date(d.endAt) : null;
+  const left = end ? Math.max(0, end.getTime() - Date.now()) : 0;
+  const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000);
+  const countdown = left > 0 ? `⏳ ${dj > 0 ? dj + 'j ' : ''}${dh}h avant le tirage` : '';
+  zone.innerHTML = `<div style="margin-bottom:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;box-shadow:0 6px 18px rgba(124,58,237,.3)">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="font-size:22px">🎁</div>
+      <div style="flex:1">
+        <div style="font-weight:900;font-size:12.5px">TIRAGE DE LA SEMAINE — 1 mois de Pass à gagner</div>
+        <div style="font-size:11px;opacity:.92">Ton avis publié = un ticket · dimanche 20h ${countdown ? '· ' + countdown : ''}</div>
+      </div>
+      <div style="text-align:center;font-size:10px;font-weight:800;background:rgba(255,255,255,.18);padding:6px 10px;border-radius:99px">${d.entriesCount} participant${d.entriesCount > 1 ? 's' : ''}</div>
+    </div>
+    ${d.entered ? '<div style="margin-top:6px;font-size:11px;font-weight:800">✅ Tu participes — bonne chance !</div>' : '<div style="margin-top:6px;font-size:11px;font-weight:800">✍️ Écris ton avis pour participer</div>'}
+    ${lastChip}
+  </div>`;
+}
+
 window.closeReviewsModal = function() {
   document.getElementById('reviewsModal')?.classList.remove('show');
+};
+
+// ---------- Codes cadeaux : activation dans « Mon Profil » ----------
+window.redeemGift = async function() {
+  const token = window.USER_PROFILE && window.USER_PROFILE.sessionToken;
+  if (!token) { window.location.href = '/connexion.html'; return; }
+  const input = document.getElementById('vpGiftCode');
+  const btn = document.getElementById('vpGiftBtn');
+  const code = (input && input.value || '').trim().toUpperCase();
+  if (code.length < 6) {
+    if (window.toast) toast('Entre ton code cadeau.', 'warn');
+    return;
+  }
+  if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>'; }
+  try {
+    const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
+    const res = await fetch(`${apiBase}/api/gifts/redeem`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body: JSON.stringify({ code })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.success) {
+      if (window.toast) toast(data.message || '🎁 Pass activé !', 'success', 5000);
+      if (input) input.value = '';
+      if (typeof window.syncUserProfileFromRemote === 'function') window.syncUserProfileFromRemote();
+    } else {
+      if (window.toast) toast(data.error || 'Code invalide.', 'warn');
+    }
+  } catch (e) {
+    if (window.toast) toast('⚠️ Connexion impossible au serveur.', 'warn');
+  }
+  if (btn) { btn.disabled = false; btn.innerHTML = 'Activer'; }
 };
 
 function renderReviewsList(reviews) {
@@ -3600,6 +3684,7 @@ window.submitReview = async function() {
         <div style="font-size:30px">🎉</div>
         <div style="font-weight:800;font-size:14px;color:#0f172a;margin:6px 0 4px">Merci pour ton avis !</div>
         <div style="font-size:12px;color:#64748b">Il sera visible par tous les élèves après validation par l'équipe.</div>
+        <div style="margin-top:8px;font-size:12px;font-weight:800;color:#7c3aed">🎁 S'il est publié, tu participes au tirage de la semaine : un Pass d'un mois à gagner !</div>
       </div>`;
     } else {
       if (window.toast) toast(data.error || 'Envoi impossible.', 'warn');

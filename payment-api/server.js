@@ -2287,11 +2287,14 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
     });
     console.log(`[Admin Reviews] ✅ Avis ${id} publié par ${req.adminUser.email}`);
     const rd = doc.data();
+    // Un avis publié = un ticket au tirage de la semaine (anti-spam : modération + 1/compte).
+    let drawEntered = false;
+    try { drawEntered = await addDrawEntry(id, rd); } catch (e) { console.warn('[Draw] Entry KO:', e.message); }
     if (rd.uid) {
       await createNotification({
         target: rd.uid, icon: 'fa-star',
         title: '⭐ Ton avis est publié !',
-        body: `Ton avis (${rd.stars || 5}/5 ★) est maintenant visible par tous les élèves de ResumeCI.`
+        body: `Ton avis (${rd.stars || 5}/5 ★) est maintenant visible par tous les élèves de ResumeCI.${drawEntered ? ' 🎁 Il te fait aussi participer au tirage de la semaine : un Pass à gagner dimanche 20h !' : ''}`
       });
     }
     await createNotification({
@@ -2366,6 +2369,294 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
     res.json({ success: true });
   } catch (err) {
     console.error('[Admin Reviews] Erreur suppression:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// ==================== TIRAGE AU SORT HEBDO + CODES CADEAUX ====================
+// Semaine = lundi 00:00 → dimanche 20h GMT (Abidjan = GMT). Un avis publié
+// par l'admin = un ticket (1 par compte par semaine). Le prix est un code
+// cadeau à usage unique notifié au gagnant : il l'utilise ou l'offre à un
+// camarade — la donation est intégrée par construction.
+const DRAW_CLOSE_HOUR_GMT = 20;
+
+function currentWeekId(d = new Date()) {
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const day = (t.getUTCDay() + 6) % 7; // lundi = 0
+  t.setUTCDate(t.getUTCDate() - day + 3); // jeudi de la semaine ISO 8601
+  const firstThu = new Date(Date.UTC(t.getUTCFullYear(), 0, 4));
+  firstThu.setUTCDate(firstThu.getUTCDate() - ((firstThu.getUTCDay() + 6) % 7) + 3);
+  const w = 1 + Math.round((t - firstThu) / 604800000);
+  return `${t.getUTCFullYear()}-W${String(w).padStart(2, '0')}`;
+}
+function weekWindow(weekId) {
+  const [y, w] = String(weekId).split('-W').map(Number);
+  const jan4 = new Date(Date.UTC(y, 0, 4));
+  const start = new Date(jan4);
+  start.setUTCDate(jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + (w - 1) * 7);
+  const end = new Date(start);
+  end.setUTCDate(start.getUTCDate() + 6);
+  end.setUTCHours(DRAW_CLOSE_HOUR_GMT, 0, 0, 0);
+  return { startAt: start.toISOString(), endAt: end.toISOString() };
+}
+async function getOrCreateDraw(weekId = currentWeekId()) {
+  const ref = db.collection('draws').doc(weekId);
+  const doc = await ref.get();
+  if (doc.exists) return { ref, ...doc.data() };
+  const data = { weekId, status: 'open', ...weekWindow(weekId), entries: [] };
+  await ref.set(data, { merge: true });
+  return { ref, ...data };
+}
+// 1 avis publié = 1 ticket (1 par compte par semaine — l'anti-spam avis fait le reste).
+async function addDrawEntry(reviewId, rd, weight = 1) {
+  const weekId = currentWeekId();
+  const ref = db.collection('draws').doc(weekId);
+  let entered = false;
+  await db.runTransaction(async t => {
+    const doc = await t.get(ref);
+    const data = doc.exists ? doc.data() : { weekId, status: 'open', ...weekWindow(weekId), entries: [] };
+    if (data.status !== 'open') return;
+    const entries = Array.isArray(data.entries) ? data.entries : [];
+    if (entries.some(e => e.uid === rd.uid)) return;
+    entries.push({
+      reviewId,
+      uid: String(rd.uid || ''),
+      firstName: clampStr(rd.firstName || 'Élève', 60),
+      classe: clampStr(rd.classe || '', 60),
+      stars: Math.max(1, Math.min(5, parseInt(rd.stars, 10) || 5)),
+      weight: Math.min(Math.max(Number(weight) || 1, 1), 5),
+      addedAt: new Date().toISOString()
+    });
+    t.set(ref, { ...data, entries }, { merge: true });
+    entered = true;
+  });
+  return entered;
+}
+const isUniversityClass = c => /^Licence/i.test(String(c || ''));
+function prizeFor(classe) {
+  return isUniversityClass(classe)
+    ? { plan: 'uni_pro', days: 30, label: 'Pass Licence Pro (1 mois)' }
+    : { plan: 'pro', days: 30, label: 'Pass Pro (1 mois)' };
+}
+function genGiftCode() {
+  return `RC-${crypto.randomBytes(4).toString('hex').toUpperCase()}`;
+}
+async function createGift({ plan, days, maxUses = 1, expiresAt = null, note = '', createdBy = 'admin' }) {
+  const code = genGiftCode();
+  const doc = {
+    code, kind: 'days',
+    plan: KNOWN_PLANS.has(String(plan)) ? plan : 'pro',
+    days: Math.min(Math.max(Number(days) || 30, 1), 365),
+    maxUses: Math.min(Math.max(Number(maxUses) || 1, 1), 500),
+    usedBy: [],
+    expiresAt: expiresAt || null,
+    note: String(note || '').slice(0, 120),
+    createdBy: String(createdBy || 'admin'),
+    createdAt: new Date().toISOString()
+  };
+  await db.collection('gifts').doc(code).set(doc);
+  return doc;
+}
+// Applique un cadeau : prolonge le Pass (base = max(maintenant, fin actuelle)
+// — un gagnant déjà abonné ne perd jamais de jours).
+async function grantGiftDays(uid, plan, days) {
+  const user = await findUserByAnyId(uid);
+  if (!user || !user._docId) return null;
+  const now = Date.now();
+  const base = Math.max(now, Number(user.premiumExpiresAt) || 0);
+  const expiresAt = base + days * 24 * 60 * 60 * 1000;
+  const fv = FieldValue || admin.firestore?.FieldValue;
+  await db.collection('users').doc(user._docId).set({
+    isPremium: true,
+    plan,
+    premiumPlan: plan,
+    premiumExpiresAt: expiresAt,
+    subscriptionType: days >= 300 ? 'yearly' : 'monthly',
+    lastGiftAt: fv ? fv.serverTimestamp() : new Date().toISOString(),
+    updatedAt: fv ? fv.serverTimestamp() : new Date().toISOString()
+  }, { merge: true });
+  return { expiresAt, user };
+}
+
+// Statut public du tirage (connecté ou non — `entered` exige la session).
+app.get('/api/draw', async (req, res) => {
+  try {
+    if (!db) return res.json({ success: true, open: false, entriesCount: 0 });
+    const draw = await getOrCreateDraw();
+    const uid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    const entries = Array.isArray(draw.entries) ? draw.entries : [];
+    let lastWinner = null;
+    const snap = await db.collection('draws').where('status', '==', 'drawn').limit(10).get();
+    const past = snap.docs.map(d => d.data()).sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')));
+    const w = past.find(p => p.winner);
+    if (w) {
+      lastWinner = { firstName: w.winner.firstName, classe: w.winner.classe, weekId: w.weekId, prizeLabel: w.winner.prizeLabel || 'Pass offert' };
+    }
+    res.json({
+      success: true,
+      open: draw.status === 'open',
+      weekId: draw.weekId,
+      startAt: draw.startAt, endAt: draw.endAt,
+      entriesCount: entries.length,
+      entered: uid ? entries.some(e => e.uid === uid) : false,
+      lastWinner
+    });
+  } catch (err) {
+    console.error('[Draw] Erreur statut:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// Utiliser un code cadeau (session requise — l'élève OU le camarade à qui il l'a offert).
+app.post('/api/gifts/redeem', async (req, res) => {
+  try {
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) return res.status(401).json({ success: false, error: 'Connecte-toi pour utiliser un code cadeau.' });
+    if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
+    const user = await findUserByAnyId(sessionUid);
+    if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    const code = String(req.body.code || '').trim().toUpperCase().replace(/\s+/g, '').slice(0, 30);
+    if (code.length < 6) return res.status(400).json({ success: false, error: 'Entre ton code cadeau.' });
+
+    const ref = db.collection('gifts').doc(code);
+    const doc = await ref.get();
+    if (!doc.exists) return res.status(404).json({ success: false, error: 'Code inconnu. Vérifie les caractères.' });
+    const g = doc.data();
+    const usedBy = Array.isArray(g.usedBy) ? g.usedBy : [];
+    if (usedBy.includes(user._docId)) return res.status(409).json({ success: false, error: 'Tu as déjà utilisé ce code.' });
+    if (usedBy.length >= (Number(g.maxUses) || 1)) return res.status(410).json({ success: false, error: 'Ce code a déjà été utilisé.' });
+    if (g.expiresAt && Date.parse(g.expiresAt) < Date.now()) return res.status(410).json({ success: false, error: 'Ce code a expiré.' });
+
+    const grant = await grantGiftDays(user._docId, g.plan, Number(g.days) || 30);
+    if (!grant) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
+    await ref.set({ usedBy: [...usedBy, user._docId], lastUsedAt: new Date().toISOString() }, { merge: true });
+    console.log(`[Gifts] 🎁 Code ${code} utilisé par ${maskPhone(user._docId)} → ${g.days}j Pass ${g.plan}`);
+    await createNotification({
+      target: user._docId, icon: 'fa-gift',
+      title: '🎁 Code cadeau activé !',
+      body: `Ton Pass a été prolongé de ${g.days} jour${Number(g.days) > 1 ? 's' : ''}. Bonnes révisions !`
+    });
+    res.json({ success: true, days: g.days, plan: g.plan, expiresAt: grant.expiresAt, message: `🎁 ${g.days} jour${Number(g.days) > 1 ? 's' : ''} de Pass offerts !` });
+  } catch (err) {
+    console.error('[Gifts] Erreur redeem:', err);
+    res.status(500).json({ success: false, error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : tirage en cours (participants complets) + historique ---
+app.get('/api/admin/draw', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const draw = await getOrCreateDraw();
+    const snap = await db.collection('draws').where('status', '==', 'drawn').limit(12).get();
+    const past = snap.docs.map(d => d.data())
+      .sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')))
+      .map(p => ({ weekId: p.weekId, entriesCount: (p.entries || []).length, drawnAt: p.drawnAt, drawnBy: p.drawnBy, winner: p.winner ? { firstName: p.winner.firstName, classe: p.winner.classe, prizeLabel: p.winner.prizeLabel, code: p.winner.code } : null }));
+    res.json({ success: true, draw: { ...draw, ref: undefined }, past });
+  } catch (err) {
+    console.error('[Admin Draw] Erreur lecture:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : booster un avis « vedette » (compte ×N au tirage) ---
+app.post('/api/admin/draw/entry/weight', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const reviewId = String(req.body.reviewId || '');
+    const weight = Math.min(Math.max(parseInt(req.body.weight, 10) || 1, 1), 5);
+    const draw = await getOrCreateDraw();
+    const entries = Array.isArray(draw.entries) ? draw.entries : [];
+    const e = entries.find(x => x.reviewId === reviewId);
+    if (!e) return res.status(404).json({ error: 'Participant introuvable dans le tirage en cours.' });
+    e.weight = weight;
+    await draw.ref.set({ entries }, { merge: true });
+    res.json({ success: true, weight });
+  } catch (err) {
+    console.error('[Admin Draw] Erreur boost:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : lancer le tirage (pondéré) → génère le code prix + notifications ---
+app.post('/api/admin/draw/pick', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const draw = await getOrCreateDraw();
+    if (draw.status !== 'open') return res.status(409).json({ error: 'Le tirage de cette semaine est déjà effectué.' });
+    const entries = Array.isArray(draw.entries) ? draw.entries : [];
+    if (!entries.length) return res.status(400).json({ error: 'Aucun participant cette semaine.' });
+
+    const pool = [];
+    entries.forEach(e => { for (let i = 0; i < (e.weight || 1); i++) pool.push(e); });
+    const winner = pool[Math.floor(Math.random() * pool.length)];
+    const prize = prizeFor(winner.classe);
+    const gift = await createGift({ plan: prize.plan, days: prize.days, maxUses: 1, note: `Tirage ${draw.weekId} — gagnant ${maskPhone(winner.uid)}`, createdBy: req.adminUser.email });
+
+    const winnerDoc = {
+      reviewId: winner.reviewId, uid: winner.uid, firstName: winner.firstName,
+      classe: winner.classe, stars: winner.stars,
+      prizePlan: prize.plan, prizeDays: prize.days, prizeLabel: prize.label, code: gift.code
+    };
+    await draw.ref.set({
+      status: 'drawn', winner: winnerDoc,
+      drawnAt: new Date().toISOString(),
+      drawnBy: String(req.adminUser.email || 'admin').toLowerCase()
+    }, { merge: true });
+    await db.collection('reviews').doc(winner.reviewId).set({ drawWinner: draw.weekId }, { merge: true }).catch(() => {});
+
+    await createNotification({
+      target: winner.uid, icon: 'fa-trophy',
+      title: '🏆 Tu as gagné le tirage de la semaine !',
+      body: `Bravo ${winner.firstName} ! Ton avis a été tiré au sort : ${prize.label} offert. Ton code cadeau : ${gift.code} — entre-le dans « Mon Profil ». Déjà abonné ? Tu peux l'offrir à un camarade, il prolongera ton Pass ou le sien.`
+    });
+    await createNotification({
+      target: 'all', icon: 'fa-trophy',
+      title: '🏆 Tirage de la semaine — résultat !',
+      body: `${winner.firstName}${winner.classe ? ' (' + String(winner.classe).replace(/_/g, ' ') + ')' : ''} a gagné ${prize.label} ! Laisse ton avis toi aussi pour participer au prochain tirage.`
+    });
+    console.log(`[Admin Draw] 🏆 Gagnant ${maskPhone(winner.uid)} (${winner.firstName}) → code ${gift.code}`);
+    res.json({ success: true, winner: winnerDoc, code: gift.code, entriesCount: entries.length });
+  } catch (err) {
+    console.error('[Admin Draw] Erreur tirage:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : générer un code cadeau (concours, parrainage, compensation…) ---
+app.post('/api/admin/gifts', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const { plan, days, maxUses, expiresAt, note } = req.body || {};
+    if (!KNOWN_PLANS.has(String(plan)) || plan === 'free') {
+      return res.status(400).json({ error: 'Formule invalide (pro, elite, uni_starter, uni_pro, uni_elite…).' });
+    }
+    let exp = null;
+    if (expiresAt) {
+      const t = Date.parse(expiresAt);
+      if (!Number.isFinite(t)) return res.status(400).json({ error: 'Date d\'expiration invalide.' });
+      exp = new Date(t).toISOString();
+    }
+    const gift = await createGift({ plan, days, maxUses, expiresAt: exp, note, createdBy: req.adminUser.email });
+    console.log(`[Admin Gifts] 🎁 Code ${gift.code} créé (${gift.days}j ${gift.plan}, ${gift.maxUses} usage) par ${req.adminUser.email}`);
+    res.json({ success: true, gift });
+  } catch (err) {
+    console.error('[Admin Gifts] Erreur création:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
+// --- Admin : liste des codes cadeaux ---
+app.get('/api/admin/gifts', async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const snap = await db.collection('gifts').limit(200).get();
+    const gifts = snap.docs.map(d => d.data())
+      .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))
+      .map(g => ({ code: g.code, plan: g.plan, days: g.days, maxUses: g.maxUses, used: (g.usedBy || []).length, expiresAt: g.expiresAt, note: g.note, createdAt: g.createdAt }));
+    res.json({ success: true, gifts });
+  } catch (err) {
+    console.error('[Admin Gifts] Erreur liste:', err);
     res.status(500).json({ error: 'Erreur serveur.' });
   }
 });
