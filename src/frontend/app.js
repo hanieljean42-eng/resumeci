@@ -3422,6 +3422,19 @@ function getReviewsBannerHtml() {
   return '<div id="homeReviewsBanner"></div>';
 }
 
+function homeDrawStrip() {
+  const d = window._drawCache;
+  if (!d || !d.open) return '';
+  const end = d.endAt ? new Date(d.endAt) : null;
+  const left = end ? Math.max(0, end.getTime() - Date.now()) : 0;
+  const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000);
+  return `<div onclick="openReviewsModal()" role="button" style="cursor:pointer;display:flex;align-items:center;gap:10px;margin:-8px 0 14px;padding:9px 16px;border-radius:0 0 14px 14px;background:linear-gradient(135deg,#6d28d9,#7c3aed);color:#fff;box-shadow:0 6px 16px rgba(124,58,237,.3)">
+    <span style="font-size:15px">🎁</span>
+    <span style="flex:1;font-size:11.5px;font-weight:800">TIRAGE DU DIMANCHE — 1 mois de Pass à gagner</span>
+    <span style="font-size:10.5px;font-weight:800;background:rgba(255,255,255,.18);padding:5px 10px;border-radius:99px;white-space:nowrap">⏳ fin dim. 16h · ${d.entriesCount} ticket${d.entriesCount > 1 ? 's' : ''} →</span>
+  </div>`;
+}
+
 function fillHomeReviewsBanner() {
   const el = document.getElementById('homeReviewsBanner');
   if (!el) return;
@@ -3432,7 +3445,7 @@ function fillHomeReviewsBanner() {
       <div style="font-size:28px">⭐</div>
       <div style="flex:1"><div style="font-weight:900;font-size:15px">Avis des élèves</div><div style="font-size:12px;opacity:.92">Sois le premier à partager ton expérience ResumeCI !</div></div>
       <div style="font-size:12px;font-weight:800;background:rgba(255,255,255,.18);padding:8px 14px;border-radius:99px;white-space:nowrap">Donner mon avis →</div>
-    </div>`;
+    </div>${homeDrawStrip()}`;
     return;
   }
   const avg = list.reduce((s, r) => s + r.stars, 0) / list.length;
@@ -3470,10 +3483,11 @@ function fillHomeReviewsBanner() {
         <div style="font-size:12px;color:#334155;line-height:1.45;margin-top:2px">${escHtml(String(latestReply.reply).slice(0, 140))}${String(latestReply.reply).length > 140 ? '…' : ''}</div>
       </div>
     </div>` : ''}
-  </div>`;
+  </div>${homeDrawStrip()}`;
 }
 
 window.loadHomeReviews = async function() {
+  if (typeof window.loadDrawStatus === 'function') window.loadDrawStatus();
   try {
     const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
     const res = await fetch(`${apiBase}/api/reviews?limit=6`, { cache: 'no-store' });
@@ -3521,6 +3535,7 @@ window.loadDrawStatus = async function() {
     window._drawCache = null;
   }
   renderDrawBanner();
+  fillHomeReviewsBanner();
 };
 
 function renderDrawBanner() {
