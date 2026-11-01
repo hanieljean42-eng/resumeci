@@ -120,6 +120,32 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '100kb' }));
 
+// Quota gratuit Firestore épuisé (gRPC 8 RESOURCE_EXHAUSTED) : message explicite
+// au lieu de « Erreur serveur ». Les routes journalisent leurs erreurs via
+// console.error ; on y détecte le quota, puis on réécrit les réponses 500.
+const FIRESTORE_QUOTA_MSG = 'Quota gratuit Firestore épuisé pour aujourd\'hui : les données reviennent automatiquement vers 08h00 GMT.';
+let firestoreQuotaUntil = 0;
+function isQuotaError(err) {
+  return !!err && typeof err === 'object' && (err.code === 8 || err.code === 'resource-exhausted'
+    || /RESOURCE_EXHAUSTED|Quota exceeded/i.test(String(err.message || '')));
+}
+const consoleErrorOrig = console.error.bind(console);
+console.error = (...args) => {
+  if (args.some(isQuotaError)) firestoreQuotaUntil = Date.now() + 10 * 60 * 1000;
+  consoleErrorOrig(...args);
+};
+app.use((req, res, next) => {
+  const json = res.json.bind(res);
+  res.json = body => {
+    if (res.statusCode === 500 && firestoreQuotaUntil > Date.now() && body && typeof body === 'object') {
+      res.status(429);
+      body = { ...body, success: false, error: FIRESTORE_QUOTA_MSG, code: 'firestore_quota' };
+    }
+    return json(body);
+  };
+  next();
+});
+
 function limiter(windowMs, max) {
   return rateLimit({
     windowMs,
@@ -262,7 +288,7 @@ async function findUserByAnyId(rawId) {
     try {
       const d = await users.doc(cand).get();
       if (d.exists) return { ...d.data(), uid: d.data().uid || d.id, _docId: d.id };
-    } catch (e) {}
+    } catch (e) { if (isQuotaError(e)) throw e; }
   }
   // Préférence doc réel > fantôme : un doc canonique (ID = numéro, ou avec
   // identité) gagne toujours contre un doc technique user_*/admin_* hérité.
@@ -281,7 +307,7 @@ async function findUserByAnyId(rawId) {
             scoreDoc(b.id, b.data()) > scoreDoc(a.id, a.data()) ? b : a);
           return { ...best.data(), uid: best.data().uid || best.id, _docId: best.id };
         }
-      } catch (e) {}
+      } catch (e) { if (isQuotaError(e)) throw e; }
     }
   }
   return null;
@@ -2233,6 +2259,7 @@ app.get('/api/reviews', async (req, res) => {
     res.json({ success: true, reviews });
   } catch (err) {
     console.error('[Reviews] Erreur lecture:', err);
+    if (isQuotaError(err)) return res.json({ success: true, reviews: [] });
     res.status(500).json({ success: false, error: 'Erreur serveur.' });
   }
 });
@@ -2589,6 +2616,7 @@ app.get('/api/draw', async (req, res) => {
     });
   } catch (err) {
     console.error('[Draw] Erreur statut:', err);
+    if (isQuotaError(err)) return res.json({ success: true, open: false, entriesCount: 0 });
     res.status(500).json({ success: false, error: 'Erreur serveur.' });
   }
 });
