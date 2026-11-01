@@ -21,6 +21,8 @@ services:
         value: djeble.haniel@gmail.com
       - key: WEBHOOK_SECRET
         sync: false
+      - key: MONGODB_URI
+        sync: false
       - key: PUBLIC_API_URL
         value: https://resumeci-payment-api.onrender.com
       - key: GENIUSPAY_API_URL
