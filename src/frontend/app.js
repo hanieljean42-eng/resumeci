@@ -3543,8 +3543,8 @@ function renderDrawBanner() {
     <div style="display:flex;align-items:center;gap:8px">
       <div style="font-size:17px">🎁</div>
       <div style="flex:1;min-width:0">
-        <div style="font-weight:900;font-size:11.5px">TIRAGE DIMANCHE 20H — 1 mois de Pass à gagner</div>
-        <div style="font-size:10px;opacity:.9">${d.entered ? '✅ Tu participes — bonne chance !' : '✍️ Ton avis publié = ton ticket'} · ${d.entriesCount} participant${d.entriesCount > 1 ? 's' : ''}${countdown ? ' · ' + countdown : ''}</div>
+        <div style="font-weight:900;font-size:11.5px">TIRAGE DU DIMANCHE — 1 mois de Pass à gagner</div>
+        <div style="font-size:10px;opacity:.9">${d.entered ? '✅ Tu participes — bonne chance !' : '✍️ Ton avis publié = ton ticket'} · ${d.entriesCount} participant${d.entriesCount > 1 ? 's' : ''} · fin dim. 16h, gagnant à 20h${countdown ? ' · ' + countdown : ''}</div>
       </div>
     </div>
     ${lastChip}

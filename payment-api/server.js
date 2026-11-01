@@ -2294,7 +2294,7 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
       await createNotification({
         target: rd.uid, icon: 'fa-star',
         title: '⭐ Ton avis est publié !',
-        body: `Ton avis (${rd.stars || 5}/5 ★) est maintenant visible par tous les élèves de ResumeCI.${drawEntered ? ' 🎁 Il te fait aussi participer au tirage de la semaine : un Pass à gagner dimanche 20h !' : ''}`
+        body: `Ton avis (${rd.stars || 5}/5 ★) est maintenant visible par tous les élèves de ResumeCI.${drawEntered ? ' 🎁 Il te fait aussi participer au tirage de la semaine : un Pass à gagner, gagnant annoncé dimanche à 20h !' : ''}`
       });
     }
     await createNotification({
@@ -2374,11 +2374,14 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
 });
 
 // ==================== TIRAGE AU SORT HEBDO + CODES CADEAUX ====================
-// Semaine = lundi 00:00 → dimanche 20h GMT (Abidjan = GMT). Un avis publié
-// par l'admin = un ticket (1 par compte par semaine). Le prix est un code
-// cadeau à usage unique notifié au gagnant : il l'utilise ou l'offre à un
-// camarade — la donation est intégrée par construction.
-const DRAW_CLOSE_HOUR_GMT = 20;
+// Cycle hebdo (GMT = heure d'Abidjan) : la semaine démarre dimanche 20h et
+// les participations se clôturent le dimanche suivant à 16h. L'admin tire au
+// sort entre 16h et 20h, le gagnant est annoncé à 20h — et la semaine
+// suivante s'ouvre à 20h. Un avis publié entre 16h et 20h compte quand même
+// pour la semaine suivante (aucun ticket perdu). Le prix est un code cadeau
+// à usage unique notifié au gagnant : il l'utilise ou l'offre à un camarade.
+const DRAW_CLOSE_HOUR_GMT = 16; // clôture des participations
+const DRAW_OPEN_HOUR_GMT = 20;  // ouverture officielle de la semaine suivante
 
 function currentWeekId(d = new Date()) {
   const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
@@ -2392,14 +2395,30 @@ function currentWeekId(d = new Date()) {
 function weekWindow(weekId) {
   const [y, w] = String(weekId).split('-W').map(Number);
   const jan4 = new Date(Date.UTC(y, 0, 4));
-  const start = new Date(jan4);
-  start.setUTCDate(jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + (w - 1) * 7);
-  const end = new Date(start);
-  end.setUTCDate(start.getUTCDate() + 6);
-  end.setUTCHours(DRAW_CLOSE_HOUR_GMT, 0, 0, 0);
+  const monday = new Date(jan4);
+  monday.setUTCDate(jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + (w - 1) * 7);
+  const end = new Date(monday);
+  end.setUTCDate(monday.getUTCDate() + 6);
+  end.setUTCHours(DRAW_CLOSE_HOUR_GMT, 0, 0, 0);            // dim. 16h : clôture
+  const start = new Date(end.getTime() - 164 * 3600000);    // dim. 20h précédent : ouverture
   return { startAt: start.toISOString(), endAt: end.toISOString() };
 }
-async function getOrCreateDraw(weekId = currentWeekId()) {
+// Semaine « active » : dès la clôture (dim. 16h), les participations vont à la
+// semaine suivante (ouverte officiellement à 20h — aucun ticket perdu).
+function activeWeekId(d = new Date()) {
+  const cur = currentWeekId(d);
+  if (d.getTime() <= Date.parse(weekWindow(cur).endAt)) return cur;
+  return currentWeekId(new Date(d.getTime() + 7 * 86400000));
+}
+// Dernier tirage clôturé et non encore effectué — cible du pick entre 16h et 20h.
+async function pendingDrawToPick() {
+  const snap = await db.collection('draws').where('status', '==', 'open').limit(20).get();
+  const now = Date.now();
+  return snap.docs.map(d => ({ ref: d.ref, ...d.data() }))
+    .filter(x => x.endAt && Date.parse(x.endAt) <= now && (x.entries || []).length > 0)
+    .sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')))[0] || null;
+}
+async function getOrCreateDraw(weekId = activeWeekId()) {
   const ref = db.collection('draws').doc(weekId);
   const doc = await ref.get();
   if (doc.exists) return { ref, ...doc.data() };
@@ -2409,7 +2428,7 @@ async function getOrCreateDraw(weekId = currentWeekId()) {
 }
 // 1 avis publié = 1 ticket (1 par compte par semaine — l'anti-spam avis fait le reste).
 async function addDrawEntry(reviewId, rd, weight = 1) {
-  const weekId = currentWeekId();
+  const weekId = activeWeekId();
   const ref = db.collection('draws').doc(weekId);
   let entered = false;
   await db.runTransaction(async t => {
@@ -2547,12 +2566,19 @@ app.post('/api/gifts/redeem', async (req, res) => {
 app.get('/api/admin/draw', async (req, res) => {
   try {
     if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
-    const draw = await getOrCreateDraw();
+    const current = await getOrCreateDraw();
+    const pending = await pendingDrawToPick();
+    const draw = pending || current;
     const snap = await db.collection('draws').where('status', '==', 'drawn').limit(12).get();
     const past = snap.docs.map(d => d.data())
       .sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')))
       .map(p => ({ weekId: p.weekId, entriesCount: (p.entries || []).length, drawnAt: p.drawnAt, drawnBy: p.drawnBy, winner: p.winner ? { firstName: p.winner.firstName, classe: p.winner.classe, prizeLabel: p.winner.prizeLabel, code: p.winner.code } : null }));
-    res.json({ success: true, draw: { ...draw, ref: undefined }, past });
+    res.json({
+      success: true,
+      draw: { ...draw, ref: undefined, due: !!pending },
+      current: { weekId: current.weekId, entriesCount: (current.entries || []).length, endAt: current.endAt },
+      past
+    });
   } catch (err) {
     console.error('[Admin Draw] Erreur lecture:', err);
     res.status(500).json({ error: 'Erreur serveur.' });
@@ -2565,7 +2591,7 @@ app.post('/api/admin/draw/entry/weight', async (req, res) => {
     if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
     const reviewId = String(req.body.reviewId || '');
     const weight = Math.min(Math.max(parseInt(req.body.weight, 10) || 1, 1), 5);
-    const draw = await getOrCreateDraw();
+    const draw = (await pendingDrawToPick()) || await getOrCreateDraw();
     const entries = Array.isArray(draw.entries) ? draw.entries : [];
     const e = entries.find(x => x.reviewId === reviewId);
     if (!e) return res.status(404).json({ error: 'Participant introuvable dans le tirage en cours.' });
@@ -2582,10 +2608,12 @@ app.post('/api/admin/draw/entry/weight', async (req, res) => {
 app.post('/api/admin/draw/pick', async (req, res) => {
   try {
     if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
-    const draw = await getOrCreateDraw();
-    if (draw.status !== 'open') return res.status(409).json({ error: 'Le tirage de cette semaine est déjà effectué.' });
+    const draw = await pendingDrawToPick();
+    if (!draw) {
+      const cur = await getOrCreateDraw();
+      return res.status(409).json({ error: `Participations ouvertes jusqu'à la clôture (${String(cur.endAt || '').slice(0, 16).replace('T', ' ')} GMT) — le tirage se fait après 16h dimanche.` });
+    }
     const entries = Array.isArray(draw.entries) ? draw.entries : [];
-    if (!entries.length) return res.status(400).json({ error: 'Aucun participant cette semaine.' });
 
     const pool = [];
     entries.forEach(e => { for (let i = 0; i < (e.weight || 1); i++) pool.push(e); });

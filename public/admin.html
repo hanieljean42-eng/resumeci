@@ -1112,13 +1112,13 @@
         const res = await adminFetch('/api/admin/draw');
         const data = await res.json().catch(() => ({}));
         if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
-        renderDraw(data.draw, data.past || []);
+        renderDraw(data.draw, data.past || [], data.current);
       } catch(e) {
         if (body) body.innerHTML = `<div style="text-align:center;padding:20px;color:var(--rose);"><i class="fas fa-triangle-exclamation"></i> ${escapeHtml(e.message)}</div>`;
       }
     };
 
-    function renderDraw(draw, past) {
+    function renderDraw(draw, past, current) {
       const body = document.getElementById('drawBody');
       const label = document.getElementById('drawCountLabel');
       if (!body || !draw) return;
@@ -1127,18 +1127,21 @@
       const left = end ? Math.max(0, end.getTime() - Date.now()) : 0;
       const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000);
       const open = draw.status === 'open';
-      if (label) label.textContent = `${draw.weekId} · ${entries.length} participant(s) · ${open ? 'ouvert' : 'tiré'}`;
+      if (label) label.textContent = `${draw.weekId} · ${entries.length} participant(s) · ${draw.due ? 'à tirer' : open ? 'ouvert' : 'tiré'}`;
 
       let html = `<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
         <div>
-          <div style="font-weight:800;font-size:14px">Semaine ${escapeHtml(draw.weekId)} — ${open ? '⏳ ' + (dj > 0 ? dj + 'j ' : '') + dh + 'h avant la clôture' : '🏁 tirage effectué'}</div>
-          <div style="font-size:11.5px;color:var(--text-dim)">Clôture dimanche 20h · 1 avis publié = 1 ticket · « vedette » compte ×3</div>
+          <div style="font-weight:800;font-size:14px">Semaine ${escapeHtml(draw.weekId)} — ${draw.due ? '🎲 clôturée : à tirer avant 20h' : open ? '⏳ ' + (dj > 0 ? dj + 'j ' : '') + dh + 'h avant la clôture' : '🏁 tirage effectué'}</div>
+          <div style="font-size:11.5px;color:var(--text-dim)">Clôture dim. 16h · tirage 16h-20h · gagnant annoncé 20h · 1 avis publié = 1 ticket · « vedette » ×3</div>
         </div>
         ${open && draw.winner ? '' : ''}
-        ${open
-          ? `<button class="btn-top btn-top-primary" style="padding:9px 16px;font-size:12.5px;background:var(--amber)" onclick="pickDraw()" ${entries.length ? '' : 'disabled'}><i class="fas fa-dice"></i> 🎲 Lancer le tirage (${entries.length})</button>`
-          : draw.winner ? `<div style="font-size:12px;padding:8px 12px;border-radius:8px;background:rgba(16,185,129,.1);border:1px solid var(--emerald);color:var(--emerald);font-weight:800">🏆 ${escapeHtml(draw.winner.firstName)} (${escapeHtml(draw.winner.classe || '—')}) → ${escapeHtml(draw.winner.prizeLabel || '')} · code <code style="background:var(--bg);padding:1px 6px;border-radius:4px">${escapeHtml(draw.winner.code || '')}</code></div>` : ''}
-      </div>`;
+        ${draw.due
+          ? `<button class="btn-top btn-top-primary" style="padding:9px 16px;font-size:12.5px;background:var(--amber)" onclick="pickDraw()"><i class="fas fa-dice"></i> 🎲 Lancer le tirage (${entries.length})</button>`
+          : open
+            ? `<button class="btn-top btn-top-primary" style="padding:9px 16px;font-size:12.5px;opacity:.5" disabled title="Le tirage se fait dimanche après la clôture de 16h"><i class="fas fa-lock"></i> Tirage après dim. 16h</button>`
+            : draw.winner ? `<div style="font-size:12px;padding:8px 12px;border-radius:8px;background:rgba(16,185,129,.1);border:1px solid var(--emerald);color:var(--emerald);font-weight:800">🏆 ${escapeHtml(draw.winner.firstName)} (${escapeHtml(draw.winner.classe || '—')}) → ${escapeHtml(draw.winner.prizeLabel || '')} · code <code style="background:var(--bg);padding:1px 6px;border-radius:4px">${escapeHtml(draw.winner.code || '')}</code></div>` : ''}
+      </div>
+      ${current && current.weekId !== draw.weekId ? `<div style="font-size:11.5px;color:var(--text-dim);padding:6px 10px;border-radius:8px;background:rgba(99,102,241,.08);border:1px dashed var(--border);margin-bottom:10px">➕ Semaine ${escapeHtml(current.weekId)} déjà ouverte (depuis dim. 20h) — ${current.entriesCount} ticket(s) collecté(s)</div>` : ''}`;
 
       if (entries.length) {
         html += '<div style="max-height:280px;overflow-y:auto">' + entries.map(e => `
