@@ -1223,6 +1223,7 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     const isTrialFiche = subFiches.length > 0 && subFiches[0] === file;
     const premHit = memCache.get(`prem:${sessionUid}`);
     if (!isTrialFiche && premHit && premHit.exp > Date.now()
+      && (!premHit.val.premiumExpiresAt || premHit.val.premiumExpiresAt > Date.now())
       && (!cls.startsWith('Licence_') || premHit.val.premiumPlan.startsWith('uni_'))) {
       // Pass actif déjà vérifié récemment : pas de relecture Firestore à chaque fiche.
     } else if (!isTrialFiche) {
@@ -1790,6 +1791,7 @@ app.post('/api/delete-account', profileLimiter, async (req, res) => {
       return res.status(404).json({ success: false, error: 'Compte introuvable.' });
     }
     await db.collection('users').doc(user._docId).delete();
+    invalidateUserCaches();
     console.log(`[DeleteAccount] 🗑️ Compte supprimé (${maskPhone(sessionUid)})`);
     res.json({ success: true });
   } catch (err) {
@@ -2014,7 +2016,7 @@ app.post('/api/admin/delete-user', async (req, res) => {
     for (const id of candidates) {
       const ref = db.collection('users').doc(id);
       const snap = await ref.get();
-      if (snap.exists) { await ref.delete(); deleted = `users/${id}`; break; }
+      if (snap.exists) { await ref.delete(); invalidateUserCaches(); deleted = `users/${id}`; break; }
     }
     if (!deleted) {
       for (const id of candidates) {
@@ -2113,28 +2115,37 @@ const REVIEW_STATUS = { PENDING: 'pending', APPROVED: 'approved' };
 // l'accueil (avis, tirage) et des notifications. En cas d'erreur Firestore
 // (ex. quota), la dernière valeur connue est resservie plutôt qu'un 500.
 const memCache = new Map();
-async function cached(key, ttlMs, fn) {
+// Tous les appelants concurrents partagent la même promesse (repli inclus) ;
+// une lecture invalidée pendant son vol ne réécrit pas le cache.
+function cached(key, ttlMs, fn) {
   const hit = memCache.get(key);
-  if (hit && hit.exp > Date.now()) return hit.val;
+  if (hit && hit.exp > Date.now()) return Promise.resolve(hit.val);
   if (hit && hit.pending) return hit.pending;
-  const pending = (async () => fn())();
-  memCache.set(key, { exp: 0, val: hit ? hit.val : undefined, hasVal: !!(hit && hit.hasVal), pending });
-  try {
-    const val = await pending;
-    memCache.set(key, { exp: Date.now() + ttlMs, val, hasVal: true });
+  const prev = hit && hit.hasVal ? hit : null;
+  const entry = { exp: 0, val: prev ? prev.val : undefined, hasVal: !!prev };
+  const current = () => memCache.get(key) === entry;
+  entry.pending = Promise.resolve().then(fn).then(val => {
+    if (current()) memCache.set(key, { exp: Date.now() + ttlMs, val, hasVal: true });
     return val;
-  } catch (err) {
-    if (hit && hit.hasVal) {
-      memCache.set(key, { exp: Date.now() + 60 * 1000, val: hit.val, hasVal: true });
+  }, err => {
+    if (prev) {
+      if (current()) memCache.set(key, { exp: Date.now() + 60 * 1000, val: prev.val, hasVal: true });
       console.warn(`[Cache] ${key} : valeur précédente resservie (${err.code || err.message})`);
-      return hit.val;
+      return prev.val;
     }
-    memCache.delete(key);
+    if (current()) memCache.delete(key);
     throw err;
-  }
+  });
+  memCache.set(key, entry);
+  return entry.pending;
 }
 function invalidateCache(prefix) {
   for (const k of memCache.keys()) if (k.startsWith(prefix)) memCache.delete(k);
+}
+// Suppression de compte (rare) : on oublie toutes les résolutions de session et Pass en cache.
+function invalidateUserCaches() {
+  invalidateCache('uid:');
+  invalidateCache('prem:');
 }
 // Résolution session → doc utilisateur (l'ID du doc ne change pas).
 async function findUserDocIdCached(sessionUid) {
@@ -2171,7 +2182,7 @@ app.get('/api/notifications', async (req, res) => {
     if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
     const user = await findUserDocIdCached(sessionUid);
     if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
-    const readTarget = target => db.collection('notifications').where('target', '==', target).limit(50).get()
+    const readTarget = target => db.collection('notifications').where('target', '==', target).get()
       .then(snap => snap.docs.map(d => ({ id: d.id, ...d.data() })));
     const [globalNotifs, personalNotifs] = await Promise.all([
       cached('notifs:all', 5 * 60 * 1000, () => readTarget('all')),
