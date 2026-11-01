@@ -3528,27 +3528,25 @@ function renderDrawBanner() {
   if (!zone) return;
   const d = window._drawCache;
   const last = d && d.lastWinner;
-  const lastChip = last ? `<div style="margin-top:6px;font-size:10.5px;opacity:.95">🏆 ${escHtml(last.firstName)}${last.classe ? ' · ' + escHtml(String(last.classe).replace(/_/g, ' ')) : ''} a gagné <b>${escHtml(last.prizeLabel)}</b> la semaine dernière</div>` : '';
+  const lastChip = last ? `<div style="margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,.2);font-size:10.5px;opacity:.95">🏆 ${escHtml(last.firstName)}${last.classe ? ' · ' + escHtml(String(last.classe).replace(/_/g, ' ')) : ''} a gagné <b>${escHtml(last.prizeLabel)}</b> la semaine dernière</div>` : '';
   if (!d || !d.open) {
-    zone.innerHTML = lastChip
-      ? `<div style="margin-bottom:12px;padding:10px 12px;border-radius:12px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #f59e0b;font-size:11.5px;color:#92400e">${lastChip}</div>`
+    zone.innerHTML = last
+      ? `<div style="margin-bottom:8px;padding:9px 12px;border-radius:11px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #f59e0b;font-size:11.5px;color:#92400e">🏆 ${escHtml(last.firstName)}${last.classe ? ' · ' + escHtml(String(last.classe).replace(/_/g, ' ')) : ''} a gagné <b>${escHtml(last.prizeLabel)}</b> la semaine dernière</div>`
       : '';
     return;
   }
   const end = d.endAt ? new Date(d.endAt) : null;
   const left = end ? Math.max(0, end.getTime() - Date.now()) : 0;
-  const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000);
-  const countdown = left > 0 ? `⏳ ${dj > 0 ? dj + 'j ' : ''}${dh}h avant le tirage` : '';
-  zone.innerHTML = `<div style="margin-bottom:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;box-shadow:0 6px 18px rgba(124,58,237,.3)">
-    <div style="display:flex;align-items:center;gap:10px">
-      <div style="font-size:22px">🎁</div>
-      <div style="flex:1">
-        <div style="font-weight:900;font-size:12.5px">TIRAGE DE LA SEMAINE — 1 mois de Pass à gagner</div>
-        <div style="font-size:11px;opacity:.92">Ton avis publié = un ticket · dimanche 20h ${countdown ? '· ' + countdown : ''}</div>
+  const dj = Math.floor(left / 86400000), dh = Math.floor((left % 86400000) / 3600000), dm = Math.floor((left % 3600000) / 60000);
+  const countdown = left > 0 ? `⏳ ${dj > 0 ? dj + 'j ' : ''}${dh}h${dj === 0 ? ' ' + dm + 'min' : ''}` : '';
+  zone.innerHTML = `<div style="margin-bottom:8px;padding:9px 12px;border-radius:11px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.28)">
+    <div style="display:flex;align-items:center;gap:8px">
+      <div style="font-size:17px">🎁</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:900;font-size:11.5px">TIRAGE DIMANCHE 20H — 1 mois de Pass à gagner</div>
+        <div style="font-size:10px;opacity:.9">${d.entered ? '✅ Tu participes — bonne chance !' : '✍️ Ton avis publié = ton ticket'} · ${d.entriesCount} participant${d.entriesCount > 1 ? 's' : ''}${countdown ? ' · ' + countdown : ''}</div>
       </div>
-      <div style="text-align:center;font-size:10px;font-weight:800;background:rgba(255,255,255,.18);padding:6px 10px;border-radius:99px">${d.entriesCount} participant${d.entriesCount > 1 ? 's' : ''}</div>
     </div>
-    ${d.entered ? '<div style="margin-top:6px;font-size:11px;font-weight:800">✅ Tu participes — bonne chance !</div>' : '<div style="margin-top:6px;font-size:11px;font-weight:800">✍️ Écris ton avis pour participer</div>'}
     ${lastChip}
   </div>`;
 }

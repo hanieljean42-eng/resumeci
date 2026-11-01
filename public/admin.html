@@ -573,6 +573,52 @@
         </div>
       </div>
 
+      <!-- Notification personnalisée -->
+      <div class="section-card" id="notifCard">
+        <div class="section-header">
+          <h2><i class="fas fa-bullhorn" style="color:var(--rose);"></i> Notification personnalisée</h2>
+          <span style="font-size:12px; color:var(--text-dim);">envoi immédiat dans le centre de notifs</span>
+        </div>
+        <div class="section-body" style="padding:14px 22px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+            <select id="notifTarget" onchange="notifTargetChange()" style="padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+              <option value="all">📢 Tous les utilisateurs</option>
+              <option value="classe">🎓 Une classe</option>
+              <option value="phone">👤 Un numéro</option>
+            </select>
+            <select id="notifClasse" style="display:none;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+              <option value="Terminale_D">Terminale D</option>
+              <option value="Terminale_A">Terminale A</option>
+              <option value="Terminale_C">Terminale C</option>
+              <option value="Premiere_A">Première A</option>
+              <option value="Premiere_C">Première C</option>
+              <option value="Premiere_D">Première D</option>
+              <option value="Seconde_A">Seconde A</option>
+              <option value="Seconde_C">Seconde C</option>
+              <option value="3eme">3ème (BEPC)</option>
+              <option value="4eme">4ème</option>
+              <option value="5eme">5ème</option>
+              <option value="6eme">6ème</option>
+              <option value="Licence_1_ADA">🎓 Licence 1 — ADA</option>
+              <option value="Licence_1_Droit">🎓 Licence 1 — Droit</option>
+              <option value="Licence_1_Miage">🎓 Licence 1 — MIAGE</option>
+            </select>
+            <input id="notifPhone" type="tel" maxlength="20" placeholder="Ex : 0701020304" style="display:none;width:160px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+            <select id="notifIcon" style="padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12px">
+              <option value="fa-bullhorn">📣 Annonce</option>
+              <option value="fa-gift">🎁 Cadeau</option>
+              <option value="fa-trophy">🏆 Concours</option>
+              <option value="fa-star">⭐ Important</option>
+              <option value="fa-graduation-cap">🎓 Pédagogie</option>
+              <option value="fa-bell">🔔 Rappel</option>
+            </select>
+          </div>
+          <input id="notifTitle" type="text" maxlength="120" placeholder="Titre (ex : 🎉 Tirage au sort lancé !)" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12.5px;margin-bottom:8px;box-sizing:border-box">
+          <textarea id="notifBody" maxlength="300" rows="2" placeholder="Message (ex : Écris ton avis cette semaine : dimanche 20h, un élève remporte 1 mois de Pass gratuit !)" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:12.5px;margin-bottom:10px;box-sizing:border-box;resize:vertical"></textarea>
+          <button class="btn-top btn-top-primary" style="padding:9px 18px;font-size:12.5px" onclick="sendCustomNotif()"><i class="fas fa-paper-plane"></i> Envoyer la notification</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -1184,6 +1230,36 @@
         loadGifts();
       } catch(e) {
         adminToast('⚠️', 'Erreur', e.message, 'error');
+      }
+    };
+
+    // ========== NOTIFICATION PERSONNALISÉE ==========
+    window.notifTargetChange = function() {
+      const t = document.getElementById('notifTarget').value;
+      document.getElementById('notifClasse').style.display = t === 'classe' ? '' : 'none';
+      document.getElementById('notifPhone').style.display = t === 'phone' ? '' : 'none';
+    };
+
+    window.sendCustomNotif = async function() {
+      const target = document.getElementById('notifTarget').value;
+      const title = document.getElementById('notifTitle').value.trim();
+      const body = document.getElementById('notifBody').value.trim();
+      if (title.length < 3) { adminToast('⚠️', 'Titre trop court', 'Minimum 3 caractères.', 'error'); return; }
+      if (body.length < 5) { adminToast('⚠️', 'Message trop court', 'Minimum 5 caractères.', 'error'); return; }
+      const payload = { target, title, body, icon: document.getElementById('notifIcon').value };
+      if (target === 'classe') payload.classe = document.getElementById('notifClasse').value;
+      if (target === 'phone') payload.phone = document.getElementById('notifPhone').value.trim();
+      const label = target === 'all' ? 'TOUS les utilisateurs' : target === 'classe' ? 'la classe ' + payload.classe.replace(/_/g, ' ') : 'le numéro ' + payload.phone;
+      if (!confirm(`Envoyer cette notification à ${label} ?\n\n« ${title} »`)) return;
+      try {
+        const res = await adminFetch('/api/admin/notifications', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+        adminToast('📣', 'Notification envoyée', target === 'all' ? 'à tous les utilisateurs' : `à ${data.sent} utilisateur(s)`, 'success');
+        document.getElementById('notifTitle').value = '';
+        document.getElementById('notifBody').value = '';
+      } catch(e) {
+        adminToast('⚠️', 'Erreur envoi', e.message, 'error');
       }
     };
 

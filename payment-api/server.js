@@ -2661,6 +2661,44 @@ app.get('/api/admin/gifts', async (req, res) => {
   }
 });
 
+// --- Admin : notification personnalisée — tous / une classe / un numéro ---
+app.post('/api/admin/notifications', requireAdmin, async (req, res) => {
+  try {
+    if (!db) return res.status(503).json({ error: 'Base de données indisponible' });
+    const { target, classe, phone, icon, title, body } = req.body || {};
+    const t = String(title || '').trim();
+    const b = String(body || '').trim();
+    if (t.length < 3 || t.length > 120) return res.status(400).json({ error: 'Titre requis (3-120 caractères).' });
+    if (b.length < 5 || b.length > 300) return res.status(400).json({ error: 'Message requis (5-300 caractères).' });
+    const safeIcon = /^fa-[a-z0-9-]{1,38}$/i.test(String(icon || '')) ? String(icon) : 'fa-bell';
+    let sent = 0;
+    if (target === 'all') {
+      await createNotification({ target: 'all', icon: safeIcon, title: t, body: b });
+      sent = -1;
+    } else if (target === 'classe') {
+      const cls = String(classe || '').trim();
+      if (!cls || cls.length > 60) return res.status(400).json({ error: 'Classe invalide.' });
+      const snap = await db.collection('users').where('selectedClass', '==', cls).limit(1000).get();
+      if (snap.empty) return res.status(404).json({ error: 'Aucun utilisateur dans cette classe.' });
+      for (const d of snap.docs) {
+        await createNotification({ target: d.id, icon: safeIcon, title: t, body: b });
+        sent++;
+      }
+    } else if (target === 'phone') {
+      const user = await findUserByAnyId(String(phone || '').trim());
+      if (!user || !user._docId) return res.status(404).json({ error: 'Numéro introuvable.' });
+      await createNotification({ target: user._docId, icon: safeIcon, title: t, body: b });
+      sent = 1;
+    } else {
+      return res.status(400).json({ error: 'Cible invalide (all / classe / phone).' });
+    }
+    res.json({ success: true, sent });
+  } catch (err) {
+    console.error('[Admin Notifs] Erreur envoi:', err);
+    res.status(500).json({ error: 'Erreur serveur.' });
+  }
+});
+
 app.get('/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
 
