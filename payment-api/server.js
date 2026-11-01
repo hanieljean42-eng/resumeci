@@ -1221,7 +1221,11 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     }
     const subFiches = (getSecureFichesIndex()[cls] || {})[sub] || [];
     const isTrialFiche = subFiches.length > 0 && subFiches[0] === file;
-    if (!isTrialFiche) {
+    const premHit = memCache.get(`prem:${sessionUid}`);
+    if (!isTrialFiche && premHit && premHit.exp > Date.now()
+      && (!cls.startsWith('Licence_') || premHit.val.premiumPlan.startsWith('uni_'))) {
+      // Pass actif déjà vérifié récemment : pas de relecture Firestore à chaque fiche.
+    } else if (!isTrialFiche) {
       let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
       const candidates = [user];
       // Session héritée pointant un doc fantôme ou non premium : suivre le
@@ -1234,6 +1238,7 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
         }
       }
       const status = mergedPremiumStatus(candidates);
+      if (status.isPremium) memCache.set(`prem:${sessionUid}`, { exp: Date.now() + 10 * 60 * 1000, val: status, hasVal: true });
       // Université : Pass étudiant (uni_*) requis. École : n'importe quel Pass actif (dès 500 F).
       const isPremium = status.isPremium && (cls.startsWith('Licence_') ? status.premiumPlan.startsWith('uni_') : true);
       if (!isPremium) {
@@ -2102,6 +2107,41 @@ app.get('/api/admin/transactions', async (req, res) => {
 // modération exclusivement par l'admin (validation + suppression).
 // --------------------------------------------------------------------------
 const REVIEW_STATUS = { PENDING: 'pending', APPROVED: 'approved' };
+
+// Cache mémoire (TTL) des lectures Firestore les plus fréquentes : le quota
+// gratuit (50 000 lectures/jour) était épuisé par les appels répétés de
+// l'accueil (avis, tirage) et des notifications. En cas d'erreur Firestore
+// (ex. quota), la dernière valeur connue est resservie plutôt qu'un 500.
+const memCache = new Map();
+async function cached(key, ttlMs, fn) {
+  const hit = memCache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.val;
+  if (hit && hit.pending) return hit.pending;
+  const pending = (async () => fn())();
+  memCache.set(key, { exp: 0, val: hit ? hit.val : undefined, hasVal: !!(hit && hit.hasVal), pending });
+  try {
+    const val = await pending;
+    memCache.set(key, { exp: Date.now() + ttlMs, val, hasVal: true });
+    return val;
+  } catch (err) {
+    if (hit && hit.hasVal) {
+      memCache.set(key, { exp: Date.now() + 60 * 1000, val: hit.val, hasVal: true });
+      console.warn(`[Cache] ${key} : valeur précédente resservie (${err.code || err.message})`);
+      return hit.val;
+    }
+    memCache.delete(key);
+    throw err;
+  }
+}
+function invalidateCache(prefix) {
+  for (const k of memCache.keys()) if (k.startsWith(prefix)) memCache.delete(k);
+}
+// Résolution session → doc utilisateur (l'ID du doc ne change pas).
+async function findUserDocIdCached(sessionUid) {
+  const user = await cached(`uid:${sessionUid}`, 30 * 60 * 1000, () => findUserByAnyId(sessionUid));
+  if (!user) invalidateCache(`uid:${sessionUid}`);
+  return user;
+}
 const reviewsLimiter = limiter(15 * 60 * 1000, 10);
 
 // Centre de notifications in-app : target = 'all' (tous les élèves) ou un uid.
@@ -2117,6 +2157,7 @@ async function createNotification(n) {
       createdAt: new Date().toISOString(),
       createdTs: fv ? fv.serverTimestamp() : null
     });
+    invalidateCache(`notifs:${String(n.target || 'all').slice(0, 80)}`);
   } catch (err) {
     console.error('[Notifs] Erreur création:', err.message || err);
   }
@@ -2128,13 +2169,17 @@ app.get('/api/notifications', async (req, res) => {
     const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
     if (!sessionUid) return res.status(401).json({ success: false, error: 'Session requise.' });
     if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
-    const user = await findUserByAnyId(sessionUid);
+    const user = await findUserDocIdCached(sessionUid);
     if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
-    const snap = await db.collection('notifications').where('target', 'in', ['all', user._docId]).limit(80).get();
-    const notifications = snap.docs.map(d => {
-      const n = d.data();
+    const readTarget = target => db.collection('notifications').where('target', '==', target).limit(50).get()
+      .then(snap => snap.docs.map(d => ({ id: d.id, ...d.data() })));
+    const [globalNotifs, personalNotifs] = await Promise.all([
+      cached('notifs:all', 5 * 60 * 1000, () => readTarget('all')),
+      cached(`notifs:${user._docId}`, 5 * 60 * 1000, () => readTarget(user._docId))
+    ]);
+    const notifications = [...globalNotifs, ...personalNotifs].map(n => {
       return {
-        id: d.id,
+        id: n.id,
         icon: String(n.icon || 'fa-bell').slice(0, 40),
         title: String(n.title || '').slice(0, 120),
         body: String(n.body || '').slice(0, 300),
@@ -2168,11 +2213,12 @@ app.get('/api/reviews', async (req, res) => {
   try {
     if (!db) return res.json({ success: true, reviews: [] });
     const lim = Math.min(Math.max(parseInt(req.query.limit, 10) || 50, 1), 100);
-    const snap = await db.collection('reviews').where('status', '==', REVIEW_STATUS.APPROVED).get();
-    const reviews = snap.docs
-      .map(reviewPublicView)
-      .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))
-      .slice(0, lim);
+    const all = await cached('reviews:approved', 10 * 60 * 1000, async () => {
+      const snap = await db.collection('reviews').where('status', '==', REVIEW_STATUS.APPROVED).get();
+      return snap.docs.map(reviewPublicView)
+        .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')));
+    });
+    const reviews = all.slice(0, lim);
     res.json({ success: true, reviews });
   } catch (err) {
     console.error('[Reviews] Erreur lecture:', err);
@@ -2220,6 +2266,7 @@ app.post('/api/reviews', reviewsLimiter, async (req, res) => {
       createdTs: fv ? fv.serverTimestamp() : null
     };
     const ref = await db.collection('reviews').add(doc);
+    invalidateCache(`reviews:mine:${user._docId}`);
     console.log(`[Reviews] 📝 Nouvel avis en attente (${stars}★) de ${maskPhone(user._docId)} → ${ref.id}`);
     res.json({ success: true, pending: true, message: 'Avis envoyé ! Il sera visible après validation par notre équipe.' });
   } catch (err) {
@@ -2236,11 +2283,13 @@ app.get('/api/reviews/mine', async (req, res) => {
     const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
     if (!sessionUid) return res.status(401).json({ success: false, error: 'Session requise.' });
     if (!db) return res.status(503).json({ success: false, error: 'Service temporairement indisponible.' });
-    const user = await findUserByAnyId(sessionUid);
+    const user = await findUserDocIdCached(sessionUid);
     if (!user || !user._docId) return res.status(404).json({ success: false, error: 'Compte introuvable.' });
-    const own = await db.collection('reviews').where('uid', '==', user._docId).limit(1).get();
-    if (own.empty) return res.json({ success: true, submitted: false });
-    const rv = own.docs[0].data();
+    const rv = await cached(`reviews:mine:${user._docId}`, 30 * 60 * 1000, async () => {
+      const own = await db.collection('reviews').where('uid', '==', user._docId).limit(1).get();
+      return own.empty ? null : own.docs[0].data();
+    });
+    if (!rv) return res.json({ success: true, submitted: false });
     res.json({
       success: true,
       submitted: true,
@@ -2287,6 +2336,7 @@ app.post('/api/admin/reviews/:id/approve', async (req, res) => {
     });
     console.log(`[Admin Reviews] ✅ Avis ${id} publié par ${req.adminUser.email}`);
     const rd = doc.data();
+    invalidateCache('reviews:');
     // Un avis publié = un ticket au tirage de la semaine (anti-spam : modération + 1/compte).
     let drawEntered = false;
     try { drawEntered = await addDrawEntry(id, rd); } catch (e) { console.warn('[Draw] Entry KO:', e.message); }
@@ -2320,6 +2370,7 @@ app.post('/api/admin/reviews/:id/reply', async (req, res) => {
     const doc = await ref.get();
     if (!doc.exists) return res.status(404).json({ error: 'Avis introuvable.' });
     const fv = FieldValue || admin.firestore?.FieldValue;
+    invalidateCache('reviews:');
     if (!reply) {
       // Réponse vide = retirer la réponse existante.
       await ref.update({ reply: '', repliedAt: '', repliedBy: '' });
@@ -2365,6 +2416,7 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
     const doc = await ref.get();
     if (!doc.exists) return res.status(404).json({ error: 'Avis introuvable.' });
     await ref.delete();
+    invalidateCache('reviews:');
     console.log(`[Admin Reviews] 🗑️ Avis ${id} supprimé par ${req.adminUser.email}`);
     res.json({ success: true });
   } catch (err) {
@@ -2449,6 +2501,7 @@ async function addDrawEntry(reviewId, rd, weight = 1) {
     t.set(ref, { ...data, entries }, { merge: true });
     entered = true;
   });
+  if (entered) invalidateCache('draw:');
   return entered;
 }
 const isUniversityClass = c => /^Licence/i.test(String(c || ''));
@@ -2501,12 +2554,15 @@ async function grantGiftDays(uid, plan, days) {
 app.get('/api/draw', async (req, res) => {
   try {
     if (!db) return res.json({ success: true, open: false, entriesCount: 0 });
-    const draw = await getOrCreateDraw();
+    const { draw, past } = await cached(`draw:public:${activeWeekId()}`, 3 * 60 * 1000, async () => {
+      const { ref, ...d } = await getOrCreateDraw();
+      const snap = await db.collection('draws').where('status', '==', 'drawn').limit(10).get();
+      const drawn = snap.docs.map(x => x.data()).sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')));
+      return { draw: d, past: drawn };
+    });
     const uid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
     const entries = Array.isArray(draw.entries) ? draw.entries : [];
     let lastWinner = null;
-    const snap = await db.collection('draws').where('status', '==', 'drawn').limit(10).get();
-    const past = snap.docs.map(d => d.data()).sort((a, b) => String(b.weekId || '').localeCompare(String(a.weekId || '')));
     const w = past.find(p => p.winner);
     if (w) {
       lastWinner = { firstName: w.winner.firstName, classe: w.winner.classe, weekId: w.weekId, prizeLabel: w.winner.prizeLabel || 'Pass offert' };
@@ -2597,6 +2653,7 @@ app.post('/api/admin/draw/entry/weight', async (req, res) => {
     if (!e) return res.status(404).json({ error: 'Participant introuvable dans le tirage en cours.' });
     e.weight = weight;
     await draw.ref.set({ entries }, { merge: true });
+    invalidateCache('draw:');
     res.json({ success: true, weight });
   } catch (err) {
     console.error('[Admin Draw] Erreur boost:', err);
@@ -2631,6 +2688,7 @@ app.post('/api/admin/draw/pick', async (req, res) => {
       drawnAt: new Date().toISOString(),
       drawnBy: String(req.adminUser.email || 'admin').toLowerCase()
     }, { merge: true });
+    invalidateCache('draw:');
     await db.collection('reviews').doc(winner.reviewId).set({ drawWinner: draw.weekId }, { merge: true }).catch(() => {});
 
     await createNotification({

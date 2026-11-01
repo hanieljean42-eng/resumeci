@@ -646,7 +646,10 @@ async function loadData() {
   if (typeof handleInitialRoute === 'function') handleInitialRoute();
   else showDashboard();
   setTimeout(() => { if (window.checkReviewGate) window.checkReviewGate(); }, 2500);
-  if (window.loadNotifications) { window.loadNotifications(); setInterval(window.loadNotifications, 90000); }
+  if (window.loadNotifications) {
+    window.loadNotifications();
+    setInterval(() => { if (document.visibilityState === 'visible') window.loadNotifications(); }, 300000);
+  }
   if (typeof updateTopbarStreak === 'function') {
     updateTopbarStreak();
   }
@@ -3486,7 +3489,11 @@ function fillHomeReviewsBanner() {
   </div>${homeDrawStrip()}`;
 }
 
+window._homeReviewsAt = 0;
 window.loadHomeReviews = async function() {
+  // Le tableau de bord est re-rendu souvent : on ne relit l'API qu'une fois toutes les 3 min.
+  if (Date.now() - window._homeReviewsAt < 180000) { fillHomeReviewsBanner(); return; }
+  window._homeReviewsAt = Date.now();
   if (typeof window.loadDrawStatus === 'function') window.loadDrawStatus();
   try {
     const apiBase = window.getPaymentApiBase ? window.getPaymentApiBase() : '';
