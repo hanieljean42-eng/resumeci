@@ -22,8 +22,12 @@
 ## Cache
 - Bumper `?v=` de l'asset modifié dans `public/index.html` + `public/sw.js`, et `CACHE_SHELL` dans `sw.js`.
 
+## Base de secours MongoDB
+- `payment-api/lib/dualstore.js` enveloppe `db` si `MONGODB_URI` est défini (MongoDB Atlas M0 gratuit) : écritures recopiées dans Mongo, bascule automatique sur Mongo si Firestore renvoie `RESOURCE_EXHAUSTED` (quota Spark), rejeu vers Firestore au retour. Seuls `where('==')`/`limit`/`batch`/`runTransaction` sont gérés : rester dans ce sous-ensemble Firestore.
+- Statut : `GET /api/admin/backup` ; copie complète forcée : `POST /api/admin/backup/sync` (automatique au premier démarrage).
+
 ## Variables d'environnement Render
-`FIREBASE_SERVICE_ACCOUNT` (JSON complet), `GENIUSPAY_PUBLIC_KEY`, `GENIUSPAY_SECRET_KEY`, `ADMIN_EMAILS`, `WEBHOOK_SECRET`, `PUBLIC_API_URL`.
+`FIREBASE_SERVICE_ACCOUNT` (JSON complet), `MONGODB_URI` (optionnel, secours), `GENIUSPAY_PUBLIC_KEY`, `GENIUSPAY_SECRET_KEY`, `ADMIN_EMAILS`, `WEBHOOK_SECRET`, `PUBLIC_API_URL`.
 
 ## Sécurité / conventions
 - Mots de passe : `passwordHash` (bcryptjs), 8 caractères minimum à l'inscription. Les anciens champs `password` en clair sont migrés à la première connexion. Jamais de mot de passe dans localStorage ni de lecture `users/` depuis le navigateur.

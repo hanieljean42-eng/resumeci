@@ -95,6 +95,26 @@ try {
   console.warn('⚠️ Firebase Admin non connecté:', e.message);
 }
 
+// Base de secours MongoDB (MONGODB_URI) : prend le relais si le quota Firestore est épuisé.
+let backupStore = null;
+if (db && process.env.MONGODB_URI) {
+  try {
+    const { withMongoBackup } = require('./lib/dualstore');
+    const fsMod = require('firebase-admin/firestore');
+    db = withMongoBackup(db, {
+      uri: process.env.MONGODB_URI,
+      dbName: process.env.MONGODB_DB || 'resumeci',
+      FieldValue: FieldValue || fsMod.FieldValue,
+      Timestamp: fsMod.Timestamp,
+      FieldPath: fsMod.FieldPath,
+      forceFallback: process.env.BACKUP_FORCE_FALLBACK === '1'
+    });
+    backupStore = db;
+  } catch (e) {
+    console.warn('⚠️ Base de secours MongoDB non initialisée:', e.message);
+  }
+}
+
 const app = express();
 // Render place l'API derrière un proxy : nécessaire pour que le rate limiting utilise la vraie IP client
 app.set('trust proxy', 1);
@@ -266,6 +286,16 @@ async function requireAdmin(req, res, next) {
   }
 }
 app.use('/api/admin', requireAdmin);
+
+app.get('/api/admin/backup', async (req, res) => {
+  if (!backupStore) return res.json({ success: true, enabled: false });
+  res.json({ success: true, enabled: true, ...(await backupStore.status()) });
+});
+app.post('/api/admin/backup/sync', async (req, res) => {
+  if (!backupStore) return res.status(400).json({ success: false, error: 'MONGODB_URI non configuré.' });
+  backupStore.fullSync();
+  res.json({ success: true, started: true });
+});
 
 // Helper : retrouve un compte par n'importe quel identifiant connu —
 // doc ID, champ uid, whatsapp, contact ou phone, dans tous les formats
