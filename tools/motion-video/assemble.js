@@ -8,7 +8,7 @@ const os = require('os');
 const path = require('path');
 const { clipSpeed, projectTheme, THEMES, workDir } = require('./lib');
 
-const FPS = 30, T = 0.45;
+const FPS = 30, T = 0.55;
 const P = path.resolve(process.argv[2] || '.');
 const NAME = process.argv[3] || 'ResumeCI_Video';
 const SCENES = require(path.join(P, 'scenes.js'));
@@ -52,7 +52,9 @@ async function mask({ W: mw, H: mh }) {
 
   fs.mkdirSync(w('seg'), { recursive: true });
   const durs = SCENES.map(sc => fs.readdirSync(w('frames', sc.id)).length / FPS);
-  await pool(SCENES.map((sc, i) => [sc, durs[i]]), async ([sc, dur]) => {
+  // SKIP_SEGS=1 : réutilise les seg/*.mp4 existants (utile pour ne changer que les transitions).
+  const todo = process.env.SKIP_SEGS ? SCENES.filter(sc => !fs.existsSync(w('seg', sc.id + '.mp4'))) : SCENES;
+  await pool(todo.map((sc) => [sc, durs[SCENES.indexOf(sc)]]), async ([sc, dur]) => {
     const out = w('seg', sc.id + '.mp4');
     const enc = ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '12', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-t', dur.toFixed(3), out];
     if (sc.type !== 'demo') await ff(['-framerate', String(FPS), '-i', w('frames', sc.id, '%05d.jpg'), ...enc]);
@@ -88,12 +90,15 @@ async function mask({ W: mw, H: mh }) {
   });
   console.log(`segments en ${((Date.now() - t0) / 1000).toFixed(0)} s (${PAR} en parallèle)`);
 
-  // Transitions légères (les « smooth* » coûtent ~1,6x plus cher pour un rendu proche).
-  const TRANS = ['fade', 'slideleft', 'slideup', 'wipeleft', 'circleopen', 'slideright'];
+  // Transitions : sc.trans force un effet xfade précis ; sinon rotation dans un
+  // large pool spectaculaire. demo→demo garde 'slideleft' (défilement naturel).
+  const TRANS = ['fade', 'slideleft', 'slideup', 'wipeleft', 'circleopen', 'slideright',
+    'radial', 'circlecrop', 'pixelize', 'zoomin', 'hlslice', 'vertopen', 'hlwind', 'fadeblack', 'dissolve', 'distance'];
   const inputs = SCENES.flatMap(sc => ['-i', w('seg', sc.id + '.mp4')]);
   const fc = []; let prev = '[0:v]', acc = durs[0];
   for (let i = 1; i < SCENES.length; i++) {
-    const tr = SCENES[i - 1].type === 'demo' && SCENES[i].type === 'demo' ? 'slideleft' : TRANS[i % TRANS.length];
+    const tr = SCENES[i - 1].type === 'demo' && SCENES[i].type === 'demo' ? 'slideleft'
+      : (SCENES[i].trans || TRANS[i % TRANS.length]);
     const off = acc - T, lbl = i === SCENES.length - 1 ? '[vx]' : `[x${i}]`;
     fc.push(`${prev}[${i}:v]xfade=transition=${tr}:duration=${T}:offset=${off.toFixed(3)}${lbl}`);
     prev = lbl; acc = off + durs[i];
