@@ -1,17 +1,15 @@
 {
-  "version": "3.6.27",
-  "build": 3627,
-  "date": "2026-11-11",
+  "version": "3.6.28",
+  "build": 3628,
+  "date": "2026-11-12",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Reprise de lecture + filtrage des leçons ⚡",
-  "message": "ResumeCI s'améliore : retrouve ta fiche là où tu l'avais laissée, filtre les leçons de ta classe en un instant, et profite d'un chargement allégé.",
+  "title": "Correction : ton Pass reste actif partout 🔓",
+  "message": "ResumeCI corrige un bug où certains élèves payants repassaient en version essai : ton abonnement est désormais reconnu sur tous tes appareils et toutes tes fiches.",
   "features": [
-    "📖 Bouton « Reprendre ma lecture » sur l'accueil : ta position dans chaque fiche est mémorisée",
-    "🔎 Filtre instantané des leçons dans chaque classe (nom + matière)",
-    "⚡ Chargement allégé : ~1 Mo de scripts ne se télécharge plus qu'à la demande",
-    "⏳ Message « serveur en veille » pendant les premiers chargements lents",
-    "♿ Modales plus accessibles : fermeture avec la touche Échap"
+    "🔓 Abonnement reconnu quelle que soit la formule payée (université incluse)",
+    "📱 Statut Pass resynchronisé automatiquement toutes les 5 minutes",
+    "🛡️ Premium retrouvé même si le paiement a été rattaché à un ancien compte"
   ],
   "forceShow": true
 }

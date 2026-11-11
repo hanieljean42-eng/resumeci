@@ -552,6 +552,11 @@ window.PREMIUM_PLANS = {
   uni_elite: { name: 'Excellence', price: 3000, emoji: '🏛️' }
 };
 
+// Classes Licence_* : tout Pass payant ≥ 1 000 FCFA débloque les fiches de la
+// classe (miroir de LICENCE_OK_PLANS côté serveur — un étudiant qui a payé ne
+// doit jamais être ramené à l'essai pour un décalage de nom de formule).
+window.LICENCE_OK_TIERS = new Set(['uni_starter', 'uni_pro', 'uni_elite', 'pro', 'elite', 'annual', 'annuel', 'vip']);
+
 // Traduction du vocabulaire selon le profil (élève ↔ étudiant)
 window.studentLabel = function(feminine) {
   return window.isUniversityUser() ? (feminine ? 'étudiante' : 'étudiant') : 'élève';
@@ -678,6 +683,14 @@ async function loadData() {
     if (!document.getElementById('introScreen')) window.location.href = '/connexion.html';
     return;
   }
+  // Resync périodique du statut Pass : rattrape les activations faites côté
+  // serveur (webhook GeniusPay, Pass admin, code cadeau) pendant que l'app
+  // reste ouverte — un élève payant ne doit jamais retomber en « essai ».
+  setInterval(() => {
+    if (document.visibilityState === 'visible' && typeof window.syncUserProfileFromRemote === 'function') {
+      window.syncUserProfileFromRemote();
+    }
+  }, 5 * 60 * 1000);
 }
 
 function showSubscriptionSuccessModal(tier, expiresAt) {
@@ -2033,7 +2046,7 @@ window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false, elite
     return;
   }
 
-  const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3 };
+  const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3, annual: 4, annuel: 4, vip: 4 };
   const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
   const currentLevel = activeSub ? (TIER_LEVELS[activeSub.tier] || 0) : 0;
   const targetLevel = TIER_LEVELS[tierKey] || 0;
@@ -2796,7 +2809,9 @@ async function showFiche(cls, sub, file, push = true) {
   const isTrialFiche = subFiches.length > 0 && subFiches[0].file === file;
   const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
   const subTier = String(activeSub && activeSub.tier || '');
-  const hasAccess = isUnivCls ? !!(activeSub && subTier.startsWith('uni_')) : !!activeSub;
+  const hasAccess = isUnivCls
+    ? !!(activeSub && window.LICENCE_OK_TIERS.has(subTier.toLowerCase()))
+    : !!activeSub;
   if (!hasAccess && !isTrialFiche) {
     renderSecureFicheLock(cls, sub, file, 'premium');
     return;
@@ -4279,12 +4294,14 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==================== GESTION ABONNEMENT ACTIF & RESILIATION ==================== */
 window.hasActiveSubscription = function() {
   const profile = window.USER_PROFILE;
-  if (!profile || !profile.premiumPlan || profile.premiumPlan === 'free' || !profile.isPremium) return null;
+  if (!profile || !profile.isPremium) return null;
+  const tier = String(profile.premiumPlan || '').toLowerCase();
+  if (tier === 'free') return null;
   if (profile.premiumExpiresAt && Number(profile.premiumExpiresAt) < Date.now()) {
     return null; // Abonnement expiré
   }
   return {
-    tier: profile.premiumPlan,
+    tier: profile.premiumPlan || 'pro',
     expiresAt: profile.premiumExpiresAt,
     isPremium: true
   };

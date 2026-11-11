@@ -381,25 +381,93 @@ async function resolveUserDocs(rawUid, rawPhone) {
   return { primary, extra };
 }
 
+// Normalise une date d'expiration stockée sous n'importe quelle forme
+// (ms epoch, chaîne numérique, ISO, Timestamp Firestore). Number() sur un
+// Timestamp ou une date ISO donne NaN → le compte était traité comme expiré
+// alors qu'il était premium.
+function toMsEpoch(v) {
+  if (v === null || v === undefined || v === '') return 0;
+  if (typeof v === 'object') {
+    if (typeof v.toMillis === 'function') { const t = v.toMillis(); return isFinite(t) ? t : 0; }
+    if (typeof v.toDate === 'function') { const t = v.toDate().getTime(); return isFinite(t) ? t : 0; }
+    if (typeof v._seconds === 'number') return v._seconds * 1000 + Math.floor((v._nanoseconds || 0) / 1e6);
+    return 0;
+  }
+  const n = Number(v);
+  if (isFinite(n)) return n;
+  const t = Date.parse(String(v));
+  return isFinite(t) ? t : 0;
+}
+// Un plan 'free' ne compte jamais comme premium. Plan absent + isPremium=true
+// (anciens docs sans champ plan) → 'pro' par défaut, comme avant.
+function effectivePlanName(u) {
+  const p = String((u && (u.premiumPlan || u.plan)) || '').toLowerCase();
+  if (p === 'free') return '';
+  if (p) return p;
+  return (u && u.isPremium) ? 'pro' : '';
+}
 // Statut premium consolidé : un Pass accordé (par l'admin ou un paiement) sur
 // N'IMPORTE QUEL doc du même compte compte — y compris sur un doc fantôme
 // hérité. Renvoie le statut le plus favorable parmi les docs résolus.
 function mergedPremiumStatus(users) {
   const now = Date.now();
   let best = null;
+  let bestExp = -1;
   for (const u of users) {
-    if (!u) continue;
-    const exp = Number(u.premiumExpiresAt) || 0;
-    if (u.isPremium && (exp === 0 || exp > now)) {
-      if (!best || exp === 0 || exp > (Number(best.premiumExpiresAt) || 0)) best = u;
-    }
+    if (!u || !u.isPremium) continue;
+    if (!effectivePlanName(u)) continue;
+    const exp = toMsEpoch(u.premiumExpiresAt);
+    if (!(exp === 0 || exp > now)) continue;
+    // exp === 0 = accès à vie : prioritaire sur toute expiration datée.
+    const rank = exp === 0 ? Infinity : exp;
+    if (!best || rank > bestExp) { best = u; bestExp = rank; }
   }
   if (!best) return { isPremium: false, premiumPlan: 'free', premiumExpiresAt: 0 };
-  return {
-    isPremium: true,
-    premiumPlan: best.premiumPlan || best.plan || 'pro',
-    premiumExpiresAt: Number(best.premiumExpiresAt) || 0
-  };
+  const plan = effectivePlanName(best) || 'pro';
+  const exp = toMsEpoch(best.premiumExpiresAt);
+  return { isPremium: true, premiumPlan: plan, premiumExpiresAt: exp };
+}
+// Contenu Licence_* : toutes les formules payantes à partir de 1 000 FCFA
+// donnent accès aux fiches de la classe (uni_* + équivalents école
+// pro/elite/annual/vip). Seul le Starter 500 F reste réservé au scolaire :
+// un étudiant qui a payé ne doit JAMAIS être ramené à l'essai pour ça.
+const LICENCE_OK_PLANS = new Set(['uni_starter', 'uni_pro', 'uni_elite', 'pro', 'elite', 'annual', 'annuel', 'vip']);
+function planAllowsClass(premiumPlan, cls) {
+  if (!String(cls || '').startsWith('Licence_')) return true;
+  return LICENCE_OK_PLANS.has(String(premiumPlan || '').toLowerCase());
+}
+// Tous les docs du compte (doc IDs candidats + champs uid/whatsapp/contact/phone
+// dans tous les formats de numéro). Sert à rattraper un premium posé sur un
+// doc doublon/fantôme que la résolution "meilleur doc" ne voit pas.
+async function findAllAccountDocs(rawUid, rawPhone) {
+  if (!db) return [];
+  const users = db.collection('users');
+  const byId = new Map();
+  const ids = new Set();
+  const addId = v => { const s = String(v ?? '').trim(); if (s) ids.add(s); };
+  addId(rawUid);
+  addId(rawPhone);
+  const dig = v => { const d = String(v || '').replace(/\D/g, ''); return d.length >= 10 ? d.slice(-10) : ''; };
+  const phone10 = dig(rawPhone) || dig(rawUid);
+  if (phone10.length === 10) { addId(phone10); addId('225' + phone10); addId('+225' + phone10); }
+  for (const id of ids) {
+    try {
+      const d = await users.doc(id).get();
+      if (d.exists) byId.set(d.id, { ...d.data(), uid: d.data().uid || d.id, _docId: d.id });
+    } catch (e) { if (isQuotaError(e)) throw e; }
+  }
+  const cands = phone10.length === 10 ? [phone10, '225' + phone10, '+225' + phone10] : [...ids];
+  for (const field of ['uid', 'whatsapp', 'contact', 'phone']) {
+    for (const cand of cands) {
+      try {
+        const snap = await users.where(field, '==', cand).limit(4).get();
+        snap.forEach(d => {
+          if (!byId.has(d.id)) byId.set(d.id, { ...d.data(), uid: d.data().uid || d.id, _docId: d.id });
+        });
+      } catch (e) { if (isQuotaError(e)) throw e; }
+    }
+  }
+  return [...byId.values()];
 }
 
 // Helpers mots de passe : stockage haché (bcrypt). Les anciens comptes ont un champ `password` en clair,
@@ -441,9 +509,10 @@ function stripSecrets(user) {
 // Helper : profil normalisé renvoyé au client (statut premium recalculé)
 function buildProfile(user, cleanPhone) {
   const now = Date.now();
-  const expiresAt = Number(user.premiumExpiresAt) || 0;
-  const isPremium = Boolean(user.isPremium && (expiresAt === 0 || expiresAt > now));
-  const premiumPlan = isPremium ? (user.premiumPlan || user.plan || 'pro') : 'free';
+  const expiresAt = toMsEpoch(user.premiumExpiresAt);
+  const planName = effectivePlanName(user);
+  const isPremium = Boolean(user.isPremium && planName && (expiresAt === 0 || expiresAt > now));
+  const premiumPlan = isPremium ? planName : 'free';
   const fName = user.firstName || (user.fullName ? user.fullName.split(' ')[0] : 'Élève');
   const lName = user.lastName || (user.fullName ? user.fullName.split(' ').slice(1).join(' ') : '');
   return {
@@ -522,21 +591,33 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
     }
   }
 
-  // 2. Doublons hérités : aligner tous les docs qui partagent le même contact
+  // 2. Doublons hérités : aligner TOUS les docs qui partagent le même numéro,
+  // dans tous les formats stockés (10 chiffres, 225…, +225…) et tous les
+  // champs (whatsapp/contact/phone/uid). Le whatsapp/contact est normalisé
+  // au format 10 chiffres pour que les prochaines résolutions convergent.
   if (canonicalPhone) {
-    for (const field of ['whatsapp', 'contact']) {
-      try {
-        const snap = await db.collection('users').where(field, '==', canonicalPhone).get();
-        const batch = db.batch();
-        let n = 0;
-        snap.forEach(doc => { if (!targets.has(doc.id)) { batch.set(doc.ref, updateData, { merge: true }); n++; } });
-        if (n) await batch.commit();
-      } catch (e) {
-        console.warn('[Unlock] Erreur MAJ batch:', e.message);
+    const phoneCands = [canonicalPhone, '225' + canonicalPhone, '+225' + canonicalPhone];
+    for (const field of ['whatsapp', 'contact', 'phone', 'uid']) {
+      for (const cand of phoneCands) {
+        try {
+          const snap = await db.collection('users').where(field, '==', cand).limit(10).get();
+          const batch = db.batch();
+          let n = 0;
+          snap.forEach(doc => {
+            if (!targets.has(doc.id)) {
+              batch.set(doc.ref, { ...updateData, whatsapp: canonicalPhone, contact: canonicalPhone }, { merge: true });
+              n++;
+            }
+          });
+          if (n) await batch.commit();
+        } catch (e) {
+          console.warn('[Unlock] Erreur MAJ batch:', e.message);
+        }
       }
     }
   }
 
+  invalidateUserCaches();
   console.log(`[Unlock] ✅ Compte débloqué: ${maskPhone(phone || uid)} -> Pass ${tierKey} (${durationDays}j)`);
   return { expiresAt, tierKey };
 }
@@ -1199,7 +1280,21 @@ const userStatusHandler = async (req, res) => {
     const now = Date.now();
     // Premium consolidé : un Pass posé sur n'importe quel doc du compte
     // (vrai doc OU fantôme hérité) débloque l'utilisateur.
-    const merged = mergedPremiumStatus([foundUser, ...extraUsers]);
+    let merged = mergedPremiumStatus([foundUser, ...extraUsers]);
+    if (!merged.isPremium && cleanPhone) {
+      // Statut négatif : scan complet du compte (tous les docs liés au numéro,
+      // tous formats) pour rattraper un premium posé sur un doublon/fantôme
+      // que la résolution "meilleur doc" ne voit pas. Coûteux → réservé aux
+      // comptes qui semblent gratuits (sinon chaque visite alourdit le quota).
+      try {
+        const all = await findAllAccountDocs(rawUid, cleanPhone);
+        const known = new Set([foundUser, ...extraUsers].filter(Boolean).map(u => u._docId));
+        const fresh = all.filter(u => u._docId && !known.has(u._docId));
+        if (fresh.length) merged = mergedPremiumStatus([foundUser, ...extraUsers, ...fresh]);
+      } catch (e) {
+        console.warn('[User Status] Scan compte complet impossible:', e.message);
+      }
+    }
     const isPremium = merged.isPremium;
     const premiumPlan = merged.premiumPlan;
     const effectiveExpiresAt = isPremium ? (merged.premiumExpiresAt > now ? merged.premiumExpiresAt : (now + THIRTY_DAYS_MS)) : 0;
@@ -1243,7 +1338,7 @@ app.post('/api/user-status', userStatusHandler);
 // Aucun fichier de fiche n'est hébergé publiquement : ils vivent dans
 // payment-api/fiches/ et ne sont servis qu'aux comptes authentifiés
 // (sessionToken). La 1re fiche de chaque matière est en essai gratuit ;
-// les autres exigent un Pass actif (école : dès 500 F ; Licence : uni_*).
+// les autres exigent un Pass actif (école : dès 500 F ; Licence : formule ≥ 1 000 FCFA).
 // --------------------------------------------------------------------------
 const SECURE_FICHES_DIR = path.join(__dirname, 'fiches');
 const SECURE_FICHES_INDEX_PATH = path.join(__dirname, 'fiches-index.json');
@@ -1280,7 +1375,7 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
     const premHit = memCache.get(`prem:${sessionUid}`);
     if (!isTrialFiche && premHit && premHit.exp > Date.now()
       && (!premHit.val.premiumExpiresAt || premHit.val.premiumExpiresAt > Date.now())
-      && (!cls.startsWith('Licence_') || premHit.val.premiumPlan.startsWith('uni_'))) {
+      && planAllowsClass(premHit.val.premiumPlan, cls)) {
       // Pass actif déjà vérifié récemment : pas de relecture Firestore à chaque fiche.
     } else if (!isTrialFiche) {
       let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
@@ -1294,10 +1389,28 @@ app.get('/api/fiche/:cls/:sub/:file', ficheLimiter, async (req, res) => {
           if (real && real._docId !== user._docId) candidates.push(real);
         }
       }
-      const status = mergedPremiumStatus(candidates);
+      let status = mergedPremiumStatus(candidates);
+      if (!status.isPremium && db) {
+        // Statut négatif : scan complet du compte (tous les docs liés au
+        // numéro, tous formats) — un premium posé sur un doublon/fantôme
+        // ne doit jamais renvoyer l'élève à l'essai. Réservé aux refus
+        // pour ne pas alourdir le quota sur les comptes premium.
+        try {
+          const scanPhone = user
+            ? String(user.whatsapp || user.contact || user.phone || sessionUid)
+            : sessionUid;
+          const all = await findAllAccountDocs(sessionUid, scanPhone);
+          const known = new Set(candidates.filter(Boolean).map(u => u._docId));
+          const fresh = all.filter(u => u._docId && !known.has(u._docId));
+          if (fresh.length) status = mergedPremiumStatus([...candidates, ...fresh]);
+        } catch (e) {
+          console.warn('[Fiche] Scan compte complet impossible:', e.message);
+        }
+      }
       if (status.isPremium) memCache.set(`prem:${sessionUid}`, { exp: Date.now() + 10 * 60 * 1000, val: status, hasVal: true });
-      // Université : Pass étudiant (uni_*) requis. École : n'importe quel Pass actif (dès 500 F).
-      const isPremium = status.isPremium && (cls.startsWith('Licence_') ? status.premiumPlan.startsWith('uni_') : true);
+      // Licence : toute formule payante ≥ 1 000 FCFA (uni_* ou équivalent école).
+      // École : n'importe quel Pass actif (dès 500 F).
+      const isPremium = status.isPremium && planAllowsClass(status.premiumPlan, cls);
       if (!isPremium) {
         return res.status(403).json({ success: false, error: 'premium_required' });
       }
@@ -1819,6 +1932,7 @@ app.post('/api/update-profile', profileLimiter, async (req, res) => {
 
     const ref = db.collection('users').doc(user._docId);
     await ref.set(update, { merge: true });
+    invalidateUserCaches();
     const fresh = await ref.get();
     const freshUser = { ...fresh.data(), uid: fresh.data().uid || fresh.id, _docId: fresh.id };
     const acctPhone = String(freshUser.whatsapp || freshUser.contact || fresh.id).replace(/\D/g, '').slice(-10) || fresh.id;
@@ -1954,6 +2068,7 @@ app.post('/api/admin/create-user', async (req, res) => {
 
     if (db) {
       await db.collection('users').doc(docId).set(userData, { merge: true });
+      invalidateUserCaches();
     }
 
     console.log(`[Admin CreateUser] ✅ Compte ${existing ? 'mis à jour' : 'créé'} pour ${full} (${cleanPhone}) - Forfait: ${chosenPlan}`);
@@ -2038,6 +2153,7 @@ app.post('/api/admin/set-plan', async (req, res) => {
           } catch (e) {}
         }
       }
+      invalidateUserCaches();
     }
 
     const actionText = isFree ? `Abonnement ARRÊTÉ pour ${target}` : `Forfait '${chosenPlan}' accordé à ${target} (${durationDays} jours)`;
@@ -2615,6 +2731,7 @@ async function grantGiftDays(uid, plan, days) {
     lastGiftAt: fv ? fv.serverTimestamp() : new Date().toISOString(),
     updatedAt: fv ? fv.serverTimestamp() : new Date().toISOString()
   }, { merge: true });
+  invalidateUserCaches();
   return { expiresAt, user };
 }
 

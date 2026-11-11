@@ -1277,7 +1277,7 @@ window.openPremiumTeaser = async function(featureName) {
       `;
     }
 
-    const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3 };
+    const TIER_LEVELS = { starter: 1, uni_starter: 1, pro: 2, uni_pro: 2, elite: 3, uni_elite: 3, annual: 4, annuel: 4, vip: 4 };
     const activeSub = window.hasActiveSubscription ? window.hasActiveSubscription() : null;
     const currentLevel = activeSub ? (TIER_LEVELS[activeSub.tier] || 0) : 0;
     const targetLevel = TIER_LEVELS[tierKey] || 0;
