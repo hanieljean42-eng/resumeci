@@ -419,7 +419,7 @@
         <button class="btn-top btn-top-ghost" id="btnRefresh" onclick="loadData(true)">
           <i class="fas fa-arrows-rotate"></i> Actualiser
         </button>
-        <span id="lastSyncLabel" style="font-size:11px;color:var(--text-dim);white-space:nowrap;" title="Actualisation automatique toutes les 4 min">—</span>
+        <span id="lastSyncLabel" style="font-size:11px;color:var(--text-dim);white-space:nowrap;" title="Actualisation automatique toutes les 45 s">—</span>
         <button class="btn-top btn-top-ghost" onclick="exportCSV()">
           <i class="fas fa-file-csv"></i> CSV
         </button>
@@ -929,8 +929,19 @@
       const userMap = new Map();
 
       try {
-        // L'API backend sert la liste via un cache serveur (quota Firestore
-        // préservé) — plus de lecture directe users/ depuis le navigateur.
+        // 1. Firestore Client SDK
+        try {
+          const snap = await getDocs(query(collection(db, "users"), limit(800)));
+          snap.forEach(d => {
+            const data = d.data();
+            const phone = String(data.whatsapp || data.contact || d.id).replace(/\D/g, '').slice(-10);
+            if (phone.length === 10) {
+              userMap.set(phone, { ...data, whatsapp: phone, contact: phone, id: d.id });
+            }
+          });
+        } catch(e) { console.warn("Firestore read:", e.message); }
+
+        // 2. API Backend
         try {
           const apiRes = await adminFetch('/api/admin/users');
           if (apiRes.ok) {
@@ -1256,7 +1267,7 @@
     };
 
     // ========== SYNCHRO AUTO & NOTIFICATIONS ==========
-    const AUTO_REFRESH_MS = 240000;
+    const AUTO_REFRESH_MS = 45000;
     let lastLoadAt = 0;
     let prevSnapshot = null;
 
@@ -1390,8 +1401,8 @@
       }).join('');
     }
 
-    // Actualisation automatique : toutes les 4 min quand l'onglet est visible,
-    // et dès le retour sur l'onglet si la dernière synchro date de +4 min.
+    // Actualisation automatique : toutes les 45 s quand l'onglet est visible,
+    // et dès le retour sur l'onglet si la dernière synchro date de +45 s.
     setInterval(() => {
       if (document.visibilityState === 'visible' && auth.currentUser) loadData();
     }, AUTO_REFRESH_MS);
