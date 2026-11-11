@@ -1,20 +1,17 @@
 {
-  "version": "3.4.0",
-  "build": 3400,
-  "date": "2026-10-13",
+  "version": "3.6.27",
+  "build": 3627,
+  "date": "2026-11-11",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Nouvelles Classes + Quiz Partout 🚀",
-  "message": "Trois nouvelles classes arrivent : 4ème, Première A et Première C, avec quiz et flashcards sur chaque fiche !",
+  "title": "Reprise de lecture + filtrage des leçons ⚡",
+  "message": "ResumeCI s'améliore : retrouve ta fiche là où tu l'avais laissée, filtre les leçons de ta classe en un instant, et profite d'un chargement allégé.",
   "features": [
-    "📚 1009 Fiches de cours Collège & Lycée",
-    "� Classe de 4ème : 100 fiches dans 9 matières",
-    "� Première A : 97 fiches dans 7 matières",
-    "🆕 Première C : 98 fiches dans 6 matières",
-    "🎯 Quiz interactifs sur TOUTES les fiches 4ème, 1ʳᵉ A et 1ʳᵉ C (295 nouveaux quiz)",
-    "🃏 Flashcards automatiques sur toutes les nouvelles fiches",
-    "📴 Packs hors-ligne pour réviser sans connexion Internet",
-    "👑 Formules Pass Réussite avec activation automatique 100% sécurisée"
+    "📖 Bouton « Reprendre ma lecture » sur l'accueil : ta position dans chaque fiche est mémorisée",
+    "🔎 Filtre instantané des leçons dans chaque classe (nom + matière)",
+    "⚡ Chargement allégé : ~1 Mo de scripts ne se télécharge plus qu'à la demande",
+    "⏳ Message « serveur en veille » pendant les premiers chargements lents",
+    "♿ Modales plus accessibles : fermeture avec la touche Échap"
   ],
   "forceShow": true
 }

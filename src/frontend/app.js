@@ -2561,7 +2561,7 @@ function showDashboard(push = true) {
   if (push && window.location.pathname !== '/') history.pushState(null, '', '/');
   CURRENT_FICHE = null;
   window.CURRENT_FICHE = null;
-  updatePageTitle('ResumeCI — Fiches de Résumé | Collège & Lycée CI');
+  updatePageTitle('Fiches de Résumé — Collège, Lycée & Université CI');
   const { stats: stats, structure: structure } = DATA;
   document.getElementById('breadcrumb').innerHTML =
     `<i class="fas fa-home" style="color:var(--accent)"></i><span class="current">Accueil</span>`;
@@ -2606,7 +2606,7 @@ function showDashboard(push = true) {
     0
   );
   document.getElementById('content').innerHTML =
-    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getEliteSpotlight()}${getReviewsBannerHtml()}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
+    `<div class="dashboard"><div class="dashboard-hero"><div class="hero-icon">📚</div><h2>${heroTitle}</h2><p>${heroDesc}</p></div>${window.pendingPaymentBannerHtml ? window.pendingPaymentBannerHtml() : ''}${getResumeFicheHtml()}${getEliteSpotlight()}${getReviewsBannerHtml()}${getToolsBar()}<div class="stats-grid"><div class="stat-card"><div class="stat-icon color-blue"><i class="fas fa-file-alt"></i></div><div class="stat-number" style="color:var(--accent)">${totalFichesInView}</div><div class="stat-label">Fiches</div></div><div class="stat-card"><div class="stat-icon color-orange"><i class="fas fa-graduation-cap"></i></div><div class="stat-number" style="color:var(--orange)">${classesToRender.length}</div><div class="stat-label">Classes</div></div><div class="stat-card"><div class="stat-icon color-purple"><i class="fas fa-book"></i></div><div class="stat-number" style="color:var(--purple)">${classesToRender.reduce((s, [_, c]) => s + Object.keys(c).length, 0)}</div><div class="stat-label">Matières</div></div></div><div class="class-cards">${cards}</div></div>`;
   document.querySelectorAll('.class-card').forEach(el => el.addEventListener('click', () => showClass(el.dataset.cls)));
   clearActive();
   updateEliteSpotCount();
@@ -2655,7 +2655,7 @@ function showClass(cls, push = true) {
     const minPlanBadge = univCls ? '👑 Inclus dès le Pass Étudiant (1 000 F)' : '👑 Inclus dès le Pass Starter (500 F)';
     offlineBannerHtml = `<div class="class-offline-banner" onclick="window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><div class="cob-left"><span class="cob-badge">${minPlanBadge}</span><div class="cob-title"><i class="fas fa-lock" style="color:#f59e0b"></i> Pack Hors-Ligne • ${totalFiches} fiches 🔒</div><div class="cob-desc">Télécharge toutes les fiches de ${clsCleanName} pour réviser sans connexion Internet</div></div><button class="cob-btn" onclick="event.stopPropagation();window.openPremiumTeaser('Pack Hors-Ligne Complet (${clsCleanName})')"><i class="fas fa-lock"></i> Télécharger 🔒</button></div>`;
   }
-  let h = `<div class="subject-grid"><h2>${cIcon} ${cls.replace(/_/g, ' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${totalFiches} leçons</p>${offlineBannerHtml}`;
+  let h = `<div class="subject-grid"><h2>${cIcon} ${cls.replace(/_/g, ' ')}</h2><p class="subtitle">${Object.keys(subjects).length} matières — ${totalFiches} leçons</p><div class="class-filter-wrap"><i class="fas fa-filter"></i><input id="classFilterInput" type="search" placeholder="Filtrer les leçons (ex : équation, révision…)" oninput="filterClassLessons(this.value)" autocomplete="off" aria-label="Filtrer les leçons de la classe"></div>${offlineBannerHtml}`;
   let i = 0;
   for (const [sub, fiches] of Object.entries(subjects)) {
     h += `<h3 style="margin:20px 0 10px;font-size:15px;color:var(--text-muted)">${getIcon(sub)} ${sub} (${fiches.length})</h3><div class="lessons-grid">`;
@@ -2678,6 +2678,23 @@ function showClass(cls, push = true) {
   );
   clearActive();
 }
+// Filtre instantané des leçons dans une classe (nom + matière).
+window.filterClassLessons = function(q) {
+  q = String(q || '').trim().toLowerCase();
+  const grid = document.querySelector('#content .subject-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.lesson-card').forEach(el => {
+    const name = (el.querySelector('.lesson-name')?.textContent || '');
+    const sub = el.dataset.sub || '';
+    el.style.display = (!q || (name + ' ' + sub).toLowerCase().includes(q)) ? '' : 'none';
+  });
+  // Masquer l'en-tête d'une matière dont toutes les leçons sont filtrées.
+  grid.querySelectorAll('.lessons-grid').forEach(lg => {
+    const anyVisible = [...lg.querySelectorAll('.lesson-card')].some(c => c.style.display !== 'none');
+    const h3 = lg.previousElementSibling;
+    if (h3 && h3.tagName === 'H3') h3.style.display = anyVisible ? '' : 'none';
+  });
+};
 // Écran de verrouillage des fiches (raison 'premium' ou 'auth') — tarif adapté école/université
 function renderSecureFicheLock(cls, sub, file, reason) {
   const isUniv = cls.startsWith('Licence_') || (window.isUniversityUser && window.isUniversityUser());
@@ -2745,7 +2762,7 @@ async function fetchSecureFiche(cls, sub, file) {
 function renderOfflineFicheNotice(cls, sub, file) {
   const nameLocked = file.replace('Fiche_', '').replace(/\.(html|md)$/, '').replace(/_/g, ' ');
   const clsKey = Object.keys(DATA.structure).find(k => k.toLowerCase().replace(/\s+/g, '_') === cls.toLowerCase()) || cls;
-  const bc = `<div class="breadcrumb" style="margin-bottom:14px"><a href="#" onclick="showDashboard();return false;"><i class="fas fa-home"></i></a><span class="sep">/</span><a href="#" onclick="showClass('${clsKey}');return false;">${escapeHtml(clsKey.replace(/_/g, ' '))}</a></div>`;
+  const bc = `<div class="breadcrumb" style="margin-bottom:14px"><a href="#" onclick="showDashboard();return false;"><i class="fas fa-home"></i></a><span class="sep">/</span><a href="#" onclick="showClass('${clsKey}');return false;">${escHtml(clsKey.replace(/_/g, ' '))}</a></div>`;
   const isPremium = !!(window.hasActiveSubscription && window.hasActiveSubscription());
   const hint = isPremium
     ? `Ton Pass est actif : cette fiche n'est juste pas encore enregistrée sur ton téléphone. Reconnecte-toi pour la lire ou re-télécharge le <b>Pack Hors-Ligne</b> de ta classe.`
@@ -2754,7 +2771,7 @@ function renderOfflineFicheNotice(cls, sub, file) {
     <div class="lesson-content" style="max-width:640px;margin:40px auto;text-align:center;padding:34px 30px 30px;background:#fff;border:2px solid #f59e0b;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.14);">
       <div style="font-size:50px;margin-bottom:10px;">📴</div>
       <h3 style="margin:0 0 8px;color:#92400e;font-size:20px;">Fiche non disponible hors ligne</h3>
-      <p style="margin:0 0 6px;color:#444;font-size:15px;font-weight:600;">${escapeHtml(nameLocked)}</p>
+      <p style="margin:0 0 6px;color:#444;font-size:15px;font-weight:600;">${escHtml(nameLocked)}</p>
       <p style="margin:0 0 18px;color:#666;font-size:13.5px;line-height:1.6;">${hint}</p>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
         <button class="btn" onclick="showClass('${clsKey}')"><i class="fas fa-arrow-left"></i> Retour à ma classe</button>
@@ -2785,6 +2802,11 @@ async function showFiche(cls, sub, file, push = true) {
     return;
   }
   document.getElementById('content').innerHTML = '<div class="loading"><div class="spinner"></div>Chargement...</div>';
+  // Cold start Render : si la fiche met >4s, prévenir l'élève au lieu d'un spinner muet.
+  const slowTimer = setTimeout(() => {
+    const l = document.querySelector('#content .loading');
+    if (l) l.innerHTML = '<div class="spinner"></div><div style="margin-top:12px;font-size:13px;color:var(--text-dim,#64748b);line-height:1.6">Connexion au serveur…<br><small>Première visite ou serveur en veille : le chargement peut prendre jusqu\'à 1 minute.</small></div>';
+  }, 4000);
   const name = file.replace('Fiche_', '').replace('.md', '');
   updatePageTitle(name + ' - ' + cls.replace(/_/g, ' ') + ' ' + sub);
   document.getElementById('breadcrumb').innerHTML =
@@ -2856,6 +2878,16 @@ async function showFiche(cls, sub, file, push = true) {
       window.initFicheStudyFeatures(cls, sub, file);
     }
     if (typeof updateAudioFabVisual === 'function') updateAudioFabVisual();
+    // Reprise de lecture : restaurer la position de scroll sauvegardée pour cette fiche.
+    try {
+      const _pp = getProgress().fiches[`${cls}/${sub}/${file}`];
+      if (_pp && _pp.pos > 0.01) {
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          if (max > 0) window.scrollTo(0, Math.round(_pp.pos * max));
+        }));
+      }
+    } catch (e0) {}
     clearActive();
     const el = document.querySelector(`.nav-lesson[data-path="${cls}/${sub}/${file}"]`);
     if (el) {
@@ -2866,6 +2898,8 @@ async function showFiche(cls, sub, file, push = true) {
   } catch (e) {
     document.getElementById('content').innerHTML =
       `<div class="loading" style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> Erreur</div>`;
+  } finally {
+    clearTimeout(slowTimer);
   }
 }
 function clearActive() {
@@ -4436,6 +4470,21 @@ window.executeCancelSubscription = async function() {
   }
 };
 
+// html2pdf (~1 Mo) n'est chargé qu'au premier export PDF, pas au démarrage.
+let _html2pdfPromise = null;
+function ensureHtml2Pdf() {
+  if (window.html2pdf) return Promise.resolve(true);
+  if (_html2pdfPromise) return _html2pdfPromise;
+  _html2pdfPromise = new Promise(resolve => {
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+    s.onload = () => resolve(!!window.html2pdf);
+    s.onerror = () => resolve(false);
+    document.head.appendChild(s);
+  });
+  return _html2pdfPromise;
+}
+
 async function downloadCurrentFichePdf() {
   if (!window.userHasFeature || !window.userHasFeature('Téléchargement PDF')) {
     if (typeof window.openPremiumTeaser === 'function') {
@@ -4589,6 +4638,7 @@ async function downloadCurrentFichePdf() {
   }
 
   const fileName = CURRENT_FICHE.file.replace(/\.html?$/i, '.pdf').replace(/[\\/:*?"<>|]/g, '-');
+  await ensureHtml2Pdf();
   if (window.html2pdf) {
     await html2pdf()
       .set({
@@ -5477,6 +5527,55 @@ function trackFicheRead(cls, sub, file) {
   saveProgress(p);
   if (typeof updateStreak === 'function') updateStreak();
 }
+// Sauvegarde continue de la position de lecture (fraction 0-1) pour chaque fiche.
+let _ficheScrollRaf = null;
+window.addEventListener('scroll', () => {
+  if (!window.CURRENT_FICHE || _ficheScrollRaf) return;
+  _ficheScrollRaf = requestAnimationFrame(() => {
+    _ficheScrollRaf = null;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (max <= 0) return;
+    const frac = Math.min(1, Math.max(0, window.scrollY / max));
+    const cf = window.CURRENT_FICHE;
+    const key = `${cf.cls}/${cf.sub}/${cf.file}`;
+    const p = getProgress();
+    if (p.fiches[key]) {
+      p.fiches[key].pos = Math.round(frac * 1000) / 1000;
+      saveProgress(p);
+    }
+  });
+}, { passive: true });
+// Dernière fiche lue → carte « Reprendre ma lecture » sur le dashboard.
+function getLastReadFiche() {
+  try {
+    const p = getProgress();
+    let best = null;
+    for (const k in p.fiches) {
+      const e = p.fiches[k];
+      if (!best || (e.last || 0) > (best.e.last || 0)) best = { k, e };
+    }
+    if (!best) return null;
+    const parts = best.k.split('/');
+    if (parts.length < 3) return null;
+    return { cls: parts[0], sub: parts[1], file: parts.slice(2).join('/'), pos: best.e.pos || 0, last: best.e.last || 0 };
+  } catch (e) { return null; }
+}
+function getResumeFicheHtml() {
+  const f = getLastReadFiche();
+  if (!f) return '';
+  const name = String(f.file).replace(/^Fiche_/, '').replace(/\.html?$/i, '').replace(/_/g, ' ');
+  const clsName = String(f.cls).replace(/_/g, ' ');
+  const pct = f.pos > 0.01 ? Math.round(f.pos * 100) + '% lu' : 'à lire';
+  return `<div class="resume-fiche-card" onclick="resumeLastFiche()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')resumeLastFiche()">
+    <div class="rf-ic"><i class="fas fa-book-open-reader"></i></div>
+    <div class="rf-txt"><strong><i class="fas fa-forward" style="font-size:10px"></i> ${f.pos > 0.01 ? 'Reprendre ma lecture' : 'Dernière fiche lue'}</strong><span>${escHtml(name)} — ${escHtml(clsName)} › ${escHtml(f.sub)} <em>(${pct})</em></span></div>
+    <i class="fas fa-chevron-right rf-arrow"></i>
+  </div>`;
+}
+window.resumeLastFiche = function() {
+  const f = getLastReadFiche();
+  if (f) showFiche(f.cls, f.sub, f.file);
+};
 function getWeekData() {
   const p = getProgress();
   const days = [];
@@ -6375,4 +6474,41 @@ document.addEventListener('click', (e) => {
     if (window.USER_PROFILE) { clearInterval(waitProfile); buildDevUI(); }
     else if (++tries > 20) clearInterval(waitProfile);
   }, 1500);
+})();
+
+// ==========================================================================
+// ACCESSIBILITÉ MODALES — role="dialog" + aria-modal + Échap pour fermer +
+// focus sur le 1er contrôle utile à l'ouverture.
+// ==========================================================================
+(function initModalA11y() {
+  const overlays = [...document.querySelectorAll('.profile-modal-overlay')];
+  overlays.forEach(ov => {
+    const modal = ov.querySelector('.profile-modal');
+    if (modal) {
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      const t = modal.querySelector('h1,h2,h3');
+      if (t && !modal.getAttribute('aria-label')) modal.setAttribute('aria-label', t.textContent.trim().slice(0, 120));
+    }
+    // Focus à l'ouverture (léger : une observation par overlay, attribut class seul)
+    new MutationObserver(() => {
+      if (!(ov.classList.contains('show') || ov.classList.contains('active'))) return;
+      setTimeout(() => {
+        const f = ov.querySelector('.modal-close') || ov.querySelector('input:not([type="hidden"]), textarea, select, button');
+        if (f && f.focus) f.focus({ preventScroll: true });
+      }, 60);
+    }).observe(ov, { attributes: true, attributeFilter: ['class'] });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const open = overlays.filter(ov => ov.classList.contains('show') || ov.classList.contains('active'));
+    if (!open.length) return;
+    const top = open[open.length - 1];
+    if (top.id === 'reviewGateModal' && typeof window.dismissReviewGate === 'function') {
+      window.dismissReviewGate();
+      return;
+    }
+    const btn = top.querySelector('.modal-close');
+    if (btn) btn.click();
+  });
 })();
