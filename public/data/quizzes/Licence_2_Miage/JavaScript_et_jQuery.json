@@ -1,0 +1,47 @@
+{
+  "Fiche_Lecon1_INTRODUCTION_ET_OBJETS": {
+    "title": "Introduction et objets JavaScript",
+    "questions": [
+      {"id":"q1","text":"JavaScript a été créé par :","type":"qcm","options":["Sun Microsystems","Brendan Eich chez Netscape (1995)","Microsoft","La W3C"],"answer":1,"explanation":"Brendan Eich, Netscape, 1995 — d'abord nommé LiveScript."},
+      {"id":"q2","text":"JavaScript et Java :","type":"qcm","options":["Sont le même langage","Sont des langages différents malgré le nom quasi identique","Java est plus récent","JavaScript est un sous-ensemble de Java"],"answer":1,"explanation":"Noms proches, langages différents, peu de points communs."},
+      {"id":"q3","text":"L'objet le plus élevé dans la hiérarchie JavaScript est :","type":"qcm","options":["document","window","navigator","screen"],"answer":1,"explanation":"window = objet racine, implicite (alert() = window.alert())."},
+      {"id":"q4","text":"document.write() permet de :","type":"qcm","options":["Lire un document","Écrire directement dans la page","Supprimer un élément","Créer un formulaire"],"answer":1,"explanation":"document.write() affiche du contenu dans le document."}
+    ]
+  },
+  "Fiche_Lecon2_VARIABLES_ET_OPERATEURS": {
+    "title": "Variables et opérateurs",
+    "questions": [
+      {"id":"q1","text":"JavaScript est « faiblement typé » car :","type":"qcm","options":["Il n'a pas de types","Le type d'une variable n'est pas déclaré, il suit la valeur","Il n'accepte que des nombres","Il utilise des classes"],"answer":1,"explanation":"Pas de déclaration de type : le type est déduit de la valeur affectée."},
+      {"id":"q2","text":"typeof x retourne :","type":"qcm","options":["La valeur de x","Le type de x","La taille de x","L'adresse de x"],"answer":1,"explanation":"typeof = opérateur donnant le type (number, string, boolean…)."},
+      {"id":"q3","text":"En JavaScript, « + » sert aussi à :","type":"qcm","options":["Uniquement additionner","Concaténer des chaînes","Diviser","Multiplier"],"answer":1,"explanation":"+ = addition ET concaténation de chaînes."},
+      {"id":"q4","text":"NaN signifie :","type":"qcm","options":["Not a Number","Null and Undefined","New Array Node","No Access Needed"],"answer":0,"explanation":"NaN = résultat d'un calcul numérique invalide."}
+    ]
+  },
+  "Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES": {
+    "title": "Fonctions, événements et formulaires",
+    "questions": [
+      {"id":"q1","text":"La programmation évènementielle signifie :","type":"qcm","options":["Un code linéaire","Le code s'exécute en réponse à un événement (clic, saisie…)","Pas de code","Des fonctions seulement"],"answer":1,"explanation":"Événementiel = déclenchement par événements utilisateur/navigateur."},
+      {"id":"q2","text":"onClick est :","type":"qcm","options":["Une méthode","Un attribut événementiel HTML","Une variable","Une fonction"],"answer":1,"explanation":"attribut HTML d'événement : onClick, onChange, onSubmit…"},
+      {"id":"q3","text":"Checkbox vs radio :","type":"qcm","options":["Identiques","Checkbox = plusieurs choix possibles, radio = un seul choix par groupe","Radio = plusieurs choix","Checkbox = un seul choix"],"answer":1,"explanation":"Checkbox = multi-sélection ; radio = sélection unique dans un groupe."},
+      {"id":"q4","text":"Pour lire la valeur d'un champ texte :","type":"qcm","options":["document.form.champ","document.form.champ.value","document.form.champ.text","getElementById seul"],"answer":1,"explanation":"La propriété .value contient la saisie utilisateur."}
+    ]
+  },
+  "Fiche_Lecon4_OBJETS_PREDNFINIS": {
+    "title": "Objets prédéfinis JavaScript",
+    "questions": [
+      {"id":"q1","text":"setTimeout() vs setInterval() :","type":"qcm","options":["Identiques","setTimeout = une fois après délai, setInterval = à intervalle régulier","setTimeout = répété","setInterval = une fois"],"answer":1,"explanation":"Timeout = unique ; Interval = répété ; clearTimeout/clearInterval pour annuler."},
+      {"id":"q2","text":"L'objet Date sert à :","type":"qcm","options":["Afficher du texte","Gérer date et heure","Créer des tableaux","Dessiner"],"answer":1,"explanation":"Date = date/heure courante et calculs temporels."},
+      {"id":"q3","text":"Un tableau JavaScript est indexé à partir de :","type":"qcm","options":["1","0","-1","Au hasard"],"answer":1,"explanation":"Indices démarrent à 0 ; length donne la taille."},
+      {"id":"q4","text":"Math.random() retourne :","type":"qcm","options":["Un entier","Un nombre entre 0 (inclus) et 1 (exclu)","Toujours 1","Un booléen"],"answer":1,"explanation":"Math.random() ∈ [0,1[."}
+    ]
+  },
+  "Fiche_Lecon5_COOKIES_DOM": {
+    "title": "Cookies, DOM et liens",
+    "questions": [
+      {"id":"q1","text":"Un cookie est :","type":"qcm","options":["Un fichier serveur","Un petit fichier texte stocké côté client","Un script","Une base de données"],"answer":1,"explanation":"Cookie = fichier .txt côté client conservant des infos entre visites."},
+      {"id":"q2","text":"Le DOM est :","type":"qcm","options":["Le code HTML source","La représentation arborescente du document sous forme d'objets","Un navigateur","Un langage"],"answer":1,"explanation":"DOM = modèle objet du document, dynamique, accessible par JS."},
+      {"id":"q3","text":"document.cookie :","type":"qcm","options":["Lit tous les cookies","Accède aux cookies lisibles par JS (HttpOnly exclus)","Supprime les cookies","Crée des cookies"],"answer":1,"explanation":"document.cookie ne voit pas les cookies HttpOnly."},
+      {"id":"q4","text":"Dans le DOM, chaque balise HTML devient :","type":"qcm","options":["Une variable","Un nœud","Un attribut","Un texte"],"answer":1,"explanation":"Éléments, attributs et textes = nœuds de l'arbre DOM."}
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — NOTIONS DE BASE — Algorithme_des_graphes Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Notions de base des graphes : définitions, ordre, degré — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html"><meta property="og:title" content="Leçon 1 — NOTIONS DE BASE — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Notions de base des graphes : définitions, ordre, degré — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — NOTIONS DE BASE — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Notions de base des graphes : définitions, ordre, degré — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_des_graphes","item":"https://resumeci.me/#Licence_2_Miage/Algorithme_des_graphes"},{"@type":"ListItem","position":4,"name":"Leçon 1 — NOTIONS DE BASE","item":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — NOTIONS DE BASE — Algorithme_des_graphes Licence 2_Miage | ResumeCI","description":"Leçon 1 — Notions de base des graphes : définitions, ordre, degré — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme","url":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon1_NOTIONS_DE_BASE.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Algorithme_des_graphes","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme des graphes</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : Notions de base des graphes</span>
+  </div>
+</div>
+
+<h2>I. Définition d'un graphe</h2>
+<div class="definition"><strong>Graphe non orienté :</strong> un graphe <strong>G = (S, A)</strong> est déterminé par deux ensembles :
+<ul>
+  <li><strong>S</strong> : un ensemble fini non vide dont les éléments sont appelés <strong>sommets</strong> ;</li>
+  <li><strong>A</strong> : un ensemble de <strong>paires de sommets</strong> appelées <strong>arêtes</strong>.</li>
+</ul></div>
+<p>Si <strong>S = {1, 2, …, n}</strong> est l'ensemble des sommets, une arête <strong>a</strong> s'écrit <strong>a = {u, v}</strong> où u et v sont les <strong>extrémités</strong> de a.</p>
+<ul>
+  <li>Les sommets u et v sont <strong>adjacents</strong> et <strong>incidents</strong> avec l'arête a.</li>
+  <li>Si les deux extrémités sont confondues (u = v), l'arête s'appelle une <strong>boucle</strong>.</li>
+  <li>Deux arêtes ayant <strong>mêmes extrémités</strong> sont dites <strong>parallèles</strong>.</li>
+</ul>
+
+<h2>II. Types de graphes</h2>
+<table>
+  <tr><th>Type</th><th>Définition</th></tr>
+  <tr><td><strong>Ordre d'un graphe</strong></td><td>Nombre <strong>n</strong> de sommets du graphe</td></tr>
+  <tr><td><strong>Graphe simple</strong></td><td>Deux sommets distincts joints par <strong>au plus une arête</strong>, et <strong>sans boucle</strong></td></tr>
+  <tr><td><strong>Graphe orienté</strong></td><td>Les arêtes deviennent des <strong>arcs</strong> : couples <strong>ordonnés</strong> (u, v) — u = origine, v = extrémité</td></tr>
+  <tr><td><strong>Sous-graphe</strong></td><td>G' = (S', A') avec S' ⊂ S et A' ⊂ A, extrémités des arêtes de A' dans S'</td></tr>
+  <tr><td><strong>Sous-graphe engendré</strong></td><td>Sous-graphe contenant <strong>toutes</strong> les arêtes de A ayant pour extrémités les sommets de S'. <em>Tout sous-graphe engendré est un sous-graphe, mais la réciproque est fausse.</em></td></tr>
+  <tr><td><strong>Graphe complet K<sub>n</sub></strong></td><td>Graphe simple d'ordre n où <strong>tous</strong> les sommets sont deux à deux adjacents</td></tr>
+</table>
+<div class="important"><strong>Remarque :</strong> à tout graphe orienté on peut associer un graphe simple (ex. plan de ville : un piéton ignore le sens des rues).</div>
+
+<h2>III. Le degré d'un sommet</h2>
+<div class="definition"><strong>Degré d'un sommet :</strong> nombre d'arêtes dont ce sommet est une extrémité — <strong>les boucles comptent deux fois</strong>. Un sommet sans arête est <strong>isolé</strong> (degré 0).</div>
+<div class="important"><strong>Lemme des poignées de mains :</strong> dans un graphe, la <strong>somme des degrés des sommets = 2 × nombre d'arêtes</strong> — donc c'est toujours un <strong>nombre pair</strong>. (Chaque arête est comptée deux fois, une pour chaque extrémité.)</div>
+<h3>Degré dans un graphe orienté</h3>
+<ul>
+  <li><strong>d⁺(s)</strong> : degré <strong>extérieur</strong> = nombre d'arcs partant de s (s extrémité initiale)</li>
+  <li><strong>d⁻(s)</strong> : degré <strong>intérieur</strong> = nombre d'arcs arrivant à s (s extrémité finale)</li>
+  <li><strong>d(s) = d⁺(s) + d⁻(s)</strong></li>
+</ul>
+<div class="important"><strong>Propriété :</strong> dans un graphe orienté, <strong>Σ d⁺ = Σ d⁻ = nombre d'arcs</strong> (comme les cadeaux offerts = cadeaux reçus lors d'un échange).</div>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier que la <strong>boucle compte pour 2</strong> dans le degré du sommet.</li>
+    <li>Croire qu'un sous-graphe est forcément <strong>engendré</strong> (c'est faux : il faut TOUTES les arêtes entre ses sommets).</li>
+    <li>Confondre <strong>arête</strong> (paire non ordonnée, graphe non orienté) et <strong>arc</strong> (couple ordonné, graphe orienté).</li>
+    <li>Dire qu'un graphe est simple alors qu'il contient une boucle ou des arêtes parallèles.</li>
+    <li>Oublier que la somme des degrés est <strong>toujours paire</strong> → si tu trouves un nombre impair, tu t'es trompé.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

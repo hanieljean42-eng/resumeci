@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-IHM-01",
+  "type": "td",
+  "matiere": "Interaction homme-machine",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "IHM : interfaces graphiques et styles d'interaction",
+  "consignes": "Travaux dirigés d'entraînement originaux rédigés par ResumeCI dans l'esprit du TD1 d'Interaction homme-machine. Réponds en citant les notions du cours (WIMP, fenêtres, styles d'interaction).",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Notions et acteurs IHM",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Définir une IHM et citer les deux familles de dispositifs qui la composent.</li><li>Identifier les trois participants d'une IHM et préciser le rôle de chacun.</li><li>Pourquoi dit-on que l'IHM représente une part majeure du code des logiciels interactifs ?</li></ol>",
+      "correction": "<p><strong>a)</strong> IHM = ensemble des <strong>dispositifs matériels et logiciels</strong> permettant à l'utilisateur de contrôler et communiquer avec une machine.</p><p><strong>b)</strong> Les 3 participants : <strong>l'utilisateur</strong> (interagit via capteurs/effecteurs), <strong>le concepteur</strong> (imaginaire/anticipateur des choix, code les comportements), <strong>le programme/la machine</strong> (exécute).</p><p><strong>c)</strong> Environ 48 % du code des logiciels interactifs et ~80 % du code web sont consacrés à l'IHM — c'est la partie la plus volumineuse du développement.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Interfaces graphiques WIMP",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Que signifie l'acronyme WIMP ? Citer les 4 éléments.</li><li>Distinguer fenêtre <em>modale</em> et fenêtre <em>flottante</em> (palette) avec un exemple concret pour chacune.</li><li>Pourquoi le multifenêtrage avec superposition est-il déconseillé ? Quelle alternative recommande le cours ?</li></ol>",
+      "correction": "<p><strong>a)</strong> WIMP = Windows (fenêtres), Icons (icônes), Menus, Pointers (pointeurs/souris).</p><p><strong>b)</strong> Modale = bloquante, doit être fermée avant de revenir (ex. boîte de dialogue « Enregistrer ? »). Flottante = palette/barre d'outils déplaçable sans bloquer (ex. palette de couleurs de Photoshop).</p><p><strong>c)</strong> La superposition masque des informations — on recommande la <strong>mosaïque (MDI)</strong> où les fenêtres ne se chevauchent pas.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Langage de commandes et formulaires",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>À quel type d'utilisateur le langage de commandes est-il adapté ? Citer deux inconvénients pour les novices.</li><li>Différencier <em>formulaire</em> et <em>requête</em> comme styles d'interaction.</li><li>Donner un exemple d'utilisation de la reconnaissance vocale où elle est pertinente.</li></ol>",
+      "correction": "<p><strong>a)</strong> Adapté aux <strong>experts</strong> (accès direct, productivité). Inconvénients novices : faut mémoriser la syntaxe, aucune aide visuelle, erreurs fréquentes.</p><p><strong>b)</strong> Formulaire = <strong>saisie</strong> d'informations par l'utilisateur (questions/réponses guidées). Requête = <strong>interrogation</strong> du système via un langage (ex. SQL « SELECT … »).</p><p><strong>c)</strong> Environnement où le clavier est impossible ou dangereux : conduite automobile, handicap moteur, mains occupées.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Manipulation directe et multimodalité",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Qui a introduit la manipulation directe et en quelle année ? Citer ses deux principes clés.</li><li>Lister 2 avantages et 2 inconvénients de la manipulation directe.</li><li>Expliquer le principe de l'interaction multimodale et donner un exemple.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Ben Schneiderman, 1982</strong>. Principes : représentation permanente des objets manipulés + principe <em>objet/action</em> (on agit sur l'objet visible).</p><p><strong>b)</strong> Avantages : opérations rapides et réversibles, effet visible immédiat, apprentissage intuitif. Inconvénients : encombrement visuel, ambiguïté des icônes, moins efficace pour les experts en tâches répétitives.</p><p><strong>c)</strong> Multimodal = combiner plusieurs modalités sensorimotrices (voix + geste + regard). Exemple : « put that there » de Bolt (1963) — l'utilisateur montre un objet et le déplace à la voix.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

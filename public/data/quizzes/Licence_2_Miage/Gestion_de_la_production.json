@@ -1,0 +1,26 @@
+{
+  "Fiche_Lecon1_COMPETITIVITE_ET_NOUVELLE_GOP": {
+    "title": "Compétitivité et nouvelle GOP",
+    "questions": [
+      {"id":"q1","text":"La GOP (Gestion de la Production) consiste à :","type":"qcm","options":["Gérer uniquement les stocks","Planifier, organiser et contrôler la production pour répondre à la demande au moindre coût","Suivre la comptabilité","Gérer le personnel"],"answer":1,"explanation":"GOP = ensemble des activités de planification, d'ordonnancement et de contrôle de la production."},
+      {"id":"id2","text":"La « nouvelle GOP » se caractérise par :","type":"qcm","options":["La production en grande série uniforme","La flexibilité et la réponse rapide à la demande variée","L'absence de planification","La production sans qualité"],"answer":1,"explanation":"Face à la sur-offre concurrentielle, la production devient réactive/proactive et flexible."},
+      {"id":"q3","text":"L'objectif principal de la GOP est :","type":"qcm","options":["Maximiser les stocks","Réduire les délais d'approvisionnement, de production et de livraison","Augmenter les prix","Supprimer la qualité"],"answer":1,"explanation":"Réduire les délais totaux et optimiser coûts/qualité/délais."}
+    ]
+  },
+  "Fiche_Lecon2_FLUX_ET_VALEUR_AJOUTEE": {
+    "title": "Flux et valeur ajoutée",
+    "questions": [
+      {"id":"q1","text":"La valeur ajoutée d'une entreprise est :","type":"qcm","options":["Son chiffre d'affaires","La différence entre la production et les consommations intermédiaires","Son bénéfice net","Son capital"],"answer":1,"explanation":"VA = production − consommations intermédiaires (achats de matières, services extérieurs)."},
+      {"id":"q2","text":"Un flux de production désigne :","type":"qcm","options":["Le déplacement de matières entre postes de travail","Le flux d'argent","Le flux d'informations uniquement","Le stock"],"answer":0,"explanation":"Flux = mouvement continu des produits dans le système productif."},
+      {"id":"q3","text":"Réduire le temps de cycle permet de :","type":"qcm","options":["Augmenter les stocks","Réduire les délais et les coûts","Diminuer la qualité","Augmenter la complexité"],"answer":1,"explanation":"Cycle plus court = réactivité, moins de stock en cours, délais réduits."}
+    ]
+  },
+  "Fiche_Lecon3_PLACE_DANS_ENTREPRISE_ET_HUMAIN": {
+    "title": "Place de la GOP et facteur humain",
+    "questions": [
+      {"id":"q1","text":"La GOP occupe une place :","type":"qcm","options":["Marginale dans l'entreprise","Centrale, en interface entre commercial, achats, production et logistique","Uniquement en atelier","Dans la comptabilité"],"answer":1,"explanation":"Fonction transverse : elle coordonne toute la chaîne de valeur."},
+      {"id":"q2","text":"Le facteur humain dans la GOP est :","type":"qcm","options":["Accessoire","Déterminant : motivation, compétence et organisation du travail conditionnent la performance","Ignoré","Réduit à la paie"],"answer":1,"explanation":"La performance dépend des opérateurs, de leur engagement et de l'organisation."},
+      {"id":"q3","text":"La flexibilité de production exige :","type":"qcm","options":["Des machines rigides","Une organisation adaptable et des compétences polyvalentes","L'absence de formation","Des stocks massifs"],"answer":1,"explanation":"Flexibilité = organisation, polyvalence et réactivité humaine."}
+    ]
+  }
+}

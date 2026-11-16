@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-BDD-01",
+  "type": "td",
+  "matiere": "Théorie des bases de données",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Modèle Entité-Association, normalisation et algèbre relationnelle",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés des exercices de modélisation et d'algèbre relationnelle du cours. Pour la modélisation : identifie entités, attributs, identifiants et cardinalités.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Modélisation E-A",
+      "points": "6 pts",
+      "enonce": "Une bibliothèque gère des <strong>livres</strong> (ISBN, titre, année, nb pages) et des <strong>emprunteurs</strong> (numéro de carte, nom, adresse). Un livre peut être emprunté plusieurs fois par un même emprunteur à des dates différentes ; chaque emprunt a une date de sortie et une date de retour prévue.<ol type='a'><li>Identifier les entités et leurs identifiants.</li><li>Décrire l'association entre Livre et Emprunteur (degré, cardinalités, attributs).</li><li>Pourquoi « ISBN » est-il un bon identifiant de Livre ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Entités : LIVRE (id: ISBN), EMPRUNTEUR (id: n°carte). Association EMPRUNT.</p><p><strong>b)</strong> Association binaire N:N — un livre peut être emprunté par plusieurs emprunteurs, un emprunteur emprunte plusieurs livres. Cardinalités : EMPRUNTEUR (0,n) — EMPRUNT — (0,n) LIVRE. Attributs de l'association : dateSortie, dateRetour.</p><p><strong>c)</strong> L'ISBN identifie <strong>uniquement</strong> un livre (pas d'homonymes) — contrairement au titre qui peut se répéter.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Normalisation",
+      "points": "5 pts",
+      "enonce": "Relation EMPLOYE(Nom, Dept, AdresseDept, Salaire) où AdresseDept dépend du département et non de l'employé, et Nom+Dept forment la clé.<ol type='a'><li>Cette relation est-elle en 3FN ? Justifier.</li><li>Comment la décomposer pour obtenir des relations normalisées ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Non</strong> — violation de la 3FN : AdresseDept dépend de Dept (attribut non-clé) qui n'est pas la clé complète → dépendance <strong>transitive</strong> Nom→Dept→AdresseDept.</p><p><strong>b)</strong> Décomposition : EMPLOYE(Nom, Dept, Salaire) + DEPARTEMENT(Dept, AdresseDept). Chaque attribut dépend directement de la clé de sa relation.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Algèbre relationnelle",
+      "points": "5 pts",
+      "enonce": "Relations : ETUDIANT(Nom, Filiere), INSCRIPTION(Nom, Cours). <ol type='a'><li>Exprimer en algèbre : les étudiants inscrits au cours « SQL ».</li><li>Exprimer : les étudiants de la filière MIAGE inscrits à « SQL ».</li><li>Exprimer : les étudiants inscrits à <em>tous</em> les cours (division).</li></ol>",
+      "correction": "<p><strong>a)</strong> σ<sub>Cours='SQL'</sub>(INSCRIPTION) ⋈ ETUDIANT — ou projection : π<sub>Nom</sub>(σ<sub>Cours='SQL'</sub>(INSCRIPTION)).</p><p><strong>b)</strong> π<sub>Nom</sub>( σ<sub>Filiere='MIAGE'</sub>(ETUDIANT) ⋈ σ<sub>Cours='SQL'</sub>(INSCRIPTION) ).</p><p><strong>c)</strong> Division : INSCRIPTION ÷ π<sub>Cours</sub>(COURS) — retourne les noms associés à <strong>tous</strong> les cours (quantification universelle).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — MRD",
+      "points": "4 pts",
+      "enonce": "À partir du modèle E-A de l'exercice 1 (association N:N EMPRUNT avec attributs), décrire le schéma relationnel (tables, clés primaires et étrangères).<ol type='a'><li>Donner les tables et leurs attributs.</li><li>Comment l'association N:N est-elle traduite ?</li></ol>",
+      "correction": "<p><strong>a)</strong> LIVRE(ISBN PK, titre, annee, nbPages) ; EMPRUNTEUR(Ncarte PK, nom, adresse) ; EMPRUNT(#ISBN FK, #Ncarte FK, dateSortie, dateRetour).</p><p><strong>b)</strong> L'association N:N devient une <strong>table de jointure</strong> dont la clé primaire est la <strong>composition des deux clés étrangères</strong> (#ISBN, #Ncarte) — les attributs de l'association (dates) y sont stockés.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    }
+  ]
+}

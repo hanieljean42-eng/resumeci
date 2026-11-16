@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — CSS SELECTEURS — HTML5_CSS3_et_Bootstrap Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — CSS : introduction, sélecteurs, classes et IDs — HTML5 CSS3 et Bootstrap Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 HTML5 CSS3 et Boot"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html"><meta property="og:title" content="Leçon 1 — CSS SELECTEURS — HTML5_CSS3_et_Bootstrap Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — CSS : introduction, sélecteurs, classes et IDs — HTML5 CSS3 et Bootstrap Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 HTML5 CSS3 et Boot"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — CSS SELECTEURS — HTML5_CSS3_et_Bootstrap Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — CSS : introduction, sélecteurs, classes et IDs — HTML5 CSS3 et Bootstrap Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 HTML5 CSS3 et Boot"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"HTML5_CSS3_et_Bootstrap","item":"https://resumeci.me/#Licence_2_Miage/HTML5_CSS3_et_Bootstrap"},{"@type":"ListItem","position":4,"name":"Leçon 1 — CSS SELECTEURS","item":"https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — CSS SELECTEURS — HTML5_CSS3_et_Bootstrap Licence 2_Miage | ResumeCI","description":"Leçon 1 — CSS : introduction, sélecteurs, classes et IDs — HTML5 CSS3 et Bootstrap Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 HTML5 CSS3 et Boot","url":"https://resumeci.me/fiches/Licence_2_Miage/HTML5_CSS3_et_Bootstrap/Fiche_Lecon1_CSS_SELECTEURS.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"HTML5_CSS3_et_Bootstrap","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 HTML5 CSS3 et Bootstrap</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : CSS — sélecteurs (contenu CSS fourni)</span>
+  </div>
+</div>
+
+<h2>I. Qu'est-ce que CSS ?</h2>
+<div class="definition"><strong>CSS (Cascading Style Sheets) :</strong> langage décrivant la <strong>présentation</strong> (apparence et disposition) d'un document HTML — séparé du contenu.</div>
+<p><strong>Avantages de la feuille de style externe :</strong></p>
+<ul>
+  <li><strong>Tout changer rapidement via 1 fichier</strong> ;</li>
+  <li>Fichiers <strong>moins volumineux</strong> → chargement plus rapide ;</li>
+  <li>Réutilisable sur plusieurs pages.</li>
+</ul>
+<p><strong>Liens vers CSS :</strong></p>
+<pre>&lt;link href="style.css" rel="stylesheet" type="text/css" media="all"&gt;
+&lt;link href="style-2.css" rel="stylesheet" type="text/css" media="print"&gt;</pre>
+<p>L'attribut <code>media</code> cible le support (all, print, screen…).</p>
+
+<h2>II. Structure d'une règle CSS</h2>
+<pre>sélecteur {
+  propriété: valeur;
+}</pre>
+<ul>
+  <li>Le <strong>sélecteur</strong> détermine les parties du document concernées ;</li>
+  <li>Le <strong>bloc de déclaration</strong> (entre accolades) contient propriété + valeur, séparées par <code>:</code> ;</li>
+  <li>Ex. <code>color: red;</code> → couleur des textes en rouge.</li>
+</ul>
+
+<h2>III. Les sélecteurs</h2>
+<h3>1. Sélecteur de type</h3>
+<p>Le plus simple : on applique un style à une <strong>balise HTML</strong> — ex. <code>p { color: green; }</code> colore tous les paragraphes.</p>
+<h3>2. Les classes (.)</h3>
+<ul>
+  <li>Nom de classe <strong>toujours précédé d'un point</strong> : <code>.vert</code>, <code>.rouge</code> ;</li>
+  <li>Appliquée via l'attribut HTML <code>class="vert"</code> ;</li>
+  <li>On peut <strong>omettre le nom de la balise</strong> : <code>.vert { }</code> s'applique à <strong>tout élément</strong> ayant cette classe ;</li>
+  <li><strong>Intérêt :</strong> regrouper des propriétés dans une classe et les appliquer à différents éléments/endroits — noms <strong>significatifs et mémorisables</strong> (ex. <code>.remarque</code>).</li>
+</ul>
+<h3>3. L'ID (#)</h3>
+<ul>
+  <li>Contrairement à la classe, un <strong>id s'applique à un objet unique</strong> — un élément ne peut avoir qu'<strong>un seul id</strong>, non réutilisable ;</li>
+  <li>Utilisé pour <strong>placer des blocs</strong> dans une page et créer des <strong>ancres/liens internes</strong> (retour en haut) ;</li>
+  <li>Priorité plus forte que la classe dans la cascade.</li>
+</ul>
+<h3>4. Groupement de sélecteurs</h3>
+<p>Plusieurs sélecteurs séparés par une <strong>virgule</strong> partagent le même bloc de déclaration.</p>
+
+<h2>IV. Héritage et cascade</h2>
+<h3>Héritage</h3>
+<ul>
+  <li>Les balises HTML <strong>s'emboîtent</strong> → un élément peut hériter du style de son <strong>parent</strong> (ex. un <code>&lt;p&gt;</code> dans <code>&lt;body&gt;</code> hérite de body) ;</li>
+  <li>L'héritage s'applique à <strong>certaines propriétés</strong> (couleur, police…) mais <strong>pas toutes</strong> — les marges ne se transmettent pas aux éléments en-ligne ;</li>
+  <li>Une propriété définie <strong>directement</strong> sur l'élément <strong>remplace</strong> celle héritée.</li>
+</ul>
+<h3>Cascade</h3>
+<ul>
+  <li>Quand plusieurs règles s'appliquent au même élément, <strong>la dernière/plus spécifique gagne</strong> ;</li>
+  <li>Priorité : <strong>id &gt; classe &gt; type</strong> ;</li>
+  <li>Ex. : un paragraphe avec classe <code>.pspecial</code> écrase le style de base ; <code>id</code> « l'emporte » sur la classe.</li>
+</ul>
+
+<h2>V. Valeurs en CSS</h2>
+<table>
+  <tr><th>Type</th><th>Exemples</th></tr>
+  <tr><td>Mots-clés</td><td><code>bold</code></td></tr>
+  <tr><td>Pourcentage</td><td><code>50%</code></td></tr>
+  <tr><td>Couleurs</td><td><code>#RRVVBB</code>, <code>#RVB</code>, <code>rgb()</code>, mot clé</td></tr>
+  <tr><td>URL</td><td><code>url(...)</code></td></tr>
+  <tr><td>Longueurs</td><td><code>px</code>, <code>em</code>, <code>rem</code>, <code>pt</code>, <code>%</code></td></tr>
+</table>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier le <strong>point</strong> devant le nom de classe (<code>.vert</code>) ou le <strong>#</strong> devant l'id.</li>
+    <li>Penser qu'un id est réutilisable → il est <strong>unique</strong> par page.</li>
+    <li>Confondre <strong>classe</strong> (réutilisable, plusieurs par élément) et <strong>id</strong> (unique, un seul par élément).</li>
+    <li>Oublier que l'héritage ne s'applique <strong>pas à toutes les propriétés</strong> (marges non héritées par les en-lignes).</li>
+    <li>Ordre de priorité : <strong>id &gt; classe &gt; type</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

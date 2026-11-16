@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — OBJETS PREDNFINIS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Objets prédéfinis : navigator, document, string, Date, Array, RegExp, Math — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉS"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html"><meta property="og:title" content="Leçon 4 — OBJETS PREDNFINIS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Objets prédéfinis : navigator, document, string, Date, Array, RegExp, Math — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉS"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — OBJETS PREDNFINIS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Objets prédéfinis : navigator, document, string, Date, Array, RegExp, Math — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉS"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"JavaScript_et_jQuery","item":"https://resumeci.me/#Licence_2_Miage/JavaScript_et_jQuery"},{"@type":"ListItem","position":4,"name":"Leçon 4 — OBJETS PREDNFINIS","item":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — OBJETS PREDNFINIS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI","description":"Leçon 4 — Objets prédéfinis : navigator, document, string, Date, Array, RegExp, Math — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉS","url":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon4_OBJETS_PREDNFINIS.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"JavaScript_et_jQuery","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 JavaScript et jQuery</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 4 : Objets prédéfinis</span>
+  </div>
+</div>
+
+<h2>I. Objets du navigateur et de la page</h2>
+<table>
+  <tr><th>Objet</th><th>Rôle / propriétés-méthodes clés</th></tr>
+  <tr><td><strong>navigator</strong></td><td>Informations sur le navigateur et l'environnement : nom, version, langue, plugins…</td></tr>
+  <tr><td><strong>document</strong></td><td>La page : <code>document.write()</code>, <code>document.title</code>, accès aux formulaires/liens…</td></tr>
+  <tr><td><strong>screen</strong></td><td>Caractéristiques de l'écran : résolution, profondeur de couleur…</td></tr>
+  <tr><td><strong>location</strong></td><td>URL courante ; méthode <code>open()</code> avec paramètres (URL, cible, dimensions…)</td></tr>
+</table>
+
+<h2>II. L'objet String</h2>
+<p>Méthodes de manipulation de chaînes : <strong>longueur</strong>, <strong>sous-chaînes</strong> (substring/slice), <strong>recherche</strong> (indexOf), <strong>remplacement</strong> (replace), <strong>majuscules/minuscules</strong> (toUpperCase/toLowerCase), <strong>concaténation</strong>.</p>
+
+<h2>III. L'objet Date et les minuteries</h2>
+<ul>
+  <li><strong>Date :</strong> date et heure courantes — création, lecture, formatage ;</li>
+  <li><strong>Minuteries (timers) :</strong> 4 méthodes particulières pour gérer le temps :</li>
+</ul>
+<table>
+  <tr><th>Méthode</th><th>Rôle</th></tr>
+  <tr><td><code>setTimeout(fonction, délai)</code></td><td>Exécute la fonction <strong>une fois</strong> après le délai (ms)</td></tr>
+  <tr><td><code>clearTimeout(id)</code></td><td>Annule un setTimeout</td></tr>
+  <tr><td><code>setInterval(fonction, délai)</code></td><td>Exécute la fonction <strong>à intervalle régulier</strong></td></tr>
+  <tr><td><code>clearInterval(id)</code></td><td>Annule un setInterval</td></tr>
+</table>
+
+<h2>IV. L'objet Array (tableaux)</h2>
+<ul>
+  <li>Tableau = objet permettant de stocker <strong>plusieurs valeurs</strong> ;</li>
+  <li>Création : <code>new Array()</code> ou littéral <code>[v1, v2, v3]</code> ;</li>
+  <li>Accès par <strong>indice</strong> (0, 1, 2…) ; propriété <code>length</code> ;</li>
+  <li>Méthodes : ajout (<code>push</code>), suppression (<code>pop</code>, <code>splice</code>), tri (<code>sort</code>), itération (<code>forEach</code>, boucles for)…</li>
+  <li>Tableaux <strong>par compréhension</strong> et fonctions <strong>génératrices</strong> (versions récentes).</li>
+</ul>
+
+<h2>V. L'objet RegExp (expressions régulières)</h2>
+<p>Manipule les <strong>expressions régulières</strong> (motifs de recherche/remplacement dans le texte). Deux créations :</p>
+<pre>var exp = new RegExp("motif","option");
+var exp = /motif/option;</pre>
+<p>Le <strong>masque</strong> combine caractères classiques et <strong>métacaractères</strong> (classes de caractères, quantificateurs, alternatives…).</p>
+
+<h2>VI. L'objet Math</h2>
+<p>Opérations mathématiques : constantes (<code>PI</code>, <code>E</code>) et méthodes (<code>abs</code>, <code>round</code>, <code>floor</code>, <code>ceil</code>, <code>random</code>, <code>pow</code>, <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>max</code>, <code>min</code>…).</p>
+
+<h2>VII. Objets window, frame, event</h2>
+<ul>
+  <li><strong>frame :</strong> très proche de <code>window</code> — gère les cadres (frames) d'une page ; accès par <strong>numéro d'indice</strong> ou par <strong>nom</strong> (recommandé) ;</li>
+  <li><strong>event :</strong> objet lié aux événements — capture les infos de l'événement déclencheur.</li>
+</ul>
+
+<h2>VIII. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <code>setTimeout</code> (une fois) et <code>setInterval</code> (répété) — et leurs <code>clear*</code> respectifs.</li>
+    <li>Oublier que les délais sont en <strong>millisecondes</strong>.</li>
+    <li>Confondre <strong>index</strong> (à partir de 0) et <strong>position</strong> (à partir de 1) pour un tableau.</li>
+    <li>Oublier <code>length</code> pour la taille d'un tableau/chaîne.</li>
+    <li>RegExp : ne pas oublier les <strong>options</strong> (g = global, i = insensible à la casse) ni le délimiteur <code>/</code>.</li>
+    <li><code>Math.random()</code> retourne [0,1[ — pas [0,1].</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

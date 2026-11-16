@@ -1,0 +1,58 @@
+{
+  "Fiche_Lecon1_ENTREPRISE_ET_SYSCOHADA": {
+    "title": "Entreprise et SYSCOHADA",
+    "questions": [
+      {"id":"q1","text":"SYSCOHADA est :","type":"qcm","options":["Un logiciel comptable","Le référentiel comptable OHADA en vigueur en Afrique","Une norme fiscale française","Un modèle de bilan"],"answer":1,"explanation":"SYSCOHADA = Système Comptable OHADA, référentiel des 17 pays de l'espace OHADA."},
+      {"id":"q2","text":"Lequel de ces principes n'est PAS un principe comptable fondamental ?","type":"qcm","options":["Continuité d'exploitation","Partie double","Prix de revient","Spécialisation des exercices"],"answer":2,"explanation":"Prix de revient est une méthode d'évaluation, pas un principe. Les principes : continuité, permanence des méthodes, prudence, spécialisation, importance relative."},
+      {"id":"q3","text":"La règle de prudence impose :","type":"qcm","options":["De surévaluer les actifs","De ne pas surestimer les produits et de ne pas sous-estimer les charges","D'amortir au maximum","De masquer les pertes"],"answer":1,"explanation":"Prudence = en cas de doute, ne pas surestimer actif/produit, ne pas sous-estimer passif/charge."}
+    ]
+  },
+  "Fiche_Lecon2_FLUX_EMPLOIS_ETRESSOURCES": {
+    "title": "Flux d'emplois et de ressources",
+    "questions": [
+      {"id":"q1","text":"Un flux d'emplois correspond à :","type":"qcm","options":["Une entrée de trésorerie","Une utilisation de bien ou service (charge ou immobilisation)","Un apport de capital","Un crédit fournisseur"],"answer":1,"explanation":"Emploi = utilisation de moyens (charge d'exploitation, acquisition d'immobilisation…)."},
+      {"id":"q2","text":"Un flux de ressources correspond à :","type":"qcm","options":["Une sortie de trésorerie","Une entrée ou une diminution d'emploi (vente, remboursement…)","Une dotation aux amortissements","Une charge constatée d'avance"],"answer":1,"explanation":"Ressource = moyen obtenu (vente, encaissement, dotation d'amortissement qui « libère » la charge…)."},
+      {"id":"q3","text":"Les deux grandes catégories de flux sont :","type":"qcm","options":["Débit et crédit","Emplois et ressources","Actif et passif","Charge et produit"],"answer":1,"explanation":"Cycle d'exploitation : emplois = charges ; ressources = produits + amortissements."}
+    ]
+  },
+  "Fiche_Lecon3_LE_COMPTE_ET_PARTIE_DOUBLE": {
+    "title": "Le compte et la partie double",
+    "questions": [
+      {"id":"q1","text":"La partie double signifie que :","type":"qcm","options":["Chaque écriture utilise deux comptes","Chaque opération est enregistrée au débit d'un compte et au crédit d'un autre, pour un même montant","On utilise deux journaux","On écrit chaque pièce deux fois"],"answer":1,"explanation":"Équilibre : total débits = total crédits pour chaque opération."},
+      {"id":"q2","text":"Un compte est soldé débiteur quand :","type":"qcm","options":["Ses crédits dépassent ses débits","Ses débits dépassent ses crédits","Il est de classe 6","Il est au passif"],"answer":1,"explanation":"Solde débiteur = débits > crédits ; solde créditeur = crédits > débits."},
+      {"id":"q3","text":"Les 9 classes du plan comptable OHADA vont de :","type":"qcm","options":["1 à 9 avec la classe 1 = capitaux","A à I","I à IX","1 à 10"],"answer":0,"explanation":"Classe 1 = comptes de capitaux (passif), 6 = charges, 7 = produits."}
+    ]
+  },
+  "Fiche_Lecon4_JOURNAL_GRAND_LIVRE_BALANCE": {
+    "title": "Journal, grand livre et balance",
+    "questions": [
+      {"id":"q1","text":"Le journal enregistre :","type":"qcm","options":["Toutes les opérations par ordre chronologique, regroupées par nature","Un seul compte","Uniquement les achats","Les soldes annuels"],"answer":0,"explanation":"Journal = enregistrement chronologique ; grand livre = par compte ; balance = centralisation des soldes."},
+      {"id":"q2","text":"La balance générale présente :","type":"qcm","options":["Les mouvements de chaque compte sur l'exercice","Les totaux débit/crédit de chaque compte","Uniquement les comptes de charge","Le bilan"],"answer":1,"explanation":"Balance = récapitulatif des totaux débit/crédit et soldes de tous les comptes."},
+      {"id":"q3","text":"Vrai ou faux : la balance doit être équilibrée (total débits = total crédits).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Oui — la partie double garantit l'équilibre de la balance."}
+    ]
+  },
+  "Fiche_Lecon5_TVA": {
+    "title": "La TVA",
+    "questions": [
+      {"id":"q1","text":"La TVA est :","type":"qcm","options":["Un impôt sur le revenu","Une taxe sur la valeur ajoutée collectée sur les ventes et déductible sur les achats","Un impôt sur les sociétés","Une taxe locale"],"answer":1,"explanation":"TVA = taxe sur la valeur ajoutée : TVA collectée (ventes) − TVA déductible (achats) = TVA à payer."},
+      {"id":"q2","text":"La TVA déductible correspond à :","type":"qcm","options":["La TVA facturée aux clients","La TVA payée sur les achats de biens et services","L'impôt sur les bénéfices","La taxe d'habitation"],"answer":1,"explanation":"TVA déductible = TVA supportée sur les acquisitions, récupérable sur la TVA collectée."},
+      {"id":"q3","text":"La TVA à payer au trésor est :","type":"qcm","options":["TVA collectée + TVA déductible","TVA collectée − TVA déductible","TVA déductible − TVA collectée","Somme des deux"],"answer":1,"explanation":"TVA nette = collectée (ventes HT×taux) − déductible (achats HT×taux)."}
+    ]
+  },
+  "Fiche_Lecon6_OPERATIONS_COURANTES": {
+    "title": "Les opérations courantes",
+    "questions": [
+      {"id":"q1","text":"Une vente à crédit se traduit par :","type":"qcm","options":["Débit client / Crédit produit + TVA","Débit trésorerie / Crédit produit","Débit produit / Crédit client","Débit TVA / Crédit client"],"answer":0,"explanation":"Vente à crédit : débit 411 Clients, crédit 7xx Ventes, crédit 443 TVA collectée."},
+      {"id":"q2","text":"Un achat d'immobilisation à crédit utilise les comptes de :","type":"qcm","options":["Classe 6 uniquement","Classe 2 (immobilisations) et classe 4 (fournisseurs)","Classe 5 et 7","Classe 1 et 4"],"answer":1,"explanation":"Immobilisation = classe 2 ; fournisseur = classe 4 (401)."},
+      {"id":"q3","text":"La variation de stock de marchandises s'enregistre :","type":"qcm","options":["Uniquement en fin d'exercice","Au débit ou crédit du compte 6031 selon la hausse ou la baisse","Jamais","En classe 7"],"answer":1,"explanation":"Hausse de stock → débit 31/37 ; baisse → crédit ; constatée en 6031."}
+    ]
+  },
+  "Fiche_Lecon7_BILAN_ET_AMORTISSEMENTS": {
+    "title": "Bilan et amortissements",
+    "questions": [
+      {"id":"q1","text":"L'amortissement est :","type":"qcm","options":["Une charge de trésorerie","La constatation comptable de la perte de valeur d'une immobilisation","Un impôt","Une provision pour créance douteuse"],"answer":1,"explanation":"Dotation aux amortissements = charge (68x) sans sortie de trésorerie, en contrepartie d'un compte d'amortissement (créditeur)."},
+      {"id":"q2","text":"La valeur nette comptable (VNC) d'une immobilisation est :","type":"qcm","options":["Prix d'achat","Prix d'achat − amortissements cumulés","Prix de revient + amortissements","Valeur marchande"],"answer":1,"explanation":"VNC = valeur brute − amortissements cumulés."},
+      {"id":"q3","text":"Le bilan distingue :","type":"qcm","options":["Deux parties : actif et passif","Trois parties : bilan, compte de résultat, TAFIRE","Uniquement le passif","Les comptes de gestion"],"answer":0,"explanation":"Bilan = actif (emplois) à gauche, passif (ressources) à droite — équilibre obligatoire."}
+    ]
+  }
+}

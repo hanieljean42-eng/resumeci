@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-JS-01",
+  "type": "partiel",
+  "matiere": "JavaScript et jQuery",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "JavaScript : objets, fonctions, événements, formulaires, DOM",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Écrire du JavaScript précis ; justifier les pièges du langage.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Variables et types (6 pts)",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Que valent <code>5 + '3'</code>, <code>'5' - 2</code>, <code>typeof 5+'3'</code> ? Expliquer.</li><li><code>==</code> vs <code>===</code> : différence et exemple.</li><li><code>NaN === NaN</code> ? Comment tester NaN ?</li><li>JavaScript est-il typé ? Expliquer « faiblement typé ».</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>5+'3'</code>=<span class='reponse'>'53'</span> (concaténation) ; <code>'5'-2</code>=<span class='reponse'>3</span> (- convertit en nombre) ; typeof → <span class='reponse'>'string'</span>.</p><p><strong>b)</strong> <code>==</code> convertit les types ('5'==5 true) ; <code>===</code> strict ('5'===5 false). Toujours préférer ===.</p><p><strong>c)</strong> <span class='reponse'>false</span> — NaN ≠ NaN ; utiliser <code>isNaN(x)</code>.</p><p><strong>d)</strong> Faiblement typé : pas de déclaration de type, le type suit la valeur affectée.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Fonctions et événements (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Écrire <code>fact(n)</code> (factorielle) avec une boucle.</li><li><code>setTimeout</code> vs <code>setInterval</code> : différence et annulation.</li><li>Programmation évènementielle : définition + exemple d'événement.</li><li>Checkbox vs radio.</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>function fact(n){let r=1;for(let i=2;i&lt;=n;i++)r*=i;return r;}</code></p><p><strong>b)</strong> setTimeout = 1 fois après délai ; setInterval = répété. Annuler : clearTimeout/clearInterval.</p><p><strong>c)</strong> Événementiel = code exécuté en réponse à un événement (clic, saisie, chargement). Ex. onclick.</p><p><strong>d)</strong> Checkbox = multi-sélection ; radio = un seul choix par groupe.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — DOM, cookies, objets (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Qu'est-ce que le DOM ?</li><li>Comment lire la valeur d'un champ <code>&lt;input name=\"mail\"&gt;</code> dans un form <code>f</code> ?</li><li>Limites de <code>document.cookie</code> ?</li><li>Intervalle de <code>Math.random()</code> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> DOM = Document Object Model : représentation arborescente du document HTML sous forme d'objets, manipulable par JS.</p><p><strong>b)</strong> <code>document.f.mail.value</code>.</p><p><strong>c)</strong> N'accède qu'aux cookies <strong>non-HttpOnly</strong> ; stockage côté client, taille limitée (~4 Ko).</p><p><strong>d)</strong> [0, 1[ — 0 inclus, 1 exclu.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts · d) 1 pt"
+    }
+  ]
+}

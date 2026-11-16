@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-PL-01",
+  "type": "td",
+  "matiere": "Programmation linéaire",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Formulation et algorithme du simplexe",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés du TD d'optimisation linéaire. Pour chaque problème : identifier les variables de décision, écrire le programme (max/min z, contraintes, positivité), puis résoudre par le simplexe quand demandé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Formulation",
+      "points": "5 pts",
+      "enonce": "Une usine fabrique deux produits P1 et P2 sur deux machines M1 (dispo 40 h) et M2 (dispo 30 h). P1 demande 2 h de M1 et 1 h de M2 ; P2 demande 1 h de M1 et 2 h de M2. Les profits unitaires sont 6 pour P1 et 4 pour P2.<ol type='a'><li>Formuler le programme linéaire (variables, objectif, contraintes, positivité).</li><li>Pourquoi le programme est-il un max ? Que représentent les variables d'écart ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Variables : x₁ = quantité de P1, x₂ = quantité de P2.<br>Max z = 6x₁ + 4x₂<br>s.c. 2x₁ + x₂ ≤ 40 (M1) ; x₁ + 2x₂ ≤ 30 (M2) ; x₁, x₂ ≥ 0.</p><p><strong>b)</strong> On maximise le profit. Variables d'écart (e₁, e₂) = heures <strong>non utilisées</strong> de chaque machine : 2x₁+x₂+e₁=40, x₁+2x₂+e₂=30, eᵢ≥0.</p>",
+      "bareme_detail": "a) 3,5 pts · b) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Rationnement",
+      "points": "4 pts",
+      "enonce": "Un nutritionniste prépare une ration avec deux aliments A et B. Besoins minimaux : protéines ≥ 40 g, glucides ≥ 30 g. A fournit 4 g de protéines et 2 g de glucides par unité ; B fournit 2 g et 6 g. Coûts : 10 F pour A, 8 F pour B. Quantités disponibles : max 10 A et max 8 B.<ol type='a'><li>Écrire le programme (min z).</li><li>Une contrainte « au moins » se ramène à quelle forme pour le simplexe ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Min z = 10a + 8b<br>s.c. 4a + 2b ≥ 40 ; 2a + 6b ≥ 30 ; a ≤ 10 ; b ≤ 8 ; a, b ≥ 0.</p><p><strong>b)</strong> Les inégalités ≥ se traitent avec des <strong>variables d'excès (ou surplus)</strong> de signe négatif, ou par la méthode des deux phases / dualité — le simplexe standard exige des égalités avec variables d'écart ≥ 0.</p>",
+      "bareme_detail": "a) 3 pts · b) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Simplexe",
+      "points": "7 pts",
+      "enonce": "Max z = x₁ + 2x₂ avec contraintes : x₁ + x₂ ≤ 4 ; 2x₁ + x₂ ≤ 6 ; x₁, x₂ ≥ 0.<ol type='a'><li>Mettre le problème sous forme standard (égalités avec variables d'écart).</li><li>Donner le tableau initial et identifier la variable entrante (max).</li><li>Effectuer UN pivot (test de sortie + pivot) et donner la nouvelle base.</li></ol>",
+      "correction": "<p><strong>a)</strong> x₁+x₂+e₁=4 ; 2x₁+x₂+e₂=6 ; z = x₁+2x₂ (−z + x₁ + 2x₂ = 0).</p><p><strong>b)</strong> En max, variable entrante = <strong>plus grand ĉⱼ &gt; 0</strong> → x₂ (coût réduit 2 &gt; 1).</p><p><strong>c)</strong> Ratios : L1 : 4/1 = 4 ; L2 : 6/1 = 6 → <strong>test de sortie : L1</strong> (e₁ sort). Pivot sur la ligne 1, colonne x₂ : nouvelle base {x₂, e₂}. Nouvelle solution : x₂=4, e₂=2, x₁=0 → z = 8. Prochain tour : vérifier les coûts réduits pour l'optimalité.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 3 pts"
+    },
+    {
+      "titre": "Exercice 4 — Lecture du résultat",
+      "points": "4 pts",
+      "enonce": "Après itérations du simplexe sur un problème de max, on obtient tous les coûts réduits ĉⱼ ≤ 0.<ol type='a'><li>Que peut-on conclure ?</li><li>Si au lieu de cela une colonne a tous les âᵢⱼ ≤ 0 avec ĉⱼ &gt; 0, que signifie-t-il ?</li><li>Distinguer « non borné » et « pas de solution ».</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Solution optimale atteinte</span> — en max, tous les ĉⱼ ≤ 0 ⇒ plus d'amélioration possible.</p><p><strong>b)</strong> <span class='reponse'>Problème non borné</span> : la variable peut entrer indéfiniment (z → +∞), aucune ligne ne limite son entrée.</p><p><strong>c)</strong> « Pas de solution » (infaisable) = aucune solution ne satisfait les contraintes — détecté en phase 1 ; « non borné » = solutions existent mais l'objectif peut croître sans limite.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt"
+    }
+  ]
+}

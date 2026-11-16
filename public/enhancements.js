@@ -397,7 +397,7 @@
   };
 
   // ==================== PLAN DE RÉVISION ====================
-  const PLANNER_CLASS_LABELS = { '6eme':'6ème','5eme':'5ème','4eme':'4ème','3eme':'3ème (BEPC)','Seconde_A':'Seconde A','Seconde_C':'Seconde C','Premiere_A':'Première A','Premiere_C':'Première C','Premiere_D':'Première D','Terminale_A':'Terminale A (BAC)','Terminale_C':'Terminale C (BAC)','Terminale_D':'Terminale D (BAC)','Licence_1_Droit':'Licence 1 — Droit','Licence_1_Miage':'Licence 1 — MIAGE' };
+  const PLANNER_CLASS_LABELS = { '6eme':'6ème','5eme':'5ème','4eme':'4ème','3eme':'3ème (BEPC)','Seconde_A':'Seconde A','Seconde_C':'Seconde C','Premiere_A':'Première A','Premiere_C':'Première C','Premiere_D':'Première D','Terminale_A':'Terminale A (BAC)','Terminale_C':'Terminale C (BAC)','Terminale_D':'Terminale D (BAC)','Licence_1_Droit':'Licence 1 — Droit','Licence_1_Miage':'Licence 1 — MIAGE','Licence_1_ADA':'Licence 1 — ADA','Licence_2_Miage':'Licence 2 — MIAGE' };
 
   function plannerClassOptions(savedCls){
     const keys = (window.DATA && window.DATA.structure) ? Object.keys(window.DATA.structure) : [];

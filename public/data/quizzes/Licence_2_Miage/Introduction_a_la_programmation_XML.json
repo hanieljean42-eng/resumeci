@@ -1,0 +1,32 @@
+{
+  "Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME": {
+    "title": "XML et document bien formé",
+    "questions": [
+      {"id":"q1","text":"XML signifie :","type":"qcm","options":["eXtensible Markup Language","HyperText Markup Language","Standard Generalized Markup Language","Extensible Schema Definition"],"answer":0,"explanation":"XML = eXtensible Markup Language, publié en février 1998 (XML 1.0)."},
+      {"id":"q2","text":"Un document XML bien formé exige :","type":"qcm","options":["Une DTD","Un seul élément racine et une imbrication correcte","Au moins deux racines","Des balises en majuscules"],"answer":1,"explanation":"Bien formé = 1 racine, imbrication stricte, entités valides — sans DTD obligatoire."},
+      {"id":"q3","text":"XML est :","type":"qcm","options":["Insensible à la casse","Sensible à la casse","Toujours en majuscules","Sans balises"],"answer":1,"explanation":"Les noms d'éléments sont sensibles à la casse."},
+      {"id":"q4","text":"Un document valide est :","type":"qcm","options":["Toujours bien formé et conforme à sa DTD","Bien formé mais sans DTD","Forcément valide XML 1.1","Identique à bien formé"],"answer":0,"explanation":"Valide ⇒ bien formé + conforme au document type (DTD/XSD)."},
+      {"id":"q5","text":"Le prologue XML peut contenir :","type":"qcm","options":["Uniquement le corps","Déclaration XML + DOCTYPE","Des commentaires uniquement","Rien d'obligatoire"],"answer":1,"explanation":"Prologue = déclaration <?xml ...?> + déclaration DOCTYPE éventuelle."}
+    ]
+  },
+  "Fiche_Lecon2_DTD": {
+    "title": "Les DTD",
+    "questions": [
+      {"id":"q1","text":"Une DTD sert à :","type":"qcm","options":["Afficher le XML","Décrire la grammaire et les contraintes d'un document XML","Formater le XML","Compresser le XML"],"answer":1,"explanation":"DTD = modèle de la grammaire + contraintes sémantiques pour valider un XML."},
+      {"id":"q2","text":"Dans une DTD, « ? » signifie :","type":"qcm","options":["Obligatoire","0 ou 1 occurrence","1 ou plusieurs","Illimité"],"answer":1,"explanation":"? = optionnel (0-1) ; * = 0-n ; + = 1-n."},
+      {"id":"q3","text":"#REQUIRED dans une déclaration ATTLIST signifie :","type":"qcm","options":["Attribut optionnel","Attribut obligatoire","Attribut avec valeur par défaut","Attribut interdit"],"answer":1,"explanation":"#REQUIRED = obligatoire ; #IMPLIED = optionnel ; \"valeur\" = défaut."},
+      {"id":"q4","text":"L'attribut ID dans une DTD doit être :","type":"qcm","options":["Dupliqué","Unique dans tout le document","Numérique","Optionnel"],"answer":1,"explanation":"ID = identifiant unique ; IDREF = référence à un ID existant."},
+      {"id":"q5","text":"Une entité paramétrique s'écrit avec :","type":"qcm","options":["&nom;","%nom;","#nom;","!nom"],"answer":1,"explanation":"%nom; = entité paramétrique utilisée dans la DTD elle-même ; &nom; = entité générale."}
+    ]
+  },
+  "Fiche_Lecon3_SCHEMAS_XSD": {
+    "title": "Schémas XML (XSD)",
+    "questions": [
+      {"id":"q1","text":"Un schéma XML (XSD) diffère de la DTD car il :","type":"qcm","options":["N'est pas en XML","Est écrit en XML, supporte les namespaces et offre un typage riche","Est plus simple","Ne valide pas"],"answer":1,"explanation":"XSD = XML, ~40 types, namespaces, héritage — remplace la DTD."},
+      {"id":"q2","text":"La racine d'un schéma XSD est :","type":"qcm","options":["<schema>","<xsd:schema>","<xs>","<root>"],"answer":1,"explanation":"Racine = xsd:schema avec xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"."},
+      {"id":"q3","text":"maxOccurs=\"unbounded\" signifie :","type":"qcm","options":["Aucune occurrence","Occurrences illimitées","Une seule","Deux occurrences"],"answer":1,"explanation":"unbounded = nombre indéterminé d'occurrences (0-n si minOccurs=0)."},
+      {"id":"q4","text":"use=\"required\" dans xsd:attribute signifie :","type":"qcm","options":["Optionnel","Obligatoire","Interdit","Valeur fixe"],"answer":1,"explanation":"use : required / optional (implied) / fixed."},
+      {"id":"q5","text":"xsi:noNamespaceSchemaLocation sert à :","type":"qcm","options":["Déclarer le namespace","Lier le document XML à son schéma .xsd","Créer un type","Valider le XML"],"answer":1,"explanation":"Attribut de liaison document→schéma (noNamespaceSchemaLocation si pas de namespace)."}
+    ]
+  }
+}

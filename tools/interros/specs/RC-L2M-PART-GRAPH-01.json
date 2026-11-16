@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-GRAPH-01",
+  "type": "partiel",
+  "matiere": "Algorithme des graphes",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Graphes : propriétés, représentations, Euler, Hamilton, plus court chemin",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Justifier chaque réponse ; matrices et listes d'adjacence demandées explicitement.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Propriétés d'un graphe (6 pts)",
+      "points": "6 pts",
+      "enonce": "Graphe non orienté G : V = {1,2,3,4,5}, E = {{1,2},{1,3},{2,3},{2,4},{3,4},{4,5}}.<ol type='a'><li>Déterminer le degré de chaque sommet. Le graphe est-il simple, régulier, complet ?</li><li>Le graphe est-il connexe ? Justifier.</li><li>Compter le nombre de chaînes de longueur 2 de 1 à 5 et les citer.</li></ol>",
+      "correction": "<p><strong>a)</strong> d(1)=2, d(2)=3, d(3)=3, d(4)=3, d(5)=1. Simple (pas de boucle/doublon), <strong>non régulier</strong>, <strong>non complet</strong> (5 sommets → K5 = 10 arêtes ; ici 6).</p><p><strong>b)</strong> Oui, connexe : 1–2–4–5 et 3 sont reliés (ex. 1–3–4–5 ou 1–2–3–4–5).</p><p><strong>c)</strong> Chaînes de longueur 2 de 1 à 5 : <span class='reponse'>1–3–4–5 et 1–2–4–5</span> (2 chaînes).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1 pt · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 2 — Matrices et Euler/Hamilton (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Écrire la matrice d'adjacence du graphe de l'exercice 1 (ordre 1..5) et vérifier qu'elle est symétrique.</li><li>Un graphe connexe admet un <strong>cycle</strong> eulérien sous quelle condition sur les degrés ? Et une <strong>chaîne</strong> eulérienne ?</li><li>Le graphe K<sub>5</sub> est-il hamiltonien ? Justifier.</li></ol>",
+      "correction": "<p><strong>a)</strong> Matrice symétrique (arêtes non orientées ⇒ m<sub>ij</sub>=m<sub>ji</sub>). Ligne 1 : 0 1 1 0 0 ; ligne 2 : 1 0 1 1 0 ; ligne 3 : 1 1 0 1 0 ; ligne 4 : 0 1 1 0 1 ; ligne 5 : 0 0 0 1 0.</p><p><strong>b)</strong> Cycle eulérien : tous les degrés <strong>pairs</strong>. Chaîne eulérienne : <strong>exactement 0 ou 2</strong> sommets de degré impair.</p><p><strong>c)</strong> Oui : K<sub>n</sub> (n≥3) est hamiltonien — ex. cycle 1–2–3–4–5–1 visite chaque sommet une fois.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2 pts · c) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Plus court chemin (Dijkstra) (7 pts)",
+      "points": "7 pts",
+      "enonce": "Graphe pondéré orienté : S→A=4, S→B=2, A→B=1, B→A=5, A→C=3, B→C=1, C→D=2, A→D=7. <ol type='a'><li>Calculer les distances minimales de S à chaque sommet et le plus court chemin S→D.</li><li>Tracer le déroulement de Dijkstra (ordre de fixation des sommets).</li><li>Pourquoi les poids négatifs invalident-ils Dijkstra ?</li></ol>",
+      "correction": "<p><strong>a)</strong> d(S)=0 ; d(B)=2 ; d(A)=min(4, 2+5)=4 (S→A) ; d(C)=min(4+3=7, 2+1=3)=3 via B ; d(D)=min(3+2=5, 4+7=11)=5. Plus court chemin S→D : <span class='reponse'>S→B→C→D</span> (coût 5).</p><p><strong>b)</strong> Ordre de fixation : S(0) → B(2) → C(3) → A(4) → D(5) — les sommets sont fixés par distance croissante.</p><p><strong>c)</strong> Dijkstra fige les distances définitivement : un arc de poids négatif découvert après coup pourrait améliorer un sommet déjà fixé → résultat faux. (Alternative : Bellman-Ford.)</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

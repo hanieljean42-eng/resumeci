@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — COOKIES DOM — JavaScript_et_jQuery Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — Cookies, DOM et liens — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence 2 MIAGE — Seme"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html"><meta property="og:title" content="Leçon 5 — COOKIES DOM — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — Cookies, DOM et liens — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence 2 MIAGE — Seme"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — COOKIES DOM — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Cookies, DOM et liens — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence 2 MIAGE — Seme"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"JavaScript_et_jQuery","item":"https://resumeci.me/#Licence_2_Miage/JavaScript_et_jQuery"},{"@type":"ListItem","position":4,"name":"Leçon 5 — COOKIES DOM","item":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — COOKIES DOM — JavaScript_et_jQuery Licence 2_Miage | ResumeCI","description":"Leçon 5 — Cookies, DOM et liens — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence 2 MIAGE — Seme","url":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon5_COOKIES_DOM.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"JavaScript_et_jQuery","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 JavaScript et jQuery</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 5 : Cookies, DOM, liens</span>
+  </div>
+</div>
+
+<h2>I. L'objet Links</h2>
+<p>Correspond aux <strong>liens hypertextes</strong> définis dans un document HTML : permet de <strong>compter, lire et modifier</strong> les liens de la page.</p>
+<table>
+  <tr><th>Propriétés</th><th>Résultat</th></tr>
+  <tr><td>Accès par indice / nom</td><td>Chaque lien est un élément de la collection</td></tr>
+  <tr><td><code>length</code></td><td>Nombre de liens dans la page</td></tr>
+</table>
+
+<h2>II. Les cookies</h2>
+<div class="definition"><strong>Cookie :</strong> petit fichier <strong>au format texte (.txt)</strong> stocké par le navigateur sur le poste de l'utilisateur, permettant de <strong>conserver des informations entre les visites</strong> (préférences, identifiants de session…).</div>
+<h3>1. Principe et utilisation</h3>
+<p>Un cookie est créé côté client ou serveur ; il est envoyé automatiquement au serveur lors des requêtes suivantes vers le même domaine.</p>
+<h3>2. Paramétrage des navigateurs</h3>
+<ul>
+  <li>Les navigateurs permettent d'<strong>autoriser, bloquer ou supprimer</strong> les cookies (paramètres de confidentialité) ;</li>
+  <li>Certains bloqueurs de publicité/tracking les filtrent.</li>
+</ul>
+<h3>3. Limites d'utilisation</h3>
+<ul>
+  <li>Taille limitée (~4 Ko par cookie) ;</li>
+  <li>Nombre limité par domaine ;</li>
+  <li>Date d'expiration à gérer ;</li>
+  <li>Ne pas y stocker de données sensibles (visibles côté client).</li>
+</ul>
+<h3>4. Application et gestion</h3>
+<ul>
+  <li><strong>Ajout d'informations optionnelles</strong> au cookie (attributs : expiration, chemin, domaine…) ;</li>
+  <li><strong>Mise à jour</strong> d'un cookie : le réécrire avec les nouvelles valeurs ;</li>
+  <li>Lecture via <code>document.cookie</code> ; suppression en expirant la date.</li>
+</ul>
+
+<h2>III. Le DOM — Document Object Model</h2>
+<div class="definition"><strong>DOM (Document Object Model) :</strong> représentation <strong>arborescente du document HTML</strong> sous forme d'objets — chaque balise, attribut et nœud de texte devient un <strong>nœud</strong> accessible et modifiable par JavaScript.</div>
+<h3>Notions essentielles</h3>
+<ul>
+  <li><strong>Nœuds :</strong> éléments, attributs, textes ;</li>
+  <li><strong>Arbre hiérarchique :</strong> parent / enfant / frère — parcours (childNodes, parentNode…) ;</li>
+  <li><strong>Manipulation :</strong> créer, lire, modifier, supprimer des nœuds (createElement, appendChild, innerHTML…) ;</li>
+  <li><strong>Événements :</strong> attacher des gestionnaires aux nœuds.</li>
+</ul>
+<h3>Mise en forme</h3>
+<p>JavaScript + CSS permettent de <strong>mettre en forme dynamiquement</strong> une page web : modifier styles, classes, contenu en réponse aux interactions.</p>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>cookie</strong> (fichier texte côté client) et <strong>cache</strong> ou <strong>session serveur</strong>.</li>
+    <li>Oublier que <code>document.cookie</code> ne permet pas de tout lire : les cookies <strong>HttpOnly</strong> sont invisibles en JS.</li>
+    <li>Confondre DOM (représentation objet du document) et HTML (code source) : le DOM est <strong>dynamique</strong>, le HTML est statique.</li>
+    <li>Confondre <strong>nœud élément</strong>, <strong>nœud texte</strong> et <strong>attribut</strong> dans l'arbre DOM.</li>
+    <li>Penser qu'un cookie est « côté serveur » → il est <strong>stocké chez le client</strong>, envoyé au serveur.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

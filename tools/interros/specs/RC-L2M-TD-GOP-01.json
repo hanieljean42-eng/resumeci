@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-GOP-01",
+  "type": "td",
+  "matiere": "Gestion de la production",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Compétitivité, flux et valeur ajoutée, facteur humain",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés du cours de Gestion de la production. Réponds en mobilisant les notions : flux, valeur ajoutée, temps de cycle, flexibilité.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Rôle et place de la GOP",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Définir la Gestion de la Production (GOP).</li><li>Pourquoi la GOP est-elle qualifiée de fonction <em>transverse</em> ?</li><li>Quels sont les trois objectifs classiques de la production ?</li></ol>",
+      "correction": "<p><strong>a)</strong> GOP = ensemble des activités de <strong>planification, d'ordonnancement et de contrôle</strong> de la production pour répondre à la demande au moindre coût.</p><p><strong>b)</strong> Transverse car elle <strong>coordonne</strong> toute la chaîne : commerciale, achats, production, logistique — elle est en interface entre tous les services.</p><p><strong>c)</strong> Les 3 objectifs classiques : <strong>coût</strong>, <strong>qualité</strong>, <strong>délais</strong> — souvent résumés par « le triangle » (améliorer l'un dégrade souvent les autres).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Flux et valeur ajoutée",
+      "points": "5 pts",
+      "enonce": "Une entreprise a un chiffre d'affaires de 10 000 000 F. Consommations intermédiaires : matières premières 4 000 000 F, services extérieurs 1 500 000 F. Masse salariale 2 000 000 F, impôts 500 000 F, dotations aux amortissements 800 000 F, résultat net 1 200 000 F.<ol type='a'><li>Calculer la valeur ajoutée (VA).</li><li>Vérifier la répartition de la VA (salaire + impôts + amortissements + résultat).</li></ol>",
+      "correction": "<p><strong>a)</strong> VA = production − consommations intermédiaires = 10 000 000 − (4 000 000 + 1 500 000) = <span class='reponse'>4 500 000 F</span>.</p><p><strong>b)</strong> Répartition : salaire 2 000 000 + impôts 500 000 + amortissements 800 000 + résultat 1 200 000 = <span class='reponse'>4 500 000 F</span> ✓ — la VA se répartit entre travail, État, capital et entreprise.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Temps de cycle et flux",
+      "points": "5 pts",
+      "enonce": "Sur une ligne d'assemblage : temps de transformation 5 min, attente entre postes 3 min, transport 1 min, contrôle qualité 2 min par pièce.<ol type='a'><li>Calculer le temps de cycle total par pièce.</li><li>Pourquoi réduire le temps d'attente est-il prioritaire ?</li><li>Que devient le « flux » si le temps de cycle diminue ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Cycle total = 5 + 3 + 1 + 2 = <span class='reponse'>11 min</span> par pièce.</p><p><strong>b)</strong> L'attente (3 min) est du <strong>temps perdu</strong> — la pièce ne subit aucune transformation. La réduire (kanban, flux tendu) augmente la cadence sans toucher aux temps utiles.</p><p><strong>c)</strong> Un cycle plus court = <strong>plus grand flux</strong> (plus de pièces par unité de temps) + moins de stock en cours + délais réduits.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Facteur humain et flexibilité",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>En quoi le facteur humain est-il déterminant dans la GOP ?</li><li>Une entreprise passe d'une production de masse uniforme à une production flexible. Citer 3 adaptations organisationnelles nécessaires.</li><li>La flexibilité coûte-t-elle toujours plus cher ? Nuancer.</li></ol>",
+      "correction": "<p><strong>a)</strong> Motivation, compétence et organisation du travail conditionnent directement la performance — les opérateurs sont le maillon central ; leur engagement détermine qualité et productivité.</p><p><strong>b)</strong> Adaptations : <strong>polyvalence</strong> des opérateurs (multi-postes), organisation en <strong>équipes</strong> autonomes, réduction des temps de changement (SMED), formation continue.</p><p><strong>c)</strong> Non nécessairement : la flexibilité peut <strong>réduire les stocks</strong> et les invendus (moindre coût), mais exige un investissement en formation et machines polyvalentes — coût initial plus élevé, gain en réactivité.</p>",
+      "bareme_detail": "a) 2 pts · b) 2,5 pts · c) 1,5 pt"
+    }
+  ]
+}

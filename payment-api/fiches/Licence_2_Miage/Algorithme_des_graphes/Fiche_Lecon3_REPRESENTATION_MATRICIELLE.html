@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — REPRESENTATION MATRICIELLE — Algorithme_des_graphes Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Représentation matricielle des graphes — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 L"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html"><meta property="og:title" content="Leçon 3 — REPRESENTATION MATRICIELLE — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Représentation matricielle des graphes — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 L"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — REPRESENTATION MATRICIELLE — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Représentation matricielle des graphes — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 L"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_des_graphes","item":"https://resumeci.me/#Licence_2_Miage/Algorithme_des_graphes"},{"@type":"ListItem","position":4,"name":"Leçon 3 — REPRESENTATION MATRICIELLE","item":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — REPRESENTATION MATRICIELLE — Algorithme_des_graphes Licence 2_Miage | ResumeCI","description":"Leçon 3 — Représentation matricielle des graphes — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 L","url":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon3_REPRESENTATION_MATRICIELLE.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Algorithme_des_graphes","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme des graphes</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 3 : Représentation matricielle</span>
+  </div>
+</div>
+
+<h2>I. Matrice d'adjacence — graphe non orienté</h2>
+<div class="definition"><strong>Matrice d'adjacence :</strong> pour un graphe G à n sommets 1, 2, …, n, c'est la matrice <strong>A = (a<sub>ij</sub>)</strong> où <strong>a<sub>ij</sub></strong> = nombre d'arêtes joignant le sommet i au sommet j.</div>
+<div class="important"><strong>Propriétés (graphe non orienté) :</strong>
+<ul>
+  <li>A est <strong>symétrique</strong> ;</li>
+  <li>diagonale = <strong>0</strong> si le graphe est simple (sans boucle) ;</li>
+  <li><strong>demi-somme</strong> de tous les coefficients = nombre d'arêtes du graphe ;</li>
+  <li><strong>Σ<sub>j</sub> a<sub>ij</sub></strong> = degré du sommet i (idem pour les colonnes).</li>
+</ul></div>
+<p><strong>Cas particuliers :</strong> sans boucle → 0 sur la diagonale ; sans arête multiple → coefficients 0 ou 1 ; graphe complet → que des 1 sauf diagonale à 0.</p>
+
+<h2>II. Matrice d'adjacence — graphe orienté</h2>
+<div class="definition">Par convention, dans la matrice d'un graphe <strong>orienté</strong>, <strong>a<sub>ij</sub></strong> = nombre d'arcs d'<strong>origine i</strong> et d'<strong>extrémité j</strong>.</div>
+<div class="important"><strong>Propriétés :</strong>
+<ul>
+  <li><strong>Σ tous les coefficients = nombre d'arcs</strong> ;</li>
+  <li>somme des coefficients de la <strong>ligne i</strong> = nombre de <strong>successeurs</strong> du sommet i (= d⁺) ;</li>
+  <li>somme des coefficients de la <strong>colonne j</strong> = nombre de <strong>prédécesseurs</strong> du sommet j (= d⁻).</li>
+</ul></div>
+
+<h2>III. Matrice des poids — graphe pondéré</h2>
+<div class="definition"><strong>Matrice des poids P = (p<sub>ij</sub>) :</strong> p<sub>ij</sub> = poids de l'arête (ou arc) entre i et j ; on note <strong>∞</strong> (ou « — ») s'il n'y a <strong>pas d'arête</strong> entre les deux sommets.</div>
+
+<h2>IV. Compter les chaînes : la puissance Mⁿ</h2>
+<div class="important"><strong>Théorème fondamental :</strong> soit G un graphe et M sa matrice d'adjacence. Le <strong>nombre de chaînes de longueur n</strong> joignant le sommet i au sommet j est donné par le coefficient <strong>d'indice (i, j) de la matrice Mⁿ</strong>.</div>
+<div class="schema">Exemple : le coefficient (1,3) de M² = nombre de chaînes de longueur 2 du sommet 1 au sommet 3 (en passant par un intermédiaire).</div>
+
+<h2>V. Graphes isomorphes</h2>
+<div class="definition"><strong>Isomorphes :</strong> deux graphes ayant la <strong>même structure</strong> — on peut déplacer les sommets pour que l'un soit la copie conforme de l'autre, peu importe le dessin.</div>
+<div class="important"><strong>Méthode de vérification :</strong>
+<ul>
+  <li>Comparer d'abord : <strong>ordre</strong>, <strong>nombre d'arêtes</strong>, <strong>degrés</strong> des sommets (conditions <strong>nécessaires</strong> mais pas suffisantes) ;</li>
+  <li>chercher une <strong>renumérotation</strong> des sommets qui rend les deux matrices d'adjacence <strong>identiques</strong> → alors isomorphes.</li>
+</ul>
+<p><strong>Exemple du cours :</strong> trois graphes d'ordre 6, 9 arêtes, tous sommets de degré 3 — mais B contient deux sous-graphes complets K₃ (pas A ni C) → B non isomorphe. A et C ont la même matrice d'adjacence après renumérotation → <strong>isomorphes</strong>.</p>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier que dans un graphe <strong>orienté</strong>, a<sub>ij</sub> compte les arcs <strong>de i vers j</strong> (pas de j vers i) — la matrice n'est plus symétrique.</li>
+    <li>Pour un graphe non orienté, diviser par 2 : la <strong>demi</strong>-somme des coefficients = nombre d'arêtes (chaque arête compte deux fois).</li>
+    <li>Confondre Mⁿ avec M × n : c'est la <strong>puissance</strong> de la matrice, pas une multiplication par n.</li>
+    <li>Croire que même ordre + même nombre d'arêtes ⇒ isomorphes : <strong>faux</strong>, il faut la même structure.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

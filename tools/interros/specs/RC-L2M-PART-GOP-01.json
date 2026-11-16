@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-GOP-01",
+  "type": "partiel",
+  "matiere": "Gestion de la production",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "GOP, flux, valeur ajoutée, temps de cycle, flexibilité",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Répondre en mobilisant les notions du cours avec des exemples concrets.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — GOP et objectifs (6 pts)",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Définir la GOP.</li><li>Pourquoi est-elle une fonction transverse ?</li><li>Quels sont les 3 objectifs classiques ? Expliquer le « triangle » coût-qualité-délai.</li></ol>",
+      "correction": "<p><strong>a)</strong> GOP = planification, ordonnancement et contrôle de la production pour répondre à la demande au moindre coût.</p><p><strong>b)</strong> Transverse = coordonne commerciale, achats, production, logistique — en interface entre tous les services.</p><p><strong>c)</strong> Coût, qualité, délais. Le triangle : améliorer l'un <strong>dégrade souvent</strong> les autres (ex. réduire le délai peut augmenter le coût ou baisser la qualité) — l'entreprise doit arbitrer.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Valeur ajoutée (7 pts)",
+      "points": "7 pts",
+      "enonce": "Production vendue : 8 000 000 F. Consommations intermédiaires : matières 3 000 000 F, services ext. 1 000 000 F. Répartition de la VA : masse salariale 1 800 000 F, impôts 400 000 F, amortissements 600 000 F, résultat 1 200 000 F.<ol type='a'><li>Calculer la VA et vérifier la répartition.</li><li>Que mesure la VA ?</li><li>Différence entre flux et stock dans la production.</li></ol>",
+      "correction": "<p><strong>a)</strong> VA = 8 000 000 − 4 000 000 = <span class='reponse'>4 000 000 F</span>. Répartition : 1 800+400+600+1 200 = 4 000 000 ✓</p><p><strong>b)</strong> La VA = richesse <strong>créée</strong> par l'entreprise (production − consommations intermédiaires) ; elle se répartit entre travail, État, capital et entreprise.</p><p><strong>c)</strong> Flux = mouvement continu des produits dans le système ; stock = accumulation/tampon. Réduire les stocks et fluidifier les flux = réactivité.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Temps de cycle, humain, flexibilité (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Décomposer le temps de cycle d'une pièce (transformation, attente, transport, contrôle).</li><li>Pourquoi réduire l'attente est-il prioritaire ?</li><li>Rôle du facteur humain dans la performance ?</li><li>3 adaptations pour passer à une production flexible.</li></ol>",
+      "correction": "<p><strong>a)</strong> Transformation (utile) + attente + transport + contrôle — seul le temps de transformation crée de la valeur.</p><p><strong>b)</strong> L'attente = temps <strong>perdu</strong> (aucune transformation) : la réduire augmente la cadence sans toucher aux temps utiles (flux tendu, kanban).</p><p><strong>c)</strong> Motivation, compétence, organisation du travail déterminent la performance — l'opérateur est le maillon central.</p><p><strong>d)</strong> Polyvalence, équipes autonomes, formation continue, réduction des temps de changement (SMED).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt · d) 2 pts"
+    }
+  ]
+}

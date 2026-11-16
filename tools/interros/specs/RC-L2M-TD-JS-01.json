@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-JS-01",
+  "type": "td",
+  "matiere": "JavaScript et jQuery",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "JavaScript : objets, fonctions, événements, formulaires",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés du livre JavaScript du cours. Écris le code JavaScript précis (pas de pseudo-code) ; les réponses attendent le résultat exact de l'exécution.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Variables et opérateurs",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Que vaut <code>typeof (5 + '3')</code> ? Et <code>5 + '3'</code> ? Expliquer.</li><li>Que renvoie <code>NaN === NaN</code> ? Pourquoi ?</li><li>Que vaut <code>[10,20,30].length</code> et <code>arr[3]</code> si arr=[10,20,30] ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>5 + '3'</code> = <span class='reponse'>'53'</span> (concaténation car un opérande est une chaîne) ; <code>typeof</code> → <span class='reponse'>'string'</span>.</p><p><strong>b)</strong> <span class='reponse'>false</span> — NaN n'est égal à rien, même pas lui-même (utiliser <code>isNaN()</code>).</p><p><strong>c)</strong> length = <span class='reponse'>3</span> ; arr[3] = <span class='reponse'>undefined</span> (indices 0 à 2).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Fonctions et événements",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Écrire une fonction <code>fact(n)</code> calculant n! avec une boucle.</li><li>Quelle différence entre <code>setTimeout(f, 1000)</code> et <code>setInterval(f, 1000)</code> ?</li><li>Quel attribut HTML déclenche du JS au clic sur un bouton ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>function fact(n) { let r = 1; for (let i = 2; i &lt;= n; i++) r *= i; return r; }</pre><p><strong>b)</strong> setTimeout = exécute f <strong>une seule fois</strong> après 1000 ms ; setInterval = exécute f <strong>à chaque intervalle</strong> de 1000 ms (répété). Annulation : clearTimeout / clearInterval.</p><p><strong>c)</strong> attribut <code>onclick</code> dans la balise (ou <code>addEventListener('click', f)</code>).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Formulaires et DOM",
+      "points": "5 pts",
+      "enonce": "Soit <code>&lt;input type=\"text\" name=\"email\"&gt;</code> dans un formulaire <code>inscription</code>.<ol type='a'><li>Comment lire la valeur saisie en JS ?</li><li>Quelle différence entre checkbox et radio ?</li><li>Que retourne <code>document.cookie</code> et quelle est sa limite ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>document.inscription.email.value</code>.</p><p><strong>b)</strong> Checkbox = <strong>multi-sélection</strong> (plusieurs choix possibles) ; radio = <strong>un seul choix</strong> dans un groupe (même name).</p><p><strong>c)</strong> document.cookie retourne les cookies <strong>lisibles par JS</strong> sous forme de chaîne « nom=valeur ». Limite : n'accède pas aux cookies <strong>HttpOnly</strong> ; les cookies restent côté client.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Objets et tableaux",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Que vaut <code>Math.random()</code> ? Dans quel intervalle ?</li><li>Écrire un tableau <code>notes</code> de 3 notes et afficher la somme avec une boucle.</li><li>Différence entre <code>==</code> et <code>===</code> en JavaScript.</li></ol>",
+      "correction": "<p><strong>a)</strong> Nombre aléatoire dans <span class='reponse'>[0, 1[</span> (0 inclus, 1 exclu).</p><p><strong>b)</strong> <code>let notes=[12,15,9], s=0; for(let i=0;i&lt;notes.length;i++) s+=notes[i];</code> → s = <span class='reponse'>36</span>.</p><p><strong>c)</strong> <code>==</code> = égalité <strong>avec conversion</strong> de type (ex. '5'==5 → true) ; <code>===</code> = égalité <strong>stricte</strong> (type + valeur, '5'===5 → false). Bon réflexe : toujours utiliser ===.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts · c) 2 pts"
+    }
+  ]
+}

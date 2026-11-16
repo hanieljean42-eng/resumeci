@@ -1,0 +1,30 @@
+{
+  "Fiche_Lecon1_LDD_LMD": {
+    "title": "SQL : LDD et LMD",
+    "questions": [
+      {"id":"q1","text":"SELECT appartient au sous-langage :","type":"qcm","options":["LDD","LMD","LID/DQL","DCL"],"answer":2,"explanation":"SELECT = LID (interrogation) ; INSERT/UPDATE/DELETE = LMD ; CREATE/ALTER/DROP = LDD."},
+      {"id":"q2","text":"Un UPDATE sans clause WHERE :","type":"qcm","options":["Ne modifie rien","Modifie TOUTES les lignes de la table","Génère une erreur","Modifie une ligne au hasard"],"answer":1,"explanation":"Sans WHERE → toutes les lignes sont modifiées/supprimées."},
+      {"id":"q3","text":"ON DELETE CASCADE signifie :","type":"qcm","options":["Interdire la suppression","Supprimer les lignes dépendantes quand la ligne référencée est supprimée","Mettre la FK à NULL","Rien faire"],"answer":1,"explanation":"CASCADE = suppression en cascade ; SET NULL = annule le lien."},
+      {"id":"q4","text":"MERGE (upsert) sert à :","type":"qcm","options":["Supprimer des lignes","Insérer ou mettre à jour selon que la clé existe","Créer une table","Interroger"],"answer":1,"explanation":"Upsert = insert-or-update ; syntaxes : ON DUPLICATE KEY (MySQL), ON CONFLICT (PostgreSQL), MERGE (Oracle)."}
+    ]
+  },
+  "Fiche_Lecon2_SELECT_AGREGATS": {
+    "title": "SELECT et agrégats",
+    "questions": [
+      {"id":"q1","text":"L'ordre d'évaluation SQL est :","type":"qcm","options":["SELECT, FROM, WHERE…","FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY","WHERE → SELECT → FROM","ORDER BY → SELECT"],"answer":1,"explanation":"Le SGBD évalue dans cet ordre ; d'où l'impossibilité d'utiliser un alias SELECT dans WHERE."},
+      {"id":"q2","text":"COUNT(*) vs COUNT(colonne) :","type":"qcm","options":["Identiques","COUNT(*) compte les lignes ; COUNT(col) ignore les NULL","COUNT(col) compte tout","COUNT(*) ignore les doublons"],"answer":1,"explanation":"COUNT(col) ne compte que les valeurs non nulles."},
+      {"id":"q3","text":"HAVING sert à :","type":"qcm","options":["Filtrer les lignes","Filtrer les groupes après calcul des agrégats","Trier","Joindre"],"answer":1,"explanation":"WHERE = lignes avant regroupement ; HAVING = groupes après agrégation."},
+      {"id":"q4","text":"En GROUP BY, une colonne du SELECT hors agrégat doit :","type":"qcm","options":["Pouvoir être libre","Figurer dans le GROUP BY","Être en MAX()","Être omise"],"answer":1,"explanation":"Règle : toute colonne non agrégée doit être dans GROUP BY."},
+      {"id":"q5","text":"note = NULL en SQL :","type":"qcm","options":["Est vrai pour les NULL","N'est jamais vrai — utiliser IS NULL","Retourne les NULL","Cause une erreur"],"answer":1,"explanation":"Toute comparaison avec NULL est inconnue → IS NULL / IS NOT NULL."}
+    ]
+  },
+  "Fiche_Lecon3_JOINTURES_VUES": {
+    "title": "Jointures, sous-requêtes, vues",
+    "questions": [
+      {"id":"q1","text":"LEFT JOIN retourne :","type":"qcm","options":["Seulement les correspondances","Toutes les lignes de gauche + NULL à droite si pas de correspondance","Toutes les lignes des deux","Le produit cartésien"],"answer":1,"explanation":"LEFT garde tout ce qui est à gauche ; RIGHT symétrique ; FULL = les deux."},
+      {"id":"q2","text":"UNION vs UNION ALL :","type":"qcm","options":["Identiques","UNION supprime les doublons, UNION ALL les conserve","UNION ALL = intersection","UNION = différence"],"answer":1,"explanation":"UNION = dédoublonné ; UNION ALL = tout."},
+      {"id":"q3","text":"Une vue est :","type":"qcm","options":["Une table physique","Une table virtuelle définie par une requête SELECT","Un index","Une contrainte"],"answer":1,"explanation":"Vue = requête stockée, pas de données propres."},
+      {"id":"q4","text":"Une CTE (WITH) est :","type":"qcm","options":["Une table permanente","Une table temporaire nommée dans la requête","Un index","Une vue"],"answer":1,"explanation":"CTE = sous-requête nommée et réutilisable dans le WITH."}
+    ]
+  }
+}

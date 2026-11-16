@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — ALGORITHME SIMPLEXE — Programmation_lineaire Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Algorithme du simplexe — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Licence 2 MIAGE —"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html"><meta property="og:title" content="Leçon 2 — ALGORITHME SIMPLEXE — Programmation_lineaire Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Algorithme du simplexe — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Licence 2 MIAGE —"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — ALGORITHME SIMPLEXE — Programmation_lineaire Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Algorithme du simplexe — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Licence 2 MIAGE —"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_lineaire","item":"https://resumeci.me/#Licence_2_Miage/Programmation_lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 2 — ALGORITHME SIMPLEXE","item":"https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — ALGORITHME SIMPLEXE — Programmation_lineaire Licence 2_Miage | ResumeCI","description":"Leçon 2 — Algorithme du simplexe — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Licence 2 MIAGE —","url":"https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon2_ALGORITHME_SIMPLEXE.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Programmation_lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation linéaire</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 2 : Algorithme du simplexe</span>
+  </div>
+</div>
+
+<h2>I. Principe</h2>
+<div class="definition"><strong>Algorithme du simplexe :</strong> méthode itérative qui parcourt les <strong>sommets du polyèdre</strong> des solutions réalisables pour trouver l'<strong>optimum</strong> d'un programme linéaire. On part d'une <strong>base réalisable de départ</strong> B ; I = indices des variables de base, J = indices des variables hors base.</div>
+<h3>Forme standard</h3>
+<pre>Min Z = cx
+    Ax = b
+    x ≥ 0</pre>
+<p>Les inégalités sont transformées en égalités via les <strong>variables d'écart</strong>.</p>
+
+<h2>II. Algorithme primal (minimisation)</h2>
+<h3>Étape 1 — Test d'arrêt</h3>
+<ul>
+  <li>Si <strong>tous les ĉⱼ ≥ 0</strong> → stop : « La base B est <strong>optimale</strong> » ;</li>
+  <li>Si ∃ k ∈ J avec <strong>ĉₖ &lt; 0</strong> et colonne Âₖ ≤ 0 → stop : « Le problème est <strong>non borné</strong> » (valeur optimale = −∞) ;</li>
+  <li>Sinon → changement de base.</li>
+</ul>
+<h3>Étape 2 — Changement de base</h3>
+<p><strong>a) Test d'entrée :</strong> la variable <strong>entrante</strong> xₖ est celle avec le plus petit ĉₖ &lt; 0 (pour min) :</p>
+<pre>ĉₖ = min { ĉⱼ : j ∈ J, ĉⱼ &lt; 0 }</pre>
+<p><strong>b) Test de sortie :</strong> la variable <strong>sortante</strong> xₗ est celle qui limite le plus le rapport :</p>
+<pre>b̂ₗ = min { b̂ᵢ / âᵢₖ : i ∈ I, âᵢₖ &gt; 0 }</pre>
+<p><strong>c) Nouvelle base :</strong> I := I − l + k ; J := J − k + l. Retour à l'étape 1.</p>
+<h3>Cas de la maximisation</h3>
+<p>Pas besoin de transformer en minimisation — inverser les inégalités :</p>
+<ul>
+  <li>Arrêt optimal : <strong>tous les cⱼ ≤ 0</strong> ;</li>
+  <li>Non borné : ∃ k ∈ J avec <strong>cₖ &gt; 0</strong> et Aₖ ≤ 0 ;</li>
+  <li>Test d'entrée : <strong>ĉₖ = max { ĉⱼ : ĉⱼ &gt; 0 }</strong>.</li>
+</ul>
+
+<h2>III. Méthode des tableaux</h2>
+<p>Mise en œuvre manuelle : on écrit les <strong>tableaux simplexes</strong> relatifs aux bases rencontrées. Dans le tableau :</p>
+<ul>
+  <li>Le <strong>pivot</strong> = élément à l'intersection de la ligne du pivot et de la colonne du pivot ;</li>
+  <li>La <strong>ligne du pivot</strong> et la <strong>colonne du pivot</strong> en découlent.</li>
+</ul>
+<h3>Règles de pivotage</h3>
+<ol>
+  <li>Remplacer le pivot par son <strong>inverse</strong> (1/pivot) ;</li>
+  <li>Diviser les autres éléments de la <strong>ligne du pivot</strong> par le pivot ;</li>
+  <li>Diviser les autres éléments de la <strong>colonne du pivot</strong> par le pivot <strong>et changer leur signe</strong> ;</li>
+  <li>Mettre à jour les autres lignes par combinaison linéaire.</li>
+</ol>
+<p><strong>Cas particuliers :</strong> si une ligne intersecte la colonne du pivot par un <strong>zéro</strong>, la ligne est inchangée ; si une colonne intersecte la ligne du pivot par un zéro, la colonne reste inchangée.</p>
+
+<h2>IV. Lecture du résultat</h2>
+<ul>
+  <li><strong>Optimum atteint</strong> : tous les coefficients de la fonction objectif sont <strong>négatifs ou nuls</strong> (en min) ;</li>
+  <li><strong>Solution optimale</strong> : les valeurs des variables de base dans la dernière colonne ;</li>
+  <li><strong>Non borné</strong> : une colonne de la fonction objectif a des coefficients <strong>tous négatifs</strong> sans pivot possible → valeur optimale = −∞.</li>
+</ul>
+<p><em>Exemple du cours :</em> max Z = 3x₁ + 2x₂ → solution optimale x = (3/2, 2)ᵀ, Z = 17/2. Exemple non borné : min Z = −3x₁ + 5x₂ avec colonne x₂ toute négative → optimum = −∞.</p>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>variable entrante</strong> (entre dans la base, choisie par le test d'entrée) et <strong>sortante</strong> (sort de la base, choisie par le test de sortie).</li>
+    <li>Pour une <strong>maximisation</strong>, inverser les signes : arrêt quand cⱼ ≤ 0, entrée par le <strong>max</strong> des ĉⱼ &gt; 0.</li>
+    <li>Oublier que le test de sortie ne considère que les âᵢₖ <strong>&gt; 0</strong>.</li>
+    <li>Confondre « non borné » (pas d'optimum fini) et « pas de solution » (incompatible).</li>
+    <li>Dans le pivotage : le pivot devient <strong>1/pivot</strong>, la ligne est <strong>divisée</strong>, la colonne est <strong>divisée + signe changé</strong>.</li>
+    <li>Solution optimale lue dans la <strong>dernière colonne</strong> du tableau final.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

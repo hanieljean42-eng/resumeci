@@ -1,0 +1,38 @@
+{
+  "Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION": {
+    "title": "Modèle Entité-Association",
+    "questions": [
+      {"id":"q1","text":"Le SGBD est :","type":"qcm","options":["Un fichier texte","Un logiciel gérant le stockage et l'accès aux données","Un langage","Un réseau"],"answer":1,"explanation":"SGBD = système de gestion de bases de données (MySQL, PostgreSQL, SQL Server…)."},
+      {"id":"q2","text":"L'identifiant d'une entité :","type":"qcm","options":["N'importe quel attribut","La propriété identifiant de façon unique chaque occurrence","Toujours le nom","Un attribut optionnel"],"answer":1,"explanation":"Identifiant = clé unique (CIN, IdAuteur…) — le nom ne suffit pas (homonymes)."},
+      {"id":"q3","text":"La cardinalité 0,n signifie :","type":"qcm","options":["Obligatoire et unique","Au moins zéro, au plus n","Exactement 1","Au moins 1"],"answer":1,"explanation":"0,n = optionnel et multiple ; 1,1 = obligatoire unique ; 1,n = obligatoire multiple."},
+      {"id":"q4","text":"Une association ternaire relie :","type":"qcm","options":["2 entités","3 entités","1 entité","4 entités"],"answer":1,"explanation":"Degré K = nombre d'entités : K=1 unaire, K=2 binaire, K=3 ternaire."}
+    ]
+  },
+  "Fiche_Lecon2_NORMALISATION_MRD": {
+    "title": "Normalisation et MRD",
+    "questions": [
+      {"id":"q1","text":"La 1ère forme normale exige :","type":"qcm","options":["Pas de clé","Au moins une clé et des attributs atomiques","Pas de transitivité","Des attributs composés"],"answer":1,"explanation":"1FN = clé + attributs atomiques (pas de propriétés répétitives)."},
+      {"id":"q2","text":"La 2ème forme normale traite :","type":"qcm","options":["Les attributs atomiques","La dépendance d'un attribut à une PARTIE d'une clé composée","La transitivité","Les homonymes"],"answer":1,"explanation":"2FN = tout attribut dépend de TOUTE la clé (pas d'une partie)."},
+      {"id":"q3","text":"La 3ème forme normale élimine :","type":"qcm","options":["Les clés","Les dépendances transitives (attribut dépendant d'un autre attribut non-clé)","Les doublons","Les entités"],"answer":1,"explanation":"3FN = dépendance directe à la clé, pas de transitivité."},
+      {"id":"q4","text":"Une association N:N devient en MRD :","type":"qcm","options":["Une clé étrangère","Une nouvelle table dont la clé = les identifiants des deux entités","Un attribut","Rien"],"answer":1,"explanation":"N:N → table de jointure avec clé composée (#IdA, #IdB) + attributs de l'association."}
+    ]
+  },
+  "Fiche_Lecon3_ALGEBRE_RELATIONNELLE": {
+    "title": "Algèbre relationnelle",
+    "questions": [
+      {"id":"q1","text":"La sélection filtre :","type":"qcm","options":["Les colonnes","Les lignes selon un critère","Les tables","Les attributs"],"answer":1,"explanation":"Sélection = lignes satisfaisant le critère (comme WHERE)."},
+      {"id":"q2","text":"La projection conserve :","type":"qcm","options":["Les lignes","Certaines colonnes (attributs)","Tout","Les doublons"],"answer":1,"explanation":"Projection = sous-ensemble d'attributs ; élimine les doublons."},
+      {"id":"q3","text":"L'intersection correspond à :","type":"qcm","options":["OU logique","ET logique (présent dans les deux)","La différence","Le produit"],"answer":1,"explanation":"Intersection = ET ; union = OU ; différence = non commutative."},
+      {"id":"q4","text":"La division trouve :","type":"qcm","options":["Le plus court chemin","Les occurrences associées à TOUTES les occurrences d'une autre table","L'union","Le produit cartésien"],"answer":1,"explanation":"Division = quantification universelle (ex. inscrits à tous les cours)."}
+    ]
+  },
+  "Fiche_Lecon4_SQL_COMMANDES": {
+    "title": "SQL : les commandes",
+    "questions": [
+      {"id":"q1","text":"SQL signifie :","type":"qcm","options":["Simple Query Language","Structured Query Language","Standard Query Logic","System Query Library"],"answer":1,"explanation":"Structured Query Language, fondé sur l'algèbre relationnelle."},
+      {"id":"q2","text":"DCL comprend :","type":"qcm","options":["CREATE, DROP","SELECT, INSERT","GRANT, REVOKE","UPDATE, DELETE"],"answer":2,"explanation":"DCL = contrôle d'accès : GRANT (accorder), REVOKE (retirer)."},
+      {"id":"q3","text":"GRANT SELECT ON Etudiant TO User1 donne :","type":"qcm","options":["Tous les droits","Le droit de lecture sur la table Etudiant à User1","Le droit de modifier","Rien"],"answer":1,"explanation":"GRANT = accorder un privilège ; WITH GRANT OPTION permet de le retransmettre."},
+      {"id":"q4","text":"Le langage SQL est fondé sur :","type":"qcm","options":["La logique propositionnelle","L'algèbre relationnelle","Les graphes","La POO"],"answer":1,"explanation":"Fondement : algèbre relationnelle."}
+    ]
+  }
+}

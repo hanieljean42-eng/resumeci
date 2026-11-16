@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — EULERIENS HAMILTONIENS — Algorithme_des_graphes Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — Graphes eulériens et hamiltoniens — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 Licenc"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html"><meta property="og:title" content="Leçon 4 — EULERIENS HAMILTONIENS — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — Graphes eulériens et hamiltoniens — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 Licenc"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — EULERIENS HAMILTONIENS — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — Graphes eulériens et hamiltoniens — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 Licenc"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_des_graphes","item":"https://resumeci.me/#Licence_2_Miage/Algorithme_des_graphes"},{"@type":"ListItem","position":4,"name":"Leçon 4 — EULERIENS HAMILTONIENS","item":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — EULERIENS HAMILTONIENS — Algorithme_des_graphes Licence 2_Miage | ResumeCI","description":"Leçon 4 — Graphes eulériens et hamiltoniens — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes 🏫 Licenc","url":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon4_EULERIENS_HAMILTONIENS.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Algorithme_des_graphes","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme des graphes</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 4 : Graphes eulériens et hamiltoniens</span>
+  </div>
+</div>
+
+<h2>I. Graphes eulériens</h2>
+<div class="definition"><strong>Chaîne eulérienne :</strong> chaîne composée de <strong>Toutes les arêtes</strong> du graphe, <strong>prises une seule fois</strong>.</div>
+<div class="definition"><strong>Cycle eulérien :</strong> cycle composé de toutes les arêtes du graphe prises une seule fois.</div>
+<div class="definition"><strong>Graphe eulérien :</strong> graphe possédant un <strong>cycle eulérien</strong>.</div>
+
+<h3>Théorème d'Euler (1739)</h3>
+<div class="important"><strong>Un graphe connexe possède :</strong>
+<ul>
+  <li>une <strong>chaîne eulérienne</strong> ⟺ tous ses sommets sont de <strong>degré pair</strong>, <strong>sauf deux</strong> (qui seront les extrémités de la chaîne) ;</li>
+  <li>un <strong>cycle eulérien</strong> ⟺ <strong>tous</strong> ses sommets sont de <strong>degré pair</strong>.</li>
+</ul></div>
+<div class="schema">Méthode : pour savoir si un graphe est eulérien → vérifier la <strong>connexité</strong> puis compter les <strong>degrés</strong> des sommets.</div>
+<p><strong>Interprétation pratique :</strong> un graphe possédant une chaîne ou un cycle eulérien peut être <strong>« dessiné en une seule fois, sans jamais lever le crayon »</strong>.</p>
+<p><strong>Exemples du cours :</strong></p>
+<ul>
+  <li>Chaîne eulérienne « A − C − E − D − B − C − D − A − B » mais pas de cycle → <strong>pas eulérien</strong> ;</li>
+  <li>Aucun sommet impair → plusieurs cycles eulériens → <strong>graphe eulérien</strong>.</li>
+</ul>
+
+<h2>II. Graphes hamiltoniens</h2>
+<div class="definition"><strong>Chemin hamiltonien :</strong> chemin qui passe par <strong>tous les sommets une et une seule fois</strong>.</div>
+<div class="definition"><strong>Cycle hamiltonien :</strong> chemin hamiltonien <strong>fermé</strong> (une arête relie le sommet de départ au sommet d'arrivée).</div>
+<div class="definition"><strong>Graphe hamiltonien :</strong> graphe possédant un <strong>cycle hamiltonien</strong>.</div>
+
+<h3>Théorème de Dirac (1952)</h3>
+<div class="important"><strong>Soit G un graphe simple avec n ≥ 3 sommets. Si deg(x) ≥ n/2 pour chaque sommet x, alors G est hamiltonien.</strong></div>
+<p><strong>Exemple :</strong> chemin hamiltonien « d − e − c − b − a » ; cycle hamiltonien « d − e − b − a − c ».</p>
+
+<h2>III. Euler vs Hamilton — ne pas confondre</h2>
+<table>
+  <tr><th></th><th>Eulérien</th><th>Hamiltonien</th></tr>
+  <tr><td><strong>On parcourt…</strong></td><td>toutes les <strong>arêtes</strong> une seule fois</td><td>tous les <strong>sommets</strong> une seule fois</td></tr>
+  <tr><td><strong>Condition de degré</strong></td><td>tous pairs (sauf 2 pour chaîne)</td><td>deg(x) ≥ n/2 (Dirac, condition suffisante)</td></tr>
+  <tr><td><strong>Critère simple</strong></td><td>théorème d'Euler : critère <strong>nécessaire et suffisant</strong></td><td>pas de critère simple ; Dirac = suffisant seulement</td></tr>
+</table>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre eulérien (arêtes) et hamiltonien (sommets) — question favorite !</li>
+    <li>Oublier l'hypothèse de <strong>connexité</strong> dans le théorème d'Euler.</li>
+    <li>Pour une <strong>chaîne</strong> eulérienne : exactement <strong>deux</strong> sommets de degré impair (les extrémités) — pas zéro, pas quatre.</li>
+    <li>Le théorème de Dirac donne une condition <strong>large</strong> : un graphe peut être hamiltonien sans vérifier deg ≥ n/2.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

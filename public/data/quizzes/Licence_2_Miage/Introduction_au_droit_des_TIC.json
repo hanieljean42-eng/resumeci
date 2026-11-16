@@ -1,0 +1,29 @@
+{
+  "Fiche_Lecon1_NOTIONS_ET_ACTEURS": {
+    "title": "Notions, sources et acteurs du droit des TIC",
+    "questions": [
+      {"id":"q1","text":"Les TIC désignent :","type":"qcm","options":["Uniquement Internet","L'ensemble des technologies de production, traitement et échange d'informations numériques","Les ordinateurs uniquement","Les réseaux sociaux"],"answer":1,"explanation":"TIC = technologies de l'information et de la communication au sens large."},
+      {"id":"q2","text":"La loi n° 2013-450 du 19 juin 2013 concerne :","type":"qcm","options":["La cybercriminalité","La protection des données à caractère personnel","Les transactions électroniques","Le droit d'auteur"],"answer":1,"explanation":"2013-450 = données personnelles ; 2013-451 = cybercriminalité ; 2013-546 = transactions électroniques."},
+      {"id":"q3","text":"L'ARTCI est :","type":"qcm","options":["L'agence de sécurité","L'autorité de régulation des TIC et de protection des utilisateurs","Un tribunal","Un ministère"],"answer":1,"explanation":"ARTCI = régulation du secteur numérique + protection des utilisateurs."},
+      {"id":"q4","text":"L'ANSSI est chargée de :","type":"qcm","options":["Réguler les télécoms","La sécurité des systèmes d'information et la lutte contre la cybercriminalité","La protection des données","Les transactions électroniques"],"answer":1,"explanation":"ANSSI = Agence Nationale de la Sécurité des Systèmes d'Information."}
+    ]
+  },
+  "Fiche_Lecon2_DONNEES_PERSONNELLES": {
+    "title": "Protection des données personnelles",
+    "questions": [
+      {"id":"q1","text":"Une donnée à caractère personnel est :","type":"qcm","options":["Toute information","Une information permettant d'identifier directement ou indirectement une personne","Uniquement le nom","Un secret d'État"],"answer":1,"explanation":"Permet l'identification directe ou indirective — nom, téléphone, localisation, biométrie…"},
+      {"id":"q2","text":"Le traitement des données inclut :","type":"qcm","options":["Uniquement la collecte","Collecte, conservation, utilisation, transmission, diffusion, effacement…","Seulement le stockage","La vente"],"answer":1,"explanation":"Traitement = toute opération ou ensemble d'opérations sur données personnelles."},
+      {"id":"q3","text":"Le principe de proportionnalité exige :","type":"qcm","options":["De tout collecter","De ne collecter que les données nécessaires à la finalité","De tout détruire","De tout publier"],"answer":1,"explanation":"Proportionnalité = données limitées au nécessaire."},
+      {"id":"q4","text":"Le droit à l'opposition permet :","type":"qcm","options":["D'accéder à ses données","De s'opposer à un traitement dans les conditions prévues par la loi","De tout effacer","De modifier la loi"],"answer":1,"explanation":"Droits : information, accès, rectification, opposition, suppression, ne pas être soumis à des décisions automatisées."}
+    ]
+  },
+  "Fiche_Lecon3_CONTRATS_ET_CYBERCRIMINALITE": {
+    "title": "Contrats et cybercriminalité",
+    "questions": [
+      {"id":"q1","text":"La loi n° 2013-451 du 19 juin 2013 réprime :","type":"qcm","options":["Les données personnelles","La cybercriminalité","Les transactions électroniques","Le droit d'auteur"],"answer":1,"explanation":"2013-451 = cybercriminalité ; 2013-450 = données personnelles."},
+      {"id":"q2","text":"L'accès frauduleux à un système d'information (art. 4) est puni de :","type":"qcm","options":["6 mois et 1M FCFA","1 à 2 ans de prison et 5 à 10 millions FCFA","10 ans de prison","Une simple amende"],"answer":1,"explanation":"Art. 4 : 1-2 ans + 5-10 M FCFA pour accès/tentative d'accès frauduleux."},
+      {"id":"q3","text":"La différence entre cyberattaque et infraction classique via TIC :","type":"qcm","options":["Aucune","La cyberattaque vise le système lui-même ; l'infraction classique utilise le numérique comme outil","La cyberattaque est civile","L'infraction classique est plus grave"],"answer":1,"explanation":"Ex. piratage = cyberattaque ; escroquerie en ligne = infraction patrimoniale via TIC."},
+      {"id":"q4","text":"Une menace cyber et une infraction sont :","type":"qcm","options":["Identiques","Distinctes : la menace est un risque potentiel, l'infraction est un fait qualifié par la loi","La menace est plus grave","L'infraction est un risque"],"answer":1,"explanation":"Ne pas confondre menace (potentielle) et infraction (matérialisée et qualifiée)."}
+    ]
+  }
+}

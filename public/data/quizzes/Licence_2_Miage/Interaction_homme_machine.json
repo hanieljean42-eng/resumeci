@@ -1,0 +1,38 @@
+{
+  "Fiche_Lecon1_INTRODUCTION_AUX_IHM": {
+    "title": "Introduction aux IHM",
+    "questions": [
+      {"id":"q1","text":"Une IHM (Interface Homme-Machine) est :","type":"qcm","options":["Uniquement un écran","L'ensemble des dispositifs matériels et logiciels permettant de contrôler et communiquer avec une machine","Un langage de programmation","Un type de souris"],"answer":1,"explanation":"IHM = dispositifs matériels + logiciels de contrôle et de communication homme-machine."},
+      {"id":"q2","text":"Le concepteur (designer) dans l'IHM est le participant qui :","type":"qcm","options":["Utilise l'interface","Anticipe les choix de l'utilisateur et les code dans un programme","Construit le matériel","Vend le logiciel"],"answer":1,"explanation":"Le concepteur imagine l'interface et code les comportements dans le programme."},
+      {"id":"q3","text":"L'IHM représente en moyenne :","type":"qcm","options":["10 % du code logiciel","48 % du code des logiciels interactifs et 80 % du code web","90 % du code","5 % du temps de développement"],"answer":1,"explanation":"~48 % des logiciels interactifs, ~80 % du code web, 50-90 % du temps de dev."},
+      {"id":"q4","text":"Ivan Sutherland est associé à :","type":"qcm","options":["La première souris","SketchPad (1962), début de l'interaction homme-machine","Le Macintosh","Le Web"],"answer":1,"explanation":"Sutherland = SketchPad 1962 ; la souris = Doug Engelbart 1968."}
+    ]
+  },
+  "Fiche_Lecon2_INTERFACES_GRAPHIQUES": {
+    "title": "Interfaces graphiques",
+    "questions": [
+      {"id":"q1","text":"WIMP signifie :","type":"qcm","options":["Windows, Icons, Menus, Pointers","Write, Insert, Move, Print","Windows, Internet, Mail, Programs","Web, Image, Music, Page"],"answer":0,"explanation":"Acronyme des IG : Windows, Icons, Menus, Pointers (ou rubans)."},
+      {"id":"q2","text":"Une fenêtre modale :","type":"qcm","options":["Peut être déplacée librement","Doit être fermée avant de revenir à la fenêtre principale","Est toujours visible","Est une palette d'outils"],"answer":1,"explanation":"Modale = bloquante ; flottante = palette/barre d'outils."},
+      {"id":"q3","text":"Le multifenêtrage AVEC superposition est :","type":"qcm","options":["Recommandé","À éviter (informations masquées)","La norme","Identique à la mosaïque"],"answer":1,"explanation":"Le cours recommande la mosaïque (MDI) plutôt que la superposition."},
+      {"id":"q4","text":"Swing et SWT sont des boîtes à outils pour :","type":"qcm","options":["Python","Java","C++","PHP"],"answer":1,"explanation":"Swing et SWT sont les toolkits GUI de Java."}
+    ]
+  },
+  "Fiche_Lecon3_STYLES_INTERACTION_1": {
+    "title": "Styles d'interaction 1",
+    "questions": [
+      {"id":"q1","text":"Le langage de commandes est adapté aux :","type":"qcm","options":["Novices","Experts","Enfants","Débutants"],"answer":1,"explanation":"Langage de commandes = accès direct pour experts ; inutilisable par les novices."},
+      {"id":"q2","text":"La différence entre formulaire et requête :","type":"qcm","options":["Aucune","Le formulaire saisit des informations, la requête interroge le système","Le formulaire est visuel, la requête est texte","Le formulaire est pour les bases de données uniquement"],"answer":1,"explanation":"Formulaire = questions/réponses ; requête = interrogation via langage (ex. SQL)."},
+      {"id":"q3","text":"L'avantage de la reconnaissance vocale (langage naturel) est :","type":"qcm","options":["Toujours plus rapide","Adaptée aux handicapés et environnements où le clavier est impossible","Gratuite","Sans ambiguïté"],"answer":1,"explanation":"Sécurité (conduite) + accessibilité handicap ; limites : ambiguïtés du langage naturel."},
+      {"id":"q4","text":"« Remplacer » et « copier » diffèrent par :","type":"qcm","options":["Rien","L'ordre commande/arguments : remplacer = commande d'abord, copier = arguments d'abord","La longueur du mot","Le nombre de paramètres"],"answer":1,"explanation":"Dans un menu, l'ordre commande↔arguments peut varier selon la commande."}
+    ]
+  },
+  "Fiche_Lecon4_STYLES_INTERACTION_2": {
+    "title": "Styles d'interaction 2",
+    "questions": [
+      {"id":"q1","text":"La manipulation directe a été introduite par :","type":"qcm","options":["Nielsen","Ben Schneiderman (1982)","Sutherland","Engelbart"],"answer":1,"explanation":"Schneiderman, 1982 : représentation permanente des objets + principe objet/action."},
+      {"id":"q2","text":"Avantage de la manipulation directe :","type":"qcm","options":["Toujours plus rapide","Opérations rapides et réversibles, effet visible immédiat","Moins d'encombrement","Idéale pour les experts en tâches répétitives"],"answer":1,"explanation":"Avantages : rapidité, réversibilité ; inconvénients : encombrement, ambiguïté des icônes, moins rapide pour experts."},
+      {"id":"q3","text":"L'interaction multimodale combine :","type":"qcm","options":["Uniquement la voix","Plusieurs modalités : parlé, écrit, gestuel, visuel","Un seul canal","Seulement le tactile"],"answer":1,"explanation":"Multimodal = plusieurs canaux sensorimoteurs simultanés (paradigme « put that there » de Bolt 1963)."},
+      {"id":"q4","text":"L'interface cerveau-machine (ICM) vise à :","type":"qcm","options":["Améliorer les jeux vidéo","Rendre leur autonomie à des personnes handicapées ou paralysées","Remplacer le clavier","Contrôler des drones"],"answer":1,"explanation":"ICM : prothèses, parole/écriture après paralysie, fauteuils roulants."}
+    ]
+  }
+}

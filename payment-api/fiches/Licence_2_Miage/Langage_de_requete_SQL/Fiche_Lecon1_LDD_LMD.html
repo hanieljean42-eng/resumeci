@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — LDD LMD — Langage_de_requete_SQL Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — SQL : LDD, LMD et manipulation des données — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQL "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html"><meta property="og:title" content="Leçon 1 — LDD LMD — Langage_de_requete_SQL Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — SQL : LDD, LMD et manipulation des données — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQL "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — LDD LMD — Langage_de_requete_SQL Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — SQL : LDD, LMD et manipulation des données — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQL "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Langage_de_requete_SQL","item":"https://resumeci.me/#Licence_2_Miage/Langage_de_requete_SQL"},{"@type":"ListItem","position":4,"name":"Leçon 1 — LDD LMD","item":"https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — LDD LMD — Langage_de_requete_SQL Licence 2_Miage | ResumeCI","description":"Leçon 1 — SQL : LDD, LMD et manipulation des données — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQL ","url":"https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon1_LDD_LMD.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Langage_de_requete_SQL","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage de requête SQL</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : LDD et LMD</span>
+  </div>
+</div>
+
+<h2>I. Les sous-langages SQL</h2>
+<table>
+  <tr><th>Sous-langage</th><th>Rôle</th><th>Commandes</th></tr>
+  <tr><td><strong>LDD (DDL)</strong></td><td>Définir la <strong>structure</strong> : tables, contraintes, index, vues</td><td><code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code></td></tr>
+  <tr><td><strong>LMD (DML)</strong></td><td><strong>Manipuler</strong> les données (lignes)</td><td><code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>MERGE</code></td></tr>
+  <tr><td><strong>LID (DQL)</strong></td><td><strong>Interroger</strong> les données (sans les modifier)</td><td><code>SELECT</code></td></tr>
+</table>
+
+<h2>II. CREATE TABLE et contraintes</h2>
+<pre>CREATE TABLE filiere (
+  id      INT PRIMARY KEY,
+  libelle VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE inscription (
+  etudiant_id INT NOT NULL,
+  cours_id    INT NOT NULL,
+  note        DECIMAL(4,2),
+  PRIMARY KEY (etudiant_id, cours_id),
+  FOREIGN KEY (etudiant_id) REFERENCES etudiant(id) ON DELETE CASCADE,
+  FOREIGN KEY (cours_id)    REFERENCES cours(id)
+);</pre>
+<ul>
+  <li><code>PRIMARY KEY</code> : identifie de façon unique chaque ligne ;</li>
+  <li><code>FOREIGN KEY ... REFERENCES</code> : lie à une clé primaire d'une autre table ;</li>
+  <li><code>ON DELETE</code> : <code>CASCADE</code> (supprime les lignes dépendantes), <code>SET NULL</code> (met la FK à NULL), <code>RESTRICT</code>/<code>NO ACTION</code> (refuse la suppression) ;</li>
+  <li><code>NOT NULL</code>, <code>UNIQUE</code>, <code>DEFAULT</code>, <code>CHECK</code> : autres contraintes.</li>
+</ul>
+<p>Variante : <code>CREATE TABLE nouvelle AS SELECT ...</code> (copie structure + données).</p>
+
+<h2>III. INSERT / UPDATE / DELETE</h2>
+<pre>-- Insertion
+INSERT INTO etudiant (id, nom, prenom, date_naissance, email, filiere_id)
+VALUES (1, 'KOUASSI', 'Jean', DATE '2004-03-15', 'j@ex.ci', 1);
+
+INSERT INTO inscription (etudiant_id, cours_id)
+SELECT id, 10 FROM etudiant WHERE filiere_id = 1;   -- insertion depuis un SELECT
+
+-- Modification : SANS WHERE → TOUTES les lignes !
+UPDATE inscription SET note = 18 WHERE cours_id = 10 AND note &lt; 19;
+
+-- Suppression
+DELETE FROM inscription WHERE note IS NULL;</pre>
+<div class="important"><strong>Règle d'or :</strong> un <code>UPDATE</code> ou <code>DELETE</code> <strong>sans clause WHERE modifie/supprime toutes les lignes</strong> de la table.</div>
+
+<h2>IV. MERGE (upsert)</h2>
+<div class="definition"><strong>Upsert :</strong> « insert or update » — insère une ligne ou la met à jour si la clé existe déjà. Syntaxe très différente selon le SGBD :</div>
+<pre>MERGE INTO inscription i
+USING (SELECT 101 AS etudiant_id, 10 AS cours_id, 15.5 AS note FROM dual) s
+ON (i.etudiant_id = s.etudiant_id AND i.cours_id = s.cours_id)
+WHEN MATCHED     THEN UPDATE SET i.note = s.note
+WHEN NOT MATCHED THEN INSERT (etudiant_id, cours_id, note)
+                   VALUES (s.etudiant_id, s.cours_id, s.note);</pre>
+<ul>
+  <li><strong>MySQL :</strong> <code>INSERT ... ON DUPLICATE KEY UPDATE</code> ;</li>
+  <li><strong>PostgreSQL :</strong> <code>INSERT ... ON CONFLICT (...) DO UPDATE SET ... = EXCLUDED....</code> ;</li>
+  <li><strong>Oracle :</strong> <code>MERGE INTO ... USING ... ON ...</code>.</li>
+</ul>
+
+<h2>V. Multi-SGBD : points de vigilance</h2>
+<ul>
+  <li>Oracle : pas de <code>IF NOT EXISTS</code> (avant 23ai), <code>FROM dual</code> requis pour SELECT sans table, pas de <code>ON UPDATE</code> dans les FK ;</li>
+  <li>MySQL/PostgreSQL : <code>CREATE DATABASE/SCHEMA</code>, autocommit par défaut ;</li>
+  <li>Littéraux de date : ISO <code>'2004-03-15'</code> ou Oracle <code>DATE '2004-03-15'</code> / <code>TO_DATE(...)</code>.</li>
+</ul>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>LDD</strong> (structure) et <strong>LMD</strong> (données) : CREATE = LDD, INSERT/UPDATE/DELETE = LMD, SELECT = LID.</li>
+    <li>Oublier le <strong>WHERE</strong> sur UPDATE/DELETE → mise à jour/suppression globale.</li>
+    <li>Mettre une FK vers une colonne non unique ou non PK → violation de contrainte.</li>
+    <li>Confondre <code>ON DELETE CASCADE</code> (supprime tout) et <code>SET NULL</code> (annule le lien).</li>
+    <li>Utiliser la syntaxe upsert d'un SGBD sur un autre (ON DUPLICATE KEY = MySQL, ON CONFLICT = PostgreSQL, MERGE = Oracle).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-DROIT-01",
+  "type": "partiel",
+  "matiere": "Introduction au droit des TIC",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Données personnelles, cybercriminalité, qualification",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Citer les lois par numéro/année et les articles quand c'est demandé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Cadre légal des TIC (6 pts)",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Définir les TIC.</li><li>Citer 3 lois ivoiriennes relatives aux TIC avec leur objet.</li><li>Rôle de l'ARTCI et de l'ANSSI (1 phrase chacun).</li></ol>",
+      "correction": "<p><strong>a)</strong> TIC = technologies de production, traitement et échange d'informations numériques.</p><p><strong>b)</strong> Ex. : loi 2013-450 (données personnelles) ; loi 2013-451 (cybercriminalité) ; loi 2013-546 (transactions électroniques).</p><p><strong>c)</strong> ARTCI = régulation du secteur + protection des utilisateurs ; ANSSI = sécurité des systèmes d'information et lutte contre la cybercriminalité.</p>",
+      "bareme_detail": "a) 1 pt · b) 2 pts · c) 3 pts"
+    },
+    {
+      "titre": "Exercice 2 — Données personnelles (7 pts)",
+      "points": "7 pts",
+      "enonce": "Une banque lance une appli qui collecte : identité, numéro de compte, empreinte digitale, localisation GPS et historique d'achats, sans consentement explicite.<ol type='a'><li>Quelles données sont « à caractère personnel » ?</li><li>Quels principes de la loi 2013-450 sont violés ? (3 minimum)</li><li>Quels droits la personne dispose-t-elle ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Toutes : identité et compte (directe), empreinte (biométrie), GPS (indirecte), historique (profilage) — toute info permettant une identification directe/indirecte.</p><p><strong>b)</strong> Violations : <strong>finalité</strong> (usage non déclaré), <strong>consentement</strong> (aucun explicite), <strong>proportionnalité</strong> (GPS permanent non nécessaire), <strong>transparence</strong> (pas d'information préalable).</p><p><strong>c)</strong> Information, accès, rectification, opposition, suppression, ne pas être soumis à des décisions automatisées.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Qualification (7 pts)",
+      "points": "7 pts",
+      "enonce": "Cas : un hacker pirate le site d'une ONG et chiffre ses données ; un autre arnaque des clients par faux e-mails de la banque.<ol type='a'><li>Qualifier chaque fait : cyberattaque ou infraction via TIC ? Justifier.</li><li>Peine encourue pour l'accès frauduleux (art. 4 loi 2013-451) ?</li><li>La « menace » et l'« infraction » : différence ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Piratage = <strong>cyberattaque</strong> (cible = le système lui-même). Arnaque = <strong>infraction patrimoniale via TIC</strong> (le numérique est l'outil, la victime est la cible).</p><p><strong>b)</strong> <span class='reponse'>1 à 2 ans de prison et 5 à 10 millions FCFA</span> (accès ou tentative d'accès frauduleux).</p><p><strong>c)</strong> Menace = risque potentiel non matérialisé ; infraction = fait réel qualifié par la loi.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

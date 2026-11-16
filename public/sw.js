@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v127';
+const CACHE_SHELL = 'resumeci-shell-v129';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -22,7 +22,7 @@ const SHELL_FILES = [
   '/univ.css?v=2.3.0',
   '/intro.css?v=1.1.0',
   '/enhancements.css?v=3.4.0',
-  '/enhancements.js?v=3.3.9',
+  '/enhancements.js?v=3.3.10',
   '/firebase-config.js?v=3.3.5',
   '/content-protection.js?v=3.3.5',
   '/quiz.css?v=3.4.0',
@@ -30,7 +30,7 @@ const SHELL_FILES = [
   '/vendor/ts-fsrs.min.js',
   '/flashcards.js?v=3.5.0',
   '/app-modals.css?v=1.0.0',
-  '/app.js?v=3.6.28'
+  '/app.js?v=3.6.29'
 ];
 
 // Install: cache shell files and skip waiting immediately
@@ -65,6 +65,10 @@ self.addEventListener('fetch', e => {
     e.respondWith(fetch(e.request, { cache: 'no-store' }));
     return;
   }
+
+  // Ne jamais intercepter les téléchargements (APK, gros fichiers) :
+  // laisser le navigateur gérer le téléchargement sans passer par le cache.
+  if (/\.(apk|zip|pdf)$/i.test(url.pathname)) return;
 
   // Fiches: stale-while-revalidate (serve cached fast, but always update in background)
   if (url.pathname.startsWith('/fiches/')) {

@@ -24,7 +24,7 @@ const subjectIcons = {
   'Education Physique': '🏃',
   EPS: '🏃',
 };
-const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
+const CLASS_ORDER = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA', 'Licence_2_Miage'];
 function getOrderedClasses(structure) {
   const entries = [];
   const seen = new Set();
@@ -59,7 +59,18 @@ const UNI_SUBJECT_ICONS = {
   Analyse_Macroeconomique: '🏦', Algebre_Vectoriel_et_Lineaire: '🧮',
   Modelisation_et_Optimisation: '⚙️', Mathematiques_Financieres: '💹', Statistiques: '📊',
   Presentation_de_l_Information_Comptable: '📋',
-  Utilisation_de_l_Information_Comptable: '🧾'
+  Utilisation_de_l_Information_Comptable: '🧾',
+  Algorithme_des_graphes: '🕸️', Algorithme_avancee: '🧩', Base_de_donnees_MS_SQL_Server: '🗄️',
+  Comptabilite_et_systeme_d_information_comptable: '🧾', Gestion_de_la_production: '🏭',
+  HTML5_CSS3_et_Bootstrap: '🎨', Interaction_homme_machine: '🖱️',
+  Introduction_a_la_programmation_XML: '📄', Introduction_au_droit_des_TIC: '⚖️',
+  JavaScript_et_jQuery: '🟨', Langage_Java: '☕', Langage_de_requete_SQL: '🗃️',
+  Programmation_lineaire: '📐', Theorie_des_bases_de_donnees: '🗄️',
+  Anglais_Technique: '✈️', Environnement_juridique: '⚖️', Framework_Laravel: '🟠',
+  Initiation_aux_methodes_agiles: '🏃', Logique_et_systemes_experts: '🧠',
+  Organisation_de_l_entreprise: '🏢', PHP: '🐘', Programmation_logique: '🔣',
+  Reseau_Ethernet_et_802_11: '🔌', Reseaux_locaux_virtuels_VLAN: '🕸️',
+  Theorie_de_la_programmation_orientee_objet: '🧬'
 };
 function getIcon(n) {
   if (UNI_SUBJECT_ICONS[n]) return UNI_SUBJECT_ICONS[n];
@@ -6414,7 +6425,7 @@ document.addEventListener('click', (e) => {
     : 'http://127.0.0.1:3000');
   const DEV_CLASSES = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C',
     'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D',
-    'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
+    'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA', 'Licence_2_Miage'];
   const DEV_PLANS = ['keep', 'free', 'starter', 'pro', 'vip', 'annual', 'elite',
     'uni_starter', 'uni_pro', 'uni_elite'];
 

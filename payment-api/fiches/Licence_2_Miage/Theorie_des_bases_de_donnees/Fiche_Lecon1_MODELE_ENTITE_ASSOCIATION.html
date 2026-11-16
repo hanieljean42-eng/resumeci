@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — MODELE ENTITE ASSOCIATION — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Bases de données et modèle Entité-Association — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des ba"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html"><meta property="og:title" content="Leçon 1 — MODELE ENTITE ASSOCIATION — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Bases de données et modèle Entité-Association — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des ba"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — MODELE ENTITE ASSOCIATION — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Bases de données et modèle Entité-Association — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des ba"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Theorie_des_bases_de_donnees","item":"https://resumeci.me/#Licence_2_Miage/Theorie_des_bases_de_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 1 — MODELE ENTITE ASSOCIATION","item":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — MODELE ENTITE ASSOCIATION — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI","description":"Leçon 1 — Bases de données et modèle Entité-Association — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des ba","url":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon1_MODELE_ENTITE_ASSOCIATION.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Theorie_des_bases_de_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Théorie des bases de données</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : Modèle Entité-Association</span>
+  </div>
+</div>
+
+<h2>I. Notions de base</h2>
+<ul>
+  <li><strong>Base de données :</strong> ensemble organisé d'informations structurées, stockées et accessibles ;</li>
+  <li><strong>SGBD (Système de Gestion de Bases de Données) :</strong> logiciel gérant le stockage, l'accès et la manipulation des données — exemples : MySQL, Microsoft Access / SQL Server, PostgreSQL ;</li>
+  <li><strong>Modèle relationnel :</strong> les données sont organisées sous forme de <strong>relations/tableaux</strong> pouvant être liés entre eux ; une relation = <strong>en-tête + corps</strong>.</li>
+</ul>
+
+<h2>II. Le modèle Entité-Association (E/A)</h2>
+<p>La <strong>conception</strong> d'une BD suit 2 étapes : (1) construire un <strong>schéma conceptuel</strong> modélisé en entités et associations ; (2) transformer ce schéma E/A en <strong>schéma relationnel</strong> (MLR).</p>
+<h3>Entités</h3>
+<ul>
+  <li><strong>Choses (objets)</strong> — regroupement des choses de même nature : <strong>classes d'entités</strong> et <strong>classes d'association</strong> ;</li>
+  <li><strong>Propriété d'une entité</strong> = attribut ;</li>
+  <li><strong>Identifiant :</strong> propriété qui <strong>identifie de façon unique</strong> chaque occurrence d'entité (ex. CIN pour Personne, IdAuteur pour Auteur — le nom seul ne suffit pas : homonymes possibles).</li>
+</ul>
+<h3>Associations</h3>
+<ul>
+  <li><strong>Lien entre deux ou plusieurs entités</strong> ;</li>
+  <li><strong>Degré K</strong> = nombre d'entités participantes : K=1 → <strong>unaire/récursive</strong> (ex. « être parent »), K=2 → <strong>binaire</strong>, K=3 → <strong>ternaire</strong> ;</li>
+  <li>Exemple : <code>1,1 Livre — 1,n Édite — 1,n Éditeur</code>, <code>Auteur 1,n Écrit 1,1 Livre</code>.</li>
+</ul>
+
+<h2>III. Les cardinalités</h2>
+<div class="definition">La cardinalité <strong>mesure le degré de participation</strong> d'une entité à une association — lue <strong>dans le sens de lecture</strong> du diagramme.</div>
+<table>
+  <tr><th>Cardinalité</th><th>Signification</th></tr>
+  <tr><td><strong>0,1</strong></td><td>Au moins zéro, au plus 1</td></tr>
+  <tr><td><strong>0,n</strong></td><td>Au moins zéro, au plus n</td></tr>
+  <tr><td><strong>1,1</strong></td><td>Au moins 1, au plus 1 (obligatoire et unique)</td></tr>
+  <tr><td><strong>1,n</strong></td><td>Au moins 1, au plus n (obligatoire, plusieurs possibles)</td></tr>
+</table>
+<ul>
+  <li><strong>Cardinalités minimales :</strong> 0 et 1 ; <strong>maximales :</strong> 1 et n ;</li>
+  <li><em>Exemple lu :</em> « Un client achète un ou plusieurs produits » → côté Client : 1,n ; « un produit est acheté par aucun ou plusieurs clients » → côté Produit : 0,n.</li>
+</ul>
+
+<h2>IV. Exemple type</h2>
+<pre>Personne (Id_Personne, Nom, Prénom)
+   │ 0,n  Possède  0,1
+   ▼                    ▼
+Voiture (Num_Série, Marque, Carburant)
+   ▲
+Fabricant (Id_Fabricant) — 1,n Fabrique 1,1 Voiture</pre>
+<p><em>Ex-2 du cours :</em> « Un auteur peut-il écrire plusieurs livres ? » Oui — la cardinalité 1,n côté Auteur le permet. « Des auteurs homonymes ? » Oui, car le nom n'est pas identifiant — seul IdAuteur l'est.</p>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>entité</strong> (classe d'objets) et <strong>attribut</strong> (propriété) et <strong>identifiant</strong> (clé unique).</li>
+    <li>Lire une cardinalité <strong>dans le mauvais sens</strong> : elle se lit du côté de l'entité participante vers l'association.</li>
+    <li>Confondre cardinalité <strong>minimale</strong> (0 ou 1 = optionnel/obligatoire) et <strong>maximale</strong> (1 ou n = unique/multiple).</li>
+    <li>Utiliser le nom comme identifiant → les homonymes le rendent insuffisant.</li>
+    <li>Oublier que la conception suit <strong>E/A → MLR</strong> : d'abord le schéma conceptuel, puis la traduction relationnelle.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

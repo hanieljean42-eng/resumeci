@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — XML DOCUMENT BIEN FORME — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — XML : historique et document bien formé — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Introduction "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html"><meta property="og:title" content="Leçon 1 — XML DOCUMENT BIEN FORME — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — XML : historique et document bien formé — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Introduction "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — XML DOCUMENT BIEN FORME — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — XML : historique et document bien formé — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Introduction "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Introduction_a_la_programmation_XML","item":"https://resumeci.me/#Licence_2_Miage/Introduction_a_la_programmation_XML"},{"@type":"ListItem","position":4,"name":"Leçon 1 — XML DOCUMENT BIEN FORME","item":"https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — XML DOCUMENT BIEN FORME — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI","description":"Leçon 1 — XML : historique et document bien formé — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Introduction ","url":"https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon1_XML_DOCUMENT_BIEN_FORME.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Introduction_a_la_programmation_XML","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Introduction à la programmation XML</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : XML et document bien formé</span>
+  </div>
+</div>
+
+<h2>I. Historique : de SGML à XML</h2>
+<table>
+  <tr><th>Étape</th><th>Contenu</th></tr>
+  <tr><td>HTML / HTTP</td><td>À l'origine, un document HTML mêlait <strong>à parts égales données et présentation</strong> — la présentation a fini par dominer</td></tr>
+  <tr><td><strong>EDIFACT</strong></td><td>Norme d'échange de données informatisées (EDI) pour l'administration, le commerce et le transport, sous l'égide de l'ONU (fin années 1980)</td></tr>
+  <tr><td><strong>SGML</strong> (ISO 8879)</td><td>Standard Generalized Markup Language — utilisé en gestion documentaire ; <strong>trop complexe</strong></td></tr>
+  <tr><td><strong>1996</strong></td><td>Le <strong>W3C</strong> + industriels simplifient SGML</td></tr>
+  <tr><td><strong>XML 1.0</strong></td><td>Publié en <strong>février 1998</strong> (XML 1.1 en 2004). Méta-langage à balises pour décrire et échanger des données structurées</td></tr>
+</table>
+<div class="definition"><strong>Principes hérités de SGML :</strong> séparation présentation/données, structuration des données, description des structures par <strong>schémas (DTD)</strong>.</div>
+
+<h2>II. XML vs HTML et JSON</h2>
+<ul>
+  <li><strong>XML ≠ HTML :</strong> XML ne possède <strong>pas de balises prédéfinies</strong>, c'est un langage à balises <strong>extensible</strong> ; il décrit la <strong>structure logique</strong> des données sous forme d'<strong>arbre hiérarchique</strong>.</li>
+  <li><strong>XML vs JSON :</strong> JSON est un format de données <strong>simple et léger</strong> ; XML est <strong>plus robuste, flexible et strict</strong> (validation par DTD/XSD, namespaces, typage).</li>
+  <li>XML <strong>différencie structure, contenu et présentation</strong> (cette dernière via XSL/XSLT).</li>
+</ul>
+
+<h2>III. Champs d'application</h2>
+<p>Échanges de données inter-entreprises (EDI), configuration d'applications, <strong>multimédia (MPEG-7)</strong>, intégration d'applications d'entreprise (EAI, adaptateurs XML), bases de données (Oracle utilise XML pour décrire ses schémas), dialogue client/serveur HTTP.</p>
+
+<h2>IV. Structure d'un document XML</h2>
+<table>
+  <tr><th>Partie</th><th>Description</th></tr>
+  <tr><td><strong>Prologue</strong></td><td>En-tête optionnel : déclaration XML + déclaration DOCTYPE</td></tr>
+  <tr><td><strong>Corps</strong></td><td>Un <strong>élément racine</strong> unique contenant des sous-éléments imbriqués (arbre)</td></tr>
+  <tr><td><strong>Commentaires</strong></td><td><code>&lt;!-- ... --&gt;</code> — ignorés par l'analyseur</td></tr>
+</table>
+<h3>Déclaration XML (prologue)</h3>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</pre>
+<ul>
+  <li><code>version</code> : par défaut "1.0" ;</li>
+  <li><code>encoding</code> : jeu de caractères accepté dans le document ;</li>
+  <li><code>standalone="yes"</code> : document <strong>autonome</strong> (aucune DTD externe) ; <code>"no"</code> : référence une DTD externe via DOCTYPE.</li>
+</ul>
+<pre>&lt;!DOCTYPE racine SYSTEM "fichier.dtd" [ ...déclarations internes... ]&gt;</pre>
+
+<h2>V. Règles d'un document bien formé</h2>
+<div class="important"><strong>6 types de balisage :</strong> balises (ouvrantes/fermantes/vides), références d'entités, commentaires, sections <strong>CDATA</strong>, prologue + DOCTYPE, instructions de traitement.</div>
+<ul>
+  <li>Au moins <strong>1 élément</strong>, jamais vide ;</li>
+  <li><strong>Un seul élément racine</strong> (point de départ unique) ;</li>
+  <li><strong>Imbrication correcte</strong> : aucun chevauchement — un élément ne se ferme que si tous ses sous-éléments sont fermés ;</li>
+  <li>Références d'entités elles-mêmes bien formées ;</li>
+  <li>Données : pas de <code>&amp;</code>, <code>&gt;</code>, <code>^</code> bruts — utiliser les entités (<code>&amp;amp;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;#201;</code> pour É…) ;</li>
+  <li><strong>Sensible à la casse</strong> : nom d'élément identique dans balise ouvrante et fermante.</li>
+</ul>
+
+<h2>VI. Analyseur XML (parseur)</h2>
+<p>L'analyseur <strong>lit le document, vérifie qu'il est bien formé</strong> et le convertit en <strong>structure arborescente</strong> ; les entités sont remplacées par leur contenu. Le résultat est transmis à une application (navigateur, programme…).</p>
+
+<h2>VII. ⚠️ Bien formé ≠ valide</h2>
+<div class="important" style="border-left: 4px solid #f59e0b; background: #fffbeb;">
+  <strong>Bien formé :</strong> syntaxiquement correct (règles ci-dessus).<br>
+  <strong>Valide :</strong> document bien formé <strong>ET</strong> conforme aux contraintes du <strong>document type (DTD ou XSD)</strong>.
+</div>
+
+<h2>VIII. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Dire « XML = HTML » ou « XML a des balises prédéfinies » → faux : XML est <strong>extensible</strong>, sans balises prédéfinies.</li>
+    <li>Confondre <strong>bien formé</strong> et <strong>valide</strong> : valide ⇒ bien formé, mais pas l'inverse.</li>
+    <li>Oublier la <strong>sensibilité à la casse</strong> ou l'imbrication stricte (pas de chevauchement).</li>
+    <li>Croire que XML est « ancien » : XML 1.0 date de <strong>1998</strong> ; SGML = ISO 8879.</li>
+    <li>Écrire <code>&amp;</code> brut dans une donnée → doit être échappé <code>&amp;amp;</code>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

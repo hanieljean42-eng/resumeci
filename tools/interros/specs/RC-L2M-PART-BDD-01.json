@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-BDD-01",
+  "type": "partiel",
+  "matiere": "Théorie des bases de données",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "E-A, normalisation, MRD, algèbre relationnelle",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Modélisation : entités, identifiants, cardinalités ; algèbre : opérateurs corrects.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Modélisation E-A (6 pts)",
+      "points": "6 pts",
+      "enonce": "Une université gère des <strong>étudiants</strong> (matricule, nom) et des <strong>cours</strong> (code, intitulé, crédits). Un étudiant suit plusieurs cours ; un cours a plusieurs étudiants. Chaque inscription a une <strong>note</strong> et un <strong>semestre</strong>.<ol type='a'><li>Entités, identifiants, association.</li><li>Cardinalités et attributs de l'association.</li><li>Degré de l'association ?</li></ol>",
+      "correction": "<p><strong>a)</strong> ETUDIANT (id: matricule), COURS (id: code). Association INSCRIPTION.</p><p><strong>b)</strong> ETUDIANT (0,n) — INSCRIPTION — (0,n) COURS ; attributs : note, semestre.</p><p><strong>c)</strong> Degré 2 (binaire, entre 2 entités). N:N → table de jointure en MRD.</p>",
+      "bareme_detail": "a) 2 pts · b) 3 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Normalisation (7 pts)",
+      "points": "7 pts",
+      "enonce": "Relation INSCRIT(Matricule, Nom, Filiere, Cours, Credit, Note) — clé = (Matricule, Cours).<ol type='a'><li>Cette relation respecte-t-elle la 3FN ? Identifier les dépendances.</li><li>La décomposer en relations 3FN.</li><li>Qu'est-ce qu'une dépendance transitive ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Non</strong> — violations : Nom, Filiere dépendent de Matricule (pas de la clé complète) ; Credit dépend de Cours. Dépendances partielles et transitives.</p><p><strong>b)</strong> ETUDIANT(Matricule, Nom, Filiere) ; COURS(Cours, Credit) ; INSCRIPTION(Matricule, Cours, Note) — clé composée (Matricule, Cours).</p><p><strong>c)</strong> A dépend de B qui dépend de la clé : ex. Filiere dépend de Matricule, pas directement de la clé composée → transitivité à éliminer.</p>",
+      "bareme_detail": "a) 3 pts · b) 3 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Algèbre relationnelle (7 pts)",
+      "points": "7 pts",
+      "enonce": "Relations : ETUDIANT(Nom, Filiere), INSCRIPTION(Nom, Cours, Note).<ol type='a'><li>Exprimer : étudiants de filière MIAGE.</li><li>Exprimer : inscrits au cours SQL avec note &gt; 10.</li><li>Exprimer : étudiants inscrits à TOUS les cours (division).</li><li>Distinguer sélection et projection.</li></ol>",
+      "correction": "<p><strong>a)</strong> σ<sub>Filiere='MIAGE'</sub>(ETUDIANT)</p><p><strong>b)</strong> σ<sub>Cours='SQL' ∧ Note&gt;10</sub>(INSCRIPTION) — jointure avec ETUDIANT si le nom est demandé.</p><p><strong>c)</strong> INSCRIPTION ÷ π<sub>Cours</sub>(COURS) — quantification universelle.</p><p><strong>d)</strong> Sélection (σ) filtre les <strong>lignes</strong> ; projection (π) conserve certaines <strong>colonnes</strong>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 2 pts · d) 1,5 pt"
+    }
+  ]
+}

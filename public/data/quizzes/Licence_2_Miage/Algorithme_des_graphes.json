@@ -1,0 +1,52 @@
+{
+  "Fiche_Lecon1_NOTIONS_DE_BASE": {
+    "title": "Notions de base des graphes",
+    "questions": [
+      {"id":"q1","text":"Un graphe est :","type":"qcm","options":["Un ensemble ordonné de nœuds","Un couple (Sommets, Arêtes) reliant des sommets entre eux","Une liste chaînée de valeurs","Une arborescence binaire"],"answer":1,"explanation":"Graphe G=(S,A) : S = ensemble des sommets, A = ensemble des arêtes reliant des paires de sommets."},
+      {"id":"q2","text":"Un graphe est dit NON orienté lorsque :","type":"qcm","options":["Chaque arête a un sens","Les arêtes relient deux sommets sans direction","Il contient des cycles","Il possède un sommet isolé"],"answer":1,"explanation":"Non orienté = arêtes sans sens ; orienté = arêtes avec sens (flèches)."},
+      {"id":"q3","text":"Le degré d'un sommet est :","type":"qcm","options":["Le nombre de sommets du graphe","Le nombre d'arêtes incidentes à ce sommet","Le nombre de ses voisins les plus proches","Le poids de ses arêtes"],"answer":1,"explanation":"Degré = nombre d'arêtes qui aboutissent au sommet (dans un graphe orienté, on distingue degré entrant et sortant)."},
+      {"id":"q4","text":"Un graphe est dit complet lorsque :","type":"qcm","options":["Il contient au moins un cycle","Chaque paire de sommets est reliée par une arête","Il n'a aucun cycle","Tous ses sommets ont le même degré"],"answer":1,"explanation":"Complet = tout sommet est adjacent à tous les autres."},
+      {"id":"q5","text":"Vrai ou faux : un graphe peut contenir des boucles (arêtes d'un sommet vers lui-même).","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Oui, sauf graphe simple ; les boucles et arêtes multiples définissent les multigraphes."}
+    ]
+  },
+  "Fiche_Lecon2_CHAINES_CYCLES_ET_TYPES": {
+    "title": "Chaînes, cycles et types de graphes",
+    "questions": [
+      {"id":"q1","text":"Une chaîne (chemin) dans un graphe est :","type":"qcm","options":["Une suite de sommets consécutifs reliés par des arêtes","Un sous-ensemble de sommets isolés","Un graphe complet","Un cycle de longueur 3"],"answer":0,"explanation":"Chaîne = suite v1,v2,...,vk où chaque paire consécutive est reliée par une arête."},
+      {"id":"q2","text":"Un cycle est :","type":"qcm","options":["Une chaîne dont le premier et le dernier sommet coïncident","Une chaîne de longueur 1","Un graphe sans arêtes","Un sommet de degré nul"],"answer":0,"explanation":"Cycle = chaîne fermée : v1=vk, aucun sommet répété sauf les extrémités."},
+      {"id":"q3","text":"Un graphe connexe est un graphe où :","type":"qcm","options":["Il existe un chemin entre toute paire de sommets","Tous les sommets ont le même degré","Il est complet","Il ne contient aucun cycle"],"answer":0,"explanation":"Connexe = on peut aller de n'importe quel sommet à n'importe quel autre par une chaîne."},
+      {"id":"q4","text":"Un arbre est un graphe qui est :","type":"qcm","options":["Complet et connexe","Connexe et sans cycle","Sans cycle et non connexe","Toujours orienté"],"answer":1,"explanation":"Arbre = connexe + acyclique (n sommets → n−1 arêtes)."},
+      {"id":"q5","text":"La distance entre deux sommets est :","type":"qcm","options":["Le nombre d'arêtes du plus court chemin les reliant","Le poids total du graphe","Le degré du sommet le plus proche","Le nombre de cycles passant par eux"],"answer":0,"explanation":"Distance = longueur du plus court chemin entre deux sommets."}
+    ]
+  },
+  "Fiche_Lecon3_REPRESENTATION_MATRICIELLE": {
+    "title":"Représentations d'un graphe",
+    "questions": [
+      {"id":"q1","text":"La matrice d'adjacence d'un graphe non orienté est :","type":"qcm","options":["Toujours triangulaire","Symétrique, avec des 0 sur la diagonale (graphe simple)","Triangulaire inférieure uniquement","Asymétrique"],"answer":1,"explanation":"Non orienté → a_ij = a_ji ; simple → diagonale nulle."},
+      {"id":"q2","text":"Dans la matrice d'adjacence, a_ij = 1 signifie :","type":"qcm","options":["Le sommet i est isolé","Il existe une arête entre le sommet i et le sommet j","Le sommet i a pour poids j","La distance i→j vaut 1"],"answer":1,"explanation":"a_ij = 1 ⇔ arête (vi,vj) ; 0 sinon (graphe simple non pondéré)."},
+      {"id":"q3","text":"La liste d'adjacence représente un graphe par :","type":"qcm","options":["Une matrice n×n","Pour chaque sommet, la liste de ses voisins","Un seul vecteur de taille n","Une table de hachage uniquement"],"answer":1,"explanation":"Liste d'adjacence : pour chaque sommet, on stocke ses voisins — économique en mémoire pour les graphes creux."},
+      {"id":"q4","text":"Vrai ou faux : la matrice d'adjacence d'un graphe orienté n'est pas forcément symétrique.","type":"vrai_faux","options":["Vrai","Faux"],"answer":0,"explanation":"Orienté : a_ij=1 n'implique pas a_ji=1 → matrice généralement asymétrique."},
+      {"id":"q5","text":"Le nombre de 1 dans la matrice d'adjacence d'un graphe non orienté simple est :","type":"qcm","options":["n (nombre de sommets)","2m (deux fois le nombre d'arêtes)","m/2","n²"],"answer":1,"explanation":"Chaque arête compte 2 fois (symétrie) : nombre de 1 = 2m."}
+    ]
+  },
+  "Fiche_Lecon4_EULERIENS_HAMILTONIENS": {
+    "title": "Graphes eulériens et hamiltoniens",
+    "questions": [
+      {"id":"q1","text":"Un graphe est eulérien s'il possède :","type":"qcm","options":["Un cycle passant par tous les sommets","Un cycle passant par toutes les arêtes une seule fois","Une chaîne entre deux sommets","Un arbre couvrant"],"answer":1,"explanation":"Eulérien = cycle (ou chaîne) utilisant chaque arête exactement une fois."},
+      {"id":"q2","text":"Condition nécessaire et suffisante pour qu'un graphe connexe soit eulérien :","type":"qcm","options":["Tous ses sommets ont un degré pair","Il a un nombre pair de sommets","Il est complet","Il possède exactement 2 sommets de degré impair"],"answer":0,"explanation":"Théorème : connexe + tous degrés pairs ⇔ circuit eulérien."},
+      {"id":"q3","text":"Un graphe connexe admet une chaîne eulérienne (non fermée) si et seulement si :","type":"qcm","options":["Tous les degrés sont pairs","Exactement 2 sommets ont un degré impair","Aucun sommet n'est isolé","Il a au moins 3 sommets"],"answer":1,"explanation":"2 sommets de degré impair → chaîne eulérienne entre eux."},
+      {"id":"q4","text":"Un graphe hamiltonien possède :","type":"qcm","options":["Un cycle passant par toutes les arêtes","Un cycle passant par tous les sommets une seule fois","Un arbre couvrant minimal","Une chaîne eulérienne"],"answer":1,"explanation":"Hamiltonien = cycle visite chaque sommet exactement une fois (≠ eulérien qui concerne les arêtes)."},
+      {"id":"q5","text":"Vrai ou faux : il existe un algorithme simple garantissant de trouver un cycle hamiltonien dans tout graphe.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"Le problème hamiltonien est NP-complet — pas d'algorithme polynomial connu."}
+    ]
+  },
+  "Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA": {
+    "title": "Plus court chemin et algorithme de Dijkstra",
+    "questions": [
+      {"id":"q1","text":"L'algorithme de Dijkstra sert à trouver :","type":"qcm","options":["Le cycle hamiltonien","Le plus court chemin entre un sommet source et tous les autres","Le graphe eulérien","Le point d'articulation"],"answer":1,"explanation":"Dijkstra = plus courts chemins depuis une source, sur graphes pondérés à poids positifs."},
+      {"id":"q2","text":"Condition d'application de Dijkstra :","type":"qcm","options":["Graphe non orienté uniquement","Poids des arêtes positifs (ou nuls)","Graphe complet","Absence de cycles"],"answer":1,"explanation":"Poids négatifs → utiliser Bellman-Ford ; Dijkstra exige des poids ≥ 0."},
+      {"id":"q3","text":"Complexité de l'algorithme de Dijkstra avec un tas binaire :","type":"qcm","options":["O(n²)","O((n+m) log n)","O(n!)","O(m)"],"answer":1,"explanation":"Avec tas : O((n+m) log n) ; version naïve O(n²)."},
+      {"id":"q4","text":"Dijkstra fonctionne par :","type":"qcm","options":["Backtracking","Sélection gloutonne du sommet non visité le plus proche","Programmation dynamique","Force brute"],"answer":1,"explanation":"Glouton : à chaque étape on extrait le sommet à distance minimale et on relâche ses voisins."},
+      {"id":"q5","text":"Vrai ou faux : Dijkstra peut être appliqué à un graphe avec des poids d'arêtes négatifs.","type":"vrai_faux","options":["Vrai","Faux"],"answer":1,"explanation":"Non — les poids négatifs peuvent créer des cycles à coût négatif ; Dijkstra n'est plus correct."}
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — SELECT AGREGATS — Langage_de_requete_SQL Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — SELECT : filtres, tri, fonctions et agrégats — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQ"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html"><meta property="og:title" content="Leçon 2 — SELECT AGREGATS — Langage_de_requete_SQL Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — SELECT : filtres, tri, fonctions et agrégats — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQ"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — SELECT AGREGATS — Langage_de_requete_SQL Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — SELECT : filtres, tri, fonctions et agrégats — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQ"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Langage_de_requete_SQL","item":"https://resumeci.me/#Licence_2_Miage/Langage_de_requete_SQL"},{"@type":"ListItem","position":4,"name":"Leçon 2 — SELECT AGREGATS","item":"https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — SELECT AGREGATS — Langage_de_requete_SQL Licence 2_Miage | ResumeCI","description":"Leçon 2 — SELECT : filtres, tri, fonctions et agrégats — Langage de requête SQL Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Langage de requête SQ","url":"https://resumeci.me/fiches/Licence_2_Miage/Langage_de_requete_SQL/Fiche_Lecon2_SELECT_AGREGATS.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Langage_de_requete_SQL","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Langage de requête SQL</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 2 : SELECT et agrégats</span>
+  </div>
+</div>
+
+<h2>I. SELECT : ordre d'écriture vs ordre d'évaluation</h2>
+<table>
+  <tr><th>Ordre d'écriture</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+  <tr><td>Clause</td><td>SELECT</td><td>FROM</td><td>WHERE</td><td>GROUP BY</td><td>HAVING</td><td>ORDER BY</td></tr>
+  <tr><th>Ordre d'évaluation</th><th>5</th><th>1</th><th>2</th><th>3</th><th>4</th><th>6</th></tr>
+</table>
+<div class="important"><strong>Conséquence :</strong> le SGBD évalue FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY. Un <strong>alias défini dans SELECT n'est pas utilisable dans WHERE</strong> (mais il l'est dans ORDER BY et, selon le SGBD, dans HAVING/GROUP BY).</div>
+
+<h2>II. Syntaxe et projection</h2>
+<pre>SELECT [DISTINCT] { * | expr [[AS] alias] [, ...] }
+FROM nom_table [alias]
+[WHERE condition]
+[ORDER BY expr [ASC|DESC] [NULLS {FIRST|LAST}] [, ...]]
+[LIMIT n [OFFSET m]]                          -- MySQL, PostgreSQL
+[OFFSET m ROWS] [FETCH FIRST n ROWS ONLY];    -- norme / Oracle</pre>
+<ul>
+  <li><code>DISTINCT</code> : supprime les doublons ;</li>
+  <li><code>AS alias</code> : renomme une colonne dans le résultat ;</li>
+  <li><code>*</code> : toutes les colonnes.</li>
+</ul>
+
+<h2>III. Filtrer avec WHERE</h2>
+<pre>SELECT nom, prenom FROM etudiant
+WHERE filiere_id = 1
+  AND date_naissance >= DATE '2004-01-01'
+  AND nom LIKE 'K%'          -- % : n caractères, _ : 1 caractère
+  AND email IS NOT NULL;</pre>
+<h3>Opérateurs de condition</h3>
+<table>
+  <tr><th>Opérateur</th><th>Usage</th></tr>
+  <tr><td><code>= &lt;&gt; &lt; &lt;= &gt; &gt;=</code></td><td>Comparaisons</td></tr>
+  <tr><td><code>BETWEEN v1 AND v2</code></td><td>Plage de valeurs (incluses)</td></tr>
+  <tr><td><code>IN (v1, v2, ...)</code></td><td>Appartenance à une liste</td></tr>
+  <tr><td><code>LIKE 'motif'</code></td><td>% = plusieurs caractères, _ = un caractère</td></tr>
+  <tr><td><code>IS [NOT] NULL</code></td><td>Test de nullité — <strong>obligatoire</strong></td></tr>
+  <tr><td><code>AND / OR / NOT</code></td><td>Logique booléenne</td></tr>
+</table>
+<div class="important"><strong>NULL :</strong> toute comparaison avec NULL (<code>note = NULL</code>) est <strong>jamais vraie</strong> → toujours utiliser <code>IS NULL</code> / <code>IS NOT NULL</code>.</div>
+
+<h2>IV. Trier, limiter, expressions</h2>
+<pre>SELECT etudiant_id, note FROM inscription
+WHERE cours_id = 10
+ORDER BY note DESC, etudiant_id ASC
+FETCH FIRST 5 ROWS ONLY;</pre>
+<h3>CASE (expression conditionnelle)</h3>
+<pre>SELECT etudiant_id, note,
+  CASE
+    WHEN note >= 16 THEN 'Très bien'
+    WHEN note >= 14 THEN 'Bien'
+    WHEN note >= 10 THEN 'Admis'
+    ELSE 'Ajourné'
+  END AS mention
+FROM inscription;</pre>
+
+<h2>V. Agrégats, GROUP BY, HAVING</h2>
+<table>
+  <tr><th>Fonction</th><th>Résultat</th><th>NULL</th></tr>
+  <tr><td><code>COUNT(*)</code></td><td>Nombre de lignes</td><td>Comptées</td></tr>
+  <tr><td><code>COUNT(col)</code></td><td>Valeurs non nulles de la colonne</td><td>Ignorées</td></tr>
+  <tr><td><code>COUNT(DISTINCT col)</code></td><td>Valeurs distinctes non nulles</td><td>Ignorées</td></tr>
+  <tr><td><code>SUM(col)</code></td><td>Somme</td><td>Ignorées</td></tr>
+  <tr><td><code>AVG(col)</code></td><td>Moyenne</td><td>Ignorées</td></tr>
+  <tr><td><code>MIN / MAX(col)</code></td><td>Min / max</td><td>Ignorées</td></tr>
+</table>
+<pre>SELECT cours_id, COUNT(*) AS nb, ROUND(AVG(note),2) AS moyenne
+FROM inscription
+GROUP BY cours_id;</pre>
+<h3>Règles</h3>
+<ul>
+  <li>Toute colonne du SELECT <strong>hors fonction d'agrégation</strong> doit figurer dans le <strong>GROUP BY</strong> (sinon erreur) ;</li>
+  <li><strong>WHERE</strong> filtre les <strong>lignes</strong> (avant regroupement) ;</li>
+  <li><strong>HAVING</strong> filtre les <strong>groupes</strong> (après calcul des agrégats) ;</li>
+  <li>Sous-totaux : <code>GROUP BY ROLLUP(a,b)</code>, <code>CUBE</code>, <code>GROUPING SETS</code>.</li>
+</ul>
+<pre>SELECT cours_id, AVG(note) AS moyenne
+FROM inscription
+WHERE note IS NOT NULL          -- filtre lignes
+GROUP BY cours_id
+HAVING AVG(note) &lt; 10         -- filtre groupes
+ORDER BY moyenne;</pre>
+
+<h2>VI. Fonctions courantes (multi-SGBD)</h2>
+<table>
+  <tr><th>Besoin</th><th>MySQL</th><th>PostgreSQL</th><th>Oracle</th></tr>
+  <tr><td>Majuscules</td><td><code>UPPER(s)</code></td><td><code>UPPER(s)</code></td><td><code>UPPER(s)</code></td></tr>
+  <tr><td>Remplacer NULL</td><td><code>IFNULL(x,0)</code></td><td><code>COALESCE(x,0)</code></td><td><code>NVL(x,0)</code>, COALESCE</td></tr>
+  <tr><td>Sous-chaîne</td><td><code>SUBSTRING(s,1,3)</code></td><td><code>SUBSTRING(s FROM 1 FOR 3)</code></td><td><code>SUBSTR(s,1,3)</code></td></tr>
+  <tr><td>Année d'une date</td><td><code>YEAR(d)</code></td><td><code>EXTRACT(YEAR FROM d)</code></td><td><code>EXTRACT(YEAR FROM d)</code></td></tr>
+  <tr><td>Formater date</td><td><code>DATE_FORMAT(d,'%d/%m/%Y')</code></td><td><code>TO_CHAR(d,'DD/MM/YYYY')</code></td><td><code>TO_CHAR(d,'DD/MM/YYYY')</code></td></tr>
+  <tr><td>Concaténer un groupe</td><td><code>GROUP_CONCAT(... SEPARATOR ', ')</code></td><td><code>STRING_AGG(nom, ', ')</code></td><td><code>LISTAGG(nom, ', ') WITHIN GROUP (ORDER BY nom)</code></td></tr>
+</table>
+
+<h2>VII. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Utiliser un <strong>alias SELECT dans WHERE</strong> → impossible (ordre d'évaluation).</li>
+    <li>Oublier une colonne dans le GROUP BY → erreur « colonne hors GROUP BY ».</li>
+    <li>Mettre une condition sur un <strong>agrégat dans WHERE</strong> → WHERE filtre les lignes AVANT calcul ; pour filtrer sur l'agrégat → <strong>HAVING</strong>.</li>
+    <li><code>COUNT(*)</code> compte les lignes, <code>COUNT(col)</code> ignore les NULL — différence cruciale.</li>
+    <li><code>note = NULL</code> n'est jamais vrai → <code>IS NULL</code>.</li>
+    <li>Confondre <code>LIKE '%x'</code> (finit par x) et <code>LIKE 'x%'</code> (commence par x).</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

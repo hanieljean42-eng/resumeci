@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-CSS-01",
+  "type": "td",
+  "matiere": "HTML5, CSS3 et Bootstrap",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "CSS : sélecteurs, propriétés, héritage et cascade",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés du cours de CSS. Réponds en écrivant le sélecteur/propriété CSS exacte attendue.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Sélecteurs",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Écrire les sélecteurs CSS pour cibler : un élément <code>p</code>, une classe <code>titre</code>, un id <code>menu</code>.</li><li>Un même id peut-il être utilisé sur 2 éléments ? Justifier.</li><li>Quelle est la différence entre classe et id ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Élément : <code>p { }</code> ; classe : <code>.titre { }</code> ; id : <code>#menu { }</code>.</p><p><strong>b)</strong> <strong>Non</strong> — un id doit être <strong>unique</strong> dans la page (un seul élément). Violation = document invalide.</p><p><strong>c)</strong> Classe = <strong>réutilisable</strong> sur plusieurs éléments ; id = <strong>unique</strong>. Priorité CSS : id &gt; classe &gt; type (élément).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Propriétés de texte",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Mettre un texte en <strong>gras</strong>, de taille 16px, centré horizontalement — écrire la règle CSS.</li><li>Quelle propriété contrôle l'espacement entre les lignes ?</li><li>Mettre une liste à puces avec les puces <em>dans</em> le texte.</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>font-weight: bold; font-size: 16px; text-align: center;</code></p><p><strong>b)</strong> <code>line-height</code>.</p><p><strong>c)</strong> <code>list-style-position: inside;</code> (défaut = outside).</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Cascade et héritage",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Trois règles ciblent le même élément : <code>p{color:blue}</code>, <code>.intro{color:red}</code>, <code>#special{color:green}</code>. L'élément a class=\"intro\" et id=\"special\". Quelle couleur gagne ?</li><li>La propriété <code>color</code> est-elle héritée ? Et <code>margin</code> ?</li><li>Où placer un style pour qu'il ait la priorité maximale ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>Vert</span> — priorité : id (#special) &gt; classe (.intro) &gt; type (p).</p><p><strong>b)</strong> <code>color</code> = <strong>héritée</strong> (transmise aux enfants) ; <code>margin</code> = <strong>non héritée</strong>.</p><p><strong>c)</strong> <code>style=\"...\"</code> inline dans la balise — priorité maximale (sauf !important).</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Arrière-plan",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Positionner une image de fond en <strong>haut à droite</strong>, sans répétition.</li><li>Quelle unité CSS est relative à la hauteur de la minuscule « x » ? Et « em » ?</li><li>Différence entre px, em et % ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>background-image: url(...); background-position: top right; background-repeat: no-repeat;</code></p><p><strong>b)</strong> <code>ex</code> = hauteur du « x » minuscules ; <code>em</code> = taille de la police de l'élément parent.</p><p><strong>c)</strong> <code>px</code> = pixel fixe ; <code>em</code>/<code>rem</code> = relatif à la police (parent / racine) → mise à l'échelle ; <code>%</code> = relatif au conteneur.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

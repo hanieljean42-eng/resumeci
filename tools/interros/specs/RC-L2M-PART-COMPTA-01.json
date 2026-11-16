@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-COMPTA-01",
+  "type": "partiel",
+  "matiere": "Comptabilité et système d'information comptable",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Partie double, TVA, opérations courantes, bilan et amortissements",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI dans le référentiel SYSCOHADA. Écritures comptables demandées au débit/crédit avec les comptes OHADA.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Écritures courantes (7 pts)",
+      "points": "7 pts",
+      "enonce": "L'entreprise « CIRESUME » réalise les opérations suivantes (TVA 18 %) :<ol type='a'><li>Vente de marchandises à crédit : 236 000 F TTC.</li><li>Achat de fournitures à crédit : 59 000 F TTC.</li><li>Encaissement client en espèces : 118 000 F TTC (sur une créance de 118 000 F).</li></ol>Écrire les 3 écritures (comptes, montants, débit/crédit).",
+      "correction": "<p><strong>a)</strong> HT=200 000, TVA=36 000 :<br>411 Clients 236 000 D — 701 Ventes 200 000 C ; 4431 TVA collectée 36 000 C.</p><p><strong>b)</strong> HT=50 000, TVA=9 000 :<br>601 Achats 50 000 D ; 4452 TVA déductible 9 000 D — 401 Fournisseurs 59 000 C.</p><p><strong>c)</strong> 571 Caisse 118 000 D — 411 Clients 118 000 C (la TVA collectée n'est pas touchée : elle reste due au trésor).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Soldes, balance et résultat (6 pts)",
+      "points": "6 pts",
+      "enonce": "Totaux sur l'exercice : 701 Ventes (crédits 950 000), 601 Achats (débits 600 000), 411 Clients (débits 800 000 / crédits 720 000), 401 Fournisseurs (débits 150 000 / crédits 480 000).<ol type='a'><li>Donner le solde de chaque compte.</li><li>Calculer le résultat (produits − charges).</li><li>Pourquoi la balance est-elle équilibrée ?</li></ol>",
+      "correction": "<p><strong>a)</strong> 701 : créditeur 950 000 ; 601 : débiteur 600 000 ; 411 : débiteur <span class='reponse'>80 000</span> ; 401 : créditeur <span class='reponse'>330 000</span>.</p><p><strong>b)</strong> Résultat = 950 000 − 600 000 = <span class='reponse'>+350 000 F</span>.</p><p><strong>c)</strong> La partie double impose débits=crédits à chaque écriture → les totaux restent égaux dans la balance.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Amortissement et bilan (7 pts)",
+      "points": "7 pts",
+      "enonce": "Matériel acquis 1 200 000 F, amortissement linéaire sur 5 ans (taux 20 %).<ol type='a'><li>Calculer la dotation annuelle et la VNC après 2 ans.</li><li>Écrire l'écriture d'amortissement de l'année 1.</li><li>Où apparaît le matériel dans le bilan (actif) et où l'amortissement cumulé ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Dotation = 1 200 000 × 20 % = <span class='reponse'>240 000 F/an</span>. Après 2 ans : amort. cumulé 480 000 → VNC = <span class='reponse'>720 000 F</span>.</p><p><strong>b)</strong> 681 Dotations aux amortissements 240 000 D — 28x Amortissements du matériel 240 000 C.</p><p><strong>c)</strong> Actif : matériel à sa <strong>valeur brute</strong> ; amortissement cumulé en <strong>déduction de l'actif</strong> (ou au passif selon présentation). La VNC est la valeur nette comptable.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts · c) 2 pts"
+    }
+  ]
+}

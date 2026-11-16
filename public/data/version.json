@@ -1,15 +1,15 @@
 {
-  "version": "3.6.28",
-  "build": 3628,
+  "version": "3.6.32",
+  "build": 3629,
   "date": "2026-11-12",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Correction : ton Pass reste actif partout 🔓",
-  "message": "ResumeCI corrige un bug où certains élèves payants repassaient en version essai : ton abonnement est désormais reconnu sur tous tes appareils et toutes tes fiches.",
+  "title": "Nouvelle classe : Licence 2 MIAGE 🎓",
+  "message": "ResumeCI ajoute la classe Licence 2 MIAGE avec ses 26 matières (semestres 3 et 4).",
   "features": [
-    "🔓 Abonnement reconnu quelle que soit la formule payée (université incluse)",
-    "📱 Statut Pass resynchronisé automatiquement toutes les 5 minutes",
-    "🛡️ Premium retrouvé même si le paiement a été rattaché à un ancien compte"
+    "🎓 Licence 2 MIAGE disponible à l'inscription",
+    "📚 26 matières des semestres 3 et 4",
+    "🔓 Même Pass étudiant : toutes les fiches de la filière"
   ],
   "forceShow": true
 }

@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-SQL-01",
+  "type": "td",
+  "matiere": "Langage de requête SQL",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "SELECT, agrégats, jointures et vues",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés des TP SQL du cours (SELECT, fonctions, jointures). Schéma de référence : Etudiant(nom, prenom, note, filiere), Cours(id, titre, credit), Inscription(etudiant_id, cours_id, note). Écris les requêtes SQL complètes.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — SELECT et agrégats",
+      "points": "5 pts",
+      "enonce": "Sur la table Etudiant(nom, prenom, note, filiere) :<ol type='a'><li>Afficher nom, prenom et note des étudiants de la filière MIAGE, triés par note décroissante.</li><li>Calculer la note moyenne, la note max et le nombre d'étudiants par filière.</li><li>Pourquoi ne peut-on pas écrire WHERE note > AVG(note) ? Comment contourner ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>SELECT nom, prenom, note FROM Etudiant WHERE filiere='MIAGE' ORDER BY note DESC;</code></p><p><strong>b)</strong> <code>SELECT filiere, AVG(note), MAX(note), COUNT(*) FROM Etudiant GROUP BY filiere;</code></p><p><strong>c)</strong> Les fonctions agrégées ne sont pas disponibles dans WHERE (évalué avant le regroupement). Contournement : <code>HAVING AVG(note) &gt; ...</code> après GROUP BY, ou sous-requête.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Jointures",
+      "points": "6 pts",
+      "enonce": "Tables : Etudiant(id, nom), Cours(id, titre), Inscription(etudiant_id, cours_id, note).<ol type='a'><li>Afficher le nom de chaque étudiant avec les titres des cours suivis (INNER JOIN).</li><li>Afficher les étudiants SANS aucune inscription (LEFT JOIN).</li><li>Quelle différence entre INNER JOIN et LEFT JOIN ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>SELECT e.nom, c.titre FROM Etudiant e JOIN Cours c ON c.id = i.cours_id JOIN Inscription i ON i.etudiant_id = e.id;</code> — ou via Inscription comme table pivot : <code>FROM Etudiant e JOIN Inscription i ON i.etudiant_id=e.id JOIN Cours c ON c.id=i.cours_id</code>.</p><p><strong>b)</strong> <code>SELECT e.nom FROM Etudiant e LEFT JOIN Inscription i ON i.etudiant_id=e.id WHERE i.etudiant_id IS NULL;</code></p><p><strong>c)</strong> INNER JOIN ne garde que les correspondances des deux côtés ; LEFT JOIN garde toutes les lignes de gauche (+ NULL à droite si pas de correspondance).</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Sous-requêtes et vues",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Afficher les étudiants dont la note est supérieure à la moyenne générale.</li><li>Créer une vue <code>Vue_Moyennes</code> qui donne la moyenne par filière.</li><li>À quoi sert une vue ? Donner un avantage par rapport à une table.</li></ol>",
+      "correction": "<p><strong>a)</strong> <code>SELECT nom FROM Etudiant WHERE note &gt; (SELECT AVG(note) FROM Etudiant);</code></p><p><strong>b)</strong> <code>CREATE VIEW Vue_Moyennes AS SELECT filiere, AVG(note) AS moyenne FROM Etudiant GROUP BY filiere;</code></p><p><strong>c)</strong> La vue est une <strong>table virtuelle</strong> définie par une requête : elle simplifie les requêtes complexes, sécurise l'accès (colonnes limitées) et ne duplique pas les données.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Piège NULL",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Que retourne <code>SELECT COUNT(*) FROM Etudiant WHERE note = NULL</code> ? Pourquoi ?</li><li>Comment écrire correctement « les étudiants sans note » ?</li><li>Que fait <code>note != 10</code> pour une note NULL ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <span class='reponse'>0 ligne</span> — toute comparaison avec NULL est <strong>inconnue</strong> (ni vraie ni fausse) en SQL.</p><p><strong>b)</strong> <code>WHERE note IS NULL</code>.</p><p><strong>c)</strong> Rien non plus : <code>NULL != 10</code> est inconnu → la ligne est exclue. Utiliser <code>IS NOT NULL</code> ou <code>COALESCE(note,0) != 10</code>.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — INTRODUCTION ET OBJETS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — JavaScript : historique, placement et modèle d'objets — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html"><meta property="og:title" content="Leçon 1 — INTRODUCTION ET OBJETS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — JavaScript : historique, placement et modèle d'objets — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — INTRODUCTION ET OBJETS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — JavaScript : historique, placement et modèle d'objets — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"JavaScript_et_jQuery","item":"https://resumeci.me/#Licence_2_Miage/JavaScript_et_jQuery"},{"@type":"ListItem","position":4,"name":"Leçon 1 — INTRODUCTION ET OBJETS","item":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — INTRODUCTION ET OBJETS — JavaScript_et_jQuery Licence 2_Miage | ResumeCI","description":"Leçon 1 — JavaScript : historique, placement et modèle d'objets — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et ","url":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon1_INTRODUCTION_ET_OBJETS.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"JavaScript_et_jQuery","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 JavaScript et jQuery</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : Introduction et objets</span>
+  </div>
+</div>
+
+<h2>I. Historique et versions</h2>
+<table>
+  <tr><th>Événement</th><th>Détail</th></tr>
+  <tr><td><strong>Milieu des années 1990</strong></td><td>Besoin de pages plus conviviales ; Brendan Eich (Netscape) développe un langage de script — d'abord nommé <strong>LiveScript</strong> — complément de Java côté client</td></tr>
+  <tr><td><strong>1995 — JS 1.0</strong></td><td>Implémenté nativement dans <strong>Netscape Navigator 2.0</strong> et Internet Explorer 3.0</td></tr>
+  <tr><td><strong>1996</strong></td><td>Microsoft sort <strong>Jscript</strong> (IE) ; Navigator 3.0 apporte corrections</td></tr>
+  <tr><td>Standardisation</td><td>Suivi de la norme <strong>ECMA</strong> (ECMAScript) ; mais IE et Firefox implémentent différemment → un script peut marcher sur un navigateur et échouer sur un autre</td></tr>
+  <tr><td>Versions clés</td><td>1.3 (Navigator 4.5), 1.4, 1.5, 1.6 (Firefox 1.0), 1.7 (Firefox 2.0), 1.8 (Firefox 3.0)</td></tr>
+</table>
+<div class="important"><strong>Réhabilitation :</strong> JavaScript a été déprécié à cause de l'abus des <strong>popups</strong> (fenêtres surgissantes) ; les bloqueurs de popup intégrés aux navigateurs ont redonné ses lettres de noblesse au langage.</div>
+
+<h2>II. Placement et exécution des scripts</h2>
+<ul>
+  <li>Le script s'insère dans le <strong>&lt;head&gt;</strong> ou le <strong>&lt;body&gt;</strong> du document HTML ;</li>
+  <li>La partie <strong>body</strong> construit les objets de la page ; la partie <strong>head</strong> contient les fonctions et le code événementiel ;</li>
+  <li>Affichage dans la page : <code>document.write("texte")</code> ;</li>
+  <li>Boîtes de dialogue : <code>alert()</code> (message), <code>confirm()</code> (OK/Annuler → booléen), <code>prompt()</code> (saisie).</li>
+</ul>
+
+<h2>III. Débogage</h2>
+<ul>
+  <li><strong>Boîtes de dialogue</strong> (alert/confirm) : simples, adaptées aux petits scripts ;</li>
+  <li><strong>Console du navigateur</strong> (F12) : adaptée aux scripts complexes — afficher variables et objets ;</li>
+  <li><strong>Débogueur intégré</strong> : points d'arrêt, inspection pas à pas des variables.</li>
+</ul>
+
+<h2>IV. Objets, méthodes et propriétés</h2>
+<div class="definition"><strong>Programmation Orientée Objet (POO) :</strong> JavaScript manipule des <strong>objets</strong> (éléments de la page : fenêtres, formulaires, champs, boutons) dotés de <strong>propriétés</strong> (caractéristiques) et de <strong>méthodes</strong> (actions).</div>
+<h3>Hiérarchie des objets prédéfinis</h3>
+<pre>window (fenêtre — objet le plus élevé)
+ └── document (page)
+      ├── formu (formulaire)
+      │    └── nom (champ)
+      └── ...</pre>
+<ul>
+  <li><strong>Syntaxe pointée :</strong> <code>document.formu.nom</code> accède à la propriété/méthode d'un objet imbriqué ;</li>
+  <li><strong>window est implicite :</strong> inutile de le nommer → <code>print()</code> = <code>window.print()</code>, <code>document.title</code> lit le titre de la page ;</li>
+  <li>Deux catégories : <strong>objets prédéfinis</strong> (hiérarchie) et <strong>objets créés par le développeur</strong> ;</li>
+  <li>La version de JS détermine les objets/méthodes disponibles — un script peut renvoyer une erreur sur un navigateur plus ancien.</li>
+</ul>
+<p><strong>Méthodes utiles de window :</strong> <code>alert()</code>, <code>confirm()</code>, <code>prompt()</code>, <code>print()</code>.</p>
+
+<h2>V. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>Java</strong> et <strong>JavaScript</strong> : noms quasi identiques mais <strong>langages différents</strong>, peu de points communs.</li>
+    <li>Attribuer JavaScript à Java ou à un autre langage → créé par <strong>Brendan Eich chez Netscape</strong> (LiveScript → JavaScript, 1995).</li>
+    <li>Oublier que <code>window</code> est l'objet racine <strong>implicite</strong> (on écrit <code>alert()</code>, pas <code>window.alert()</code> — les deux marchent).</li>
+    <li>Confondre <strong>propriété</strong> (valeur/caractéristique) et <strong>méthode</strong> (action/fonction de l'objet).</li>
+    <li>Penser que JS est « mort » à cause des popups → les bloqueurs ont réhabilité le langage.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

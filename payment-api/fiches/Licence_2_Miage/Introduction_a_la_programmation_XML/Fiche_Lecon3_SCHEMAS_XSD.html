@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — SCHEMAS XSD — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Schémas XML (XSD) : éléments, types et validation — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Int"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html"><meta property="og:title" content="Leçon 3 — SCHEMAS XSD — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Schémas XML (XSD) : éléments, types et validation — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Int"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — SCHEMAS XSD — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Schémas XML (XSD) : éléments, types et validation — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Int"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Introduction_a_la_programmation_XML","item":"https://resumeci.me/#Licence_2_Miage/Introduction_a_la_programmation_XML"},{"@type":"ListItem","position":4,"name":"Leçon 3 — SCHEMAS XSD","item":"https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — SCHEMAS XSD — Introduction_a_la_programmation_XML Licence 2_Miage | ResumeCI","description":"Leçon 3 — Schémas XML (XSD) : éléments, types et validation — Introduction à la programmation XML Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Int","url":"https://resumeci.me/fiches/Licence_2_Miage/Introduction_a_la_programmation_XML/Fiche_Lecon3_SCHEMAS_XSD.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Introduction_a_la_programmation_XML","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Introduction à la programmation XML</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 3 : Schémas XML (XSD)</span>
+  </div>
+</div>
+
+<h2>I. Pourquoi les XSD remplacent les DTD</h2>
+<table>
+  <tr><th>Limite de la DTD</th><th>Apport du XSD</th></tr>
+  <tr><td>Pas au format XML → outil de parsing spécial</td><td><strong>Écrit en XML</strong> → mêmes outils</td></tr>
+  <tr><td>Ne supporte pas les <strong>namespaces</strong></td><td>Gère les espaces de noms</td></tr>
+  <tr><td>Typage très limité (#PCDATA, #CDATA)</td><td><strong>~40 types de données</strong> + types personnalisés</td></tr>
+</table>
+<div class="important"><strong>Historique :</strong> W3C, février 2000. Objectif : remplacer la DTD. Avantages : <strong>extensible</strong> (nouveaux types), éléments de même nom au contenu différent, occurrences précises (<code>minOccurs</code>/<code>maxOccurs</code>), <strong>héritage</strong> (extension).</div>
+
+<h2>II. Structure de base</h2>
+<pre>&lt;?xml version="1.0"?&gt;
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;!-- déclarations d'éléments, attributs et types --&gt;
+&lt;/xsd:schema&gt;</pre>
+<ul>
+  <li>Racine : <code>&lt;xsd:schema&gt;</code> ; tout élément du schéma est <strong>préfixé <code>xsd:</code> ou <code>xs:</code></strong> ;</li>
+  <li><code>xmlns:xsd="http://www.w3.org/2001/XMLSchema"</code> déclare l'espace de noms des types XSD ;</li>
+  <li><code>xmlns="..."</code> (sans préfixe) = espace de noms <strong>par défaut</strong>.</li>
+</ul>
+
+<h2>III. Référencer un schéma depuis un document XML</h2>
+<pre>&lt;livre xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="schema.xsd"&gt; ... &lt;/livre&gt;</pre>
+<ul>
+  <li><code>xmlns:xsi</code> : déclare l'espace de noms de l'instance ;</li>
+  <li><code>xsi:noNamespaceSchemaLocation</code> : localisation du .xsd <strong>sans namespace</strong> ;
+      <code>xsi:schemaLocation</code> : utilisé quand il y a un namespace.</li>
+</ul>
+
+<h2>IV. Déclaration d'éléments et d'attributs</h2>
+<pre>&lt;xsd:element name="nom" type="type" minOccurs="0" maxOccurs="unbounded"/&gt;</pre>
+<ul>
+  <li><code>type</code> : type simple prédéfini (<code>xsd:string</code>, <code>xsd:integer</code>, <code>xsd:decimal</code>, <code>xsd:date</code>, <code>xsd:year</code>, <code>xsd:boolean</code>…) ou type complexe utilisateur ;</li>
+  <li><code>minOccurs</code>/<code>maxOccurs</code> : nombre d'occurrences — <code>"unbounded"</code> = illimité ;</li>
+  <li>Un élément peut contenir une déclaration inline <code>&lt;xsd:complexType&gt;</code> avec <code>&lt;xsd:sequence&gt;</code> (ordre), <code>&lt;xsd:choice&gt;</code> (alternative), <code>&lt;xsd:all&gt;</code>.</li>
+</ul>
+<pre>&lt;xsd:attribute name="isbn" type="xsd:string" use="required" default="..."/&gt;</pre>
+<ul>
+  <li><code>use</code> : <code>required</code> (obligatoire), <code>optional</code>/<code>implied</code> (optionnel), <code>fixed</code> (valeur fixe) ;</li>
+  <li><code>default</code>/<code>fixed</code> : valeur par défaut.</li>
+</ul>
+
+<h2>V. Types de données et restrictions</h2>
+<h3>Types simples intégrés</h3>
+<p>Près de <strong>40 types</strong> : string, integer, decimal, float, boolean, date, year, CDATA… Utilisation : <code>type="xsd:integer"</code>.</p>
+<h3>Restriction d'un type intégré</h3>
+<pre>&lt;xsd:simpleType name="typeISBN"&gt;
+  &lt;xsd:restriction base="xsd:string"&gt;
+    &lt;xsd:pattern value="[0-9]{10}"/&gt;
+  &lt;/xsd:restriction&gt;
+&lt;/xsd:simpleType&gt;</pre>
+<ul>
+  <li><code>base</code> : type dont on dérive (ex. restreindre <code>xsd:string</code>) ;</li>
+  <li><code>&lt;xsd:pattern&gt;</code> : expression régulière (ISBN = 10 chiffres) ;</li>
+  <li>Autres : <code>&lt;xsd:minInclusive&gt;</code>, <code>&lt;xsd:maxInclusive&gt;</code>, <code>&lt;xsd:enumeration&gt;</code>, <code>&lt;xsd:length&gt;</code>…</li>
+</ul>
+<h3>Type complexe</h3>
+<pre>&lt;xsd:complexType name="typePages"&gt; ... &lt;/xsd:complexType&gt;</pre>
+<p>Définit un élément avec sous-éléments et/ou attributs. <code>&lt;xsd:simpleContent&gt;</code> + <code>&lt;xsd:extension base="xsd:string"&gt;</code> = élément textuel <strong>portant des attributs</strong> (ex. titre avec attribut langue).</p>
+
+<h2>VI. Correspondance DTD → XSD</h2>
+<table>
+  <tr><th>DTD</th><th>XSD</th></tr>
+  <tr><td><code>&lt;!ELEMENT x (#PCDATA)&gt;</code></td><td><code>&lt;xsd:element name="x" type="xsd:string"/&gt;</code></td></tr>
+  <tr><td><code>&lt;!ATTLIST x a CDATA #REQUIRED&gt;</code></td><td><code>&lt;xsd:attribute name="a" type="xsd:string" use="required"/&gt;</code></td></tr>
+  <tr><td><code>*</code> / <code>+</code> / <code>?</code></td><td><code>maxOccurs="unbounded"</code> / <code>minOccurs="1"</code> / <code>minOccurs="0"</code></td></tr>
+  <tr><td><code>(A|B)</code></td><td><code>&lt;xsd:choice&gt;</code></td></tr>
+  <tr><td><code>(A,B)</code></td><td><code>&lt;xsd:sequence&gt;</code></td></tr>
+</table>
+
+<h2>VII. Exemple type (sujet d'examen)</h2>
+<ul>
+  <li><code>etudiant</code> : attribut <code>id</code> type ID ; <code>annee</code> = entier ;</li>
+  <li><code>inscription</code> : attributs <code>etudiant</code>/<code>cours</code> en IDREF ; <code>note</code> décimal 0-20 ; <code>session</code> énumération (normale|rattrapage).</li>
+</ul>
+
+<h2>VIII. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Oublier le <strong>préfixe <code>xsd:</code></strong> sur les balises du schéma.</li>
+    <li>Confondre <code>noNamespaceSchemaLocation</code> (sans namespace) et <code>schemaLocation</code> (avec namespace).</li>
+    <li>Mettre <code>maxOccurs="unbounded"</code> sans <code>minOccurs</code> → minOccurs par défaut = 1 ; pour « 0 ou plus » il faut <code>minOccurs="0"</code> aussi.</li>
+    <li>Oublier que <code>use="implied"</code> = optionnel (équivalent DTD <code>#IMPLIED</code>).</li>
+    <li>Déclarer un type complexe pour un élément <strong>sans sous-éléments</strong> → utiliser <code>simpleType</code> à la place.</li>
+    <li>Dans une restriction, oublier <code>base="..."</code> : on ne restreint pas « dans le vide ».</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

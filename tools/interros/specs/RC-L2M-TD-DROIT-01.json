@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-DROIT-01",
+  "type": "td",
+  "matiere": "Introduction au droit des TIC",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Droit des TIC : données personnelles, cybercriminalité, contrats",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés des sujets de TD d'Introduction au droit des TIC. Cite les lois ivoiriennes par leur numéro et date quand c'est demandé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Notions et sources du droit des TIC",
+      "points": "4 pts",
+      "enonce": "<ol type='a'><li>Que recouvre l'acronyme TIC ?</li><li>Citer trois lois ivoiriennes relatives aux TIC avec leur objet (numéro + année).</li><li>Quel est le rôle de l'ARTCI et de l'ANSSI ?</li></ol>",
+      "correction": "<p><strong>a)</strong> TIC = Technologies de l'Information et de la Communication (ensemble des technologies de production, traitement et échange d'informations numériques).</p><p><strong>b)</strong> Exemples : loi n° 2013-450 du 19 juin 2013 (protection des données à caractère personnel) ; loi n° 2013-451 du 19 juin 2013 (cybercriminalité) ; loi n° 2013-546 (transactions électroniques).</p><p><strong>c)</strong> ARTCI = régulation du secteur des TIC + protection des utilisateurs. ANSSI = Agence Nationale de la Sécurité des Systèmes d'Information (cybersécurité, lutte contre la cybercriminalité).</p>",
+      "bareme_detail": "a) 1 pt · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Données personnelles",
+      "points": "6 pts",
+      "enonce": "Une startup collecte : nom, numéro de téléphone, position GPS en continu et photo de profil de ses utilisateurs, sans information préalable.<ol type='a'><li>Lesquels de ces éléments sont des « données à caractère personnel » ? Justifier.</li><li>Quels principes de la loi de 2013 cette pratique viole-t-elle ? (citer au moins 3)</li><li>Quels droits la loi reconnaît-elle aux personnes concernées ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Tous : nom (identification directe), téléphone, position GPS (donnée de localisation permettant une identification indirecte), photo (biométrie). Toute information permettant d'identifier directement ou indirectement une personne est personnelle.</p><p><strong>b)</strong> Violation de : <strong>transparence/obligation d'information</strong> (aucune information donnée), <strong>proportionnalité</strong> (la position GPS en continu n'est pas nécessaire), <strong>finalité</strong> (usage non déclaré), <strong>limitation de la durée de conservation</strong> peut-être aussi.</p><p><strong>c)</strong> Droit d'information, d'accès, de rectification, d'opposition, de suppression, et de ne pas être soumis à des décisions automatisées.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Cybercriminalité",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Distinguer « menace cyber » et « infraction » : donner un exemple de chacun.</li><li>La loi n° 2013-451 réprime-t-elle l'accès frauduleux à un système d'information ? Quelle peine pour l'accès ou la tentative d'accès ?</li><li>Donner un exemple d'infraction commise <em>via</em> les TIC qui n'est pas une « cyberattaque » au sens strict.</li></ol>",
+      "correction": "<p><strong>a)</strong> Menace = risque potentiel non encore matérialisé (ex. propagation d'un virus). Infraction = fait qualifié par la loi (ex. piratage effectif d'un serveur).</p><p><strong>b)</strong> Oui — art. 4 : accès frauduleux ou tentative d'accès à un système d'information puni de <span class='reponse'>1 à 2 ans de prison et 5 à 10 millions de FCFA d'amende</span>.</p><p><strong>c)</strong> Escroquerie en ligne (hameçonnage/phishing) : l'infraction patrimoniale utilise le numérique comme <strong>outil</strong> — la cible n'est pas le système lui-même mais la victime.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Qualification d'un cas",
+      "points": "4 pts",
+      "enonce": "Un étudiant pirate le serveur de sa faculté pour consulter les notes de ses camarades, puis vend ces informations à un site tiers.<ol type='a'><li>Identifier les infractions possibles (au moins 2).</li><li>Dire si les données de notes sont des données personnelles et quel principe est violé par la revente.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Accès frauduleux</strong> au système d'information (art. 4, loi 2013-451) + <strong>atteinte aux données</strong>/divulgation non autorisée de données personnelles (loi 2013-450) — possiblement atteinte à la vie privée.</p><p><strong>b)</strong> Oui : les notes associées à des étudiants identifiés sont des données à caractère personnel. La revente viole le principe de <strong>finalité</strong> (collecte pour l'évaluation, pas pour la vente) et l'<strong>obligation de confidentialité</strong>.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt"
+    }
+  ]
+}

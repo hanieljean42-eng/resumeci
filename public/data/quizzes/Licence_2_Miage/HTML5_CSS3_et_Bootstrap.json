@@ -1,0 +1,22 @@
+{
+  "Fiche_Lecon1_CSS_SELECTEURS": {
+    "title": "CSS : sélecteurs",
+    "questions": [
+      {"id":"q1","text":"CSS sert à :","type":"qcm","options":["Structurer le contenu","Décrire la présentation (apparence, disposition) d'un document HTML","Programmer","Créer des bases de données"],"answer":1,"explanation":"CSS = Cascading Style Sheets, séparé du contenu HTML."},
+      {"id":"q2","text":"Un sélecteur de classe s'écrit :","type":"qcm","options":["#nom",".nom","nom","*nom"],"answer":1,"explanation":"Classe = .nom ; id = #nom ; type = nom."},
+      {"id":"q3","text":"Un id en CSS :","type":"qcm","options":["Réutilisable","Unique par page","Multiple","Identique à une classe"],"answer":1,"explanation":"id = unique (un seul élément) ; classe = réutilisable."},
+      {"id":"q4","text":"La priorité en CSS est :","type":"qcm","options":["type > classe > id","id > classe > type","classe > id > type","Toujours la dernière"],"answer":1,"explanation":"Cascade : id prioritaire sur classe, classe sur type."},
+      {"id":"q5","text":"L'héritage CSS signifie :","type":"qcm","options":["Tout est hérité","Certaines propriétés se transmettent aux balises emboîtées","Rien n'est hérité","Seuls les styles inline héritent"],"answer":1,"explanation":"Couleur, police… héritées ; marges non héritées par les en-lignes."}
+    ]
+  },
+  "Fiche_Lecon2_CSS_PROPRIETES": {
+    "title": "CSS : propriétés",
+    "questions": [
+      {"id":"q1","text":"font-weight: bold contrôle :","type":"qcm","options":["La taille","L'épaisseur (graisse) du texte","La couleur","L'italique"],"answer":1,"explanation":"font-weight = graisse ; font-style = italique ; font-size = taille."},
+      {"id":"q2","text":"text-align: center aligne :","type":"qcm","options":["Verticalement","Horizontalement","Les deux","Les images"],"answer":1,"explanation":"text-align = alignement horizontal (left/center/right/justify)."},
+      {"id":"q3","text":"list-style-position: inside place la puce :","type":"qcm","options":["Hors du texte (défaut)","Dans le texte, décalée à droite","Cachée","En haut"],"answer":1,"explanation":"inside = puce dans le texte ; outside = hors (défaut)."},
+      {"id":"q4","text":"background-position: top right positionne l'image :","type":"qcm","options":["En bas à gauche","En haut à droite","Au centre","En bas à droite"],"answer":1,"explanation":"top right = coin supérieur droit, par rapport au coin supérieur gauche de l'élément."},
+      {"id":"q5","text":"L'unité « ex » en CSS est relative à :","type":"qcm","options":["La largeur","La hauteur de la minuscule x","L'écran","Le pixel"],"answer":1,"explanation":"ex = hauteur du « x » minuscules ; em = taille de police parente."}
+    ]
+  }
+}

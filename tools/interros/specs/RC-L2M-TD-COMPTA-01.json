@@ -1,0 +1,41 @@
+{
+  "code": "RC-L2M-TD-COMPTA-01",
+  "type": "td",
+  "matiere": "Comptabilité et système d'information comptable",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Comptes, partie double, TVA et opérations courantes",
+  "consignes": "Travaux dirigés d'entraînement originaux rédigés par ResumeCI dans l'esprit des fiches d'exercices de comptabilité SYSCOHADA. Utilise les classes de comptes OHADA : 411 Clients, 401 Fournisseurs, 4111/4112, 443 TVA collectée, 445 TVA déductible, 601 Achats, 701 Ventes, 706, 31 Marchandises.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Partie double",
+      "points": "4 pts",
+      "enonce": "Une entreprise vend des marchandises à crédit pour 118 000 F TTC, TVA 18 %.<ol type='a'><li>Enregistrer l'opération (présenter l'écriture avec comptes et montants HT/TVA/TTC).</li><li>Le client paie ensuite en espèces : écrire l'écriture correspondante.</li></ol>",
+      "correction": "<p><strong>a)</strong> HT = 118 000 / 1,18 = <span class='reponse'>100 000 F</span>, TVA = <span class='reponse'>18 000 F</span>.<br>411 Clients &nbsp;118 000&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;701 Ventes &nbsp;100 000&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;4431 TVA collectée &nbsp;18 000&nbsp;&nbsp;C</p><p><strong>b)</strong> 571 Caisse (ou 512 Banque) &nbsp;118 000&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;411 Clients &nbsp;118 000&nbsp;&nbsp;C</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — Achat et TVA déductible",
+      "points": "5 pts",
+      "enonce": "L'entreprise achète des marchandises à crédit pour 59 000 F TTC (TVA 18 %).<ol type='a'><li>Écrire l'écriture d'achat (calculer le HT).</li><li>Expliquer la différence entre TVA collectée et TVA déductible, et dans quel sens chacune circule.</li></ol>",
+      "correction": "<p><strong>a)</strong> HT = 59 000 / 1,18 = <span class='reponse'>50 000 F</span>, TVA = <span class='reponse'>9 000 F</span>.<br>601 Achats de marchandises &nbsp;50 000&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;401 Fournisseurs &nbsp;59 000&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;4452 TVA déductible &nbsp;9 000&nbsp;&nbsp;D</p><p><strong>b)</strong> TVA <strong>collectée</strong> = TVA facturée sur les <strong>ventes</strong> (dette envers le trésor). TVA <strong>déductible</strong> = TVA payée sur les <strong>achats</strong> (créance sur le trésor). TVA nette à payer = collectée − déductible.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    },
+    {
+      "titre": "Exercice 3 — Soldes et balance",
+      "points": "6 pts",
+      "enonce": "Sur l'exercice, le compte 411 Clients présente : total débits 500 000 F, total crédits 420 000 F. Le compte 701 Ventes : débits 0, crédits 800 000 F. Le compte 601 Achats : débits 600 000 F, crédits 0.<ol type='a'><li>Déterminer le solde (débit/crédit) de chaque compte.</li><li>En déduire le résultat (produits − charges) en ignorant les autres comptes.</li><li>Pourquoi la balance générale doit-elle être équilibrée ?</li></ol>",
+      "correction": "<p><strong>a)</strong> 411 : débits &gt; crédits → <span class='reponse'>solde débiteur 80 000 F</span> (créances clients). 701 : <span class='reponse'>solde créditeur 800 000 F</span> (produit). 601 : <span class='reponse'>solde débiteur 600 000 F</span> (charge).</p><p><strong>b)</strong> Résultat = 800 000 − 600 000 = <span class='reponse'>+200 000 F</span> (bénéfice).</p><p><strong>c)</strong> La partie double impose débits = crédits à chaque écriture ; en reportant tous les comptes, les totaux restent égaux — la balance est donc équilibrée par construction.</p>",
+      "bareme_detail": "a) 3 pts · b) 1,5 pt · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 4 — Stock et variation",
+      "points": "5 pts",
+      "enonce": "Au 01/01 le stock de marchandises (compte 31) est de 200 000 F ; au 31/12 il est de 150 000 F. Les achats de l'exercice s'élèvent à 900 000 F et les ventes à 1 500 000 F HT.<ol type='a'><li>Écrire l'écriture de variation de stock de fin d'exercice.</li><li>Calculer le coût des marchandises vendues (CMV) et la marge commerciale.</li></ol>",
+      "correction": "<p><strong>a)</strong> Baisse de 50 000 F (200→150) → la marchandise sortie n'est pas remplacée :<br>31 Marchandises &nbsp;50 000&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;6031 Variation de stocks &nbsp;50 000&nbsp;&nbsp;D (ou 60311).</p><p><strong>b)</strong> CMV = stock initial + achats − stock final = 200 000 + 900 000 − 150 000 = <span class='reponse'>950 000 F</span>. Marge commerciale = ventes − CMV = 1 500 000 − 950 000 = <span class='reponse'>550 000 F</span>.</p>",
+      "bareme_detail": "a) 2,5 pts · b) 2,5 pts"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "code": "RC-L2M-TD-XML-01",
+  "type": "td",
+  "matiere": "Introduction à la programmation XML",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "XML bien formé, DTD et schémas XSD",
+  "consignes": "Travaux dirigés d'entraînement originaux inspirés des exercices XML (exo_XML, sujets de TD et compositions) du cours de Licence 2. Distingue bien « bien formé » (syntaxe) et « valide » (conforme au modèle).",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Document bien formé",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Le document suivant est-il bien formé ? Justifier :<br><code>&lt;catalogue&gt;&lt;livre&gt;&lt;titre&gt;XML&lt;/titre&gt;&lt;livre&gt;&lt;auteur&gt;A&lt;/auteur&gt;&lt;/catalogue&gt;</code></li><li>Corriger les erreurs pour obtenir un document bien formé.</li><li>Le document corrigé est-il forcément valide ? Pourquoi ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Non</strong> : les balises ne sont pas correctement imbriquées — &lt;livre&gt; est rouvert avant de fermer le premier ; il manque &lt;/livre&gt; et l'élément &lt;auteur&gt; est hors de tout livre.</p><p><strong>b)</strong> Version corrigée : <code>&lt;catalogue&gt;&lt;livre&gt;&lt;titre&gt;XML&lt;/titre&gt;&lt;auteur&gt;A&lt;/auteur&gt;&lt;/livre&gt;&lt;/catalogue&gt;</code> (un seul élément racine, imbrication stricte).</p><p><strong>c)</strong> <strong>Non</strong> : « valide » exige en plus la conformité à un modèle (DTD/XSD). Un document bien formé sans DTD est valide par défaut, mais n'a aucune contrainte de structure.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2,5 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — DTD",
+      "points": "6 pts",
+      "consigne": "Modèle : une <code>universite</code> contient des <code>etudiant</code> (nom, prenom obligatoires ; email optionnel ; matricule unique).",
+      "enonce": "<ol type='a'><li>Écrire la DTD interne complète pour ce modèle (éléments + attributs).</li><li>Expliquer les quantificateurs utilisés et ce que signifie <code>#IMPLIED</code> vs <code>#REQUIRED</code>.</li><li>Quel type d'attribut garantit l'unicité du matricule ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>&lt;!ELEMENT universite (etudiant+)&gt;&lt;!ELEMENT etudiant (nom, prenom, email?)&gt;&lt;!ELEMENT nom (#PCDATA)&gt;&lt;!ELEMENT prenom (#PCDATA)&gt;&lt;!ELEMENT email (#PCDATA)&gt;&lt;!ATTLIST etudiant matricule ID #REQUIRED&gt;</pre><p><strong>b)</strong> <code>+</code> = 1 à n étudiants ; <code>?</code> = email optionnel ; <code>+</code> après etudiant = au moins un. #REQUIRED = attribut obligatoire, #IMPLIED = optionnel.</p><p><strong>c)</strong> <code>ID</code> — identifiant unique dans tout le document.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Schéma XSD",
+      "points": "5 pts",
+      "enonce": "<ol type='a'><li>Qu'est-ce qui distingue fondamentalement un schéma XSD d'une DTD ? (citer 3 différences)</li><li>Dans un XSD, comment déclarer un élément <code>prix</code> de type décimal, obligatoire, apparaissant 1 à plusieurs fois ?</li><li>À quoi sert l'attribut <code>xsi:noNamespaceSchemaLocation</code> dans le document XML ?</li></ol>",
+      "correction": "<p><strong>a)</strong> XSD est écrit <strong>en XML</strong> ; il supporte les <strong>namespaces</strong> ; il offre un <strong>typage riche</strong> (décimal, date, ~40 types primitifs) contre les types limités de la DTD (CDATA, ID, IDREF…).</p><p><strong>b)</strong> <code>&lt;xsd:element name=\"prix\" type=\"xsd:decimal\" minOccurs=\"1\" maxOccurs=\"unbounded\"/&gt;</code> — ou un élément parent avec <code>maxOccurs=\"unbounded\"</code>.</p><p><strong>c)</strong> Il <strong>lie le document XML à son fichier schéma</strong> (emplacement du .xsd) pour la validation.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 4 — Validation et cas pratique",
+      "points": "4 pts",
+      "enonce": "On donne la DTD : <code>&lt;!ELEMENT article (titre, prix+)&gt;</code> etc. et le document : <code>&lt;article&gt;&lt;titre&gt;PC&lt;/titre&gt;&lt;prix&gt;500&lt;/prix&gt;&lt;prix&gt;450&lt;/prix&gt;&lt;/article&gt;</code> (prix déclaré #PCDATA).<ol type='a'><li>Ce document est-il valide par rapport à la DTD ?</li><li>Si <code>prix</code> apparaît 2 fois alors que la DTD exige <code>prix+</code>, que changer pour n'autoriser qu'un seul prix ?</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Oui</strong> : prix+ autorise 1 ou plusieurs occurrences — 2 prix sont acceptés. Le document est bien formé ET valide.</p><p><strong>b)</strong> Remplacer <code>prix+</code> par <code>prix</code> (exactement une occurrence) ou <code>prix?</code> (0 ou 1) selon qu'on veut l'obliger.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts"
+    }
+  ]
+}

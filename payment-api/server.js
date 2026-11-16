@@ -2981,7 +2981,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok', uptime: process.up
 // --------------------------------------------------------------------------
 const DEV_MODE = process.env.DEV_MODE === '1' && !IS_PRODUCTION;
 if (DEV_MODE) {
-  const DEV_CLASSES = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA'];
+  const DEV_CLASSES = ['6eme', '5eme', '4eme', '3eme', 'Seconde_A', 'Seconde_C', 'Premiere_A', 'Premiere_C', 'Premiere_D', 'Terminale_A', 'Terminale_C', 'Terminale_D', 'Licence_1_Droit', 'Licence_1_Miage', 'Licence_1_ADA', 'Licence_2_Miage'];
   const DEV_PLANS = ['free', 'starter', 'pro', 'vip', 'annual', 'elite', 'uni_starter', 'uni_pro', 'uni_elite'];
 
   app.get('/dev', (req, res) => {

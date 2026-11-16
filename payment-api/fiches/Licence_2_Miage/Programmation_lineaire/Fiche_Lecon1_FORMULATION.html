@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 1 — FORMULATION — Programmation_lineaire Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 1 — Formulation d'un programme linéaire — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Lice"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html"><meta property="og:title" content="Leçon 1 — FORMULATION — Programmation_lineaire Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 1 — Formulation d'un programme linéaire — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Lice"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 1 — FORMULATION — Programmation_lineaire Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 1 — Formulation d'un programme linéaire — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Lice"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Programmation_lineaire","item":"https://resumeci.me/#Licence_2_Miage/Programmation_lineaire"},{"@type":"ListItem","position":4,"name":"Leçon 1 — FORMULATION","item":"https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 1 — FORMULATION — Programmation_lineaire Licence 2_Miage | ResumeCI","description":"Leçon 1 — Formulation d'un programme linéaire — Programmation linéaire Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Programmation linéaire 🏫 Lice","url":"https://resumeci.me/fiches/Licence_2_Miage/Programmation_lineaire/Fiche_Lecon1_FORMULATION.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Programmation_lineaire","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Programmation linéaire</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 1 : Formulation</span>
+  </div>
+</div>
+
+<h2>I. Qu'est-ce que la programmation linéaire ?</h2>
+<div class="definition"><strong>Programmation linéaire (PL) :</strong> l'une des plus importantes techniques d'<strong>optimisation</strong> de la recherche opérationnelle. Objectif : déterminer l'<strong>affectation optimale de ressources rares</strong> entre des activités ou produits concurrents, en optimisant une fonction sous des <strong>contraintes en forme d'inégalités</strong>.</div>
+<p>Avantages : <strong>facilité de modélisation</strong>, <strong>efficacité des algorithmes</strong>, nombreux logiciels disponibles — la micro-informatique l'a mise à la portée de tous.</p>
+
+<h2>II. Les 3 ingrédients du modèle</h2>
+<h3>1. Variables de décision</h3>
+<p>Les inconnues du problème — les quantités à déterminer. <em>Exemple :</em> x₁ = quantité du produit A, x₂ = quantité du produit B à produire.</p>
+<h3>2. Fonction objectif (ou fonction économique)</h3>
+<p>La grandeur à optimiser — fonction associant à chaque plan de production une valeur (profit, coût…).</p>
+<pre>Max z = 50x₁ + 60x₂        -- maximiser le profit</pre>
+<h3>3. Contraintes</h3>
+<p>Les « empêchements naturels » qui freinent l'objectif (ressources limitées). S'écrivent en <strong>inégalités</strong> — on utilise <code>≤</code> et non <code>=</code> car il n'est pas obligatoire d'épuiser toutes les ressources.</p>
+<h3>4. Contraintes de positivité</h3>
+<p>x₁, x₂ ≥ 0 — la solution ne peut comporter de valeurs négatives (inacceptables).</p>
+
+<h2>III. Exemple de référence (problème de production)</h2>
+<p>Une entreprise fabrique A et B avec une machine m (8 h/jour), deux matières p (10 kg) et q (36 kg). Fabrication de A : 1 h de m, 2 kg de p, 9 kg de q, profit 50 F. Fabrication de B : 2 h de m, 2 kg de p, 4 kg de q, profit 60 F.</p>
+<table>
+  <tr><th></th><th>Machine m</th><th>Matière p</th><th>Matière q</th><th>Profit</th></tr>
+  <tr><td>A</td><td>1 h</td><td>2 kg</td><td>9 kg</td><td>50 F</td></tr>
+  <tr><td>B</td><td>2 h</td><td>2 kg</td><td>4 kg</td><td>60 F</td></tr>
+  <tr><td>Disponible</td><td>8 h</td><td>10 kg</td><td>36 kg</td><td>—</td></tr>
+</table>
+<pre>Max  z = 50x₁ + 60x₂
+s.c. x₁ + 2x₂ ≤ 8     (m)
+     2x₁ + 2x₂ ≤ 10    (p)
+     9x₁ + 4x₂ ≤ 36    (q)
+     x₁, x₂ ≥ 0</pre>
+
+<h2>IV. Variables d'écart</h2>
+<div class="definition">Pour ramener les contraintes en <strong>inégalités</strong> à des <strong>égalités</strong> (plus faciles à traiter), on introduit des <strong>variables d'écart</strong> — toujours <strong>positives ou nulles</strong>.</div>
+<p>Chaque contrainte reçoit sa variable d'écart (x₃, x₄, x₅…) qui représente la <strong>quantité de ressource disponible non utilisée</strong> :</p>
+<pre>x₁ + 2x₂ + x₃ = 8
+2x₁ + 2x₂ + x₄ = 10
+9x₁ + 4x₂ + x₅ = 36
+x₁, x₂, x₃, x₄, x₅ ≥ 0</pre>
+
+<h2>V. Problème de minimisation et problème de mélange</h2>
+<h3>Minimisation</h3>
+<p>Même structure mais <code>Min z</code> — ex. régime alimentaire le moins cher garantissant des apports suffisants :</p>
+<pre>Min  z = c₁x₁ + c₂x₂ + ··· + cₙxₙ
+s.c. a₁₁x₁ + a₁₂x₂ + ··· + a₁ₙxₙ ≥ b₁
+     ...
+     aₘ₁x₁ + aₘ₂x₂ + ··· + aₘₙxₙ ≥ bₘ
+     x₁, x₂, ..., xₙ ≥ 0</pre>
+<ul>
+  <li>n aliments de prix cⱼ ; m éléments nutritifs ; aᵢⱼ = quantité du ième nutriment dans une unité du jème aliment ; bᵢ = besoin minimum.</li>
+  <li>Ce <strong>problème de mélange</strong> se présente dans de nombreuses situations (régime alimentaire pour animaux, etc.).</li>
+</ul>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Écrire une contrainte avec <code>=</code> alors qu'on a une <strong>inégalité</strong> (≤ ou ≥) — le signe ≤ est correct car la ressource peut ne pas être épuisée.</li>
+    <li>Oublier les <strong>contraintes de positivité</strong> xᵢ ≥ 0.</li>
+    <li>Confondre <strong>variable de décision</strong> (inconnue) et <strong>variable d'écart</strong> (ressource inutilisée).</li>
+    <li>Inverser max/min : problème de <strong>coût minimal</strong> = Min, de <strong>profit/CA maximal</strong> = Max.</li>
+    <li>Oublier que la variable d'écart est <strong>aussi ≥ 0</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

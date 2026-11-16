@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-IHM-01",
+  "type": "partiel",
+  "matiere": "Interaction homme-machine",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Interfaces graphiques, styles d'interaction, multimodalité",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Répondre en citant les notions du cours (WIMP, fenêtres, styles).",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — IHM et interfaces graphiques (6 pts)",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Définir une IHM et citer les 3 participants.</li><li>Que signifie WIMP ?</li><li>Distinguer fenêtre modale et fenêtre flottante avec un exemple.</li><li>Pourquoi la mosaïque (MDI) est-elle préférée à la superposition ?</li></ol>",
+      "correction": "<p><strong>a)</strong> IHM = dispositifs matériels + logiciels de contrôle/communication homme-machine. Participants : utilisateur, concepteur, programme/machine.</p><p><strong>b)</strong> Windows, Icons, Menus, Pointers.</p><p><strong>c)</strong> Modale = bloquante (dialogue « Enregistrer ? ») ; flottante = palette déplaçable (barre d'outils Photoshop).</p><p><strong>d)</strong> La superposition <strong>masque</strong> des informations ; la mosaïque affiche les fenêtres côte à côte sans chevauchement.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1 pt · c) 1,5 pt · d) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Styles d'interaction (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Le langage de commandes convient à quel type d'utilisateur ? Inconvénients pour les novices ?</li><li>Distinguer formulaire et requête.</li><li>La manipulation directe : auteur, année, 2 principes, 2 avantages, 1 inconvénient.</li><li>L'interaction multimodale : principe + exemple historique.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Experts</strong> (accès direct, productivité). Novices : syntaxe à mémoriser, pas d'aide visuelle, erreurs.</p><p><strong>b)</strong> Formulaire = <strong>saisie</strong> d'infos ; requête = <strong>interrogation</strong> du système (ex. SQL).</p><p><strong>c)</strong> Ben Schneiderman, 1982. Principes : représentation permanente des objets + objet/action. Avantages : rapidité, réversibilité, effet visible. Inconvénient : encombrement/ambiguïté des icônes.</p><p><strong>d)</strong> Combinaison de plusieurs modalités (voix+geste+regard) — ex. « put that there » de Bolt (1963).</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2,5 pts · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — Choix de style (7 pts)",
+      "points": "7 pts",
+      "enonce": "Pour chaque situation, choisir le style d'interaction le plus adapté et justifier :<ol type='a'><li>Un comptable saisit 500 factures par jour avec des codes connus.</li><li>Un enfant de 8 ans joue à un jeu éducatif.</li><li>Un utilisateur handicapé des membres supérieurs doit écrire un texte.</li><li>Un pilote d'avion consulte les instruments en vol.</li></ol>",
+      "correction": "<p><strong>a)</strong> <strong>Langage de commandes</strong> — expert, saisie répétitive, codes connus = productivité maximale.</p><p><strong>b)</strong> <strong>Manipulation directe</strong> — intuitif, icônes, pas de syntaxe à mémoriser.</p><p><strong>c)</strong> <strong>Reconnaissance vocale / interface cerveau-machine</strong> — contourne l'impossibilité du clavier/souris.</p><p><strong>d)</strong> <strong>Affichage/interaction visuelle sobre + commandes</strong> — sécurité : minimiser la charge cognitive, éviter les ambiguïtés ; écrans dédiés.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 1,5 pt · c) 2 pts · d) 2 pts"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 3 — FONCTIONS EVENEMENTS FORMULAIRES — JavaScript_et_jQuery Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 3 — Fonctions, événements et formulaires — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html"><meta property="og:title" content="Leçon 3 — FONCTIONS EVENEMENTS FORMULAIRES — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 3 — Fonctions, événements et formulaires — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 3 — FONCTIONS EVENEMENTS FORMULAIRES — JavaScript_et_jQuery Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 3 — Fonctions, événements et formulaires — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"JavaScript_et_jQuery","item":"https://resumeci.me/#Licence_2_Miage/JavaScript_et_jQuery"},{"@type":"ListItem","position":4,"name":"Leçon 3 — FONCTIONS EVENEMENTS FORMULAIRES","item":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 3 — FONCTIONS EVENEMENTS FORMULAIRES — JavaScript_et_jQuery Licence 2_Miage | ResumeCI","description":"Leçon 3 — Fonctions, événements et formulaires — JavaScript et jQuery Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 JavaScript et jQuery 🏫 Licence","url":"https://resumeci.me/fiches/Licence_2_Miage/JavaScript_et_jQuery/Fiche_Lecon3_FONCTIONS_EVENEMENTS_FORMULAIRES.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"JavaScript_et_jQuery","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 JavaScript et jQuery</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 3 : Fonctions, événements, formulaires</span>
+  </div>
+</div>
+
+<h2>I. Les fonctions</h2>
+<div class="definition"><strong>Fonction :</strong> bloc de code réutilisable exécuté à la demande — élément fondamental avec les méthodes. Syntaxe : <code>function nomFonction(paramètres) { instructions }</code>. Appelée par un événement ou directement.</div>
+
+<h2>II. Programmation évènementielle</h2>
+<div class="definition"><strong>Programmation évènementielle :</strong> le code s'exécute <strong>en réponse à un événement</strong> (clic, saisie, chargement…) plutôt que de façon linéaire.</div>
+<ul>
+  <li>Syntaxe : nommer l'<strong>événement</strong>, suivi de <code>=</code>, puis la fonction — ex. attribut HTML <code>onClick="maFonction()"</code> ;</li>
+  <li>Événements courants : <code>onClick</code>, <code>onChange</code>, <code>onSubmit</code>, <code>onLoad</code>, <code>onFocus</code>, <code>onBlur</code>… ;</li>
+  <li>Fonctions et évènements sont <strong>largement employés avec les formulaires</strong>.</li>
+</ul>
+
+<h2>III. Manipulation des formulaires</h2>
+<div class="important"><strong>Correspondance HTML ↔ JavaScript :</strong> chaque élément de formulaire HTML est un <strong>objet JavaScript</strong> accessible par la syntaxe pointée : <code>document.formulaire.champ</code>. Les contrôles se font via des <strong>fonctions placées dans le &lt;head&gt;</strong>.</div>
+<h3>A. Champ <code>text</code> (monoligne)</h3>
+<ul>
+  <li>Reçoit des valeurs saisies par l'utilisateur <strong>et</strong> affiche des résultats ;</li>
+  <li>Monoligne → insuffisant pour une longue chaîne (utiliser <code>textarea</code>) ;</li>
+  <li>Accès à la valeur : syntaxe pointée <code>document.form.nom.value</code>.</li>
+</ul>
+<h3>B. Champ <code>textarea</code> (multiligne)</h3>
+<p>Identique à <code>text</code> mais pour les chaînes longues ; redimensionnable avec barre de défilement.</p>
+<h3>C. Cases à cocher (<code>checkbox</code>)</h3>
+<ul>
+  <li>Teste si la case est <strong>cochée ou non</strong> → oriente le déroulement ;</li>
+  <li>Plusieurs cases cochées pour une même question possibles → combiner par le <strong>ET logique <code>&amp;&amp;</code></strong> ;</li>
+  <li>4 possibilités pour 2 cases : aucune, 1re seule, 2e seule, les deux.</li>
+</ul>
+<h3>D. Boutons radio (<code>radio</code>)</h3>
+<p>Une seule réponse possible dans un groupe — tester la valeur sélectionnée.</p>
+<h3>E. Listes à sélection</h3>
+<ul>
+  <li><strong>Liste simple :</strong> une valeur sélectionnée ;</li>
+  <li><strong>Sélection multiple :</strong> plusieurs valeurs via la touche <code>[Alt]</code> — le script fait une <strong>boucle</strong> sur les éléments pour contrôler chacun.</li>
+</ul>
+<h3>F. Envoi de fichier</h3>
+<p>Un formulaire peut permettre à l'utilisateur d'<strong>envoyer un fichier</strong> (champ de type fichier).</p>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>fonction</strong> (bloc réutilisable) et <strong>méthode</strong> (fonction d'un objet).</li>
+    <li>Oublier que les événements HTML s'écrivent <code>onClick</code>, <code>onChange</code>… (attributs de balise).</li>
+    <li>Confondre <code>checkbox</code> (plusieurs réponses possibles) et <code>radio</code> (une seule réponse par groupe).</li>
+    <li>Oublier la <strong>valeur</strong> d'un champ : <code>document.form.champ</code> renvoie l'objet, il faut <code>.value</code> pour le contenu.</li>
+    <li>Pour une liste à sélection multiple, oublier la <strong>boucle</strong> sur les éléments avec <code>[Alt]</code>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

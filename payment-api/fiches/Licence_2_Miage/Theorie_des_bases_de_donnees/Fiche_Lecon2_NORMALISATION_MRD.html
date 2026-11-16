@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 2 — NORMALISATION MRD — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 2 — Normalisation et passage E/A → MRD — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de donn"><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html"><meta property="og:title" content="Leçon 2 — NORMALISATION MRD — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 2 — Normalisation et passage E/A → MRD — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de donn"><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 2 — NORMALISATION MRD — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 2 — Normalisation et passage E/A → MRD — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de donn"><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Theorie_des_bases_de_donnees","item":"https://resumeci.me/#Licence_2_Miage/Theorie_des_bases_de_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 2 — NORMALISATION MRD","item":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 2 — NORMALISATION MRD — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI","description":"Leçon 2 — Normalisation et passage E/A → MRD — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de donn","url":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon2_NORMALISATION_MRD.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Theorie_des_bases_de_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Théorie des bases de données</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 2 : Normalisation et MRD</span>
+  </div>
+</div>
+
+<h2>I. La normalisation</h2>
+<div class="definition"><strong>Normalisation :</strong> algorithme consistant à partir d'une <strong>table universelle</strong> (totalité des attributs) pour obtenir <strong>plusieurs tables</strong>. Objectif : vérifier la <strong>non-redondance</strong> de l'information et proposer des transformations <strong>sans perte d'information</strong>. Les <strong>formes normales</strong> s'appliquent aux entités et aux associations.</div>
+
+<h2>II. Les formes normales</h2>
+<h3>1ère forme normale (1FN)</h3>
+<ul>
+  <li>La relation possède <strong>au moins une clé</strong> ;</li>
+  <li><strong>Tous les attributs sont atomiques</strong> — pas de propriétés répétitives ou décomposables.</li>
+</ul>
+<p><em>Exemple :</em> une table Etudiant avec attribut « Université » redondant (Moulay Ismaïl répété) n'est pas en 1FN → on sort Université dans sa propre table.</p>
+<p><strong>Mise en 1FN :</strong> ajouter une clé si absente ; sortir les attributs non atomiques dans une nouvelle table.</p>
+
+<h3>2ème forme normale (2FN)</h3>
+<ul>
+  <li>La table est déjà en <strong>1FN</strong> ;</li>
+  <li>La table possède une <strong>clé élémentaire</strong> (un seul attribut) ;</li>
+  <li>Si la clé est <strong>composée</strong>, les autres attributs doivent dépendre de la <strong>totalité</strong> de la clé.</li>
+</ul>
+<p><strong>Mise en 2FN :</strong> garder les attributs dépendant de toute la clé ; regrouper ceux dépendant d'une <strong>partie</strong> de la clé dans une nouvelle table dont cette partie devient la clé.</p>
+
+<h3>3ème forme normale (3FN)</h3>
+<ul>
+  <li>La table est déjà en <strong>2FN</strong> ;</li>
+  <li><strong>Tous les attributs dépendent directement de la clé</strong> — pas de <strong>dépendance transitive</strong> (un attribut dépend d'un autre attribut non-clé).</li>
+</ul>
+<p><strong>Mise en 3FN :</strong> garder les attributs dépendant directement de la clé ; regrouper les dépendances transitives dans une nouvelle table — l'attribut de transition <strong>reste dupliqué</strong> dans la table initiale et devient la clé de la nouvelle.</p>
+<p><em>Exemple :</em> Appartement(IdApt, AdresseApt, CIN_Propriétaire, Nom_Propriétaire) → l'adresse du propriétaire dépend du CIN, pas de la clé → on crée Propriétaire(CIN, Nom, Adresse).</p>
+
+<h3>Forme normale de Boyce-Codd (BCFN)</h3>
+<ul>
+  <li>La table est déjà en <strong>3FN</strong> ;</li>
+  <li><strong>Tout attribut qui appartient à la clé ne dépend pas d'un autre attribut</strong> (renforcement de la 3FN pour les clés composées).</li>
+</ul>
+
+<h2>III. Passage du E/A au MRD (Modèle Relationnel de données)</h2>
+<h3>Règle 1 — Entité → Relation</h3>
+<ul>
+  <li>Chaque entité devient une <strong>relation (table)</strong> ;</li>
+  <li>Son <strong>identifiant devient la clé primaire</strong> ;</li>
+  <li>Les autres propriétés deviennent les <strong>attributs</strong>.</li>
+</ul>
+<p><em>Ex :</em> Entité Personne(CIN, Nom, Prénom, Age) → Relation Personne(CIN, Nom, Prénom, Age).</p>
+<h3>Règle 2 — Association 1:N → Clé étrangère</h3>
+<ul>
+  <li>Création d'une <strong>clé étrangère (#)</strong> dans la relation de l'entité côté « 1 » ;</li>
+  <li>Elle référence la clé primaire de la relation de l'entité côté « N ».</li>
+</ul>
+<p><em>Ex :</em> Etudiant 1,1 Appartient 1,n Filière → Etudiant(CNE, Nom, Prénom, #IdFilière) + Filière(IdFilière, Nom, Nb-Etud).</p>
+<h3>Règle 3 — Association N:N → Table de jointure</h3>
+<ul>
+  <li>Création d'une <strong>nouvelle table</strong> dont la clé primaire = <strong>ensemble des identifiants</strong> des entités associées ;</li>
+  <li>Les propriétés de l'association deviennent des attributs de la nouvelle table.</li>
+</ul>
+<p><em>Ex :</em> Commande N:N Contient Produit → Commande(IdCom, Date, Montant) + Produit(IdProduit, Nom, Prix) + Contenir(#IdCom, #IdProduit, Qte).</p>
+<h3>Règle 4 — Association 1:1 → Dépend de l'entité la plus importante</h3>
+<p>L'attribut clé est reporté selon la règle du côté « important » (la règle dépend fonctionnellement de l'entité la plus importante).</p>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>1FN</strong> (attributs atomiques) et <strong>2FN</strong> (dépendance de toute la clé) et <strong>3FN</strong> (pas de transitivité).</li>
+    <li>Oublier que la 3FN exige la <strong>2FN</strong> d'abord, et la BCFN la <strong>3FN</strong>.</li>
+    <li>Confondre dépendance <strong>partielle</strong> (→ 2FN) et <strong>transitive</strong> (→ 3FN).</li>
+    <li>Pour une association <strong>N:N</strong>, oublier de créer la <strong>table de jointure</strong> avec clé composée.</li>
+    <li>Confondre clé <strong>primaire</strong> et clé <strong>étrangère (#)</strong> dans le MRD.</li>
+    <li>Oublier que l'attribut de transition <strong>reste dupliqué</strong> dans la table initiale lors de la mise en 3FN.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

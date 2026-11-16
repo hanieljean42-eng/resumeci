@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 4 — SQL COMMANDES — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 4 — SQL : les commandes DDL, DQL, DML, DCL — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html"><meta property="og:title" content="Leçon 4 — SQL COMMANDES — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 4 — SQL : les commandes DDL, DQL, DML, DCL — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 4 — SQL COMMANDES — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 4 — SQL : les commandes DDL, DQL, DML, DCL — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Theorie_des_bases_de_donnees","item":"https://resumeci.me/#Licence_2_Miage/Theorie_des_bases_de_donnees"},{"@type":"ListItem","position":4,"name":"Leçon 4 — SQL COMMANDES","item":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 4 — SQL COMMANDES — Theorie_des_bases_de_donnees Licence 2_Miage | ResumeCI","description":"Leçon 4 — SQL : les commandes DDL, DQL, DML, DCL — Théorie des bases de données Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Théorie des bases de ","url":"https://resumeci.me/fiches/Licence_2_Miage/Theorie_des_bases_de_donnees/Fiche_Lecon4_SQL_COMMANDES.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Theorie_des_bases_de_donnees","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Théorie des bases de données</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 4 : SQL — les commandes</span>
+  </div>
+</div>
+
+<h2>I. Qu'est-ce que SQL ?</h2>
+<div class="definition"><strong>SQL = Structured Query Language</strong> (Langage de Requête Structurée). Langage permettant d'<strong>administrer la base de données</strong> et de <strong>gérer les contrôles d'accès</strong>. Fondement : <strong>l'algèbre relationnelle</strong>.</div>
+<h3>Les 5 catégories de commandes</h3>
+<table>
+  <tr><th>Catégorie</th><th>Nom complet</th><th>Rôle</th><th>Commandes</th></tr>
+  <tr><td><strong>DDL</strong></td><td>Data Definition Language</td><td>Manipuler les <strong>structures</strong> (tables, index…)</td><td>CREATE, ALTER, DROP</td></tr>
+  <tr><td><strong>DQL</strong></td><td>Data Query Language</td><td><strong>Récupérer</strong> les données</td><td>SELECT</td></tr>
+  <tr><td><strong>DML</strong></td><td>Data Manipulation Language</td><td>Manipuler les <strong>données</strong></td><td>INSERT, UPDATE, DELETE</td></tr>
+  <tr><td><strong>DCL</strong></td><td>Data Control Language</td><td>Contrôler les <strong>accès</strong> aux données</td><td>GRANT, REVOKE</td></tr>
+</table>
+<p><em>(Une 5e catégorie — TCL, transactions : COMMIT, ROLLBACK — est aussi citée dans le cours.)</em></p>
+
+<h2>II. DDL — Définir la structure</h2>
+<ul>
+  <li><code>CREATE TABLE nom (colonne TYPE [contrainte], ...)</code> ;</li>
+  <li><code>ALTER TABLE</code> : modifier une table ; <code>DROP TABLE</code> : supprimer ;</li>
+  <li><code>PRIMARY KEY</code> : indique la <strong>clé primaire</strong> ;</li>
+  <li><code>FOREIGN KEY ... REFERENCES</code> : clé étrangère ;</li>
+  <li><code>CREATE INDEX</code> : accélérer les recherches.</li>
+</ul>
+
+<h2>III. DQL — Interroger</h2>
+<pre>SELECT Nom FROM Etudiant;          -- une colonne
+SELECT * FROM Etudiant;            -- toutes les colonnes</pre>
+<p>La requête SELECT peut avoir des <strong>sous-commandes</strong> : WHERE (filtre), GROUP BY, ORDER BY, et opérateurs ensemblistes <code>UNION | INTERSECT | EXCEPT</code>.</p>
+
+<h2>IV. DML — Manipuler les données</h2>
+<ul>
+  <li><code>INSERT INTO table (col) VALUES (...)</code> — insérer ;</li>
+  <li><code>UPDATE table SET col = val WHERE ...</code> — modifier ;</li>
+  <li><code>DELETE FROM table WHERE ...</code> — supprimer ;</li>
+  <li><em>Sans WHERE, UPDATE/DELETE agissent sur <strong>toutes les lignes</strong>.</em></li>
+</ul>
+
+<h2>V. DCL — Contrôler les accès</h2>
+<pre>GRANT SELECT ON Etudiant TO User1;   -- accorder un privilège
+GRANT SELECT ON Etudiant TO User1 WITH GRANT OPTION;  -- peut retransmettre
+REVOKE SELECT ON Etudiant FROM User1;  -- retirer le privilège</pre>
+<p><code>GRANT</code> accorde une autorisation ; <code>REVOKE</code> l'annule. <code>WITH GRANT OPTION</code> permet au bénéficiaire de répercuter le privilège.</p>
+
+<h2>VI. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Confondre <strong>DQL</strong> (SELECT = interroger) et <strong>DML</strong> (INSERT/UPDATE/DELETE = manipuler) et <strong>DDL</strong> (structure).</li>
+    <li>Oublier que SQL est fondé sur <strong>l'algèbre relationnelle</strong>.</li>
+    <li>Confondre <code>GRANT</code> (donner) et <code>REVOKE</code> (retirer).</li>
+    <li><code>SELECT *</code> = toutes les colonnes ; <code>SELECT col</code> = une colonne.</li>
+    <li>Oublier le <code>WHERE</code> sur UPDATE/DELETE → effet global.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

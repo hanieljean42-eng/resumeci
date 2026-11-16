@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leçon 5 — PLUS COURT CHEMIN DIJKSTRA — Algorithme_des_graphes Licence 2_Miage | ResumeCI</title><meta name="description" content="Leçon 5 — Plus court chemin : algorithme de Dijkstra — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes "><meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html"><link rel="alternate" hreflang="fr-CI" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html"><link rel="alternate" hreflang="x-default" href="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html"><meta property="og:title" content="Leçon 5 — PLUS COURT CHEMIN DIJKSTRA — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta property="og:description" content="Leçon 5 — Plus court chemin : algorithme de Dijkstra — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes "><meta property="og:type" content="article"><meta property="og:url" content="https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html"><meta property="og:image" content="https://resumeci.me/og-image.png"><meta property="og:site_name" content="ResumeCI"><meta property="og:locale" content="fr_CI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Leçon 5 — PLUS COURT CHEMIN DIJKSTRA — Algorithme_des_graphes Licence 2_Miage | ResumeCI"><meta name="twitter:description" content="Leçon 5 — Plus court chemin : algorithme de Dijkstra — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes "><meta name="twitter:image" content="https://resumeci.me/og-image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ResumeCI","item":"https://resumeci.me"},{"@type":"ListItem","position":2,"name":"Licence 2_Miage","item":"https://resumeci.me/#Licence_2_Miage"},{"@type":"ListItem","position":3,"name":"Algorithme_des_graphes","item":"https://resumeci.me/#Licence_2_Miage/Algorithme_des_graphes"},{"@type":"ListItem","position":4,"name":"Leçon 5 — PLUS COURT CHEMIN DIJKSTRA","item":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Leçon 5 — PLUS COURT CHEMIN DIJKSTRA — Algorithme_des_graphes Licence 2_Miage | ResumeCI","description":"Leçon 5 — Plus court chemin : algorithme de Dijkstra — Algorithme des graphes Licence 2 MIAGE | ResumeCI 📝 FICHE DE RÉSUMÉ 📖 Algorithme des graphes ","url":"https://resumeci.me/fiches/Licence_2_Miage/Algorithme_des_graphes/Fiche_Lecon5_PLUS_COURT_CHEMIN_DIJKSTRA.html","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Haniel_dev"},"publisher":{"@type":"Organization","name":"ResumeCI","url":"https://resumeci.me"},"inLanguage":"fr-CI","educationalLevel":"Licence 2_Miage","about":"Algorithme_des_graphes","learningResourceType":"Fiche de résumé"}</script><link rel="stylesheet" href="/fiche-standalone.css?v=1"><script src="/fiche-standalone.js?v=1"></script></head>
+<body>
+<div class="header">
+  <h1>📝 FICHE DE RÉSUMÉ</h1>
+  <div class="meta">
+    <span>📖 Algorithme des graphes</span>
+    <span>🏫 Licence 2 MIAGE — Semestre 3</span>
+    <span>Leçon 5 : Plus court chemin — Dijkstra</span>
+  </div>
+</div>
+
+<h2>I. Le problème</h2>
+<div class="definition"><strong>Plus court chemin :</strong> dans un graphe <strong>pondéré</strong>, trouver le trajet de <strong>coût minimal</strong> (temps, distance, argent…) entre un sommet de départ et un sommet d'arrivée. Ex. classique : trajet routier le plus rapide entre deux villes.</div>
+
+<h2>II. L'algorithme de Dijkstra</h2>
+<div class="important"><strong>Principe :</strong> algorithme <strong>glouton</strong> conçu pour des <strong>valuations positives</strong>. Un sommet de départ <strong>x</strong> est fixé. On construit progressivement un ensemble de sommets pour lesquels on <strong>connaît le plus court chemin depuis x</strong>.</div>
+<div class="schema"><strong>Règle d'or :</strong> à chaque étape, on choisit le sommet dont la <strong>distance à x est minimale</strong> parmi ceux qui n'ont <strong>pas encore été choisis</strong>. On recommence tant qu'il reste des sommets à sélectionner.</div>
+
+<h3>Déroulement pas à pas</h3>
+<ol>
+  <li><strong>Initialisation :</strong> d(x) = 0 ; d(tous les autres sommets) = +∞. Le sommet x entre dans l'ensemble S des sommets « fixés ».</li>
+  <li><strong>À chaque itération :</strong> parmi les sommets <strong>non fixés</strong>, choisir celui de <strong>distance minimale</strong> → il entre dans S (sa distance est maintenant définitive).</li>
+  <li><strong>Relaxation :</strong> pour chaque voisin v du sommet u qui vient d'être fixé, si <strong>d(u) + w(u,v) &lt; d(v)</strong>, alors mettre à jour <strong>d(v) = d(u) + w(u,v)</strong> et retenir u comme prédécesseur de v.</li>
+  <li><strong>Arrêt :</strong> quand le sommet cible est fixé (ou tous les sommets atteignables sont dans S).</li>
+</ol>
+<div class="important"><strong>Lecture du résultat :</strong> la distance minimale est d(cible) ; le <strong>trajet</strong> se reconstitue en remontant les <strong>prédécesseurs</strong> depuis la cible jusqu'à x.</div>
+
+<h2>III. Application — TD Graphes n°1</h2>
+<p><strong>Énoncé :</strong> un automobiliste doit aller de <strong>A à C</strong> en utilisant les durées moyennes (en minutes) d'un graphe pondéré <strong>orienté</strong> (sens uniques). Déterminer le trajet le plus rapide ; le retour est-il plus rapide que l'aller ?</p>
+<div class="important"><strong>Méthode :</strong>
+<ol>
+  <li>Identifier le <strong>sens des arcs</strong> (sens uniques → chemins possibles limités) ;</li>
+  <li>Appliquer Dijkstra depuis <strong>A</strong> : fixer les sommets par distance croissante ;</li>
+  <li>Noter à chaque étape la distance et le <strong>prédécesseur</strong> ;</li>
+  <li>À l'arrivée en C : remonter les prédécesseurs → trajet optimal et temps minimal.</li>
+</ol></div>
+<p><strong>Point clé du TD :</strong> comme le graphe est <strong>orienté</strong>, le trajet retour C → A peut être <strong>différent (voire impossible)</strong> — ne pas supposer la symétrie du temps de parcours.</p>
+
+<h2>IV. ⚠️ Pièges d'examen</h2>
+<div class="important" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+  <strong>⚠️ Pièges classiques :</strong>
+  <ul>
+    <li>Appliquer Dijkstra avec des <strong>valuations négatives</strong> → l'algorithme n'est <strong>pas garanti</strong> (réservé aux poids positifs).</li>
+    <li>Oublier qu'un graphe <strong>orienté</strong> n'est pas symétrique : le trajet retour n'est pas le trajet aller inversé.</li>
+    <li>Choisir le prochain sommet au hasard au lieu de prendre la <strong>distance minimale</strong> — c'est tout le principe glouton.</li>
+    <li>Ne pas mettre à jour d(v) quand un chemin plus court est trouvé via un autre sommet.</li>
+    <li>Confondre « plus <strong>court</strong> chemin » (nombre d'arêtes) et « plus <strong>rapide/cheap</strong> chemin » (somme des poids) — Dijkstra optimise le <strong>poids total</strong>.</li>
+  </ul>
+</div>
+
+<div class="resume-ci-whatsapp-qr" style="margin-top:28px;padding:16px 18px;border:2px solid #25d366;border-radius:14px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);text-align:center;page-break-inside:avoid">
+  <p style="margin:0 0 10px;font-size:13px;font-weight:700;color:#166534">📺 Chaîne WhatsApp ResumeCI</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=8&data=https%3A%2F%2Fwhatsapp.com%2Fchannel%2F0029Vb8u2u0KrWQxKOhaDZ1F" width="100" height="100" alt="QR Code chaîne WhatsApp ResumeCI" loading="lazy" style="display:block;margin:0 auto 8px;border-radius:8px;background:#fff;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.06)"/>
+  <a href="https://whatsapp.com/channel/0029Vb8u2u0KrWQxKOhaDZ1F" target="_blank" rel="noopener" style="font-size:11px;color:#15803d;font-weight:600;text-decoration:none">Scanne le QR ou clique pour nous suivre — fiches, quiz &amp; actus</a>
+</div>
+<div style="text-align:center;color:#94a3b8;font-size:10px;margin-top:24px;padding-top:12px;border-top:1px solid #e5e7eb">Créé par <strong style="color:#64748b">Haniel_dev</strong></div>
+</body></html>

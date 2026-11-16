@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-PL-01",
+  "type": "partiel",
+  "matiere": "Programmation linéaire",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "Formulation et algorithme du simplexe",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Pour chaque problème : variables, objectif, contraintes ; résoudre par le simplexe quand demandé.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Formulation (6 pts)",
+      "points": "6 pts",
+      "enonce": "Une entreprise produit 2 articles A et B. Contraintes : main-d'œuvre ≤ 60 h, machine ≤ 40 h. A demande 3 h MO et 1 h machine ; B demande 2 h MO et 2 h machine. Profits : 8 et 6.<ol type='a'><li>Formuler le programme (max z, contraintes, positivité).</li><li>Ajouter une contrainte de marché : B ≤ 10.</li><li>Que deviennent les variables d'écart ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Max z = 8A + 6B ; s.c. 3A+2B ≤ 60 ; A+2B ≤ 40 ; A,B ≥ 0.</p><p><strong>b)</strong> Ajouter B ≤ 10 (ou 0A+1B ≤ 10).</p><p><strong>c)</strong> Variables d'écart e₁, e₂ ≥ 0 absorbant le slack : 3A+2B+e₁=60 ; A+2B+e₂=40 — quantité de ressource non utilisée.</p>",
+      "bareme_detail": "a) 3 pts · b) 1 pt · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 2 — Simplexe : un pivot (7 pts)",
+      "points": "7 pts",
+      "enonce": "Max z = 3x₁ + 2x₂ ; s.c. x₁ + x₂ ≤ 5 ; 2x₁ + x₂ ≤ 8 ; x₁,x₂ ≥ 0.<ol type='a'><li>Écrire le programme sous forme standard.</li><li>Identifier la variable entrante au 1er tour (max).</li><li>Faire le test de sortie et effectuer le pivot ; donner la nouvelle base et z.</li></ol>",
+      "correction": "<p><strong>a)</strong> x₁+x₂+e₁=5 ; 2x₁+x₂+e₂=8.</p><p><strong>b)</strong> Max → variable entrante = plus grand ĉⱼ &gt; 0 → <span class='reponse'>x₁ (3)</span>.</p><p><strong>c)</strong> Ratios : L1: 5/1=5 ; L2: 8/2=4 → <strong>L2 sort</strong> (e₂ sort, x₁ entre). Pivot ligne 2 : x₁ = (8−x₂−e₂)/2 → nouvelle solution x₁=4, e₁=1, x₂=0 → <span class='reponse'>z = 12</span>.</p>",
+      "bareme_detail": "a) 2 pts · b) 1,5 pt · c) 3,5 pts"
+    },
+    {
+      "titre": "Exercice 3 — Lecture du résultat (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>En maximisation, quand arrête-t-on le simplexe ?</li><li>Une colonne a ĉⱼ &gt; 0 mais tous les âᵢⱼ ≤ 0 : conclusion ?</li><li>Distinguer « non borné », « infaisable » et « dégénéré ».</li><li>Expliquer pourquoi la méthode du simplexe est « itérative par changement de base ».</li></ol>",
+      "correction": "<p><strong>a)</strong> Quand <strong>tous les coûts réduits ĉⱼ ≤ 0</strong> (max) — plus d'amélioration possible.</p><p><strong>b)</strong> <span class='reponse'>Problème non borné</span> : la variable peut croître sans limite (z → +∞).</p><p><strong>c)</strong> Non borné = solutions existent, objectif infini ; infaisable = aucune solution (détecté phase 1) ; dégénéré = une variable de base = 0 (risque de cyclage).</p><p><strong>d)</strong> Chaque itération remplace une variable de base par une hors-base via un pivot : on « saute » d'un sommet du polyèdre à un adjacent en améliorant z à chaque pas.</p>",
+      "bareme_detail": "a) 1,5 pt · b) 2 pts · c) 2,5 pts · d) 1 pt"
+    }
+  ]
+}

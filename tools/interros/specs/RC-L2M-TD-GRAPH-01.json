@@ -1,0 +1,42 @@
+{
+  "code": "RC-L2M-TD-GRAPH-01",
+  "type": "td",
+  "matiere": "Algorithme des graphes",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "1 h 30",
+  "bareme": "/20 — auto-évaluation",
+  "chapitre": "Graphes : notions, représentations, parcours et chemins",
+  "consignes": "Travaux dirigés d'entraînement — exercices originaux rédigés par ResumeCI dans l'esprit des TD d'Algorithme des graphes de Licence 2. Pour chaque graphe, justifie tes réponses ; les matrices et listes d'adjacence sont demandées explicitement quand c'est le cas.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Degré, chaîne et cycle",
+      "points": "4 pts",
+      "enonce": "On considère le graphe G = (V, E) non orienté avec V = {A, B, C, D, E} et E = {{A,B}, {A,C}, {B,C}, {B,D}, {C,E}, {D,E}}.<ol type='a'><li>Déterminer les degrés de chaque sommet. Le graphe est-il simple ? Régulier ? Complet ?</li><li>Donner une chaîne de A à E de longueur 4, puis un cycle passant par B.</li><li>Le graphe est-il connexe ? Justifier.</li></ol>",
+      "correction": "<p><strong>a)</strong> Degrés : d(A)=2, d(B)=3, d(C)=3, d(D)=2, d(E)=2. Graphe simple (aucune boucle, pas d'arêtes multiples). <strong>Non régulier</strong> (degrés différents) et <strong>non complet</strong> (5 sommets → K5 aurait 10 arêtes ; ici 6 arêtes).</p><p><strong>b)</strong> Chaîne de longueur 4 : <span class='reponse'>A–B–D–E–C</span> ou A–C–E–D–B. Cycle par B : <span class='reponse'>B–C–E–D–B</span> (longueur 4).</p><p><strong>c)</strong> Oui : tous les sommets sont atteignables — ex. A–B–D–E–C relie les 5.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 2 — Matrice d'adjacence",
+      "points": "5 pts",
+      "consigne": "On reprend le graphe de l'exercice 1 (ordre des sommets : A, B, C, D, E).",
+      "enonce": "<ol type='a'><li>Écrire la matrice d'adjacence de G.</li><li>Que vaut le nombre de 1 sur la ligne correspondant à B ? Quelle propriété ce nombre vérifie-t-il ?</li><li>Vrai ou faux : dans une matrice d'adjacence symétrique, l'élément m<sub>ij</sub> vaut toujours 1 quand i ≠ j.</li></ol>",
+      "correction": "<p><strong>a)</strong> Matrice (lignes/colonnes A,B,C,D,E) :<br>0 1 1 0 0 / 1 0 1 1 0 / 1 1 0 0 1 / 0 1 0 0 1 / 0 0 1 1 0</p><p><strong>b)</strong> <span class='reponse'>3</span> — le nombre de 1 sur la ligne (ou colonne) d'un sommet = son degré. Vérifié : d(B)=3.</p><p><strong>c)</strong> <strong>Faux</strong> : la symétrie impose seulement m<sub>ij</sub> = m<sub>ji</sub>. La valeur est 1 si l'arête existe, 0 sinon — elle n'est pas toujours 1 (ex. m<sub>AD</sub>=0).</p>",
+      "bareme_detail": "a) 2,5 pts · b) 1,5 pt · c) 1 pt"
+    },
+    {
+      "titre": "Exercice 3 — Eulerien et hamiltonien",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Rappeler le théorème : quelles conditions un graphe connexe non orienté doit-il satisfaire pour être eulérien (admettre un cycle eulérien) ?</li><li>Un graphe connexe a exactement 4 sommets de degré impair. Peut-il être eulérien ? Eulerien au sens circuit ?</li><li>Le graphe complet K<sub>4</sub> est-il hamiltonien ? Justifier en exhibant un cycle hamiltonien.</li></ol>",
+      "correction": "<p><strong>a)</strong> Connexe + <strong>tous les degrés pairs</strong> ⇒ cycle eulérien (théorème d'Euler). Variante : exactement 0 ou 2 sommets de degré impair ⇒ chaîne eulérienne.</p><p><strong>b)</strong> 4 sommets de degré impair : <strong>non</strong> eulérien (ni cycle ni chaîne eulérienne) — il faut au plus 2 sommets impairs.</p><p><strong>c)</strong> Oui : K<sub>4</sub> est hamiltonien — ex. cycle <span class='reponse'>1–2–3–4–1</span> qui visite chaque sommet une fois et revient au départ.</p>",
+      "bareme_detail": "a) 2 pts · b) 2 pts · c) 2 pts"
+    },
+    {
+      "titre": "Exercice 4 — Plus court chemin (Dijkstra)",
+      "points": "5 pts",
+      "enonce": "Graphe pondéré orienté : A→B=3, A→C=1, B→C=1, C→B=4, B→D=2, C→D=5, D→E=2, B→E=8. <ol type='a'><li>Donner les distances minimales de A à chaque sommet (A inclus) et le plus court chemin de A à E.</li><li>Pourquoi l'algorithme de Dijkstra exige-t-il des poids <strong>positifs</strong> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Distances : d(A)=0 ; d(C)=1 (A→C) ; d(B)=min(3 [A→B], 1+4=5 [A→C→B]) = <span class='reponse'>3</span> ; d(D)=min(3+2=5 [A→B→D], 1+5=6 [A→C→D]) = <span class='reponse'>5</span> ; d(E)=min(3+8=11 [A→B→E], 5+2=7 [A→B→D→E]) = <span class='reponse'>7</span>. Plus court chemin A→E : <span class='reponse'>A→B→D→E</span> (coût 7).</p><p><strong>b)</strong> Dijkstra fige les distances par ordre croissant : un poids négatif découvert après coup invaliderait un sommet déjà « fixé » → résultat faux. (Les poids négatifs exigent Bellman-Ford.)</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts"
+    }
+  ]
+}

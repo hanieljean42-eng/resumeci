@@ -1,0 +1,34 @@
+{
+  "code": "RC-L2M-PART-XML-01",
+  "type": "partiel",
+  "matiere": "Introduction à la programmation XML",
+  "classe": "Licence 2 MIAGE",
+  "classe_key": "Licence_2_Miage",
+  "duree": "2 h",
+  "bareme": "/20",
+  "chapitre": "XML, DTD et schémas XSD",
+  "consignes": "Examen blanc — sujet original rédigé par ResumeCI. Distinguer « bien formé » et « valide » dans chaque réponse.",
+  "exercices": [
+    {
+      "titre": "Exercice 1 — Document bien formé (6 pts)",
+      "points": "6 pts",
+      "enonce": "<ol type='a'><li>Citer les 4 règles d'un document XML bien formé.</li><li>Ce document est-il bien formé ? <code>&lt;mag&gt;&lt;article&gt;&lt;titre&gt;A&lt;/titre&gt;&lt;/mag&gt;&lt;/article&gt;</code> Justifier.</li><li>Corriger pour obtenir un document bien formé.</li><li>Ce document corrigé est-il automatiquement valide ?</li></ol>",
+      "correction": "<p><strong>a)</strong> 1 racine unique ; imbrication stricte ; noms sensibles à la casse ; entités/préfixes corrects.</p><p><strong>b)</strong> <strong>Non</strong> — &lt;/mag&gt; ferme avant &lt;/article&gt; alors que &lt;article&gt; est imbriqué dans &lt;mag&gt; : croisement interdit.</p><p><strong>c)</strong> <code>&lt;mag&gt;&lt;article&gt;&lt;titre&gt;A&lt;/titre&gt;&lt;/article&gt;&lt;/mag&gt;</code></p><p><strong>d)</strong> <strong>Non</strong> — valide exige la conformité à un modèle (DTD/XSD) ; sans modèle, tout bien formé est valide par défaut mais sans contrainte.</p>",
+      "bareme_detail": "a) 2 pts · b) 1 pt · c) 1,5 pt · d) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 2 — DTD (7 pts)",
+      "points": "7 pts",
+      "enonce": "Modèle : une <code>bibliotheque</code> contient des <code>livre</code> (titre, auteur, annee obligatoires ; isbn unique ; resume optionnel).<ol type='a'><li>Écrire la DTD interne complète (éléments + attributs).</li><li>Expliquer les quantificateurs <code>?</code>, <code>*</code>, <code>+</code>.</li><li>Pourquoi isbn est-il déclaré ID et non CDATA ?</li></ol>",
+      "correction": "<p><strong>a)</strong></p><pre class='code'>&lt;!ELEMENT bibliotheque (livre*)&gt;&lt;!ELEMENT livre (titre, auteur, annee, resume?)&gt;&lt;!ELEMENT titre (#PCDATA)&gt;&lt;!ELEMENT auteur (#PCDATA)&gt;&lt;!ELEMENT annee (#PCDATA)&gt;&lt;!ELEMENT resume (#PCDATA)&gt;&lt;!ATTLIST livre isbn ID #REQUIRED&gt;</pre><p><strong>b)</strong> ? = 0 ou 1 ; * = 0 à n ; + = 1 à n.</p><p><strong>c)</strong> ID garantit <strong>l'unicité</strong> dans tout le document + permet les références IDREF ; CDATA accepte n'importe quelle chaîne dupliquée.</p>",
+      "bareme_detail": "a) 3,5 pts · b) 2 pts · c) 1,5 pt"
+    },
+    {
+      "titre": "Exercice 3 — XSD (7 pts)",
+      "points": "7 pts",
+      "enonce": "<ol type='a'><li>Donner 4 avantages du XSD sur la DTD.</li><li>Déclarer en XSD : un élément <code>prix</code> de type décimal, optionnel, max 2 occurrences.</li><li>À quoi sert <code>xsi:schemaLocation</code> ?</li></ol>",
+      "correction": "<p><strong>a)</strong> Écrit en XML ; namespaces ; typage riche (~40 types) ; héritage/extensions ; contraintes (min/max, motifs).</p><p><strong>b)</strong> <code>&lt;xsd:element name=\"prix\" type=\"xsd:decimal\" minOccurs=\"0\" maxOccurs=\"2\"/&gt;</code></p><p><strong>c)</strong> Attribut de <strong>liaison</strong> : associe le document XML à son fichier schéma (namespace → URL du .xsd) pour la validation.</p>",
+      "bareme_detail": "a) 3 pts · b) 2 pts · c) 2 pts"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Fiche_Lecon1_FORMULATION": {
+    "title": "Formulation d'un programme linéaire",
+    "questions": [
+      {"id":"q1","text":"Un programme linéaire se compose de :","type":"qcm","options":["Uniquement une fonction objectif","Variables de décision, fonction objectif, contraintes et positivité","Des graphes","Des tableaux"],"answer":1,"explanation":"4 ingrédients : variables de décision, fonction objectif, contraintes, xᵢ ≥ 0."},
+      {"id":"q2","text":"Les variables d'écart servent à :","type":"qcm","options":["Ajouter des contraintes","Transformer les inégalités en égalités (ressource non utilisée)","Supprimer la fonction objectif","Nommer les variables"],"answer":1,"explanation":"Variable d'écart = quantité de ressource disponible non utilisée, ≥ 0."},
+      {"id":"q3","text":"Un problème de mélange (régime alimentaire) est :","type":"qcm","options":["Un problème de maximisation","Un problème de minimisation sous contraintes de besoins minimaux","Un problème sans contraintes","Un problème de graphes"],"answer":1,"explanation":"Min coût s.c. apports ≥ besoins — forme Min avec inégalités ≥."},
+      {"id":"q4","text":"La contrainte de positivité impose :","type":"qcm","options":["xᵢ ≤ 0","xᵢ ≥ 0","xᵢ = 0","xᵢ libre"],"answer":1,"explanation":"Les quantités produites ne peuvent être négatives."}
+    ]
+  },
+  "Fiche_Lecon2_ALGORITHME_SIMPLEXE": {
+    "title": "Algorithme du simplexe",
+    "questions": [
+      {"id":"q1","text":"L'algorithme du simplexe fonctionne par :","type":"qcm","options":["Force brute","Changements de base itératifs entre sommets du polyèdre","Récursion","Tri"],"answer":1,"explanation":"Itératif : test d'entrée → test de sortie → nouveau pivot jusqu'à l'optimum."},
+      {"id":"q2","text":"En minimisation, l'arrêt optimal a lieu quand :","type":"qcm","options":["Tous les ĉⱼ < 0","Tous les ĉⱼ ≥ 0","Un ĉⱼ = 0","Il n'y a plus de variables"],"answer":1,"explanation":"Min : arrêt quand tous les coûts réduits ≥ 0 ; max : tous ≤ 0."},
+      {"id":"q3","text":"La variable entrante est choisie par :","type":"qcm","options":["Le plus grand rapport","Le min (ou max en max) des coûts réduits améliorants","Le hasard","Le dernier indice"],"answer":1,"explanation":"Min : min{ĉⱼ < 0} ; Max : max{ĉⱼ > 0}."},
+      {"id":"q4","text":"Le test de sortie calcule :","type":"qcm","options":["Le max de b̂ᵢ","Le min{b̂ᵢ/âᵢₖ : âᵢₖ > 0}","La somme des âᵢₖ","Le produit des âᵢₖ"],"answer":1,"explanation":"Ratio test : min sur les âᵢₖ > 0 — détermine la variable sortante."},
+      {"id":"q5","text":"Un programme est « non borné » quand :","type":"qcm","options":["Il n'a pas de solution","La valeur optimale est infinie (colonne sans pivot possible)","Il a trop de contraintes","La base est dégénérée"],"answer":1,"explanation":"Non borné = optimum = −∞ (min) ou +∞ (max), pas « pas de solution »."}
+    ]
+  },
+  "Fiche_Lecon3_TD_FORMULATION": {
+    "title": "TD — Formulation",
+    "questions": [
+      {"id":"q1","text":"« Au moindre coût » dans un énoncé signifie :","type":"qcm","options":["Max z","Min z","Min puis Max","Aucun objectif"],"answer":1,"explanation":"Coût minimal → Min z ; profit/CA maximal → Max z."},
+      {"id":"q2","text":"Un besoin « au minimum 60 kg » s'écrit :","type":"qcm","options":["≤ 60","≥ 60","= 60","< 60"],"answer":1,"explanation":"Besoin minimum → inégalité ≥."},
+      {"id":"q3","text":"Dans l'exercice des routes A↔B, une route double sens compte :","type":"qcm","options":["Un seul sens","Dans les deux sens avec des débits différents (20 A→B, 30 B→A)","Jamais","Double coût"],"answer":1,"explanation":"Double sens = débit dans les 2 sens + coût unique."}
+    ]
+  }
+}
