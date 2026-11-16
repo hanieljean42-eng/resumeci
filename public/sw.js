@@ -1,4 +1,4 @@
-const CACHE_SHELL = 'resumeci-shell-v129';
+const CACHE_SHELL = 'resumeci-shell-v130';
 const CACHE_FICHES = 'resumeci-fiches-v3';
 
 const SHELL_FILES = [
@@ -18,7 +18,7 @@ const SHELL_FILES = [
   '/data/structure.json',
   '/data/stats.json',
   '/data/search-index.json',
-  '/main.css?v=3.4.1',
+  '/main.css?v=3.4.2',
   '/univ.css?v=2.3.0',
   '/intro.css?v=1.1.0',
   '/enhancements.css?v=3.4.0',
