@@ -1,15 +1,15 @@
 {
-  "version": "3.6.35",
-  "build": 3632,
+  "version": "3.6.36",
+  "build": 3633,
   "date": "2026-11-21",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Hani : réponses en direct + discussions sauvegardées 💬",
-  "message": "Hani répond désormais mot à mot (plus rapide) et garde tes discussions pour chaque fiche.",
+  "title": "Hani : formules mathématiques corrigées ✨",
+  "message": "Les formules de Hani s'affichent maintenant joliment (plus de symboles LaTeX bruts) et il répond à toutes les questions d'études.",
   "features": [
-    "⚡ Réponses de Hani en streaming — affichage immédiat",
-    "💾 Une discussion par fiche : retrouve tes échanges quand tu y retournes",
-    "📱 Panneau optimisé mobile et clavier Android"
+    "🧮 Formules rendues en vrai format mathématique (KaTeX)",
+    "📚 Hani répond à toutes les questions scolaires, pas seulement la fiche",
+    "⚡ Réponses en streaming mot à mot"
   ],
   "forceShow": false
 }

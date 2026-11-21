@@ -30,10 +30,27 @@
 
   function fmtReply(text) {
     let h = esc(text);
+    // Protège les blocs `code` avant la conversion mathématique
+    const codes = [];
+    h = h.replace(/`([^`]+)`/g, (m, c) => { codes.push(c); return '\u0000' + (codes.length - 1) + '\u0000'; });
+    // $$...$$ et $...$ → spans .math-inline rendus par KaTeX (renderInlineMath)
+    h = h.replace(/\$\$([\s\S]+?)\$\$|\$([^$\n]{1,400}?)\$/g, (m, disp, inline) => {
+      const tex = String(disp !== undefined ? disp : inline).trim();
+      return `<span class="math-inline" data-tex="${tex.replace(/"/g, '&quot;')}">${tex}</span>`;
+    });
+    // \(...\) et \[...\] → même traitement
+    h = h.replace(/\\\[([\s\S]+?)\\\]|\\\(([\s\S]+?)\\\)/g, (m, d, i) => {
+      const tex = String(d !== undefined ? d : i).trim();
+      return `<span class="math-inline" data-tex="${tex.replace(/"/g, '&quot;')}">${tex}</span>`;
+    });
     h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    h = h.replace(/`([^`]+)`/g, '<code>$1</code>');
+    h = h.replace(/\u0000(\d+)\u0000/g, (m, i) => '<code>' + codes[+i] + '</code>');
     h = h.replace(/\n/g, '<br>');
     return h;
+  }
+
+  function renderMath(el) {
+    if (window.renderInlineMath) { try { window.renderInlineMath(el); } catch (e) {} }
   }
 
   // ---------- Persistance : un fil de discussion par fiche ----------
@@ -175,6 +192,7 @@
     div.className = 'ai-msg ' + (role === 'user' ? 'user' : role === 'sys' ? 'sys' : 'bot');
     div.innerHTML = isHtml ? text : fmtReply(text);
     els.msgs.appendChild(div);
+    if (role !== 'user' && role !== 'sys') renderMath(div);
     els.msgs.scrollTop = els.msgs.scrollHeight;
     return div;
   }
@@ -283,9 +301,7 @@
               else if (j.type === 'done') {
                 finishReply(j.reply || acc, j.remaining);
                 bubble.innerHTML = fmtReply(acc || j.reply || '');
-                if (typeof window.renderInlineMath === 'function') {
-                  try { window.renderInlineMath(bubble); } catch (e) {}
-                }
+                renderMath(bubble);
                 return;
               } else if (j.type === 'error') {
                 streamError = j.error || 'ai_failed';
@@ -307,9 +323,8 @@
       if (data.success && data.reply) {
         if (typeof data.remaining === 'number') { remaining = data.remaining; updateQuota(); }
         bubble.remove();
-        addMsg('bot', data.reply);
-        const last = els.msgs.lastElementChild;
-        if (typeof window.renderInlineMath === 'function') { try { window.renderInlineMath(last); } catch (e) {} }
+        const botMsg = addMsg('bot', data.reply);
+        renderMath(botMsg);
         history.push({ role: 'model', text: String(data.reply) });
         if (history.length > 40) history = history.slice(-40);
         saveThread();
