@@ -2617,8 +2617,8 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
 // global pour protéger le quota gratuit partagé entre tous les élèves.
 // --------------------------------------------------------------------------
 const GEMINI_API_KEY = String(process.env.GEMINI_API_KEY || '').trim();
-const GEMINI_MODEL = String(process.env.GEMINI_MODEL || 'gemini-3.5-flash').trim();
-const GEMINI_FALLBACK_MODEL = String(process.env.GEMINI_FALLBACK_MODEL || 'gemini-flash-lite-latest').trim();
+const GEMINI_MODEL = String(process.env.GEMINI_MODEL || 'gemini-flash-lite-latest').trim();
+const GEMINI_FALLBACK_MODEL = String(process.env.GEMINI_FALLBACK_MODEL || 'gemini-3.5-flash').trim();
 const AI_DAILY_LIMIT = Math.min(200, Math.max(1, parseInt(process.env.AI_DAILY_LIMIT || '25', 10) || 25));
 const AI_GLOBAL_DAILY_CAP = Math.min(10000, Math.max(50, parseInt(process.env.AI_GLOBAL_DAILY_CAP || '1200', 10) || 1200));
 const aiLimiter = limiter(15 * 60 * 1000, 40);
@@ -2653,6 +2653,75 @@ function geminiGenerate(system, contents, model) {
           reject(Object.assign(new Error(msg), { status: gres.statusCode }));
         } catch (e) { reject(e); }
       });
+    });
+    req.on('timeout', () => req.destroy(Object.assign(new Error('timeout'), { status: 504 })));
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+// Streaming SSE : same payload to streamGenerateContent?alt=sse, each text
+// delta is forwarded to onChunk as it arrives (perceived latency ↓).
+function geminiStream(system, contents, model, onChunk) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({
+      system_instruction: { parts: [{ text: system }] },
+      contents,
+      generationConfig: { temperature: 0.4, maxOutputTokens: 700 }
+    });
+    const req = https.request({
+      hostname: 'generativelanguage.googleapis.com',
+      path: `/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(GEMINI_API_KEY)}`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+      timeout: 45000
+    }, (gres) => {
+      if (gres.statusCode < 200 || gres.statusCode >= 300) {
+        let data = '';
+        gres.on('data', c => { data += c; });
+        gres.on('end', () => {
+          try {
+            const j = JSON.parse(data);
+            reject(Object.assign(new Error(String((j.error && j.error.message) || `HTTP ${gres.statusCode}`).slice(0, 200)), { status: gres.statusCode }));
+          } catch (e) {
+            reject(Object.assign(new Error(`HTTP ${gres.statusCode}`), { status: gres.statusCode }));
+          }
+        });
+        return;
+      }
+      const flushParts = text => {
+        for (const line of text.split('\n')) {
+          if (!line.startsWith('data:')) continue;
+          const payload = line.slice(5).trim();
+          if (!payload || payload === '[DONE]') continue;
+          try {
+            const j = JSON.parse(payload);
+            const parts = ((((j.candidates || [])[0] || {}).content || {}).parts) || [];
+            for (const p of parts) {
+              if (p.text) { full += p.text; onChunk(p.text); }
+            }
+          } catch (e) { /* fragment SSE partiel : ignoré */ }
+        }
+      };
+      let full = '';
+      let buf = '';
+      const decoder = new (require('string_decoder').StringDecoder)('utf8');
+      gres.on('data', chunk => {
+        buf += decoder.write(chunk).replace(/\r\n/g, '\n');
+        let idx;
+        while ((idx = buf.indexOf('\n\n')) >= 0) {
+          const evt = buf.slice(0, idx);
+          buf = buf.slice(idx + 2);
+          flushParts(evt);
+        }
+      });
+      gres.on('end', () => {
+        buf += decoder.end();
+        if (buf.trim()) flushParts(buf);
+        resolve(full.trim());
+      });
+      gres.on('error', reject);
     });
     req.on('timeout', () => req.destroy(Object.assign(new Error('timeout'), { status: 504 })));
     req.on('error', reject);
@@ -2787,7 +2856,38 @@ Règles strictes :
     contents.push({ role: 'user', parts: [{ text: userText }] });
     while (contents.length && contents[0].role !== 'user') contents.shift();
 
-    // Modèle principal, repli sur le modèle lite si saturation/quota (tier gratuit)
+    // Mode streaming (SSE) : réponse mot à mot pour une latence perçue faible.
+    if (body.stream === true || body.stream === '1' || body.stream === 1) {
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'X-Accel-Buffering': 'no'
+      });
+      const send = o => { try { res.write(`data: ${JSON.stringify(o)}\n\n`); } catch (e) {} };
+      send({ type: 'start' });
+      let full = '';
+      const attempt = async model => {
+        await geminiStream(system, contents, model, t => { full += t; send({ type: 'token', text: t }); });
+      };
+      try {
+        try {
+          await attempt(GEMINI_MODEL);
+        } catch (e) {
+          const retryable = !e.status || e.status === 408 || e.status === 429 || e.status >= 500;
+          if (!retryable || !GEMINI_FALLBACK_MODEL || GEMINI_FALLBACK_MODEL === GEMINI_MODEL || full) throw e;
+          full = '';
+          await attempt(GEMINI_FALLBACK_MODEL);
+        }
+        send({ type: 'done', reply: full.trim(), remaining: quota.remaining });
+      } catch (e) {
+        console.error('[AI] Erreur stream:', e && e.message);
+        send({ type: 'error', error: (e && e.status === 429) ? 'ai_overloaded' : 'ai_failed' });
+      }
+      return res.end();
+    }
+
+    // Mode JSON classique (compatibilité)
     let reply;
     try {
       reply = await geminiGenerate(system, contents, GEMINI_MODEL);
