@@ -658,15 +658,10 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
     const expiresAt = result ? result.expiresAt : null;
     await ref.set({ status: 'processed', expiresAt, processedAt: FieldValue.serverTimestamp() }, { merge: true });
     // Code promo consommé : l'uid payeur est enregistré pour bloquer la réutilisation.
-    // Read-modify-write (pas arrayUnion) : DualStore/Mongo ne connaît pas les sentinelles.
+    // arrayUnion est atomique côté Firestore et traduit en $addToSet par DualStore/Mongo.
     if (discountCode && uid) {
       const gRef = db.collection('gifts').doc(String(discountCode));
-      const gSnap = await gRef.get().catch(() => null);
-      const prev = gSnap && gSnap.exists ? gSnap.data().usedBy : null;
-      const usedBy = Array.isArray(prev) ? prev : [];
-      if (!usedBy.includes(uid)) {
-        await gRef.set({ usedBy: [...usedBy, uid] }, { merge: true }).catch(() => {});
-      }
+      await gRef.set({ usedBy: FieldValue.arrayUnion(uid) }, { merge: true }).catch(() => {});
     }
     return { alreadyProcessed: false, tierKey, expiresAt };
   } catch (e) {

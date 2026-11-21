@@ -51,6 +51,8 @@ class DualStore {
   toMongoValue(v) {
     if (v === null || v === undefined || typeof v !== 'object') return v;
     if (this.isSentinel(v, 'ts')) return new Date();
+    const cn = v.constructor && v.constructor.name;
+    if (cn === 'ArrayUnionTransform' || cn === 'ArrayRemoveTransform') return (v.elements || []).map(x => this.toMongoValue(x));
     if (this.TS && v instanceof this.TS) return v.toDate();
     if (v instanceof Date) return v;
     if (typeof v.toDate === 'function' && typeof v.seconds === 'number') return v.toDate();
@@ -61,17 +63,22 @@ class DualStore {
     for (const [k, x] of Object.entries(v)) if (x !== undefined) out[k] = this.toMongoValue(x);
     return out;
   }
-  // { $set, $unset } pour un set merge / update ; doc complet pour un set simple.
+  // { $set, $unset, $addToSet, $pull } pour un set merge / update ; doc complet pour un set simple.
   toMongoUpdate(data) {
-    const $set = {}; const $unset = {};
+    const $set = {}; const $unset = {}; const $addToSet = {}; const $pull = {};
     for (const [k, v] of Object.entries(data || {})) {
       if (v === undefined) continue;
+      const cn = v && v.constructor && v.constructor.name;
       if (this.isSentinel(v, 'delete')) $unset[k] = '';
+      else if (cn === 'ArrayUnionTransform') $addToSet[k] = { $each: (v.elements || []).map(x => this.toMongoValue(x)) };
+      else if (cn === 'ArrayRemoveTransform') $pull[k] = { $in: (v.elements || []).map(x => this.toMongoValue(x)) };
       else $set[k] = this.toMongoValue(v);
     }
     const upd = {};
     if (Object.keys($set).length) upd.$set = $set;
     if (Object.keys($unset).length) upd.$unset = $unset;
+    if (Object.keys($addToSet).length) upd.$addToSet = $addToSet;
+    if (Object.keys($pull).length) upd.$pull = $pull;
     return upd;
   }
   toMongoDoc(data) {
