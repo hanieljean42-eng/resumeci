@@ -2053,6 +2053,10 @@ let currentCheckoutMethod = 'wave';
 // GeniusPay est masqué dans l'app — l'abonnement se fait sur resumeci.me.
 window.isAndroidApp = function() {
   try {
+    // La TWA partage le stockage de Chrome : un onglet navigateur reste en mode
+    // 'browser' — on exige standalone pour ne pas bloquer l'achat sur le site.
+    const standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+    if (!standalone) return false;
     if (localStorage.getItem('resumeci_twa') === '1') return true;
     const ref = document.referrer || '';
     const viaTwa = ref.startsWith('android-app://') ||
