@@ -661,10 +661,7 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
     if (discountCode && uid) {
       const gRef = db.collection('gifts').doc(String(discountCode));
       const gSnap = await gRef.get().catch(() => null);
-      const usedBy = gSnap && gSnap.exists ? (gSnap.data().usedBy || []) : [];
-      if (!usedBy.includes(uid)) {
-        await gRef.set({ usedBy: [...usedBy, uid] }, { merge: true }).catch(() => {});
-      }
+      await gRef.set({ usedBy: FieldValue.arrayUnion(uid) }, { merge: true }).catch(() => {});
     }
     return { alreadyProcessed: false, tierKey, expiresAt };
   } catch (e) {
@@ -858,17 +855,18 @@ app.post('/api/pay', async (req, res) => {
       if (!g || g.kind !== 'discount' || gExpired || exhausted || usedBy.includes(accountDocId)) {
         return res.status(400).json({ success: false, error: 'Ce code promo est invalide, expiré ou déjà utilisé.' });
       }
-      const hadPass = payingUser && Number(payingUser.premiumExpiresAt) > 0;
+      const hadPass = payingUser && toMsEpoch(payingUser.premiumExpiresAt) > 0;
       if (g.renewalOnly !== false && !hadPass) {
         return res.status(400).json({ success: false, error: 'Ce code est réservé aux élèves qui prolongent leur Pass.' });
       }
       discountPct = Math.min(Math.max(Number(g.percent) || 0, 1), 90);
     }
 
-    if (userRef && !discountCode) {
+    if (userRef) {
       const userSnap = await userRef.get().catch(() => null);
       const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
       if (pending && pending.tierKey === tierKey && pending.checkoutUrl &&
+          String(pending.discountCode || '') === String(discountCode || '') &&
           Date.now() - (Number(pending.createdAt) || 0) < PENDING_REUSE_MS) {
         const gp = await queryGeniusPayPayment(pending.reference).catch(() => null);
         const st = gp && gp.success && gp.data ? gp.data.status : null;
@@ -975,7 +973,7 @@ app.post('/api/pay', async (req, res) => {
       if (userRef && result.data.reference) {
         // set+merge (et non update) : fonctionne aussi si le doc vient d'être résolu
         userRef.set({
-          pendingPayment: { reference: String(result.data.reference), tierKey, checkoutUrl: targetUrl, createdAt: Date.now() }
+          pendingPayment: { reference: String(result.data.reference), tierKey, checkoutUrl: targetUrl, createdAt: Date.now(), discountCode: discountCode || null }
         }, { merge: true }).catch(() => {});
       }
       res.json({
@@ -1118,7 +1116,8 @@ app.post('/api/confirm-payment', async (req, res) => {
       tierKey: actualTier,
       amount: amt,
       paymentMethod: pay.payment_method || 'wave',
-      source: 'confirm-payment'
+      source: 'confirm-payment',
+      discountCode: (pay.metadata && pay.metadata.discountCode) || null
     });
     res.json({
       success: true,
@@ -2379,8 +2378,10 @@ async function createNotification(n) {
       createdTs: fv ? fv.serverTimestamp() : null
     });
     invalidateCache(`notifs:${String(n.target || 'all').slice(0, 80)}`);
+    return true;
   } catch (err) {
     console.error('[Notifs] Erreur création:', err.message || err);
+    return false;
   }
 }
 
@@ -3151,34 +3152,34 @@ async function runExpiryReminders() {
   let sent7 = 0, sent1 = 0, sent0 = 0;
   for (const doc of snap.docs) {
     const u = doc.data();
-    const exp = Number(u.premiumExpiresAt) || 0;
+    const exp = toMsEpoch(u.premiumExpiresAt);
     const r = u.passReminder || {};
     if (Number(r.exp) !== exp) { r.j7 = r.j1 = r.j0 = false; r.exp = exp; }
     let dirty = false;
     if (u.isPremium && exp > now && exp <= now + 7 * DAY) {
       const daysLeft = Math.ceil((exp - now) / DAY);
       if (daysLeft <= 1 && !r.j1) {
-        await createNotification({
+        const ok = await createNotification({
           target: doc.id, icon: 'fa-hourglass-end',
           title: 'Dernier jour de ton Pass !',
           body: `Ton Pass expire aujourd'hui. Prolonge-le maintenant avec le code ${RENEWAL_CODE} : -20 % sur toutes les formules, et tes jours restants sont conservés.`
         });
-        r.j1 = true; sent1++; dirty = true;
+        if (ok) { r.j1 = true; r.j7 = true; sent1++; dirty = true; }
       } else if (!r.j7) {
-        await createNotification({
+        const ok = await createNotification({
           target: doc.id, icon: 'fa-hourglass-half',
           title: `Ton Pass expire dans ${daysLeft} jour${daysLeft > 1 ? 's' : ''}`,
           body: `Prolonge-le avant l'expiration avec le code ${RENEWAL_CODE} : -20 % de fidélité, cumulé avec tes jours restants.`
         });
-        r.j7 = true; sent7++; dirty = true;
+        if (ok) { r.j7 = true; sent7++; dirty = true; }
       }
     } else if (exp > 0 && exp <= now && exp > now - 3 * DAY && !r.j0) {
-      await createNotification({
+      const ok = await createNotification({
         target: doc.id, icon: 'fa-heart-crack',
         title: 'Ton Pass est terminé',
         body: `Reviens vite : le code ${RENEWAL_CODE} te donne -20 % sur toutes les formules pour reprendre là où tu t'étais arrêté.`
       });
-      r.j0 = true; sent0++; dirty = true;
+      if (ok) { r.j0 = true; sent0++; dirty = true; }
     }
     if (dirty) {
       await db.collection('users').doc(doc.id).set({
