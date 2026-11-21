@@ -2609,6 +2609,203 @@ app.delete('/api/admin/reviews/:id', async (req, res) => {
   }
 });
 
+// --------------------------------------------------------------------------
+// ROUTE 7b : TUTEUR IA « PROFESSEUR IA 24/7 » — réservé Pass Élite / Excellence / VIP / Annuel
+// Appelle l'API Gemini (tier gratuit Google AI Studio) avec le contenu de la
+// fiche en contexte. Clé : GEMINI_API_KEY (variable d'env Render, jamais côté
+// client). Quota : AI_DAILY_LIMIT questions/jour/élève + plafond journalier
+// global pour protéger le quota gratuit partagé entre tous les élèves.
+// --------------------------------------------------------------------------
+const GEMINI_API_KEY = String(process.env.GEMINI_API_KEY || '').trim();
+const GEMINI_MODEL = String(process.env.GEMINI_MODEL || 'gemini-3.5-flash').trim();
+const GEMINI_FALLBACK_MODEL = String(process.env.GEMINI_FALLBACK_MODEL || 'gemini-flash-lite-latest').trim();
+const AI_DAILY_LIMIT = Math.min(200, Math.max(1, parseInt(process.env.AI_DAILY_LIMIT || '25', 10) || 25));
+const AI_GLOBAL_DAILY_CAP = Math.min(10000, Math.max(50, parseInt(process.env.AI_GLOBAL_DAILY_CAP || '1200', 10) || 1200));
+const aiLimiter = limiter(15 * 60 * 1000, 40);
+const aiMemQuota = new Map(); // repli mémoire si Firestore indisponible
+
+function geminiGenerate(system, contents, model) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({
+      system_instruction: { parts: [{ text: system }] },
+      contents,
+      generationConfig: { temperature: 0.4, maxOutputTokens: 800 }
+    });
+    const req = https.request({
+      hostname: 'generativelanguage.googleapis.com',
+      path: `/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+      timeout: 30000
+    }, (gres) => {
+      let data = '';
+      gres.on('data', c => { data += c; });
+      gres.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          if (gres.statusCode >= 200 && gres.statusCode < 300) {
+            const parts = ((((json.candidates || [])[0] || {}).content || {}).parts) || [];
+            const text = parts.map(p => p.text || '').join('').trim();
+            if (text) return resolve(text);
+            return reject(Object.assign(new Error('empty_reply'), { status: gres.statusCode }));
+          }
+          const msg = String((json.error && json.error.message) || `HTTP ${gres.statusCode}`).slice(0, 200);
+          reject(Object.assign(new Error(msg), { status: gres.statusCode }));
+        } catch (e) { reject(e); }
+      });
+    });
+    req.on('timeout', () => req.destroy(Object.assign(new Error('timeout'), { status: 504 })));
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+// Compteur journalier : doc {day, count} dans Firestore, repli mémoire.
+async function aiDailyTake(collection, docId, max) {
+  const day = new Date().toISOString().slice(0, 10);
+  if (db) {
+    try {
+      const ref = db.collection(collection).doc(docId);
+      const snap = await ref.get();
+      const d = snap.exists ? snap.data() : {};
+      const count = d.day === day ? (Number(d.count) || 0) : 0;
+      if (count >= max) return { ok: false, remaining: 0 };
+      await ref.set({ day, count: count + 1, updatedAt: Date.now() }, { merge: true });
+      return { ok: true, remaining: max - count - 1 };
+    } catch (e) { /* repli mémoire ci-dessous */ }
+  }
+  const key = collection + ':' + docId;
+  const m = aiMemQuota.get(key);
+  const count = m && m.day === day ? m.count : 0;
+  if (count >= max) return { ok: false, remaining: 0 };
+  aiMemQuota.set(key, { day, count: count + 1 });
+  return { ok: true, remaining: max - count - 1 };
+}
+
+// Extrait le texte lisible d'une fiche sécurisée (mêmes garde-fous que /api/fiche).
+function ficheTextForAi(cls, subject, file) {
+  const unsafe = p => !p || p.includes('..') || p.includes('/') || p.includes('\\');
+  if (unsafe(cls) || unsafe(subject) || unsafe(file) || !file.endsWith('.html')) return null;
+  const filePath = path.join(SECURE_FICHES_DIR, cls, subject, file);
+  if (!filePath.startsWith(SECURE_FICHES_DIR + path.sep) || !fs.existsSync(filePath)) return null;
+  const html = fs.readFileSync(filePath, 'utf8');
+  const text = html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'")
+    .replace(/\s+/g, ' ').trim();
+  return text ? text.slice(0, 12000) : null;
+}
+
+app.post('/api/ai/chat', aiLimiter, async (req, res) => {
+  try {
+    if (!GEMINI_API_KEY) {
+      return res.status(503).json({ success: false, error: 'ai_unavailable' });
+    }
+    const sessionUid = verifySession(String(req.headers.authorization || '').replace(/^Bearer\s+/i, ''));
+    if (!sessionUid) {
+      return res.status(401).json({ success: false, error: 'auth_required' });
+    }
+    // Même résolution de compte que les fiches/interros (doc fantôme → vrai compte)
+    let user = db ? await findUserByAnyId(sessionUid).catch(() => null) : null;
+    const candidates = [user];
+    if (user) {
+      const ghostPhone = String(user.whatsapp || user.contact || user.phone || '').replace(/\D/g, '').slice(-10);
+      if (ghostPhone.length === 10) {
+        const real = await findUserByAnyId(ghostPhone).catch(() => null);
+        if (real && real._docId !== user._docId) candidates.push(real);
+      }
+    }
+    const status = mergedPremiumStatus(candidates);
+    if (!status.isPremium || !ELITE_PLANS.has(String(status.premiumPlan || '').toLowerCase())) {
+      return res.status(403).json({ success: false, error: 'elite_required' });
+    }
+    const message = clampStr(req.body && req.body.message, 1000).trim();
+    if (!message) {
+      return res.status(400).json({ success: false, error: 'message_required' });
+    }
+
+    const quota = await aiDailyTake('ai_quota', String(sessionUid).replace(/[^A-Za-z0-9_-]/g, '_').slice(0, 80) || 'anon', AI_DAILY_LIMIT);
+    if (!quota.ok) {
+      return res.status(429).json({ success: false, error: 'ai_quota', remaining: 0, limit: AI_DAILY_LIMIT });
+    }
+    const glob = await aiDailyTake('ai_global', aiTodaySafe(), AI_GLOBAL_DAILY_CAP);
+    if (!glob.ok) {
+      return res.status(503).json({ success: false, error: 'ai_busy' });
+    }
+
+    const body = req.body || {};
+    const cls = clampStr(body.cls, 60);
+    const subject = clampStr(body.subject, 80);
+    const file = clampStr(body.file, 120);
+    const effectiveCls = (CLASS_KEY_RE.test(cls) ? cls : '') || firstUserClasse(candidates);
+    const classLabel = String(effectiveCls || 'Collège/Lycée').replace(/_/g, ' ');
+
+    let context = '';
+    let ficheLabel = '';
+    if (effectiveCls && subject && file) {
+      const txt = ficheTextForAi(effectiveCls, subject, file);
+      if (txt) {
+        context = txt;
+        ficheLabel = `${classLabel} — ${subject} — ${String(file).replace(/^Fiche_/, '').replace(/\.html$/, '')}`;
+      }
+    }
+    let subjectsHint = '';
+    if (!context && effectiveCls && CLASS_KEY_RE.test(effectiveCls)) {
+      const subs = Object.keys(getSecureFichesIndex()[effectiveCls] || {});
+      if (subs.length) subjectsHint = `\nMatières ResumeCI disponibles pour ${classLabel} : ${subs.join(', ')}.`;
+    }
+
+    const system = `Tu es Hani, le Professeur IA de ResumeCI (Côte d'Ivoire) — un tuteur scolaire chaleureux et pédagogue.
+Si on te demande ton nom, tu es Hani. Tu parles de toi à la première personne (« je », « Hani peut t'aider »).
+L'élève est en ${classLabel}.${subjectsHint}
+Règles strictes :
+- Réponds en français, simple et encourageant, adapté au niveau ${classLabel}.
+- Si un CONTENU DE FICHE est fourni, base-toi sur lui pour les questions de cours et cite la notion.
+- Pour les exercices, donne la méthode étape par étape puis le résultat.
+- 5 à 15 lignes maximum sauf demande de détail. Texte simple, listes à puces « - » autorisées.
+- Question hors cours : redirige poliment vers les révisions.
+- N'invente ni formule ni fait : en cas de doute, dis « vérifie dans ta fiche ».${ficheLabel ? `\nFiche en contexte : ${ficheLabel}.` : ''}`;
+
+    // Historique : 8 derniers messages max, rôles alternés user/model exigés par Gemini.
+    const hist = Array.isArray(body.history) ? body.history.slice(-8) : [];
+    const contents = [];
+    for (const h of hist) {
+      const role = h && h.role === 'model' ? 'model' : 'user';
+      const text = clampStr(h && h.text, 1500).trim();
+      if (!text) continue;
+      const last = contents[contents.length - 1];
+      if (last && last.role === role) last.parts[0].text += '\n' + text;
+      else contents.push({ role, parts: [{ text }] });
+    }
+    const userText = (context
+      ? `=== CONTENU DE LA FICHE (${ficheLabel}) ===\n${context}\n=== FIN DU CONTENU ===\n\n`
+      : '') + `Question de l'élève : ${message}`;
+    contents.push({ role: 'user', parts: [{ text: userText }] });
+    while (contents.length && contents[0].role !== 'user') contents.shift();
+
+    // Modèle principal, repli sur le modèle lite si saturation/quota (tier gratuit)
+    let reply;
+    try {
+      reply = await geminiGenerate(system, contents, GEMINI_MODEL);
+    } catch (e) {
+      const retryable = !e.status || e.status === 408 || e.status === 429 || e.status >= 500;
+      if (!retryable || !GEMINI_FALLBACK_MODEL || GEMINI_FALLBACK_MODEL === GEMINI_MODEL) throw e;
+      reply = await geminiGenerate(system, contents, GEMINI_FALLBACK_MODEL);
+    }
+    res.json({ success: true, reply, remaining: quota.remaining });
+  } catch (err) {
+    const st = err && err.status;
+    if (st === 429) return res.status(429).json({ success: false, error: 'ai_overloaded' });
+    console.error('[AI] Erreur:', err && err.message);
+    res.status(502).json({ success: false, error: 'ai_failed' });
+  }
+});
+function aiTodaySafe() { return new Date().toISOString().slice(0, 10); }
+
 // ==================== TIRAGE AU SORT HEBDO + CODES CADEAUX ====================
 // Cycle hebdo (GMT = heure d'Abidjan) : la semaine démarre dimanche 20h et
 // les participations se clôturent le dimanche suivant à 16h. L'admin tire au

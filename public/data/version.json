@@ -1,15 +1,15 @@
 {
-  "version": "3.6.32",
-  "build": 3629,
-  "date": "2026-11-12",
+  "version": "3.6.34",
+  "build": 3631,
+  "date": "2026-11-21",
   "forceReload": false,
   "forcePurgeCache": false,
-  "title": "Nouvelle classe : Licence 2 MIAGE 🎓",
-  "message": "ResumeCI ajoute la classe Licence 2 MIAGE avec ses 26 matières (semestres 3 et 4).",
+  "title": "Nouveau : Hani, ton Professeur IA 🤖",
+  "message": "Hani est né ! Pose tes questions de cours à ton tuteur IA : il répond à partir de tes fiches. Réservé au Pass Élite.",
   "features": [
-    "🎓 Licence 2 MIAGE disponible à l'inscription",
-    "📚 26 matières des semestres 3 et 4",
-    "🔓 Même Pass étudiant : toutes les fiches de la filière"
+    "🤖 Hani — Tuteur IA personnalisé dans les fiches et en chat libre",
+    "📄 Il répond en s'appuyant sur le contenu de ta fiche",
+    "🔒 Accès réservé au Pass Élite et Pass Excellence"
   ],
-  "forceShow": true
+  "forceShow": false
 }
