@@ -2274,6 +2274,8 @@ window.submitCheckoutPayment = async function() {
   const email = isUnivCheckout ? 'etudiant@resumeci.me' : 'eleve@resumeci.me';
   const fullPhone = '+225' + rawPhone;
   const returnOrigin = window.location.origin;
+  const promoInput = document.getElementById('checkoutPromoInput');
+  const promoCode = promoInput ? promoInput.value.trim().toUpperCase() : '';
 
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
@@ -2287,11 +2289,24 @@ window.submitCheckoutPayment = async function() {
         customerName: name.trim() || (isUnivCheckout ? 'Étudiant(e)' : 'Élève'),
         customerPhone: fullPhone,
         customerEmail: email,
-        returnOrigin: returnOrigin
+        returnOrigin: returnOrigin,
+        ...(promoCode ? { code: promoCode } : {})
       })
     });
 
-    if (!res.ok) throw new Error("GATEWAY_UNAVAILABLE");
+    if (!res.ok) {
+      // Code promo refusé (400) : afficher la raison au lieu d'un message générique
+      try {
+        const errData = await res.json();
+        if (errData && errData.error && res.status === 400) {
+          if (window.toast) toast(errData.error, 'warn', 5000);
+          if (btn) btn.disabled = false;
+          if (textEl) textEl.innerHTML = originalContent;
+          return;
+        }
+      } catch (_) {}
+      throw new Error("GATEWAY_UNAVAILABLE");
+    }
     const ct = res.headers.get('content-type') || '';
     if (!ct.includes('application/json')) throw new Error("GATEWAY_RESPONSE_INVALID");
 
@@ -2299,6 +2314,12 @@ window.submitCheckoutPayment = async function() {
     const checkoutUrl = data.checkout_url || data.payment_url;
 
     if (data.success && checkoutUrl) {
+      if (data.discountApplied && data.finalAmount) {
+        const finalPrice = Number(data.finalAmount).toLocaleString('fr-FR');
+        const badge = document.getElementById('checkoutPriceBadge');
+        if (badge) badge.textContent = `${finalPrice} FCFA (-${data.discountPct}%)`;
+        if (window.toast) toast(`Code ${promoCode} appliqué : tu paies ${finalPrice} FCFA au lieu de ${Number(data.baseAmount).toLocaleString('fr-FR')} FCFA`, 'success', 5000);
+      }
       if (data.reference || data.payment_reference) {
         window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier, currentCheckoutMethod);
       }

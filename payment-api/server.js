@@ -626,7 +626,7 @@ async function unlockUserInFirestore(uid, phone, tierKey, durationDays = 30, ext
 // Chaque référence est enregistrée dans `payments/{reference}` : une référence déjà traitée
 // ne débloque plus rien (pas de réinitialisation de premiumExpiresAt par rejeu).
 const ALREADY_EXISTS = 6;
-async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, paymentMethod, source }) {
+async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, paymentMethod, source, discountCode }) {
   if (!db) throw new Error('Firestore non initialisé');
   const ref = db.collection('payments').doc(String(reference));
   try {
@@ -636,6 +636,7 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
       phone: phone || null,
       tierKey,
       amount,
+      discountCode: discountCode || null,
       paymentMethod: paymentMethod || null,
       source,
       status: 'processing',
@@ -656,6 +657,15 @@ async function processVerifiedPayment(reference, { uid, phone, tierKey, amount, 
     });
     const expiresAt = result ? result.expiresAt : null;
     await ref.set({ status: 'processed', expiresAt, processedAt: FieldValue.serverTimestamp() }, { merge: true });
+    // Code promo consommé : l'uid payeur est enregistré pour bloquer la réutilisation
+    if (discountCode && uid) {
+      const gRef = db.collection('gifts').doc(String(discountCode));
+      const gSnap = await gRef.get().catch(() => null);
+      const usedBy = gSnap && gSnap.exists ? (gSnap.data().usedBy || []) : [];
+      if (!usedBy.includes(uid)) {
+        await gRef.set({ usedBy: [...usedBy, uid] }, { merge: true }).catch(() => {});
+      }
+    }
     return { alreadyProcessed: false, tierKey, expiresAt };
   } catch (e) {
     // Échec du déblocage : libérer la référence pour permettre un nouvel essai
@@ -753,7 +763,8 @@ async function resolvePendingPayment(userRef, userData) {
   const result = await processVerifiedPayment(pending.reference, {
     uid: meta.uid || userData.uid || userRef.id,
     phone: pay.customer?.phone || meta.phone || null,
-    tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'user-status'
+    tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'user-status',
+    discountCode: meta.discountCode || null
   });
   if (result.alreadyProcessed) await clear();
   return result;
@@ -832,7 +843,29 @@ app.post('/api/pay', async (req, res) => {
     const { primary: payingUser } = db ? await resolveUserDocs(safeUid, cleanPhone) : { primary: null };
     const accountDocId = payingUser ? payingUser._docId : safeUid;
     const userRef = db ? db.collection('users').doc(accountDocId) : null;
-    if (userRef) {
+    // Code promo / fidélité (optionnel) : validé sur la collection `gifts`
+    // (kind 'discount'). Par défaut réservé aux élèves ayant déjà eu un Pass
+    // (`renewalOnly`), une seule utilisation par compte sauf si maxUses > 1.
+    let discountPct = 0;
+    let discountCode = null;
+    if (req.body.code) {
+      discountCode = clampStr(req.body.code, 24).toUpperCase().replace(/\s+/g, '');
+      const gSnap = db ? await db.collection('gifts').doc(discountCode).get().catch(() => null) : null;
+      const g = gSnap && gSnap.exists ? gSnap.data() : null;
+      const usedBy = g && Array.isArray(g.usedBy) ? g.usedBy : [];
+      const exhausted = usedBy.length >= (Number(g && g.maxUses) || 1);
+      const gExpired = g && g.expiresAt && Date.parse(g.expiresAt) < Date.now();
+      if (!g || g.kind !== 'discount' || gExpired || exhausted || usedBy.includes(accountDocId)) {
+        return res.status(400).json({ success: false, error: 'Ce code promo est invalide, expiré ou déjà utilisé.' });
+      }
+      const hadPass = payingUser && Number(payingUser.premiumExpiresAt) > 0;
+      if (g.renewalOnly !== false && !hadPass) {
+        return res.status(400).json({ success: false, error: 'Ce code est réservé aux élèves qui prolongent leur Pass.' });
+      }
+      discountPct = Math.min(Math.max(Number(g.percent) || 0, 1), 90);
+    }
+
+    if (userRef && !discountCode) {
       const userSnap = await userRef.get().catch(() => null);
       const pending = userSnap && userSnap.exists ? userSnap.data().pendingPayment : null;
       if (pending && pending.tierKey === tierKey && pending.checkoutUrl &&
@@ -866,8 +899,9 @@ app.post('/api/pay', async (req, res) => {
     }
 
     // Payload GeniusPay avec Côte d'Ivoire par défaut et URLs de webhook explicites
+    const finalAmount = discountPct ? Math.max(100, Math.round(plan.price * (100 - discountPct) / 100)) : plan.price;
     const payload = {
-      amount: plan.price,
+      amount: finalAmount,
       currency: "XOF",
       description: `Pass Réussite ${plan.name} - ResumeCI`,
       country: "CI",
@@ -883,7 +917,8 @@ app.post('/api/pay', async (req, res) => {
         customerPhone: cleanPhone.slice(-10),
         tierKey: tierKey,
         type: 'monthly',
-        method: chosenMethod
+        method: chosenMethod,
+        ...(discountCode ? { discountCode, discountPct } : {})
       },
       webhook_url: WEBHOOK_URL,
       callback_url: WEBHOOK_URL,
@@ -948,7 +983,8 @@ app.post('/api/pay', async (req, res) => {
         checkout_url: targetUrl,
         payment_url: targetUrl,
         payment_reference: result.data.reference || null,
-        payment_method: result.data.payment_method || chosenMethod
+        payment_method: result.data.payment_method || chosenMethod,
+        ...(discountCode ? { discountApplied: true, discountPct, finalAmount, baseAmount: plan.price } : {})
       });
     } else {
       console.error("[Paiement] Erreur GeniusPay:", result && (result.message || result.error || 'réponse inattendue'));
@@ -997,7 +1033,8 @@ app.get('/api/check-payment/:ref', async (req, res) => {
 
     if (isCompleted) {
       const result = await processVerifiedPayment(ref, {
-        uid, phone, tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'check-payment'
+        uid, phone, tierKey, amount, paymentMethod: pay.payment_method || 'wave', source: 'check-payment',
+        discountCode: meta.discountCode || null
       });
 
       return res.json({
@@ -1138,7 +1175,8 @@ app.post('/api/webhook', async (req, res) => {
 
     if (!db) return res.status(503).send('Service indisponible');
     const result = await processVerifiedPayment(ref, {
-      uid, phone, tierKey, amount, paymentMethod: verified.payment_method || 'wave', source: 'webhook'
+      uid, phone, tierKey, amount, paymentMethod: verified.payment_method || 'wave', source: 'webhook',
+      discountCode: metadata.discountCode || null
     });
     if (result.alreadyProcessed) {
       console.log(`[Webhook] Paiement ${ref} déjà traité, ignoré.`);
@@ -3086,7 +3124,87 @@ function go(){ call({phone:phone.value, fullName:name.value, selectedClass:cls.v
   console.log('🧪 DEV_MODE actif — outils de test sur /dev');
 }
 
+// --------------------------------------------------------------------------
+// RAPPELS D'EXPIRATION DU PASS : J-7, J-1 et relance expiré (<3 jours)
+// + code fidélité REN20 (-20 %). Scan des users toutes les 12 h ; flags
+// `passReminder` par cycle d'abonnement (réarmés quand premiumExpiresAt change).
+// --------------------------------------------------------------------------
+const RENEWAL_CODE = 'REN20';
+async function ensureRenewalCode() {
+  const gRef = db.collection('gifts').doc(RENEWAL_CODE);
+  const snap = await gRef.get();
+  if (!snap.exists) {
+    await gRef.set({
+      code: RENEWAL_CODE, kind: 'discount', percent: 20, maxUses: 1000,
+      usedBy: [], renewalOnly: true,
+      note: 'Fidélité : -20 % sur le renouvellement du Pass',
+      createdBy: 'system', createdAt: new Date().toISOString()
+    });
+  }
+}
+async function runExpiryReminders() {
+  if (!db) return { sent7: 0, sent1: 0, sent0: 0 };
+  await ensureRenewalCode().catch(e => console.warn('[Rappels] Code fidélité:', e.message));
+  const snap = await db.collection('users').get();
+  const now = Date.now();
+  const DAY = 24 * 60 * 60 * 1000;
+  let sent7 = 0, sent1 = 0, sent0 = 0;
+  for (const doc of snap.docs) {
+    const u = doc.data();
+    const exp = Number(u.premiumExpiresAt) || 0;
+    const r = u.passReminder || {};
+    if (Number(r.exp) !== exp) { r.j7 = r.j1 = r.j0 = false; r.exp = exp; }
+    let dirty = false;
+    if (u.isPremium && exp > now && exp <= now + 7 * DAY) {
+      const daysLeft = Math.ceil((exp - now) / DAY);
+      if (daysLeft <= 1 && !r.j1) {
+        await createNotification({
+          target: doc.id, icon: 'fa-hourglass-end',
+          title: 'Dernier jour de ton Pass !',
+          body: `Ton Pass expire aujourd'hui. Prolonge-le maintenant avec le code ${RENEWAL_CODE} : -20 % sur toutes les formules, et tes jours restants sont conservés.`
+        });
+        r.j1 = true; sent1++; dirty = true;
+      } else if (!r.j7) {
+        await createNotification({
+          target: doc.id, icon: 'fa-hourglass-half',
+          title: `Ton Pass expire dans ${daysLeft} jour${daysLeft > 1 ? 's' : ''}`,
+          body: `Prolonge-le avant l'expiration avec le code ${RENEWAL_CODE} : -20 % de fidélité, cumulé avec tes jours restants.`
+        });
+        r.j7 = true; sent7++; dirty = true;
+      }
+    } else if (exp > 0 && exp <= now && exp > now - 3 * DAY && !r.j0) {
+      await createNotification({
+        target: doc.id, icon: 'fa-heart-crack',
+        title: 'Ton Pass est terminé',
+        body: `Reviens vite : le code ${RENEWAL_CODE} te donne -20 % sur toutes les formules pour reprendre là où tu t'étais arrêté.`
+      });
+      r.j0 = true; sent0++; dirty = true;
+    }
+    if (dirty) {
+      await db.collection('users').doc(doc.id).set({
+        passReminder: { exp, j7: !!r.j7, j1: !!r.j1, j0: !!r.j0 }
+      }, { merge: true }).catch(() => {});
+    }
+  }
+  console.log(`[Rappels] J-7: ${sent7}, J-1: ${sent1}, expirés: ${sent0}`);
+  return { sent7, sent1, sent0 };
+}
+
+// Déclenchement manuel depuis le panneau admin
+app.post('/api/admin/reminders/run', async (req, res) => {
+  try {
+    const out = await runExpiryReminders();
+    res.json({ success: true, ...out });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Serveur ResumeCI actif sur http://0.0.0.0:${PORT}`);
+  // Premier scan 15 s après le démarrage, puis toutes les 12 h
+  setTimeout(() => runExpiryReminders().catch(e => console.warn('[Rappels]', e.message)), 15000);
+  const iv = setInterval(() => runExpiryReminders().catch(e => console.warn('[Rappels]', e.message)), 12 * 60 * 60 * 1000);
+  if (iv.unref) iv.unref();
 });
