@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "me.resumeci.app",
+      "sha256_cert_fingerprints": [
+        "46:25:77:64:89:36:C1:94:CF:C8:00:BF:A7:88:6B:6D:75:1F:EC:EC:B4:AB:61:CC:DC:EF:3E:5D:91:FE:F7:B2"
+      ]
+    }
+  }
+]

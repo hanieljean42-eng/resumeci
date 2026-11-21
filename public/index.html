@@ -201,7 +201,7 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.6.33" defer></script>
+  <script src="/app.js?v=3.6.36" defer></script>
   <script src="/ai-tutor.js?v=3.6.34" defer></script>
 
 
@@ -847,6 +847,25 @@
         </div>
 
         <!-- Validation -->
+        <!-- Code promo (optionnel) -->
+        <div class="checkout-field-group">
+          <label class="checkout-label" for="checkoutPromoInput">
+            <span>Code promo</span>
+            <span class="checkout-hint-badge">optionnel — fidélité -20 %</span>
+          </label>
+          <div class="checkout-phone-input-wrap">
+            <input
+              type="text"
+              id="checkoutPromoInput"
+              class="cpi-input"
+              placeholder="Ex : REN20"
+              maxlength="24"
+              autocomplete="off"
+              style="text-transform:uppercase"
+            />
+          </div>
+        </div>
+
         <button id="checkoutSubmitBtn" class="pm-btn checkout-submit-btn" onclick="submitCheckoutPayment()">
           <span id="checkoutSubmitText">Payer 500 FCFA avec Wave</span>
         </button>

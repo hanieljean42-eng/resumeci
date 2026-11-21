@@ -2049,7 +2049,38 @@ window.initiatePremiumPayment = function (btn, tierKey = 'pro') {
 let currentCheckoutTier = 'starter';
 let currentCheckoutMethod = 'wave';
 
+// Détection de l'app Android (Trusted Web Activity / Bubblewrap) : Google Play
+// exige sa propre facturation pour les achats numériques, donc le checkout
+// GeniusPay est masqué dans l'app — l'abonnement se fait sur resumeci.me.
+window.isAndroidApp = function() {
+  try {
+    // La TWA partage le stockage de Chrome : un onglet navigateur reste en mode
+    // 'browser' — on exige standalone pour ne pas bloquer l'achat sur le site.
+    const standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+    if (!standalone) return false;
+    if (localStorage.getItem('resumeci_twa') === '1') return true;
+    const ref = document.referrer || '';
+    const viaTwa = ref.startsWith('android-app://') ||
+      (navigator.userAgent || '').includes('; wv) Build/') ||
+      new URLSearchParams(location.search).get('twa') === '1';
+    if (viaTwa) localStorage.setItem('resumeci_twa', '1');
+    return viaTwa;
+  } catch (e) { return false; }
+};
+
 window.openPaymentCheckoutModal = function(tierKey = 'pro', force = false, eliteChecked = false) {
+  if (window.isAndroidApp && window.isAndroidApp()) {
+    window.showActionNotice({
+      type: 'info',
+      icon: '👑',
+      title: 'Abonnement sur resumeci.me',
+      subtitle: 'Pass ' + (((window.PREMIUM_PLANS || {})[tierKey] || {}).name || 'Réussite'),
+      message: "L'application Android ne propose pas de paiement intégré.\n\nPour activer ton Pass avec Wave, Orange Money ou MTN, ouvre **resumeci.me** dans ton navigateur (Chrome, Samsung Internet…) et abonne-toi là-bas : ton Pass sera automatiquement actif dans l'application.",
+      primaryBtnText: 'Compris',
+      primaryBtnAction: () => {}
+    });
+    return;
+  }
   // Réveille l'API Render (plan gratuit en veille) pendant que l'élève choisit sa formule
   try { fetch(`${window.getPaymentApiBase()}/api/health`, { cache: 'no-store' }).catch(() => {}); } catch (e) {}
   if (!window.USER_PROFILE) {
@@ -2275,6 +2306,8 @@ window.submitCheckoutPayment = async function() {
   const email = isUnivCheckout ? 'etudiant@resumeci.me' : 'eleve@resumeci.me';
   const fullPhone = '+225' + rawPhone;
   const returnOrigin = window.location.origin;
+  const promoInput = document.getElementById('checkoutPromoInput');
+  const promoCode = promoInput ? promoInput.value.trim().toUpperCase() : '';
 
   try {
     const apiBase = typeof window.getPaymentApiBase === 'function' ? window.getPaymentApiBase() : 'https://resumeci-payment-api.onrender.com';
@@ -2288,11 +2321,24 @@ window.submitCheckoutPayment = async function() {
         customerName: name.trim() || (isUnivCheckout ? 'Étudiant(e)' : 'Élève'),
         customerPhone: fullPhone,
         customerEmail: email,
-        returnOrigin: returnOrigin
+        returnOrigin: returnOrigin,
+        ...(promoCode ? { code: promoCode } : {})
       })
     });
 
-    if (!res.ok) throw new Error("GATEWAY_UNAVAILABLE");
+    if (!res.ok) {
+      // Code promo refusé (400) : afficher la raison au lieu d'un message générique
+      try {
+        const errData = await res.json();
+        if (errData && errData.error && res.status === 400) {
+          if (window.toast) toast(errData.error, 'warn', 5000);
+          if (btn) btn.disabled = false;
+          if (textEl) textEl.innerHTML = originalContent;
+          return;
+        }
+      } catch (_) {}
+      throw new Error("GATEWAY_UNAVAILABLE");
+    }
     const ct = res.headers.get('content-type') || '';
     if (!ct.includes('application/json')) throw new Error("GATEWAY_RESPONSE_INVALID");
 
@@ -2300,6 +2346,12 @@ window.submitCheckoutPayment = async function() {
     const checkoutUrl = data.checkout_url || data.payment_url;
 
     if (data.success && checkoutUrl) {
+      if (data.discountApplied && data.finalAmount) {
+        const finalPrice = Number(data.finalAmount).toLocaleString('fr-FR');
+        const badge = document.getElementById('checkoutPriceBadge');
+        if (badge) badge.textContent = `${finalPrice} FCFA (-${data.discountPct}%)`;
+        if (window.toast) toast(`Code ${promoCode} appliqué : tu paies ${finalPrice} FCFA au lieu de ${Number(data.baseAmount).toLocaleString('fr-FR')} FCFA`, 'success', 5000);
+      }
       if (data.reference || data.payment_reference) {
         window.setPendingPaymentRef(data.reference || data.payment_reference, currentCheckoutTier, currentCheckoutMethod);
       }
